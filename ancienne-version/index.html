@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Le Secret de la Déclaration — Escape Game</title>
+<style>
+/* ============================================================
+   LE SECRET DE LA DÉCLARATION — Feuille de style
+   Palette tricolore + parchemin, immersion historique
+   ============================================================ */
+:root{
+  --bleu:#1d3a8a;
+  --bleu-fonce:#13286b;
+  --rouge:#b22222;
+  --rouge-fonce:#8a1a1a;
+  --parchemin:#f4e9d0;
+  --parchemin-clair:#fbf3dd;
+  --encre:#2b1d10;
+  --or:#c9a227;
+  --vert:#2e7d32;
+  --ombre:rgba(20,10,0,.25);
+  --radius:14px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%}
+body{
+  font-family:Georgia,'Times New Roman',serif;
+  color:var(--encre);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(201,162,39,.10), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(178,34,34,.08), transparent 45%),
+    linear-gradient(135deg,#efe2c2,#f4e9d0 40%,#e8d9b3);
+  min-height:100%;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(rgba(80,50,10,.06) 1px,transparent 1px);
+  background-size:4px 4px;
+}
+#app{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:18px 16px 60px}
+
+/* Bandeau tricolore */
+.drapeau{height:6px;background:linear-gradient(90deg,var(--bleu) 0 33.3%,#fff 33.3% 66.6%,var(--rouge) 66.6% 100%);border-radius:6px 6px 0 0}
+
+/* Carte parchemin */
+.carte{
+  background:linear-gradient(180deg,var(--parchemin-clair),var(--parchemin));
+  border:1px solid #d8c79a;
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px var(--ombre), inset 0 0 60px rgba(160,120,40,.08);
+  padding:26px 24px;
+  margin-top:0;
+}
+
+/* En-tête HUD */
+.hud{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  background:var(--bleu-fonce);color:#fff;
+  padding:12px 16px;border-radius:0 0 var(--radius) var(--radius);
+  box-shadow:0 6px 18px var(--ombre);
+  position:sticky;top:0;z-index:50;
+}
+.hud .titre{font-size:1.05rem;font-weight:bold;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+.hud .stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat{
+  background:rgba(255,255,255,.13);padding:6px 12px;border-radius:20px;
+  font-size:.85rem;display:flex;align-items:center;gap:6px;font-family:inherit;
+}
+.stat b{font-variant-numeric:tabular-nums}
+.stat.temps{background:var(--rouge)}
+.stat.temps.alerte{animation:pulse 1s infinite}
+@keyframes pulse{50%{background:var(--rouge-fonce);transform:scale(1.05)}}
+.badges-mini{display:flex;gap:4px}
+
+/* Écrans */
+.ecran{display:none;animation:fondu .5s ease}
+.ecran.actif{display:block}
+@keyframes fondu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Titres */
+h1{font-size:2.2rem;margin:.2em 0;color:var(--bleu-fonce);text-shadow:1px 1px 0 rgba(255,255,255,.5);text-align:center}
+h1 .couleur1{color:var(--bleu)} h1 .couleur2{color:var(--rouge)}
+h2{font-size:1.4rem;color:var(--bleu-fonce);border-bottom:3px double var(--or);padding-bottom:6px;margin-top:0}
+h3{color:var(--rouge-fonce);margin-bottom:.4em}
+.sstitre{text-align:center;color:var(--encre);opacity:.8;font-style:italic;margin-top:0}
+
+/* Boutons */
+.btn{
+  font-family:inherit;font-size:1rem;font-weight:bold;
+  padding:12px 22px;border:none;border-radius:30px;cursor:pointer;
+  background:linear-gradient(180deg,var(--rouge),var(--rouge-fonce));
+  color:#fff;box-shadow:0 4px 0 var(--rouge-fonce),0 6px 14px var(--ombre);
+  transition:transform .1s, box-shadow .1s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--rouge-fonce)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn.grand{font-size:1.15rem;padding:14px 30px}
+.btn.bleu{background:linear-gradient(180deg,var(--bleu),var(--bleu-fonce));box-shadow:0 4px 0 var(--bleu-fonce),0 6px 14px var(--ombre)}
+.btn.vert{background:linear-gradient(180deg,#3a9d40,var(--vert));box-shadow:0 4px 0 var(--vert),0 6px 14px var(--ombre)}
+.btn.or{background:linear-gradient(180deg,#e0b830,var(--or));color:#3a2a00;box-shadow:0 4px 0 #9c7a16,0 6px 14px var(--ombre)}
+.btn.gris{background:linear-gradient(180deg,#bbb,#888);box-shadow:0 4px 0 #777}
+.btn petit{font-size:.85rem;padding:8px 14px}
+.center{text-align:center}
+.boutons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+
+/* Champs */
+input[type=text],select{
+  font-family:inherit;font-size:1.05rem;padding:12px 14px;border-radius:10px;
+  border:2px solid #c9b78a;background:#fffbeb;width:100%;color:var(--encre);
+}
+input[type=text]:focus{outline:none;border-color:var(--bleu)}
+.choix-niveau{display:flex;gap:14px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+.opt-niveau{
+  flex:1;min-width:180px;max-width:280px;padding:18px;border-radius:14px;cursor:pointer;
+  border:3px solid transparent;background:var(--parchemin-clair);text-align:center;
+  box-shadow:0 4px 12px var(--ombre);transition:transform .15s,border-color .15s;
+}
+.opt-niveau:hover{transform:translateY(-3px)}
+.opt-niveau.choisi{border-color:var(--or);background:#fff8e0}
+.opt-niveau .gros{font-size:1.3rem;font-weight:bold;color:var(--bleu-fonce)}
+.opt-niveau .petit{font-size:.85rem;opacity:.75;margin-top:4px}
+
+/* Bulle de dialogue personnage */
+.dialogue{position:relative;background:#fff8e6;border:2px solid var(--or);border-radius:18px;padding:18px 20px 18px 80px;margin:18px 0;box-shadow:0 4px 14px var(--ombre);min-height:80px}
+.dialogue::before{content:attr(data-perso);position:absolute;left:-8px;top:-12px;background:var(--bleu-fonce);color:#fff;padding:4px 14px;border-radius:14px;font-size:.8rem;font-weight:bold;font-style:normal}
+.dialogue .avatar{position:absolute;left:14px;top:18px;width:52px;height:52px;border-radius:50%;background:var(--parchemin);border:3px solid var(--or);display:flex;align-items:center;justify-content:center;font-size:1.8rem}
+.dialogue p{margin:0;font-style:italic}
+
+/* Boîte décor salle */
+.decor{
+  background:linear-gradient(135deg,#3a2a14,#5a4020);color:#f3e3c0;
+  padding:18px 20px;border-radius:14px;border-left:6px solid var(--or);
+  margin:14px 0;font-style:italic;position:relative;box-shadow:0 6px 16px var(--ombre);
+}
+.decor .lieu{font-style:normal;font-weight:bold;color:var(--or);display:block;margin-bottom:6px;letter-spacing:1px}
+.sens{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:.8rem;opacity:.9}
+.sens span{background:rgba(0,0,0,.25);padding:3px 10px;border-radius:12px}
+
+/* Consigne */
+.consigne{background:#fff3d6;border:2px dashed var(--rouge);border-radius:12px;padding:12px 16px;margin:14px 0;font-weight:bold;color:var(--rouge-fonce)}
+.consigne::before{content:"🎯 ";}
+
+/* Zones d'énigme */
+.zone-enigme{background:rgba(255,255,255,.45);border-radius:14px;padding:18px;margin-top:14px}
+
+/* Cases à remplir (mot mystère) */
+.slots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+.slot{
+  width:44px;height:54px;border:3px solid var(--bleu);border-radius:8px;
+  background:#fffbeb;display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;font-weight:bold;color:var(--bleu-fonce);text-transform:uppercase;
+  box-shadow:inset 0 -3px 0 #ddd;
+}
+.slot.vide::after{content:"·";color:#bbb}
+.slot.ok{background:#d8f5d8;border-color:var(--vert)}
+
+/* Lettre cliquable dans un texte */
+.lettre-clic{cursor:pointer;border-radius:4px;padding:0 2px;font-weight:bold;transition:background .15s}
+.lettre-clic.cm1{color:var(--rouge);text-decoration:underline;text-decoration-color:var(--rouge)}
+.lettre-clic.cm2{color:var(--encre);border-bottom:2px dotted transparent}
+.lettre-clic.cm2:hover{background:rgba(201,162,39,.25)}
+.lettre-clic.utilisee{text-decoration:none;background:var(--vert);color:#fff;cursor:default;opacity:.5}
+.texte-doc{background:#fff8e6;border:1px solid #d8c79a;border-radius:10px;padding:18px 20px;font-size:1.15rem;line-height:2;margin:12px 0;box-shadow:inset 0 0 30px rgba(160,120,40,.1)}
+
+/* Cartes associables */
+.rang-match{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+.colonne-match{flex:1;min-width:220px;display:flex;flex-direction:column;gap:10px}
+.carte-match{
+  background:#fff8e6;border:2px solid #d8c79a;border-radius:10px;padding:12px 14px;
+  cursor:pointer;text-align:center;transition:all .15s;font-size:.95rem;min-height:60px;
+  display:flex;align-items:center;justify-content:center;
+}
+.carte-match:hover{transform:translateY(-2px);border-color:var(--or)}
+.carte-match.select{border-color:var(--bleu);background:#e6efff;box-shadow:0 0 0 3px rgba(29,58,138,.2)}
+.carte-match.bien{border-color:var(--vert);background:#d8f5d8;cursor:default;pointer-events:none}
+.carte-match.mal{animation:secoue .4s;border-color:var(--rouge)}
+@keyframes secoue{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.carte-match .emoji{font-size:1.8rem;display:block;margin-bottom:4px}
+
+/* Rébus */
+.rebus{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:center;margin:18px 0}
+.rebus-item{background:#fff8e6;border:3px solid var(--or);border-radius:14px;padding:14px;text-align:center;min-width:130px;box-shadow:0 4px 12px var(--ombre)}
+.rebus-item .symbole{font-size:3rem;display:block;margin-bottom:6px}
+.rebus-item select{margin-top:6px;max-width:120px}
+.phrase-trou{font-size:1.3rem;text-align:center;background:#fff8e6;border-radius:10px;padding:14px;margin:12px 0}
+.phrase-trou .trou{display:inline-block;min-width:90px;border-bottom:3px solid var(--bleu);color:var(--bleu-fonce);font-weight:bold;padding:0 6px}
+.phrase-trou .trou.ok{color:var(--vert);border-color:var(--vert)}
+
+/* Mécanisme plan */
+.plan{background:#fff8e6;border:2px solid #d8c79a;border-radius:14px;padding:20px;position:relative;margin:14px auto;max-width:560px;font-family:'Courier New',monospace}
+.plan table{width:100%;border-collapse:separate;border-spacing:6px}
+.plan td{border:2px dashed var(--bleu);border-radius:8px;height:54px;text-align:center;vertical-align:middle;cursor:pointer;font-family:Georgia,serif;font-size:.9rem;background:rgba(255,255,255,.5)}
+.plan td:hover{background:#e6efff}
+.plan td.etiquette-placee{background:#fff3d6;border-style:solid;font-weight:bold}
+.plan td.bien{background:#d8f5d8;border-color:var(--vert)}
+.plan td.mal{background:#ffe0e0;border-color:var(--rouge);animation:secoue .4s}
+.plan .legende{font-size:.75rem;text-align:center;color:#888;margin-top:6px;font-family:Georgia,serif}
+.banque{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.etiquette{
+  background:linear-gradient(180deg,#fff8e6,#f0e0b8);border:2px solid var(--or);border-radius:8px;
+  padding:8px 12px;cursor:pointer;font-size:.9rem;font-weight:bold;transition:transform .1s;
+  box-shadow:0 2px 4px var(--ombre);
+}
+.etiquette:hover{transform:translateY(-2px)}
+.etiquette.select{background:var(--bleu);color:#fff;border-color:var(--bleu-fonce)}
+.etiquette.utilisee{display:none}
+
+/* Liste réordonnable */
+.liste-ordre{display:flex;flex-direction:column;gap:8px;max-width:480px;margin:14px auto}
+.item-ordre{
+  background:#fff8e6;border:2px solid #d8c79a;border-radius:10px;padding:12px 14px;
+  display:flex;align-items:center;gap:12px;cursor:grab;
+}
+.item-ordre:hover{border-color:var(--or)}
+.item-ordre .poignee{font-size:1.4rem;color:var(--or);user-select:none}
+.item-ordre .rang{background:var(--bleu-fonce);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0}
+.item-ordre .contenu{flex:1}
+.controles-ordre{display:flex;flex-direction:column;gap:2px}
+.controles-ordre button{background:var(--parchemin);border:1px solid #c9b78a;border-radius:6px;width:28px;height:22px;cursor:pointer;font-size:.8rem;padding:0;line-height:1}
+
+/* Indice / feedback */
+.feedback{padding:14px 18px;border-radius:12px;margin:14px 0;font-weight:bold;display:none;animation:fondu .3s}
+.feedback.show{display:block}
+.feedback.succes{background:#d8f5d8;border:2px solid var(--vert);color:#1b5e20}
+.feedback.erreur{background:#ffe0e0;border:2px solid var(--rouge);color:var(--rouge-fonce)}
+.feedback.indice{background:#fff3d6;border:2px solid var(--or);color:#7a5a00}
+.barre-outils{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+
+/* Progression salles */
+.progression{display:flex;gap:6px;justify-content:center;margin:14px 0;flex-wrap:wrap}
+.prog-point{
+  width:34px;height:34px;border-radius:50%;background:#fff;border:2px solid #c9b78a;
+  display:flex;align-items:center;justify-content:center;font-weight:bold;color:#888;font-size:.9rem;
+}
+.prog-point.fait{background:var(--vert);color:#fff;border-color:var(--vert)}
+.prog-point.actuel{background:var(--bleu);color:#fff;border-color:var(--bleu-fonce);transform:scale(1.15)}
+
+/* Quizz */
+.qcm-question{background:#fff8e6;border-radius:10px;padding:14px;margin:12px 0;border-left:4px solid var(--bleu)}
+.qcm-question .q{font-weight:bold;margin-bottom:10px}
+.qcm-option{display:block;background:#fff;border:1px solid #d8c79a;border-radius:8px;padding:10px 14px;margin:6px 0;cursor:pointer}
+.qcm-option:hover{background:#e6efff}
+.qcm-option.select{background:#dde8ff;border-color:var(--bleu)}
+.qcm-option.bonne{background:#d8f5d8;border-color:var(--vert)}
+.qcm-option.mauvaise{background:#ffe0e0;border-color:var(--rouge)}
+
+/* Badges */
+.grille-badges{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:18px 0}
+.badge{background:linear-gradient(135deg,#fff8e6,#f0e0b8);border:2px solid var(--or);border-radius:14px;padding:16px;text-align:center;width:130px;box-shadow:0 4px 12px var(--ombre);opacity:.3;filter:grayscale(1)}
+.badge.gagne{opacity:1;filter:none;animation:pop .5s}
+.badge .icone{font-size:2.4rem}
+.badge .nom{font-weight:bold;font-size:.85rem;margin-top:4px;color:var(--bleu-fonce)}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+
+/* Article secret */
+.article-secret{
+  background:linear-gradient(135deg,#fffbe6,#f5e6b8);border:3px double var(--or);
+  border-radius:14px;padding:24px;margin:20px 0;text-align:center;box-shadow:0 8px 24px var(--ombre);
+  font-family:'Times New Roman',serif;
+}
+.article-secret .sceau{font-size:2rem}
+.article-secret .numero{color:var(--rouge-fonce);font-weight:bold;letter-spacing:2px}
+.article-secret .texte{font-size:1.2rem;font-style:italic;margin:12px 0}
+
+/* Score final */
+.score-final{font-size:3rem;text-align:center;color:var(--bleu-fonce);font-weight:bold;margin:10px 0}
+.score-final .sur{font-size:1.4rem;color:#888}
+
+/* Confettis */
+.confetti{position:fixed;width:10px;height:14px;top:-20px;z-index:9999;pointer-events:none;animation:tomb .5s linear forwards}
+@keyframes tomb{to{transform:translateY(110vh) rotate(720deg);opacity:.3}}
+
+/* Responsive */
+@media (max-width:640px){
+  h1{font-size:1.6rem}
+  .carte{padding:18px 14px}
+  .hud{font-size:.85rem;padding:10px}
+  .hud .titre{font-size:.95rem}
+  .stat{padding:5px 9px;font-size:.78rem}
+  .dialogue{padding:14px 14px 14px 70px}
+  .dialogue .avatar{width:44px;height:44px;font-size:1.4rem;left:10px}
+  .lettre-clic{padding:2px 3px}
+  .slot{width:36px;height:44px;font-size:1.3rem}
+  .rang-match{flex-direction:column;align-items:stretch}
+  .btn{padding:11px 18px;font-size:.95rem}
+}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style>
+</head>
+<body>
+<div class="drapeau"></div>
+<div id="app">
+
+  <!-- ============ HUD ============ -->
+  <div class="hud" id="hud" style="display:none">
+    <div class="titre">🏛️ Le Secret de la Déclaration</div>
+    <div class="stats">
+      <div class="stat" id="hud-equipe">👤 <b id="hud-eq-nom">—</b></div>
+      <div class="stat temps" id="hud-temps">⏱️ <b id="hud-min">00</b>:<b id="hud-sec">00</b></div>
+      <div class="stat" id="hud-score">⭐ <b id="hud-score-val">0</b></div>
+      <div class="stat" id="hud-frag">📜 <b id="hud-frag-val">0</b>/4</div>
+      <button class="btn gris petit" id="btn-pause" style="padding:6px 12px;font-size:.8rem">⏸ Pause</button>
+    </div>
+  </div>
+
+  <!-- ============ ÉCRAN ACCUEIL ============ -->
+  <section class="ecran actif" id="ecran-accueil">
+    <div class="carte">
+      <h1><span class="couleur1">Le Secret</span> de la <span class="couleur2">Déclaration</span></h1>
+      <p class="sstitre">~ Un escape game sur la Révolution française ~</p>
+      <div class="decor">
+        <span class="lieu">📜 Paris, le 26 août 1789</span>
+        Il y a quelques jours, l'Assemblée nationale a adopté la <b>Déclaration des droits de l'homme et du citoyen</b>. Mais un <b>article secret</b>, jamais rendu public, a été dérobé dans la nuit… S'il tombait entre de mauvaises mains, il pourrait changer le cours de l'Histoire !
+        <div class="sens"><span>👁️ à voir</span><span>👂 à entendre</span><span>✋ à toucher</span></div>
+      </div>
+      <div class="dialogue" data-perso="Maximilien">
+        <div class="avatar">⚖️</div>
+        <p>Apprentis, écoutez. Je suis Maximilien, avocat. Retrouvez les quatre fragments du manuscrit volé. Vous avez <b>55 minutes</b>. Le sort de la liberté est entre vos mains.</p>
+      </div>
+      <hr style="border:none;border-top:2px dotted #c9b78a;margin:18px 0">
+      <h3 style="text-align:center">👤 Votre équipe</h3>
+      <input type="text" id="input-equipe" placeholder="Nom de votre équipe (ex. : Les Patriotes)" maxlength="24">
+      <h3 style="text-align:center;margin-top:18px">🎯 Votre niveau</h3>
+      <div class="choix-niveau">
+        <div class="opt-niveau" data-niveau="CM1">
+          <div class="gros">CM1</div>
+          <div class="petit">Textes plus courts, indices en couleur, énigmes à 3 éléments</div>
+        </div>
+        <div class="opt-niveau" data-niveau="CM2">
+          <div class="gros">CM2</div>
+          <div class="petit">Textes plus denses, déduction, énigmes à 5-6 éléments</div>
+        </div>
+      </div>
+      <div class="boutons">
+        <button class="btn grand bleu" id="btn-demarrer" disabled>🚀 Commencer l'aventure</button>
+      </div>
+      <p class="sr-only" id="msg-accueil" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ============ CONTENEUR SALLES (rempli par JS) ============ -->
+  <section class="ecran" id="ecran-salle">
+    <div class="carte" id="salle-contenu"></div>
+  </section>
+
+  <!-- ============ ÉCRAN PAUSE ============ -->
+  <section class="ecran" id="ecran-pause">
+    <div class="carte center">
+      <h2>⏸ Partie en pause</h2>
+      <p style="font-size:1.1rem">Le temps est suspendu. Revenez quand vous êtes prêts !</p>
+      <p style="opacity:.7">Astuce : profitez-en pour réfléchir ensemble à voix haute.</p>
+      <div class="boutons">
+        <button class="btn vert grand" id="btn-reprendre">▶️ Reprendre</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ÉCRAN FINAL / VICTOIRE ============ -->
+  <section class="ecran" id="ecran-fin">
+    <div class="carte" id="fin-contenu"></div>
+  </section>
+
+</div>
+
+<script>
+/* ============================================================
+   MOTEUR DE JEU — Le Secret de la Déclaration
+   ============================================================ */
+
+const ETAT = {
+  equipe: "",
+  niveau: "CM2",
+  salle: 1,
+  score: 0,
+  fragments: [],
+  badges: {bastille:false, avocat:false, fraternite:false, lumiere:false},
+  debut: null,
+  msEcoules: 0,
+  enPause: false,
+  tempsParSalle: {},
+  salleDebut: null,
+  indicesUtilises: 0,
+  quiz: {repondu:false, score:0},
+  fini: false
+};
+
+const CLE_SAUVEGARDE = "escape_declaration_save";
+
+/* ---- Sauvegarde / chargement ---- */
+function sauvegarder(){
+  try{ localStorage.setItem(CLE_SAUVEGARDE, JSON.stringify(ETAT)); }catch(e){}
+}
+function charger(){
+  try{
+    const s = localStorage.getItem(CLE_SAUVEGARDE);
+    if(!s) return false;
+    const d = JSON.parse(s);
+    Object.assign(ETAT, d);
+    return true;
+  }catch(e){ return false; }
+}
+
+/* ---- Navigation entre écrans ---- */
+function aller(ecranId){
+  document.querySelectorAll(".ecran").forEach(e=>e.classList.remove("actif"));
+  document.getElementById(ecranId).classList.add("actif");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ---- HUD ---- */
+function majHUD(){
+  document.getElementById("hud").style.display = ETAT.salle>=1 && ETAT.debut ? "flex" : "none";
+  document.getElementById("hud-eq-nom").textContent = ETAT.equipe || "—";
+  document.getElementById("hud-score-val").textContent = ETAT.score;
+  document.getElementById("hud-frag-val").textContent = ETAT.fragments.length;
+  const m = Math.floor(ETAT.msEcoules/60000);
+  const s = Math.floor((ETAT.msEcoules%60000)/1000);
+  document.getElementById("hud-min").textContent = String(m).padStart(2,"0");
+  document.getElementById("hud-sec").textContent = String(s).padStart(2,"0");
+  const alerte = m >= 50;
+  document.getElementById("hud-temps").classList.toggle("alerte", alerte);
+}
+
+/* ---- Minuteur ---- */
+let timerId = null;
+let dernierTick = null;
+function demarrerTimer(){
+  if(timerId) return;
+  dernierTick = Date.now();
+  timerId = setInterval(()=>{
+    if(ETAT.enPause || ETAT.fini){ dernierTick = Date.now(); return; }
+    const now = Date.now();
+    ETAT.msEcoules += now - dernierTick;
+    dernierTick = now;
+    majHUD();
+    sauvegarder();
+    if(Math.floor(ETAT.msEcoules/60000) >= 55){
+      // temps limite atteint : on laisse finir mais on alerte
+    }
+  }, 1000);
+}
+
+/* ---- Score ---- */
+function ajouterScore(pts, raison){
+  ETAT.score += pts;
+  majHUD();
+  if(pts>0) toast("+"+pts+" points"+(raison?" · "+raison:""));
+}
+function toast(msg){
+  let t = document.createElement("div");
+  t.textContent = msg;
+  t.style.cssText = "position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--bleu-fonce);color:#fff;padding:10px 18px;border-radius:24px;font-weight:bold;z-index:9999;box-shadow:0 6px 16px rgba(0,0,0,.3);font-family:Georgia,serif;animation:fondu .3s";
+  document.body.appendChild(t);
+  setTimeout(()=>{ t.style.transition="opacity .4s"; t.style.opacity="0"; setTimeout(()=>t.remove(),400); }, 1800);
+}
+
+/* ---- Confettis ---- */
+function confettis(n=60){
+  const couleurs=["#1d3a8a","#b22222","#c9a227","#2e7d32","#fff"];
+  for(let i=0;i<n;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=couleurs[i%couleurs.length];
+    c.style.animationDuration=(0.8+Math.random()*1.2)+"s";
+    c.style.animationDelay=(Math.random()*0.3)+"s";
+    c.style.transform="rotate("+Math.random()*360+"deg)";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),2200);
+  }
+}
+
+/* ---- Progression ---- */
+function barreProgression(){
+  const sallesTotales = 5;
+  let html = '<div class="progression" aria-label="Progression">';
+  for(let i=1;i<=sallesTotales;i++){
+    let cls = "";
+    if(i < ETAT.salle) cls="fait";
+    else if(i === ETAT.salle) cls="actuel";
+    html += `<div class="prog-point ${cls}">${i}</div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+/* ---- Système d'indices ---- */
+function boutonIndice(indices, onVoir){
+  // indices: tableau de strings de + en + explicites
+  let idx = 0;
+  return `<button class="btn or" id="btn-indice">💡 Indice</button>`;
+}
+function activerBoutonIndice(indices){
+  let idx = 0;
+  const btn = document.getElementById("btn-indice");
+  if(!btn) return;
+  btn.addEventListener("click", ()=>{
+    if(idx >= indices.length){
+      btn.textContent = "💡 Plus d'indices";
+      return;
+    }
+    const fb = document.createElement("div");
+    fb.className = "feedback indice show";
+    fb.innerHTML = "💡 " + indices[idx];
+    document.querySelector(".zone-enigme").appendChild(fb);
+    idx++;
+    ETAT.indicesUtilises++;
+    ajouterScore(0,"");
+    // pénalité douce sur le score
+    ETAT.score = Math.max(0, ETAT.score-2);
+    majHUD();
+    sauvegarder();
+    btn.textContent = "💡 Indice suivant";
+    fb.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+}
+
+/* ============================================================
+   DÉMARRAGE
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", ()=>{
+  // reprise éventuelle
+  if(charger() && ETAT.equipe && ETAT.debut && !ETAT.fini){
+    if(confirm("Une partie est en cours pour l'équipe « "+ETAT.equipe+" ». Voulez-vous la reprendre ?")){
+      entrerDansLeJeu(true);
+      return;
+    }else{
+      localStorage.removeItem(CLE_SAUVEGARDE);
+      location.reload();
+    }
+  }
+
+  // sélection niveau
+  document.querySelectorAll(".opt-niveau").forEach(o=>{
+    o.addEventListener("click", ()=>{
+      document.querySelectorAll(".opt-niveau").forEach(x=>x.classList.remove("choisi"));
+      o.classList.add("choisi");
+      ETAT.niveau = o.dataset.niveau;
+      verifierPret();
+    });
+  });
+  // nom équipe
+  document.getElementById("input-equipe").addEventListener("input", e=>{
+    ETAT.equipe = e.target.value.trim();
+    verifierPret();
+  });
+  document.getElementById("btn-demarrer").addEventListener("click", ()=>{
+    ETAT.debut = Date.now() - ETAT.msEcoules;
+    ETAT.salleDebut = Date.now();
+    entrerDansLeJeu(false);
+  });
+  document.getElementById("btn-pause").addEventListener("click", ()=>{
+    ETAT.enPause = true;
+    aller("ecran-pause");
+  });
+  document.getElementById("btn-reprendre").addEventListener("click", ()=>{
+    ETAT.enPause = false;
+    dernierTick = Date.now();
+    aller("ecran-salle");
+  });
+});
+
+function verifierPret(){
+  const ok = ETAT.equipe.length>=2 && ETAT.niveau;
+  document.getElementById("btn-demarrer").disabled = !ok;
+}
+
+function entrerDansLeJeu(reprise){
+  aller("ecran-salle");
+  demarrerTimer();
+  majHUD();
+  afficherSalle(ETAT.salle);
+  if(reprise) toast("Partie reprise ✓");
+}
+
+/* ============================================================
+   DÉFINITION DES SALLES
+   ============================================================ */
+const SALLES = [
+  null, // index 0 inutilisé
+  {lieu:"Salle 1 — La cour du Palais-Royal", perso:"Louise", emoji:"🧒", rendu:rendreSalle1},
+  {lieu:"Salle 2 — L'imprimerie clandestine", perso:"Maître Gutenberg", emoji:"🖨️", rendu:rendreSalle2},
+  {lieu:"Salle 3 — Le jardin des Tuileries", perso:"Le Marquis de Montclair", emoji:"🎩", rendu:rendreSalle3},
+  {lieu:"Salle 4 — La place de la Bastille", perso:"Louise", emoji:"🧒", rendu:rendreSalle4},
+  {lieu:"Salle 5 — La salle de l'Assemblée", perso:"Maximilien", emoji:"⚖️", rendu:rendreSalle5},
+];
+
+function afficherSalle(n){
+  const salle = SALLES[n];
+  const c = document.getElementById("salle-contenu");
+  ETAT.salleDebut = Date.now();
+  c.innerHTML = barreProgression() + salle.rendu();
+  salle.rendu_apres && salle.rendu_apres();
+  majHUD();
+  sauvegarder();
+}
+
+function validerSalle(fragment, dialogueSuivant, badge){
+  // marquer la salle finie, donner fragment + score
+  const duree = Date.now() - ETAT.salleDebut;
+  ETAT.tempsParSalle[ETAT.salle] = duree;
+  if(!ETAT.fragments.includes(fragment)){
+    ETAT.fragments.push(fragment);
+  }
+  let pts = 10;
+  let raison = "";
+  // bonus rapidité
+  if(duree < 180000){ pts += 5; raison = "rapidité"; if(badge) ETAT.badges[badge]=true; }
+  else if(duree < 360000){ pts += 2; }
+  // pénalité indices
+  if(ETAT.indicesUtilises > 0 && raison!=="rapidité") pts = Math.max(5, pts-2);
+  ajouterScore(pts, raison);
+  // afficher l'écran de transition victoire salle
+  const c = document.getElementById("salle-contenu");
+  const overlay = document.createElement("div");
+  overlay.className = "feedback succes show";
+  overlay.innerHTML = `🎉 Bravo ! Vous récupérez le fragment : <b>${fragment}</b> ${motVersEmoji(fragment)}<br>
+    <span style="font-weight:normal;font-size:.9rem">Temps : ${Math.floor(duree/60000)} min ${Math.floor((duree%60000)/1000)} s · +${pts} points</span>
+    <div style="margin-top:12px">${dialogueSuivant}</div>
+    <div class="boutons"><button class="btn grand vert" id="btn-salle-suivante">➡️ Salle suivante</button></div>`;
+  c.appendChild(overlay);
+  confettis(40);
+  overlay.scrollIntoView({behavior:"smooth",block:"center"});
+  document.getElementById("btn-salle-suivante").addEventListener("click", ()=>{
+    ETAT.salle++;
+    ETAT.indicesUtilises = 0;
+    if(ETAT.salle > 5){
+      finDuJeu();
+    }else{
+      afficherSalle(ETAT.salle);
+    }
+  });
+  sauvegarder();
+}
+
+function motVersEmoji(m){
+  const map = {"LIBERTÉ":"🔓","ÉGALITÉ":"⚖️","FRATERNITÉ":"🤝","1789":"📜"};
+  return map[m]||"📜";
+}
+
+/* ============================================================
+   SALLE 1 — Le cahier de doléances codé
+   ============================================================ */
+function rendreSalle1(){
+  const cm1 = ETAT.niveau==="CM1";
+  const dialogueIntro = `<div class="dialogue" data-perso="Louise">
+    <div class="avatar">🧒</div>
+    <p>Eh ! Vous, là ! Vous cherchez le manuscrit volé, pas vrai ? Tout Paris en parle. Moi, j'connais cette ville comme ma poche. Aidez-moi à décoder ce cahier, et j'vous file un renseignement. Marché conclu ?</p>
+  </div>`;
+  const decor = `<div class="decor">
+    <span class="lieu">🌧️ La cour du Palais-Royal</span>
+    La pluie fine fouette les pavés luisants. Des affiches révolutionnaires, fraîchement collées, suintent sous l'humidité — on sent l'encre encore humide et la pâte de farine. Au loin, la rumeur d'une foule monte et descend, ponctuée du tintement d'une cloche. Une odeur de pain chaud s'échappe d'une boulangerie voisine.
+    <div class="sens"><span>👁️ pavés mouillés</span><span>👂 foule + cloche</span><span>👃 pain chaud</span><span>✋ papier humide</span></div>
+  </div>`;
+  const consigne = `<div class="consigne">${cm1
+    ? "Lis le texte. Les lettres <b style='color:var(--rouge)'>en rouge soulignées</b> sont cachées. Clique dessus <b>dans l'ordre</b> pour former le mot mystère (7 lettres)."
+    : "Lis le texte du cahier de doléances. Certaines lettres sont marquées. Clique sur les lettres marquées <b>dans l'ordre</b> pour révéler le mot caché."}</div>`;
+
+  // Construction du texte avec lettres cliquables placées en début de mots
+  // séquence cible : L - I - B - E - R - T - É
+  const texte = cm1
+    ? `<p class="texte-doc"><span class="lettre-clic cm1" data-l="L">L</span>es habitants demandent qu'on impose riches et pauvres. <span class="lettre-clic cm1" data-l="I">I</span>l faut que justice soit égale pour tous. <span class="lettre-clic cm1" data-l="B">B</span>eaucoup souffrent des taxes injustes. <span class="lettre-clic cm1" data-l="E">E</span>nfin, que règne la liberté. <span class="lettre-clic cm1" data-l="R">R</span>éunissons nos voix contre les abus. <span class="lettre-clic cm1" data-l="T">T</span>erminons les privilèges des nobles. <span class="lettre-clic cm1" data-l="É">É</span>galité pour tous les Français !</p>`
+    : `<p class="texte-doc">Les habitants de la paroisse demandent que soient <span class="lettre-clic cm2" data-l="L">l</span>evées toutes les charges injustes qui pèsent sur le peuple ; qu'<span class="lettre-clic cm2" data-l="I">i</span>mposés également, riches et pauvres participent selon leurs moyens. Ils demandent que <span class="lettre-clic cm2" data-l="B">b</span>ientôt la justice ne soit plus vendue ni achetée ; qu'<span class="lettre-clic cm2" data-l="E">e</span>nfin les privilèges héréditaires soient abolis ; que la <span class="lettre-clic cm2" data-l="R">r</span>aison et la loi guident seuls le royaume ; que <span class="lettre-clic cm2" data-l="T">t</span>ous les Français soient égaux en droits, sans <span class="lettre-clic cm2" data-l="É">é</span>gard à leur naissance.</p>`;
+
+  return `
+    <h2>${SALLES[1].lieu}</h2>
+    ${decor}
+    ${dialogueIntro}
+    ${consigne}
+    <div class="zone-enigme">
+      <div class="slots" id="slots-1">${Array.from({length:7}).map(()=>'<div class="slot vide"></div>').join("")}</div>
+      ${texte}
+      <div class="feedback" id="fb-1"></div>
+      <div class="barre-outils">
+        <button class="btn or" id="btn-indice">💡 Indice</button>
+      </div>
+    </div>
+  `;
+}
+SALLES[1].rendu_apres = ()=>{
+  const cible = ["L","I","B","E","R","T","É"];
+  let pos = 0;
+  const slots = document.querySelectorAll("#slots-1 .slot");
+  document.querySelectorAll(".lettre-clic").forEach(l=>{
+    l.addEventListener("click", ()=>{
+      if(l.classList.contains("utilisee")) return;
+      const lettre = l.dataset.l;
+      if(lettre === cible[pos]){
+        l.classList.add("utilisee");
+        const s = slots[pos];
+        s.classList.remove("vide");
+        s.classList.add("ok");
+        s.textContent = lettre;
+        pos++;
+        if(pos === cible.length){
+          document.getElementById("fb-1").className = "feedback succes show";
+          document.getElementById("fb-1").innerHTML = "✨ Le mot mystère est : <b>LIBERTÉ</b> !";
+          setTimeout(()=>{
+            validerSalle("LIBERTÉ",
+              `<div class="dialogue" data-perso="Louise"><div class="avatar">🧒</div><p>Palsambleu, vous êtes malins ! Le voleur est passé par l'<b>imprimerie</b>, rue de la Harpe. Cherchez Maître Gutenberg. Et… prenez garde, la foule gronde.</p></div>`,
+              "bastille");
+          }, 900);
+        }
+      }else{
+        l.classList.add("mal");
+        setTimeout(()=>l.classList.remove("mal"),400);
+        const fb = document.getElementById("fb-1");
+        fb.className="feedback erreur show";
+        fb.textContent = "Ce n'est pas la bonne lettre dans l'ordre. Cherche la première lettre non encore trouvée.";
+        setTimeout(()=>fb.classList.remove("show"),2000);
+      }
+    });
+  });
+  const indices = ETAT.niveau==="CM1"
+    ? ["La première lettre à cliquer est un <b>L</b> majuscule, en rouge.", "Ensuite cherche un <b>I</b> majuscule rouge.", "Le mot veut dire « ne pas être prisonnier »."]
+    : ["Les lettres à trouver sont les premières lettres de mots-clés du texte.", "Le mot cherché commence par <b>L</b> et finit par <b>É</b>.", "C'est l'un des trois mots de la devise de la France."];
+  activerBoutonIndice(indices);
+};
+
+/* ============================================================
+   SALLE 2 — La Marseillaise mystérieuse
+   ============================================================ */
+function rendreSalle2(){
+  const cm1 = ETAT.niveau==="CM1";
+  const dialogueIntro = `<div class="dialogue" data-perso="Maître Gutenberg">
+    <div class="avatar">🖨️</div>
+    <p>Entrez, et refermez cette porte. La presse tourne : c'est par l'imprimé que les idées voyagent. Avant de vous aider, dites-moi : associez ces extraits de la Marseillaise aux bonnes images. Prouvez votre perspicacité.</p>
+  </div>`;
+  const decor = `<div class="decor">
+    <span class="lieu">🖨️ L'imprimerie clandestine</span>
+    La porte grince et se referme sur le bruit de la rue. Ici, c'est le cliquetis régulier de la presse à bras qui domine, accompagné du froissement des feuilles. L'air sent le plomb fondu, l'encre grasse et la poussière de papier. Des cahiers de doléances s'entassent sur une table, éclairés par une chandelle dont la flamme vacille.
+    <div class="sens"><span>👂 presse à bras</span><span>👃 encre & plomb</span><span>👁️ chandelle</span></div>
+  </div>`;
+  const consigne = cm1
+    ? `<div class="consigne">Clique sur un extrait à gauche, puis sur l'image correspondante à droite. Associe les <b>3 paires</b> !</div>`
+    : `<div class="consigne">Remets ces <b>5 événements de 1789</b> dans l'ordre chronologique (du plus ancien au plus récent) avec les flèches.</div>`;
+
+  let enigme = "";
+  if(cm1){
+    const extraits = [
+      {id:"e1", txt:"« Aux armes, citoyens !»", bon:"i1"},
+      {id:"e2", txt:"« Allons enfants de la Patrie»", bon:"i2"},
+      {id:"e3", txt:"« Le jour de gloire est arrivé»", bon:"i3"},
+    ];
+    const images = [
+      {id:"i1", emoji:"🏰", txt:"Prise de la Bastille"},
+      {id:"i2", emoji:"🚶", txt:"Volontaires en marche"},
+      {id:"i3", emoji:"🚩", txt:"Drapeau tricolore hissé"},
+    ];
+    enigme = `<div class="rang-match">
+      <div class="colonne-match" id="col-extraits">
+        ${extraits.map(e=>`<div class="carte-match" data-id="${e.id}" data-bon="${e.bon}">${e.txt}</div>`).join("")}
+      </div>
+      <div class="colonne-match" id="col-images">
+        ${images.map(i=>`<div class="carte-match" data-id="${i.id}"><span class="emoji">${i.emoji}</span>${i.txt}</div>`).join("")}
+      </div>
+    </div>`;
+  }else{
+    const evts = [
+      {id:"eg", txt:"États généraux réunis à Versailles", date:"mai 1789", rang:1},
+      {id:"jp", txt:"Serment du Jeu de paume", date:"20 juin 1789", rang:2},
+      {id:"ba", txt:"Prise de la Bastille", date:"14 juillet 1789", rang:3},
+      {id:"dec", txt:"Adoption de la Déclaration des droits", date:"26 août 1789", rang:4},
+      {id:"mf", txt:"Marche des femmes à Versailles", date:"5 octobre 1789", rang:5},
+    ];
+    // mélanger pour l'affichage
+    evts.sort(()=>Math.random()-0.5);
+    enigme = `<div class="liste-ordre" id="liste-ordre">
+      ${evts.map(e=>`<div class="item-ordre" data-id="${e.id}" data-rang="${e.rang}">
+        <span class="rang">${e.rang}</span>
+        <div class="contenu"><b>${e.txt}</b><br><span style="font-size:.8rem;opacity:.7">${e.date}</span></div>
+        <div class="controles-ordre">
+          <button class="btn-monter" aria-label="Monter">▲</button>
+          <button class="btn-descendre" aria-label="Descendre">▼</button>
+        </div>
+      </div>`).join("")}
+    </div>
+    <div class="center"><button class="btn vert" id="btn-verif-ordre">✅ Vérifier l'ordre</button></div>`;
+  }
+
+  return `
+    <h2>${SALLES[2].lieu}</h2>
+    ${decor}
+    ${dialogueIntro}
+    ${consigne}
+    <div class="zone-enigme">
+      ${enigme}
+      <div class="feedback" id="fb-2"></div>
+      <div class="barre-outils">
+        <button class="btn or" id="btn-indice">💡 Indice</button>
+      </div>
+    </div>
+  `;
+}
+SALLES[2].rendu_apres = ()=>{
+  const cm1 = ETAT.niveau==="CM1";
+  if(cm1){
+    let selectionGauche = null;
+    document.querySelectorAll("#col-extraits .carte-match").forEach(c=>{
+      c.addEventListener("click", ()=>{
+        document.querySelectorAll("#col-extraits .carte-match").forEach(x=>x.classList.remove("select"));
+        c.classList.add("select");
+        selectionGauche = c;
+      });
+    });
+    document.querySelectorAll("#col-images .carte-match").forEach(img=>{
+      img.addEventListener("click", ()=>{
+        if(!selectionGauche) return;
+        if(selectionGauche.dataset.bon === img.dataset.id){
+          selectionGauche.classList.add("bien");
+          selectionGauche.classList.remove("select");
+          img.classList.add("bien");
+          selectionGauche = null;
+          const restant = document.querySelectorAll("#col-extraits .carte-match:not(.bien)").length;
+          if(restant===0){
+            document.getElementById("fb-2").className="feedback succes show";
+            document.getElementById("fb-2").innerHTML="✨ Toutes les associations sont correctes !";
+            setTimeout(()=>validerSalle("ÉGALITÉ",
+              `<div class="dialogue" data-perso="Maître Gutenberg"><div class="avatar">🖨️</div><p>Joli. Rousseau disait que l'homme est né libre. Voici votre fragment. Le <b>Marquis de Montclair</b> rôde aux <b>Tuileries</b>. Écoutez-le… mais méfiez-vous.</p></div>`,"avocat"),900);
+          }
+        }else{
+          img.classList.add("mal");
+          setTimeout(()=>img.classList.remove("mal"),400);
+          const fb=document.getElementById("fb-2");
+          fb.className="feedback erreur show";
+          fb.textContent="Mauvaise association. Réessaie !";
+          setTimeout(()=>fb.classList.remove("show"),1800);
+        }
+      });
+    });
+    const indices=["La Bastille est attaquée quand on crie « Aux armes ! ».","« Enfants de la Patrie » = des volontaires qui marchent ensemble.","Le drapeau est hissé quand « le jour de gloire est arrivé »."];
+    activerBoutonIndice(indices);
+  }else{
+    const liste = document.getElementById("liste-ordre");
+    liste.addEventListener("click", e=>{
+      const item = e.target.closest(".item-ordre");
+      if(!item) return;
+      if(e.target.classList.contains("btn-monter")){
+        const prev = item.previousElementSibling;
+        if(prev) liste.insertBefore(item, prev);
+      }else if(e.target.classList.contains("btn-descendre")){
+        const next = item.nextElementSibling;
+        if(next) liste.insertBefore(next, item);
+      }
+      rafraichirRangs();
+    });
+    function rafraichirRangs(){
+      document.querySelectorAll("#liste-ordre .item-ordre").forEach((it,i)=>{
+        it.querySelector(".rang").textContent = i+1;
+      });
+    }
+    rafraichirRangs();
+    document.getElementById("btn-verif-ordre").addEventListener("click", ()=>{
+      const items = [...document.querySelectorAll("#liste-ordre .item-ordre")];
+      const ordre = items.map(it=>it.dataset.rang).join("");
+      if(ordre === "12345"){
+        items.forEach(it=>it.style.borderColor="var(--vert)");
+        document.getElementById("fb-2").className="feedback succes show";
+        document.getElementById("fb-2").innerHTML="✨ Ordre chronologique parfait !";
+        setTimeout(()=>validerSalle("ÉGALITÉ",
+          `<div class="dialogue" data-perso="Maître Gutenberg"><div class="avatar">🖨️</div><p>Excellent. Vous maîtrisez la chronologie de 1789. Voici votre fragment. Le <b>Marquis</b> vous attend aux <b>Tuileries</b>.</p></div>`,"avocat"),900);
+      }else{
+        document.getElementById("fb-2").className="feedback erreur show";
+        document.getElementById("fb-2").textContent="L'ordre n'est pas correct. Lequel vient en premier : les États généraux ou la Bastille ?";
+        setTimeout(()=>document.getElementById("fb-2").classList.remove("show"),2500);
+      }
+    });
+    const indices=["Le tout premier événement de 1789 est la réunion des <b>États généraux</b> (mai 1789).","La <b>prise de la Bastille</b> (14 juillet) vient avant la <b>Déclaration</b> (26 août).","Le dernier est la <b>marche des femmes</b> (5 octobre)."];
+    activerBoutonIndice(indices);
+  }
+};
+
+/* ============================================================
+   SALLE 3 — Le rébus de la Déclaration
+   ============================================================ */
+function rendreSalle3(){
+  const cm1 = ETAT.niveau==="CM1";
+  const dialogueIntro = `<div class="dialogue" data-perso="Le Marquis de Montclair">
+    <div class="avatar">🎩</div>
+    <p>Ah. Les voilà, les apprentis du futur. Je vous attendais. Croyez-vous vraiment que ce manuscrit vous attendrait sagement ? Je le cherche aussi. Prouvez-moi votre perspicacité : déchiffrez ce parchemin.</p>
+  </div>`;
+  const decor = `<div class="decor">
+    <span class="lieu">🌳 Le jardin des Tuileries</span>
+    Le soleil perce les nuages sur les allées de sable. Des paons crient près d'une volière. L'odeur des tilleuls en fleur se mêle au parfum de poudre de riz des nobles qui se promènent. Au loin, des gardes suisses montent la garde, leurs pas cadencés résonnant sur les graviers.
+    <div class="sens"><span>👁️ allées de sable</span><span>👂 paons + pas</span><span>👃 tilleuls en fleur</span></div>
+  </div>`;
+  const consigne = `<div class="consigne">Déchiffre les <b>3 rébus</b> et choisis le bon mot pour compléter la phrase de la Déclaration.</div>`;
+
+  const mots = [
+    {symbole:"🔓", libelle:"chaîne brisée", bonne:"LIBRES", options:["LIBRES","PRISON","OR"]},
+    {symbole:"⚖️", libelle:"balance égale", bonne:"ÉGAUX", options:["ÉGAUX","FORTS","RICHES"]},
+    {symbole:"📜", libelle:"parchemin signé", bonne:"DROITS", options:["DROITS","POIDS","DEVOIRS"]},
+  ];
+
+  const rebus = `<div class="rebus">
+    ${mots.map((m,i)=>`<div class="rebus-item">
+      <span class="symbole">${m.symbole}</span>
+      <div style="font-size:.8rem;opacity:.7">${m.libelle}</div>
+      <select data-i="${i}" class="choix-rebus">
+        <option value="">— choisir —</option>
+        ${m.options.map(o=>`<option value="${o}">${o}</option>`).join("")}
+      </select>
+    </div>`).join("")}
+  </div>
+  <div class="phrase-trou" id="phrase-trou">« Les hommes naissent <span class="trou" data-i="0">…</span> et <span class="trou" data-i="1">…</span> en <span class="trou" data-i="2">…</span>. »</div>
+  <div class="center"><button class="btn vert" id="btn-verif-rebus">✅ Vérifier la phrase</button></div>`;
+
+  return `
+    <h2>${SALLES[3].lieu}</h2>
+    ${decor}
+    ${dialogueIntro}
+    ${consigne}
+    <div class="zone-enigme">
+      ${rebus}
+      <div class="feedback" id="fb-3"></div>
+      <div class="barre-outils">
+        <button class="btn or" id="btn-indice">💡 Indice</button>
+      </div>
+    </div>
+  `;
+}
+SALLES[3].rendu_apres = ()=>{
+  const reponse = ["LIBRES","ÉGAUX","DROITS"];
+  document.querySelectorAll(".choix-rebus").forEach(sel=>{
+    sel.addEventListener("change", ()=>{
+      const i = +sel.dataset.i;
+      const trou = document.querySelector(`.trou[data-i="${i}"]`);
+      if(sel.value){
+        trou.textContent = sel.value;
+      }else{
+        trou.textContent = "…";
+      }
+      trou.classList.remove("ok");
+    });
+  });
+  document.getElementById("btn-verif-rebus").addEventListener("click", ()=>{
+    const choix = [...document.querySelectorAll(".choix-rebus")].map(s=>s.value);
+    const toutBon = choix.every((v,i)=>v===reponse[i]);
+    if(toutBon){
+      document.querySelectorAll(".trou").forEach(t=>t.classList.add("ok"));
+      document.getElementById("fb-3").className="feedback succes show";
+      document.getElementById("fb-3").innerHTML="✨ « Les hommes naissent <b>libres</b> et <b>égaux</b> en <b>droits</b>. » Article 1 retrouvé !";
+      setTimeout(()=>validerSalle("FRATERNITÉ",
+        `<div class="dialogue" data-perso="Le Marquis"><div class="avatar">🎩</div><p>Vous avez l'œil. Soit. Le vrai voleur veut <b>vendre</b> l'article secret. Il est à l'<b>Assemblée</b>. Voici votre fragment. Allez, le temps vous est compté.</p></div>`,"fraternite"),1000);
+    }else{
+      document.querySelectorAll(".trou").forEach((t,i)=>{
+        if(choix[i]===reponse[i]) t.classList.add("ok");
+      });
+      document.getElementById("fb-3").className="feedback erreur show";
+      document.getElementById("fb-3").textContent="Certaines réponses sont erronées. Réfléchis bien au symbole de chaque rébus.";
+      setTimeout(()=>document.getElementById("fb-3").classList.remove("show"),2500);
+    }
+  });
+  const indices = ETAT.niveau==="CM1"
+    ? ["Une chaîne brisée, c'est l'inverse d'être prisonnier → c'est être…","La balance égale des deux plateaux → le mot commence par É-.","Le parchemin signé protège ce qu'on possède : nos…"]
+    : ["Pense au mot de la devise qui s'oppose à « prison ».","Le second rébus est un jeu phonétique : « = eau » → égaux.","Le parchemin signé garanti nos droits (et nos devoirs)."];
+  activerBoutonIndice(indices);
+};
+
+/* ============================================================
+   SALLE 4 — Les personnages clés
+   ============================================================ */
+function rendreSalle4(){
+  const cm1 = ETAT.niveau==="CM1";
+  const dialogueIntro = `<div class="dialogue" data-perso="Louise">
+    <div class="avatar">🧒</div>
+    <p>Regardez ! Sur cette table abandonnée, y'a des portraits de tous ces grands bonshommes. Si vous savez qui a dit quoi, vous trouverez le dernier indice. À vous de jouer !</p>
+  </div>`;
+  const decor = `<div class="decor">
+    <span class="lieu">🏰 La place de la Bastille</span>
+    On dirait que le combat vient à peine de cesser. La fumée de poudre pique encore les yeux. Des débris de pierre jonchent le sol. Une odeur métallique flotte dans l'air. La forteresse fume, à demi démantelée. Des volontaires circulent en chantant.
+    <div class="sens"><span>👁️ débris & fumée</span><span>👃 poudre métallique</span><span>👂 chants</span></div>
+  </div>`;
+  const consigne = `<div class="consigne">Clique sur un <b>portrait</b>, puis sur sa <b>citation</b>. Associe toutes les paires !</div>`;
+
+  let persos = [
+    {id:"louis", emoji:"👑", nom:"Louis XVI", bon:"c-louis", ev:"États généraux"},
+    {id:"mira", emoji:"🎤", nom:"Mirabeau", bon:"c-mira", ev:"Séance royale"},
+    {id:"dant", emoji:"🔊", nom:"Danton", bon:"c-dant", ev:"Chute monarchie"},
+    {id:"robe", emoji:"⚖️", nom:"Robespierre", bon:"c-robe", ev:"La Terreur"},
+  ];
+  let citations = [
+    {id:"c-louis", txt:"« J'ai peu de confiance dans les assemblées.»"},
+    {id:"c-mira", txt:"« Nous sommes ici par la volonté du peuple.»"},
+    {id:"c-dant", txt:"« De l'audace, encore de l'audace !»"},
+    {id:"c-robe", txt:"« La vertu sans laquelle la terreur est funeste.»"},
+  ];
+  if(!cm1){
+    persos.push({id:"bail", emoji:"🏛️", nom:"Bailly", bon:"c-bail", ev:"Maire de Paris"});
+    persos.push({id:"olym", emoji:"✒️", nom:"Olympe de Gouges", bon:"c-olym", ev:"Droits des femmes"});
+    citations.push({id:"c-bail", txt:"« La Bastille est prise !»"});
+    citations.push({id:"c-olym", txt:"« La femme naît libre et demeure égale à l'homme.»"});
+  }
+  // mélanger citations
+  citations.sort(()=>Math.random()-0.5);
+
+  return `
+    <h2>${SALLES[4].lieu}</h2>
+    ${decor}
+    ${dialogueIntro}
+    ${consigne}
+    <div class="zone-enigme">
+      <div class="rang-match">
+        <div class="colonne-match" id="col-persos">
+          ${persos.map(p=>`<div class="carte-match" data-id="${p.id}" data-bon="${p.bon}"><span class="emoji">${p.emoji}</span><b>${p.nom}</b><br><span style="font-size:.75rem;opacity:.7">${p.ev}</span></div>`).join("")}
+        </div>
+        <div class="colonne-match" id="col-citations">
+          ${citations.map(c=>`<div class="carte-match" data-id="${c.id}">${c.txt}</div>`).join("")}
+        </div>
+      </div>
+      <div class="feedback" id="fb-4"></div>
+      <div class="barre-outils">
+        <button class="btn or" id="btn-indice">💡 Indice</button>
+      </div>
+    </div>
+  `;
+}
+SALLES[4].rendu_apres = ()=>{
+  let selPerso = null;
+  document.querySelectorAll("#col-persos .carte-match").forEach(c=>{
+    c.addEventListener("click", ()=>{
+      document.querySelectorAll("#col-persos .carte-match").forEach(x=>x.classList.remove("select"));
+      c.classList.add("select");
+      selPerso = c;
+    });
+  });
+  document.querySelectorAll("#col-citations .carte-match").forEach(ci=>{
+    ci.addEventListener("click", ()=>{
+      if(!selPerso) return;
+      if(selPerso.dataset.bon === ci.dataset.id){
+        selPerso.classList.add("bien");
+        selPerso.classList.remove("select");
+        ci.classList.add("bien");
+        selPerso = null;
+        const restant = document.querySelectorAll("#col-persos .carte-match:not(.bien)").length;
+        if(restant===0){
+          document.getElementById("fb-4").className="feedback succes show";
+          document.getElementById("fb-4").innerHTML="✨ Toutes les associations sont correctes !";
+          setTimeout(()=>validerSalle("1789",
+            `<div class="dialogue" data-perso="Louise"><div class="avatar">🧒</div><p>Vous êtes incollables ! Le dernier fragment vous attend : le <b>mécanisme de l'Assemblée</b>. Place aux étiquettes !</p></div>`,"lumiere"),900);
+        }
+      }else{
+        ci.classList.add("mal");
+        setTimeout(()=>ci.classList.remove("mal"),400);
+        const fb=document.getElementById("fb-4");
+        fb.className="feedback erreur show";
+        fb.textContent="Ce personnage n'a pas dit cela. Réessaie !";
+        setTimeout(()=>fb.classList.remove("show"),1800);
+      }
+    });
+  });
+  const indices = ETAT.niveau==="CM1"
+    ? ["<b>Danton</b> est connu pour réclamer « de l'audace ».","<b>Louis XVI</b> est le roi, peu favorable aux assemblées.","<b>Olympe de Gouges</b> défendait les droits des femmes (si présente)."]
+    : ["<b>Mirabeau</b> a défié le roi le 23 juin 1789.","<b>Robespierre</b> est associé à la Terreur et à la vertu.","<b>Bailly</b> a annoncé la prise de la Bastille, en tant que maire de Paris."];
+  activerBoutonIndice(indices);
+};
+
+/* ============================================================
+   SALLE 5 — Le mécanisme de l'Assemblée (FINALE)
+   ============================================================ */
+function rendreSalle5(){
+  const cm1 = ETAT.niveau==="CM1";
+  const dialogueIntro = `<div class="dialogue" data-perso="Maximilien">
+    <div class="avatar">⚖️</div>
+    <p>Vous y êtes presque, apprentis. Voici la salle de l'Assemblée. Placez les étiquettes aux bons emplacements sur le plan. Le bon ordre révèlera l'emplacement du manuscrit… et l'article secret.</p>
+  </div>`;
+  const decor = `<div class="decor">
+    <span class="lieu">🏛️ La salle de l'Assemblée nationale</span>
+    La salle est vaste et pleine d'écho. Des gradins en bois entourent une estrade où trône un fauteuil de président. L'air sent la cire fraîche et le bois vernis. Au mur, un grand plan de la salle porte des symboles étranges. Une horloge bat la mesure — tic, tac, tic, tac…
+    <div class="sens"><span>👂 tic-tac d'horloge</span><span>👃 cire & bois vernis</span><span>👁️ gradins & estrade</span></div>
+  </div>`;
+  const consigne = `<div class="consigne">Clique sur une <b>case vide</b> du plan, puis sur l'<b>étiquette</b> à y placer. Remplis tout le plan !</div>`;
+
+  const emplacements = cm1 ? [
+    {id:"pres", label:"Président", bon:"Bailly"},
+    {id:"gauche", label:"Tribune gauche", bon:"Robespierre"},
+    {id:"droite", label:"Tribune droite", bon:"Mounier"},
+    {id:"date", label:"Date au fronton", bon:"26 août 1789"},
+    {id:"lieu", label:"Lieu", bon:"Versailles"},
+  ] : [
+    {id:"pres", label:"Président", bon:"Bailly"},
+    {id:"gauche", label:"Tribune gauche", bon:"Robespierre"},
+    {id:"droite", label:"Tribune droite", bon:"Mounier"},
+    {id:"centre", label:"Centre", bon:"Mirabeau"},
+    {id:"fond", label:"Tribune du fond", bon:"Danton"},
+    {id:"date", label:"Date au fronton", bon:"26 août 1789"},
+    {id:"lieu", label:"Lieu", bon:"Versailles"},
+    {id:"secret", label:"Secrétaire", bon:"Olympe de Gouges"},
+  ];
+
+  const etiquettes = emplacements.map(e=>e.bon).slice().sort(()=>Math.random()-0.5);
+
+  const planHTML = cm1 ? `
+    <div class="plan" id="plan-assemblee">
+      <table>
+        <tr><td colspan="3" data-emp="pres">${emplacements[0].label}</td></tr>
+        <tr>
+          <td data-emp="gauche">${emplacements[1].label}</td>
+          <td style="border:none;background:transparent;font-weight:bold;color:var(--or)">🏛️</td>
+          <td data-emp="droite">${emplacements[2].label}</td>
+        </tr>
+        <tr><td data-emp="date">${emplacements[3].label}</td><td style="border:none"></td><td data-emp="lieu">${emplacements[4].label}</td></tr>
+      </table>
+      <div class="legende">Clique sur une case, puis choisis une étiquette ci-dessous.</div>
+    </div>` : `
+    <div class="plan" id="plan-assemblee">
+      <table>
+        <tr><td colspan="3" data-emp="pres">${emplacements[0].label}</td></tr>
+        <tr>
+          <td data-emp="gauche">${emplacements[1].label}</td>
+          <td data-emp="centre">${emplacements[3].label}</td>
+          <td data-emp="droite">${emplacements[2].label}</td>
+        </tr>
+        <tr>
+          <td data-emp="fond">${emplacements[4].label}</td>
+          <td data-emp="secret">${emplacements[7].label}</td>
+          <td style="border:none;background:transparent"></td>
+        </tr>
+        <tr><td data-emp="date">${emplacements[5].label}</td><td colspan="2" data-emp="lieu">${emplacements[6].label}</td></tr>
+      </table>
+      <div class="legende">Clique sur une case, puis choisis une étiquette ci-dessous.</div>
+    </div>`;
+
+  return `
+    <h2>${SALLES[5].lieu}</h2>
+    ${decor}
+    ${dialogueIntro}
+    ${consigne}
+    <div class="zone-enigme">
+      ${planHTML}
+      <div class="banque" id="banque-etiquettes">
+        ${etiquettes.map(e=>`<div class="etiquette" data-val="${e}">${e}</div>`).join("")}
+      </div>
+      <div class="center" style="margin-top:14px"><button class="btn vert" id="btn-verif-plan">✅ Vérifier le plan</button></div>
+      <div class="feedback" id="fb-5"></div>
+      <div class="barre-outils">
+        <button class="btn or" id="btn-indice">💡 Indice</button>
+      </div>
+    </div>
+  `;
+}
+SALLES[5].rendu_apres = ()=>{
+  const cm1 = ETAT.niveau==="CM1";
+  const corrections = {};
+  document.querySelectorAll("#plan-assemblee td[data-emp]").forEach(td=>{
+    const empId = td.dataset.emp;
+    const label = td.textContent.trim();
+    corrections[empId] = {td, label, val:null, empId};
+    td.addEventListener("click", ()=>{
+      if(td.classList.contains("etiquette-placee")) return; // déjà rempli (on peut permettre de changer)
+      // sélectionner la case
+      document.querySelectorAll("#plan-assemblee td").forEach(x=>x.style.outline="");
+      td.style.outline = "3px solid var(--bleu)";
+      // attendre un clic sur étiquette
+      const handler = (ev)=>{
+        const et = ev.target.closest(".etiquette");
+        if(!et || et.classList.contains("utilisee")) return;
+        td.innerHTML = `<b>${et.dataset.val}</b><br><span style="font-size:.7rem;opacity:.7">${label}</span>`;
+        td.classList.add("etiquette-placee");
+        td.style.outline="";
+        corrections[empId].val = et.dataset.val;
+        et.classList.add("utilisee");
+        document.getElementById("banque-etiquettes").removeEventListener("click", handler);
+      };
+      document.getElementById("banque-etiquettes").addEventListener("click", handler);
+    });
+  });
+  document.getElementById("btn-verif-plan").addEventListener("click", ()=>{
+    const bons = SALLES_DEF.plan[cm1?"CM1":"CM2"];
+    let nbErr = 0;
+    Object.keys(bons).forEach(empId=>{
+      const c = corrections[empId];
+      if(c && c.val === bons[empId]){
+        c.td.classList.add("bien");
+      }else if(c && c.val){
+        c.td.classList.add("mal");
+        nbErr++;
+        setTimeout(()=>c.td.classList.remove("mal"),1500);
+      }else{
+        nbErr++;
+      }
+    });
+    if(nbErr===0){
+      document.getElementById("fb-5").className="feedback succes show";
+      document.getElementById("fb-5").innerHTML="✨ Le plan est parfait ! Le mécanisme s'ouvre…";
+      setTimeout(()=>finDuJeu(),1100);
+    }else{
+      document.getElementById("fb-5").className="feedback erreur show";
+      document.getElementById("fb-5").textContent = nbErr+" étiquette(s) mal placée(s) ou manquante(s). Réessaie !";
+      setTimeout(()=>document.getElementById("fb-5").classList.remove("show"),2500);
+    }
+  });
+  const indices = cm1
+    ? ["Le <b>président</b> de l'Assemblée en 1789 est <b>Bailly</b>.","À <b>gauche</b> siègent les plus radicaux, comme <b>Robespierre</b>.","La <b>date</b> de la Déclaration est le <b>26 août 1789</b>."]
+    : ["<b>Mirabeau</b> est au centre, entre les factions.","<b>Danton</b> siège à la tribune du fond.","<b>Olympe de Gouges</b> défendait les droits des femmes : place-la comme secrétaire (rôle fictif)."];
+  activerBoutonIndice(indices);
+};
+
+const SALLES_DEF = {
+  plan: {
+    CM1: {pres:"Bailly", gauche:"Robespierre", droite:"Mounier", date:"26 août 1789", lieu:"Versailles"},
+    CM2: {pres:"Bailly", gauche:"Robespierre", droite:"Mounier", centre:"Mirabeau", fond:"Danton", date:"26 août 1789", lieu:"Versailles", secret:"Olympe de Gouges"}
+  }
+};
+
+/* ============================================================
+   FIN DU JEU — Article secret + quizz + score
+   ============================================================ */
+function finDuJeu(){
+  ETAT.fini = true;
+  aller("ecran-fin");
+  const min = Math.floor(ETAT.msEcoules/60000);
+  const sec = Math.floor((ETAT.msEcoules%60000)/1000);
+  const c = document.getElementById("fin-contenu");
+  c.innerHTML = `
+    <h2>🎉 Mission accomplie !</h2>
+    <div class="dialogue" data-perso="Maximilien">
+      <div class="avatar">⚖️</div>
+      <p>Vous avez réussi, apprentis. Les quatre fragments sont réunis. L'article secret est retrouvé. Voici ce qu'il disait…</p>
+    </div>
+    <div class="article-secret">
+      <div class="sceau">🏛️</div>
+      <div class="numero">ARTICLE 18 — SECRET</div>
+      <div class="texte">« Nul ne peut être accusé, arrêté ni détenu que dans les cas déterminés par la Loi et selon les formes qu'elle a prescrites. »</div>
+      <div style="font-size:.8rem;opacity:.7">Librement adapté de l'esprit de l'article 7 de la Déclaration de 1789.</div>
+    </div>
+    <div class="grille-badges">
+      ${badgeHTML("bastille","🥖","Esprit de la Bastille","rapidité")}
+      ${badgeHTML("avocat","⚖️","L'Avocat","raisonnement")}
+      ${badgeHTML("fraternite","🤝","Fraternité","coopération")}
+      ${badgeHTML("lumiere","📚","Lettre & Lumière","lecture")}
+    </div>
+    <p style="text-align:center;opacity:.8">⏱️ Temps total : <b>${min} min ${sec} s</b></p>
+    <hr style="border:none;border-top:2px dotted #c9b78a;margin:18px 0">
+    <h2>📝 Quizz final — Valide tes acquis !</h2>
+    <div id="quizz"></div>
+    <div class="feedback" id="fb-quizz"></div>
+    <div class="boutons" id="quizz-actions" style="display:none">
+      <button class="btn grand vert" id="btn-voir-score">🏆 Voir mon score final</button>
+    </div>
+    <div id="score-recap" style="display:none"></div>
+    <div class="boutons" style="margin-top:24px">
+      <button class="btn bleu" id="btn-rejouer">🔄 Rejouer</button>
+      <button class="btn gris" onclick="window.print()">🖨️ Imprimer le bilan</button>
+    </div>
+  `;
+  construireQuizz();
+  document.getElementById("btn-rejouer").addEventListener("click", ()=>{
+    localStorage.removeItem(CLE_SAUVEGARDE);
+    location.reload();
+  });
+  confettis(100);
+  sauvegarder();
+}
+
+function badgeHTML(cle, icone, nom, desc){
+  const gagne = ETAT.badges[cle];
+  return `<div class="badge ${gagne?"gagne":""}">
+    <div class="icone">${icone}</div>
+    <div class="nom">${nom}</div>
+    <div style="font-size:.7rem;opacity:.7">${desc}</div>
+  </div>`;
+}
+
+/* ---- Quizz ---- */
+const QUIZZ = [
+  {q:"1. Quand a été adoptée la Déclaration des droits de l'homme et du citoyen ?",
+   options:["14 juillet 1789","26 août 1789","21 janvier 1793"], bonne:1},
+  {q:"2. Que signifie « liberté » dans la Déclaration ?",
+   options:["Faire tout ce qu'on veut","Agir sans nuire aux droits des autres","Ne plus avoir de lois"], bonne:1},
+  {q:"3. Qui prend la Bastille le 14 juillet 1789 ?",
+   options:["Le roi et ses gardes","Le peuple parisien","L'armée anglaise"], bonne:1},
+  {q:"4. Qu'est-ce qu'un « cahier de doléances » ?",
+   options:["Un cahier d'écolier","Un texte où le peuple exprime ses plaintes au roi","Un journal intime"], bonne:1},
+  {q:"5. Quel symbole représente l'égalité dans la Révolution ?",
+   options:["La balance ⚖️","La couronne 👑","L'épée 🗡️"], bonne:0},
+];
+function construireQuizz(){
+  const cont = document.getElementById("quizz");
+  cont.innerHTML = QUIZZ.map((item,i)=>`
+    <div class="qcm-question" data-i="${i}">
+      <div class="q">${item.q}</div>
+      ${item.options.map((o,j)=>`<label class="qcm-option" data-j="${j}"><input type="radio" name="q${i}" value="${j}" style="display:none">${o}</label>`).join("")}
+    </div>
+  `).join("");
+  let repondu = Array(QUIZZ.length).fill(null);
+  cont.querySelectorAll(".qcm-question").forEach(qi=>{
+    const i = +qi.dataset.i;
+    qi.querySelectorAll(".qcm-option").forEach(opt=>{
+      opt.addEventListener("click", ()=>{
+        qi.querySelectorAll(".qcm-option").forEach(x=>{x.classList.remove("select");x.classList.remove("bonne");x.classList.remove("mauvaise")});
+        opt.classList.add("select");
+        repondu[i] = +opt.dataset.j;
+        if(repondu.every(r=>r!==null)){
+          document.getElementById("quizz-actions").style.display="flex";
+        }
+      });
+    });
+  });
+  document.getElementById("btn-voir-score").onclick = ()=>{
+    let score = 0;
+    QUIZZ.forEach((item,i)=>{
+      const qi = cont.querySelector(`.qcm-question[data-i="${i}"]`);
+      qi.querySelectorAll(".qcm-option").forEach(opt=>{
+        const j=+opt.dataset.j;
+        opt.classList.remove("select");
+        if(j===item.bonne) opt.classList.add("bonne");
+        else if(j===repondu[i]) opt.classList.add("mauvaise");
+      });
+      if(repondu[i]===item.bonne) score++;
+    });
+    ETAT.quiz.repondu = true;
+    ETAT.quiz.score = score;
+    const pts = score*2;
+    ETAT.score += pts;
+    majHUD();
+    const fb = document.getElementById("fb-quizz");
+    fb.className = "feedback "+(score>=4?"succes":(score>=3?"indice":"erreur"))+" show";
+    fb.innerHTML = `Tu as <b>${score}/${QUIZZ.length}</b> bonnes réponses (+${pts} points). ${
+      score===5?"Parfait, tu es un véritable apprenti historien ! 🌟":
+      score>=4?"Très bien ! Encore un petit effort.":
+      score>=3?"Pas mal ! Révise les dates-clés de 1789.":"Relis bien la Déclaration et les événements de 1789."}`;
+    // récapitulatif final
+    const recap = document.getElementById("score-recap");
+    recap.style.display="block";
+    const min = Math.floor(ETAT.msEcoules/60000);
+    const sec = Math.floor((ETAT.msEcoules%60000)/1000);
+    const nbBadges = Object.values(ETAT.badges).filter(Boolean).length;
+    let mention = "";
+    if(ETAT.score>=55) mention="🏆 Maître de la Révolution";
+    else if(ETAT.score>=45) mention="🥈 Patriote éclairé";
+    else if(ETAT.score>=35) mention="🥉 Bon citoyen";
+    else mention="📜 Apprenti motivé";
+    recap.innerHTML = `
+      <div class="article-secret">
+        <div class="sceau">🏁</div>
+        <div class="numero">BILAN DE L'ÉQUIPE « ${ETAT.equipe.toUpperCase()} »</div>
+        <div class="score-final">${ETAT.score}<span class="sur"> / 60</span></div>
+        <div style="font-size:1.1rem;color:var(--bleu-fonce);font-weight:bold">${mention}</div>
+        <hr style="border:none;border-top:1px solid #c9b78a;margin:12px 0">
+        <div>⏱️ Temps : <b>${min} min ${sec} s</b></div>
+        <div>📜 Fragments : <b>${ETAT.fragments.length}/4</b></div>
+        <div>📝 Quizz : <b>${ETAT.quiz.score}/${QUIZZ.length}</b></div>
+        <div>🏅 Badges : <b>${nbBadges}/4</b></div>
+        <div>Niveau : <b>${ETAT.niveau}</b></div>
+      </div>`;
+    recap.scrollIntoView({behavior:"smooth",block:"center"});
+    confettis(60);
+    sauvegarder();
+  };
+}
+</script>
+</body>
+</html>

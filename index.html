@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="Le Secret de la Déclaration — Escape game immersif sur la Révolution française pour CM1-CM2">
+<title>Le Secret de la Déclaration — Escape Game</title>
+<link rel="stylesheet" href="css/style.css?v7">
+<link rel="stylesheet" href="css/video.css?v8">
+<link rel="stylesheet" href="css/animations.css?v7">
+<link rel="stylesheet" href="css/personnages.css?v7">
+<link rel="stylesheet" href="css/print.css?v7">
+</head>
+<body>
+<div class="drapeau"></div>
+<div id="app">
+
+  <!-- ============ HUD ============ -->
+  <div class="hud" id="hud" style="display:none">
+    <div class="hud-gauche">🏛️ Le Secret de la Déclaration <span style="opacity:.5;font-size:.7rem;font-weight:normal">v7</span></div>
+    <div class="hud-droite">
+      <div class="stat" title="Équipe">👤 <b id="hud-eq-nom">—</b></div>
+      <div class="stat temps" id="hud-temps" title="Temps écoulé">⏱️ <b id="hud-min">00</b>:<b id="hud-sec">00</b></div>
+      <div class="stat" title="Score">⭐ <b id="hud-score-val">0</b></div>
+      <div class="stat" title="Fragments récupérés">📜 <b id="hud-frag-val">0</b>/4</div>
+      <button class="hud-bouton" id="btn-lecons" title="Bibliothèque de leçons">📚 Leçons</button>
+      <button class="hud-bouton" id="btn-reglages" title="Réglages">⚙️</button>
+      <button class="hud-bouton" id="btn-pause" title="Mettre en pause">⏸</button>
+    </div>
+  </div>
+
+  <!-- ============ ÉCRAN ACCUEIL ============ -->
+  <section class="ecran actif" id="ecran-accueil">
+    <div class="carte">
+      <h1><span class="bleu">Le Secret</span> de la <span class="rouge">Déclaration</span></h1>
+      <p class="sstitre">~ Escape game immersif sur la Révolution française · 1789 ~</p>
+
+      <div class="scene scene--media" id="scene-accueil" data-media="salle1">
+        <div class="decor-fallback"></div>
+        <div class="decor-overlay"></div>
+        <div class="decor-contenu">
+          <span class="lieu">📜 Paris, le 26 août 1789</span>
+          <p class="description">Il y a quelques jours, l'Assemblée nationale a adopté la <b>Déclaration des droits de l'homme et du citoyen</b>. Mais un <b>article secret</b>, jamais rendu public, a été dérobé dans la nuit… S'il tombait entre de mauvaises mains, il pourrait changer le cours de l'Histoire !</p>
+        </div>
+      </div>
+
+      <div class="personnage-scene entrer" style="margin-top:18px">
+        <div class="portrait" id="portrait-intro"></div>
+        <div class="bulle">
+          <div class="nom-perso">Maximilien</div>
+          <div class="texte" id="intro-texte"></div>
+          <div class="controles-voix">
+            <button class="btn petit or" id="btn-intro-ecouter">🔊 Écouter</button>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border:none;border-top:2px dotted var(--parchemin-ombre);margin:22px 0">
+
+      <h3 style="text-align:center">👤 Votre équipe</h3>
+      <input type="text" id="input-equipe" placeholder="Nom de votre équipe (ex. : Les Patriotes)" maxlength="24" autocomplete="off">
+
+      <h3 style="text-align:center;margin-top:20px">🎯 Votre niveau</h3>
+      <div class="choix-niveau">
+        <div class="opt-niveau" data-niveau="CM1">
+          <div class="gros">CM1</div>
+          <div class="petit">Textes plus courts, lettres en couleur, énigmes à 3-4 éléments</div>
+        </div>
+        <div class="opt-niveau" data-niveau="CM2">
+          <div class="gros">CM2</div>
+          <div class="petit">Textes plus denses, déduction, énigmes à 5-6 éléments, frises chronologiques</div>
+        </div>
+      </div>
+
+      <div class="boutons">
+        <button class="btn grand bleu" id="btn-demarrer" disabled>🚀 Commencer l'aventure</button>
+      </div>
+
+      <hr style="border:none;border-top:1px dotted var(--parchemin-ombre);margin:18px 0">
+
+      <details style="text-align:center;font-size:.85rem;opacity:.75">
+        <summary style="cursor:pointer;font-weight:bold;color:var(--bleu-fonce)">🔧 Problème pour démarrer ? (cliquez ici)</summary>
+        <div style="margin-top:12px;padding:12px;background:#fff8e6;border-radius:10px;border:1px solid var(--parchemin-ombre)">
+          <p style="margin:0 0 10px">Si le jeu ne fonctionne pas correctement, ou si vous arrivez directement à la fin, c'est qu'une ancienne partie est restée en mémoire. Cliquez ci-dessous pour tout effacer et repartir à zéro :</p>
+          <button class="btn gris" id="btn-reset-total">🗑️ Effacer ma sauvegarde et recommencer</button>
+          <p id="reset-msg" style="margin-top:8px;color:var(--vert);font-weight:bold"></p>
+        </div>
+      </details>
+
+      <p class="sr-only" id="msg-accueil" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ============ CONTENEUR SALLES ============ -->
+  <section class="ecran" id="ecran-salle">
+    <div class="carte" id="salle-contenu"></div>
+  </section>
+
+  <!-- ============ ÉCRAN PAUSE ============ -->
+  <section class="ecran" id="ecran-pause">
+    <div class="carte center">
+      <h2>⏸ Partie en pause</h2>
+      <p style="font-size:1.1rem">Le temps est suspendu. Revenez quand vous êtes prêts !</p>
+      <p style="opacity:.7;font-style:italic">Astuce : profitez-en pour réfléchir ensemble à voix haute, ou consultez les leçons 📚.</p>
+      <div class="boutons">
+        <button class="btn vert grand" id="btn-reprendre">▶️ Reprendre l'aventure</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ÉCRAN FINAL ============ -->
+  <section class="ecran" id="ecran-fin">
+    <div class="carte" id="fin-contenu"></div>
+  </section>
+
+</div>
+
+<!-- ============ MODALS (leçons, réglages) ============ -->
+<div class="overlay-modal" id="overlay-lecons">
+  <div class="modal" id="modal-lecons">
+    <div class="modal-tete">
+      <h3>📚 Bibliothèque de leçons</h3>
+      <button class="fermer" data-close="overlay-lecons" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-corps" id="corps-lecons"></div>
+  </div>
+</div>
+
+<div class="overlay-modal" id="overlay-reglages">
+  <div class="modal" id="modal-reglages">
+    <div class="modal-tete">
+      <h3>⚙️ Réglages</h3>
+      <button class="fermer" data-close="overlay-reglages" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-corps" id="corps-reglages"></div>
+  </div>
+</div>
+
+<!-- ============ CINÉMATIQUE PLEIN ÉCRAN ============
+     Rempli dynamiquement par js/media.js. Reste vide (et invisible)
+     tant qu'aucune vidéo n'a été déposée par l'enseignant. -->
+<div class="overlay-cine" id="overlay-cine"></div>
+
+<!-- ============ Scripts (balises statiques : garantissent l'ordre de chargement) ============ -->
+<script src="js/portraits.js?v7"></script>
+<!-- personnages.js DOIT être chargé après portraits.js : il remplace
+     htmlPortrait() par la version plein corps animée -->
+<script src="js/personnages.js?v7"></script>
+<!-- media.js APRES personnages.js : il remplace activerPortrait()
+     par la cascade video/image des personnages -->
+<script src="js/media.js?v8"></script>
+<script src="js/audio.js?v7"></script>
+<script src="js/decors.js?v7"></script>
+<script src="js/narration.js?v7"></script>
+<script src="js/enigmes.js?v7"></script>
+<script src="js/lecons.js?v7"></script>
+<script src="js/impression.js?v7"></script>
+<script src="js/api.js?v7"></script>
+<script src="js/sync.js?v7"></script>
+<script src="js/reglages.js?v7"></script>
+<script src="js/app.js?v7"></script>
+<script>
+  // Initialisation de l'écran d'accueil : portrait de Maximilien + texte d'intro
+  // On utilise une fonction nommée appelée soit au DOMContentLoaded, soit immédiatement
+  // si le DOM est déjà prêt (au cas où les scripts externes auraient déjà déclenché l'événement).
+  function initialiserAccueil(){
+    // Décor de l'accueil : SVG immédiat, puis vidéo/image si disponible
+    const sc = document.getElementById("scene-accueil");
+    if(sc){
+      const fb = sc.querySelector(".decor-fallback");
+      if(fb && typeof SVG_DECORS === "object") fb.innerHTML = SVG_DECORS["palais-royal"];
+      if(typeof installerDecor === "function") installerDecor(sc, "salle1");
+    }
+
+    const p = document.getElementById("portrait-intro");
+    if(!p) return; // garde-fou
+    if(typeof htmlPortrait !== "function"){
+      console.error("htmlPortrait indisponible — portraits.js non chargé");
+      return;
+    }
+    p.innerHTML = htmlPortrait("maximilien");
+    activerPortrait(p.querySelector(".portrait-conteneur"));
+    const texteIntro = "Apprentis, écoutez. Je suis Maximilien, avocat. La Déclaration que nous venons d'adopter est notre plus grand espoir. Mais un article secret a été volé. Retrouvez les quatre fragments. Le sort de la liberté est entre vos mains.";
+    machineEcrire(document.getElementById("intro-texte"), texteIntro);
+    const btnEcouter = document.getElementById("btn-intro-ecouter");
+    if(btnEcouter) btnEcouter.addEventListener("click", ()=>{
+      if("speechSynthesis" in window){
+        speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(texteIntro);
+        u.lang = "fr-FR";
+        u.rate = 0.92;
+        const sc = document.querySelector("#ecran-accueil .personnage-scene");
+        const portrait = sc && sc.querySelector(".portrait");
+        u.onstart = ()=>{
+          if(portrait){
+            portrait.classList.add("parle");
+            // Maximilien salue, puis pointe vers l'élève à la fin de sa harangue
+            if(typeof geste === "function"){
+              geste(portrait, "salue", 1800);
+              setTimeout(()=>geste(portrait, "pointe", 2000), 6000);
+            }
+          }
+        };
+        u.onend = ()=>{ if(portrait) portrait.classList.remove("parle"); };
+        speechSynthesis.speak(u);
+      }
+    });
+    // Fermeture modals
+    document.querySelectorAll(".fermer").forEach(b=>{
+      b.addEventListener("click", ()=>document.getElementById(b.dataset.close).classList.remove("show"));
+    });
+    document.querySelectorAll(".overlay-modal").forEach(o=>{
+      o.addEventListener("click", e=>{ if(e.target===o) o.classList.remove("show"); });
+    });
+    // Échap pour fermer
+    document.addEventListener("keydown", e=>{
+      if(e.key==="Escape") document.querySelectorAll(".overlay-modal.show").forEach(o=>o.classList.remove("show"));
+    });
+
+    // Bouton de réinitialisation total (accessible sans F12)
+    const btnReset = document.getElementById("btn-reset-total");
+    if(btnReset){
+      btnReset.addEventListener("click", ()=>{
+        if(confirm("Voulez-vous vraiment effacer la sauvegarde ? Cela supprimera la partie en cours et vous permettra de recommencer à zéro.")){
+          try{
+            localStorage.removeItem("escape_declaration_v2");
+            localStorage.removeItem("escape_app_version");
+            localStorage.removeItem("escape_reglages");
+          }catch(e){}
+          const msg = document.getElementById("reset-msg");
+          msg.textContent = "✅ Sauvegarde effacée. La page va recharger…";
+          setTimeout(()=>location.reload(), 1200);
+        }
+      });
+    }
+  }
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", initialiserAccueil);
+  }else{
+    initialiserAccueil();
+  }
+</script>
+</body>
+</html>

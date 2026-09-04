@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau de bord enseignant — Le Tour du Monde en 80 minutes</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body{font-family:Georgia,serif;background:linear-gradient(135deg,#14304a,#0a1a2b);color:#fff;min-height:100vh;padding:20px}
+  .container{max-width:1200px;margin:0 auto}
+  h1{color:#fff;text-align:center;margin-bottom:8px;font-size:1.8rem}
+  h1 span{color:#c08a3e}
+  .sstitre{text-align:center;color:#aab;opacity:.8;margin-bottom:20px}
+  .bandeau{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:16px 20px;margin-bottom:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+  .bandeau .info{font-size:.95rem}
+  .bandeau .info b{color:#c08a3e;font-size:1.1rem}
+  .adresse{background:#fff;color:#2b6f9e;padding:8px 14px;border-radius:8px;font-family:monospace;font-size:.9rem;font-weight:bold}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0}
+  .actions button{background:linear-gradient(180deg,#a33327,#7d2419);color:#fff;border:none;padding:10px 18px;border-radius:24px;cursor:pointer;font-family:inherit;font-weight:bold;font-size:.95rem;box-shadow:0 4px 12px rgba(0,0,0,.3);transition:transform .12s}
+  .actions button:hover{transform:translateY(-2px)}
+  .actions button.vert{background:linear-gradient(180deg,#3f9c86,#2f7d6b)}
+  .actions button.bleu{background:linear-gradient(180deg,#2b6f9e,#14304a)}
+  .actions button.or{background:linear-gradient(180deg,#e8bf72,#c08a3e);color:#2f2107}
+  table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.95);color:#222;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  th{background:#2b6f9e;color:#fff;padding:12px;text-align:left;font-size:.9rem}
+  td{padding:10px 12px;border-bottom:1px solid #eee;font-size:.92rem}
+  tr:hover td{background:#f0f4ff}
+  .vide{text-align:center;padding:40px;color:#888;font-style:italic}
+  .badge-progress{display:inline-block;background:#ddc9a0;padding:2px 8px;border-radius:10px;font-size:.78rem;color:#5a4838}
+  .badge-progress.fait{background:#2f7d6b;color:#fff}
+  .fragments{font-size:.85rem}
+  .indicateur{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+  .indicateur.actif{background:#3f9c86;box-shadow:0 0 8px #3f9c86}
+  .indicateur.pause{background:#c08a3e}
+  .indicateur.fini{background:#2b6f9e}
+  .indicateur.inactif{background:#888}
+  .rafraichir{font-size:.8rem;opacity:.7}
+  .modal-msg{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:100}
+  .modal-msg.show{display:flex}
+  .modal-msg .boite{background:#fff;color:#222;padding:24px;border-radius:14px;max-width:500px;width:90%}
+  .modal-msg input,.modal-msg select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-family:inherit}
+  .modal-msg label{font-weight:bold;font-size:.9rem}
+  .points-escales{display:flex;gap:3px}
+  .points-escales .pt{width:14px;height:14px;border-radius:50%;background:#ddd}
+  .points-escales .pt.fait{background:#2f7d6b}
+  .points-escales .pt.actuel{background:#2b6f9e;transform:scale(1.2)}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>👨‍🏫 Tableau de bord <span>enseignant</span></h1>
+  <p class="sstitre">Pilotage des équipes — « Le Tour du Monde en 80 minutes » · Géographie CM1-CM2</p>
+
+  <div class="bandeau">
+    <div class="info">🌐 Adresse IP locale : <span class="adresse" id="ip-locale">détection...</span></div>
+    <div class="info">📱 Adresse élèves : <span class="adresse" id="url-eleves">...</span></div>
+    <div class="info">👥 Équipes connectées : <b id="nb-equipes">0</b></div>
+    <div class="info rafraichir">🔄 Actualisation auto toutes les 2 s</div>
+  </div>
+
+  <div class="actions">
+    <button class="or" onclick="diffuserPause(true)">⏸ Pause générale</button>
+    <button class="vert" onclick="diffuserPause(false)">▶️ Reprise générale</button>
+    <button class="bleu" onclick="diffuserMessage()">📣 Diffuser un message</button>
+    <button class="bleu" onclick="diffuserIndice()">💡 Donner un indice à une équipe</button>
+    <button onclick="exportCSV()">📊 Exporter les scores (CSV)</button>
+    <button class="vert" onclick="window.open('index.html','_blank')">🎮 Ouvrir un poste élève</button>
+  </div>
+
+  <table id="table-equipes">
+    <thead>
+      <tr>
+        <th>État</th>
+        <th>Équipe</th>
+        <th>Niveau</th>
+        <th>Escale</th>
+        <th>Progression</th>
+        <th>Score</th>
+        <th>Cachets</th>
+        <th>Temps</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="corps-equipes">
+      <tr><td colspan="9" class="vide">En attente des équipages... Les élèves doivent ouvrir l'adresse ci-dessus sur leurs postes.</td></tr>
+    </tbody>
+  </table>
+
+  <p style="text-align:center;margin-top:24px;opacity:.6;font-size:.85rem">
+    💡 Cette page doit être ouverte sur le poste enseignant. Les élèves se connectent via l'adresse IP locale affichée en haut.
+  </p>
+</div>
+
+<!-- Modal message -->
+<div class="modal-msg" id="modal-message">
+  <div class="boite">
+    <h3 id="modal-titre">Diffuser un message</h3>
+    <div id="modal-contenu"></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:16px">
+      <button onclick="fermerModal()" style="background:#888;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer">Annuler</button>
+      <button id="modal-valider" style="background:#2b6f9e;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:bold">Valider</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let pollId = null;
+
+async function poll(){
+  try{
+    const r = await fetch("/api/equipes", {cache:"no-store"});
+    const data = await r.json();
+    // Le serveur héberge les deux escape games : on ne garde que nos équipes.
+    const miennes = (data.equipes || []).filter(e => e.jeu === "tour-du-monde");
+    afficher(miennes);
+  }catch(e){
+    document.getElementById("corps-equipes").innerHTML = '<tr><td colspan="9" class="vide">⚠️ Serveur non joignable. Lancez d\'abord le serveur local (serveur.py) ou ouvrez ce fichier via <code>http://127.0.0.1:8000/tour-du-monde/prof.html</code>.</td></tr>';
+  }
+}
+async function chargerInfo(){
+  try{
+    const r = await fetch("/api/info", {cache:"no-store"});
+    const d = await r.json();
+    document.getElementById("ip-locale").textContent = d.ip + ":" + d.port;
+    document.getElementById("url-eleves").textContent = "http://"+d.ip+":"+d.port+"/tour-du-monde/";
+    // nb-equipes est mis à jour par afficher() avec le seul compte du Tour du Monde
+  }catch(e){
+    document.getElementById("ip-locale").textContent = "Serveur non démarré";
+    document.getElementById("url-eleves").textContent = "Lancez serveur.py";
+  }
+}
+
+function afficher(equipes){
+  const corps = document.getElementById("corps-equipes");
+  document.getElementById("nb-equipes").textContent = equipes.length;
+  if(equipes.length===0){
+    corps.innerHTML = '<tr><td colspan="9" class="vide">En attente de connexion d\'équipes... Les élèves doivent ouvrir l\'adresse ci-dessus sur leurs postes.</td></tr>';
+    return;
+  }
+  // Trier : d'abord les actifs, puis par salle décroissante
+  equipes.sort((a,b)=>{
+    if(a.fini && !b.fini) return 1;
+    if(!a.fini && b.fini) return -1;
+    return (b.salle||0) - (a.salle||0);
+  });
+  corps.innerHTML = equipes.map(e=>{
+    const escalesHTML = Array.from({length:5}).map((_,i)=>{
+      const n = i+1;
+      let cls = e.salle>n ? "fait" : (e.salle===n ? "actuel" : "");
+      return `<span class="pt ${cls}"></span>`;
+    }).join("");
+    const etat = e.fini ? {cls:"fini",txt:"Terminé 🏁"} : e.enPause ? {cls:"pause",txt:"En pause ⏸"} : {cls:"actif",txt:"En cours ▶"};
+    const min = Math.floor((e.msEcoules||0)/60000);
+    const sec = Math.floor(((e.msEcoules||0)%60000)/1000);
+    const fragments = (e.fragments||[]).join(", ");
+    return `<tr>
+      <td><span class="indicateur ${etat.cls}"></span>${etat.txt}</td>
+      <td><b>${escapeHtml(e.equipe||"Anonyme")}</b></td>
+      <td>${e.niveau||"—"}</td>
+      <td><b>${e.salle||0}</b> / 5</td>
+      <td><div class="points-escales">${escalesHTML}</div></td>
+      <td><b>⭐ ${e.score||0}</b></td>
+      <td class="fragments">🛂 ${(e.fragments||[]).length}/4<br><span style="font-size:.75rem;opacity:.7">${fragments}</span></td>
+      <td>${min}min ${String(sec).padStart(2,"0")}s</td>
+      <td>
+        <button onclick="actionEquipe('${escapeAttr(e.equipe)}','pause')" style="background:#c08a3e;color:#2f2107;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">⏸</button>
+        <button onclick="actionEquipe('${escapeAttr(e.equipe)}','reprendre')" style="background:#3f9c86;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">▶</button>
+        <button onclick="actionEquipe('${escapeAttr(e.equipe)}','indice')" style="background:#2b6f9e;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">💡</button>
+      </td>
+    </tr>`;
+  }).join("");
+}
+
+async function envoyerCommande(equipe, commande){
+  await fetch("/api/commande", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({equipe, commande})
+  });
+}
+
+async function diffuserPause(pause){
+  await envoyerCommande("*", {pause});
+}
+async function diffuserMessage(){
+  const msg = prompt("Message à diffuser à TOUTES les équipes :");
+  if(msg) await envoyerCommande("*", {message: msg});
+}
+async function diffuserIndice(){
+  const msg = prompt("Indice à diffuser à TOUTES les équipes :");
+  if(msg) await envoyerCommande("*", {indice: msg});
+}
+async function actionEquipe(equipe, type){
+  if(type==="pause") await envoyerCommande(equipe, {pause:true});
+  else if(type==="reprendre") await envoyerCommande(equipe, {pause:false});
+  else if(type==="indice"){
+    const msg = prompt("Indice pour l'équipe « "+equipe+"\" :");
+    if(msg) await envoyerCommande(equipe, {indice: msg});
+  }
+}
+async function exportCSV(){
+  window.location.href = "/api/export";
+}
+function fermerModal(){ document.getElementById("modal-message").classList.remove("show"); }
+function escapeHtml(s){ return (s||"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+function escapeAttr(s){ return (s||"").replace(/'/g,"\\'"); }
+
+// Démarrage
+chargerInfo();
+poll();
+pollId = setInterval(poll, 2000);
+setInterval(chargerInfo, 5000);
+</script>
+</body>
+</html>

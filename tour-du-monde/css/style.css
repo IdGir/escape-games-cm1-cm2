@@ -1,0 +1,690 @@
+/* ============================================================
+   LE TOUR DU MONDE EN 80 MINUTES — Charte graphique « Verne »
+   Géographie · CM1-CM2 · d'après Jules Verne (1872)
+   ------------------------------------------------------------
+   Univers : carte marine, laiton d'instrument, abysses du
+   Nautilus, vélin de carnet de voyage.
+   ⚠️ Les composants VIDÉO sont dans css/video.css
+   ============================================================ */
+
+/* ---- Tokens ---- */
+:root{
+  /* Abysses (fonds sombres, HUD, scènes) */
+  --abysse:#0a1a2b;
+  --abysse-2:#102a41;
+  --abysse-3:#17405e;
+
+  /* Laiton & cuivre (instruments, cadres, accents) */
+  --laiton:#c08a3e;
+  --laiton-clair:#e8bf72;
+  --laiton-sombre:#8a5f24;
+  --cuivre:#a55c2b;
+
+  /* Vélin (papier de carnet et de carte marine) */
+  --velin:#f2e4c8;
+  --velin-clair:#faf1dc;
+  --velin-ombre:#ddc9a0;
+  --encre:#33261a;
+  --encre-doux:#57452f;
+
+  /* Accents */
+  --jade:#2f7d6b;          /* validation, Nautilus */
+  --jade-clair:#3f9c86;
+  --sceau:#a33327;         /* erreur, cachet de cire */
+  --sceau-clair:#c8452f;
+  --azur:#2b6f9e;          /* océans, liens */
+
+  /* Ombres & misc */
+  --ombre:rgba(8,20,32,.32);
+  --ombre-douce:rgba(8,20,32,.15);
+  --radius:16px;
+  --radius-petit:10px;
+  --transi:.25s cubic-bezier(.4,0,.2,1);
+
+  /* Ratio des médias (voir video.css) */
+  --ratio-video:16/9;
+}
+
+/* ---- Reset ---- */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{height:100%;overflow-x:hidden}
+html{font-size:16px}
+body{
+  font-family:Georgia,'Times New Roman',serif;
+  color:var(--encre);
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(192,138,62,.14), transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(43,111,158,.12), transparent 55%),
+    linear-gradient(150deg,#efe0be 0%,#f2e4c8 45%,#e4d2ab 100%);
+  min-height:100vh;
+  line-height:1.6;
+  font-size:var(--taille-texte, 1rem);
+  transition:font-size var(--transi);
+}
+/* Quadrillage de carte marine (parallèles / méridiens) en filigrane */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(60,40,15,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60,40,15,.05) 1px, transparent 1px),
+    radial-gradient(rgba(70,50,20,.04) 1px, transparent 1px);
+  background-size:64px 64px, 64px 64px, 5px 5px;
+}
+
+/* ---- Mise en page ---- */
+#app{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 16px 60px}
+
+/* Bandeau supérieur : ruban de laiton gradué (comme un sextant) */
+.bandeau-laiton{
+  height:10px;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.35) 0 1px, transparent 1px 20px),
+    linear-gradient(180deg,var(--laiton-clair),var(--laiton) 45%,var(--laiton-sombre));
+  box-shadow:0 2px 8px var(--ombre);
+  position:sticky;top:0;z-index:100;
+}
+
+/* ---- HUD (bandeau de jeu) ---- */
+.hud{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  background:linear-gradient(180deg,var(--abysse),var(--abysse-2));
+  color:#fff;padding:10px 16px;margin-bottom:12px;
+  border-radius:0 0 var(--radius) var(--radius);
+  border-bottom:2px solid var(--laiton-sombre);
+  box-shadow:0 8px 22px var(--ombre);
+  position:sticky;top:10px;z-index:90;
+}
+.hud-gauche{display:flex;align-items:center;gap:10px;font-size:1.05rem;font-weight:bold;letter-spacing:.5px}
+.hud-droite{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stat{
+  background:rgba(255,255,255,.10);padding:7px 13px;border-radius:22px;
+  font-size:.85rem;display:inline-flex;align-items:center;gap:6px;
+  border:1px solid rgba(232,191,114,.28);transition:var(--transi);
+}
+.stat b{font-variant-numeric:tabular-nums;font-weight:bold}
+.stat.temps{background:var(--cuivre);border-color:var(--laiton-clair)}
+.stat.temps.alerte{animation:pulse-temps 1s infinite}
+@keyframes pulse-temps{50%{background:var(--sceau-clair);transform:scale(1.08);box-shadow:0 0 0 4px rgba(200,69,47,.28)}}
+.hud-bouton{
+  background:rgba(255,255,255,.12);border:1px solid rgba(232,191,114,.35);
+  color:#fff;padding:7px 12px;border-radius:22px;cursor:pointer;
+  font-family:inherit;font-size:.85rem;font-weight:bold;transition:var(--transi);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.hud-bouton:hover{background:rgba(232,191,114,.28);transform:translateY(-1px)}
+.hud-bouton.actif{background:var(--laiton);color:#2a1c06;border-color:var(--laiton-clair)}
+
+/* ---- Écrans ---- */
+.ecran{display:none;animation:fondu .5s ease}
+.ecran.actif{display:block}
+@keyframes fondu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ---- Carte : page de carnet de voyage ---- */
+.carte{
+  background:
+    radial-gradient(circle at 0% 0%, rgba(192,138,62,.10), transparent 32%),
+    radial-gradient(circle at 100% 100%, rgba(43,111,158,.07), transparent 32%),
+    linear-gradient(180deg,var(--velin-clair),var(--velin));
+  border:1px solid var(--velin-ombre);
+  border-radius:var(--radius);
+  box-shadow:0 12px 36px var(--ombre), inset 0 0 90px rgba(150,110,45,.10);
+  padding:28px 26px;
+  position:relative;
+}
+/* Rivets de laiton aux quatre coins (esthétique instrument) */
+.carte::before,.carte::after{
+  content:"";position:absolute;width:10px;height:10px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--laiton-clair), var(--laiton-sombre));
+  box-shadow:0 1px 2px rgba(0,0,0,.4);pointer-events:none;
+}
+.carte::before{top:10px;left:10px}
+.carte::after{bottom:10px;right:10px}
+
+/* ---- Typographie ---- */
+h1,h2,h3,h4{font-family:Georgia,serif;line-height:1.2}
+h1{
+  font-size:clamp(1.7rem,5vw,2.5rem);margin:.2em 0;
+  color:var(--abysse-2);text-align:center;letter-spacing:1px;
+  text-shadow:1px 1px 0 rgba(255,255,255,.6),2px 2px 8px var(--ombre-douce);
+}
+h1 .laiton{color:var(--cuivre)} h1 .azur{color:var(--azur)} h1 .jade{color:var(--jade)}
+h2{
+  font-size:clamp(1.25rem,3vw,1.65rem);color:var(--abysse-2);
+  border-bottom:3px double var(--laiton);padding-bottom:8px;margin:0 0 16px;
+  display:flex;align-items:center;gap:10px;
+}
+h3{color:var(--cuivre);font-size:1.18rem;margin:.5em 0 .3em}
+h4{color:var(--abysse-2);font-size:1.05rem;margin:.6em 0 .3em}
+.sstitre{text-align:center;color:var(--encre-doux);font-style:italic;margin:-.2em 0 1em;opacity:.85}
+p{margin:.5em 0}
+
+/* ---- Boutons ---- */
+.btn{
+  font-family:inherit;font-size:1rem;font-weight:bold;
+  padding:12px 22px;border:none;border-radius:30px;cursor:pointer;
+  background:linear-gradient(180deg,var(--cuivre),#7d4520);
+  color:#fff;box-shadow:0 4px 0 #7d4520,0 6px 14px var(--ombre);
+  transition:transform .12s, box-shadow .12s, filter .15s;
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  text-decoration:none;
+}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #7d4520}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;filter:grayscale(.5)}
+.btn.grand{font-size:1.15rem;padding:14px 32px}
+.btn.petit{font-size:.85rem;padding:8px 14px}
+.btn.azur{background:linear-gradient(180deg,var(--azur),#1d5075);box-shadow:0 4px 0 #1d5075,0 6px 14px var(--ombre)}
+.btn.jade{background:linear-gradient(180deg,var(--jade-clair),var(--jade));box-shadow:0 4px 0 var(--jade),0 6px 14px var(--ombre)}
+.btn.laiton{background:linear-gradient(180deg,var(--laiton-clair),var(--laiton));color:#2f2107;box-shadow:0 4px 0 var(--laiton-sombre),0 6px 14px var(--ombre)}
+.btn.gris{background:linear-gradient(180deg,#9aa5ad,#6c777f);box-shadow:0 4px 0 #5d666d}
+.btn.plein-large{width:100%}
+.boutons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.center{text-align:center}
+
+/* ---- Champs ---- */
+input[type=text],input[type=password],input[type=number],select,textarea{
+  font-family:inherit;font-size:1.05rem;padding:12px 14px;border-radius:10px;
+  border:2px solid var(--velin-ombre);background:#fffaf0;
+  width:100%;color:var(--encre);transition:var(--transi);
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--azur);box-shadow:0 0 0 3px rgba(43,111,158,.18)}
+label{font-weight:bold;color:var(--abysse-2);display:block;margin-bottom:5px;font-size:.95rem}
+
+/* ---- Sélecteur de niveau ---- */
+.choix-niveau{display:flex;gap:14px;justify-content:center;margin:18px 0;flex-wrap:wrap}
+.opt-niveau{
+  flex:1;min-width:180px;max-width:280px;padding:20px;border-radius:14px;cursor:pointer;
+  border:3px solid transparent;background:var(--velin-clair);text-align:center;
+  box-shadow:0 4px 12px var(--ombre-douce);transition:var(--transi);
+}
+.opt-niveau:hover{transform:translateY(-3px);box-shadow:0 8px 18px var(--ombre)}
+.opt-niveau.choisi{border-color:var(--laiton);background:#fff6e2;box-shadow:0 8px 18px var(--ombre)}
+.opt-niveau .gros{font-size:1.4rem;font-weight:bold;color:var(--abysse-2);letter-spacing:1px}
+.opt-niveau .petit{font-size:.85rem;opacity:.75;margin-top:6px}
+
+/* ============================================================
+   SCÈNE (décor de l'étape)
+   Le décor peut être : une VIDÉO, une IMAGE ou un SVG animé.
+   La cascade est pilotée par js/media.js — voir css/video.css
+   ============================================================ */
+.scene{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  min-height:260px;margin:0 0 18px;
+  box-shadow:0 12px 30px var(--ombre), inset 0 0 0 3px rgba(232,191,114,.18);
+  isolation:isolate;background:var(--abysse);
+}
+/* Couche 0 : le média de fond (video / img / svg) — voir video.css */
+.scene .decor-img,
+.scene .decor-fallback{position:absolute;inset:0;z-index:0}
+.scene .decor-img{width:100%;height:100%;object-fit:cover}
+/* Couche 1 : voile de lisibilité + vignettage de longue-vue */
+.scene .decor-overlay{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 45%, transparent 45%, rgba(4,12,20,.55) 100%),
+    linear-gradient(180deg, rgba(4,12,20,.15) 0%, rgba(4,12,20,.72) 100%);
+}
+/* Couche 2 : le texte */
+.scene .decor-contenu{
+  position:relative;z-index:2;padding:20px 24px;min-height:260px;
+  display:flex;flex-direction:column;justify-content:flex-end;color:#fff;
+}
+.scene .lieu{
+  display:inline-block;font-weight:bold;color:var(--laiton-clair);letter-spacing:2px;
+  text-transform:uppercase;font-size:.82rem;margin-bottom:8px;
+  text-shadow:0 2px 6px rgba(0,0,0,.85);
+}
+.scene .description{
+  font-style:italic;font-size:1.02rem;line-height:1.6;
+  text-shadow:0 2px 8px rgba(0,0,0,.9);max-width:75ch;
+}
+.scene .sens{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:.8rem}
+.scene .sens span{
+  background:rgba(4,12,20,.5);padding:4px 11px;border-radius:14px;
+  border:1px solid rgba(232,191,114,.25);backdrop-filter:blur(2px);
+}
+/* Cartouche « coordonnées » façon carnet de bord */
+.scene .coordonnees{
+  position:absolute;top:12px;right:14px;z-index:2;
+  background:rgba(4,12,20,.55);border:1px solid rgba(232,191,114,.35);
+  color:var(--laiton-clair);font-size:.72rem;letter-spacing:1px;
+  padding:4px 10px;border-radius:8px;backdrop-filter:blur(3px);
+  font-variant-numeric:tabular-nums;
+}
+
+/* ---- Personnage animé ---- */
+.personnage-scene{
+  position:relative;margin:0 0 18px;min-height:180px;
+  background:linear-gradient(135deg,var(--abysse),var(--abysse-3));
+  border-radius:var(--radius);padding:20px;display:flex;gap:18px;align-items:center;
+  box-shadow:0 10px 26px var(--ombre);overflow:hidden;
+  border:1px solid rgba(232,191,114,.2);
+}
+.personnage-scene::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 18% 28%, rgba(232,191,114,.16), transparent 52%);
+}
+/* Portrait cerclé comme un hublot de laiton */
+.portrait{
+  flex-shrink:0;width:120px;height:120px;border-radius:50%;
+  border:4px solid var(--laiton);overflow:hidden;position:relative;
+  background:#0d2135;
+  box-shadow:0 0 0 3px var(--abysse), 0 0 0 5px var(--laiton-sombre), 0 8px 20px rgba(0,0,0,.5);
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait .portrait-svg{width:100%;height:100%;display:block}
+.portrait.parle{
+  box-shadow:0 0 0 3px var(--abysse), 0 0 0 6px var(--laiton-clair), 0 0 30px var(--laiton-clair);
+  animation:halo-parle 1.2s infinite alternate;
+}
+@keyframes halo-parle{to{box-shadow:0 0 0 3px var(--abysse), 0 0 0 9px var(--laiton-clair), 0 0 42px var(--laiton-clair)}}
+.bulle{
+  flex:1;background:var(--velin-clair);border:2px solid var(--laiton);
+  border-radius:18px;padding:14px 18px;position:relative;color:var(--encre);
+  box-shadow:0 6px 16px var(--ombre);min-height:80px;
+}
+.bulle::before{
+  content:"";position:absolute;left:-14px;top:50%;transform:translateY(-50%);
+  border:10px solid transparent;border-right-color:var(--laiton);
+}
+.bulle::after{
+  content:"";position:absolute;left:-10px;top:50%;transform:translateY(-50%);
+  border:8px solid transparent;border-right-color:var(--velin-clair);
+}
+.bulle .nom-perso{
+  font-weight:bold;color:var(--abysse-2);font-size:.8rem;
+  text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;
+}
+.bulle .texte{font-style:italic;font-size:1.02rem;line-height:1.55}
+.bulle .sous-titre{margin-top:8px;font-size:.9rem;color:var(--encre-doux);font-style:normal}
+.controles-voix{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pastille-perso{
+  position:absolute;top:8px;left:8px;background:var(--laiton);color:#2f2107;
+  font-size:.7rem;padding:3px 9px;border-radius:12px;font-weight:bold;letter-spacing:.5px;z-index:5;
+}
+
+/* ---- Consigne ---- */
+.consigne{
+  background:linear-gradient(90deg,#fff2d4,#fbe3bd);
+  border-left:5px solid var(--cuivre);border-radius:0 12px 12px 0;
+  padding:14px 18px;margin:14px 0;font-weight:bold;color:#7d4520;
+  box-shadow:0 4px 12px var(--ombre-douce);
+}
+.consigne::before{content:"🧭 ";margin-right:4px}
+
+/* ---- Zone énigme ---- */
+.zone-enigme{
+  background:rgba(255,255,255,.52);border-radius:14px;padding:22px;margin-top:14px;
+  border:1px solid var(--velin-ombre);
+}
+
+/* ============================================================
+   COMPOSANTS D'ÉNIGMES GÉOGRAPHIQUES
+   ============================================================ */
+
+/* ---- Planisphère cliquable (étape 1) ---- */
+.planisphere{
+  position:relative;width:100%;max-width:720px;margin:16px auto;
+  background:linear-gradient(180deg,#dff0fa,#c8e4f4);
+  border:3px solid var(--laiton);border-radius:12px;overflow:hidden;
+  box-shadow:0 8px 22px var(--ombre), inset 0 0 40px rgba(43,111,158,.15);
+}
+.planisphere svg{display:block;width:100%;height:auto}
+/* Zones à remplir sur la carte */
+.planisphere .zone-carte{
+  cursor:pointer;fill:rgba(255,255,255,.35);stroke:var(--abysse-2);
+  stroke-width:1.5;stroke-dasharray:5 4;transition:fill .2s, stroke .2s;
+}
+.planisphere .zone-carte:hover{fill:rgba(232,191,114,.55)}
+.planisphere .zone-carte.visee{fill:rgba(43,111,158,.45);stroke-dasharray:none;stroke-width:3}
+.planisphere .zone-carte.bien{fill:rgba(47,125,107,.55);stroke:var(--jade);stroke-dasharray:none}
+.planisphere .zone-carte.mal{fill:rgba(163,51,39,.45);stroke:var(--sceau);animation:secoue .4s}
+.planisphere .etiq-carte{
+  font-family:Georgia,serif;font-size:11px;font-weight:bold;fill:var(--encre);
+  pointer-events:none;text-anchor:middle;paint-order:stroke;
+  stroke:rgba(255,255,255,.8);stroke-width:3;
+}
+.planisphere .etiq-ocean{fill:#12496e;font-style:italic}
+.legende-carte{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  font-size:.8rem;margin-top:8px;color:var(--encre-doux);
+}
+.legende-carte i{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:5px;vertical-align:-2px}
+
+/* ---- Banque d'étiquettes (partagée) ---- */
+.banque{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.etiquette{
+  background:linear-gradient(180deg,#fff6e2,#efdcb4);border:2px solid var(--laiton);
+  border-radius:8px;padding:8px 12px;cursor:pointer;font-size:.9rem;font-weight:bold;
+  transition:transform .12s, background .15s;box-shadow:0 2px 4px var(--ombre-douce);
+  color:var(--encre);
+}
+.etiquette:hover{transform:translateY(-2px)}
+.etiquette.select{background:var(--azur);color:#fff;border-color:#1d5075}
+.etiquette.utilisee{opacity:.3;pointer-events:none;filter:grayscale(1)}
+.etiquette.ocean{background:linear-gradient(180deg,#dcefff,#b9daf2);border-color:var(--azur);color:#12496e}
+
+/* ---- Carnet de route : liste d'étapes ordonnables (étape 2) ---- */
+.carnet-route{
+  display:flex;flex-direction:column;gap:8px;max-width:560px;margin:14px auto;
+  position:relative;padding-left:26px;
+}
+/* Le trait pointillé du voyage */
+.carnet-route::before{
+  content:"";position:absolute;left:11px;top:14px;bottom:14px;width:2px;
+  background:repeating-linear-gradient(180deg,var(--cuivre) 0 5px,transparent 5px 11px);
+}
+.item-ordre{
+  background:var(--velin-clair);border:2px solid var(--velin-ombre);
+  border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;
+  box-shadow:0 2px 6px var(--ombre-douce);transition:var(--transi);position:relative;
+}
+.item-ordre::before{
+  content:"";position:absolute;left:-21px;top:50%;transform:translateY(-50%);
+  width:11px;height:11px;border-radius:50%;background:var(--cuivre);
+  border:2px solid var(--velin-clair);
+}
+.item-ordre:hover{border-color:var(--laiton)}
+.item-ordre .rang{
+  background:var(--abysse-2);color:#fff;width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;
+}
+.item-ordre .contenu{flex:1}
+.controles-ordre{display:flex;flex-direction:column;gap:3px}
+.controles-ordre button{
+  background:var(--velin);border:1px solid var(--velin-ombre);border-radius:6px;
+  width:30px;height:24px;cursor:pointer;font-size:.75rem;padding:0;line-height:1;
+  transition:var(--transi);
+}
+.controles-ordre button:hover{background:var(--laiton);color:#2f2107}
+
+/* ---- Cartes associables (climats, transports) ---- */
+.rang-match{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+.colonne-match{flex:1;min-width:240px;display:flex;flex-direction:column;gap:10px}
+.colonne-match .titre-colonne{
+  text-align:center;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--encre-doux);font-weight:bold;
+}
+.carte-match{
+  background:var(--velin-clair);border:2px solid var(--velin-ombre);
+  border-radius:10px;padding:14px;cursor:pointer;text-align:center;
+  transition:var(--transi);font-size:.95rem;min-height:64px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 2px 6px var(--ombre-douce);
+}
+.carte-match:hover{transform:translateY(-2px);border-color:var(--laiton);box-shadow:0 6px 14px var(--ombre)}
+.carte-match.select{border-color:var(--azur);background:#e4f0fa;box-shadow:0 0 0 3px rgba(43,111,158,.25)}
+.carte-match.bien{border-color:var(--jade);background:#d9f0e8;cursor:default;pointer-events:none;animation:pop-slot .4s}
+.carte-match.mal{animation:secoue .4s;border-color:var(--sceau);background:#fbe0dc}
+@keyframes secoue{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@keyframes pop-slot{0%{transform:scale(.5)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+.carte-match .emoji{font-size:1.9rem;display:block;margin-bottom:4px}
+
+/* ---- Fiche « paysage » (étape 3) ---- */
+.grille-paysages{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:16px 0}
+.paysage{
+  border:2px solid var(--velin-ombre);border-radius:12px;overflow:hidden;
+  background:var(--velin-clair);cursor:pointer;transition:var(--transi);
+  box-shadow:0 3px 10px var(--ombre-douce);
+}
+.paysage:hover{transform:translateY(-3px);border-color:var(--laiton)}
+.paysage.select{border-color:var(--azur);box-shadow:0 0 0 3px rgba(43,111,158,.25)}
+.paysage.bien{border-color:var(--jade);background:#d9f0e8;pointer-events:none}
+.paysage.mal{border-color:var(--sceau);animation:secoue .4s}
+.paysage .vignette{height:76px;display:flex;align-items:center;justify-content:center;font-size:2.6rem}
+.paysage .nom{padding:8px;text-align:center;font-size:.85rem;font-weight:bold;color:var(--abysse-2);border-top:1px solid var(--velin-ombre)}
+
+/* ---- Table de calcul (étape 4) ---- */
+.table-bord{
+  width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;
+  background:var(--velin-clair);border:2px solid var(--laiton);border-radius:10px;overflow:hidden;
+  font-size:.92rem;
+}
+.table-bord th{
+  background:linear-gradient(180deg,var(--abysse-2),var(--abysse));color:var(--laiton-clair);
+  padding:9px 10px;text-align:left;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;
+}
+.table-bord td{padding:9px 10px;border-top:1px solid var(--velin-ombre)}
+.table-bord tr:nth-child(even) td{background:rgba(255,255,255,.35)}
+.table-bord input[type=number]{width:92px;padding:6px 8px;font-size:.95rem;text-align:right}
+.table-bord td.ok{background:#d9f0e8}
+.table-bord td.ko{background:#fbe0dc}
+.echelle{
+  display:flex;align-items:center;gap:10px;justify-content:center;margin:12px 0;
+  font-size:.85rem;color:var(--encre-doux);
+}
+.echelle .barre{
+  height:12px;width:160px;border:2px solid var(--encre);
+  background:repeating-linear-gradient(90deg,var(--encre) 0 20px,#fff 20px 40px);
+}
+
+/* ---- Cadran des fuseaux horaires (étape 5) ---- */
+.cadran-monde{
+  position:relative;width:100%;max-width:520px;aspect-ratio:1;margin:18px auto;
+  border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--abysse-3),var(--abysse));
+  border:8px solid var(--laiton);
+  box-shadow:0 0 0 3px var(--laiton-sombre), 0 14px 34px var(--ombre), inset 0 0 60px rgba(0,0,0,.6);
+}
+.cadran-monde .graduation{
+  position:absolute;left:50%;top:6px;width:2px;height:12px;background:rgba(232,191,114,.55);
+  transform-origin:50% calc(50vw);
+}
+.cadran-monde .ville{
+  position:absolute;transform:translate(-50%,-50%);
+  background:rgba(4,12,20,.72);border:1px solid var(--laiton);border-radius:10px;
+  padding:6px 9px;text-align:center;color:#fff;font-size:.72rem;min-width:78px;
+  backdrop-filter:blur(2px);
+}
+.cadran-monde .ville .h{display:block;font-size:1rem;font-weight:bold;color:var(--laiton-clair);font-variant-numeric:tabular-nums}
+.cadran-monde .ville.bien{border-color:var(--jade);background:rgba(47,125,107,.75)}
+.cadran-monde .ville.mal{border-color:var(--sceau);animation:secoue .4s}
+.cadran-monde .meridien{
+  position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;
+  background:repeating-linear-gradient(180deg,var(--sceau-clair) 0 8px,transparent 8px 16px);
+}
+.cadran-monde .noyau{
+  position:absolute;inset:26%;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,#2f6f8f,#0d2b3f);
+  border:2px solid rgba(232,191,114,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--laiton-clair);font-size:.8rem;text-align:center;padding:10px;
+}
+.fuseaux-champs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+.fuseau-champ{
+  background:var(--velin-clair);border:2px solid var(--velin-ombre);border-radius:10px;
+  padding:10px 12px;text-align:center;min-width:132px;
+}
+.fuseau-champ .ville-nom{font-weight:bold;color:var(--abysse-2);font-size:.9rem}
+.fuseau-champ .decalage{font-size:.72rem;color:var(--encre-doux)}
+.fuseau-champ select{margin-top:6px;font-size:.9rem;padding:6px}
+.fuseau-champ.ok{border-color:var(--jade);background:#d9f0e8}
+.fuseau-champ.ko{border-color:var(--sceau);background:#fbe0dc}
+
+/* ---- Cachets de voyage (fragments) ---- */
+.cachets{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.cachet{
+  width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  border:3px dashed var(--sceau);color:var(--sceau);font-size:.68rem;font-weight:bold;
+  letter-spacing:.5px;transform:rotate(-8deg);background:rgba(163,51,39,.06);
+  padding:6px;line-height:1.15;
+}
+.cachet .icone{font-size:1.5rem;display:block;margin-bottom:2px}
+.cachet.vide{border-color:#bbb;color:#bbb;background:transparent;transform:none;border-style:dotted}
+
+/* ---- Feedback ---- */
+.feedback{padding:14px 18px;border-radius:12px;margin:14px 0;font-weight:bold;display:none;animation:fondu .3s}
+.feedback.show{display:block}
+.feedback.succes{background:#d9f0e8;border:2px solid var(--jade);color:#1c5245}
+.feedback.erreur{background:#fbe0dc;border:2px solid var(--sceau);color:#7d2419}
+.feedback.indice{background:#fff2d4;border:2px solid var(--laiton);color:#7a5300}
+.barre-outils{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+
+/* ---- Progression (les 5 escales) ---- */
+.progression{display:flex;gap:8px;justify-content:center;margin:0 0 18px;flex-wrap:wrap;align-items:center}
+.prog-point{
+  width:38px;height:38px;border-radius:50%;background:var(--velin-clair);
+  border:2px solid var(--velin-ombre);display:flex;align-items:center;justify-content:center;
+  font-weight:bold;color:#8a8a8a;font-size:.9rem;transition:var(--transi);
+}
+.prog-point.fait{background:var(--jade);color:#fff;border-color:var(--jade)}
+.prog-point.actuel{background:var(--azur);color:#fff;border-color:#1d5075;transform:scale(1.18);box-shadow:0 0 0 4px rgba(43,111,158,.22)}
+.prog-lien{width:22px;height:2px;background:repeating-linear-gradient(90deg,var(--cuivre) 0 4px,transparent 4px 8px)}
+
+/* ---- Quizz ---- */
+.qcm-question{background:#fff6e2;border-radius:10px;padding:14px;margin:12px 0;border-left:4px solid var(--azur);box-shadow:0 2px 6px var(--ombre-douce)}
+.qcm-question .q{font-weight:bold;margin-bottom:10px;color:var(--abysse-2)}
+.qcm-option{
+  display:block;background:#fff;border:1px solid var(--velin-ombre);border-radius:8px;
+  padding:11px 14px;margin:6px 0;cursor:pointer;transition:var(--transi);
+}
+.qcm-option:hover{background:#e4f0fa}
+.qcm-option.select{background:#d6e8f6;border-color:var(--azur)}
+.qcm-option.bonne{background:#d9f0e8;border-color:var(--jade)}
+.qcm-option.mauvaise{background:#fbe0dc;border-color:var(--sceau)}
+
+/* ---- Badges ---- */
+.grille-badges{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:20px 0}
+.badge{
+  background:linear-gradient(135deg,#fff6e2,#efdcb4);border:2px solid var(--laiton);
+  border-radius:14px;padding:18px;text-align:center;width:145px;
+  box-shadow:0 4px 12px var(--ombre-douce);opacity:.3;filter:grayscale(1);transition:var(--transi);
+}
+.badge.gagne{opacity:1;filter:none;animation:pop-badge .6s}
+.badge .icone{font-size:2.6rem}
+.badge .nom{font-weight:bold;font-size:.85rem;margin-top:6px;color:var(--abysse-2)}
+.badge .desc{font-size:.72rem;opacity:.7;margin-top:2px}
+@keyframes pop-badge{0%{transform:scale(0)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
+
+/* ---- Révélation finale (le carnet retrouvé) ---- */
+.carnet-final{
+  background:linear-gradient(135deg,#fffbec,#f3e3bd);border:3px double var(--laiton);
+  border-radius:14px;padding:28px;margin:22px 0;text-align:center;
+  box-shadow:0 10px 28px var(--ombre);position:relative;
+}
+.carnet-final .sceau-cire{font-size:2.2rem}
+.carnet-final .numero{color:var(--cuivre);font-weight:bold;letter-spacing:2px;margin-top:6px}
+.carnet-final .texte{font-size:1.22rem;font-style:italic;margin:14px 0;line-height:1.5}
+
+/* ---- Score final ---- */
+.score-final{font-size:clamp(2.4rem,8vw,3.4rem);text-align:center;color:var(--abysse-2);font-weight:bold;margin:10px 0}
+.score-final .sur{font-size:.45em;color:#8a8a8a}
+
+/* ---- Confettis ---- */
+.confetti{position:fixed;width:11px;height:14px;top:-20px;z-index:9999;pointer-events:none;animation:tomb .6s linear forwards}
+@keyframes tomb{to{transform:translateY(110vh) rotate(720deg);opacity:.3}}
+
+/* ---- Toast ---- */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  background:var(--abysse);color:#fff;padding:11px 20px;border-radius:24px;
+  font-weight:bold;z-index:9999;box-shadow:0 6px 16px rgba(0,0,0,.4);
+  border:1px solid var(--laiton-sombre);font-family:Georgia,serif;animation:fondu .3s;
+  max-width:90vw;text-align:center;
+}
+
+/* ---- Modals (leçons, réglages) ---- */
+.overlay-modal{
+  position:fixed;inset:0;background:rgba(4,12,20,.74);backdrop-filter:blur(4px);
+  z-index:200;display:none;align-items:flex-start;justify-content:center;
+  padding:20px;overflow-y:auto;
+}
+.overlay-modal.show{display:flex;animation:fondu .3s}
+.modal{
+  background:var(--velin-clair);border-radius:var(--radius);max-width:780px;width:100%;
+  margin:auto;box-shadow:0 20px 60px rgba(0,0,0,.55);overflow:hidden;
+  border:1px solid var(--laiton-sombre);
+  animation:zoom-modal .35s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes zoom-modal{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-tete{
+  background:linear-gradient(180deg,var(--abysse-2),var(--abysse));color:#fff;
+  padding:16px 22px;display:flex;justify-content:space-between;align-items:center;
+  border-bottom:2px solid var(--laiton-sombre);
+}
+.modal-tete h3{color:var(--laiton-clair);margin:0}
+.modal-tete .fermer{
+  background:rgba(255,255,255,.18);border:none;color:#fff;width:36px;height:36px;
+  border-radius:50%;cursor:pointer;font-size:1.2rem;transition:var(--transi);
+}
+.modal-tete .fermer:hover{background:var(--sceau);transform:rotate(90deg)}
+.modal-corps{padding:22px;max-height:70vh;overflow-y:auto}
+.modal-pied{padding:14px 22px;background:var(--velin);border-top:1px solid var(--velin-ombre);display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+
+/* ---- Bibliothèque de leçons ---- */
+.biblio-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin:16px 0}
+.carte-lecon{
+  background:#fff6e2;border:2px solid var(--velin-ombre);border-radius:12px;
+  padding:16px;cursor:pointer;transition:var(--transi);text-align:center;
+}
+.carte-lecon:hover{transform:translateY(-3px);border-color:var(--laiton);box-shadow:0 8px 18px var(--ombre)}
+.carte-lecon .icone{font-size:2.2rem}
+.carte-lecon .titre{font-weight:bold;color:var(--abysse-2);margin-top:6px;font-size:.92rem}
+.carte-lecon .duree{font-size:.75rem;color:var(--cuivre);margin-top:4px}
+
+/* ---- Leçon affichée ---- */
+.lecon-contenu h4{color:var(--cuivre);margin-top:18px}
+.lecon-contenu .encadre{
+  background:#fff2d4;border-left:4px solid var(--laiton);padding:12px 16px;
+  border-radius:0 8px 8px 0;margin:12px 0;
+}
+.lecon-contenu .frise{display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin:14px 0}
+.lecon-contenu .frise .evt{
+  flex-shrink:0;background:var(--abysse-2);color:#fff;padding:10px 14px;
+  border-radius:10px;min-width:145px;font-size:.85rem;
+}
+.lecon-contenu .frise .evt .date{color:var(--laiton-clair);font-weight:bold;display:block;font-size:.95rem}
+.lecon-contenu .document-epoque{
+  background:#fff;border:2px solid var(--velin-ombre);border-radius:10px;padding:14px;margin:12px 0;
+}
+.lecon-contenu .source,.lecon-contenu .legende-doc{font-size:.78rem;color:#8a8a8a;font-style:italic;margin-top:8px}
+.lecon-contenu .placeholder-image{
+  background:#eee6d2;border:2px dashed var(--velin-ombre);border-radius:8px;
+  padding:22px;text-align:center;color:var(--encre-doux);
+}
+/* Tableau de repères géographiques dans les leçons */
+.lecon-contenu table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+.lecon-contenu th{background:var(--abysse-2);color:var(--laiton-clair);padding:8px;text-align:left}
+.lecon-contenu td{padding:8px;border-top:1px solid var(--velin-ombre)}
+
+/* ---- Module réglages ---- */
+.reglages-group{margin-bottom:18px}
+.reglages-group h4{border-bottom:2px solid var(--velin-ombre);padding-bottom:6px}
+.reglage-ligne{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dotted var(--velin-ombre)}
+.reglage-ligne .libelle{flex:1}
+.reglage-ligne .controle{flex-shrink:0}
+.bascule{position:relative;width:52px;height:28px;background:#9aa5ad;border-radius:14px;cursor:pointer;transition:var(--transi);flex-shrink:0}
+.bascule.actif{background:var(--jade)}
+.bascule::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:var(--transi)}
+.bascule.actif::after{transform:translateX(24px)}
+
+/* ---- Responsive ---- */
+@media (max-width:760px){
+  .carte{padding:20px 16px}
+  .hud{padding:8px 10px;font-size:.85rem;position:relative;top:0}
+  .hud-gauche{font-size:.95rem}
+  .stat{padding:5px 9px;font-size:.76rem}
+  .personnage-scene{flex-direction:column;text-align:center;gap:14px}
+  .portrait{width:100px;height:100px}
+  .bulle::before,.bulle::after{display:none}
+  .rang-match{flex-direction:column;align-items:stretch}
+  .colonne-match{min-width:0}
+  .btn{padding:11px 18px;font-size:.95rem}
+  .scene,.scene .decor-contenu{min-height:200px}
+  .scene .description{font-size:.92rem}
+  .cadran-monde{max-width:100%}
+  .cadran-monde .ville{font-size:.62rem;min-width:64px;padding:4px 6px}
+  .table-bord{font-size:.82rem}
+  .table-bord th,.table-bord td{padding:6px}
+}
+@media (max-width:480px){
+  .choix-niveau{flex-direction:column;align-items:center}
+  .opt-niveau{max-width:100%;width:100%}
+  .grille-paysages{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---- Mode « animations réduites » ---- */
+body.calme *{animation-duration:0s !important;animation-iteration-count:1 !important}
+body.calme .scene .decor-overlay{background:linear-gradient(180deg,rgba(4,12,20,.2),rgba(4,12,20,.7))}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}

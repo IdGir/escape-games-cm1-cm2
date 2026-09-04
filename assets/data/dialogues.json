@@ -1,0 +1,107 @@
+{
+  "personnages": {
+    "louise":     {"nom":"Louise",                  "emoji":"🧒", "fonction":"Petite parisienne, guide"},
+    "gutenberg":  {"nom":"Maître Gutenberg",        "emoji":"🖨️", "fonction":"Imprimeur, voix des Lumières"},
+    "marquis":    {"nom":"Le Marquis de Montclair", "emoji":"🎩", "fonction":"Aristocrate, allié secret"},
+    "maximilien": {"nom":"Maximilien",              "emoji":"⚖️", "fonction":"Jeune avocat, figure morale"}
+  },
+
+  "introduction": {
+    "perso": "maximilien",
+    "nom": "Maximilien",
+    "texte": "Apprentis, écoutez. Je suis Maximilien, avocat. La Déclaration que nous venons d'adopter est notre plus grand espoir. Mais un article secret a été volé. Retrouvez les quatre fragments. Vous avez <b>55 minutes</b>. Le sort de la liberté est entre vos mains."
+  },
+
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La cour du Palais-Royal",
+      "decor": "palais-royal",
+      "lieu": "🌧️ La cour du Palais-Royal — 26 août 1789",
+      "description": "La pluie fine fouette les pavés luisants. Des affiches révolutionnaires, fraîchement collées, suintent sous l'humidité — on sent l'encre encore humide et la pâte de farine. Au loin, la rumeur d'une foule monte et descend, ponctuée du tintement d'une cloche. Une odeur de pain chaud s'échappe d'une boulangerie voisine.",
+      "sens": ["👁️ pavés mouillés", "👂 foule + cloche", "👃 pain chaud", "✋ papier humide"],
+      "dialogue_intro": {
+        "perso": "louise", "nom": "Louise",
+        "texte": "Eh ! Vous, là ! Vous cherchez le manuscrit volé, pas vrai ? Tout Paris en parle. Moi, j'connais cette ville comme ma poche. Aidez-moi à décoder ce cahier, et j'vous file un renseignement. Marché conclu ?"
+      },
+      "dialogue_reussite": {
+        "perso": "louise", "nom": "Louise",
+        "texte": "Palsambleu, vous êtes malins ! Le voleur est passé par l'<b>imprimerie</b>, rue de la Harpe. Cherchez Maître Gutenberg. Et… prenez garde, la foule gronde."
+      },
+      "fragment": "LIBERTÉ",
+      "badge_rapidite": "bastille"
+    },
+    {
+      "num": 2,
+      "titre": "L'imprimerie clandestine",
+      "decor": "imprimerie",
+      "lieu": "🖨️ L'imprimerie clandestine — sous les toits de Paris",
+      "description": "La porte grince et se referme sur le bruit de la rue. Ici, c'est le cliquetis régulier de la presse à bras qui domine, accompagné du froissement des feuilles. L'air sent le plomb fondu, l'encre grasse et la poussière de papier. Des cahiers de doléances s'entassent sur une table, éclairés par une chandelle dont la flamme vacille.",
+      "sens": ["👂 presse à bras", "👃 encre & plomb", "👁️ chandelle vacillante"],
+      "dialogue_intro": {
+        "perso": "gutenberg", "nom": "Maître Gutenberg",
+        "texte": "Entrez, et refermez cette porte. La presse tourne : c'est par l'imprimé que les idées voyagent. Avant de vous aider, associez ces extraits de la Marseillaise aux bonnes images. Prouvez votre perspicacité."
+      },
+      "dialogue_reussite": {
+        "perso": "gutenberg", "nom": "Maître Gutenberg",
+        "texte": "Joli. Rousseau disait que l'homme est né libre. Voici votre fragment. Le <b>Marquis de Montclair</b> rôde aux <b>Tuileries</b>. Écoutez-le… mais méfiez-vous."
+      },
+      "fragment": "ÉGALITÉ",
+      "badge_rapidite": "avocat"
+    },
+    {
+      "num": 3,
+      "titre": "Le jardin des Tuileries",
+      "decor": "tuileries",
+      "lieu": "🌳 Le jardin des Tuileries — après-midi ensoleillé",
+      "description": "Le soleil perce les nuages sur les allées de sable. Des paons crient près d'une volière. L'odeur des tilleuls en fleur se mêle au parfum de poudre de riz des nobles qui se promènent. Au loin, des gardes suisses montent la garde, leurs pas cadencés résonnant sur les graviers.",
+      "sens": ["👁️ allées de sable", "👂 paons + pas cadencés", "👃 tilleuls en fleur"],
+      "dialogue_intro": {
+        "perso": "marquis", "nom": "Le Marquis de Montclair",
+        "texte": "Ah. Les voilà, les apprentis du futur. Je vous attendais. Croyez-vous vraiment que ce manuscrit vous attendrait sagement ? Je le cherche aussi. Prouvez-moi votre perspicacité : déchiffrez ce parchemin."
+      },
+      "dialogue_reussite": {
+        "perso": "marquis", "nom": "Le Marquis de Montclair",
+        "texte": "Vous avez l'œil. Soit. Le vrai voleur veut <b>vendre</b> l'article secret. Il est à l'<b>Assemblée</b>. Voici votre fragment. Allez, le temps vous est compté."
+      },
+      "fragment": "FRATERNITÉ",
+      "badge_rapidite": "fraternite"
+    },
+    {
+      "num": 4,
+      "titre": "La place de la Bastille",
+      "decor": "bastille",
+      "lieu": "🏰 La place de la Bastille — après la prise du 14 juillet 1789",
+      "description": "On dirait que le combat vient à peine de cesser. La fumée de poudre pique encore les yeux. Des débris de pierre jonchent le sol. Une odeur métallique flotte dans l'air. La forteresse fume, à demi démantelée. Des volontaires circulent en chantant.",
+      "sens": ["👁️ débris & fumée", "👃 poudre métallique", "👂 chants révolutionnaires"],
+      "dialogue_intro": {
+        "perso": "louise", "nom": "Louise",
+        "texte": "Regardez ! Sur cette table abandonnée, y'a des portraits de tous ces grands bonshommes. Si vous savez qui a dit quoi, vous trouverez le dernier indice. À vous de jouer !"
+      },
+      "dialogue_reussite": {
+        "perso": "louise", "nom": "Louise",
+        "texte": "Vous êtes incollables ! Le dernier fragment vous attend : le <b>mécanisme de l'Assemblée</b>. Place aux étiquettes !"
+      },
+      "fragment": "1789",
+      "badge_rapidite": "lumiere"
+    },
+    {
+      "num": 5,
+      "titre": "La salle de l'Assemblée nationale",
+      "decor": "assemblee",
+      "lieu": "🏛️ La salle de l'Assemblée nationale — jour de l'adoption",
+      "description": "La salle est vaste et pleine d'écho. Des gradins en bois entourent une estrade où trône un fauteuil de président. L'air sent la cire fraîche et le bois vernis. Au mur, un grand plan de la salle porte des symboles étranges. Une horloge bat la mesure — tic, tac, tic, tac…",
+      "sens": ["👂 tic-tac d'horloge", "👃 cire & bois vernis", "👁️ gradins & estrade"],
+      "dialogue_intro": {
+        "perso": "maximilien", "nom": "Maximilien",
+        "texte": "Vous y êtes presque, apprentis. Voici la salle de l'Assemblée. Placez les étiquettes aux bons emplacements sur le plan. Le bon ordre révèlera l'emplacement du manuscrit… et l'article secret."
+      },
+      "dialogue_fin": {
+        "perso": "maximilien", "nom": "Maximilien",
+        "texte": "Vous avez réussi. Les quatre fragments sont réunis. L'article secret est retrouvé. Voici ce qu'il disait…"
+      },
+      "fragment": null,
+      "badge_rapidite": null
+    }
+  ]
+}

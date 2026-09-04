@@ -1,0 +1,183 @@
+{
+  "qcm": {
+    "CM1": [
+      {"q": "Combien y a-t-il de continents sur Terre ?", "options": ["5", "6", "10"], "bonne": 1, "pts": 1},
+      {"q": "Quel est le plus grand océan du monde ?", "options": ["L'océan Atlantique", "L'océan Indien", "L'océan Pacifique"], "bonne": 2, "pts": 1},
+      {"q": "Sur quel continent se trouve la France ?", "options": ["L'Asie", "L'Europe", "L'Afrique"], "bonne": 1, "pts": 1},
+      {"q": "Comment s'appelle la ligne imaginaire qui coupe la Terre en deux moitiés égales ?", "options": ["L'équateur", "Le méridien", "Le tropique"], "bonne": 0, "pts": 1},
+      {"q": "Sur une carte, où se trouve habituellement le nord ?", "options": ["En bas", "En haut", "À droite"], "bonne": 1, "pts": 1},
+      {"q": "Dans un désert, le climat est…", "options": ["chaud et sec", "froid et humide", "doux et pluvieux"], "bonne": 0, "pts": 1},
+      {"q": "Le soleil se lève à l'…", "options": ["ouest", "est", "sud"], "bonne": 1, "pts": 1},
+      {"q": "Qu'est-ce qu'un planisphère ?", "options": ["Une carte de toute la Terre à plat", "Un instrument de mesure", "Un type de bateau"], "bonne": 0, "pts": 1},
+      {"q": "Quel moyen de transport Phileas Fogg utilise-t-il pour traverser les océans ?", "options": ["Le train", "Le paquebot à vapeur", "L'avion"], "bonne": 1, "pts": 1},
+      {"q": "En montagne, quand on monte, la température…", "options": ["augmente", "baisse", "ne change pas"], "bonne": 1, "pts": 1}
+    ],
+    "CM2": [
+      {"q": "Combien y a-t-il de continents et d'océans sur Terre ?", "options": ["5 continents et 3 océans", "6 continents et 5 océans", "7 continents et 7 océans"], "bonne": 1, "pts": 1},
+      {"q": "Le canal de Suez, ouvert en 1869, relie la mer Méditerranée à…", "options": ["la mer Rouge", "la mer Noire", "la mer Baltique"], "bonne": 0, "pts": 1},
+      {"q": "Le méridien de référence (longitude 0°) passe par…", "options": ["Paris", "Greenwich, à Londres", "Rome"], "bonne": 1, "pts": 1},
+      {"q": "En combien de fuseaux horaires la Terre est-elle découpée ?", "options": ["12", "24", "36"], "bonne": 1, "pts": 1},
+      {"q": "Quel continent est situé autour du pôle Sud ?", "options": ["L'Océanie", "L'Antarctique", "L'Amérique du Sud"], "bonne": 1, "pts": 1},
+      {"q": "Sur une carte au 1 cm = 200 km, un trajet mesuré de 7 cm représente…", "options": ["700 km", "1 400 km", "200 km"], "bonne": 1, "pts": 1},
+      {"q": "Un climat équatorial est…", "options": ["chaud et humide toute l'année", "froid et sec", "tempéré avec quatre saisons"], "bonne": 0, "pts": 1},
+      {"q": "Les parallèles servent à mesurer…", "options": ["la latitude", "la longitude", "l'altitude"], "bonne": 0, "pts": 1},
+      {"q": "En voyageant vers l'est, on…", "options": ["ajoute des heures", "retire des heures", "ne change pas d'heure"], "bonne": 0, "pts": 1},
+      {"q": "S'il est midi à Londres, quelle heure est-il à Hong Kong (+8 h) ?", "options": ["4 h", "20 h", "8 h"], "bonne": 1, "pts": 1},
+      {"q": "La Terre tourne de 360° en 24 heures, soit…", "options": ["15° par heure", "24° par heure", "10° par heure"], "bonne": 0, "pts": 1},
+      {"q": "Qu'est-ce qui distingue un canal d'un détroit ?", "options": ["Le canal est creusé par l'homme", "Le détroit est creusé par l'homme", "Il n'y a aucune différence"], "bonne": 0, "pts": 1},
+      {"q": "Quel océan sépare l'Europe de l'Amérique ?", "options": ["Le Pacifique", "L'Atlantique", "L'Indien"], "bonne": 1, "pts": 1},
+      {"q": "L'Himalaya est une chaîne de montagnes située en…", "options": ["Afrique", "Asie", "Amérique du Sud"], "bonne": 1, "pts": 1},
+      {"q": "Pourquoi Phileas Fogg a-t-il gagné un jour ?", "options": ["Il a voyagé vers l'est en franchissant les 24 fuseaux horaires", "Il s'est trompé dans ses calculs", "Il est passé par le pôle Nord"], "bonne": 0, "pts": 1}
+    ]
+  },
+  "questions_fermees": {
+    "CM1": [
+      {"q": "Vrai ou faux : l'océan Pacifique est le plus grand océan du monde.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Vrai ou faux : l'Europe est plus grande que l'Asie.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : dans un désert, il pleut très souvent.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : l'équateur partage la Terre en un hémisphère nord et un hémisphère sud.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Cite les quatre points cardinaux.", "type": "court", "rep": "Nord, Sud, Est, Ouest", "pts": 2},
+      {"q": "Sur quel continent se trouve la France ?", "type": "court", "rep": "L'Europe", "pts": 1},
+      {"q": "Nomme trois océans.", "type": "court", "rep": "Réponses possibles : Pacifique, Atlantique, Indien, Arctique, Austral", "pts": 1},
+      {"q": "Quel animal Phileas Fogg utilise-t-il pour traverser la jungle indienne ?", "type": "court", "rep": "Un éléphant (nommé Kiouni)", "pts": 1}
+    ],
+    "CM2": [
+      {"q": "Vrai ou faux : le méridien de Greenwich sert de référence pour les longitudes.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Vrai ou faux : en allant vers l'ouest, on ajoute des heures.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : le canal de Panama relie l'Atlantique au Pacifique.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Vrai ou faux : les océans couvrent environ un tiers de la surface de la Terre.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Cite les cinq océans du monde.", "type": "court", "rep": "Pacifique, Atlantique, Indien, Arctique, Austral", "pts": 2},
+      {"q": "S'il est midi à Londres, quelle heure est-il à New York (−5 h) ?", "type": "court", "rep": "7 h du matin", "pts": 1},
+      {"q": "Sur une carte au 1 cm = 200 km, quelle distance réelle représentent 12 cm ?", "type": "court", "rep": "2 400 km (12 × 200)", "pts": 1},
+      {"q": "Quelle est la différence entre la latitude et la longitude ?", "type": "court", "rep": "La latitude mesure la distance à l'équateur ; la longitude mesure la distance au méridien de Greenwich.", "pts": 2},
+      {"q": "Explique pourquoi Phileas Fogg a gagné un jour.", "type": "ouverte", "rep_attendue": "En faisant le tour du monde vers l'est, il a franchi les 24 fuseaux horaires en ajoutant une heure à chaque fois, soit 24 heures : un jour de plus que les Londoniens restés sur place.", "pts": 2}
+    ]
+  },
+  "etudes_documents": {
+    "CM1": [
+      {
+        "titre": "Lire un planisphère",
+        "salle_concernee": 1,
+        "document": {
+          "type": "texte",
+          "source": "Texte documentaire, cycle 3",
+          "contenu": "« Un planisphère est une carte qui représente toute la Terre à plat. On y voit les six continents — Europe, Asie, Afrique, Amérique du Nord, Amérique du Sud et Océanie — auxquels s'ajoute l'Antarctique, couvert de glace. Entre eux s'étendent les océans. Une ligne horizontale, l'équateur, partage la Terre en deux moitiés : l'hémisphère nord et l'hémisphère sud. »"
+        },
+        "questions": [
+          {"q": "Qu'est-ce qu'un planisphère ?", "type": "court", "rep": "Une carte qui représente toute la Terre à plat.", "pts": 1},
+          {"q": "Comment s'appelle la ligne qui partage la Terre en deux moitiés ?", "type": "court", "rep": "L'équateur", "pts": 1},
+          {"q": "Nomme les deux hémisphères.", "type": "court", "rep": "L'hémisphère nord et l'hémisphère sud", "pts": 1},
+          {"q": "Quel continent est couvert de glace ?", "type": "court", "rep": "L'Antarctique", "pts": 1}
+        ]
+      },
+      {
+        "titre": "Le canal de Suez",
+        "salle_concernee": 2,
+        "document": {
+          "type": "texte",
+          "source": "Texte documentaire adapté",
+          "contenu": "« Avant 1869, pour aller d'Europe en Asie par la mer, il fallait contourner toute l'Afrique : un voyage de plusieurs mois. Le canal de Suez, creusé à travers le désert égyptien, relie la mer Méditerranée à la mer Rouge. Il a raccourci le trajet de près de 8 000 kilomètres. »"
+        },
+        "questions": [
+          {"q": "Quelles deux mers le canal de Suez relie-t-il ?", "type": "court", "rep": "La mer Méditerranée et la mer Rouge", "pts": 1},
+          {"q": "Que fallait-il faire avant son ouverture ?", "type": "court", "rep": "Contourner toute l'Afrique", "pts": 1},
+          {"q": "En quelle année le canal a-t-il été ouvert ?", "type": "court", "rep": "En 1869", "pts": 1}
+        ]
+      }
+    ],
+    "CM2": [
+      {
+        "titre": "Le dernier chapitre du Tour du monde",
+        "salle_concernee": 5,
+        "document": {
+          "type": "texte",
+          "source": "Jules Verne, Le Tour du monde en quatre-vingts jours, 1873, chapitre XXXVII (extrait adapté)",
+          "contenu": "« En se dirigeant vers l'est, Phileas Fogg allait au-devant du soleil, et les jours diminuaient pour lui d'autant de fois quatre minutes qu'il franchissait de degrés. Or, il y a trois cent soixante degrés sur la circonférence terrestre, et ces trois cent soixante degrés, multipliés par quatre minutes, donnent précisément vingt-quatre heures — c'est-à-dire ce jour inconsciemment gagné. »"
+        },
+        "questions": [
+          {"q": "Dans quel sens Phileas Fogg a-t-il voyagé ?", "type": "court", "rep": "Vers l'est", "pts": 1},
+          {"q": "Combien de degrés compte la circonférence de la Terre ?", "type": "court", "rep": "360 degrés", "pts": 1},
+          {"q": "Vérifie le calcul de Jules Verne : 360 × 4 minutes = ? Convertis en heures.", "type": "court", "rep": "1 440 minutes = 24 heures = 1 jour", "pts": 2},
+          {"q": "Explique avec tes mots pourquoi il a gagné un jour.", "type": "ouverte", "rep_attendue": "Chaque degré parcouru vers l'est fait gagner 4 minutes de journée ; sur un tour complet de 360°, cela fait 24 heures, soit un jour entier gagné sans s'en apercevoir.", "pts": 2}
+        ]
+      },
+      {
+        "titre": "Climats et latitudes",
+        "salle_concernee": 3,
+        "document": {
+          "type": "texte",
+          "source": "Texte documentaire, cycle 3",
+          "contenu": "« Plus on s'éloigne de l'équateur, moins les rayons du soleil frappent la Terre directement, et plus il fait froid. On distingue ainsi trois grandes zones : la zone chaude, de part et d'autre de l'équateur ; les zones tempérées, où l'on trouve quatre saisons ; les zones froides, autour des pôles. L'altitude joue le même rôle : la température baisse d'environ 0,6 °C tous les 100 mètres. »"
+        },
+        "questions": [
+          {"q": "Cite les trois grandes zones climatiques.", "type": "court", "rep": "La zone chaude, les zones tempérées, les zones froides", "pts": 1},
+          {"q": "Dans quelle zone se trouve la France ?", "type": "court", "rep": "Dans une zone tempérée", "pts": 1},
+          {"q": "De combien la température baisse-t-elle tous les 100 mètres d'altitude ?", "type": "court", "rep": "Environ 0,6 °C", "pts": 1},
+          {"q": "Pourquoi trouve-t-on de la neige au sommet de l'Himalaya, alors que l'Inde est un pays chaud ?", "type": "ouverte", "rep_attendue": "Parce que la température baisse avec l'altitude : au sommet, à plusieurs milliers de mètres, il fait suffisamment froid pour que la neige ne fonde pas.", "pts": 2}
+        ]
+      }
+    ]
+  },
+  "fiches_preparatoires": [
+    {
+      "salle": 1,
+      "titre": "Le planisphère : continents et océans",
+      "objectifs": ["Nommer et situer les 6 continents", "Nommer et situer les 5 océans", "Repérer l'équateur et le méridien de Greenwich"],
+      "vocabulaire": [
+        {"mot": "Planisphère", "def": "Carte représentant toute la Terre à plat"},
+        {"mot": "Continent", "def": "Très grande étendue de terre"},
+        {"mot": "Équateur", "def": "Ligne imaginaire à égale distance des deux pôles"},
+        {"mot": "Hémisphère", "def": "Moitié de la Terre (nord ou sud)"}
+      ],
+      "contexte": "Avant de partir, Phileas Fogg doit reconstituer sa carte du monde. C'est l'occasion de revoir les grands repères du planisphère : les six continents, les cinq océans, l'équateur et le méridien de Greenwich."
+    },
+    {
+      "salle": 2,
+      "titre": "Se déplacer d'un continent à l'autre",
+      "objectifs": ["Situer les mers, détroits et canaux", "Comprendre l'utilité du canal de Suez", "Ordonner les étapes d'un itinéraire"],
+      "vocabulaire": [
+        {"mot": "Canal", "def": "Voie d'eau creusée par l'homme"},
+        {"mot": "Détroit", "def": "Passage naturel étroit entre deux terres"},
+        {"mot": "Escale", "def": "Arrêt au cours d'un voyage"},
+        {"mot": "Isthme", "def": "Bande de terre étroite entre deux mers"}
+      ],
+      "contexte": "Ouvert en 1869, le canal de Suez relie la mer Méditerranée à la mer Rouge et évite de contourner toute l'Afrique. Il raccourcit le trajet Europe-Asie de près de 8 000 km : c'est ce qui rend le pari de Fogg réalisable."
+    },
+    {
+      "salle": 3,
+      "titre": "Les climats et les paysages du monde",
+      "objectifs": ["Distinguer zones chaude, tempérée et froide", "Associer un paysage à son climat", "Comprendre le rôle de la latitude et de l'altitude"],
+      "vocabulaire": [
+        {"mot": "Climat", "def": "Temps qu'il fait habituellement dans une région"},
+        {"mot": "Aride", "def": "Très sec, presque sans pluie"},
+        {"mot": "Latitude", "def": "Distance d'un lieu à l'équateur"},
+        {"mot": "Altitude", "def": "Hauteur au-dessus du niveau de la mer"}
+      ],
+      "contexte": "De l'Égypte à l'Himalaya, le voyage traverse en quelques semaines presque tous les climats de la planète : aride, équatorial, tropical, montagnard. Un excellent support pour comparer les paysages du monde."
+    },
+    {
+      "salle": 4,
+      "titre": "Transports, distances et échelle d'une carte",
+      "objectifs": ["Identifier les moyens de transport du XIXᵉ siècle", "Lire l'échelle d'une carte", "Calculer une distance réelle"],
+      "vocabulaire": [
+        {"mot": "Échelle", "def": "Rapport entre la mesure sur la carte et la réalité"},
+        {"mot": "Vapeur", "def": "Énergie qui a permis trains et paquebots"},
+        {"mot": "Itinéraire", "def": "Chemin suivi pour aller d'un lieu à un autre"},
+        {"mot": "Légende", "def": "Ce qui explique les symboles d'une carte"}
+      ],
+      "contexte": "C'est la machine à vapeur (train et paquebot) qui rend le pari possible : trente ans plus tôt, il aurait été absurde. L'étape travaille aussi le calcul avec l'échelle : distance réelle = mesure en cm × échelle."
+    },
+    {
+      "salle": 5,
+      "titre": "Méridiens, parallèles et fuseaux horaires",
+      "objectifs": ["Comprendre le rôle du méridien de Greenwich", "Calculer une heure locale", "Expliquer le jour gagné en voyageant vers l'est"],
+      "vocabulaire": [
+        {"mot": "Méridien", "def": "Demi-cercle imaginaire allant d'un pôle à l'autre"},
+        {"mot": "Parallèle", "def": "Cercle imaginaire parallèle à l'équateur"},
+        {"mot": "Fuseau horaire", "def": "Bande de 15° où l'on lit la même heure"},
+        {"mot": "Longitude", "def": "Distance d'un lieu au méridien de Greenwich"}
+      ],
+      "contexte": "La Terre tourne de 360° en 24 heures, soit 15° par heure : c'est tout le secret du dénouement du roman. Vers l'est on ajoute des heures, vers l'ouest on en retire. Sur un tour complet, cela fait un jour entier."
+    }
+  ]
+}

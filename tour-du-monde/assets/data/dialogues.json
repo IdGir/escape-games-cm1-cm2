@@ -1,0 +1,122 @@
+{
+  "titre": "Le Tour du Monde en 80 minutes",
+  "sous_titre": "Escape game de géographie CM1-CM2, d'après Jules Verne",
+  "personnages": {
+    "fogg":         {"nom": "Phileas Fogg",      "emoji": "🎩", "role": "Le gentleman qui a parié"},
+    "passepartout": {"nom": "Jean Passepartout", "emoji": "🧳", "role": "Son domestique français, guide des élèves"},
+    "aouda":        {"nom": "Mrs Aouda",         "emoji": "🌺", "role": "Jeune femme sauvée en Inde"},
+    "fix":          {"nom": "L'inspecteur Fix",  "emoji": "🔍", "role": "Policier de Scotland Yard, soupçonneux"}
+  },
+  "salles": [
+    {
+      "num": 1,
+      "titre": "Le Reform Club, à Londres",
+      "decor": "reform-club",
+      "lieu": "🎩 Londres, Angleterre — mercredi 2 octobre 1872, 20 h 45",
+      "coordonnees": "51° N · 0° — Méridien de Greenwich",
+      "description": "Le feu crépite dans la cheminée du club le plus fermé de Londres. Sur un guéridon d'acajou, un grand globe terrestre tourne doucement. Phileas Fogg vient de parier vingt mille livres qu'il ferait le tour du monde en quatre-vingts jours — mais son carnet de route a disparu.",
+      "sens": ["👁️ le globe qui tourne", "👂 la pluie sur la vitre", "👃 le bois du foyer"],
+      "notion": "Le planisphère : continents, océans, équateur, méridien de Greenwich",
+      "dialogue_intro": {
+        "perso": "fogg",
+        "nom": "Phileas Fogg",
+        "texte": "Messieurs, mesdemoiselles. Je viens de parier que je ferai le tour du monde en quatre-vingts jours. Mais on m'a dérobé mon carnet de route. Sans itinéraire, je ne puis partir. Reconstituez d'abord ma carte du monde : placez chaque continent et chaque océan à sa juste place. Le temps, lui, ne nous attendra pas."
+      },
+      "dialogue_reussite": {
+        "perso": "fogg",
+        "nom": "Phileas Fogg",
+        "texte": "Parfait. La Terre reprend sa forme. Nous partirons par l'<b>est</b> : Paris, l'Italie, puis l'Égypte. Passepartout, les bagages ! Rendez-vous au <b>canal de Suez</b>."
+      },
+      "fragment": "ROSE DES VENTS",
+      "badge_rapidite": "navigateur"
+    },
+    {
+      "num": 2,
+      "titre": "L'isthme de Suez",
+      "decor": "suez",
+      "lieu": "🐫 Suez, Égypte — mercredi 9 octobre 1872",
+      "coordonnees": "30° N · 32° E — entre deux mers",
+      "description": "Le sable brûle sous un soleil blanc. Devant vous s'ouvre une longue tranchée d'eau bleue creusée à travers le désert : le canal de Suez, ouvert depuis trois ans à peine. Le paquebot Mongolia y glisse lentement, sa cheminée crachant un panache blanc.",
+      "sens": ["👁️ le canal dans le désert", "👂 la sirène du vapeur", "👃 le sable chaud"],
+      "notion": "Se déplacer dans le monde : mers, détroits, canaux, itinéraire",
+      "dialogue_intro": {
+        "perso": "fix",
+        "nom": "L'inspecteur Fix",
+        "texte": "Halte-là ! Inspecteur Fix, de Scotland Yard. Votre monsieur Fogg m'a tout l'air d'un voleur en fuite. Vous prétendez l'aider ? Fort bien : prouvez-moi que vous savez seulement où vous allez. Remettez ces escales dans l'ordre. Et dites-moi donc à quoi sert ce canal."
+      },
+      "dialogue_reussite": {
+        "perso": "fix",
+        "nom": "L'inspecteur Fix",
+        "texte": "Hum. Vous connaissez votre géographie, je vous l'accorde. Le canal relie la Méditerranée à la mer Rouge — sans lui, il faudrait contourner toute l'Afrique. Filez donc vers l'<b>Inde</b>. Je vous suis de près."
+      },
+      "fragment": "LE CANAL",
+      "badge_rapidite": "voyageur"
+    },
+    {
+      "num": 3,
+      "titre": "La jungle de l'Inde",
+      "decor": "inde",
+      "lieu": "🐘 Près de Kholby, Inde — mardi 22 octobre 1872",
+      "coordonnees": "22° N · 78° E — sous les tropiques",
+      "description": "Le train s'est arrêté net : la voie ferrée n'est pas terminée. Devant vous, cinquante kilomètres de jungle épaisse, et pour seule monture un éléphant nommé Kiouni. Au loin, les cimes blanches de l'Himalaya percent la brume de chaleur.",
+      "sens": ["👁️ la voie ferrée coupée", "👂 les singes dans la canopée", "👃 la terre humide"],
+      "notion": "Les climats et les paysages du monde : latitude et altitude",
+      "dialogue_intro": {
+        "perso": "aouda",
+        "nom": "Mrs Aouda",
+        "texte": "Vous m'avez sauvée, je vous aiderai à mon tour. Voyez ce carnet : monsieur Fogg y notait les paysages traversés. Les pages se sont mêlées. Retrouvez quel climat va avec quel paysage — car on ne voyage pas sans savoir quel temps l'on trouvera."
+      },
+      "dialogue_reussite": {
+        "perso": "aouda",
+        "nom": "Mrs Aouda",
+        "texte": "C'est cela même. Du désert brûlant à la banquise, tout dépend de la distance à l'<b>équateur</b> et de l'altitude. Hâtons-nous : le vapeur de <b>Hong Kong</b> n'attendra pas."
+      },
+      "fragment": "LES CLIMATS",
+      "badge_rapidite": "geographe"
+    },
+    {
+      "num": 4,
+      "titre": "La mer de Chine",
+      "decor": "mer-chine",
+      "lieu": "🌊 À bord de la Tankadère, mer de Chine — 7 novembre 1872",
+      "coordonnees": "22° N · 114° E — cap au nord-est",
+      "description": "La goélette tangue dans une mer démontée. Le vent hurle dans les haubans, la pluie cingle le pont. Le pilote hurle des ordres qu'on n'entend plus. Il faut tenir le cap — et surtout, savoir combien de chemin il reste à parcourir.",
+      "sens": ["👁️ les éclairs sur l'horizon", "👂 le vent dans les voiles", "👃 l'embrun salé"],
+      "notion": "Moyens de transport, distances et échelle d'une carte",
+      "dialogue_intro": {
+        "perso": "passepartout",
+        "nom": "Jean Passepartout",
+        "texte": "Sacrebleu, quelle tempête ! Aidez-moi, je vous en prie : le timonier veut le journal de bord tout de suite. Pour chaque étape, il faut le bon moyen de transport et la vraie distance. On mesure sur la carte, puis on multiplie avec l'échelle. Vite, mes amis, vite !"
+      },
+      "dialogue_reussite": {
+        "perso": "passepartout",
+        "nom": "Jean Passepartout",
+        "texte": "Ah ! Vous êtes des as ! Le timonier a son cap. Encore l'Amérique à traverser, et nous voilà rentrés à <b>Londres</b>… si toutefois nous arrivons à l'heure."
+      },
+      "fragment": "LA VAPEUR",
+      "badge_rapidite": "voyageur"
+    },
+    {
+      "num": 5,
+      "titre": "L'observatoire de Greenwich",
+      "decor": "greenwich",
+      "lieu": "⏰ Greenwich, Londres — samedi 21 décembre 1872",
+      "coordonnees": "51° N · 0° — longitude zéro",
+      "description": "Vous voici revenus au point de départ, sur la ligne de laiton du méridien zéro. Phileas Fogg croit avoir perdu son pari d'un seul jour. Il se trompe. Toute la clé de l'histoire tient dans une chose que la Terre fait en tournant : les fuseaux horaires.",
+      "sens": ["👁️ la ligne du méridien", "👂 le carillon de Big Ben", "👃 le froid de décembre"],
+      "notion": "Méridiens, parallèles et fuseaux horaires",
+      "dialogue_intro": {
+        "perso": "fogg",
+        "nom": "Phileas Fogg",
+        "texte": "J'ai échoué, dit-on. Quatre-vingt-un jours au lieu de quatre-vingts. Et pourtant… quelque chose ne tourne pas rond dans mes comptes. Nous avons voyagé vers l'est tout du long. Calculez donc l'heure qu'il est dans ces villes, puis dites-moi ce qui a bien pu m'arriver."
+      },
+      "dialogue_fin": {
+        "perso": "fogg",
+        "nom": "Phileas Fogg",
+        "texte": "Ainsi donc… en allant vers l'est, j'ai gagné un jour sans m'en apercevoir. Le carnet est complet, et le pari est gagné. Messieurs, mesdemoiselles : vous êtes de fort bons géographes."
+      },
+      "fragment": null,
+      "badge_rapidite": "horloger"
+    }
+  ]
+}

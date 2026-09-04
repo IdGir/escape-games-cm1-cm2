@@ -1,0 +1,84 @@
+DOSSIER MEDIAS - LE TOUR DU MONDE EN 80 MINUTES
+================================================
+
+Deposez ici (ou dans tour-du-monde/assets/...) vos videos et images.
+Les deux emplacements sont explores automatiquement par le jeu.
+
+RIEN N'EST OBLIGATOIRE : sans aucun fichier, le jeu utilise ses decors et
+ses personnages dessines, et reste entierement jouable.
+
+
+1. DECORS ET CINEMATIQUES        -> tour-du-monde/assets/videos/
+---------------------------------------------------------------
+  intro.mp4    Cinematique d'ouverture (le pari au Reform Club)
+  etape1.mp4   Decor - Salon victorien du Reform Club, Londres 1872
+  etape2.mp4   Decor - Le canal de Suez dans le desert egyptien
+  etape3.mp4   Decor - Jungle indienne, elephant, voie ferree inachevee
+  etape4.mp4   Decor - Tempete en mer de Chine, goelette
+  etape5.mp4   Decor - Observatoire de Greenwich, ligne du meridien
+  final.mp4    Cinematique de fin (le jour gagne)
+
+  Format d'image 16/9. Une image du meme nom dans
+  tour-du-monde/assets/images/decors/ sert d'affiche.
+
+
+2. PERSONNAGES                   -> .../assets/videos/personnages/
+                                 ou .../assets/images/personnages/
+---------------------------------------------------------------
+  fogg.mp4          ou fogg.png          Phileas Fogg
+  passepartout.mp4  ou passepartout.png  Jean Passepartout
+  aouda.mp4         ou aouda.png         Mrs Aouda
+  fix.mp4           ou fix.png           L'inspecteur Fix
+
+  VARIANTE FACULTATIVE "EN TRAIN DE PARLER" :
+  ajoutez fogg-parle.mp4 (et ainsi de suite). Le jeu bascule tout seul
+  sur cette boucle pendant que le personnage parle, puis revient a la
+  boucle de repos. Sans variante, la boucle de repos tourne en continu.
+
+  Cadre : portrait vertical 170 x 262 px (plein corps).
+  Les videos de personnage sont MUETTES : la voix vient de la synthese
+  vocale du navigateur, avec ses sous-titres.
+  Un .gif anime est aussi accepte comme image.
+
+
+3. CARTES ET PAYSAGES            -> tour-du-monde/assets/images/cartes/
+---------------------------------------------------------------
+  planisphere.jpg        Fond de carte de l'escale 1
+  paysage-desert.jpg     Vignette du desert       (escale 3)
+  paysage-jungle.jpg     Vignette de la jungle
+  paysage-montagne.jpg   Vignette de l'Himalaya
+  paysage-campagne.jpg   Vignette de la campagne anglaise
+  paysage-banquise.jpg   Vignette de la banquise
+  paysage-savane.jpg     Vignette de la savane
+
+  Le planisphere reste entierement jouable avec une vraie carte en
+  fond : les zones a placer se posent par-dessus.
+
+
+4. DOCUMENTS DES LECONS          -> tour-du-monde/assets/images/documents/
+---------------------------------------------------------------
+  Image nommee d'apres la lecon (ou d'apres la cle "fichier" declaree
+  dans assets/data/lecons.json).
+
+
+FORMATS ACCEPTES
+----------------
+  Video       : .mp4 (H.264, recommande) ou .webm
+  Image       : .jpg / .png / .webp  (+ .gif pour les personnages)
+  Sous-titres : .vtt du meme nom que la video, charges automatiquement
+
+CONSEILS
+--------
+  - Visez moins de 20 Mo par video, 15 a 30 s en boucle pour un decor.
+  - Les decors sont joues MUETS pour ne pas couvrir la voix des
+    personnages ; un bouton dans la scene permet d'activer le son.
+
+VERIFIER CE QUI EST DETECTE
+---------------------------
+  Dans le jeu : icone ENGRENAGE > Multimedia > "Verifier les fichiers
+  presents". Trois tableaux indiquent ce que le jeu a trouve pour les
+  decors, les personnages et les cartes.
+
+ATTENTION : les medias video exigent le serveur (lancer.bat /
+lancer-mac.command). En double-clic sur index.html, les navigateurs
+bloquent la lecture des videos locales.

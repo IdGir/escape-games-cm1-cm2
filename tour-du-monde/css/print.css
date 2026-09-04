@@ -1,0 +1,194 @@
+/* ============================================================
+   IMPRESSION A4 — Fiches préparatoires & évaluations
+   Optimisé pour ne rien couper, marges maîtrisées
+   ============================================================ */
+
+/* Zone imprimable dédiée (cachée à l'écran) */
+.zone-impression{display:none}
+
+/* Passage en mode impression : on masque tout sauf la zone imprimable */
+@media print{
+  @page{
+    size:A4;
+    margin:14mm 14mm 16mm 14mm;
+  }
+  html,body{
+    background:#fff !important;
+    color:#000 !important;
+    font-size:11pt;
+    line-height:1.45;
+  }
+  /* ------------------------------------------------------------
+     NEUTRALISATION DE LA CHARTE ÉCRAN
+     Sans ces règles, la fiche est tronquée au bas de la première
+     page : la charte écran impose html,body{height:100%;overflow
+     -x:hidden} et body{min-height:100vh}, ce qui enferme tout le
+     document dans une seule hauteur d'écran. À l'impression, le
+     flux doit au contraire pouvoir s'étendre sur autant de pages
+     que nécessaire.
+     ------------------------------------------------------------ */
+  html,body{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+  /* Aucun ancêtre de la zone d'impression ne doit rogner ni limiter */
+  .zone-impression{
+    display:block !important;
+    position:static !important;
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+    width:100% !important;
+  }
+
+  body::before,.bandeau-laiton,.drapeau,.hud,.overlay-cine,.overlay-modal,.scene,.personnage-scene,
+  .carte:not(.impression-actif),.ecran:not(.impression-actif),
+  .boutons,.barre-outils,.no-print{display:none !important}
+
+  /* On n'affiche que la zone d'impression */
+  .zone-impression{display:block !important}
+  #app{max-width:none;padding:0;margin:0}
+
+  /* Éviter les coupures mal placées */
+  h1,h2,h3,h4{page-break-after:avoid;break-after:avoid}
+  .impr-bloc,.impr-question,.impr-document{page-break-inside:avoid;break-inside:avoid}
+  table,tr,td,th{page-break-inside:avoid}
+
+  /* En-tête de fiche sur chaque page */
+  .impr-entete{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:2.5px solid #14304a;padding-bottom:6px;margin-bottom:12px;
+    font-size:9pt;
+  }
+  .impr-entete .gauche{font-weight:bold;color:#14304a}
+  .impr-entete .gauche .titre-fiche{font-size:14pt;color:#000;margin-bottom:2px}
+  .impr-entete .droite{text-align:right;color:#555;font-size:8.5pt}
+  .impr-entete .logo{font-size:18pt}
+
+  /* Bandeau décoratif : ruban de laiton gradué, comme un sextant.
+     (La classe garde son nom historique pour rester compatible
+      avec la génération des fiches dans js/impression.js.) */
+  .impr-bandeau-tricolore{
+    height:4px;
+    background:
+      repeating-linear-gradient(90deg, rgba(0,0,0,.45) 0 1px, transparent 1px 12px),
+      linear-gradient(180deg,#e8bf72,#c08a3e 50%,#8a5f24);
+    margin:-12px -14mm 12px -14mm;
+  }
+
+  /* Pied de page : pagination + références */
+  /* Pied de fiche : DANS LE FLUX.
+     En position:fixed il se superposait au texte et ne s'imprimait
+     qu'une seule fois, en écrasant le bas de la première page. */
+  .impr-pied{
+    border-top:1px solid #999;padding-top:4px;margin-top:18px;
+    font-size:8pt;color:#666;display:flex;justify-content:space-between;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+
+  /* Titres de fiche */
+  .impr-titre-principal{
+    text-align:center;font-size:18pt;font-weight:bold;color:#14304a;
+    margin:6px 0 2px;
+  }
+  .impr-soustitre{text-align:center;font-style:italic;color:#555;font-size:10pt;margin-bottom:14px}
+
+  /* Cartouche d'identification élève */
+  .impr-cartouche{
+    border:2px solid #14304a;border-radius:8px;padding:10px 14px;margin:10px 0 16px;
+    display:flex;justify-content:space-between;gap:14px;font-size:10pt;
+  }
+  .impr-cartouche .champ{flex:1}
+  .impr-cartouche .champ .label{font-size:8pt;color:#666;text-transform:uppercase;letter-spacing:.5px}
+  .impr-cartouche .champ .ligne{border-bottom:1px solid #999;height:16px;margin-top:2px}
+
+  /* Marqueur CORRIGÉ bien visible */
+  .impr-marque-corrige{
+    background:#a33327;color:#fff;font-weight:bold;font-size:11pt;
+    padding:4px 14px;border-radius:4px;display:inline-block;margin-bottom:10px;
+    letter-spacing:1px;
+  }
+
+  /* Questions */
+  .impr-question{margin:10px 0;padding-left:0}
+  .impr-question .num{font-weight:bold;color:#14304a}
+  .impr-question .reponses-courtes{margin-top:4px}
+  .impr-question .ligne-rep{border-bottom:1px dotted #888;height:20px;margin:4px 0}
+  .impr-question .cases-qcm{margin-top:5px;padding-left:10pt}
+  .impr-question .cases-qcm .opt{display:flex;align-items:center;gap:6px;margin:3px 0}
+  .impr-question .cases-qcm .case{
+    display:inline-block;width:11px;height:11px;border:1.5px solid #333;border-radius:50%;
+    flex-shrink:0;
+  }
+  .impr-question .vrai-faux{display:flex;gap:18px;margin-top:5px;font-size:10pt}
+  .impr-question .vrai-faux span{display:inline-flex;align-items:center;gap:5px}
+  .impr-question .vrai-faux .case{display:inline-block;width:12px;height:12px;border:1.5px solid #333}
+
+  /* Corrigé : bonnes réponses surlignées */
+  .impr-corrige .opt.bonne{background:#d8f5d8;font-weight:bold;border-radius:3px;padding:1px 4px}
+  .impr-corrige .reponse-attendue{
+    background:#fffbe6;border-left:3px solid #c08a3e;padding:4px 8px;
+    margin-top:3px;font-style:italic;border-radius:0 4px 4px 0;
+  }
+  .impr-corrige .barre-pts{
+    display:inline-block;background:#14304a;color:#fff;font-size:9pt;
+    padding:1px 7px;border-radius:10px;margin-left:6px;
+  }
+
+  /* Barème global */
+  .impr-bareme{
+    border:2px solid #c08a3e;background:#fffbe6;border-radius:8px;
+    padding:10px 14px;margin-top:16px;font-size:10pt;
+  }
+  .impr-bareme table{width:100%;border-collapse:collapse}
+  .impr-bareme td,.impr-bareme th{padding:4px 8px;border-bottom:1px solid #ddc9a0;text-align:left}
+  .impr-bareme th{background:#f0e0b8;font-weight:bold}
+
+  /* Étude de document */
+  .impr-document{
+    border:1.5px solid #999;background:#f9f4e8;padding:12px;margin:10px 0;border-radius:6px;
+  }
+  .impr-document .legende-doc{font-size:8.5pt;color:#666;font-style:italic;margin-top:6px;border-top:1px dotted #aaa;padding-top:4px}
+  .impr-document .placeholder-image{
+    border:2px dashed #999;background:#fff;min-height:140px;display:flex;
+    align-items:center;justify-content:center;color:#999;font-style:italic;font-size:9pt;margin-bottom:6px;
+  }
+  .impr-document img{max-width:100%;max-height:180px;display:block;margin:0 auto}
+
+  /* Fiche préparatoire */
+  .impr-fiche-prepa .objectifs{
+    background:#eef4ff;border-left:4px solid #14304a;padding:8px 12px;
+    border-radius:0 6px 6px 0;margin:10px 0;font-size:10pt;
+  }
+  .impr-fiche-prepa .objectifs ul{margin:4px 0 0 16px}
+  .impr-fiche-prepa .vocabulaire{margin:10px 0}
+  .impr-fiche-prepa .vocabulaire .mot{font-weight:bold;color:#a33327}
+
+  /* Frise chronologique imprimée */
+  .impr-frise{display:flex;justify-content:space-between;margin:14px 0;font-size:9pt;gap:4px}
+  .impr-frise .evt{flex:1;text-align:center;border-top:3px solid #14304a;padding-top:4px}
+  .impr-frise .evt .date{font-weight:bold;color:#a33327;display:block}
+
+  /* Lignes de réponse étendues */
+  .impr-lignes-reponse{margin-top:8px}
+  .impr-lignes-reponse .ligne{border-bottom:1px solid #999;height:22px;margin:3px 0}
+
+  /* Notes enseignant */
+  .impr-note-enseignant{
+    background:#fff3d6;border:1px dashed #c08a3e;border-radius:6px;
+    padding:8px 12px;margin:10px 0;font-size:9pt;font-style:italic;
+  }
+
+  /* Éviter l'élargissement intempestif */
+  .impr-contenu{max-width:100%}
+
+  /* La zone d'impression ne doit jamais hériter d'une largeur de colonne */
+  .zone-impression > *{max-width:100% !important}
+
+  /* Forcer les couleurs d'arrière-plan à s'imprimer */
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
