@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission géographique — Année A</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/activites.css">
+<link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+<!-- ====================== EN-TÊTE ====================== -->
+<header id="barre" hidden>
+  <button class="lien-retour" id="btn-carnet" title="Revenir au carnet de mission">📔 Carnet</button>
+  <div class="barre-titre">
+    <span id="barre-session">Mission géographique</span>
+    <small id="barre-element"></small>
+  </div>
+  <div class="barre-outils">
+    <span class="jeton" id="barre-score" title="Points">⭐ <b>0</b></span>
+    <span class="jeton" id="barre-chrono" title="Temps écoulé">⏱ <b>00:00</b></span>
+    <button id="btn-lecon" title="Ouvrir la leçon">📚</button>
+    <button id="btn-aide" title="Demander un coup de pouce">💡</button>
+    <button id="btn-reglages" title="Réglages enseignant">⚙️</button>
+  </div>
+</header>
+
+<!-- ====================== ACCUEIL ====================== -->
+<main id="ecran-accueil" class="ecran actif">
+  <div class="accueil-fond" aria-hidden="true"></div>
+  <div class="accueil-carte">
+    <p class="tampon">Bureau Mondial de Surveillance Géographique</p>
+    <h1>Mission géographique</h1>
+    <p class="sous-titre">Année A · CM1 – CM2</p>
+
+    <div class="media-slot" data-media="mission-intro" hidden></div>
+
+    <div class="lettre">
+      <p><em>Cher élève,</em></p>
+      <p>Tu as été sélectionné(e) grâce à tes compétences géographiques pour effectuer
+      une mission des plus secrètes.</p>
+      <p>Une valise contenant des informations sensibles sur la mise au point d'une
+      nouvelle ressource a été volée par des malfaiteurs. Problème : on ne sait pas
+      exactement où elle a été volée, ni même de quelle ressource il s'agit.</p>
+      <p>Il est capital de la retrouver au plus vite. L'avenir de la Terre en dépend !</p>
+      <p class="signature">Professeur Atlas</p>
+    </div>
+
+    <form id="form-depart" autocomplete="off">
+      <label>Nom de l'équipe ou de l'élève
+        <input type="text" id="champ-equipe" maxlength="30" placeholder="Les explorateurs" required>
+      </label>
+      <fieldset class="choix-niveau">
+        <legend>Niveau</legend>
+        <label><input type="radio" name="niveau" value="CM1"> CM1</label>
+        <label><input type="radio" name="niveau" value="CM2" checked> CM2</label>
+      </fieldset>
+      <button type="submit" class="bouton-principal">Ouvrir le carnet de mission</button>
+    </form>
+    <p class="note-accueil">
+      La mission se déroule en <b>16 séances</b> réparties sur toute l'année.
+      Chaque séance réussie ajoute un <b>indice</b> au carnet. Les indices réunis
+      permettront de retrouver la valise… et la récompense mystère.
+    </p>
+    <button class="lien-discret" id="btn-reglages-accueil">⚙️ Espace enseignant</button>
+  </div>
+</main>
+
+<!-- ====================== CARNET DE MISSION ====================== -->
+<main id="ecran-carnet" class="ecran">
+  <div class="carnet-entete">
+    <h2>Carnet de mission</h2>
+    <p id="carnet-equipe"></p>
+    <div class="jauge"><div class="jauge-barre" id="jauge-progression"></div></div>
+    <p class="jauge-legende"><b id="carnet-fait">0</b> séance(s) réussie(s) sur <b id="carnet-total">16</b></p>
+  </div>
+
+  <section class="carnet-colonnes">
+    <div id="liste-periodes" class="periodes"></div>
+
+    <aside class="panneau-indices">
+      <h3>🔎 Indices récoltés</h3>
+      <p class="aide-panneau">Chaque séance réussie dépose ici un indice. Ne les perds pas !</p>
+      <ul id="liste-indices" class="indices"></ul>
+      <button id="btn-valise" class="bouton-principal" disabled>🧳 Ouvrir la piste finale</button>
+      <p class="aide-panneau" id="aide-valise"></p>
+    </aside>
+  </section>
+</main>
+
+<!-- ====================== SÉANCE ====================== -->
+<main id="ecran-session" class="ecran">
+  <div id="session-scene"></div>
+</main>
+
+<!-- ====================== FINAL ====================== -->
+<main id="ecran-final" class="ecran">
+  <div id="final-scene"></div>
+</main>
+
+<!-- ====================== MODALES ====================== -->
+<div id="modale" class="modale" hidden>
+  <div class="modale-boite" role="dialog" aria-modal="true">
+    <button class="modale-fermer" id="modale-fermer" aria-label="Fermer">✕</button>
+    <div id="modale-contenu"></div>
+  </div>
+</div>
+
+<div id="bandeau-message" class="bandeau" hidden></div>
+
+<!-- ====================== SCRIPTS ====================== -->
+<script src="js/donnees/lecons.js"></script>
+<script src="js/donnees/sessions-p1.js"></script>
+<script src="js/donnees/sessions-p2.js"></script>
+<script src="js/donnees/sessions-p3.js"></script>
+<script src="js/donnees/sessions-p4.js"></script>
+<script src="js/donnees/sessions-p5.js"></script>
+<script src="js/donnees/final.js"></script>
+<script src="js/medias.js"></script>
+<script src="js/cartes.js"></script>
+<script src="js/activites.js"></script>
+<script src="js/sauvegarde.js"></script>
+<script src="js/carnet.js"></script>
+<script src="js/lecons.js"></script>
+<script src="js/impression.js"></script>
+<script src="js/reglages.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

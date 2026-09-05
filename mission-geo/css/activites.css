@@ -1,0 +1,252 @@
+/* =========================================================
+   MISSION GEOGRAPHIQUE — habillage des activites interactives
+   ========================================================= */
+
+.activite{
+  border:1px solid #e0e8f2; border-radius:16px; padding:1rem 1.1rem;
+  background:#fdfefe; margin:1rem 0;
+}
+.activite > .consigne{
+  font-weight:700; color:var(--bleu-profond); margin:0 0 .3rem; line-height:1.4;
+  display:flex; gap:.5rem; align-items:flex-start;
+}
+.activite > .consigne::before{ content:"\27A4"; color:var(--bleu-clair); }
+.activite > .precision{ margin:.1rem 0 .9rem; color:var(--encre-douce); font-size:.9rem; }
+.activite.validee{ border-color:var(--vert); background:var(--vert-pale); }
+.activite .retour{
+  margin-top:.8rem; padding:.6rem .8rem; border-radius:10px; font-size:.92rem; line-height:1.5;
+}
+.activite .retour.bon{ background:var(--vert-pale); border:1px solid var(--vert); }
+.activite .retour.faux{ background:var(--rouge-pale); border:1px solid var(--rouge); }
+.activite .barre-actions{ display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.9rem; align-items:center; }
+.activite .essais{ font-size:.82rem; color:var(--encre-douce); }
+
+/* ---------- QCM ---------- */
+.qcm{ display:grid; gap:.5rem; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); }
+.qcm.liste{ grid-template-columns:1fr; }
+.qcm button{
+  font:inherit; text-align:left; cursor:pointer; padding:.6rem .8rem;
+  border:2px solid #d7e2ee; border-radius:12px; background:#fff; line-height:1.35;
+  display:grid; gap:.4rem;
+}
+.qcm button:hover{ border-color:var(--bleu-clair); }
+.qcm button.choisi{ border-color:var(--bleu-clair); background:var(--bleu-pale); }
+.qcm button.bon{ border-color:var(--vert); background:var(--vert-pale); }
+.qcm button.mauvais{ border-color:var(--rouge); background:var(--rouge-pale); }
+.qcm button img, .qcm button .vignette{ border-radius:8px; width:100%; }
+.qcm .vignette{
+  aspect-ratio:4/3; display:grid; place-items:center; font-size:2rem;
+  background:#eef4fa; color:var(--bleu-profond);
+}
+
+/* ---------- Vrai / Faux ---------- */
+table.vf{ width:100%; border-collapse:collapse; }
+table.vf td{ padding:.45rem .4rem; border-bottom:1px solid #e7edf5; vertical-align:middle; }
+table.vf td:first-child{ line-height:1.4; }
+table.vf td:last-child{ width:7.5rem; text-align:right; white-space:nowrap; }
+table.vf .bascule{
+  font:inherit; font-weight:700; cursor:pointer; width:2.3rem; height:2.1rem;
+  border:2px solid #d7e2ee; background:#fff; border-radius:8px; margin-left:.3rem;
+}
+table.vf .bascule.choisi{ background:var(--bleu-pale); border-color:var(--bleu-clair); }
+table.vf tr.bon td{ background:var(--vert-pale); }
+table.vf tr.faux td{ background:var(--rouge-pale); }
+
+/* ---------- Texte a trous ---------- */
+.banque-mots{ display:flex; flex-wrap:wrap; gap:.4rem; margin:.2rem 0 .9rem; }
+.mot-etiquette{
+  font:inherit; cursor:grab; background:#fff8e2; border:2px solid var(--or);
+  border-radius:999px; padding:.3rem .8rem; font-weight:600;
+}
+.mot-etiquette.utilise{ opacity:.35; cursor:not-allowed; }
+.mot-etiquette.selectionne{ background:var(--or); color:#3d2c00; }
+.texte-trous{ line-height:2.2; }
+.trou{
+  display:inline-block; min-width:7.5rem; border-bottom:2px dashed var(--bleu-clair);
+  text-align:center; cursor:pointer; padding:0 .4rem; font-weight:700; color:var(--bleu-profond);
+  background:#f4f9fe; border-radius:6px 6px 0 0;
+}
+.trou.vide{ color:#9fb0c4; font-weight:400; }
+.trou.bon{ border-color:var(--vert); background:var(--vert-pale); }
+.trou.faux{ border-color:var(--rouge); background:var(--rouge-pale); }
+
+/* ---------- Relier ---------- */
+.relier{ display:grid; grid-template-columns:1fr auto 1fr; gap:.5rem 1rem; align-items:start; }
+@media (max-width:640px){ .relier{ grid-template-columns:1fr; } }
+.relier .colonne{ display:grid; gap:.45rem; align-content:start; }
+.relier .colonne button{
+  font:inherit; text-align:left; cursor:pointer; padding:.5rem .7rem;
+  border:2px solid #d7e2ee; border-radius:10px; background:#fff; line-height:1.3;
+  display:flex; align-items:center; gap:.5rem;
+}
+.relier .colonne button .pastille{
+  width:1.5rem; height:1.5rem; border-radius:50%; display:grid; place-items:center;
+  font-size:.78rem; font-weight:800; background:#eef4fa; color:var(--encre-douce); flex:0 0 auto;
+}
+.relier .colonne button.selectionne{ border-color:var(--or); background:#fff8e2; }
+.relier .colonne button.appariee{ border-color:var(--bleu-clair); background:var(--bleu-pale); }
+.relier .colonne button.bon{ border-color:var(--vert); background:var(--vert-pale); }
+.relier .colonne button.faux{ border-color:var(--rouge); background:var(--rouge-pale); }
+.relier .lien-milieu{ align-self:center; color:var(--encre-douce); font-size:.8rem; text-align:center; }
+
+/* ---------- Remise en ordre ---------- */
+.ordre{ display:grid; gap:.45rem; counter-reset:rang; }
+.ordre .element{
+  display:flex; align-items:center; gap:.6rem; background:#fff;
+  border:2px solid #d7e2ee; border-radius:10px; padding:.45rem .6rem;
+}
+.ordre .element .rang{
+  counter-increment:rang; flex:0 0 auto; width:1.9rem; height:1.9rem; border-radius:50%;
+  background:var(--bleu-clair); color:#fff; display:grid; place-items:center; font-weight:800;
+}
+.ordre .element .rang::before{ content:counter(rang); }
+.ordre .element .libelle{ flex:1; line-height:1.3; }
+.ordre .element img{ width:74px; border-radius:6px; }
+.ordre .element .fleches{ display:flex; flex-direction:column; gap:.15rem; }
+.ordre .element .fleches button{
+  font:inherit; cursor:pointer; border:1px solid #cfdcea; background:#f4f8fc;
+  border-radius:6px; width:1.9rem; line-height:1.2;
+}
+.ordre .element.bon{ border-color:var(--vert); background:var(--vert-pale); }
+.ordre .element.faux{ border-color:var(--rouge); background:var(--rouge-pale); }
+
+/* ---------- Etiquettes sur une carte ---------- */
+.carte-zone{ position:relative; border-radius:14px; overflow:hidden; background:#eaf3fb; }
+.carte-zone img, .carte-zone svg{ display:block; width:100%; height:auto; }
+.zone-depot{
+  position:absolute; transform:translate(-50%,-50%);
+  min-width:5.6rem; min-height:1.7rem; padding:.15rem .35rem;
+  border:2px dashed var(--bleu-profond); border-radius:8px;
+  background:rgba(255,255,255,.88); font-size:.78rem; font-weight:700;
+  color:var(--bleu-profond); cursor:pointer; text-align:center; line-height:1.2;
+}
+.zone-depot.vide{ color:#8ea3bb; font-weight:400; }
+.zone-depot.survol{ background:var(--or); }
+.zone-depot.bon{ border-style:solid; border-color:var(--vert); background:#dff5e8; }
+.zone-depot.faux{ border-style:solid; border-color:var(--rouge); background:#fde3e1; }
+
+/* ---------- Tri en paniers ---------- */
+.paniers{ display:grid; gap:.8rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+.panier{
+  border:2px solid var(--bleu-clair); border-radius:14px; padding:.6rem; background:#fff; min-height:6rem;
+}
+.panier h4{ margin:0 0 .4rem; font-size:.95rem; color:var(--bleu-profond); }
+.panier .contenu{ display:flex; flex-wrap:wrap; gap:.35rem; min-height:3rem; align-content:flex-start; }
+.panier.survol{ background:var(--bleu-pale); }
+.jeton-tri{
+  font:inherit; cursor:pointer; background:#fff; border:2px solid #d7e2ee;
+  border-radius:10px; padding:.3rem .6rem; display:inline-flex; align-items:center; gap:.35rem;
+}
+.jeton-tri.selectionne{ border-color:var(--or); background:#fff8e2; }
+.jeton-tri.bon{ border-color:var(--vert); background:var(--vert-pale); }
+.jeton-tri.faux{ border-color:var(--rouge); background:var(--rouge-pale); }
+.jeton-tri img{ width:44px; border-radius:5px; }
+.reserve-jetons{
+  display:flex; flex-wrap:wrap; gap:.4rem; padding:.6rem; border-radius:12px;
+  background:#f2f7fc; border:2px dashed #cfdcea; margin-bottom:.8rem; min-height:3.2rem;
+}
+
+/* ---------- Mots croises ---------- */
+.mots-croises{ display:grid; gap:1rem; grid-template-columns:auto 1fr; align-items:start; }
+@media (max-width:760px){ .mots-croises{ grid-template-columns:1fr; } }
+.grille-mc{ display:grid; gap:2px; width:max-content; }
+.grille-mc .case{ width:1.85rem; height:1.85rem; position:relative; }
+.grille-mc .case.jouable{ background:#fff; border:1.5px solid #64809c; border-radius:2px; }
+.grille-mc .case input{
+  width:100%; height:100%; border:0; text-align:center; text-transform:uppercase;
+  font:inherit; font-weight:700; background:transparent; padding:0;
+}
+.grille-mc .case .num{
+  position:absolute; top:0; left:2px; font-size:.55rem; color:var(--encre-douce); font-weight:700;
+}
+.grille-mc .case.bon{ background:var(--vert-pale); }
+.grille-mc .case.faux{ background:var(--rouge-pale); }
+.definitions{ font-size:.9rem; line-height:1.5; }
+.definitions h4{ margin:.2rem 0 .3rem; color:var(--bleu-profond); }
+.definitions ol{ margin:0 0 .8rem; padding-left:1.4rem; }
+
+/* ---------- Mots meles ---------- */
+.grille-mm{ display:grid; gap:2px; width:max-content; margin:0 auto .8rem; user-select:none; }
+.grille-mm .lettre{
+  width:2rem; height:2rem; display:grid; place-items:center; background:#fff;
+  border:1px solid #dbe5ef; border-radius:5px; font-weight:700; cursor:pointer;
+}
+.grille-mm .lettre.selection{ background:var(--or); }
+.grille-mm .lettre.trouve{ background:var(--vert-pale); border-color:var(--vert); }
+.liste-a-trouver{ display:flex; flex-wrap:wrap; gap:.4rem; justify-content:center; }
+.liste-a-trouver span{
+  border:1px solid #cfdcea; border-radius:999px; padding:.15rem .6rem; font-size:.85rem;
+}
+.liste-a-trouver span.trouve{ background:var(--vert-pale); border-color:var(--vert); text-decoration:line-through; }
+
+/* ---------- Anagramme ---------- */
+.anagramme{ text-align:center; }
+.anagramme .lettres{ display:flex; gap:.4rem; justify-content:center; flex-wrap:wrap; margin:.6rem 0; }
+.anagramme .lettres button{
+  font:inherit; font-weight:800; font-size:1.3rem; width:2.6rem; height:2.9rem; cursor:pointer;
+  border:2px solid var(--kraft); background:var(--papier-creme); border-radius:8px;
+}
+.anagramme .lettres button.utilisee{ opacity:.3; }
+.anagramme .reponse{
+  display:inline-flex; gap:.3rem; min-height:3rem; align-items:center; justify-content:center;
+  padding:.3rem .6rem; border-bottom:3px solid var(--bleu-clair); min-width:12rem;
+}
+.anagramme .reponse span{
+  font-size:1.4rem; font-weight:800; color:var(--bleu-profond);
+  border:2px solid var(--bleu-clair); border-radius:6px; width:2.2rem; height:2.6rem;
+  display:grid; place-items:center; background:#fff;
+}
+
+/* ---------- Saisies ---------- */
+.saisies{ display:grid; gap:.6rem; }
+.saisies .ligne{ display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.saisies .ligne label{ flex:1; min-width:12rem; line-height:1.35; }
+.saisies .ligne input{ width:9rem; text-align:center; font-weight:700; }
+.saisies .ligne .unite{ font-weight:600; color:var(--encre-douce); }
+.saisies .ligne.bon input{ border-color:var(--vert); background:var(--vert-pale); }
+.saisies .ligne.faux input{ border-color:var(--rouge); background:var(--rouge-pale); }
+.aide-calcul{ font-size:.85rem; color:var(--encre-douce); }
+table.donnees{ width:100%; border-collapse:collapse; font-size:.85rem; margin:.5rem 0; }
+table.donnees th, table.donnees td{ border:1px solid #d7e2ee; padding:.3rem .45rem; text-align:center; }
+table.donnees th{ background:var(--bleu-pale); color:var(--bleu-profond); }
+.enveloppe-tableau{ overflow-x:auto; }
+
+/* ---------- Repartition (gouttes, paniers de courses) ---------- */
+.repartition{ display:grid; gap:.7rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+.repartition .poste{
+  border:2px solid var(--bleu-clair); border-radius:14px; padding:.7rem; background:#fff; text-align:center;
+}
+.repartition .poste h4{ margin:0 0 .4rem; font-size:.95rem; }
+.repartition .poste .compteur{ font-size:1.6rem; font-weight:800; color:var(--bleu-profond); }
+.repartition .poste .boutons{ display:flex; gap:.4rem; justify-content:center; margin-top:.4rem; }
+.repartition .poste .boutons button{
+  font:inherit; font-weight:800; width:2.2rem; height:2.2rem; cursor:pointer;
+  border:2px solid #cfdcea; background:#f4f8fc; border-radius:8px;
+}
+.reste-a-placer{ font-weight:700; text-align:center; margin:.6rem 0; }
+.reste-a-placer.ok{ color:var(--vert); }
+
+/* ---------- Tableau a completer ---------- */
+table.a-completer{ width:100%; border-collapse:collapse; font-size:.9rem; }
+table.a-completer th, table.a-completer td{ border:1px solid #d7e2ee; padding:.35rem .4rem; }
+table.a-completer th{ background:var(--bleu-pale); color:var(--bleu-profond); font-size:.85rem; }
+table.a-completer select{ padding:.25rem; border-radius:6px; min-width:6rem; }
+table.a-completer td.bon{ background:var(--vert-pale); }
+table.a-completer td.faux{ background:var(--rouge-pale); }
+
+/* ---------- Diagramme circulaire ---------- */
+.diagramme{ display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:center; }
+@media (max-width:640px){ .diagramme{ grid-template-columns:1fr; } }
+.diagramme svg{ width:230px; height:230px; }
+.diagramme .secteur{ cursor:pointer; stroke:#fff; stroke-width:2; }
+.diagramme .secteur.choisi{ filter:brightness(1.15); }
+.legende-diagramme{ display:grid; gap:.4rem; }
+.legende-diagramme .ligne{ display:flex; align-items:center; gap:.5rem; }
+.legende-diagramme .pastille{ width:1.1rem; height:1.1rem; border-radius:4px; flex:0 0 auto; }
+.legende-diagramme select{ flex:1; }
+
+/* ---------- Reponse ouverte ---------- */
+.ouverte textarea{ min-height:6rem; resize:vertical; }
+.pistes{ background:var(--papier-creme); border:1px dashed var(--kraft); border-radius:10px;
+  padding:.6rem .8rem; font-size:.88rem; margin-top:.6rem; }
+.pistes ul{ margin:.3rem 0 0; padding-left:1.2rem; }

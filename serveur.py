@@ -302,6 +302,7 @@ def main():
     print("  📱 ADRESSES À DONNER AUX ÉLÈVES :")
     print("     Révolution française  →  http://{}:{}/".format(ip, PORT))
     print("     Tour du Monde (géo.)  →  http://{}:{}/tour-du-monde/".format(ip, PORT))
+    print("     Mission géographique  →  http://{}:{}/mission-geo/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/prof.html".format(PORT))

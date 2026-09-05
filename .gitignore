@@ -10,3 +10,15 @@ __pycache__/
 # ---- Éditeurs ----
 *.swp
 .vscode/
+
+# ---- Documents source volumineux (gardes en local) ----
+Mission géographique Année A.pdf
+
+# ---- Outils de developpement locaux ----
+.claude/
+
+# ---- Medias deposes par l'enseignant (peuvent etre lourds) ----
+mission-geo/assets/videos/*
+!mission-geo/assets/videos/.gitkeep
+mission-geo/assets/images/*
+!mission-geo/assets/images/.gitkeep

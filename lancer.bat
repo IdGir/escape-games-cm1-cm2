@@ -43,6 +43,7 @@ echo.
 echo  ^>^> POSTES ELEVES :
 echo      Histoire     : http://127.0.0.1:8000/
 echo      Geographie   : http://127.0.0.1:8000/tour-du-monde/
+echo      Mission geo  : http://127.0.0.1:8000/mission-geo/
 echo.
 echo  ^>^> TABLEAUX DE BORD ENSEIGNANT :
 echo      Histoire     : http://127.0.0.1:8000/prof.html

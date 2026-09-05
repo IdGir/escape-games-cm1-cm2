@@ -1,18 +1,39 @@
 # 🎓 ESCAPE GAMES PÉDAGOGIQUES — CM1 / CM2
 
-Ce dossier contient **deux escape games** partageant le même moteur et le même
-serveur local :
+Ce dossier contient **trois escape games** partageant le même serveur local :
 
-| Jeu | Matière | Dossier | Lancer |
-|---|---|---|---|
-| 🏛️ **Le Secret de la Déclaration** | Histoire — Révolution française, 1789 | *(racine)* | `index.html` |
-| 🧭 **Le Tour du Monde en 80 minutes** | **Géographie** — d'après Jules Verne | `tour-du-monde/` | `tour-du-monde/index.html` |
+| Jeu | Matière | Format | Dossier | Lancer |
+|---|---|---|---|---|
+| 🏛️ **Le Secret de la Déclaration** | Histoire — Révolution française, 1789 | séance unique | *(racine)* | `index.html` |
+| 🧭 **Le Tour du Monde en 80 minutes** | Géographie — d'après Jules Verne | séance unique | `tour-du-monde/` | `tour-du-monde/index.html` |
+| 🗺️ **Mission géographique — Année A** | **Géographie CM1/CM2 — programme complet** | **16 séances sur l'année** | `mission-geo/` | `mission-geo/index.html` |
 
-Un seul serveur sert les deux : `lancer.bat` (Windows) ou `lancer-mac.command` (Mac).
-Chaque jeu a son propre tableau de bord enseignant, qui n'affiche que ses équipes.
+Un seul serveur sert les trois : `lancer.bat` (Windows) ou `lancer-mac.command` (Mac).
 
-> 📖 La documentation du jeu de géographie se trouve dans
-> [`tour-du-monde/README.md`](tour-du-monde/README.md).
+> 📖 Documentation de chaque jeu :
+> [`tour-du-monde/README.md`](tour-du-monde/README.md) ·
+> [`mission-geo/README.md`](mission-geo/README.md)
+
+---
+
+## 🗺️ MISSION GÉOGRAPHIQUE — ANNÉE A (nouveauté)
+
+Adaptation interactive **intégrale** du livret papier *Mission géographique — Année A*,
+redécoupée en **16 séances filées sur toute l'année**, une par élément du programme
+de géographie (organisation du territoire, inégalités dans le monde, se nourrir,
+usages de l'eau douce).
+
+* Chaque séance réussie dépose **un indice** dans un carnet qui se remplit toute l'année ;
+* les 16 indices réunis ouvrent une **piste finale** en trois énigmes ;
+* la valise s'ouvre alors sur une **récompense mystère** que l'enseignant définit
+  quand il le souhaite, dans l'espace enseignant ;
+* **15 types d'énigmes interactives**, une **leçon** par séance, et des fiches A4
+  (préparation, élève, corrigé, leçon, progression + solutions, bilan, diplôme) ;
+* **des emplacements image ou vidéo réservés partout** : introduction, cœur de
+  séance, chaque énigme, dénouement, leçon, récompense — aucun fichier n'est
+  obligatoire, le jeu fonctionne tel quel.
+
+👉 Tout est détaillé dans [`mission-geo/README.md`](mission-geo/README.md).
 
 ---
 
