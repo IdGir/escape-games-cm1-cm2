@@ -18,11 +18,20 @@ Mission géographique Année A.pdf
 .claude/
 
 # ---- Médias déposés par l'enseignant (gardés en local, souvent lourds) ----
+# Règle générale : ignorer le contenu, pas le dossier lui-même (un dossier
+# ignoré ne peut plus être "dé-ignoré" fichier par fichier : voir les
+# exceptions ci-dessous pour les médias choisis, publiés avec le jeu).
 assets/videos/
 assets/images/
-tour-du-monde/assets/videos/
-tour-du-monde/assets/images/
+tour-du-monde/assets/videos/*
+tour-du-monde/assets/images/*
 mission-geo/assets/videos/*
 !mission-geo/assets/videos/.gitkeep
 mission-geo/assets/images/*
 !mission-geo/assets/images/.gitkeep
+
+# ---- Exceptions : médias choisis par l'enseignant, publiés avec le jeu ----
+!tour-du-monde/assets/videos/intro.mp4
+!tour-du-monde/assets/images/decors/
+tour-du-monde/assets/images/decors/*
+!tour-du-monde/assets/images/decors/intro.jpg
