@@ -35,31 +35,36 @@ particulier au-delà d'une connexion internet normale.
 
 ---
 
-## 🖼️ Ajouter ou remplacer une image / vidéo sur GitHub
+## 🖼️ Ajouter ou remplacer une image / vidéo
 
-Chaque décor, personnage ou carte a un **nom de fichier attendu**. Déposez un
-fichier portant ce nom au bon endroit sur GitHub, et il remplace automatiquement
-le dessin par défaut — **rien à modifier dans le code**, pas besoin d'ouvrir
-un logiciel de développement.
+Chaque décor, personnage ou carte a un **nom de fichier attendu**, propre à
+**un seul dossier canonique**. Déposez un fichier portant ce nom dans ce
+dossier, et il remplace automatiquement le dessin par défaut — **rien à
+modifier dans le code**.
 
-### La marche à suivre (identique pour tous les jeux)
+> ⚠️ **Un seul et même dossier fait foi pour chaque jeu : `assets/` à sa
+> racine.** Le dossier `Elements EG/` (utilisé dans une version antérieure)
+> n'est plus la référence — ne l'utilisez plus, pour éviter d'avoir deux
+> emplacements possibles pour la même image.
 
-1. Ouvrez le dossier concerné sur GitHub (liens ci-dessous pour chaque jeu).
-2. Cliquez sur **Add file** (en haut à droite) → **Upload files**.
-3. Glissez votre image ou vidéo dans la zone, **renommez-la exactement** comme
-   indiqué dans les tableaux ci-dessous (GitHub permet de renommer avant
-   d'envoyer, en cliquant sur le nom du fichier affiché).
-4. Si le dossier n'existe pas encore, tapez son chemin complet dans le nom du
-   fichier au moment de l'envoi, par exemple `assets/images/decors/salle1.jpg`
-   — GitHub crée le dossier tout seul.
-5. En bas de page, laissez **« Commit directly to the main branch »** coché,
-   puis cliquez sur **Commit changes**.
-6. Rechargez le jeu dans Chrome (**Ctrl+F5** pour forcer le rechargement, au
-   cas où le navigateur aurait gardé l'ancienne version en mémoire). C'est en
-   ligne en général en moins d'une minute.
+### Deux façons d'envoyer un fichier — au choix
 
-> Aucune ligne de commande, aucun logiciel Git à installer : tout se fait dans
-> le navigateur, sur la page GitHub.
+**A. Directement sur GitHub (aucune installation)**
+1. Ouvrez le dossier concerné sur GitHub (liens ci-dessous, un par jeu).
+2. **Add file** (en haut à droite) → **Upload files**.
+3. Glissez votre fichier, **renommez-le exactement** comme indiqué dans le
+   `README.md` de ce dossier (visible directement sous la liste des fichiers,
+   sur la page GitHub du dossier).
+4. En bas de page, laissez **« Commit directly to the main branch »** coché
+   → **Commit changes**.
+
+**B. Dans le dossier du projet sur votre ordinateur**
+1. Placez le fichier, avec le bon nom, directement dans le sous-dossier
+   `assets/...` correspondant du projet (celui que Claude Code utilise).
+2. Dites-le-moi (« j'ai déposé tel fichier ») : je le publie sur GitHub pour vous.
+
+Dans les deux cas, **c'est en ligne en général en moins d'une minute** une
+fois le commit fait — rechargez avec **Ctrl+F5** pour forcer le rechargement.
 
 ### Formats acceptés
 - **Images** : `.jpg`, `.png`, `.webp` — format **16:9** pour les décors,
@@ -69,27 +74,25 @@ un logiciel de développement.
 - Si vous déposez à la fois une vidéo et une image du même nom, **la vidéo est
   prioritaire**. Sans aucun fichier, le jeu affiche son décor dessiné —
   ce n'est jamais une erreur, juste le mode par défaut.
+- **Noms de fichiers toujours en minuscules** (`salle1.jpg`, pas `Salle1.jpg`) :
+  le site est sensible à la casse, une majuscule empêche la détection.
 
 ---
 
 ### 🏛️ Le Secret de la Déclaration — dossiers médias
 
-Dossier GitHub : [`/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree/main/assets)
+Dossier GitHub : [`/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree/main/assets) — chaque sous-dossier a son propre `README.md` avec la liste exacte des noms attendus et ce qui est déjà en ligne.
 
-| Type | Dossier à ouvrir sur GitHub | Fichiers attendus |
-|---|---|---|
-| Décors des 5 salles | `assets/images/decors/` (vidéo : `assets/videos/`) | `salle1.jpg` … `salle5.jpg` (ou `.mp4`) |
-| Cinématiques d'intro/fin | même dossiers | `intro.jpg`/`intro.mp4`, `final.jpg`/`final.mp4` |
-| Portraits des personnages | `assets/images/personnages/` (vidéo : `assets/videos/personnages/`) | `louise`, `gutenberg`, `marquis`, `maximilien` (`.png` ou `.mp4`) |
-| Variante « en train de parler » (optionnel) | même dossier vidéo | `louise-parle.mp4`, etc. |
-| Documents d'époque (dans les leçons) | `assets/images/documents/` | nom indiqué dans la leçon concernée |
+| Sous-dossier | Contenu |
+|---|---|
+| [`assets/videos/`](assets/videos/) | Décors filmés des 5 salles + cinématiques *(salle1 déjà en ligne)* |
+| [`assets/images/decors/`](assets/images/decors/) | Images des mêmes décors *(salle4 déjà en ligne)* |
+| [`assets/images/personnages/`](assets/images/personnages/) | Portraits de Louise, Gutenberg, le Marquis, Maximilien |
+| [`assets/videos/personnages/`](assets/videos/personnages/) | Mêmes personnages, en vidéo |
+| [`assets/images/documents/`](assets/images/documents/) | Documents d'époque des leçons |
 
-> Ces dossiers `assets/images/` et `assets/videos/` n'existent pas encore sur
-> GitHub pour ce jeu (le jeu tourne pour l'instant sur ses décors dessinés) —
-> ils seront créés automatiquement dès votre premier envoi.
-> 💡 Prompts prêts à copier-coller pour générer les 5 images de salles avec
-> une IA d'images : voir la réponse précédente dans cette conversation, ou
-> les sections 4-5 de [`Le-Secret-de-la-Declaration.md`](Le-Secret-de-la-Declaration.md).
+> 💡 Prompts prêts à copier-coller pour générer les images de salles avec une
+> IA : sections 4-5 de [`Le-Secret-de-la-Declaration.md`](Le-Secret-de-la-Declaration.md).
 
 ---
 
@@ -97,13 +100,14 @@ Dossier GitHub : [`/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree
 
 Dossier GitHub : [`/tour-du-monde/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree/main/tour-du-monde/assets)
 
-| Type | Dossier à ouvrir sur GitHub | Fichiers attendus |
-|---|---|---|
-| Décors des 5 escales | `tour-du-monde/assets/images/decors/` (vidéo : `tour-du-monde/assets/videos/`) | `etape1.jpg` … `etape5.jpg` (ou `.mp4`) |
-| Cinématiques d'intro/fin | mêmes dossiers | `intro.jpg`/`.mp4` *(déjà en ligne)*, `final.jpg`/`.mp4` |
-| Portraits des personnages | `tour-du-monde/assets/images/personnages/` (vidéo : `.../videos/personnages/`) | `fogg`, `passepartout`, `aouda`, `fix` (`.png` ou `.mp4`) |
-| Cartes et paysages | `tour-du-monde/assets/images/cartes/` | `planisphere.jpg`, `paysage-desert.jpg`, `paysage-jungle.jpg`, `paysage-montagne.jpg`, `paysage-campagne.jpg`, `paysage-banquise.jpg`, `paysage-savane.jpg` |
-| Documents d'époque (dans les leçons) | `tour-du-monde/assets/images/documents/` | nom indiqué dans la leçon concernée |
+| Sous-dossier | Contenu |
+|---|---|
+| [`tour-du-monde/assets/videos/`](tour-du-monde/assets/videos/) | Décors filmés des 5 escales + cinématiques *(tout déjà en ligne)* |
+| [`tour-du-monde/assets/images/decors/`](tour-du-monde/assets/images/decors/) | Images des mêmes décors *(intro déjà en ligne)* |
+| [`tour-du-monde/assets/images/personnages/`](tour-du-monde/assets/images/personnages/) | Portraits de Fogg, Passepartout, Aouda, Fix |
+| [`tour-du-monde/assets/videos/personnages/`](tour-du-monde/assets/videos/personnages/) | Mêmes personnages, en vidéo |
+| [`tour-du-monde/assets/images/cartes/`](tour-du-monde/assets/images/cartes/) | Planisphère *(déjà en ligne)* et paysages des climats |
+| [`tour-du-monde/assets/images/documents/`](tour-du-monde/assets/images/documents/) | Documents d'époque des leçons |
 
 ---
 
@@ -111,17 +115,18 @@ Dossier GitHub : [`/tour-du-monde/assets/`](https://github.com/IdGir/escape-game
 
 Dossier GitHub : [`/mission-geo/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree/main/mission-geo/assets)
 
-Ce jeu a **16 séances × plusieurs emplacements** : plutôt qu'un tableau géant,
-la **liste complète et exacte des noms attendus** est dans un fichier texte
-dédié, à consulter avant chaque envoi :
+Ce jeu a **16 séances × plusieurs emplacements** : tout est **à plat**, pas de
+sous-dossiers.
 
-📄 **[`mission-geo/assets/OU-DEPOSER-VOS-MEDIAS.txt`](https://github.com/IdGir/escape-games-cm1-cm2/blob/main/mission-geo/assets/OU-DEPOSER-VOS-MEDIAS.txt)**
+| Sous-dossier | Contenu |
+|---|---|
+| [`mission-geo/assets/videos/`](mission-geo/assets/videos/) | Toutes les vidéos, `<nom>.mp4` |
+| [`mission-geo/assets/images/`](mission-geo/assets/images/) | Toutes les images, `<nom>.jpg` |
 
-En résumé :
-- Vidéos → `mission-geo/assets/videos/<nom>.mp4`
-- Images → `mission-geo/assets/images/<nom>.jpg`
-- Le `<nom>` exact (ex. `s01-intro`, `s02-plan-dijon`, `recompense`…) est donné
-  séance par séance dans le fichier ci-dessus.
+📄 La **liste complète et exacte des noms attendus** (un par séance et par
+emplacement) est dans
+**[`mission-geo/assets/OU-DEPOSER-VOS-MEDIAS.txt`](https://github.com/IdGir/escape-games-cm1-cm2/blob/main/mission-geo/assets/OU-DEPOSER-VOS-MEDIAS.txt)**
+— à consulter avant chaque envoi.
 
 ---
 
