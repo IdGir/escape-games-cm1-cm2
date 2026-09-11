@@ -97,9 +97,20 @@ function afficherLecon(id){
   let docHTML = "";
   if(lecon.document){
     const d = lecon.document;
-    if(d.type==="image" && d.url_wikimedia){
+    if(d.type==="image"){
+      /* Image de document : assets/images/documents/<fichier>.jpg
+         Si le fichier n'existe pas, l'encadré de secours indique à
+         l'enseignant où le déposer et conserve le lien Wikimedia. */
+      const base = d.fichier || lecon.id;
+      const src = encodeURI("assets/images/documents/" + base + ".jpg");
       docHTML = `<h4>📄 Document d'époque</h4><div class="document-epoque">
-        <div class="placeholder-image">🖼️ ${d.titre}<br><span style="font-size:.75rem">Document historique (à intégrer par l'enseignant)</span><br><a href="${d.url_wikimedia}" target="_blank" style="color:var(--bleu);font-size:.8rem">Voir sur Wikimedia →</a></div>
+        <img class="image-document" src="${src}" alt="${d.titre||""}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="placeholder-image" style="display:none">🖼️ ${d.titre||""}<br>
+          <span style="font-size:.75rem">Déposez <code>${base}.jpg</code> dans <code>assets/images/documents/</code></span>
+          ${d.url_wikimedia?`<br><a href="${d.url_wikimedia}" target="_blank" rel="noopener" style="color:var(--bleu);font-size:.8rem">Voir sur Wikimedia &rarr;</a>`:""}
+        </div>
+        <div style="font-weight:bold;margin-top:8px">${d.titre}</div>
         <div class="legende-doc">${d.source}</div>
       </div>`;
     }else if(d.type==="text"){

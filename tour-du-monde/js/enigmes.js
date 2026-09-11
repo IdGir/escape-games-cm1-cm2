@@ -34,24 +34,28 @@ function melanger(tab){ return tab.slice().sort(()=>Math.random()-0.5); }
    Placer les continents et les océans sur la carte du monde.
    ============================================================ */
 
-/* Tracés schématiques du planisphère (viewBox 800 × 400) */
+/* Tracés du planisphère (viewBox 800 × 400).
+   Calibrés sur la vraie carte assets/images/cartes/planisphere.jpg (1920×960,
+   même ratio 2:1 que le viewBox, posée en fond via poserFondCarte avec
+   object-fit:cover) : les zones cliquables tombent donc sur les bons
+   continents de la photo, pas seulement sur le dessin de secours. */
 const FORMES_CARTE = {
-  "amerique-n":  "M70,70 L180,58 L212,96 L188,132 L150,142 L140,182 L118,180 L122,132 L86,110 Z",
-  "amerique-s":  "M150,202 L198,192 L216,224 L204,270 L182,320 L160,300 L152,250 Z",
-  "amerique":    "M70,70 L180,58 L212,96 L188,132 L154,142 L216,224 L204,270 L182,320 L160,300 L150,238 L128,180 L122,132 L86,110 Z",
-  "europe":      "M348,68 L420,62 L432,92 L404,118 L370,114 L350,94 Z",
-  "afrique":     "M356,142 L448,134 L464,180 L436,238 L410,284 L386,258 L372,206 Z",
-  "asie":        "M436,54 L678,50 L702,96 L650,142 L560,170 L494,152 L448,118 L432,84 Z",
-  "oceanie":     "M636,238 L718,230 L732,268 L688,294 L648,280 Z",
-  "antarctique": "M40,362 L762,358 L766,396 L36,398 Z",
+  "amerique-n":  "M0,63 L125,8 L283,58 L346,104 L258,96 L208,175 L146,196 L63,138 L0,92 Z",
+  "amerique-s":  "M200,204 L258,200 L292,225 L275,271 L250,313 L233,354 L217,375 L208,313 L192,250 Z",
+  "amerique":    "M0,63 L125,8 L283,58 L346,104 L292,225 L275,271 L250,313 L233,354 L217,375 L208,313 L192,250 L208,175 L146,196 L63,138 L0,92 Z",
+  "europe":      "M350,92 L400,70 L450,75 L488,104 L482,140 L438,150 L396,129 L358,117 Z",
+  "afrique":     "M375,175 L417,163 L471,160 L513,179 L500,229 L479,271 L450,313 L433,346 L413,313 L396,250 L383,208 Z",
+  "asie":        "M417,167 L479,83 L604,8 L800,8 L800,188 L708,250 L604,271 L521,229 L458,188 Z",
+  "oceanie":     "M692,250 L771,254 L800,271 L800,333 L763,346 L708,333 L688,292 Z",
+  "antarctique": "M0,379 L800,379 L800,398 L0,398 Z",
 };
-/* Océans : zones cliquables en pleine eau */
+/* Océans : zones cliquables en pleine eau, mêmes coordonnées calibrées */
 const OCEANS_CARTE = {
-  "pacifique": {cx:66,  cy:236, rx:50, ry:36},
-  "atlantique":{cx:282, cy:232, rx:44, ry:42},
-  "indien":    {cx:552, cy:262, rx:50, ry:36},
-  "arctique":  {cx:400, cy:26,  rx:96, ry:20},
-  "austral":   {cx:400, cy:334, rx:126,ry:18},
+  "pacifique": {cx:29,  cy:188, rx:27, ry:117},
+  "atlantique":{cx:325, cy:188, rx:29, ry:104},
+  "indien":    {cx:583, cy:292, rx:75, ry:42},
+  "arctique":  {cx:400, cy:10,  rx:375,ry:8},
+  "austral":   {cx:400, cy:373, rx:375,ry:8},
 };
 
 /* Ce qu'il faut placer, selon le niveau */
@@ -152,9 +156,9 @@ function enigme1HTML(){
 /* Centre approximatif d'un tracé, pour y poser l'étiquette */
 function centreForme(id){
   const centres = {
-    "amerique-n":{x:140,y:105},"amerique-s":{x:182,y:252},"amerique":{x:150,y:180},
-    "europe":{x:390,y:94},"afrique":{x:412,y:206},"asie":{x:566,y:104},
-    "oceanie":{x:684,y:264},"antarctique":{x:400,y:382},
+    "amerique-n":{x:159,y:103},"amerique-s":{x:236,y:278},"amerique":{x:190,y:190},
+    "europe":{x:419,y:107},"afrique":{x:439,y:237},"asie":{x:599,y:155},
+    "oceanie":{x:746,y:297},"antarctique":{x:400,y:388},
   };
   return centres[id] || {x:400,y:200};
 }

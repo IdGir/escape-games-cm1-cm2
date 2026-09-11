@@ -34,6 +34,11 @@
         "titre": "Le monde en quatre-vingts jours",
         "contenu": "« Le tour du monde en quatre-vingts jours : Londres — Suez, 7 jours ; Suez — Bombay, 13 jours ; Bombay — Calcutta, 3 jours ; Calcutta — Hong-Kong, 13 jours… Total : quatre-vingts jours. »",
         "source": "Jules Verne, Le Tour du monde en quatre-vingts jours, 1873 (extrait adapté)."
+      },
+      "carte": {
+        "base": "planisphere",
+        "legende": "Le planisphère : continents et océans",
+        "source": ""
       }
     },
     {
@@ -56,6 +61,11 @@
         "titre": "Le sens du voyage",
         "contenu": "« En se dirigeant vers l'est, Phileas Fogg allait au-devant du soleil, et les jours diminuaient pour lui d'autant de fois quatre minutes qu'il franchissait de degrés. »",
         "source": "Jules Verne, chapitre XXXVII."
+      },
+      "carte": {
+        "base": "rose-des-vents",
+        "legende": "La rose des vents et ses 8 directions",
+        "source": ""
       }
     },
     {
@@ -72,6 +82,11 @@
       "contenu": {
         "cm1": "<h4>Ce qu'il y a sur toute carte</h4><div class='encadre'><b>Un titre</b> : de quoi parle la carte.<br><b>Une légende</b> : ce que veulent dire les couleurs et les symboles.<br><b>Une orientation</b> : la flèche du nord.<br><b>Une échelle</b> : combien un centimètre représente en vrai.</div><h4>L'échelle</h4><p>Si l'échelle dit <b>1 cm = 200 km</b>, alors :</p><div class='encadre'>2 cm sur la carte → 2 × 200 = <b>400 km</b> en vrai<br>5 cm sur la carte → 5 × 200 = <b>1 000 km</b> en vrai</div>",
         "cm2": "<h4>Les quatre éléments d'une carte</h4><p><b>Titre</b>, <b>légende</b>, <b>orientation</b>, <b>échelle</b> : sans eux, une carte est illisible.</p><h4>Calculer avec l'échelle</h4><p>L'échelle exprime un rapport entre la carte et la réalité.</p><div class='encadre'><b>distance réelle = mesure sur la carte × échelle</b><br>Exemple : 12 cm × 200 km = <b>2 400 km</b>.<br><br>Et dans l'autre sens :<br><b>mesure sur la carte = distance réelle ÷ échelle</b><br>Exemple : 4 400 km ÷ 200 = <b>22 cm</b>.</div><p>Une échelle peut aussi s'écrire sous forme de fraction, comme <b>1/20 000 000</b> : 1 cm sur la carte vaut alors 20 000 000 cm en vrai, soit 200 km.</p>"
+      },
+      "carte": {
+        "base": "carte-exemple-echelle",
+        "legende": "Une carte avec titre, légende, orientation et échelle",
+        "source": ""
       }
     },
     {
@@ -88,6 +103,11 @@
       "contenu": {
         "cm1": "<h4>Trois grandes zones</h4><div class='encadre'><b>🔥 La zone chaude</b> — autour de l'équateur. Il y fait chaud toute l'année.<br><b>🌤️ Les zones tempérées</b> — entre les tropiques et les cercles polaires. Il y a quatre saisons. La France s'y trouve.<br><b>❄️ Les zones froides</b> — autour des pôles. Il y fait froid presque toute l'année.</div><h4>Des paysages différents</h4><p>🏜️ <b>Le désert</b> : très chaud, presque jamais de pluie.<br>🌴 <b>La forêt tropicale</b> : chaude et très humide.<br>🏔️ <b>La montagne</b> : plus on monte, plus il fait froid.<br>🧊 <b>La banquise</b> : de la glace toute l'année.</p>",
         "cm2": "<h4>Latitude et altitude : les deux clés</h4><p>Le climat d'un lieu dépend surtout de deux choses : sa <b>latitude</b> (sa distance à l'équateur) et son <b>altitude</b> (sa hauteur au-dessus de la mer).</p><table><tr><th>Climat</th><th>Caractéristiques</th><th>Exemple</th></tr><tr><td>Équatorial</td><td>Chaud et humide toute l'année</td><td>Forêt de l'Amazonie</td></tr><tr><td>Tropical</td><td>Saison sèche / saison des pluies</td><td>Savane africaine</td></tr><tr><td>Aride</td><td>Chaud, presque sans pluie</td><td>Sahara</td></tr><tr><td>Tempéré océanique</td><td>Doux et pluvieux</td><td>Angleterre, Bretagne</td></tr><tr><td>Montagnard</td><td>Froid dû à l'altitude</td><td>Himalaya, Alpes</td></tr><tr><td>Polaire</td><td>Glacé toute l'année</td><td>Antarctique</td></tr></table><div class='encadre'>En montagne, la température baisse d'environ <b>0,6 °C tous les 100 mètres</b> d'altitude : voilà pourquoi il y a de la neige au sommet, même en Inde.</div>"
+      },
+      "carte": {
+        "base": "carte-climats-monde",
+        "legende": "Les grandes zones climatiques du monde",
+        "source": ""
       }
     },
     {
@@ -118,7 +138,12 @@
           "date": "1914",
           "evt": "Ouverture du canal de Panama"
         }
-      ]
+      ],
+      "carte": {
+        "base": "carte-canaux-detroits",
+        "legende": "Les grands canaux et détroits du monde",
+        "source": ""
+      }
     },
     {
       "id": "fuseaux",
@@ -150,6 +175,11 @@
         "titre": "Le jour gagné",
         "contenu": "« Il y a trois cent soixante degrés sur la circonférence terrestre, et ces trois cent soixante degrés, multipliés par quatre minutes, donnent précisément vingt-quatre heures — c'est-à-dire ce jour inconsciemment gagné. »",
         "source": "Jules Verne, Le Tour du monde en quatre-vingts jours, chapitre XXXVII."
+      },
+      "carte": {
+        "base": "carte-fuseaux-horaires",
+        "legende": "Carte des fuseaux horaires du monde",
+        "source": ""
       }
     }
   ]

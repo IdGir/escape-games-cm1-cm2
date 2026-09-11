@@ -7,7 +7,7 @@ vidéo n'est présente.
 
 | Fichier attendu | Contenu | Statut |
 |---|---|---|
-| `salle1.jpg` | Cour du Palais-Royal sous la pluie | à déposer *(vidéo déjà en ligne)* |
+| `salle1.jpg` | Cour du Palais-Royal sous la pluie | à déposer |
 | `salle2.jpg` | Imprimerie clandestine à la bougie | à déposer |
 | `salle3.jpg` | Jardin des Tuileries ensoleillé | à déposer |
 | `salle4.png` | Place de la Bastille fumante | ✅ déjà en ligne |
