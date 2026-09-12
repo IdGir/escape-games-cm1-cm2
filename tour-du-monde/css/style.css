@@ -243,6 +243,12 @@ label{font-weight:bold;color:var(--abysse-2);display:block;margin-bottom:5px;fon
   background:rgba(4,12,20,.5);padding:4px 11px;border-radius:14px;
   border:1px solid rgba(232,191,114,.25);backdrop-filter:blur(2px);
 }
+/* Décor filmé ou illustré réel : le bandeau lieu/description/mots-clés,
+   pensé pour compenser le dessin schématique, ferait double emploi et
+   ressemblerait à un texte incrusté par une IA. On le masque. */
+.scene.a-media .lieu,
+.scene.a-media .description,
+.scene.a-media .sens{display:none}
 /* Cartouche « coordonnées » façon carnet de bord */
 .scene .coordonnees{
   position:absolute;top:12px;right:14px;z-index:2;

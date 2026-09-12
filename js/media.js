@@ -377,6 +377,11 @@ async function installerDecor(sceneEl, base){
     img.setAttribute("aria-hidden", "true");
     sceneEl.insertBefore(img, sceneEl.firstChild);
     if(fallback) fallback.style.display = "none";
+    // Le bandeau lieu/description/mots-clés est pensé pour compenser le
+    // dessin schématique : posé sur une vraie photo, il fait doublon et
+    // ressemble à un texte incrusté par une IA. On le masque (voir CSS
+    // .scene.a-media), l'image se suffisant à elle-même.
+    sceneEl.classList.add("a-media");
     marquerSource(sceneEl, "décor illustré");
     return;
   }
@@ -398,12 +403,14 @@ async function installerDecor(sceneEl, base){
   v.addEventListener("loadeddata", ()=>{
     v.dataset.pret = "oui";
     if(fallback) fallback.style.display = "none";
+    sceneEl.classList.add("a-media");
   }, {once:true});
 
   // Si le fichier casse en cours de route, on retombe sur le SVG
   v.addEventListener("error", ()=>{
     v.remove();
     if(fallback) fallback.style.display = "block";
+    sceneEl.classList.remove("a-media");
     marquerSource(sceneEl, "décor dessiné");
   }, {once:true});
 
