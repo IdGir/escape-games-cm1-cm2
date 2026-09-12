@@ -149,8 +149,21 @@ const DONNEES_FALLBACK = {
   ]
 };
 
+/* ---- Mode vérification (enseignant) ----
+   index.html?salle=3&niveau=CM1 ouvre directement la salle 3 (salle=6 :
+   écran de fin), sans nom d'équipe. Rien n'est sauvegardé ni envoyé au
+   tableau de bord : une partie en cours sur ce poste reste intacte.
+   Les liens sont prêts dans verifier.html, à la racine du projet. */
+const VERIF = (()=>{
+  const p = new URLSearchParams(location.search);
+  const n = parseInt(p.get("salle"), 10);
+  if(!(n >= 1 && n <= 6)) return null;
+  return { salle:n, niveau: p.get("niveau") === "CM1" ? "CM1" : "CM2" };
+})();
+
 /* ---- Sauvegarde / chargement partie ---- */
 function sauvegarder(){
+  if(VERIF) return;
   try{ localStorage.setItem(CLE_SAUVEGARDE, JSON.stringify(ETAT)); }catch(e){}
 }
 function chargerPartie(){
@@ -328,7 +341,8 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     ETAT.debut = Date.now();
     ETAT.salleDebut = Date.now();
     ETAT.msEcoules = 0;
-    entrerDansLeJeu(false);
+    // Cinématique d'ouverture, si l'enseignant a fourni intro.mp4
+    lancerCine("intro", "Paris, août 1789", ()=>entrerDansLeJeu(false));
   });
   // Boutons HUD (pause / reprendre / leçons / réglages)
   document.getElementById("btn-pause").addEventListener("click", ()=>{
@@ -345,6 +359,17 @@ document.addEventListener("DOMContentLoaded", async ()=>{
   document.getElementById("btn-lecons").addEventListener("click", ouvrirBiblioLecons);
   document.getElementById("btn-reglages").addEventListener("click", ouvrirReglages);
   verifierPret();
+
+  if(VERIF){
+    ETAT.equipe = "Vérification";
+    ETAT.niveau = VERIF.niveau;
+    ETAT.salle = VERIF.salle;
+    ETAT.debut = ETAT.salleDebut = Date.now();
+    ETAT.msEcoules = 0;
+    entrerDansLeJeu(false);
+    toast("🔍 Mode vérification · " + VERIF.niveau + " · rien n'est sauvegardé");
+    return;
+  }
 
   // ===== Gestion de la reprise d'une partie en cours =====
   let partieEnCours = null;
@@ -381,6 +406,15 @@ function verifierPret(){
   document.getElementById("btn-demarrer").disabled = !ok;
 }
 
+/* Joue une cinématique si elle est autorisée et disponible ; sinon enchaîne. */
+function lancerCine(base, titre, suite){
+  if(ETAT.reglages.cinematiques !== false && typeof jouerCinematique === "function"){
+    jouerCinematique({base, titre, onFin:suite});
+  }else{
+    suite();
+  }
+}
+
 function appliquerReglages(){
   document.documentElement.style.setProperty("--taille-texte", ETAT.reglages.tailleTexte+"rem");
   setNarrationActif(ETAT.reglages.narrationActive);
@@ -408,7 +442,7 @@ function entrerDansLeJeu(reprise){
   afficherSalle(ETAT.salle);
   if(reprise) toast("Partie reprise ✓");
   // Démarrer la synchronisation avec le serveur prof (si présent)
-  if(typeof demarrerSync === "function") demarrerSync();
+  if(!VERIF && typeof demarrerSync === "function") demarrerSync();
 }
 
 /* ============================================================
@@ -504,7 +538,8 @@ function validerSalle(n){
   if(n === 5){
     confettis(60);
     sauvegarder();
-    setTimeout(()=>finDuJeu(), 1200);
+    // Cinématique de fin, si l'enseignant a fourni final.mp4
+    setTimeout(()=>lancerCine("final", "L'article secret", finDuJeu), 1200);
     return;
   }
 

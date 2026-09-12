@@ -360,6 +360,17 @@ const APP = (function(){
     id("modale").addEventListener("click", e => { if(e.target.id === "modale") fermerModale(); });
     document.addEventListener("keydown", e => { if(e.key === "Escape") fermerModale(); });
 
+    /* Mode vérification : ?seance=5 (ou s05) ouvre la séance directement,
+       ?seance=final ouvre la piste finale. Voir sauvegarde.js. */
+    const verif = new URLSearchParams(location.search).get("seance");
+    if(verif){
+      afficherEcran("carnet");
+      if(verif === "final") id("btn-valise").click();
+      else ouvrirSession(/^\d+$/.test(verif) ? "s" + verif.padStart(2, "0") : verif);
+      message("🔍 Mode vérification : rien n'est enregistré sur ce poste.");
+      return;
+    }
+
     afficherEcran(etat.equipe ? "carnet" : "accueil");
   }
 

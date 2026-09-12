@@ -4,9 +4,7 @@ title Escape Games pedagogiques - Serveur local
 cls
 echo.
 echo  ============================================================
-echo    ESCAPE GAMES PEDAGOGIQUES - Lancement - CM1/CM2
-echo      1. Le Secret de la Declaration  (Histoire - Revolution)
-echo      2. Le Tour du Monde en 80 minutes  (Geographie - Jules Verne)
+echo    ESCAPE GAMES PEDAGOGIQUES - CM1/CM2 - Serveur local
 echo  ============================================================
 echo.
 echo  Verification de Python...
@@ -28,8 +26,8 @@ echo  [ERREUR] Python n'est pas installe ou pas dans le PATH.
 echo.
 echo  Solutions :
 echo    1. Installer Python : https://www.python.org/downloads/
-echo    2. OU ouvrir directement index.html en double-clic (mode autonome)
-echo       ATTENTION : les decors VIDEO exigent le serveur (double-clic = decors dessines)
+echo       (cocher "Add Python to PATH" pendant l'installation)
+echo    2. OU jouer en ligne : https://idgir.github.io/escape-games-cm1-cm2/
 echo.
 pause
 exit /b 1
@@ -38,16 +36,16 @@ exit /b 1
 echo  Python detecte :
 %CMD% --version
 echo.
-echo  Demarrage du serveur sur le port 8000...
+echo  ^>^> ACCUEIL (les 3 jeux + page de verification) :
+echo      http://127.0.0.1:8000/
 echo.
-echo  ^>^> POSTES ELEVES :
-echo      Histoire     : http://127.0.0.1:8000/
-echo      Geographie   : http://127.0.0.1:8000/tour-du-monde/
-echo      Mission geo  : http://127.0.0.1:8000/mission-geo/
+echo  ^>^> JEUX :
+echo      Le Secret de la Declaration : http://127.0.0.1:8000/declaration/
+echo      Le Tour du Monde            : http://127.0.0.1:8000/tour-du-monde/
+echo      Mission geographique        : http://127.0.0.1:8000/mission-geo/
 echo.
-echo  ^>^> TABLEAUX DE BORD ENSEIGNANT :
-echo      Histoire     : http://127.0.0.1:8000/prof.html
-echo      Geographie   : http://127.0.0.1:8000/tour-du-monde/prof.html
+echo  ^>^> VERIFICATION (medias + acces direct aux enigmes) :
+echo      http://127.0.0.1:8000/verifier.html
 echo.
 echo  Fermez cette fenetre pour arreter le serveur.
 echo.

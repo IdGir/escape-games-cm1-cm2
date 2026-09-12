@@ -8,10 +8,6 @@
         VIDÉO  assets/videos/salle1.mp4   (ou .webm)
      →  IMAGE  assets/images/decors/salle1.png
      →  SVG    dessiné ci-dessous
-
-   Le dossier « Elements EG/Revolution fr/ » est également exploré,
-   et le fichier « Paris 1789.mp4 » y est reconnu comme décor de la
-   salle 1 (voir la table ALIAS dans js/media.js).
    ============================================================ */
 
 /**

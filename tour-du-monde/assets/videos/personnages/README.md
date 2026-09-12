@@ -1,19 +1,9 @@
 # 🎥 Personnages filmés — Le Tour du Monde en 80 minutes
 
-Vidéo en boucle, cadre **170 × 262 px** (portrait vertical, plein corps),
-jouée **muette** (la voix vient de la synthèse vocale).
+Boucles muettes, cadre 170 × 262 px (portrait vertical, plein corps), `.mp4` ou `.webm` :
+`fogg.mp4` · `passepartout.mp4` · `aouda.mp4` · `fix.mp4`
 
-| Fichier | Personnage |
-|---|---|
-| `fogg.mp4` | Phileas Fogg |
-| `passepartout.mp4` | Jean Passepartout |
-| `aouda.mp4` | Mrs Aouda |
-| `fix.mp4` | L'inspecteur Fix |
+Variante facultative « en train de parler » : `fogg-parle.mp4`, etc.
 
-**Variante « en train de parler » (optionnelle)** : ajoutez `fogg-parle.mp4`,
-etc. Le jeu bascule dessus tout seul pendant que le personnage parle, puis
-revient à la boucle de repos.
-
-Sans fichier, le jeu essaie une image dans
-[`../../images/personnages/`](../../images/personnages/), puis retombe sur
-le personnage dessiné animé.
+Liste complète des médias du jeu : [`../../README.md`](../../README.md) ·
+état en direct : [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#tour-du-monde)

@@ -61,7 +61,27 @@ const SAUVEGARDE = (function(){
 
   let etat = neuf();
 
+  /* Mode vérification (enseignant) : index.html?seance=5 ouvre la séance 5
+     sur un carnet vierge, en ordre libre, et n'écrit RIEN : la progression
+     annuelle de la classe reste intacte sur ce poste. Les réglages, repères
+     locaux et récompense déjà saisis sont relus pour un rendu fidèle. */
+  const VERIF = new URLSearchParams(location.search).has("seance");
+
   function charger(){
+    if(VERIF){
+      etat = neuf();
+      try{
+        const lu = JSON.parse(localStorage.getItem(CLE) || "null");
+        if(lu){
+          Object.assign(etat.reglages, lu.reglages || {});
+          Object.assign(etat.profil, lu.profil || {});
+          Object.assign(etat.recompense, lu.recompense || {});
+        }
+      }catch(e){}
+      etat.equipe = "Vérification";
+      etat.reglages.ordreLibre = true;
+      return etat;
+    }
     try{
       const brut = localStorage.getItem(CLE);
       if(brut){
@@ -79,6 +99,7 @@ const SAUVEGARDE = (function(){
   }
 
   function enregistrer(){
+    if(VERIF) return;
     try{ localStorage.setItem(CLE, JSON.stringify(etat)); }
     catch(e){ console.warn("Impossible d'enregistrer la progression.", e); }
   }

@@ -114,7 +114,7 @@ async function poll(){
     const miennes = (data.equipes || []).filter(e => e.jeu !== "tour-du-monde");
     afficher(miennes);
   }catch(e){
-    document.getElementById("corps-equipes").innerHTML = '<tr><td colspan="9" class="vide">⚠️ Serveur non joignable. Lancez d\'abord le serveur local (serveur.py) ou ouvrez ce fichier via <code>http://127.0.0.1:8000/prof.html</code>.</td></tr>';
+    document.getElementById("corps-equipes").innerHTML = '<tr><td colspan="9" class="vide">⚠️ Serveur non joignable. Lancez d\'abord le serveur local (lancer.bat) ou ouvrez ce fichier via <code>http://127.0.0.1:8000/declaration/prof.html</code>.</td></tr>';
   }
 }
 async function chargerInfo(){

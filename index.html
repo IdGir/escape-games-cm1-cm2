@@ -1,244 +1,123 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content="Le Secret de la Déclaration — Escape game immersif sur la Révolution française pour CM1-CM2">
-<title>Le Secret de la Déclaration — Escape Game</title>
-<link rel="stylesheet" href="css/style.css?v9">
-<link rel="stylesheet" href="css/video.css?v8">
-<link rel="stylesheet" href="css/animations.css?v7">
-<link rel="stylesheet" href="css/personnages.css?v7">
-<link rel="stylesheet" href="css/print.css?v7">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escape games pédagogiques — CM1 · CM2</title>
+<meta name="description" content="Trois escape games pédagogiques d'histoire et de géographie pour le CM1 et le CM2.">
+<style>
+  :root{
+    --fond:#f6f4ef; --papier:#fff; --encre:#1f2430; --doux:#5d6472; --ligne:#e2ddd2;
+    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header{text-align:center;padding:42px 20px 18px}
+  header h1{margin:0;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.01em}
+  header p{margin:6px 0 0;color:var(--doux)}
+  main{max-width:1100px;margin:0 auto;padding:10px 20px 40px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+  .jeu{background:var(--papier);border:1px solid var(--ligne);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .jeu .bandeau{padding:22px 22px 16px;color:#fff}
+  .jeu .bandeau .icone{font-size:2.4rem;line-height:1}
+  .jeu h2{margin:8px 0 2px;font-size:1.3rem}
+  .jeu .meta{font-size:.88rem;opacity:.9}
+  .jeu .corps{padding:16px 22px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .jeu .corps p{margin:0;color:var(--doux);font-size:.95rem}
+  .jouer{display:block;text-align:center;padding:13px;border-radius:12px;color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;margin-top:auto}
+  .jouer:hover{filter:brightness(1.08)}
+  .liens{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.88rem}
+  .liens a{color:var(--doux)}
+  .declaration .bandeau{background:linear-gradient(135deg,var(--decl),#13286b 60%,var(--decl-2))}
+  .declaration .jouer{background:var(--decl)}
+  .tour .bandeau{background:linear-gradient(135deg,var(--tdm),#082f38 60%,var(--tdm-2))}
+  .tour .jouer{background:var(--tdm)}
+  .mission .bandeau{background:linear-gradient(135deg,var(--mg),#1d4526 60%,var(--mg-2))}
+  .mission .jouer{background:var(--mg)}
+  .enseignant{max-width:1100px;margin:0 auto 50px;padding:0 20px}
+  .enseignant .boite{background:var(--papier);border:1px solid var(--ligne);border-radius:16px;padding:18px 22px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+  .enseignant h3{margin:0;font-size:1.05rem}
+  .enseignant p{margin:2px 0 0;color:var(--doux);font-size:.9rem}
+  .bouton{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--encre);color:#fff;text-decoration:none;font-weight:600}
+  .bouton.clair{background:#ecE9e2;color:var(--encre)}
+  .boutons{display:flex;flex-wrap:wrap;gap:8px}
+  [hidden]{display:none!important}
+</style>
 </head>
 <body>
-<div class="drapeau"></div>
-<div id="app">
 
-  <!-- ============ HUD ============ -->
-  <div class="hud" id="hud" style="display:none">
-    <div class="hud-gauche">🏛️ Le Secret de la Déclaration <span style="opacity:.5;font-size:.7rem;font-weight:normal">v7</span></div>
-    <div class="hud-droite">
-      <div class="stat" title="Équipe">👤 <b id="hud-eq-nom">—</b></div>
-      <div class="stat temps" id="hud-temps" title="Temps écoulé">⏱️ <b id="hud-min">00</b>:<b id="hud-sec">00</b></div>
-      <div class="stat" title="Score">⭐ <b id="hud-score-val">0</b></div>
-      <div class="stat" title="Fragments récupérés">📜 <b id="hud-frag-val">0</b>/4</div>
-      <button class="hud-bouton" id="btn-lecons" title="Bibliothèque de leçons">📚 Leçons</button>
-      <button class="hud-bouton" id="btn-reglages" title="Réglages">⚙️</button>
-      <button class="hud-bouton" id="btn-pause" title="Mettre en pause">⏸</button>
+<header>
+  <h1>🎓 Escape games pédagogiques</h1>
+  <p>CM1 · CM2 — Histoire et géographie</p>
+</header>
+
+<main>
+  <article class="jeu declaration">
+    <div class="bandeau">
+      <div class="icone">🏛️</div>
+      <h2>Le Secret de la Déclaration</h2>
+      <div class="meta">Histoire · Révolution française · 45 à 60 min · 5 salles</div>
+    </div>
+    <div class="corps">
+      <p>Paris, août 1789 : un article secret de la Déclaration des droits de l'homme a été volé. Quatre fragments à retrouver.</p>
+      <a class="jouer" href="declaration/">▶ Jouer</a>
+      <div class="liens">
+        <a class="prof" href="declaration/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/main/declaration#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="jeu tour">
+    <div class="bandeau">
+      <div class="icone">🧭</div>
+      <h2>Le Tour du Monde en 80 minutes</h2>
+      <div class="meta">Géographie · d'après Jules Verne · 5 escales</div>
+    </div>
+    <div class="corps">
+      <p>Le carnet de route de Phileas Fogg a disparu. Cinq escales, cinq énigmes de géographie, et le mystère du 80ᵉ jour.</p>
+      <a class="jouer" href="tour-du-monde/">▶ Jouer</a>
+      <div class="liens">
+        <a class="prof" href="tour-du-monde/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/main/tour-du-monde#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="jeu mission">
+    <div class="bandeau">
+      <div class="icone">🗺️</div>
+      <h2>Mission géographique — Année A</h2>
+      <div class="meta">Géographie · toute l'année · 16 séances</div>
+    </div>
+    <div class="corps">
+      <p>Une valise volée, seize séances pour réunir les indices, une piste finale en Corse et une récompense mystère.</p>
+      <a class="jouer" href="mission-geo/">▶ Jouer</a>
+      <div class="liens">
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/main/mission-geo#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<section class="enseignant">
+  <div class="boite">
+    <div>
+      <h3>👩‍🏫 Espace enseignant</h3>
+      <p>Tester n'importe quelle énigme, voir tous les médias et ce qui manque, déposer un fichier.</p>
+    </div>
+    <div class="boutons">
+      <a class="bouton" href="verifier.html">🔍 Vérifier les jeux</a>
+      <a class="bouton clair" href="https://github.com/IdGir/escape-games-cm1-cm2#readme" target="_blank" rel="noopener">📁 Documentation</a>
     </div>
   </div>
+</section>
 
-  <!-- ============ ÉCRAN ACCUEIL ============ -->
-  <section class="ecran actif" id="ecran-accueil">
-    <div class="carte">
-      <h1><span class="bleu">Le Secret</span> de la <span class="rouge">Déclaration</span></h1>
-      <p class="sstitre">~ Escape game immersif sur la Révolution française · 1789 ~</p>
-
-      <div class="scene scene--media" id="scene-accueil" data-media="salle1">
-        <div class="decor-fallback"></div>
-        <div class="decor-overlay"></div>
-        <div class="decor-contenu">
-          <span class="lieu">📜 Paris, le 26 août 1789</span>
-          <p class="description">Il y a quelques jours, l'Assemblée nationale a adopté la <b>Déclaration des droits de l'homme et du citoyen</b>. Mais un <b>article secret</b>, jamais rendu public, a été dérobé dans la nuit… S'il tombait entre de mauvaises mains, il pourrait changer le cours de l'Histoire !</p>
-        </div>
-      </div>
-
-      <div class="personnage-scene entrer" style="margin-top:18px">
-        <div class="portrait" id="portrait-intro"></div>
-        <div class="bulle">
-          <div class="nom-perso">Maximilien</div>
-          <div class="texte" id="intro-texte"></div>
-          <div class="controles-voix">
-            <button class="btn petit or" id="btn-intro-ecouter">🔊 Écouter</button>
-          </div>
-        </div>
-      </div>
-
-      <hr style="border:none;border-top:2px dotted var(--parchemin-ombre);margin:22px 0">
-
-      <h3 style="text-align:center">👤 Votre équipe</h3>
-      <input type="text" id="input-equipe" placeholder="Nom de votre équipe (ex. : Les Patriotes)" maxlength="24" autocomplete="off">
-
-      <h3 style="text-align:center;margin-top:20px">🎯 Votre niveau</h3>
-      <div class="choix-niveau">
-        <div class="opt-niveau" data-niveau="CM1">
-          <div class="gros">CM1</div>
-          <div class="petit">Textes plus courts, lettres en couleur, énigmes à 3-4 éléments</div>
-        </div>
-        <div class="opt-niveau" data-niveau="CM2">
-          <div class="gros">CM2</div>
-          <div class="petit">Textes plus denses, déduction, énigmes à 5-6 éléments, frises chronologiques</div>
-        </div>
-      </div>
-
-      <div class="boutons">
-        <button class="btn grand bleu" id="btn-demarrer" disabled>🚀 Commencer l'aventure</button>
-      </div>
-
-      <hr style="border:none;border-top:1px dotted var(--parchemin-ombre);margin:18px 0">
-
-      <details style="text-align:center;font-size:.85rem;opacity:.75">
-        <summary style="cursor:pointer;font-weight:bold;color:var(--bleu-fonce)">🔧 Problème pour démarrer ? (cliquez ici)</summary>
-        <div style="margin-top:12px;padding:12px;background:#fff8e6;border-radius:10px;border:1px solid var(--parchemin-ombre)">
-          <p style="margin:0 0 10px">Si le jeu ne fonctionne pas correctement, ou si vous arrivez directement à la fin, c'est qu'une ancienne partie est restée en mémoire. Cliquez ci-dessous pour tout effacer et repartir à zéro :</p>
-          <button class="btn gris" id="btn-reset-total">🗑️ Effacer ma sauvegarde et recommencer</button>
-          <p id="reset-msg" style="margin-top:8px;color:var(--vert);font-weight:bold"></p>
-        </div>
-      </details>
-
-      <p class="sr-only" id="msg-accueil" role="status"></p>
-    </div>
-  </section>
-
-  <!-- ============ CONTENEUR SALLES ============ -->
-  <section class="ecran" id="ecran-salle">
-    <div class="carte" id="salle-contenu"></div>
-  </section>
-
-  <!-- ============ ÉCRAN PAUSE ============ -->
-  <section class="ecran" id="ecran-pause">
-    <div class="carte center">
-      <h2>⏸ Partie en pause</h2>
-      <p style="font-size:1.1rem">Le temps est suspendu. Revenez quand vous êtes prêts !</p>
-      <p style="opacity:.7;font-style:italic">Astuce : profitez-en pour réfléchir ensemble à voix haute, ou consultez les leçons 📚.</p>
-      <div class="boutons">
-        <button class="btn vert grand" id="btn-reprendre">▶️ Reprendre l'aventure</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ÉCRAN FINAL ============ -->
-  <section class="ecran" id="ecran-fin">
-    <div class="carte" id="fin-contenu"></div>
-  </section>
-
-</div>
-
-<!-- ============ MODALS (leçons, réglages) ============ -->
-<div class="overlay-modal" id="overlay-lecons">
-  <div class="modal" id="modal-lecons">
-    <div class="modal-tete">
-      <h3>📚 Bibliothèque de leçons</h3>
-      <button class="fermer" data-close="overlay-lecons" aria-label="Fermer">✕</button>
-    </div>
-    <div class="modal-corps" id="corps-lecons"></div>
-  </div>
-</div>
-
-<div class="overlay-modal" id="overlay-reglages">
-  <div class="modal" id="modal-reglages">
-    <div class="modal-tete">
-      <h3>⚙️ Réglages</h3>
-      <button class="fermer" data-close="overlay-reglages" aria-label="Fermer">✕</button>
-    </div>
-    <div class="modal-corps" id="corps-reglages"></div>
-  </div>
-</div>
-
-<!-- ============ CINÉMATIQUE PLEIN ÉCRAN ============
-     Rempli dynamiquement par js/media.js. Reste vide (et invisible)
-     tant qu'aucune vidéo n'a été déposée par l'enseignant. -->
-<div class="overlay-cine" id="overlay-cine"></div>
-
-<!-- ============ Scripts (balises statiques : garantissent l'ordre de chargement) ============ -->
-<script src="js/portraits.js?v7"></script>
-<!-- personnages.js DOIT être chargé après portraits.js : il remplace
-     htmlPortrait() par la version plein corps animée -->
-<script src="js/personnages.js?v7"></script>
-<!-- media.js APRES personnages.js : il remplace activerPortrait()
-     par la cascade video/image des personnages -->
-<script src="js/media.js?v9"></script>
-<script src="js/audio.js?v7"></script>
-<script src="js/decors.js?v7"></script>
-<script src="js/narration.js?v7"></script>
-<script src="js/enigmes.js?v7"></script>
-<script src="js/lecons.js?v8"></script>
-<script src="js/impression.js?v7"></script>
-<script src="js/api.js?v7"></script>
-<script src="js/sync.js?v7"></script>
-<script src="js/reglages.js?v7"></script>
-<script src="js/app.js?v7"></script>
 <script>
-  // Initialisation de l'écran d'accueil : portrait de Maximilien + texte d'intro
-  // On utilise une fonction nommée appelée soit au DOMContentLoaded, soit immédiatement
-  // si le DOM est déjà prêt (au cas où les scripts externes auraient déjà déclenché l'événement).
-  function initialiserAccueil(){
-    // Décor de l'accueil : SVG immédiat, puis vidéo/image si disponible
-    const sc = document.getElementById("scene-accueil");
-    if(sc){
-      const fb = sc.querySelector(".decor-fallback");
-      if(fb && typeof SVG_DECORS === "object") fb.innerHTML = SVG_DECORS["palais-royal"];
-      if(typeof installerDecor === "function") installerDecor(sc, "salle1");
-    }
-
-    const p = document.getElementById("portrait-intro");
-    if(!p) return; // garde-fou
-    if(typeof htmlPortrait !== "function"){
-      console.error("htmlPortrait indisponible — portraits.js non chargé");
-      return;
-    }
-    p.innerHTML = htmlPortrait("maximilien");
-    activerPortrait(p.querySelector(".portrait-conteneur"));
-    const texteIntro = "Apprentis, écoutez. Je suis Maximilien, avocat. La Déclaration que nous venons d'adopter est notre plus grand espoir. Mais un article secret a été volé. Retrouvez les quatre fragments. Le sort de la liberté est entre vos mains.";
-    machineEcrire(document.getElementById("intro-texte"), texteIntro);
-    const btnEcouter = document.getElementById("btn-intro-ecouter");
-    if(btnEcouter) btnEcouter.addEventListener("click", ()=>{
-      if("speechSynthesis" in window){
-        speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(texteIntro);
-        u.lang = "fr-FR";
-        u.rate = 0.92;
-        const sc = document.querySelector("#ecran-accueil .personnage-scene");
-        const portrait = sc && sc.querySelector(".portrait");
-        u.onstart = ()=>{
-          if(portrait){
-            portrait.classList.add("parle");
-            // Maximilien salue, puis pointe vers l'élève à la fin de sa harangue
-            if(typeof geste === "function"){
-              geste(portrait, "salue", 1800);
-              setTimeout(()=>geste(portrait, "pointe", 2000), 6000);
-            }
-          }
-        };
-        u.onend = ()=>{ if(portrait) portrait.classList.remove("parle"); };
-        speechSynthesis.speak(u);
-      }
-    });
-    // Fermeture modals
-    document.querySelectorAll(".fermer").forEach(b=>{
-      b.addEventListener("click", ()=>document.getElementById(b.dataset.close).classList.remove("show"));
-    });
-    document.querySelectorAll(".overlay-modal").forEach(o=>{
-      o.addEventListener("click", e=>{ if(e.target===o) o.classList.remove("show"); });
-    });
-    // Échap pour fermer
-    document.addEventListener("keydown", e=>{
-      if(e.key==="Escape") document.querySelectorAll(".overlay-modal.show").forEach(o=>o.classList.remove("show"));
-    });
-
-    // Bouton de réinitialisation total (accessible sans F12)
-    const btnReset = document.getElementById("btn-reset-total");
-    if(btnReset){
-      btnReset.addEventListener("click", ()=>{
-        if(confirm("Voulez-vous vraiment effacer la sauvegarde ? Cela supprimera la partie en cours et vous permettra de recommencer à zéro.")){
-          try{
-            localStorage.removeItem("escape_declaration_v2");
-            localStorage.removeItem("escape_app_version");
-            localStorage.removeItem("escape_reglages");
-          }catch(e){}
-          const msg = document.getElementById("reset-msg");
-          msg.textContent = "✅ Sauvegarde effacée. La page va recharger…";
-          setTimeout(()=>location.reload(), 1200);
-        }
-      });
-    }
-  }
-  if(document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", initialiserAccueil);
-  }else{
-    initialiserAccueil();
-  }
+  /* Les tableaux de bord suivent les équipes en direct : ils n'existent
+     qu'avec le serveur local (lancer.bat). On ne les montre que s'il répond. */
+  fetch("/api/info", {cache:"no-store"})
+    .then(r => { if(r.ok) document.querySelectorAll(".prof").forEach(a => a.hidden = false); })
+    .catch(() => {});
 </script>
 </body>
 </html>

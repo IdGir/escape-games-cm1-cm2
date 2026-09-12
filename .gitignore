@@ -11,13 +11,12 @@ __pycache__/
 *.swp
 .vscode/
 
-# ---- Documents source volumineux (gardes en local) ----
+# ---- Documents source volumineux (gardés en local, dans mission-geo/) ----
 Mission géographique Année A.pdf
 
-# ---- Outils de developpement locaux ----
+# ---- Outils de développement locaux ----
 .claude/
 
 # ---- Médias des jeux ----
-# Tous les dossiers assets/videos et assets/images (des 3 jeux) sont suivis
-# normalement : un fichier déposé au bon endroit est automatiquement publié
-# au prochain push. Voir le README de chaque dossier pour les noms attendus.
+# Les dossiers <jeu>/assets/ sont suivis normalement : un fichier déposé au
+# bon endroit est publié au prochain push. Noms attendus : <jeu>/assets/README.md

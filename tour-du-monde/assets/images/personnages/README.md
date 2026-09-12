@@ -1,16 +1,9 @@
-# 🎭 Portraits des personnages — Le Tour du Monde en 80 minutes
+# 🎭 Portraits — Le Tour du Monde en 80 minutes
 
-Format **carré (1:1)**, `.png` (fond transparent recommandé), `.jpg`, `.webp`
-ou `.gif` animé.
+`.png` à fond transparent de préférence (`.gif` animé, `.webp`, `.jpg` acceptés) :
+`fogg.png` · `passepartout.png` · `aouda.png` · `fix.png`
 
-| Fichier attendu | Personnage |
-|---|---|
-| `fogg.png` | Phileas Fogg |
-| `passepartout.png` | Jean Passepartout |
-| `aouda.png` | Mrs Aouda |
-| `fix.png` | L'inspecteur Fix |
+Pour un personnage filmé : [`../../videos/personnages/`](../../videos/personnages/).
 
-Sans fichier, le jeu affiche son personnage dessiné animé à la place.
-
-Pour un personnage **filmé** (vidéo en boucle) plutôt qu'une image fixe,
-voir [`../../videos/personnages/`](../../videos/personnages/).
+Liste complète des médias du jeu : [`../../README.md`](../../README.md) ·
+état en direct : [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#tour-du-monde)

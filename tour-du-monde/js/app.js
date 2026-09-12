@@ -154,8 +154,21 @@ const DONNEES_FALLBACK = {
   ]
 };
 
+/* ---- Mode vérification (enseignant) ----
+   index.html?salle=3&niveau=CM1 ouvre directement l'escale 3 (salle=6 :
+   écran de fin), sans nom d'équipe. Rien n'est sauvegardé ni envoyé au
+   tableau de bord : un voyage en cours sur ce poste reste intact.
+   Les liens sont prêts dans verifier.html, à la racine du projet. */
+const VERIF = (()=>{
+  const p = new URLSearchParams(location.search);
+  const n = parseInt(p.get("salle"), 10);
+  if(!(n >= 1 && n <= 6)) return null;
+  return { salle:n, niveau: p.get("niveau") === "CM1" ? "CM1" : "CM2" };
+})();
+
 /* ---- Sauvegarde ---- */
 function sauvegarder(){
+  if(VERIF) return;
   try{ localStorage.setItem(CLE_SAUVEGARDE, JSON.stringify(ETAT)); }catch(e){}
 }
 
@@ -327,6 +340,17 @@ document.addEventListener("DOMContentLoaded", async ()=>{
   document.getElementById("btn-reglages").addEventListener("click", ouvrirReglages);
   verifierPret();
 
+  if(VERIF){
+    ETAT.equipe = "Vérification";
+    ETAT.niveau = VERIF.niveau;
+    ETAT.salle = VERIF.salle;
+    ETAT.debut = ETAT.salleDebut = Date.now();
+    ETAT.msEcoules = 0;
+    entrerDansLeJeu(false);
+    toast("🔍 Mode vérification · " + VERIF.niveau + " · rien n'est sauvegardé");
+    return;
+  }
+
   // ---- Reprise éventuelle d'une partie ----
   let enCours = null;
   try{
@@ -388,7 +412,7 @@ function entrerDansLeJeu(reprise){
   majHUD();
   afficherSalle(ETAT.salle);
   if(reprise) toast("Voyage repris ✓");
-  if(typeof demarrerSync === "function") demarrerSync();
+  if(!VERIF && typeof demarrerSync === "function") demarrerSync();
 }
 
 /* ============================================================

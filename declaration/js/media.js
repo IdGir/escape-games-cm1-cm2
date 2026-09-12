@@ -39,30 +39,15 @@ const MEDIA = {
   videosActives: [],      // <video> de décor actuellement dans le DOM
 };
 
-/* ---- Où chercher les fichiers, dans l'ordre de préférence ----
-   Les deux derniers chemins pointent vers le dossier « Elements EG »
-   du projet, pour que l'enseignant puisse y ranger ses médias
-   au même endroit que ceux des autres escape games. */
+/* ---- Où chercher les fichiers ----
+   Un seul dossier par type de média, un seul nom par emplacement :
+   la liste complète est dans assets/README.md. */
 const DOSSIERS_VIDEO = [
   "assets/videos/",
-  "Elements EG/Revolution fr/",
 ];
 const DOSSIERS_IMAGE = [
   "assets/images/decors/",
-  "Elements EG/Revolution fr/",
 ];
-
-/* ---- Noms alternatifs acceptés pour chaque salle ----
-   Permet d'utiliser un fichier déjà nommé autrement (par exemple la
-   vidéo « Paris 1789.mp4 » livrée avec le projet) sans avoir à le
-   renommer. Le premier nom trouvé l'emporte. */
-const ALIAS = {
-  salle1: ["salle1", "Paris 1789", "palais-royal"],
-  salle2: ["salle2", "imprimerie"],
-  salle3: ["salle3", "tuileries"],
-  salle4: ["salle4", "bastille"],
-  salle5: ["salle5", "assemblee"],
-};
 const EXT_VIDEO = [".mp4", ".webm"];
 const EXT_IMAGE = [".jpg", ".png", ".webp", ".jpeg"];
 /* .gif accepte pour les personnages : une animation bouclee toute simple */
@@ -76,12 +61,9 @@ const EXT_IMAGE_PERSO = [".png", ".gif", ".webp", ".jpg", ".jpeg"];
      - le personnage SVG plein corps dessine dans js/personnages.js */
 const DOSSIERS_PERSO_VIDEO = [
   "assets/videos/personnages/",
-  "assets/videos/",
-  "Elements EG/Revolution fr/personnages/",
 ];
 const DOSSIERS_PERSO_IMAGE = [
   "assets/images/personnages/",
-  "Elements EG/Revolution fr/personnages/",
 ];
 
 /* ---- CARTES ET ILLUSTRATIONS ----
@@ -89,11 +71,9 @@ const DOSSIERS_PERSO_IMAGE = [
    facultatifs : sans fichier, le jeu garde ses dessins et ses emojis. */
 const DOSSIERS_CARTE = [
   "assets/images/cartes/",
-  "Elements EG/Revolution fr/cartes/",
 ];
 const DOSSIERS_DOCUMENT = [
   "assets/images/documents/",
-  "Elements EG/Revolution fr/documents/",
 ];
 
 /* Délai maximal accordé à une sonde avant de passer à la suite.
@@ -147,13 +127,9 @@ async function premierePresente(candidats, sonde){
 /* ---- Construire la liste des candidats pour un nom de base ---- */
 function candidats(base, dossiers, extensions){
   const liste = [];
-  const noms = ALIAS[base] || [base];
-  for(const n of noms){
-    for(const d of dossiers){
-      for(const e of extensions){
-        // encodeURI : le dossier « Elements EG » contient une espace
-        liste.push(encodeURI(d + n + e));
-      }
+  for(const d of dossiers){
+    for(const e of extensions){
+      liste.push(encodeURI(d + base + e));
     }
   }
   return liste;

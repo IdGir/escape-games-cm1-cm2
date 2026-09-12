@@ -1,9 +1,7 @@
 # 🖼️ Images — Mission géographique, Année A
 
-Déposez vos images ici, au format `assets/images/<nom>.jpg` (ou `.png`, `.webp`, `.gif`).
+Toutes les images du jeu, à plat : `<nom>.jpg` (ou `.png`, `.webp`, `.gif`, `.svg`),
+fonds de carte compris.
 
-📄 La liste complète et exacte des noms attendus (un par séance et par
-emplacement, plus les fonds de carte) est dans
-[`../OU-DEPOSER-VOS-MEDIAS.txt`](../OU-DEPOSER-VOS-MEDIAS.txt).
-
-Sans fichier, le jeu retombe sur son dessin intégré.
+Les 93 noms attendus : [`../README.md`](../README.md) ·
+état en direct : [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#mission-geo)

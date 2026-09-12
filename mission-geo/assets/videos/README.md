@@ -1,10 +1,7 @@
 # 🎬 Vidéos — Mission géographique, Année A
 
-Déposez vos vidéos ici, au format `assets/videos/<nom>.mp4` (ou `.webm`, `.m4v`).
+Toutes les vidéos du jeu, à plat : `<nom>.mp4` (ou `.webm`, `.m4v`).
+Une vidéo passe avant l'image du même nom dans [`../images/`](../images/).
 
-📄 La liste complète et exacte des noms attendus (un par séance et par
-emplacement) est dans
-[`../OU-DEPOSER-VOS-MEDIAS.txt`](../OU-DEPOSER-VOS-MEDIAS.txt).
-
-Sans fichier, le jeu essaie une image dans [`../images/`](../images/), puis
-retombe sur son dessin intégré.
+Les 93 noms attendus : [`../README.md`](../README.md) ·
+état en direct : [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#mission-geo)

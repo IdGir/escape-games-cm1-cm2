@@ -1,8 +1,8 @@
-# 📄 Documents et illustrations de leçon — Le Tour du Monde en 80 minutes
+# 📄 Documents des leçons — Le Tour du Monde en 80 minutes
 
-Images illustrant un document ou une carte dans la bibliothèque de leçons (📚).
-Le nom exact attendu est donné par la clé `"fichier"` (document) ou `"base"`
-(carte) de la leçon concernée, dans `assets/data/lecons.json`.
+Images de document de la bibliothèque de leçons 📚, `.jpg` uniquement. Le nom
+est celui de la clé `"fichier"` du document dans `../../data/lecons.json`
+(aucune leçon n'en déclare pour l'instant).
 
-Sans fichier, la leçon affiche un encadré indiquant le nom attendu à la place
-de l'image.
+Liste complète des médias du jeu : [`../../README.md`](../../README.md) ·
+état en direct : [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#tour-du-monde)

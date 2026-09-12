@@ -39,17 +39,14 @@ const MEDIA = {
   videosActives: [],      // <video> de décor actuellement dans le DOM
 };
 
-/* ---- Où chercher les fichiers, dans l'ordre de préférence ----
-   Les deux derniers chemins pointent vers le dossier « Elements EG »
-   du projet, pour que l'enseignant puisse y ranger ses médias
-   au même endroit que ceux des autres escape games. */
+/* ---- Où chercher les fichiers ----
+   Un seul dossier par type de média, un seul nom par emplacement :
+   la liste complète est dans assets/README.md. */
 const DOSSIERS_VIDEO = [
   "assets/videos/",
-  "../Elements EG/Jules Verne/",
 ];
 const DOSSIERS_IMAGE = [
   "assets/images/decors/",
-  "../Elements EG/Jules Verne/",
 ];
 const EXT_VIDEO = [".mp4", ".webm"];
 const EXT_IMAGE = [".jpg", ".png", ".webp", ".jpeg"];
@@ -64,12 +61,9 @@ const EXT_IMAGE_PERSO = [".png", ".gif", ".webp", ".jpg", ".jpeg"];
      - le personnage SVG plein corps dessine dans js/personnages.js */
 const DOSSIERS_PERSO_VIDEO = [
   "assets/videos/personnages/",
-  "assets/videos/",
-  "../Elements EG/Jules Verne/personnages/",
 ];
 const DOSSIERS_PERSO_IMAGE = [
   "assets/images/personnages/",
-  "../Elements EG/Jules Verne/personnages/",
 ];
 
 /* ---- CARTES ET ILLUSTRATIONS ----
@@ -77,11 +71,9 @@ const DOSSIERS_PERSO_IMAGE = [
    facultatifs : sans fichier, le jeu garde ses dessins et ses emojis. */
 const DOSSIERS_CARTE = [
   "assets/images/cartes/",
-  "../Elements EG/Jules Verne/cartes/",
 ];
 const DOSSIERS_DOCUMENT = [
   "assets/images/documents/",
-  "../Elements EG/Jules Verne/documents/",
 ];
 
 /* Délai maximal accordé à une sonde avant de passer à la suite.
@@ -137,7 +129,6 @@ function candidats(base, dossiers, extensions){
   const liste = [];
   for(const d of dossiers){
     for(const e of extensions){
-      // encodeURI : le dossier « Elements EG » contient une espace
       liste.push(encodeURI(d + base + e));
     }
   }

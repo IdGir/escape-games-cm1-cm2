@@ -1,188 +1,171 @@
-# 🎓 ESCAPE GAMES PÉDAGOGIQUES — CM1 / CM2
+# 🎓 Escape games pédagogiques — CM1 / CM2
 
-Guide pratique : **lancer chaque jeu depuis Chrome**, et **ajouter ou remplacer
-des images/vidéos directement sur GitHub**, sans rien installer.
+Trois escape games d'histoire et de géographie, jouables dans Chrome, sans installation.
 
-> 📁 Dépôt GitHub : **https://github.com/IdGir/escape-games-cm1-cm2**
-> 🌐 Site en ligne : **https://idgir.github.io/escape-games-cm1-cm2/**
+| | Jeu | Jouer | Guide : énigmes, solutions | Médias |
+|---|---|---|---|---|
+| 🏛️ | **Le Secret de la Déclaration** — Histoire, 1789 | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/declaration/) | [declaration/README.md](declaration/README.md) | [liste](declaration/assets/README.md) |
+| 🧭 | **Le Tour du Monde en 80 minutes** — Géographie | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/tour-du-monde/) | [tour-du-monde/README.md](tour-du-monde/README.md) | [liste](tour-du-monde/assets/README.md) |
+| 🗺️ | **Mission géographique — Année A** — Géographie, 16 séances | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/) | [mission-geo/README.md](mission-geo/README.md) | [liste](mission-geo/assets/README.md) |
+
+- 🏠 **Accueil des trois jeux** : https://idgir.github.io/escape-games-cm1-cm2/
+- 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
 
 ---
 
-## 🚀 Lancer les jeux (dans Chrome, aucune installation)
+## 1. Lancer un jeu
 
-Cliquez simplement sur l'adresse, ou copiez-la dans un nouvel onglet Chrome —
-sur PC, TBI Android ou Chromebook, ça marche pareil :
+### En ligne — n'importe où, le plus simple
 
-| Jeu | Adresse à ouvrir dans Chrome |
+Ouvrez **https://idgir.github.io/escape-games-cm1-cm2/** dans Chrome (PC, TBI,
+Chromebook, tablette) et cliquez sur le jeu. Mettez l'adresse en favori une
+fois pour toutes.
+
+- La progression de chaque équipe est gardée **sur l'appareil** (même navigateur).
+- Tout fonctionne en ligne : jeux, vidéos, leçons, fiches à imprimer. Seul le
+  tableau de bord enseignant en direct demande le mode local (ci-dessous).
+- L'adresse racine du site ouvre désormais **l'accueil des trois jeux**.
+  Pour arriver directement dans un jeu, mettez son adresse en favori
+  (par exemple `…/declaration/`).
+
+### Sur l'ordinateur — sans internet, ou pour vérifier avant de publier
+
+1. Installez **Python 3** (une seule fois : https://www.python.org/downloads/,
+   cochez « Add Python to PATH »).
+2. Double-cliquez sur **`lancer.bat`** (Windows) ou **`lancer-mac.command`** (Mac).
+3. Le navigateur s'ouvre sur l'accueil : **http://127.0.0.1:8000/**
+4. Pour les autres postes de la classe (même réseau) : l'adresse est affichée
+   dans la fenêtre noire, par exemple `http://192.168.1.20:8000/`.
+
+Laissez la fenêtre noire ouverte pendant la séance. Ce mode ajoute les
+**tableaux de bord enseignant en direct** (suivi des équipes, pause générale,
+indices envoyés à la volée) :
+`http://127.0.0.1:8000/declaration/prof.html` et `http://127.0.0.1:8000/tour-du-monde/prof.html`.
+
+> Un double-clic direct sur un `index.html` lance aussi le jeu, mais **sans les
+> vidéos** (le navigateur les bloque) : préférez l'une des deux méthodes ci-dessus.
+
+---
+
+## 2. Tout vérifier : la page de vérification
+
+**[verifier.html](https://idgir.github.io/escape-games-cm1-cm2/verifier.html)** —
+en ligne, ou en local sur http://127.0.0.1:8000/verifier.html. Un onglet par jeu :
+
+| Rubrique | Ce qu'elle fait |
 |---|---|
-| 🏛️ **Le Secret de la Déclaration** (Histoire, 1789) | [idgir.github.io/escape-games-cm1-cm2/](https://idgir.github.io/escape-games-cm1-cm2/) |
-| 🧭 **Le Tour du Monde en 80 minutes** (Géographie) | [idgir.github.io/escape-games-cm1-cm2/tour-du-monde/](https://idgir.github.io/escape-games-cm1-cm2/tour-du-monde/) |
-| 🗺️ **Mission géographique — Année A** (Géographie, année entière) | [idgir.github.io/escape-games-cm1-cm2/mission-geo/](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/) |
+| 🧩 **Tester les énigmes** | Un bouton par salle, escale ou séance (en CM1 et en CM2) : le jeu s'ouvre directement au bon endroit. **Rien n'est sauvegardé** : les parties des élèves ne sont pas touchées. |
+| 🎞️ **Médias** | Chaque emplacement du jeu : aperçu, fichier trouvé et son poids — ou, s'il manque, le nom exact à utiliser (📋 le copie) et le bouton pour le déposer sur GitHub. Filtres *Présents / Manquants / Lourds*. |
+| 🧹 **Fichiers mal nommés** | Les fichiers présents dans les dossiers mais que le jeu ne verra pas (majuscule, faute de frappe, mauvais dossier). |
+| 📚 **Documents** | Les guides du jeu. |
 
-💡 **Astuce classe** : mettez ces trois adresses en **favoris Chrome** (étoile
-dans la barre d'adresse) sur chaque poste/TBI une fois pour toutes — les élèves
-n'auront plus qu'à cliquer sur le favori.
+Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper ou mettre en favori :
 
-Chaque élève/équipe garde sa progression automatiquement sur **l'appareil
-utilisé** (même onglet, même navigateur). Pas besoin de compte, pas de wifi
-particulier au-delà d'une connexion internet normale.
-
-> ⚠️ **Ce qui ne fonctionne PAS en ligne** : le **tableau de bord enseignant
-> synchronisé en direct** (`prof.html` qui suit les équipes en temps réel)
-> a besoin d'un petit serveur qui tourne sur un ordinateur — GitHub ne peut
-> pas le faire tourner. Tout le reste (le jeu, les leçons, les fiches à
-> imprimer) fonctionne parfaitement en ligne. Voir [tout en bas](#-pour-aller-plus-loin--le-mode-serveur-local) si vous voulez ce mode avancé.
+| Jeu | Adresse | Exemple |
+|---|---|---|
+| Le Secret de la Déclaration | `declaration/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin | [salle 3 en CM1](https://idgir.github.io/escape-games-cm1-cm2/declaration/?salle=3&niveau=CM1) |
+| Le Tour du Monde | `tour-du-monde/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin | [escale 5 en CM2](https://idgir.github.io/escape-games-cm1-cm2/tour-du-monde/?salle=5&niveau=CM2) |
+| Mission géographique | `mission-geo/?seance=N` — N de 1 à 16, ou `final` | [séance 13](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=13) |
 
 ---
 
-## 🖼️ Ajouter ou remplacer une image / vidéo
+## 3. Ajouter ou remplacer une image ou une vidéo
 
-Chaque décor, personnage ou carte a un **nom de fichier attendu**, propre à
-**un seul dossier canonique**. Déposez un fichier portant ce nom dans ce
-dossier, et il remplace automatiquement le dessin par défaut — **rien à
-modifier dans le code**.
+**La règle** : chaque jeu a **un seul dossier médias**, `<jeu>/assets/`, et chaque
+emplacement **un seul nom de fichier**. Il suffit de déposer un fichier portant
+ce nom : il remplace le dessin par défaut, ou l'ancien fichier du même nom.
+Aucun code à modifier.
 
-> ⚠️ **Un seul et même dossier fait foi pour chaque jeu : `assets/` à sa
-> racine.** Le dossier `Elements EG/` (utilisé dans une version antérieure)
-> n'est plus la référence — ne l'utilisez plus, pour éviter d'avoir deux
-> emplacements possibles pour la même image.
+Les noms attendus sont dans la page de vérification (📋 copie le nom) et dans
+le `README.md` du dossier `assets/` de chaque jeu.
 
-### Deux façons d'envoyer un fichier — au choix
+### Méthode A — sur l'ordinateur, puis publication *(on voit le rendu avant de publier)*
 
-**A. Directement sur GitHub (aucune installation)**
-1. Ouvrez le dossier concerné sur GitHub (liens ci-dessous, un par jeu).
-2. **Add file** (en haut à droite) → **Upload files**.
-3. Glissez votre fichier, **renommez-le exactement** comme indiqué dans le
-   `README.md` de ce dossier (visible directement sous la liste des fichiers,
-   sur la page GitHub du dossier).
-4. En bas de page, laissez **« Commit directly to the main branch »** coché
-   → **Commit changes**.
+1. Lancez `lancer.bat` et ouvrez http://127.0.0.1:8000/verifier.html.
+2. Copiez le fichier dans le bon dossier, avec le bon nom — par exemple
+   `declaration/assets/videos/salle1.mp4`.
+3. Revenez sur la page de vérification : l'aperçu apparaît aussitôt, et
+   ▶ ouvre la salle dans le jeu.
+4. Publiez sur GitHub : demandez-le à Claude Code (« publie les nouveaux
+   médias »), ou `git add` → `git commit` → `git push`.
 
-**B. Dans le dossier du projet sur votre ordinateur**
-1. Placez le fichier, avec le bon nom, directement dans le sous-dossier
-   `assets/...` correspondant du projet (celui que Claude Code utilise).
-2. Dites-le-moi (« j'ai déposé tel fichier ») : je le publie sur GitHub pour vous.
+### Méthode B — directement sur GitHub *(rien à installer)*
 
-Dans les deux cas, **c'est en ligne en général en moins d'une minute** une
-fois le commit fait — rechargez avec **Ctrl+F5** pour forcer le rechargement.
+1. Sur la page de vérification en ligne, cliquez **⬆️ Vidéo → GitHub** ou
+   **⬆️ Image → GitHub** sur la carte de l'emplacement : le bon dossier s'ouvre
+   sur GitHub.
+2. Glissez le fichier, **nommé exactement** comme indiqué.
+3. **Commit changes**. C'est en ligne en une minute environ ; rechargez le jeu
+   avec **Ctrl+F5**.
 
-### Formats acceptés
-- **Images** : `.jpg`, `.png`, `.webp` — format **16:9** pour les décors,
-  **carré (1:1)** pour les portraits de personnages.
-- **Vidéos** : `.mp4` (recommandé) ou `.webm` — plutôt **courtes** (15-30 s en
-  boucle) et **légères** (moins de 20 Mo) pour un chargement rapide.
-- Si vous déposez à la fois une vidéo et une image du même nom, **la vidéo est
-  prioritaire**. Sans aucun fichier, le jeu affiche son décor dessiné —
-  ce n'est jamais une erreur, juste le mode par défaut.
-- **Noms de fichiers toujours en minuscules** (`salle1.jpg`, pas `Salle1.jpg`) :
-  le site est sensible à la casse, une majuscule empêche la détection.
+> Après un envoi sur GitHub, récupérez le fichier sur l'ordinateur avant d'y
+> retravailler (`git pull`, ou demandez-le à Claude Code) : le dossier local
+> et GitHub doivent rester identiques.
 
----
+### Formats
 
-### 🏛️ Le Secret de la Déclaration — dossiers médias
+| | Décors et cinématiques | Personnages | Cartes, documents de leçon |
+|---|---|---|---|
+| **Vidéo** | `.mp4` (H.264) ou `.webm`, 16:9, 15 à 30 s en boucle, moins de 20 Mo | `.mp4` en boucle, cadre portrait vertical | — |
+| **Image** | `.jpg`, `.png` ou `.webp`, 16:9 | `.png` carré (fond transparent), `.gif` animé accepté | `.jpg` |
 
-Dossier GitHub : [`/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree/main/assets) — chaque sous-dossier a son propre `README.md` avec la liste exacte des noms attendus et ce qui est déjà en ligne.
-
-| Sous-dossier | Contenu |
-|---|---|
-| [`assets/videos/`](assets/videos/) | Décors filmés des 5 salles + cinématiques *(salle1 déjà en ligne)* |
-| [`assets/images/decors/`](assets/images/decors/) | Images des mêmes décors *(salle4 déjà en ligne)* |
-| [`assets/images/personnages/`](assets/images/personnages/) | Portraits de Louise, Gutenberg, le Marquis, Maximilien |
-| [`assets/videos/personnages/`](assets/videos/personnages/) | Mêmes personnages, en vidéo |
-| [`assets/images/documents/`](assets/images/documents/) | Documents d'époque des leçons |
-
-> 💡 Prompts prêts à copier-coller pour générer les images de salles avec une
-> IA : sections 4-5 de [`Le-Secret-de-la-Declaration.md`](Le-Secret-de-la-Declaration.md).
+- Noms **en minuscules, sans espace ni accent** : `salle1.jpg`, pas `Salle 1.JPG`.
+- Vidéo et image du même nom : la vidéo s'affiche, l'image lui sert d'affiche.
+- Les vidéos de décor sont jouées **muettes** (un bouton 🔇 permet d'activer le son).
+- Sous-titres : un fichier `.vtt` du même nom que la vidéo est chargé automatiquement.
+- Sans fichier, le jeu affiche son dessin : ce n'est jamais une erreur.
+- Supprimer un fichier ramène le dessin par défaut.
 
 ---
 
-### 🧭 Le Tour du Monde en 80 minutes — dossiers médias
+## 4. Organisation du dépôt
 
-Dossier GitHub : [`/tour-du-monde/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree/main/tour-du-monde/assets)
+```
+PROJET ESCAPE GAMES/
+├── index.html              Accueil : les trois jeux
+├── verifier.html           Vérification : énigmes, médias, fichiers mal nommés
+├── lancer.bat              Serveur local, Windows (double-clic)
+├── lancer-mac.command      Serveur local, Mac
+├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
+│
+├── declaration/            🏛️ Le Secret de la Déclaration
+│   ├── README.md           Guide du jeu : salles, énigmes, solutions
+│   ├── GUIDE-PEDAGOGIQUE.md  Scénario, déroulé, évaluation, fiches à imprimer
+│   ├── index.html          Le jeu
+│   ├── prof.html           Tableau de bord enseignant (mode local)
+│   ├── assets/             ★ Médias du jeu — README.md = liste des noms
+│   │   ├── videos/         décors, cinématiques (+ personnages/)
+│   │   ├── images/         decors/, personnages/, documents/
+│   │   └── data/           textes : dialogues, leçons, évaluations
+│   ├── css/
+│   └── js/
+│
+├── tour-du-monde/          🧭 Même organisation (+ assets/images/cartes/)
+│
+└── mission-geo/            🗺️ Mission géographique
+    ├── README.md
+    ├── index.html
+    ├── assets/             ★ videos/ et images/, tout à plat
+    ├── css/
+    └── js/donnees/         le contenu des 16 séances
+```
 
-| Sous-dossier | Contenu |
-|---|---|
-| [`tour-du-monde/assets/videos/`](tour-du-monde/assets/videos/) | Décors filmés des 5 escales + cinématiques *(tout déjà en ligne)* |
-| [`tour-du-monde/assets/images/decors/`](tour-du-monde/assets/images/decors/) | Images des mêmes décors *(intro déjà en ligne)* |
-| [`tour-du-monde/assets/images/personnages/`](tour-du-monde/assets/images/personnages/) | Portraits de Fogg, Passepartout, Aouda, Fix |
-| [`tour-du-monde/assets/videos/personnages/`](tour-du-monde/assets/videos/personnages/) | Mêmes personnages, en vidéo |
-| [`tour-du-monde/assets/images/cartes/`](tour-du-monde/assets/images/cartes/) | Planisphère *(déjà en ligne)* et paysages des climats |
-| [`tour-du-monde/assets/images/documents/`](tour-du-monde/assets/images/documents/) | Documents d'époque des leçons |
-
----
-
-### 🗺️ Mission géographique — Année A — dossiers médias
-
-Dossier GitHub : [`/mission-geo/assets/`](https://github.com/IdGir/escape-games-cm1-cm2/tree/main/mission-geo/assets)
-
-Ce jeu a **16 séances × plusieurs emplacements** : tout est **à plat**, pas de
-sous-dossiers.
-
-| Sous-dossier | Contenu |
-|---|---|
-| [`mission-geo/assets/videos/`](mission-geo/assets/videos/) | Toutes les vidéos, `<nom>.mp4` |
-| [`mission-geo/assets/images/`](mission-geo/assets/images/) | Toutes les images, `<nom>.jpg` |
-
-📄 La **liste complète et exacte des noms attendus** (un par séance et par
-emplacement) est dans
-**[`mission-geo/assets/OU-DEPOSER-VOS-MEDIAS.txt`](https://github.com/IdGir/escape-games-cm1-cm2/blob/main/mission-geo/assets/OU-DEPOSER-VOS-MEDIAS.txt)**
-— à consulter avant chaque envoi.
-
----
-
-## ✅ Vérifier que vos médias sont bien détectés
-
-Dans chaque jeu, ouvrez le module enseignant (icône **⚙️**) puis
-**Multimédia → « Vérifier les fichiers présents »** (ou « Vérifier les
-fichiers détectés » selon le jeu). Le jeu liste, décor par décor, s'il a
-trouvé une vidéo, une image, ou s'il utilise le dessin par défaut.
+Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur
+(dans `mission-geo/`), il n'est pas publié.
 
 ---
 
-## 👨‍🏫 Modules enseignant, impressions, leçons
-
-Chaque jeu a son propre module ⚙️ (accessibilité, sons, minuteur, choix
-CM1/CM2) et ses fiches A4 imprimables (préparation, élève, corrigé, bilan) —
-tout cela fonctionne **directement en ligne**, sans serveur. Le détail complet
-de chaque jeu (énigmes, personnages, notions travaillées, dépannage) est dans
-son propre README :
-
-- [`tour-du-monde/README.md`](tour-du-monde/README.md)
-- [`mission-geo/README.md`](mission-geo/README.md)
-
----
-
-## 🔧 En cas de problème
+## 5. En cas de problème
 
 | Problème | Solution |
 |---|---|
-| Mon image/vidéo n'apparaît pas après l'envoi | Ctrl+F5 pour forcer le rechargement ; vérifiez le **nom exact** (minuscules, bon dossier, bonne extension) ; ⚙️ → Multimédia → « Vérifier les fichiers » |
-| J'ai renommé un fichier mais l'ancien reste affiché | Le navigateur garde une copie en cache : Ctrl+F5, ou attendez quelques minutes |
-| Le tableau de bord prof n'affiche aucune équipe | Normal en ligne (GitHub Pages) : ce module a besoin du [mode serveur local](#-pour-aller-plus-loin--le-mode-serveur-local) |
-| Page blanche ou jeu figé | Utilisez Chrome ou Edge à jour ; rechargez la page |
-| Je veux effacer la progression d'un élève | Bouton « Rejouer » en fin de partie, ou effacer les données de navigation de cet onglet |
+| Mon image ou ma vidéo n'apparaît pas | Page de vérification : la carte indique le nom attendu, et la rubrique 🧹 signale les fichiers mal nommés. Puis **Ctrl+F5** dans le jeu. |
+| L'ancienne image reste affichée | Le navigateur garde une copie : **Ctrl+F5**, ou attendez quelques minutes après un envoi sur GitHub. |
+| Pas de vidéo, seulement les dessins | Le jeu a été ouvert en double-clic : passez par l'adresse en ligne ou par `lancer.bat`. |
+| `lancer.bat` affiche « Python n'est pas installé » | Installez Python en cochant « Add Python to PATH », ou jouez en ligne. |
+| Le tableau de bord n'affiche aucune équipe | Il ne fonctionne qu'en mode local, avec les élèves sur l'adresse affichée par `lancer.bat`. |
+| Page blanche ou jeu figé | Chrome ou Edge à jour ; rechargez la page. |
+| Effacer la progression d'une équipe | Bouton « Rejouer » en fin de partie (Mission géo : ⚙️ → Progression → « Repartir de zéro »). |
 
----
-
-## 🔬 Pour aller plus loin : le mode serveur local
-
-Si un jour vous voulez le **tableau de bord enseignant en direct** (suivi
-équipe par équipe pendant la partie, pause générale, indices envoyés à la
-volée), il faut faire tourner le petit serveur inclus sur **un ordinateur de
-la classe** :
-
-1. Téléchargez le dépôt (`Code` → `Download ZIP` sur GitHub), ou clonez-le.
-2. Vérifiez que **Python 3** est installé.
-3. Double-cliquez sur `lancer.bat` (Windows) ou `lancer-mac.command` (Mac).
-4. Donnez aux élèves l'adresse IP locale affichée par le serveur ; ouvrez
-   `prof.html` sur votre poste.
-
-Ce mode est **optionnel** : tout le contenu pédagogique (jeu, leçons, fiches)
-est identique en ligne et en local. Détails complets dans les README de
-chaque jeu.
-
----
-
-## 🎓 Bonne aventure, apprentis chercheurs !
-
-*Trois escape games pédagogiques, CM1-CM2 · Histoire et Géographie*
+Les erreurs « 404 » visibles dans la console du navigateur (F12) sont normales :
+c'est le jeu qui cherche les médias que vous auriez pu déposer.

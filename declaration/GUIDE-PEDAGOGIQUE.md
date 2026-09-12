@@ -5,8 +5,13 @@
 **Niveau visé :** CM1 – CM2
 **Durée :** 45 à 60 minutes
 **Modalités :** Jeu en équipes de 4-5 élèves / ou classe entière (TBI)
-**Matériel :** Ordinateur ou tablette + connexion à une API de dialogue (Albert ou DeepSeek)
+**Matériel :** Ordinateur, tablette ou TBI (API de dialogue Albert ou DeepSeek facultative)
 **Auteur :** Conçu avec GLM 5.2
+
+> 📌 Ce guide décrit la **séquence pédagogique** : scénario, déroulé, évaluation,
+> fiches à imprimer. Pour lancer le jeu, tester une salle, voir les solutions
+> telles qu'elles sont programmées ou gérer les médias, voir le
+> [README du jeu](README.md).
 
 ---
 

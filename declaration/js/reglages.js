@@ -136,9 +136,6 @@ function ouvrirReglages(){
         <p style="margin:6px 0">Dans <code>assets/videos/</code>, nommés
         <code>salle1.mp4</code> … <code>salle5.mp4</code> (décors), plus
         <code>intro.mp4</code> et <code>final.mp4</code> (cinématiques).</p>
-        <p style="margin:6px 0">Le dossier <code>Elements EG/Revolution fr/</code> est aussi
-        exploré : le fichier <b>« Paris 1789.mp4 »</b> qui s'y trouve déjà est reconnu
-        automatiquement comme décor de la <b>salle 1</b>.</p>
         <p style="margin:10px 0 4px"><b>Personnages</b> — vidéo en boucle ou image, dans
         <code>assets/videos/personnages/</code> ou <code>assets/images/personnages/</code> :
         <code>louise</code>, <code>gutenberg</code>, <code>marquis</code>, <code>maximilien</code>
