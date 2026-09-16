@@ -1,22 +1,18 @@
-# ---- Fichiers système ----
+# Fichiers produits par la compilation (l'exe se reconstruit avec build_exe.bat)
+build/
+dist/
+__pycache__/
+*.pyc
+*.spec.bak
+# Données personnelles : jamais sur GitHub
+*.db
+*.sqlite
+*.sqlite3
+cles-ia.json
+.env
+# Système
 Thumbs.db
 desktop.ini
 .DS_Store
-
-# ---- Python ----
-__pycache__/
-*.pyc
-
-# ---- Éditeurs ----
-*.swp
 .vscode/
-
-# ---- Documents source volumineux (gardés en local, dans mission-geo/) ----
-Mission géographique Année A.pdf
-
-# ---- Outils de développement locaux ----
 .claude/
-
-# ---- Médias des jeux ----
-# Les dossiers <jeu>/assets/ sont suivis normalement : un fichier déposé au
-# bon endroit est publié au prochain push. Noms attendus : <jeu>/assets/README.md

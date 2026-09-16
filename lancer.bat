@@ -1,57 +1,48 @@
 @echo off
 chcp 65001 >nul
-title Escape Games pedagogiques - Serveur local
-cls
+title Correcteur Pedagogique
+cd /d "%~dp0"
+
 echo.
-echo  ============================================================
-echo    ESCAPE GAMES PEDAGOGIQUES - CM1/CM2 - Serveur local
-echo  ============================================================
-echo.
-echo  Verification de Python...
+echo   ===========================================
+echo     CORRECTEUR PEDAGOGIQUE
+echo   ===========================================
 echo.
 
-REM Tester python puis py (Windows)
 python --version >nul 2>&1
-if %errorlevel%==0 (
-    set CMD=python
-    goto :lancer
+if errorlevel 1 (
+  echo   [!] Python n est pas installe sur cet ordinateur.
+  echo.
+  echo   Que faire :
+  echo     1. Va sur https://www.python.org/downloads/
+  echo     2. Clique sur le gros bouton jaune "Download Python"
+  echo     3. Lance le fichier telecharge
+  echo     4. IMPORTANT : coche la case "Add Python to PATH" en bas
+  echo     5. Clique sur "Install Now"
+  echo     6. Redemarre ce fichier lancer.bat
+  echo.
+  pause
+  exit /b 1
 )
-py --version >nul 2>&1
-if %errorlevel%==0 (
-    set CMD=py
-    goto :lancer
+
+echo   [1/2] Verification des composants...
+python -m pip install --quiet flask pywebview qrcode
+if errorlevel 1 (
+  echo   [!] Impossible d installer les composants. Verifie ta connexion,
+  echo       puis relance ce fichier. Une fois installes, ils ne seront
+  echo       plus jamais retelecharges.
+  pause
+  exit /b 1
 )
 
-echo  [ERREUR] Python n'est pas installe ou pas dans le PATH.
+echo   [2/2] Lancement...
+echo   Laisse cette fenetre noire ouverte pendant l utilisation.
 echo.
-echo  Solutions :
-echo    1. Installer Python : https://www.python.org/downloads/
-echo       (cocher "Add Python to PATH" pendant l'installation)
-echo    2. OU jouer en ligne : https://idgir.github.io/escape-games-cm1-cm2/
-echo.
-pause
-exit /b 1
+python app.py
 
-:lancer
-echo  Python detecte :
-%CMD% --version
-echo.
-echo  ^>^> ACCUEIL (les 3 jeux + page de verification) :
-echo      http://127.0.0.1:8000/
-echo.
-echo  ^>^> JEUX :
-echo      Le Secret de la Declaration : http://127.0.0.1:8000/declaration/
-echo      Le Tour du Monde            : http://127.0.0.1:8000/tour-du-monde/
-echo      Mission geographique        : http://127.0.0.1:8000/mission-geo/
-echo.
-echo  ^>^> VERIFICATION (medias + acces direct aux enigmes) :
-echo      http://127.0.0.1:8000/verifier.html
-echo.
-echo  Fermez cette fenetre pour arreter le serveur.
-echo.
-
-REM Ouvrir le navigateur apres 2 secondes
-start "" timeout /t 2 /nobreak >nul ^& start "" http://127.0.0.1:8000/
-
-%CMD% serveur.py 8000
-pause
+if errorlevel 1 (
+  echo.
+  echo   [!] L application s est arretee sur une erreur.
+  echo   Recopie le message ci-dessus pour le signaler.
+  pause
+)

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="clair" data-espace="prof">
+<head>
+  <meta charset="utf-8">
+  <title>Correcteur — correction et analyse de textes d'élèves</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside id="sidebar">
+    <div class="logo">
+      <div class="logo-pastille" id="logo-ico">✏️</div>
+      <div>
+        <div class="logo-nom">Correcteur</div>
+        <div class="logo-sous" id="logo-sous">Correction &amp; analyse</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-pied" id="sidebar-pied"></div>
+  </aside>
+
+  <main id="principal">
+    <!-- La barre du haut a disparu : elle répétait le titre de la page et
+         mangeait 62 px de hauteur. Les deux boutons flottent maintenant au
+         niveau du titre, et « fil » ne sert plus qu'au titre du navigateur. -->
+    <div class="actions-haut">
+      <button class="btn-rond" id="btn-reglages" title="Réglages">⚙️</button>
+      <button class="btn-rond" id="btn-theme" title="Thème clair / sombre">🌙</button>
+    </div>
+    <div id="fil" hidden></div>
+    <div id="contenu"></div>
+  </main>
+
+  <div class="modale" id="modale"><div class="boite" id="modale-corps"></div></div>
+  <div class="toast" id="toast"></div>
+  <div id="verrou"></div>
+
+  <script src="js/noyau.js"></script>
+  <script src="js/confort.js"></script>
+  <script src="js/graphiques.js"></script>
+  <script src="js/securite.js"></script>
+  <script src="js/dico.js"></script>
+  <script src="js/dictee.js"></script>
+  <script src="js/eleve.js"></script>
+  <script src="js/fluence.js"></script>
+  <script src="js/prof.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

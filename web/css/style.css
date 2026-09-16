@@ -1,0 +1,1701 @@
+/* ==========================================================================
+   Correcteur Pédagogique — feuille de style
+   Les couleurs viennent du design system (theme.py).
+   Le mode sombre bascule via [data-theme="sombre"] sur <html>.
+   ========================================================================== */
+
+:root {
+  --bleu: #2563EB;  --bleu-fonce: #1D4ED8;  --bleu-pale: #EFF6FF;
+  --ambre: #E8890C; --ambre-fonce: #B45309; --ambre-pale: #FFF6E6;
+  --vert: #15A34A;  --orange: #D97706;  --rouge: #DC2626;  --cyan: #0EA5E9;
+
+  --fond: #FFFFFF;
+  --fond-doux: #F3F4F6;
+  --carte: #FFFFFF;
+  --bordure: #E5E7EB;
+  --texte: #1E2233;
+  --texte-doux: #6B7280;
+  --texte-pale: #9AA1B0;
+  --sidebar: #FBFBFD;
+  --sidebar-survol: #F1F3F7;
+  --surligne: #FEF3C7;
+  --ligne-alt: #F8F5EE;
+
+  --ombre: 0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --ombre-forte: 0 4px 12px rgba(16,24,40,.08);
+  --r: 10px;  --r-s: 8px;
+
+  --accent: var(--bleu);
+  --accent-pale: var(--bleu-pale);
+
+  --police: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --emoji: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+}
+
+[data-theme="sombre"] {
+  --fond: #0F1117;  --fond-doux: #1A1D26;  --carte: #171A22;
+  --bordure: #2A2F3B;
+  --texte: #E8EAF0;  --texte-doux: #9AA1B0;  --texte-pale: #6B7280;
+  --sidebar: #12151C;  --sidebar-survol: #1D212B;
+  --surligne: #4A3C12;  --ligne-alt: #191D27;
+  --bleu-pale: #16233D;  --ambre-pale: #3A2E18;
+  --ombre: 0 1px 3px rgba(0,0,0,.4);
+  --ombre-forte: 0 4px 14px rgba(0,0,0,.5);
+}
+
+/* L'espace élève passe en ambre */
+[data-espace="eleve"] { --accent: var(--ambre); --accent-pale: var(--ambre-pale); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%; font-family: var(--police); font-size: 14px;
+  color: var(--texte); background: var(--fond);
+  -webkit-font-smoothing: antialiased;
+}
+body { display: flex; overflow: hidden; }
+::selection { background: var(--accent-pale); }
+
+/* ========================================================================== */
+/*  Barre latérale                                                            */
+/* ========================================================================== */
+#sidebar {
+  width: 250px; flex-shrink: 0; background: var(--sidebar);
+  border-right: 1px solid var(--bordure);
+  display: flex; flex-direction: column; padding: 16px 12px;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; padding: 4px 4px 18px; }
+.logo-pastille {
+  width: 40px; height: 40px; border-radius: var(--r);
+  background: var(--accent); color: #fff; display: grid; place-items: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.logo-nom { font-weight: 600; font-size: 15px; line-height: 1.2; }
+.logo-sous { font-size: 12px; color: var(--texte-doux); }
+
+.nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: var(--r-s); cursor: pointer;
+  color: var(--texte); transition: background .12s ease;
+  border: none; background: none; text-align: left; width: 100%;
+  font-family: inherit;
+}
+.nav-item .ico { font-family: var(--emoji); font-size: 15px; width: 20px;
+                 text-align: center; flex-shrink: 0; }
+.nav-item .lib { font-weight: 600; font-size: 13.5px; line-height: 1.25; }
+.nav-item .sub { font-size: 11.5px; color: var(--texte-doux); line-height: 1.25; }
+.nav-item:hover { background: var(--sidebar-survol); }
+.nav-item.actif { background: var(--accent); color: #fff; }
+.nav-item.actif .sub { color: rgba(255,255,255,.72); }
+
+.sidebar-pied { margin-top: auto; padding-top: 12px; }
+
+.etat-ia {
+  border: 1px solid var(--bordure); border-radius: var(--r);
+  background: var(--carte); padding: 12px 14px; margin-top: 10px;
+  box-shadow: var(--ombre);
+}
+.etat-ia .ligne { display: flex; align-items: center; gap: 7px; }
+.pastille { width: 8px; height: 8px; border-radius: 50%; background: var(--texte-pale); }
+.pastille.on { background: var(--vert); }
+.etat-ia .t { font-weight: 600; font-size: 12px; }
+.etat-ia .n { font-size: 13px; margin-top: 5px; }
+.etat-ia .d { font-size: 11px; color: var(--texte-pale); margin-top: 2px; }
+
+/* ========================================================================== */
+/*  Barre du haut + contenu                                                   */
+/* ========================================================================== */
+#principal { flex: 1; display: flex; flex-direction: column; min-width: 0;
+             position: relative; }
+
+/* Les deux boutons flottent en haut à droite, au niveau du titre de la page :
+   plus de bande dédiée, donc 62 px de hauteur rendus au contenu. */
+.actions-haut {
+  position: absolute; top: 22px; right: 28px; z-index: 5;
+  display: flex; gap: 8px;
+}
+
+.btn-rond {
+  width: 36px; height: 36px; border-radius: var(--r-s);
+  border: 1px solid var(--bordure); background: var(--carte);
+  display: grid; place-items: center; cursor: pointer;
+  font-family: var(--emoji); font-size: 15px; color: var(--texte-doux);
+  transition: background .12s ease;
+}
+.btn-rond:hover { background: var(--fond-doux); }
+
+#contenu { flex: 1; overflow-y: auto; padding: 20px 28px 40px; }
+
+/* Le titre laisse la place aux deux boutons flottants, à droite. */
+.page-titre { font-size: 25px; font-weight: 700; letter-spacing: -.02em;
+              padding-right: 96px; }
+.page-sous { color: var(--texte-doux); margin-top: 3px; margin-bottom: 16px;
+             padding-right: 96px; }
+
+/* ========================================================================== */
+/*  Cartes, boutons, champs                                                   */
+/* ========================================================================== */
+.carte {
+  background: var(--carte); border: 1px solid var(--bordure);
+  border-radius: var(--r); padding: 22px; box-shadow: var(--ombre);
+  margin-bottom: 18px;
+}
+.carte-titre { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.carte-sous { color: var(--texte-doux); font-size: 12.5px; margin-bottom: 14px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+  padding: 10px 18px; border-radius: var(--r-s); border: 1px solid transparent;
+  background: var(--accent); color: #fff; font-weight: 600; font-size: 13.5px;
+  cursor: pointer; font-family: inherit;
+  transition: filter .12s ease, background .12s ease, transform .06s ease;
+}
+.btn:hover { filter: brightness(.93); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { background: var(--fond-doux); color: var(--texte-pale);
+                cursor: not-allowed; filter: none; }
+.btn .ico { font-family: var(--emoji); }
+
+.btn.doux { background: var(--fond-doux); color: var(--texte); }
+.btn.doux:hover { background: var(--bordure); filter: none; }
+.btn.fantome { background: transparent; border-color: var(--bordure);
+               color: var(--texte); }
+.btn.fantome:hover { background: var(--fond-doux); filter: none; }
+.btn.vert { background: var(--vert); }
+.btn.rouge { background: var(--rouge); }
+.btn.grand { padding: 14px 26px; font-size: 15px; }
+.btn.xl { padding: 18px 34px; font-size: 17px; }
+
+label.champ { display: block; font-size: 12.5px; font-weight: 600;
+              color: var(--texte-doux); margin-bottom: 6px; }
+select, input[type=text], input[type=number], input[type=password], textarea {
+  width: 100%; padding: 10px 12px; border-radius: var(--r-s);
+  border: 1px solid var(--bordure); background: var(--carte); color: var(--texte);
+  font-family: inherit; font-size: 14px; outline: none;
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+select:focus, input:focus, textarea:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-pale);
+}
+.grille { display: grid; gap: 14px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: repeat(3, 1fr); }
+.rangee { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.pousse { margin-left: auto; }
+
+.inter { display: flex; align-items: center; gap: 9px; padding: 5px 0;
+         cursor: pointer; font-size: 13.5px; }
+.inter input { width: auto; }
+
+/* Statistiques */
+.stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.stat {
+  flex: 1; min-width: 140px; background: var(--carte);
+  border: 1px solid var(--bordure); border-radius: var(--r);
+  padding: 16px 18px; box-shadow: var(--ombre);
+}
+.stat .v { font-size: 26px; font-weight: 700; line-height: 1.1; }
+.stat .l { font-size: 12px; color: var(--texte-doux); margin-top: 4px; }
+
+/* Tableaux */
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th { text-align: left; font-size: 11.5px; text-transform: uppercase;
+     letter-spacing: .04em; color: var(--texte-doux); font-weight: 600;
+     padding: 10px 12px; border-bottom: 1px solid var(--bordure); }
+td { padding: 11px 12px; border-bottom: 1px solid var(--bordure); }
+tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--fond-doux); }
+
+.puce {
+  display: inline-block; padding: 3px 9px; border-radius: 999px;
+  font-size: 11.5px; font-weight: 600; color: #fff;
+}
+.puce.doux { background: var(--fond-doux); color: var(--texte-doux); }
+
+/* Tuiles de choix (élève) */
+.tuiles { display: flex; gap: 18px; flex-wrap: wrap; }
+.tuile {
+  flex: 1; min-width: 230px; background: var(--carte);
+  border: 2px solid var(--bordure); border-radius: 14px; padding: 26px 22px;
+  cursor: pointer; text-align: center; box-shadow: var(--ombre);
+  transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.tuile:hover { border-color: var(--accent); transform: translateY(-3px);
+               box-shadow: var(--ombre-forte); }
+.tuile .emo { font-family: var(--emoji); font-size: 40px; }
+.tuile h3 { margin: 10px 0 6px; font-size: 17px; color: var(--accent); }
+.tuile p { color: var(--texte-doux); font-size: 13px; line-height: 1.5; }
+
+/* ========================================================================== */
+/*  Éditeur avec surlignage : textarea transparent au-dessus d'un calque       */
+/* ========================================================================== */
+.editeur { position: relative; border: 1px solid var(--bordure);
+           border-radius: var(--r); overflow: hidden; background: var(--carte); }
+
+.barre-outils {
+  display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+  background: var(--fond-doux); border-bottom: 1px solid var(--bordure);
+  font-size: 12.5px; flex-wrap: wrap;
+}
+.barre-outils .compteur { margin-left: auto; color: var(--texte-doux); }
+.mini {
+  padding: 5px 10px; border-radius: 6px; border: 1px solid var(--bordure);
+  background: var(--carte); color: var(--texte); cursor: pointer;
+  font-family: inherit; font-size: 12px;
+}
+.mini:hover { background: var(--fond-doux); }
+
+.zone { position: relative; }
+.calque, .zone textarea {
+  margin: 0; padding: 18px 20px; border: 0;
+  font-family: var(--lect-police, Verdana), sans-serif;
+  font-size: var(--lect-taille, 16px);
+  line-height: var(--lect-interligne, 1.9);
+  letter-spacing: var(--lect-espacement, 0);
+  white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+.calque {
+  position: absolute; inset: 0; overflow: auto; pointer-events: none;
+  color: transparent; background: var(--lect-fond, var(--carte));
+}
+.zone textarea {
+  position: relative; display: block; width: 100%; min-height: 260px;
+  background: transparent; color: var(--texte); resize: vertical;
+  outline: none; caret-color: var(--accent);
+  /* La hauteur est pilotée en JS (_ajusterHauteur) : elle suit le contenu et
+     la taille de police choisie, pour ne jamais couper le texte. */
+}
+.zone textarea:focus { box-shadow: none; border: 0; }
+
+/* Marques d'erreur, posées dans le calque (donc SOUS le texte) */
+mark.err { background: var(--surligne); border-radius: 3px;
+           box-shadow: inset 0 -2px 0 rgba(0,0,0,.18); color: transparent; }
+mark.cat { border-radius: 3px; color: transparent; }
+mark.vig { background: transparent; color: transparent;
+           box-shadow: inset 0 -2px 0 var(--texte-pale); }
+
+/* Zone de lecture seule (fluence) */
+.lecture {
+  border: 1px solid var(--bordure); border-radius: var(--r);
+  background: var(--lect-fond, var(--carte));
+  padding: 22px 26px;
+  font-family: var(--lect-police, Georgia), serif;
+  font-size: var(--lect-taille, 20px);
+  line-height: var(--lect-interligne, 1.9);
+  letter-spacing: var(--lect-espacement, 0);
+  white-space: pre-wrap;
+}
+.syl-0 { color: #0EA5E9; }
+.syl-1 { color: #DC2626; }
+.ligne-alt-on .lg:nth-child(even) { background: var(--ligne-alt); }
+.regle-on .lg:hover { background: var(--surligne); }
+
+/* Confort de lecture */
+.confort { border-top: 1px solid var(--bordure); background: var(--fond-doux);
+           padding: 10px 12px; display: none; }
+.confort.ouvert { display: block; }
+.confort .rangee { gap: 14px; }
+.confort label.champ { margin-bottom: 3px; }
+.confort select { width: auto; padding: 6px 10px; font-size: 13px; }
+
+/* Bilan intermédiaire (étape 2) — deux cadres côte à côte, bien visibles */
+.duo-bilan { margin-bottom: 18px; align-items: stretch; }
+.bloc-bilan {
+  text-align: center; margin-bottom: 0; padding: 20px 18px 22px;
+  border-width: 2px; border-radius: 14px; box-shadow: var(--ombre-forte);
+  display: flex; flex-direction: column;
+}
+.bloc-bilan.reussi  { border-color: var(--vert);   background: rgba(21,163,74,.06); }
+.bloc-bilan.restant { border-color: var(--orange); background: rgba(217,119,6,.06); }
+.bloc-bilan-titre { font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+.bloc-bilan-nombre { font-size: 72px; font-weight: 800; line-height: 1.02; margin: 6px 0 14px; }
+.bloc-bilan-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; }
+.bloc-bilan-chips .puce { font-size: 13.5px; padding: 6px 13px; }
+.bloc-bilan-vide { color: var(--texte-doux); }
+.bloc-bilan-note { margin-top: auto; padding-top: 12px; font-size: 12.5px;
+                   color: var(--texte-doux); }
+/* Version compacte : les mêmes cadres restent visibles pendant les passages
+   guidés, sans manger la place du texte. */
+.duo-bilan.compact { margin-bottom: 14px; }
+.duo-bilan.compact .bloc-bilan { padding: 13px 16px 15px; border-radius: 12px; }
+.duo-bilan.compact .bloc-bilan-titre { font-size: 14.5px; }
+.duo-bilan.compact .bloc-bilan-nombre { font-size: 42px; margin: 0 0 9px; }
+.duo-bilan.compact .bloc-bilan-chips .puce { font-size: 12px; padding: 4px 10px; }
+.duo-bilan.compact .bloc-bilan-note { padding-top: 9px; font-size: 12px; }
+
+/* Sur écran étroit (Chromebook en mode salle), les deux cadres se superposent. */
+@media (max-width: 820px) { .duo-bilan { grid-template-columns: 1fr; } }
+
+/* Frise des étapes */
+.frise { display: flex; gap: 6px; margin-bottom: 18px; }
+.etape {
+  flex: 1; padding: 10px 12px; border-radius: var(--r-s);
+  background: var(--fond-doux); color: var(--texte-doux);
+  font-size: 12.5px; font-weight: 600; text-align: center;
+}
+.etape.actu { background: var(--accent); color: #fff; }
+.etape.fait { background: var(--vert); color: #fff; }
+
+/* Panneau latéral des leçons */
+/* Le texte de l'élève est ce qui compte : il prend la plus grande part, et le
+   panneau d'aide se resserre. Sur écran étroit, le panneau passe dessous
+   plutôt que d'étrangler le texte. */
+.deux-col { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px;
+            align-items: start; }
+@media (max-width: 1150px) {
+  .deux-col { grid-template-columns: 1fr; }
+  .deux-col > #panneau { order: -1; }
+}
+.lecon h4 { color: #fff; padding: 9px 14px; border-radius: var(--r-s) var(--r-s) 0 0;
+            font-size: 14px; }
+.lecon .corps { border: 1px solid var(--bordure); border-top: 0;
+                border-radius: 0 0 var(--r-s) var(--r-s); padding: 14px;
+                background: var(--carte); font-size: 13px; line-height: 1.6; }
+.lecon ul { margin: 6px 0 0 16px; }
+.lecon .ex { background: var(--fond-doux); border-radius: 6px; padding: 6px 9px;
+             margin-top: 5px; font-size: 12.5px; }
+.lecon .piege { color: var(--orange); margin-top: 10px; font-size: 12.5px; }
+
+/* Mini-leçon enrichie : plus grande, colorée et aérée */
+.lecon.grande { box-shadow: var(--ombre-forte); border-radius: 14px; overflow: hidden;
+                margin-top: 4px; }
+.lecon.grande h4 { font-size: 17px; padding: 13px 18px; border-radius: 14px 14px 0 0;
+                   font-family: var(--emoji), var(--police); letter-spacing: -.01em; }
+.lecon.grande .corps { padding: 18px 18px 20px; font-size: 14px; line-height: 1.75;
+                       border-radius: 0 0 14px 14px; }
+.lecon-question { background: var(--fond-doux); border: 2px solid var(--bordure);
+                  border-radius: 12px; padding: 12px 14px; font-size: 14.5px;
+                  line-height: 1.6; margin-bottom: 14px; }
+.lecon-retenir { border-radius: 12px; padding: 14px 16px; font-size: 15.5px;
+                 font-weight: 600; line-height: 1.5; margin-bottom: 14px; }
+.lecon-regle { font-size: 14px; line-height: 1.7; margin-bottom: 6px; }
+.lecon-soustitre { font-weight: 700; font-size: 13px; text-transform: uppercase;
+                   letter-spacing: .03em; margin: 14px 0 6px; }
+.lecon.grande ul { margin: 4px 0 0 20px; }
+.lecon.grande ul li { margin-bottom: 5px; }
+.lecon.grande .ex { background: var(--fond-doux); border-radius: 8px; padding: 9px 12px;
+                    margin-top: 7px; font-size: 13.5px; }
+.lecon.grande .piege { color: var(--orange); font-weight: 600; margin-top: 14px;
+                       font-size: 13.5px; background: var(--ambre-pale);
+                       border-radius: 8px; padding: 10px 12px; }
+.lecon-indice-zone { margin-top: 16px; }
+.lecon-indice { margin-top: 10px; border: 2px dashed var(--bordure); border-radius: 12px;
+                padding: 12px 14px; font-size: 14.5px; line-height: 1.6;
+                background: var(--accent-pale); }
+.lecon-source { margin-top: 16px; font-size: 12px; color: var(--texte-pale);
+                border-top: 1px solid var(--bordure); padding-top: 10px; }
+
+/* Chronomètre */
+.chrono { font-family: "Consolas", monospace; font-size: 42px; font-weight: 700;
+          letter-spacing: .02em; }
+.grand-score { font-size: 68px; font-weight: 800; color: var(--cyan);
+               line-height: 1; }
+
+.jauge { height: 22px; border-radius: 999px; background: var(--fond-doux);
+         overflow: hidden; position: relative; margin: 12px 0 6px; }
+.jauge .rempli { height: 100%; border-radius: 999px; transition: width .5s ease; }
+.jauge .repere { position: absolute; top: -4px; bottom: -4px; width: 3px;
+                 background: var(--rouge); }
+
+/* Divers */
+.vide { text-align: center; color: var(--texte-doux); padding: 60px 20px; }
+.alerte { border-left: 4px solid var(--orange); background: var(--carte);
+          border: 1px solid var(--bordure); border-left-width: 4px;
+          border-radius: var(--r-s); padding: 12px 14px; margin-bottom: 8px; }
+.alerte.forte { border-left-color: var(--rouge); }
+.alerte .t { font-weight: 600; font-size: 13.5px; }
+.alerte .r { color: var(--texte-doux); font-size: 12.5px; margin-top: 4px; }
+
+.toast {
+  position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+  background: var(--texte); color: var(--fond); padding: 12px 20px;
+  border-radius: var(--r-s); font-size: 13.5px; box-shadow: var(--ombre-forte);
+  z-index: 100; opacity: 0; transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+.toast.on { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+
+.chargement { display: inline-block; width: 15px; height: 15px;
+              border: 2px solid var(--bordure); border-top-color: var(--accent);
+              border-radius: 50%; animation: tourne .7s linear infinite;
+              vertical-align: -2px; }
+@keyframes tourne { to { transform: rotate(360deg); } }
+
+.modale {
+  position: fixed; inset: 0; background: rgba(15,17,23,.55);
+  display: none; place-items: center; z-index: 50; padding: 24px;
+}
+.modale.on { display: grid; }
+.modale .boite { background: var(--carte); border-radius: 14px; padding: 24px;
+                 width: 100%; max-width: 720px; max-height: 88vh; overflow-y: auto;
+                 box-shadow: var(--ombre-forte); }
+
+/* Graphiques (SVG dessinés en JS) */
+svg.graph { width: 100%; height: auto; display: block; }
+svg.graph text { font-family: var(--police); fill: var(--texte-doux); }
+
+/* ============================================================
+   Phase I — verrou, pilotage, devoirs, sécurité, mode salle
+   ============================================================ */
+#verrou { display: none; }
+#verrou.on {
+  display: flex; position: fixed; inset: 0; z-index: 200;
+  align-items: center; justify-content: center; padding: 24px;
+  background: linear-gradient(160deg, var(--accent-pale), var(--fond-doux));
+}
+.verrou-carte {
+  background: var(--carte); border: 1px solid var(--bordure);
+  border-radius: 18px; box-shadow: var(--ombre-forte);
+  padding: 36px 32px; width: min(420px, 100%); text-align: center;
+}
+.verrou-logo { font-weight: 700; color: var(--accent); margin-bottom: 20px; }
+.verrou-carte h2 { margin: 0 0 8px; font-size: 1.3rem; color: var(--texte); }
+.verrou-aide { color: var(--texte-doux); font-size: .9rem; line-height: 1.5; margin: 0 0 20px; }
+.verrou-pin {
+  width: 200px; text-align: center; font-size: 1.7rem; letter-spacing: .4rem;
+  padding: 12px; border: 2px solid var(--bordure); border-radius: 14px;
+  margin: 0 auto 16px; display: block; background: var(--fond); color: var(--texte);
+}
+.verrou-champ {
+  width: 100%; font-size: 1rem; padding: 12px; border: 2px solid var(--bordure);
+  border-radius: 12px; margin: 0 0 12px; background: var(--fond); color: var(--texte);
+}
+.verrou-pin:focus, .verrou-champ:focus { outline: none; border-color: var(--accent); }
+.verrou-code {
+  font-size: 1.5rem; font-weight: 700; letter-spacing: .18rem; color: var(--accent);
+  background: var(--accent-pale); border: 2px dashed var(--accent); border-radius: 12px;
+  padding: 16px; margin: 0 0 18px; user-select: all;
+}
+.verrou-err { color: var(--rouge); font-size: .88rem; min-height: 1.1em; margin-top: 8px; }
+.lien-verrou {
+  background: none; border: none; color: var(--texte-doux); cursor: pointer;
+  text-decoration: underline; font-size: .88rem; margin-top: 12px;
+}
+
+/* heatmap */
+.heatmap { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; overflow-x: auto; }
+.hm-ligne { display: flex; align-items: center; gap: 6px; }
+.hm-nom { width: 110px; flex-shrink: 0; font-size: .84rem; color: var(--texte-doux); }
+.hm-nom.entete { font-weight: 700; color: var(--texte); }
+.hm-cell {
+  flex: 1; min-width: 50px; text-align: center; padding: 8px 4px;
+  border-radius: 7px; font-size: .8rem; font-weight: 600;
+}
+.hm-cell.entete { background: none !important; color: var(--texte-doux) !important; font-size: .72rem; }
+
+/* régressions */
+.reg-ligne {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border: 1px solid #F5C6C6; background: rgba(220,38,38,.05);
+  border-radius: 10px; margin-bottom: 8px;
+}
+.reg-meta { color: var(--texte-doux); font-size: .84rem; margin-top: 2px; }
+.reg-fleche { color: var(--rouge); font-weight: 700; }
+.reg-tag {
+  background: var(--accent-pale); color: var(--accent); border-radius: 8px;
+  padding: 4px 10px; font-size: .8rem; font-weight: 600;
+}
+
+/* devoirs */
+.dev-ligne {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; border: 1px solid var(--bordure); border-radius: 10px; margin-bottom: 8px;
+}
+.dev-type { color: var(--texte-pale); font-size: .8rem; margin-left: 6px; }
+.btn-supprimer {
+  border: none; background: var(--fond-doux); color: var(--rouge);
+  border-radius: 8px; padding: 6px 10px; cursor: pointer; font-weight: 700;
+}
+.btn-mini {
+  border: none; background: var(--accent-pale); color: var(--accent);
+  border-radius: 8px; padding: 7px 12px; cursor: pointer; font-weight: 600; font-size: .85rem;
+}
+.champ-inline {
+  font-size: 1rem; padding: 10px 12px; border: 1.5px solid var(--bordure);
+  border-radius: 10px; background: var(--fond); color: var(--texte); width: 150px;
+}
+
+/* devoirs côté élève */
+.devoirs-eleve { border-left: 4px solid var(--ambre); }
+.rangee-devoirs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.devoir-tuile {
+  display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+  border: 2px solid var(--ambre); background: var(--ambre-pale); color: var(--texte);
+  border-radius: 12px; cursor: pointer; font-size: 1rem; font-weight: 600;
+}
+.devoir-tuile:hover { background: #FFEFD3; }
+.devoir-ico { font-size: 1.2rem; }
+
+/* ============================================================
+   Phase J2 — menu simplifié : onglets de Paramètres
+   ============================================================ */
+.onglets {
+  display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 20px;
+  border-bottom: 2px solid var(--bordure); padding-bottom: 0;
+}
+.onglet {
+  border: none; background: none; cursor: pointer; font-family: inherit;
+  font-size: 13.5px; font-weight: 600; color: var(--texte-doux);
+  padding: 11px 18px; border-radius: var(--r-s) var(--r-s) 0 0;
+  border-bottom: 3px solid transparent; margin-bottom: -2px;
+  transition: color .12s ease, background .12s ease;
+}
+.onglet:hover { background: var(--fond-doux); color: var(--texte); }
+.onglet.actif { color: var(--accent); border-bottom-color: var(--accent);
+                background: var(--accent-pale); }
+.onglet-ico { font-family: var(--emoji); margin-right: 3px; }
+.param-intro { color: var(--texte-doux); font-size: 13px; margin-bottom: 16px; }
+
+.btn-retour { padding: 8px 14px; font-size: 13px; }
+.barre-bord { align-items: center; }
+
+/* Légende sous le graphique de lecture du tableau de bord */
+.legende-bandes {
+  display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 12px;
+  padding-top: 12px; border-top: 1px solid var(--bordure);
+  font-size: 12.5px; color: var(--texte-doux);
+}
+
+/* ------------------------------------------------------------
+   Blocs de module : écriture / lecture / besoins bien séparés
+   ------------------------------------------------------------ */
+.module-bloc {
+  border: 1px solid var(--bordure); border-radius: 14px; background: var(--carte);
+  padding: 18px 20px 20px; margin-bottom: 20px; box-shadow: var(--ombre);
+  border-top: 4px solid var(--coul-module, var(--accent));
+}
+.module-ecrit    { --coul-module: var(--bleu); }
+.module-lecture  { --coul-module: var(--cyan); }
+.module-besoins  { --coul-module: var(--orange); }
+.module-groupes  { --coul-module: var(--vert); }
+.module-entete { display: flex; align-items: center; gap: 13px; margin-bottom: 16px; }
+.module-ico {
+  width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px;
+  background: var(--coul-module); color: #fff; display: grid; place-items: center;
+  font-family: var(--emoji); font-size: 20px;
+}
+.module-nom { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+.module-sous { font-size: 12.5px; color: var(--texte-doux); margin-top: 2px;
+               line-height: 1.45; }
+.module-compte {
+  margin-left: auto; flex-shrink: 0; font-size: 12px; font-weight: 700;
+  color: var(--coul-module); background: var(--fond-doux);
+  border-radius: 999px; padding: 6px 14px;
+}
+.module-bloc .carte { box-shadow: none; }
+.module-bloc .vide { padding: 30px 16px; }
+
+/* ------------------------------------------------------------
+   Un besoin = son diagnostic + SA fiche, dans le même cadre
+   ------------------------------------------------------------ */
+.besoin {
+  border: 1px solid var(--bordure); border-left: 5px solid var(--orange);
+  border-radius: 0 12px 12px 0; padding: 14px 16px; margin-bottom: 12px;
+  background: var(--carte);
+}
+.besoin.forte { border-left-color: var(--rouge); background: rgba(220,38,38,.035); }
+.besoin-haut { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.besoin-titre { font-weight: 700; font-size: 14.5px; }
+.besoin-urgence {
+  margin-left: auto; font-size: 11px; font-weight: 800; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--rouge);
+  background: rgba(220,38,38,.1); border-radius: 999px; padding: 4px 11px;
+}
+.besoin-corps { display: flex; gap: 18px; align-items: center; margin-top: 10px;
+                flex-wrap: wrap; }
+.besoin-texte { flex: 1; min-width: 260px; }
+.besoin-remede { font-size: 13.5px; line-height: 1.5; }
+.besoin-etape { color: var(--texte-doux); font-size: 12.5px; margin-top: 4px;
+                line-height: 1.5; }
+.fiche-besoin { flex-shrink: 0; white-space: nowrap; }
+
+.besoin-ligne { display: flex; gap: 14px; align-items: flex-start; }
+.besoin-eleve { min-width: 140px; padding-top: 15px; }
+.besoin-prenom { font-weight: 700; font-size: 14.5px; display: block; }
+.besoin-classe { color: var(--texte-pale); font-size: 12px; }
+
+/* ------------------------------------------------------------
+   Groupes de besoin : la vedette de l'écran Remédiation
+   ------------------------------------------------------------ */
+.grille-groupes {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 14px;
+}
+.groupe-carte {
+  border: 2px solid var(--coul); border-radius: 14px; overflow: hidden;
+  background: var(--carte); box-shadow: var(--ombre); display: flex;
+  flex-direction: column;
+}
+.groupe-bandeau {
+  background: var(--coul); color: #fff; padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.groupe-nom { font-weight: 700; font-size: 15.5px; letter-spacing: -.01em; }
+.groupe-effectif {
+  margin-left: auto; background: rgba(255,255,255,.25); border-radius: 999px;
+  min-width: 30px; height: 30px; display: grid; place-items: center;
+  font-weight: 800; font-size: 15px; padding: 0 9px;
+}
+.groupe-corps { padding: 14px 16px 16px; display: flex; flex-direction: column;
+                gap: 14px; flex: 1; }
+.groupe-eleves { display: flex; flex-wrap: wrap; gap: 6px; }
+.groupe-eleve {
+  background: var(--fond-doux); border-radius: 8px; padding: 6px 11px;
+  font-size: 13px; font-weight: 600;
+}
+.groupe-btn { width: 100%; background: var(--coul); font-size: 13px; margin-top: auto; }
+
+@media (max-width: 900px) {
+  .besoin-ligne { flex-direction: column; gap: 2px; }
+  .besoin-eleve { padding-top: 0; }
+}
+
+/* Banques de textes : compteur et validation des propositions */
+.compteur-banque {
+  background: var(--fond-doux); border-radius: var(--r-s); padding: 9px 13px;
+  font-size: 12.5px; color: var(--texte-doux); margin-bottom: 14px;
+}
+.props { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+.prop {
+  border: 1px solid var(--bordure); border-radius: 12px; padding: 12px 14px;
+  background: var(--carte);
+}
+.prop-haut { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.prop-case { width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--accent); }
+.prop-titre { flex: 1; font-weight: 700; font-size: 14.5px; }
+.prop-meta { flex-shrink: 0; font-size: 11.5px; color: var(--texte-pale);
+             white-space: nowrap; }
+.prop-source { font-size: 12px; color: var(--accent); margin: 7px 0 0 30px;
+               font-style: italic; }
+.prop-texte { margin-top: 9px; font-size: 13.5px; line-height: 1.65; }
+.prop-ligne { display: flex; align-items: center; gap: 12px; cursor: pointer;
+              padding: 10px 14px; }
+.prop-contenu { font-size: 15px; }
+
+/* ============================================================
+   Espace élève — page d'accueil : on clique, on ne déroule rien
+   ============================================================ */
+.accueil { max-width: 900px; margin: 0 auto; padding: 8px 0 30px; }
+.accueil-entete { text-align: center; margin-bottom: 34px; }
+.accueil-emo { font-family: var(--emoji); font-size: 56px; line-height: 1; }
+.accueil-titre {
+  font-size: 40px; font-weight: 800; letter-spacing: -.03em; margin-top: 10px;
+  background: linear-gradient(100deg, var(--ambre), var(--ambre-fonce));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.accueil-sous { color: var(--texte-doux); font-size: 17px; margin-top: 8px; }
+
+.accueil-etape { margin-bottom: 30px; }
+.accueil-numero {
+  display: flex; align-items: center; gap: 11px; font-size: 17px;
+  font-weight: 700; margin-bottom: 16px;
+}
+.accueil-numero > span:first-child {
+  width: 30px; height: 30px; border-radius: 50%; background: var(--accent);
+  color: #fff; display: grid; place-items: center; font-size: 15px;
+  flex-shrink: 0;
+}
+.lien-retour {
+  margin-left: auto; background: none; border: none; cursor: pointer;
+  color: var(--texte-doux); font-family: inherit; font-size: 13.5px;
+  font-weight: 600; text-decoration: underline; padding: 6px 4px;
+}
+.lien-retour:hover { color: var(--accent); }
+
+.cartes-classe { display: flex; gap: 16px; flex-wrap: wrap; }
+.carte-classe {
+  flex: 1 1 220px; min-height: 132px; border: 3px solid var(--bordure);
+  border-radius: 18px; background: var(--carte); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 4px; padding: 20px; font-family: inherit;
+  color: var(--texte); box-shadow: var(--ombre);
+  transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.carte-classe:hover { border-color: var(--accent); transform: translateY(-3px);
+                      box-shadow: var(--ombre-forte); }
+.carte-classe.actif { border-color: var(--accent); background: var(--accent-pale); }
+.carte-classe-ico { font-family: var(--emoji); font-size: 34px; }
+.carte-classe-nom { font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+.carte-classe-nb { font-size: 13px; color: var(--texte-doux); }
+
+.grille-prenoms {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 12px;
+}
+.carte-prenom {
+  display: flex; align-items: center; gap: 12px; padding: 13px 15px;
+  border: 2px solid var(--bordure); border-radius: 14px; background: var(--carte);
+  cursor: pointer; font-family: inherit; color: var(--texte); text-align: left;
+  transition: border-color .13s ease, transform .13s ease, background .13s ease;
+}
+.carte-prenom:hover { border-color: var(--accent); background: var(--accent-pale);
+                      transform: translateY(-2px); }
+.carte-prenom-ini {
+  width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%;
+  background: var(--accent); color: #fff; display: grid; place-items: center;
+  font-size: 18px; font-weight: 800;
+}
+.carte-prenom-nom { font-size: 16.5px; font-weight: 700; }
+
+/* ============================================================
+   Bilan de « Je me corrige » — gros chiffres, lisibles de loin
+   ============================================================ */
+.bilan-bravo { text-align: center; margin: 6px 0 26px; }
+.bilan-felicit {
+  font-size: 38px; font-weight: 800; color: var(--vert); letter-spacing: -.03em;
+  line-height: 1.15;
+}
+.bilan-jauge {
+  position: relative; height: 34px; border-radius: 999px;
+  background: var(--fond-doux); overflow: hidden; max-width: 560px;
+  margin: 18px auto 0;
+}
+.bilan-jauge-rempli {
+  height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--vert), #34C77B);
+  transition: width .7s cubic-bezier(.22,1,.36,1);
+}
+.bilan-jauge-txt {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 14.5px; font-weight: 700; color: var(--texte);
+}
+
+.bilan-grand {
+  display: flex; align-items: stretch; gap: 14px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.bilan-case {
+  flex: 1 1 200px; border: 3px solid var(--bordure); border-radius: 18px;
+  padding: 20px 18px 22px; text-align: center; background: var(--carte);
+  box-shadow: var(--ombre);
+}
+.bilan-case.depart    { border-color: var(--rouge); background: rgba(220,38,38,.05); }
+.bilan-case.corrigees { border-color: var(--vert);  background: rgba(21,163,74,.07); }
+.bilan-case.restantes { border-color: var(--orange); background: rgba(217,119,6,.05); }
+.bilan-case-l { font-size: 15px; font-weight: 700; color: var(--texte-doux); }
+.bilan-case-v { font-size: 76px; font-weight: 800; line-height: 1.05; margin-top: 4px; }
+.bilan-case.depart .bilan-case-v    { color: var(--rouge); }
+.bilan-case.corrigees .bilan-case-v { color: var(--vert); }
+.bilan-case.restantes .bilan-case-v { color: var(--orange); }
+.bilan-fleche {
+  display: grid; place-items: center; font-size: 34px; font-weight: 800;
+  color: var(--texte-pale); flex: 0 0 30px;
+}
+
+.bilan-second { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.bilan-mini {
+  flex: 1 1 170px; background: var(--carte); border: 1px solid var(--bordure);
+  border-radius: 14px; padding: 15px 18px; box-shadow: var(--ombre);
+}
+.bilan-mini .v { font-size: 32px; font-weight: 800; line-height: 1.1; }
+.bilan-mini .l { font-size: 13.5px; color: var(--texte-doux); margin-top: 3px; }
+
+.bilan-cats { padding: 22px 24px 24px; }
+.bilan-cats-titre { font-size: 19px; font-weight: 700; margin-bottom: 16px; }
+.bilan-cats-grille {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+  gap: 12px;
+}
+.bilan-cat {
+  border: 2px solid var(--c); border-radius: 14px; overflow: hidden;
+  text-align: center; background: var(--carte);
+}
+.bilan-cat-nom {
+  background: var(--c); color: #fff; padding: 8px 10px;
+  font-size: 13.5px; font-weight: 700;
+}
+.bilan-cat-chiffres {
+  display: flex; align-items: baseline; justify-content: center; gap: 9px;
+  padding: 14px 8px 4px; font-size: 34px; font-weight: 800;
+}
+.bilan-cat-chiffres .av { color: var(--texte-doux); }
+.bilan-cat-chiffres .fl { font-size: 20px; color: var(--texte-pale); }
+.bilan-cat-etat { font-size: 12.5px; color: var(--texte-doux); padding: 0 8px 12px; }
+.bilan-cat.fini .bilan-cat-etat { color: var(--vert); font-weight: 700; }
+
+@media (max-width: 760px) {
+  .bilan-fleche { display: none; }
+  .bilan-case-v { font-size: 58px; }
+  .bilan-felicit { font-size: 30px; }
+}
+
+/* ============================================================
+   Visionneuse des leçons du classeur — enfin lisible
+   ============================================================ */
+.lecon-modale-haut {
+  display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.lecon-modale-haut .carte-titre { font-size: 17px; margin-bottom: 2px; }
+.lecon-modale-sous { font-size: 12.5px; color: var(--texte-doux); }
+.zoom-reglage {
+  margin-left: auto; display: flex; align-items: center; gap: 8px;
+  background: var(--fond-doux); border-radius: 999px; padding: 6px 10px;
+}
+.zoom-lib { font-size: 12px; font-weight: 600; color: var(--texte-doux); }
+.btn-zoom {
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--bordure);
+  background: var(--carte); color: var(--texte); cursor: pointer;
+  font-size: 19px; font-weight: 700; line-height: 1; font-family: inherit;
+  display: grid; place-items: center;
+}
+.btn-zoom:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.zoom-valeur { font-size: 13px; font-weight: 700; min-width: 52px; text-align: center; }
+.lecon-cadre {
+  border: 1px solid var(--bordure); border-radius: 12px; overflow: auto;
+  background: #fff; max-height: 66vh;
+}
+.lecon-cadre iframe { width: 100%; border: 0; display: block; background: #fff; }
+
+/* Bouton « Voir la leçon », dans l'aide de l'élève */
+.btn-lecon {
+  width: 100%; margin: 14px 0 4px; padding: 13px 18px; font-size: 14.5px;
+  justify-content: flex-start; text-align: left;
+}
+
+/* Bandeau : ce mot se déduit / ne se déduit pas */
+.lecon-nature {
+  display: flex; gap: 12px; align-items: flex-start; border-radius: 12px;
+  padding: 13px 15px; margin-bottom: 14px; font-size: 14px; line-height: 1.55;
+  border: 2px solid var(--bordure);
+}
+.lecon-nature-ico { font-family: var(--emoji); font-size: 24px; flex-shrink: 0;
+                    line-height: 1.1; }
+.lecon-nature.a_savoir { border-color: var(--ambre); background: var(--ambre-pale);
+                         color: var(--ambre-fonce); }
+.lecon-nature.famille  { border-color: var(--vert); background: rgba(21,163,74,.08); }
+.lecon-nature.accent   { border-color: var(--cyan); background: rgba(14,165,233,.08); }
+[data-theme="sombre"] .lecon-nature.a_savoir { color: #F5C46A; }
+
+/* Cloisonnement de l'espace élève (Réglages) */
+.verrou-inter {
+  background: var(--fond-doux); border-radius: var(--r-s); padding: 11px 14px;
+  font-size: 14px;
+}
+.avert-acces {
+  margin-top: 10px; background: var(--ambre-pale); border: 1px solid var(--ambre);
+  border-left-width: 4px; border-radius: var(--r-s); padding: 10px 14px;
+  font-size: 12.5px; color: var(--ambre-fonce); line-height: 1.5;
+}
+[data-theme="sombre"] .avert-acces { color: #F5C46A; }
+
+/* ============================================================
+   « Mon bilan » — le retour donné à l'élève sur ses réussites
+   Gros chiffres, une phrase d'explication sous chacun, et des
+   couleurs franches : lisible par un enfant de 9 ans.
+   ============================================================ */
+.bl-bloc {
+  border: 1px solid var(--bordure); border-top: 5px solid var(--coul-bl, var(--accent));
+  border-radius: 16px; background: var(--carte); box-shadow: var(--ombre);
+  padding: 20px 22px 24px; margin-bottom: 20px;
+}
+.bl-ecrit   { --coul-bl: var(--bleu); }
+.bl-progres { --coul-bl: var(--vert); }
+.bl-lecture { --coul-bl: var(--cyan); }
+.bl-mots    { --coul-bl: var(--ambre); }
+.bl-titre {
+  display: flex; align-items: center; gap: 11px; font-size: 21px;
+  font-weight: 800; letter-spacing: -.02em; margin-bottom: 16px;
+}
+.bl-titre > span:first-child { font-family: var(--emoji); font-size: 26px; }
+.bl-compte {
+  margin-left: auto; font-size: 13px; font-weight: 700; color: var(--texte-doux);
+  background: var(--fond-doux); border-radius: 999px; padding: 6px 14px;
+}
+.bl-legende { font-size: 13px; color: var(--texte-doux); line-height: 1.55; }
+.bl-graph { margin-top: 14px; box-shadow: none; margin-bottom: 0; }
+
+/* Les chiffres, chacun avec sa phrase d'explication */
+.bl-chiffres { display: flex; gap: 14px; flex-wrap: wrap; }
+.bl-chiffre {
+  flex: 1 1 200px; background: var(--fond-doux); border-radius: 14px;
+  padding: 18px 20px 20px;
+}
+.bl-chiffre .v { font-size: 46px; font-weight: 800; line-height: 1.02; }
+.bl-chiffre .l { font-size: 15px; font-weight: 700; margin-top: 4px; }
+.bl-chiffre .e { font-size: 12.5px; color: var(--texte-doux); margin-top: 7px;
+                 line-height: 1.5; }
+.bl-chiffre.vert .v   { color: var(--vert); }
+.bl-chiffre.bleu .v   { color: var(--bleu); }
+.bl-chiffre.orange .v { color: var(--orange); }
+
+/* Les badges de réussite */
+.badges {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 13px;
+}
+.badge {
+  border: 2px solid var(--bordure); border-radius: 16px; padding: 16px 12px 14px;
+  text-align: center; background: var(--carte);
+}
+.badge-emo { font-family: var(--emoji); font-size: 38px; line-height: 1.1; }
+.badge-nom { font-size: 14.5px; font-weight: 800; margin-top: 6px; line-height: 1.25; }
+.badge-obj { font-size: 11.5px; color: var(--texte-doux); margin-top: 5px;
+             line-height: 1.4; }
+.badge.gagne {
+  border-color: var(--vert); background: rgba(21,163,74,.08);
+  box-shadow: 0 2px 10px rgba(21,163,74,.14);
+}
+.badge.gagne .badge-obj { color: var(--vert); font-weight: 700; }
+.badge.a-venir { opacity: .82; }
+.badge.a-venir .badge-emo { filter: grayscale(1); opacity: .5; }
+.badge-jauge {
+  height: 7px; border-radius: 999px; background: var(--fond-doux);
+  overflow: hidden; margin-top: 9px;
+}
+.badge-jauge > div { height: 100%; border-radius: 999px; background: var(--accent);
+                     transition: width .6s ease; }
+.badge-reste { font-size: 11.5px; font-weight: 700; color: var(--texte-doux);
+               margin-top: 5px; }
+
+/* Ce qui progresse : avant → maintenant */
+.evolutions {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+.evo {
+  border: 2px solid var(--bordure); border-radius: 14px; padding: 14px 12px 13px;
+  text-align: center; background: var(--carte);
+}
+.evo-nom { font-size: 14px; font-weight: 700; }
+.evo-chiffres {
+  display: flex; align-items: baseline; justify-content: center; gap: 9px;
+  margin-top: 8px; font-size: 30px; font-weight: 800;
+}
+.evo-avant { color: var(--texte-pale); }
+.evo-fleche { font-size: 19px; color: var(--texte-pale); }
+.evo-apres { color: var(--texte); }
+.evo-mot { font-size: 12.5px; color: var(--texte-doux); margin-top: 5px; }
+.evo.mieux { border-color: var(--vert); background: rgba(21,163,74,.07); }
+.evo.mieux .evo-apres { color: var(--vert); }
+.evo.mieux .evo-mot { color: var(--vert); font-weight: 700; }
+.evo.pareil { border-color: var(--orange); background: rgba(217,119,6,.06); }
+.evo.pareil .evo-apres { color: var(--orange); }
+
+/* Objectif de lecture */
+.bl-objectif { margin-bottom: 18px; }
+.bl-objectif-txt { font-size: 15px; line-height: 1.65; margin-bottom: 12px; }
+.bl-jauge {
+  position: relative; height: 34px; border-radius: 999px;
+  background: var(--fond-doux); overflow: hidden;
+}
+.bl-jauge-rempli {
+  height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), #38BDF8);
+  transition: width .8s cubic-bezier(.22,1,.36,1);
+}
+.bl-jauge-txt {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 14px; font-weight: 700; color: var(--texte);
+}
+
+/* Bilan encore vide */
+.bilan-vide {
+  text-align: center; padding: 50px 20px; border: 2px dashed var(--bordure);
+  border-radius: 18px;
+}
+.bilan-vide-emo { font-family: var(--emoji); font-size: 54px; }
+.bilan-vide h3 { font-size: 21px; margin: 12px 0 8px; }
+.bilan-vide p { color: var(--texte-doux); line-height: 1.7; margin-bottom: 20px; }
+
+.tuile-bilan h3 { color: var(--vert); }
+
+/* Mes leçons (élève) */
+.grille-lecons {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+.carte-lecon {
+  border: 2px solid var(--c); border-radius: 16px; overflow: hidden;
+  background: var(--carte); display: flex; flex-direction: column;
+  box-shadow: var(--ombre);
+}
+.carte-lecon-haut { background: var(--c); color: #fff; padding: 9px 15px;
+                    font-size: 13px; font-weight: 700; }
+.carte-lecon-titre { font-size: 17px; font-weight: 800; padding: 14px 15px 2px;
+                     line-height: 1.3; }
+.carte-lecon-sous { font-size: 12px; color: var(--texte-doux); padding: 0 15px 14px; }
+.carte-lecon .btn { margin: auto 15px 15px; background: var(--c); }
+
+/* Impression du bilan de l'élève */
+@media print {
+  #sidebar, #barre-haut, .btn, .toast, .modale { display: none !important; }
+  #contenu { overflow: visible; padding: 0; }
+  body { display: block; overflow: visible; }
+  .bl-bloc { break-inside: avoid; box-shadow: none; }
+}
+
+/* Réussites débloquées à la fin d'une séance de correction */
+.nouveaux-badges {
+  border: 3px solid var(--vert); border-radius: 18px;
+  background: rgba(21,163,74,.07); padding: 18px 20px 20px; margin-bottom: 16px;
+  animation: apparait .45s cubic-bezier(.22,1,.36,1);
+}
+@keyframes apparait {
+  from { opacity: 0; transform: translateY(10px) scale(.97); }
+  to   { opacity: 1; transform: none; }
+}
+.nb-titre { font-size: 21px; font-weight: 800; color: var(--vert);
+            text-align: center; margin-bottom: 14px; }
+.nb-liste { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.nb-badge {
+  display: flex; align-items: center; gap: 12px; background: var(--carte);
+  border: 2px solid var(--vert); border-radius: 14px; padding: 12px 18px;
+  font-size: 15px;
+}
+.nb-emo { font-family: var(--emoji); font-size: 32px; }
+.nb-obj { font-size: 12.5px; color: var(--texte-doux); }
+.nouveaux-badges .btn { display: flex; margin: 16px auto 0; }
+
+/* ============================================================
+   Mon dictionnaire — chercher un mot en l'écrivant comme on l'entend
+   ============================================================ */
+.dico-boite { border-top: 4px solid var(--accent); }
+.dico-ligne { display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap; }
+.dico-champ {
+  flex: 1 1 260px; font-size: 22px; font-weight: 600; padding: 14px 18px;
+  border-radius: 12px; border: 2px solid var(--bordure);
+  font-family: var(--lect-police, inherit);
+}
+.dico-champ:focus { border-color: var(--accent); }
+.dico-ligne .btn { flex-shrink: 0; padding: 14px 26px; font-size: 16px; }
+.dico-aide { font-size: 13px; color: var(--texte-doux); margin-top: 12px;
+             line-height: 1.55; }
+.dico-compte { display: block; margin-top: 4px; color: var(--texte-pale);
+               font-size: 12px; }
+
+.dico-intro { font-size: 15px; line-height: 1.6; margin: 4px 0 14px; }
+.dico-bravo {
+  background: rgba(21,163,74,.09); border: 2px solid var(--vert);
+  border-radius: 12px; padding: 13px 16px; margin-bottom: 14px; font-size: 15px;
+  line-height: 1.55;
+}
+
+/* La liste des propositions, du plus probable au moins probable */
+.dico-liste { display: flex; flex-direction: column; gap: 8px; }
+.dico-mot {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  border: 2px solid var(--bordure); border-radius: 13px; background: var(--carte);
+  padding: 13px 16px; cursor: pointer; font-family: inherit; color: var(--texte);
+  text-align: left; transition: border-color .12s ease, transform .12s ease,
+    background .12s ease;
+}
+.dico-mot:hover { border-color: var(--accent); transform: translateX(3px); }
+.dico-mot.choisi { border-color: var(--accent); background: var(--accent-pale); }
+.dico-mot.meme-son { border-left: 6px solid var(--vert); }
+.dico-rang {
+  width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%;
+  background: var(--fond-doux); color: var(--texte-doux);
+  display: grid; place-items: center; font-size: 13.5px; font-weight: 800;
+}
+.dico-mot.meme-son .dico-rang { background: var(--vert); color: #fff; }
+.dico-mot-txt { flex: 1; min-width: 0; }
+.dico-mot-nom { display: block; font-size: 20px; font-weight: 700;
+                letter-spacing: -.01em; }
+.dico-mot-nat { display: block; font-size: 12.5px; color: var(--texte-doux);
+                margin-top: 1px; }
+.dico-etiq {
+  flex-shrink: 0; font-size: 11px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--vert); background: rgba(21,163,74,.12);
+  border-radius: 999px; padding: 5px 11px;
+}
+.dico-jauge {
+  flex-shrink: 0; width: 62px; height: 7px; border-radius: 999px;
+  background: var(--fond-doux); overflow: hidden;
+}
+.dico-jauge > span { display: block; height: 100%; border-radius: 999px;
+                     background: var(--accent); }
+
+/* La définition du mot cliqué */
+.dico-def {
+  margin-top: 16px; border: 3px solid var(--accent); border-radius: 16px;
+  background: var(--carte); padding: 20px 22px 22px; box-shadow: var(--ombre-forte);
+}
+.dico-def-haut { display: flex; align-items: flex-start; gap: 16px;
+                 flex-wrap: wrap; margin-bottom: 12px; }
+.dico-def-mot { font-size: 30px; font-weight: 800; letter-spacing: -.02em;
+                color: var(--accent); }
+.dico-def-nat { font-size: 13px; color: var(--texte-doux); font-style: italic; }
+.dico-utiliser { margin-left: auto; flex-shrink: 0; }
+.dico-def-txt { font-size: 17px; line-height: 1.7; }
+.dico-def-vide { font-size: 14.5px; line-height: 1.6; color: var(--texte-doux);
+                 background: var(--fond-doux); border-radius: 10px;
+                 padding: 12px 15px; }
+.dico-famille {
+  margin-top: 16px; border-top: 1px solid var(--bordure); padding-top: 14px;
+}
+.dico-famille-t { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.dico-famille-l { display: flex; flex-wrap: wrap; gap: 7px; }
+.dico-famille-m {
+  background: var(--fond-doux); border-radius: 8px; padding: 6px 12px;
+  font-size: 14.5px; font-weight: 600;
+}
+.dico-famille-aide { font-size: 12px; color: var(--texte-doux); margin-top: 8px; }
+.dico-actions { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 16px; }
+
+.dico-rien {
+  text-align: center; padding: 40px 20px; border: 2px dashed var(--bordure);
+  border-radius: 16px; margin-top: 14px;
+}
+.dico-rien-emo { font-family: var(--emoji); font-size: 44px; }
+.dico-rien p { color: var(--texte-doux); line-height: 1.65; margin-top: 8px; }
+
+.btn-dico { width: 100%; margin-top: 9px; justify-content: flex-start; }
+.tuile-dico h3 { color: var(--cyan); }
+.dico-modale .dico-boite { box-shadow: none; margin-bottom: 14px; }
+.dico-modale #dico-resultats { max-height: 46vh; overflow-y: auto; }
+
+/* Nuage des mots cherchés (côté enseignant) */
+.nuage-mots { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+.mot-cherche {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid var(--c); border-radius: 999px; padding: 7px 8px 7px 15px;
+  font-size: 15px; font-weight: 600; color: var(--texte);
+}
+.mot-cherche b {
+  background: var(--c); color: #fff; border-radius: 999px; min-width: 24px;
+  height: 24px; display: grid; place-items: center; font-size: 12.5px;
+  padding: 0 7px;
+}
+
+/* ============================================================
+   Ma dictée — fabriquée avec les mots que l'élève rate vraiment
+   ============================================================ */
+.dictee-accueil { text-align: center; padding: 34px 26px 30px;
+                  border-top: 4px solid var(--ambre); }
+.dictee-accueil-emo { font-family: var(--emoji); font-size: 52px; line-height: 1; }
+.dictee-accueil h3 { font-size: 25px; margin: 12px 0 10px; }
+.dictee-expli {
+  font-size: 15.5px; line-height: 1.7; color: var(--texte-doux);
+  max-width: 560px; margin: 0 auto 16px;
+}
+.dictee-mode { font-size: 14px; color: var(--texte-doux); line-height: 1.6;
+               max-width: 520px; margin: 0 auto 14px; }
+.dictee-vitesse { justify-content: center; margin-bottom: 20px; }
+.dictee-vitesse .mini.actif { background: var(--accent); color: #fff;
+                              border-color: var(--accent); }
+.dictee-sans-voix {
+  background: var(--ambre-pale); border: 1px solid var(--ambre);
+  border-left-width: 4px; border-radius: 10px; padding: 13px 16px;
+  font-size: 13.5px; line-height: 1.6; color: var(--ambre-fonce);
+  max-width: 560px; margin: 0 auto 20px; text-align: left;
+}
+[data-theme="sombre"] .dictee-sans-voix { color: #F5C46A; }
+
+/* Barre de progression */
+.dictee-barre { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.dictee-progres {
+  flex: 1; height: 10px; border-radius: 999px; background: var(--fond-doux);
+  overflow: hidden;
+}
+.dictee-progres > div { height: 100%; border-radius: 999px;
+  background: var(--ambre); transition: width .4s ease; }
+.dictee-compte { font-size: 13px; font-weight: 700; color: var(--texte-doux);
+                 white-space: nowrap; }
+
+/* La scène de dictée */
+.dictee-scene { text-align: center; padding: 30px 26px 28px; }
+.dictee-consigne { font-size: 17px; color: var(--texte-doux); margin-bottom: 20px; }
+.dictee-boutons { display: flex; gap: 10px; justify-content: center;
+                  flex-wrap: wrap; margin-bottom: 6px; }
+.dictee-ecouter { background: var(--ambre); }
+.dictee-affichage { min-height: 56px; display: grid; place-items: center;
+                    margin-top: 12px; }
+.dictee-flash {
+  font-size: 40px; font-weight: 800; letter-spacing: .02em; color: var(--ambre);
+  animation: flashmot .3s ease;
+}
+@keyframes flashmot { from { opacity: 0; transform: scale(.9); } }
+.dictee-cache { font-size: 15px; color: var(--texte-pale); font-style: italic; }
+.dictee-champ {
+  font-size: 30px; font-weight: 700; text-align: center; padding: 16px 20px;
+  border-radius: 14px; border: 3px solid var(--bordure); max-width: 440px;
+  margin: 0 auto; display: block;
+  font-family: var(--lect-police, inherit);
+}
+.dictee-champ:focus { border-color: var(--ambre); }
+.dictee-actions { display: flex; gap: 10px; justify-content: center;
+                  margin-top: 18px; flex-wrap: wrap; }
+.dictee-astuce { font-size: 13px; color: var(--texte-pale); margin-top: 14px; }
+
+/* Le retour immédiat après chaque mot */
+.dictee-retour {
+  margin-top: 22px; border-radius: 16px; padding: 18px 20px 20px;
+  border: 3px solid var(--bordure); text-align: center;
+  animation: apparait .35s cubic-bezier(.22,1,.36,1);
+}
+.dictee-retour.juste { border-color: var(--vert); background: rgba(21,163,74,.08); }
+.dictee-retour.orthographe,
+.dictee-retour.proche { border-color: var(--orange); background: rgba(217,119,6,.07); }
+.dictee-retour.accent { border-color: var(--cyan); background: rgba(14,165,233,.07); }
+.dictee-retour.ecoute,
+.dictee-retour.vide { border-color: var(--rouge); background: rgba(220,38,38,.06); }
+.dr-haut { display: flex; align-items: center; gap: 10px; justify-content: center; }
+.dr-emo { font-family: var(--emoji); font-size: 30px; }
+.dr-titre { font-size: 22px; font-weight: 800; }
+.dictee-retour.juste .dr-titre { color: var(--vert); }
+.dr-mot { font-size: 19px; margin-top: 10px; }
+.dr-mot b { color: var(--ambre); font-size: 24px; }
+.dr-conseil { font-size: 14.5px; line-height: 1.6; color: var(--texte-doux);
+              margin-top: 10px; max-width: 520px; margin-left: auto;
+              margin-right: auto; }
+.dictee-retour .btn { margin-top: 16px; }
+
+/* Bilan de la dictée */
+.dictee-bravo { text-align: center; margin: 8px 0 24px; }
+.dictee-score { font-size: 72px; font-weight: 800; color: var(--ambre);
+                line-height: 1.05; }
+.dictee-score-l { font-size: 17px; font-weight: 700; color: var(--texte-doux); }
+.dictee-message { font-size: 16px; line-height: 1.65; max-width: 620px;
+                  margin: 14px auto 0; }
+.dictee-genres {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px; margin-top: 12px;
+}
+.dictee-genre { border: 2px solid var(--bordure); border-radius: 14px;
+                padding: 15px 14px; text-align: center; }
+.dg-emo { font-family: var(--emoji); font-size: 30px; }
+.dg-n { font-size: 34px; font-weight: 800; line-height: 1.1; }
+.dg-t { font-size: 14px; font-weight: 700; margin-top: 3px; }
+.dg-e { font-size: 12.5px; color: var(--texte-doux); margin-top: 6px;
+        line-height: 1.5; }
+.dictee-liste { display: flex; flex-direction: column; gap: 7px; margin-top: 12px; }
+.dictee-ligne {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  border: 1px solid var(--bordure); border-radius: 11px; padding: 11px 15px;
+}
+.dictee-ligne.juste { border-color: var(--vert); background: rgba(21,163,74,.05); }
+.dictee-ligne.faux { border-color: var(--orange); background: rgba(217,119,6,.04); }
+.dl-etat { font-family: var(--emoji); font-size: 18px; }
+.dl-mot { font-size: 18px; font-weight: 700; }
+.dl-saisi { font-size: 13.5px; color: var(--texte-doux); }
+.dl-dico { margin-left: auto; }
+.tuile-dictee h3 { color: var(--ambre); }
+.bl-dictee { --coul-bl: var(--ambre); }
+.module-dictee { --coul-module: var(--ambre); }
+
+/* ============================================================
+   Passage guidé — disposition retenue
+     · à droite : les compteurs et le passage en cours (vue d'ensemble)
+     · sous le texte : l'aide, sur toute la largeur (elle a besoin de place)
+   ============================================================ */
+/* En-tête d'un passage : la frise et le titre tiennent sur une seule ligne.
+   L'ancien bandeau de cinq boutons faisait doublon avec le titre juste en
+   dessous et mangeait 90 px de hauteur pour rien. */
+.entete-passage {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  border-bottom: 3px solid var(--c); padding-bottom: 10px; margin-bottom: 14px;
+}
+.ep-fil { display: flex; gap: 5px; flex-shrink: 0; }
+.ep-point {
+  width: 26px; height: 26px; border-radius: 50%; display: grid;
+  place-items: center; font-size: 12.5px; font-weight: 800;
+  background: var(--fond-doux); color: var(--texte-pale);
+}
+.ep-point.fait { background: var(--vert); color: #fff; }
+.ep-point.actu { background: var(--c); color: #fff;
+                 box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 25%, transparent); }
+.ep-h1 { font-size: 22px; font-weight: 800; letter-spacing: -.02em; margin: 0; }
+.ep-rang { margin-left: auto; font-size: 12.5px; color: var(--texte-doux); }
+
+.colonne-suivi { display: flex; flex-direction: column; gap: 12px; }
+.duo-bilan.vertical { display: flex; flex-direction: column; gap: 10px;
+                      margin-bottom: 0; }
+.duo-bilan.vertical .bloc-bilan { padding: 12px 14px 13px; border-radius: 12px;
+                                  box-shadow: var(--ombre); }
+.duo-bilan.vertical .bloc-bilan-titre { font-size: 13.5px; }
+.duo-bilan.vertical .bloc-bilan-nombre { font-size: 38px; margin: 2px 0 8px; }
+.duo-bilan.vertical .bloc-bilan-chips .puce { font-size: 11.5px; padding: 4px 9px; }
+.duo-bilan.vertical .bloc-bilan-note { padding-top: 8px; font-size: 11.5px; }
+
+.encart-passage { margin-bottom: 0; padding: 15px 16px 16px; }
+.ep-titre { font-weight: 700; font-size: 14.5px; }
+.ep-consigne { font-size: 12.5px; color: var(--texte-doux); line-height: 1.5;
+               margin-top: 4px; }
+.ep-compteur { text-align: center; margin: 12px 0 8px; }
+.ep-nombre { display: block; font-size: 44px; font-weight: 800; line-height: 1; }
+.ep-libelle { font-size: 12.5px; font-weight: 600; }
+.ep-astuce { font-size: 12px; color: var(--texte-doux); line-height: 1.45;
+             border-top: 1px solid var(--bordure); padding-top: 10px; }
+.ep-dico { width: 100%; margin-top: 10px; font-size: 13px; }
+
+/* L'aide, sous le texte, sur toute la largeur */
+.zone-aide { margin-top: 14px; }
+.zone-aide .lecon.grande .corps { padding: 20px 22px 22px; }
+.zone-aide .lecon-question { font-size: 16px; }
+.zone-aide .lecon.grande ul { columns: 2; column-gap: 26px; }
+.zone-aide .lecon.grande ul li { break-inside: avoid; }
+.zone-aide .btn-lecon { width: auto; }
+.aide-outils { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 12px; }
+.aide-outils .btn { width: auto; }
+
+@media (max-width: 1150px) {
+  .zone-aide .lecon.grande ul { columns: 1; }
+}
+
+.panneau-large { margin-top: 14px; }
+.bandeau-passage {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  border: 1px solid var(--bordure); border-left: 6px solid var(--c);
+  border-radius: 0 14px 14px 0; background: var(--carte);
+  padding: 14px 20px; box-shadow: var(--ombre);
+}
+.bp-compteur { display: flex; align-items: baseline; gap: 9px; flex-shrink: 0; }
+.bp-nombre { font-size: 40px; font-weight: 800; line-height: 1; }
+.bp-libelle { font-size: 13px; font-weight: 600; }
+.bp-texte { flex: 1 1 260px; min-width: 0; }
+.bp-titre { font-size: 15.5px; font-weight: 700; }
+.bp-consigne { font-size: 13px; color: var(--texte-doux); line-height: 1.5;
+               margin-top: 2px; }
+.bp-astuce {
+  flex: 0 1 300px; font-size: 12.5px; color: var(--texte-doux);
+  line-height: 1.5; border-left: 1px solid var(--bordure); padding-left: 18px;
+}
+
+/* L'aide s'ouvre sous le texte, sur toute la largeur : deux colonnes de
+   lecture confortables plutôt qu'une colonne étroite à droite. */
+#zone-lecon { margin-top: 14px; }
+.panneau-large .lecon.grande .corps { padding: 20px 22px 22px; }
+.panneau-large .lecon-question { font-size: 16px; }
+.panneau-large .lecon.grande ul { columns: 2; column-gap: 26px; }
+.panneau-large .lecon.grande ul li { break-inside: avoid; }
+.panneau-large .btn-lecon, .panneau-large .btn-dico { width: auto; }
+.panneau-large .lecon-indice-zone { margin-top: 14px; }
+
+@media (max-width: 900px) {
+  .bp-astuce { border-left: 0; padding-left: 0; flex-basis: 100%; }
+  .panneau-large .lecon.grande ul { columns: 1; }
+}
+
+/* ============================================================
+   Flash cards — mémorisation éclair d'un mot
+   ============================================================ */
+.banque-entrainement {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  border-top: 4px solid var(--accent);
+}
+.be-texte { flex: 1 1 320px; }
+.banque-entrainement .btn { flex-shrink: 0; }
+
+.flash-scene { text-align: center; padding: 30px 26px 26px; }
+.flash-etoiles { font-size: 24px; letter-spacing: 6px; color: var(--ambre);
+                 margin-bottom: 18px; }
+.flash-zone {
+  min-height: 120px; display: grid; place-items: center;
+  background: var(--fond-doux); border-radius: 16px; padding: 20px;
+}
+.flash-mot {
+  font-size: 52px; font-weight: 800; letter-spacing: .01em;
+  font-family: var(--lect-police, inherit); line-height: 1.15;
+  animation: apparait .25s ease;
+}
+.flash-chrono {
+  margin-top: 10px; font-size: 15px; font-weight: 700; color: var(--texte-doux);
+  width: 34px; height: 34px; border-radius: 50%; background: var(--carte);
+  display: grid; place-items: center; margin-left: auto; margin-right: auto;
+}
+.flash-cache { font-size: 30px; color: var(--texte-pale); }
+.flash-quitter { margin-top: 16px; }
+.flash-acquis { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+.flash-acquis-mot {
+  background: rgba(21,163,74,.1); border: 2px solid var(--vert);
+  color: var(--vert); border-radius: 999px; padding: 7px 15px;
+  font-size: 15px; font-weight: 700;
+}
+
+/* ============================================================
+   « À faire la prochaine fois » — l'analyse propose, le maître valide
+   ============================================================ */
+.suggestion { display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+.sg-eleve { min-width: 150px; }
+.sg-prenom { display: block; font-size: 17px; font-weight: 800; }
+.sg-classe { font-size: 12px; color: var(--texte-pale); }
+.sg-pistes { flex: 1 1 400px; display: flex; flex-direction: column; gap: 9px; }
+.sg-piste {
+  display: flex; align-items: center; gap: 13px; flex-wrap: wrap;
+  border: 1px solid var(--bordure); border-left: 4px solid var(--texte-pale);
+  border-radius: 0 11px 11px 0; padding: 11px 15px;
+}
+.sg-piste.urgente { border-left-color: var(--rouge);
+                    background: rgba(220,38,38,.035); }
+.sg-ico { font-family: var(--emoji); font-size: 22px; flex-shrink: 0; }
+.sg-texte { flex: 1 1 220px; min-width: 0; }
+.sg-titre { font-size: 14.5px; font-weight: 700; }
+.sg-motif { font-size: 12.5px; color: var(--texte-doux); margin-top: 2px; }
+.sg-piste .btn { flex-shrink: 0; }
+.sg-piste .btn:disabled { background: var(--vert); color: #fff; }
+
+/* Côté élève : ce qui est à faire en priorité */
+.a-faire { border: 3px solid var(--accent); background: var(--accent-pale); }
+.af-liste { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.af-tuile {
+  display: flex; align-items: center; gap: 12px; flex: 1 1 260px;
+  border: 2px solid var(--accent); border-radius: 14px; background: var(--carte);
+  padding: 14px 18px; cursor: pointer; font-family: inherit; color: var(--texte);
+  text-align: left; transition: transform .12s ease, box-shadow .12s ease;
+}
+.af-tuile:hover { transform: translateY(-2px); box-shadow: var(--ombre-forte); }
+.af-ico { font-family: var(--emoji); font-size: 26px; flex-shrink: 0; }
+.af-txt { flex: 1; font-size: 15.5px; font-weight: 700; line-height: 1.3; }
+.af-go { font-size: 12.5px; font-weight: 700; color: var(--accent);
+         white-space: nowrap; }
+
+/* ============================================================
+   Lecture en autonomie — l'ordinateur écoute et compte
+   ============================================================ */
+.auto-note { font-size: 12px; color: var(--texte-doux); text-align: right; }
+.auto-choix {
+  background: var(--fond-doux); border-radius: 12px; padding: 12px 15px;
+  align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5;
+}
+.auto-choix input { margin-top: 3px; width: 20px; height: 20px;
+                    accent-color: var(--accent); }
+.auto-detail { font-size: 12.5px; color: var(--texte-doux); }
+.auto-actif {
+  display: flex; align-items: center; gap: 10px; font-size: 14px;
+  font-weight: 700; color: var(--rouge); background: rgba(220,38,38,.07);
+  border-radius: 12px; padding: 11px 15px;
+}
+.auto-pastille {
+  width: 12px; height: 12px; border-radius: 50%; background: var(--rouge);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: .25; transform: scale(.8); } }
+
+/* Le texte relu, mot par mot */
+.relecture {
+  font-family: var(--lect-police, Georgia), serif;
+  font-size: var(--lect-taille, 18px); line-height: 2.1;
+  margin-top: 12px; word-spacing: 2px;
+}
+.relecture span { padding: 2px 3px; border-radius: 4px; }
+.mot-lu { color: var(--texte); }
+.mot-remplace { background: rgba(217,119,6,.22);
+                box-shadow: inset 0 -2px 0 var(--orange); cursor: help; }
+.mot-oublie { background: rgba(220,38,38,.16); text-decoration: line-through;
+              text-decoration-color: var(--rouge); }
+.mot-non_lu { color: var(--texte-pale); }
+.lg-cle { display: inline-flex; align-items: center; gap: 6px;
+          margin-right: 16px; font-size: 12.5px; }
+.lg-cle::before { content: ""; width: 13px; height: 13px; border-radius: 4px;
+                  display: inline-block; }
+.lg-cle.lu::before { background: var(--bordure); }
+.lg-cle.remplace::before { background: rgba(217,119,6,.5); }
+.lg-cle.oublie::before { background: rgba(220,38,38,.4); }
+.lg-cle.non_lu::before { background: var(--fond-doux);
+                         border: 1px solid var(--bordure); }
+.avert-auto {
+  background: var(--ambre-pale); border: 1px solid var(--ambre);
+  border-left-width: 4px; border-radius: 10px; padding: 13px 16px;
+  font-size: 13.5px; line-height: 1.6; color: var(--ambre-fonce);
+  margin-bottom: 18px;
+}
+[data-theme="sombre"] .avert-auto { color: #F5C46A; }
+
+/* Avertissement à lire avant d'activer l'envoi de la voix */
+.avert-rgpd {
+  background: var(--fond-doux); border: 1px solid var(--bordure);
+  border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0;
+  padding: 14px 18px; margin: 14px 0; font-size: 13px; line-height: 1.6;
+}
+.avert-rgpd ul { margin: 8px 0 0 18px; }
+.avert-rgpd li { margin-bottom: 6px; }
+
+/* Résultat d'un test de connexion à un service */
+.res-test {
+  border-radius: 10px; padding: 11px 15px; font-size: 13.5px; line-height: 1.55;
+  border: 1px solid var(--bordure); border-left-width: 4px;
+}
+.res-test.ok { border-left-color: var(--vert); background: rgba(21,163,74,.07);
+               color: var(--vert); }
+.res-test.ko { border-left-color: var(--orange);
+               background: rgba(217,119,6,.07); color: var(--ambre-fonce); }
+[data-theme="sombre"] .res-test.ko { color: #F5C46A; }
+.astuce-test { font-size: 12px; color: var(--texte-pale); margin-top: 8px;
+               line-height: 1.5; }
+.liste-modeles { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.liste-modeles .mini { font-family: Consolas, monospace; font-size: 11.5px; }
+.liste-modeles .mini:hover { background: var(--accent); color: #fff;
+                             border-color: var(--accent); }
+
+/* ============================================================
+   Phase J9 — modes de dictée, badges à paliers, objectif, impression
+   ============================================================ */
+
+/* Choix du mode de dictée */
+.modes-dictee { display: grid; gap: 16px;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.mode-carte {
+  border: 2px solid var(--bordure); border-radius: 16px; background: var(--carte);
+  padding: 20px 18px; text-align: center; box-shadow: var(--ombre);
+  display: flex; flex-direction: column;
+}
+.mode-emo { font-family: var(--emoji); font-size: 40px; line-height: 1; }
+.mode-nom { font-size: 19px; font-weight: 800; margin-top: 8px; }
+.mode-expli { font-size: 13px; color: var(--texte-doux); line-height: 1.55;
+              margin-top: 8px; }
+.mode-suivi { font-size: 12.5px; color: var(--texte-pale); margin-top: 10px; }
+.mode-niveaux { display: flex; gap: 8px; margin-top: auto; padding-top: 14px; }
+.mode-niveaux .btn { flex: 1; padding: 10px 6px; font-size: 13px; line-height: 1.3; }
+.niv-nb { font-size: 11px; color: var(--texte-pale); font-weight: 400; }
+
+/* Correction mot à mot d'une expression ou d'une phrase */
+.dr-juste { color: var(--vert); }
+.dr-faux, .dr-oublie { color: var(--rouge); text-decoration: underline;
+                       text-decoration-style: wavy; }
+
+/* Badges : paliers et prochain objectif */
+.badge { border-color: var(--c, var(--bordure)); }
+.badge.gagne { border-color: var(--vert); }
+.badge-palier { font-size: 11px; letter-spacing: 2px; color: var(--texte-pale);
+                margin-top: 7px; }
+.badge.gagne .badge-palier { color: var(--vert); }
+.prochain-badge {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  background: var(--accent-pale); border: 2px solid var(--accent);
+  border-radius: 14px; padding: 13px 16px; margin-bottom: 16px; font-size: 14.5px;
+}
+.pb-emo { font-family: var(--emoji); font-size: 30px; }
+.pb-obj { font-size: 12.5px; color: var(--texte-doux); }
+.pb-jauge { flex: 1 1 160px; height: 10px; border-radius: 999px;
+            background: var(--carte); overflow: hidden; }
+.pb-jauge > div { height: 100%; background: var(--accent); border-radius: 999px; }
+
+/* Graphiques du bilan : compacts, pour garder la vue d'ensemble */
+/* Compromis : assez grands pour se lire, assez sobres pour garder la vue
+   d'ensemble du bilan. Deux graphiques tiennent côte à côte sur un écran
+   ordinaire. */
+.bl-graph.compact { max-width: 640px; }
+.bl-graph.compact svg.graph { max-height: 250px; }
+@media (min-width: 1250px) {
+  .bl-bloc .bl-graph.compact { max-width: 700px; }
+}
+.bl-bloc .grille.g2 .bl-graph.compact { max-width: none; }
+
+/* Objectif personnel */
+.objectif-perso {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  border: 2px dashed var(--accent); border-radius: 14px; padding: 14px 18px;
+  margin-top: 14px;
+}
+.objectif-perso.atteint { border-style: solid; border-color: var(--vert);
+                          background: rgba(21,163,74,.07); }
+.op-txt { flex: 1 1 300px; font-size: 14.5px; line-height: 1.6; }
+.op-choix { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Écran d'impression */
+.carte-eleve-badges { padding: 16px 18px; }
+.eleve-tout { font-size: 15px; gap: 10px; }
+.eleve-tout input { width: 19px; height: 19px; accent-color: var(--accent); }
+.badge-nb { margin-left: auto; font-size: 12px; color: var(--texte-pale); }
+.badges-choix { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.badge-choix {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  border: 2px solid var(--c, var(--bordure)); border-radius: 999px;
+  padding: 6px 13px 6px 9px; font-size: 13px;
+}
+.badge-choix input { width: 16px; height: 16px; accent-color: var(--c); }
+.badge-choix:has(input:checked) { background: color-mix(in srgb,
+  var(--c) 12%, transparent); font-weight: 700; }
+.bc-emo { font-family: var(--emoji); font-size: 16px; }
+.grille-lecons-choix {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 8px;
+}
+.lecon-choix {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  border: 1px solid var(--bordure); border-radius: 10px; padding: 9px 13px;
+  font-size: 13.5px;
+}
+.lecon-choix:has(input:checked) { border-color: var(--accent);
+                                  background: var(--accent-pale); }
+.lecon-choix input { width: 17px; height: 17px; accent-color: var(--accent); }
+.lc-id { font-family: Consolas, monospace; font-size: 11px;
+         color: var(--texte-pale); flex-shrink: 0; }
+.lc-titre { flex: 1; min-width: 0; }
+
+/* ============================================================
+   Phase J11 — mise en page resserrée, thèmes multiples, dictionnaire mobile
+   ============================================================ */
+
+/* Le bouton d'avancement, sur la ligne du titre du passage */
+.ep-suite { flex-shrink: 0; margin-left: 8px; }
+
+/* Les deux compteurs en bandeau bas, au-dessus du texte */
+.duo-bilan.bandeau {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;
+}
+.duo-bilan.bandeau .bloc-bilan {
+  display: grid; grid-template-columns: auto 1fr; align-items: center;
+  gap: 4px 14px; padding: 10px 16px; border-radius: 12px; border-width: 2px;
+  box-shadow: none; text-align: left;
+}
+.duo-bilan.bandeau .bloc-bilan-titre { font-size: 13px; grid-column: 2; }
+.duo-bilan.bandeau .bloc-bilan-nombre {
+  font-size: 34px; margin: 0; grid-row: 1 / span 2; grid-column: 1;
+}
+.duo-bilan.bandeau .bloc-bilan-chips { grid-column: 2; justify-content: flex-start; }
+.duo-bilan.bandeau .bloc-bilan-chips .puce { font-size: 11px; padding: 3px 9px; }
+.duo-bilan.bandeau .bloc-bilan-note { display: none; }
+.duo-bilan.bandeau .bloc-bilan-vide { font-size: 12px; }
+@media (max-width: 820px) { .duo-bilan.bandeau { grid-template-columns: 1fr; } }
+
+/* Les trois boutons d'aide sur une seule ligne */
+.aide-outils { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 14px;
+               align-items: center; }
+.aide-outils .btn { width: auto; margin: 0; }
+
+/* Bilan : chiffres à gauche, graphique à droite */
+.bl-duo { display: grid; grid-template-columns: 260px 1fr; gap: 16px;
+          align-items: start; }
+.bl-chiffres.colonne { flex-direction: column; flex-wrap: nowrap; }
+.bl-chiffres.colonne .bl-chiffre { flex: 0 0 auto; width: 100%; padding: 13px 16px; }
+.bl-chiffres.colonne .bl-chiffre .v { font-size: 34px; }
+.bl-chiffres.colonne .bl-chiffre .l { font-size: 13.5px; }
+.bl-chiffres.colonne .bl-chiffre .e { font-size: 12px; }
+.bl-duo .bl-graph { margin: 0; max-width: none; }
+.bl-duo .bl-graph svg.graph { max-height: 280px; }
+@media (max-width: 900px) { .bl-duo { grid-template-columns: 1fr; } }
+
+/* Thèmes des textes : cases à cocher */
+.grille-themes {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.theme-choix {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  border: 1px solid var(--bordure); border-radius: 10px; padding: 9px 13px;
+  font-size: 13.5px;
+}
+.theme-choix:has(input:checked) { border-color: var(--accent);
+                                  background: var(--accent-pale); }
+.theme-choix input { width: 17px; height: 17px; accent-color: var(--accent); }
+
+/* Dictionnaire flottant et déplaçable */
+.modale.dico-flottante { background: rgba(15,17,23,.28); place-items: start; }
+.modale.dico-flottante .boite { box-shadow: 0 12px 40px rgba(16,24,40,.3); }
+.dico-poignee {
+  display: flex; align-items: flex-start; gap: 14px; cursor: move;
+  user-select: none; margin: -6px -6px 12px; padding: 6px;
+  border-radius: 10px;
+}
+.dico-poignee:hover { background: var(--fond-doux); }
+.dico-deplacer { margin-left: auto; font-size: 11.5px; color: var(--texte-pale);
+                 white-space: nowrap; }
+
+/* mode salle */
+.salle-adresse {
+  font-size: 1.3rem; font-weight: 700; color: var(--accent); text-align: center;
+  background: var(--accent-pale); border-radius: 12px; padding: 14px; margin-bottom: 12px;
+  user-select: all;
+}
+.salle-qr { display: flex; justify-content: center; margin: 8px 0; }
+.salle-qr svg { width: 200px; height: 200px; }
+.salle-note {
+  background: var(--ambre-pale); border: 1px solid #FDE4B8; border-left: 4px solid var(--ambre);
+  border-radius: 10px; padding: 12px 14px; font-size: .88rem; line-height: 1.5;
+  color: var(--ambre-fonce); margin-top: 12px;
+}
