@@ -70,12 +70,19 @@ un encadré discret rappelle le nom attendu. Ces emplacements sont déclarés da
 Pour qu'une illustration soit une **vidéo**, ajoutez `"type": "video"` dans le bloc `media` de
 l'énigme et déposez `<nom>.mp4` dans `assets/videos/`.
 
-## 4. Documents des leçons — `assets/images/documents/`
+## 4. Fiches officielles des leçons — `assets/lecons/`
 
-Les leçons de la bibliothèque 📚 utilisent pour l'instant des **documents-textes** (citations
-sourcées) : aucun fichier image n'est attendu. Pour remplacer un document-texte par une image,
-passez son `type` à `"image"` dans `assets/data/lecons.json` et déposez `<id-de-la-leçon>.jpg`
-dans `assets/images/documents/`.
+Les leçons du jeu (📚) **sont** les 16 documents PDF officiels du site
+« Découvrons notre Constitution ». Ce ne sont pas des médias facultatifs comme les décors :
+ils constituent le contenu pédagogique du jeu.
+
+- **Installation :** double-cliquez sur `assets/lecons/telecharger-fiches.bat`.
+- **Liste complète, noms attendus et liens :** [`assets/lecons/README.md`](lecons/README.md).
+- **Si un fichier manque :** la leçon ouvre le document sur le site officiel — rien n'est cassé.
+- **Vérification :** ⚙️ Réglages → « 🔍 Vérifier les fichiers présents », ou `verifier.html`
+  à la racine du dépôt (onglet ⚖️, famille « Fiches officielles »).
+
+Aucune image n'est attendue dans `assets/images/documents/` : ce dossier n'est plus utilisé.
 
 ## 5. Où trouver des images libres de droits
 

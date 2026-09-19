@@ -127,10 +127,11 @@ const EXT = {
   jpg:     [".jpg"],
   mp4:     [".mp4"],
   mgVideo: [".mp4", ".webm", ".m4v"],
-  mgImage: [".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"]
+  mgImage: [".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"],
+  pdf:     [".pdf"]
 };
 /* Au-delà, le fichier est signalé comme lourd (chargement lent en classe) */
-const SEUIL = { video: 20e6, image: 3e6 };
+const SEUIL = { video: 20e6, image: 3e6, pdf: 6e6 };
 
 const ONGLETS = [
   { id: "declaration",   titre: "🏛️ Le Secret de la Déclaration" },
@@ -182,6 +183,12 @@ function personnage(R, base, nom, tester){
 function imageSeule(dossier, base, titre, role, ext, tester){
   return { titre, role, tester: tester || [],
     groupes: [{ type: "image", libelle: "Image", dossier, base, ext }] };
+}
+/* Fiche PDF officielle : le fichier est attendu localement ; sans lui, le jeu
+   bascule tout seul sur le lien du site d'origine (rien n'est cassé). */
+function fichePdf(dossier, base, titre, role, tester, lien){
+  return { titre, role, tester: tester || [], lien, defaut: "Sans fichier : lien en ligne",
+    groupes: [{ type: "pdf", libelle: "Fiche PDF", dossier, base, ext: EXT.pdf }] };
 }
 
 /* ---------------- Définition des quatre jeux ---------------- */
@@ -272,14 +279,17 @@ async function construireConstitution(){
       { titre: "Personnages", slots: Object.entries(dial.personnages || {}).map(([cle, p]) =>
           personnage(R, cle, (p && p.nom) || cle, persoSalles(cle))) },
       { titre: "Illustrations d'énigmes (facultatives)", slots: illustrations },
-      { titre: "Documents des leçons (📚)", slots: listeLecons(lec)
-          .filter(l => l.document && l.document.type === "image")
-          .map(l => imageSeule(R + "assets/images/documents/", l.document.fichier || l.id, l.document.titre,
-            `Leçon « ${l.titre} ». Format .jpg uniquement.`, EXT.jpg)) }
+      { titre: "Fiches officielles — leçons du jeu (📚)", slots: listeLecons(lec).map(l =>
+          fichePdf(R + (lec.dossier || "assets/lecons/"), String(l.fichier).replace(/\.pdf$/i, ""),
+            (l.type === "jeu" ? "🎲 " : "📄 ") + l.titre,
+            `${l.format} · ${l.poids}. ${l.apercu} Sans le fichier, la leçon propose le lien officiel.`,
+            [{ libelle: l.salle === 6 ? "Bonus" : "Salle " + l.salle, url: lien(Math.min(l.salle, 5), "CM2") }],
+            l.url)) }
     ],
     docs: [
       { libelle: "📘 Guide du jeu (énigmes et solutions)", url: lienGitHub(R + "README.md") },
       { libelle: "🎞️ Liste des médias", url: lienGitHub(R + "assets/README.md") },
+      { libelle: "📚 Installer les fiches officielles", url: lienGitHub(R + "assets/lecons/README.md") },
       { libelle: "📖 Guide pédagogique", url: lienGitHub(R + "GUIDE-PEDAGOGIQUE.md") },
       { libelle: "🏛️ Fiche concours", url: lienGitHub(R + "assets/data/concours.json") },
       { libelle: "▶ Écran d'accueil du jeu", url: R }
@@ -517,21 +527,25 @@ function rendreOnglets(){
 function carteMedia(s, jeu){
   const video = s.res.find(r => r.trouve && r.g.type === "video" && !r.g.optionnel);
   const image = s.res.find(r => r.trouve && r.g.type === "image");
+  const pdf   = s.res.find(r => r.trouve && r.g.type === "pdf");
   const q = "?t=" + JETON;
   let apercu;
-  if(video){
+  if(pdf){
+    apercu = `<a href="${enc(pdf.trouve.chemin)}" target="_blank" rel="noopener" title="Ouvrir la fiche">
+      <div class="vide"><span>📄</span>Fiche installée</div></a>`;
+  }else if(video){
     apercu = `<video src="${enc(video.trouve.chemin)}${q}#t=0.5" ${image ? `poster="${enc(image.trouve.chemin)}${q}"` : ""}
       muted controls preload="metadata" playsinline onerror="this.parentNode.classList.add('attente')"></video>`;
   }else if(image){
     apercu = `<a href="${enc(image.trouve.chemin)}${q}" target="_blank" rel="noopener" title="Ouvrir en grand">
       <img src="${enc(image.trouve.chemin)}${q}" alt="" loading="lazy" onerror="this.closest('.apercu').classList.add('attente')"></a>`;
   }else{
-    apercu = `<div class="vide"><span>✏️</span>${esc(jeu.defaut)}</div>`;
+    apercu = `<div class="vide"><span>✏️</span>${esc(s.defaut || jeu.defaut)}</div>`;
   }
 
   const court = c => c.slice(jeu.R.length);
   const lignes = s.res.map(({ g, trouve }) => {
-    const icone = g.type === "video" ? "🎬" : "🖼️";
+    const icone = { video: "🎬", image: "🖼️", pdf: "📄" }[g.type] || "🖼️";
     if(trouve){
       const lourd = trouve.taille > SEUIL[g.type];
       return `<li class="ok">✔ ${icone} ${esc(g.libelle)} : <code>${esc(court(trouve.chemin))}</code>` +
@@ -543,13 +557,15 @@ function carteMedia(s, jeu){
   }).join("");
 
   const tests = (s.tester || []).map(t =>
-    `<a class="bouton" href="${esc(t.url)}" target="_blank" rel="noopener" title="Voir dans le jeu">▶ ${esc(t.libelle)}</a>`).join("");
+    `<a class="bouton" href="${esc(t.url)}" target="_blank" rel="noopener" title="Voir dans le jeu">▶ ${esc(t.libelle)}</a>`).join("")
+    + (s.lien ? `<a class="bouton" href="${esc(s.lien)}" target="_blank" rel="noopener" title="Le document sur le site d'origine">🔗 Fiche officielle</a>` : "");
   const dossiers = new Map();
   s.groupes.filter(g => !g.optionnel).forEach(g => { if(!dossiers.has(g.dossier)) dossiers.set(g.dossier, g.type); });
   const depots = [...dossiers].map(([d, type]) =>
-    `<a class="bouton" href="${lienUpload(d)}" target="_blank" rel="noopener" title="Ouvre ${esc(d)} sur GitHub : glissez-y le fichier, nommé comme indiqué">⬆️ ${type === "video" ? "Vidéo" : "Image"} → GitHub</a>`).join("");
+    `<a class="bouton" href="${lienUpload(d)}" target="_blank" rel="noopener" title="Ouvre ${esc(d)} sur GitHub : glissez-y le fichier, nommé comme indiqué">⬆️ ${({ video: "Vidéo", image: "Image", pdf: "Fiche PDF" })[type] || "Image"} → GitHub</a>`).join("");
   const nom = s.groupes[0].base;
-  const etat = { video: "🎬 vidéo", image: "🖼️ image", absent: "✏️ par défaut" }[s.etat];
+  const etat = { video: "🎬 vidéo", image: "🖼️ image", pdf: "📄 installée",
+                 absent: "✏️ par défaut" }[s.etat];
 
   return `<article class="media etat-${s.etat}">
     <div class="apercu">${apercu}</div>

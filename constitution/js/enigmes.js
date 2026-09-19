@@ -79,9 +79,19 @@ function enigmeHTML(e, numero, total){
       <div class="feedback" id="fb-${e.id}"></div>
       <div class="barre-outils">
         <button class="btn or petit" id="indice-${e.id}">💡 Indice</button>
+        ${(e.lecon && (!window.ETAT || !ETAT.reglages || ETAT.reglages.leconsAutorisees !== false))
+          ? `<button class="btn gris petit" data-fiche="${echapper(e.lecon)}" title="Ouvrir le document officiel dont vient cette énigme">📚 Fiche source</button>` : ""}
         ${e.source ? `<span class="source-enigme">Source : ${echapper(e.source)}</span>` : ""}
       </div>
     </div>`;
+}
+
+/* ---- Ouvrir le document officiel d'où vient l'énigme ----
+   Ouvre la bibliothèque (📚) directement sur la bonne fiche. */
+async function ouvrirFicheSource(id){
+  if(typeof ouvrirBiblioLecons !== "function") return;
+  await ouvrirBiblioLecons();
+  if(typeof afficherLecon === "function") afficherLecon(id);
 }
 
 /* ---- Illustration ou vidéo facultative de l'énigme ----
@@ -629,6 +639,9 @@ function activerEnigme(e, onReussite){
     setTimeout(()=>onReussite(e, indicesUtilises), 700);
   };
 
+  const bf = carte.querySelector("[data-fiche]");
+  if(bf) bf.addEventListener("click", ()=>ouvrirFicheSource(bf.dataset.fiche));
+
   (ACTIVATEURS[e.type] || (()=>{}))(e, d, reussir, rater);
 
   /* ---- Indices progressifs (−2 points chacun) ---- */
@@ -655,6 +668,7 @@ function activerEnigme(e, onReussite){
   }
 }
 
+window.ouvrirFicheSource = ouvrirFicheSource;
 window.enigmeHTML     = enigmeHTML;
 window.activerEnigme  = activerEnigme;
 window.donneesNiveau  = donneesNiveau;

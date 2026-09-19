@@ -390,6 +390,43 @@ Pour mettre l'encart à jour d'une année sur l'autre, il suffit de modifier
 
 ---
 
+## Les leçons : les fiches officielles
+
+Le bouton 📚 du jeu n'ouvre pas des leçons réécrites, mais **les 16 documents officiels**
+du site [Découvrons notre Constitution](https://www.decouvronsnotreconstitution.fr/)
+(Conseil constitutionnel et ministère de l'Éducation nationale) : chaque énigme est
+construite à partir de l'un d'eux, et le bouton **📚 Fiche source**, sous l'énigme, ouvre
+directement le document dont elle est tirée.
+
+| Fiche officielle | Format | Salle | Énigmes qui s'en servent |
+|---|---|---|---|
+| La Constitution française | Infographie — 1 page · 1,98 Mo | 1 | 1-1, 1-3 |
+| Qu'est-ce qu'une Constitution ? (dossier) | Dossier élève — 5 rubriques · 3,63 Mo | 1 | 1-4 |
+| Jeu : Sais-tu ce qu'est une Constitution ? *(fiche-jeu)* | Fiche-jeu — 6 questions, corrigé inclus · 1,53 Mo | 1 | 1-2 |
+| Les textes de notre Constitution | Infographie — 1 page · 0,74 Mo | 2 | 2-1, 2-2 |
+| Le texte de la Constitution de la Ve République (dossier) | Dossier élève — 4 à 5 pages · 4,26 Mo | 2 | 2-3, 2-4 |
+| Jeu : Es-tu incollable sur la Constitution de la Ve République ? *(fiche-jeu)* | Fiche-jeu — 6 questions, corrigé inclus · 1,51 Mo | 2 | révision / pour aller plus loin |
+| Comment la Constitution organise la vie démocratique | Dossier élève — 3 pages · 3,14 Mo | 3 | 3-1, 3-3 |
+| Le président de la République | Infographie — 1 page · 1,39 Mo | 3 | 3-2, 3-4 |
+| Le parcours d'une loi | Infographie — 1 page · 0,65 Mo | 4 | 4-1, 4-2 |
+| La procédure d'élaboration des lois (dossier 2025) | Dossier élève — 3 pages · 1,57 Mo | 4 | 4-4, 5-4 |
+| Jeu : Que sais-tu sur la procédure d'élaboration des lois ? *(fiche-jeu)* | Fiche-jeu — 5 vrai/faux, corrigé inclus · 1,54 Mo | 4 | 4-3 |
+| Les valeurs et principes de la République française | Infographie — 1 page · 1,13 Mo | 5 | 5-1, 5-2 |
+| Les symboles de la République française | Infographie — 1 page · 0,98 Mo | 5 | révision / pour aller plus loin |
+| Les libertés en France | Infographie — 1 page · 0,93 Mo | 5 | révision / pour aller plus loin |
+| La Constitution au quotidien | Infographie — 1 page · 1,36 Mo | bonus | 5-3 |
+| La Constitution dans ta vie quotidienne (dossier) | Dossier élève — 3 pages · 3,69 Mo | bonus | révision / pour aller plus loin |
+
+Les fichiers sont attendus dans `assets/lecons/` (30 Mo au total). Pour les installer :
+double-cliquez sur `assets/lecons/telecharger-fiches.bat` — voir
+[assets/lecons/README.md](assets/lecons/README.md). **Sans les fichiers, le jeu reste
+entièrement jouable** : chaque leçon propose alors le lien vers le document en ligne.
+
+> Source : Conseil constitutionnel / Découvrons notre Constitution - www.decouvronsnotreconstitution.fr
+> Illustrations cycle 3 : Fabrice Mosca. Infographies : Amélie Blanquet (Play Bac Presse). Textes et jeux : Bayard Jeunesse.
+
+---
+
 ## Médias
 
 Tout est facultatif : sans fichier, le jeu affiche ses décors et ses personnages dessinés.
@@ -405,7 +442,7 @@ les liste avec leur état.
 - **Concours** : bascule, aperçu de l'encart, fiche de projet à imprimer.
 - **Multimédia** : décors vidéo, son des vidéos, cinématiques, inventaire des fichiers.
 - **Sons** : voix de synthèse des personnages, ambiances, volumes séparés.
-- **Séance** : durée du minuteur (45 à 90 min), bibliothèque de leçons 📚 autorisée ou non.
+- **Séance** : durée du minuteur (45 à 90 min), fiches officielles 📚 autorisées ou non.
 - **IA facultative** : une clé Albert ou DeepSeek rend les dialogues d'introduction dynamiques ;
   sans clé ou en cas d'échec, les textes écrits sont utilisés.
 - **Impressions A4** : 5 fiches préparatoires, QCM (10 questions en CM1, 12 en CM2),
@@ -419,7 +456,7 @@ les liste avec leur état.
 |---|---|
 | **les énigmes** : questions, réponses, indices, corrections | `assets/data/enigmes.json` |
 | les dialogues, les lieux, les mots-clés | `assets/data/dialogues.json` |
-| les leçons de la bibliothèque 📚 | `assets/data/lecons.json` |
+| les fiches officielles 📚 (titres, fichiers, liens) | `assets/data/lecons.json` |
 | les évaluations imprimables et le quizz final | `assets/data/evaluations.json` |
 | le concours : session, thème, dates, liens | `assets/data/concours.json` |
 | les décors dessinés | `js/decors.js` |
@@ -453,6 +490,7 @@ constitution/
 ├── README.md · GUIDE-PEDAGOGIQUE.md
 ├── assets/
 │   ├── data/      enigmes.json, dialogues.json, lecons.json, evaluations.json, concours.json
+│   ├── lecons/    les 16 fiches PDF officielles (+ telecharger-fiches.bat)
 │   ├── videos/    décors et cinématiques (+ personnages/)
 │   └── images/    decors/, personnages/, cartes/, documents/
 ├── css/           style, enigmes, video, animations, personnages, impression

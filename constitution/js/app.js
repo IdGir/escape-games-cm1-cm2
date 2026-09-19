@@ -717,8 +717,8 @@ function construireQuizz(){
     fb.innerHTML = `Tu as <b>${score}/${QUIZZ.length}</b> bonnes réponses (+${score*PTS_QUIZ} points). ${
       score===5?"Parfait : tu connais ta Constitution !" :
       score>=4?"Très bien ! Encore un petit effort." :
-      score>=3?"Pas mal. Relis la leçon sur le Conseil constitutionnel." :
-               "Reprends les leçons 📚 : les trois pouvoirs et le parcours d'une loi."}`;
+      score>=3?"Pas mal. Relis la fiche 📚 sur le Conseil constitutionnel." :
+               "Reprends les fiches 📚 : les trois pouvoirs et le parcours d'une loi."}`;
     afficherRecap();
     if(ETAT.reglages.concoursActif) afficherConcours();
     sauvegarder();

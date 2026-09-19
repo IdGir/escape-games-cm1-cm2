@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="Le Sceau de la République — escape game d'EMC sur la Constitution du 4 octobre 1958, pour les CM1 et les CM2. 15 énigmes en CM1, 20 en CM2.">
 <title>Le Sceau de la République — Escape Game</title>
-<link rel="stylesheet" href="css/style.css?v1">
-<link rel="stylesheet" href="css/video.css?v1">
-<link rel="stylesheet" href="css/animations.css?v1">
-<link rel="stylesheet" href="css/personnages.css?v1">
-<link rel="stylesheet" href="css/enigmes.css?v1">
-<link rel="stylesheet" href="css/print.css?v1">
+<link rel="stylesheet" href="css/style.css?v2">
+<link rel="stylesheet" href="css/video.css?v2">
+<link rel="stylesheet" href="css/animations.css?v2">
+<link rel="stylesheet" href="css/personnages.css?v2">
+<link rel="stylesheet" href="css/enigmes.css?v2">
+<link rel="stylesheet" href="css/print.css?v2">
 </head>
 <body>
 <div class="drapeau"></div>
@@ -24,7 +24,7 @@
       <div class="stat temps" id="hud-temps" title="Temps écoulé">⏱️ <b id="hud-min">00</b>:<b id="hud-sec">00</b></div>
       <div class="stat" title="Score">⭐ <b id="hud-score-val">0</b></div>
       <div class="stat" title="Serrures ouvertes">🗝️ <b id="hud-cle-val">0</b>/5</div>
-      <button class="hud-bouton" id="btn-lecons" title="Bibliothèque de leçons">📚 Leçons</button>
+      <button class="hud-bouton" id="btn-lecons" title="Les fiches officielles du Conseil constitutionnel">📚 Fiches</button>
       <button class="hud-bouton" id="btn-reglages" title="Réglages enseignant">⚙️</button>
       <button class="hud-bouton" id="btn-pause" title="Mettre en pause">⏸</button>
     </div>
@@ -114,7 +114,7 @@
     <div class="carte center">
       <h2>⏸ Partie en pause</h2>
       <p style="font-size:1.1rem">Le temps est suspendu. Revenez quand vous êtes prêts !</p>
-      <p style="opacity:.7;font-style:italic">Astuce : profitez-en pour relire une leçon 📚 ou pour reformuler l'énigme à voix haute, ensemble.</p>
+      <p style="opacity:.7;font-style:italic">Astuce : profitez-en pour relire une fiche officielle 📚 ou pour reformuler l'énigme à voix haute, ensemble.</p>
       <div class="boutons">
         <button class="btn vert grand" id="btn-reprendre">▶️ Reprendre l'enquête</button>
       </div>
@@ -132,7 +132,7 @@
 <div class="overlay-modal" id="overlay-lecons">
   <div class="modal" id="modal-lecons">
     <div class="modal-tete">
-      <h3>📚 Bibliothèque de leçons</h3>
+      <h3>📚 Les fiches officielles</h3>
       <button class="fermer" data-close="overlay-lecons" aria-label="Fermer">✕</button>
     </div>
     <div class="modal-corps" id="corps-lecons"></div>
@@ -156,19 +156,19 @@
      personnages.js définit htmlPortrait() et activerPortrait() ;
      media.js DOIT suivre : il remplace activerPortrait() par la
      cascade vidéo → image → dessin. -->
-<script src="js/personnages.js?v1"></script>
-<script src="js/media.js?v1"></script>
-<script src="js/audio.js?v1"></script>
-<script src="js/decors.js?v1"></script>
-<script src="js/narration.js?v1"></script>
-<script src="js/enigmes.js?v1"></script>
-<script src="js/lecons.js?v1"></script>
-<script src="js/impression.js?v1"></script>
-<script src="js/concours.js?v1"></script>
-<script src="js/api.js?v1"></script>
-<script src="js/sync.js?v1"></script>
-<script src="js/reglages.js?v1"></script>
-<script src="js/app.js?v1"></script>
+<script src="js/personnages.js?v2"></script>
+<script src="js/media.js?v2"></script>
+<script src="js/audio.js?v2"></script>
+<script src="js/decors.js?v2"></script>
+<script src="js/narration.js?v2"></script>
+<script src="js/enigmes.js?v2"></script>
+<script src="js/lecons.js?v2"></script>
+<script src="js/impression.js?v2"></script>
+<script src="js/concours.js?v2"></script>
+<script src="js/api.js?v2"></script>
+<script src="js/sync.js?v2"></script>
+<script src="js/reglages.js?v2"></script>
+<script src="js/app.js?v2"></script>
 <script>
   function initialiserAccueil(){
     const sc = document.getElementById("scene-accueil");

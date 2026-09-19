@@ -198,7 +198,7 @@ seulement sa quantité.
 - ⚙️ **Animations réduites** pour les élèves sensibles au mouvement, ou sur un poste lent.
 - ⚙️ **Voix des personnages** : la synthèse vocale lit les dialogues — utile aux lecteurs fragiles,
   avec un casque.
-- **Bibliothèque 📚** : les six leçons sont, elles aussi, différenciées CM1 / CM2.
+- **Bibliothèque 📚** : les 16 fiches officielles sont les mêmes pour tous, mais rangées par salle ; les infographies d'une page conviennent aux CM1, les dossiers de 3 à 5 pages aux CM2 et à la préparation.
 - **Indices** : trois par énigme, de plus en plus explicites. Ils coûtent 2 points, jamais la
   réussite : une équipe qui prend tous les indices finit le jeu.
 
@@ -379,21 +379,31 @@ Le contenu des énigmes et des leçons est construit à partir des ressources p�
 officielles du **Conseil constitutionnel** et du **ministère de l'Éducation nationale**, publiées
 sur <https://www.decouvronsnotreconstitution.fr> :
 
-| Fiche | Utilisée dans |
-|---|---|
-| *La Constitution française* (cycle 3) | Salle 1 — définition, trois pouvoirs, Conseil constitutionnel |
-| *Sais-tu ce qu'est une Constitution ?* (8-10 ans) | Salle 1 — vrai / faux |
-| *Les textes de notre Constitution* (cycle 3) | Salle 2 — bloc de constitutionnalité |
-| *La Constitution de la Ve République* (cycle 3) | Salle 2 — 1958, préambule et articles |
-| *Comment la Constitution organise la vie démocratique* (cycle 3) | Salle 3 — institutions, élections |
-| *Le président de la République* (cycle 3) | Salle 3 — rôle, élection, pouvoirs |
-| *Le parcours d'une loi* (8-10 ans) | Salle 4 — les étapes |
-| *Que sais-tu sur la procédure d'élaboration des lois ?* (8-10 ans) | Salle 4 — vrai / faux |
-| *Les valeurs et principes de la République française* (8-10 ans) | Salle 5 — articles 1 et 2 |
-| *Les libertés en France* (8-10 ans) | Salle 5 — libertés garanties |
-| *Les symboles de la République française* (cycle 3) | Salle 5 et leçon 6 |
-| *La Constitution dans ton quotidien* (8-10 ans) | Salle 5 — situations concrètes |
-| *Le Conseil constitutionnel, gardien de la Constitution* (cycle 3) | Salle 5 — fiche d'identité |
+| Fiche officielle | Format | Utilisée dans |
+|---|---|---|
+| *La Constitution française* | Infographie — 1 page | salle 1 — énigmes 1-1, 1-3 |
+| *Qu'est-ce qu'une Constitution ? (dossier)* | Dossier élève — 5 rubriques | salle 1 — énigmes 1-4 |
+| *Jeu : Sais-tu ce qu'est une Constitution ?* (fiche-jeu) | Fiche-jeu — 6 questions, corrigé inclus | salle 1 — énigmes 1-2 |
+| *Les textes de notre Constitution* | Infographie — 1 page | salle 2 — énigmes 2-1, 2-2 |
+| *Le texte de la Constitution de la Ve République (dossier)* | Dossier élève — 4 à 5 pages | salle 2 — énigmes 2-3, 2-4 |
+| *Jeu : Es-tu incollable sur la Constitution de la Ve République ?* (fiche-jeu) | Fiche-jeu — 6 questions, corrigé inclus | salle 2 — révision / prolongement |
+| *Comment la Constitution organise la vie démocratique* | Dossier élève — 3 pages | salle 3 — énigmes 3-1, 3-3 |
+| *Le président de la République* | Infographie — 1 page | salle 3 — énigmes 3-2, 3-4 |
+| *Le parcours d'une loi* | Infographie — 1 page | salle 4 — énigmes 4-1, 4-2 |
+| *La procédure d'élaboration des lois (dossier 2025)* | Dossier élève — 3 pages | salle 4 — énigmes 4-4, 5-4 |
+| *Jeu : Que sais-tu sur la procédure d'élaboration des lois ?* (fiche-jeu) | Fiche-jeu — 5 vrai/faux, corrigé inclus | salle 4 — énigmes 4-3 |
+| *Les valeurs et principes de la République française* | Infographie — 1 page | salle 5 — énigmes 5-1, 5-2 |
+| *Les symboles de la République française* | Infographie — 1 page | salle 5 — révision / prolongement |
+| *Les libertés en France* | Infographie — 1 page | salle 5 — révision / prolongement |
+| *La Constitution au quotidien* | Infographie — 1 page | bonus — énigmes 5-3 |
+| *La Constitution dans ta vie quotidienne (dossier)* | Dossier élève — 3 pages | bonus — révision / prolongement |
+
+Ces 16 documents **sont** les leçons du jeu : le bouton 📚 les ouvre tels quels (visionneuse
+PDF intégrée, téléchargement, lien vers la page d'origine), et chaque énigme porte un bouton
+**📚 Fiche source** qui ouvre le document dont elle est tirée. Ils sont installés dans
+`constitution/assets/lecons/` ; sans eux, le jeu bascule automatiquement sur les liens en ligne.
+
+**Réutilisation :** Contenus librement diffusables et reproductibles pour un usage non commercial, sous réserve de citer la source, de conserver le titre, la date d'extraction et le nom de l'illustrateur, et de ne pas altérer les contenus (mentions légales du site).
 
 Le texte des articles 1er et 2 est celui de la **Constitution du 4 octobre 1958** dans sa
 rédaction en vigueur. Chaque énigme affiche sa source sous le bouton d'indice, et chaque leçon

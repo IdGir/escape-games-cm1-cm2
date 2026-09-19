@@ -3,7 +3,7 @@
    - Accessibilité (taille des textes, animations réduites)
    - Multimédia : décors filmés, son, cinématiques, inventaire
    - Sons et voix
-   - Durée de la séance, bibliothèque de leçons
+   - Durée de la séance, fiches officielles
    - CONCOURS « Découvrons notre Constitution » (facultatif)
    - IA facultative (Albert / DeepSeek)
    - Impressions A4 (fiches, évaluations, corrigés)
@@ -204,7 +204,7 @@ function ouvrirReglages(){
         </div>
       </div>
       <div class="reglage-ligne">
-        <div class="libelle"><b>Bibliothèque de leçons 📚</b><br><span style="font-size:.8rem;opacity:.7">Consultable par les élèves pendant la partie</span></div>
+        <div class="libelle"><b>Fiches officielles 📚</b><br><span style="font-size:.8rem;opacity:.7">Les documents du Conseil constitutionnel, consultables pendant la partie</span></div>
         <div class="controle"><div class="bascule ${r.leconsAutorisees?"actif":""}" id="reg-lecons"></div></div>
       </div>
     </div>
@@ -347,6 +347,20 @@ async function scannerMedias(){
       "assets/images/personnages/"+p.base+".png");
   })));
 
+  /* Fiches officielles (leçons) : présentes dans assets/lecons/ ou lues en ligne */
+  let lignesFiches = "";
+  try{
+    const donnees = await chargerLecons();
+    const dossier = donnees.dossier || "assets/lecons/";
+    lignesFiches = (await Promise.all((donnees.lecons||[]).map(async l=>{
+      const presente = await fichePresente(dossier + l.fichier);
+      return ligne((l.type==="jeu" ? "🎲 " : "📄 ") + l.titre,
+        presente ? "📄 fiche installée (hors connexion)"
+                 : "🔗 lien vers le site officiel (fichier absent)",
+        dossier + l.fichier);
+    }))).join("");
+  }catch(e){ lignesFiches = ""; }
+
   const enig = mediaEnigmes();
   const lignesEnig = (await Promise.all(enig.map(async c=>{
     const url = await resoudreCarte(c.base);
@@ -364,8 +378,11 @@ async function scannerMedias(){
       tableau("Décors et cinématiques", lignesDecor.join(""))
     + tableau("Personnages", lignesPerso.join(""))
     + tableau("Illustrations d'énigmes", lignesEnig.join(""))
+    + tableau("Fiches officielles (leçons 📚)", lignesFiches)
     + `<p style="font-size:.78rem;opacity:.7;margin-top:6px">
         « Dessiné » n'est pas une erreur : c'est le mode par défaut, entièrement jouable.
+        Une fiche « absente » n'est pas une erreur non plus : la leçon ouvre alors le document sur le site du Conseil constitutionnel.
+        Pour les installer hors connexion : <code>assets/lecons/telecharger-fiches.bat</code>.
         Les erreurs 404 visibles dans la console (F12) sont normales : le jeu cherche les fichiers que vous pourriez déposer.</p>`;
 }
 
