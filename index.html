@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Escape games pédagogiques — CM1 · CM2</title>
-<meta name="description" content="Trois escape games pédagogiques d'histoire et de géographie pour le CM1 et le CM2.">
+<meta name="description" content="Quatre escape games pédagogiques d'histoire, de géographie et d'EMC pour le CM1 et le CM2.">
 <style>
   :root{
     --fond:#f6f4ef; --papier:#fff; --encre:#1f2430; --doux:#5d6472; --ligne:#e2ddd2;
-    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b;
+    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227;
   }
   *{box-sizing:border-box}
   body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
@@ -33,6 +33,8 @@
   .tour .jouer{background:var(--tdm)}
   .mission .bandeau{background:linear-gradient(135deg,var(--mg),#1d4526 60%,var(--mg-2))}
   .mission .jouer{background:var(--mg)}
+  .constitution .bandeau{background:linear-gradient(135deg,var(--cst),#33163d 60%,var(--cst-2))}
+  .constitution .jouer{background:var(--cst)}
   .enseignant{max-width:1100px;margin:0 auto 50px;padding:0 20px}
   .enseignant .boite{background:var(--papier);border:1px solid var(--ligne);border-radius:16px;padding:18px 22px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
   .enseignant h3{margin:0;font-size:1.05rem}
@@ -47,7 +49,7 @@
 
 <header>
   <h1>🎓 Escape games pédagogiques</h1>
-  <p>CM1 · CM2 — Histoire et géographie</p>
+  <p>CM1 · CM2 — Histoire, géographie et enseignement moral et civique</p>
 </header>
 
 <main>
@@ -94,6 +96,22 @@
       <a class="jouer" href="mission-geo/">▶ Jouer</a>
       <div class="liens">
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/mission-geo#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="jeu constitution">
+    <div class="bandeau">
+      <div class="icone">⚖️</div>
+      <h2>Le Sceau de la République</h2>
+      <div class="meta">EMC · la Constitution de 1958 · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
+    </div>
+    <div class="corps">
+      <p>Au Palais-Royal, un coffre scellé le 4 octobre 1958 porte cinq serrures. Cinq mots à trouver, de la cour du Conseil constitutionnel à l'hémicycle. Suite directe du <i>Secret de la Déclaration</i>.</p>
+      <a class="jouer" href="constitution/">▶ Jouer</a>
+      <div class="liens">
+        <a class="prof" href="constitution/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/main/constitution#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
     </div>
   </article>

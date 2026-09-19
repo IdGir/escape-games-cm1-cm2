@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tableau de bord enseignant — Le Secret de la Déclaration</title>
+<title>Tableau de bord enseignant — Le Sceau de la République</title>
 <link rel="stylesheet" href="css/style.css">
 <style>
   body{font-family:Georgia,serif;background:linear-gradient(135deg,#13286b,#0c1a4a);color:#fff;min-height:100vh;padding:20px}
@@ -49,7 +49,7 @@
 <body>
 <div class="container">
   <h1>👨‍🏫 Tableau de bord <span>enseignant</span></h1>
-  <p class="sstitre">Pilotage des équipes — « Le Secret de la Déclaration »</p>
+  <p class="sstitre">Pilotage des équipes — « Le Sceau de la République »</p>
 
   <div class="bandeau">
     <div class="info">🌐 Adresse IP locale : <span class="adresse" id="ip-locale">détection...</span></div>
@@ -76,7 +76,7 @@
         <th>Salle</th>
         <th>Progression</th>
         <th>Score</th>
-        <th>Fragments</th>
+        <th>Serrures</th>
         <th>Temps</th>
         <th>Actions</th>
       </tr>
@@ -111,10 +111,10 @@ async function poll(){
     const r = await fetch("/api/equipes", {cache:"no-store"});
     const data = await r.json();
     // Le serveur héberge plusieurs escape games : on ne garde que celles de ce jeu.
-    const miennes = (data.equipes || []).filter(e => (e.jeu || "declaration") === "declaration");
+    const miennes = (data.equipes || []).filter(e => (e.jeu || "") === "constitution");
     afficher(miennes);
   }catch(e){
-    document.getElementById("corps-equipes").innerHTML = '<tr><td colspan="9" class="vide">⚠️ Serveur non joignable. Lancez d\'abord le serveur local (lancer.bat) ou ouvrez ce fichier via <code>http://127.0.0.1:8000/declaration/prof.html</code>.</td></tr>';
+    document.getElementById("corps-equipes").innerHTML = '<tr><td colspan="9" class="vide">⚠️ Serveur non joignable. Lancez d\'abord le serveur local (lancer.bat) ou ouvrez ce fichier via <code>http://127.0.0.1:8000/constitution/prof.html</code>.</td></tr>';
   }
 }
 async function chargerInfo(){
@@ -157,10 +157,10 @@ function afficher(equipes){
       <td><span class="indicateur ${etat.cls}"></span>${etat.txt}</td>
       <td><b>${escapeHtml(e.equipe||"Anonyme")}</b></td>
       <td>${e.niveau||"—"}</td>
-      <td><b>${e.salle||0}</b> / 5</td>
+      <td><b>${e.salle||0}</b> / 5${e.enigme!==undefined?` <span style="opacity:.6;font-size:.8rem">(énigme ${(e.enigme||0)+1})</span>`:""}</td>
       <td><div class="points-salles">${sallesHTML}</div></td>
       <td><b>⭐ ${e.score||0}</b></td>
-      <td class="fragments">📜 ${(e.fragments||[]).length}/4<br><span style="font-size:.75rem;opacity:.7">${fragments}</span></td>
+      <td class="fragments">🗝️ ${(e.fragments||[]).length}/5<br><span style="font-size:.75rem;opacity:.7">${fragments}</span></td>
       <td>${min}min ${String(sec).padStart(2,"0")}s</td>
       <td>
         <button onclick="actionEquipe('${escapeAttr(e.equipe)}','pause')" style="background:#c9a227;color:#3a2a00;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">⏸</button>

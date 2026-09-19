@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "jeu": "Le Sceau de la République",
+    "sujet": "La Constitution du 4 octobre 1958 — EMC, cycle 3",
+    "niveaux": ["CM1", "CM2"],
+    "suite_de": "Le Secret de la Déclaration (escape game sur la Révolution française, 1789)",
+    "sources": "Ressources pédagogiques du Conseil constitutionnel et du ministère de l'Éducation nationale, site decouvronsnotreconstitution.fr (fiches cycle 3 et 8-10 ans)."
+  },
+
+  "personnages": {
+    "berthier": {"nom": "Monsieur Berthier", "emoji": "🗝️", "role": "Gardien-archiviste du Palais-Royal"},
+    "nour":     {"nom": "Nour",              "emoji": "🎒", "role": "Déléguée de classe, 10 ans"},
+    "ferrand":  {"nom": "Madame Ferrand",    "emoji": "🎀", "role": "Députée à l'Assemblée nationale"},
+    "sylla":    {"nom": "Maître Sylla",      "emoji": "⚖️", "role": "Juriste au Conseil constitutionnel"}
+  },
+
+  "intro_accueil": "Bonjour. Je suis Monsieur Berthier, gardien de ce bâtiment. Dans la cave du Palais-Royal, nous avons retrouvé un coffre scellé le 4 octobre 1958, le jour où la Constitution a été promulguée. Sur le couvercle, une phrase : « Aux apprentis du 26 août 1789 ». Cela ne vous rappelle rien ? Le coffre porte cinq serrures. Pour chacune, il faut un mot. Et pour trouver ces mots, il faut comprendre la Constitution. Au travail !",
+
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La cour du Palais-Royal",
+      "decor": "cour",
+      "motCle": "RÈGLES",
+      "lieu": "🏛️ La cour du Palais-Royal, à Paris — aujourd'hui",
+      "description": "C'est ici, dans cette cour, que des apprentis ont un jour cherché un article volé de la Déclaration des droits de l'homme et du citoyen. Deux siècles plus tard, le même lieu abrite le Conseil constitutionnel. Sous les galeries, un vieux coffre de bois attend, posé sur un chariot.",
+      "sens": ["👁️ colonnes rayées", "👂 pas sur les pavés", "👃 pierre humide"],
+      "dialogue_intro": {
+        "perso": "berthier",
+        "nom": "Monsieur Berthier",
+        "texte": "Vous voilà. Regardez bien cette cour : en 1789, des apprentis y ont cherché un article volé de la Déclaration des droits de l'homme et du citoyen. Aujourd'hui, c'est ici que siège le Conseil constitutionnel. Et ce coffre, scellé le 4 octobre 1958, porte cinq serrures. La première s'ouvre avec un mot très simple. Commençons par le commencement : savez-vous seulement ce qu'est une Constitution ?"
+      },
+      "dialogue_reussite": {
+        "perso": "berthier",
+        "nom": "Monsieur Berthier",
+        "texte": "Première serrure ouverte ! Une Constitution, ce sont des <b>règles</b> : les règles du jeu de tout un pays. Montez maintenant au premier étage, dans la salle des Textes. Maître Sylla vous y attend. Il connaît chaque virgule de ces documents."
+      }
+    },
+    {
+      "num": 2,
+      "titre": "La salle des Textes",
+      "decor": "archives",
+      "motCle": "TEXTES",
+      "lieu": "📜 La salle des Textes — premier étage",
+      "description": "Des rayonnages jusqu'au plafond, une seule lampe, et au centre une vitrine. Sous le verre : quatre documents, datés 1789, 1946, 1958 et 2004. Une plaque de cuivre indique « Bloc de constitutionnalité ».",
+      "sens": ["👁️ quatre documents sous verre", "👂 silence, papier froissé", "👃 vieux papier et cire"],
+      "dialogue_intro": {
+        "perso": "sylla",
+        "nom": "Maître Sylla",
+        "texte": "Bienvenue. Beaucoup croient que la Constitution, c'est un seul texte. C'est faux. Quand nous vérifions une loi, nous nous appuyons sur quatre documents : la Constitution du 4 octobre 1958, la Déclaration des droits de l'homme et du citoyen de 1789, le Préambule de la Constitution de 1946 et la Charte de l'environnement. Ensemble, ils forment le bloc de constitutionnalité. La deuxième serrure les connaît. Pas vous ? Alors regardez bien la vitrine."
+      },
+      "dialogue_reussite": {
+        "perso": "sylla",
+        "nom": "Maître Sylla",
+        "texte": "Deuxième serrure : <b>TEXTES</b>. Vous savez maintenant que la Constitution s'appuie sur quatre textes, et qu'elle a été adoptée par référendum en septembre 1958 avant d'être promulguée le 4 octobre. Descendez : Madame Ferrand vous attend à l'Assemblée nationale. Le pouvoir, à partir de maintenant, ce n'est plus du papier : ce sont des gens."
+      }
+    },
+    {
+      "num": 3,
+      "titre": "L'hémicycle",
+      "decor": "hemicycle",
+      "motCle": "PEUPLE",
+      "lieu": "🏛️ L'hémicycle de l'Assemblée nationale — Palais-Bourbon",
+      "description": "Les bancs rouges montent en gradins autour de la tribune. Au-dessus du perchoir, les lettres « RF ». Le tableau de vote s'allume : vert, blanc, rouge. Pour l'instant, la salle est vide.",
+      "sens": ["👁️ gradins rouges", "👂 écho du bois", "👃 velours et cire"],
+      "dialogue_intro": {
+        "perso": "ferrand",
+        "nom": "Madame Ferrand",
+        "texte": "Entrez, entrez ! Je suis députée : j'ai été élue par les habitants de ma circonscription. Regardez ces bancs : chacun représente des milliers de personnes. En démocratie, le pouvoir n'appartient ni au roi ni aux juges : il appartient au peuple, qui l'exerce par ses représentants et par le référendum. Troisième serrure. Prouvez-moi que vous savez qui fait quoi dans notre République."
+      },
+      "dialogue_reussite": {
+        "perso": "ferrand",
+        "nom": "Madame Ferrand",
+        "texte": "Troisième serrure : <b>PEUPLE</b>. Exécutif, législatif, autorité judiciaire : trois pouvoirs séparés, pour que personne ne décide tout seul. Maintenant, suivez-moi : je vais vous montrer ce qui se passe réellement quand une loi naît. Entre ce palais et celui du Luxembourg, un texte peut faire beaucoup d'allers-retours."
+      }
+    },
+    {
+      "num": 4,
+      "titre": "La navette parlementaire",
+      "decor": "senat",
+      "motCle": "LOI",
+      "lieu": "🏛️ Entre le Palais-Bourbon et le palais du Luxembourg",
+      "description": "Deux palais, un jardin, un bassin. Entre les deux, un dossier voyage sans cesse : l'Assemblée nationale l'amende, le Sénat le modifie, il revient. C'est ce que l'on appelle la navette.",
+      "sens": ["👁️ deux palais face à face", "👂 fontaine et graviers", "👃 tilleuls du jardin"],
+      "dialogue_intro": {
+        "perso": "ferrand",
+        "nom": "Madame Ferrand",
+        "texte": "Une loi ne tombe pas du ciel. Elle part soit du Gouvernement — on parle alors d'un projet de loi —, soit d'un parlementaire — c'est une proposition de loi. Ensuite, elle est étudiée, amendée, discutée, votée, et elle fait la navette entre nos deux assemblées jusqu'à ce que nous tombions d'accord. Quatrième serrure : remettez ce parcours dans l'ordre, sans en oublier une étape."
+      },
+      "dialogue_reussite": {
+        "perso": "ferrand",
+        "nom": "Madame Ferrand",
+        "texte": "Quatrième serrure : <b>LOI</b>. Une fois le texte adopté, le président de la République a quinze jours pour le promulguer — et, dans ce délai, il peut saisir le Conseil constitutionnel. Retournez au Palais-Royal : Maître Sylla vous attend dans la salle des séances. C'est là que tout se termine."
+      }
+    },
+    {
+      "num": 5,
+      "titre": "La salle des séances du Conseil constitutionnel",
+      "decor": "conseil",
+      "motCle": "GARDIEN",
+      "lieu": "⚖️ La salle des séances — Conseil constitutionnel, Palais-Royal",
+      "description": "Neuf fauteuils rouges en fer à cheval, une table sombre, des dossiers posés. Gravée au-dessus des boiseries : « Liberté, Égalité, Fraternité ». C'est ici que l'on vérifie qu'une loi respecte la Constitution.",
+      "sens": ["👁️ neuf fauteuils", "👂 silence, papier", "👃 bois ciré"],
+      "dialogue_intro": {
+        "perso": "sylla",
+        "nom": "Maître Sylla",
+        "texte": "Neuf sièges. Neuf membres, nommés pour neuf ans : trois par le président de la République, trois par le président de l'Assemblée nationale, trois par le président du Sénat. On nous appelle parfois « les Sages ». Notre travail tient en une phrase : aucune loi ne doit être contraire à la Constitution. Dernière serrure. Elle ne s'ouvrira que si vous savez ce que la Constitution change dans votre vie de tous les jours."
+      },
+      "dialogue_fin": {
+        "perso": "berthier",
+        "nom": "Monsieur Berthier",
+        "texte": "Cinq serrures, cinq mots. Le couvercle se soulève… Il n'y a pas d'or là-dedans : seulement une feuille, celle de l'article premier. C'est le vrai trésor. En 1789, des apprentis ont sauvé un article. Aujourd'hui, vous avez compris à quoi il sert. Bravo."
+      }
+    }
+  ]
+}

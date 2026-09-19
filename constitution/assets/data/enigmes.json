@@ -1,0 +1,1513 @@
+{
+  "metadata": {
+    "jeu": "Le Sceau de la République",
+    "version": 1,
+    "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+    "types": [
+      "qcm",
+      "vraifaux",
+      "association",
+      "ordre",
+      "tri",
+      "trous",
+      "lettres",
+      "code",
+      "intrus",
+      "plan"
+    ],
+    "sources": "Fiches pédagogiques cycle 3 et 8-10 ans du site decouvronsnotreconstitution.fr (Conseil constitutionnel / ministère de l'Éducation nationale) ; texte de la Constitution du 4 octobre 1958.",
+    "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e1-1\",\"legende\":\"…\",\"source\":\"…\"}. Déposez alors e1-1.jpg dans assets/images/cartes/ (ou e1-1.mp4 dans assets/videos/ avec \"type\":\"video\"). Sans fichier, l'énigme reste jouable."
+  },
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La cour du Palais-Royal — Qu'est-ce qu'une Constitution ?",
+      "enigmes": [
+        {
+          "id": "1-1",
+          "titre": "La règle du jeu",
+          "type": "qcm",
+          "media": {
+            "base": "e1-1",
+            "legende": "Le coffre scellé le 4 octobre 1958",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Lis chaque question, puis clique sur la bonne réponse. Quand tu as répondu à tout, clique sur « Vérifier ».",
+            "cm2": "Réponds aux trois questions, puis vérifie. Attention aux pièges : une seule réponse est exacte par question."
+          },
+          "source": "Fiche « La Constitution française », cycle 3",
+          "correction": "Une Constitution est l'ensemble des règles qui organisent la vie de tous les citoyens d'un pays. C'est le texte le plus important : il est au-dessus de toutes les lois.",
+          "indices": {
+            "cm1": [
+              "Pense à la règle du jeu d'un jeu de société : sans elle, personne ne sait ce qui est permis.",
+              "La Constitution concerne <b>tous</b> les habitants d'un pays, pas seulement les adultes.",
+              "Elle est <b>au-dessus</b> de toutes les autres lois."
+            ],
+            "cm2": [
+              "Une Constitution organise la vie de <b>tous</b> les citoyens, pas seulement d'un groupe.",
+              "Presque tous les pays du monde en ont une : la France n'est pas une exception.",
+              "Elle est au sommet : aucune loi ne peut lui être contraire."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Une Constitution, c'est…",
+                "options": [
+                  "l'ensemble des règles qui organisent la vie de tous les citoyens d'un pays",
+                  "le règlement intérieur d'une école",
+                  "la liste des habitants d'une ville"
+                ],
+                "bonne": 0,
+                "explication": "C'est un peu la règle du jeu de tout un pays."
+              },
+              {
+                "q": "Par rapport aux autres lois, la Constitution est…",
+                "options": [
+                  "au-dessus de toutes les lois",
+                  "une loi comme les autres",
+                  "moins importante qu'une loi"
+                ],
+                "bonne": 0,
+                "explication": "Aucune loi ne peut être contraire à la Constitution."
+              },
+              {
+                "q": "Quels pays ont une Constitution ?",
+                "options": [
+                  "presque tous les pays du monde",
+                  "seulement la France",
+                  "seulement les pays d'Europe"
+                ],
+                "bonne": 0,
+                "explication": "Presque tous les États du monde en ont une, parfois depuis très longtemps."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Une Constitution, c'est…",
+                "options": [
+                  "l'ensemble des règles qui organisent la vie de tous les citoyens d'un pays",
+                  "l'ensemble des lois votées au cours d'une année",
+                  "le règlement que chaque ville écrit pour ses habitants",
+                  "un accord signé entre plusieurs pays"
+                ],
+                "bonne": 0,
+                "explication": "Elle organise la vie commune et garantit les droits et les libertés de chacun."
+              },
+              {
+                "q": "Une Constitution est-elle toujours un texte écrit ?",
+                "options": [
+                  "Non : elle peut aussi être un ensemble de règles non écrites, comme au Royaume-Uni",
+                  "Oui, partout dans le monde",
+                  "Non : elle n'est jamais écrite",
+                  "Uniquement dans les républiques"
+                ],
+                "bonne": 0,
+                "explication": "En France, la Constitution est un texte écrit. Au Royaume-Uni, certaines règles respectées par tous n'ont jamais été écrites."
+              },
+              {
+                "q": "Quelle place occupe la Constitution parmi les textes de droit ?",
+                "options": [
+                  "Elle est le texte le plus important : toutes les lois doivent la respecter",
+                  "Elle a la même valeur qu'une loi ordinaire",
+                  "Elle ne s'applique qu'au Gouvernement",
+                  "Elle ne s'applique qu'en période de crise"
+                ],
+                "bonne": 0,
+                "explication": "On l'appelle parfois « la loi des lois »."
+              }
+            ]
+          }
+        },
+        {
+          "id": "1-2",
+          "titre": "Vrai ou faux ?",
+          "type": "vraifaux",
+          "consigne": "Pour chaque phrase, clique sur <b>Vrai</b> ou sur <b>Faux</b>, puis vérifie. Les lignes vertes sont justes : reprends seulement les autres.",
+          "source": "Fiche-jeu « Sais-tu ce qu'est une Constitution ? » (8-10 ans)",
+          "correction": "La Constitution est écrite en France, elle est au-dessus des lois, les trois pouvoirs y sont séparés, et le Conseil constitutionnel peut contrôler une loi avant comme après sa promulgation.",
+          "indices": {
+            "cm1": [
+              "Deux phrases sur quatre sont fausses.",
+              "Souviens-toi : la France n'est pas le seul pays à avoir une Constitution.",
+              "En France, la Constitution est bien un texte écrit que l'on peut lire."
+            ],
+            "cm2": [
+              "Trois phrases sur six sont fausses.",
+              "Au Royaume-Uni, une partie des règles constitutionnelles n'est pas écrite.",
+              "Depuis 2010, une personne jugée par un tribunal peut faire contrôler une loi <b>déjà</b> en vigueur."
+            ]
+          },
+          "cm1": {
+            "affirmations": [
+              {
+                "txt": "La France est le seul pays du monde à avoir une Constitution.",
+                "vrai": false,
+                "explication": "Presque tous les pays du monde ont une Constitution."
+              },
+              {
+                "txt": "La Constitution est au-dessus de toutes les autres lois.",
+                "vrai": true,
+                "explication": "C'est le texte le plus important de la République."
+              },
+              {
+                "txt": "En France, la Constitution est un texte écrit.",
+                "vrai": true,
+                "explication": "On peut la lire : elle comporte un préambule et des articles."
+              },
+              {
+                "txt": "La Constitution ne sert qu'aux adultes qui votent.",
+                "vrai": false,
+                "explication": "Elle protège tous les habitants, enfants compris : école gratuite, protection de la santé…"
+              }
+            ]
+          },
+          "cm2": {
+            "affirmations": [
+              {
+                "txt": "La France est le seul pays du monde à avoir une Constitution.",
+                "vrai": false,
+                "explication": "Presque tous les pays en ont une. Celle de Saint-Marin, toujours appliquée, date de 1600."
+              },
+              {
+                "txt": "Une Constitution est forcément un texte écrit.",
+                "vrai": false,
+                "explication": "Au Royaume-Uni, certaines règles constitutionnelles respectées par tous n'ont jamais été écrites."
+              },
+              {
+                "txt": "La Constitution est au-dessus de toutes les autres lois.",
+                "vrai": true,
+                "explication": "Toutes les lois, tous les règlements et tous les décrets doivent la respecter."
+              },
+              {
+                "txt": "En France, les pouvoirs exécutif, législatif et judiciaire sont séparés.",
+                "vrai": true,
+                "explication": "Si une seule personne détenait tous les pouvoirs, elle gouvernerait sans contrôle."
+              },
+              {
+                "txt": "Le Conseil constitutionnel ne peut contrôler une loi qu'avant sa promulgation.",
+                "vrai": false,
+                "explication": "Il peut aussi le faire après : dans un procès, une personne peut contester une loi déjà en vigueur."
+              },
+              {
+                "txt": "Depuis 1789, la France a eu une seule Constitution.",
+                "vrai": false,
+                "explication": "Elle en a connu quinze. Celle de 1958 est celle de la Ve République."
+              }
+            ]
+          }
+        },
+        {
+          "id": "1-3",
+          "titre": "Les trois pouvoirs",
+          "type": "tri",
+          "media": {
+            "base": "e1-3",
+            "legende": "La séparation des pouvoirs",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Clique sur une étiquette, puis sur la colonne où elle doit aller. Six étiquettes, trois colonnes.",
+            "cm2": "Classe les neuf étiquettes dans les trois colonnes. Clique sur une étiquette, puis sur sa colonne. Pour la ressortir, clique dessus puis sur la zone du haut."
+          },
+          "source": "Fiche « La Constitution française », cycle 3",
+          "correction": "Le pouvoir législatif fait et vote les lois (le Parlement). Le pouvoir exécutif les fait appliquer (le président de la République et le Gouvernement). L'autorité judiciaire sanctionne ceux qui ne les respectent pas (les tribunaux et les juges).",
+          "indices": {
+            "cm1": [
+              "« Législatif » vient de « loi » : c'est celui qui écrit et vote les lois.",
+              "« Exécutif » vient de « exécuter » : c'est celui qui applique.",
+              "Les juges et les tribunaux forment l'autorité judiciaire."
+            ],
+            "cm2": [
+              "Le Parlement, ce sont l'Assemblée nationale et le Sénat : pouvoir législatif.",
+              "Le président de la République et le Gouvernement appliquent les lois : pouvoir exécutif.",
+              "L'indépendance des juges est une garantie de la démocratie : autorité judiciaire."
+            ]
+          },
+          "cm1": {
+            "colonnes": [
+              {
+                "id": "leg",
+                "titre": "Pouvoir législatif",
+                "icone": "📜"
+              },
+              {
+                "id": "exe",
+                "titre": "Pouvoir exécutif",
+                "icone": "🏛️"
+              },
+              {
+                "id": "jud",
+                "titre": "Autorité judiciaire",
+                "icone": "⚖️"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Voter les lois",
+                "col": "leg"
+              },
+              {
+                "txt": "Le Parlement",
+                "col": "leg"
+              },
+              {
+                "txt": "Faire appliquer les lois",
+                "col": "exe"
+              },
+              {
+                "txt": "Le Gouvernement",
+                "col": "exe"
+              },
+              {
+                "txt": "Sanctionner ceux qui ne respectent pas les lois",
+                "col": "jud"
+              },
+              {
+                "txt": "Les tribunaux et les juges",
+                "col": "jud"
+              }
+            ]
+          },
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "leg",
+                "titre": "Pouvoir législatif",
+                "icone": "📜"
+              },
+              {
+                "id": "exe",
+                "titre": "Pouvoir exécutif",
+                "icone": "🏛️"
+              },
+              {
+                "id": "jud",
+                "titre": "Autorité judiciaire",
+                "icone": "⚖️"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Écrire et voter les lois",
+                "col": "leg"
+              },
+              {
+                "txt": "L'Assemblée nationale et le Sénat",
+                "col": "leg"
+              },
+              {
+                "txt": "Proposer une proposition de loi",
+                "col": "leg"
+              },
+              {
+                "txt": "Faire appliquer les lois",
+                "col": "exe"
+              },
+              {
+                "txt": "Le président de la République et le Gouvernement",
+                "col": "exe"
+              },
+              {
+                "txt": "Nommer les ministres",
+                "col": "exe"
+              },
+              {
+                "txt": "Sanctionner ceux qui ne respectent pas les lois",
+                "col": "jud"
+              },
+              {
+                "txt": "Les tribunaux et les juges",
+                "col": "jud"
+              },
+              {
+                "txt": "Juger en toute indépendance",
+                "col": "jud"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1-4",
+          "titre": "Le mot de la première serrure",
+          "type": "lettres",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Certaines lettres du texte sont cliquables. Clique-les <b>dans l'ordre</b> pour reconstituer le mot de la première serrure.",
+          "source": "Fiche « La Constitution française », cycle 3",
+          "correction": "RÈGLES. Une Constitution, ce sont d'abord des règles : celles qui organisent la vie de tout un pays.",
+          "indices": {
+            "cm2": [
+              "Le mot a six lettres et commence par un <b>R</b>.",
+              "La deuxième lettre porte un accent grave.",
+              "Monsieur Berthier l'a dit : « la règle du jeu de tout un pays »."
+            ],
+            "commun": [
+              "Le mot a six lettres et commence par un <b>R</b>."
+            ]
+          },
+          "commun": {
+            "cible": [
+              "R",
+              "È",
+              "G",
+              "L",
+              "E",
+              "S"
+            ],
+            "texte": "<p>Une Constitution <b data-l='R'>r</b>egroupe l'ensemble des lois d'un pays. Son but est tr<b data-l='È'>è</b>s clair : permettre à tous de bien vivre ensemble. Elle or<b data-l='G'>g</b>anise les trois pouvoirs, garantit <b data-l='L'>l</b>a liberté de chacun <b data-l='E'>e</b>t protège les droit<b data-l='S'>s</b> des citoyens.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "titre": "La salle des Textes — Le texte de la Constitution de la Ve République",
+      "enigmes": [
+        {
+          "id": "2-1",
+          "titre": "Les quatre textes, dans l'ordre",
+          "type": "ordre",
+          "media": {
+            "base": "e2-1",
+            "legende": "Le bloc de constitutionnalité",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Remets les quatre textes du plus ancien au plus récent avec les flèches ▲▼, puis vérifie. Les dates sont écrites : sers-t'en !",
+            "cm2": "Remets les quatre textes du plus ancien au plus récent avec les flèches ▲▼, puis vérifie. Cette fois, les dates ne sont pas données."
+          },
+          "source": "Fiche « Les textes de notre Constitution », cycle 3",
+          "correction": "Déclaration des droits de l'homme et du citoyen (1789) → Préambule de la Constitution de 1946 → Constitution du 4 octobre 1958 → Charte de l'environnement (2004, intégrée à la Constitution en 2005).",
+          "indices": {
+            "cm1": [
+              "Le plus ancien date de la Révolution française.",
+              "Le Préambule de 1946 a été écrit juste après la Seconde Guerre mondiale.",
+              "Le plus récent parle de la nature et de l'environnement."
+            ],
+            "cm2": [
+              "Le plus ancien est celui que les apprentis de 1789 connaissaient déjà.",
+              "Le Préambule a été écrit après la Seconde Guerre mondiale, sous la IVe République.",
+              "La Charte de l'environnement est le seul texte du XXIe siècle."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "La Déclaration des droits de l'homme et du citoyen",
+                "sous": "26 août 1789",
+                "rang": 1
+              },
+              {
+                "txt": "Le Préambule de la Constitution de la IVe République",
+                "sous": "27 octobre 1946",
+                "rang": 2
+              },
+              {
+                "txt": "La Constitution de la Ve République",
+                "sous": "4 octobre 1958",
+                "rang": 3
+              },
+              {
+                "txt": "La Charte de l'environnement",
+                "sous": "2004",
+                "rang": 4
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "La Déclaration des droits de l'homme et du citoyen",
+                "sous": "égalité devant la loi, liberté d'expression, présomption d'innocence",
+                "rang": 1
+              },
+              {
+                "txt": "Le Préambule de la Constitution de la IVe République",
+                "sous": "égalité femmes-hommes, droit à l'instruction, droit d'asile",
+                "rang": 2
+              },
+              {
+                "txt": "La Constitution de la Ve République",
+                "sous": "organise les trois pouvoirs et le rôle du peuple",
+                "rang": 3
+              },
+              {
+                "txt": "La Charte de l'environnement",
+                "sous": "droit à un environnement équilibré, devoir de le préserver",
+                "rang": 4
+              }
+            ]
+          }
+        },
+        {
+          "id": "2-2",
+          "titre": "Chaque texte, son apport",
+          "type": "association",
+          "consigne": "Clique sur un texte dans la colonne de gauche, puis sur ce qu'il apporte, dans la colonne de droite.",
+          "source": "Fiche « Les textes de notre Constitution », cycle 3",
+          "correction": "Ces quatre textes forment le bloc de constitutionnalité : c'est sur eux que le Conseil constitutionnel s'appuie pour vérifier qu'une loi est conforme.",
+          "indices": {
+            "cm1": [
+              "1789, c'est la Révolution : l'égalité devant la loi.",
+              "1946, c'est l'après-guerre : l'école pour tous et l'égalité entre les femmes et les hommes.",
+              "La Charte de l'environnement parle de la nature."
+            ],
+            "cm2": [
+              "La présomption d'innocence vient de la Déclaration de 1789.",
+              "Le droit d'asile et l'égalité femmes-hommes viennent du Préambule de 1946.",
+              "C'est la Constitution de 1958 qui répartit les rôles entre les institutions."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "icone": "✊",
+                "g": "La Déclaration des droits de l'homme et du citoyen (1789)",
+                "d": "L'égalité devant la loi et la liberté d'expression"
+              },
+              {
+                "icone": "🏫",
+                "g": "Le Préambule de 1946",
+                "d": "L'égalité entre les femmes et les hommes et le droit à l'instruction"
+              },
+              {
+                "icone": "🌍",
+                "g": "La Charte de l'environnement (2004)",
+                "d": "Le droit de vivre dans un environnement équilibré"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "icone": "✊",
+                "g": "La Déclaration des droits de l'homme et du citoyen (1789)",
+                "d": "L'égalité devant la loi, la liberté de pensée et la présomption d'innocence"
+              },
+              {
+                "icone": "🏫",
+                "g": "Le Préambule de 1946",
+                "d": "L'égalité femmes-hommes, l'égal accès à l'instruction et à la culture, le droit d'asile"
+              },
+              {
+                "icone": "🏛️",
+                "g": "La Constitution du 4 octobre 1958",
+                "d": "L'organisation des trois pouvoirs et la façon dont le peuple exerce le sien"
+              },
+              {
+                "icone": "🌍",
+                "g": "La Charte de l'environnement (2004)",
+                "d": "Le droit à un environnement équilibré et le devoir de le préserver"
+              }
+            ]
+          }
+        },
+        {
+          "id": "2-3",
+          "titre": "La fiche d'identité de la Constitution",
+          "type": "trous",
+          "consigne": "Clique sur une étiquette, puis sur le trou où elle doit aller. Pour la retirer, clique sur le trou.",
+          "source": "Fiche « La Constitution de la Ve République », cycle 3",
+          "correction": "Adoptée par référendum en septembre 1958, la Constitution a été promulguée le 4 octobre 1958. Elle comporte un préambule et 108 articles, et institue la Ve République.",
+          "indices": {
+            "cm1": [
+              "Les Français ont voté directement : on appelle cela un référendum.",
+              "La date est écrite sur le coffre : 4 octobre 1958.",
+              "Le texte d'introduction d'une Constitution s'appelle un préambule."
+            ],
+            "cm2": [
+              "Le général de Gaulle, devenu chef du Gouvernement, lance la rédaction du texte.",
+              "« Promulguer », c'est rendre officiel.",
+              "Le nombre d'articles est un nombre à trois chiffres qui commence par 1."
+            ]
+          },
+          "cm1": {
+            "texte": "<p>En 1958, la France change de Constitution. Le texte est adopté par les Français lors d'un [[référendum]], puis promulgué le 4 [[octobre]] 1958. Il commence par une introduction appelée le [[préambule]]. Cette Constitution est celle de la [[Ve République]].</p>",
+            "etiquettes": [
+              "référendum",
+              "octobre",
+              "préambule",
+              "Ve République",
+              "élection",
+              "janvier"
+            ]
+          },
+          "cm2": {
+            "texte": "<p>Dans les années 1950, les gouvernements se succèdent trop vite. Le général de [[Gaulle]], devenu chef du Gouvernement, lance la rédaction d'une nouvelle Constitution. Elle est adoptée par [[référendum]] en septembre 1958, puis [[promulguée]] le 4 octobre 1958 : c'est le début de la [[Ve République]]. Le texte comporte un [[préambule]] et [[108]] articles, et il crée le Conseil constitutionnel.</p>",
+            "etiquettes": [
+              "Gaulle",
+              "référendum",
+              "promulguée",
+              "Ve République",
+              "préambule",
+              "108",
+              "IVe République",
+              "17",
+              "élection"
+            ]
+          }
+        },
+        {
+          "id": "2-4",
+          "titre": "Le cadenas à chiffres",
+          "type": "code",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Trois questions, trois nombres. Compose-les pour ouvrir le cadenas.",
+          "source": "Fiches « La Constitution de la Ve République » et « Les textes de notre Constitution », cycle 3",
+          "correction": "1958 : la Constitution de la Ve République. 1789 : la Déclaration des droits de l'homme et du citoyen. 4 : le nombre de textes du bloc de constitutionnalité.",
+          "indices": {
+            "cm2": [
+              "Le premier nombre est écrit sur le coffre lui-même.",
+              "Le deuxième est l'année de la Déclaration des droits de l'homme et du citoyen.",
+              "Compte les documents exposés dans la vitrine de la salle."
+            ]
+          },
+          "commun": {
+            "champs": [
+              {
+                "libelle": "Année de la Constitution actuelle",
+                "valeur": "1958",
+                "longueur": 4
+              },
+              {
+                "libelle": "Année de la Déclaration des droits de l'homme et du citoyen",
+                "valeur": "1789",
+                "longueur": 4
+              },
+              {
+                "libelle": "Nombre de textes du bloc de constitutionnalité",
+                "valeur": "4",
+                "longueur": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "titre": "L'hémicycle — Comment la Constitution organise la vie démocratique",
+      "enigmes": [
+        {
+          "id": "3-1",
+          "titre": "Qui fait quoi dans la République ?",
+          "type": "plan",
+          "media": {
+            "base": "e3-1",
+            "legende": "L'organisation des pouvoirs",
+            "source": "Illustration facultative"
+          },
+          "consigne": "Clique sur une étiquette, puis sur la case où elle doit aller. Pour corriger, clique sur la case.",
+          "source": "Fiche « Comment la Constitution organise la vie démocratique en France », cycle 3",
+          "correction": "Le président de la République et le Gouvernement forment le pouvoir exécutif. L'Assemblée nationale et le Sénat forment le Parlement, qui détient le pouvoir législatif.",
+          "indices": {
+            "cm1": [
+              "Le chef de l'État est élu par tous les Français : c'est le président de la République.",
+              "Le Premier ministre dirige le Gouvernement.",
+              "Les députés siègent à l'Assemblée nationale, les sénateurs au Sénat."
+            ],
+            "cm2": [
+              "Le président nomme le Premier ministre, qui forme le Gouvernement.",
+              "Le Parlement est composé de deux chambres.",
+              "Les députés sont 577 ; les sénateurs, 348."
+            ]
+          },
+          "cm1": {
+            "titre": "Complète le schéma de la République",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Chef de l'État, élu par tous les Français",
+                "reponse": "Le président de la République"
+              },
+              {
+                "libelle": "Il dirige le Gouvernement",
+                "reponse": "Le Premier ministre"
+              },
+              {
+                "libelle": "Les députés y siègent",
+                "reponse": "L'Assemblée nationale"
+              },
+              {
+                "libelle": "Les sénateurs y siègent",
+                "reponse": "Le Sénat"
+              }
+            ]
+          },
+          "cm2": {
+            "titre": "Complète le schéma de la République",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Chef de l'État et chef des armées",
+                "reponse": "Le président de la République"
+              },
+              {
+                "libelle": "Nommé par le président, il forme le Gouvernement",
+                "reponse": "Le Premier ministre"
+              },
+              {
+                "libelle": "Ils appliquent les lois, chacun dans son domaine",
+                "reponse": "Les ministres"
+              },
+              {
+                "libelle": "577 élus, dans des circonscriptions",
+                "reponse": "Les députés"
+              },
+              {
+                "libelle": "348 élus, par de grands électeurs",
+                "reponse": "Les sénateurs"
+              },
+              {
+                "libelle": "Les deux chambres réunies",
+                "reponse": "Le Parlement"
+              }
+            ]
+          }
+        },
+        {
+          "id": "3-2",
+          "titre": "Le président de la République",
+          "type": "qcm",
+          "consigne": "Réponds à toutes les questions, puis vérifie.",
+          "source": "Fiche « Le président de la République », cycle 3",
+          "correction": "Le président est élu au suffrage universel direct pour cinq ans, renouvelable une fois. Pour être candidat, il faut être français, avoir 18 ans au moins, jouir de ses droits civiques et réunir 500 parrainages d'élus.",
+          "indices": {
+            "cm1": [
+              "« Suffrage universel direct » signifie que tous les citoyens votent eux-mêmes.",
+              "Un mandat présidentiel dure moins longtemps qu'un mandat de sénateur.",
+              "On vote en France à partir de 18 ans."
+            ],
+            "cm2": [
+              "Depuis le référendum de 2000, le mandat est un quinquennat.",
+              "Un parrainage est le soutien écrit et signé d'un élu, un maire par exemple.",
+              "Le président peut dissoudre l'Assemblée nationale, mais pas le Sénat."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Comment le président de la République est-il élu ?",
+                "options": [
+                  "Par tous les citoyens, qui votent directement",
+                  "Par les députés seulement",
+                  "Par les juges"
+                ],
+                "bonne": 0,
+                "explication": "C'est le suffrage universel direct."
+              },
+              {
+                "q": "Pour combien de temps est-il élu ?",
+                "options": [
+                  "5 ans",
+                  "7 ans",
+                  "9 ans"
+                ],
+                "bonne": 0,
+                "explication": "Cinq ans : on appelle cela un quinquennat."
+              },
+              {
+                "q": "À partir de quel âge peut-on voter en France ?",
+                "options": [
+                  "18 ans",
+                  "16 ans",
+                  "21 ans"
+                ],
+                "bonne": 0,
+                "explication": "La majorité électorale est fixée à 18 ans."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Comment le président de la République est-il élu ?",
+                "options": [
+                  "Au suffrage universel direct, à la majorité des voix",
+                  "Par le Parlement réuni en Congrès",
+                  "Par les maires de France",
+                  "Par tirage au sort"
+                ],
+                "bonne": 0,
+                "explication": "Le Conseil constitutionnel vérifie que l'élection se déroule dans le respect de la loi."
+              },
+              {
+                "q": "Combien de temps dure son mandat, et combien de fois est-il renouvelable ?",
+                "options": [
+                  "5 ans, renouvelable une fois",
+                  "7 ans, renouvelable une fois",
+                  "5 ans, renouvelable sans limite",
+                  "9 ans, non renouvelable"
+                ],
+                "bonne": 0,
+                "explication": "Le septennat est devenu quinquennat après le référendum de 2000."
+              },
+              {
+                "q": "Combien de parrainages d'élus faut-il pour être candidat ?",
+                "options": [
+                  "500",
+                  "100",
+                  "1 000",
+                  "aucun"
+                ],
+                "bonne": 0,
+                "explication": "Il faut aussi être français, avoir plus de 18 ans et ne pas avoir été privé de ses droits civiques."
+              },
+              {
+                "q": "Lequel de ces pouvoirs le président possède-t-il ?",
+                "options": [
+                  "Dissoudre l'Assemblée nationale",
+                  "Voter les lois à la place des députés",
+                  "Juger les procès importants",
+                  "Nommer les sénateurs"
+                ],
+                "bonne": 0,
+                "explication": "Il peut aussi soumettre certains projets de loi au référendum et saisir le Conseil constitutionnel."
+              }
+            ]
+          }
+        },
+        {
+          "id": "3-3",
+          "titre": "L'intrus du bureau de vote",
+          "type": "intrus",
+          "consigne": {
+            "cm1": "Toutes ces élections se font au suffrage universel <b>direct</b> : les citoyens votent eux-mêmes… sauf une. Clique sur l'intrus.",
+            "cm2": "Toutes ces élections se font au suffrage universel <b>direct</b>… sauf une. Clique sur l'intrus, et demande-toi pourquoi."
+          },
+          "source": "Fiches « Comment la Constitution organise la vie démocratique » et « Le président de la République », cycle 3",
+          "correction": "Les sénateurs sont élus au suffrage universel indirect : ce sont de grands électeurs — maires, conseillers municipaux, départementaux et régionaux, députés — qui votent pour eux.",
+          "indices": {
+            "cm1": [
+              "Pour quatre de ces élections, tu iras toi-même voter à 18 ans.",
+              "Pour l'une d'elles, ce sont des élus qui votent à la place des citoyens.",
+              "Elle concerne la deuxième chambre du Parlement."
+            ],
+            "cm2": [
+              "Cherche l'élection où le citoyen ne glisse pas lui-même son bulletin dans l'urne.",
+              "Ce sont environ 162 000 grands électeurs qui votent.",
+              "Cette chambre siège au palais du Luxembourg."
+            ]
+          },
+          "commun": {
+            "cartes": [
+              {
+                "icone": "🏛️",
+                "txt": "Le président de la République",
+                "sous": "tous les citoyens votent",
+                "intrus": false
+              },
+              {
+                "icone": "📜",
+                "txt": "Les députés",
+                "sous": "élections législatives",
+                "intrus": false
+              },
+              {
+                "icone": "🏘️",
+                "txt": "Les conseillers municipaux",
+                "sous": "élections municipales",
+                "intrus": false
+              },
+              {
+                "icone": "🇪🇺",
+                "txt": "Les représentants au Parlement européen",
+                "sous": "élections européennes",
+                "intrus": false
+              },
+              {
+                "icone": "🏛️",
+                "txt": "Les sénateurs",
+                "sous": "élus par de grands électeurs",
+                "intrus": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "3-4",
+          "titre": "Les présidents de la Ve République",
+          "type": "ordre",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Remets les présidents de la Ve République dans l'ordre chronologique, du premier au plus récent.",
+          "source": "Fiche « Comment la Constitution organise la vie démocratique en France », cycle 3",
+          "correction": "Charles de Gaulle (1959-1969), Georges Pompidou (1969-1974), Valéry Giscard d'Estaing (1974-1981), François Mitterrand (1981-1995), Jacques Chirac (1995-2007), Nicolas Sarkozy (2007-2012), François Hollande (2012-2017), Emmanuel Macron (depuis 2017).",
+          "indices": {
+            "cm2": [
+              "Le premier est celui qui a lancé la rédaction de la Constitution de 1958.",
+              "Deux présidents ont exercé deux mandats de sept ans : Mitterrand et Chirac.",
+              "Le plus récent est aussi le plus jeune à avoir été élu."
+            ]
+          },
+          "commun": {
+            "items": [
+              {
+                "txt": "Charles de Gaulle",
+                "sous": "1959-1969",
+                "rang": 1
+              },
+              {
+                "txt": "Georges Pompidou",
+                "sous": "1969-1974",
+                "rang": 2
+              },
+              {
+                "txt": "Valéry Giscard d'Estaing",
+                "sous": "1974-1981",
+                "rang": 3
+              },
+              {
+                "txt": "François Mitterrand",
+                "sous": "1981-1995",
+                "rang": 4
+              },
+              {
+                "txt": "Jacques Chirac",
+                "sous": "1995-2007",
+                "rang": 5
+              },
+              {
+                "txt": "Nicolas Sarkozy",
+                "sous": "2007-2012",
+                "rang": 6
+              },
+              {
+                "txt": "François Hollande",
+                "sous": "2012-2017",
+                "rang": 7
+              },
+              {
+                "txt": "Emmanuel Macron",
+                "sous": "depuis 2017",
+                "rang": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "titre": "La navette parlementaire — Le parcours d'une loi",
+      "enigmes": [
+        {
+          "id": "4-1",
+          "titre": "Le vocabulaire de la loi",
+          "type": "association",
+          "consigne": "Relie chaque mot à sa définition : clique à gauche, puis à droite.",
+          "source": "Fiche « Le parcours d'une loi » (8-10 ans) et fiche cycle 3 sur la procédure d'élaboration des lois",
+          "correction": "Projet de loi (Gouvernement) et proposition de loi (Parlement) n'ont pas la même origine. Un amendement modifie le texte, la promulgation le rend officiel, et la publication au Journal officiel précède l'entrée en vigueur.",
+          "indices": {
+            "cm1": [
+              "Un « projet » vient du Gouvernement ; une « proposition » vient d'un parlementaire.",
+              "« Promulguer », c'est rendre officiel.",
+              "Le Journal officiel est le journal où l'on publie les textes de loi."
+            ],
+            "cm2": [
+              "Retiens : PROjet = gouvernement, PROposition = parlementaires.",
+              "Un amendement se vote : c'est une modification proposée au texte.",
+              "La navette, c'est l'aller-retour du texte entre les deux assemblées."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "icone": "🏛️",
+                "g": "Un projet de loi",
+                "d": "Un texte proposé par le Gouvernement"
+              },
+              {
+                "icone": "📜",
+                "g": "Une proposition de loi",
+                "d": "Un texte proposé par un député ou un sénateur"
+              },
+              {
+                "icone": "✍️",
+                "g": "Un amendement",
+                "d": "Une modification proposée au texte"
+              },
+              {
+                "icone": "🖋️",
+                "g": "Promulguer",
+                "d": "Rendre la loi officielle"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "icone": "🏛️",
+                "g": "Un projet de loi",
+                "d": "Un texte dont l'initiative vient du Gouvernement"
+              },
+              {
+                "icone": "📜",
+                "g": "Une proposition de loi",
+                "d": "Un texte dont l'initiative vient d'un parlementaire"
+              },
+              {
+                "icone": "✍️",
+                "g": "Un amendement",
+                "d": "Une modification proposée puis votée sur le texte"
+              },
+              {
+                "icone": "🔁",
+                "g": "La navette",
+                "d": "L'aller-retour du texte entre l'Assemblée nationale et le Sénat"
+              },
+              {
+                "icone": "🖋️",
+                "g": "Promulguer",
+                "d": "L'acte par lequel le président rend la loi officielle"
+              },
+              {
+                "icone": "📰",
+                "g": "Le Journal officiel",
+                "d": "La publication dans laquelle paraissent les textes de loi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "4-2",
+          "titre": "Le parcours d'une loi",
+          "type": "ordre",
+          "media": {
+            "base": "e4-2",
+            "legende": "Le parcours d'une loi, étape par étape",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Remets les six étapes du parcours d'une loi dans l'ordre, avec les flèches ▲▼.",
+            "cm2": "Remets les huit étapes du parcours d'une loi dans l'ordre, avec les flèches ▲▼. Attention à la fin : publication et application ne sont pas la même chose."
+          },
+          "source": "Fiche « Le parcours d'une loi » (8-10 ans)",
+          "correction": "Dépôt du texte → étude en commission → amendements → vote et navette entre les deux assemblées → dernier mot possible à l'Assemblée nationale → promulgation par le président sous quinze jours (avec saisine possible du Conseil constitutionnel) → publication au Journal officiel → entrée en vigueur et application par le Gouvernement.",
+          "indices": {
+            "cm1": [
+              "Tout commence par quelqu'un qui dépose un texte.",
+              "On discute et on modifie avant de voter.",
+              "La loi ne s'applique qu'à la toute fin, une fois publiée."
+            ],
+            "cm2": [
+              "Le petit groupe de parlementaires spécialisés, c'est la commission.",
+              "Le président dispose de quinze jours pour promulguer, et peut saisir le Conseil constitutionnel dans ce délai.",
+              "La publication au Journal officiel précède l'entrée en vigueur."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "Un projet ou une proposition de loi est déposé",
+                "sous": "par le Gouvernement ou par un parlementaire",
+                "rang": 1
+              },
+              {
+                "txt": "Le texte est étudié et modifié",
+                "sous": "les parlementaires proposent des amendements",
+                "rang": 2
+              },
+              {
+                "txt": "L'Assemblée nationale et le Sénat votent",
+                "sous": "le texte passe de l'une à l'autre",
+                "rang": 3
+              },
+              {
+                "txt": "Le président de la République promulgue la loi",
+                "sous": "il a quinze jours pour le faire",
+                "rang": 4
+              },
+              {
+                "txt": "La loi est publiée au Journal officiel",
+                "sous": "tout le monde peut la lire",
+                "rang": 5
+              },
+              {
+                "txt": "La loi entre en vigueur",
+                "sous": "le Gouvernement la fait appliquer",
+                "rang": 6
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "Dépôt d'un projet ou d'une proposition de loi",
+                "sous": "initiative du Gouvernement ou d'un parlementaire",
+                "rang": 1
+              },
+              {
+                "txt": "Étude en commission",
+                "sous": "un petit groupe de parlementaires spécialisés examine le texte",
+                "rang": 2
+              },
+              {
+                "txt": "Dépôt et vote des amendements",
+                "sous": "les modifications proposées au texte",
+                "rang": 3
+              },
+              {
+                "txt": "Débat et vote dans les deux assemblées",
+                "sous": "la navette, jusqu'à un texte identique",
+                "rang": 4
+              },
+              {
+                "txt": "En cas de désaccord persistant, l'Assemblée nationale peut statuer définitivement",
+                "sous": "à la demande du Gouvernement",
+                "rang": 5
+              },
+              {
+                "txt": "Promulgation par le président de la République",
+                "sous": "quinze jours, avec saisine possible du Conseil constitutionnel",
+                "rang": 6
+              },
+              {
+                "txt": "Publication au Journal officiel",
+                "sous": "la loi devient connue de tous",
+                "rang": 7
+              },
+              {
+                "txt": "Entrée en vigueur et application",
+                "sous": "le Premier ministre et le Gouvernement s'en chargent",
+                "rang": 8
+              }
+            ]
+          }
+        },
+        {
+          "id": "4-3",
+          "titre": "Vrai ou faux : la fabrique de la loi",
+          "type": "vraifaux",
+          "consigne": "Vrai ou faux pour chaque phrase, puis vérifie.",
+          "source": "Fiche-jeu « Que sais-tu sur la procédure d'élaboration des lois ? » (8-10 ans)",
+          "correction": "Une loi s'applique à tous. L'initiative vient du Gouvernement (projet) ou du Parlement (proposition). En cas de désaccord, l'Assemblée nationale peut avoir le dernier mot. Le président dispose de quinze jours pour promulguer. La publication précède l'application.",
+          "indices": {
+            "cm1": [
+              "Deux phrases sur quatre sont fausses.",
+              "PROjet = Gouvernement ; PROposition = parlementaires.",
+              "Quinze jours, ce n'est pas un mois."
+            ],
+            "cm2": [
+              "Trois phrases sur six sont fausses.",
+              "Relis bien l'ordre des deux dernières étapes du parcours d'une loi.",
+              "Un amendement modifie le texte : il ne l'annule pas."
+            ]
+          },
+          "cm1": {
+            "affirmations": [
+              {
+                "txt": "Une loi votée par le Parlement s'applique à tous les citoyens.",
+                "vrai": true,
+                "explication": "La loi est la même pour tous : c'est le principe d'égalité."
+              },
+              {
+                "txt": "Quand c'est le Gouvernement qui est à l'origine du texte, on parle d'une proposition de loi.",
+                "vrai": false,
+                "explication": "On parle d'un projet de loi. La proposition vient d'un député ou d'un sénateur."
+              },
+              {
+                "txt": "Le président de la République a quinze jours pour promulguer une loi.",
+                "vrai": true,
+                "explication": "Dans ce délai, il peut aussi saisir le Conseil constitutionnel."
+              },
+              {
+                "txt": "La loi s'applique avant d'être publiée au Journal officiel.",
+                "vrai": false,
+                "explication": "Elle est d'abord publiée, puis elle entre en vigueur."
+              }
+            ]
+          },
+          "cm2": {
+            "affirmations": [
+              {
+                "txt": "Une loi votée par le Parlement s'applique à tous les citoyens.",
+                "vrai": true,
+                "explication": "La loi est la même pour tous."
+              },
+              {
+                "txt": "Quand c'est le Gouvernement qui est à l'origine du texte, on parle d'une proposition de loi.",
+                "vrai": false,
+                "explication": "C'est un projet de loi. La proposition vient du Parlement."
+              },
+              {
+                "txt": "Un amendement est une modification proposée au texte de loi.",
+                "vrai": true,
+                "explication": "Les amendements sont discutés puis votés."
+              },
+              {
+                "txt": "Si les deux assemblées n'arrivent pas à se mettre d'accord, le texte est définitivement abandonné.",
+                "vrai": false,
+                "explication": "Le Gouvernement peut demander à l'Assemblée nationale de statuer définitivement."
+              },
+              {
+                "txt": "Le président de la République a trois mois pour promulguer une loi.",
+                "vrai": false,
+                "explication": "Il dispose de quinze jours."
+              },
+              {
+                "txt": "La loi est publiée au Journal officiel avant d'entrer en vigueur.",
+                "vrai": true,
+                "explication": "Publication, puis entrée en vigueur, puis application par le Gouvernement."
+              }
+            ]
+          }
+        },
+        {
+          "id": "4-4",
+          "titre": "Le cadenas du Parlement",
+          "type": "code",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Trois nombres à retrouver pour ouvrir le cadenas de la quatrième serrure.",
+          "source": "Fiches « Le parcours d'une loi » et « La Constitution de la Ve République », cycle 3",
+          "correction": "15 jours pour promulguer une loi · 577 députés à l'Assemblée nationale · 348 sénateurs au Sénat.",
+          "indices": {
+            "cm2": [
+              "Madame Ferrand l'a dit deux fois : le délai de promulgation est de deux semaines.",
+              "Le nombre de députés commence par 5 et compte trois chiffres.",
+              "Il y a moins de sénateurs que de députés."
+            ]
+          },
+          "commun": {
+            "champs": [
+              {
+                "libelle": "Jours dont dispose le président pour promulguer une loi",
+                "valeur": "15",
+                "longueur": 2
+              },
+              {
+                "libelle": "Nombre de députés à l'Assemblée nationale",
+                "valeur": "577",
+                "longueur": 3
+              },
+              {
+                "libelle": "Nombre de sénateurs au Sénat",
+                "valeur": "348",
+                "longueur": 3
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "titre": "La salle des séances — Valeurs, libertés et Constitution au quotidien",
+      "enigmes": [
+        {
+          "id": "5-1",
+          "titre": "Les articles 1 et 2",
+          "type": "trous",
+          "media": {
+            "base": "e5-1",
+            "legende": "Les symboles de la République",
+            "source": "Illustration facultative"
+          },
+          "consigne": "Complète le texte des articles 1 et 2 de la Constitution avec les étiquettes.",
+          "source": "Constitution du 4 octobre 1958, articles 1er et 2 ; fiche « Les valeurs et principes de la République française »",
+          "correction": "Article 1er : « La France est une République indivisible, laïque, démocratique et sociale. » Article 2 : la devise est « Liberté, Égalité, Fraternité » et le principe est « gouvernement du peuple, par le peuple et pour le peuple ».",
+          "indices": {
+            "cm1": [
+              "« Indivisible » veut dire qu'on ne peut pas la couper en morceaux : les mêmes droits partout.",
+              "« Laïque » : l'État ne préfère aucune religion.",
+              "La devise est écrite sur le fronton des mairies et des écoles."
+            ],
+            "cm2": [
+              "Quatre adjectifs qualifient la République dans l'article 1er.",
+              "La devise compte trois mots, dans un ordre bien précis.",
+              "Le principe de la République se termine par « pour le peuple »."
+            ]
+          },
+          "cm1": {
+            "texte": "<p><b>Article 1er.</b> La France est une République [[indivisible]], [[laïque]], [[démocratique]] et sociale.</p><p><b>Article 2.</b> La devise de la République est « Liberté, [[Égalité]], Fraternité ».</p>",
+            "etiquettes": [
+              "indivisible",
+              "laïque",
+              "démocratique",
+              "Égalité",
+              "royale",
+              "Richesse"
+            ]
+          },
+          "cm2": {
+            "texte": "<p><b>Article 1er.</b> La France est une République [[indivisible]], [[laïque]], [[démocratique]] et [[sociale]]. Elle assure l'égalité devant la [[loi]] de tous les citoyens sans distinction d'origine, de race ou de religion.</p><p><b>Article 2.</b> La devise de la République est « Liberté, Égalité, Fraternité ». Son principe est : gouvernement du [[peuple]], par le peuple et pour le peuple.</p>",
+            "etiquettes": [
+              "indivisible",
+              "laïque",
+              "démocratique",
+              "sociale",
+              "loi",
+              "peuple",
+              "fédérale",
+              "coutume",
+              "roi"
+            ]
+          }
+        },
+        {
+          "id": "5-2",
+          "titre": "Valeurs et principes de la République",
+          "type": "association",
+          "consigne": "Relie chaque principe à ce qu'il veut dire.",
+          "source": "Fiche « Les valeurs et principes de la République française » (8-10 ans)",
+          "correction": "Indivisibilité, laïcité, démocratie, caractère social, égalité et liberté : six principes inscrits dans la Constitution, que le Conseil constitutionnel fait respecter.",
+          "indices": {
+            "cm1": [
+              "La laïcité repose sur la séparation entre les religions et l'État (loi de 1905).",
+              "La démocratie, c'est « le pouvoir appartient au peuple ».",
+              "L'égalité : la loi est la même pour tous."
+            ],
+            "cm2": [
+              "Indivisible : les mêmes droits et les mêmes devoirs partout en France.",
+              "Sociale : l'État garantit l'éducation, le logement, l'emploi, la santé.",
+              "La liberté de chacun s'arrête là où elle nuirait à autrui."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "icone": "🤝",
+                "g": "L'indivisibilité",
+                "d": "Partout en France, les citoyens ont les mêmes droits et les mêmes devoirs"
+              },
+              {
+                "icone": "⚖️",
+                "g": "La laïcité",
+                "d": "Chacun croit ou ne croit pas librement ; l'État reste neutre"
+              },
+              {
+                "icone": "🗳️",
+                "g": "La démocratie",
+                "d": "Le pouvoir appartient au peuple, qui élit ses représentants"
+              },
+              {
+                "icone": "🕊️",
+                "g": "La liberté",
+                "d": "Chacun est libre, tant qu'il ne nuit pas aux autres"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "icone": "🤝",
+                "g": "L'indivisibilité",
+                "d": "Partout en France, les mêmes droits et les mêmes devoirs ; personne ne peut s'attribuer le pouvoir"
+              },
+              {
+                "icone": "⚖️",
+                "g": "La laïcité",
+                "d": "Séparation des religions et de l'État, depuis la loi de 1905 ; l'État est neutre"
+              },
+              {
+                "icone": "🗳️",
+                "g": "La démocratie",
+                "d": "Le pouvoir appartient au peuple, qui vote au suffrage universel"
+              },
+              {
+                "icone": "🏥",
+                "g": "Le caractère social",
+                "d": "L'État garantit l'éducation, le logement, l'emploi et la protection de la santé"
+              },
+              {
+                "icone": "🟰",
+                "g": "L'égalité",
+                "d": "La loi s'applique de la même façon à tous, quelles que soient l'origine ou la religion"
+              },
+              {
+                "icone": "🕊️",
+                "g": "La liberté",
+                "d": "S'exprimer, circuler, se réunir, croire ou non — dans le respect de la loi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "5-3",
+          "titre": "La Constitution dans ton quotidien",
+          "type": "qcm",
+          "media": {
+            "base": "e5-3",
+            "legende": "La Constitution dans ton quotidien",
+            "source": "Illustration facultative"
+          },
+          "consigne": "Pour chaque situation de tous les jours, retrouve le droit garanti par la Constitution.",
+          "source": "Infographie « La Constitution dans ton quotidien » et fiche « La Constitution dans ta vie quotidienne », cycle 3",
+          "correction": "École gratuite et laïque, protection de la santé, environnement, droit d'obtenir un emploi, accès à Internet et vie privée : la Constitution agit dans la vie de tous les jours.",
+          "indices": {
+            "cm1": [
+              "L'école publique est gratuite et laïque : c'est un devoir de l'État.",
+              "La Charte de l'environnement a été intégrée à la Constitution en 2005.",
+              "Chacun a le devoir de travailler et le droit d'obtenir un emploi."
+            ],
+            "cm2": [
+              "Le Conseil constitutionnel a jugé en 2015 que l'obligation vaccinale était conforme à la Constitution.",
+              "La liberté d'accès à Internet est reconnue depuis 2009.",
+              "La Sécurité sociale finance les dépenses de santé avec de l'argent public."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Tu vas à l'école publique sans rien payer. Quel devoir de l'État cela illustre-t-il ?",
+                "options": [
+                  "L'organisation d'un enseignement public, gratuit et laïc",
+                  "Le droit de vote",
+                  "La liberté de circuler"
+                ],
+                "bonne": 0,
+                "explication": "L'instruction est obligatoire et accessible gratuitement à tous les enfants."
+              },
+              {
+                "q": "Ta classe trie les déchets et plante des arbres. Quel texte de la Constitution est concerné ?",
+                "options": [
+                  "La Charte de l'environnement",
+                  "La Déclaration des droits de l'homme et du citoyen",
+                  "Le Préambule de 1946"
+                ],
+                "bonne": 0,
+                "explication": "Intégrée à la Constitution en 2005, elle fait de l'environnement le patrimoine commun des êtres humains."
+              },
+              {
+                "q": "Certains vaccins sont obligatoires pour les enfants. Pourquoi est-ce conforme à la Constitution ?",
+                "options": [
+                  "Parce que la Constitution garantit à tous la protection de la santé",
+                  "Parce que les médecins le demandent",
+                  "Parce que c'est écrit dans le règlement de l'école"
+                ],
+                "bonne": 0,
+                "explication": "La Constitution garantit à tous, notamment à l'enfant, la protection de la santé."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "L'école publique est gratuite et laïque. De quoi s'agit-il, selon la Constitution ?",
+                "options": [
+                  "D'un devoir de l'État",
+                  "D'un choix des communes",
+                  "D'une décision du Conseil constitutionnel",
+                  "D'une tradition sans valeur juridique"
+                ],
+                "bonne": 0,
+                "explication": "« L'organisation de l'enseignement public, gratuit et laïc à tous les degrés est un devoir de l'État. »"
+              },
+              {
+                "q": "En 2015, le Conseil constitutionnel s'est prononcé sur l'obligation vaccinale. Qu'a-t-il jugé ?",
+                "options": [
+                  "Qu'elle était conforme à la Constitution, qui garantit la protection de la santé",
+                  "Qu'elle était contraire à la liberté individuelle",
+                  "Qu'il n'était pas compétent",
+                  "Qu'elle relevait des communes"
+                ],
+                "bonne": 0,
+                "explication": "Protéger la santé de tous justifie cette obligation."
+              },
+              {
+                "q": "Un employeur refuse d'embaucher quelqu'un à cause de ses origines. Que dit la Constitution ?",
+                "options": [
+                  "Chacun a le droit d'obtenir un emploi, sans discrimination",
+                  "L'employeur est libre de choisir comme il veut",
+                  "Cela ne concerne pas la Constitution",
+                  "Seule la loi européenne s'applique"
+                ],
+                "bonne": 0,
+                "explication": "« Chacun a le devoir de travailler et le droit d'obtenir un emploi. » Aucune discrimination n'est permise."
+              },
+              {
+                "q": "Depuis 2009, quelle liberté liée au numérique est reconnue ?",
+                "options": [
+                  "La liberté d'accès à Internet, avec le respect de la vie privée",
+                  "Le droit d'avoir un téléphone portable",
+                  "Le droit à un ordinateur gratuit",
+                  "La gratuité des abonnements"
+                ],
+                "bonne": 0,
+                "explication": "Le respect des données personnelles et de la vie privée en ligne est garanti."
+              }
+            ]
+          }
+        },
+        {
+          "id": "5-4",
+          "titre": "La fiche d'identité du Conseil constitutionnel",
+          "type": "plan",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Complète la fiche d'identité du Conseil constitutionnel en plaçant les étiquettes.",
+          "source": "Fiche « Le Conseil constitutionnel, gardien de la Constitution », cycle 3",
+          "correction": "Neuf membres, nommés pour neuf ans : trois par le président de la République, trois par le président de l'Assemblée nationale, trois par le président du Sénat. Il siège au Palais-Royal et veille au respect de la Constitution.",
+          "indices": {
+            "cm2": [
+              "Le nombre de membres est le même que le nombre d'années de leur mandat.",
+              "Trois autorités différentes nomment chacune un tiers des membres.",
+              "Le Conseil siège dans le bâtiment où se déroule ce jeu."
+            ]
+          },
+          "commun": {
+            "titre": "Conseil constitutionnel — fiche d'identité",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Nombre de membres",
+                "reponse": "9"
+              },
+              {
+                "libelle": "Durée de leur mandat",
+                "reponse": "9 ans"
+              },
+              {
+                "libelle": "Année de sa création",
+                "reponse": "1958"
+              },
+              {
+                "libelle": "Nomme trois membres",
+                "reponse": "Le président de la République"
+              },
+              {
+                "libelle": "Nomme trois membres",
+                "reponse": "Le président de l'Assemblée nationale"
+              },
+              {
+                "libelle": "Nomme trois membres",
+                "reponse": "Le président du Sénat"
+              },
+              {
+                "libelle": "Son surnom",
+                "reponse": "Les Sages",
+                "span": 1
+              },
+              {
+                "libelle": "Son rôle",
+                "reponse": "Vérifier que les lois respectent la Constitution",
+                "span": 2
+              }
+            ],
+            "etiquettes": [
+              "9",
+              "9 ans",
+              "1958",
+              "Le président de la République",
+              "Le président de l'Assemblée nationale",
+              "Le président du Sénat",
+              "Les Sages",
+              "Vérifier que les lois respectent la Constitution"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

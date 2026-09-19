@@ -39,12 +39,16 @@ function envoyerEtat(){
   if(!SYNC.actif || !ETAT.equipe) return;
   const payload = {
     // Identifie le jeu : le tableau de bord n'affiche que ses propres équipes
-    jeu: "declaration",
+    jeu: "constitution",
     equipe: ETAT.equipe,
     niveau: ETAT.niveau,
     salle: ETAT.salle,
+    enigme: ETAT.enigme,
     score: ETAT.score,
-    fragments: ETAT.fragments,
+    // « fragments » est le champ générique du serveur : ici, les mots-clés des serrures
+    fragments: ETAT.motsCles,
+    enigmesReussies: ETAT.enigmesReussies,
+    indicesTotal: ETAT.indicesTotal,
     msEcoules: ETAT.msEcoules,
     enPause: ETAT.enPause,
     fini: ETAT.fini

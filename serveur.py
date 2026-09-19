@@ -3,7 +3,8 @@
 """
 ============================================================
  ESCAPE GAMES PÉDAGOGIQUES — Serveur local · CM1-CM2
- Sert les trois jeux (declaration/, tour-du-monde/, mission-geo/),
+ Sert les quatre jeux (declaration/, tour-du-monde/, mission-geo/,
+ constitution/),
  la page d'accueil et verifier.html, depuis la racine du projet.
 ============================================================
  Serveur HTTP stdlib + mini-API REST pour le pilotage prof.
@@ -236,7 +237,7 @@ class Handler(BaseHTTPRequestHandler):
             # Inventaire des médias déposés, lu par verifier.html :
             # { "declaration/assets/videos/salle4.mp4": taille, ... }
             fichiers = {}
-            for jeu in ("declaration", "tour-du-monde", "mission-geo"):
+            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution"):
                 for racine, _, noms in os.walk(os.path.join(jeu, "assets")):
                     for nom in noms:
                         chemin = os.path.join(racine, nom)
@@ -244,7 +245,7 @@ class Handler(BaseHTTPRequestHandler):
             self.json_reponse({"fichiers": fichiers})
         elif path == "/api/info" and methode == "GET":
             self.json_reponse({
-                "serveur": "Le Secret de la Déclaration",
+                "serveur": "Escape games pédagogiques CM1-CM2",
                 "ip": get_ip_locale(),
                 "port": PORT,
                 "equipes_connectees": len(ETATS_EQUIPES)
@@ -317,16 +318,18 @@ def main():
     print()
     print("  ✅ Serveur démarré sur le port {} (multi-thread, vidéo activée)".format(PORT))
     print()
-    print("  🏠 ACCUEIL (les 3 jeux)  →  http://{}:{}/".format(ip, PORT))
+    print("  🏠 ACCUEIL (les 4 jeux)  →  http://{}:{}/".format(ip, PORT))
     print()
     print("  📱 ADRESSES À DONNER AUX ÉLÈVES :")
     print("     Révolution française  →  http://{}:{}/declaration/".format(ip, PORT))
     print("     Tour du Monde (géo.)  →  http://{}:{}/tour-du-monde/".format(ip, PORT))
     print("     Mission géographique  →  http://{}:{}/mission-geo/".format(ip, PORT))
+    print("     Constitution (EMC)    →  http://{}:{}/constitution/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/tour-du-monde/prof.html".format(PORT))
+    print("     http://127.0.0.1:{}/constitution/prof.html".format(PORT))
     print()
     print("  🔍 VÉRIFICATION (médias, accès direct aux énigmes) :")
     print("     http://127.0.0.1:{}/verifier.html".format(PORT))
