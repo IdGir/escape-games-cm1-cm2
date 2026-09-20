@@ -1,0 +1,226 @@
+{
+  "_commentaire": "Manifeste des medias du jeu. Les lieux reels sont des photographies libres de droits (Wikimedia Commons) : aucun batiment n'est invente. Les personnages et deux illustrations sont generes par l'API Agnes AI. Les cinq schemas (e1-3, e2-1, e3-1, e4-2, e5-1) sont dessines a la main et deja presents dans assets/images/cartes/.",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0",
+    "cle": "Variable d'environnement AGNES_API_KEY, ou fichier cle-agnes.txt a cote du script (non versionne)."
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, cartoon violence, celebrity likeness",
+  "photos": [
+    {
+      "cible": "assets/images/decors/salle1.jpg",
+      "titre": "Cour d'honneur du Palais-Royal et colonnes de Buren",
+      "lieu": "Palais-Royal, Paris — siège du Conseil constitutionnel",
+      "fichier_commons": "Paris Palais Royal Colonnes de Buren 4.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_Palais_Royal_Colonnes_de_Buren_4.jpg?width=1920",
+      "page": "https://commons.wikimedia.org/wiki/File:Paris_Palais_Royal_Colonnes_de_Buren_4.jpg",
+      "licence": "CC BY-SA 4.0",
+      "auteur": "Zairon"
+    },
+    {
+      "cible": "assets/images/decors/salle2.jpg",
+      "titre": "Salle de consultation du CARAN, Archives nationales",
+      "lieu": "Archives nationales, Paris",
+      "fichier_commons": "Centre-d'acceuil-et-de-recherche-des-Archives-nationales-Architecte-Stanislas-Fiszer-Salle-de-consultation-.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Centre-d'acceuil-et-de-recherche-des-Archives-nationales-Architecte-Stanislas-Fiszer-Salle-de-consultation-.jpg?width=1920",
+      "page": "https://commons.wikimedia.org/wiki/File:Centre-d'acceuil-et-de-recherche-des-Archives-nationales-Architecte-Stanislas-Fiszer-Salle-de-consultation-.jpg",
+      "licence": "CC BY-SA 3.0",
+      "auteur": "Archives nationales (France)"
+    },
+    {
+      "cible": "assets/images/decors/salle3.jpg",
+      "titre": "Hémicycle de l'Assemblée nationale",
+      "lieu": "Palais Bourbon, Paris",
+      "fichier_commons": "Assemblée nationale (visite septembre 2024) 41.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Assemblée_nationale_(visite_septembre_2024)_41.jpg?width=1920",
+      "page": "https://commons.wikimedia.org/wiki/File:Assemblée_nationale_(visite_septembre_2024)_41.jpg",
+      "licence": "CC BY-SA 4.0",
+      "auteur": "PanierAvide"
+    },
+    {
+      "cible": "assets/images/decors/salle4.jpg",
+      "titre": "Hémicycle du Sénat",
+      "lieu": "Palais du Luxembourg, Paris",
+      "fichier_commons": "Hémicycle du Sénat (tribunes).jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hémicycle_du_Sénat_(tribunes).jpg?width=1920",
+      "page": "https://commons.wikimedia.org/wiki/File:Hémicycle_du_Sénat_(tribunes).jpg",
+      "licence": "Domaine public",
+      "auteur": "Tangopaso"
+    },
+    {
+      "cible": "assets/images/decors/salle5.jpg",
+      "titre": "Salle des délibérés du Conseil constitutionnel",
+      "lieu": "Conseil constitutionnel, Palais-Royal, Paris",
+      "fichier_commons": "Conseil Constitutionnel - Salle des délibérés.JPG",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Conseil_Constitutionnel_-_Salle_des_délibérés.JPG?width=1920",
+      "page": "https://commons.wikimedia.org/wiki/File:Conseil_Constitutionnel_-_Salle_des_délibérés.JPG",
+      "licence": "CC BY-SA 4.0",
+      "auteur": "Faqscl"
+    }
+  ],
+  "images": [
+    {
+      "cle": "berthier",
+      "nom": "Monsieur Berthier — gardien-archiviste",
+      "cible": "assets/images/personnages/berthier.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Three-quarter view, head and shoulders, calm and friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a French man in his early sixties, short neatly trimmed grey beard, warm brown eyes, faint smile, wearing a plain dark navy jacket over a white shirt, a bunch of old brass keys visible at his belt.",
+      "taille": "768x1024",
+      "type": "personnage"
+    },
+    {
+      "cle": "nour",
+      "nom": "Nour — déléguée de classe (10 ans)",
+      "cible": "assets/images/personnages/nour.png",
+      "prompt": "Stylised illustration for a children's educational game, animated feature film look, clearly not photorealistic, soft cel-shaded rendering. Completely fictional character. A cheerful 10-year-old schoolgirl with curly dark hair tied back, wearing a mustard cardigan, holding a school notebook against her chest, confident friendly smile, three-quarter view, plain deep black background, vertical portrait framing. No text, no lettering, no logo, no watermark.",
+      "taille": "768x1024",
+      "type": "personnage"
+    },
+    {
+      "cle": "ferrand",
+      "nom": "Madame Ferrand — députée",
+      "cible": "assets/images/personnages/ferrand.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Three-quarter view, head and shoulders, calm and friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a French woman in her forties, shoulder-length auburn hair, wearing a navy blazer and, across her chest from the right shoulder, the French tricolour sash with the blue stripe closest to the neck, then white, then red. Composed, attentive expression.",
+      "taille": "768x1024",
+      "type": "personnage"
+    },
+    {
+      "cle": "sylla",
+      "nom": "Maître Sylla — juriste au Conseil constitutionnel",
+      "cible": "assets/images/personnages/sylla.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Three-quarter view, head and shoulders, calm and friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a French man in his fifties with close-cropped greying hair and dark skin, wearing a charcoal suit, white shirt and discreet dark tie, holding a thick bound book of law against his chest, thoughtful benevolent expression.",
+      "taille": "768x1024",
+      "type": "personnage"
+    },
+    {
+      "cle": "e1-1",
+      "cible": "assets/images/cartes/e1-1.jpg",
+      "nom": "Énigme 1-1 — le coffre scellé",
+      "prompt": "Photorealistic still life for an educational game: a heavy old oak strongbox reinforced with iron bands, five distinct iron locks in a row on its front, a dark red wax seal, resting on the stone paving of a French palace courtyard, early morning light, shallow depth of field, warm museum atmosphere. No text, no lettering, no numbers, no watermark.",
+      "taille": "1344x768",
+      "type": "illustration"
+    },
+    {
+      "cle": "e5-3",
+      "cible": "assets/images/cartes/e5-3.jpg",
+      "nom": "Énigme 5-3 — la Constitution au quotidien",
+      "prompt": "Warm realistic illustration for a French primary school game: a sunny street in a French town, a public primary school building with a tricolour flag on its façade, children with backpacks walking to the entrance, a doctor's surgery and a recycling point visible along the street, everyday peaceful scene, soft daylight. Faces are generic and fictional. No text, no lettering, no signage, no watermark.",
+      "taille": "1344x768",
+      "type": "illustration"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "berthier",
+      "nom": "Monsieur Berthier — gardien-archiviste (au repos)",
+      "cible": "assets/videos/personnages/berthier.mp4",
+      "depuis_image": "assets/images/personnages/berthier.png",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement, hair barely moving. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "berthier-parle",
+      "nom": "Monsieur Berthier — gardien-archiviste (en train de parler)",
+      "cible": "assets/videos/personnages/berthier-parle.mp4",
+      "depuis_image": "assets/images/personnages/berthier.png",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "nour",
+      "nom": "Nour — déléguée de classe (10 ans) (au repos)",
+      "cible": "assets/videos/personnages/nour.mp4",
+      "depuis_image": "assets/images/personnages/nour.png",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement, hair barely moving. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "nour-parle",
+      "nom": "Nour — déléguée de classe (10 ans) (en train de parler)",
+      "cible": "assets/videos/personnages/nour-parle.mp4",
+      "depuis_image": "assets/images/personnages/nour.png",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "ferrand",
+      "nom": "Madame Ferrand — députée (au repos)",
+      "cible": "assets/videos/personnages/ferrand.mp4",
+      "depuis_image": "assets/images/personnages/ferrand.png",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement, hair barely moving. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "ferrand-parle",
+      "nom": "Madame Ferrand — députée (en train de parler)",
+      "cible": "assets/videos/personnages/ferrand-parle.mp4",
+      "depuis_image": "assets/images/personnages/ferrand.png",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "sylla",
+      "nom": "Maître Sylla — juriste au Conseil constitutionnel (au repos)",
+      "cible": "assets/videos/personnages/sylla.mp4",
+      "depuis_image": "assets/images/personnages/sylla.png",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement, hair barely moving. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "sylla-parle",
+      "nom": "Maître Sylla — juriste au Conseil constitutionnel (en train de parler)",
+      "cible": "assets/videos/personnages/sylla-parle.mp4",
+      "depuis_image": "assets/images/personnages/sylla.png",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152,
+      "images": 121,
+      "fps": 24
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinématique d'ouverture (cour du Palais-Royal)",
+      "cible": "assets/videos/intro.mp4",
+      "depuis_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_Palais_Royal_Colonnes_de_Buren_4.jpg?width=1920",
+      "prompt": "Slow cinematic push-in across the courtyard, gentle steady camera move forward, light shifting softly on the stone columns, no people appearing, no new architecture invented, photorealistic, calm and solemn.",
+      "largeur": 1152,
+      "hauteur": 768,
+      "images": 121,
+      "fps": 24,
+      "licence_heritee": "CC BY-SA 4.0 — dérivé de la photo de Zairon (cour du Palais-Royal)"
+    },
+    {
+      "cle": "final",
+      "nom": "Cinématique de fin (le coffre s'ouvre)",
+      "cible": "assets/videos/final.mp4",
+      "depuis_image": "assets/images/cartes/e1-1.jpg",
+      "prompt": "The five iron locks turn one after another and the heavy oak lid slowly opens, warm golden light spilling out from inside the chest, dust motes in the light beam, static camera, cinematic and solemn. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768,
+      "images": 121,
+      "fps": 24
+    }
+  ]
+}

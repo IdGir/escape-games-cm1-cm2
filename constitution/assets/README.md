@@ -1,5 +1,9 @@
 # 🎞️ Médias du jeu — Le Sceau de la République
 
+> **Production automatique :** double-cliquez sur `medias/produire-medias.bat` pour
+> installer les photographies des cinq lieux réels et générer les personnages et les
+> cinématiques. Crédits et licences : [`medias/CREDITS.md`](medias/CREDITS.md).
+
 **Tout est facultatif.** Sans aucun fichier, le jeu affiche ses décors et ses personnages
 dessinés en SVG, animés : c'est le mode par défaut, entièrement jouable. Déposer un fichier
 portant exactement le nom attendu le fait apparaître à la place du dessin — **aucun code à
@@ -39,6 +43,12 @@ et le nom exact à utiliser.
 
 Les vidéos vont dans `assets/videos/`, les images dans `assets/images/decors/`.
 
+**Les décors fournis sont de vraies photographies**, pas des images inventées : cour du
+Palais-Royal (colonnes de Buren), salle de consultation des Archives nationales, hémicycle de
+l'Assemblée nationale, hémicycle du Sénat, salle des délibérés du Conseil constitutionnel.
+Elles viennent de Wikimedia Commons sous licence libre — auteur et licence sont rappelés dans
+⚙️ Réglages → « Crédits des médias » et dans [`medias/CREDITS.md`](medias/CREDITS.md).
+
 ## 2. Personnages — `assets/videos/personnages/` et `assets/images/personnages/`
 
 | Personnage | Rôle | Nom du fichier | Variante « parle » |
@@ -51,6 +61,10 @@ Les vidéos vont dans `assets/videos/`, les images dans `assets/images/decors/`.
 La variante `-parle` est jouée pendant que le personnage parle ; sans elle, la vidéo au repos
 est conservée.
 
+Les quatre personnages sont **fictifs** : ils sont générés à partir des descriptions de
+`medias/medias.json`, qui demandent explicitement de ne ressembler à aucune personne réelle.
+Nour, l'élève, est rendue en style illustré plutôt que photoréaliste.
+
 ## 3. Illustrations d'énigmes — `assets/images/cartes/`
 
 Chaque illustration est **facultative** : sans fichier, l'énigme reste entièrement jouable et
@@ -59,13 +73,17 @@ un encadré discret rappelle le nom attendu. Ces emplacements sont déclarés da
 
 | Énigme | Nom du fichier | Légende prévue |
 |---|---|---|
-| 1-1 — La règle du jeu (salle 1) | `e1-1.jpg` | Le coffre scellé le 4 octobre 1958 |
-| 1-3 — Les trois pouvoirs (salle 1) | `e1-3.jpg` | La séparation des pouvoirs |
-| 2-1 — Les quatre textes, dans l'ordre (salle 2) | `e2-1.jpg` | Le bloc de constitutionnalité |
-| 3-1 — Qui fait quoi dans la République ? (salle 3) | `e3-1.jpg` | L'organisation des pouvoirs |
-| 4-2 — Le parcours d'une loi (salle 4) | `e4-2.jpg` | Le parcours d'une loi, étape par étape |
-| 5-1 — Les articles 1 et 2 (salle 5) | `e5-1.jpg` | Les symboles de la République |
+| 1-1 — La règle du jeu (salle 1) | `e1-1.jpg` | Le coffre scellé le 4 octobre 1958 — *généré* |
+| 1-3 — Les trois pouvoirs (salle 1) | `e1-3.jpg` ✅ | La séparation des pouvoirs |
+| 2-1 — Les quatre textes, dans l'ordre (salle 2) | `e2-1.jpg` ✅ | Le bloc de constitutionnalité |
+| 3-1 — Qui fait quoi dans la République ? (salle 3) | `e3-1.jpg` ✅ | L'organisation des pouvoirs |
+| 4-2 — Le parcours d'une loi (salle 4) | `e4-2.jpg` ✅ | Le parcours d'une loi, étape par étape |
+| 5-1 — Les articles 1 et 2 (salle 5) | `e5-1.jpg` ✅ | Les symboles de la République |
 | 5-3 — La Constitution dans ton quotidien (salle 5) | `e5-3.jpg` | La Constitution dans ton quotidien |
+
+Les cinq schémas marqués ✅ sont **déjà fournis** : ce sont des schémas dessinés pour le jeu,
+dont chaque information provient d'une fiche officielle citée en bas de l'image. Les deux autres
+(`e1-1`, `e5-3`) sont produits par `medias/produire-medias.bat`.
 
 Pour qu'une illustration soit une **vidéo**, ajoutez `"type": "video"` dans le bloc `media` de
 l'énigme et déposez `<nom>.mp4` dans `assets/videos/`.

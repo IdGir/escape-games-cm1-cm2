@@ -243,12 +243,19 @@ function ouvrirReglages(){
       </div>
     </div>
 
+    <div class="reglages-group">
+      <h4>📷 Crédits des médias</h4>
+      <p style="font-size:.85rem;opacity:.8;font-style:italic;margin-bottom:10px">Les lieux du jeu sont de vraies photographies, sous licence libre. Auteur et licence doivent rester visibles.</p>
+      <div id="zone-credits" style="font-size:.82rem">Chargement…</div>
+    </div>
+
     <div class="boutons" style="margin-top:18px">
       <button class="btn vert" id="btn-sauver-reglages">💾 Enregistrer les réglages</button>
     </div>
   `;
 
   corps.querySelectorAll(".bascule").forEach(b=>b.addEventListener("click", ()=>b.classList.toggle("actif")));
+  afficherCredits();
   corps.querySelector("#btn-imprimer-prepa").addEventListener("click", ()=>imprimerFiches("prepa"));
   corps.querySelector("#btn-imprimer-qcm").addEventListener("click", ()=>imprimerFiches("qcm"));
   corps.querySelector("#btn-imprimer-fermees").addEventListener("click", ()=>imprimerFiches("fermees"));
@@ -320,6 +327,43 @@ async function testerAPI(){
   }
 }
 
+/* ---- Crédits des médias ----
+   Lus dans assets/medias/medias.json. Les photographies des lieux réels sont
+   sous licence libre : citer l'auteur et la licence est obligatoire. */
+async function afficherCredits(){
+  const zone = document.getElementById("zone-credits");
+  if(!zone) return;
+  let M = null;
+  try{
+    const r = await fetch("assets/medias/medias.json", {cache:"no-store"});
+    if(r.ok) M = await r.json();
+  }catch(e){ /* mode file:// */ }
+  if(!M || !M.photos){
+    zone.innerHTML = "<p style='opacity:.7'>Aucune photographie installée : le jeu utilise ses décors dessinés. " +
+      "Voir <code>assets/medias/CREDITS.md</code>.</p>";
+    return;
+  }
+  const lignes = await Promise.all(M.photos.map(async p=>{
+    let presente = false;
+    try{ presente = (await fetch(p.cible, {method:"HEAD"})).ok; }catch(e){ presente = false; }
+    return `<tr style="opacity:${presente?1:.5}">
+      <td style="padding:3px 6px">${presente?"📷":"✏️"}</td>
+      <td style="padding:3px 6px">${p.titre}</td>
+      <td style="padding:3px 6px"><a href="${p.page}" target="_blank" rel="noopener">${p.auteur}</a></td>
+      <td style="padding:3px 6px">${p.licence}</td></tr>`;
+  }));
+  zone.innerHTML = `
+    <table style="width:100%;background:#fff;border-radius:8px">
+      <tr><th></th><th style="text-align:left;padding:3px 6px">Lieu photographié</th>
+      <th style="text-align:left;padding:3px 6px">Auteur</th>
+      <th style="text-align:left;padding:3px 6px">Licence</th></tr>
+      ${lignes.join("")}
+    </table>
+    <p style="margin-top:8px;opacity:.75">Photographies : Wikimedia Commons. Personnages et cinématiques :
+    images générées (personnages fictifs). Schémas des énigmes : dessinés pour ce jeu d'après les fiches
+    du Conseil constitutionnel. Détail complet dans <code>assets/medias/CREDITS.md</code>.</p>`;
+}
+
 /* ---- Inventaire des médias réellement présents ----
    « Dessiné » n'est jamais une erreur : c'est le mode par défaut. ---- */
 async function scannerMedias(){
@@ -387,6 +431,7 @@ async function scannerMedias(){
 }
 
 window.scannerMedias      = scannerMedias;
+window.afficherCredits    = afficherCredits;
 window.ouvrirReglages     = ouvrirReglages;
 window.sauverReglages     = sauverReglages;
 window.testerAPI          = testerAPI;
