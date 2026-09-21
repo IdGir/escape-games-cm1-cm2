@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "jeu": "Le Manuscrit de l'abbaye",
+    "sujet": "Le Moyen Âge — Clovis, Charlemagne, le rôle social de l'Église, l'art roman et l'art gothique — histoire, cycle 3",
+    "niveaux": ["CM1", "CM2"],
+    "suite_vers": "Jeu n°02 : le château fort et les paysans (Année B, période 1)",
+    "sources": "Programme d'histoire-géographie du cycle 3 (arrêté du 22 avril 2026) ; BnF — Passerelles et Essentiels (abbaye de Cluny, scribes et copistes) ; Centre des monuments nationaux (Cluny, Saint-Denis) ; Hospices civils de Beaune ; Lumni."
+  },
+
+  "personnages": {
+    "anselme": {"nom": "Frère Anselme", "emoji": "🕯️", "role": "Moine copiste de l'abbaye"},
+    "aude":    {"nom": "Aude",          "emoji": "🖋️", "role": "Élève de l'école du palais d'Aix, 11 ans"},
+    "alix":    {"nom": "Mère Alix",     "emoji": "🕊️", "role": "Abbesse, responsable de l'hôtel-Dieu"},
+    "garin":   {"nom": "Garin",         "emoji": "⛏️", "role": "Apprenti tailleur de pierre, 12 ans"}
+  },
+
+  "intro_accueil": "Entrez vite, et refermez la porte. Je suis frère Anselme, copiste de cette abbaye. Ce matin, j'ai ouvert le grand livre que nous copions depuis trois ans : cinq pages ont disparu. L'évêque arrive demain pour le voir. Vous êtes apprentis copistes : vous allez refaire ces cinq pages. Chacune raconte un moment de notre histoire, et chacune porte un mot. Les cinq mots ensemble redonneront la première ligne du livre. Prenez une plume. Au travail.",
+
+  "incipit": "Au temps des FRANCS et de l'EMPIRE, la PLUME, la CHARITÉ et la PIERRE ont gardé la mémoire des hommes.",
+
+  "salles": [
+    {
+      "num": 1,
+      "titre": "Le baptême de Clovis",
+      "decor": "reims",
+      "motCle": "FRANCS",
+      "lieu": "⛪ Reims, la ville du baptême — la première page du livre",
+      "description": "La page montre un roi agenouillé devant un évêque, près d'une cuve d'eau. Autour, des guerriers regardent. En haut de la page, une grande lettre attend ses couleurs. Sous le dessin, une ligne s'est effacée : celle qui raconte comment, après l'Empire romain, un roi a réuni une grande partie de la Gaule.",
+      "sens": ["👁️ or et bleu sur le parchemin", "👂 cloche lointaine", "👃 cire chaude et encre"],
+      "dialogue_intro": {
+        "perso": "anselme",
+        "nom": "Frère Anselme",
+        "texte": "Voici la première page. Elle commence là où finit l'Empire romain. Quand l'empire s'effondre en Occident, des peuples s'installent en Gaule : parmi eux, les Francs. Leur roi s'appelle Clovis. Il gagne des batailles, et il se fait baptiser à Reims par l'évêque Remi. Attention : personne ne connaît la date exacte de ce baptême. Les historiens hésitent entre 496 et 508. Écrivez « vers l'an 500 », c'est plus honnête. Rendez-moi cette page."
+      },
+      "dialogue_reussite": {
+        "perso": "anselme",
+        "nom": "Frère Anselme",
+        "texte": "Première page refaite. Le mot de cette page est <b>FRANCS</b> : c'est leur nom qui a donné, bien plus tard, celui de la France. Passez à la deuxième page. Elle vous emmène à Aix-la-Chapelle, chez un roi franc devenu empereur. Une élève de son école vous y attend."
+      }
+    },
+    {
+      "num": 2,
+      "titre": "La cour de Charlemagne",
+      "decor": "aix",
+      "motCle": "EMPIRE",
+      "lieu": "👑 Aix-la-Chapelle, le palais de Charlemagne — la deuxième page",
+      "description": "Sur la page, un homme couronné est assis. Devant lui, des enfants tiennent des tablettes de cire. Plus loin, une chapelle ronde coiffée d'une coupole. Une carte occupe le bas de la page : elle va de l'océan aux grands fleuves de l'est, mais ses noms ont été grattés.",
+      "sens": ["👁️ mosaïques dorées", "👂 stylets sur la cire", "👃 encens froid"],
+      "dialogue_intro": {
+        "perso": "aude",
+        "nom": "Aude",
+        "texte": "Bonjour ! J'apprends à lire et à écrire ici, au palais. Charlemagne est roi des Francs depuis 768. Le jour de Noël de l'an 800, à Rome, le pape Léon III l'a couronné empereur. Une chose encore : on raconte parfois que Charlemagne a inventé l'école. C'est faux. Des écoles existaient déjà dans les monastères et auprès des évêques. Lui a demandé qu'il y en ait davantage, et il a fait venir des savants comme Alcuin. Aidez-moi à refaire cette page."
+      },
+      "dialogue_reussite": {
+        "perso": "aude",
+        "nom": "Aude",
+        "texte": "Deuxième page refaite, et le mot est <b>EMPIRE</b>. Regardez mon écriture : ronde, claire, avec des espaces entre les mots. On l'appelle la minuscule caroline, et c'est grâce à elle que les livres se lisent mieux. Retournez à l'abbaye : la troisième page se fait au scriptorium, la salle où l'on copie."
+      }
+    },
+    {
+      "num": 3,
+      "titre": "Le scriptorium de l'abbaye",
+      "decor": "scriptorium",
+      "motCle": "PLUME",
+      "lieu": "🕯️ Le scriptorium de l'abbaye — la troisième page",
+      "description": "Des pupitres en bois alignés sous de hautes fenêtres. Ici, on travaille à la lumière du jour : le feu pourrait détruire les livres. Sur chaque pupitre, une peau tendue, une plume d'oie, un petit couteau, un encrier de corne. La page à refaire montre un moine penché sur son travail.",
+      "sens": ["👁️ lumière rasante des fenêtres", "👂 grattement des plumes", "👃 cuir et poussière de craie"],
+      "dialogue_intro": {
+        "perso": "anselme",
+        "nom": "Frère Anselme",
+        "texte": "Ici, on copie. L'imprimerie n'existe pas : chaque livre est recopié à la main, page après page. Un grand livre peut demander une année de travail. Nous ne faisons pas que copier : nous enseignons aussi. L'école de l'abbaye reçoit les futurs moines, et quelques enfants. La troisième page raconte cela."
+      },
+      "dialogue_reussite": {
+        "perso": "anselme",
+        "nom": "Frère Anselme",
+        "texte": "Troisième page refaite. Le mot est <b>PLUME</b> : sans elle, beaucoup de textes anciens ne seraient pas arrivés jusqu'à vous. Maintenant, traversez le cloître. Mère Alix vous attend à l'hôtel-Dieu."
+      }
+    },
+    {
+      "num": 4,
+      "titre": "L'hôtel-Dieu et l'aumône",
+      "decor": "hoteldieu",
+      "motCle": "CHARITÉ",
+      "lieu": "🕊️ L'hôtel-Dieu, près de l'abbaye — la quatrième page",
+      "description": "Une très longue salle, des lits alignés le long des murs, une chapelle au fond pour que les malades puissent suivre la messe depuis leur lit. À la porte, des pauvres attendent la distribution du pain. La page à refaire montre cette file, et une main qui donne.",
+      "sens": ["👁️ lits à rideaux alignés", "👂 prières à voix basse", "👃 bouillon et herbes"],
+      "dialogue_intro": {
+        "perso": "alix",
+        "nom": "Mère Alix",
+        "texte": "Bienvenue. Ici, personne ne paie. Nous accueillons les malades pauvres, les vieillards, les enfants abandonnés, et les pèlerins de passage. Cette maison s'appelle l'hôtel-Dieu, la maison de Dieu. D'où vient l'argent ? De la dîme, la part des récoltes que les paysans versent à l'Église, et des dons des seigneurs. Refaites cette page : elle dit ce que l'Église faisait pour ceux qui n'avaient rien."
+      },
+      "dialogue_reussite": {
+        "perso": "alix",
+        "nom": "Mère Alix",
+        "texte": "Quatrième page refaite. Le mot est <b>CHARITÉ</b> : au Moyen Âge, c'est le nom que l'on donne au secours porté aux pauvres et aux malades. Il vous reste une page. Sortez par le portail : Garin taille des pierres sur le chantier. Il vous montrera deux façons de bâtir une église."
+      }
+    },
+    {
+      "num": 5,
+      "titre": "L'église romane et la cathédrale gothique",
+      "decor": "chantier",
+      "motCle": "PIERRE",
+      "lieu": "⛏️ Le chantier, entre l'église de l'abbaye et la cathédrale neuve — la cinquième page",
+      "description": "À gauche, l'église de l'abbaye : trapue, des murs épais, de petites fenêtres, des arcs arrondis. À droite, le chantier de la cathédrale : des échafaudages, des arcs pointus, d'immenses fenêtres de verre coloré. La dernière page doit montrer les deux.",
+      "sens": ["👁️ poussière de pierre dans la lumière", "👂 ciseaux et maillets", "👃 pierre fraîchement taillée"],
+      "dialogue_intro": {
+        "perso": "garin",
+        "nom": "Garin",
+        "texte": "Regardez les deux bâtiments. L'église de l'abbaye est romane : sa voûte a la forme d'un demi-tonneau, on l'appelle voûte en berceau. Elle pèse sur les murs : alors on les fait épais, on les renforce avec des contreforts, et on perce de petites fenêtres. La cathédrale est gothique : la voûte repose sur des arcs croisés, les ogives, et des arcs-boutants la retiennent de l'extérieur. Les murs peuvent s'ouvrir : place aux vitraux. Dernière page, apprentis."
+      },
+      "dialogue_fin": {
+        "perso": "anselme",
+        "nom": "Frère Anselme",
+        "texte": "Cinq pages, cinq mots. Le livre est complet, et sa première ligne se lit de nouveau. Voilà le travail d'un copiste : il n'invente pas le passé, il l'empêche de disparaître. L'évêque peut venir. Bravo, apprentis."
+      }
+    }
+  ],
+
+  "cadenas_final": {
+    "titre": "Le fermoir du livre",
+    "texte": "Le livre est complet, mais son fermoir de cuivre reste bloqué. Sur le fermoir, quatre petites plaques gravées peuvent glisser. Frère Anselme explique : « Le fermoir s'ouvre quand les quatre plaques sont rangées de la plus ancienne à la plus récente. »",
+    "perso": "anselme"
+  }
+}

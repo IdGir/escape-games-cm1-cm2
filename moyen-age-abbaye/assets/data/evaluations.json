@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "sujet": "Le Moyen Âge — Le Manuscrit de l'abbaye",
+    "niveaux": ["CM1", "CM2"],
+    "programme": "Histoire cycle 3 — CM1, thème 1 « La vie quotidienne au Moyen Âge (XIe-XIIIe siècles) » : rôle social de l'Église, art roman et art gothique (arrêté du 22 avril 2026) ; Clovis et Charlemagne selon la progression de l'enseignant (Année A, période 1).",
+    "sources": "Leçons du jeu (assets/data/lecons.json) ; programme du cycle 3 ; BnF ; Centre des monuments nationaux ; Hospices civils de Beaune."
+  },
+
+  "quizz_final": {
+    "CM1": [
+      {"q": "Qui est Clovis ?", "options": ["Le roi des Francs", "Un empereur romain", "Un moine copiste"], "bonne": 0},
+      {"q": "Qui est couronné empereur à Rome en l'an 800 ?", "options": ["Clovis", "Charlemagne", "Saint Louis"], "bonne": 1},
+      {"q": "Comment appelle-t-on la salle où les moines copient les livres ?", "options": ["Le réfectoire", "Le scriptorium", "Le donjon"], "bonne": 1},
+      {"q": "Qu'est-ce qu'un hôtel-Dieu ?", "options": ["Un château de seigneur", "Une auberge payante", "Une maison qui accueille gratuitement les malades pauvres"], "bonne": 2},
+      {"q": "Des arcs pointus, des arcs-boutants et de grands vitraux : c'est…", "options": ["l'art gothique", "l'art roman", "l'art romain"], "bonne": 0}
+    ],
+    "CM2": [
+      {"q": "Pourquoi écrit-on que Clovis est baptisé « vers l'an 500 » ?", "options": ["Parce que la date exacte est discutée (496, 499 ou 508)", "Parce qu'il a été baptisé en l'an 500 exactement", "Parce qu'il n'a jamais été baptisé"], "bonne": 0},
+      {"q": "Quelle est la date du couronnement impérial de Charlemagne ?", "options": ["25 décembre 800", "4 août 1443", "14 juillet 814"], "bonne": 0},
+      {"q": "Charlemagne a-t-il inventé l'école ?", "options": ["Oui, pour tous les enfants", "Non : il a demandé davantage d'écoles dans les monastères et les évêchés, qui existaient déjà", "Non : l'école n'existe pas au Moyen Âge"], "bonne": 1},
+      {"q": "Comment l'Église finance-t-elle l'aide aux pauvres ?", "options": ["Par la dîme, ses terres et les dons", "Par un impôt du roi", "Par les paiements des malades"], "bonne": 0},
+      {"q": "Pourquoi les églises gothiques peuvent-elles avoir de grands vitraux ?", "options": ["Parce que la croisée d'ogives et les arcs-boutants soulagent les murs", "Parce que leurs murs sont plus épais", "Parce que le verre est plus solide que la pierre"], "bonne": 0}
+    ]
+  },
+
+  "fiches_preparatoires": [
+    {
+      "salle": 1,
+      "titre": "Après l'Empire romain : Clovis, roi des Francs",
+      "objectifs": ["Situer 476 et le début du Moyen Âge", "Savoir qui est Clovis", "Expliquer l'importance du baptême de Reims"],
+      "vocabulaire": [
+        {"mot": "Moyen Âge", "def": "Période de 476 à 1492"},
+        {"mot": "Francs", "def": "Peuple installé au nord de la Gaule ; il a donné son nom à la France"},
+        {"mot": "Baptême", "def": "Cérémonie par laquelle on devient chrétien"},
+        {"mot": "Évêque", "def": "Chef religieux d'une ville et de sa région"}
+      ],
+      "contexte": "Vers 476, l'Empire romain disparaît en Occident. Les Francs s'installent au nord de la Gaule. Leur roi Clovis (481-511) gagne les batailles de Soissons (486) et de Vouillé (507), puis se fait baptiser à Reims par l'évêque Remi, vers l'an 500 : la date exacte est discutée."
+    },
+    {
+      "salle": 2,
+      "titre": "Charlemagne, son empire et les écoles",
+      "objectifs": ["Situer le couronnement de l'an 800", "Décrire l'empire et son gouvernement", "Distinguer l'histoire et le mythe de « Charlemagne inventeur de l'école »"],
+      "vocabulaire": [
+        {"mot": "Empereur", "def": "Souverain qui commande à plusieurs peuples et royaumes"},
+        {"mot": "Comte", "def": "Homme qui gouverne une région au nom de l'empereur"},
+        {"mot": "Missi dominici", "def": "Envoyés de l'empereur qui contrôlent les comtes"},
+        {"mot": "Minuscule caroline", "def": "Écriture ronde et claire, avec des espaces entre les mots"}
+      ],
+      "contexte": "Charlemagne, roi des Francs depuis 768, est couronné empereur à Rome par le pape Léon III le 25 décembre 800. Il vit à Aix-la-Chapelle. En 789, il demande des écoles dans les monastères et les évêchés : il développe des écoles qui existaient déjà, liées à l'Église et au palais."
+    },
+    {
+      "salle": 3,
+      "titre": "Les moines : prier, copier, enseigner",
+      "objectifs": ["Décrire la vie d'un moine", "Expliquer la fabrication d'un manuscrit", "Savoir que l'Église assure l'enseignement"],
+      "vocabulaire": [
+        {"mot": "Abbaye", "def": "Monastère dirigé par un abbé ou une abbesse"},
+        {"mot": "Scriptorium", "def": "Salle où l'on copie les livres"},
+        {"mot": "Parchemin", "def": "Peau d'animal préparée pour écrire"},
+        {"mot": "Enluminure", "def": "Décor peint d'un manuscrit"}
+      ],
+      "contexte": "Les moines partagent leur journée entre prière, travail et étude. Sans imprimerie, les livres sont recopiés à la main sur parchemin. L'Église tient les écoles : écoles des abbayes, écoles cathédrales, puis universités au XIIIe siècle. En Bourgogne, l'abbaye de Cluny est fondée en 910."
+    },
+    {
+      "salle": 4,
+      "titre": "L'Église auprès des pauvres et des malades",
+      "objectifs": ["Décrire le rôle social de l'Église", "Nommer les lieux d'accueil", "Dire d'où vient l'argent de l'assistance"],
+      "vocabulaire": [
+        {"mot": "Hôtel-Dieu", "def": "Maison qui accueille gratuitement les malades pauvres"},
+        {"mot": "Hospice", "def": "Lieu qui héberge pèlerins et voyageurs"},
+        {"mot": "Aumône", "def": "Don fait à un pauvre"},
+        {"mot": "Dîme", "def": "Environ un dixième de la récolte, versé à l'Église"}
+      ],
+      "contexte": "Il n'existe ni hôpital public ni aide de l'État. L'Église accueille les malades pauvres à l'hôtel-Dieu, les pèlerins à l'hospice, distribue l'aumône. Exemple en Bourgogne : l'hôtel-Dieu de Beaune, fondé en 1443 par Nicolas Rolin et Guigone de Salins."
+    },
+    {
+      "salle": 5,
+      "titre": "Différencier l'art roman et l'art gothique",
+      "objectifs": ["Reconnaître une église romane", "Reconnaître une église gothique", "Expliquer le rôle de la croisée d'ogives et des arcs-boutants"],
+      "vocabulaire": [
+        {"mot": "Voûte en berceau", "def": "Voûte en demi-tonneau (roman)"},
+        {"mot": "Arc en plein cintre", "def": "Arc arrondi (roman)"},
+        {"mot": "Croisée d'ogives", "def": "Deux arcs croisés qui portent la voûte (gothique)"},
+        {"mot": "Arc-boutant", "def": "Arc extérieur qui retient la poussée de la voûte (gothique)"}
+      ],
+      "contexte": "Aux XIe et XIIe siècles, l'art roman bâtit des églises aux murs épais et aux petites fenêtres (nef de Vézelay). À partir du milieu du XIIe siècle, l'art gothique invente la croisée d'ogives, l'arc brisé et l'arc-boutant : les églises montent plus haut et s'ouvrent aux vitraux (chœur de Saint-Denis, 1144)."
+    }
+  ],
+
+  "qcm": {
+    "CM1": [
+      {"q": "En quelle année l'Empire romain d'Occident disparaît-il ?", "options": ["476", "800", "1492"], "bonne": 0, "pts": 1},
+      {"q": "Clovis est le roi…", "options": ["des Romains", "des Francs", "des Gaulois"], "bonne": 1, "pts": 1},
+      {"q": "Où Clovis est-il baptisé ?", "options": ["À Reims", "À Rome", "À Paris"], "bonne": 0, "pts": 1},
+      {"q": "Qui couronne Charlemagne empereur ?", "options": ["L'évêque Remi", "Le pape", "Clovis"], "bonne": 1, "pts": 1},
+      {"q": "Où se trouve le palais de Charlemagne ?", "options": ["À Aix-la-Chapelle", "À Versailles", "À Reims"], "bonne": 0, "pts": 1},
+      {"q": "Sur quoi les moines écrivent-ils ?", "options": ["Sur du parchemin", "Sur des feuilles imprimées", "Sur du plastique"], "bonne": 0, "pts": 1},
+      {"q": "Qui décore les grandes lettres des manuscrits ?", "options": ["Le forgeron", "L'enlumineur", "Le seigneur"], "bonne": 1, "pts": 1},
+      {"q": "La dîme est…", "options": ["un jeu", "une part de la récolte versée à l'Église", "un château"], "bonne": 1, "pts": 1},
+      {"q": "Une église aux murs épais et aux petites fenêtres est…", "options": ["romane", "gothique", "moderne"], "bonne": 0, "pts": 1},
+      {"q": "Un arc pointu s'appelle…", "options": ["un arc en plein cintre", "un arc brisé", "un arc-en-ciel"], "bonne": 1, "pts": 1}
+    ],
+    "CM2": [
+      {"q": "Le Moyen Âge va de…", "options": ["476 à 1492", "800 à 1789", "52 av. J.-C. à 476"], "bonne": 0, "pts": 1},
+      {"q": "Quelle bataille Clovis gagne-t-il en 486 ?", "options": ["Vouillé", "Soissons", "Poitiers"], "bonne": 1, "pts": 1},
+      {"q": "Contre qui Clovis se bat-il à Vouillé en 507 ?", "options": ["Les Wisigoths", "Les Romains", "Les Saxons"], "bonne": 0, "pts": 1},
+      {"q": "Pourquoi le baptême de Clovis l'aide-t-il ?", "options": ["Il obtient l'appui des évêques", "Il devient empereur", "Il ne paie plus d'impôts"], "bonne": 0, "pts": 1},
+      {"q": "Qui est le pape qui couronne Charlemagne ?", "options": ["Grégoire", "Léon III", "Remi"], "bonne": 1, "pts": 1},
+      {"q": "Qui contrôle les comtes dans l'empire ?", "options": ["Les missi dominici", "Les moines", "Les chevaliers"], "bonne": 0, "pts": 1},
+      {"q": "Quel savant enseigne au palais de Charlemagne ?", "options": ["Suger", "Alcuin", "Grégoire de Tours"], "bonne": 1, "pts": 1},
+      {"q": "Que fait le rubricateur ?", "options": ["Il relie le livre", "Il écrit les titres en rouge", "Il prépare les peaux"], "bonne": 1, "pts": 1},
+      {"q": "En quelle année est fondée l'abbaye de Cluny ?", "options": ["910", "1118", "1443"], "bonne": 0, "pts": 1},
+      {"q": "Qui fonde l'hôtel-Dieu de Beaune en 1443 ?", "options": ["Charlemagne", "Nicolas Rolin et Guigone de Salins", "L'abbé Suger"], "bonne": 1, "pts": 1},
+      {"q": "Quel élément gothique renvoie la poussée de la voûte vers l'extérieur ?", "options": ["Le contrefort", "L'arc-boutant", "La voûte en berceau"], "bonne": 1, "pts": 1},
+      {"q": "Quel chantier est considéré comme l'un des premiers gothiques ?", "options": ["La nef de Vézelay", "Le chœur de Saint-Denis (1144)", "L'abbaye de Cluny (910)"], "bonne": 1, "pts": 1}
+    ]
+  },
+
+  "questions_fermees": {
+    "CM1": [
+      {"q": "Vrai ou faux : le nom de la France vient du peuple des Francs.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Vrai ou faux : Charlemagne a vécu avant Clovis.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : au Moyen Âge, les livres sont recopiés à la main.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Vrai ou faux : à l'hôtel-Dieu, les malades pauvres doivent payer.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : les églises gothiques ont de grands vitraux.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Écris le nom de l'empereur couronné à Rome en l'an 800.", "type": "court", "rep": "Charlemagne", "pts": 1},
+      {"q": "Comment s'appelle la salle où les moines copient les livres ?", "type": "court", "rep": "Le scriptorium", "pts": 1},
+      {"q": "Cite deux caractéristiques de l'art roman.", "type": "court", "rep": "Deux au choix : voûte en berceau, arc en plein cintre, murs épais, contreforts, petites fenêtres", "pts": 2}
+    ],
+    "CM2": [
+      {"q": "Vrai ou faux : on connaît avec certitude l'année du baptême de Clovis.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : Charlemagne a créé l'école pour tous les enfants.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : l'Admonitio generalis (789) demande des écoles dans les monastères et les évêchés.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Vrai ou faux : la dîme représente environ la moitié de la récolte.", "type": "vf", "bonne": "faux", "pts": 1},
+      {"q": "Vrai ou faux : les arcs-boutants sont placés à l'extérieur de l'église.", "type": "vf", "bonne": "vrai", "pts": 1},
+      {"q": "Donne la date exacte du couronnement de Charlemagne.", "type": "court", "rep": "Le 25 décembre 800", "pts": 1},
+      {"q": "Cite trois lieux où l'Église accueille ou instruit les gens.", "type": "court", "rep": "Trois au choix : hôtel-Dieu, hospice, léproserie, école monastique, école cathédrale, université", "pts": 2},
+      {"q": "Explique pourquoi une église romane a de petites fenêtres.", "type": "court", "rep": "La voûte en berceau pèse sur les murs : de grandes fenêtres les affaibliraient", "pts": 2}
+    ]
+  },
+
+  "etudes_documents": {
+    "CM1": [
+      {
+        "titre": "Un ordre de Charlemagne",
+        "document": {
+          "contenu": "« Qu'il y ait des écoles pour apprendre à lire aux enfants. Que dans chaque monastère et chaque évêché, on enseigne les psaumes, le chant, le calcul et la grammaire. »",
+          "source": "D'après l'Admonitio generalis, capitulaire de Charlemagne, 789 (texte adapté)."
+        },
+        "questions": [
+          {"q": "Qui a donné cet ordre ? En quelle année ?", "type": "courte", "rep": "Charlemagne, en 789", "pts": 2},
+          {"q": "Où doivent se trouver les écoles ?", "type": "courte", "rep": "Dans les monastères et les évêchés", "pts": 1},
+          {"q": "Charlemagne a-t-il inventé l'école ? Explique.", "type": "ouverte", "rep_attendue": "Non : des écoles existaient déjà dans les monastères et auprès des évêques ; il demande qu'il y en ait davantage.", "pts": 2}
+        ]
+      },
+      {
+        "titre": "L'hôtel-Dieu de Beaune",
+        "document": {
+          "contenu": "« Je fonde, et dote irrévocablement en la ville de Beaune, un hôpital pour les pauvres malades. »",
+          "source": "Nicolas Rolin, acte de fondation de l'hôtel-Dieu de Beaune, 4 août 1443 (extrait)."
+        },
+        "questions": [
+          {"q": "Dans quelle ville se trouve cet hôpital ?", "type": "courte", "rep": "À Beaune, en Bourgogne", "pts": 1},
+          {"q": "Pour qui est-il fondé ?", "type": "courte", "rep": "Pour les pauvres malades", "pts": 1},
+          {"q": "Au Moyen Âge, qui s'occupe des pauvres et des malades ?", "type": "ouverte", "rep_attendue": "L'Église (moines, religieuses), grâce à la dîme et aux dons.", "pts": 2}
+        ]
+      }
+    ],
+    "CM2": [
+      {
+        "titre": "Le baptême de Clovis raconté par Grégoire de Tours",
+        "document": {
+          "contenu": "« Le roi demanda le premier à être baptisé par l'évêque. »",
+          "source": "D'après Grégoire de Tours, Histoire des Francs, livre II, fin du VIe siècle."
+        },
+        "questions": [
+          {"q": "Qui est l'évêque qui baptise Clovis ? Dans quelle ville ?", "type": "courte", "rep": "Remi, à Reims", "pts": 2},
+          {"q": "Grégoire de Tours a-t-il vu le baptême ? Justifie.", "type": "ouverte", "rep_attendue": "Non : il écrit à la fin du VIe siècle, près d'un siècle après les faits ; c'est un témoignage tardif.", "pts": 2},
+          {"q": "Pourquoi ce baptême est-il important pour le pouvoir de Clovis ?", "type": "ouverte", "rep_attendue": "Il adopte la religion des Gallo-Romains et obtient l'appui des évêques, très influents dans les villes.", "pts": 2}
+        ]
+      },
+      {
+        "titre": "Ce que voulait l'abbé Suger",
+        "document": {
+          "contenu": "« Faire entrer plus de lumière dans l'église, car Dieu est lumière. »",
+          "source": "Idée de l'abbé Suger, à l'origine du chœur gothique de Saint-Denis, consacré en 1144 (formule résumée)."
+        },
+        "questions": [
+          {"q": "Quel art naît avec le chœur de Saint-Denis ?", "type": "courte", "rep": "L'art gothique", "pts": 1},
+          {"q": "Quels éléments permettent de faire entrer plus de lumière ?", "type": "courte", "rep": "La croisée d'ogives, l'arc brisé et les arcs-boutants, qui permettent d'ouvrir de grands vitraux", "pts": 2},
+          {"q": "Compare avec une église romane : pourquoi y fait-il plus sombre ?", "type": "ouverte", "rep_attendue": "La voûte en berceau pèse sur les murs, qui doivent rester épais avec de petites fenêtres.", "pts": 2}
+        ]
+      }
+    ]
+  }
+}

@@ -10,6 +10,7 @@ Cinq escape games d'histoire, de géographie, d'EMC et de sciences, jouables dan
 | ⚖️ | **Le Sceau de la République** — EMC, la Constitution de 1958 | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/constitution/) | [constitution/README.md](constitution/README.md) | [liste](constitution/assets/README.md) |
 | 🌦️ | **La Station météo disparue** — Sciences, mesures météorologiques | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/) | [station-meteo/README.md](station-meteo/README.md) | [liste](station-meteo/assets/README.md) |
 | ⚗️ | **Le Laboratoire de Madame Mélange** — Sciences, masses et mélanges | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/melanges/) | [melanges/README.md](melanges/README.md) | [liste](melanges/assets/README.md) |
+| 📜 | **Le Manuscrit de l'abbaye** — Histoire, le Moyen Âge | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/) | [moyen-age-abbaye/README.md](moyen-age-abbaye/README.md) | [liste](moyen-age-abbaye/assets/README.md) |
 
 - 🏠 **Accueil des cinq jeux** : https://idgir.github.io/escape-games-cm1-cm2/
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
@@ -73,6 +74,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | Le Sceau de la République | `constitution/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 2, CM2](https://idgir.github.io/escape-games-cm1-cm2/constitution/?salle=4&niveau=CM2&enigme=2) |
 | Le Laboratoire de Madame Mélange | `melanges/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 5, énigme 4, CM2](https://idgir.github.io/escape-games-cm1-cm2/melanges/?salle=5&niveau=CM2&enigme=4) |
 | La Station météo disparue | `station-meteo/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [module 1, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/?salle=1&niveau=CM2&enigme=1) |
+| Le Manuscrit de l'abbaye | `moyen-age-abbaye/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fermoir puis fin ; `&enigme=K` vise une énigme | [salle 5, énigme 1, CM1](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/?salle=5&niveau=CM1&enigme=1) |
 
 ---
 
@@ -129,7 +131,7 @@ le `README.md` du dossier `assets/` de chaque jeu.
 
 ```
 PROJET ESCAPE GAMES/
-├── index.html              Accueil : les trois jeux
+├── index.html              Accueil : tous les jeux
 ├── verifier.html           Vérification : énigmes, médias, fichiers mal nommés
 ├── lancer.bat              Serveur local, Windows (double-clic)
 ├── lancer-mac.command      Serveur local, Mac
@@ -179,14 +181,23 @@ PROJET ESCAPE GAMES/
 │   ├── css/
 │   └── js/                 enigmes.js = moteur + type « instrument » (thermomètre, pluviomètre)
 │
-└── melanges/               ⚗️ Le Laboratoire de Madame Mélange (sciences)
-    ├── README.md           Guide du jeu : salles, énigmes, solutions
+├── melanges/               ⚗️ Le Laboratoire de Madame Mélange (sciences)
+│   ├── README.md           Guide du jeu : salles, énigmes, solutions
+│   ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
+│   ├── A-VERIFIER.md       Faits à contrôler
+│   ├── index.html · prof.html
+│   ├── assets/data/        ★ enigmes.json, lecons.json (leçons rédigées), dialogues, évaluations
+│   ├── css/
+│   └── js/                 même moteur à 10 types d'énigmes
+│
+└── moyen-age-abbaye/       📜 Le Manuscrit de l'abbaye (histoire, le Moyen Âge)
+    ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
     ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
-    ├── A-VERIFIER.md       Faits à contrôler
+    ├── A-VERIFIER.md       Faits vérifiés et points à relire
     ├── index.html · prof.html
-    ├── assets/data/        ★ enigmes.json, lecons.json (leçons rédigées), dialogues, évaluations
-    ├── css/
-    └── js/                 même moteur à 10 types d'énigmes
+    ├── assets/data/        ★ enigmes.json (+ le fermoir) · lecons.json = 5 leçons rédigées
+    ├── css/ · js/          même moteur que constitution/
+    └── tests/              test-jeu.js (Node + jsdom)
 ```
 
 Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur

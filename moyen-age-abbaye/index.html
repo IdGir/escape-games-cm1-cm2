@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="Le Manuscrit de l'abbaye — escape game d'histoire sur le Moyen Âge (Clovis, Charlemagne, le rôle social de l'Église, l'art roman et l'art gothique), pour les CM1 et les CM2. 15 énigmes en CM1, 20 en CM2.">
+<title>Le Manuscrit de l'abbaye — Escape Game</title>
+<link rel="stylesheet" href="css/style.css?v1">
+<link rel="stylesheet" href="css/video.css?v1">
+<link rel="stylesheet" href="css/animations.css?v1">
+<link rel="stylesheet" href="css/personnages.css?v1">
+<link rel="stylesheet" href="css/enigmes.css?v1">
+<link rel="stylesheet" href="css/print.css?v1">
+</head>
+<body>
+<div class="drapeau"></div>
+<div id="app">
+
+  <!-- ============ HUD ============ -->
+  <div class="hud" id="hud" style="display:none">
+    <div class="hud-gauche">📜 Le Manuscrit de l'abbaye <span style="opacity:.5;font-size:.7rem;font-weight:normal">v1</span></div>
+    <div class="hud-droite">
+      <div class="stat" title="Équipe">👤 <b id="hud-eq-nom">—</b></div>
+      <div class="stat temps" id="hud-temps" title="Temps écoulé">⏱️ <b id="hud-min">00</b>:<b id="hud-sec">00</b></div>
+      <div class="stat" title="Score">⭐ <b id="hud-score-val">0</b></div>
+      <div class="stat" title="Pages refaites">📜 <b id="hud-cle-val">0</b>/5</div>
+      <button class="hud-bouton" id="btn-lecons" title="Les leçons du jeu">📚 Leçons</button>
+      <button class="hud-bouton" id="btn-reglages" title="Réglages enseignant">⚙️</button>
+      <button class="hud-bouton" id="btn-pause" title="Mettre en pause">⏸</button>
+    </div>
+  </div>
+
+  <!-- ============ ÉCRAN ACCUEIL ============ -->
+  <section class="ecran actif" id="ecran-accueil">
+    <div class="carte">
+      <h1>Le <span class="bleu">Manuscrit</span> de l'<span class="rouge">abbaye</span></h1>
+      <p class="sstitre">~ Escape game d'histoire · le Moyen Âge, de Clovis aux cathédrales ~</p>
+
+      <div class="scene scene--media" id="scene-accueil" data-media="salle3">
+        <div class="decor-fallback"></div>
+        <div class="decor-overlay"></div>
+        <div class="decor-contenu">
+          <span class="lieu">🕯️ Le scriptorium de l'abbaye, la veille de la visite de l'évêque</span>
+          <p class="description">Depuis trois ans, les moines copient un grand livre enluminé. Ce matin, <b>cinq pages ont disparu</b>. L'évêque arrive demain pour le voir. Il faut refaire ces pages : chacune raconte un moment du <b>Moyen Âge</b>, et chacune cache un mot.</p>
+        </div>
+      </div>
+
+      <div class="personnage-scene entrer" style="margin-top:18px">
+        <div class="portrait" id="portrait-intro"></div>
+        <div class="bulle">
+          <div class="nom-perso">Frère Anselme</div>
+          <div class="texte" id="intro-texte"></div>
+          <div class="controles-voix">
+            <button class="btn petit or" id="btn-intro-ecouter">🔊 Écouter</button>
+          </div>
+        </div>
+      </div>
+
+      <details style="margin-top:16px;background:#fff8e6;border:1px solid var(--parchemin-ombre);border-radius:12px;padding:12px">
+        <summary style="cursor:pointer;font-weight:bold;color:var(--bleu-fonce)">👨‍🏫 Pour l'enseignant</summary>
+        <p style="margin-top:8px;font-size:.92rem">
+          Cinq salles, une notion chacune : Clovis roi des Francs ; Charlemagne et son empire ;
+          les moines, la copie et l'enseignement ; l'aide de l'Église aux pauvres et aux malades ;
+          l'art roman et l'art gothique. Une leçon rédigée 📚 accompagne chaque salle.
+          La suite naturelle est le jeu n°02 (le château fort et les paysans).
+          Le guide pédagogique et les solutions sont dans le dossier du jeu (README.md).
+        </p>
+      </details>
+
+      <hr style="border:none;border-top:2px dotted var(--parchemin-ombre);margin:22px 0">
+
+      <h3 style="text-align:center">👤 Votre équipe</h3>
+      <input type="text" id="input-equipe" placeholder="Nom de votre équipe (ex. : Les Enlumineurs)" maxlength="24" autocomplete="off">
+
+      <h3 style="text-align:center;margin-top:20px">🎯 Votre niveau</h3>
+      <div class="choix-niveau">
+        <div class="opt-niveau" data-niveau="CM1">
+          <div class="gros">CM1</div>
+          <div class="petit">15 énigmes · textes plus courts, moins d'étiquettes, repères chronologiques donnés</div>
+        </div>
+        <div class="opt-niveau" data-niveau="CM2">
+          <div class="gros">CM2</div>
+          <div class="petit">20 énigmes · dates exactes, documents, cartes, cadenas et mot caché</div>
+        </div>
+      </div>
+      <p id="apercu-niveau" style="text-align:center;font-size:.85rem;opacity:.75;margin-top:8px"></p>
+
+      <div class="boutons">
+        <button class="btn grand bleu" id="btn-demarrer" disabled>✒️ Prendre la plume</button>
+      </div>
+
+      <hr style="border:none;border-top:1px dotted var(--parchemin-ombre);margin:18px 0">
+
+      <details style="text-align:center;font-size:.85rem;opacity:.75">
+        <summary style="cursor:pointer;font-weight:bold;color:var(--bleu-fonce)">🔧 Problème pour démarrer ? (cliquez ici)</summary>
+        <div style="margin-top:12px;padding:12px;background:#fff8e6;border-radius:10px;border:1px solid var(--parchemin-ombre)">
+          <p style="margin:0 0 10px">Si le jeu ne fonctionne pas correctement, ou si vous arrivez directement à la fin, c'est qu'une ancienne partie est restée en mémoire. Cliquez ci-dessous pour tout effacer et repartir à zéro :</p>
+          <button class="btn gris" id="btn-reset-total">🗑️ Effacer ma sauvegarde et recommencer</button>
+          <p id="reset-msg" style="margin-top:8px;color:var(--vert);font-weight:bold"></p>
+        </div>
+      </details>
+
+      <p class="sr-only" id="msg-accueil" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ============ CONTENEUR SALLES ============ -->
+  <section class="ecran" id="ecran-salle">
+    <div class="carte" id="salle-contenu"></div>
+  </section>
+
+  <!-- ============ ÉCRAN PAUSE ============ -->
+  <section class="ecran" id="ecran-pause">
+    <div class="carte center">
+      <h2>⏸ Partie en pause</h2>
+      <p style="font-size:1.1rem">Le temps est suspendu. Revenez quand vous êtes prêts !</p>
+      <p style="font-style:italic">Astuce : profitez-en pour relire une leçon 📚 ou pour reformuler l'énigme à voix haute, ensemble.</p>
+      <div class="boutons">
+        <button class="btn vert grand" id="btn-reprendre">▶️ Reprendre l'enquête</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ÉCRAN FINAL ============ -->
+  <section class="ecran" id="ecran-fin">
+    <div class="carte" id="fin-contenu"></div>
+  </section>
+
+</div>
+
+<!-- ============ MODALS ============ -->
+<div class="overlay-modal" id="overlay-lecons">
+  <div class="modal" id="modal-lecons">
+    <div class="modal-tete">
+      <h3>📚 Les leçons</h3>
+      <button class="fermer" data-close="overlay-lecons" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-corps" id="corps-lecons"></div>
+  </div>
+</div>
+
+<div class="overlay-modal" id="overlay-reglages">
+  <div class="modal" id="modal-reglages">
+    <div class="modal-tete">
+      <h3>⚙️ Réglages</h3>
+      <button class="fermer" data-close="overlay-reglages" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-corps" id="corps-reglages"></div>
+  </div>
+</div>
+
+<!-- Cinématique plein écran (remplie par js/media.js, invisible sans fichier) -->
+<div class="overlay-cine" id="overlay-cine"></div>
+
+<!-- ============ Scripts (ordre garanti par des balises statiques) ============
+     personnages.js définit htmlPortrait() et activerPortrait() ;
+     media.js DOIT suivre : il remplace activerPortrait() par la
+     cascade vidéo → image → dessin. -->
+<script src="js/personnages.js?v1"></script>
+<script src="js/media.js?v1"></script>
+<script src="js/audio.js?v1"></script>
+<script src="js/decors.js?v1"></script>
+<script src="js/narration.js?v1"></script>
+<script src="js/enigmes.js?v1"></script>
+<script src="js/lecons.js?v1"></script>
+<script src="js/impression.js?v1"></script>
+<script src="js/api.js?v1"></script>
+<script src="js/sync.js?v1"></script>
+<script src="js/reglages.js?v1"></script>
+<script src="js/app.js?v1"></script>
+<script>
+  function initialiserAccueil(){
+    const sc = document.getElementById("scene-accueil");
+    if(sc){
+      const fb = sc.querySelector(".decor-fallback");
+      if(fb && typeof SVG_DECORS === "object") fb.innerHTML = SVG_DECORS["scriptorium"];
+      if(typeof installerDecor === "function") installerDecor(sc, "salle3");
+    }
+
+    const p = document.getElementById("portrait-intro");
+    if(!p || typeof htmlPortrait !== "function") return;
+    p.innerHTML = htmlPortrait("anselme");
+    activerPortrait(p.querySelector(".portrait-conteneur"));
+
+    const texteIntro = "Entrez vite, et refermez la porte. Je suis frère Anselme, copiste de cette abbaye. Ce matin, j'ai ouvert le grand livre que nous copions depuis trois ans : cinq pages ont disparu. L'évêque arrive demain pour le voir. Vous êtes apprentis copistes : vous allez refaire ces cinq pages. Chacune raconte un moment de notre histoire, et chacune porte un mot. Les cinq mots ensemble redonneront la première ligne du livre. Prenez une plume. Au travail.";
+    machineEcrire(document.getElementById("intro-texte"), texteIntro);
+
+    const btnEcouter = document.getElementById("btn-intro-ecouter");
+    if(btnEcouter) btnEcouter.addEventListener("click", ()=>{
+      if(!("speechSynthesis" in window)) return;
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(texteIntro);
+      u.lang = "fr-FR"; u.rate = 0.92;
+      const scene = document.querySelector("#ecran-accueil .personnage-scene");
+      const portrait = scene && scene.querySelector(".portrait");
+      u.onstart = ()=>{
+        if(!portrait) return;
+        portrait.classList.add("parle");
+        if(typeof geste === "function"){
+          geste(portrait, "salue", 1800);
+          setTimeout(()=>geste(portrait, "pointe", 2000), 7000);
+        }
+      };
+      u.onend = ()=>{ if(portrait) portrait.classList.remove("parle"); };
+      speechSynthesis.speak(u);
+    });
+
+    document.querySelectorAll(".fermer").forEach(b=>{
+      b.addEventListener("click", ()=>document.getElementById(b.dataset.close).classList.remove("show"));
+    });
+    document.querySelectorAll(".overlay-modal").forEach(o=>{
+      o.addEventListener("click", e=>{ if(e.target===o) o.classList.remove("show"); });
+    });
+    document.addEventListener("keydown", e=>{
+      if(e.key==="Escape") document.querySelectorAll(".overlay-modal.show").forEach(o=>o.classList.remove("show"));
+    });
+
+    const btnReset = document.getElementById("btn-reset-total");
+    if(btnReset) btnReset.addEventListener("click", ()=>{
+      if(!confirm("Voulez-vous vraiment effacer la sauvegarde ? La partie en cours sera perdue.")) return;
+      try{
+        localStorage.removeItem("escape_moyenage_v1");
+        localStorage.removeItem("escape_app_version_moyenage");
+        localStorage.removeItem("escape_reglages_moyenage");
+      }catch(e){}
+      document.getElementById("reset-msg").textContent = "✅ Sauvegarde effacée. La page va recharger…";
+      setTimeout(()=>location.reload(), 1200);
+    });
+  }
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialiserAccueil);
+  else initialiserAccueil();
+</script>
+</body>
+</html>

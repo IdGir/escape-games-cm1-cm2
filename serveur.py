@@ -237,7 +237,7 @@ class Handler(BaseHTTPRequestHandler):
             # Inventaire des médias déposés, lu par verifier.html :
             # { "declaration/assets/videos/salle4.mp4": taille, ... }
             fichiers = {}
-            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo", "melanges"):
+            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo", "melanges", "moyen-age-abbaye"):
                 for racine, _, noms in os.walk(os.path.join(jeu, "assets")):
                     for nom in noms:
                         chemin = os.path.join(racine, nom)
@@ -325,6 +325,7 @@ def main():
     print("     Tour du Monde (géo.)  →  http://{}:{}/tour-du-monde/".format(ip, PORT))
     print("     Mission géographique  →  http://{}:{}/mission-geo/".format(ip, PORT))
     print("     Constitution (EMC)    →  http://{}:{}/constitution/".format(ip, PORT))
+    print("     Moyen Âge (histoire)  →  http://{}:{}/moyen-age-abbaye/".format(ip, PORT))
     print("     Station météo (sc.)   →  http://{}:{}/station-meteo/".format(ip, PORT))
     print("     Mélanges (sciences)   →  http://{}:{}/melanges/".format(ip, PORT))
     print()
@@ -332,6 +333,7 @@ def main():
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/tour-du-monde/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/constitution/prof.html".format(PORT))
+    print("     http://127.0.0.1:{}/moyen-age-abbaye/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/station-meteo/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/melanges/prof.html".format(PORT))
     print()

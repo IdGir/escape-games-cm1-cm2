@@ -1,0 +1,385 @@
+/* ============================================================
+   PERSONNAGES PLEIN CORPS — scène, gestes, mouvements
+   Chargé APRÈS style.css et animations.css : surcharge volontaire
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. LA SCÈNE DU PERSONNAGE
+   L'ancien portrait rond (120 px) devient une estrade verticale
+   ------------------------------------------------------------ */
+.portrait{
+  flex-shrink:0;
+  width:170px;
+  height:262px;
+  border-radius:16px 16px 10px 10px;   /* plus de cercle : plein corps */
+  border:3px solid var(--or);
+  overflow:hidden;
+  position:relative;
+  background:#141a2c;
+  box-shadow:0 0 0 2px var(--bleu-nuit), 0 14px 30px rgba(0,0,0,.55);
+  align-self:flex-end;                  /* le perso pose sur le sol de la scène */
+}
+.portrait .portrait-svg,
+.portrait .portrait-svg-interne{
+  width:100%; height:100%; display:block;
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Sol lumineux sous le personnage */
+.portrait::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:34%;
+  background:linear-gradient(to top, rgba(201,162,39,.20), transparent);
+  pointer-events:none;
+}
+
+/* Halo pendant la parole (adapté à la nouvelle forme) */
+.portrait.parle{
+  border-radius:16px 16px 10px 10px;
+  box-shadow:0 0 0 2px var(--bleu-nuit), 0 0 0 5px var(--or-clair), 0 0 34px rgba(240,214,120,.55);
+  animation:halo-parle-corps 1.3s infinite alternate ease-in-out;
+}
+@keyframes halo-parle-corps{
+  to{box-shadow:0 0 0 2px var(--bleu-nuit), 0 0 0 7px var(--or-clair), 0 0 48px rgba(240,214,120,.8)}
+}
+
+/* La scène s'aligne en bas pour poser les personnages */
+.personnage-scene{align-items:flex-end;min-height:290px}
+.personnage-scene .bulle{align-self:center}
+
+/* ------------------------------------------------------------
+   2. RIG — points de pivot des membres
+   transform-box:fill-box → l'origine se calcule sur la boîte
+   propre de chaque membre, indépendamment du viewBox.
+   ------------------------------------------------------------ */
+.perso-plein .bras,
+.perso-plein .avant-g,
+.perso-plein .avant-d,
+.perso-plein .main-g,
+.perso-plein .main-d,
+.perso-plein .buste,
+.perso-plein .tete,
+.perso-plein .jambes,
+.perso-plein .perso-corps,
+.perso-plein .cocarde{
+  transform-box:fill-box;
+}
+/* Épaules : pivot en haut du bras */
+.perso-plein .bras     { transform-origin:50% 6%; }
+/* Coudes : pivot en haut de l'avant-bras */
+.perso-plein .avant-g,
+.perso-plein .avant-d  { transform-origin:50% 8%; }
+/* Buste : pivot sur les hanches */
+.perso-plein .buste    { transform-origin:50% 100%; }
+/* Tête : pivot sur le cou */
+.perso-plein .tete     { transform-origin:50% 92%; }
+.perso-plein .jambes   { transform-origin:50% 100%; }
+.perso-plein .perso-corps{ transform-origin:50% 100%; }
+
+/* ------------------------------------------------------------
+   3. VIE AU REPOS — respiration, balancement, poids du corps
+   Un personnage immobile paraît mort : il bouge toujours un peu.
+   ------------------------------------------------------------ */
+.perso-plein .buste{
+  animation:respire 4.2s ease-in-out infinite;
+}
+@keyframes respire{
+  0%,100%{transform:scaleY(1) scaleX(1) translateY(0)}
+  50%    {transform:scaleY(1.018) scaleX(1.006) translateY(-1.2px)}
+}
+
+/* Léger transfert de poids du corps entier */
+.perso-plein .perso-corps{
+  animation:balance-corps 7s ease-in-out infinite;
+}
+@keyframes balance-corps{
+  0%,100%{transform:rotate(0deg) translateX(0)}
+  33%    {transform:rotate(.5deg) translateX(1.5px)}
+  66%    {transform:rotate(-.4deg) translateX(-1.5px)}
+}
+
+/* Bras au repos : très léger pendule, décalé entre les deux côtés */
+.perso-plein .bras-g{ animation:pendule-g 5.4s ease-in-out infinite; }
+.perso-plein .bras-d{ animation:pendule-d 6.1s ease-in-out infinite; }
+@keyframes pendule-g{
+  0%,100%{transform:rotate(0deg)}
+  50%    {transform:rotate(2.4deg)}
+}
+@keyframes pendule-d{
+  0%,100%{transform:rotate(0deg)}
+  50%    {transform:rotate(-2.8deg)}
+}
+
+/* Cocarde de Louise : elle frémit */
+.perso-plein .cocarde{ animation:fremit 3.6s ease-in-out infinite; transform-origin:50% 0%; }
+@keyframes fremit{
+  0%,100%{transform:rotate(0deg)}
+  50%    {transform:rotate(6deg)}
+}
+
+/* ------------------------------------------------------------
+   3 bis. REGARD — clignement des yeux
+   La paupière est une ellipse couleur peau posée SUR l'œil.
+   Au repos elle doit être escamotée (scaleY(0)) et ne se déployer
+   qu'au moment du clignement : on surcharge donc la règle générale
+   d'animations.css, dont la logique est inversée.
+   Les deux yeux clignent ensemble, avec un rythme irrégulier.
+   ------------------------------------------------------------ */
+.perso-plein .yeux .paupiere{
+  transform-box:fill-box;
+  transform-origin:50% 0%;      /* la paupière descend depuis le haut */
+  transform:scaleY(0);          /* œil ouvert par défaut */
+  animation:cligne-plein 5.4s infinite ease-in-out;
+}
+@keyframes cligne-plein{
+  0%, 41%, 100% { transform:scaleY(0);   }   /* œil ouvert */
+  43%, 44%      { transform:scaleY(1);   }   /* clignement bref */
+  46%, 88%      { transform:scaleY(0);   }
+  90%, 91%      { transform:scaleY(1);   }   /* second clignement rapproché */
+  93%           { transform:scaleY(0);   }
+}
+/* Pendant la parole, le personnage cligne un peu plus souvent */
+.portrait.parle .perso-plein .yeux .paupiere{
+  animation-duration:3.6s;
+}
+
+/* ------------------------------------------------------------
+   4. PAROLE — le personnage s'anime en parlant
+   (le lip-sync de la bouche reste géré par animations.css)
+   ------------------------------------------------------------ */
+
+/* Le buste accompagne le discours */
+.portrait.parle .perso-plein .buste{
+  animation:respire-parle 1.9s ease-in-out infinite;
+}
+@keyframes respire-parle{
+  0%,100%{transform:scaleY(1) translateY(0) rotate(0deg)}
+  30%    {transform:scaleY(1.02) translateY(-1.5px) rotate(.5deg)}
+  70%    {transform:scaleY(1.01) translateY(-.6px) rotate(-.5deg)}
+}
+
+/* Bras droit : gesticulation oratoire pendant la parole */
+.portrait.parle .perso-plein .bras-d{
+  animation:gesticule-bras 2.6s ease-in-out infinite;
+}
+@keyframes gesticule-bras{
+  0%    {transform:rotate(0deg)}
+  20%   {transform:rotate(-26deg)}
+  45%   {transform:rotate(-14deg)}
+  65%   {transform:rotate(-32deg)}
+  85%   {transform:rotate(-8deg)}
+  100%  {transform:rotate(0deg)}
+}
+.portrait.parle .perso-plein .avant-d{
+  animation:gesticule-avant 2.6s ease-in-out infinite;
+}
+@keyframes gesticule-avant{
+  0%    {transform:rotate(0deg)}
+  20%   {transform:rotate(-22deg)}
+  45%   {transform:rotate(-6deg)}
+  65%   {transform:rotate(-28deg)}
+  85%   {transform:rotate(-4deg)}
+  100%  {transform:rotate(0deg)}
+}
+/* Bras gauche : accompagnement plus discret et décalé */
+.portrait.parle .perso-plein .bras-g{
+  animation:gesticule-bras-g 3.4s ease-in-out infinite;
+}
+@keyframes gesticule-bras-g{
+  0%,100%{transform:rotate(0deg)}
+  40%    {transform:rotate(13deg)}
+  70%    {transform:rotate(5deg)}
+}
+
+/* La tête ponctue le propos */
+.portrait.parle .perso-plein .tete{
+  animation:tete-parle 2.2s ease-in-out infinite;
+}
+@keyframes tete-parle{
+  0%,100%{transform:rotate(0deg) translateY(0)}
+  25%    {transform:rotate(1.6deg) translateY(-1px)}
+  60%    {transform:rotate(-1.2deg) translateY(0)}
+}
+
+/* ------------------------------------------------------------
+   5. GESTES DÉCLENCHÉS PAR LE JEU
+   Appliqués via geste(element, "pointe"|"joie"|"inquiet"|"salue")
+   ------------------------------------------------------------ */
+
+/* --- POINTER DU DOIGT : « regardez là ! » --- */
+.portrait.geste-pointe .perso-plein .bras-d{
+  animation:pointe-bras 1s ease-out forwards;
+}
+@keyframes pointe-bras{
+  0%  {transform:rotate(0deg)}
+  60% {transform:rotate(-72deg)}
+  100%{transform:rotate(-66deg)}
+}
+.portrait.geste-pointe .perso-plein .avant-d{
+  animation:pointe-avant 1s ease-out forwards;
+}
+@keyframes pointe-avant{
+  0%  {transform:rotate(0deg)}
+  60% {transform:rotate(-34deg)}
+  100%{transform:rotate(-30deg)}
+}
+.portrait.geste-pointe .perso-plein .tete{
+  animation:pointe-tete 1s ease-out forwards;
+}
+@keyframes pointe-tete{
+  0%  {transform:rotate(0deg)}
+  100%{transform:rotate(7deg)}
+}
+
+/* --- JOIE : bras levés, petit saut --- */
+.portrait.geste-joie .perso-plein .bras-d{
+  animation:joie-bras-d 1.5s ease-in-out;
+}
+.portrait.geste-joie .perso-plein .bras-g{
+  animation:joie-bras-g 1.5s ease-in-out;
+}
+@keyframes joie-bras-d{
+  0%,100%{transform:rotate(0deg)}
+  25%,75%{transform:rotate(-118deg)}
+  50%    {transform:rotate(-104deg)}
+}
+@keyframes joie-bras-g{
+  0%,100%{transform:rotate(0deg)}
+  25%,75%{transform:rotate(118deg)}
+  50%    {transform:rotate(104deg)}
+}
+.portrait.geste-joie .perso-plein .perso-corps{
+  animation:joie-saut 1.5s ease-in-out;
+}
+@keyframes joie-saut{
+  0%,100%      {transform:translateY(0) rotate(0deg)}
+  20%,60%      {transform:translateY(-9px) rotate(0deg)}
+  40%,80%      {transform:translateY(0) rotate(0deg)}
+}
+.portrait.geste-joie .perso-plein .sourcils{
+  animation:sourcils-hauts 1.5s ease-in-out;
+}
+@keyframes sourcils-hauts{
+  0%,100%{transform:translateY(0)}
+  50%    {transform:translateY(-3px)}
+}
+
+/* --- INQUIÉTUDE : recul, épaules rentrées, tête basse --- */
+.portrait.geste-inquiet .perso-plein .perso-corps{
+  animation:inquiet-recul 1.6s ease-in-out;
+}
+@keyframes inquiet-recul{
+  0%,100%{transform:translateX(0) scale(1)}
+  35%,65%{transform:translateX(-5px) scale(.985)}
+}
+.portrait.geste-inquiet .perso-plein .tete{
+  animation:inquiet-tete 1.6s ease-in-out;
+}
+@keyframes inquiet-tete{
+  0%,100%{transform:rotate(0deg) translateY(0)}
+  40%    {transform:rotate(-5deg) translateY(2px)}
+}
+.portrait.geste-inquiet .perso-plein .bras-d,
+.portrait.geste-inquiet .perso-plein .bras-g{
+  animation:inquiet-bras 1.6s ease-in-out;
+}
+@keyframes inquiet-bras{
+  0%,100%{transform:rotate(0deg)}
+  40%    {transform:rotate(-9deg)}
+}
+
+/* --- SALUT : révérence / signe de la main --- */
+.portrait.geste-salue .perso-plein .bras-d{
+  animation:salut-bras 1.8s ease-in-out;
+}
+@keyframes salut-bras{
+  0%,100%       {transform:rotate(0deg)}
+  15%           {transform:rotate(-96deg)}
+  30%,50%,70%   {transform:rotate(-82deg)}
+  40%,60%       {transform:rotate(-110deg)}
+  85%           {transform:rotate(-40deg)}
+}
+
+/* ------------------------------------------------------------
+   6. ENTRÉE EN SCÈNE — le personnage arrive par la gauche
+   ------------------------------------------------------------ */
+.personnage-scene.entrer .portrait{
+  animation:entree-perso .85s cubic-bezier(.22,1.2,.36,1) both;
+}
+@keyframes entree-perso{
+  0%  {opacity:0; transform:translateX(-46px) translateY(10px) scale(.9)}
+  70% {opacity:1; transform:translateX(4px) translateY(0) scale(1.02)}
+  100%{opacity:1; transform:translateX(0) translateY(0) scale(1)}
+}
+/* Petit rebond des jambes à l'arrivée */
+.personnage-scene.entrer .perso-plein .jambes{
+  animation:arrivee-jambes .85s ease-out both;
+}
+@keyframes arrivee-jambes{
+  0%  {transform:scaleY(1)}
+  70% {transform:scaleY(.94)}
+  100%{transform:scaleY(1)}
+}
+
+/* Sortie de scène (changement de salle) */
+.personnage-scene.sortir .portrait{
+  animation:sortie-perso .5s ease-in both;
+}
+@keyframes sortie-perso{
+  0%  {opacity:1; transform:translateX(0) scale(1)}
+  100%{opacity:0; transform:translateX(38px) scale(.92)}
+}
+
+/* ------------------------------------------------------------
+   7. ADAPTATION AUX PETITS ÉCRANS / VIDÉOPROJECTEUR
+   ------------------------------------------------------------ */
+@media (max-width:760px){
+  .portrait{width:132px;height:204px}
+  .personnage-scene{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:14px;
+    min-height:0;
+  }
+  .portrait{align-self:center}
+}
+@media (max-width:480px){
+  .portrait{width:112px;height:174px}
+}
+
+/* Écran d'accueil : personnage un peu plus grand (effet d'accueil) */
+#ecran-accueil .portrait{width:180px;height:278px}
+@media (max-width:760px){
+  #ecran-accueil .portrait{width:132px;height:204px}
+}
+
+/* ------------------------------------------------------------
+   8. ACCESSIBILITÉ — respect de « mouvement réduit »
+   Certains élèves (troubles vestibulaires, épilepsie photosensible)
+   ont besoin d'une interface calme.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion:reduce){
+  .perso-plein .perso-corps,
+  .perso-plein .buste,
+  .perso-plein .bras-g,
+  .perso-plein .bras-d,
+  .perso-plein .cocarde,
+  .portrait.parle .perso-plein .buste,
+  .portrait.parle .perso-plein .bras-d,
+  .portrait.parle .perso-plein .bras-g,
+  .portrait.parle .perso-plein .avant-d,
+  .portrait.parle .perso-plein .tete,
+  .personnage-scene.entrer .portrait,
+  .personnage-scene.entrer .perso-plein .jambes{
+    animation:none !important;
+  }
+  .portrait.parle{animation:none}
+}
+
+/* Mode « animations réduites » activable par l'enseignant */
+body.calme .perso-plein .perso-corps,
+body.calme .perso-plein .bras-g,
+body.calme .perso-plein .bras-d,
+body.calme .perso-plein .cocarde{
+  animation:none !important;
+}
