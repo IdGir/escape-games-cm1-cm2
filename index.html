@@ -8,7 +8,7 @@
 <style>
   :root{
     --fond:#f6f4ef; --papier:#fff; --encre:#1f2430; --doux:#5d6472; --ligne:#e2ddd2;
-    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --met:#1d5c8f; --met-2:#f2c14e;
+    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e;
   }
   *{box-sizing:border-box}
   body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
@@ -35,6 +35,8 @@
   .mission .jouer{background:var(--mg)}
   .constitution .bandeau{background:linear-gradient(135deg,var(--cst),#33163d 60%,var(--cst-2))}
   .constitution .jouer{background:var(--cst)}
+  .melanges .bandeau{background:linear-gradient(135deg,var(--mel),#0b2a30 60%,var(--mel-2))}
+  .melanges .jouer{background:var(--mel)}
   .meteo .bandeau{background:linear-gradient(135deg,var(--met),#0f3350 60%,var(--met-2))}
   .meteo .jouer{background:var(--met)}
   .enseignant{max-width:1100px;margin:0 auto 50px;padding:0 20px}
@@ -130,6 +132,21 @@
       <div class="liens">
         <a class="prof" href="station-meteo/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/station-meteo#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+  <article class="jeu melanges">
+    <div class="bandeau">
+      <div class="icone">⚗️</div>
+      <h2>Le Laboratoire de Madame Mélange</h2>
+      <div class="meta">Sciences · masses, mélanges et séparation · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
+    </div>
+    <div class="corps">
+      <p>L'apprentie de Madame Mélange a renversé toutes les fioles. Peser, observer, trier, filtrer, évaporer : cinq opérations à retrouver pour compléter le testament de la chimiste.</p>
+      <a class="jouer" href="melanges/">▶ Jouer</a>
+      <div class="liens">
+        <a class="prof" href="melanges/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/melanges#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
     </div>
   </article>

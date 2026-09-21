@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "jeu": "Le Laboratoire de Madame Mélange",
+    "sujet": "La matière : masses, mélanges homogènes et hétérogènes, séparation des constituants — sciences, cycle 3",
+    "niveaux": [
+      "CM1",
+      "CM2"
+    ],
+    "suite": "Jeu n°10 (les états de la matière). Lien possible avec le jeu n°08 (alimentation : filtrer, conserver).",
+    "sources": "Programme de sciences et technologie du cycle 3 (BO 2026) ; Fondation La main à la pâte ; Cité des sciences et de l'industrie ; Lumni."
+  },
+  "personnages": {
+    "lila": {
+      "nom": "Lila",
+      "emoji": "",
+      "role": "Apprentie chimiste, 11 ans"
+    },
+    "marius": {
+      "nom": "Marius",
+      "emoji": "",
+      "role": "Cuisinier de la cuisine d'essai"
+    },
+    "nadia": {
+      "nom": "Nadia",
+      "emoji": "",
+      "role": "Laborantine de l'atelier de tri"
+    },
+    "yann": {
+      "nom": "Yann",
+      "emoji": "",
+      "role": "Paludier, ramasseur de sel de mer"
+    },
+    "melange": {
+      "nom": "Madame Mélange",
+      "emoji": "",
+      "role": "Chimiste, directrice du laboratoire"
+    }
+  },
+  "intro_accueil": "Bonjour ! Je m'appelle Lila, je suis l'apprentie de Madame Mélange. Ce matin, j'ai trébuché et toutes les fioles du laboratoire se sont renversées. Tout est mélangé ! Madame Mélange part à la retraite et m'a confié son testament de chimiste : un protocole en cinq opérations pour retrouver ses échantillons. Mais la page est effacée. Chaque salle du laboratoire cache une opération. Aidez-moi à les retrouver. Et rappelez-vous la règle numéro un : ici, on ne goûte jamais et on ne sent jamais un produit !",
+  "protocole": [
+    "PESER",
+    "OBSERVER",
+    "AIMANTER",
+    "ÉVAPORER",
+    "COMPARER"
+  ],
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La salle des balances",
+      "decor": "balances",
+      "motCle": "PESER",
+      "lieu": "La salle des balances — rez-de-chaussée du laboratoire",
+      "description": "Sur les étagères, des balances de toutes les tailles : une vieille balance à deux plateaux en cuivre, une balance électronique, une boîte de masses marquées. Au sol, des fioles renversées portent encore leur étiquette.",
+      "sens": [
+        "Vu : deux plateaux immobiles",
+        "Entendu : le bip de la balance",
+        "Règle : on ne sent rien"
+      ],
+      "dialogue_intro": {
+        "perso": "lila",
+        "nom": "Lila",
+        "texte": "Voici la salle des balances. Madame Mélange disait toujours : « Avant de séparer, on pèse. » Moi, je confonds encore la balance à plateaux et la balance électronique, et je ne sais jamais à quoi sert la touche « tare ». Si vous m'aidez à ranger ces fioles et à peser ces liquides, la première opération du testament apparaîtra."
+      },
+      "dialogue_reussite": {
+        "perso": "lila",
+        "nom": "Lila",
+        "texte": "Un mot vient d'apparaître sur la page : <b>PESER</b> ! On pèse avant tout, pour savoir ce que l'on a au départ. Suivez-moi dans la cuisine d'essai : Marius, le cuisinier, dit que son sucre a disparu dans son café. Je n'y crois pas une seconde."
+      }
+    },
+    {
+      "num": 2,
+      "titre": "La cuisine d'essai",
+      "decor": "cuisine",
+      "motCle": "COMPARER",
+      "lieu": "La cuisine d'essai — là où l'on teste les mélanges du quotidien",
+      "description": "Un plan de travail blanc, une cafetière, un sucrier, des verres gradués et une balance de cuisine. Une affiche au mur : « Cuisine d'essai du laboratoire : ici, on mesure, on ne goûte pas. »",
+      "sens": [
+        "Vu : un sucrier ouvert",
+        "Entendu : une cuillère qui tourne",
+        "Règle : on ne goûte rien"
+      ],
+      "dialogue_intro": {
+        "perso": "marius",
+        "nom": "Marius",
+        "texte": "Ah, les apprentis ! J'ai mis un sucre dans mon café, j'ai remué… et plus de sucre ! Il a disparu, non ? Madame Mélange m'a laissé une balance et m'a interdit de goûter quoi que ce soit dans cette cuisine d'essai. Alors prouvez-moi, avec la balance, ce que devient mon sucre."
+      },
+      "dialogue_reussite": {
+        "perso": "marius",
+        "nom": "Marius",
+        "texte": "Deuxième mot : <b>COMPARER</b>. On compare la masse d'avant et la masse d'après : elles sont égales ! Mon sucre ne s'est pas envolé, il s'est dissous. Allez voir la salle des fioles : Lila y a fait tomber tout un rayon de mélanges."
+      }
+    },
+    {
+      "num": 3,
+      "titre": "La salle des fioles",
+      "decor": "fioles",
+      "motCle": "OBSERVER",
+      "lieu": "La salle des fioles — premier étage",
+      "description": "Des centaines de fioles bouchées, bien rangées sur des étagères. Certaines sont transparentes, d'autres ont deux couches, d'autres encore sont troubles avec un dépôt au fond. Au mur, le portrait de Madame Mélange, loupe à la main.",
+      "sens": [
+        "Vu : des couches de couleurs",
+        "Entendu : le verre qui tinte",
+        "Règle : on ne débouche pas"
+      ],
+      "dialogue_intro": {
+        "perso": "lila",
+        "nom": "Lila",
+        "texte": "C'est ici que j'ai tout renversé. Madame Mélange avait rangé ses fioles en deux familles, mais les étiquettes sont tombées. Dans certaines, on voit plusieurs choses ; dans d'autres, on ne voit qu'un seul liquide… mais ce sont quand même des mélanges ! Même l'air de cette pièce en est un. Aidez-moi à les reclasser."
+      },
+      "dialogue_reussite": {
+        "perso": "lila",
+        "nom": "Lila",
+        "texte": "Troisième mot : <b>OBSERVER</b>. Avant de séparer un mélange, on le regarde bien : homogène ou hétérogène ? C'est ce qui permet de choisir la bonne méthode. Descendons à l'atelier de tri : Nadia a besoin de nous pour un bac de sable plein de limaille de fer."
+      }
+    },
+    {
+      "num": 4,
+      "titre": "L'atelier de tri",
+      "decor": "atelier",
+      "motCle": "AIMANTER",
+      "lieu": "L'atelier de tri — au sous-sol",
+      "description": "Des bacs en plastique alignés sur un établi, des tamis accrochés au mur, une bassine d'eau et un gros aimant en fer à cheval. Dans un bac, du sable gris brille par endroits : de la limaille de fer.",
+      "sens": [
+        "Vu : des tamis de tailles différentes",
+        "Entendu : le sable qui glisse",
+        "Règle : lunettes et gants"
+      ],
+      "dialogue_intro": {
+        "perso": "nadia",
+        "nom": "Nadia",
+        "texte": "Bienvenue à l'atelier ! Ici, on sépare des mélanges de solides. Chaque méthode utilise une différence : la taille des grains, le fer que l'aimant attire, ce qui flotte ou ce qui coule. Mettez vos lunettes : on va tamiser, aimanter et faire flotter."
+      },
+      "dialogue_reussite": {
+        "perso": "nadia",
+        "nom": "Nadia",
+        "texte": "Quatrième mot : <b>AIMANTER</b>. L'aimant attire le fer, et seulement certains métaux : c'est lui qui sortira la limaille du dernier bocal de Madame Mélange. Il reste une opération. Pour la trouver, il faut aller voir Yann, à la saline."
+      }
+    },
+    {
+      "num": 5,
+      "titre": "La saline",
+      "decor": "saline",
+      "motCle": "ÉVAPORER",
+      "lieu": "La saline — la paillasse de filtration, face aux marais salants",
+      "description": "Une grande fenêtre donne sur les bassins d'un marais salant. Sur la paillasse : un entonnoir, du papier filtre, des béchers, une coupelle posée au soleil. Et, au centre, le dernier bocal de Madame Mélange.",
+      "sens": [
+        "Vu : des bassins qui brillent",
+        "Entendu : les mouettes",
+        "Règle : l'eau filtrée ne se boit pas"
+      ],
+      "dialogue_intro": {
+        "perso": "yann",
+        "nom": "Yann",
+        "texte": "Je suis paludier : je récolte le sel de mer. Et le sel, on ne peut pas l'attraper avec un filtre : il est dissous, il passe à travers ! Ici, vous allez décanter, filtrer, et découvrir ce que le soleil et le vent font dans mes marais. Le dernier mot du testament se cache dans mon métier."
+      },
+      "dialogue_fin": {
+        "perso": "melange",
+        "nom": "Madame Mélange",
+        "texte": "Bravo, mes apprentis. PESER, OBSERVER, AIMANTER, ÉVAPORER, COMPARER : voilà mon protocole. Vous avez retrouvé les 20 grammes de fer et les 30 grammes de sel de mon dernier bocal. Rien ne s'est perdu : la matière ne disparaît pas, elle change seulement de place. Le laboratoire est à vous, Lila. Et n'oubliez jamais : on observe, on mesure, mais on ne goûte pas !"
+      }
+    }
+  ]
+}

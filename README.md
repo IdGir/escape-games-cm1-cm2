@@ -9,6 +9,7 @@ Cinq escape games d'histoire, de géographie, d'EMC et de sciences, jouables dan
 | 🗺️ | **Mission géographique — Année A** — Géographie, 16 séances | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/) | [mission-geo/README.md](mission-geo/README.md) | [liste](mission-geo/assets/README.md) |
 | ⚖️ | **Le Sceau de la République** — EMC, la Constitution de 1958 | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/constitution/) | [constitution/README.md](constitution/README.md) | [liste](constitution/assets/README.md) |
 | 🌦️ | **La Station météo disparue** — Sciences, mesures météorologiques | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/) | [station-meteo/README.md](station-meteo/README.md) | [liste](station-meteo/assets/README.md) |
+| ⚗️ | **Le Laboratoire de Madame Mélange** — Sciences, masses et mélanges | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/melanges/) | [melanges/README.md](melanges/README.md) | [liste](melanges/assets/README.md) |
 
 - 🏠 **Accueil des cinq jeux** : https://idgir.github.io/escape-games-cm1-cm2/
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
@@ -70,6 +71,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | Le Tour du Monde | `tour-du-monde/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin | [escale 5 en CM2](https://idgir.github.io/escape-games-cm1-cm2/tour-du-monde/?salle=5&niveau=CM2) |
 | Mission géographique | `mission-geo/?seance=N` — N de 1 à 16, ou `final` | [séance 13](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=13) |
 | Le Sceau de la République | `constitution/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 2, CM2](https://idgir.github.io/escape-games-cm1-cm2/constitution/?salle=4&niveau=CM2&enigme=2) |
+| Le Laboratoire de Madame Mélange | `melanges/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 5, énigme 4, CM2](https://idgir.github.io/escape-games-cm1-cm2/melanges/?salle=5&niveau=CM2&enigme=4) |
 | La Station météo disparue | `station-meteo/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [module 1, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/?salle=1&niveau=CM2&enigme=1) |
 
 ---
@@ -166,16 +168,25 @@ PROJET ESCAPE GAMES/
 │   ├── css/                (+ enigmes.css)
 │   └── js/                 enigmes.js = moteur générique à 10 types d'énigmes
 │
-└── station-meteo/          🌦️ La Station météo disparue (sciences)
-    ├── README.md           Guide du jeu : modules, énigmes, solutions, sources
-    ├── GUIDE-PEDAGOGIQUE.md  Programmes, protocole de mini-station, déroulés, évaluation
-    ├── A-VERIFIER.md       Points factuels à contrôler
-    ├── fiche-releves.html  Fiche de relevés à imprimer (station de la cour)
-    ├── index.html          Le jeu
-    ├── prof.html           Tableau de bord enseignant (mode local)
-    ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json (5 leçons rédigées)
+├── station-meteo/          🌦️ La Station météo disparue (sciences)
+│   ├── README.md           Guide du jeu : modules, énigmes, solutions, sources
+│   ├── GUIDE-PEDAGOGIQUE.md  Programmes, protocole de mini-station, déroulés, évaluation
+│   ├── A-VERIFIER.md       Points factuels à contrôler
+│   ├── fiche-releves.html  Fiche de relevés à imprimer (station de la cour)
+│   ├── index.html          Le jeu
+│   ├── prof.html           Tableau de bord enseignant (mode local)
+│   ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json (5 leçons rédigées)
+│   ├── css/
+│   └── js/                 enigmes.js = moteur + type « instrument » (thermomètre, pluviomètre)
+│
+└── melanges/               ⚗️ Le Laboratoire de Madame Mélange (sciences)
+    ├── README.md           Guide du jeu : salles, énigmes, solutions
+    ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
+    ├── A-VERIFIER.md       Faits à contrôler
+    ├── index.html · prof.html
+    ├── assets/data/        ★ enigmes.json, lecons.json (leçons rédigées), dialogues, évaluations
     ├── css/
-    └── js/                 enigmes.js = moteur + type « instrument » (thermomètre, pluviomètre)
+    └── js/                 même moteur à 10 types d'énigmes
 ```
 
 Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="Le Laboratoire de Madame Mélange — escape game de sciences sur la matière : masses, mélanges homogènes et hétérogènes, séparation des constituants. CM1 et CM2, 15 énigmes en CM1, 20 en CM2.">
+<title>Le Laboratoire de Madame Mélange — Escape Game</title>
+<link rel="stylesheet" href="css/style.css?v1">
+<link rel="stylesheet" href="css/video.css?v1">
+<link rel="stylesheet" href="css/animations.css?v1">
+<link rel="stylesheet" href="css/personnages.css?v1">
+<link rel="stylesheet" href="css/enigmes.css?v1">
+<link rel="stylesheet" href="css/print.css?v1">
+</head>
+<body>
+<div class="drapeau"></div>
+<div id="app">
+
+  <!-- ============ HUD ============ -->
+  <div class="hud" id="hud" style="display:none">
+    <div class="hud-gauche">⚗️ Le Laboratoire de Madame Mélange <span style="opacity:.5;font-size:.7rem;font-weight:normal">v1</span></div>
+    <div class="hud-droite">
+      <div class="stat" title="Équipe">👤 <b id="hud-eq-nom">—</b></div>
+      <div class="stat temps" id="hud-temps" title="Temps écoulé">⏱️ <b id="hud-min">00</b>:<b id="hud-sec">00</b></div>
+      <div class="stat" title="Score">⭐ <b id="hud-score-val">0</b></div>
+      <div class="stat" title="Opérations du testament retrouvées">🧪 <b id="hud-cle-val">0</b>/5</div>
+      <button class="hud-bouton" id="btn-lecons" title="Les cinq leçons du laboratoire">📚 Leçons</button>
+      <button class="hud-bouton" id="btn-reglages" title="Réglages enseignant">⚙️</button>
+      <button class="hud-bouton" id="btn-pause" title="Mettre en pause">⏸</button>
+    </div>
+  </div>
+
+  <!-- ============ ÉCRAN ACCUEIL ============ -->
+  <section class="ecran actif" id="ecran-accueil">
+    <div class="carte">
+      <h1>Le <span class="bleu">Laboratoire</span> de <span class="rouge">Madame Mélange</span></h1>
+      <p class="sstitre">~ Escape game de sciences · la matière : masses, mélanges et séparation ~</p>
+
+      <div class="scene scene--media" id="scene-accueil" data-media="salle1">
+        <div class="decor-fallback"></div>
+        <div class="decor-overlay"></div>
+        <div class="decor-contenu">
+          <span class="lieu">Le laboratoire de Madame Mélange — ce matin</span>
+          <p class="description">Lila, l'apprentie, a trébuché : <b>toutes les fioles se sont renversées</b> et tout est mélangé. Madame Mélange part à la retraite ; elle a laissé un <b>testament de chimiste</b>, un protocole en <b>cinq opérations</b>, mais la page est effacée. Chaque salle du laboratoire en cache une.</p>
+        </div>
+      </div>
+
+      <div class="personnage-scene entrer" style="margin-top:18px">
+        <div class="portrait" id="portrait-intro"></div>
+        <div class="bulle">
+          <div class="nom-perso">Lila</div>
+          <div class="texte" id="intro-texte"></div>
+          <div class="controles-voix">
+            <button class="btn petit or" id="btn-intro-ecouter">🔊 Écouter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="regle-securite" role="note" style="margin-top:16px;background:#fff;border:2px solid var(--rouge);border-radius:12px;padding:10px 14px;text-align:center">
+        <b>Règle n°1 du laboratoire :</b> on ne goûte jamais, on ne sent jamais un produit. On observe et on mesure.
+      </div>
+
+      <hr style="border:none;border-top:2px dotted var(--parchemin-ombre);margin:22px 0">
+
+      <h3 style="text-align:center">👤 Votre équipe</h3>
+      <input type="text" id="input-equipe" placeholder="Nom de votre équipe (ex. : Les Fioles)" maxlength="24" autocomplete="off">
+
+      <h3 style="text-align:center;margin-top:20px">🎯 Votre niveau</h3>
+      <div class="choix-niveau">
+        <div class="opt-niveau" data-niveau="CM1">
+          <div class="gros">CM1</div>
+          <div class="petit">15 énigmes · masses en grammes, calculs en une étape, critères visibles</div>
+        </div>
+        <div class="opt-niveau" data-niveau="CM2">
+          <div class="gros">CM2</div>
+          <div class="petit">20 énigmes · conversions g / kg, calculs en deux étapes, cas pièges, protocole chiffré</div>
+        </div>
+      </div>
+      <p id="apercu-niveau" style="text-align:center;font-size:.85rem;opacity:.75;margin-top:8px"></p>
+
+      <div class="boutons">
+        <button class="btn grand bleu" id="btn-demarrer" disabled>⚗️ Entrer dans le laboratoire</button>
+      </div>
+
+      <hr style="border:none;border-top:1px dotted var(--parchemin-ombre);margin:18px 0">
+
+      <details style="text-align:center;font-size:.85rem;opacity:.75">
+        <summary style="cursor:pointer;font-weight:bold;color:var(--bleu-fonce)">🔧 Problème pour démarrer ? (cliquez ici)</summary>
+        <div style="margin-top:12px;padding:12px;background:#fff8e6;border-radius:10px;border:1px solid var(--parchemin-ombre)">
+          <p style="margin:0 0 10px">Si le jeu ne fonctionne pas correctement, ou si vous arrivez directement à la fin, c'est qu'une ancienne partie est restée en mémoire. Cliquez ci-dessous pour tout effacer et repartir à zéro :</p>
+          <button class="btn gris" id="btn-reset-total">🗑️ Effacer ma sauvegarde et recommencer</button>
+          <p id="reset-msg" style="margin-top:8px;color:var(--vert);font-weight:bold"></p>
+        </div>
+      </details>
+
+      <p class="sr-only" id="msg-accueil" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ============ CONTENEUR SALLES ============ -->
+  <section class="ecran" id="ecran-salle">
+    <div class="carte" id="salle-contenu"></div>
+  </section>
+
+  <!-- ============ ÉCRAN PAUSE ============ -->
+  <section class="ecran" id="ecran-pause">
+    <div class="carte center">
+      <h2>⏸ Partie en pause</h2>
+      <p style="font-size:1.1rem">Le temps est suspendu. Revenez quand vous êtes prêts !</p>
+      <p style="opacity:.7;font-style:italic">Astuce : profitez-en pour relire une leçon 📚 ou pour reformuler l'énigme à voix haute, ensemble.</p>
+      <div class="boutons">
+        <button class="btn vert grand" id="btn-reprendre">▶️ Reprendre l'enquête</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ÉCRAN FINAL ============ -->
+  <section class="ecran" id="ecran-fin">
+    <div class="carte" id="fin-contenu"></div>
+  </section>
+
+</div>
+
+<!-- ============ MODALS ============ -->
+<div class="overlay-modal" id="overlay-lecons">
+  <div class="modal" id="modal-lecons">
+    <div class="modal-tete">
+      <h3>📚 Les leçons du laboratoire</h3>
+      <button class="fermer" data-close="overlay-lecons" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-corps" id="corps-lecons"></div>
+  </div>
+</div>
+
+<div class="overlay-modal" id="overlay-reglages">
+  <div class="modal" id="modal-reglages">
+    <div class="modal-tete">
+      <h3>⚙️ Réglages</h3>
+      <button class="fermer" data-close="overlay-reglages" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-corps" id="corps-reglages"></div>
+  </div>
+</div>
+
+<!-- Cinématique plein écran (remplie par js/media.js, invisible sans fichier) -->
+<div class="overlay-cine" id="overlay-cine"></div>
+
+<!-- ============ Scripts (ordre garanti par des balises statiques) ============
+     personnages.js définit htmlPortrait() et activerPortrait() ;
+     media.js DOIT suivre : il remplace activerPortrait() par la
+     cascade vidéo → image → dessin. -->
+<script src="js/personnages.js?v1"></script>
+<script src="js/media.js?v1"></script>
+<script src="js/audio.js?v1"></script>
+<script src="js/decors.js?v1"></script>
+<script src="js/narration.js?v1"></script>
+<script src="js/enigmes.js?v1"></script>
+<script src="js/lecons.js?v1"></script>
+<script src="js/impression.js?v1"></script>
+<script src="js/api.js?v1"></script>
+<script src="js/sync.js?v1"></script>
+<script src="js/reglages.js?v1"></script>
+<script src="js/app.js?v1"></script>
+<script>
+  function initialiserAccueil(){
+    const sc = document.getElementById("scene-accueil");
+    if(sc){
+      const fb = sc.querySelector(".decor-fallback");
+      if(fb && typeof SVG_DECORS === "object") fb.innerHTML = SVG_DECORS["balances"];
+      if(typeof installerDecor === "function") installerDecor(sc, "salle1");
+    }
+
+    const p = document.getElementById("portrait-intro");
+    if(!p || typeof htmlPortrait !== "function") return;
+    p.innerHTML = htmlPortrait("lila");
+    activerPortrait(p.querySelector(".portrait-conteneur"));
+
+    const texteIntro = "Bonjour ! Je m'appelle Lila, je suis l'apprentie de Madame Mélange. Ce matin, j'ai trébuché et toutes les fioles du laboratoire se sont renversées. Tout est mélangé ! Madame Mélange part à la retraite et m'a confié son testament de chimiste : un protocole en cinq opérations pour retrouver ses échantillons. Mais la page est effacée. Chaque salle du laboratoire cache une opération. Aidez-moi à les retrouver. Et rappelez-vous la règle numéro un : ici, on ne goûte jamais et on ne sent jamais un produit !";
+    machineEcrire(document.getElementById("intro-texte"), texteIntro);
+
+    const btnEcouter = document.getElementById("btn-intro-ecouter");
+    if(btnEcouter) btnEcouter.addEventListener("click", ()=>{
+      if(!("speechSynthesis" in window)) return;
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(texteIntro);
+      u.lang = "fr-FR"; u.rate = 0.92;
+      const scene = document.querySelector("#ecran-accueil .personnage-scene");
+      const portrait = scene && scene.querySelector(".portrait");
+      u.onstart = ()=>{
+        if(!portrait) return;
+        portrait.classList.add("parle");
+        if(typeof geste === "function"){
+          geste(portrait, "salue", 1800);
+          setTimeout(()=>geste(portrait, "pointe", 2000), 7000);
+        }
+      };
+      u.onend = ()=>{ if(portrait) portrait.classList.remove("parle"); };
+      speechSynthesis.speak(u);
+    });
+
+    document.querySelectorAll(".fermer").forEach(b=>{
+      b.addEventListener("click", ()=>document.getElementById(b.dataset.close).classList.remove("show"));
+    });
+    document.querySelectorAll(".overlay-modal").forEach(o=>{
+      o.addEventListener("click", e=>{ if(e.target===o) o.classList.remove("show"); });
+    });
+    document.addEventListener("keydown", e=>{
+      if(e.key==="Escape") document.querySelectorAll(".overlay-modal.show").forEach(o=>o.classList.remove("show"));
+    });
+
+    const btnReset = document.getElementById("btn-reset-total");
+    if(btnReset) btnReset.addEventListener("click", ()=>{
+      if(!confirm("Voulez-vous vraiment effacer la sauvegarde ? La partie en cours sera perdue.")) return;
+      try{
+        localStorage.removeItem("escape_melanges_v1");
+        localStorage.removeItem("escape_app_version_melanges");
+        localStorage.removeItem("escape_reglages_melanges");
+      }catch(e){}
+      document.getElementById("reset-msg").textContent = "✅ Sauvegarde effacée. La page va recharger…";
+      setTimeout(()=>location.reload(), 1200);
+    });
+  }
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialiserAccueil);
+  else initialiserAccueil();
+</script>
+</body>
+</html>

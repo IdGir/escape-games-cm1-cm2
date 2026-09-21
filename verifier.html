@@ -138,7 +138,8 @@ const ONGLETS = [
   { id: "tour-du-monde", titre: "🧭 Le Tour du Monde" },
   { id: "mission-geo",   titre: "🗺️ Mission géographique" },
   { id: "constitution",  titre: "⚖️ Le Sceau de la République" },
-  { id: "station-meteo", titre: "🌦️ La Station météo disparue" }
+  { id: "station-meteo", titre: "🌦️ La Station météo disparue" },
+  { id: "melanges",      titre: "⚗️ Le Laboratoire de Madame Mélange" }
 ];
 
 let JETON = Date.now();   // anti-cache des aperçus, renouvelé à chaque actualisation
@@ -354,6 +355,66 @@ async function construireMeteo(){
   };
 }
 
+async function construireMelanges(){
+  const R = "melanges/";
+  const [dial, lec, enig] = await Promise.all([
+    json(R + "assets/data/dialogues.json"),
+    json(R + "assets/data/lecons.json"),
+    json(R + "assets/data/enigmes.json")
+  ]);
+  const lien = (n, niv, e) => `${R}?salle=${n}&niveau=${niv}` + (e ? "&enigme=" + e : "");
+  const deux = n => [{ libelle: "CM1", url: lien(n, "CM1") }, { libelle: "CM2", url: lien(n, "CM2") }];
+  const salles = dial.salles;
+  const persoSalles = p => salles.filter(s => (s.dialogue_intro && s.dialogue_intro.perso === p) || (s.dialogue_fin && s.dialogue_fin.perso === p))
+                                 .map(s => ({ libelle: "Salle " + s.num, url: lien(s.num, "CM2") }));
+  /* Énigmes du niveau demandé, dans l'ordre où le jeu les présente */
+  const enigmesDe = (num, niv) => {
+    const b = (enig.salles || []).find(x => x.num === num);
+    return b ? (b.enigmes || []).filter(e => !e.niveaux || e.niveaux.includes(niv)) : [];
+  };
+  /* Illustrations facultatives déclarées dans enigmes.json */
+  const illustrations = [];
+  (enig.salles || []).forEach(b => (b.enigmes || []).forEach(e => {
+    if(!e.media || !e.media.base) return;
+    const niv = (!e.niveaux || e.niveaux.includes("CM1")) ? "CM1" : "CM2";
+    const rang = enigmesDe(b.num, niv).findIndex(x => x.id === e.id) + 1;
+    illustrations.push(imageSeule(R + "assets/images/cartes/", e.media.base,
+      `Énigme ${e.id} — ${e.titre}`,
+      (e.media.legende || "Illustration facultative") + ". Sans fichier, l'énigme reste jouable.",
+      EXT.image, [{ libelle: "Salle " + b.num + " · " + niv, url: lien(b.num, niv, rang) }]));
+  }));
+
+  return {
+    id: "melanges", nom: "Le Laboratoire de Madame Mélange", R,
+    defaut: "Sans fichier : décor dessiné",
+    tests: ["CM1", "CM2"].map(niv => ({ titre: niv + " — " + salles.reduce((t,s)=>t+enigmesDe(s.num,niv).length,0) + " énigmes", liens: [
+      ...salles.flatMap(s => [
+        { libelle: s.num + ". " + s.titre + " (" + s.motCle + ")", url: lien(s.num, niv) },
+        ...enigmesDe(s.num, niv).map((e, i) => ({ libelle: "   ↳ " + e.id + " " + e.titre + " (" + e.type + ")", url: lien(s.num, niv, i + 1) }))
+      ]),
+      { libelle: "🏁 Fin : testament, badges, quizz", url: lien(6, niv) }
+    ]})),
+    familles: [
+      { titre: "Décors et cinématiques", slots: [
+        decor(R, "intro", "Cinématique d'ouverture", "Plein écran au clic sur « Entrer dans le laboratoire ». Sautée si absente.", [{ libelle: "Accueil", url: R }]),
+        ...salles.map(s => decor(R, "salle" + s.num, `Salle ${s.num} — ${s.titre}`,
+          "Décor de fond de la salle" + (s.num === 1 ? ", et de l'écran d'accueil" : "") + ".", deux(s.num))),
+        decor(R, "final", "Cinématique de fin", "Plein écran quand le testament est complet. Sautée si absente.", [{ libelle: "Salle 5", url: lien(5, "CM2") }])
+      ]},
+      { titre: "Personnages", slots: Object.entries(dial.personnages || {}).map(([cle, p]) =>
+          personnage(R, cle, (p && p.nom) || cle, persoSalles(cle))) },
+      { titre: "Illustrations d'énigmes (facultatives)", slots: illustrations }
+    ],
+    docs: [
+      { libelle: "📘 Guide du jeu (énigmes et solutions)", url: lienGitHub(R + "README.md") },
+      { libelle: "🎞️ Liste des médias", url: lienGitHub(R + "assets/README.md") },
+      { libelle: "📖 Guide pédagogique", url: lienGitHub(R + "GUIDE-PEDAGOGIQUE.md") },
+      { libelle: "🔎 Points à vérifier", url: lienGitHub(R + "A-VERIFIER.md") },
+      { libelle: "▶ Écran d'accueil du jeu", url: R }
+    ]
+  };
+}
+
 async function construireTour(){
   const R = "tour-du-monde/";
   const [dial, lec] = await Promise.all([json(R + "assets/data/dialogues.json"), json(R + "assets/data/lecons.json")]);
@@ -479,7 +540,8 @@ const CONSTRUCTEURS = {
   "tour-du-monde": construireTour,
   "mission-geo": construireMission,
   "constitution": construireConstitution,
-  "station-meteo": construireMeteo
+  "station-meteo": construireMeteo,
+  "melanges": construireMelanges
 };
 
 /* ---------------- Quels fichiers existent ? ----------------

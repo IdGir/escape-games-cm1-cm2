@@ -237,7 +237,7 @@ class Handler(BaseHTTPRequestHandler):
             # Inventaire des médias déposés, lu par verifier.html :
             # { "declaration/assets/videos/salle4.mp4": taille, ... }
             fichiers = {}
-            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo"):
+            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo", "melanges"):
                 for racine, _, noms in os.walk(os.path.join(jeu, "assets")):
                     for nom in noms:
                         chemin = os.path.join(racine, nom)
@@ -326,12 +326,14 @@ def main():
     print("     Mission géographique  →  http://{}:{}/mission-geo/".format(ip, PORT))
     print("     Constitution (EMC)    →  http://{}:{}/constitution/".format(ip, PORT))
     print("     Station météo (sc.)   →  http://{}:{}/station-meteo/".format(ip, PORT))
+    print("     Mélanges (sciences)   →  http://{}:{}/melanges/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/tour-du-monde/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/constitution/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/station-meteo/prof.html".format(PORT))
+    print("     http://127.0.0.1:{}/melanges/prof.html".format(PORT))
     print()
     print("  🔍 VÉRIFICATION (médias, accès direct aux énigmes) :")
     print("     http://127.0.0.1:{}/verifier.html".format(PORT))

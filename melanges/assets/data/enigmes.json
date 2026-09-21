@@ -1,0 +1,1455 @@
+{
+  "metadata": {
+    "jeu": "Le Laboratoire de Madame Mélange",
+    "version": 1,
+    "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+    "types": [
+      "qcm",
+      "vraifaux",
+      "association",
+      "ordre",
+      "tri",
+      "trous",
+      "lettres",
+      "code",
+      "intrus",
+      "plan"
+    ],
+    "sources": "Programme de sciences et technologie du cycle 3 (BO 2026) ; Fondation La main à la pâte, « À la découverte des mélanges » ; Cité des sciences et de l'industrie ; Lumni.",
+    "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e1-1\",\"legende\":\"…\",\"source\":\"…\"}. Déposez alors e1-1.jpg dans assets/images/cartes/. Sans fichier, l'énigme reste jouable."
+  },
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La salle des balances",
+      "enigmes": [
+        {
+          "id": "1-1",
+          "titre": "Du plus léger au plus lourd",
+          "type": "ordre",
+          "media": {
+            "base": "e1-1",
+            "legende": "Les fioles posées sur la balance électronique",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Lila a posé chaque fiole sur la balance électronique et a noté sa masse. Range les fioles de la plus légère (en haut) à la plus lourde (en bas) avec ▲ et ▼, puis vérifie.",
+            "cm2": "Les étiquettes n'utilisent pas toutes la même unité. Range les récipients du plus léger (en haut) au plus lourd (en bas), puis vérifie. Attention aux pièges !"
+          },
+          "source": "Programme de sciences et technologie du cycle 3 (BO 2026) — la matière : masse, mélanges",
+          "correction": "Pour comparer des masses, on les écrit dans la même unité. 1 kg = 1 000 g : donc 0,2 kg = 200 g et 1,05 kg = 1 050 g. Ensuite, on compare les nombres comme d'habitude.",
+          "indices": {
+            "cm1": [
+              "Commence par compter les chiffres : 95 n'a que deux chiffres, c'est le plus petit nombre.",
+              "Entre 305 et 530, regarde le chiffre des centaines : 3 est plus petit que 5.",
+              "La plus légère est la fiole jaune, la plus lourde est la fiole rouge."
+            ],
+            "cm2": [
+              "Convertis tout en grammes. Rappel : 1 kg = 1 000 g.",
+              "0,2 kg = 200 g et 1,05 kg = 1 050 g.",
+              "Le plus léger pèse 95 g, le plus lourd pèse 1 200 g."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "La fiole jaune",
+                "sous": "95 g",
+                "rang": 1
+              },
+              {
+                "txt": "La fiole verte",
+                "sous": "150 g",
+                "rang": 2
+              },
+              {
+                "txt": "La fiole bleue",
+                "sous": "305 g",
+                "rang": 3
+              },
+              {
+                "txt": "La fiole rouge",
+                "sous": "530 g",
+                "rang": 4
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "La fiole jaune",
+                "sous": "95 g",
+                "rang": 1
+              },
+              {
+                "txt": "La fiole violette",
+                "sous": "0,2 kg",
+                "rang": 2
+              },
+              {
+                "txt": "La fiole verte",
+                "sous": "250 g",
+                "rang": 3
+              },
+              {
+                "txt": "Le bocal bleu",
+                "sous": "1,05 kg",
+                "rang": 4
+              },
+              {
+                "txt": "Le bocal rouge",
+                "sous": "1 200 g",
+                "rang": 5
+              }
+            ]
+          },
+          "lecon": "masses"
+        },
+        {
+          "id": "1-2",
+          "titre": "Deux balances, deux façons de peser",
+          "type": "qcm",
+          "consigne": {
+            "cm1": "Lis chaque question, puis clique sur la bonne réponse. Quand tu as répondu à tout, clique sur « Vérifier ».",
+            "cm2": "Réponds aux trois questions, puis vérifie. Une seule réponse est exacte par question."
+          },
+          "source": "Programme de sciences et technologie du cycle 3 (BO 2026) — la matière : masse, mélanges",
+          "correction": "La balance à plateaux compare deux masses : le plateau le plus chargé descend, et les plateaux sont à la même hauteur quand les masses sont égales (c'est l'équilibre). La balance électronique affiche directement la masse, en grammes. Sa touche « tare » (ou « zéro ») remet l'affichage à zéro quand le récipient est posé : on ne pèse alors que ce que l'on y verse.",
+          "indices": {
+            "cm1": [
+              "Pense à une balançoire à bascule : de quel côté descend-elle ?",
+              "Le symbole « g » veut dire gramme. Le litre sert à mesurer autre chose.",
+              "À l'équilibre, la pomme pèse autant que toutes les masses marquées réunies : additionne-les."
+            ],
+            "cm2": [
+              "À l'équilibre, l'objet pèse autant que la somme des masses marquées : 200 + 50 + 20 + 5.",
+              "« Tarer », c'est faire comme si le récipient ne pesait rien.",
+              "Masse et volume sont deux grandeurs différentes : pense à l'huile qui flotte sur l'eau."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Sur une balance à deux plateaux, le plateau qui descend porte…",
+                "options": [
+                  "l'objet le plus lourd",
+                  "l'objet le plus léger",
+                  "l'objet le plus grand"
+                ],
+                "bonne": 0,
+                "explication": "Le plateau le plus chargé descend. Quand les deux plateaux sont à la même hauteur, les masses sont égales."
+              },
+              {
+                "q": "La balance électronique affiche « 250 g ». Que veut dire « g » ?",
+                "options": [
+                  "gramme",
+                  "litre",
+                  "mètre"
+                ],
+                "bonne": 0,
+                "explication": "Le gramme est une unité de masse. Le litre mesure un volume, le mètre une longueur."
+              },
+              {
+                "q": "Les plateaux sont à l'équilibre : à gauche une pomme, à droite des masses de 100 g, 50 g et 20 g. La pomme pèse…",
+                "options": [
+                  "170 g",
+                  "150 g",
+                  "100 g"
+                ],
+                "bonne": 0,
+                "explication": "100 + 50 + 20 = 170. À l'équilibre, la pomme pèse autant que les trois masses réunies."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "À l'équilibre, un flacon est d'un côté ; de l'autre, des masses de 200 g, 50 g, 20 g et 5 g. Le flacon pèse…",
+                "options": [
+                  "275 g",
+                  "270 g",
+                  "252 g",
+                  "225 g"
+                ],
+                "bonne": 0,
+                "explication": "200 + 50 + 20 + 5 = 275 g."
+              },
+              {
+                "q": "À quoi sert la touche « tare » (ou « zéro ») d'une balance électronique ?",
+                "options": [
+                  "À remettre l'affichage à zéro avec le récipient posé, pour ne peser que ce qu'on y verse",
+                  "À passer des grammes aux kilogrammes",
+                  "À éteindre la balance",
+                  "À mesurer le volume d'un liquide"
+                ],
+                "bonne": 0,
+                "explication": "On pose le bol vide, on appuie sur « tare » : la balance affiche 0. Ce qu'on verse ensuite est pesé seul."
+              },
+              {
+                "q": "Un litre d'eau et un litre d'huile ont-ils la même masse ?",
+                "options": [
+                  "Non : le litre d'huile est plus léger",
+                  "Oui : un litre pèse toujours 1 kg",
+                  "Non : le litre d'huile est plus lourd",
+                  "On ne peut pas peser un liquide"
+                ],
+                "bonne": 0,
+                "explication": "1 L d'eau pèse environ 1 kg ; 1 L d'huile de tournesol pèse environ 920 g. Même volume, masses différentes : c'est pour cela que l'huile flotte sur l'eau."
+              }
+            ]
+          },
+          "lecon": "masses"
+        },
+        {
+          "id": "1-3",
+          "titre": "Peser un liquide",
+          "type": "code",
+          "consigne": {
+            "cm1": "Un liquide ne tient pas tout seul sur la balance : on le pèse dans un récipient. Pour trouver la masse du liquide seul, calcule : <b>récipient plein − récipient vide</b>. Écris les deux résultats en grammes, puis clique sur « Ouvrir ».",
+            "cm2": "Lila a pesé trois récipients. Calcule la masse du contenu seul, en grammes. Attention : une masse est donnée en kilogrammes."
+          },
+          "source": "Programme de sciences et technologie du cycle 3 (BO 2026) — la matière : masse, mélanges",
+          "correction": "Masse du liquide = masse du récipient plein − masse du récipient vide. La touche « tare » d'une balance électronique fait ce calcul à notre place.",
+          "indices": {
+            "cm1": [
+              "Pour le bécher : 330 − 80.",
+              "Pour la bouteille : 1 150 − 400.",
+              "Les deux résultats sont 250 et 750."
+            ],
+            "cm2": [
+              "Pour l'eau : 335 − 85.",
+              "Pour l'huile, convertis d'abord : 0,3 kg = 300 g. Puis 1 220 − 300.",
+              "Pour le sucre : 225 − 150. La balance tarée aurait affiché ce nombre directement."
+            ]
+          },
+          "cm1": {
+            "champs": [
+              {
+                "libelle": "L'eau du bécher (bécher vide 80 g, plein 330 g)",
+                "valeur": "250",
+                "longueur": 3
+              },
+              {
+                "libelle": "Le sirop de la bouteille (bouteille vide 400 g, pleine 1 150 g)",
+                "valeur": "750",
+                "longueur": 3
+              }
+            ]
+          },
+          "cm2": {
+            "champs": [
+              {
+                "libelle": "L'eau : bécher vide 85 g, bécher plein 335 g",
+                "valeur": "250",
+                "longueur": 3
+              },
+              {
+                "libelle": "Un litre d'huile : flacon vide 0,3 kg, flacon plein 1 220 g",
+                "valeur": "920",
+                "longueur": 3
+              },
+              {
+                "libelle": "Le sucre : bol vide 150 g, bol avec le sucre 225 g",
+                "valeur": "75",
+                "longueur": 3
+              }
+            ]
+          },
+          "lecon": "masses"
+        },
+        {
+          "id": "1-4",
+          "titre": "Les unités de masse",
+          "type": "trous",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Clique sur une étiquette, puis sur le trou où elle va. Attention : certaines étiquettes ne servent à rien.",
+          "source": "Programme de sciences et technologie du cycle 3 (BO 2026) — la matière : masse, mélanges",
+          "correction": "Le gramme (g) est l'unité de base. 1 kg = 1 000 g ; 1 t = 1 000 kg ; 1 g = 1 000 mg. Le litre (L) mesure un volume, c'est-à-dire la place occupée : ce n'est pas une unité de masse.",
+          "indices": {
+            "cm2": [
+              "« kilo » veut dire mille : un kilogramme, ce sont mille grammes.",
+              "Les objets très lourds, comme un camion, se pèsent en tonnes.",
+              "Le litre ne mesure pas une masse, mais un volume."
+            ]
+          },
+          "commun": {
+            "texte": "<p>Au laboratoire, l'unité de masse la plus utilisée est le [[gramme]]. Pour les objets plus lourds, on utilise le [[kilogramme]] : 1 kg = [[1 000]] g. Un camion se pèse en [[tonnes]] : 1 t = 1 000 kg. Pour de très petites masses, on utilise le [[milligramme]] : 1 g = 1 000 mg. Attention : le litre mesure un [[volume]], pas une masse.</p>",
+            "etiquettes": [
+              "gramme",
+              "kilogramme",
+              "1 000",
+              "tonnes",
+              "milligramme",
+              "volume",
+              "mètre",
+              "100",
+              "centimètre"
+            ]
+          },
+          "lecon": "masses"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "titre": "La cuisine d'essai",
+      "enigmes": [
+        {
+          "id": "2-1",
+          "titre": "Le sucre a-t-il disparu ?",
+          "type": "vraifaux",
+          "consigne": "Pour chaque phrase, clique sur <b>Vrai</b> ou sur <b>Faux</b>, puis vérifie. Les lignes vertes sont justes : reprends seulement les autres.",
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Le sucre et le sel ne disparaissent pas dans l'eau : ils se dissolvent. On ne les voit plus, mais ils sont toujours là, et la balance le prouve : la masse totale ne change pas. Au laboratoire, on ne goûte jamais pour vérifier.",
+          "indices": {
+            "cm1": [
+              "Deux phrases sur quatre sont fausses.",
+              "Pense à la balance : si le sucre avait disparu, la masse baisserait.",
+              "Règle n°1 du laboratoire : on ne goûte jamais rien."
+            ],
+            "cm2": [
+              "Trois phrases sur six sont vraies.",
+              "« Fondre » et « se dissoudre », ce n'est pas la même chose : la glace fond, le sel se dissout.",
+              "Si l'on met beaucoup trop de sel, une partie reste au fond du verre."
+            ]
+          },
+          "cm1": {
+            "affirmations": [
+              {
+                "txt": "Quand on met du sucre dans l'eau et qu'on remue, le sucre disparaît : il n'existe plus.",
+                "vrai": false,
+                "explication": "On ne le voit plus, mais il est toujours là : il s'est dissous."
+              },
+              {
+                "txt": "Un verre d'eau de 200 g et un morceau de sucre de 6 g : après avoir remué, la balance affiche 206 g.",
+                "vrai": true,
+                "explication": "200 + 6 = 206. La masse se conserve."
+              },
+              {
+                "txt": "Pour savoir s'il y a du sucre dans l'eau, on peut la goûter.",
+                "vrai": false,
+                "explication": "Au laboratoire, on ne goûte jamais ! On utilise la balance, ou on fait évaporer l'eau."
+              },
+              {
+                "txt": "Le sable se dissout dans l'eau, comme le sucre.",
+                "vrai": false,
+                "explication": "Le sable ne se dissout pas : les grains restent visibles et tombent au fond."
+              }
+            ]
+          },
+          "cm2": {
+            "affirmations": [
+              {
+                "txt": "Quand on dissout du sucre dans l'eau, le sucre disparaît : il n'existe plus.",
+                "vrai": false,
+                "explication": "Il est toujours là, en morceaux trop petits pour être vus, même à la loupe."
+              },
+              {
+                "txt": "250 g d'eau et 20 g de sel : après dissolution, la balance affiche 270 g.",
+                "vrai": true,
+                "explication": "250 + 20 = 270. La masse totale se conserve."
+              },
+              {
+                "txt": "Après la dissolution, le mélange est plus léger, car le sel a fondu.",
+                "vrai": false,
+                "explication": "Le sel ne fond pas, il se dissout. Fondre, c'est passer de l'état solide à l'état liquide sous l'effet de la chaleur, comme la glace. La masse reste 270 g."
+              },
+              {
+                "txt": "On peut dissoudre autant de sel que l'on veut dans un verre d'eau.",
+                "vrai": false,
+                "explication": "Au bout d'un moment, le sel ne se dissout plus : il reste au fond du verre."
+              },
+              {
+                "txt": "Pour vérifier qu'il y a du sel dans l'eau, on la goûte.",
+                "vrai": false,
+                "explication": "Jamais au laboratoire ! On peut faire évaporer l'eau : le sel réapparaît."
+              },
+              {
+                "txt": "Si on laisse l'eau salée s'évaporer, on retrouve le sel.",
+                "vrai": true,
+                "explication": "L'eau part dans l'air sous forme de vapeur ; le sel reste au fond du récipient."
+              }
+            ]
+          },
+          "lecon": "conservation"
+        },
+        {
+          "id": "2-2",
+          "titre": "Le cahier taché de Marius",
+          "type": "plan",
+          "media": {
+            "base": "e2-2",
+            "legende": "L'expérience de Marius : eau, sucre, balance",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Marius a noté son expérience, mais son cahier est taché. Il se souvient : <b>l'eau pesait 200 g et le sucre 20 g</b>. Clique sur une étiquette, puis sur la case où elle va.",
+            "cm2": "Le cahier de Marius est taché. Il reste une seule mesure : <b>à la fin, le verre d'eau sucrée pèse 265 g</b>, et le sucre pesait 15 g. Complète le schéma de l'expérience."
+          },
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Masse de l'eau + masse du sucre = masse de l'eau sucrée. Le sucre s'est dissous : on ne le voit plus, mais sa masse est toujours là. L'eau sucrée est un mélange homogène.",
+          "indices": {
+            "cm1": [
+              "Avant de mélanger, on pèse chaque chose séparément.",
+              "À la fin, la masse est égale à : eau + sucre.",
+              "Le sucre ne fond pas (il n'est pas chauffé) : il se…"
+            ],
+            "cm2": [
+              "La masse de la fin est la somme des deux masses du début.",
+              "Pour retrouver l'eau : 265 − 15.",
+              "Un mélange où l'on ne distingue plus les constituants est dit homogène."
+            ]
+          },
+          "cm1": {
+            "titre": "L'expérience de Marius",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "1. Le verre d'eau, seul sur la balance",
+                "reponse": "200 g"
+              },
+              {
+                "libelle": "2. Le sucre, pesé dans une coupelle tarée",
+                "reponse": "20 g"
+              },
+              {
+                "libelle": "3. Le sucre est versé dans l'eau, on remue : la balance affiche…",
+                "reponse": "220 g"
+              },
+              {
+                "libelle": "4. Ce qui est arrivé au sucre",
+                "reponse": "il s'est dissous"
+              }
+            ],
+            "etiquettes": [
+              "200 g",
+              "20 g",
+              "220 g",
+              "il s'est dissous",
+              "180 g",
+              "il a disparu"
+            ]
+          },
+          "cm2": {
+            "titre": "L'expérience de Marius",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "1. Le verre d'eau, seul",
+                "reponse": "250 g"
+              },
+              {
+                "libelle": "2. Le sucre, pesé seul",
+                "reponse": "15 g"
+              },
+              {
+                "libelle": "3. L'eau sucrée, après avoir remué",
+                "reponse": "265 g"
+              },
+              {
+                "libelle": "4. Ce qui est arrivé au sucre",
+                "reponse": "dissous"
+              },
+              {
+                "libelle": "5. Le mélange obtenu est…",
+                "reponse": "homogène"
+              }
+            ],
+            "etiquettes": [
+              "250 g",
+              "15 g",
+              "265 g",
+              "dissous",
+              "homogène",
+              "280 g",
+              "fondu",
+              "hétérogène"
+            ]
+          },
+          "lecon": "conservation"
+        },
+        {
+          "id": "2-3",
+          "titre": "Le café de Marius",
+          "type": "qcm",
+          "consigne": {
+            "cm1": "Marius prépare son café. Réponds aux trois questions, puis vérifie. Ici, on ne goûte rien : on pèse !",
+            "cm2": "Réponds aux trois questions, puis vérifie. Une seule réponse est exacte par question."
+          },
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Tout ce qui est matière a une masse : le sucre dissous, mais aussi l'air. Quand on ajoute un sucre dans une tasse, la balance augmente de la masse du sucre, même quand on ne le voit plus.",
+          "indices": {
+            "cm1": [
+              "Additionne la masse de la tasse de café et celle du sucre.",
+              "Le sucre est encore dans la tasse, mais en morceaux si petits qu'on ne les voit plus.",
+              "L'air est invisible, mais il gonfle un ballon : il prend de la place."
+            ],
+            "cm2": [
+              "Deux sucres de 5 g, cela fait 10 g de plus.",
+              "L'air est de la matière : il a une masse, même faible.",
+              "Le sucre n'est pas chauffé : il ne fond pas."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "La tasse de café pèse 180 g. Marius ajoute un sucre de 5 g et remue. La balance affiche…",
+                "options": [
+                  "185 g",
+                  "180 g",
+                  "175 g"
+                ],
+                "bonne": 0,
+                "explication": "180 + 5 = 185 g : le sucre dissous pèse toujours."
+              },
+              {
+                "q": "Où est passé le sucre ?",
+                "options": [
+                  "Il est toujours dans le café, en morceaux trop petits pour être vus",
+                  "Il s'est envolé",
+                  "Il a été détruit"
+                ],
+                "bonne": 0,
+                "explication": "Il s'est dissous dans le café."
+              },
+              {
+                "q": "Quelle phrase est juste ?",
+                "options": [
+                  "L'air est de la matière : il a une masse",
+                  "L'air ne pèse rien",
+                  "L'air n'existe que quand il y a du vent"
+                ],
+                "bonne": 0,
+                "explication": "Avec une balance précise, un ballon gonflé pèse un peu plus que le même ballon dégonflé."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "La tasse de café pèse 180 g. Marius ajoute deux sucres de 5 g chacun et remue. La balance affiche…",
+                "options": [
+                  "190 g",
+                  "185 g",
+                  "180 g",
+                  "170 g"
+                ],
+                "bonne": 0,
+                "explication": "180 + 5 + 5 = 190 g."
+              },
+              {
+                "q": "Sur une balance précise, un ballon dégonflé pèse 420 g. On le gonfle bien. Il pèse maintenant…",
+                "options": [
+                  "un peu plus de 420 g, car l'air a une masse",
+                  "moins de 420 g, car l'air le rend plus léger",
+                  "exactement 420 g, car l'air ne pèse rien",
+                  "le double, 840 g"
+                ],
+                "bonne": 0,
+                "explication": "L'air ajouté a une masse : quelques grammes seulement, mais la balance précise le montre."
+              },
+              {
+                "q": "Pourquoi ne voit-on plus le sucre dans le café ?",
+                "options": [
+                  "Il s'est séparé en morceaux si petits qu'on ne les voit plus, même à la loupe",
+                  "Il a fondu, comme la glace au soleil",
+                  "Il s'est transformé en eau",
+                  "Il est tombé au fond sans qu'on le voie"
+                ],
+                "bonne": 0,
+                "explication": "C'est la dissolution. Fondre, c'est autre chose : un solide devient liquide quand on le chauffe."
+              }
+            ]
+          },
+          "lecon": "conservation"
+        },
+        {
+          "id": "2-4",
+          "titre": "Le cadenas de la cuisine",
+          "type": "code",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Le placard des épices est fermé par un cadenas à trois nombres. Calcule chaque masse en grammes, puis clique sur « Ouvrir ».",
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "La masse se conserve : 300 g d'eau + 30 g de sel = 330 g d'eau salée. Pour l'eau du bol : 420 − 150 − 20 = 250 g. Et quand toute l'eau s'évapore, on retrouve exactement les 30 g de sel.",
+          "indices": {
+            "cm2": [
+              "Premier nombre : 300 + 30.",
+              "Deuxième nombre : enlève le bol vide, puis enlève le sucre.",
+              "Troisième nombre : l'eau part, le sel reste. Combien de sel avait-on mis ?"
+            ]
+          },
+          "commun": {
+            "champs": [
+              {
+                "libelle": "300 g d'eau + 30 g de sel, après dissolution",
+                "valeur": "330",
+                "longueur": 3
+              },
+              {
+                "libelle": "Bol d'eau sucrée : 420 g. Le bol vide pèse 150 g, le sucre 20 g. Masse de l'eau ?",
+                "valeur": "250",
+                "longueur": 3
+              },
+              {
+                "libelle": "On fait évaporer toute l'eau salée du premier nombre. Masse de sel retrouvée ?",
+                "valeur": "30",
+                "longueur": 3
+              }
+            ]
+          },
+          "lecon": "conservation"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "titre": "La salle des fioles",
+      "enigmes": [
+        {
+          "id": "3-1",
+          "titre": "Homogène ou hétérogène ?",
+          "type": "tri",
+          "media": {
+            "base": "e3-1",
+            "legende": "Les fioles de l'étagère de Madame Mélange",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Observe chaque mélange avec tes yeux. Clique sur une étiquette, puis sur la bonne colonne. Quand tout est rangé, vérifie.",
+            "cm2": "Range les neuf mélanges. On observe à l'œil nu, sans loupe : pour chacun, peut-on distinguer au moins deux constituants ?"
+          },
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Dans un mélange homogène, on ne distingue pas les constituants à l'œil nu : eau salée, eau sucrée, sirop à l'eau, eau du robinet, air. Dans un mélange hétérogène, on voit au moins deux constituants : eau et huile, eau et sable, vinaigrette, jus avec pulpe, eau boueuse.",
+          "indices": {
+            "cm1": [
+              "Pose-toi une seule question : est-ce que je vois deux choses différentes ?",
+              "Dans l'eau salée, on ne voit pas le sel : c'est quand même un mélange.",
+              "Il y a trois mélanges dans chaque colonne."
+            ],
+            "cm2": [
+              "L'air et l'eau du robinet sont des mélanges, même si on ne voit rien.",
+              "La vinaigrette laissée au repos se sépare en deux couches.",
+              "Il y a quatre mélanges homogènes et cinq hétérogènes."
+            ]
+          },
+          "cm1": {
+            "colonnes": [
+              {
+                "id": "homo",
+                "titre": "Homogène : je ne vois qu'une seule chose"
+              },
+              {
+                "id": "hetero",
+                "titre": "Hétérogène : je vois au moins deux choses"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Eau salée",
+                "col": "homo"
+              },
+              {
+                "txt": "Sirop de menthe à l'eau",
+                "col": "homo"
+              },
+              {
+                "txt": "Eau sucrée",
+                "col": "homo"
+              },
+              {
+                "txt": "Eau et huile",
+                "col": "hetero"
+              },
+              {
+                "txt": "Eau et sable",
+                "col": "hetero"
+              },
+              {
+                "txt": "Jus d'orange avec pulpe",
+                "col": "hetero"
+              }
+            ]
+          },
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "homo",
+                "titre": "Mélange homogène"
+              },
+              {
+                "id": "hetero",
+                "titre": "Mélange hétérogène"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Eau salée",
+                "col": "homo"
+              },
+              {
+                "txt": "Sirop à l'eau",
+                "col": "homo"
+              },
+              {
+                "txt": "Eau du robinet",
+                "col": "homo"
+              },
+              {
+                "txt": "Air",
+                "col": "homo"
+              },
+              {
+                "txt": "Eau et huile",
+                "col": "hetero"
+              },
+              {
+                "txt": "Eau boueuse",
+                "col": "hetero"
+              },
+              {
+                "txt": "Vinaigrette",
+                "col": "hetero"
+              },
+              {
+                "txt": "Jus d'orange avec pulpe",
+                "col": "hetero"
+              },
+              {
+                "txt": "Riz et semoule",
+                "col": "hetero"
+              }
+            ]
+          },
+          "lecon": "melanges"
+        },
+        {
+          "id": "3-2",
+          "titre": "L'intrus de l'étagère",
+          "type": "intrus",
+          "consigne": {
+            "cm1": "Sur cette étagère, Lila a rangé les mélanges homogènes. Un seul n'a rien à faire là. Clique sur l'intrus.",
+            "cm2": "Madame Mélange avait rangé ici ses mélanges homogènes. Lila en a ajouté un par erreur. Clique sur l'intrus."
+          },
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "L'intrus est le seul mélange hétérogène : on y distingue deux constituants à l'œil nu. Tous les autres sont homogènes, même quand on n'y voit « que de l'eau » ou « rien du tout ».",
+          "indices": {
+            "cm1": [
+              "Cherche le seul mélange où l'on voit deux choses.",
+              "Le sel et le sucre dissous ne se voient plus.",
+              "Les grains de sable, eux, se voient très bien."
+            ],
+            "cm2": [
+              "L'air est un mélange de gaz : on ne distingue pas ses constituants.",
+              "L'eau du robinet contient des sels minéraux dissous qu'on ne voit pas.",
+              "Laisse reposer chaque mélange dans ta tête : lequel se sépare en couches ?"
+            ]
+          },
+          "cm1": {
+            "cartes": [
+              {
+                "txt": "Eau salée",
+                "sous": "un liquide transparent",
+                "intrus": false
+              },
+              {
+                "txt": "Eau sucrée",
+                "sous": "un liquide transparent",
+                "intrus": false
+              },
+              {
+                "txt": "Sirop à l'eau",
+                "sous": "un liquide coloré, pareil partout",
+                "intrus": false
+              },
+              {
+                "txt": "Eau et sable",
+                "sous": "des grains au fond",
+                "intrus": true
+              }
+            ]
+          },
+          "cm2": {
+            "cartes": [
+              {
+                "txt": "Air",
+                "sous": "un mélange de gaz",
+                "intrus": false
+              },
+              {
+                "txt": "Eau du robinet",
+                "sous": "avec des sels minéraux dissous",
+                "intrus": false
+              },
+              {
+                "txt": "Sirop à l'eau",
+                "sous": "coloré, pareil partout",
+                "intrus": false
+              },
+              {
+                "txt": "Eau salée",
+                "sous": "transparente",
+                "intrus": false
+              },
+              {
+                "txt": "Vinaigrette",
+                "sous": "huile et vinaigre",
+                "intrus": true
+              }
+            ]
+          },
+          "lecon": "melanges"
+        },
+        {
+          "id": "3-3",
+          "titre": "Ce que l'on observe",
+          "type": "association",
+          "consigne": {
+            "cm1": "Relie chaque mélange à ce que l'on observe. Clique d'abord à gauche, puis à droite.",
+            "cm2": "Relie chaque mélange à l'observation qui lui correspond. Clique d'abord à gauche, puis à droite."
+          },
+          "source": "Cité des sciences et de l'industrie / Lumni — ressources sur les mélanges et la séparation",
+          "correction": "Observer, c'est la première étape d'une séparation : on regarde si l'on distingue les constituants, s'ils flottent, s'ils tombent au fond, ou si le mélange est pareil partout. C'est ce qui permet de choisir la bonne méthode.",
+          "indices": {
+            "cm1": [
+              "L'huile ne se mélange pas avec l'eau : elle reste au-dessus.",
+              "Les grains de sable coulent au fond de l'eau.",
+              "Le sel dissous ne se voit plus."
+            ],
+            "cm2": [
+              "Pour un même volume, l'huile est plus légère que l'eau.",
+              "Dans l'eau boueuse, il faut attendre pour que la terre se dépose.",
+              "L'air ne se voit pas, mais on peut le peser et le sentir quand il bouge."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "Eau et huile",
+                "d": "Deux couches : l'huile reste au-dessus"
+              },
+              {
+                "g": "Eau et sable",
+                "d": "Les grains tombent au fond"
+              },
+              {
+                "g": "Eau salée",
+                "d": "Un liquide transparent : on ne voit pas le sel"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "Eau et huile",
+                "d": "Deux couches : pour un même volume, l'huile est plus légère que l'eau"
+              },
+              {
+                "g": "Eau boueuse",
+                "d": "Trouble ; au repos, la terre se dépose au fond"
+              },
+              {
+                "g": "Sirop à l'eau",
+                "d": "Coloré mais uniforme : le même aspect partout"
+              },
+              {
+                "g": "Air",
+                "d": "Invisible, mais il a une masse et occupe de la place"
+              }
+            ]
+          },
+          "lecon": "melanges"
+        },
+        {
+          "id": "3-4",
+          "titre": "Les idées fausses de Lila",
+          "type": "vraifaux",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Lila a écrit ce qu'elle croyait savoir avant d'entrer au laboratoire. Pour chaque phrase, clique sur <b>Vrai</b> ou sur <b>Faux</b>, puis vérifie.",
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "L'eau salée est un mélange homogène. L'air est de la matière : c'est un mélange de gaz qui a une masse (environ 1,2 g par litre à 20 °C). L'eau du robinet contient des sels minéraux dissous. Un mélange de sel et d'eau est hétérogène tant que le sel n'est pas dissous, puis homogène.",
+          "indices": {
+            "cm2": [
+              "Trois phrases sont vraies, trois sont fausses.",
+              "Ne pas voir un constituant ne veut pas dire qu'il n'est pas là.",
+              "Pense au sel dans l'eau juste avant de remuer, puis juste après."
+            ]
+          },
+          "commun": {
+            "affirmations": [
+              {
+                "txt": "L'eau salée n'est pas un mélange, puisqu'on ne voit qu'un seul liquide.",
+                "vrai": false,
+                "explication": "C'est un mélange homogène d'eau et de sel. On ne voit pas le sel, mais il est là."
+              },
+              {
+                "txt": "L'air n'est pas de la matière.",
+                "vrai": false,
+                "explication": "L'air est un mélange de gaz. Il a une masse : un litre d'air pèse environ 1,2 g."
+              },
+              {
+                "txt": "Du sel dans l'eau : juste avant de remuer, le mélange est hétérogène ; une fois le sel dissous, il est homogène.",
+                "vrai": true,
+                "explication": "Avant de remuer, on voit les grains de sel au fond. Une fois dissous, on ne les voit plus."
+              },
+              {
+                "txt": "L'eau du robinet est de l'eau pure.",
+                "vrai": false,
+                "explication": "Elle contient des sels minéraux dissous : c'est un mélange homogène."
+              },
+              {
+                "txt": "Dans une vinaigrette laissée au repos, l'huile remonte à la surface.",
+                "vrai": true,
+                "explication": "L'huile et le vinaigre ne se mélangent pas : l'huile, plus légère pour un même volume, reste au-dessus."
+              },
+              {
+                "txt": "Pour savoir ce que contient une fiole, on ne la goûte pas et on ne la sent pas : on observe et on mesure.",
+                "vrai": true,
+                "explication": "C'est la règle de sécurité n°1 du laboratoire."
+              }
+            ]
+          },
+          "lecon": "melanges"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "titre": "L'atelier de tri",
+      "enigmes": [
+        {
+          "id": "4-1",
+          "titre": "Une méthode pour chaque mélange",
+          "type": "association",
+          "consigne": {
+            "cm1": "Nadia a quatre bacs à trier. Relie chaque mélange à la méthode qui permet de le séparer. Clique d'abord à gauche, puis à droite.",
+            "cm2": "Relie chaque mélange de solides à la méthode qui convient, et à la raison pour laquelle elle fonctionne."
+          },
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Chaque méthode utilise une différence entre les constituants : la taille (tamisage), le fer attiré par l'aimant (aimantation), le fait de flotter ou de couler (flottation), ou simplement ce que l'on voit (tri à la main).",
+          "indices": {
+            "cm1": [
+              "L'aimant attire les objets en fer.",
+              "Le tamis laisse passer les petits grains et retient les gros.",
+              "La sciure de bois flotte sur l'eau, le sable coule."
+            ],
+            "cm2": [
+              "Cherche la différence entre les deux constituants : taille, fer, flotte ou coule, couleur.",
+              "Les grains de limaille de fer et de sable peuvent avoir la même taille : le tamis ne sert à rien.",
+              "Des boutons de deux couleurs n'ont ni fer ni tailles différentes : il reste les mains."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "Limaille de fer et sable",
+                "d": "L'aimant"
+              },
+              {
+                "g": "Gravier et sable fin",
+                "d": "Le tamis"
+              },
+              {
+                "g": "Sciure de bois et sable",
+                "d": "Une bassine d'eau"
+              },
+              {
+                "g": "Boutons rouges et boutons bleus",
+                "d": "Le tri à la main"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "Limaille de fer et sable",
+                "d": "Aimantation : seul le fer est attiré par l'aimant"
+              },
+              {
+                "g": "Gravier et sable fin",
+                "d": "Tamisage : les grains fins passent, les gros restent"
+              },
+              {
+                "g": "Sciure de bois et sable",
+                "d": "Flottation : dans l'eau, la sciure flotte et le sable coule"
+              },
+              {
+                "g": "Boutons rouges et boutons bleus",
+                "d": "Tri à la main : seule la couleur les distingue"
+              }
+            ]
+          },
+          "lecon": "separer-solides"
+        },
+        {
+          "id": "4-2",
+          "titre": "Pas à pas",
+          "type": "ordre",
+          "media": {
+            "base": "e4-2",
+            "legende": "Le tamis et la bassine de l'atelier",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Nadia veut séparer le gravier du sable fin. Remets les étapes dans l'ordre avec ▲ et ▼, puis vérifie.",
+            "cm2": "Nadia veut récupérer la sciure mélangée au sable. Remets les cinq étapes de la flottation dans l'ordre, puis vérifie."
+          },
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Une séparation se fait toujours dans un ordre logique : préparer le matériel, mettre le mélange, agir, observer, récupérer chaque constituant.",
+          "indices": {
+            "cm1": [
+              "Avant de verser, il faut placer quelque chose sous le tamis.",
+              "On secoue une fois le mélange dans le tamis.",
+              "La dernière étape, c'est le résultat : où est chaque constituant ?"
+            ],
+            "cm2": [
+              "Tout commence dans la bassine d'eau.",
+              "Il faut laisser le temps au sable de tomber au fond.",
+              "On ne fait sécher la sciure qu'après l'avoir sortie de l'eau."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "Poser le tamis au-dessus d'une bassine vide",
+                "rang": 1
+              },
+              {
+                "txt": "Verser le mélange de gravier et de sable dans le tamis",
+                "rang": 2
+              },
+              {
+                "txt": "Secouer doucement le tamis",
+                "rang": 3
+              },
+              {
+                "txt": "Le sable est dans la bassine, le gravier est resté dans le tamis",
+                "rang": 4
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "Verser le mélange de sciure et de sable dans une bassine d'eau",
+                "rang": 1
+              },
+              {
+                "txt": "Remuer, puis attendre quelques instants",
+                "rang": 2
+              },
+              {
+                "txt": "Observer : la sciure flotte, le sable est au fond",
+                "rang": 3
+              },
+              {
+                "txt": "Récupérer la sciure à la surface avec une passoire",
+                "rang": 4
+              },
+              {
+                "txt": "Laisser sécher la sciure sur du papier journal",
+                "rang": 5
+              }
+            ]
+          },
+          "lecon": "separer-solides"
+        },
+        {
+          "id": "4-3",
+          "titre": "Ce que l'aimant attire",
+          "type": "qcm",
+          "consigne": {
+            "cm1": "Nadia te prête son gros aimant. Réponds aux trois questions, puis vérifie.",
+            "cm2": "Réponds aux trois questions, puis vérifie. Une seule réponse est exacte par question."
+          },
+          "source": "Cité des sciences et de l'industrie / Lumni — ressources sur les mélanges et la séparation",
+          "correction": "Un aimant attire le fer et les objets en acier (l'acier contient du fer). Il n'attire pas tous les métaux : l'aluminium, le cuivre ou l'or ne sont pas attirés. Dans les centres de tri, de gros aimants séparent les boîtes de conserve en acier des autres déchets.",
+          "indices": {
+            "cm1": [
+              "« Métal » ne veut pas dire « attiré par l'aimant ».",
+              "Les canettes de soda sont souvent en aluminium.",
+              "Les grains de limaille et de sable ont à peu près la même taille : le tamis ne peut pas les séparer."
+            ],
+            "cm2": [
+              "L'acier contient du fer.",
+              "Pour le tamis, compare la taille des grains.",
+              "Pense aux boîtes de conserve."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Un aimant attire…",
+                "options": [
+                  "les objets en fer",
+                  "tous les métaux",
+                  "le bois et le plastique"
+                ],
+                "bonne": 0,
+                "explication": "Il attire le fer et l'acier, mais pas tous les métaux."
+              },
+              {
+                "q": "Une canette en aluminium est-elle attirée par l'aimant ?",
+                "options": [
+                  "Non : l'aluminium n'est pas attiré",
+                  "Oui : tous les métaux sont attirés",
+                  "Oui, mais seulement si elle est vide"
+                ],
+                "bonne": 0,
+                "explication": "L'aluminium est un métal, mais l'aimant ne l'attire pas."
+              },
+              {
+                "q": "Pour séparer la limaille de fer du sable, on utilise…",
+                "options": [
+                  "un aimant",
+                  "un tamis",
+                  "une bassine d'eau"
+                ],
+                "bonne": 0,
+                "explication": "Seule la limaille est attirée. Le tamis ne marche pas : les grains ont presque la même taille."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Lequel de ces objets l'aimant attire-t-il ?",
+                "options": [
+                  "un trombone en acier",
+                  "une bague en or",
+                  "une feuille d'aluminium",
+                  "une cuillère en bois"
+                ],
+                "bonne": 0,
+                "explication": "L'acier contient du fer : il est attiré."
+              },
+              {
+                "q": "Pourquoi le tamis ne suffit-il pas à séparer la limaille de fer du sable ?",
+                "options": [
+                  "Les grains ont à peu près la même taille",
+                  "Le fer est trop lourd pour le tamis",
+                  "Le sable colle au fer",
+                  "Le tamis est en métal"
+                ],
+                "bonne": 0,
+                "explication": "Le tamis trie selon la taille. Il faut une autre différence : le fer est attiré par l'aimant."
+              },
+              {
+                "q": "Dans un centre de tri des déchets, un gros aimant sert à…",
+                "options": [
+                  "séparer les boîtes de conserve en acier des autres déchets",
+                  "récupérer les canettes en aluminium",
+                  "trier le verre selon sa couleur",
+                  "séparer le papier du carton"
+                ],
+                "bonne": 0,
+                "explication": "L'aimant sort l'acier du flot des déchets. L'aluminium, lui, n'est pas attiré."
+              }
+            ]
+          },
+          "lecon": "separer-solides"
+        },
+        {
+          "id": "4-4",
+          "titre": "L'établi de Nadia",
+          "type": "plan",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Sur l'établi, quatre bacs attendent. Pose sur chaque bac l'outil qui permet de séparer son contenu. Deux étiquettes ne servent à rien.",
+          "source": "Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Bac A : seule la couleur distingue les boutons, on trie à la main. Bac B : les grumeaux sont plus gros que la farine, le tamis les retient. Bac C : les trombones en acier sont attirés par l'aimant, pas les perles. Bac D : dans l'eau, la sciure flotte et le sable coule.",
+          "indices": {
+            "cm2": [
+              "Le filtre et la balance ne servent pas à séparer des solides secs.",
+              "Les trombones sont en acier.",
+              "La sciure de bois flotte."
+            ]
+          },
+          "commun": {
+            "titre": "L'établi de Nadia",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Bac A : boutons rouges et boutons bleus",
+                "reponse": "les mains"
+              },
+              {
+                "libelle": "Bac B : farine pleine de grumeaux",
+                "reponse": "le tamis"
+              },
+              {
+                "libelle": "Bac C : trombones en acier et perles en plastique",
+                "reponse": "l'aimant"
+              },
+              {
+                "libelle": "Bac D : sciure de bois et sable",
+                "reponse": "la bassine d'eau"
+              }
+            ],
+            "etiquettes": [
+              "les mains",
+              "le tamis",
+              "l'aimant",
+              "la bassine d'eau",
+              "le filtre",
+              "la balance"
+            ]
+          },
+          "lecon": "separer-solides"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "titre": "La saline",
+      "enigmes": [
+        {
+          "id": "5-1",
+          "titre": "Filtrer, décanter, évaporer",
+          "type": "trous",
+          "media": {
+            "base": "e5-1",
+            "legende": "Les marais salants",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Clique sur une étiquette, puis sur le trou où elle va. Trois étiquettes ne servent à rien.",
+            "cm2": "Complète le récit de Yann. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes ne servent à rien."
+          },
+          "source": "Programme de sciences et technologie du cycle 3 (BO 2026) — la matière : masse, mélanges",
+          "correction": "Décantation : on laisse reposer, le solide tombe au fond, on verse doucement le liquide. Filtration : le filtre retient les grains solides, le liquide passe. Mais un solide dissous, comme le sel, traverse le filtre : pour le récupérer, on fait évaporer l'eau. L'eau filtrée ne se boit pas pour autant.",
+          "indices": {
+            "cm1": [
+              "Laisser reposer pour que le solide tombe au fond, c'est la décantation.",
+              "Le sel dissous passe à travers le filtre.",
+              "Pour récupérer le sel, il faut que l'eau s'en aille."
+            ],
+            "cm2": [
+              "Le filtre retient ce qui n'est pas dissous.",
+              "L'eau de mer contient en moyenne une trentaine de grammes de sel par litre.",
+              "Dans les marais salants, le soleil et le vent font partir l'eau."
+            ]
+          },
+          "cm1": {
+            "texte": "<p>Pour séparer le sable de l'eau, on peut attendre que le sable tombe au fond, puis verser doucement l'eau : c'est la [[décantation]]. On peut aussi verser le mélange dans un [[filtre]] : l'eau passe, le sable [[reste]] dans le filtre. Mais le sel dissous traverse le filtre ! Pour le récupérer, on laisse l'eau s'[[évaporer]] : le sel reste au fond.</p>",
+            "etiquettes": [
+              "décantation",
+              "filtre",
+              "reste",
+              "évaporer",
+              "aimant",
+              "fondre",
+              "tamis"
+            ]
+          },
+          "cm2": {
+            "texte": "<p>Yann laisse reposer un seau d'eau boueuse : la terre se dépose au fond. Il verse ensuite doucement l'eau dans un autre récipient : c'est la [[décantation]]. L'eau reste un peu trouble ; il la verse dans un entonnoir garni de papier [[filtre]]. Les grains solides sont [[retenus]], l'eau plus claire s'écoule. Mais le sel [[dissous]] traverse le filtre. Dans les marais salants, le soleil et le vent font [[évaporer]] l'eau de mer, qui contient en moyenne [[35]] g de sel par litre : le sel reste, le paludier le récolte.</p>",
+            "etiquettes": [
+              "décantation",
+              "filtre",
+              "retenus",
+              "dissous",
+              "évaporer",
+              "35",
+              "fondu",
+              "350",
+              "aimantation",
+              "tamisage"
+            ]
+          },
+          "lecon": "separer-liquide"
+        },
+        {
+          "id": "5-2",
+          "titre": "Le montage de filtration",
+          "type": "plan",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Yann a démonté son matériel. Place chaque étiquette sur la bonne case du schéma. Trois étiquettes ne servent à rien.",
+          "source": "Programme de sciences et technologie du cycle 3 (BO 2026) — la matière : masse, mélanges",
+          "correction": "L'entonnoir guide le liquide ; le papier filtre, plié en cône, retient les grains de sable ; le bécher recueille le liquide filtré. Si le mélange était de l'eau salée avec du sable, le sable reste dans le filtre et l'eau salée coule dans le bécher : on récupère ensuite le sel par évaporation.",
+          "indices": {
+            "cm2": [
+              "Le filtre est dans l'entonnoir, le bécher est dessous.",
+              "Ce qui est dissous traverse le filtre.",
+              "Pour séparer l'eau et le sel dissous, une seule méthode : laisser partir l'eau."
+            ]
+          },
+          "commun": {
+            "titre": "Le montage de Yann, de haut en bas",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "En forme de cône, il guide le liquide",
+                "reponse": "l'entonnoir"
+              },
+              {
+                "libelle": "Plié dans l'entonnoir, il retient les grains",
+                "reponse": "le papier filtre"
+              },
+              {
+                "libelle": "Sous l'entonnoir, il recueille le liquide",
+                "reponse": "le bécher"
+              },
+              {
+                "libelle": "Ce qui reste dans le filtre (eau salée + sable)",
+                "reponse": "le sable"
+              },
+              {
+                "libelle": "Ce qui coule dans le bécher (eau salée + sable)",
+                "reponse": "l'eau salée"
+              },
+              {
+                "libelle": "La méthode pour récupérer ensuite le sel",
+                "reponse": "l'évaporation"
+              }
+            ],
+            "etiquettes": [
+              "l'entonnoir",
+              "le papier filtre",
+              "le bécher",
+              "le sable",
+              "l'eau salée",
+              "l'évaporation",
+              "l'eau pure",
+              "l'aimant",
+              "la décantation"
+            ]
+          },
+          "lecon": "separer-liquide"
+        },
+        {
+          "id": "5-3",
+          "titre": "Le mot du paludier",
+          "type": "lettres",
+          "consigne": {
+            "cm1": "Yann raconte son métier. Des lettres cachées sont en couleur dans son récit. Clique-les dans l'ordre pour écrire le nom de la méthode qui sépare le sel de l'eau.",
+            "cm2": "Des lettres cachées se trouvent dans le récit de Yann. Clique-les dans l'ordre pour écrire la méthode qui sépare un solide dissous de l'eau."
+          },
+          "source": "Cité des sciences et de l'industrie / Lumni — ressources sur les mélanges et la séparation",
+          "correction": "ÉVAPORER : l'eau passe à l'état de vapeur et part dans l'air ; le sel, lui, reste. C'est ainsi que l'on récolte le sel de mer dans les marais salants.",
+          "indices": {
+            "cm1": [
+              "Le mot a huit lettres et commence par É.",
+              "Cherche les lettres en couleur, du début à la fin du texte.",
+              "Le mot commence par ÉVA…"
+            ],
+            "cm2": [
+              "Le mot a huit lettres.",
+              "Lis le texte dans l'ordre : chaque lettre cachée est un peu plus loin que la précédente.",
+              "É, V, A, P…"
+            ]
+          },
+          "commun": {
+            "cible": [
+              "É",
+              "V",
+              "A",
+              "P",
+              "O",
+              "R",
+              "E",
+              "R"
+            ],
+            "texte": "<p>Chaque <b data-l='É'>é</b>té, Yann fait entrer l'eau de mer dans les bassins du marais. Le soleil et le <b data-l='V'>v</b>ent chauffent l'e<b data-l='A'>a</b>u et la font partir, <b data-l='P'>p</b>eu à peu. Au b<b data-l='O'>o</b>ut de quelques jours, de petits c<b data-l='R'>r</b>istaux blancs flottent à la surfac<b data-l='E'>e</b> : c'est la fleu<b data-l='R'>r</b> de sel.</p>"
+          },
+          "lecon": "separer-liquide"
+        },
+        {
+          "id": "5-4",
+          "titre": "Le testament de Madame Mélange",
+          "type": "ordre",
+          "media": {
+            "base": "e5-4",
+            "legende": "Le testament de Madame Mélange",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Voici enfin le testament. Lis-le bien, puis remets les cinq opérations dans l'ordre avec ▲ et ▼.<div class='testament'><b>Le testament de Madame Mélange</b><br>« Mon dernier bocal contient de l'eau salée où est tombée de la limaille de fer. Pour tout retrouver : avant de toucher à quoi que ce soit, note sa masse. Ensuite, regarde bien ce que tu vois. Retire alors ce que l'aimant attire. Puis laisse l'eau s'en aller : le sel restera. À la fin, fais tes comptes : rien ne doit manquer. »</div>",
+            "cm2": "Le testament est écrit sous forme d'énigme. Remets les cinq opérations dans l'ordre du protocole, puis vérifie.<div class='testament'><b>Le testament de Madame Mélange</b><br>« Dans mon dernier bocal : 500 g d'eau, 30 g de sel dissous et 20 g de limaille de fer. Commence par ce que la balance sait faire, puis ouvre les yeux. Le fer doit partir avant que l'eau ne s'en aille. La vapeur emportera l'eau, pas le sel. Ta dernière opération prouvera que la matière ne disparaît jamais. »</div>"
+          },
+          "source": "Protocole de séparation établi d'après Fondation La main à la pâte, séquence « À la découverte des mélanges » (cycle 3)",
+          "correction": "Le protocole : PESER le bocal au départ, OBSERVER le mélange (on voit la limaille : il est hétérogène ; l'eau salée, elle, est homogène), AIMANTER pour retirer le fer, ÉVAPORER l'eau pour récupérer le sel, COMPARER enfin : 20 g de fer + 30 g de sel = 50 g, exactement ce qui avait été mis. Rien n'a disparu.",
+          "indices": {
+            "cm1": [
+              "« Note sa masse » : c'est la toute première opération.",
+              "« Regarde bien ce que tu vois » vient juste après.",
+              "« Fais tes comptes » : c'est la dernière opération."
+            ],
+            "cm2": [
+              "Ce que la balance sait faire : peser.",
+              "L'aimant avant l'évaporation : sinon le fer resterait mêlé au sel.",
+              "Prouver que la matière ne disparaît pas, c'est comparer les masses."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "PESER",
+                "sous": "noter la masse du bocal au départ",
+                "rang": 1
+              },
+              {
+                "txt": "OBSERVER",
+                "sous": "regarder : on voit la limaille dans l'eau salée",
+                "rang": 2
+              },
+              {
+                "txt": "AIMANTER",
+                "sous": "retirer la limaille de fer",
+                "rang": 3
+              },
+              {
+                "txt": "ÉVAPORER",
+                "sous": "laisser partir l'eau : le sel reste",
+                "rang": 4
+              },
+              {
+                "txt": "COMPARER",
+                "sous": "vérifier que rien ne manque",
+                "rang": 5
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "PESER",
+                "sous": "masse de départ : 550 g",
+                "rang": 1
+              },
+              {
+                "txt": "OBSERVER",
+                "sous": "mélange hétérogène : la limaille se voit ; l'eau salée est homogène",
+                "rang": 2
+              },
+              {
+                "txt": "AIMANTER",
+                "sous": "on récupère les 20 g de limaille",
+                "rang": 3
+              },
+              {
+                "txt": "ÉVAPORER",
+                "sous": "la vapeur emporte l'eau ; il reste 30 g de sel",
+                "rang": 4
+              },
+              {
+                "txt": "COMPARER",
+                "sous": "20 g + 30 g = 50 g : la masse des solides est conservée",
+                "rang": 5
+              }
+            ]
+          },
+          "lecon": "separer-liquide"
+        }
+      ]
+    }
+  ]
+}
