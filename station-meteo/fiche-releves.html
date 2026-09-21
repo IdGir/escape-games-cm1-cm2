@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiche de relevés — Station météo de la classe</title>
+<style>
+  @page{size:A4 landscape;margin:12mm}
+  body{font-family:Arial,Helvetica,sans-serif;color:#1f2430;margin:16px}
+  h1{font-size:20px;margin:0 0 4px}
+  .sous{font-size:12px;margin:0 0 10px}
+  table{border-collapse:collapse;width:100%;font-size:13px}
+  th,td{border:1px solid #1f2430;padding:7px 5px;text-align:center}
+  thead th{background:#e3edf5}
+  tbody th{text-align:left;width:11%}
+  .rappels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;font-size:11.5px}
+  .rappels div{border:1px solid #8a93a0;border-radius:6px;padding:6px}
+  .noprint{margin:10px 0}
+  @media print{.noprint{display:none} body{margin:0}}
+</style>
+</head>
+<body>
+<p class="noprint"><button onclick="window.print()">Imprimer la fiche</button> (format A4 paysage, deux semaines)</p>
+<h1>Station météo de la classe — fiche de relevés</h1>
+<p class="sous">Semaines du ………………… au ………………… · Météorologues du jour : notez vos prénoms au dos. Toujours écrire l'<b>unité</b>.</p>
+<table>
+<thead><tr><th>Jour</th><th>Heure du relevé</th><th>Température sous abri (°C)</th><th>Minimum (°C)</th><th>Maximum (°C)</th><th>Vent : direction d'où il vient</th><th>Vent : vitesse (km/h) ou force Beaufort</th><th>Pluie (mm) — puis vider</th></tr></thead>
+<tbody><tr><th>Lundi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Mardi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Mercredi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Jeudi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Vendredi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Lundi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Mardi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Mercredi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Jeudi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>Vendredi</th><td>…… h ……</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+</table>
+<div class="rappels">
+  <div><b>Thermomètre</b> : à l'ombre, dans l'abri, vers 1,50 m ; lire sans le toucher, les yeux à la hauteur du liquide. Sous zéro : écrire le signe −.</div>
+  <div><b>Girouette</b> : noter la direction <b>d'où vient</b> le vent (N, NE, E, SE, S, SO, O, NO).</div>
+  <div><b>Beaufort</b> : 0 fumée verticale · 2 vent sur le visage · 4 poussière soulevée · 6 grosses branches agitées.</div>
+  <div><b>Pluviomètre</b> : lire la hauteur d'eau en mm, noter, puis vider. 1 mm = 1 litre par m².</div>
+</div>
+</body>
+</html>

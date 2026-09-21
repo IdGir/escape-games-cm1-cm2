@@ -1,6 +1,6 @@
 # 🎓 Escape games pédagogiques — CM1 / CM2
 
-Quatre escape games d'histoire, de géographie et d'EMC, jouables dans Chrome, sans installation.
+Cinq escape games d'histoire, de géographie, d'EMC et de sciences, jouables dans Chrome, sans installation.
 
 | | Jeu | Jouer | Guide : énigmes, solutions | Médias |
 |---|---|---|---|---|
@@ -8,8 +8,9 @@ Quatre escape games d'histoire, de géographie et d'EMC, jouables dans Chrome, s
 | 🧭 | **Le Tour du Monde en 80 minutes** — Géographie | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/tour-du-monde/) | [tour-du-monde/README.md](tour-du-monde/README.md) | [liste](tour-du-monde/assets/README.md) |
 | 🗺️ | **Mission géographique — Année A** — Géographie, 16 séances | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/) | [mission-geo/README.md](mission-geo/README.md) | [liste](mission-geo/assets/README.md) |
 | ⚖️ | **Le Sceau de la République** — EMC, la Constitution de 1958 | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/constitution/) | [constitution/README.md](constitution/README.md) | [liste](constitution/assets/README.md) |
+| 🌦️ | **La Station météo disparue** — Sciences, mesures météorologiques | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/) | [station-meteo/README.md](station-meteo/README.md) | [liste](station-meteo/assets/README.md) |
 
-- 🏠 **Accueil des quatre jeux** : https://idgir.github.io/escape-games-cm1-cm2/
+- 🏠 **Accueil des cinq jeux** : https://idgir.github.io/escape-games-cm1-cm2/
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
 
 ---
@@ -25,7 +26,7 @@ fois pour toutes.
 - La progression de chaque équipe est gardée **sur l'appareil** (même navigateur).
 - Tout fonctionne en ligne : jeux, vidéos, leçons, fiches à imprimer. Seul le
   tableau de bord enseignant en direct demande le mode local (ci-dessous).
-- L'adresse racine du site ouvre désormais **l'accueil des quatre jeux**.
+- L'adresse racine du site ouvre désormais **l'accueil des cinq jeux**.
   Pour arriver directement dans un jeu, mettez son adresse en favori
   (par exemple `…/declaration/`).
 
@@ -41,8 +42,8 @@ fois pour toutes.
 Laissez la fenêtre noire ouverte pendant la séance. Ce mode ajoute les
 **tableaux de bord enseignant en direct** (suivi des équipes, pause générale,
 indices envoyés à la volée) :
-`http://127.0.0.1:8000/declaration/prof.html`, `http://127.0.0.1:8000/tour-du-monde/prof.html`
-et `http://127.0.0.1:8000/constitution/prof.html`.
+`http://127.0.0.1:8000/declaration/prof.html`, `http://127.0.0.1:8000/tour-du-monde/prof.html`,
+`http://127.0.0.1:8000/constitution/prof.html` et `http://127.0.0.1:8000/station-meteo/prof.html`.
 
 > Un double-clic direct sur un `index.html` lance aussi le jeu, mais **sans les
 > vidéos** (le navigateur les bloque) : préférez l'une des deux méthodes ci-dessus.
@@ -69,6 +70,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | Le Tour du Monde | `tour-du-monde/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin | [escale 5 en CM2](https://idgir.github.io/escape-games-cm1-cm2/tour-du-monde/?salle=5&niveau=CM2) |
 | Mission géographique | `mission-geo/?seance=N` — N de 1 à 16, ou `final` | [séance 13](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=13) |
 | Le Sceau de la République | `constitution/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 2, CM2](https://idgir.github.io/escape-games-cm1-cm2/constitution/?salle=4&niveau=CM2&enigme=2) |
+| La Station météo disparue | `station-meteo/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [module 1, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/?salle=1&niveau=CM2&enigme=1) |
 
 ---
 
@@ -152,17 +154,28 @@ PROJET ESCAPE GAMES/
 │   ├── css/
 │   └── js/donnees/         le contenu des 16 séances
 │
-└── constitution/           ⚖️ Le Sceau de la République (EMC)
-    ├── README.md           Guide du jeu : salles, énigmes, solutions
-    ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation, concours
+├── constitution/           ⚖️ Le Sceau de la République (EMC)
+│   ├── README.md           Guide du jeu : salles, énigmes, solutions
+│   ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation, concours
+│   ├── index.html          Le jeu
+│   ├── prof.html           Tableau de bord enseignant (mode local)
+│   ├── assets/
+│   │   ├── data/           ★ enigmes.json = les 20 énigmes · concours.json = le concours
+│   │   ├── videos/         décors, cinématiques (+ personnages/)
+│   │   └── images/         decors/, personnages/, cartes/, documents/
+│   ├── css/                (+ enigmes.css)
+│   └── js/                 enigmes.js = moteur générique à 10 types d'énigmes
+│
+└── station-meteo/          🌦️ La Station météo disparue (sciences)
+    ├── README.md           Guide du jeu : modules, énigmes, solutions, sources
+    ├── GUIDE-PEDAGOGIQUE.md  Programmes, protocole de mini-station, déroulés, évaluation
+    ├── A-VERIFIER.md       Points factuels à contrôler
+    ├── fiche-releves.html  Fiche de relevés à imprimer (station de la cour)
     ├── index.html          Le jeu
     ├── prof.html           Tableau de bord enseignant (mode local)
-    ├── assets/
-    │   ├── data/           ★ enigmes.json = les 20 énigmes · concours.json = le concours
-    │   ├── videos/         décors, cinématiques (+ personnages/)
-    │   └── images/         decors/, personnages/, cartes/, documents/
-    ├── css/                (+ enigmes.css)
-    └── js/                 enigmes.js = moteur générique à 10 types d'énigmes
+    ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json (5 leçons rédigées)
+    ├── css/
+    └── js/                 enigmes.js = moteur + type « instrument » (thermomètre, pluviomètre)
 ```
 
 Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur

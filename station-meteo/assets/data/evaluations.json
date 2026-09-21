@@ -1,0 +1,682 @@
+{
+  "metadata": {
+    "sujet": "La Station météo disparue — mesures météorologiques",
+    "niveaux": [
+      "CM1",
+      "CM2"
+    ],
+    "programme": "Sciences et technologie, cycle 3 — La planète Terre : réaliser et exploiter des mesures météorologiques en utilisant des capteurs (thermomètre, anémomètre, pluviomètre).",
+    "sources": "Météo-France ; Organisation météorologique mondiale ; Eaufrance ; Fondation La main à la pâte. Données chiffrées : station fictive de l'école."
+  },
+  "quizz_final": {
+    "CM1": [
+      {
+        "q": "À quelle hauteur mesure-t-on la température de l'air sous abri ?",
+        "options": [
+          "Au ras du sol",
+          "À 1,50 m du sol",
+          "Sur le toit"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Une girouette indique…",
+        "options": [
+          "la direction d'où vient le vent",
+          "la vitesse du vent",
+          "la hauteur de pluie"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "Dans un pluviomètre, on lit une hauteur de pluie en…",
+        "options": [
+          "litres",
+          "millimètres",
+          "degrés"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "1 mm de pluie correspond à…",
+        "options": [
+          "1 litre d'eau par mètre carré",
+          "1 litre pour toute la cour",
+          "une goutte"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "« Demain, il pleuvra l'après-midi. » Cette phrase parle…",
+        "options": [
+          "de météo",
+          "de climat",
+          "d'un instrument"
+        ],
+        "bonne": 0
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Pourquoi place-t-on le thermomètre dans un abri blanc et aéré ?",
+        "options": [
+          "Pour le protéger du soleil et de la pluie",
+          "Pour le réchauffer",
+          "Pour le voir de loin"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "À quelle hauteur mesure-t-on le vent en terrain dégagé ?",
+        "options": [
+          "1,50 m",
+          "10 m",
+          "100 m"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Un vent de nord-ouest est un vent qui…",
+        "options": [
+          "vient du nord-ouest",
+          "va vers le nord-ouest",
+          "tourne autour du nord-ouest"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "Il est tombé 4 mm lundi, 0 mm mardi et 6 mm mercredi. Quel est le cumul ?",
+        "options": [
+          "2 mm",
+          "10 mm",
+          "24 mm"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Sur quelle durée calcule-t-on une moyenne pour décrire un climat ?",
+        "options": [
+          "Une semaine",
+          "Une année",
+          "Trente ans"
+        ],
+        "bonne": 2
+      }
+    ]
+  },
+  "fiches_preparatoires": [
+    {
+      "salle": 1,
+      "titre": "Mesurer la température de l'air",
+      "objectifs": [
+        "Lire un thermomètre",
+        "Savoir où placer un thermomètre",
+        "Distinguer minimum et maximum"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "Thermomètre",
+          "def": "Instrument qui mesure la température, en degrés Celsius (°C)"
+        },
+        {
+          "mot": "Abri météorologique",
+          "def": "Boîte blanche et aérée qui protège le capteur du soleil et de la pluie"
+        },
+        {
+          "mot": "Minimum",
+          "def": "Température la plus basse d'une période"
+        },
+        {
+          "mot": "Maximum",
+          "def": "Température la plus haute d'une période"
+        },
+        {
+          "mot": "Graduation",
+          "def": "Trait d'une échelle qui correspond à une valeur"
+        }
+      ],
+      "contexte": "Météo-France mesure la température de l'air sous abri, à 1,50 m du sol. Ainsi, toutes les stations mesurent de la même façon et leurs relevés sont comparables."
+    },
+    {
+      "salle": 2,
+      "titre": "Mesurer le vent",
+      "objectifs": [
+        "Utiliser les points cardinaux",
+        "Distinguer girouette et anémomètre",
+        "Utiliser l'échelle de Beaufort"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "Girouette",
+          "def": "Indique la direction d'où vient le vent"
+        },
+        {
+          "mot": "Anémomètre",
+          "def": "Mesure la vitesse du vent (km/h ou m/s)"
+        },
+        {
+          "mot": "Points cardinaux",
+          "def": "Nord, est, sud, ouest"
+        },
+        {
+          "mot": "Rose des vents",
+          "def": "Figure qui montre les directions"
+        },
+        {
+          "mot": "Échelle de Beaufort",
+          "def": "Classement du vent de 0 (calme) à 12 (ouragan)"
+        }
+      ],
+      "contexte": "Un vent porte le nom de la direction d'où il vient : un vent d'ouest vient de l'ouest. Les stations mesurent le vent à 10 m de hauteur, en terrain dégagé."
+    },
+    {
+      "salle": 3,
+      "titre": "Mesurer la pluie",
+      "objectifs": [
+        "Lire un pluviomètre",
+        "Comprendre que 1 mm = 1 L/m²",
+        "Calculer un cumul"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "Pluviomètre",
+          "def": "Instrument qui recueille et mesure la pluie"
+        },
+        {
+          "mot": "Précipitations",
+          "def": "Pluie, neige ou grêle"
+        },
+        {
+          "mot": "Millimètre",
+          "def": "1 mm de pluie = 1 litre par mètre carré"
+        },
+        {
+          "mot": "Cumul",
+          "def": "Somme des pluies de plusieurs jours"
+        },
+        {
+          "mot": "Dégagé",
+          "def": "Sans arbre ni mur à proximité"
+        }
+      ],
+      "contexte": "Le pluviomètre se lit chaque jour à la même heure, puis on le vide. On l'installe dans un endroit dégagé."
+    },
+    {
+      "salle": 4,
+      "titre": "Organiser et exploiter des relevés",
+      "objectifs": [
+        "Compléter un tableau à double entrée",
+        "Calculer un écart et un cumul",
+        "Repérer une valeur aberrante"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "Relevé",
+          "def": "Mesure notée avec sa date, son heure et son unité"
+        },
+        {
+          "mot": "Tableau à double entrée",
+          "def": "Chaque case croise une ligne et une colonne"
+        },
+        {
+          "mot": "Écart",
+          "def": "Différence entre le maximum et le minimum"
+        },
+        {
+          "mot": "Valeur aberrante",
+          "def": "Valeur impossible, due à une erreur"
+        },
+        {
+          "mot": "Diagramme en barres",
+          "def": "Graphique où la hauteur des barres représente les valeurs"
+        }
+      ],
+      "contexte": "Une valeur sans unité ne veut rien dire. Un tableau bien tenu permet de comparer les jours et de repérer les erreurs."
+    },
+    {
+      "salle": 5,
+      "titre": "Météo, climat et prévision",
+      "objectifs": [
+        "Distinguer météo et climat",
+        "Relier une prévision à un conseil"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "Météo",
+          "def": "Le temps qu'il fait à un endroit, à un moment donné"
+        },
+        {
+          "mot": "Climat",
+          "def": "Le temps habituel d'une région, calculé sur une longue période"
+        },
+        {
+          "mot": "Prévision",
+          "def": "Annonce du temps à venir"
+        },
+        {
+          "mot": "Bulletin",
+          "def": "Texte qui présente la prévision"
+        },
+        {
+          "mot": "Normale",
+          "def": "Moyenne calculée sur trente ans"
+        }
+      ],
+      "contexte": "Selon Météo-France, les climatologues décrivent le climat à partir de périodes de référence de trente ans."
+    }
+  ],
+  "qcm": {
+    "CM1": [
+      {
+        "q": "Avec quel instrument mesure-t-on la température ?",
+        "options": [
+          "Le pluviomètre",
+          "Le thermomètre",
+          "La girouette"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Où place-t-on le thermomètre ?",
+        "options": [
+          "En plein soleil",
+          "À l'ombre, dans un abri, à 1,50 m",
+          "Par terre"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "La température la plus basse de la journée s'appelle…",
+        "options": [
+          "le maximum",
+          "le minimum",
+          "le cumul"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Que mesure l'anémomètre ?",
+        "options": [
+          "La vitesse du vent",
+          "La direction du vent",
+          "La pluie"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Un vent d'ouest…",
+        "options": [
+          "vient de l'ouest",
+          "va vers l'ouest",
+          "ne souffle jamais"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Le soleil se lève…",
+        "options": [
+          "à l'est",
+          "à l'ouest",
+          "au nord"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Le pluviomètre se lit en…",
+        "options": [
+          "°C",
+          "km/h",
+          "mm"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Mardi 3 mm, mercredi 7 mm : quel est le cumul ?",
+        "options": [
+          "4 mm",
+          "10 mm",
+          "37 mm"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Où installe-t-on le pluviomètre ?",
+        "options": [
+          "Sous un arbre",
+          "Dans un endroit dégagé",
+          "Sous le préau"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "« Au Sahara, il pleut très peu toute l'année » parle…",
+        "options": [
+          "de météo",
+          "de climat"
+        ],
+        "bonne": 1,
+        "pts": 1
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Pourquoi l'abri météo est-il percé d'ouvertures ?",
+        "options": [
+          "Pour que l'air circule autour du capteur",
+          "Pour que la pluie entre",
+          "Pour l'alléger"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Quelle est la température la plus froide ?",
+        "options": [
+          "−1 °C",
+          "−6 °C",
+          "0 °C"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "À quelle hauteur mesure-t-on le vent ?",
+        "options": [
+          "1,50 m",
+          "10 m",
+          "50 m"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "La direction intermédiaire entre le sud et l'ouest est…",
+        "options": [
+          "le sud-ouest",
+          "le nord-ouest",
+          "le sud-est"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Un vent de 24 km/h correspond à la force Beaufort…",
+        "options": [
+          "2",
+          "4",
+          "8"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "1 m/s correspond à…",
+        "options": [
+          "1 km/h",
+          "3,6 km/h",
+          "60 km/h"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "7 mm de pluie sur 10 m², cela fait…",
+        "options": [
+          "17 litres",
+          "70 litres",
+          "700 litres"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Pourquoi vide-t-on le pluviomètre après chaque lecture ?",
+        "options": [
+          "Pour mesurer la pluie de chaque jour séparément",
+          "Pour qu'il ne gèle pas",
+          "Pour arroser"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Minimum 12 °C, maximum 21 °C : quel est l'écart ?",
+        "options": [
+          "9 °C",
+          "33 °C",
+          "12 °C"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Un minimum de 14 °C et un maximum de 8 °C le même jour, c'est…",
+        "options": [
+          "une valeur aberrante",
+          "un jour de gel",
+          "normal en hiver"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Quel graphique convient pour la pluie de chaque jour ?",
+        "options": [
+          "Un diagramme en barres",
+          "Une rose des vents",
+          "Une frise"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Les « normales » climatiques sont calculées sur…",
+        "options": [
+          "un an",
+          "dix ans",
+          "trente ans"
+        ],
+        "bonne": 2,
+        "pts": 1
+      }
+    ]
+  },
+  "questions_fermees": {
+    "CM1": [
+      {
+        "q": "Vrai ou faux : on mesure la température de l'air en plein soleil.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Vrai ou faux : la girouette indique d'où vient le vent.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Vrai ou faux : 1 mm de pluie, c'est 1 litre sur chaque mètre carré.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Vrai ou faux : la météo décrit le temps sur trente ans.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Nomme les trois instruments de la station de l'école.",
+        "type": "court",
+        "rep": "Le thermomètre, l'anémomètre (avec la girouette) et le pluviomètre",
+        "pts": 1
+      },
+      {
+        "q": "Cite les quatre points cardinaux.",
+        "type": "court",
+        "rep": "Nord, est, sud, ouest",
+        "pts": 1
+      },
+      {
+        "q": "Lundi 0 mm, mardi 3 mm, mercredi 7 mm : calcule le cumul.",
+        "type": "court",
+        "rep": "10 mm",
+        "pts": 1
+      },
+      {
+        "q": "Minimum 7 °C, maximum 21 °C : calcule l'écart.",
+        "type": "court",
+        "rep": "14 °C",
+        "pts": 1
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Vrai ou faux : un vent d'ouest souffle vers l'ouest.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Vrai ou faux : on installe l'anémomètre au ras du sol pour le protéger.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Vrai ou faux : une rafale est plus forte que le vent moyen.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Vrai ou faux : une seule journée froide suffit à décrire un climat.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Explique pourquoi toutes les stations mesurent la température à la même hauteur.",
+        "type": "court",
+        "rep": "Pour que leurs mesures soient comparables",
+        "pts": 1
+      },
+      {
+        "q": "La cour mesure 200 m². Il tombe 5 mm. Combien de litres ?",
+        "type": "court",
+        "rep": "1 000 litres (5 × 200)",
+        "pts": 2
+      },
+      {
+        "q": "Range du plus froid au plus chaud : 3 °C ; −2 °C ; 0 °C ; −5 °C.",
+        "type": "court",
+        "rep": "−5 °C ; −2 °C ; 0 °C ; 3 °C",
+        "pts": 1
+      },
+      {
+        "q": "Donne la différence entre météo et climat.",
+        "type": "court",
+        "rep": "La météo décrit le temps d'un moment précis ; le climat, une moyenne sur une longue période (trente ans)",
+        "pts": 2
+      }
+    ]
+  },
+  "etudes_documents": {
+    "CM1": [
+      {
+        "titre": "Le carnet de Lina",
+        "document": {
+          "contenu": "Lundi : 9 °C le matin, 17 °C l'après-midi, pas de pluie. Mardi : 11 °C le matin, 19 °C l'après-midi, 3 mm. Mercredi : 12 °C le matin, 21 °C l'après-midi, 7 mm, vent d'ouest à 24 km/h.",
+          "source": "Relevés de la station fictive de l'école."
+        },
+        "questions": [
+          {
+            "q": "Quel jour a été le plus chaud ?",
+            "type": "courte",
+            "rep": "Mercredi (21 °C)",
+            "pts": 1
+          },
+          {
+            "q": "Combien de millimètres de pluie sont tombés en tout sur les trois jours ?",
+            "type": "courte",
+            "rep": "10 mm (0 + 3 + 7)",
+            "pts": 1
+          },
+          {
+            "q": "Range ces relevés dans un tableau (jours en colonnes, grandeurs en lignes).",
+            "type": "ouverte",
+            "rep_attendue": "Un tableau avec les colonnes lundi, mardi, mercredi et les lignes matin (°C), après-midi (°C), pluie (mm), unités notées.",
+            "pts": 2
+          }
+        ]
+      }
+    ],
+    "CM2": [
+      {
+        "titre": "Deux thermomètres, deux mesures",
+        "document": {
+          "contenu": "À 15 h, Hugo lit 29 °C sur un thermomètre posé en plein soleil sur le muret. Au même moment, Lina lit 21 °C sur le thermomètre de l'abri, à 1,50 m du sol.",
+          "source": "Situation de la station fictive de l'école."
+        },
+        "questions": [
+          {
+            "q": "Quel est l'écart entre les deux mesures ?",
+            "type": "courte",
+            "rep": "8 °C",
+            "pts": 1
+          },
+          {
+            "q": "Laquelle correspond à la température de l'air ? Justifie.",
+            "type": "ouverte",
+            "rep_attendue": "Celle de Lina : elle est prise sous abri, à l'ombre, à 1,50 m, selon les règles de Météo-France ; le thermomètre d'Hugo est chauffé par le soleil.",
+            "pts": 2
+          },
+          {
+            "q": "Propose une règle pour que toute la classe mesure de la même façon.",
+            "type": "ouverte",
+            "rep_attendue": "Même abri, même hauteur, même heure, lecture sans toucher le thermomètre, noter l'unité.",
+            "pts": 2
+          }
+        ]
+      },
+      {
+        "titre": "Le diagramme de la pluie",
+        "document": {
+          "contenu": "Pluie relevée : lundi 0 mm, mardi 3 mm, mercredi 7 mm, jeudi 12 mm, vendredi 0 mm.",
+          "source": "Relevés de la station fictive de l'école."
+        },
+        "questions": [
+          {
+            "q": "Calcule le cumul de la semaine.",
+            "type": "courte",
+            "rep": "22 mm",
+            "pts": 1
+          },
+          {
+            "q": "Trace le diagramme en barres (1 cm pour 2 mm).",
+            "type": "ouverte",
+            "rep_attendue": "Cinq barres : 0 ; 1,5 ; 3,5 ; 6 ; 0 cm, axe gradué et titré, unité indiquée.",
+            "pts": 2
+          },
+          {
+            "q": "Peut-on dire, avec cette seule semaine, que le climat de la région est pluvieux ? Explique.",
+            "type": "ouverte",
+            "rep_attendue": "Non : une semaine décrit la météo ; le climat se calcule sur une longue période (trente ans).",
+            "pts": 2
+          }
+        ]
+      }
+    ]
+  }
+}

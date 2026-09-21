@@ -1,0 +1,253 @@
+{
+  "_commentaire": "Leçons rédigées du jeu « La Station météo disparue » : une par module, 3 à 4 minutes de lecture. Contenus CM1 et CM2 distincts. Chaque énigme pointe une leçon par son champ \"lecon\".",
+  "lecons": [
+    {
+      "id": "thermometre",
+      "icone": "🌡️",
+      "salle": 1,
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "titre": "Mesurer la température de l'air",
+      "objectifs": [
+        "Lire un thermomètre, y compris sous zéro",
+        "Savoir où et comment placer un thermomètre",
+        "Distinguer température minimale et maximale"
+      ],
+      "contenu": {
+        "cm1": "<h4>Un instrument : le thermomètre</h4><p>La <b>température</b> dit s'il fait chaud ou froid. On la mesure avec un <b>thermomètre</b>, en <b>degrés Celsius</b> (°C).</p><p>Pour lire un thermomètre, on regarde <b>où s'arrête le liquide</b>. On part du grand trait numéroté juste en dessous, puis on compte les petites graduations.</p><div class='encadre'><b>Une mesure juste</b><br>Le thermomètre se place <b>à l'ombre</b>, dans un <b>abri</b> blanc et aéré, à <b>1,50 m</b> du sol. Au soleil, il chaufferait lui-même et mentirait.</div><h4>Minimum et maximum</h4><p>Dans une journée, la température change. La plus basse s'appelle le <b>minimum</b> (souvent tôt le matin), la plus haute le <b>maximum</b> (souvent l'après-midi).</p><p>Sous zéro, on écrit un signe moins : <b>−3 °C</b> se lit « moins trois degrés ». À 0 °C, l'eau commence à geler.</p>",
+        "cm2": "<h4>Le thermomètre et l'abri</h4><p>On mesure la <b>température de l'air</b> avec un thermomètre ou un capteur électronique, en <b>degrés Celsius</b> (°C). Météo-France la mesure <b>sous abri, à 1,50 m du sol</b>, dans un abri blanc et percé d'ouvertures : l'air y circule, mais le capteur est protégé du rayonnement du soleil et de la pluie.</p><div class='encadre'><b>Pourquoi des règles communes ?</b><br>Toutes les stations suivent les mêmes règles, fixées par l'Organisation météorologique mondiale. Ainsi, une mesure prise à Dijon peut être comparée à une mesure prise à Brest ou à Montréal.</div><h4>Lire une température</h4><p>On lit la graduation qui correspond au sommet du liquide, les yeux à sa hauteur. Sous le zéro, les températures sont <b>négatives</b> : plus le nombre après le signe moins est grand, plus il fait froid (−6 °C est plus froid que −1 °C).</p><h4>Minimum, maximum</h4><p>La <b>température minimale</b> est la plus basse de la journée, la <b>maximale</b> la plus haute. Le maximum n'a pas lieu à midi : il arrive souvent en milieu d'après-midi, quand le sol a chauffé toute la journée.</p>"
+      },
+      "schema": {
+        "cm1": {
+          "svg": "<svg viewBox=\"0 0 360 220\" role=\"img\" aria-label=\"Schéma d'un abri météorologique : boîte blanche à persiennes sur un pied, thermomètre à 1,50 m au-dessus d'une pelouse\"><rect x=\"0\" y=\"190\" width=\"360\" height=\"30\" fill=\"#8fbf5a\"/><rect x=\"146\" y=\"92\" width=\"8\" height=\"98\" fill=\"#9aa3ad\"/><polygon points=\"96,40 150,22 204,40\" fill=\"#f5f5f2\" stroke=\"#6b7580\" stroke-width=\"1.5\"/><rect x=\"100\" y=\"40\" width=\"100\" height=\"56\" fill=\"#fbfbf8\" stroke=\"#6b7580\" stroke-width=\"1.5\"/><line x1=\"106\" y1=\"48\" x2=\"194\" y2=\"52\" stroke=\"#b9c0c7\" stroke-width=\"2\"/><line x1=\"106\" y1=\"57\" x2=\"194\" y2=\"61\" stroke=\"#b9c0c7\" stroke-width=\"2\"/><line x1=\"106\" y1=\"66\" x2=\"194\" y2=\"70\" stroke=\"#b9c0c7\" stroke-width=\"2\"/><line x1=\"106\" y1=\"75\" x2=\"194\" y2=\"79\" stroke=\"#b9c0c7\" stroke-width=\"2\"/><line x1=\"106\" y1=\"84\" x2=\"194\" y2=\"88\" stroke=\"#b9c0c7\" stroke-width=\"2\"/><rect x=\"146\" y=\"50\" width=\"8\" height=\"36\" rx=\"4\" fill=\"#fff\" stroke=\"#c62828\"/><rect x=\"148\" y=\"66\" width=\"4\" height=\"18\" fill=\"#c62828\"/><g stroke=\"#1d3a8a\" stroke-width=\"1.5\" fill=\"#1d3a8a\"><line x1=\"232\" y1=\"68\" x2=\"232\" y2=\"190\"/><polygon points=\"227,74 232,64 237,74\"/><polygon points=\"227,184 232,194 237,184\"/></g><text x=\"240\" y=\"134\" font-size=\"14\" fill=\"#1d3a8a\" font-family=\"Arial,sans-serif\">1,50 m</text><text x=\"20\" y=\"30\" font-size=\"12\" fill=\"#1f2430\" font-family=\"Arial,sans-serif\">toit : arrête le soleil</text><text x=\"20\" y=\"120\" font-size=\"12\" fill=\"#1f2430\" font-family=\"Arial,sans-serif\">persiennes :</text><text x=\"20\" y=\"135\" font-size=\"12\" fill=\"#1f2430\" font-family=\"Arial,sans-serif\">l'air circule</text><line x1=\"92\" y1=\"124\" x2=\"104\" y2=\"72\" stroke=\"#1f2430\"/></svg>",
+          "legende": "L'abri météo : à l'ombre, aéré, à 1,50 m du sol."
+        },
+        "cm2": {
+          "svg": "<svg viewBox=\"0 0 300 230\" role=\"img\" aria-label=\"Lecture d'un thermomètre : le liquide s'arrête trois graduations sous le zéro, on lit moins trois degrés\"><rect x=\"120\" y=\"22\" width=\"22\" height=\"190\" rx=\"11\" fill=\"#f4f6f8\" stroke=\"#8a93a0\"/><line x1=\"144\" y1=\"200.0\" x2=\"158\" y2=\"200.0\" stroke=\"#1f2430\" stroke-width=\"1.5\"/><text x=\"162\" y=\"204.0\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">−10</text><line x1=\"144\" y1=\"191.5\" x2=\"151\" y2=\"191.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"183.0\" x2=\"151\" y2=\"183.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"174.5\" x2=\"151\" y2=\"174.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"166.0\" x2=\"151\" y2=\"166.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"157.5\" x2=\"158\" y2=\"157.5\" stroke=\"#1f2430\" stroke-width=\"1.5\"/><text x=\"162\" y=\"161.5\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">−5</text><line x1=\"144\" y1=\"149.0\" x2=\"151\" y2=\"149.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"140.5\" x2=\"151\" y2=\"140.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"132.0\" x2=\"151\" y2=\"132.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"123.5\" x2=\"151\" y2=\"123.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"115.0\" x2=\"158\" y2=\"115.0\" stroke=\"#1f2430\" stroke-width=\"1.5\"/><text x=\"162\" y=\"119.0\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">0</text><line x1=\"144\" y1=\"106.5\" x2=\"151\" y2=\"106.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"98.0\" x2=\"151\" y2=\"98.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"89.5\" x2=\"151\" y2=\"89.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"81.0\" x2=\"151\" y2=\"81.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"72.5\" x2=\"158\" y2=\"72.5\" stroke=\"#1f2430\" stroke-width=\"1.5\"/><text x=\"162\" y=\"76.5\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">5</text><line x1=\"144\" y1=\"64.0\" x2=\"151\" y2=\"64.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"55.5\" x2=\"151\" y2=\"55.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"47.0\" x2=\"151\" y2=\"47.0\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"38.5\" x2=\"151\" y2=\"38.5\" stroke=\"#1f2430\" stroke-width=\"0.9\"/><line x1=\"144\" y1=\"30.0\" x2=\"158\" y2=\"30.0\" stroke=\"#1f2430\" stroke-width=\"1.5\"/><text x=\"162\" y=\"34.0\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">10</text><rect x=\"126\" y=\"140.5\" width=\"10\" height=\"69.5\" fill=\"#c62828\"/><circle cx=\"131\" cy=\"214\" r=\"12\" fill=\"#c62828\"/><line x1=\"112\" y1=\"115.0\" x2=\"190\" y2=\"115.0\" stroke=\"#1d3a8a\" stroke-dasharray=\"4 3\"/><line x1=\"196\" y1=\"140.5\" x2=\"232\" y2=\"140.5\" stroke=\"#1f2430\"/><text x=\"236\" y=\"144.5\" font-size=\"13\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">−3 °C</text><text x=\"196\" y=\"109.0\" font-size=\"11\" font-family=\"Arial,sans-serif\" fill=\"#1d3a8a\">0 °C : l'eau gèle</text><text x=\"10\" y=\"120\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">1 petite graduation</text><text x=\"10\" y=\"135\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">= 1 degré</text></svg>",
+          "legende": "Lire une température négative : le liquide s'arrête sous le zéro."
+        }
+      },
+      "lexique": [
+        {
+          "mot": "Température",
+          "def": "Ce qui indique s'il fait chaud ou froid ; elle se mesure en degrés Celsius (°C)."
+        },
+        {
+          "mot": "Thermomètre",
+          "def": "Instrument qui mesure la température."
+        },
+        {
+          "mot": "Abri météorologique",
+          "def": "Boîte blanche et aérée qui protège le thermomètre du soleil et de la pluie."
+        },
+        {
+          "mot": "Minimum / maximum",
+          "def": "La valeur la plus basse / la plus haute relevée pendant une période."
+        },
+        {
+          "mot": "Température négative",
+          "def": "Température inférieure à 0 °C, écrite avec le signe moins.",
+          "niveau": "CM2"
+        }
+      ],
+      "sources": [
+        "Météo-France, « Qu'est-ce que la température ? » (mesure sous abri, à 1,50 m du sol)",
+        "Organisation météorologique mondiale, Guide des instruments et des méthodes d'observation (OMM-N° 8)",
+        "Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique »"
+      ]
+    },
+    {
+      "id": "vent",
+      "icone": "🧭",
+      "salle": 2,
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "titre": "Mesurer le vent : direction et vitesse",
+      "objectifs": [
+        "Utiliser les points cardinaux et la rose des vents",
+        "Distinguer girouette et anémomètre",
+        "Utiliser une échelle de Beaufort simplifiée"
+      ],
+      "contenu": {
+        "cm1": "<h4>D'où vient le vent ?</h4><p>La <b>girouette</b> tourne avec le vent : elle indique la <b>direction d'où il vient</b>. Un vent d'ouest <b>vient de l'ouest</b>.</p><p>Pour nommer les directions, on utilise les <b>points cardinaux</b> : le <b>nord</b>, l'<b>est</b> (où le soleil se lève), le <b>sud</b> (où est le soleil à midi, en France) et l'<b>ouest</b> (où il se couche).</p><h4>À quelle vitesse ?</h4><p>L'<b>anémomètre</b> a des coupelles qui tournent d'autant plus vite que le vent est fort. Il mesure la <b>vitesse du vent</b>, en <b>kilomètres par heure</b> (km/h).</p><div class='encadre'><b>Sans instrument : l'échelle de Beaufort</b><br>Calme (moins de 1 km/h) : la fumée monte tout droit.<br>Légère brise (6 à 11 km/h) : on sent le vent sur le visage.<br>Jolie brise (20 à 28 km/h) : la poussière se soulève.<br>Vent frais (39 à 49 km/h) : les grosses branches s'agitent.</div>",
+        "cm2": "<h4>Deux instruments, deux informations</h4><p>La <b>girouette</b> indique la <b>direction d'où vient</b> le vent : un vent de nord-ouest vient du nord-ouest. L'<b>anémomètre</b> mesure sa <b>vitesse</b>, en km/h ou en mètres par seconde (1 m/s = 3,6 km/h, car une heure compte 3 600 secondes).</p><h4>La rose des vents</h4><p>Elle porte les quatre points cardinaux (N, E, S, O) et les quatre directions intermédiaires (NE, SE, SO, NO). Chaque direction intermédiaire prend le nom de ses deux voisines, en commençant par nord ou sud.</p><div class='encadre'><b>Des mesures comparables</b><br>L'Organisation météorologique mondiale demande de mesurer le vent <b>à 10 m au-dessus d'un terrain dégagé</b>, loin des obstacles, et de retenir la <b>vitesse moyenne sur dix minutes</b>. Une pointe brève et plus forte s'appelle une <b>rafale</b>.</div><h4>L'échelle de Beaufort</h4><p>Elle classe le vent de la force 0 (calme, moins de 1 km/h) à la force 12 (ouragan, 118 km/h et plus), d'après sa vitesse et ses effets : force 2 (6 à 11 km/h), on sent le vent sur le visage ; force 4 (20 à 28 km/h), la poussière se soulève ; force 6 (39 à 49 km/h), les grosses branches s'agitent.</p>"
+      },
+      "schema": {
+        "svg": "<svg viewBox=\"0 0 260 260\" role=\"img\" aria-label=\"Rose des vents à huit directions : nord en haut, est à droite, sud en bas, ouest à gauche, et les quatre directions intermédiaires\"><polygon points=\"140.0,130.0 130.0,40.0 120.0,130.0\" fill=\"#1d3a8a\"/><text x=\"130.0\" y=\"27.0\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">N</text><polygon points=\"134.9,134.9 173.8,86.2 125.1,125.1\" fill=\"#5aa0d8\"/><text x=\"186.6\" y=\"78.4\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">NE</text><polygon points=\"130.0,140.0 220.0,130.0 130.0,120.0\" fill=\"#1d3a8a\"/><text x=\"238.0\" y=\"135.0\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">E</text><polygon points=\"125.1,134.9 173.8,173.8 134.9,125.1\" fill=\"#5aa0d8\"/><text x=\"186.6\" y=\"191.6\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">SE</text><polygon points=\"120.0,130.0 130.0,220.0 140.0,130.0\" fill=\"#1d3a8a\"/><text x=\"130.0\" y=\"243.0\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">S</text><polygon points=\"125.1,125.1 86.2,173.8 134.9,134.9\" fill=\"#5aa0d8\"/><text x=\"73.4\" y=\"191.6\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">SO</text><polygon points=\"130.0,120.0 40.0,130.0 130.0,140.0\" fill=\"#1d3a8a\"/><text x=\"22.0\" y=\"135.0\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">O</text><polygon points=\"134.9,125.1 86.2,86.2 125.1,134.9\" fill=\"#5aa0d8\"/><text x=\"73.4\" y=\"78.4\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">NO</text><circle cx=\"130\" cy=\"130\" r=\"14\" fill=\"#fff\" stroke=\"#13286b\"/></svg>",
+        "legende": "La rose des vents : quatre points cardinaux et quatre directions intermédiaires."
+      },
+      "lexique": [
+        {
+          "mot": "Girouette",
+          "def": "Instrument qui indique la direction d'où vient le vent."
+        },
+        {
+          "mot": "Anémomètre",
+          "def": "Instrument qui mesure la vitesse du vent."
+        },
+        {
+          "mot": "Points cardinaux",
+          "def": "Nord, est, sud, ouest."
+        },
+        {
+          "mot": "Échelle de Beaufort",
+          "def": "Classement du vent de 0 (calme) à 12 (ouragan)."
+        },
+        {
+          "mot": "Rafale",
+          "def": "Pointe de vent brève, plus forte que la vitesse moyenne.",
+          "niveau": "CM2"
+        }
+      ],
+      "sources": [
+        "Organisation météorologique mondiale, Guide des instruments et des méthodes d'observation (OMM-N° 8) : vent à 10 m, moyenne sur 10 minutes",
+        "Échelle de Beaufort : vitesses et effets à terre (OMM, reprise par les services météorologiques nationaux)",
+        "Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique »"
+      ]
+    },
+    {
+      "id": "pluie",
+      "icone": "🌧️",
+      "salle": 3,
+      "duree": "3 min",
+      "niveau": "CM1-CM2",
+      "titre": "Mesurer la pluie avec un pluviomètre",
+      "objectifs": [
+        "Lire la hauteur d'eau d'un pluviomètre",
+        "Comprendre que 1 mm de pluie = 1 litre par mètre carré",
+        "Calculer un cumul de pluie"
+      ],
+      "contenu": {
+        "cm1": "<h4>Le pluviomètre</h4><p>Le <b>pluviomètre</b> recueille la pluie dans un tube gradué. On ne compte pas les gouttes : on lit une <b>hauteur d'eau</b>, en <b>millimètres</b> (mm).</p><div class='encadre'><b>1 mm de pluie = 1 litre d'eau sur chaque mètre carré.</b><br>Mercredi, avec 7 mm, il est tombé 7 litres sur chaque mètre carré de la cour.</div><h4>Bien l'utiliser</h4><p>On l'installe dans un <b>endroit dégagé</b>, loin des arbres et des murs. On le lit <b>chaque jour à la même heure</b>, on note la valeur, puis on le <b>vide</b>.</p><h4>Le cumul</h4><p>En additionnant la pluie de plusieurs jours, on obtient le <b>cumul</b> : 3 mm + 7 mm = 10 mm.</p>",
+        "cm2": "<h4>Une hauteur, pas un volume</h4><p>Le pluviomètre mesure la <b>hauteur de précipitations</b>, en millimètres : c'est l'épaisseur de la couche d'eau qui couvrirait un sol plat si rien ne s'écoulait ni ne s'évaporait.</p><div class='encadre'><b>1 mm sur 1 m² = 1 litre</b>, car 1 mm × 1 m² = 1 dm³. Pour connaître le volume tombé sur une surface, on multiplie : 7 mm sur une cour de 200 m² font 7 × 200 = 1 400 litres.</div><h4>Les règles de mesure</h4><p>On le place en terrain dégagé : un arbre ou un mur arrête ou renvoie la pluie. On le lit à heure fixe (souvent le matin, pour les 24 heures écoulées), puis on le vide ; sinon, on lirait la somme de plusieurs jours.</p><h4>Le cumul</h4><p>Le cumul est la <b>somme</b> des hauteurs relevées sur une période : semaine, mois, année. Il permet de comparer des périodes ou des lieux.</p>"
+      },
+      "schema": {
+        "svg": "<svg viewBox=\"0 0 360 220\" role=\"img\" aria-label=\"Un millimètre de pluie sur un mètre carré représente un litre d'eau\"><polygon points=\"30,150 150,150 190,110 70,110\" fill=\"#cfe3f3\" stroke=\"#1d5c8f\"/><polygon points=\"30,150 150,150 150,158 30,158\" fill=\"#5aa0d8\"/><polygon points=\"150,150 190,110 190,118 150,158\" fill=\"#3d86c2\"/><text x=\"70\" y=\"178\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">1 m²</text><text x=\"196\" y=\"118\" font-size=\"12\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">1 mm d'eau</text><text x=\"200\" y=\"150\" font-size=\"22\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">=</text><rect x=\"250\" y=\"80\" width=\"40\" height=\"80\" rx=\"8\" fill=\"#e3f0fa\" stroke=\"#1d5c8f\"/><rect x=\"252\" y=\"110\" width=\"36\" height=\"48\" rx=\"6\" fill=\"#5aa0d8\"/><rect x=\"262\" y=\"68\" width=\"16\" height=\"14\" fill=\"#1d5c8f\"/><text x=\"238\" y=\"182\" font-size=\"13\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">1 litre</text></svg>",
+        "legende": "Un millimètre de pluie sur un mètre carré : un litre d'eau."
+      },
+      "lexique": [
+        {
+          "mot": "Pluviomètre",
+          "def": "Instrument qui mesure la hauteur de pluie tombée."
+        },
+        {
+          "mot": "Précipitations",
+          "def": "Eau qui tombe du ciel : pluie, neige, grêle."
+        },
+        {
+          "mot": "Millimètre (mm)",
+          "def": "Unité de hauteur ; 1 mm de pluie = 1 litre par mètre carré."
+        },
+        {
+          "mot": "Cumul",
+          "def": "Somme des hauteurs de pluie de plusieurs jours."
+        },
+        {
+          "mot": "Mètre carré (m²)",
+          "def": "Surface d'un carré d'un mètre de côté.",
+          "niveau": "CM2"
+        }
+      ],
+      "sources": [
+        "Eaufrance, « Les volumes de précipitations » (1 mm = 1 L/m²)",
+        "Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique »"
+      ]
+    },
+    {
+      "id": "releves",
+      "icone": "📋",
+      "salle": 4,
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "titre": "Organiser et exploiter des relevés",
+      "objectifs": [
+        "Lire et compléter un tableau à double entrée",
+        "Trouver un minimum, un maximum, un écart",
+        "Repérer une valeur aberrante",
+        "Lire un diagramme en barres ou une courbe"
+      ],
+      "contenu": {
+        "cm1": "<h4>Le tableau de relevés</h4><p>Chaque jour, on note les mesures dans un <b>tableau</b>. Chaque <b>ligne</b> est une grandeur (température, vent, pluie) avec son <b>unité</b> ; chaque <b>colonne</b> est un jour.</p><div class='encadre'><b>Toujours noter :</b> le jour, l'heure, la valeur et l'unité (°C, km/h, mm).</div><h4>Comparer</h4><p>Le <b>minimum</b> est la plus petite valeur, le <b>maximum</b> la plus grande. L'<b>écart</b> est la différence entre les deux : 21 − 7 = 14 °C.</p><h4>Une valeur impossible</h4><p>Si une valeur est très différente des autres (41 °C au milieu de jours à 15 ou 20 °C), c'est souvent une <b>erreur de mesure</b> : thermomètre au soleil, mauvaise lecture. On ne la garde pas.</p>",
+        "cm2": "<h4>Organiser les données</h4><p>Un <b>tableau à double entrée</b> croise les grandeurs mesurées (lignes) et les dates (colonnes). Une valeur sans unité ne veut rien dire : 12 peut être 12 °C, 12 km/h ou 12 mm.</p><h4>Exploiter les données</h4><p>On cherche le <b>minimum</b> et le <b>maximum</b>, on calcule l'<b>écart</b> (maximum − minimum) et le <b>cumul</b> (somme, pour la pluie).</p><h4>Représenter</h4><p>Un <b>diagramme en barres</b> convient aux quantités (pluie de chaque jour). Une <b>courbe</b> montre l'évolution d'une grandeur qui varie en continu, comme la température.</p><div class='encadre'><b>Valeur aberrante</b><br>C'est une valeur impossible ou très éloignée des autres : un minimum plus élevé que le maximum du même jour, un chiffre recopié de travers. On la repère, on cherche la cause et on ne l'utilise pas dans les calculs.</div>"
+      },
+      "schema": {
+        "svg": "<svg viewBox=\"0 0 400 230\" role=\"img\" aria-label=\"Courbes des températures minimales et maximales de la semaine, du lundi au vendredi\"><line x1=\"50\" y1=\"190.0\" x2=\"380\" y2=\"190.0\" stroke=\"#d5dde5\"/><text x=\"42\" y=\"194.0\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\">0</text><line x1=\"50\" y1=\"161.7\" x2=\"380\" y2=\"161.7\" stroke=\"#d5dde5\"/><text x=\"42\" y=\"165.7\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\">4</text><line x1=\"50\" y1=\"133.3\" x2=\"380\" y2=\"133.3\" stroke=\"#d5dde5\"/><text x=\"42\" y=\"137.3\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\">8</text><line x1=\"50\" y1=\"105.0\" x2=\"380\" y2=\"105.0\" stroke=\"#d5dde5\"/><text x=\"42\" y=\"109.0\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\">12</text><line x1=\"50\" y1=\"76.7\" x2=\"380\" y2=\"76.7\" stroke=\"#d5dde5\"/><text x=\"42\" y=\"80.7\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\">16</text><line x1=\"50\" y1=\"48.3\" x2=\"380\" y2=\"48.3\" stroke=\"#d5dde5\"/><text x=\"42\" y=\"52.3\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\">20</text><line x1=\"50\" y1=\"20.0\" x2=\"380\" y2=\"20.0\" stroke=\"#d5dde5\"/><text x=\"42\" y=\"24.0\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\">24</text><polyline points=\"85,69.6 157,55.4 229,41.2 301,90.8 373,76.7\" fill=\"none\" stroke=\"#c62828\" stroke-width=\"2.5\"/><polyline points=\"85,126.2 157,112.1 229,105.0 301,133.3 373,140.4\" fill=\"none\" stroke=\"#1d5c8f\" stroke-width=\"2.5\" stroke-dasharray=\"6 4\"/><circle cx=\"85\" cy=\"69.6\" r=\"4\" fill=\"#c62828\"/><rect x=\"81\" y=\"122.2\" width=\"8\" height=\"8\" fill=\"#1d5c8f\"/><text x=\"85\" y=\"206\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\">Lun</text><circle cx=\"157\" cy=\"55.4\" r=\"4\" fill=\"#c62828\"/><rect x=\"153\" y=\"108.1\" width=\"8\" height=\"8\" fill=\"#1d5c8f\"/><text x=\"157\" y=\"206\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\">Mar</text><circle cx=\"229\" cy=\"41.2\" r=\"4\" fill=\"#c62828\"/><rect x=\"225\" y=\"101.0\" width=\"8\" height=\"8\" fill=\"#1d5c8f\"/><text x=\"229\" y=\"206\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\">Mer</text><circle cx=\"301\" cy=\"90.8\" r=\"4\" fill=\"#c62828\"/><rect x=\"297\" y=\"129.3\" width=\"8\" height=\"8\" fill=\"#1d5c8f\"/><text x=\"301\" y=\"206\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\">Jeu</text><circle cx=\"373\" cy=\"76.7\" r=\"4\" fill=\"#c62828\"/><rect x=\"369\" y=\"136.4\" width=\"8\" height=\"8\" fill=\"#1d5c8f\"/><text x=\"373\" y=\"206\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\">Ven</text><line x1=\"50\" y1=\"190\" x2=\"380\" y2=\"190\" stroke=\"#1f2430\"/><line x1=\"50\" y1=\"190\" x2=\"50\" y2=\"14\" stroke=\"#1f2430\"/><text x=\"6\" y=\"14\" font-size=\"11\" font-family=\"Arial,sans-serif\">°C</text><circle cx=\"250\" cy=\"12\" r=\"4\" fill=\"#c62828\"/><text x=\"258\" y=\"16\" font-size=\"11\" font-family=\"Arial,sans-serif\">maximum (trait plein)</text><rect x=\"246\" y=\"24\" width=\"8\" height=\"8\" fill=\"#1d5c8f\"/><text x=\"258\" y=\"32\" font-size=\"11\" font-family=\"Arial,sans-serif\">minimum (pointillés)</text></svg>",
+        "legende": "Les températures minimales et maximales de la semaine du jeu (station fictive de l'école)."
+      },
+      "lexique": [
+        {
+          "mot": "Relevé",
+          "def": "Mesure notée avec sa date, son heure et son unité."
+        },
+        {
+          "mot": "Tableau à double entrée",
+          "def": "Tableau où chaque case croise une ligne et une colonne."
+        },
+        {
+          "mot": "Écart",
+          "def": "Différence entre la plus grande et la plus petite valeur."
+        },
+        {
+          "mot": "Valeur aberrante",
+          "def": "Valeur impossible ou très éloignée des autres, due à une erreur."
+        },
+        {
+          "mot": "Diagramme en barres",
+          "def": "Graphique où la hauteur de chaque barre représente une valeur.",
+          "niveau": "CM2"
+        }
+      ],
+      "sources": [
+        "Programme de sciences et technologie du cycle 3 : réaliser et exploiter des mesures météorologiques",
+        "Données : relevés de la station fictive de l'école (aucune valeur réelle)"
+      ]
+    },
+    {
+      "id": "bulletin",
+      "icone": "📡",
+      "salle": 5,
+      "duree": "3 min",
+      "niveau": "CM1-CM2",
+      "titre": "De la mesure à la prévision : météo et climat",
+      "objectifs": [
+        "Relier des mesures à une prévision et à des conseils",
+        "Distinguer la météo et le climat"
+      ],
+      "contenu": {
+        "cm1": "<h4>À quoi servent les mesures ?</h4><p>En comparant les mesures d'aujourd'hui à celles des jours précédents, les prévisionnistes annoncent le temps qu'il fera. Un <b>bulletin météo</b> donne la température, le vent, la pluie, et des <b>conseils</b> : vêtement de pluie, casquette, prudence.</p><div class='encadre'><b>Météo</b> : le temps qu'il fait <b>aujourd'hui</b> et dans les jours qui viennent. Il change très vite.<br><b>Climat</b> : le temps <b>habituel</b> d'une région, observé pendant de <b>très nombreuses années</b>.</div><p>« Demain, il pleuvra » parle de météo. « Au Sahara, il pleut très peu » parle de climat.</p>",
+        "cm2": "<h4>Du relevé au bulletin</h4><p>Une prévision s'appuie sur des milliers de mesures fiables, prises partout de la même façon. À l'école, nos trois capteurs donnent déjà l'essentiel : température, vent, pluie. Le bulletin traduit ces nombres en décisions.</p><div class='encadre'><b>Météo</b> : l'état de l'atmosphère à un endroit et à un moment donnés ; il change d'heure en heure.<br><b>Climat</b> : une moyenne statistique de ces conditions sur une longue période. Les climatologues utilisent des <b>périodes de référence de trente ans</b> ; les moyennes obtenues s'appellent les « normales ».</div><p>Une journée froide ne dit rien, à elle seule, du climat : il faut de longues séries de mesures. C'est pourquoi les relevés de la station doivent être réguliers et bien conservés.</p>"
+      },
+      "schema": {
+        "svg": "<svg viewBox=\"0 0 560 120\" role=\"img\" aria-label=\"Chaîne de travail du prévisionniste : mesurer, noter, organiser, comparer, prévoir\"><rect x=\"8\" y=\"20\" width=\"96\" height=\"70\" rx=\"10\" fill=\"#eef3f8\" stroke=\"#1d3a8a\"/><text x=\"56\" y=\"46\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">Mesurer</text><text x=\"56\" y=\"62\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">thermomètre</text><text x=\"56\" y=\"73\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">anémomètre</text><text x=\"56\" y=\"84\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">pluviomètre</text><polygon points=\"106,55 116,50 116,60\" fill=\"#1d3a8a\"/><rect x=\"118\" y=\"20\" width=\"96\" height=\"70\" rx=\"10\" fill=\"#eef3f8\" stroke=\"#1d3a8a\"/><text x=\"166\" y=\"46\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">Noter</text><text x=\"166\" y=\"62\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">le jour</text><text x=\"166\" y=\"73\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">l'heure</text><text x=\"166\" y=\"84\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">la valeur</text><polygon points=\"216,55 226,50 226,60\" fill=\"#1d3a8a\"/><rect x=\"228\" y=\"20\" width=\"96\" height=\"70\" rx=\"10\" fill=\"#eef3f8\" stroke=\"#1d3a8a\"/><text x=\"276\" y=\"46\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">Organiser</text><text x=\"276\" y=\"62\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">tableau</text><text x=\"276\" y=\"73\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">graphique</text><polygon points=\"326,55 336,50 336,60\" fill=\"#1d3a8a\"/><rect x=\"338\" y=\"20\" width=\"96\" height=\"70\" rx=\"10\" fill=\"#eef3f8\" stroke=\"#1d3a8a\"/><text x=\"386\" y=\"46\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">Comparer</text><text x=\"386\" y=\"62\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">minimum</text><text x=\"386\" y=\"73\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">maximum</text><text x=\"386\" y=\"84\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">écart</text><polygon points=\"436,55 446,50 446,60\" fill=\"#1d3a8a\"/><rect x=\"448\" y=\"20\" width=\"96\" height=\"70\" rx=\"10\" fill=\"#eef3f8\" stroke=\"#1d3a8a\"/><text x=\"496\" y=\"46\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">Prévoir</text><text x=\"496\" y=\"62\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">bulletin</text><text x=\"496\" y=\"73\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">conseils</text></svg>",
+        "legende": "Le travail d'une station : de la mesure à la prévision."
+      },
+      "lexique": [
+        {
+          "mot": "Météo",
+          "def": "Le temps qu'il fait à un endroit, à un moment donné."
+        },
+        {
+          "mot": "Climat",
+          "def": "Le temps habituel d'une région, calculé sur une longue période."
+        },
+        {
+          "mot": "Prévision",
+          "def": "Annonce du temps qu'il fera, fondée sur des mesures."
+        },
+        {
+          "mot": "Bulletin",
+          "def": "Court texte qui présente la prévision et des conseils."
+        },
+        {
+          "mot": "Normale",
+          "def": "Valeur moyenne calculée sur trente ans.",
+          "niveau": "CM2"
+        }
+      ],
+      "sources": [
+        "Météo-France, « Quelle différence entre météo et climat ? » (périodes de référence de 30 ans)",
+        "Programme de sciences et technologie du cycle 3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "jeu": "La Station météo disparue",
+    "sujet": "Réaliser et exploiter des mesures météorologiques avec des capteurs (thermomètre, anémomètre, pluviomètre) — sciences et technologie, cycle 3",
+    "niveaux": ["CM1", "CM2"],
+    "coherence": "Les relevés du jeu sont ceux d'une station d'école fictive. Mercredi, jour de l'orage : minimum 12 °C, maximum 21 °C, vent moyen 24 km/h venant de l'ouest, 7 mm de pluie. Ces trois valeurs forment le code final.",
+    "sources": "Météo-France (mesure sous abri à 1,50 m, météo et climat) ; Organisation météorologique mondiale (vent mesuré à 10 m, moyenne sur 10 minutes) ; Fondation La main à la pâte (instruments d'une station d'école)."
+  },
+
+  "personnages": {
+    "vasseur": {"nom": "Madame Vasseur",  "emoji": "🌦️", "role": "Prévisionniste, marraine de la station de l'école"},
+    "tiago":   {"nom": "Tiago",           "emoji": "🧰", "role": "Technicien de station météo"},
+    "lina":    {"nom": "Lina",            "emoji": "🎒", "role": "Élève de CM2, responsable de la station de l'école"},
+    "keita":   {"nom": "Capitaine Keïta", "emoji": "⛵", "role": "Marin, dépend du vent pour sortir en mer"}
+  },
+
+  "intro_accueil": "Bonjour. Je suis Madame Vasseur, prévisionniste. L'orage de cette nuit a déréglé votre station météo : plus aucune mesure n'est fiable. Cinq modules sont hors service. Vous allez les remettre en route, dans l'ordre.",
+
+  "salles": [
+    {
+      "num": 1,
+      "titre": "L'abri météo",
+      "decor": "abri",
+      "motCle": "MESURER",
+      "lieu": "🌡️ L'abri météo, dans la cour de l'école",
+      "description": "Au bout de la cour, sur une petite pelouse, se dresse une boîte blanche à persiennes, montée sur un pied. Sa porte bat au vent. Le thermomètre a été sorti de l'abri et posé sur le muret, en plein soleil.",
+      "sens": ["👁️ une boîte blanche à persiennes", "👂 la porte qui grince", "👃 l'herbe mouillée"],
+      "dialogue_intro": {
+        "perso": "vasseur",
+        "nom": "Madame Vasseur",
+        "texte": "Regardez ce thermomètre, posé en plein soleil sur le muret : il ne mesure plus l'air, il mesure le soleil ! Un thermomètre se lit à l'ombre, dans son abri, et toujours à la même hauteur. Premier module : apprenez à lire la température, puis remettez l'instrument à sa place."
+      },
+      "dialogue_reussite": {
+        "perso": "vasseur",
+        "nom": "Madame Vasseur",
+        "texte": "Premier module en service : <b>MESURER</b>. Mercredi, le jour de l'orage, l'air est monté à 21 °C au plus chaud. Retenez ce nombre. Maintenant, montez voir le mât du vent : le capitaine Keïta attend une direction et une vitesse."
+      }
+    },
+    {
+      "num": 2,
+      "titre": "Le mât du vent",
+      "decor": "mat",
+      "motCle": "ORIENTER",
+      "lieu": "🧭 Le mât de l'anémomètre et de la girouette",
+      "description": "Au sommet d'un mât, des coupelles tournent et une girouette hésite. L'orage a fait pivoter la croix des points cardinaux : plus personne ne sait où est le nord.",
+      "sens": ["👁️ des coupelles qui tournent", "👂 le souffle du vent", "👃 l'air frais après la pluie"],
+      "dialogue_intro": {
+        "perso": "keita",
+        "nom": "Capitaine Keïta",
+        "texte": "Bonjour, matelots. Sur mon bateau, deux questions décident de tout : d'où vient le vent, et à quelle vitesse il souffle. La girouette répond à la première, l'anémomètre à la seconde. Mais sans les points cardinaux, une girouette ne sert à rien. Remettez la rose des vents dans le bon sens."
+      },
+      "dialogue_reussite": {
+        "perso": "keita",
+        "nom": "Capitaine Keïta",
+        "texte": "Deuxième module en service : <b>ORIENTER</b>. Mercredi, l'anémomètre marquait 24 km/h de vent moyen, venant de l'ouest : une jolie brise, force 4. Parfait pour naviguer. Descendez au jardin : Tiago s'occupe du pluviomètre."
+      }
+    },
+    {
+      "num": 3,
+      "titre": "Le pluviomètre",
+      "decor": "pluvio",
+      "motCle": "CUMULER",
+      "lieu": "🌧️ Le pluviomètre, au fond du jardin",
+      "description": "Loin des arbres et des murs, un entonnoir surmonte un tube gradué. Il pleut encore un peu. Sur le cahier de Tiago, les relevés de la semaine sont brouillés par les gouttes.",
+      "sens": ["👁️ un tube gradué en millimètres", "👂 la pluie sur les feuilles", "👃 la terre mouillée"],
+      "dialogue_intro": {
+        "perso": "tiago",
+        "nom": "Tiago",
+        "texte": "Salut ! Le pluviomètre recueille la pluie qui tombe sur son ouverture. On ne compte pas des litres : on lit une hauteur d'eau, en millimètres. Chaque matin, on lit, on note, on vide. Et en additionnant les jours, on obtient le cumul. À toi de lire le tube."
+      },
+      "dialogue_reussite": {
+        "perso": "tiago",
+        "nom": "Tiago",
+        "texte": "Troisième module en service : <b>CUMULER</b>. Mercredi, le tube indiquait 7 mm : sept litres d'eau sur chaque mètre carré de la cour. Lina t'attend au bureau des relevés : son tableau est dans un triste état."
+      }
+    },
+    {
+      "num": 4,
+      "titre": "Le tableau des relevés",
+      "decor": "bureau",
+      "motCle": "ORGANISER",
+      "lieu": "📋 Le bureau des relevés",
+      "description": "Au mur, un tableau à double entrée et un graphique en barres. L'eau a effacé des cases, et quelqu'un a recopié une valeur impossible.",
+      "sens": ["👁️ des cases vides", "👂 le froissement du cahier", "👃 le papier humide"],
+      "dialogue_intro": {
+        "perso": "lina",
+        "nom": "Lina",
+        "texte": "Coucou ! C'est moi qui tiens le cahier de la station. Mesurer chaque jour, c'est bien, mais si les nombres sont mélangés, on ne peut rien en tirer. Un tableau bien rangé, ça permet de comparer : quel jour était le plus froid ? le plus arrosé ? Tu m'aides à tout remettre en ordre ?"
+      },
+      "dialogue_reussite": {
+        "perso": "lina",
+        "nom": "Lina",
+        "texte": "Quatrième module en service : <b>ORGANISER</b>. Mon tableau est propre, et on voit tout d'un coup d'œil. Il reste le plus important : transformer ces mesures en bulletin pour la sortie. Madame Vasseur t'attend dans la salle de prévision."
+      }
+    },
+    {
+      "num": 5,
+      "titre": "Le bulletin du jour",
+      "decor": "studio",
+      "motCle": "PRÉVOIR",
+      "lieu": "📡 La salle de prévision",
+      "description": "Un grand écran montre une carte, un soleil, un nuage et une flèche de vent. Le micro attend. Pour lancer le bulletin, il faut entrer la valeur de vérité de mercredi : trois mesures justes.",
+      "sens": ["👁️ la carte sur l'écran", "👂 le ronronnement des ordinateurs", "👃 le café du matin"],
+      "dialogue_intro": {
+        "perso": "vasseur",
+        "nom": "Madame Vasseur",
+        "texte": "Dernier module. Mesurer, c'est bien ; prévoir, c'est mieux. La météo, c'est le temps qu'il fait aujourd'hui et dans les jours qui viennent. Le climat, c'est autre chose : une moyenne sur trente ans. Montrez-moi que vous ne les confondez pas, puis entrez la valeur de vérité de mercredi : la température maximale, la vitesse du vent et la hauteur de pluie."
+      },
+      "dialogue_fin": {
+        "perso": "lina",
+        "nom": "Lina",
+        "texte": "Le bulletin est à l'antenne ! Mesurer, orienter, cumuler, organiser, pour prévoir : c'est tout le travail d'une station. Demain matin, on recommence les relevés dans la cour. Tu viens avec moi ?"
+      }
+    }
+  ]
+}

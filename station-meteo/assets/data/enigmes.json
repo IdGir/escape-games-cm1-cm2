@@ -1,0 +1,1454 @@
+{
+  "metadata": {
+    "jeu": "La Station météo disparue",
+    "version": 1,
+    "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+    "types": [
+      "qcm",
+      "vraifaux",
+      "association",
+      "ordre",
+      "tri",
+      "trous",
+      "lettres",
+      "code",
+      "intrus",
+      "plan",
+      "instrument"
+    ],
+    "instrument": "Type propre à ce jeu (js/enigmes.js) : {instrument:'thermometre'|'pluviometre', unite, min, max, pas, etiquettes, items:[{libelle, mode:'lire'|'regler', valeur, depart}]}. En mode « lire », l'élève écrit la valeur ; en mode « regler », il règle le niveau sans voir de nombre.",
+    "coherence": "Semaine fictive de la station de l'école. Min : 9, 11, 12, 8, 7 °C. Max : 17, 19, 21, 14, 16 °C. Vent : 12, 18, 24, 30, 8 km/h. Pluie : 0, 3, 7, 12, 0 mm. Mercredi = jour de l'orage ; code final 21 / 24 / 7.",
+    "sources": "Météo-France (mesure de la température sous abri à 1,50 m ; météo et climat) ; Organisation météorologique mondiale (mesure du vent, échelle de Beaufort) ; Eaufrance (1 mm = 1 L/m²) ; Fondation La main à la pâte (station météo d'école) ; programme de sciences et technologie du cycle 3.",
+    "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e1-2\",\"legende\":\"…\",\"source\":\"…\"}. Déposez alors e1-2.jpg dans assets/images/cartes/. Sans fichier, l'énigme reste jouable."
+  },
+  "salles": [
+    {
+      "num": 1,
+      "titre": "L'abri météo — mesurer la température",
+      "enigmes": [
+        {
+          "id": "1-1",
+          "titre": "Lire le thermomètre",
+          "type": "instrument",
+          "consigne": {
+            "cm1": "Voici trois relevés du thermomètre de l'école, mercredi, le jour de l'orage. Regarde où s'arrête le liquide rouge, compte les graduations, puis écris la température lue sous chaque thermomètre. Une petite graduation vaut <b>1 degré</b>.",
+            "cm2": "Lis les trois premiers thermomètres et écris la température (attention au signe <b>moins</b> sous zéro). Pour le quatrième, utilise ▲ et ▼ (ou clique sur l'échelle) pour régler le liquide sur la température demandée. Une petite graduation vaut 1 degré."
+          },
+          "source": "Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique » (cycle 3) ; Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "On lit le nombre de la graduation où s'arrête le haut du liquide. Sous zéro, on compte vers le bas et on écrit le signe moins : −4 °C se lit « moins quatre degrés ». Mercredi, la température la plus haute était de 21 °C, à 15 h.",
+          "indices": {
+            "cm1": [
+              "Les grands traits portent un nombre : 0, 5, 10, 15, 20… Entre deux grands traits, il y a 5 petites graduations.",
+              "Pars du grand trait juste en dessous du liquide, puis compte les petits traits jusqu'au sommet du liquide.",
+              "Réponses : un nombre entre 10 et 25 pour chaque thermomètre. Le plus chaud est celui de 15 h."
+            ],
+            "cm2": [
+              "Repère d'abord le trait du 0 (en pointillés). Au-dessus, les températures sont positives ; en dessous, négatives.",
+              "Pour une température négative, compte les graduations en descendant depuis 0 et écris le signe « − » devant.",
+              "Pour régler −3 °C : le liquide doit s'arrêter trois petites graduations sous le 0."
+            ]
+          },
+          "cm1": {
+            "instrument": "thermometre",
+            "unite": "°C",
+            "min": 0,
+            "max": 30,
+            "pas": 1,
+            "etiquettes": 5,
+            "items": [
+              {
+                "libelle": "Mercredi, 8 h",
+                "mode": "lire",
+                "valeur": 12
+              },
+              {
+                "libelle": "Mercredi, midi",
+                "mode": "lire",
+                "valeur": 18
+              },
+              {
+                "libelle": "Mercredi, 15 h",
+                "mode": "lire",
+                "valeur": 21
+              }
+            ]
+          },
+          "cm2": {
+            "instrument": "thermometre",
+            "unite": "°C",
+            "min": -10,
+            "max": 30,
+            "pas": 1,
+            "etiquettes": 5,
+            "items": [
+              {
+                "libelle": "Mercredi, 8 h",
+                "mode": "lire",
+                "valeur": 12
+              },
+              {
+                "libelle": "Mercredi, 15 h",
+                "mode": "lire",
+                "valeur": 21
+              },
+              {
+                "libelle": "Un matin de janvier",
+                "mode": "lire",
+                "valeur": -4
+              },
+              {
+                "libelle": "Règle : une nuit de gel à −3 °C",
+                "mode": "regler",
+                "valeur": -3,
+                "depart": 0
+              }
+            ]
+          },
+          "lecon": "thermometre"
+        },
+        {
+          "id": "1-2",
+          "titre": "Où placer le thermomètre ?",
+          "type": "qcm",
+          "media": {
+            "base": "e1-2",
+            "legende": "Un abri météorologique à persiennes",
+            "source": "Photographie facultative, à déposer par l'enseignant"
+          },
+          "consigne": {
+            "cm1": "Le thermomètre a été retrouvé en plein soleil, sur le muret. Réponds aux trois questions pour le remettre à la bonne place, puis vérifie.",
+            "cm2": "Réponds aux trois questions. Une seule réponse est juste par question : pense à ce qui pourrait fausser la mesure."
+          },
+          "source": "Météo-France, « Qu'est-ce que la température ? » : mesure sous abri, à 1,50 m du sol",
+          "correction": "Météo-France mesure la température de l'air sous abri, à 1,50 m du sol, dans un abri blanc et percé d'ouvertures. L'abri laisse passer l'air mais protège le capteur du soleil et de la pluie : ainsi, on mesure bien l'air, et toutes les stations peuvent comparer leurs relevés.",
+          "indices": {
+            "cm1": [
+              "Au soleil, un objet chauffe beaucoup plus que l'air autour de lui.",
+              "L'abri est blanc : le blanc renvoie la lumière du soleil.",
+              "La bonne hauteur est à peu près celle de ta tête quand tu es debout : 1,50 m."
+            ],
+            "cm2": [
+              "On veut mesurer la température de l'air, pas celle du sol ni celle d'un mur.",
+              "Pour comparer deux stations, il faut qu'elles mesurent de la même façon.",
+              "Les ouvertures de l'abri laissent circuler l'air ; le toit arrête le soleil et la pluie."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Pour mesurer la température de l'air, le thermomètre doit être…",
+                "options": [
+                  "à l'ombre, dans son abri",
+                  "en plein soleil",
+                  "posé sur le sol"
+                ],
+                "bonne": 0,
+                "explication": "Au soleil, le thermomètre chauffe lui-même : il indique plus que la température de l'air."
+              },
+              {
+                "q": "À quelle hauteur place-t-on le thermomètre dans l'abri ?",
+                "options": [
+                  "à 1,50 m du sol",
+                  "au ras du sol",
+                  "sur le toit de l'école"
+                ],
+                "bonne": 0,
+                "explication": "C'est la hauteur utilisée par Météo-France : toutes les stations mesurent de la même façon."
+              },
+              {
+                "q": "Pourquoi l'abri météo est-il blanc ?",
+                "options": [
+                  "pour renvoyer la lumière du soleil",
+                  "pour qu'on le voie la nuit",
+                  "parce que c'est plus joli"
+                ],
+                "bonne": 0,
+                "explication": "Une couleur claire chauffe moins au soleil qu'une couleur foncée."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Pourquoi l'abri est-il percé d'ouvertures (des persiennes) ?",
+                "options": [
+                  "pour que l'air circule autour du capteur",
+                  "pour que la pluie mouille le thermomètre",
+                  "pour que le soleil éclaire le thermomètre",
+                  "pour faire moins lourd"
+                ],
+                "bonne": 0,
+                "explication": "L'air doit circuler : le capteur prend alors la température de l'air qui l'entoure."
+              },
+              {
+                "q": "Deux écoles comparent leurs températures. Pourquoi mesurent-elles toutes les deux à 1,50 m, sous abri ?",
+                "options": [
+                  "pour que leurs mesures soient comparables",
+                  "parce que c'est plus facile à lire",
+                  "parce que l'air est plus chaud à 1,50 m",
+                  "parce que c'est la taille du thermomètre"
+                ],
+                "bonne": 0,
+                "explication": "Les mêmes règles de mesure, partout, permettent d'échanger et de comparer les relevés (normes de l'Organisation météorologique mondiale)."
+              },
+              {
+                "q": "La température maximale d'une journée, c'est…",
+                "options": [
+                  "la température la plus haute relevée ce jour-là",
+                  "la température relevée à midi",
+                  "la moyenne de la journée",
+                  "la température relevée au soleil"
+                ],
+                "bonne": 0,
+                "explication": "Le maximum n'a pas lieu forcément à midi : mercredi, il a été atteint vers 15 h."
+              }
+            ]
+          },
+          "lecon": "thermometre"
+        },
+        {
+          "id": "1-3",
+          "titre": "Du plus froid au plus chaud",
+          "type": "ordre",
+          "consigne": {
+            "cm1": "Le cahier de relevés est trempé : les températures sont mélangées. Range-les <b>de la plus froide (en haut) à la plus chaude (en bas)</b> avec les flèches ▲ ▼.",
+            "cm2": "Range ces températures <b>de la plus froide (en haut) à la plus chaude (en bas)</b>. Attention : sous zéro, plus le nombre après le signe moins est grand, plus il fait froid."
+          },
+          "source": "Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "Pour comparer des températures, on les place sur la graduation du thermomètre : plus on est bas, plus il fait froid. −6 °C est plus froid que −1 °C, qui est plus froid que 0 °C.",
+          "indices": {
+            "cm1": [
+              "Compare d'abord les nombres qui n'ont qu'un chiffre.",
+              "La plus froide est 7 °C.",
+              "La plus chaude est 21 °C : c'est mercredi à 15 h."
+            ],
+            "cm2": [
+              "Les températures négatives sont toutes plus froides que 0 °C.",
+              "Imagine un thermomètre : −6 est plus bas que −1.",
+              "Ordre attendu : d'abord les deux températures négatives, puis 0 °C, puis les positives."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "7 °C",
+                "sous": "vendredi, au lever du jour",
+                "rang": 1
+              },
+              {
+                "txt": "12 °C",
+                "sous": "mercredi, 8 h",
+                "rang": 2
+              },
+              {
+                "txt": "16 °C",
+                "sous": "vendredi, après-midi",
+                "rang": 3
+              },
+              {
+                "txt": "18 °C",
+                "sous": "mercredi, midi",
+                "rang": 4
+              },
+              {
+                "txt": "21 °C",
+                "sous": "mercredi, 15 h",
+                "rang": 5
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "−6 °C",
+                "sous": "une nuit de janvier",
+                "rang": 1
+              },
+              {
+                "txt": "−1 °C",
+                "sous": "un matin de gel léger",
+                "rang": 2
+              },
+              {
+                "txt": "0 °C",
+                "sous": "l'eau commence à geler",
+                "rang": 3
+              },
+              {
+                "txt": "7 °C",
+                "sous": "vendredi, au lever du jour",
+                "rang": 4
+              },
+              {
+                "txt": "12 °C",
+                "sous": "mercredi, 8 h",
+                "rang": 5
+              },
+              {
+                "txt": "21 °C",
+                "sous": "mercredi, 15 h",
+                "rang": 6
+              }
+            ]
+          },
+          "lecon": "thermometre"
+        },
+        {
+          "id": "1-4",
+          "titre": "Mesure fiable ou mesure faussée ?",
+          "type": "tri",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Lina a noté comment chaque camarade a mesuré la température. Clique sur une carte, puis sur la colonne qui convient. Une mesure est <b>fiable</b> si elle respecte les règles de la station.",
+          "source": "Météo-France, « Qu'est-ce que la température ? » : mesure sous abri, à 1,50 m du sol ; Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique » (cycle 3)",
+          "correction": "Une mesure fiable se fait à l'ombre, sous abri ventilé, à 1,50 m, loin d'une source de chaleur, et toujours de la même façon (même lieu, même heure). Un thermomètre tenu à la main, posé au soleil ou près d'un mur chaud mesure autre chose que l'air.",
+          "indices": [
+            "Pose-toi la question : est-ce que quelque chose réchauffe ou refroidit le thermomètre, en plus de l'air ?",
+            "La main, le soleil, un mur chauffé, le sol : tout cela fausse la mesure.",
+            "Il y a trois mesures fiables et trois mesures faussées."
+          ],
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "fiable",
+                "titre": "Mesure fiable"
+              },
+              {
+                "id": "faussee",
+                "titre": "Mesure faussée"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Léo lit le thermomètre dans l'abri, à 1,50 m, tous les jours à 8 h.",
+                "col": "fiable"
+              },
+              {
+                "txt": "Sara attend deux minutes avant de lire, sans toucher le thermomètre.",
+                "col": "fiable"
+              },
+              {
+                "txt": "Noé note aussi le jour et l'heure à côté de chaque mesure.",
+                "col": "fiable"
+              },
+              {
+                "txt": "Inès tient le thermomètre serré dans sa main pendant la lecture.",
+                "col": "faussee"
+              },
+              {
+                "txt": "Hugo pose le thermomètre sur le muret, en plein soleil.",
+                "col": "faussee"
+              },
+              {
+                "txt": "Maëlle accroche le thermomètre contre le mur de la cantine, près de la sortie d'air chaud.",
+                "col": "faussee"
+              }
+            ]
+          },
+          "lecon": "thermometre"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "titre": "Le mât du vent — direction et vitesse",
+      "enigmes": [
+        {
+          "id": "2-1",
+          "titre": "La rose des vents",
+          "type": "plan",
+          "consigne": {
+            "cm1": "L'orage a fait tourner la croix des points cardinaux. Replace les quatre points cardinaux : clique sur une étiquette, puis sur la case qui lui correspond.",
+            "cm2": "Replace les huit directions sur les branches de la rose des vents. La <b>branche 1 montre le nord</b> ; les numéros tournent dans le sens des aiguilles d'une montre."
+          },
+          "source": "Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique » (cycle 3)",
+          "correction": "Le soleil se lève à l'est et se couche à l'ouest ; en France, à midi, il est au sud. Le nord est à l'opposé. Entre deux points cardinaux, on nomme les directions intermédiaires : nord-est, sud-est, sud-ouest, nord-ouest.",
+          "indices": {
+            "cm1": [
+              "Le matin, le soleil se lève à l'est.",
+              "Le soir, il se couche à l'ouest.",
+              "En France, le soleil de midi est au sud : le nord est dans ton dos."
+            ],
+            "cm2": [
+              "Nord en haut (1), sud en bas (5), est à droite (3), ouest à gauche (7).",
+              "Une direction intermédiaire prend le nom de ses deux voisins, en commençant par nord ou sud.",
+              "La branche 2 est entre le nord et l'est : c'est le nord-est."
+            ]
+          },
+          "cm1": {
+            "titre": "Rose des vents de la station",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Là où le soleil se lève le matin",
+                "reponse": "Est"
+              },
+              {
+                "libelle": "Là où le soleil se couche le soir",
+                "reponse": "Ouest"
+              },
+              {
+                "libelle": "Là où se trouve le soleil à midi, en France",
+                "reponse": "Sud"
+              },
+              {
+                "libelle": "À l'opposé du soleil de midi",
+                "reponse": "Nord"
+              }
+            ],
+            "etiquettes": [
+              "Nord",
+              "Sud",
+              "Est",
+              "Ouest"
+            ]
+          },
+          "cm2": {
+            "titre": "<svg class=\"graphe-consigne\" style=\"max-width:240px\" viewBox=\"0 0 240 240\" role=\"img\" aria-label=\"Rose des vents à huit branches numérotées de 1 à 8 ; la branche 1 est en haut, les numéros tournent dans le sens des aiguilles d'une montre\"><circle cx=\"120\" cy=\"120\" r=\"22\" fill=\"#eef3f8\" stroke=\"#5b6b7a\"/><polygon points=\"129.0,120.0 120.0,28.0 111.0,120.0\" fill=\"#1d3a8a\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"120.0\" cy=\"12.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"120.0\" y=\"16.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">1</text><polygon points=\"124.9,124.9 166.7,73.3 115.1,115.1\" fill=\"#5aa0d8\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"178.0\" cy=\"62.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"178.0\" y=\"66.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">2</text><polygon points=\"120.0,129.0 212.0,120.0 120.0,111.0\" fill=\"#1d3a8a\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"228.0\" cy=\"120.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"228.0\" y=\"124.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">3</text><polygon points=\"115.1,124.9 166.7,166.7 124.9,115.1\" fill=\"#5aa0d8\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"178.0\" cy=\"178.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"178.0\" y=\"182.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">4</text><polygon points=\"111.0,120.0 120.0,212.0 129.0,120.0\" fill=\"#1d3a8a\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"120.0\" cy=\"228.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"120.0\" y=\"232.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">5</text><polygon points=\"115.1,115.1 73.3,166.7 124.9,124.9\" fill=\"#5aa0d8\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"178.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"62.0\" y=\"182.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">6</text><polygon points=\"120.0,111.0 28.0,120.0 120.0,129.0\" fill=\"#1d3a8a\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"12.0\" cy=\"120.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"12.0\" y=\"124.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">7</text><polygon points=\"124.9,115.1 73.3,73.3 115.1,124.9\" fill=\"#5aa0d8\" stroke=\"#13286b\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"62.0\" r=\"10\" fill=\"#fff\" stroke=\"#13286b\"/><text x=\"62.0\" y=\"66.0\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#13286b\">8</text></svg>",
+            "colonnes": 4,
+            "cases": [
+              {
+                "libelle": "Branche 1",
+                "reponse": "Nord"
+              },
+              {
+                "libelle": "Branche 2",
+                "reponse": "Nord-Est"
+              },
+              {
+                "libelle": "Branche 3",
+                "reponse": "Est"
+              },
+              {
+                "libelle": "Branche 4",
+                "reponse": "Sud-Est"
+              },
+              {
+                "libelle": "Branche 5",
+                "reponse": "Sud"
+              },
+              {
+                "libelle": "Branche 6",
+                "reponse": "Sud-Ouest"
+              },
+              {
+                "libelle": "Branche 7",
+                "reponse": "Ouest"
+              },
+              {
+                "libelle": "Branche 8",
+                "reponse": "Nord-Ouest"
+              }
+            ],
+            "etiquettes": [
+              "Nord",
+              "Nord-Est",
+              "Est",
+              "Sud-Est",
+              "Sud",
+              "Sud-Ouest",
+              "Ouest",
+              "Nord-Ouest"
+            ]
+          },
+          "lecon": "vent"
+        },
+        {
+          "id": "2-2",
+          "titre": "Girouette et anémomètre",
+          "type": "vraifaux",
+          "media": {
+            "base": "e2-2",
+            "legende": "Une girouette et un anémomètre à coupelles",
+            "source": "Photographie facultative, à déposer par l'enseignant"
+          },
+          "consigne": "Pour chaque phrase, clique sur <b>Vrai</b> ou sur <b>Faux</b>, puis vérifie. Les lignes vertes sont justes : reprends seulement les autres.",
+          "source": "Organisation météorologique mondiale, Guide des instruments et des méthodes d'observation (OMM-N° 8) : vent mesuré à 10 m au-dessus d'un terrain dégagé, moyenne sur 10 minutes ; Échelle de Beaufort (Organisation météorologique mondiale) : vitesses en km/h et effets observés à terre",
+          "correction": "La girouette indique la direction d'où vient le vent ; l'anémomètre mesure sa vitesse, en km/h ou en m/s. Un vent d'ouest vient de l'ouest. Pour être comparables, les mesures de vent se font à 10 m de haut, en terrain dégagé.",
+          "indices": {
+            "cm1": [
+              "Deux phrases sont vraies, deux sont fausses.",
+              "On nomme un vent d'après l'endroit d'où il vient, comme un voyageur d'après sa ville de départ.",
+              "Une vitesse se mesure en kilomètres par heure, comme pour une voiture."
+            ],
+            "cm2": [
+              "Trois phrases sont vraies, trois sont fausses.",
+              "Au ras du sol, les murs et les arbres freinent le vent : la mesure serait faussée.",
+              "Une rafale, c'est un coup de vent bref, plus fort que la moyenne."
+            ]
+          },
+          "cm1": {
+            "affirmations": [
+              {
+                "txt": "La girouette indique d'où vient le vent.",
+                "vrai": true,
+                "explication": "Sa flèche pointe vers la direction d'où arrive le vent."
+              },
+              {
+                "txt": "L'anémomètre mesure la vitesse du vent.",
+                "vrai": true,
+                "explication": "Plus ses coupelles tournent vite, plus le vent est fort."
+              },
+              {
+                "txt": "Un vent d'ouest souffle vers l'ouest.",
+                "vrai": false,
+                "explication": "Un vent d'ouest vient de l'ouest et souffle vers l'est."
+              },
+              {
+                "txt": "La vitesse du vent se mesure en degrés.",
+                "vrai": false,
+                "explication": "Elle se mesure en kilomètres par heure (km/h) ou en mètres par seconde (m/s)."
+              }
+            ]
+          },
+          "cm2": {
+            "affirmations": [
+              {
+                "txt": "La girouette indique d'où vient le vent.",
+                "vrai": true,
+                "explication": "Sa flèche pointe vers la direction d'où arrive le vent."
+              },
+              {
+                "txt": "Un vent d'ouest souffle vers l'ouest.",
+                "vrai": false,
+                "explication": "Un vent d'ouest vient de l'ouest et souffle vers l'est."
+              },
+              {
+                "txt": "Mercredi, l'anémomètre indique 24 km/h : c'est une jolie brise, force 4 sur l'échelle de Beaufort.",
+                "vrai": true,
+                "explication": "La force 4 correspond à un vent de 20 à 28 km/h."
+              },
+              {
+                "txt": "Pour une mesure fiable, on place l'anémomètre au ras du sol, à l'abri des murs.",
+                "vrai": false,
+                "explication": "On le place à 10 m de haut, en terrain dégagé, loin des obstacles."
+              },
+              {
+                "txt": "Un vent de 1 m/s correspond à 3,6 km/h.",
+                "vrai": true,
+                "explication": "En une heure (3 600 secondes), on parcourt 3 600 m, soit 3,6 km."
+              },
+              {
+                "txt": "La rafale est la vitesse moyenne du vent sur dix minutes.",
+                "vrai": false,
+                "explication": "La rafale est une pointe de vent, brève et plus forte que la moyenne."
+              }
+            ]
+          },
+          "lecon": "vent"
+        },
+        {
+          "id": "2-3",
+          "titre": "L'échelle de Beaufort",
+          "type": "association",
+          "consigne": {
+            "cm1": "Le capitaine Keïta ne regarde pas toujours l'anémomètre : il observe la nature. Relie chaque vent (à gauche) à ce que l'on observe (à droite). Clique à gauche, puis à droite.",
+            "cm2": "Relie chaque degré de l'échelle de Beaufort à ce que l'on observe à terre. Clique à gauche, puis à droite."
+          },
+          "source": "Échelle de Beaufort (Organisation météorologique mondiale) : vitesses en km/h et effets observés à terre",
+          "correction": "L'échelle de Beaufort classe le vent de 0 (calme) à 12 (ouragan), d'après sa vitesse et ses effets visibles. Mercredi, à 24 km/h, le vent était de force 4 : une jolie brise.",
+          "indices": {
+            "cm1": [
+              "Plus le vent est rapide, plus les objets bougent.",
+              "Quand il n'y a pas de vent, la fumée monte tout droit.",
+              "Le vent de mercredi (24 km/h) soulève la poussière et agite les petites branches."
+            ],
+            "cm2": [
+              "Force 0 : aucun mouvement. Force 12 : dégâts importants.",
+              "Force 2 : on sent le vent sur le visage.",
+              "Force 6 : les grosses branches s'agitent et le parapluie devient difficile à tenir."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "Calme : moins de 1 km/h",
+                "d": "La fumée monte tout droit."
+              },
+              {
+                "g": "Légère brise : 6 à 11 km/h",
+                "d": "On sent le vent sur le visage, les feuilles frémissent."
+              },
+              {
+                "g": "Jolie brise : 20 à 28 km/h (mercredi : 24 km/h)",
+                "d": "La poussière se soulève, les petites branches bougent sans arrêt."
+              },
+              {
+                "g": "Vent frais : 39 à 49 km/h",
+                "d": "Les grosses branches s'agitent, le parapluie se tient mal."
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "Force 0 · moins de 1 km/h",
+                "d": "La fumée monte verticalement."
+              },
+              {
+                "g": "Force 2 · 6 à 11 km/h",
+                "d": "On sent le vent sur le visage, les feuilles frémissent."
+              },
+              {
+                "g": "Force 4 · 20 à 28 km/h",
+                "d": "La poussière se soulève, les petites branches bougent sans arrêt."
+              },
+              {
+                "g": "Force 6 · 39 à 49 km/h",
+                "d": "Les grosses branches s'agitent, les fils tendus sifflent."
+              },
+              {
+                "g": "Force 12 · 118 km/h et plus",
+                "d": "Ouragan : des dégâts très importants."
+              }
+            ]
+          },
+          "lecon": "vent"
+        },
+        {
+          "id": "2-4",
+          "titre": "Le carnet du capitaine",
+          "type": "trous",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Complète le carnet du capitaine Keïta : clique sur une étiquette, puis sur le trou. Attention, certaines étiquettes ne servent à rien.",
+          "source": "Organisation météorologique mondiale, Guide des instruments et des méthodes d'observation (OMM-N° 8) : vent mesuré à 10 m au-dessus d'un terrain dégagé, moyenne sur 10 minutes",
+          "correction": "La girouette donne la direction d'où vient le vent, l'anémomètre sa vitesse. On les installe à 10 m au-dessus d'un terrain dégagé. La vitesse retenue est une moyenne sur dix minutes ; une pointe brève et plus forte s'appelle une rafale.",
+          "indices": [
+            "Deux instruments : l'un pour la direction, l'autre pour la vitesse.",
+            "1,50 m, c'est la hauteur du thermomètre, pas celle de l'anémomètre.",
+            "Le mot qui manque à la fin désigne un coup de vent bref et fort."
+          ],
+          "cm2": {
+            "texte": "La girouette indique la [[direction]] d'où vient le vent ; l'[[anémomètre]] mesure sa [[vitesse]]. Pour que les mesures soient comparables partout dans le monde, on installe ces instruments à [[10 m]] au-dessus d'un terrain dégagé. On retient la vitesse moyenne sur dix minutes ; un coup de vent bref et plus fort s'appelle une [[rafale]].",
+            "etiquettes": [
+              "direction",
+              "anémomètre",
+              "vitesse",
+              "10 m",
+              "rafale",
+              "1,50 m",
+              "pluviomètre",
+              "température"
+            ]
+          },
+          "lecon": "vent"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "titre": "Le pluviomètre — mesurer la pluie",
+      "enigmes": [
+        {
+          "id": "3-1",
+          "titre": "Lire le pluviomètre",
+          "type": "instrument",
+          "consigne": {
+            "cm1": "Voici trois relevés du pluviomètre, lus chaque matin. Regarde le haut de l'eau, compte les graduations et écris la hauteur de pluie en <b>millimètres</b>. Une petite graduation vaut <b>1 mm</b>.",
+            "cm2": "Lis les trois premiers pluviomètres. Ici, une petite graduation vaut <b>0,5 mm</b> : écris la hauteur avec une virgule si besoin. Pour le quatrième, règle le niveau d'eau avec ▲ et ▼ (ou clique sur l'échelle)."
+          },
+          "source": "Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique » (cycle 3) ; Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "On lit la graduation qui touche le haut de l'eau, les yeux bien en face. Mercredi, le pluviomètre indiquait 7 mm de pluie tombée en 24 heures.",
+          "indices": {
+            "cm1": [
+              "Les grands traits portent 0, 5, 10, 15 et 20.",
+              "Pars du grand trait juste en dessous de l'eau et compte les petits traits en montant.",
+              "Le relevé de mercredi est entre 5 et 10 mm, deux graduations au-dessus du 5."
+            ],
+            "cm2": [
+              "Entre deux grands traits (5 mm), il y a 10 petites graduations : chacune vaut 0,5 mm.",
+              "Deux petites graduations font 1 mm.",
+              "Pour 9,5 mm : un petit trait sous le 10."
+            ]
+          },
+          "cm1": {
+            "instrument": "pluviometre",
+            "unite": "mm",
+            "min": 0,
+            "max": 20,
+            "pas": 1,
+            "etiquettes": 5,
+            "items": [
+              {
+                "libelle": "Mardi matin",
+                "mode": "lire",
+                "valeur": 3
+              },
+              {
+                "libelle": "Mercredi matin",
+                "mode": "lire",
+                "valeur": 7
+              },
+              {
+                "libelle": "Jeudi matin",
+                "mode": "lire",
+                "valeur": 12
+              }
+            ]
+          },
+          "cm2": {
+            "instrument": "pluviometre",
+            "unite": "mm",
+            "min": 0,
+            "max": 20,
+            "pas": 0.5,
+            "etiquettes": 5,
+            "items": [
+              {
+                "libelle": "Mercredi matin",
+                "mode": "lire",
+                "valeur": 7
+              },
+              {
+                "libelle": "Jeudi matin",
+                "mode": "lire",
+                "valeur": 12
+              },
+              {
+                "libelle": "Pluviomètre du jardin partagé",
+                "mode": "lire",
+                "valeur": 4.5
+              },
+              {
+                "libelle": "Règle : 9,5 mm",
+                "mode": "regler",
+                "valeur": 9.5,
+                "depart": 5
+              }
+            ]
+          },
+          "lecon": "pluie"
+        },
+        {
+          "id": "3-2",
+          "titre": "Un millimètre de pluie",
+          "type": "qcm",
+          "media": {
+            "base": "e3-2",
+            "legende": "Un pluviomètre gradué installé dans un jardin",
+            "source": "Photographie facultative, à déposer par l'enseignant"
+          },
+          "consigne": {
+            "cm1": "Tiago te pose trois questions sur son pluviomètre. Choisis une réponse par question, puis vérifie.",
+            "cm2": "Réponds aux trois questions. Pour la dernière, un calcul est nécessaire : pose-le au brouillon."
+          },
+          "source": "Eaufrance, « Les volumes de précipitations » : une hauteur de 1 mm correspond à 1 litre d'eau par mètre carré ; Fondation La main à la pâte, « Construire quelques instruments d'une station météorologique » (cycle 3)",
+          "correction": "Une hauteur de 1 mm d'eau sur une surface de 1 m² représente 1 litre (1 mm × 1 m² = 1 dm³). Le pluviomètre s'installe dans un endroit dégagé, loin des arbres et des murs, et on le vide après chaque lecture.",
+          "indices": {
+            "cm1": [
+              "La règle graduée du pluviomètre est la même que celle de ta règle : des millimètres.",
+              "Sous un arbre, les feuilles arrêtent une partie de la pluie.",
+              "1 mm de pluie sur un carré d'un mètre de côté remplit une bouteille d'un litre."
+            ],
+            "cm2": [
+              "Si on ne vide pas le tube, la pluie de mardi s'ajoute à celle de mercredi.",
+              "1 mm sur 1 m² = 1 litre. 7 mm sur 1 m² = 7 litres.",
+              "Sur 200 m², il faut multiplier par 200 : 7 × 200."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Dans quelle unité lit-on une hauteur de pluie ?",
+                "options": [
+                  "en millimètres (mm)",
+                  "en degrés (°C)",
+                  "en kilomètres par heure (km/h)"
+                ],
+                "bonne": 0,
+                "explication": "On mesure la hauteur d'eau tombée, comme avec une règle."
+              },
+              {
+                "q": "Où installe-t-on le pluviomètre ?",
+                "options": [
+                  "dans un endroit dégagé, loin des arbres et des murs",
+                  "sous un arbre, pour le protéger",
+                  "sous le préau"
+                ],
+                "bonne": 0,
+                "explication": "Rien ne doit arrêter la pluie avant qu'elle entre dans le pluviomètre."
+              },
+              {
+                "q": "1 mm de pluie, cela représente…",
+                "options": [
+                  "1 litre d'eau sur chaque mètre carré",
+                  "1 litre d'eau pour toute la cour",
+                  "une seule goutte"
+                ],
+                "bonne": 0,
+                "explication": "Mercredi, avec 7 mm, il est tombé 7 litres d'eau sur chaque mètre carré."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Pourquoi Tiago vide-t-il le pluviomètre chaque matin, après la lecture ?",
+                "options": [
+                  "pour mesurer la pluie de chaque journée séparément",
+                  "pour que l'eau ne gèle pas",
+                  "pour arroser le jardin",
+                  "parce que le tube est trop petit"
+                ],
+                "bonne": 0,
+                "explication": "Sinon, la pluie des jours précédents s'ajouterait : on lirait un cumul, pas la pluie du jour."
+              },
+              {
+                "q": "Pourquoi ne faut-il pas installer le pluviomètre près d'un mur ?",
+                "options": [
+                  "le mur peut arrêter la pluie ou la renvoyer vers le tube",
+                  "le mur réchauffe l'eau",
+                  "le mur fait peur aux oiseaux",
+                  "le mur empêche de lire"
+                ],
+                "bonne": 0,
+                "explication": "Un obstacle proche fausse la quantité d'eau recueillie, en plus ou en moins."
+              },
+              {
+                "q": "La cour mesure 200 m². Mercredi, il est tombé 7 mm. Combien de litres d'eau sont tombés sur la cour ?",
+                "options": [
+                  "1 400 litres",
+                  "207 litres",
+                  "7 litres",
+                  "140 litres"
+                ],
+                "bonne": 0,
+                "explication": "7 mm = 7 litres par mètre carré ; 7 × 200 = 1 400 litres."
+              }
+            ]
+          },
+          "lecon": "pluie"
+        },
+        {
+          "id": "3-3",
+          "titre": "Du plus sec au plus arrosé",
+          "type": "ordre",
+          "consigne": {
+            "cm1": "Range les jours <b>du plus sec (en haut) au plus arrosé (en bas)</b>.",
+            "cm2": "Range ces pluies <b>de la plus faible (en haut) à la plus forte (en bas)</b>. Certaines sont données en litres par mètre carré : convertis-les d'abord en millimètres."
+          },
+          "source": "Eaufrance, « Les volumes de précipitations » : une hauteur de 1 mm correspond à 1 litre d'eau par mètre carré ; Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "Pour comparer des pluies, on compare leurs hauteurs en millimètres. Comme 1 L/m² = 1 mm, 7 litres tombés sur 1 m² font 7 mm, et 15 litres sur 1 m² font 15 mm.",
+          "indices": {
+            "cm1": [
+              "Le jour le plus sec est celui où il n'est pas tombé une goutte.",
+              "Compare 3, 7 et 12.",
+              "Le plus arrosé est jeudi."
+            ],
+            "cm2": [
+              "7 litres sur 1 m² = 7 mm ; 15 litres sur 1 m² = 15 mm.",
+              "0,5 mm est plus petit que 3 mm.",
+              "Ordre attendu : 0,5 ; 3 ; 7 ; 12 ; 15."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "Lundi : 0 mm",
+                "rang": 1
+              },
+              {
+                "txt": "Mardi : 3 mm",
+                "rang": 2
+              },
+              {
+                "txt": "Mercredi : 7 mm",
+                "rang": 3
+              },
+              {
+                "txt": "Jeudi : 12 mm",
+                "rang": 4
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "Une bruine : 0,5 mm",
+                "rang": 1
+              },
+              {
+                "txt": "Mardi : 3 mm",
+                "rang": 2
+              },
+              {
+                "txt": "Mercredi : 7 litres tombés sur 1 m²",
+                "rang": 3
+              },
+              {
+                "txt": "Jeudi : 12 mm",
+                "rang": 4
+              },
+              {
+                "txt": "Un orage d'été : 15 litres tombés sur 1 m²",
+                "rang": 5
+              }
+            ]
+          },
+          "lecon": "pluie"
+        },
+        {
+          "id": "3-4",
+          "titre": "Le cadenas du cumul",
+          "type": "code",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Le cahier de Tiago indique pour la semaine : lundi 0 mm, mardi 3 mm, mercredi 7 mm, jeudi 12 mm, vendredi 0 mm. Ouvre le cadenas avec deux nombres.",
+          "source": "Eaufrance, « Les volumes de précipitations » : une hauteur de 1 mm correspond à 1 litre d'eau par mètre carré ; Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "Le cumul est la somme des hauteurs : 0 + 3 + 7 + 12 + 0 = 22 mm. Mercredi, 7 mm sur 10 m² : 7 × 10 = 70 litres.",
+          "indices": [
+            "Cumuler, c'est additionner les pluies de tous les jours.",
+            "0 + 3 + 7 + 12 + 0 = ?",
+            "1 mm = 1 litre par mètre carré ; le potager fait 10 m²."
+          ],
+          "cm2": {
+            "champs": [
+              {
+                "libelle": "Cumul de la semaine (en mm)",
+                "valeur": "22",
+                "longueur": 3
+              },
+              {
+                "libelle": "Litres tombés mercredi sur le potager de 10 m²",
+                "valeur": "70",
+                "longueur": 4
+              }
+            ]
+          },
+          "lecon": "pluie"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "titre": "Le tableau des relevés — organiser et exploiter",
+      "enigmes": [
+        {
+          "id": "4-1",
+          "titre": "Les cases effacées",
+          "type": "plan",
+          "consigne": {
+            "cm1": "La pluie a effacé quatre cases du tableau de Lina (A, B, C, D). Retrouve-les grâce à son carnet, puis place les bonnes étiquettes. Attention aux <b>unités</b>.<table class=\"tableau-releves\"><tr><th></th><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th></tr><tr><th>Minimum (°C)</th><td>9</td><td><b>A</b></td><td>12</td><td>8</td><td>7</td></tr><tr><th>Maximum (°C)</th><td>17</td><td>19</td><td><b>B</b></td><td>14</td><td>16</td></tr><tr><th>Vent (km/h)</th><td>12</td><td>18</td><td><b>C</b></td><td>30</td><td>8</td></tr><tr><th>Pluie (mm)</th><td>0</td><td>3</td><td>7</td><td><b>D</b></td><td>0</td></tr></table><p><i>Carnet de Lina :</i> « Mardi, au lever du jour, le thermomètre marquait 11 °C. Mercredi, au plus chaud, 21 °C. Mercredi, l'anémomètre indiquait 24 km/h. Jeudi, le pluviomètre était monté à 12 mm. »</p>",
+            "cm2": "La pluie a effacé cinq cases du tableau (A à E). Retrouve-les grâce au carnet de Lina, calcule celle qui manque, puis place les étiquettes. Attention aux <b>unités</b>.<table class=\"tableau-releves\"><tr><th></th><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th></tr><tr><th>Minimum (°C)</th><td>9</td><td><b>A</b></td><td>12</td><td>8</td><td>7</td></tr><tr><th>Maximum (°C)</th><td>17</td><td>19</td><td><b>B</b></td><td>14</td><td>16</td></tr><tr><th>Écart (°C)</th><td>8</td><td>8</td><td><b>E</b></td><td>6</td><td>9</td></tr><tr><th>Vent (km/h)</th><td>12</td><td>18</td><td><b>C</b></td><td>30</td><td>8</td></tr><tr><th>Pluie (mm)</th><td>0</td><td>3</td><td>7</td><td><b>D</b></td><td>0</td></tr></table><p><i>Carnet de Lina :</i> « Mardi, au lever du jour : 11 °C. Mercredi, au plus chaud : 21 °C. Mercredi, vent moyen : 24 km/h. Jeudi, pluviomètre : 12 mm. » La ligne « Écart » donne la différence entre le maximum et le minimum du jour.</p>"
+          },
+          "source": "Relevés de la station fictive de l'école (données du jeu) ; Programme de sciences et technologie du cycle 3 : réaliser et exploiter des mesures météorologiques",
+          "correction": "Dans un tableau à double entrée, chaque case croise une ligne (la grandeur mesurée) et une colonne (le jour). L'unité dépend de la ligne : °C pour la température, km/h pour le vent, mm pour la pluie. L'écart de mercredi vaut 21 − 12 = 9 °C.",
+          "indices": {
+            "cm1": [
+              "Lis le nom de la ligne pour trouver l'unité : une température ne peut pas être en mm.",
+              "A est le minimum de mardi, B le maximum de mercredi.",
+              "C est une vitesse de vent, D une hauteur de pluie."
+            ],
+            "cm2": [
+              "L'unité dépend de la ligne : °C, km/h ou mm.",
+              "E = maximum de mercredi − minimum de mercredi.",
+              "21 − 12 = 9."
+            ]
+          },
+          "cm1": {
+            "titre": "Cases à retrouver",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Case A : minimum de mardi",
+                "reponse": "11 °C"
+              },
+              {
+                "libelle": "Case B : maximum de mercredi",
+                "reponse": "21 °C"
+              },
+              {
+                "libelle": "Case C : vent de mercredi",
+                "reponse": "24 km/h"
+              },
+              {
+                "libelle": "Case D : pluie de jeudi",
+                "reponse": "12 mm"
+              }
+            ],
+            "etiquettes": [
+              "11 °C",
+              "21 °C",
+              "24 km/h",
+              "12 mm",
+              "12 °C",
+              "21 mm"
+            ]
+          },
+          "cm2": {
+            "titre": "Cases à retrouver",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Case A : minimum de mardi",
+                "reponse": "11 °C"
+              },
+              {
+                "libelle": "Case B : maximum de mercredi",
+                "reponse": "21 °C"
+              },
+              {
+                "libelle": "Case C : vent de mercredi",
+                "reponse": "24 km/h"
+              },
+              {
+                "libelle": "Case D : pluie de jeudi",
+                "reponse": "12 mm"
+              },
+              {
+                "libelle": "Case E : écart de mercredi",
+                "reponse": "9 °C"
+              }
+            ],
+            "etiquettes": [
+              "11 °C",
+              "21 °C",
+              "24 km/h",
+              "12 mm",
+              "9 °C",
+              "33 °C",
+              "12 °C",
+              "24 mm"
+            ]
+          },
+          "lecon": "releves"
+        },
+        {
+          "id": "4-2",
+          "titre": "La valeur impossible",
+          "type": "intrus",
+          "consigne": {
+            "cm1": "Un relevé a été mal noté : le thermomètre avait été posé en plein soleil. Clique sur la valeur qui ne va pas avec les autres.",
+            "cm2": "Un relevé contient une erreur de recopie : il est <b>impossible</b>. Clique dessus."
+          },
+          "source": "Relevés de la station fictive de l'école (données du jeu) ; Météo-France, « Qu'est-ce que la température ? »",
+          "correction": "Une valeur aberrante est une mesure qui ne peut pas être juste : trop éloignée des autres, ou impossible (un minimum ne peut pas être plus élevé que le maximum du même jour). On ne la garde pas : on cherche d'où vient l'erreur.",
+          "indices": {
+            "cm1": [
+              "Compare les nombres : toute la semaine, le maximum reste entre 14 et 21 °C.",
+              "Un thermomètre au soleil chauffe beaucoup plus que l'air.",
+              "La valeur fausse dépasse de loin toutes les autres."
+            ],
+            "cm2": [
+              "Le minimum est la valeur la plus basse de la journée ; le maximum, la plus haute.",
+              "Pour chaque jour, vérifie que le minimum est plus petit que le maximum.",
+              "Un jour a des valeurs inversées."
+            ]
+          },
+          "cm1": {
+            "cartes": [
+              {
+                "txt": "Lundi : 17 °C",
+                "sous": "maximum"
+              },
+              {
+                "txt": "Mardi : 19 °C",
+                "sous": "maximum"
+              },
+              {
+                "txt": "Mercredi : 21 °C",
+                "sous": "maximum"
+              },
+              {
+                "txt": "Jeudi : 41 °C",
+                "sous": "maximum",
+                "intrus": true
+              },
+              {
+                "txt": "Vendredi : 16 °C",
+                "sous": "maximum"
+              }
+            ]
+          },
+          "cm2": {
+            "cartes": [
+              {
+                "txt": "Lundi",
+                "sous": "minimum 9 °C · maximum 17 °C"
+              },
+              {
+                "txt": "Mardi",
+                "sous": "minimum 11 °C · maximum 19 °C"
+              },
+              {
+                "txt": "Mercredi",
+                "sous": "minimum 12 °C · maximum 21 °C"
+              },
+              {
+                "txt": "Jeudi",
+                "sous": "minimum 14 °C · maximum 8 °C",
+                "intrus": true
+              },
+              {
+                "txt": "Vendredi",
+                "sous": "minimum 7 °C · maximum 16 °C"
+              }
+            ]
+          },
+          "lecon": "releves"
+        },
+        {
+          "id": "4-3",
+          "titre": "Ce que dit le tableau",
+          "type": "trous",
+          "consigne": {
+            "cm1": "Complète le résumé de la semaine à l'aide du tableau (minimum : 9, 11, 12, 8, 7 ; maximum : 17, 19, 21, 14, 16 ; pluie : 0, 3, 7, 12, 0).",
+            "cm2": "Complète le résumé de la semaine à l'aide du tableau (minimum : 9, 11, 12, 8, 7 °C ; maximum : 17, 19, 21, 14, 16 °C ; vent : 12, 18, 24, 30, 8 km/h ; pluie : 0, 3, 7, 12, 0 mm). Certaines étiquettes sont des pièges."
+          },
+          "source": "Relevés de la station fictive de l'école (données du jeu) ; Programme de sciences et technologie du cycle 3 : réaliser et exploiter des mesures météorologiques",
+          "correction": "Le minimum de la semaine est la plus petite valeur (7 °C, vendredi), le maximum la plus grande (21 °C, mercredi) ; l'écart est la différence : 21 − 7 = 14 °C. Le cumul de pluie est la somme : 22 mm.",
+          "indices": {
+            "cm1": [
+              "Cherche le plus petit nombre de la ligne « minimum ».",
+              "Cherche le plus grand nombre de la ligne « maximum ».",
+              "Écart : 21 − 7."
+            ],
+            "cm2": [
+              "Écart : plus grande valeur moins plus petite valeur.",
+              "Cumul : 0 + 3 + 7 + 12 + 0.",
+              "Deux jours n'ont reçu aucune pluie ; le vent le plus fort a soufflé jeudi."
+            ]
+          },
+          "cm1": {
+            "texte": "La température la plus basse de la semaine est [[7 °C]], vendredi. La plus haute est [[21 °C]], mercredi. L'écart entre les deux est de [[14 °C]]. Le jour le plus arrosé est [[jeudi]].",
+            "etiquettes": [
+              "7 °C",
+              "21 °C",
+              "14 °C",
+              "jeudi",
+              "9 °C",
+              "lundi",
+              "28 °C"
+            ]
+          },
+          "cm2": {
+            "texte": "La température la plus basse de la semaine est [[7 °C]] et la plus haute [[21 °C]] : l'écart est de [[14 °C]]. Il est tombé au total [[22 mm]] de pluie, et il n'a pas plu pendant [[2]] jours. Le vent le plus fort a soufflé [[jeudi]].",
+            "etiquettes": [
+              "7 °C",
+              "21 °C",
+              "14 °C",
+              "22 mm",
+              "2",
+              "jeudi",
+              "28 °C",
+              "12 mm",
+              "3",
+              "mercredi"
+            ]
+          },
+          "lecon": "releves"
+        },
+        {
+          "id": "4-4",
+          "titre": "Le graphique de la pluie",
+          "type": "qcm",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Lina a transformé la ligne « pluie » du tableau en diagramme en barres. Lis-le, puis réponds aux trois questions.<svg class=\"graphe-consigne\" viewBox=\"0 0 480 230\" role=\"img\" aria-label=\"Diagramme en barres : hauteur de pluie relevée chaque jour, du lundi au vendredi, graduée de 0 à 14 millimètres\"><line x1=\"56\" y1=\"196.0\" x2=\"460\" y2=\"196.0\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"200.0\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">0</text><line x1=\"56\" y1=\"171.4\" x2=\"460\" y2=\"171.4\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"175.4\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">2</text><line x1=\"56\" y1=\"146.9\" x2=\"460\" y2=\"146.9\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"150.9\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">4</text><line x1=\"56\" y1=\"122.3\" x2=\"460\" y2=\"122.3\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"126.3\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">6</text><line x1=\"56\" y1=\"97.7\" x2=\"460\" y2=\"97.7\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"101.7\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">8</text><line x1=\"56\" y1=\"73.1\" x2=\"460\" y2=\"73.1\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"77.1\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">10</text><line x1=\"56\" y1=\"48.6\" x2=\"460\" y2=\"48.6\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"52.6\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">12</text><line x1=\"56\" y1=\"24.0\" x2=\"460\" y2=\"24.0\" stroke=\"#d5dde5\"/><text x=\"48\" y=\"28.0\" font-size=\"11\" text-anchor=\"end\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">14</text><text x=\"96\" y=\"212\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">Lun</text><rect x=\"154\" y=\"159.1\" width=\"44\" height=\"36.9\" fill=\"#5aa0d8\" stroke=\"#1d5c8f\"/><text x=\"176\" y=\"212\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">Mar</text><rect x=\"234\" y=\"110.0\" width=\"44\" height=\"86.0\" fill=\"#5aa0d8\" stroke=\"#1d5c8f\"/><text x=\"256\" y=\"212\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">Mer</text><rect x=\"314\" y=\"48.6\" width=\"44\" height=\"147.4\" fill=\"#5aa0d8\" stroke=\"#1d5c8f\"/><text x=\"336\" y=\"212\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">Jeu</text><text x=\"416\" y=\"212\" font-size=\"12\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">Ven</text><line x1=\"56\" y1=\"196\" x2=\"460\" y2=\"196\" stroke=\"#1f2430\" stroke-width=\"1.5\"/><line x1=\"56\" y1=\"196\" x2=\"56\" y2=\"18\" stroke=\"#1f2430\" stroke-width=\"1.5\"/><text x=\"12\" y=\"16\" font-size=\"11\" font-family=\"Arial,sans-serif\" fill=\"#1f2430\">Pluie (mm)</text></svg>",
+          "source": "Relevés de la station fictive de l'école (données du jeu) ; Programme de sciences et technologie du cycle 3 : réaliser et exploiter des mesures météorologiques",
+          "correction": "Dans un diagramme en barres, la hauteur de chaque barre se lit sur l'axe gradué. Jeudi (12 mm) a reçu 5 mm de plus que mercredi (7 mm). Lundi et vendredi n'ont pas de barre : il n'a pas plu.",
+          "indices": [
+            "Suis le haut de chaque barre jusqu'à l'axe de gauche.",
+            "Une graduation de l'axe vaut 2 mm.",
+            "Jeudi : 12 mm ; mercredi : 7 mm."
+          ],
+          "cm2": {
+            "questions": [
+              {
+                "q": "Quel jour a été le plus arrosé ?",
+                "options": [
+                  "jeudi",
+                  "mercredi",
+                  "vendredi",
+                  "mardi"
+                ],
+                "bonne": 0,
+                "explication": "La barre de jeudi est la plus haute : 12 mm."
+              },
+              {
+                "q": "Combien de millimètres de plus sont tombés jeudi que mercredi ?",
+                "options": [
+                  "5 mm",
+                  "7 mm",
+                  "12 mm",
+                  "19 mm"
+                ],
+                "bonne": 0,
+                "explication": "12 − 7 = 5 mm."
+              },
+              {
+                "q": "Combien de jours sans pluie compte cette semaine ?",
+                "options": [
+                  "2",
+                  "0",
+                  "1",
+                  "3"
+                ],
+                "bonne": 0,
+                "explication": "Lundi et vendredi n'ont pas de barre."
+              }
+            ]
+          },
+          "lecon": "releves"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "titre": "Le bulletin du jour — de la mesure à la prévision",
+      "enigmes": [
+        {
+          "id": "5-1",
+          "titre": "Météo ou climat ?",
+          "type": "tri",
+          "consigne": {
+            "cm1": "Madame Vasseur a mélangé ses fiches. Range chaque phrase : parle-t-elle de la <b>météo</b> (le temps d'un jour précis) ou du <b>climat</b> (le temps habituel, sur une très longue durée) ?",
+            "cm2": "Range chaque phrase : <b>météo</b> (le temps d'un moment ou d'un jour précis) ou <b>climat</b> (une moyenne sur une longue période, en général trente ans) ?"
+          },
+          "source": "Météo-France, « Quelle différence entre météo et climat ? » : le climat se décrit sur des périodes de référence de 30 ans",
+          "correction": "La météo décrit le temps qu'il fait à un endroit et à un moment donnés : il change d'heure en heure. Le climat décrit le temps habituel d'une région, calculé comme une moyenne sur une longue période (trente ans pour les climatologues).",
+          "indices": {
+            "cm1": [
+              "Une phrase avec « demain », « ce matin » ou « mercredi » parle de météo.",
+              "Une phrase avec « en général » ou « tout au long de l'année » parle de climat.",
+              "Il y a trois phrases de chaque sorte."
+            ],
+            "cm2": [
+              "Un seul jour ou un seul événement : météo.",
+              "Une moyenne ou une habitude sur des années : climat.",
+              "Il y a quatre phrases de chaque sorte."
+            ]
+          },
+          "cm1": {
+            "colonnes": [
+              {
+                "id": "meteo",
+                "titre": "Météo"
+              },
+              {
+                "id": "climat",
+                "titre": "Climat"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Demain, il pleuvra l'après-midi.",
+                "col": "meteo"
+              },
+              {
+                "txt": "Ce matin, il fait 12 °C dans la cour.",
+                "col": "meteo"
+              },
+              {
+                "txt": "Mercredi, le vent soufflait à 24 km/h.",
+                "col": "meteo"
+              },
+              {
+                "txt": "Au Sahara, il pleut très peu tout au long de l'année.",
+                "col": "climat"
+              },
+              {
+                "txt": "En général, il pleut plus à Brest qu'à Marseille.",
+                "col": "climat"
+              },
+              {
+                "txt": "Chez nous, l'hiver est en général plus froid que l'été.",
+                "col": "climat"
+              }
+            ]
+          },
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "meteo",
+                "titre": "Météo"
+              },
+              {
+                "id": "climat",
+                "titre": "Climat"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Demain, il pleuvra l'après-midi.",
+                "col": "meteo"
+              },
+              {
+                "txt": "Ce matin, il fait 12 °C dans la cour.",
+                "col": "meteo"
+              },
+              {
+                "txt": "Cette nuit, un orage a déréglé la station.",
+                "col": "meteo"
+              },
+              {
+                "txt": "Jeudi, le vent a soufflé à 30 km/h.",
+                "col": "meteo"
+              },
+              {
+                "txt": "Au Sahara, il pleut très peu tout au long de l'année.",
+                "col": "climat"
+              },
+              {
+                "txt": "En moyenne, il pleut plus à Brest qu'à Marseille.",
+                "col": "climat"
+              },
+              {
+                "txt": "Les « normales » de température sont calculées sur trente ans.",
+                "col": "climat"
+              },
+              {
+                "txt": "Chez nous, les hivers sont en général plus froids que les étés.",
+                "col": "climat"
+              }
+            ]
+          },
+          "lecon": "bulletin"
+        },
+        {
+          "id": "5-2",
+          "titre": "Prévoir la sortie",
+          "type": "association",
+          "consigne": {
+            "cm1": "Pour la sortie, relie chaque prévision (à gauche) au bon conseil (à droite).",
+            "cm2": "Pour la sortie, relie chaque prévision (à gauche) au conseil qui en découle (à droite)."
+          },
+          "source": "Programme de sciences et technologie du cycle 3 : réaliser et exploiter des mesures météorologiques ; Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "Une prévision sert à décider : on s'équipe contre la pluie, le froid ou le soleil, et on renonce à une activité quand le vent ou l'orage la rendent dangereuse.",
+          "indices": {
+            "cm1": [
+              "Contre la pluie, il faut un vêtement qui ne laisse pas passer l'eau.",
+              "Avec un vent fort, on ne sort pas en bateau.",
+              "Sous zéro, le sol peut devenir glissant."
+            ],
+            "cm2": [
+              "Chaque conseil répond à un seul danger ou à une seule gêne.",
+              "Pendant un orage, on reste à l'abri et on s'éloigne des arbres isolés.",
+              "Sous zéro, l'eau gèle : le sol peut glisser."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "Pluie annoncée l'après-midi",
+                "d": "Prendre un vêtement de pluie"
+              },
+              {
+                "g": "Vent frais, force 6",
+                "d": "Reporter la sortie en bateau"
+              },
+              {
+                "g": "Soleil et 21 °C",
+                "d": "Casquette et gourde d'eau"
+              },
+              {
+                "g": "−2 °C au petit matin",
+                "d": "Bonnet, gants, attention au sol glissant"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "Averses en fin de journée",
+                "d": "Prévoir un vêtement de pluie pour le retour"
+              },
+              {
+                "g": "Vent frais, force 6",
+                "d": "Reporter la sortie en bateau"
+              },
+              {
+                "g": "Soleil et 21 °C",
+                "d": "Casquette et gourde d'eau"
+              },
+              {
+                "g": "−2 °C au petit matin",
+                "d": "Bonnet, gants, attention au sol glissant"
+              },
+              {
+                "g": "Orage annoncé",
+                "d": "Rester à l'abri, loin des arbres isolés"
+              }
+            ]
+          },
+          "lecon": "bulletin"
+        },
+        {
+          "id": "5-3",
+          "titre": "Le mot caché du bulletin",
+          "type": "lettres",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Dans le bulletin, certaines lettres sont en relief. Clique, <b>dans l'ordre</b>, sur celles qui forment la direction d'où venait le vent mercredi.",
+          "source": "Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "Mercredi, la girouette indiquait un vent venant de l'ouest : le mot caché est OUEST. Un vent d'ouest vient de l'ouest et souffle vers l'est.",
+          "indices": [
+            "Le capitaine Keïta l'a dit en quittant le mât.",
+            "C'est un point cardinal de cinq lettres.",
+            "Le mot commence par O."
+          ],
+          "cm2": {
+            "cible": [
+              "O",
+              "U",
+              "E",
+              "S",
+              "T"
+            ],
+            "texte": "<p>« Bonj<span data-l='O'>o</span>ur à t<span data-l='U'>u</span>s. Mercredi, le ther<span data-l='M'>m</span>omètre est monté à 21 °C sous abri. L'anémomètr<span data-l='E'>e</span> a relevé un vent moyen de 24 km/h, force 4. Le pluviomètre a recueilli 7 mm. <span data-l='N'>N</span>ous prévoyons pour la sortie une matinée <span data-l='S'>s</span>èche, puis des averses en fin de journée. Pensez à empor<span data-l='T'>t</span>er un coupe-vent. <span data-l='R'>R</span>endez-vous demain matin pour les relevés. »</p>"
+          },
+          "lecon": "bulletin"
+        },
+        {
+          "id": "5-4",
+          "titre": "La valeur de vérité",
+          "type": "code",
+          "consigne": {
+            "cm1": "Pour lancer le bulletin, entre la <b>valeur de vérité</b> de mercredi : les trois mesures justes que tu as retrouvées dans les modules 1, 2 et 3.",
+            "cm2": "Pour lancer le bulletin, entre la <b>valeur de vérité</b> de mercredi : la température maximale sous abri, la vitesse moyenne du vent et la hauteur de pluie. Toutes les trois ont été lues dans les modules précédents."
+          },
+          "source": "Relevés de la station fictive de l'école (données du jeu)",
+          "correction": "Mercredi : 21 °C au maximum sous abri (module 1), un vent moyen de 24 km/h venant de l'ouest (module 2), 7 mm de pluie (module 3). Trois mesures fiables, prises avec les bons instruments et au bon endroit : c'est la base de toute prévision.",
+          "indices": {
+            "cm1": [
+              "La température maximale a été lue à 15 h, dans le module 1.",
+              "La vitesse du vent de mercredi est celle d'une jolie brise, force 4 (module 2).",
+              "La pluie de mercredi a été lue dans le pluviomètre (module 3) : un nombre plus petit que 10."
+            ],
+            "cm2": [
+              "Relis le tableau du module 4 : colonne « Mer ».",
+              "Température maximale : ligne « Maximum ». Vent : ligne « Vent ».",
+              "La pluie de mercredi a été lue dans le module 3 : un nombre plus petit que 10."
+            ]
+          },
+          "commun": {
+            "champs": [
+              {
+                "libelle": "Température maximale (°C)",
+                "valeur": "21",
+                "longueur": 3
+              },
+              {
+                "libelle": "Vent moyen (km/h)",
+                "valeur": "24",
+                "longueur": 3
+              },
+              {
+                "libelle": "Hauteur de pluie (mm)",
+                "valeur": "7",
+                "longueur": 3
+              }
+            ]
+          },
+          "lecon": "bulletin"
+        }
+      ]
+    }
+  ]
+}
