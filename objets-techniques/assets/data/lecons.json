@@ -1,0 +1,220 @@
+{
+  "_commentaire": "Leçons rédigées du jeu (bouton 📚). Une leçon par salle ; chaque énigme y renvoie par son champ \"lecon\". Contenu différencié cm1 / cm2.",
+  "salles": {
+    "1": "Salle 1 — Le besoin et la fonction d'usage",
+    "2": "Salle 2 — Les constituants et leurs fonctions",
+    "3": "Salle 3 — Les matériaux",
+    "4": "Salle 4 — Énergie et mouvement",
+    "5": "Salle 5 — La notice et le montage"
+  },
+  "lecons": [
+    {
+      "id": "besoin-fonction",
+      "icone": "🎯",
+      "titre": "À quoi sert un objet ?",
+      "salle": 1,
+      "duree": "3 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Définir un objet technique",
+        "Relier un objet au besoin auquel il répond",
+        "Distinguer fonction d'usage et fonction d'estime"
+      ],
+      "contenu": {
+        "cm1": "<h4>Un objet technique répond à un besoin</h4><p>Un <b>objet technique</b> est un objet fabriqué par l'être humain. On l'invente parce qu'on a un <b>besoin</b> : voir dans le noir, se déplacer, transporter ses affaires.</p><div class='encadre'>La <b>fonction d'usage</b>, c'est ce à quoi sert l'objet. On la dit avec un verbe : la lampe torche sert à <b>éclairer</b>, le vélo sert à <b>se déplacer</b>.</div><h4>Utile et agréable</h4><p>On choisit aussi un objet parce qu'il nous plaît : sa couleur, sa forme, sa décoration. C'est la <b>fonction d'estime</b>. Deux trousses de couleurs différentes rangent aussi bien les crayons.</p>",
+        "cm2": "<h4>Du besoin à l'objet</h4><p>Un <b>objet technique</b> est conçu et fabriqué par l'être humain pour répondre à un <b>besoin</b>. Un galet ramassé dans la rivière n'est pas un objet technique ; un parapluie en est un.</p><div class='encadre'>La <b>fonction d'usage</b> décrit ce que l'objet permet de faire, avec un verbe d'action : <i>la lampe torche permet d'éclairer loin d'une prise</i>. La <b>fonction d'estime</b> explique pourquoi on préfère un modèle à un autre : couleur, forme, marque, décoration.</div><h4>Les objets évoluent</h4><p>Quand les besoins changent, les objets changent. Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage.</p>"
+      },
+      "schema": "<svg viewBox=\"0 0 520 170\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;max-width:520px;height:auto;font-family:system-ui,sans-serif\"><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0 0L10 5L0 10z\" fill=\"#3a3a3a\"/></marker></defs><rect x=\"10\" y=\"50\" width=\"150\" height=\"54\" rx=\"8\" fill=\"#fff4d6\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"85.0\" y=\"73\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#1f2430\">Le besoin</text><text x=\"85.0\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">« je ne vois rien »</text><line x1=\"160\" y1=\"77\" x2=\"195\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"195\" y=\"50\" width=\"150\" height=\"54\" rx=\"8\" fill=\"#e3eefa\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"270.0\" y=\"73\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#1f2430\">L'objet</text><text x=\"270.0\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">la lampe torche</text><line x1=\"345\" y1=\"77\" x2=\"380\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"380\" y=\"50\" width=\"130\" height=\"54\" rx=\"8\" fill=\"#e4f3e1\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"445.0\" y=\"73\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#1f2430\">Fonction</text><text x=\"445.0\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">d'usage : éclairer</text><text x=\"260\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">Le besoin fait naître l'objet ; la fonction d'usage dit à quoi il sert.</text></svg>",
+      "lexique": [
+        {
+          "mot": "objet technique",
+          "def": "objet fabriqué par l'être humain pour répondre à un besoin"
+        },
+        {
+          "mot": "besoin",
+          "def": "ce qui manque, ce que l'on veut pouvoir faire"
+        },
+        {
+          "mot": "fonction d'usage",
+          "def": "ce à quoi sert l'objet"
+        },
+        {
+          "mot": "fonction d'estime",
+          "def": "ce qui fait que l'objet plaît"
+        }
+      ],
+      "sources": [
+        "Programme de sciences et technologie du cycle 3, thème « Matériaux et objets techniques » (éduscol) : « Besoin, fonction d'usage et d'estime ».",
+        "Fondation La main à la pâte, rubrique « Objets techniques »."
+      ]
+    },
+    {
+      "id": "constituants",
+      "icone": "🔧",
+      "titre": "De quoi l'objet est-il fait ?",
+      "salle": 2,
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Nommer les pièces d'un objet",
+        "Dire le rôle de chaque pièce",
+        "Distinguer fonction technique et solution technique"
+      ],
+      "contenu": {
+        "cm1": "<h4>Un objet est fait de plusieurs pièces</h4><p>Quand on ouvre une lampe torche, on trouve un <b>boîtier</b>, des <b>piles</b>, un <b>interrupteur</b> et une <b>ampoule</b>. Ce sont ses <b>constituants</b>.</p><div class='encadre'>Chaque pièce a un rôle : la pile fournit l'énergie, l'interrupteur ouvre et ferme le circuit, l'ampoule produit la lumière, le boîtier protège et se tient dans la main. Ce rôle s'appelle une <b>fonction technique</b>.</div><p>Si une seule pièce manque, l'objet ne fonctionne plus.</p>",
+        "cm2": "<h4>Décrire un objet technique</h4><p>Un objet technique est un assemblage de <b>constituants</b>. Pour le décrire, on nomme chaque pièce et on dit son rôle dans le fonctionnement de l'objet : c'est sa <b>fonction technique</b>.</p><div class='encadre'><b>Fonction d'usage</b> : à quoi sert l'objet entier (éclairer).<br><b>Fonction technique</b> : à quoi sert une pièce (fournir l'énergie, renvoyer la lumière vers l'avant).<br><b>Solution technique</b> : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).</div><h4>Plusieurs solutions pour une même fonction</h4><p>Pour « ouvrir et fermer le circuit », on peut choisir un bouton-poussoir ou un interrupteur à glissière. Pour « freiner » un vélo, des patins sur la jante ou un frein à disque. On représente ces choix par un <b>schéma</b> légendé.</p>"
+      },
+      "schema": "<svg viewBox=\"0 0 520 170\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;max-width:520px;height:auto;font-family:system-ui,sans-serif\"><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0 0L10 5L0 10z\" fill=\"#3a3a3a\"/></marker></defs><rect x=\"120\" y=\"60\" width=\"250\" height=\"56\" rx=\"10\" fill=\"#dfe6ee\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"150\" y=\"72\" width=\"70\" height=\"32\" rx=\"4\" fill=\"#f2c94c\" stroke=\"#3a3a3a\"/><text x=\"185\" y=\"93\" text-anchor=\"middle\" font-size=\"12\">pile</text><rect x=\"232\" y=\"72\" width=\"70\" height=\"32\" rx=\"4\" fill=\"#f2c94c\" stroke=\"#3a3a3a\"/><text x=\"267\" y=\"93\" text-anchor=\"middle\" font-size=\"12\">pile</text><rect x=\"230\" y=\"116\" width=\"34\" height=\"10\" rx=\"3\" fill=\"#b03a2e\"/><path d=\"M370 56 L420 36 L420 140 L370 120 Z\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><circle cx=\"392\" cy=\"88\" r=\"12\" fill=\"#fff6b0\" stroke=\"#3a3a3a\"/><line x1=\"425\" y1=\"88\" x2=\"470\" y2=\"88\" stroke=\"#e0a800\" stroke-width=\"3\" stroke-dasharray=\"5 4\"/><text x=\"245\" y=\"152\" text-anchor=\"middle\" font-size=\"12\">interrupteur</text><text x=\"245\" y=\"46\" text-anchor=\"middle\" font-size=\"12\">boîtier</text><text x=\"455\" y=\"30\" text-anchor=\"middle\" font-size=\"12\">réflecteur et lentille</text><text x=\"392\" y=\"165\" text-anchor=\"middle\" font-size=\"12\">ampoule</text></svg>",
+      "lexique": [
+        {
+          "mot": "constituant",
+          "def": "une des pièces qui composent l'objet"
+        },
+        {
+          "mot": "fonction technique",
+          "def": "le rôle d'une pièce dans le fonctionnement"
+        },
+        {
+          "mot": "solution technique",
+          "def": "la pièce choisie pour remplir une fonction technique"
+        },
+        {
+          "mot": "schéma",
+          "def": "dessin simplifié qui montre les pièces et leur place"
+        }
+      ],
+      "sources": [
+        "Programme de sciences et technologie du cycle 3, thème « Matériaux et objets techniques » (éduscol) : « Fonction technique, solutions techniques », « Représentation du fonctionnement d'un objet technique ».",
+        "Fondation La main à la pâte, rubrique « Objets techniques »."
+      ]
+    },
+    {
+      "id": "materiaux",
+      "icone": "🧱",
+      "titre": "Les matériaux",
+      "salle": 3,
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Classer des matériaux en familles",
+        "Connaître quelques propriétés",
+        "Justifier le choix d'un matériau"
+      ],
+      "contenu": {
+        "cm1": "<h4>Les familles de matériaux</h4><p>Un <b>matériau</b> est une matière qu'on utilise pour fabriquer un objet. On les range en familles :</p><div class='encadre'><b>Les métaux</b> : fer, acier, aluminium, cuivre.<br><b>Les matières plastiques</b> : bouteilles, règles, boîtiers.<br><b>Les matériaux d'origine végétale ou animale</b> : bois, coton, laine, cuir.<br><b>Le verre et les céramiques</b> : vitres, bocaux, assiettes en porcelaine.</div><h4>Choisir le bon matériau</h4><p>On choisit un matériau pour ses <b>propriétés</b> : le verre est transparent, le métal laisse passer le courant, le plastique l'arrête, le bois est léger.</p>",
+        "cm2": "<h4>Matière et matériau</h4><p>La <b>matière</b> est ce dont une chose est faite. Un <b>matériau</b> est une matière choisie et préparée pour fabriquer un objet. On classe les matériaux en <b>familles</b> : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques.</p><div class='encadre'><b>Propriétés utiles</b> : dur ou souple, léger ou lourd, transparent ou opaque, <b>conducteur</b> (laisse passer le courant ou la chaleur) ou <b>isolant</b> (les arrête), cassant ou résistant aux chocs.</div><h4>Un choix réfléchi</h4><p>La poignée d'une casserole est en bois ou en plastique parce que ces matériaux conduisent mal la chaleur. On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets.</p>"
+      },
+      "schema": "<svg viewBox=\"0 0 520 170\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;max-width:520px;height:auto;font-family:system-ui,sans-serif\"><rect x=\"8\" y=\"10\" width=\"120\" height=\"150\" rx=\"8\" fill=\"#e3e7ec\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"68\" y=\"32\" text-anchor=\"middle\" font-size=\"12.5\" font-weight=\"bold\">Métaux</text><text x=\"68\" y=\"76\" text-anchor=\"middle\" font-size=\"12\">fer, acier</text><text x=\"68\" y=\"96\" text-anchor=\"middle\" font-size=\"12\">aluminium</text><text x=\"68\" y=\"116\" text-anchor=\"middle\" font-size=\"12\">cuivre</text><rect x=\"136\" y=\"10\" width=\"120\" height=\"150\" rx=\"8\" fill=\"#e3eefa\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"196\" y=\"32\" text-anchor=\"middle\" font-size=\"12.5\" font-weight=\"bold\">Matières</text><text x=\"196\" y=\"48\" text-anchor=\"middle\" font-size=\"12.5\" font-weight=\"bold\">plastiques</text><text x=\"196\" y=\"76\" text-anchor=\"middle\" font-size=\"12\">bouteille</text><text x=\"196\" y=\"96\" text-anchor=\"middle\" font-size=\"12\">règle</text><text x=\"196\" y=\"116\" text-anchor=\"middle\" font-size=\"12\">boîtier</text><rect x=\"264\" y=\"10\" width=\"120\" height=\"150\" rx=\"8\" fill=\"#e4f3e1\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"324\" y=\"32\" text-anchor=\"middle\" font-size=\"12.5\" font-weight=\"bold\">Origine végétale</text><text x=\"324\" y=\"48\" text-anchor=\"middle\" font-size=\"12.5\" font-weight=\"bold\">ou animale</text><text x=\"324\" y=\"76\" text-anchor=\"middle\" font-size=\"12\">bois, coton</text><text x=\"324\" y=\"96\" text-anchor=\"middle\" font-size=\"12\">laine, cuir</text><rect x=\"392\" y=\"10\" width=\"120\" height=\"150\" rx=\"8\" fill=\"#fbeee0\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"452\" y=\"32\" text-anchor=\"middle\" font-size=\"12.5\" font-weight=\"bold\">Verre et</text><text x=\"452\" y=\"48\" text-anchor=\"middle\" font-size=\"12.5\" font-weight=\"bold\">céramiques</text><text x=\"452\" y=\"76\" text-anchor=\"middle\" font-size=\"12\">vitre, bocal</text><text x=\"452\" y=\"96\" text-anchor=\"middle\" font-size=\"12\">porcelaine</text></svg>",
+      "lexique": [
+        {
+          "mot": "matière",
+          "def": "ce dont une chose est faite"
+        },
+        {
+          "mot": "matériau",
+          "def": "matière choisie pour fabriquer un objet"
+        },
+        {
+          "mot": "conducteur",
+          "def": "qui laisse passer le courant électrique ou la chaleur"
+        },
+        {
+          "mot": "isolant",
+          "def": "qui empêche le courant ou la chaleur de passer"
+        },
+        {
+          "mot": "recycler",
+          "def": "transformer un objet usagé en matière pour un nouvel objet"
+        }
+      ],
+      "sources": [
+        "Programme de sciences et technologie du cycle 3, thème « Matériaux et objets techniques » (éduscol) : « Familles de matériaux », « Caractéristiques et propriétés », « Impact environnemental ».",
+        "Éduscol, ressource d'accompagnement « Matériaux et objets techniques » (cycle 3)."
+      ]
+    },
+    {
+      "id": "energie-mouvement",
+      "icone": "⚙️",
+      "titre": "Énergie et mouvement",
+      "salle": 4,
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Identifier la source d'énergie d'un objet",
+        "Ordonner une chaîne d'énergie",
+        "Reconnaître des systèmes de transmission du mouvement"
+      ],
+      "contenu": {
+        "cm1": "<h4>D'où vient l'énergie ?</h4><p>Un objet a besoin d'<b>énergie</b> pour fonctionner. Elle peut venir des <b>muscles</b> (trottinette), d'une <b>pile</b> (télécommande), de la <b>prise électrique</b> (réfrigérateur), du <b>vent</b> (éolienne) ou du <b>soleil</b> (calculatrice solaire).</p><div class='encadre'>Dans une lampe torche : la pile contient l'énergie, on appuie sur l'interrupteur, le courant circule, l'ampoule s'allume. C'est la <b>chaîne d'énergie</b>.</div><h4>Transmettre le mouvement</h4><p>Des pièces transmettent le mouvement : les <b>roues dentées</b> d'un engrenage, la <b>poulie</b> et sa corde, le <b>levier</b> qui pivote autour d'un point d'appui, la <b>roue</b> qui roule.</p>",
+        "cm2": "<h4>La chaîne d'énergie</h4><p>Tout objet qui fonctionne utilise une <b>source d'énergie</b> : les muscles, une pile ou une batterie, le courant du secteur, le vent, l'eau ou le soleil. L'énergie passe par une <b>commande</b>, est <b>transmise</b>, puis <b>transformée</b> en effet utile : lumière, mouvement, chaleur.</p><div class='encadre'>Vélo : les muscles des jambes font tourner le pédalier ; la <b>chaîne</b> transmet le mouvement au pignon ; le pignon entraîne la roue arrière ; le vélo avance.</div><h4>Les systèmes de transmission</h4><p><b>Engrenage</b> : deux roues dentées en contact, qui tournent en sens contraire. <b>Poulies et courroie</b> : deux roues à gorge éloignées, reliées par une courroie. <b>Chaîne</b> : relie deux roues dentées éloignées. <b>Levier</b> : barre qui pivote autour d'un point d'appui. <b>Manivelle</b> : transforme un va-et-vient en rotation. Le <b>moteur</b> électrique fournit un mouvement de rotation.</p>"
+      },
+      "schema": "<svg viewBox=\"0 0 520 170\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;max-width:520px;height:auto;font-family:system-ui,sans-serif\"><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0 0L10 5L0 10z\" fill=\"#3a3a3a\"/></marker></defs><rect x=\"5\" y=\"50\" width=\"118\" height=\"54\" rx=\"8\" fill=\"#fff4d6\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"64.0\" y=\"73\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#1f2430\">Source</text><text x=\"64.0\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">pile, muscles</text><line x1=\"123\" y1=\"77\" x2=\"140\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"140\" y=\"50\" width=\"118\" height=\"54\" rx=\"8\" fill=\"#e3eefa\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"199.0\" y=\"73\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#1f2430\">Commande</text><text x=\"199.0\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">interrupteur</text><line x1=\"258\" y1=\"77\" x2=\"275\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"275\" y=\"50\" width=\"118\" height=\"54\" rx=\"8\" fill=\"#e4f3e1\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"334.0\" y=\"73\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#1f2430\">Transmission</text><text x=\"334.0\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">fils, chaîne</text><line x1=\"393\" y1=\"77\" x2=\"410\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"410\" y=\"50\" width=\"105\" height=\"54\" rx=\"8\" fill=\"#fbeee0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"462.5\" y=\"73\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#1f2430\">Effet</text><text x=\"462.5\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#1f2430\">lumière, roue</text><text x=\"260\" y=\"140\" text-anchor=\"middle\" font-size=\"12\">La chaîne d'énergie : de la source jusqu'à l'effet utile.</text></svg>",
+      "lexique": [
+        {
+          "mot": "énergie",
+          "def": "ce qui permet à un objet de fonctionner ou de bouger"
+        },
+        {
+          "mot": "chaîne d'énergie",
+          "def": "trajet de l'énergie, de la source à l'effet utile"
+        },
+        {
+          "mot": "engrenage",
+          "def": "roues dentées qui s'entraînent l'une l'autre"
+        },
+        {
+          "mot": "poulie",
+          "def": "roue à gorge dans laquelle passe une corde ou une courroie"
+        },
+        {
+          "mot": "levier",
+          "def": "barre rigide qui pivote autour d'un point d'appui"
+        }
+      ],
+      "sources": [
+        "Programme de sciences et technologie du cycle 3, thème « Matériaux et objets techniques » (éduscol) : « Décrire le fonctionnement d'objets techniques ».",
+        "Fondation La main à la pâte, rubrique « Objets techniques »."
+      ]
+    },
+    {
+      "id": "notice-montage",
+      "icone": "📋",
+      "titre": "La notice et le montage",
+      "salle": 5,
+      "duree": "3 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Lire une notice",
+        "Respecter l'ordre d'un montage",
+        "Comparer deux objets qui répondent au même besoin"
+      ],
+      "contenu": {
+        "cm1": "<h4>À quoi sert une notice ?</h4><p>Une <b>notice</b> explique comment monter ou utiliser un objet. On la lit <b>avant</b> de commencer.</p><div class='encadre'>Elle contient la <b>liste des pièces</b>, des <b>étapes numérotées</b>, des <b>schémas</b> et des consignes de <b>sécurité</b>. On vérifie d'abord les pièces, on suit les étapes dans l'ordre, on essaie l'objet à la fin.</div><h4>Comparer deux objets</h4><p>Une bougie et une lampe torche servent toutes les deux à éclairer, mais elles ne fonctionnent pas de la même façon. On compare ce qu'elles savent faire, leur énergie et leurs matériaux.</p>",
+        "cm2": "<h4>Lire un document technique</h4><p>Une <b>notice</b> est un document technique. Elle donne la <b>liste des pièces et des outils</b>, les <b>étapes numérotées</b> dans l'ordre du montage, des <b>schémas</b> qui montrent comment les pièces s'assemblent, et des <b>pictogrammes de sécurité</b>. Elle peut aussi expliquer l'entretien et la réparation.</p><div class='encadre'>L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un <b>essai</b> de l'objet.</div><h4>Comparer des solutions techniques</h4><p>Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien. Un ouvre-boîte à manivelle fonctionne sans pile ni prise ; un ouvre-boîte électrique demande moins d'effort.</p>"
+      },
+      "schema": "<svg viewBox=\"0 0 520 170\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;max-width:520px;height:auto;font-family:system-ui,sans-serif\"><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0 0L10 5L0 10z\" fill=\"#3a3a3a\"/></marker></defs><rect x=\"5\" y=\"55\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#fff4d6\" stroke=\"#3a3a3a\" stroke-width=\"1.3\"/><text x=\"50\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">1. Vérifier</text><line x1=\"95\" y1=\"77\" x2=\"108\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"108\" y=\"55\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#fff4d6\" stroke=\"#3a3a3a\" stroke-width=\"1.3\"/><text x=\"153\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">2. Ouvrir</text><line x1=\"198\" y1=\"77\" x2=\"211\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"211\" y=\"55\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#fff4d6\" stroke=\"#3a3a3a\" stroke-width=\"1.3\"/><text x=\"256\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">3. Assembler</text><line x1=\"301\" y1=\"77\" x2=\"314\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"314\" y=\"55\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#fff4d6\" stroke=\"#3a3a3a\" stroke-width=\"1.3\"/><text x=\"359\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">4. Refermer</text><line x1=\"404\" y1=\"77\" x2=\"417\" y2=\"77\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><rect x=\"417\" y=\"55\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#fff4d6\" stroke=\"#3a3a3a\" stroke-width=\"1.3\"/><text x=\"462\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">5. Essayer</text><text x=\"260\" y=\"135\" text-anchor=\"middle\" font-size=\"12\">Une notice : la liste des pièces, des étapes numérotées, des schémas, la sécurité.</text></svg>",
+      "lexique": [
+        {
+          "mot": "notice",
+          "def": "document qui explique comment monter ou utiliser un objet"
+        },
+        {
+          "mot": "pictogramme",
+          "def": "petit dessin qui donne une information sans texte"
+        },
+        {
+          "mot": "étape",
+          "def": "une des actions du montage, dans un ordre précis"
+        },
+        {
+          "mot": "comparer",
+          "def": "chercher les ressemblances et les différences"
+        }
+      ],
+      "sources": [
+        "Programme de sciences et technologie du cycle 3, thème « Matériaux et objets techniques » (éduscol) : « Comparaison de solutions techniques », « Processus, planning, protocoles, procédés de réalisation ».",
+        "Fondation La main à la pâte, rubrique « Objets techniques »."
+      ]
+    }
+  ]
+}

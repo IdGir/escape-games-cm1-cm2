@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "jeu": "L'Atelier de l'inventeur",
+    "sujet": "Les objets techniques : besoin, fonctions, constitution, matériaux, énergie, notice — sciences et technologie, cycle 3",
+    "niveaux": ["CM1", "CM2"],
+    "sources": "Programme de sciences et technologie du cycle 3 (« Matériaux et objets techniques ») ; ressources d'accompagnement éduscol ; Fondation La main à la pâte, rubrique « Objets techniques »."
+  },
+  "personnages": {
+    "zoe": {"nom": "Zoé", "emoji": "📐", "role": "Apprentie ingénieure, 11 ans"},
+    "awa": {"nom": "Awa", "emoji": "🔧", "role": "Ouvrière de l'atelier"},
+    "marcel": {"nom": "Monsieur Marcel", "emoji": "🚲", "role": "Réparateur de vélos"},
+    "eleonore": {"nom": "Éléonore Marchand", "emoji": "💡", "role": "L'inventrice"}
+  },
+  "intro_accueil": "Bonjour ! Je suis Zoé, l'apprentie d'Éléonore Marchand, l'inventrice. Elle est partie en voyage et elle m'a laissé un défi. Dans son atelier, cinq machines sont démontées, et son coffre-fort est fermé. Pour l'ouvrir, il faut une phrase de cinq mots. Chaque salle de l'atelier cache un mot. Pour le trouver, il faut comprendre les objets : à quoi ils servent, de quoi ils sont faits et comment ils fonctionnent. Vous m'aidez ?",
+  "salles": [
+    {
+      "num": 1,
+      "titre": "L'entrée de l'atelier",
+      "decor": "atelier",
+      "motCle": "BESOIN",
+      "lieu": "🚪 L'entrée de l'atelier",
+      "description": "Une grande porte de bois, une table couverte d'objets du quotidien et, au fond, le coffre-fort de l'inventrice. Sur chaque objet, une étiquette vide attend une réponse.",
+      "sens": ["👁️ cinq objets sur la table", "👂 tic-tac d'une horloge", "👃 odeur de bois et d'huile"],
+      "dialogue_intro": {
+        "perso": "zoe",
+        "nom": "Zoé",
+        "texte": "Regardez cette table : une lampe torche, un ouvre-boîte, un taille-crayon, un vélo, un cartable. Éléonore dit toujours : « Avant de savoir comment marche un objet, il faut savoir à quoi il sert. » Chaque objet répond à un besoin. Trouvons lequel."
+      },
+      "dialogue_reussite": {
+        "perso": "zoe",
+        "nom": "Zoé",
+        "texte": "Premier mot : <b>BESOIN</b>. Tout objet commence par un besoin. Allons à l'établi : Awa est en train d'y démonter la lampe torche."
+      }
+    },
+    {
+      "num": 2,
+      "titre": "L'établi",
+      "decor": "etabli",
+      "motCle": "FONCTION",
+      "lieu": "🔧 L'établi de démontage",
+      "description": "Sur le grand établi, une lampe torche est ouverte. Ses pièces sont alignées sur un tapis vert. Au mur, un vélo est accroché, la chaîne enlevée.",
+      "sens": ["👁️ des pièces alignées", "👂 cliquetis de vis", "👃 odeur de métal"],
+      "dialogue_intro": {
+        "perso": "awa",
+        "nom": "Awa",
+        "texte": "Bienvenue à l'établi. Ici, on ouvre les objets pour voir ce qu'il y a dedans. Une lampe torche, ce n'est pas une seule chose : ce sont plusieurs pièces, et chacune a un rôle. Si une seule manque, la lampe ne marche plus. À vous de dire à quoi sert chaque pièce."
+      },
+      "dialogue_reussite": {
+        "perso": "awa",
+        "nom": "Awa",
+        "texte": "Deuxième mot : <b>FONCTION</b>. Chaque pièce remplit une fonction technique. Suivez-moi dans la matériauthèque : on va voir de quoi ces pièces sont faites."
+      }
+    },
+    {
+      "num": 3,
+      "titre": "La matériauthèque",
+      "decor": "materiaux",
+      "motCle": "MATÉRIAU",
+      "lieu": "🗄️ La matériauthèque",
+      "description": "Des casiers du sol au plafond. Dans chacun, des échantillons : un morceau de bois, une plaque de métal, un éclat de verre, de la laine, du plastique. Certains casiers ont été mélangés.",
+      "sens": ["👁️ des dizaines de casiers", "👂 tintement du verre", "👃 odeur de laine et de copeaux"],
+      "dialogue_intro": {
+        "perso": "awa",
+        "nom": "Awa",
+        "texte": "Ici, Éléonore range tous ses matériaux, rangés par familles. Pour fabriquer un objet, on ne prend pas n'importe quoi : on choisit un matériau pour ses propriétés. Dur ou souple, léger ou lourd, transparent ou non. Quelqu'un a tout mélangé. Aidez-moi à ranger."
+      },
+      "dialogue_reussite": {
+        "perso": "awa",
+        "nom": "Awa",
+        "texte": "Troisième mot : <b>MATÉRIAU</b>. Chaque casier est à nouveau en ordre. Monsieur Marcel vous attend dans la salle des machines. Il sait tout sur ce qui fait bouger les objets."
+      }
+    },
+    {
+      "num": 4,
+      "titre": "La salle des machines",
+      "decor": "machines",
+      "motCle": "ÉNERGIE",
+      "lieu": "⚙️ La salle des machines",
+      "description": "Des engrenages accrochés au mur, une poulie au plafond, une petite éolienne près de la fenêtre et un panneau solaire sur l'appui. Au centre, un vélo sur un support tourne à vide.",
+      "sens": ["👁️ des roues dentées", "👂 ronronnement d'une roue", "👃 odeur de graisse"],
+      "dialogue_intro": {
+        "perso": "marcel",
+        "nom": "Monsieur Marcel",
+        "texte": "Ah, les voilà ! Moi, je répare des vélos depuis longtemps. Un objet ne bouge jamais tout seul : il lui faut de l'énergie. Celle de vos jambes, celle d'une pile, du vent ou du soleil. Ensuite, il faut transmettre le mouvement d'une pièce à l'autre. Regardez bien ces roues dentées."
+      },
+      "dialogue_reussite": {
+        "perso": "marcel",
+        "nom": "Monsieur Marcel",
+        "texte": "Quatrième mot : <b>ÉNERGIE</b>. Sans elle, rien ne tourne. Dernière salle : le coin montage. Et je crois que quelqu'un vient de rentrer de voyage."
+      }
+    },
+    {
+      "num": 5,
+      "titre": "Le coin montage",
+      "decor": "montage",
+      "motCle": "NOTICE",
+      "lieu": "📋 Le coin montage",
+      "description": "Une table lumineuse, des plans épinglés au mur, une notice ouverte. À côté, le coffre-fort de l'inventrice et son clavier à cinq mots.",
+      "sens": ["👁️ des plans au mur", "👂 froissement de papier", "👃 odeur d'encre"],
+      "dialogue_intro": {
+        "perso": "eleonore",
+        "nom": "Éléonore Marchand",
+        "texte": "Bonjour à tous ! Je suis Éléonore, l'inventrice. Zoé m'a raconté votre travail. Inventer un objet ne suffit pas : il faut expliquer comment le monter, dans quel ordre, avec quelles précautions. C'est le rôle de la notice. Le dernier mot du coffre-fort est ici."
+      },
+      "dialogue_fin": {
+        "perso": "eleonore",
+        "nom": "Éléonore Marchand",
+        "texte": "Un besoin, une fonction, un matériau, une énergie, une notice. Le coffre s'ouvre. À l'intérieur, pas d'or : mon carnet d'inventrice. Il vous appartient maintenant. La prochaine invention, c'est à vous de la dessiner."
+      }
+    }
+  ]
+}

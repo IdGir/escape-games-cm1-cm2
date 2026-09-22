@@ -1,6 +1,6 @@
 # 🎓 Escape games pédagogiques — CM1 / CM2
 
-Cinq escape games d'histoire, de géographie, d'EMC et de sciences, jouables dans Chrome, sans installation.
+Huit escape games d'histoire, de géographie, d'EMC et de sciences, jouables dans Chrome, sans installation.
 
 | | Jeu | Jouer | Guide : énigmes, solutions | Médias |
 |---|---|---|---|---|
@@ -10,9 +10,10 @@ Cinq escape games d'histoire, de géographie, d'EMC et de sciences, jouables dan
 | ⚖️ | **Le Sceau de la République** — EMC, la Constitution de 1958 | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/constitution/) | [constitution/README.md](constitution/README.md) | [liste](constitution/assets/README.md) |
 | 🌦️ | **La Station météo disparue** — Sciences, mesures météorologiques | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/) | [station-meteo/README.md](station-meteo/README.md) | [liste](station-meteo/assets/README.md) |
 | ⚗️ | **Le Laboratoire de Madame Mélange** — Sciences, masses et mélanges | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/melanges/) | [melanges/README.md](melanges/README.md) | [liste](melanges/assets/README.md) |
+| ⚙️ | **L'Atelier de l'inventeur** — Sciences, les objets techniques | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/objets-techniques/) | [objets-techniques/README.md](objets-techniques/README.md) | [liste](objets-techniques/assets/README.md) |
 | 📜 | **Le Manuscrit de l'abbaye** — Histoire, le Moyen Âge | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/) | [moyen-age-abbaye/README.md](moyen-age-abbaye/README.md) | [liste](moyen-age-abbaye/assets/README.md) |
 
-- 🏠 **Accueil des cinq jeux** : https://idgir.github.io/escape-games-cm1-cm2/
+- 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
 
 ---
@@ -45,7 +46,8 @@ Laissez la fenêtre noire ouverte pendant la séance. Ce mode ajoute les
 **tableaux de bord enseignant en direct** (suivi des équipes, pause générale,
 indices envoyés à la volée) :
 `http://127.0.0.1:8000/declaration/prof.html`, `http://127.0.0.1:8000/tour-du-monde/prof.html`,
-`http://127.0.0.1:8000/constitution/prof.html` et `http://127.0.0.1:8000/station-meteo/prof.html`.
+`http://127.0.0.1:8000/constitution/prof.html`, `http://127.0.0.1:8000/station-meteo/prof.html`
+et `http://127.0.0.1:8000/objets-techniques/prof.html` (le principe est le même pour chaque jeu).
 
 > Un double-clic direct sur un `index.html` lance aussi le jeu, mais **sans les
 > vidéos** (le navigateur les bloque) : préférez l'une des deux méthodes ci-dessus.
@@ -73,6 +75,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | Mission géographique | `mission-geo/?seance=N` — N de 1 à 16, ou `final` | [séance 13](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=13) |
 | Le Sceau de la République | `constitution/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 2, CM2](https://idgir.github.io/escape-games-cm1-cm2/constitution/?salle=4&niveau=CM2&enigme=2) |
 | Le Laboratoire de Madame Mélange | `melanges/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 5, énigme 4, CM2](https://idgir.github.io/escape-games-cm1-cm2/melanges/?salle=5&niveau=CM2&enigme=4) |
+| L'Atelier de l'inventeur | `objets-techniques/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/objets-techniques/?salle=4&niveau=CM2&enigme=3) |
 | La Station météo disparue | `station-meteo/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [module 1, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/?salle=1&niveau=CM2&enigme=1) |
 | Le Manuscrit de l'abbaye | `moyen-age-abbaye/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fermoir puis fin ; `&enigme=K` vise une énigme | [salle 5, énigme 1, CM1](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/?salle=5&niveau=CM1&enigme=1) |
 
@@ -189,6 +192,15 @@ PROJET ESCAPE GAMES/
 │   ├── assets/data/        ★ enigmes.json, lecons.json (leçons rédigées), dialogues, évaluations
 │   ├── css/
 │   └── js/                 même moteur à 10 types d'énigmes
+│
+├── objets-techniques/      ⚙️ L'Atelier de l'inventeur (sciences, les objets techniques)
+│   ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
+│   ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
+│   ├── A-VERIFIER.md       Points à contrôler
+│   ├── index.html · prof.html
+│   ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json (5 leçons rédigées)
+│   ├── css/ · js/          même moteur à 10 types d'énigmes que constitution/
+│   └── tests/              tests Node + jsdom
 │
 └── moyen-age-abbaye/       📜 Le Manuscrit de l'abbaye (histoire, le Moyen Âge)
     ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
