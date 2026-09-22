@@ -1,6 +1,6 @@
 # 🎓 Escape games pédagogiques — CM1 / CM2
 
-Huit escape games d'histoire, de géographie, d'EMC et de sciences, jouables dans Chrome, sans installation.
+Neuf escape games d'histoire, de géographie, d'EMC et de sciences, jouables dans Chrome, sans installation.
 
 | | Jeu | Jouer | Guide : énigmes, solutions | Médias |
 |---|---|---|---|---|
@@ -12,6 +12,7 @@ Huit escape games d'histoire, de géographie, d'EMC et de sciences, jouables dan
 | ⚗️ | **Le Laboratoire de Madame Mélange** — Sciences, masses et mélanges | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/melanges/) | [melanges/README.md](melanges/README.md) | [liste](melanges/assets/README.md) |
 | ⚙️ | **L'Atelier de l'inventeur** — Sciences, les objets techniques | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/objets-techniques/) | [objets-techniques/README.md](objets-techniques/README.md) | [liste](objets-techniques/assets/README.md) |
 | 📜 | **Le Manuscrit de l'abbaye** — Histoire, le Moyen Âge | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/) | [moyen-age-abbaye/README.md](moyen-age-abbaye/README.md) | [liste](moyen-age-abbaye/assets/README.md) |
+| 🏰 | **Le Secret du donjon** — Histoire, le château fort et les paysans | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/chateau-fort/) | [chateau-fort/README.md](chateau-fort/README.md) | [liste](chateau-fort/assets/README.md) |
 
 - 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
@@ -78,6 +79,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | L'Atelier de l'inventeur | `objets-techniques/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/objets-techniques/?salle=4&niveau=CM2&enigme=3) |
 | La Station météo disparue | `station-meteo/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [module 1, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/?salle=1&niveau=CM2&enigme=1) |
 | Le Manuscrit de l'abbaye | `moyen-age-abbaye/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fermoir puis fin ; `&enigme=K` vise une énigme | [salle 5, énigme 1, CM1](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/?salle=5&niveau=CM1&enigme=1) |
+| Le Secret du donjon | `chateau-fort/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = inscription, herse et fin ; `&enigme=K` vise une énigme | [salle 2, énigme 4, CM2](https://idgir.github.io/escape-games-cm1-cm2/chateau-fort/?salle=2&niveau=CM2&enigme=4) |
 
 ---
 
@@ -202,14 +204,23 @@ PROJET ESCAPE GAMES/
 │   ├── css/ · js/          même moteur à 10 types d'énigmes que constitution/
 │   └── tests/              tests Node + jsdom
 │
-└── moyen-age-abbaye/       📜 Le Manuscrit de l'abbaye (histoire, le Moyen Âge)
+├── moyen-age-abbaye/       📜 Le Manuscrit de l'abbaye (histoire, le Moyen Âge)
+│   ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
+│   ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
+│   ├── A-VERIFIER.md       Faits vérifiés et points à relire
+│   ├── index.html · prof.html
+│   ├── assets/data/        ★ enigmes.json (+ le fermoir) · lecons.json = 5 leçons rédigées
+│   ├── css/ · js/          même moteur que constitution/
+│   └── tests/              test-jeu.js (Node + jsdom)
+│
+└── chateau-fort/           🏰 Le Secret du donjon (histoire, le château fort et les paysans)
     ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
     ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
     ├── A-VERIFIER.md       Faits vérifiés et points à relire
     ├── index.html · prof.html
-    ├── assets/data/        ★ enigmes.json (+ le fermoir) · lecons.json = 5 leçons rédigées
-    ├── css/ · js/          même moteur que constitution/
-    └── tests/              test-jeu.js (Node + jsdom)
+    ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json = 5 leçons rédigées
+    ├── css/ · js/          même moteur à 10 types d'énigmes que constitution/
+    └── tests/              test_json.py · test-chateau-fort.js (Node + jsdom)
 ```
 
 Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur

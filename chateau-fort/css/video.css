@@ -1,0 +1,357 @@
+/* ============================================================
+   CHARTE VIDÉO — Extension multimédia de la charte tricolore
+   ------------------------------------------------------------
+   Trois usages, trois composants :
+     1. .scene              → DÉCOR VIDÉO de fond (muet, en boucle)
+     2. .cine               → CINÉMATIQUE plein écran (intro / final)
+     3. .video-doc          → VIDÉO DOCUMENT dans une leçon
+   ------------------------------------------------------------
+   Principes de la charte :
+   • Cascade gracieuse : vidéo → image → SVG animé. Le jeu reste
+     jouable même sans le moindre fichier vidéo.
+   • Le décor est toujours MUET : il ne couvre jamais les voix
+     des personnages ni les consignes de l'enseignant.
+   • Toute vidéo est encadrée d'or (cadre de tableau d'époque)
+     pour rester cohérente avec l'univers du jeu.
+   • Accessibilité : bouton de gel du décor, respect de
+     prefers-reduced-motion, pistes de sous-titres .vtt.
+   • Impression : toute vidéo est remplacée par son poster.
+   ============================================================ */
+
+/* ============================================================
+   1. DÉCOR VIDÉO DE FOND  (dans .scene)
+   ============================================================ */
+
+/* La vidéo occupe exactement la place de l'image de décor.
+   Elle est posée sur la couche 0, sous le voile de lisibilité. */
+.scene .decor-video{
+  position:absolute;inset:0;z-index:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  background:var(--bleu-nuit);
+  /* Léger virage sépia/froid pour fondre n'importe quelle vidéo
+     dans la palette du jeu, quelle que soit sa colorimétrie. */
+  filter:saturate(.92) contrast(1.04);
+  transition:opacity .8s ease;
+}
+/* Apparition en fondu une fois la vidéo réellement prête */
+.scene .decor-video[data-pret="non"]{opacity:0}
+.scene .decor-video[data-pret="oui"]{opacity:1}
+
+/* Grain d'archive : rend homogènes vidéos IA, images et SVG */
+.scene::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  opacity:.16;mix-blend-mode:overlay;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px);
+}
+
+/* La scène passe en 16/9 dès qu'elle porte un média filmé,
+   pour ne jamais rogner brutalement une vidéo. */
+.scene.scene--media{min-height:0;aspect-ratio:var(--ratio-video)}
+.scene.scene--media .decor-contenu{
+  min-height:0;position:absolute;inset:0;
+  padding:clamp(12px,3vw,24px);
+}
+/* Sur écran étroit, on redonne de l'air au texte plutôt que
+   d'étrangler la description dans un 16/9 minuscule. */
+@media (max-width:620px){
+  .scene.scene--media{aspect-ratio:auto;min-height:240px}
+  .scene.scene--media .decor-contenu{position:relative;inset:auto;min-height:240px}
+}
+
+/* ---- Commandes du décor (coin bas-droit de la scène) ---- */
+.scene-commandes{
+  position:absolute;right:12px;bottom:12px;z-index:3;
+  display:flex;gap:6px;
+}
+.scene-commandes button{
+  width:34px;height:34px;border-radius:50%;cursor:pointer;
+  background:rgba(4,12,20,.6);color:var(--or-clair);
+  border:1px solid rgba(201,162,39,.45);
+  font-size:.95rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(3px);transition:var(--transi);
+}
+.scene-commandes button:hover{background:var(--or);color:#2f2107;transform:translateY(-2px)}
+.scene-commandes button:focus-visible{outline:2px solid var(--or-clair);outline-offset:2px}
+
+/* Pastille « décor filmé » : indique à l'enseignant la source affichée.
+   Placée en haut à gauche pour ne jamais recouvrir la description ni les
+   repères sensoriels, qui occupent le bas de la scène. */
+.scene .pastille-media{
+  position:absolute;left:12px;top:12px;z-index:3;
+  background:rgba(4,12,20,.55);border:1px solid rgba(201,162,39,.35);
+  color:var(--or-clair);font-size:.66rem;letter-spacing:1.2px;
+  text-transform:uppercase;padding:3px 9px;border-radius:8px;
+  backdrop-filter:blur(3px);
+}
+
+/* ============================================================
+   2. CINÉMATIQUE PLEIN ÉCRAN  (.cine)
+   Intro du jeu, transitions d'étape, épilogue.
+   ============================================================ */
+.overlay-cine{
+  position:fixed;inset:0;z-index:400;display:none;
+  align-items:center;justify-content:center;padding:20px;
+  background:radial-gradient(ellipse at 50% 50%, rgba(6,16,26,.92), #04090f 85%);
+}
+.overlay-cine.show{display:flex;animation:fondu .4s ease}
+
+.cine{
+  position:relative;width:100%;max-width:1000px;
+  border-radius:18px;overflow:hidden;
+  border:6px solid var(--or);
+  box-shadow:0 0 0 3px #9c7a16, 0 24px 70px rgba(0,0,0,.75),
+             inset 0 0 60px rgba(0,0,0,.5);
+  background:#04090f;
+}
+/* Rivets du hublot */
+.cine::before{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:12px;
+  background-image:
+    radial-gradient(circle at 14px 14px, var(--or-clair) 2px, transparent 3px),
+    radial-gradient(circle at calc(100% - 14px) 14px, var(--or-clair) 2px, transparent 3px),
+    radial-gradient(circle at 14px calc(100% - 14px), var(--or-clair) 2px, transparent 3px),
+    radial-gradient(circle at calc(100% - 14px) calc(100% - 14px), var(--or-clair) 2px, transparent 3px);
+  opacity:.75;
+}
+.cine video{
+  display:block;width:100%;height:auto;aspect-ratio:var(--ratio-video);
+  object-fit:cover;background:#04090f;
+}
+/* Bandeau de titre de la séquence */
+.cine-titre{
+  position:absolute;top:0;left:0;right:0;z-index:2;
+  padding:14px 18px 34px;
+  background:linear-gradient(180deg, rgba(4,9,15,.85), transparent);
+  color:var(--or-clair);font-size:.82rem;letter-spacing:2.5px;text-transform:uppercase;
+  pointer-events:none;
+}
+/* Barre de commandes */
+.cine-barre{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:26px 16px 14px;
+  background:linear-gradient(0deg, rgba(4,9,15,.9), transparent);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.cine-barre .progression-cine{
+  flex:1;min-width:120px;height:5px;border-radius:3px;
+  background:rgba(255,255,255,.18);overflow:hidden;
+}
+.cine-barre .progression-cine i{
+  display:block;height:100%;width:0;border-radius:3px;
+  background:linear-gradient(90deg,var(--or),var(--or-clair));
+  transition:width .25s linear;
+}
+.cine-barre button{
+  font-family:Georgia,serif;font-weight:bold;font-size:.85rem;
+  padding:8px 16px;border-radius:20px;cursor:pointer;
+  background:rgba(201,162,39,.18);color:#fff;
+  border:1px solid var(--or);transition:var(--transi);
+}
+.cine-barre button:hover{background:var(--or);color:#2f2107}
+.cine-barre button:focus-visible{outline:2px solid var(--or-clair);outline-offset:2px}
+
+/* Sous-titrage de secours (si pas de piste .vtt fournie) */
+.cine-soustitre{
+  position:absolute;left:0;right:0;bottom:64px;z-index:2;
+  text-align:center;padding:0 24px;pointer-events:none;
+}
+.cine-soustitre span{
+  display:inline-block;background:rgba(4,9,15,.78);color:#fff;
+  padding:7px 15px;border-radius:8px;font-size:1.02rem;line-height:1.45;
+  max-width:46ch;border:1px solid rgba(201,162,39,.28);
+}
+/* Piste native <track> : on l'aligne sur la charte quand c'est possible */
+.cine video::cue{
+  background:rgba(4,9,15,.78);color:#fff;
+  font-family:Georgia,serif;font-size:.95em;
+}
+
+/* ============================================================
+   3. VIDÉO DOCUMENT  (leçons, documents, fiches)
+   ============================================================ */
+.video-doc{
+  margin:14px 0;border-radius:12px;overflow:hidden;
+  border:3px solid var(--or);background:#04090f;
+  box-shadow:0 6px 18px var(--ombre);
+}
+.video-doc video{
+  display:block;width:100%;height:auto;aspect-ratio:var(--ratio-video);
+  background:#04090f;
+}
+.video-doc .legende{
+  background:var(--parchemin-clair);color:var(--encre);
+  padding:10px 14px;font-size:.85rem;border-top:1px solid var(--parchemin-ombre);
+}
+.video-doc .legende b{color:var(--bleu-fonce)}
+.video-doc .legende .source{display:block;font-size:.75rem;color:#8a8a8a;font-style:italic;margin-top:3px}
+
+/* Emplacement vide : dit à l'enseignant où déposer son fichier */
+.video-absente{
+  aspect-ratio:var(--ratio-video);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;text-align:center;padding:18px;
+  background:
+    repeating-linear-gradient(45deg, rgba(201,162,39,.06) 0 12px, transparent 12px 24px),
+    var(--bleu-nuit);
+  color:var(--or-clair);font-size:.85rem;
+  border:2px dashed rgba(201,162,39,.4);border-radius:10px;
+}
+.video-absente .grosse-icone{font-size:2.4rem;opacity:.75}
+.video-absente code{
+  background:rgba(0,0,0,.45);padding:2px 7px;border-radius:5px;
+  font-size:.8rem;color:#fff;font-family:Consolas,monospace;
+}
+
+/* ============================================================
+   4. PERSONNAGE FILMÉ  (dans .portrait)
+   ------------------------------------------------------------
+   Un personnage peut être remplacé par une vidéo en boucle :
+     assets/videos/personnages/<perso>.mp4          → au repos
+     assets/videos/personnages/<perso>-parle.mp4    → pendant qu'il parle
+   La bascule entre les deux est purement CSS : narration.js pose
+   déjà la classe .parle sur le .portrait quand la voix démarre.
+   Si la variante « parle » n'existe pas, la boucle de repos
+   continue simplement de tourner.
+   ============================================================ */
+.portrait .perso-video{
+  position:absolute;inset:0;z-index:1;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;background:var(--bleu-nuit);
+  transition:opacity .35s ease;
+}
+/* Au repos : on voit la boucle « repos » */
+.portrait .perso-video--repos{opacity:1}
+.portrait .perso-video--parle{opacity:0}
+/* Pendant la parole : on voit la boucle « parle » */
+.portrait.parle .perso-video--repos{opacity:0}
+.portrait.parle .perso-video--parle{opacity:1}
+
+/* Une image de personnage (photo, dessin, GIF animé) occupe le
+   même cadre circulaire que le personnage dessiné. */
+.portrait .portrait-img-cachee{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+}
+
+/* Le conteneur du personnage doit REMPLIR son cadre.
+   Sans cette règle il s'effondre à une hauteur nulle dès que le
+   personnage dessiné est masqué : c'est le SVG qui lui donnait sa
+   hauteur, et la vidéo posée en inset:0 devient alors invisible. */
+.portrait .portrait-conteneur{
+  position:absolute;inset:0;
+  border-radius:inherit;overflow:hidden;
+}
+
+/* Mode « décors vidéo désactivés » : on revient au personnage dessiné */
+body.sans-video .portrait .perso-video{display:none !important}
+
+/* ============================================================
+   5. CARTES, PAYSAGES ET ILLUSTRATIONS  (images facultatives)
+   ------------------------------------------------------------
+   Toutes ces images sont OPTIONNELLES : sans fichier, le jeu
+   conserve ses tracés SVG et ses pictogrammes.
+   ============================================================ */
+
+/* ---- Fond de carte sous le planisphère cliquable ----
+   L'image se glisse SOUS les zones à placer, qui restent
+   parfaitement cliquables et gardent leurs couleurs de validation. */
+.planisphere{position:relative}
+.planisphere .fond-planisphere{
+  position:absolute;inset:0;z-index:0;
+  width:100%;height:100%;object-fit:cover;
+  opacity:.9;
+}
+.planisphere svg{position:relative;z-index:1}
+/* Quand une vraie carte est posée, le tracé schématique des terres
+   s'efface : on ne garde que les zones cliquables et la grille. */
+.planisphere.a-fond-image .zone-carte{fill:rgba(255,255,255,.18)}
+.planisphere.a-fond-image .zone-carte:hover{fill:rgba(201,162,39,.45)}
+.planisphere.a-fond-image .etiq-carte{stroke-width:4}
+
+/* ---- Vignette de paysage illustrée ---- */
+.paysage .vignette.vignette--illustree{padding:0;height:96px}
+.vignette-image{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+
+/* ---- Illustration de leçon (carte, gravure, photo) ---- */
+.illustration{
+  margin:14px 0;border:2px solid var(--or);border-radius:10px;
+  overflow:hidden;background:var(--parchemin-clair);
+}
+.illustration img{display:block;width:100%;height:auto}
+.illustration figcaption{
+  padding:8px 12px;font-size:.85rem;color:var(--encre);
+  border-top:1px solid var(--parchemin-ombre);
+}
+.illustration figcaption .source{
+  display:block;font-size:.75rem;color:#8a8a8a;font-style:italic;margin-top:3px;
+}
+/* Fichier absent : un encadré discret dit où le déposer */
+.illustration-absente{display:none}
+.illustration.absente{border-style:dashed;opacity:.75}
+.illustration.absente .illustration-absente{
+  display:block;padding:20px;text-align:center;
+  font-size:.85rem;color:#8a8a8a;font-style:italic;
+}
+.illustration code{
+  background:rgba(0,0,0,.07);padding:2px 6px;border-radius:4px;
+  font-family:Consolas,monospace;font-size:.8rem;font-style:normal;
+}
+
+/* ---- Document illustré dans une leçon ---- */
+.document-epoque .image-document{
+  display:block;width:100%;height:auto;border-radius:6px;margin-bottom:8px;
+}
+
+/* ============================================================
+   ACCESSIBILITÉ & PRÉFÉRENCES
+   ============================================================ */
+
+/* Réglage enseignant « animations réduites » : le décor filmé est
+   figé (on garde l'image, on supprime le mouvement). */
+body.calme .scene .decor-video{
+  animation:none !important;
+  /* la mise en pause réelle est faite en JS : media.js → figerVideos() */
+}
+/* Réglage enseignant « décors vidéo désactivés » : on masque la
+   vidéo, la cascade retombe sur l'image ou le SVG. */
+body.sans-video .scene .decor-video,
+body.sans-video .video-doc video{display:none !important}
+body.sans-video .scene .pastille-media{display:none}
+
+/* Préférence système : pas d'auto-lecture agressive */
+@media (prefers-reduced-motion: reduce){
+  .scene .decor-video{transition:none}
+  .cine{animation:none}
+}
+
+/* ============================================================
+   IMPRESSION — une vidéo ne s'imprime pas :
+   on lui substitue son image d'affiche + une légende.
+   ============================================================ */
+@media print{
+  .scene .decor-video,
+  .scene-commandes,
+  .cine-barre,
+  .overlay-cine{display:none !important}
+  .video-doc video{display:none !important}
+
+  /* Les personnages filmés ne s'impriment pas */
+  .portrait .perso-video{display:none !important}
+  /* Les illustrations, si, mais sans leur encadré « fichier absent » */
+  .illustration.absente{display:none !important}
+  .illustration{border:1px solid #999;break-inside:avoid;page-break-inside:avoid}
+  .illustration img{max-height:70mm;object-fit:contain}
+  .video-doc::before{
+    content:"🎬 Séquence vidéo (non imprimable) — voir la version numérique";
+    display:block;padding:14px;text-align:center;font-style:italic;
+    background:#f4f4f4;color:#444;font-size:10pt;
+  }
+  .video-doc{border:1px solid #999;box-shadow:none}
+  .video-absente{display:none}
+}

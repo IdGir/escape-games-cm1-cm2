@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "jeu": "Le Secret du donjon",
+    "sujet": "Le Moyen Âge : le château fort et la vie quotidienne des paysannes et des paysans — histoire, cycle 3",
+    "niveaux": ["CM1", "CM2"],
+    "lien_autres_jeux": "Même période que le jeu n°01 (Moyen Âge, année A), sous un autre angle. Le calendrier des travaux de la salle 4 prépare le jeu de sciences n°03 (la météo).",
+    "sources": "Programme d'histoire-géographie du cycle 3 ; ressources de la Cité de l'architecture et du patrimoine ; chantier médiéval de Guédelon (Treigny, Yonne) ; Les Très Riches Heures du duc de Berry (musée Condé, Chantilly) ; Lumni ; L'Histoire par l'image."
+  },
+
+  "personnages": {
+    "colin":   {"nom": "Colin",        "role": "Jeune page au service du seigneur, 11 ans"},
+    "josselin":   {"nom": "Maître Josselin", "role": "Maître maçon du chantier du château"},
+    "alienor": {"nom": "Dame Aliénor", "role": "Dame du château, elle gouverne le domaine"},
+    "mahaut":  {"nom": "Mahaut",       "role": "Jeune paysanne du village, 11 ans"},
+    "perrine": {"nom": "Perrine",      "role": "Meunière du moulin du seigneur"}
+  },
+
+  "intro_accueil": "Vite, approchez ! Je suis Colin, page au château. Le seigneur est parti rejoindre le roi et il a confié les cinq clés de la seigneurie à cinq personnes du domaine. Or un messager du roi arrive avant la nuit : si la herse reste baissée, il repartira et le seigneur sera déshonoré. Cinq clés, cinq mots gravés dessus. Retrouvez-les, gravez-les dans l'inscription au-dessus de la porte, et la herse se relèvera. Suivez-moi.",
+
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La motte et la palissade",
+      "decor": "motte",
+      "motCle": "PIERRE",
+      "lieu": "Le tertre de la vieille tour, au petit matin",
+      "description": "Une grosse butte de terre porte encore les souches noircies d'une tour de bois. Tout autour, une palissade à moitié tombée. En bas, des charrettes de pierres attendent : le chantier du nouveau château commence ici.",
+      "sens": ["À voir : la butte et les pierres taillées", "À entendre : les maillets des tailleurs", "À sentir : la terre remuée et la chaux"],
+      "dialogue_intro": {
+        "perso": "josselin",
+        "nom": "Maître Josselin",
+        "texte": "Bonjour à vous. Je suis Josselin, maître maçon. Beaucoup croient qu'un château fort, c'est forcément de la pierre. C'est faux. Ici, le premier château était une butte de terre, une tour de bois et une palissade : on appelle cela une motte. Cela se construisait vite, et cela a suffi longtemps. La pierre est venue après. La première clé est à moi : je vous la donnerai quand vous saurez pourquoi et comment on bâtit un château."
+      },
+      "dialogue_reussite": {
+        "perso": "josselin",
+        "nom": "Maître Josselin",
+        "texte": "Voici la première clé. Le mot gravé dessus est <b>PIERRE</b>. Retenez bien : d'abord la terre et le bois, ensuite la pierre. Montez maintenant jusqu'aux remparts, Colin vous y attend. Lui, il connaît chaque ouverture de chaque mur."
+      }
+    },
+    {
+      "num": 2,
+      "titre": "Les remparts",
+      "decor": "remparts",
+      "motCle": "REMPARTS",
+      "lieu": "Le chemin de ronde, au-dessus de l'entrée",
+      "description": "De là, on voit tout : le fossé plein d'eau, le pont-levis relevé, la herse coincée à mi-hauteur, les tours rondes aux angles et, au centre, la tour maîtresse. Chaque ouverture, chaque saillie a une raison d'être.",
+      "sens": ["À voir : le fossé et le pont-levis relevé", "À entendre : le vent dans les créneaux", "À sentir : la pierre mouillée"],
+      "dialogue_intro": {
+        "perso": "colin",
+        "nom": "Colin",
+        "texte": "Regardez d'ici. Rien n'est là pour faire joli. Le fossé empêche d'approcher les machines de siège. Le pont-levis coupe le passage. La herse le double. Les meurtrières laissent tirer sans se montrer. Les mâchicoulis permettent de lâcher des projectiles droit sur ceux qui se collent au mur. Et la tour maîtresse, au centre, c'est le donjon : le logis du seigneur, pas un cachot. La deuxième clé est accrochée au treuil de la herse. Prouvez-moi que vous savez lire un château."
+      },
+      "dialogue_reussite": {
+        "perso": "colin",
+        "nom": "Colin",
+        "texte": "Deuxième clé : <b>REMPARTS</b>. Vous savez maintenant nommer les défenses et dire à quoi chacune sert. Descendez dans la grande salle. Dame Aliénor gouverne le domaine pendant l'absence du seigneur. Tenez-vous droits : elle rend la justice ce matin."
+      }
+    },
+    {
+      "num": 3,
+      "titre": "La grande salle",
+      "decor": "grandesalle",
+      "motCle": "SEIGNEUR",
+      "lieu": "La grande salle du donjon, avant le repas",
+      "description": "Une cheminée assez large pour s'y tenir debout, des tapisseries contre le froid, une longue table posée sur des tréteaux. À côté, une petite chapelle ; plus loin, les cuisines. C'est ici que le seigneur reçoit, juge, festoie et montre ce qu'il est.",
+      "sens": ["À voir : les tapisseries et la grande table", "À entendre : les chiens et le feu", "À sentir : la fumée et le pain chaud"],
+      "dialogue_intro": {
+        "perso": "alienor",
+        "nom": "Dame Aliénor",
+        "texte": "Entrez. Je suis Aliénor. Quand mon époux est absent, c'est moi qui gouverne le domaine : je compte les récoltes, je paie les hommes d'armes, je reçois les plaintes et je fais rendre la justice. Un château n'est pas seulement une forteresse. C'est une maison, un tribunal, une chapelle, une cuisine, et surtout une démonstration : qui entre ici doit comprendre, du premier coup d'œil, qui commande. La troisième clé est dans le coffre, sous la fenêtre."
+      },
+      "dialogue_reussite": {
+        "perso": "alienor",
+        "nom": "Dame Aliénor",
+        "texte": "Troisième clé : <b>SEIGNEUR</b>. Protection, habitation, puissance : vous avez compris les trois fonctions. Mais un château ne tient pas tout seul. Il mange ce que le village produit. Allez voir Mahaut, en bas, du côté des champs."
+      }
+    },
+    {
+      "num": 4,
+      "titre": "Le village et les champs",
+      "decor": "village",
+      "motCle": "VILLAGE",
+      "lieu": "Le village, au pied du château",
+      "description": "Une vingtaine de maisons basses, murs de torchis et toits de chaume, serrées autour de l'église. Devant chaque porte, un jardin. Au-delà, les champs en longues bandes, et les bois où les cochons vont manger les glands.",
+      "sens": ["À voir : les toits de chaume et les champs en bandes", "À entendre : la faux et les oies", "À sentir : la paille et la soupe aux fèves"],
+      "dialogue_intro": {
+        "perso": "mahaut",
+        "nom": "Mahaut",
+        "texte": "Bonjour. Moi, c'est Mahaut. Vous logez là-haut, nous logeons ici, et ce sont nos bras qui nourrissent tout le monde. Chez nous, l'année ne se compte pas en mois : elle se compte en travaux. Labourer, semer, faucher, moissonner, battre le grain, vendanger, mener les cochons au bois. Ma mère file la laine, garde la basse-cour, fait le pain et travaille aux champs comme mon père. La quatrième clé est dans le coffre à grain. Montrez-moi que vous connaissez notre année."
+      },
+      "dialogue_reussite": {
+        "perso": "mahaut",
+        "nom": "Mahaut",
+        "texte": "Quatrième clé : <b>VILLAGE</b>. Vous savez ce qu'est une année de travail ici. Reste le plus important : ce que nous devons au seigneur, et ce que le seigneur nous doit. Perrine vous attend au moulin. Elle en parle mieux que personne : c'est elle qui compte la part du seigneur."
+      }
+    },
+    {
+      "num": 5,
+      "titre": "Le moulin du seigneur",
+      "decor": "moulin",
+      "motCle": "REDEVANCES",
+      "lieu": "Le moulin à eau, au bord de la rivière",
+      "description": "La roue tourne, la meule gronde, la farine blanchit tout. Contre le mur, des sacs marqués d'une croix : la part prélevée sur chaque sac moulu. À côté, le four du seigneur, où tout le village vient cuire son pain.",
+      "sens": ["À voir : la roue et les sacs marqués", "À entendre : la meule et l'eau", "À sentir : la farine et le bois mouillé"],
+      "dialogue_intro": {
+        "perso": "perrine",
+        "nom": "Perrine",
+        "texte": "Entrez, et attention à la poussière. Je suis Perrine, la meunière. Ce moulin n'est pas à moi : il est au seigneur. Comme le four, comme le pressoir. Personne n'a le droit de moudre ailleurs, et chaque sac laisse ici sa part. On appelle cela les banalités. Il y a aussi le cens, versé chaque année pour la terre, et la corvée, les journées de travail dues sur les champs du seigneur. En échange, il doit nous protéger et nous laisser entrer au château en cas de danger. Est-ce équitable ? Regardez de près. La cinquième clé est posée sur la meule."
+      },
+      "dialogue_fin": {
+        "perso": "alienor",
+        "nom": "Dame Aliénor",
+        "texte": "Cinq clés, cinq mots : l'inscription est complète au-dessus de la porte. Il reste à relever la herse. Le treuil ne tourne que pour ceux qui ont compris : répondez aux cinq questions, vite, le messager du roi approche. Vous avez appris ce qu'un château protège, qui l'habite, ce qu'il montre, et sur quel travail il repose. N'oubliez pas : derrière chaque muraille, il y a un village."
+      }
+    }
+  ]
+}

@@ -141,7 +141,8 @@ const ONGLETS = [
   { id: "moyen-age-abbaye", titre: "📜 Le Manuscrit de l'abbaye" },
   { id: "station-meteo", titre: "🌦️ La Station météo disparue" },
   { id: "melanges",      titre: "⚗️ Le Laboratoire de Madame Mélange" },
-  { id: "objets-techniques", titre: "⚙️ L'Atelier de l'inventeur" }
+  { id: "objets-techniques", titre: "⚙️ L'Atelier de l'inventeur" },
+  { id: "chateau-fort",  titre: "🏰 Le Secret du donjon" }
 ];
 
 let JETON = Date.now();   // anti-cache des aperçus, renouvelé à chaque actualisation
@@ -655,6 +656,69 @@ async function construireMission(){
   };
 }
 
+async function construireChateau(){
+  const R = "chateau-fort/";
+  const [dial, lec, enig] = await Promise.all([
+    json(R + "assets/data/dialogues.json"),
+    json(R + "assets/data/lecons.json"),
+    json(R + "assets/data/enigmes.json")
+  ]);
+  const lien = (n, niv, e) => `${R}?salle=${n}&niveau=${niv}` + (e ? "&enigme=" + e : "");
+  const deux = n => [{ libelle: "CM1", url: lien(n, "CM1") }, { libelle: "CM2", url: lien(n, "CM2") }];
+  const salles = dial.salles;
+  const persoSalles = p => salles.filter(s => [s.dialogue_intro, s.dialogue_fin].some(d => d && d.perso === p))
+                                 .map(s => ({ libelle: "Salle " + s.num, url: lien(s.num, "CM2") }));
+  /* Énigmes du niveau demandé, dans l'ordre où le jeu les présente */
+  const enigmesDe = (num, niv) => {
+    const b = (enig.salles || []).find(x => x.num === num);
+    return b ? (b.enigmes || []).filter(e => !e.niveaux || e.niveaux.includes(niv)) : [];
+  };
+  const illustrations = [];
+  (enig.salles || []).forEach(b => (b.enigmes || []).forEach(e => {
+    if(!e.media || !e.media.base) return;
+    const niv = (!e.niveaux || e.niveaux.includes("CM1")) ? "CM1" : "CM2";
+    const rang = enigmesDe(b.num, niv).findIndex(x => x.id === e.id) + 1;
+    illustrations.push(imageSeule(R + "assets/images/cartes/", e.media.base,
+      `Énigme ${e.id} — ${e.titre}`,
+      (e.media.legende || "Illustration facultative") + ". Sans fichier, l'énigme reste jouable.",
+      EXT.image, [{ libelle: "Salle " + b.num + " · " + niv, url: lien(b.num, niv, rang) }]));
+  }));
+  return {
+    id: "chateau-fort", nom: "Le Secret du donjon", R,
+    defaut: "Sans fichier : décor dessiné",
+    tests: ["CM1", "CM2"].map(niv => ({ titre: niv + " — " + salles.reduce((t,s)=>t+enigmesDe(s.num,niv).length,0) + " énigmes", liens: [
+      ...salles.flatMap(s => [
+        { libelle: s.num + ". " + s.titre, url: lien(s.num, niv) },
+        ...enigmesDe(s.num, niv).map((e, i) => ({ libelle: "   ↳ " + e.id + " " + e.titre + " (" + e.type + ")", url: lien(s.num, niv, i + 1) }))
+      ]),
+      { libelle: "🏁 L'inscription, la herse (quizz) et la fin", url: lien(6, niv) }
+    ]})),
+    familles: [
+      { titre: "Décors et cinématiques", slots: [
+        decor(R, "intro", "Cinématique d'ouverture", "Plein écran au clic sur « Entrer au château ». Sautée si absente.", [{ libelle: "Accueil", url: R }]),
+        ...salles.map(s => decor(R, "salle" + s.num, `Salle ${s.num} — ${s.titre}`,
+          "Décor de fond de la salle" + (s.num === 1 ? ", et de l'écran d'accueil" : "") + ".", deux(s.num))),
+        decor(R, "final", "Cinématique de fin", "Plein écran quand la herse se lève. Sautée si absente.", [{ libelle: "Fin", url: lien(6, "CM2") }])
+      ]},
+      { titre: "Personnages", slots: Object.entries(dial.personnages || {}).map(([cle, p]) =>
+          personnage(R, cle, (p && p.nom) || cle, persoSalles(cle))) },
+      { titre: "Illustrations d'énigmes (facultatives)", slots: illustrations },
+      { titre: "Documents des leçons (📚)", slots: listeLecons(lec)
+          .filter(l => l.document && l.document.type === "image")
+          .map(l => imageSeule(R + "assets/images/documents/", l.document.fichier || l.id, l.document.titre,
+            `Leçon « ${l.titre} ». Format .jpg uniquement.`, EXT.jpg)) }
+    ],
+    docs: [
+      { libelle: "📘 Guide du jeu (énigmes et solutions)", url: lienGitHub(R + "README.md") },
+      { libelle: "🎞️ Liste des médias", url: lienGitHub(R + "assets/README.md") },
+      { libelle: "📖 Guide pédagogique", url: lienGitHub(R + "GUIDE-PEDAGOGIQUE.md") },
+      { libelle: "✅ Points vérifiés et à relire", url: lienGitHub(R + "A-VERIFIER.md") },
+      { libelle: "▶ Écran d'accueil du jeu", url: R }
+    ]
+  };
+}
+
+
 const CONSTRUCTEURS = {
   "declaration": construireDeclaration,
   "tour-du-monde": construireTour,
@@ -663,7 +727,8 @@ const CONSTRUCTEURS = {
   "moyen-age-abbaye": construireAbbaye,
   "station-meteo": construireMeteo,
   "melanges": construireMelanges,
-  "objets-techniques": construireObjetsTechniques
+  "objets-techniques": construireObjetsTechniques,
+  "chateau-fort": construireChateau
 };
 
 /* ---------------- Quels fichiers existent ? ----------------

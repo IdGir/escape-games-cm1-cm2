@@ -1,0 +1,290 @@
+/* ============================================================
+   LE SCEAU DE LA RÉPUBLIQUE — styles du moteur d'énigmes
+   Complète css/style.css : uniquement les types d'énigmes
+   ajoutés par js/enigmes.js (tri, trous, code, plan, intrus…).
+   ============================================================ */
+
+/* ---- Carte d'énigme ---- */
+.enigme-carte{
+  background:var(--parchemin-clair);
+  border:2px solid var(--parchemin-ombre);
+  border-radius:var(--radius);
+  padding:18px;
+  margin:14px 0;
+  box-shadow:0 4px 14px var(--ombre-douce);
+  animation:fondu .35s;
+}
+.enigme-carte.resolue{border-color:var(--vert);background:#f2fbf1}
+.enigme-tete{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.enigme-tete h3{margin:0;color:var(--bleu-fonce)}
+.enigme-num{
+  background:var(--bleu);color:#fff;border-radius:999px;
+  padding:3px 12px;font-size:.78rem;font-weight:bold;letter-spacing:.5px;white-space:nowrap;
+}
+.enigme-carte.resolue .enigme-num{background:var(--vert)}
+.source-enigme{font-size:.74rem;opacity:.85;font-style:italic;align-self:center}
+.correction{margin-top:8px;font-weight:normal;font-style:italic;font-size:.92rem}
+
+/* ---- Fil des énigmes d'une salle ---- */
+.fil-enigmes{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:10px 0 4px}
+.fil-point{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  background:#fff;border:2px solid var(--parchemin-ombre);
+  font-size:.78rem;font-weight:bold;color:var(--encre-doux);
+}
+.fil-point.fait{background:var(--vert);border-color:var(--vert);color:#fff}
+.fil-point.actuel{background:var(--or);border-color:#9a7a12;color:#3a2c0a;transform:scale(1.15)}
+
+/* ---- Explications révélées après validation ---- */
+.explication{
+  display:none;margin-top:8px;padding:8px 10px;border-left:3px solid var(--vert);
+  background:#eef8ee;border-radius:0 8px 8px 0;font-size:.88rem;font-style:italic;
+}
+.explication.show{display:block;animation:fondu .3s}
+
+/* ---- QCM : état validé ---- */
+.qcm-option.bien{background:#d8f5d8;border-color:var(--vert)}
+.qcm-option.mal{animation:secoue .4s;background:#ffe0e0;border-color:var(--rouge)}
+.qcm-question.verrouille .qcm-option{pointer-events:none;opacity:.85}
+
+/* ---- Vrai / Faux ---- */
+.bloc-vf{display:flex;flex-direction:column;gap:10px;margin:12px 0}
+.vf-ligne{
+  background:#fff8e6;border:2px solid var(--parchemin-ombre);border-radius:10px;
+  padding:12px 14px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;
+}
+.vf-ligne .vf-txt{grid-column:1}
+.vf-ligne .vf-boutons{grid-column:2;display:flex;gap:6px}
+.vf-ligne .explication{grid-column:1/-1}
+.vf-btn{min-width:64px}
+.vf-btn.select{background:var(--bleu);color:#fff;border-color:var(--bleu-fonce)}
+.vf-ligne.bien{border-color:var(--vert);background:#eef8ee}
+.vf-ligne.mal{animation:secoue .4s;border-color:var(--rouge);background:#ffe8e8}
+.vf-ligne.verrouille .vf-btn{pointer-events:none;opacity:.8}
+@media(max-width:560px){
+  .vf-ligne{grid-template-columns:1fr}
+  .vf-ligne .vf-boutons{grid-column:1;justify-content:flex-end}
+}
+
+/* ---- Ordre : états ---- */
+.item-ordre.bien{border-color:var(--vert);background:#eef8ee}
+.item-ordre.mal{animation:secoue .4s;border-color:var(--rouge);background:#ffe8e8}
+.item-ordre.verrouille .controles-ordre{visibility:hidden}
+.item-ordre .sous{font-size:.8rem;opacity:.7}
+.controles-ordre{display:flex;flex-direction:column;gap:2px}
+.controles-ordre button{
+  border:1px solid var(--parchemin-ombre);background:#fff;border-radius:6px;
+  cursor:pointer;width:30px;line-height:1.2;font-size:.9rem;
+}
+.controles-ordre button:hover{background:var(--or-clair)}
+
+/* ---- Tri en colonnes ---- */
+.tri-reserve{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  min-height:56px;padding:10px;margin:12px 0;
+  background:#fff8e6;border:2px dashed var(--parchemin-ombre);border-radius:12px;
+}
+.tri-reserve:empty::after{content:"Toutes les étiquettes sont classées";opacity:.5;font-style:italic;font-size:.85rem}
+.tri-colonnes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
+.tri-colonne{background:#fff;border:2px solid var(--parchemin-ombre);border-radius:12px;overflow:hidden}
+.tri-titre{
+  background:var(--bleu);color:#fff;padding:8px 10px;font-weight:bold;
+  text-align:center;font-size:.92rem;
+}
+.tri-zone{min-height:96px;padding:8px;display:flex;flex-direction:column;gap:6px}
+.carte-tri{
+  background:var(--parchemin);border:2px solid var(--parchemin-ombre);border-radius:8px;
+  padding:7px 10px;cursor:pointer;font-size:.9rem;transition:transform var(--transi),border-color var(--transi);
+}
+.carte-tri:hover{transform:translateY(-2px);border-color:var(--or)}
+.carte-tri.select{background:#e6efff;border-color:var(--bleu);box-shadow:0 0 0 3px rgba(29,58,138,.22)}
+.carte-tri.bien{background:#d8f5d8;border-color:var(--vert)}
+.carte-tri.mal{animation:secoue .4s;background:#ffe0e0;border-color:var(--rouge)}
+.carte-tri.verrouille{pointer-events:none;opacity:.9}
+.carte-tri .emoji{margin-right:6px}
+
+/* ---- Texte à trous ---- */
+.texte-trous{
+  background:#fffdf5;border:1px solid var(--parchemin-ombre);border-radius:12px;
+  padding:16px 18px;line-height:2.4;font-size:1.02rem;margin:12px 0;
+}
+.trou{
+  display:inline-block;min-width:104px;padding:2px 8px;margin:0 2px;
+  border-bottom:3px solid var(--bleu);background:#eef3ff;border-radius:6px 6px 0 0;
+  text-align:center;cursor:pointer;font-weight:bold;color:var(--bleu-fonce);
+}
+.trou:empty::after{content:"?";opacity:.45;font-weight:normal}
+.trou.rempli{background:#e6efff}
+.trou.bien{background:#d8f5d8;border-bottom-color:var(--vert);color:#1b5e20}
+.trou.mal{background:#ffe0e0;border-bottom-color:var(--rouge);animation:secoue .4s}
+.trou.verrouille{cursor:default;pointer-events:none}
+.etiquettes{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0}
+.etiquette.posee{opacity:.28;pointer-events:none;text-decoration:line-through}
+
+/* ---- Cadenas ---- */
+.cadenas{
+  display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:center;
+  background:#fff8e6;border:2px solid var(--or);border-radius:14px;padding:16px;margin:12px 0;
+}
+.cadenas-champ{display:flex;flex-direction:column;gap:4px;max-width:230px}
+.cadenas-champ label{font-size:.85rem;font-weight:bold;color:var(--bleu-fonce)}
+.cadenas-champ input{
+  font-family:'Courier New',monospace;font-size:1.5rem;letter-spacing:.3em;text-align:center;
+  padding:8px 10px;border:2px solid var(--parchemin-ombre);border-radius:10px;background:#fff;width:100%;
+}
+.cadenas-champ input.bien{border-color:var(--vert);background:#d8f5d8}
+.cadenas-champ input.mal{border-color:var(--rouge);background:#ffe0e0;animation:secoue .4s}
+
+/* ---- Intrus ---- */
+.grille-intrus{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.carte-intrus{
+  background:#fff;border:2px solid var(--parchemin-ombre);border-radius:12px;
+  padding:14px 10px;text-align:center;cursor:pointer;transition:transform var(--transi),border-color var(--transi);
+}
+.carte-intrus:hover{transform:translateY(-3px);border-color:var(--or)}
+.carte-intrus .emoji{font-size:1.9rem;display:block;margin-bottom:6px}
+.carte-intrus .txt{font-weight:bold;font-size:.94rem}
+.carte-intrus .sous{font-size:.78rem;opacity:.7;margin-top:4px}
+.carte-intrus.bien{border-color:var(--vert);background:#d8f5d8;animation:pop-slot .4s}
+.carte-intrus.mal{animation:secoue .4s;border-color:var(--rouge);background:#ffe0e0}
+
+/* ---- Plan / schéma ---- */
+.plan-titre{text-align:center;font-weight:bold;color:var(--bleu-fonce);margin:8px 0}
+.plan-grille{
+  display:grid;grid-template-columns:repeat(var(--plan-cols,3),1fr);gap:10px;margin:12px 0;
+}
+.plan-case{
+  background:#fff;border:2px solid var(--parchemin-ombre);border-radius:12px;
+  padding:10px;text-align:center;cursor:pointer;min-height:86px;
+  display:flex;flex-direction:column;justify-content:center;gap:6px;
+  transition:border-color var(--transi),transform var(--transi);
+}
+.plan-case:hover{border-color:var(--or);transform:translateY(-2px)}
+.plan-libelle{font-size:.82rem;opacity:.8}
+.plan-slot{
+  min-height:30px;border-bottom:3px solid var(--bleu);border-radius:6px 6px 0 0;
+  background:#eef3ff;display:grid;place-items:center;font-weight:bold;color:var(--bleu-fonce);
+  font-size:.9rem;padding:3px 4px;
+}
+.plan-slot:empty::after{content:"?";opacity:.45;font-weight:normal}
+.plan-case.bien{border-color:var(--vert)}
+.plan-case.bien .plan-slot{background:#d8f5d8;border-bottom-color:var(--vert);color:#1b5e20}
+.plan-case.mal{animation:secoue .4s;border-color:var(--rouge)}
+.plan-case.mal .plan-slot{background:#ffe0e0;border-bottom-color:var(--rouge)}
+.plan-case.verrouille{pointer-events:none}
+@media(max-width:560px){ .plan-grille{grid-template-columns:repeat(2,1fr)} }
+
+/* ---- Les cinq serrures du coffre ---- */
+.coffre-serrures{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.serrure{
+  width:92px;padding:10px 6px;border-radius:12px;text-align:center;
+  background:#efe6d0;border:2px solid var(--parchemin-ombre);
+}
+.serrure .icone{font-size:1.5rem;display:block}
+.serrure .mot{font-size:.74rem;font-weight:bold;letter-spacing:1px;opacity:.35}
+.serrure.ouverte{background:#d8f5d8;border-color:var(--vert)}
+.serrure.ouverte .mot{opacity:1;color:#1b5e20}
+
+/* ---- Bandeau « mot-clé trouvé » ---- */
+.mot-cle{
+  margin:16px auto;max-width:460px;text-align:center;
+  background:linear-gradient(135deg,#fff6d8,#f2e3ad);
+  border:3px double var(--or);border-radius:14px;padding:14px;
+}
+.mot-cle .lib{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;opacity:.7}
+.mot-cle .val{font-size:1.9rem;font-weight:bold;letter-spacing:6px;color:var(--bleu-fonce)}
+
+/* ---- Encart concours (écran de fin, facultatif) ---- */
+.encart-concours{
+  margin:20px 0;padding:18px;border-radius:14px;
+  background:linear-gradient(135deg,#eef3ff,#e2ecff);
+  border:2px solid var(--bleu);
+}
+.encart-concours h3{color:var(--bleu-fonce);margin-bottom:8px}
+.encart-concours ul{margin:8px 0 8px 20px}
+.encart-concours .dates{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0;
+}
+.encart-concours .date-case{background:#fff;border-radius:10px;padding:8px 10px;font-size:.85rem}
+.encart-concours .date-case b{display:block;color:var(--bleu-fonce)}
+.encart-concours .avert{font-size:.78rem;opacity:.75;font-style:italic;margin-top:10px}
+
+/* ============================================================
+   BIBLIOTHÈQUE DES FICHES OFFICIELLES (📚)
+   Chaque leçon est un PDF du site Découvrons notre Constitution.
+   ============================================================ */
+.biblio-intro{opacity:.85;font-style:italic;margin-bottom:10px}
+.biblio-salle{
+  color:var(--bleu-fonce);font-size:1rem;margin:20px 0 4px;
+  border-bottom:2px solid var(--or);padding-bottom:4px;
+}
+.carte-doc .doc-meta{
+  margin-top:8px;display:flex;flex-direction:column;gap:4px;align-items:center;
+}
+.badge-format{
+  background:var(--bleu-fonce);color:#fff;border-radius:20px;
+  padding:2px 10px;font-size:.7rem;font-weight:bold;
+}
+.badge-format.badge-jeu{background:var(--rouge-fonce)}
+.doc-format{font-size:.72rem;color:#6b6257}
+.doc-source-globale{
+  font-size:.75rem;color:#7a7168;font-style:italic;margin-top:22px;
+  border-top:1px dashed var(--parchemin-ombre);padding-top:10px;line-height:1.5;
+}
+
+/* ---- Document ouvert ---- */
+.doc-titre{
+  color:var(--bleu-fonce);border-bottom:2px solid var(--or);
+  padding-bottom:6px;margin:14px 0 6px;
+}
+.doc-format-ligne{font-size:.8rem;color:#6b6257;margin-bottom:8px}
+.doc-theme{font-style:italic}
+.doc-apercu{margin-bottom:10px}
+.doc-notions ul{margin:6px 0 0 18px}
+.doc-zone{margin:14px 0}
+.doc-attente{font-style:italic;opacity:.7}
+.doc-visionneuse{
+  width:100%;height:min(70vh,640px);border:2px solid var(--parchemin-ombre);
+  border-radius:10px;background:#fff;
+}
+.doc-repli{padding:18px;text-align:center}
+.doc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.doc-absent{
+  background:#fff3d6;border:2px dashed var(--or);border-radius:10px;padding:16px;
+}
+.doc-absent p{margin:0 0 8px}
+.doc-absent code{
+  background:#fff;border:1px solid var(--parchemin-ombre);border-radius:4px;
+  padding:1px 5px;font-size:.85em;
+}
+.doc-source{
+  font-size:.75rem;color:#7a7168;font-style:italic;margin-top:14px;
+  border-top:1px dashed var(--parchemin-ombre);padding-top:8px;line-height:1.5;
+}
+@media (max-width:640px){
+  .doc-visionneuse{height:min(60vh,460px)}
+}
+
+/* ============================================================
+   LE SECRET DU DONJON — compléments
+   ============================================================ */
+.source-correction{margin-top:6px;font-size:.78rem;font-style:normal;color:var(--encre-doux)}
+/* Inscription gravée au-dessus de la porte */
+.inscription-porte{background:linear-gradient(#cfc6b3,#b8ad97);border:3px solid #6f675a;color:#2b2419}
+.inscription-porte .texte{font-family:Georgia,"Times New Roman",serif;font-size:1.15rem;line-height:1.7;letter-spacing:.02em}
+.inscription-porte .texte b{color:#5a1f16;letter-spacing:.06em}
+/* La herse qui se lève à la fin du quizz */
+.herse-finale{display:flex;justify-content:center;margin:12px 0}
+.herse-finale .grille-herse{transition:transform 2.6s cubic-bezier(.3,.1,.2,1)}
+.herse-finale.levee .grille-herse{transform:translateY(calc(var(--levee,1) * -120px))}
+body.calme .herse-finale .grille-herse{transition:none}
+/* Leçons : schéma, lexique, sources */
+.schema-lecon{background:#fff;border:1px solid var(--parchemin-ombre);border-radius:10px;padding:8px;margin:8px 0 14px}
+.lexique-lecon{display:grid;grid-template-columns:minmax(110px,max-content) 1fr;gap:4px 12px;margin:6px 0 14px;font-size:.92rem}
+.lexique-lecon dt b{color:var(--bleu-fonce)}
+.lexique-lecon dd{margin:0}
+.pied-lecon{color:var(--encre-doux)}
+/* Plan du château (énigme 2-1) : lisible au TBI et sur tablette */
+.consigne svg{max-width:min(420px,100%);height:auto}
+/* Le mot le plus long (REDEVANCES) doit tenir dans sa case */
+.coffre-serrures .serrure .mot{font-size:.72rem;letter-spacing:.02em;overflow-wrap:anywhere}

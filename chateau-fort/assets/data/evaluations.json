@@ -1,0 +1,711 @@
+{
+  "metadata": {
+    "sujet": "Le Moyen Âge : le château fort et la vie quotidienne des paysannes et des paysans",
+    "niveaux": [
+      "CM1",
+      "CM2"
+    ],
+    "programme": "Histoire, CM1 : la vie quotidienne au Moyen Âge (« Comment les femmes et les hommes vivaient-ils au Moyen Âge ? ») — fonctions du château fort, vie des paysannes et des paysans. Progression de l'enseignant : année B, période 1.",
+    "sources": "Voir README.md du jeu, section Sources."
+  },
+  "quizz_final": {
+    "CM1": [
+      {
+        "q": "Quelles sont les trois fonctions d'un château fort ?",
+        "options": [
+          "prier, vendre, voyager",
+          "protéger, loger le seigneur, montrer sa puissance",
+          "cultiver, moudre, cuire le pain"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Les premiers châteaux forts étaient construits en…",
+        "options": [
+          "pierre et marbre",
+          "brique et béton",
+          "terre et bois"
+        ],
+        "bonne": 2
+      },
+      {
+        "q": "Le donjon, c'est…",
+        "options": [
+          "la tour maîtresse où vit le seigneur",
+          "une prison souterraine",
+          "le fossé plein d'eau"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "Que doit faire le paysan pendant la corvée ?",
+        "options": [
+          "payer l'Église",
+          "travailler gratuitement sur les terres du seigneur",
+          "se réfugier au château"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Que doit le seigneur aux paysans en échange ?",
+        "options": [
+          "un salaire chaque mois",
+          "une maison en pierre",
+          "la protection et la justice"
+        ],
+        "bonne": 2
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Qu'est-ce qu'une motte castrale ?",
+        "options": [
+          "un mur de pierre autour d'une ville",
+          "une tour de guet au bord de la mer",
+          "une butte de terre portant une tour de bois, entourée d'une palissade"
+        ],
+        "bonne": 2
+      },
+      {
+        "q": "À quoi servent les mâchicoulis ?",
+        "options": [
+          "à lâcher des projectiles sur les assaillants au pied du mur",
+          "à évacuer l'eau de pluie",
+          "à éclairer la grande salle"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "Pourquoi le château est-il un symbole de puissance ?",
+        "options": [
+          "il appartient à tous les habitants",
+          "il montre la richesse du seigneur, qui y commande et y rend la justice",
+          "le roi y habite toute l'année"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Que sont les banalités ?",
+        "options": [
+          "les jours de fête du village",
+          "la part des récoltes versée à l'Église",
+          "l'obligation d'utiliser, en payant, le moulin, le four et le pressoir du seigneur"
+        ],
+        "bonne": 2
+      },
+      {
+        "q": "Qu'est-ce qu'un serf ?",
+        "options": [
+          "un paysan non libre, attaché à la terre du seigneur",
+          "un esclave que l'on vend au marché",
+          "un chevalier au service du roi"
+        ],
+        "bonne": 0
+      }
+    ]
+  },
+  "fiches_preparatoires": [
+    {
+      "salle": 1,
+      "titre": "La motte et la palissade — construire un château fort",
+      "objectifs": [
+        "Dire pourquoi on construit un château fort",
+        "Décrire une motte castrale",
+        "Expliquer le passage du bois à la pierre"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "seigneur",
+          "def": "noble qui possède une terre et exerce le pouvoir sur ses habitants"
+        },
+        {
+          "mot": "motte",
+          "def": "butte de terre qui porte une tour de bois"
+        },
+        {
+          "mot": "palissade",
+          "def": "clôture de gros pieux de bois"
+        },
+        {
+          "mot": "carrier",
+          "def": "ouvrier qui extrait la pierre de la carrière"
+        },
+        {
+          "mot": "chaux",
+          "def": "poudre obtenue en cuisant du calcaire ; elle sert à faire le mortier"
+        }
+      ],
+      "contexte": "Vers le Xe siècle, les seigneurs font élever des mottes de terre et de bois. À partir du XIe siècle, les plus riches bâtissent en pierre."
+    },
+    {
+      "salle": 2,
+      "titre": "Les remparts — un lieu de protection",
+      "objectifs": [
+        "Nommer les éléments de défense",
+        "Dire le rôle de chacun",
+        "Comprendre ce qu'est un donjon"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "donjon",
+          "def": "tour maîtresse, logis du seigneur"
+        },
+        {
+          "mot": "douves",
+          "def": "fossé autour du château"
+        },
+        {
+          "mot": "pont-levis",
+          "def": "pont mobile qui se relève"
+        },
+        {
+          "mot": "herse",
+          "def": "grille qui descend pour fermer l'entrée"
+        },
+        {
+          "mot": "meurtrière",
+          "def": "ouverture étroite pour tirer à l'abri"
+        }
+      ],
+      "contexte": "Un château fort accumule les obstacles : fossé, pont-levis, herse, murs, tours, chemin de ronde. Le donjon est le dernier refuge."
+    },
+    {
+      "salle": 3,
+      "titre": "La grande salle — lieu de vie et symbole de puissance",
+      "objectifs": [
+        "Décrire la vie au château",
+        "Expliquer pourquoi le château montre la puissance du seigneur",
+        "Présenter le rôle de la dame"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "grande salle",
+          "def": "pièce principale où l'on mange, reçoit et juge"
+        },
+        {
+          "mot": "chapelle",
+          "def": "petite église du château"
+        },
+        {
+          "mot": "page",
+          "def": "jeune noble au service du seigneur"
+        },
+        {
+          "mot": "tournoi",
+          "def": "fête où des chevaliers s'affrontent"
+        },
+        {
+          "mot": "justice",
+          "def": "pouvoir de juger les disputes et de punir"
+        }
+      ],
+      "contexte": "Le château loge une grande maisonnée. La dame dirige la maison et gouverne le domaine quand le seigneur est absent."
+    },
+    {
+      "salle": 4,
+      "titre": "Le village — la vie des paysannes et des paysans",
+      "objectifs": [
+        "Décrire la maison et la nourriture des paysans",
+        "Remettre les travaux dans l'ordre de l'année",
+        "Dire le rôle des paysannes"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "torchis",
+          "def": "terre mêlée de paille, pour les murs"
+        },
+        {
+          "mot": "chaume",
+          "def": "paille du toit"
+        },
+        {
+          "mot": "moisson",
+          "def": "récolte du blé"
+        },
+        {
+          "mot": "vendanges",
+          "def": "récolte du raisin"
+        },
+        {
+          "mot": "jachère",
+          "def": "champ laissé au repos"
+        }
+      ],
+      "contexte": "Presque tout le monde vit à la campagne. L'année est rythmée par les travaux des champs, montrés par le calendrier des Très Riches Heures du duc de Berry."
+    },
+    {
+      "salle": 5,
+      "titre": "Le moulin — seigneurs et paysans",
+      "objectifs": [
+        "Nommer les redevances",
+        "Dire ce que le seigneur doit en échange",
+        "Comparer deux modes de vie"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "corvée",
+          "def": "travail gratuit sur les terres du seigneur"
+        },
+        {
+          "mot": "cens",
+          "def": "argent versé chaque année pour la terre"
+        },
+        {
+          "mot": "banalités",
+          "def": "obligation d'utiliser, en payant, le moulin, le four et le pressoir du seigneur"
+        },
+        {
+          "mot": "dîme",
+          "def": "part des récoltes versée à l'Église"
+        },
+        {
+          "mot": "serf",
+          "def": "paysan non libre, attaché à la terre du seigneur"
+        }
+      ],
+      "contexte": "Les paysans doivent au seigneur travail, argent et part des récoltes. Le seigneur doit les protéger et rendre la justice. L'échange est inégal."
+    }
+  ],
+  "qcm": {
+    "CM1": [
+      {
+        "q": "Pourquoi construit-on un château sur une hauteur ?",
+        "options": [
+          "pour avoir plus chaud",
+          "pour voir l'ennemi arriver de loin",
+          "pour être près de la mer"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "En quoi étaient faits les premiers châteaux forts ?",
+        "options": [
+          "en béton",
+          "en verre",
+          "en terre et en bois"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Quel ouvrier extrait la pierre de la carrière ?",
+        "options": [
+          "le carrier",
+          "le meunier",
+          "le page"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Comment s'appelle le fossé autour du château ?",
+        "options": [
+          "la herse",
+          "les douves",
+          "le chemin de ronde"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "La herse est…",
+        "options": [
+          "une tour ronde",
+          "un outil de paysan",
+          "une grille qui ferme l'entrée"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Qui gouverne le domaine quand le seigneur est absent ?",
+        "options": [
+          "la dame du château",
+          "le meunier",
+          "personne"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Où vivent les paysans ?",
+        "options": [
+          "dans le donjon",
+          "au village, au pied du château",
+          "dans les douves"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Avec quel outil moissonne-t-on le blé ?",
+        "options": [
+          "le fléau",
+          "la herse",
+          "la faucille"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Où les paysans doivent-ils cuire leur pain ?",
+        "options": [
+          "au four du seigneur",
+          "chez eux, sans rien payer",
+          "à l'église"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "À qui est versée la dîme ?",
+        "options": [
+          "au seigneur",
+          "à l'Église",
+          "au roi"
+        ],
+        "bonne": 1,
+        "pts": 1
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Qu'est-ce qu'une motte castrale ?",
+        "options": [
+          "une tour de pierre",
+          "un fossé plein d'eau",
+          "une butte de terre portant une tour de bois"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "À partir de quel siècle apparaissent les premiers donjons de pierre ?",
+        "options": [
+          "le XIe siècle",
+          "le VIIIe siècle",
+          "le XVIIe siècle"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Que fabrique le chaufournier ?",
+        "options": [
+          "les outils en fer",
+          "la chaux du mortier",
+          "les tuiles"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "À quoi servent les mâchicoulis ?",
+        "options": [
+          "à évacuer la fumée",
+          "à ranger les armes",
+          "à atteindre les assaillants au pied du mur"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Le mot « donjon » vient d'un mot latin qui signifie…",
+        "options": [
+          "seigneur",
+          "prison",
+          "tour"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Quelles sont les trois fonctions d'un château fort ?",
+        "options": [
+          "commerce, école, hôpital",
+          "protection, vie du seigneur, symbole de puissance",
+          "culture, pêche, élevage"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Qui devient écuyer puis chevalier ?",
+        "options": [
+          "le meunier",
+          "le serf",
+          "le page"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "En quel mois les Très Riches Heures montrent-elles les vendanges ?",
+        "options": [
+          "septembre",
+          "mars",
+          "décembre"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Qu'est-ce que la jachère ?",
+        "options": [
+          "un outil pour battre le grain",
+          "un champ laissé au repos",
+          "une redevance"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Pourquoi ne trouve-t-on pas de pommes de terre au Moyen Âge en Europe ?",
+        "options": [
+          "le seigneur les interdit",
+          "elles ne poussent qu'en ville",
+          "elles viennent d'Amérique, après 1492"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Qu'est-ce que le cens ?",
+        "options": [
+          "une somme d'argent versée chaque année pour la terre",
+          "une journée de travail",
+          "une part de farine"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Qu'est-ce qui distingue un serf d'un vilain ?",
+        "options": [
+          "le serf est noble",
+          "le serf n'est pas libre de quitter la terre du seigneur",
+          "le vilain est un esclave"
+        ],
+        "bonne": 1,
+        "pts": 1
+      }
+    ]
+  },
+  "questions_fermees": {
+    "CM1": [
+      {
+        "q": "Les premiers châteaux forts étaient en pierre.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Le donjon est la tour où vit le seigneur.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Le pont-levis se relève pour fermer l'entrée.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Les paysans habitent au château toute l'année.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Cite une défense du château fort.",
+        "type": "court",
+        "rep": "douves, pont-levis, herse, enceinte, tour, chemin de ronde, meurtrière (une réponse)",
+        "pts": 1
+      },
+      {
+        "q": "Comment s'appelle le travail gratuit dû au seigneur ?",
+        "type": "court",
+        "rep": "la corvée",
+        "pts": 1
+      },
+      {
+        "q": "Cite un travail des champs fait en été.",
+        "type": "court",
+        "rep": "faucher les foins ou moissonner le blé",
+        "pts": 1
+      },
+      {
+        "q": "Que doit le seigneur aux paysans ?",
+        "type": "court",
+        "rep": "les protéger (et rendre la justice)",
+        "pts": 1
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Tous les châteaux forts datent du XIIIe siècle.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Les mâchicoulis sont en surplomb du mur.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "La dîme est versée au seigneur.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Une femme noble pouvait gouverner un domaine.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Donne les trois fonctions d'un château fort.",
+        "type": "court",
+        "rep": "lieu de protection, lieu de vie du seigneur, symbole de sa puissance",
+        "pts": 2
+      },
+      {
+        "q": "Pourquoi remplace-t-on le bois par la pierre ?",
+        "type": "court",
+        "rep": "la pierre résiste au feu et aux attaques, et dure plus longtemps",
+        "pts": 1
+      },
+      {
+        "q": "Qu'est-ce que les banalités ?",
+        "type": "court",
+        "rep": "l'obligation d'utiliser, en payant, le moulin, le four et le pressoir du seigneur",
+        "pts": 1
+      },
+      {
+        "q": "Un serf est-il un esclave ? Justifie.",
+        "type": "court",
+        "rep": "non : il est attaché à la terre et n'est pas libre, mais il a une maison, une famille et une terre à cultiver",
+        "pts": 1
+      }
+    ]
+  },
+  "etudes_documents": {
+    "CM1": [
+      {
+        "titre": "Une motte castrale",
+        "document": {
+          "contenu": "Le seigneur fait creuser un fossé. Avec la terre, on élève une butte. Au sommet, on construit une tour en bois. Tout autour, on plante une palissade de pieux.",
+          "source": "Texte adapté d'après la fiche « Le château fort », académie de Nice."
+        },
+        "questions": [
+          {
+            "q": "Avec quoi construit-on la butte ?",
+            "type": "court",
+            "rep": "avec la terre du fossé",
+            "pts": 1
+          },
+          {
+            "q": "En quoi est la tour ?",
+            "type": "court",
+            "rep": "en bois",
+            "pts": 1
+          },
+          {
+            "q": "Quel est le danger pour ce château ?",
+            "type": "court",
+            "rep": "le feu",
+            "pts": 1
+          }
+        ]
+      },
+      {
+        "titre": "Le calendrier des travaux",
+        "document": {
+          "contenu": "Juin : on fauche les foins. Juillet : on moissonne le blé et on tond les moutons. Septembre : on vendange. Novembre : on mène les cochons manger les glands.",
+          "source": "D'après le calendrier des Très Riches Heures du duc de Berry, vers 1411-1416, musée Condé, Chantilly."
+        },
+        "questions": [
+          {
+            "q": "Que fait-on en juillet ?",
+            "type": "court",
+            "rep": "on moissonne le blé et on tond les moutons",
+            "pts": 1
+          },
+          {
+            "q": "Que récolte-t-on en septembre ?",
+            "type": "court",
+            "rep": "le raisin (les vendanges)",
+            "pts": 1
+          },
+          {
+            "q": "Que mangent les cochons en novembre ?",
+            "type": "court",
+            "rep": "des glands",
+            "pts": 1
+          }
+        ]
+      }
+    ],
+    "CM2": [
+      {
+        "titre": "Le donjon",
+        "document": {
+          "contenu": "Donjon : du latin populaire dominionem, dérivé de dominus, « seigneur ». Tour maîtresse d'un château fort, qui servait de résidence au seigneur et de dernier refuge en cas d'attaque.",
+          "source": "D'après l'encyclopédie Larousse, article « donjon »."
+        },
+        "questions": [
+          {
+            "q": "De quel mot latin vient « donjon » ? Que signifie-t-il ?",
+            "type": "court",
+            "rep": "dominus, le seigneur",
+            "pts": 1
+          },
+          {
+            "q": "Quelles sont les deux fonctions du donjon citées ?",
+            "type": "court",
+            "rep": "résidence du seigneur et dernier refuge",
+            "pts": 1
+          },
+          {
+            "q": "Pourquoi est-il faux de dire que le donjon était une prison ?",
+            "type": "court",
+            "rep": "c'était d'abord le logis du seigneur et un refuge, pas un lieu pour enfermer",
+            "pts": 1
+          }
+        ]
+      },
+      {
+        "titre": "Le moulin banal",
+        "document": {
+          "contenu": "Dans la seigneurie, les paysans n'ont pas le droit de moudre leur grain ailleurs qu'au moulin du seigneur. Le meunier garde une partie de la farine. Il en va de même pour le four et le pressoir.",
+          "source": "Texte adapté d'après Vikidia, « Banalité (droit seigneurial) »."
+        },
+        "questions": [
+          {
+            "q": "Comment appelle-t-on cette obligation ?",
+            "type": "court",
+            "rep": "une banalité",
+            "pts": 1
+          },
+          {
+            "q": "Quels autres équipements sont concernés ?",
+            "type": "court",
+            "rep": "le four et le pressoir",
+            "pts": 1
+          },
+          {
+            "q": "Qui profite de cette obligation ? Explique.",
+            "type": "court",
+            "rep": "le seigneur : il reçoit une part de chaque fournée et de chaque sac moulu",
+            "pts": 1
+          }
+        ]
+      }
+    ]
+  }
+}

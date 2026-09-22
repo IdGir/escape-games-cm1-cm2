@@ -1,0 +1,1477 @@
+{
+  "metadata": {
+    "jeu": "Le Secret du donjon",
+    "version": 1,
+    "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+    "types": [
+      "qcm",
+      "vraifaux",
+      "association",
+      "ordre",
+      "tri",
+      "trous",
+      "lettres",
+      "code",
+      "intrus",
+      "plan"
+    ],
+    "sources": "Programme d'histoire-géographie du cycle 3 (BO du 28 mai 2026) ; académie de Nice, fiche « Le château fort » ; chantier de Guédelon ; Les Très Riches Heures du duc de Berry (musée Condé, Chantilly) ; Lumni ; L'Histoire par l'image ; Vikidia ; Larousse. Détail : README.md, section Sources.",
+    "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e1-2\",\"legende\":\"…\",\"source\":\"…\"}. Déposez alors e1-2.jpg dans assets/images/cartes/ (ou e1-2.mp4 dans assets/videos/ avec \"type\":\"video\"). Sans fichier, l'énigme reste jouable."
+  },
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La motte et la palissade — Pourquoi et comment construire un château fort ?",
+      "enigmes": [
+        {
+          "id": "1-1",
+          "titre": "Pourquoi une butte ?",
+          "type": "qcm",
+          "consigne": {
+            "cm1": "Lis chaque question, puis clique sur la bonne réponse. Quand tu as tout répondu, clique sur « Vérifier ».",
+            "cm2": "Réponds aux trois questions, puis vérifie. Une seule réponse est exacte à chaque fois."
+          },
+          "source": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Lumni, le château fort",
+          "correction": "Un château fort sert d'abord à protéger : le seigneur, sa famille, ses hommes et, en cas de danger, les habitants du domaine. On le bâtit en hauteur pour voir venir l'ennemi et être difficile à attaquer. Les premiers châteaux sont faits de terre et de bois.",
+          "indices": {
+            "cm1": [
+              "Du haut d'une butte, que peut-on faire plus facilement ?",
+              "Au début, on construit avec ce que l'on trouve vite et partout : la terre et les arbres.",
+              "Le mot « fort » dans « château fort » te donne la réponse à la troisième question."
+            ],
+            "cm2": [
+              "Le mot « castrale » vient du latin castrum, « lieu fortifié ».",
+              "Pense à ce que le feu fait au bois, et à ce qu'il ne fait pas à la pierre.",
+              "Les premiers donjons de pierre apparaissent environ un siècle après les premières mottes."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Pourquoi construit-on un château sur une butte ou une colline ?",
+                "options": [
+                  "pour voir loin et être plus difficile à attaquer",
+                  "parce que la terre y est plus chaude",
+                  "pour être plus près des nuages"
+                ],
+                "bonne": 0,
+                "explication": "En hauteur, on voit l'ennemi arriver de loin, et il doit monter pour attaquer."
+              },
+              {
+                "q": "Les premiers châteaux forts sont surtout construits en…",
+                "options": [
+                  "terre et bois",
+                  "pierre et marbre",
+                  "brique et verre"
+                ],
+                "bonne": 0,
+                "explication": "Une butte de terre, une tour de bois et une palissade de pieux."
+              },
+              {
+                "q": "À quoi sert d'abord un château fort ?",
+                "options": [
+                  "à protéger le seigneur et les gens du domaine",
+                  "à ranger le blé du roi",
+                  "à loger les voyageurs"
+                ],
+                "bonne": 0,
+                "explication": "C'est d'abord un lieu de protection. Il est aussi un lieu de vie et un symbole de puissance."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Qu'appelle-t-on une motte castrale ?",
+                "options": [
+                  "une butte de terre, souvent élevée par les hommes, qui porte une tour de bois entourée d'une palissade",
+                  "une colline naturelle où l'on cultive la vigne",
+                  "un mur de pierre qui entoure une ville",
+                  "une tour de pierre construite au bord de la mer"
+                ],
+                "bonne": 0,
+                "explication": "Les mottes apparaissent vers le Xe siècle. On creuse un fossé et on entasse la terre au centre."
+              },
+              {
+                "q": "Pourquoi remplace-t-on peu à peu le bois par la pierre ?",
+                "options": [
+                  "la pierre résiste au feu, aux coups et au temps",
+                  "la pierre coûte moins cher que le bois",
+                  "le roi interdit d'utiliser le bois",
+                  "un château de pierre se construit plus vite"
+                ],
+                "bonne": 0,
+                "explication": "Un château de pierre coûte très cher et demande des années de travail : seuls les seigneurs puissants peuvent en bâtir."
+              },
+              {
+                "q": "À partir de quand apparaissent les premiers donjons de pierre ?",
+                "options": [
+                  "au XIe siècle",
+                  "dans l'Antiquité, au temps des Gaulois",
+                  "au XVIIIe siècle",
+                  "au XXe siècle"
+                ],
+                "bonne": 0,
+                "explication": "Les donjons de pierre apparaissent au XIe siècle ; les grandes enceintes de pierre se multiplient aux XIIe et XIIIe siècles."
+              }
+            ]
+          },
+          "lecon": "construire-un-chateau"
+        },
+        {
+          "id": "1-2",
+          "titre": "Du bois à la pierre",
+          "type": "ordre",
+          "media": {
+            "base": "e1-2",
+            "legende": "Un chantier de château fort du XIIIe siècle",
+            "source": "Photographie facultative (par exemple le chantier de Guédelon)"
+          },
+          "consigne": {
+            "cm1": "Remets les étapes dans l'ordre, de la plus ancienne (en haut) à la plus récente (en bas). Utilise les flèches ▲ et ▼.",
+            "cm2": "Classe ces cinq moments de l'histoire des châteaux forts, du plus ancien au plus récent. Aide-toi des siècles."
+          },
+          "source": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Chantier médiéval de Guédelon (Treigny, Yonne) ; Cité de l'architecture et du patrimoine",
+          "correction": "D'abord la motte de terre et de bois (Xe siècle), puis les donjons de pierre (XIe siècle), puis les enceintes de pierre qui entourent tout le château (XIIe siècle), enfin les enceintes à tours rondes du XIIIe siècle. Le château fort a changé pendant des siècles : il n'y a pas un seul modèle.",
+          "indices": {
+            "cm1": [
+              "Le Xe siècle vient avant le XIe, qui vient avant le XIIe.",
+              "Tout commence par de la terre et du bois.",
+              "Les tours rondes de l'enceinte sont la dernière étape."
+            ],
+            "cm2": [
+              "Lis les siècles en chiffres romains : X = 10, XI = 11, XII = 12, XIII = 13.",
+              "Guédelon imite un château ancien, mais le chantier, lui, est d'aujourd'hui.",
+              "Le donjon de pierre vient avant l'enceinte de pierre qui l'entoure."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "Une butte de terre, une tour de bois et une palissade",
+                "sous": "Xe siècle",
+                "rang": 1
+              },
+              {
+                "txt": "Les premiers donjons en pierre",
+                "sous": "XIe siècle",
+                "rang": 2
+              },
+              {
+                "txt": "Un grand mur de pierre entoure le donjon",
+                "sous": "XIIe siècle",
+                "rang": 3
+              },
+              {
+                "txt": "Des tours rondes aux angles de l'enceinte",
+                "sous": "XIIIe siècle",
+                "rang": 4
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "On entasse la terre d'un fossé pour élever une motte, coiffée d'une tour de bois",
+                "sous": "Xe siècle",
+                "rang": 1
+              },
+              {
+                "txt": "Les seigneurs les plus riches font bâtir des donjons de pierre",
+                "sous": "XIe siècle",
+                "rang": 2
+              },
+              {
+                "txt": "Une enceinte de pierre, avec son chemin de ronde, entoure le donjon et la cour",
+                "sous": "XIIe siècle",
+                "rang": 3
+              },
+              {
+                "txt": "Des enceintes à tours rondes aux angles, sur le modèle des châteaux de Philippe Auguste",
+                "sous": "XIIIe siècle",
+                "rang": 4
+              },
+              {
+                "txt": "À Guédelon, des artisans bâtissent un château du XIIIe siècle avec les techniques de l'époque",
+                "sous": "depuis 1997",
+                "rang": 5
+              }
+            ]
+          },
+          "lecon": "construire-un-chateau"
+        },
+        {
+          "id": "1-3",
+          "titre": "Les métiers du chantier",
+          "type": "association",
+          "consigne": {
+            "cm1": "Clique sur un métier à gauche, puis sur son travail à droite.",
+            "cm2": "Relie chaque artisan du chantier à son travail. Attention : certains se ressemblent."
+          },
+          "source": "Chantier médiéval de Guédelon (Treigny, Yonne) ; Cité de l'architecture et du patrimoine",
+          "correction": "Un château de pierre demande beaucoup de métiers : le carrier extrait la pierre, le tailleur lui donne sa forme, le chaufournier fabrique la chaux du mortier, le maçon assemble, le charpentier fait les échafaudages et les toits, le forgeron fabrique et répare les outils.",
+          "indices": {
+            "cm1": [
+              "Une carrière, c'est l'endroit d'où l'on sort la pierre.",
+              "Le charpentier travaille le bois.",
+              "Le forgeron travaille le fer, au feu."
+            ],
+            "cm2": [
+              "Le chaufournier travaille avec un four à chaux.",
+              "Le tailleur ne sort pas la pierre de la carrière : il la façonne.",
+              "Le forgeron répare les outils qui s'usent sur la pierre."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "Le carrier",
+                "d": "extrait les blocs de pierre de la carrière"
+              },
+              {
+                "g": "Le charpentier",
+                "d": "construit les échafaudages et les toits en bois"
+              },
+              {
+                "g": "Le forgeron",
+                "d": "fabrique et répare les outils en fer"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "Le carrier",
+                "d": "extrait les blocs de pierre de la carrière"
+              },
+              {
+                "g": "Le tailleur de pierre",
+                "d": "donne à chaque bloc sa forme exacte"
+              },
+              {
+                "g": "Le chaufournier",
+                "d": "cuit la pierre calcaire pour obtenir la chaux du mortier"
+              },
+              {
+                "g": "Le charpentier",
+                "d": "construit les échafaudages et les charpentes"
+              },
+              {
+                "g": "Le forgeron",
+                "d": "fabrique et répare les outils en fer"
+              }
+            ]
+          },
+          "lecon": "construire-un-chateau"
+        },
+        {
+          "id": "1-4",
+          "titre": "Le carnet du maître maçon",
+          "type": "trous",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop.",
+          "source": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Chantier médiéval de Guédelon (Treigny, Yonne) ; Cité de l'architecture et du patrimoine",
+          "correction": "Les premières mottes sont rapides à construire mais craignent le feu. Au XIe siècle apparaissent les donjons de pierre. À Guédelon, en Bourgogne, on reconstruit depuis 1997 un château du XIIIe siècle pour comprendre comment travaillaient les bâtisseurs.",
+          "indices": {
+            "cm2": [
+              "Le premier trou désigne la butte de terre.",
+              "Le bois a un grand ennemi.",
+              "Le chantier d'aujourd'hui se trouve dans l'Yonne, en Bourgogne."
+            ]
+          },
+          "commun": {
+            "texte": "<p>Vers le Xe siècle, beaucoup de seigneurs font élever une [[motte]] : une butte de terre qui porte une tour de [[bois]] entourée d'une [[palissade]]. Ces châteaux se construisent vite, mais ils craignent le [[feu]]. À partir du [[XIe]] siècle, les seigneurs les plus riches font bâtir des donjons en [[pierre]]. Aujourd'hui, à [[Guédelon]], des artisans construisent un château comme au XIIIe siècle.</p>",
+            "etiquettes": [
+              "motte",
+              "bois",
+              "palissade",
+              "feu",
+              "XIe",
+              "pierre",
+              "Guédelon",
+              "brique",
+              "XVIIIe",
+              "Versailles",
+              "vent"
+            ]
+          },
+          "lecon": "construire-un-chateau"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "titre": "Les remparts — Un château fort, lieu de protection",
+      "enigmes": [
+        {
+          "id": "2-1",
+          "titre": "Le plan du château",
+          "type": "plan",
+          "consigne": {
+            "cm1": "Observe le plan du château vu de dessus. Clique sur une étiquette, puis sur la case du bon repère (1 à 4).<svg viewBox=\"0 0 320 230\" role=\"img\" aria-label=\"Plan d'un château fort vu de dessus, avec six repères numérotés\" style=\"display:block;max-width:420px;margin:10px auto;background:#f7efd9;border:2px solid #8a7a5a;border-radius:10px\">\n<rect x=\"14\" y=\"14\" width=\"292\" height=\"202\" rx=\"30\" fill=\"#9cc3d8\" stroke=\"#4d7489\" stroke-width=\"2\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"#d9ccb0\" stroke=\"#5e5446\" stroke-width=\"7\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"none\" stroke=\"#f7efd9\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/>\n<g fill=\"#b8a888\" stroke=\"#5e5446\" stroke-width=\"3\"><circle cx=\"48\" cy=\"40\" r=\"16\"/><circle cx=\"272\" cy=\"40\" r=\"16\"/><circle cx=\"48\" cy=\"190\" r=\"16\"/><circle cx=\"272\" cy=\"190\" r=\"16\"/></g>\n<rect x=\"138\" y=\"70\" width=\"46\" height=\"46\" fill=\"#8f806a\" stroke=\"#3d352b\" stroke-width=\"3\"/>\n<rect x=\"146\" y=\"190\" width=\"28\" height=\"30\" fill=\"#a07a4a\" stroke=\"#5e3f1f\" stroke-width=\"2\"/>\n<g stroke=\"#3d352b\" stroke-width=\"2\"><line x1=\"150\" y1=\"186\" x2=\"150\" y2=\"196\"/><line x1=\"156\" y1=\"186\" x2=\"156\" y2=\"196\"/><line x1=\"162\" y1=\"186\" x2=\"162\" y2=\"196\"/><line x1=\"168\" y1=\"186\" x2=\"168\" y2=\"196\"/></g>\n<g font-family=\"Georgia,serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">\n<circle cx=\"161\" cy=\"93\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"161\" y=\"98\">1</text>\n<circle cx=\"30\" cy=\"118\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"30\" y=\"123\">2</text>\n<circle cx=\"200\" cy=\"215\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"200\" y=\"220\">3</text>\n<circle cx=\"96\" cy=\"58\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"96\" y=\"63\">4</text>\n<circle cx=\"126\" cy=\"176\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"126\" y=\"181\">5</text>\n<circle cx=\"272\" cy=\"40\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"272\" y=\"45\">6</text>\n</g></svg>",
+            "cm2": "Observe le plan du château vu de dessus. Place chaque étiquette dans la case du bon repère (1 à 6). Une étiquette est en trop.<svg viewBox=\"0 0 320 230\" role=\"img\" aria-label=\"Plan d'un château fort vu de dessus, avec six repères numérotés\" style=\"display:block;max-width:420px;margin:10px auto;background:#f7efd9;border:2px solid #8a7a5a;border-radius:10px\">\n<rect x=\"14\" y=\"14\" width=\"292\" height=\"202\" rx=\"30\" fill=\"#9cc3d8\" stroke=\"#4d7489\" stroke-width=\"2\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"#d9ccb0\" stroke=\"#5e5446\" stroke-width=\"7\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"none\" stroke=\"#f7efd9\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/>\n<g fill=\"#b8a888\" stroke=\"#5e5446\" stroke-width=\"3\"><circle cx=\"48\" cy=\"40\" r=\"16\"/><circle cx=\"272\" cy=\"40\" r=\"16\"/><circle cx=\"48\" cy=\"190\" r=\"16\"/><circle cx=\"272\" cy=\"190\" r=\"16\"/></g>\n<rect x=\"138\" y=\"70\" width=\"46\" height=\"46\" fill=\"#8f806a\" stroke=\"#3d352b\" stroke-width=\"3\"/>\n<rect x=\"146\" y=\"190\" width=\"28\" height=\"30\" fill=\"#a07a4a\" stroke=\"#5e3f1f\" stroke-width=\"2\"/>\n<g stroke=\"#3d352b\" stroke-width=\"2\"><line x1=\"150\" y1=\"186\" x2=\"150\" y2=\"196\"/><line x1=\"156\" y1=\"186\" x2=\"156\" y2=\"196\"/><line x1=\"162\" y1=\"186\" x2=\"162\" y2=\"196\"/><line x1=\"168\" y1=\"186\" x2=\"168\" y2=\"196\"/></g>\n<g font-family=\"Georgia,serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">\n<circle cx=\"161\" cy=\"93\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"161\" y=\"98\">1</text>\n<circle cx=\"30\" cy=\"118\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"30\" y=\"123\">2</text>\n<circle cx=\"200\" cy=\"215\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"200\" y=\"220\">3</text>\n<circle cx=\"96\" cy=\"58\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"96\" y=\"63\">4</text>\n<circle cx=\"126\" cy=\"176\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"126\" y=\"181\">5</text>\n<circle cx=\"272\" cy=\"40\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"272\" y=\"45\">6</text>\n</g></svg>"
+          },
+          "source": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Cité de l'architecture et du patrimoine",
+          "correction": "Au centre, le donjon (1). Tout autour, l'enceinte (4), renforcée de tours (6). Devant, les douves (2), franchies par le pont-levis (3) ; derrière lui, la herse (5) ferme l'entrée.",
+          "indices": {
+            "cm1": [
+              "Le repère 1 est au milieu : c'est la tour la plus importante.",
+              "Le repère 2 est dans l'eau.",
+              "Le repère 4 est le grand mur qui fait le tour du château."
+            ],
+            "cm2": [
+              "Le repère 3 franchit l'eau : il peut se relever.",
+              "Le repère 5 est une grille, juste derrière le passage.",
+              "Le repère 6 est une construction ronde, dans un angle du mur."
+            ]
+          },
+          "cm1": {
+            "titre": "Le plan du château",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Repère 1 — la grande tour au centre",
+                "reponse": "Le donjon"
+              },
+              {
+                "libelle": "Repère 2 — le fossé plein d'eau",
+                "reponse": "Les douves"
+              },
+              {
+                "libelle": "Repère 3 — le pont devant l'entrée",
+                "reponse": "Le pont-levis"
+              },
+              {
+                "libelle": "Repère 4 — le grand mur tout autour",
+                "reponse": "L'enceinte"
+              }
+            ]
+          },
+          "cm2": {
+            "titre": "Le plan du château",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "Le donjon"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "Les douves"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "Le pont-levis"
+              },
+              {
+                "libelle": "Repère 4",
+                "reponse": "L'enceinte"
+              },
+              {
+                "libelle": "Repère 5",
+                "reponse": "La herse"
+              },
+              {
+                "libelle": "Repère 6",
+                "reponse": "Une tour"
+              }
+            ],
+            "etiquettes": [
+              "Le donjon",
+              "Les douves",
+              "Le pont-levis",
+              "L'enceinte",
+              "La herse",
+              "Une tour",
+              "La chapelle"
+            ]
+          },
+          "lecon": "les-defenses"
+        },
+        {
+          "id": "2-2",
+          "titre": "À quoi ça sert ?",
+          "type": "association",
+          "consigne": {
+            "cm1": "Clique sur une défense à gauche, puis sur son rôle à droite.",
+            "cm2": "Relie chaque élément de défense à son rôle précis."
+          },
+          "source": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC)",
+          "correction": "Chaque élément ralentit ou arrête l'ennemi : les douves l'empêchent d'approcher, la herse ferme l'entrée, les meurtrières permettent de tirer à l'abri, les mâchicoulis de viser ceux qui sont au pied du mur, le chemin de ronde de surveiller et de défendre le haut des murs.",
+          "indices": {
+            "cm1": [
+              "La herse est une grille qui descend.",
+              "Une meurtrière est une fente étroite dans le mur.",
+              "Les douves sont pleines d'eau."
+            ],
+            "cm2": [
+              "« Mâchicoulis » : les ouvertures sont dans le sol d'une galerie en surplomb.",
+              "Le chemin de ronde permet de faire le tour du château par le haut.",
+              "La meurtrière est étroite dehors et large dedans : on voit sans être vu."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "La herse",
+                "d": "fermer le passage de l'entrée"
+              },
+              {
+                "g": "La meurtrière",
+                "d": "tirer des flèches sans être vu"
+              },
+              {
+                "g": "Les douves",
+                "d": "empêcher l'ennemi de s'approcher du mur"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "La herse",
+                "d": "fermer le passage, même si le pont-levis est franchi"
+              },
+              {
+                "g": "La meurtrière (ou archère)",
+                "d": "observer et tirer en restant à l'abri"
+              },
+              {
+                "g": "Les mâchicoulis",
+                "d": "lâcher des projectiles à la verticale sur les assaillants au pied du mur"
+              },
+              {
+                "g": "Le chemin de ronde",
+                "d": "circuler en haut des murs pour surveiller et défendre"
+              },
+              {
+                "g": "Les douves",
+                "d": "tenir les ennemis et leurs machines loin du mur"
+              }
+            ]
+          },
+          "lecon": "les-defenses"
+        },
+        {
+          "id": "2-3",
+          "titre": "Vrai ou idée reçue ?",
+          "type": "vraifaux",
+          "consigne": {
+            "cm1": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+            "cm2": "Attention aux idées reçues sur les châteaux forts : tranche chaque affirmation, puis vérifie."
+          },
+          "source": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Larousse, article « donjon »",
+          "correction": "Les châteaux forts n'étaient pas tous en pierre ni tous du XIIIe siècle. Le donjon est la tour maîtresse, le logis du seigneur : le mot vient du latin dominus, « le seigneur ». Le château protège aussi les habitants du domaine en cas de danger.",
+          "indices": {
+            "cm1": [
+              "Souviens-toi de la motte de la salle 1.",
+              "Le mot « donjon » vient d'un mot latin qui veut dire « seigneur ».",
+              "Colin a dit que le château protège aussi les gens du village."
+            ],
+            "cm2": [
+              "Des mottes du Xe siècle aux châteaux du XVe siècle, il s'écoule cinq siècles.",
+              "Donjon vient de dominus : à qui appartient cette tour ?",
+              "Un château sert à se défendre, mais pas seulement : pense à la salle 3."
+            ]
+          },
+          "cm1": {
+            "affirmations": [
+              {
+                "txt": "Tous les châteaux forts étaient construits en pierre.",
+                "vrai": false,
+                "explication": "Les premiers étaient en terre et en bois."
+              },
+              {
+                "txt": "Le donjon était d'abord une prison.",
+                "vrai": false,
+                "explication": "C'est la tour maîtresse, où vit le seigneur. On a parfois enfermé des prisonniers dans une tour, mais ce n'était pas son rôle."
+              },
+              {
+                "txt": "En cas de danger, les habitants du village pouvaient se réfugier au château.",
+                "vrai": true,
+                "explication": "Le seigneur doit protéger les gens de sa seigneurie."
+              },
+              {
+                "txt": "Le pont-levis se relève pour empêcher d'entrer.",
+                "vrai": true,
+                "explication": "Relevé, il bouche l'entrée et laisse le fossé entre l'ennemi et la porte."
+              }
+            ]
+          },
+          "cm2": {
+            "affirmations": [
+              {
+                "txt": "Tous les châteaux forts étaient construits en pierre.",
+                "vrai": false,
+                "explication": "Les mottes castrales, en terre et en bois, ont longtemps été les plus nombreuses."
+              },
+              {
+                "txt": "Tous les châteaux forts datent du XIIIe siècle.",
+                "vrai": false,
+                "explication": "On en construit du Xe au XVe siècle, et ils changent beaucoup pendant ces siècles."
+              },
+              {
+                "txt": "Le donjon était d'abord une prison.",
+                "vrai": false,
+                "explication": "Le mot vient du latin dominus, « seigneur » : c'est la tour maîtresse, le logis et le dernier refuge du seigneur."
+              },
+              {
+                "txt": "En cas de danger, les habitants de la seigneurie pouvaient se réfugier au château.",
+                "vrai": true,
+                "explication": "C'est l'une des obligations du seigneur envers eux."
+              },
+              {
+                "txt": "Les mâchicoulis servent à atteindre les assaillants au pied du mur.",
+                "vrai": true,
+                "explication": "Ils sont en surplomb : on lâche des projectiles à la verticale."
+              },
+              {
+                "txt": "Un château fort sert seulement à faire la guerre.",
+                "vrai": false,
+                "explication": "C'est aussi le lieu de vie du seigneur et un symbole de sa puissance."
+              }
+            ]
+          },
+          "lecon": "les-defenses"
+        },
+        {
+          "id": "2-4",
+          "titre": "Le cadenas du treuil",
+          "type": "code",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Le treuil de la herse est bloqué par un cadenas à mots. Écris les trois mots demandés (les accents ne comptent pas), puis ouvre.",
+          "source": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC)",
+          "correction": "La herse est la grille qui ferme l'entrée, les douves sont le fossé qui entoure le château, le donjon est la tour maîtresse. Ce vocabulaire sert à décrire n'importe quel château fort.",
+          "indices": {
+            "cm2": [
+              "Les trois mots ont été vus sur le plan du château.",
+              "La grille commence par H, le fossé par D.",
+              "La tour maîtresse commence aussi par D."
+            ]
+          },
+          "commun": {
+            "champs": [
+              {
+                "libelle": "La grille qui descend pour fermer l'entrée (5 lettres)",
+                "valeur": "HERSE",
+                "longueur": 5,
+                "numerique": false
+              },
+              {
+                "libelle": "Le fossé qui entoure le château (6 lettres)",
+                "valeur": "DOUVES",
+                "longueur": 6,
+                "numerique": false
+              },
+              {
+                "libelle": "La tour maîtresse, logis du seigneur (6 lettres)",
+                "valeur": "DONJON",
+                "longueur": 6,
+                "numerique": false
+              }
+            ]
+          },
+          "lecon": "les-defenses"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "titre": "La grande salle — Lieu de vie du seigneur et symbole de sa puissance",
+      "enigmes": [
+        {
+          "id": "3-1",
+          "titre": "Défendre ou vivre ?",
+          "type": "tri",
+          "consigne": {
+            "cm1": "Clique sur une étiquette, puis sur la colonne où elle va. Quand tout est rangé, vérifie.",
+            "cm2": "Range chaque étiquette dans la bonne colonne : ce qui sert à se défendre, à vivre, ou à montrer sa puissance."
+          },
+          "source": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org)",
+          "correction": "Le château a trois fonctions. C'est un lieu de protection (herse, meurtrières, douves), un lieu de vie (grande salle, cuisines, chapelle, chambres) et un symbole de la puissance du seigneur (il y rend la justice, y reçoit, y affiche son blason, y organise des fêtes).",
+          "indices": {
+            "cm1": [
+              "Ce qui arrête l'ennemi va dans la colonne « Se défendre ».",
+              "On mange, on dort et on prie dans la colonne « Vivre ».",
+              "La chapelle est un lieu de prière."
+            ],
+            "cm2": [
+              "Le blason est l'emblème de la famille : on le montre.",
+              "Rendre la justice, c'est exercer son pouvoir sur les autres.",
+              "La chambre et les cuisines servent à la vie de tous les jours."
+            ]
+          },
+          "cm1": {
+            "colonnes": [
+              {
+                "id": "def",
+                "titre": "Se défendre"
+              },
+              {
+                "id": "vie",
+                "titre": "Vivre au château"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "La herse",
+                "col": "def"
+              },
+              {
+                "txt": "Les meurtrières",
+                "col": "def"
+              },
+              {
+                "txt": "Le chemin de ronde",
+                "col": "def"
+              },
+              {
+                "txt": "La cheminée de la grande salle",
+                "col": "vie"
+              },
+              {
+                "txt": "Les cuisines",
+                "col": "vie"
+              },
+              {
+                "txt": "La chapelle",
+                "col": "vie"
+              }
+            ]
+          },
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "def",
+                "titre": "Se défendre"
+              },
+              {
+                "id": "vie",
+                "titre": "Vivre au château"
+              },
+              {
+                "id": "pui",
+                "titre": "Montrer sa puissance"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Les mâchicoulis",
+                "col": "def"
+              },
+              {
+                "txt": "La herse",
+                "col": "def"
+              },
+              {
+                "txt": "Les douves",
+                "col": "def"
+              },
+              {
+                "txt": "Les cuisines",
+                "col": "vie"
+              },
+              {
+                "txt": "La chapelle",
+                "col": "vie"
+              },
+              {
+                "txt": "La chambre du seigneur et de la dame",
+                "col": "vie"
+              },
+              {
+                "txt": "Le blason peint au-dessus de la porte",
+                "col": "pui"
+              },
+              {
+                "txt": "Rendre la justice dans la grande salle",
+                "col": "pui"
+              },
+              {
+                "txt": "Organiser un tournoi",
+                "col": "pui"
+              }
+            ]
+          },
+          "lecon": "vie-du-seigneur"
+        },
+        {
+          "id": "3-2",
+          "titre": "Une journée du seigneur",
+          "type": "qcm",
+          "consigne": {
+            "cm1": "Lis chaque question et choisis la bonne réponse, puis vérifie.",
+            "cm2": "Choisis la réponse exacte à chacune des trois questions, puis vérifie."
+          },
+          "source": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org)",
+          "correction": "Le seigneur gouverne sa seigneurie : il reçoit dans la grande salle, rend la justice, fait la guerre quand il le faut, et se divertit par la chasse, les fêtes et les tournois. Son château montre à tous sa richesse et son pouvoir.",
+          "indices": {
+            "cm1": [
+              "C'est la plus grande pièce du donjon.",
+              "Juger, c'est régler les disputes.",
+              "On part en forêt avec des chiens et des faucons."
+            ],
+            "cm2": [
+              "Le seigneur n'est pas élu : son pouvoir vient de sa terre.",
+              "Dans un tournoi, les chevaliers s'entraînent au combat devant des spectateurs.",
+              "Un château bien visible se voit de tout le pays."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Où le seigneur reçoit-il ses invités et prend-il ses repas ?",
+                "options": [
+                  "dans la grande salle",
+                  "dans les douves",
+                  "au moulin"
+                ],
+                "bonne": 0,
+                "explication": "La grande salle, ou salle d'honneur, est chauffée par une immense cheminée."
+              },
+              {
+                "q": "Que fait le seigneur quand il rend la justice ?",
+                "options": [
+                  "il règle les disputes et punit les fautes sur ses terres",
+                  "il écrit les lois de tout le royaume",
+                  "il construit des routes"
+                ],
+                "bonne": 0,
+                "explication": "Sur sa seigneurie, c'est lui qui juge."
+              },
+              {
+                "q": "Quel loisir le seigneur pratique-t-il en forêt avec ses chiens et ses faucons ?",
+                "options": [
+                  "la chasse",
+                  "la pêche en mer",
+                  "le théâtre"
+                ],
+                "bonne": 0,
+                "explication": "La chasse est un loisir réservé aux nobles, et un entraînement au combat."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Pourquoi le seigneur a-t-il le droit de rendre la justice ?",
+                "options": [
+                  "parce qu'il exerce le pouvoir sur les terres et les habitants de sa seigneurie",
+                  "parce que les habitants l'ont élu",
+                  "parce qu'il est prêtre",
+                  "parce que le roi le paie pour cela"
+                ],
+                "bonne": 0,
+                "explication": "Au Moyen Âge, le seigneur commande, protège et juge les habitants de sa seigneurie."
+              },
+              {
+                "q": "Qu'est-ce qu'un tournoi ?",
+                "options": [
+                  "une fête où des chevaliers s'affrontent pour s'entraîner et montrer leur valeur",
+                  "une guerre contre le roi",
+                  "un marché de village",
+                  "une procession religieuse"
+                ],
+                "bonne": 0,
+                "explication": "Le tournoi est un spectacle, et une occasion de gagner de la gloire."
+              },
+              {
+                "q": "Pourquoi un seigneur fait-il bâtir un grand château bien visible ?",
+                "options": [
+                  "pour se protéger, mais aussi pour montrer à tous sa richesse et son pouvoir",
+                  "pour loger tous les paysans toute l'année",
+                  "pour ranger le blé de tout le royaume",
+                  "parce que le roi l'oblige à habiter en ville"
+                ],
+                "bonne": 0,
+                "explication": "Le château est aussi un symbole : il rappelle chaque jour qui commande."
+              }
+            ]
+          },
+          "lecon": "vie-du-seigneur"
+        },
+        {
+          "id": "3-3",
+          "titre": "Les gens du château",
+          "type": "vraifaux",
+          "consigne": {
+            "cm1": "Pour chaque phrase, clique sur « Vrai » ou « Faux », puis vérifie.",
+            "cm2": "Tranche chaque affirmation sur les habitants du château, puis vérifie."
+          },
+          "source": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org) ; Encyclopædia Universalis, « Aliénor d'Aquitaine »",
+          "correction": "Au château vivent le seigneur, la dame, leurs enfants, des pages et des écuyers, des hommes d'armes, un chapelain et de nombreux serviteurs. La dame n'est pas une figurante : elle dirige la maison et, en l'absence de son époux, elle gouverne le domaine.",
+          "indices": {
+            "cm1": [
+              "Pense à Dame Aliénor : que fait-elle pendant l'absence du seigneur ?",
+              "Un château, c'est une grande maison : qui fait la cuisine ?",
+              "Colin est un page : que fait-il ?"
+            ],
+            "cm2": [
+              "Une fille de seigneur pouvait recevoir des terres en héritage.",
+              "Le page devient écuyer, puis chevalier.",
+              "Dans un château, beaucoup de personnes travaillent."
+            ]
+          },
+          "cm1": {
+            "affirmations": [
+              {
+                "txt": "La dame du château peut gouverner le domaine quand le seigneur est absent.",
+                "vrai": true,
+                "explication": "Elle surveille les récoltes, les comptes, les hommes d'armes, et fait rendre la justice."
+              },
+              {
+                "txt": "La dame du château ne s'occupe que de sa toilette.",
+                "vrai": false,
+                "explication": "Elle dirige les serviteurs, les réserves de nourriture et l'éducation des enfants."
+              },
+              {
+                "txt": "Au château vivent aussi des serviteurs, des cuisiniers et des hommes d'armes.",
+                "vrai": true,
+                "explication": "Le château est une grande maison où beaucoup de gens travaillent."
+              },
+              {
+                "txt": "Un page est un jeune garçon qui sert le seigneur et apprend le métier de chevalier.",
+                "vrai": true,
+                "explication": "Le page devient ensuite écuyer, puis chevalier."
+              }
+            ]
+          },
+          "cm2": {
+            "affirmations": [
+              {
+                "txt": "La dame du château peut gouverner le domaine quand le seigneur est absent.",
+                "vrai": true,
+                "explication": "Elle gère les récoltes, les comptes, la défense et la justice."
+              },
+              {
+                "txt": "Une femme noble pouvait hériter d'une seigneurie et la gouverner.",
+                "vrai": true,
+                "explication": "Aliénor d'Aquitaine, par exemple, hérita au XIIe siècle du duché d'Aquitaine."
+              },
+              {
+                "txt": "Au château, seul le seigneur travaille.",
+                "vrai": false,
+                "explication": "Serviteurs, cuisiniers, palefreniers, hommes d'armes, chapelain : beaucoup de monde y travaille."
+              },
+              {
+                "txt": "Le page devient écuyer, puis chevalier.",
+                "vrai": true,
+                "explication": "C'est la formation d'un jeune noble."
+              },
+              {
+                "txt": "Les familles de paysans habitent au château toute l'année.",
+                "vrai": false,
+                "explication": "Elles vivent au village. Elles viennent au château pour payer, travailler ou se réfugier en cas de danger."
+              }
+            ]
+          },
+          "lecon": "vie-du-seigneur"
+        },
+        {
+          "id": "3-4",
+          "titre": "L'intrus de la grande salle",
+          "type": "intrus",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Toutes ces activités se passent au château ou autour du seigneur, sauf une. Clique sur l'intrus.",
+          "source": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org)",
+          "correction": "Le seigneur reçoit, juge, chasse, organise des fêtes et commande ses hommes d'armes. Il ne laboure pas lui-même la terre : ce sont les paysans qui cultivent, y compris ses propres champs, par la corvée.",
+          "indices": {
+            "cm2": [
+              "Cherche une activité qui demande de travailler la terre.",
+              "Qui cultive les champs de la seigneurie ?",
+              "Le seigneur fait travailler les autres sur ses terres."
+            ]
+          },
+          "commun": {
+            "cartes": [
+              {
+                "txt": "Recevoir ses invités à un banquet",
+                "sous": "dans la grande salle",
+                "intrus": false
+              },
+              {
+                "txt": "Rendre la justice",
+                "sous": "juger les disputes",
+                "intrus": false
+              },
+              {
+                "txt": "Chasser le cerf avec ses chiens",
+                "sous": "dans la forêt du seigneur",
+                "intrus": false
+              },
+              {
+                "txt": "Commander les hommes d'armes",
+                "sous": "pour défendre le domaine",
+                "intrus": false
+              },
+              {
+                "txt": "Labourer lui-même ses champs",
+                "sous": "avec un araire",
+                "intrus": true
+              }
+            ]
+          },
+          "lecon": "vie-du-seigneur"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "titre": "Le village et les champs — La vie quotidienne des paysannes et des paysans",
+      "enigmes": [
+        {
+          "id": "4-1",
+          "titre": "Le calendrier des travaux",
+          "type": "ordre",
+          "media": {
+            "base": "e4-1",
+            "legende": "Une page du calendrier des Très Riches Heures du duc de Berry",
+            "source": "Musée Condé, Chantilly (image du domaine public, facultative)"
+          },
+          "consigne": {
+            "cm1": "Au Moyen Âge, chaque mois a son travail. Remets ces travaux dans l'ordre de l'année, du début (en haut) à la fin (en bas).",
+            "cm2": "Ce calendrier est inspiré des Très Riches Heures du duc de Berry, un livre peint vers 1411-1416. Remets les six travaux dans l'ordre des mois, de mars à novembre."
+          },
+          "source": "Les Très Riches Heures du duc de Berry, calendrier (vers 1411-1416, frères Limbourg), musée Condé, Chantilly",
+          "correction": "Dans le calendrier des Très Riches Heures : en mars, on laboure et on taille la vigne ; en juin, on fauche les foins ; en juillet, on moissonne et on tond les moutons ; en septembre, on vendange ; en octobre, on sème ; en novembre, on mène les cochons manger les glands dans la forêt.",
+          "indices": {
+            "cm1": [
+              "L'année commence en hiver et le printemps vient après.",
+              "L'été, c'est le temps des foins, puis du blé.",
+              "Les cochons vont en forêt quand les glands tombent des chênes, tout à la fin de l'automne."
+            ],
+            "cm2": [
+              "On fauche l'herbe avant de couper le blé.",
+              "Les vendanges ont lieu juste avant les semailles d'automne.",
+              "La glandée ferme l'année des travaux : les glands tombent en novembre."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "Labourer et tailler la vigne",
+                "sous": "à la fin de l'hiver",
+                "rang": 1
+              },
+              {
+                "txt": "Faucher les foins",
+                "sous": "au début de l'été",
+                "rang": 2
+              },
+              {
+                "txt": "Moissonner le blé",
+                "sous": "au cœur de l'été",
+                "rang": 3
+              },
+              {
+                "txt": "Vendanger le raisin",
+                "sous": "à la fin de l'été",
+                "rang": 4
+              },
+              {
+                "txt": "Mener les cochons manger les glands",
+                "sous": "à la fin de l'automne",
+                "rang": 5
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "Labourer et tailler la vigne",
+                "sous": "on prépare la terre après l'hiver",
+                "rang": 1
+              },
+              {
+                "txt": "Faucher les foins",
+                "sous": "l'herbe séchée nourrira les bêtes l'hiver",
+                "rang": 2
+              },
+              {
+                "txt": "Moissonner le blé et tondre les moutons",
+                "sous": "on coupe les épis à la faucille",
+                "rang": 3
+              },
+              {
+                "txt": "Vendanger",
+                "sous": "on cueille le raisin pour faire le vin",
+                "rang": 4
+              },
+              {
+                "txt": "Semer le blé d'hiver",
+                "sous": "le grain passera l'hiver sous la terre",
+                "rang": 5
+              },
+              {
+                "txt": "La glandée",
+                "sous": "les porcs mangent les glands tombés des chênes",
+                "rang": 6
+              }
+            ]
+          },
+          "lecon": "vie-des-paysans"
+        },
+        {
+          "id": "4-2",
+          "titre": "Les outils de Mahaut",
+          "type": "association",
+          "consigne": {
+            "cm1": "Clique sur un outil à gauche, puis sur le travail qu'il sert à faire.",
+            "cm2": "Relie chaque outil à son usage. Attention, deux outils servent à préparer la terre."
+          },
+          "source": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
+          "correction": "La faux coupe l'herbe pour le foin, la faucille coupe les épis de blé, le fléau bat les épis pour en faire sortir les grains. L'araire gratte la terre ; la charrue, plus lourde, la retourne grâce à son versoir.",
+          "indices": {
+            "cm1": [
+              "La faux a un très long manche et une grande lame.",
+              "La faucille est petite et courbée, on la tient d'une main.",
+              "L'araire est tiré par un animal et ouvre le sol."
+            ],
+            "cm2": [
+              "Le fléau est fait de deux bâtons reliés par une courroie.",
+              "La charrue retourne la terre, l'araire la gratte seulement.",
+              "La faucille sert à la moisson, la faux à la fenaison."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "La faux",
+                "d": "couper l'herbe pour faire le foin"
+              },
+              {
+                "g": "La faucille",
+                "d": "couper les épis de blé"
+              },
+              {
+                "g": "L'araire",
+                "d": "ouvrir la terre avant de semer"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "La faux",
+                "d": "couper l'herbe des prés pour faire le foin"
+              },
+              {
+                "g": "La faucille",
+                "d": "couper les épis de blé pendant la moisson"
+              },
+              {
+                "g": "Le fléau",
+                "d": "battre les épis pour faire sortir les grains"
+              },
+              {
+                "g": "L'araire",
+                "d": "gratter la terre pour préparer les semailles"
+              },
+              {
+                "g": "La charrue",
+                "d": "retourner profondément la terre grâce à son versoir"
+              }
+            ]
+          },
+          "lecon": "vie-des-paysans"
+        },
+        {
+          "id": "4-3",
+          "titre": "Chez Mahaut",
+          "type": "trous",
+          "consigne": {
+            "cm1": "Clique sur une étiquette, puis sur le trou où elle va. Trois étiquettes sont en trop.",
+            "cm2": "Complète le récit de Mahaut. Attention : certaines étiquettes n'existaient pas encore en Europe au Moyen Âge."
+          },
+          "source": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
+          "correction": "La maison paysanne est souvent faite d'une seule pièce, aux murs de torchis et au toit de chaume. On mange surtout du pain et de la soupe. Les paysannes travaillent aux champs, s'occupent des bêtes, filent la laine et vendent au marché. La pomme de terre et le maïs viennent d'Amérique : ils n'arrivent en Europe qu'après 1492.",
+          "indices": {
+            "cm1": [
+              "Le torchis est fait de terre et de paille.",
+              "Le chaume, c'est de la paille sur le toit.",
+              "La pomme de terre n'existait pas encore en Europe."
+            ],
+            "cm2": [
+              "La jachère, c'est une terre qu'on laisse se reposer.",
+              "La pomme de terre et le maïs viennent d'Amérique.",
+              "Le dimanche, on ne travaille pas."
+            ]
+          },
+          "cm1": {
+            "texte": "<p>Ma maison n'a qu'une seule [[pièce]]. Les murs sont en [[torchis]], un mélange de terre et de paille, et le toit est en [[chaume]]. Nous mangeons surtout du [[pain]] et de la soupe de légumes. Ma mère travaille aux champs, garde les [[poules]] et file la laine.</p>",
+            "etiquettes": [
+              "pièce",
+              "torchis",
+              "chaume",
+              "pain",
+              "poules",
+              "pommes de terre",
+              "béton",
+              "chocolat"
+            ]
+          },
+          "cm2": {
+            "texte": "<p>Notre maison n'a qu'une seule [[pièce]], aux murs de [[torchis]] sous un toit de [[chaume]]. Nous mangeons surtout du [[pain]], avec de la soupe de légumes et de fèves ; la viande est rare. Pour ne pas épuiser la terre, on laisse chaque année une partie des champs se reposer : c'est la [[jachère]]. Ma mère travaille aux champs, file la [[laine]] et vend nos œufs au marché. Le dimanche et les jours de [[fête]], on ne travaille pas.</p>",
+            "etiquettes": [
+              "pièce",
+              "torchis",
+              "chaume",
+              "pain",
+              "jachère",
+              "laine",
+              "fête",
+              "pommes de terre",
+              "maïs",
+              "béton",
+              "vacances"
+            ]
+          },
+          "lecon": "vie-des-paysans"
+        },
+        {
+          "id": "4-4",
+          "titre": "Le mot caché du village",
+          "type": "lettres",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Certaines lettres du texte sont cachées. Clique-les dans l'ordre pour reconstituer le mot de la quatrième clé.",
+          "source": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
+          "correction": "Le village, c'est l'ensemble des maisons des paysans, serrées autour de l'église, avec les jardins, les champs, les prés et les bois qui les entourent.",
+          "indices": {
+            "cm2": [
+              "Le mot a sept lettres.",
+              "Il commence par la lettre V.",
+              "C'est le lieu où vit Mahaut."
+            ]
+          },
+          "commun": {
+            "cible": [
+              "V",
+              "I",
+              "L",
+              "L",
+              "A",
+              "G",
+              "E"
+            ],
+            "texte": "<p>Au pied du château, les maisons se serrent autour de l'église. Les femmes et les hommes y tra<b data-l='V'>v</b>aillent du lever au coucher du soleil. Autour, les champs, les prés, les jardins et les bo<b data-l='I'>i</b>s nourrissent tout le monde. Ce<b data-l='L'>l</b>ui qui a faim au printemps attend la moisson avec impatience. Le b<b data-l='L'>l</b>é est coupé en juillet, puis b<b data-l='A'>a</b>ttu au fléau. En septembre viennent les vendan<b data-l='G'>g</b>es, puis les semailles d<b data-l='E'>e</b> l'automne.</p>"
+          },
+          "lecon": "vie-des-paysans"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "titre": "Le moulin du seigneur — Seigneurs et paysans",
+      "enigmes": [
+        {
+          "id": "5-1",
+          "titre": "Qui reçoit quoi ?",
+          "type": "intrus",
+          "consigne": {
+            "cm1": "Le paysan doit toutes ces charges au seigneur, sauf une, qu'il verse à l'Église. Clique sur l'intrus.",
+            "cm2": "Toutes ces charges sont dues au seigneur, sauf une. Laquelle ? Clique sur l'intrus."
+          },
+          "source": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
+          "correction": "Le cens, la corvée, le champart et les banalités sont dus au seigneur. La dîme, environ un dixième de la récolte, est versée à l'Église : elle sert à entretenir les prêtres et les églises, et à aider les pauvres.",
+          "indices": {
+            "cm1": [
+              "Une de ces charges porte un nom qui fait penser au nombre dix.",
+              "Elle ne va pas au château mais à l'église.",
+              "C'est la dîme."
+            ],
+            "cm2": [
+              "Cherche une charge qui ne va pas au château.",
+              "Le mot vient du latin decima, « dixième ».",
+              "Le curé du village en profite."
+            ]
+          },
+          "cm1": {
+            "cartes": [
+              {
+                "txt": "Le cens",
+                "sous": "de l'argent pour la terre",
+                "intrus": false
+              },
+              {
+                "txt": "La corvée",
+                "sous": "des journées de travail",
+                "intrus": false
+              },
+              {
+                "txt": "Le four banal",
+                "sous": "une part pour cuire son pain",
+                "intrus": false
+              },
+              {
+                "txt": "La dîme",
+                "sous": "une part de la récolte",
+                "intrus": true
+              }
+            ]
+          },
+          "cm2": {
+            "cartes": [
+              {
+                "txt": "Le cens",
+                "sous": "argent versé chaque année pour la terre",
+                "intrus": false
+              },
+              {
+                "txt": "La corvée",
+                "sous": "journées de travail gratuit",
+                "intrus": false
+              },
+              {
+                "txt": "Le champart",
+                "sous": "une part de la récolte",
+                "intrus": false
+              },
+              {
+                "txt": "La banalité du moulin",
+                "sous": "une part du grain moulu",
+                "intrus": false
+              },
+              {
+                "txt": "La dîme",
+                "sous": "environ un dixième de la récolte",
+                "intrus": true
+              }
+            ]
+          },
+          "lecon": "seigneur-et-paysans"
+        },
+        {
+          "id": "5-2",
+          "titre": "Le registre de Perrine",
+          "type": "trous",
+          "media": {
+            "base": "e5-2",
+            "legende": "Un moulin à eau médiéval",
+            "source": "Illustration facultative"
+          },
+          "consigne": {
+            "cm1": "Complète le registre de Perrine. Clique sur une étiquette, puis sur le trou. Trois étiquettes sont en trop.",
+            "cm2": "Complète le registre de la meunière avec le vocabulaire exact. Quatre étiquettes sont en trop."
+          },
+          "source": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
+          "correction": "Les paysans doivent au seigneur la corvée, le cens et les banalités (moulin, four, pressoir). Le seigneur rend la justice. En échange, il doit protéger les habitants de la seigneurie.",
+          "indices": {
+            "cm1": [
+              "Le travail gratuit sur les terres du seigneur s'appelle la corvée.",
+              "On moud le grain au moulin, on cuit le pain au four.",
+              "Ce que le seigneur doit en échange commence par « pro »."
+            ],
+            "cm2": [
+              "Les banalités portent sur le moulin, le four et le pressoir.",
+              "La dîme est pour l'Église : elle n'a pas sa place ici.",
+              "Le seigneur juge : il rend la justice."
+            ]
+          },
+          "cm1": {
+            "texte": "<p>Chaque paysan doit travailler gratuitement quelques jours sur les terres du seigneur : c'est la [[corvée]]. Il doit moudre son grain au [[moulin]] du seigneur et cuire son pain à son [[four]], en laissant une part. En échange, le seigneur doit le [[protéger]].</p>",
+            "etiquettes": [
+              "corvée",
+              "moulin",
+              "four",
+              "protéger",
+              "école",
+              "marché",
+              "vacances"
+            ]
+          },
+          "cm2": {
+            "texte": "<p>Les champs du seigneur sont cultivés grâce à la [[corvée]]. Chaque année, les paysans versent le [[cens]] pour la terre qu'ils cultivent. Ils doivent utiliser, contre paiement, le moulin, le four et le pressoir du seigneur : ce sont les [[banalités]]. Le seigneur rend aussi la [[justice]]. En échange, il doit [[protéger]] les habitants, qui peuvent se réfugier derrière ses [[remparts]] en cas de danger.</p>",
+            "etiquettes": [
+              "corvée",
+              "cens",
+              "banalités",
+              "justice",
+              "protéger",
+              "remparts",
+              "dîme",
+              "salaire",
+              "vote",
+              "école"
+            ]
+          },
+          "lecon": "seigneur-et-paysans"
+        },
+        {
+          "id": "5-3",
+          "titre": "Donnant, donnant ?",
+          "type": "tri",
+          "consigne": {
+            "cm1": "Range chaque étiquette : ce que le paysan doit au seigneur, ou ce que le seigneur doit au paysan.",
+            "cm2": "Range chaque étiquette dans la bonne colonne, puis compare la longueur des deux colonnes. Qu'en penses-tu ?"
+          },
+          "source": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
+          "correction": "Le paysan doit beaucoup : travail, argent, part des récoltes, paiements au moulin et au four. Le seigneur doit la protection, le refuge et la justice. C'est un échange, mais un échange très inégal : c'est le seigneur qui fixe les règles.",
+          "indices": {
+            "cm1": [
+              "Qui travaille sur les terres de l'autre ?",
+              "Qui a des remparts pour protéger ?",
+              "Le seigneur a trois devoirs dans cette liste."
+            ],
+            "cm2": [
+              "Le champart, c'est une part de la récolte.",
+              "La justice est rendue par le seigneur.",
+              "La colonne du paysan est la plus longue."
+            ]
+          },
+          "cm1": {
+            "colonnes": [
+              {
+                "id": "pay",
+                "titre": "Le paysan doit au seigneur"
+              },
+              {
+                "id": "sei",
+                "titre": "Le seigneur doit au paysan"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Travailler gratuitement sur ses terres",
+                "col": "pay"
+              },
+              {
+                "txt": "Payer le cens",
+                "col": "pay"
+              },
+              {
+                "txt": "Cuire son pain au four du seigneur",
+                "col": "pay"
+              },
+              {
+                "txt": "Le protéger en cas de guerre",
+                "col": "sei"
+              },
+              {
+                "txt": "L'accueillir au château en cas de danger",
+                "col": "sei"
+              },
+              {
+                "txt": "Régler les disputes entre voisins",
+                "col": "sei"
+              }
+            ]
+          },
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "pay",
+                "titre": "Le paysan doit au seigneur"
+              },
+              {
+                "id": "sei",
+                "titre": "Le seigneur doit au paysan"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "La corvée sur la réserve",
+                "col": "pay"
+              },
+              {
+                "txt": "Le cens",
+                "col": "pay"
+              },
+              {
+                "txt": "Le champart",
+                "col": "pay"
+              },
+              {
+                "txt": "Une part du grain moulu au moulin",
+                "col": "pay"
+              },
+              {
+                "txt": "Une part pour cuire au four banal",
+                "col": "pay"
+              },
+              {
+                "txt": "La protection en cas de guerre",
+                "col": "sei"
+              },
+              {
+                "txt": "Le refuge derrière les remparts",
+                "col": "sei"
+              },
+              {
+                "txt": "La justice",
+                "col": "sei"
+              }
+            ]
+          },
+          "lecon": "seigneur-et-paysans"
+        },
+        {
+          "id": "5-4",
+          "titre": "Deux vies côte à côte",
+          "type": "plan",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Complète le tableau qui compare la vie du seigneur et celle du paysan. Place chaque étiquette dans la bonne case. Deux étiquettes sont en trop.",
+          "source": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org) ; Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
+          "correction": "Seigneurs et paysans vivent côte à côte, mais leurs vies sont très différentes : château de pierre ou maison de torchis, viande et gibier ou pain et soupe, gouverner et combattre ou cultiver la terre.",
+          "indices": {
+            "cm2": [
+              "La colonne de gauche parle du seigneur, celle de droite du paysan.",
+              "Le gibier, c'est ce que l'on rapporte de la chasse.",
+              "Le paysan cultive et élève les bêtes."
+            ]
+          },
+          "commun": {
+            "titre": "Le seigneur | Le paysan",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Le seigneur habite…",
+                "reponse": "un château de pierre"
+              },
+              {
+                "libelle": "Le paysan habite…",
+                "reponse": "une maison de torchis"
+              },
+              {
+                "libelle": "Le seigneur mange souvent…",
+                "reponse": "de la viande et du gibier"
+              },
+              {
+                "libelle": "Le paysan mange surtout…",
+                "reponse": "du pain et de la soupe"
+              },
+              {
+                "libelle": "Le seigneur passe son temps à…",
+                "reponse": "gouverner, juger, chasser"
+              },
+              {
+                "libelle": "Le paysan passe son temps à…",
+                "reponse": "cultiver la terre et élever les bêtes"
+              }
+            ],
+            "etiquettes": [
+              "un château de pierre",
+              "une maison de torchis",
+              "de la viande et du gibier",
+              "du pain et de la soupe",
+              "gouverner, juger, chasser",
+              "cultiver la terre et élever les bêtes",
+              "des pommes de terre",
+              "un immeuble"
+            ]
+          },
+          "lecon": "seigneur-et-paysans"
+        }
+      ]
+    }
+  ]
+}
