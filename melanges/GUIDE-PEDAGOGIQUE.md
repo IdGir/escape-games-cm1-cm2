@@ -14,6 +14,35 @@ Progression de l'enseignant : **Année B, période 1**.
 
 ## 1. Place dans les programmes
 
+
+## 🎯 Compétences du programme, énigme par énigme
+
+_Sciences et technologie, cycle 3 — Année B, période 1 — Thème « États et constitution de la matière à l'échelle macroscopique » (BO 2026)._
+
+
+| Salle | Énigme | Type | Compétence du programme |
+|---|---|---|---|
+| **1.** La salle des balances | 1-1 · Du plus léger au plus lourd | ordre | Comparer et mesurer des masses de différents objets ou liquides de diverses manières. |
+| **1.** La salle des balances | 1-2 · Deux balances, deux façons de peser | qcm | Comparer et mesurer des masses de différents objets ou liquides de diverses manières. |
+| **1.** La salle des balances | 1-3 · Peser un liquide | code | Comparer et mesurer des masses de différents objets ou liquides de diverses manières. |
+| **1.** La salle des balances | 1-4 · Les unités de masse | trous | Comparer et mesurer des masses de différents objets ou liquides de diverses manières. |
+| **2.** La cuisine d'essai | 2-1 · Le sucre a-t-il disparu ? | vraifaux | Distinguer mélanges homogènes et hétérogènes (la dissolution). |
+| **2.** La cuisine d'essai | 2-2 · Le cahier taché de Marius | plan | Distinguer mélanges homogènes et hétérogènes (la dissolution). |
+| **2.** La cuisine d'essai | 2-3 · Le café de Marius | qcm | Distinguer mélanges homogènes et hétérogènes (la dissolution). |
+| **2.** La cuisine d'essai | 2-4 · Le cadenas de la cuisine | code | Distinguer mélanges homogènes et hétérogènes (la dissolution). |
+| **3.** La salle des fioles | 3-1 · Homogène ou hétérogène ? | tri | Distinguer mélanges homogènes et hétérogènes (l'observation). |
+| **3.** La salle des fioles | 3-2 · L'intrus de l'étagère | intrus | Distinguer mélanges homogènes et hétérogènes (l'observation). |
+| **3.** La salle des fioles | 3-3 · Ce que l'on observe | association | Distinguer mélanges homogènes et hétérogènes (l'observation). |
+| **3.** La salle des fioles | 3-4 · Les idées fausses de Lila | vraifaux | Distinguer mélanges homogènes et hétérogènes (l'observation). |
+| **4.** L'atelier de tri | 4-1 · Une méthode pour chaque mélange | association | Séparer les constituants de mélanges solides (le tri, l'aimantation). |
+| **4.** L'atelier de tri | 4-2 · Pas à pas | ordre | Séparer les constituants de mélanges solides (le tri, l'aimantation). |
+| **4.** L'atelier de tri | 4-3 · Ce que l'aimant attire | qcm | Séparer les constituants de mélanges solides (le tri, l'aimantation). |
+| **4.** L'atelier de tri | 4-4 · L'établi de Nadia | plan | Séparer les constituants de mélanges solides (le tri, l'aimantation). |
+| **5.** La saline | 5-1 · Filtrer, décanter, évaporer | trous | Séparer les constituants de mélanges solides et solide-liquide (filtration, décantation, évaporation). |
+| **5.** La saline | 5-2 · Le montage de filtration | plan | Séparer les constituants de mélanges solides et solide-liquide (filtration, décantation, évaporation). |
+| **5.** La saline | 5-3 · Le mot du paludier | lettres | Séparer les constituants de mélanges solides et solide-liquide (filtration, décantation, évaporation). |
+| **5.** La saline | 5-4 · Le testament de Madame Mélange | ordre | Séparer les constituants de mélanges solides et solide-liquide (filtration, décantation, évaporation). |
+
 ### L'extrait de la progression à couvrir
 
 > États et constitution de la matière à l'échelle macroscopique. Comparer et mesurer des masses de différents

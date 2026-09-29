@@ -10,6 +10,35 @@ Points à contrôler avant la classe : [A-VERIFIER.md](A-VERIFIER.md).
 
 ## 1. Place dans les programmes
 
+
+## 🎯 Compétences du programme, énigme par énigme
+
+_Histoire, cycle 3 — Année B, période 1 — Thème 1 : « Le Moyen Âge — le château fort et la vie des paysannes et des paysans » (programme d'histoire-géographie du cycle 3, BO 2026)._
+
+
+| Salle | Énigme | Type | Compétence du programme |
+|---|---|---|---|
+| **1.** La motte et la palissade | 1-1 · Pourquoi une butte ? | qcm | Décrire les fonctions d'un château fort : lieu de protection (sa construction). |
+| **1.** La motte et la palissade | 1-2 · Du bois à la pierre | ordre | Décrire les fonctions d'un château fort : lieu de protection (sa construction). |
+| **1.** La motte et la palissade | 1-3 · Les métiers du chantier | association | Décrire les fonctions d'un château fort : lieu de protection (sa construction). |
+| **1.** La motte et la palissade | 1-4 · Le carnet du maître maçon | trous | Décrire les fonctions d'un château fort : lieu de protection (sa construction). |
+| **2.** Les remparts | 2-1 · Le plan du château | plan | Décrire les fonctions d'un château fort : lieu de protection. |
+| **2.** Les remparts | 2-2 · À quoi ça sert ? | association | Décrire les fonctions d'un château fort : lieu de protection. |
+| **2.** Les remparts | 2-3 · Vrai ou idée reçue ? | vraifaux | Décrire les fonctions d'un château fort : lieu de protection. |
+| **2.** Les remparts | 2-4 · Le cadenas du treuil | code | Décrire les fonctions d'un château fort : lieu de protection. |
+| **3.** La grande salle | 3-1 · Défendre ou vivre ? | tri | Décrire les fonctions d'un château fort : lieu de vie du seigneur, symbole de sa puissance. |
+| **3.** La grande salle | 3-2 · Une journée du seigneur | qcm | Décrire les fonctions d'un château fort : lieu de vie du seigneur, symbole de sa puissance. |
+| **3.** La grande salle | 3-3 · Les gens du château | vraifaux | Décrire les fonctions d'un château fort : lieu de vie du seigneur, symbole de sa puissance. |
+| **3.** La grande salle | 3-4 · L'intrus de la grande salle | intrus | Décrire les fonctions d'un château fort : lieu de vie du seigneur, symbole de sa puissance. |
+| **4.** Le village et les champs | 4-1 · Le calendrier des travaux | ordre | Raconter la vie quotidienne des paysannes et des paysans. |
+| **4.** Le village et les champs | 4-2 · Les outils de Mahaut | association | Raconter la vie quotidienne des paysannes et des paysans. |
+| **4.** Le village et les champs | 4-3 · Chez Mahaut | trous | Raconter la vie quotidienne des paysannes et des paysans. |
+| **4.** Le village et les champs | 4-4 · Le mot caché du village | lettres | Raconter la vie quotidienne des paysannes et des paysans. |
+| **5.** Le moulin du seigneur | 5-1 · Qui reçoit quoi ? | intrus | Raconter la vie quotidienne des paysannes et des paysans (les relations avec le seigneur). |
+| **5.** Le moulin du seigneur | 5-2 · Le registre de Perrine | trous | Raconter la vie quotidienne des paysannes et des paysans (les relations avec le seigneur). |
+| **5.** Le moulin du seigneur | 5-3 · Donnant, donnant ? | tri | Raconter la vie quotidienne des paysannes et des paysans (les relations avec le seigneur). |
+| **5.** Le moulin du seigneur | 5-4 · Deux vies côte à côte | plan | Raconter la vie quotidienne des paysannes et des paysans (les relations avec le seigneur). |
+
 **Programme d'histoire-géographie du cycle 3** (BO du 28 mai 2026, en vigueur en CM1 à la rentrée 2026) :
 en CM1, thème consacré à la **vie quotidienne au Moyen Âge**, avec la question directrice *« Comment les femmes
 et les hommes vivaient-ils au Moyen Âge ? »* : cadres de vie (château, seigneurie), modes de vie des paysannes

@@ -20,6 +20,22 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 
 ---
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Histoire, cycle 3 — Année A, période 4 — Thème 4 : « Le temps de la Révolution et l'Empire » (programme d'histoire-géographie du cycle 3, BO 2026)._
+
+
+| Salle | Compétence du programme |
+|---|---|
+| **1.** La cour du Palais-Royal | Décrire le contexte social, économique et intellectuel du royaume en France en 1789. |
+| **2.** L'imprimerie clandestine | Repère culturel complémentaire : un chant devenu symbole nationale de la période révolutionnaire (hors BO strict). |
+| **3.** Le jardin des Tuileries | Affirmation des nouveaux principes d'organisation de la société (la Déclaration des droits de l'homme et du citoyen). |
+| **4.** La place de la Bastille | Fin de la monarchie absolue et de l'Ancien Régime (repères et acteurs de l'année 1789). |
+| **5.** La salle de l'Assemblée nationale | Affirmation des nouveaux principes d'organisation de la société (l'Assemblée nationale). |
+
+Détail énigme par énigme : voir [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md).
+
+
 ## Les 5 salles
 
 | # | Lieu | Personnage | Énigme | Fragment gagné | Tester |

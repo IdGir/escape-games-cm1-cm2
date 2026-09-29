@@ -17,6 +17,20 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 
 ---
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Géographie, cycle 3 — repères et méthodes transversaux (planisphère, échelle, fuseaux horaires), en appui du programme de géographie du cycle 3 (BO 2026). Jeu de révision, non adossé à un thème unique de la progression annuelle._
+
+
+| Escale | Compétence du programme |
+|---|---|
+| **1.** Le Reform Club, Londres | Se repérer sur un planisphère : nommer et localiser les continents et les océans. |
+| **2.** L'isthme de Suez | Identifier un itinéraire et le rôle d'un canal maritime (repère géographique). |
+| **3.** La jungle de l'Inde | Identifier et localiser les grands types de climats et de paysages dans le monde. |
+| **4.** La mer de Chine | Utiliser l'échelle d'une carte ; identifier des moyens de transport. |
+| **5.** L'observatoire de Greenwich | Repères géographiques : les méridiens et les fuseaux horaires. |
+
+
 ## Les 5 escales
 
 | # | Lieu | Notion travaillée | Personnage | Cachet | Tester |

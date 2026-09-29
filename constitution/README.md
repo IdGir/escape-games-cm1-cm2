@@ -24,6 +24,22 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 
 ---
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Enseignement moral et civique, cycle 3 (BO n° 24 du 13 juin 2024) et Histoire, cycle 3 — Année B, période 4 — « Lois protectrices des droits et des libertés » (BO 2026)._
+
+
+| Salle | Compétence du programme |
+|---|---|
+| **1.** La cour du Palais-Royal | EMC — Identifier les règles communes qui organisent la vie collective : qu'est-ce qu'une Constitution ? |
+| **2.** La salle des Textes | EMC — Connaître les textes fondateurs de la Constitution de la Ve République. |
+| **3.** L'hémicycle | EMC — Distinguer les pouvoirs législatif, exécutif et judiciaire ; le rôle du président de la République. |
+| **4.** La navette parlementaire | EMC — Comprendre le parcours d'une loi (la navette parlementaire). |
+| **5.** La salle des séances | Histoire — Lois protectrices des droits et des libertés ; EMC — valeurs et principes de la République. |
+
+Détail énigme par énigme : voir [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md).
+
+
 ## Les 5 salles
 
 | # | Lieu | Thème | Personnage | Mot-clé | Énigmes | Tester |

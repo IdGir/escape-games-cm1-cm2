@@ -23,6 +23,22 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 
 ---
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Histoire, cycle 3 — Année A, période 1 — Thème 1 : « Le Moyen Âge — Clovis et Charlemagne dans la continuité de l'empire romain » (programme d'histoire-géographie du cycle 3, BO 2026)._
+
+
+| Salle | Compétence du programme |
+|---|---|
+| **1.** Le baptême de Clovis | Repère chronologique : la fin de l'Empire romain (476) et l'avènement des royaumes francs. |
+| **2.** Aix-la-Chapelle | Repère chronologique : Charlemagne et son empire, dans la continuité de l'Empire romain. |
+| **3.** Le scriptorium | Décrire le rôle social de l'Église : l'enseignement. |
+| **4.** L'hôtel-Dieu | Décrire le rôle social de l'Église : l'assistance aux pauvres et aux malades. |
+| **5.** Le chantier | Différencier l'art roman et l'art gothique. |
+
+Détail énigme par énigme : voir [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md).
+
+
 ## Les 5 salles
 
 | # | Lieu | Notion | Personnage | Mot-clé | Énigmes | Tester |

@@ -22,6 +22,22 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 
 ---
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Sciences et technologie, cycle 3 — Année B, période 1 — Thème « États et constitution de la matière à l'échelle macroscopique » (BO 2026)._
+
+
+| Salle | Compétence du programme |
+|---|---|
+| **1.** La salle des balances | Comparer et mesurer des masses de différents objets ou liquides de diverses manières. |
+| **2.** La cuisine d'essai | Distinguer mélanges homogènes et hétérogènes (la dissolution). |
+| **3.** La salle des fioles | Distinguer mélanges homogènes et hétérogènes (l'observation). |
+| **4.** L'atelier de tri | Séparer les constituants de mélanges solides (le tri, l'aimantation). |
+| **5.** La saline | Séparer les constituants de mélanges solides et solide-liquide (filtration, décantation, évaporation). |
+
+Détail énigme par énigme : voir [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md).
+
+
 ## Les 5 salles
 
 | # | Lieu | Notion | Personnage | Mot-clé | Énigmes | Tester |

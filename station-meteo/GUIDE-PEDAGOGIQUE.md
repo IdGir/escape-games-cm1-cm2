@@ -11,6 +11,35 @@ relevés imprimable : [fiche-releves.html](fiche-releves.html)).
 
 ## 1. Place dans les programmes
 
+
+## 🎯 Compétences du programme, énigme par énigme
+
+_Sciences et technologie, cycle 3 — Année A, période 1 — Thème « La planète Terre » (BO 2026)._
+
+
+| Salle | Énigme | Type | Compétence du programme |
+|---|---|---|---|
+| **1.** L'abri météo | 1-1 · Lire le thermomètre | instrument | Réaliser des mesures météorologiques en utilisant des capteurs : le thermomètre. |
+| **1.** L'abri météo | 1-2 · Où placer le thermomètre ? | qcm | Réaliser des mesures météorologiques en utilisant des capteurs : le thermomètre. |
+| **1.** L'abri météo | 1-3 · Du plus froid au plus chaud | ordre | Réaliser des mesures météorologiques en utilisant des capteurs : le thermomètre. |
+| **1.** L'abri météo | 1-4 · Mesure fiable ou mesure faussée ? | tri | Réaliser des mesures météorologiques en utilisant des capteurs : le thermomètre. |
+| **2.** Le mât du vent | 2-1 · La rose des vents | plan | Réaliser des mesures météorologiques en utilisant des capteurs : l'anémomètre (et la girouette). |
+| **2.** Le mât du vent | 2-2 · Girouette et anémomètre | vraifaux | Réaliser des mesures météorologiques en utilisant des capteurs : l'anémomètre (et la girouette). |
+| **2.** Le mât du vent | 2-3 · L'échelle de Beaufort | association | Réaliser des mesures météorologiques en utilisant des capteurs : l'anémomètre (et la girouette). |
+| **2.** Le mât du vent | 2-4 · Le carnet du capitaine | trous | Réaliser des mesures météorologiques en utilisant des capteurs : l'anémomètre (et la girouette). |
+| **3.** Le pluviomètre | 3-1 · Lire le pluviomètre | instrument | Réaliser des mesures météorologiques en utilisant des capteurs : le pluviomètre. |
+| **3.** Le pluviomètre | 3-2 · Un millimètre de pluie | qcm | Réaliser des mesures météorologiques en utilisant des capteurs : le pluviomètre. |
+| **3.** Le pluviomètre | 3-3 · Du plus sec au plus arrosé | ordre | Réaliser des mesures météorologiques en utilisant des capteurs : le pluviomètre. |
+| **3.** Le pluviomètre | 3-4 · Le cadenas du cumul | code | Réaliser des mesures météorologiques en utilisant des capteurs : le pluviomètre. |
+| **4.** Le tableau des relevés | 4-1 · Les cases effacées | plan | Exploiter des mesures météorologiques (organiser et lire un tableau de relevés). |
+| **4.** Le tableau des relevés | 4-2 · La valeur impossible | intrus | Exploiter des mesures météorologiques (organiser et lire un tableau de relevés). |
+| **4.** Le tableau des relevés | 4-3 · Ce que dit le tableau | trous | Exploiter des mesures météorologiques (organiser et lire un tableau de relevés). |
+| **4.** Le tableau des relevés | 4-4 · Le graphique de la pluie | qcm | Exploiter des mesures météorologiques (organiser et lire un tableau de relevés). |
+| **5.** Le bulletin du jour | 5-1 · Météo ou climat ? | tri | Exploiter des mesures météorologiques (distinguer météo et climat, prévoir). |
+| **5.** Le bulletin du jour | 5-2 · Prévoir la sortie | association | Exploiter des mesures météorologiques (distinguer météo et climat, prévoir). |
+| **5.** Le bulletin du jour | 5-3 · Le mot caché du bulletin | lettres | Exploiter des mesures météorologiques (distinguer météo et climat, prévoir). |
+| **5.** Le bulletin du jour | 5-4 · La valeur de vérité | code | Exploiter des mesures météorologiques (distinguer météo et climat, prévoir). |
+
 **Sciences et technologie, cycle 3 — thème « La planète Terre »** :
 *réaliser et exploiter des mesures météorologiques en utilisant des capteurs (thermomètre,
 anémomètre et pluviomètre).* C'est l'extrait de la progression de l'enseignant

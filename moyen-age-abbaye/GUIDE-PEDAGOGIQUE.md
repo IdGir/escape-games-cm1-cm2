@@ -13,6 +13,35 @@ Clovis et Charlemagne dans la continuité de l'Empire romain ; le rôle social d
 
 ## 1. Place dans les programmes
 
+
+## 🎯 Compétences du programme, énigme par énigme
+
+_Histoire, cycle 3 — Année A, période 1 — Thème 1 : « Le Moyen Âge — Clovis et Charlemagne dans la continuité de l'empire romain » (programme d'histoire-géographie du cycle 3, BO 2026)._
+
+
+| Salle | Énigme | Type | Compétence du programme |
+|---|---|---|---|
+| **1.** Le baptême de Clovis | 1-1 · Après l'Empire romain | qcm | Repère chronologique : la fin de l'Empire romain (476) et l'avènement des royaumes francs. |
+| **1.** Le baptême de Clovis | 1-2 · La frise de la première page | ordre | Repère chronologique : la fin de l'Empire romain (476) et l'avènement des royaumes francs. |
+| **1.** Le baptême de Clovis | 1-3 · Qui a fait quoi ? | association | Repère chronologique : la fin de l'Empire romain (476) et l'avènement des royaumes francs. |
+| **1.** Le baptême de Clovis | 1-4 · La carte du royaume | plan | Repère chronologique : la fin de l'Empire romain (476) et l'avènement des royaumes francs. |
+| **2.** Aix-la-Chapelle | 2-1 · De Clovis à Charlemagne | ordre | Repère chronologique : Charlemagne et son empire, dans la continuité de l'Empire romain. |
+| **2.** Aix-la-Chapelle | 2-2 · Le couronnement | trous | Repère chronologique : Charlemagne et son empire, dans la continuité de l'Empire romain. |
+| **2.** Aix-la-Chapelle | 2-3 · La carte de l'empire | plan | Repère chronologique : Charlemagne et son empire, dans la continuité de l'Empire romain. |
+| **2.** Aix-la-Chapelle | 2-4 · Le mot caché de la deuxième page | lettres | Repère chronologique : Charlemagne et son empire, dans la continuité de l'Empire romain. |
+| **3.** Le scriptorium | 3-1 · Une journée de moine | tri | Décrire le rôle social de l'Église : l'enseignement. |
+| **3.** Le scriptorium | 3-2 · Comment naît un livre | trous | Décrire le rôle social de l'Église : l'enseignement. |
+| **3.** Le scriptorium | 3-3 · Où apprend-on ? | association | Décrire le rôle social de l'Église : l'enseignement. |
+| **3.** Le scriptorium | 3-4 · Le cadenas de la bibliothèque | code | Décrire le rôle social de l'Église : l'enseignement. |
+| **4.** L'hôtel-Dieu | 4-1 · Les documents de l'hôtel-Dieu | qcm | Décrire le rôle social de l'Église : l'assistance aux pauvres et aux malades. |
+| **4.** L'hôtel-Dieu | 4-2 · Vrai ou faux : l'aide aux pauvres | vraifaux | Décrire le rôle social de l'Église : l'assistance aux pauvres et aux malades. |
+| **4.** L'hôtel-Dieu | 4-3 · Où l'envoyer ? | tri | Décrire le rôle social de l'Église : l'assistance aux pauvres et aux malades. |
+| **4.** L'hôtel-Dieu | 4-4 · Les mots de la charité | association | Décrire le rôle social de l'Église : l'assistance aux pauvres et aux malades. |
+| **5.** Le chantier | 5-1 · Légende les deux églises | plan | Différencier l'art roman et l'art gothique. |
+| **5.** Le chantier | 5-2 · L'intrus du chantier | intrus | Différencier l'art roman et l'art gothique. |
+| **5.** Le chantier | 5-3 · Roman ou gothique ? | tri | Différencier l'art roman et l'art gothique. |
+| **5.** Le chantier | 5-4 · Vrai ou faux : le maître d'œuvre | vraifaux | Différencier l'art roman et l'art gothique. |
+
 ### La progression de l'enseignant
 
 Année A, période 1, histoire — **Thème 1 : Le Moyen Âge**.

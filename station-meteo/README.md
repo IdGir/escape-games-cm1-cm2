@@ -20,6 +20,22 @@ pluviomètre, organiser des relevés et les exploiter pour prévoir.
 | Médias | aucun n'est nécessaire : décors et personnages dessinés en SVG et animés |
 | Réseau | aucun : pas de CDN, pas de police distante, pas de bibliothèque externe |
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Sciences et technologie, cycle 3 — Année A, période 1 — Thème « La planète Terre » (BO 2026)._
+
+
+| Salle | Compétence du programme |
+|---|---|
+| **1.** L'abri météo | Réaliser des mesures météorologiques en utilisant des capteurs : le thermomètre. |
+| **2.** Le mât du vent | Réaliser des mesures météorologiques en utilisant des capteurs : l'anémomètre (et la girouette). |
+| **3.** Le pluviomètre | Réaliser des mesures météorologiques en utilisant des capteurs : le pluviomètre. |
+| **4.** Le tableau des relevés | Exploiter des mesures météorologiques (organiser et lire un tableau de relevés). |
+| **5.** Le bulletin du jour | Exploiter des mesures météorologiques (distinguer météo et climat, prévoir). |
+
+Détail énigme par énigme : voir [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md).
+
+
 ## L'histoire
 
 Un orage a traversé la nuit. Au matin, la station météo de l'école ne donne plus rien de

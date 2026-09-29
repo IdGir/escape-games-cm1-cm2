@@ -27,6 +27,22 @@ le calendrier des travaux de la salle 4 prépare le jeu de sciences n°03 (la m�
 
 ---
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Histoire, cycle 3 — Année B, période 1 — Thème 1 : « Le Moyen Âge — le château fort et la vie des paysannes et des paysans » (programme d'histoire-géographie du cycle 3, BO 2026)._
+
+
+| Salle | Compétence du programme |
+|---|---|
+| **1.** La motte et la palissade | Décrire les fonctions d'un château fort : lieu de protection (sa construction). |
+| **2.** Les remparts | Décrire les fonctions d'un château fort : lieu de protection. |
+| **3.** La grande salle | Décrire les fonctions d'un château fort : lieu de vie du seigneur, symbole de sa puissance. |
+| **4.** Le village et les champs | Raconter la vie quotidienne des paysannes et des paysans. |
+| **5.** Le moulin du seigneur | Raconter la vie quotidienne des paysannes et des paysans (les relations avec le seigneur). |
+
+Détail énigme par énigme : voir [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md).
+
+
 ## Les 5 salles
 
 | # | Lieu | Notion | Personnage | Mot-clé | Énigmes | Tester |

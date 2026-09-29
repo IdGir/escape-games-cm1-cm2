@@ -13,6 +13,35 @@ fonctionnement et de la constitution d'objets techniques. »
 
 ## 1. Place dans les programmes
 
+
+## 🎯 Compétences du programme, énigme par énigme
+
+_Sciences et technologie, cycle 3 — Année A, période 1 — Thème « Les objets techniques : description du fonctionnement et de la constitution d'objets techniques » (BO 2026)._
+
+
+| Salle | Énigme | Type | Compétence du programme |
+|---|---|---|---|
+| **1.** L'entrée de l'atelier | 1-1 · Chaque objet répond à un besoin | association | Décrire le fonctionnement d'un objet technique : sa fonction d'usage (à quoi il sert). |
+| **1.** L'entrée de l'atelier | 1-2 · Servir ou plaire ? | qcm | Décrire le fonctionnement d'un objet technique : sa fonction d'usage (à quoi il sert). |
+| **1.** L'entrée de l'atelier | 1-3 · Le tri de l'inventrice | tri | Décrire le fonctionnement d'un objet technique : sa fonction d'usage (à quoi il sert). |
+| **1.** L'entrée de l'atelier | 1-4 · Le mot de la première serrure | lettres | Décrire le fonctionnement d'un objet technique : sa fonction d'usage (à quoi il sert). |
+| **2.** L'établi | 2-1 · Le schéma de la lampe torche | plan | Décrire la constitution d'un objet technique : ses pièces (schéma). |
+| **2.** L'établi | 2-2 · Chaque pièce a un rôle | association | Décrire la constitution d'un objet technique : ses pièces (schéma). |
+| **2.** L'établi | 2-3 · Le bon mot au bon endroit | qcm | Décrire la constitution d'un objet technique : ses pièces (schéma). |
+| **2.** L'établi | 2-4 · Le carnet de l'inventrice | trous | Décrire la constitution d'un objet technique : ses pièces (schéma). |
+| **3.** La matériauthèque | 3-1 · Les casiers de la matériauthèque | tri | Décrire la constitution d'un objet technique : les matériaux. |
+| **3.** La matériauthèque | 3-2 · Vrai ou faux dans l'atelier | vraifaux | Décrire la constitution d'un objet technique : les matériaux. |
+| **3.** La matériauthèque | 3-3 · L'échantillon égaré | intrus | Décrire la constitution d'un objet technique : les matériaux. |
+| **3.** La matériauthèque | 3-4 · Le bon matériau pour le bon usage | qcm | Décrire la constitution d'un objet technique : les matériaux. |
+| **4.** La salle des machines | 4-1 · La chaîne d'énergie | ordre | Décrire le fonctionnement d'un objet technique : la chaîne d'énergie, la transmission du mouvement. |
+| **4.** La salle des machines | 4-2 · Chaque machine son énergie | association | Décrire le fonctionnement d'un objet technique : la chaîne d'énergie, la transmission du mouvement. |
+| **4.** La salle des machines | 4-3 · Transmettre le mouvement | plan | Décrire le fonctionnement d'un objet technique : la chaîne d'énergie, la transmission du mouvement. |
+| **4.** La salle des machines | 4-4 · Le cadenas à mots de la salle des machines | code | Décrire le fonctionnement d'un objet technique : la chaîne d'énergie, la transmission du mouvement. |
+| **5.** Le coin montage | 5-1 · Le montage dans l'ordre | ordre | Décrire la constitution d'un objet technique : le montage, la fabrication. |
+| **5.** Le coin montage | 5-2 · Lire la notice | vraifaux | Décrire la constitution d'un objet technique : le montage, la fabrication. |
+| **5.** Le coin montage | 5-3 · Deux objets, un même besoin | qcm | Décrire la constitution d'un objet technique : le montage, la fabrication. |
+| **5.** Le coin montage | 5-4 · Le cycle de l'inventrice | trous | Décrire la constitution d'un objet technique : le montage, la fabrication. |
+
 ### Programme en vigueur pour le CM2 en 2026-2027 (version 2020)
 
 Thème « **Matériaux et objets techniques** » — attendus de fin de cycle couverts par le jeu :

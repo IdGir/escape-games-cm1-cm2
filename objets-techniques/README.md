@@ -24,6 +24,22 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 
 ---
 
+## 🎯 Compétences du programme (vue d'ensemble)
+
+_Sciences et technologie, cycle 3 — Année A, période 1 — Thème « Les objets techniques : description du fonctionnement et de la constitution d'objets techniques » (BO 2026)._
+
+
+| Salle | Compétence du programme |
+|---|---|
+| **1.** L'entrée de l'atelier | Décrire le fonctionnement d'un objet technique : sa fonction d'usage (à quoi il sert). |
+| **2.** L'établi | Décrire la constitution d'un objet technique : ses pièces (schéma). |
+| **3.** La matériauthèque | Décrire la constitution d'un objet technique : les matériaux. |
+| **4.** La salle des machines | Décrire le fonctionnement d'un objet technique : la chaîne d'énergie, la transmission du mouvement. |
+| **5.** Le coin montage | Décrire la constitution d'un objet technique : le montage, la fabrication. |
+
+Détail énigme par énigme : voir [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md).
+
+
 ## Les 5 salles
 
 | # | Lieu | Notion | Personnage | Mot-clé | Énigmes | Tester |

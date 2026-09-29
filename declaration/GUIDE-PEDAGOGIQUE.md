@@ -15,6 +15,20 @@
 
 ---
 
+
+## 🎯 Compétences du programme, salle par salle
+
+_Histoire, cycle 3 — Année A, période 4 — Thème 4 : « Le temps de la Révolution et l'Empire » (programme d'histoire-géographie du cycle 3, BO 2026)._
+
+
+| Salle | Énigme | Compétence du programme |
+|---|---|---|
+| **1.** La cour du Palais-Royal | Le cahier de doléances codé | Décrire le contexte social, économique et intellectuel du royaume en France en 1789. |
+| **2.** L'imprimerie clandestine | La Marseillaise mystérieuse | Repère culturel complémentaire : un chant devenu symbole nationale de la période révolutionnaire (hors BO strict). |
+| **3.** Le jardin des Tuileries | Le rébus de la Déclaration | Affirmation des nouveaux principes d'organisation de la société (la Déclaration des droits de l'homme et du citoyen). |
+| **4.** La place de la Bastille | Les grands personnages | Fin de la monarchie absolue et de l'Ancien Régime (repères et acteurs de l'année 1789). |
+| **5.** La salle de l'Assemblée nationale | Le mécanisme de l'Assemblée | Affirmation des nouveaux principes d'organisation de la société (l'Assemblée nationale). |
+
 ## 📑 SOMMAIRE
 
 1. [Guide de lecture rapide (pour l'enseignant)](#1--guide-de-lecture-rapide-pour-lenseignant)

@@ -12,6 +12,35 @@ Le détail des énigmes et leurs solutions se trouvent dans le [README du jeu](R
 
 ## 1. Place dans les programmes
 
+
+## 🎯 Compétences du programme, énigme par énigme
+
+_Enseignement moral et civique, cycle 3 (BO n° 24 du 13 juin 2024) et Histoire, cycle 3 — Année B, période 4 — « Lois protectrices des droits et des libertés » (BO 2026)._
+
+
+| Salle | Énigme | Type | Compétence du programme |
+|---|---|---|---|
+| **1.** La cour du Palais-Royal | 1-1 · La règle du jeu | qcm | EMC — Identifier les règles communes qui organisent la vie collective : qu'est-ce qu'une Constitution ? |
+| **1.** La cour du Palais-Royal | 1-2 · Vrai ou faux ? | vraifaux | EMC — Identifier les règles communes qui organisent la vie collective : qu'est-ce qu'une Constitution ? |
+| **1.** La cour du Palais-Royal | 1-3 · Les trois pouvoirs | tri | EMC — Identifier les règles communes qui organisent la vie collective : qu'est-ce qu'une Constitution ? |
+| **1.** La cour du Palais-Royal | 1-4 · Le mot de la première serrure | lettres | EMC — Identifier les règles communes qui organisent la vie collective : qu'est-ce qu'une Constitution ? |
+| **2.** La salle des Textes | 2-1 · Les quatre textes, dans l'ordre | ordre | EMC — Connaître les textes fondateurs de la Constitution de la Ve République. |
+| **2.** La salle des Textes | 2-2 · Chaque texte, son apport | association | EMC — Connaître les textes fondateurs de la Constitution de la Ve République. |
+| **2.** La salle des Textes | 2-3 · La fiche d'identité de la Constitution | trous | EMC — Connaître les textes fondateurs de la Constitution de la Ve République. |
+| **2.** La salle des Textes | 2-4 · Le cadenas à chiffres | code | EMC — Connaître les textes fondateurs de la Constitution de la Ve République. |
+| **3.** L'hémicycle | 3-1 · Qui fait quoi dans la République ? | plan | EMC — Distinguer les pouvoirs législatif, exécutif et judiciaire ; le rôle du président de la République. |
+| **3.** L'hémicycle | 3-2 · Le président de la République | qcm | EMC — Distinguer les pouvoirs législatif, exécutif et judiciaire ; le rôle du président de la République. |
+| **3.** L'hémicycle | 3-3 · L'intrus du bureau de vote | intrus | EMC — Distinguer les pouvoirs législatif, exécutif et judiciaire ; le rôle du président de la République. |
+| **3.** L'hémicycle | 3-4 · Les présidents de la Ve République | ordre | EMC — Distinguer les pouvoirs législatif, exécutif et judiciaire ; le rôle du président de la République. |
+| **4.** La navette parlementaire | 4-1 · Le vocabulaire de la loi | association | EMC — Comprendre le parcours d'une loi (la navette parlementaire). |
+| **4.** La navette parlementaire | 4-2 · Le parcours d'une loi | ordre | EMC — Comprendre le parcours d'une loi (la navette parlementaire). |
+| **4.** La navette parlementaire | 4-3 · Vrai ou faux : la fabrique de la loi | vraifaux | EMC — Comprendre le parcours d'une loi (la navette parlementaire). |
+| **4.** La navette parlementaire | 4-4 · Le cadenas du Parlement | code | EMC — Comprendre le parcours d'une loi (la navette parlementaire). |
+| **5.** La salle des séances | 5-1 · Les articles 1 et 2 | trous | Histoire — Lois protectrices des droits et des libertés ; EMC — valeurs et principes de la République. |
+| **5.** La salle des séances | 5-2 · Valeurs et principes de la République | association | Histoire — Lois protectrices des droits et des libertés ; EMC — valeurs et principes de la République. |
+| **5.** La salle des séances | 5-3 · La Constitution dans ton quotidien | qcm | Histoire — Lois protectrices des droits et des libertés ; EMC — valeurs et principes de la République. |
+| **5.** La salle des séances | 5-4 · La fiche d'identité du Conseil constitutionnel | plan | Histoire — Lois protectrices des droits et des libertés ; EMC — valeurs et principes de la République. |
+
 Le programme d'**enseignement moral et civique** publié au **Bulletin officiel n° 24 du
 13 juin 2024** s'applique à tous les niveaux depuis la **rentrée 2026**. Il organise le cycle 3
 autour d'un thème annuel :

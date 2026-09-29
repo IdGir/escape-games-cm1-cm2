@@ -37,7 +37,7 @@ La progression est **conservée toute l'année** sur le poste, et peut être
 
 ## Les 16 séances
 
-| # | Séance | Période | Élément du programme | Livret | Tester |
+| # | Séance | Période | Compétence du programme (BO, géographie Année B) | Livret | Tester |
 |---|---|---|---|---|---|
 | 1 | Le grand départ | P1 | Découpage administratif : la commune et ses lieux | p. 1 | [▶](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=1) |
 | 2 | Direction Dijon ! | P1 | Commune, département, région, pays, continent | p. 14 | [▶](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=2) |
