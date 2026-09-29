@@ -1,0 +1,278 @@
+{
+  "_commentaire": "Manifeste des medias du jeu Le Tour du Monde en 80 minutes. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "tour-du-monde",
+  "titre": "Le Tour du Monde en 80 minutes",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [
+    {
+      "cle": "etape1",
+      "cible": "assets/images/decors/etape1.jpg",
+      "recherche": "Reform Club Pall Mall London",
+      "lieu": "Reform Club, Londres",
+      "paysage": true
+    },
+    {
+      "cle": "etape2",
+      "cible": "assets/images/decors/etape2.jpg",
+      "recherche": "Suez Canal ship",
+      "lieu": "Canal de Suez",
+      "paysage": true
+    },
+    {
+      "cle": "etape3",
+      "cible": "assets/images/decors/etape3.jpg",
+      "recherche": "Kanha National Park forest India",
+      "lieu": "Foret de l'Inde centrale (Kanha)",
+      "paysage": true
+    },
+    {
+      "cle": "etape4",
+      "cible": "assets/images/decors/etape4.jpg",
+      "recherche": "South China Sea",
+      "lieu": "Mer de Chine meridionale",
+      "paysage": true
+    },
+    {
+      "cle": "etape5",
+      "cible": "assets/images/decors/etape5.jpg",
+      "recherche": "Royal Observatory Greenwich",
+      "lieu": "Observatoire royal de Greenwich",
+      "paysage": true
+    },
+    {
+      "cle": "paysage-desert",
+      "cible": "assets/images/cartes/paysage-desert.jpg",
+      "recherche": "Sahara sand dunes",
+      "lieu": "Desert du Sahara",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "paysage-jungle",
+      "cible": "assets/images/cartes/paysage-jungle.jpg",
+      "recherche": "tropical rainforest",
+      "lieu": "Foret tropicale humide",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "paysage-montagne",
+      "cible": "assets/images/cartes/paysage-montagne.jpg",
+      "recherche": "Himalaya mountains",
+      "lieu": "Himalaya",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "paysage-campagne",
+      "cible": "assets/images/cartes/paysage-campagne.jpg",
+      "recherche": "Cotswolds countryside",
+      "lieu": "Campagne anglaise (Cotswolds)",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "paysage-banquise",
+      "cible": "assets/images/cartes/paysage-banquise.jpg",
+      "recherche": "sea ice pack ice",
+      "lieu": "Banquise",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "paysage-savane",
+      "cible": "assets/images/cartes/paysage-savane.jpg",
+      "recherche": "Serengeti savanna",
+      "lieu": "Savane du Serengeti",
+      "paysage": false,
+      "rang": 1
+    }
+  ],
+  "images": [
+    {
+      "cle": "cine-intro",
+      "nom": "Cinematique d'ouverture, le pari (image de depart)",
+      "cible": "assets/images/decors/intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a Victorian gentlemen's club reading room in London in 1872, leather armchairs, a card table, a large clock on the wall, gaslight.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-final",
+      "nom": "Cinematique de fin (image de depart)",
+      "cible": "assets/images/decors/final.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a Victorian London street in 1872 with a steam train station and a large clock tower, evening, festive mood, no readable signs.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "fogg",
+      "nom": "Phileas Fogg",
+      "cible": "assets/images/personnages/fogg.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Victorian English gentleman in his forties, 1872, top hat, dark frock coat, precise and calm expression, pocket watch chain.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "passepartout",
+      "nom": "Jean Passepartout",
+      "cible": "assets/images/personnages/passepartout.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a cheerful French valet in his thirties, 1872, short brown hair, waistcoat and travelling bag, lively smile.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "aouda",
+      "nom": "Mrs Aouda",
+      "cible": "assets/images/personnages/aouda.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a young Indian woman in her twenties in the 1870s, elegant silk sari in deep blue, dark hair, gentle confident expression, respectful portrayal.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "fix",
+      "nom": "L'inspecteur Fix",
+      "cible": "assets/images/personnages/fix.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Victorian Scotland Yard detective in his forties, 1872, bowler hat, grey overcoat, sideburns, suspicious squint.",
+      "taille": "768x1024"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "etape1-video",
+      "nom": "Reform Club, Londres (video)",
+      "cible": "assets/videos/etape1.mp4",
+      "depuis": "etape1",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "etape2-video",
+      "nom": "Canal de Suez (video)",
+      "cible": "assets/videos/etape2.mp4",
+      "depuis": "etape2",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "etape3-video",
+      "nom": "Foret de l'Inde centrale (Kanha) (video)",
+      "cible": "assets/videos/etape3.mp4",
+      "depuis": "etape3",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "etape4-video",
+      "nom": "Mer de Chine meridionale (video)",
+      "cible": "assets/videos/etape4.mp4",
+      "depuis": "etape4",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "etape5-video",
+      "nom": "Observatoire royal de Greenwich (video)",
+      "cible": "assets/videos/etape5.mp4",
+      "depuis": "etape5",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinematique d'ouverture, le pari",
+      "cible": "assets/videos/intro.mp4",
+      "depuis": "cine-intro",
+      "prompt": "Slow push-in towards the wall clock, the pendulum swings, gaslight flickers. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "final",
+      "nom": "Cinematique de fin",
+      "cible": "assets/videos/final.mp4",
+      "depuis": "cine-final",
+      "prompt": "The clock hands move to a quarter to nine, steam drifts across the street, warm lights come on. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "fogg-repos",
+      "nom": "Phileas Fogg (au repos)",
+      "cible": "assets/videos/personnages/fogg.mp4",
+      "depuis": "fogg",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "fogg-parle",
+      "nom": "Phileas Fogg (parle)",
+      "cible": "assets/videos/personnages/fogg-parle.mp4",
+      "depuis": "fogg",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "passepartout-repos",
+      "nom": "Jean Passepartout (au repos)",
+      "cible": "assets/videos/personnages/passepartout.mp4",
+      "depuis": "passepartout",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "passepartout-parle",
+      "nom": "Jean Passepartout (parle)",
+      "cible": "assets/videos/personnages/passepartout-parle.mp4",
+      "depuis": "passepartout",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "aouda-repos",
+      "nom": "Mrs Aouda (au repos)",
+      "cible": "assets/videos/personnages/aouda.mp4",
+      "depuis": "aouda",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "aouda-parle",
+      "nom": "Mrs Aouda (parle)",
+      "cible": "assets/videos/personnages/aouda-parle.mp4",
+      "depuis": "aouda",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "fix-repos",
+      "nom": "L'inspecteur Fix (au repos)",
+      "cible": "assets/videos/personnages/fix.mp4",
+      "depuis": "fix",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "fix-parle",
+      "nom": "L'inspecteur Fix (parle)",
+      "cible": "assets/videos/personnages/fix-parle.mp4",
+      "depuis": "fix",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    }
+  ]
+}

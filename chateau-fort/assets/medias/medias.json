@@ -1,0 +1,287 @@
+{
+  "_commentaire": "Manifeste des medias du jeu Le Secret du donjon. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "chateau-fort",
+  "titre": "Le Secret du donjon",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [
+    {
+      "cle": "salle1",
+      "cible": "assets/images/decors/salle1.jpg",
+      "recherche": "Saint-Sylvain-d'Anjou chateau a motte reconstitution",
+      "lieu": "Motte castrale reconstituee de Saint-Sylvain-d'Anjou",
+      "paysage": true
+    },
+    {
+      "cle": "salle2",
+      "cible": "assets/images/decors/salle2.jpg",
+      "recherche": "Guedelon courtine tour chateau",
+      "lieu": "Chantier medieval de Guedelon, remparts",
+      "paysage": true
+    },
+    {
+      "cle": "salle3",
+      "cible": "assets/images/decors/salle3.jpg",
+      "recherche": "Guedelon grande salle",
+      "lieu": "Guedelon, la grande salle",
+      "paysage": true
+    },
+    {
+      "cle": "salle5",
+      "cible": "assets/images/decors/salle5.jpg",
+      "recherche": "Guedelon moulin a eau",
+      "lieu": "Guedelon, le moulin a eau",
+      "paysage": true
+    },
+    {
+      "cle": "e1-2",
+      "cible": "assets/images/cartes/e1-2.jpg",
+      "recherche": "Guedelon chantier chateau construction",
+      "lieu": "Chantier de chateau fort (Guedelon)",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "e4-1",
+      "cible": "assets/images/cartes/e4-1.jpg",
+      "recherche": "Tres Riches Heures du duc de Berry mars",
+      "lieu": "Tres Riches Heures du duc de Berry, calendrier",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "e5-2",
+      "cible": "assets/images/cartes/e5-2.jpg",
+      "recherche": "moulin a eau Guedelon roue",
+      "lieu": "Moulin a eau medieval",
+      "paysage": false,
+      "rang": 2
+    },
+    {
+      "cle": "tres-riches-heures-octobre-doc",
+      "cible": "assets/images/documents/tres-riches-heures-octobre.jpg",
+      "recherche": "Tres Riches Heures du duc de Berry octobre",
+      "lieu": "Tres Riches Heures, Octobre",
+      "paysage": false,
+      "rang": 1
+    }
+  ],
+  "images": [
+    {
+      "cle": "salle4",
+      "nom": "Salle 4, le village et les champs",
+      "cible": "assets/images/decors/salle4.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a 13th-century French peasant village at the foot of a stone castle, timber-framed thatched cottages, a small church, ploughed fields and hedges, a few distant peasants working, morning light.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-intro",
+      "nom": "Cinematique d'ouverture (image de depart)",
+      "cible": "assets/images/decors/intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a 13th-century stone castle on a hill with its wooden drawbridge still raised, at dawn, mist over the moat.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-final",
+      "nom": "Cinematique de fin (image de depart)",
+      "cible": "assets/images/decors/final.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: the inner gate of a 13th-century stone castle with a heavy iron portcullis, torches on the walls, evening light.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "colin",
+      "nom": "Colin, page",
+      "cible": "assets/images/personnages/colin.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: an 11-year-old page boy of the 13th century, short tunic in the lord's colours red and blue, hose, short brown hair, eager smile, no weapon.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "josselin",
+      "nom": "Maitre Josselin, maitre macon",
+      "cible": "assets/images/personnages/josselin.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a master mason in his fifties, 13th century, sturdy, grey beard, linen shirt and leather apron, holding a mason's square.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "alienor",
+      "nom": "Dame Alienor, dame du chateau",
+      "cible": "assets/images/personnages/alienor.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a noble lady of a castle in her thirties, 13th century, long dress in deep green wool, simple veil and circlet, calm dignified expression.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "mahaut",
+      "nom": "Mahaut, jeune paysanne",
+      "cible": "assets/images/personnages/mahaut.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: an 11-year-old peasant girl of the 13th century, plain undyed wool dress, linen headscarf, holding a basket of turnips, bright smile.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "perrine",
+      "nom": "Perrine, meuniere",
+      "cible": "assets/images/personnages/perrine.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a village miller woman in her forties, 13th century, flour-dusted apron over a brown dress, linen coif, strong friendly face.",
+      "taille": "768x1024"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "salle1-video",
+      "nom": "Motte castrale reconstituee de Saint-Sylvain-d'Anjou (video)",
+      "cible": "assets/videos/salle1.mp4",
+      "depuis": "salle1",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle2-video",
+      "nom": "Chantier medieval de Guedelon, remparts (video)",
+      "cible": "assets/videos/salle2.mp4",
+      "depuis": "salle2",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle3-video",
+      "nom": "Guedelon, la grande salle (video)",
+      "cible": "assets/videos/salle3.mp4",
+      "depuis": "salle3",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle5-video",
+      "nom": "Guedelon, le moulin a eau (video)",
+      "cible": "assets/videos/salle5.mp4",
+      "depuis": "salle5",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle4-video",
+      "nom": "Salle 4, le village et les champs (video)",
+      "cible": "assets/videos/salle4.mp4",
+      "depuis": "salle4",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinematique d'ouverture",
+      "cible": "assets/videos/intro.mp4",
+      "depuis": "cine-intro",
+      "prompt": "The wooden drawbridge slowly lowers over the moat, mist drifting, birds in the sky. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "final",
+      "nom": "Cinematique de fin",
+      "cible": "assets/videos/final.mp4",
+      "depuis": "cine-final",
+      "prompt": "The iron portcullis slowly rises, revealing warm daylight behind the gate, static camera. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "colin-repos",
+      "nom": "Colin, page (au repos)",
+      "cible": "assets/videos/personnages/colin.mp4",
+      "depuis": "colin",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "colin-parle",
+      "nom": "Colin, page (parle)",
+      "cible": "assets/videos/personnages/colin-parle.mp4",
+      "depuis": "colin",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "josselin-repos",
+      "nom": "Maitre Josselin, maitre macon (au repos)",
+      "cible": "assets/videos/personnages/josselin.mp4",
+      "depuis": "josselin",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "josselin-parle",
+      "nom": "Maitre Josselin, maitre macon (parle)",
+      "cible": "assets/videos/personnages/josselin-parle.mp4",
+      "depuis": "josselin",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "alienor-repos",
+      "nom": "Dame Alienor, dame du chateau (au repos)",
+      "cible": "assets/videos/personnages/alienor.mp4",
+      "depuis": "alienor",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "alienor-parle",
+      "nom": "Dame Alienor, dame du chateau (parle)",
+      "cible": "assets/videos/personnages/alienor-parle.mp4",
+      "depuis": "alienor",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "mahaut-repos",
+      "nom": "Mahaut, jeune paysanne (au repos)",
+      "cible": "assets/videos/personnages/mahaut.mp4",
+      "depuis": "mahaut",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "mahaut-parle",
+      "nom": "Mahaut, jeune paysanne (parle)",
+      "cible": "assets/videos/personnages/mahaut-parle.mp4",
+      "depuis": "mahaut",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "perrine-repos",
+      "nom": "Perrine, meuniere (au repos)",
+      "cible": "assets/videos/personnages/perrine.mp4",
+      "depuis": "perrine",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "perrine-parle",
+      "nom": "Perrine, meuniere (parle)",
+      "cible": "assets/videos/personnages/perrine-parle.mp4",
+      "depuis": "perrine",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    }
+  ]
+}

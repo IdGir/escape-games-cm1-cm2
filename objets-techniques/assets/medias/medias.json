@@ -1,0 +1,229 @@
+{
+  "_commentaire": "Manifeste des medias du jeu L'Atelier de l'inventeur. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "objets-techniques",
+  "titre": "L'Atelier de l'inventeur",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [],
+  "images": [
+    {
+      "cle": "salle1",
+      "nom": "Salle 1, l'entree de l'atelier",
+      "cible": "assets/images/decors/salle1.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: the entrance of a bright inventor's workshop in an old brick building, a long wooden table with everyday objects, pegboard of tools, large windows.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle2",
+      "nom": "Salle 2, l'etabli",
+      "cible": "assets/images/decors/salle2.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a wooden workbench with a disassembled flashlight, screwdrivers, a vice and small parts laid out neatly, desk lamp.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle3",
+      "nom": "Salle 3, la materiautheque",
+      "cible": "assets/images/decors/salle3.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a material library room: shelves of labelled-free wooden drawers and bins with samples of wood, metal, plastic, glass, cardboard and fabric.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle4",
+      "nom": "Salle 4, la salle des machines",
+      "cible": "assets/images/decors/salle4.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a workshop machine room with a bicycle on a stand, a hand-crank drill, gears, pulleys and belts, a small wind turbine model.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle5",
+      "nom": "Salle 5, le coin montage",
+      "cible": "assets/images/decors/salle5.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: an assembly corner with a workbench, an open assembly manual with drawings only, parts sorted in trays, a half-built wooden toy cart.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-intro",
+      "nom": "Cinematique d'ouverture (image de depart)",
+      "cible": "assets/images/decors/intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: the closed double doors of an old brick inventor's workshop, a brass padlock, morning light.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-final",
+      "nom": "Cinematique de fin (image de depart)",
+      "cible": "assets/images/decors/final.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a heavy old green steel safe in a workshop, its round dial and handle, warm light.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "zoe",
+      "nom": "Zoe, apprentie ingenieure",
+      "cible": "assets/images/personnages/zoe.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: an 11-year-old girl apprentice engineer, curly hair, safety glasses pushed up on her head, denim overalls, holding a screwdriver, confident smile.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "awa",
+      "nom": "Awa, ouvriere",
+      "cible": "assets/images/personnages/awa.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a woman factory worker in her thirties, navy work overalls, headscarf, protective gloves in her pocket, friendly.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "marcel",
+      "nom": "Monsieur Marcel, reparateur de velos",
+      "cible": "assets/images/personnages/marcel.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a bicycle repairman in his sixties, grey moustache, flat cap, grease-stained blue work jacket, holding a spanner.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "eleonore",
+      "nom": "Eleonore Marchand, l'inventrice",
+      "cible": "assets/images/personnages/eleonore.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: an elderly woman inventor around seventy, white hair in a bun, round glasses, tweed jacket with pencils in the pocket, mischievous smile.",
+      "taille": "768x1024"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "salle1-video",
+      "nom": "Salle 1, l'entree de l'atelier (video)",
+      "cible": "assets/videos/salle1.mp4",
+      "depuis": "salle1",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle2-video",
+      "nom": "Salle 2, l'etabli (video)",
+      "cible": "assets/videos/salle2.mp4",
+      "depuis": "salle2",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle3-video",
+      "nom": "Salle 3, la materiautheque (video)",
+      "cible": "assets/videos/salle3.mp4",
+      "depuis": "salle3",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle4-video",
+      "nom": "Salle 4, la salle des machines (video)",
+      "cible": "assets/videos/salle4.mp4",
+      "depuis": "salle4",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle5-video",
+      "nom": "Salle 5, le coin montage (video)",
+      "cible": "assets/videos/salle5.mp4",
+      "depuis": "salle5",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinematique d'ouverture",
+      "cible": "assets/videos/intro.mp4",
+      "depuis": "cine-intro",
+      "prompt": "The workshop doors slowly swing open revealing warm light inside, dust in the air. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "final",
+      "nom": "Cinematique de fin",
+      "cible": "assets/videos/final.mp4",
+      "depuis": "cine-final",
+      "prompt": "The safe door slowly opens, warm golden light spills out, static camera. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "zoe-repos",
+      "nom": "Zoe, apprentie ingenieure (au repos)",
+      "cible": "assets/videos/personnages/zoe.mp4",
+      "depuis": "zoe",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "zoe-parle",
+      "nom": "Zoe, apprentie ingenieure (parle)",
+      "cible": "assets/videos/personnages/zoe-parle.mp4",
+      "depuis": "zoe",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "awa-repos",
+      "nom": "Awa, ouvriere (au repos)",
+      "cible": "assets/videos/personnages/awa.mp4",
+      "depuis": "awa",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "awa-parle",
+      "nom": "Awa, ouvriere (parle)",
+      "cible": "assets/videos/personnages/awa-parle.mp4",
+      "depuis": "awa",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "marcel-repos",
+      "nom": "Monsieur Marcel, reparateur de velos (au repos)",
+      "cible": "assets/videos/personnages/marcel.mp4",
+      "depuis": "marcel",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "marcel-parle",
+      "nom": "Monsieur Marcel, reparateur de velos (parle)",
+      "cible": "assets/videos/personnages/marcel-parle.mp4",
+      "depuis": "marcel",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "eleonore-repos",
+      "nom": "Eleonore Marchand, l'inventrice (au repos)",
+      "cible": "assets/videos/personnages/eleonore.mp4",
+      "depuis": "eleonore",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "eleonore-parle",
+      "nom": "Eleonore Marchand, l'inventrice (parle)",
+      "cible": "assets/videos/personnages/eleonore-parle.mp4",
+      "depuis": "eleonore",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    }
+  ]
+}

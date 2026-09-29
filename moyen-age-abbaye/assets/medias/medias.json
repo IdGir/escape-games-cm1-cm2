@@ -1,0 +1,254 @@
+{
+  "_commentaire": "Manifeste des medias du jeu Le Manuscrit de l'abbaye. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "moyen-age-abbaye",
+  "titre": "Le Manuscrit de l'abbaye",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [
+    {
+      "cle": "salle1",
+      "cible": "assets/images/decors/salle1.jpg",
+      "lieu": "Le bapteme de Clovis",
+      "paysage": true,
+      "fichier_commons": "Baptème de Clovis 4731.JPG"
+    },
+    {
+      "cle": "salle2",
+      "cible": "assets/images/decors/salle2.jpg",
+      "recherche": "Aachen Cathedral Palatine Chapel octagon interior",
+      "lieu": "Chapelle palatine d'Aix-la-Chapelle",
+      "paysage": true
+    },
+    {
+      "cle": "salle3",
+      "cible": "assets/images/decors/salle3.jpg",
+      "recherche": "Abbaye de Fontenay salle des moines",
+      "lieu": "Abbaye de Fontenay, salle des moines",
+      "paysage": true
+    },
+    {
+      "cle": "salle4",
+      "cible": "assets/images/decors/salle4.jpg",
+      "recherche": "incategory:\"Grande_salle_des_pôvres_de_l'Hôtel-Dieu_de_Beaune\" lits -charpente -plafond -voute -poutre",
+      "lieu": "Hotel-Dieu de Beaune, grande salle des povres",
+      "paysage": true
+    },
+    {
+      "cle": "salle5",
+      "cible": "assets/images/decors/salle5.jpg",
+      "recherche": "Vezelay basilique Sainte-Marie-Madeleine nef",
+      "lieu": "Basilique de Vezelay, nef romane et choeur gothique",
+      "paysage": true
+    },
+    {
+      "cle": "e1-2",
+      "cible": "assets/images/cartes/e1-2.jpg",
+      "recherche": "Clovis bapteme Grandes Chroniques",
+      "lieu": "Le bapteme de Clovis dans un manuscrit medieval",
+      "paysage": false,
+      "rang": 2
+    },
+    {
+      "cle": "e3-2",
+      "cible": "assets/images/cartes/e3-2.jpg",
+      "recherche": "lettrine historiee manuscrit enlumine XIIe siecle",
+      "lieu": "Page de manuscrit enlumine avec lettrine",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "e4-1",
+      "cible": "assets/images/cartes/e4-1.jpg",
+      "recherche": "Hotel-Dieu Beaune salle des povres lits",
+      "lieu": "Grande salle des malades de l'hotel-Dieu de Beaune",
+      "paysage": false,
+      "rang": 2
+    }
+  ],
+  "images": [
+    {
+      "cle": "cine-intro",
+      "nom": "Cinematique d'ouverture (image de depart)",
+      "cible": "assets/images/decors/intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a large illuminated medieval manuscript lying open on a monk's oak writing desk in a stone scriptorium, several pages visibly torn out, candlelight, quill and inkpot beside it.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-final",
+      "nom": "Cinematique de fin (image de depart)",
+      "cible": "assets/images/decors/final.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: the same illuminated medieval manuscript now complete and closed, with a brass clasp and leather binding, on the oak desk, warm golden candlelight.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "anselme",
+      "nom": "Frere Anselme, moine copiste",
+      "cible": "assets/images/personnages/anselme.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Benedictine monk copyist in his forties, black habit, tonsured hair, kind eyes, holding a goose quill, 12th century.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "aude",
+      "nom": "Aude, eleve de l'ecole du palais",
+      "cible": "assets/images/personnages/aude.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: an 11-year-old girl of the Carolingian era, simple long wool tunic in muted blue, braided brown hair, holding a wax writing tablet, curious smile.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "alix",
+      "nom": "Mere Alix, abbesse",
+      "cible": "assets/images/personnages/alix.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Benedictine abbess in her late fifties, black habit with white wimple and veil, gentle and determined expression, 13th century.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "garin",
+      "nom": "Garin, apprenti tailleur de pierre",
+      "cible": "assets/images/personnages/garin.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a 12-year-old boy apprentice stonemason of the 12th century, rough linen tunic, leather apron, light stone dust on his hands and hair, holding a small chisel.",
+      "taille": "768x1024"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "salle1-video",
+      "nom": "Reims, le bapteme de Clovis (enluminure) (video)",
+      "cible": "assets/videos/salle1.mp4",
+      "depuis": "salle1",
+      "prompt": "Very slow push-in towards the centre of this historical artwork, never zooming out, the frame always stays inside the original picture; the artwork itself stays exactly unchanged, nothing is added or animated inside it, soft museum lighting. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle2-video",
+      "nom": "Chapelle palatine d'Aix-la-Chapelle (video)",
+      "cible": "assets/videos/salle2.mp4",
+      "depuis": "salle2",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle3-video",
+      "nom": "Abbaye de Fontenay, salle des moines (video)",
+      "cible": "assets/videos/salle3.mp4",
+      "depuis": "salle3",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle4-video",
+      "nom": "Hotel-Dieu de Beaune, grande salle des povres (video)",
+      "cible": "assets/videos/salle4.mp4",
+      "depuis": "salle4",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle5-video",
+      "nom": "Basilique de Vezelay, nef romane et choeur gothique (video)",
+      "cible": "assets/videos/salle5.mp4",
+      "depuis": "salle5",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinematique d'ouverture",
+      "cible": "assets/videos/intro.mp4",
+      "depuis": "cine-intro",
+      "prompt": "Slow push-in on the open manuscript, candle flame flickering, a loose page slowly lifts in a draught. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "final",
+      "nom": "Cinematique de fin",
+      "cible": "assets/videos/final.mp4",
+      "depuis": "cine-final",
+      "prompt": "The brass clasp of the book closes gently, golden light glows softly, static camera. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "anselme-repos",
+      "nom": "Frere Anselme, moine copiste (au repos)",
+      "cible": "assets/videos/personnages/anselme.mp4",
+      "depuis": "anselme",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "anselme-parle",
+      "nom": "Frere Anselme, moine copiste (parle)",
+      "cible": "assets/videos/personnages/anselme-parle.mp4",
+      "depuis": "anselme",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "aude-repos",
+      "nom": "Aude, eleve de l'ecole du palais (au repos)",
+      "cible": "assets/videos/personnages/aude.mp4",
+      "depuis": "aude",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "aude-parle",
+      "nom": "Aude, eleve de l'ecole du palais (parle)",
+      "cible": "assets/videos/personnages/aude-parle.mp4",
+      "depuis": "aude",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "alix-repos",
+      "nom": "Mere Alix, abbesse (au repos)",
+      "cible": "assets/videos/personnages/alix.mp4",
+      "depuis": "alix",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "alix-parle",
+      "nom": "Mere Alix, abbesse (parle)",
+      "cible": "assets/videos/personnages/alix-parle.mp4",
+      "depuis": "alix",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "garin-repos",
+      "nom": "Garin, apprenti tailleur de pierre (au repos)",
+      "cible": "assets/videos/personnages/garin.mp4",
+      "depuis": "garin",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "garin-parle",
+      "nom": "Garin, apprenti tailleur de pierre (parle)",
+      "cible": "assets/videos/personnages/garin-parle.mp4",
+      "depuis": "garin",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    }
+  ]
+}

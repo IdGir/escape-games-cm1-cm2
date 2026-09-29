@@ -1,0 +1,482 @@
+{
+  "_commentaire": "Manifeste des medias du jeu Mission geographique. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "mission-geo",
+  "titre": "Mission geographique",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [
+    {
+      "cle": "final-intro",
+      "cible": "assets/images/final-intro.jpg",
+      "recherche": "Aeroport Ajaccio Napoleon Bonaparte",
+      "lieu": "Aeroport d'Ajaccio",
+      "paysage": true
+    },
+    {
+      "cle": "s02-intro",
+      "cible": "assets/images/s02-intro.jpg",
+      "recherche": "Dijon place de la Liberation",
+      "lieu": "Dijon, place de la Liberation",
+      "paysage": true
+    },
+    {
+      "cle": "s02-coeur",
+      "cible": "assets/images/s02-coeur.jpg",
+      "recherche": "Palais des ducs de Bourgogne Dijon",
+      "lieu": "Palais des ducs de Bourgogne, Dijon",
+      "paysage": true
+    },
+    {
+      "cle": "s03-intro",
+      "cible": "assets/images/s03-intro.jpg",
+      "recherche": "Clamecy Nievre ville",
+      "lieu": "Clamecy (Nievre)",
+      "paysage": true
+    },
+    {
+      "cle": "s04-intro",
+      "cible": "assets/images/s04-intro.jpg",
+      "recherche": "Besancon vue depuis la citadelle",
+      "lieu": "Besancon depuis la citadelle",
+      "paysage": true
+    },
+    {
+      "cle": "s04-coeur",
+      "cible": "assets/images/s04-coeur.jpg",
+      "recherche": "Besancon quartier Battant",
+      "lieu": "Besancon, quartiers",
+      "paysage": true
+    },
+    {
+      "cle": "s05-intro",
+      "cible": "assets/images/s05-intro.jpg",
+      "recherche": "La Dole Jura sommet",
+      "lieu": "Le massif de la Dole",
+      "paysage": true
+    },
+    {
+      "cle": "s05-coeur",
+      "cible": "assets/images/s05-coeur.jpg",
+      "recherche": "Les Rousses station de ski",
+      "lieu": "Domaine skiable des Rousses",
+      "paysage": true
+    },
+    {
+      "cle": "s06-intro",
+      "cible": "assets/images/s06-intro.jpg",
+      "recherche": "Falaises d'Etretat",
+      "lieu": "Les falaises d'Etretat",
+      "paysage": true
+    },
+    {
+      "cle": "s06-coeur",
+      "cible": "assets/images/s06-coeur.jpg",
+      "recherche": "Aiguille d'Etretat",
+      "lieu": "L'Aiguille creuse, Etretat",
+      "paysage": true
+    },
+    {
+      "cle": "s07-intro",
+      "cible": "assets/images/s07-intro.jpg",
+      "recherche": "cote atlantique dune plage Landes",
+      "lieu": "Le littoral atlantique",
+      "paysage": true
+    },
+    {
+      "cle": "s07-coeur",
+      "cible": "assets/images/s07-coeur.jpg",
+      "recherche": "Grande Plage Biarritz",
+      "lieu": "La grande plage de Biarritz",
+      "paysage": true
+    },
+    {
+      "cle": "s08-intro",
+      "cible": "assets/images/s08-intro.jpg",
+      "recherche": "Dhaka street Bangladesh",
+      "lieu": "Dhaka, Bangladesh",
+      "paysage": true
+    },
+    {
+      "cle": "s09-intro",
+      "cible": "assets/images/s09-intro.jpg",
+      "recherche": "Bamako marche",
+      "lieu": "Un marche de Bamako",
+      "paysage": true
+    },
+    {
+      "cle": "s13-intro",
+      "cible": "assets/images/s13-intro.jpg",
+      "recherche": "torrent alpin montagne",
+      "lieu": "Un torrent alpin",
+      "paysage": true
+    },
+    {
+      "cle": "s14-intro",
+      "cible": "assets/images/s14-intro.jpg",
+      "recherche": "Sources de la Seine Source-Seine",
+      "lieu": "Les sources de la Seine",
+      "paysage": true
+    },
+    {
+      "cle": "s15-intro",
+      "cible": "assets/images/s15-intro.jpg",
+      "recherche": "Garonne Toulouse Pont-Neuf",
+      "lieu": "La Garonne a Toulouse",
+      "paysage": true
+    },
+    {
+      "cle": "s16-intro",
+      "cible": "assets/images/s16-intro.jpg",
+      "recherche": "riviere a sec Var secheresse",
+      "lieu": "Une riviere a sec dans le Var",
+      "paysage": true
+    },
+    {
+      "cle": "s16-coeur",
+      "cible": "assets/images/s16-coeur.jpg",
+      "recherche": "lac de Serre-Poncon niveau bas",
+      "lieu": "Un lac a son plus bas niveau",
+      "paysage": true
+    }
+  ],
+  "images": [
+    {
+      "cle": "s03-coeur",
+      "nom": "Un bourg de la Nievre",
+      "cible": "assets/images/s03-coeur.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: the main street of a small Burgundy market town, stone houses with slate roofs, a church tower, a bakery, a few cars, spring day.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "s09-coeur",
+      "nom": "Etals du marche",
+      "cible": "assets/images/s09-coeur.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: colourful market stalls with vegetables, grains, spices and fruit under sunshades in West Africa, busy but calm.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "s10-coeur",
+      "nom": "La ferme",
+      "cible": "assets/images/s10-coeur.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a French family farm with a barn, a vegetable field, dairy cows in a meadow and a small farm shop, sunny day.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "s11-coeur",
+      "nom": "Dans l'usine",
+      "cible": "assets/images/s11-coeur.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: the inside of a small food-processing plant: stainless steel machines, a conveyor belt with jars, workers in white coats and hairnets.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "s12-coeur",
+      "nom": "D'ou viennent nos aliments ?",
+      "cible": "assets/images/s12-coeur.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a French open-air market stall with local fruit and vegetables in wooden crates, handwritten price boards left blank.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-mission-intro",
+      "nom": "Ouverture de la mission (image de depart)",
+      "cible": "assets/images/mission-intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: an old leather suitcase on a desk next to a world globe, a map of France and a compass, adventure mood, warm lamp light.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-s01-intro",
+      "nom": "Le message du Professeur Atlas (image de depart)",
+      "cible": "assets/images/s01-intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a mysterious envelope sealed with wax on a teacher's desk in a French classroom, a world globe beside it, morning light.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-s10-intro",
+      "nom": "Un plateau de cantine (image de depart)",
+      "cible": "assets/images/s10-intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a French school canteen tray with a balanced meal: salad, fish, vegetables, bread, yoghurt and an apple, top view.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-s11-intro",
+      "nom": "La ferme au lever du jour (image de depart)",
+      "cible": "assets/images/s11-intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a French farm at sunrise with a tractor leaving the barn towards golden wheat fields.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-s12-intro",
+      "nom": "Un etal de marche (image de depart)",
+      "cible": "assets/images/s12-intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a French open-air market in the morning, stalls being set up with fruit and vegetables, no readable signs.",
+      "taille": "1344x768"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "final-intro-video",
+      "nom": "Aeroport d'Ajaccio (video)",
+      "cible": "assets/videos/final-intro.mp4",
+      "depuis": "final-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s02-intro-video",
+      "nom": "Dijon, place de la Liberation (video)",
+      "cible": "assets/videos/s02-intro.mp4",
+      "depuis": "s02-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s02-coeur-video",
+      "nom": "Palais des ducs de Bourgogne, Dijon (video)",
+      "cible": "assets/videos/s02-coeur.mp4",
+      "depuis": "s02-coeur",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s03-intro-video",
+      "nom": "Clamecy (Nievre) (video)",
+      "cible": "assets/videos/s03-intro.mp4",
+      "depuis": "s03-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s04-intro-video",
+      "nom": "Besancon depuis la citadelle (video)",
+      "cible": "assets/videos/s04-intro.mp4",
+      "depuis": "s04-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s04-coeur-video",
+      "nom": "Besancon, quartiers (video)",
+      "cible": "assets/videos/s04-coeur.mp4",
+      "depuis": "s04-coeur",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s05-intro-video",
+      "nom": "Le massif de la Dole (video)",
+      "cible": "assets/videos/s05-intro.mp4",
+      "depuis": "s05-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s05-coeur-video",
+      "nom": "Domaine skiable des Rousses (video)",
+      "cible": "assets/videos/s05-coeur.mp4",
+      "depuis": "s05-coeur",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s06-intro-video",
+      "nom": "Les falaises d'Etretat (video)",
+      "cible": "assets/videos/s06-intro.mp4",
+      "depuis": "s06-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s06-coeur-video",
+      "nom": "L'Aiguille creuse, Etretat (video)",
+      "cible": "assets/videos/s06-coeur.mp4",
+      "depuis": "s06-coeur",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s07-intro-video",
+      "nom": "Le littoral atlantique (video)",
+      "cible": "assets/videos/s07-intro.mp4",
+      "depuis": "s07-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s07-coeur-video",
+      "nom": "La grande plage de Biarritz (video)",
+      "cible": "assets/videos/s07-coeur.mp4",
+      "depuis": "s07-coeur",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s08-intro-video",
+      "nom": "Dhaka, Bangladesh (video)",
+      "cible": "assets/videos/s08-intro.mp4",
+      "depuis": "s08-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s09-intro-video",
+      "nom": "Un marche de Bamako (video)",
+      "cible": "assets/videos/s09-intro.mp4",
+      "depuis": "s09-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s13-intro-video",
+      "nom": "Un torrent alpin (video)",
+      "cible": "assets/videos/s13-intro.mp4",
+      "depuis": "s13-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s14-intro-video",
+      "nom": "Les sources de la Seine (video)",
+      "cible": "assets/videos/s14-intro.mp4",
+      "depuis": "s14-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s15-intro-video",
+      "nom": "La Garonne a Toulouse (video)",
+      "cible": "assets/videos/s15-intro.mp4",
+      "depuis": "s15-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s16-intro-video",
+      "nom": "Une riviere a sec dans le Var (video)",
+      "cible": "assets/videos/s16-intro.mp4",
+      "depuis": "s16-intro",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s16-coeur-video",
+      "nom": "Un lac a son plus bas niveau (video)",
+      "cible": "assets/videos/s16-coeur.mp4",
+      "depuis": "s16-coeur",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s03-coeur-video",
+      "nom": "Un bourg de la Nievre (video)",
+      "cible": "assets/videos/s03-coeur.mp4",
+      "depuis": "s03-coeur",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s09-coeur-video",
+      "nom": "Etals du marche (video)",
+      "cible": "assets/videos/s09-coeur.mp4",
+      "depuis": "s09-coeur",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s10-coeur-video",
+      "nom": "La ferme (video)",
+      "cible": "assets/videos/s10-coeur.mp4",
+      "depuis": "s10-coeur",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s11-coeur-video",
+      "nom": "Dans l'usine (video)",
+      "cible": "assets/videos/s11-coeur.mp4",
+      "depuis": "s11-coeur",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s12-coeur-video",
+      "nom": "D'ou viennent nos aliments ? (video)",
+      "cible": "assets/videos/s12-coeur.mp4",
+      "depuis": "s12-coeur",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "mission-intro",
+      "nom": "Ouverture de la mission",
+      "cible": "assets/videos/mission-intro.mp4",
+      "depuis": "cine-mission-intro",
+      "prompt": "Slow push-in on the suitcase, the globe slowly turns, lamp light flickers. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s01-intro",
+      "nom": "Le message du Professeur Atlas",
+      "cible": "assets/videos/s01-intro.mp4",
+      "depuis": "cine-s01-intro",
+      "prompt": "Slow push-in towards the envelope, sunlight moves across the desk. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s10-intro",
+      "nom": "Un plateau de cantine",
+      "cible": "assets/videos/s10-intro.mp4",
+      "depuis": "cine-s10-intro",
+      "prompt": "Very slow top-down rotation of the tray, steam rises gently from the hot dish. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s11-intro",
+      "nom": "La ferme au lever du jour",
+      "cible": "assets/videos/s11-intro.mp4",
+      "depuis": "cine-s11-intro",
+      "prompt": "The tractor slowly drives out towards the fields, sun rising, light mist. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "s12-intro",
+      "nom": "Un etal de marche",
+      "cible": "assets/videos/s12-intro.mp4",
+      "depuis": "cine-s12-intro",
+      "prompt": "Slow pan along the market stalls, awnings moving in the breeze. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    }
+  ]
+}

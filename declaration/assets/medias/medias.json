@@ -1,0 +1,254 @@
+{
+  "_commentaire": "Manifeste des medias du jeu Le Secret de la Declaration. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "declaration",
+  "titre": "Le Secret de la Declaration",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [
+    {
+      "cle": "salle1",
+      "cible": "assets/images/decors/salle1.jpg",
+      "recherche": "Palais-Royal Paris jardin galeries",
+      "lieu": "Palais-Royal, Paris",
+      "paysage": true
+    },
+    {
+      "cle": "salle3",
+      "cible": "assets/images/decors/salle3.jpg",
+      "recherche": "Jardin des Tuileries Paris allee",
+      "lieu": "Jardin des Tuileries, Paris",
+      "paysage": true
+    },
+    {
+      "cle": "salle4",
+      "cible": "assets/images/decors/salle4.jpg",
+      "recherche": "Prise de la Bastille Houel",
+      "lieu": "La prise de la Bastille (Jean-Pierre Houel, 1789)",
+      "paysage": true
+    },
+    {
+      "cle": "salle5",
+      "cible": "assets/images/decors/salle5.jpg",
+      "recherche": "Ouverture des Etats generaux Couder",
+      "lieu": "Salle des Menus-Plaisirs, Versailles (Auguste Couder)",
+      "paysage": true
+    },
+    {
+      "cle": "etats-generaux-doc",
+      "cible": "assets/images/documents/etats-generaux.jpg",
+      "recherche": "Serment du Jeu de paume David",
+      "lieu": "Le Serment du Jeu de paume (J.-L. David)",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "bastille-doc",
+      "cible": "assets/images/documents/bastille.jpg",
+      "recherche": "Prise de la Bastille 14 juillet 1789 peinture",
+      "lieu": "La prise de la Bastille",
+      "paysage": false,
+      "rang": 2
+    },
+    {
+      "cle": "declaration-doc",
+      "cible": "assets/images/documents/declaration.jpg",
+      "recherche": "Declaration des droits de l'homme et du citoyen Le Barbier",
+      "lieu": "Declaration des droits de l'homme et du citoyen (Le Barbier)",
+      "paysage": false,
+      "rang": 1
+    }
+  ],
+  "images": [
+    {
+      "cle": "salle2",
+      "nom": "Salle 2, l'imprimerie clandestine",
+      "cible": "assets/images/decors/salle2.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a clandestine 18th-century Paris printing workshop in a cellar, a wooden hand press, type cases, stacks of blank paper sheets, candlelight.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-intro",
+      "nom": "Cinematique d'ouverture (image de depart)",
+      "cible": "assets/images/decors/intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a Paris street in 1789 at dusk, stone houses, cobblestones, lanterns, a pamphlet with blank pages on the ground.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-final",
+      "nom": "Cinematique de fin (image de depart)",
+      "cible": "assets/images/decors/final.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: an 18th-century wooden desk with a large parchment and a goose quill, a tricolour cockade beside it, morning light through a tall window.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "louise",
+      "nom": "Louise, fille du peuple",
+      "cible": "assets/images/personnages/louise.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a 12-year-old girl of the common people of Paris in 1789, simple striped skirt, shawl, white cap over brown hair, lively smile.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "gutenberg",
+      "nom": "Maitre Gutenberg, imprimeur",
+      "cible": "assets/images/personnages/gutenberg.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Paris printer in his fifties in 1789, bearded, round spectacles, ink-stained apron over a white shirt, serious thoughtful look.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "marquis",
+      "nom": "Le Marquis de Montclair",
+      "cible": "assets/images/personnages/marquis.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a French nobleman in his forties in 1789, powdered wig, embroidered silk coat, lace jabot, haughty but not menacing expression.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "maximilien",
+      "nom": "Maximilien, jeune avocat",
+      "cible": "assets/images/personnages/maximilien.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a young lawyer in his late twenties in 1789, dark coat, white cravat, neatly tied hair, earnest passionate look, holding papers.",
+      "taille": "768x1024"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "salle1-video",
+      "nom": "Palais-Royal, Paris (video)",
+      "cible": "assets/videos/salle1.mp4",
+      "depuis": "salle1",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle3-video",
+      "nom": "Jardin des Tuileries, Paris (video)",
+      "cible": "assets/videos/salle3.mp4",
+      "depuis": "salle3",
+      "prompt": "Slow cinematic push-in, gentle steady camera move forward, light shifting softly, no people appearing, no new buildings or objects invented, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle4-video",
+      "nom": "La prise de la Bastille (Jean-Pierre Houel, 1789) (video)",
+      "cible": "assets/videos/salle4.mp4",
+      "depuis": "salle4",
+      "prompt": "Very slow push-in towards the centre of this historical artwork, never zooming out, the frame always stays inside the original picture; the artwork itself stays exactly unchanged, nothing is added or animated inside it, soft museum lighting. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle5-video",
+      "nom": "Salle des Menus-Plaisirs, Versailles (Auguste Couder) (video)",
+      "cible": "assets/videos/salle5.mp4",
+      "depuis": "salle5",
+      "prompt": "Very slow push-in towards the centre of this historical artwork, never zooming out, the frame always stays inside the original picture; the artwork itself stays exactly unchanged, nothing is added or animated inside it, soft museum lighting. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle2-video",
+      "nom": "Salle 2, l'imprimerie clandestine (video)",
+      "cible": "assets/videos/salle2.mp4",
+      "depuis": "salle2",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinematique d'ouverture",
+      "cible": "assets/videos/intro.mp4",
+      "depuis": "cine-intro",
+      "prompt": "Slow push-in along the cobbled street, lantern light flickering, a blank sheet of paper drifting in the wind. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "final",
+      "nom": "Cinematique de fin",
+      "cible": "assets/videos/final.mp4",
+      "depuis": "cine-final",
+      "prompt": "Morning light slowly spreads over the parchment, gentle dust in the air, static camera. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "louise-repos",
+      "nom": "Louise, fille du peuple (au repos)",
+      "cible": "assets/videos/personnages/louise.mp4",
+      "depuis": "louise",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "louise-parle",
+      "nom": "Louise, fille du peuple (parle)",
+      "cible": "assets/videos/personnages/louise-parle.mp4",
+      "depuis": "louise",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "gutenberg-repos",
+      "nom": "Maitre Gutenberg, imprimeur (au repos)",
+      "cible": "assets/videos/personnages/gutenberg.mp4",
+      "depuis": "gutenberg",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "gutenberg-parle",
+      "nom": "Maitre Gutenberg, imprimeur (parle)",
+      "cible": "assets/videos/personnages/gutenberg-parle.mp4",
+      "depuis": "gutenberg",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "marquis-repos",
+      "nom": "Le Marquis de Montclair (au repos)",
+      "cible": "assets/videos/personnages/marquis.mp4",
+      "depuis": "marquis",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "marquis-parle",
+      "nom": "Le Marquis de Montclair (parle)",
+      "cible": "assets/videos/personnages/marquis-parle.mp4",
+      "depuis": "marquis",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "maximilien-repos",
+      "nom": "Maximilien, jeune avocat (au repos)",
+      "cible": "assets/videos/personnages/maximilien.mp4",
+      "depuis": "maximilien",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "maximilien-parle",
+      "nom": "Maximilien, jeune avocat (parle)",
+      "cible": "assets/videos/personnages/maximilien-parle.mp4",
+      "depuis": "maximilien",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    }
+  ]
+}

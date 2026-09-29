@@ -1,0 +1,254 @@
+{
+  "_commentaire": "Manifeste des medias du jeu La Station meteo disparue. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "station-meteo",
+  "titre": "La Station meteo disparue",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [
+    {
+      "cle": "e1-2",
+      "cible": "assets/images/cartes/e1-2.jpg",
+      "recherche": "Stevenson screen weather station",
+      "lieu": "Abri meteorologique a persiennes",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "e2-2",
+      "cible": "assets/images/cartes/e2-2.jpg",
+      "recherche": "cup anemometer wind vane",
+      "lieu": "Girouette et anemometre a coupelles",
+      "paysage": false,
+      "rang": 1
+    },
+    {
+      "cle": "e3-2",
+      "cible": "assets/images/cartes/e3-2.jpg",
+      "recherche": "rain gauge pluviometre",
+      "lieu": "Pluviometre",
+      "paysage": false,
+      "rang": 1
+    }
+  ],
+  "images": [
+    {
+      "cle": "salle1",
+      "nom": "Module 1, l'abri meteo",
+      "cible": "assets/images/decors/salle1.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a white louvred wooden weather shelter (Stevenson screen) on short legs standing on a mown lawn in a French school garden, morning light.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle2",
+      "nom": "Module 2, le mat du vent",
+      "cible": "assets/images/decors/salle2.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a tall metal mast with a cup anemometer and a wind vane at its top against a cloudy sky, in a school garden.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle3",
+      "nom": "Module 3, le pluviometre",
+      "cible": "assets/images/decors/salle3.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a graduated rain gauge on a post in a vegetable garden during light rain, droplets visible.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle4",
+      "nom": "Module 4, le tableau des releves",
+      "cible": "assets/images/decors/salle4.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a small classroom office with a large paper table of weather readings pinned on the wall, a line graph, a thermometer and notebooks on the desk.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle5",
+      "nom": "Module 5, le bulletin du jour",
+      "cible": "assets/images/decors/salle5.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a small school TV weather studio with a large screen showing a blank map of France without any text, a desk and a camera.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-intro",
+      "nom": "Cinematique d'ouverture (image de depart)",
+      "cible": "assets/images/decors/intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a French primary school courtyard at dawn just after a thunderstorm, puddles, fallen leaves, a knocked-over weather instrument on the grass.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-final",
+      "nom": "Cinematique de fin (image de depart)",
+      "cible": "assets/images/decors/final.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: the same French school courtyard in bright sunshine, a white weather shelter and a wind mast standing proudly, blue sky.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "vasseur",
+      "nom": "Madame Vasseur, previsionniste",
+      "cible": "assets/images/personnages/vasseur.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a French weather forecaster woman in her mid-forties, short dark hair, glasses, blazer, holding a tablet, warm smile.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "keita",
+      "nom": "Capitaine Keita, marin",
+      "cible": "assets/images/personnages/keita.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a sea captain in his mid-fifties of West African descent, short grey beard, navy pea coat and captain's cap, weathered friendly face.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "tiago",
+      "nom": "Tiago, technicien",
+      "cible": "assets/images/personnages/tiago.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a weather station technician in his thirties, high-visibility vest over a grey fleece, cap, holding a toolbox.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "lina",
+      "nom": "Lina, eleve",
+      "cible": "assets/images/personnages/lina.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a 10-year-old schoolgirl, raincoat in yellow, dark hair in a ponytail, holding a notebook and pencil, enthusiastic.",
+      "taille": "768x1024"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "salle1-video",
+      "nom": "Module 1, l'abri meteo (video)",
+      "cible": "assets/videos/salle1.mp4",
+      "depuis": "salle1",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle2-video",
+      "nom": "Module 2, le mat du vent (video)",
+      "cible": "assets/videos/salle2.mp4",
+      "depuis": "salle2",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle3-video",
+      "nom": "Module 3, le pluviometre (video)",
+      "cible": "assets/videos/salle3.mp4",
+      "depuis": "salle3",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle4-video",
+      "nom": "Module 4, le tableau des releves (video)",
+      "cible": "assets/videos/salle4.mp4",
+      "depuis": "salle4",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle5-video",
+      "nom": "Module 5, le bulletin du jour (video)",
+      "cible": "assets/videos/salle5.mp4",
+      "depuis": "salle5",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinematique d'ouverture",
+      "cible": "assets/videos/intro.mp4",
+      "depuis": "cine-intro",
+      "prompt": "Slow push-in across the wet courtyard, dripping water, clouds moving away. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "final",
+      "nom": "Cinematique de fin",
+      "cible": "assets/videos/final.mp4",
+      "depuis": "cine-final",
+      "prompt": "Sunlight spreads across the courtyard, the anemometer cups start to spin gently. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "vasseur-repos",
+      "nom": "Madame Vasseur, previsionniste (au repos)",
+      "cible": "assets/videos/personnages/vasseur.mp4",
+      "depuis": "vasseur",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "vasseur-parle",
+      "nom": "Madame Vasseur, previsionniste (parle)",
+      "cible": "assets/videos/personnages/vasseur-parle.mp4",
+      "depuis": "vasseur",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "keita-repos",
+      "nom": "Capitaine Keita, marin (au repos)",
+      "cible": "assets/videos/personnages/keita.mp4",
+      "depuis": "keita",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "keita-parle",
+      "nom": "Capitaine Keita, marin (parle)",
+      "cible": "assets/videos/personnages/keita-parle.mp4",
+      "depuis": "keita",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "tiago-repos",
+      "nom": "Tiago, technicien (au repos)",
+      "cible": "assets/videos/personnages/tiago.mp4",
+      "depuis": "tiago",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "tiago-parle",
+      "nom": "Tiago, technicien (parle)",
+      "cible": "assets/videos/personnages/tiago-parle.mp4",
+      "depuis": "tiago",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "lina-repos",
+      "nom": "Lina, eleve (au repos)",
+      "cible": "assets/videos/personnages/lina.mp4",
+      "depuis": "lina",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "lina-parle",
+      "nom": "Lina, eleve (parle)",
+      "cible": "assets/videos/personnages/lina-parle.mp4",
+      "depuis": "lina",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    }
+  ]
+}

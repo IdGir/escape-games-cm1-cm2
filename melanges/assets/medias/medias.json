@@ -1,0 +1,263 @@
+{
+  "_commentaire": "Manifeste des medias du jeu Le Laboratoire de Madame Melange. Lieux reels : photographies libres de Wikimedia Commons (recherche automatique, credits ecrits dans CREDITS-medias.md). Personnages, scenes generiques et videos : API Agnes AI. Les cartes et schemas ne sont jamais generes par IA.",
+  "jeu": "melanges",
+  "titre": "Le Laboratoire de Madame Melange",
+  "api": {
+    "nom": "Agnes AI",
+    "base": "https://apihub.agnes-ai.com",
+    "modele_image": "agnes-image-2.1-flash",
+    "modele_video": "agnes-video-v2.0"
+  },
+  "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+  "photos": [
+    {
+      "cle": "e5-1",
+      "cible": "assets/images/cartes/e5-1.jpg",
+      "recherche": "marais salants de Guerande",
+      "lieu": "Les marais salants de Guerande",
+      "paysage": false,
+      "rang": 1
+    }
+  ],
+  "images": [
+    {
+      "cle": "salle1",
+      "nom": "Salle 1, la salle des balances",
+      "cible": "assets/images/decors/salle1.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a school science room with a two-pan balance, an electronic kitchen scale and a box of brass masses on a white bench.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle2",
+      "nom": "Salle 2, la cuisine d'essai",
+      "cible": "assets/images/decors/salle2.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a test kitchen: countertop with a coffee maker, a sugar bowl, a kitchen scale, glasses of water and a measuring jug.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle3",
+      "nom": "Salle 3, la salle des fioles",
+      "cible": "assets/images/decors/salle3.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: wooden shelves full of glass flasks: some clear liquids, some with two separate layers of oil and water, some cloudy mixtures.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle4",
+      "nom": "Salle 4, l'atelier de tri",
+      "cible": "assets/images/decors/salle4.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a sorting workshop with sieves, a horseshoe magnet, bins of sand and gravel and a basin of water on a table.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "salle5",
+      "nom": "Salle 5, la saline",
+      "cible": "assets/images/decors/salle5.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a small lab by a window with a filtration setup (funnel, filter paper, beaker), a shallow dish drying in the sun, salt marshes visible outside.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-intro",
+      "nom": "Cinematique d'ouverture (image de depart)",
+      "cible": "assets/images/decors/intro.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a chemistry laboratory shelf with glass flasks, a sheet of old paper with faded blank writing lines lying on the bench.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "cine-final",
+      "nom": "Cinematique de fin (image de depart)",
+      "cible": "assets/images/decors/final.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: white salt crystals at the bottom of a shallow ceramic dish, iron filings clinging to a red horseshoe magnet beside it, sunlight.",
+      "taille": "1344x768"
+    },
+    {
+      "cle": "lila",
+      "nom": "Lila, apprentie chimiste",
+      "cible": "assets/images/personnages/lila.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: an 11-year-old girl apprentice chemist, white lab coat too big for her, safety goggles on her forehead, braids, curious smile.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "marius",
+      "nom": "Marius, cuisinier",
+      "cible": "assets/images/personnages/marius.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a cheerful cook in his forties, white chef jacket and apron, short beard, holding a wooden spoon.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "nadia",
+      "nom": "Nadia, laborantine",
+      "cible": "assets/images/personnages/nadia.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a laboratory technician woman in her thirties, lab coat, hair tied back, holding a sieve.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "yann",
+      "nom": "Yann, paludier",
+      "cible": "assets/images/personnages/yann.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Breton salt-marsh worker (paludier) in his fifties, weathered face, rolled-up sleeves, wide-brimmed hat, holding a long wooden salt rake.",
+      "taille": "768x1024"
+    },
+    {
+      "cle": "melange",
+      "nom": "Madame Melange, chimiste",
+      "cible": "assets/images/personnages/melange.png",
+      "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a woman chemist in her sixties, silver hair, round spectacles, white lab coat over a purple scarf, holding a flask, wise smile.",
+      "taille": "768x1024"
+    }
+  ],
+  "videos": [
+    {
+      "cle": "salle1-video",
+      "nom": "Salle 1, la salle des balances (video)",
+      "cible": "assets/videos/salle1.mp4",
+      "depuis": "salle1",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle2-video",
+      "nom": "Salle 2, la cuisine d'essai (video)",
+      "cible": "assets/videos/salle2.mp4",
+      "depuis": "salle2",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle3-video",
+      "nom": "Salle 3, la salle des fioles (video)",
+      "cible": "assets/videos/salle3.mp4",
+      "depuis": "salle3",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle4-video",
+      "nom": "Salle 4, l'atelier de tri (video)",
+      "cible": "assets/videos/salle4.mp4",
+      "depuis": "salle4",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "salle5-video",
+      "nom": "Salle 5, la saline (video)",
+      "cible": "assets/videos/salle5.mp4",
+      "depuis": "salle5",
+      "prompt": "Slow cinematic camera move through the scene, subtle ambient motion (light, dust, leaves or steam), nothing new appears, photorealistic, calm and loopable. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "intro",
+      "nom": "Cinematique d'ouverture",
+      "cible": "assets/videos/intro.mp4",
+      "depuis": "cine-intro",
+      "prompt": "A few flasks wobble and topple from the shelf, the old paper sheet flutters, the writing fades away. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "final",
+      "nom": "Cinematique de fin",
+      "cible": "assets/videos/final.mp4",
+      "depuis": "cine-final",
+      "prompt": "Slow close-up push-in, salt crystals sparkle in the sunlight, static otherwise. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "lila-repos",
+      "nom": "Lila, apprentie chimiste (au repos)",
+      "cible": "assets/videos/personnages/lila.mp4",
+      "depuis": "lila",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "lila-parle",
+      "nom": "Lila, apprentie chimiste (parle)",
+      "cible": "assets/videos/personnages/lila-parle.mp4",
+      "depuis": "lila",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "marius-repos",
+      "nom": "Marius, cuisinier (au repos)",
+      "cible": "assets/videos/personnages/marius.mp4",
+      "depuis": "marius",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "marius-parle",
+      "nom": "Marius, cuisinier (parle)",
+      "cible": "assets/videos/personnages/marius-parle.mp4",
+      "depuis": "marius",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "nadia-repos",
+      "nom": "Nadia, laborantine (au repos)",
+      "cible": "assets/videos/personnages/nadia.mp4",
+      "depuis": "nadia",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "nadia-parle",
+      "nom": "Nadia, laborantine (parle)",
+      "cible": "assets/videos/personnages/nadia-parle.mp4",
+      "depuis": "nadia",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "yann-repos",
+      "nom": "Yann, paludier (au repos)",
+      "cible": "assets/videos/personnages/yann.mp4",
+      "depuis": "yann",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "yann-parle",
+      "nom": "Yann, paludier (parle)",
+      "cible": "assets/videos/personnages/yann-parle.mp4",
+      "depuis": "yann",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "melange-repos",
+      "nom": "Madame Melange, chimiste (au repos)",
+      "cible": "assets/videos/personnages/melange.mp4",
+      "depuis": "melange",
+      "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+      "largeur": 768,
+      "hauteur": 1152
+    },
+    {
+      "cle": "melange-parle",
+      "nom": "Madame Melange, chimiste (parle)",
+      "cible": "assets/videos/personnages/melange-parle.mp4",
+      "depuis": "melange",
+      "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+      "largeur": 768,
+      "hauteur": 1152
+    }
+  ]
+}
