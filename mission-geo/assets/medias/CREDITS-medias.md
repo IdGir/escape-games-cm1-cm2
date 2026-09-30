@@ -1,6 +1,7 @@
 ﻿# Credits des photographies - Mission geographique
 
-Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres). Les videos animees a partir d'une photo
+Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres) ; quelques photos generiques d'illustration viennent de Pixabay
+(Pixabay Content License, https://pixabay.com) ; documents anciens du domaine public : Gallica, BnF. Les videos animees a partir d'une photo
 sous licence CC BY-SA heritent de cette licence. Personnages et scenes generiques : images creees avec Agnes AI,
 personnages entierement fictifs.
 
@@ -24,3 +25,4 @@ personnages entierement fictifs.
 | `assets/images/s14-intro.jpg` | Les sources de la Seine | [File:Seine wide.jpg](https://commons.wikimedia.org/wiki/File:Seine_wide.jpg) | Jean-Pierre Lavoie | CC BY-SA 3.0 |
 | `assets/images/s15-intro.jpg` | La Garonne a Toulouse | [File:Panorama from pont Saint-Pierre in Toulouse - 2012-08-31.jpg](https://commons.wikimedia.org/wiki/File:Panorama_from_pont_Saint-Pierre_in_Toulouse_-_2012-08-31.jpg) | PierreSelim | CC BY 3.0 |
 | `assets/images/s16-coeur.jpg` | Un lac a son plus bas niveau | [File:Ilot Saint Michel, un été de grande sécheresse.jpg](https://commons.wikimedia.org/wiki/File:Ilot_Saint_Michel,_un_%C3%A9t%C3%A9_de_grande_s%C3%A9cheresse.jpg) | Celeda | CC BY-SA 4.0 |
+| `assets/images/s16-intro.jpg` | Une riviere a sec (photo d'illustration) | [Pixabay 2562806](https://pixabay.com/photos/mountain-erosion-death-valley-2562806/) | jplenio | Pixabay Content License |

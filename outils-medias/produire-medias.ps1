@@ -42,6 +42,16 @@ $script:CleAgnesAPI = $Cle
 $FaireIA = [bool]$Cle
 if (-not $FaireIA) { Dire "Aucune cle Agnes (outils-medias\cle-agnes.txt) : seules les photos seront telechargees." "Yellow" }
 
+# ---- Cle API Pixabay (source de secours pour les photos generiques) ----
+$script:CleBay = $null
+foreach ($f in @((Join-Path $Outils "cle-pixabay.txt"), (Join-Path $Outils "cle-pexels.txt"))) {
+  if (-not $script:CleBay -and (Test-Path $f)) {
+    $t = (Get-Content $f -Raw).Trim()
+    if ($t -match '^[0-9]+-[0-9a-f]{20,}$') { $script:CleBay = $t; Note "Cle Pixabay lue depuis : $f" }
+  }
+}
+if (-not $script:CleBay -and $env:PIXABAY_API_KEY) { $script:CleBay = $env:PIXABAY_API_KEY.Trim() }
+
 # ---- Etat : URL en ligne de chaque photo / image ------------
 $Etat = @{}; $Cred = @{}
 if (Test-Path $EtatFic) {
@@ -132,6 +142,30 @@ function ParRecherche($q, $paysage, $rang) {
 }
 
 
+# ---- Pixabay : secours pour les photos generiques (licence Pixabay, credit ajoute) ----
+$BaseP = "https://pixabay.com/api/"; if ($env:PIXABAY_API) { $BaseP = $env:PIXABAY_API }
+function ParPixabay($q, $paysage, $rang) {
+  $u = $BaseP + "?key=" + $script:CleBay + "&q=" + [uri]::EscapeDataString($q) + "&image_type=photo&safesearch=true&min_width=1000&per_page=20"
+  if ($paysage) { $u += "&orientation=horizontal" }
+  $r = Invoke-RestMethod -Uri $u -UserAgent $UA
+  $ok = @($r.hits | Where-Object { [int]$_.imageWidth -ge 1000 -and ((-not $paysage) -or ([int]$_.imageWidth / [double][int]$_.imageHeight -ge 1.25)) })
+  if ($ok.Count -eq 0) { return $null }
+  $i = [math]::Min([math]::Max(1, [int]$rang), $ok.Count) - 1
+  $x = $ok[$i]
+  return [pscustomobject]@{ idx = 0; titre = ("Pixabay " + $x.id); l = [int]$x.imageWidth; h = [int]$x.imageHeight;
+    url = $x.largeImageURL; page = $x.pageURL; auteur = [string]$x.user; licence = "Pixabay Content License" }
+}
+
+# ---- Gallica (BnF) : document du domaine public, image IIIF par identifiant ark ----
+$BaseG = "https://gallica.bnf.fr"; if ($env:GALLICA_BASE) { $BaseG = $env:GALLICA_BASE }
+function ParGallica($ref, $page, $titre) {
+  if ($ref -notmatch 'ark:/12148/([A-Za-z0-9.]+)') { if ($ref -match '^[A-Za-z0-9.]+$') { $id = $ref } else { throw "identifiant Gallica illisible : $ref" } } else { $id = $Matches[1] }
+  $n = 1; if ($page) { $n = [int]$page }
+  return [pscustomobject]@{ idx = 0; titre = $(if ($titre) { $titre } else { "Gallica $id (vue $n)" }); l = 1600; h = 0;
+    url = "$BaseG/iiif/ark:/12148/$id/f$n/full/1600,/0/native.jpg"; page = "$BaseG/ark:/12148/$id/f$n.item";
+    auteur = "Source : gallica.bnf.fr / BnF"; licence = "Domaine public (Gallica, BnF)" }
+}
+
 # ---- Appels Agnes freines (compte gratuit : 10 requetes/minute) ----
 $script:DernierAppel = [datetime]::MinValue
 $script:EchecsCle = 0
@@ -176,11 +210,19 @@ foreach ($p in $M.photos) {
   try {
     $info = $null
     if ($p.fichier_commons) { $info = ParNom $p.fichier_commons }
+    elseif ($p.gallica)     { $info = ParGallica $p.gallica $p.page_gallica $p.titre_gallica }
     elseif ($p.recherche)   { $rang = 1; if ($p.rang) { $rang = $p.rang }; $info = ParRecherche $p.recherche ([bool]$p.paysage) $rang }
+    $lieuCredit = $p.lieu
+    if (-not $info -and $p.recherche_pixabay -and $script:CleBay) {
+      $rangP = 1; if ($p.rang_pixabay) { $rangP = $p.rang_pixabay }
+      $info = ParPixabay $p.recherche_pixabay ([bool]$p.paysage) $rangP
+      if ($info -and $p.lieu_pixabay) { $lieuCredit = $p.lieu_pixabay }
+      if ($info) { Dire "    (rien sur Commons : photo generique Pixabay)" "Yellow" }
+    }
     if (-not $info) { throw "aucune photo trouvee pour : $($p.recherche)" }
     if (-not (Test-Path $cible)) { Enregistrer $info.url $cible }
     $Etat[$clePhoto] = $info.url
-    $Cred[$nom + "|" + $p.cible] = @{ fichier = $p.cible; lieu = $p.lieu; titre = $info.titre; page = $info.page; auteur = $info.auteur; licence = $info.licence }
+    $Cred[$nom + "|" + $p.cible] = @{ fichier = $p.cible; lieu = $lieuCredit; titre = $info.titre; page = $info.page; auteur = $info.auteur; licence = $info.licence }
     SauverEtat
     Dire "  + $nom  ($($info.titre) - $($info.licence))" "Green"; $ok++
   } catch { Dire "  ! $nom : echec ($($_.Exception.Message))" "Red"; $echec++ }
@@ -274,7 +316,8 @@ if (-not $FaireIA) { Dire "  (ignore : aucune cle API)" "Yellow" } else {
 # ---- Credits des photos -------------------------------------
 if ($Cred.Count -gt 0) {
   $t = @("# Credits des photographies - $($M.titre)", "",
-         "Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres). Les videos animees a partir d'une photo",
+         "Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres) ; quelques photos generiques d'illustration viennent de Pixabay",
+         "(Pixabay Content License, https://pixabay.com) ; documents anciens du domaine public : Gallica, BnF. Les videos animees a partir d'une photo",
          "sous licence CC BY-SA heritent de cette licence. Personnages et scenes generiques : images creees avec Agnes AI,",
          "personnages entierement fictifs.", "",
          "| Fichier | Sujet | Source | Auteur | Licence |", "|---|---|---|---|---|")
