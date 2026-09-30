@@ -336,10 +336,16 @@ function activerTri(e, d, reussir, rater){
     el.classList.add("select"); sel = el;
   };
   carte.addEventListener("click", ev=>{
+    const col = ev.target.closest(".tri-colonne");
     const c = ev.target.closest(".carte-tri");
+    /* Une carte est choisie : un clic n'importe où dans la colonne l'y dépose,
+       y compris sur son titre ou sur une carte déjà posée. Sans cela, une colonne
+       remplie par de grandes cartes n'offre plus aucune zone vide où cliquer. */
+    if(sel && col){
+      const zone = col.querySelector(".tri-zone");
+      if(zone){ zone.appendChild(sel); sel.classList.remove("select"); sel = null; return; }
+    }
     if(c){ if(!c.classList.contains("verrouille")) choisir(c); return; }
-    const zone = ev.target.closest(".tri-zone");
-    if(zone && sel){ zone.appendChild(sel); sel.classList.remove("select"); sel = null; return; }
     if(ev.target.closest(".tri-reserve") && sel){ reserve.appendChild(sel); sel.classList.remove("select"); sel = null; }
   });
   carte.querySelector("[data-valider]").addEventListener("click", ()=>{

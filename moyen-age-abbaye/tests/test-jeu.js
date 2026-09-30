@@ -296,7 +296,7 @@ async function partie(niveau, { indiceSalle = 0 } = {}){
   w.close();
 }
 
-/* Étapes : node test-jeu.js [cm1|cm2|indice|verif|reglages] — sans argument, tout est lancé. */
+/* Étapes : node test-jeu.js [cm1|cm2|indice|tri|verif|reglages] — sans argument, tout est lancé. */
 const ETAPE = process.argv[2] || "tout";
 const faire = e => ETAPE === "tout" || ETAPE === e;
 (async () => {
@@ -319,6 +319,25 @@ const faire = e => ETAPE === "tout" || ETAPE === e;
       ok(w.localStorage.getItem("escape_moyenage_v1") === null, `${e.id} : le mode vérification ne sauvegarde rien`);
       w.close();
     }
+    }
+    if(faire("tri")){
+      console.log("5 bis. Tri : déposer dans une colonne déjà remplie");
+      const { w } = await ouvrir("?salle=5&niveau=CM1&enigme=3", { escape_reglages_moyenage: REGLAGES_TEST });
+      await attendre(() => w.document.getElementById("enigme-5-3"), 6000, "énigme 5-3");
+      const carte = w.document.getElementById("enigme-5-3");
+      const q = s => carte.querySelector(s), qa = s => [...carte.querySelectorAll(s)];
+      const colRoman = qa(".tri-colonne").find(c => c.dataset.col === "roman");
+      const premiere = qa(".tri-reserve .carte-tri")[0];
+      clic(premiere); clic(colRoman.querySelector(".tri-titre"));      // clic sur le titre de la colonne
+      ok(colRoman.querySelector(".tri-zone").contains(premiere), "un clic sur le titre de la colonne dépose la carte");
+      const seconde = qa(".tri-reserve .carte-tri")[0];
+      clic(seconde); clic(premiere);                                   // clic sur une carte déjà posée
+      ok(colRoman.querySelector(".tri-zone").contains(seconde), "on peut déposer sur une colonne déjà remplie");
+      ok(qa(".tri-reserve .carte-tri").length === qa(".carte-tri").length - 2, "les deux cartes ont quitté la réserve");
+      clic(premiere);                                                  // rien de choisi : on la reprend
+      clic(q(".tri-reserve"));
+      ok(q(".tri-reserve").contains(premiere), "on peut renvoyer une carte dans la réserve");
+      w.close();
     }
     if(faire("verif")){
     console.log("6. Mode vérification : fin de partie");
