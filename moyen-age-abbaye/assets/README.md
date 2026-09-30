@@ -4,7 +4,7 @@
 SVG, animés : c'est le mode par défaut, entièrement jouable. Déposer un fichier portant exactement le
 nom attendu le fait apparaître à la place du dessin — **aucun code à modifier**.
 
-Aucun média n'est fourni pour l'instant. La page de vérification
+Les cinq illustrations d'énigmes sont fournies ; les décors, les cinématiques et les personnages restent facultatifs. La page de vérification
 ([verifier.html](../../verifier.html#moyen-age-abbaye)) et ⚙️ Réglages → « 🔍 Vérifier les fichiers
 présents » affichent, pour chaque emplacement, ce qui est en place et le nom exact à utiliser.
 
@@ -59,10 +59,23 @@ encadré discret rappelle le nom attendu.
 | Énigme | Nom du fichier | Légende prévue | Piste de source |
 |---|---|---|---|
 | 1-2 — La frise de la première page | `e1-2.jpg` | Le baptême de Clovis dans un manuscrit médiéval | Grandes Chroniques de France, BnF / Gallica |
-| 2-3 — La carte de l'empire | `e2-3.jpg` | L'empire de Charlemagne en 814 | Carte d'atlas historique libre de droits |
+| 2-3 — La carte de l'empire | `e2-3.jpg` ✅ | L'empire de Charlemagne en 814 | **Fournie** : carte dessinée pour le jeu (voir ci-dessous) |
 | 3-2 — Comment naît un livre | `e3-2.jpg` | Une page de manuscrit enluminé, avec sa lettrine | BnF / Gallica, base Enluminures |
 | 4-1 — Les documents de l'hôtel-Dieu | `e4-1.jpg` | La grande salle des malades de l'hôtel-Dieu de Beaune | Hospices civils de Beaune, Wikimedia Commons |
-| 5-1 — Légende les deux églises | `e5-1.jpg` | Coupe d'une église romane et d'une cathédrale gothique | Schéma dessiné (un schéma est déjà dans la leçon 📚) |
+| 5-1 — Légende les deux églises | `e5-1.jpg` ✅ | Coupe d'une église romane et d'une cathédrale gothique | **Fourni** : le schéma de la leçon 📚, exporté en image |
+
+Les illustrations marquées ✅ ont été dessinées pour le jeu ; les autres sont des photographies ou des
+enluminures déposées par ailleurs (voir les crédits du dépôt).
+
+**Crédits et fabrication de `e2-3.jpg`** : carte simplifiée dessinée pour le jeu avec
+`assets/images/cartes/produire-carte-empire.py` (Python, geopandas et matplotlib). Fond de carte :
+**Natural Earth**, domaine public (<https://www.naturalearthdata.com/>). Les limites de l'empire sont
+approximatives, tracées d'après les contours actuels : France, Benelux, Suisse, Autriche, Slovénie,
+Germanie jusqu'à l'Elbe, Italie du nord et du centre jusqu'à Rome, marche d'Espagne.
+Pour la refaire après une modification : `python produire-carte-empire.py` dans ce dossier.
+
+**`e5-1.jpg`** est l'export du schéma « Deux façons de tenir une voûte » de la leçon
+« Différencier l'art roman et l'art gothique » (`assets/data/lecons.json`, champ `schema`).
 
 Pour qu'une illustration soit une **vidéo**, ajoutez `"type": "video"` dans le bloc `media` de l'énigme et
 déposez `<nom>.mp4` dans `assets/videos/`.
