@@ -16,6 +16,7 @@ Raconter la vie quotidienne des paysannes et des paysans. »*
 | | |
 |---|---|
 | ▶ **Jouer** | [en ligne](https://idgir.github.io/escape-games-cm1-cm2/chateau-fort/) · en local : http://127.0.0.1:8000/chateau-fort/ (avec `lancer.bat`) |
+| 📖 **Leçons A4** | [à imprimer, CM1 ou CM2](https://idgir.github.io/escape-games-cm1-cm2/chateau-fort/lecons-imprimables.html) — aussi depuis ⚙️ Réglages dans le jeu : une page illustrée par leçon (cartes, graphiques, compétence du programme) |
 | 👨‍🏫 **Tableau de bord** | http://127.0.0.1:8000/chateau-fort/prof.html — mode local uniquement |
 | 🔍 **Vérifier** | [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#chateau-fort) : tester chaque énigme, voir les médias |
 | 🎞️ **Médias** | [assets/README.md](assets/README.md) : tous les noms de fichiers attendus (tous facultatifs) |

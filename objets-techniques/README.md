@@ -14,6 +14,7 @@ Description du fonctionnement et de la constitution d'objets techniques. »
 | | |
 |---|---|
 | ▶ **Jouer** | [en ligne](https://idgir.github.io/escape-games-cm1-cm2/objets-techniques/) · en local : http://127.0.0.1:8000/objets-techniques/ (avec `lancer.bat`) |
+| 📖 **Leçons A4** | [à imprimer, CM1 ou CM2](https://idgir.github.io/escape-games-cm1-cm2/objets-techniques/lecons-imprimables.html) — aussi depuis ⚙️ Réglages dans le jeu : une page illustrée par leçon (cartes, graphiques, compétence du programme) |
 | 👨‍🏫 **Tableau de bord** | http://127.0.0.1:8000/objets-techniques/prof.html — mode local uniquement |
 | 🔍 **Vérifier** | [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#objets-techniques) : tester chaque énigme, voir les médias |
 | 🎞️ **Médias** | [assets/README.md](assets/README.md) : tous les noms de fichiers attendus |

@@ -6,6 +6,7 @@ pluviomètre, organiser des relevés et les exploiter pour prévoir.
 
 - ▶ **Jouer en ligne** : https://idgir.github.io/escape-games-cm1-cm2/station-meteo/
 - 📖 **Guide pédagogique** : [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md)
+- 🖨️ **Leçons A4 illustrées** (CM1 ou CM2) : https://idgir.github.io/escape-games-cm1-cm2/station-meteo/lecons-imprimables.html — aussi depuis ⚙️ Réglages dans le jeu
 - 🎞️ **Médias facultatifs** : [assets/README.md](assets/README.md)
 - ✅ **Points à contrôler** : [A-VERIFIER.md](A-VERIFIER.md)
 

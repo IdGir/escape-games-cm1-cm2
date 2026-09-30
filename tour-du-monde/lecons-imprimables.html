@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leçons à imprimer</title>
+<link rel="stylesheet" href="css/lecons-a4.css">
+</head>
+<body>
+  <div class="barre">
+    <h1 id="titre-barre">Leçons à imprimer</h1>
+    <div class="bascule" role="group" aria-label="Niveau">
+      <button type="button" data-niveau="CM1">CM1</button>
+      <button type="button" data-niveau="CM2">CM2</button>
+    </div>
+    <label>Leçon <select id="choix-lecon"><option value="toutes">Toutes les leçons</option></select></label>
+    <button type="button" class="btn-imprimer" id="btn-imprimer">Imprimer</button>
+    <div class="aide">Dans la fenêtre d'impression : format A4, portrait, marges « par défaut » ou « aucune », et cocher « Graphiques d'arrière-plan » pour garder les couleurs.</div>
+  </div>
+  <main id="pages"></main>
+  <script src="js/lecons-a4.js"></script>
+</body>
+</html>

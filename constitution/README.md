@@ -15,6 +15,7 @@ constitutionnalité**. Les deux jeux se jouent dans l'ordre, ou indépendamment 
 | | |
 |---|---|
 | ▶ **Jouer** | [en ligne](https://idgir.github.io/escape-games-cm1-cm2/constitution/) · en local : http://127.0.0.1:8000/constitution/ (avec `lancer.bat`) |
+| 📖 **Leçons A4** | [à imprimer, CM1 ou CM2](https://idgir.github.io/escape-games-cm1-cm2/constitution/lecons-imprimables.html) — aussi depuis ⚙️ Réglages dans le jeu : une page illustrée par leçon (cartes, graphiques, compétence du programme) |
 | 👨‍🏫 **Tableau de bord** | http://127.0.0.1:8000/constitution/prof.html — mode local uniquement |
 | 🔍 **Vérifier** | [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#constitution) : tester chaque énigme, voir les médias |
 | 🎞️ **Médias** | [assets/README.md](assets/README.md) : tous les noms de fichiers attendus |

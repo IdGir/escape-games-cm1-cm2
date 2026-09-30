@@ -208,6 +208,16 @@ function ouvrirReglages(){
     </div>
 
     <div class="reglages-group">
+      <h4>📖 Leçons à imprimer (A4 illustrées)</h4>
+      <p style="font-size:.85rem;opacity:.8;font-style:italic;margin-bottom:10px">Une page A4 par leçon : texte CM1 ou CM2, cartes, schémas, graphiques, frise, lexique et compétence du programme. L'aperçu s'ouvre dans un nouvel onglet ; cliquez ensuite sur « Imprimer ».</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+        <select id="reg-lecon-a4" style="flex:1;min-width:150px"><option value="lecon=toutes">Toutes les leçons</option><option value="salle=1">Salle 1</option><option value="salle=2">Salle 2</option><option value="salle=3">Salle 3</option><option value="salle=4">Salle 4</option><option value="salle=5">Salle 5</option></select>
+        <button class="btn bleu" id="btn-lecons-a4-cm1">📖 CM1</button>
+        <button class="btn bleu" id="btn-lecons-a4-cm2">📖 CM2</button>
+      </div>
+    </div>
+
+    <div class="reglages-group">
       <h4>🖨️ Impressions A4</h4>
       <p style="font-size:.85rem;opacity:.8;font-style:italic;margin-bottom:10px">Fiches préparatoires et évaluations, corrigés séparés, prêts à imprimer.</p>
       <div style="display:flex;flex-direction:column;gap:8px">
@@ -230,6 +240,9 @@ function ouvrirReglages(){
   corps.querySelector("#btn-imprimer-fermees").addEventListener("click", ()=>imprimerFiches("fermees"));
   corps.querySelector("#btn-imprimer-docs").addEventListener("click", ()=>imprimerFiches("docs"));
   corps.querySelector("#btn-imprimer-tout").addEventListener("click", ()=>imprimerFiches("tout"));
+  const ouvrirLeconsA4 = n => window.open("lecons-imprimables.html?niveau=" + n + "&" + corps.querySelector("#reg-lecon-a4").value, "_blank");
+  corps.querySelector("#btn-lecons-a4-cm1").addEventListener("click", ()=>ouvrirLeconsA4("CM1"));
+  corps.querySelector("#btn-lecons-a4-cm2").addEventListener("click", ()=>ouvrirLeconsA4("CM2"));
   corps.querySelector("#btn-test-api").addEventListener("click", testerAPI);
   corps.querySelector("#btn-scan-medias").addEventListener("click", scannerMedias);
   corps.querySelector("#btn-sauver-reglages").addEventListener("click", sauverReglages);

@@ -1,0 +1,250 @@
+/* ============================================================
+   LEÇONS IMPRIMABLES A4 — feuille de style commune aux jeux
+   Une leçon = une page A4 portrait. Le script lecons-a4.js
+   ajuste la taille du texte pour que chaque leçon tienne
+   sur sa page (variable --echelle).
+   ============================================================ */
+
+:root{
+  --c1:#2a3a4a;          /* couleur principale du jeu (réglée par lecons-a4.json) */
+  --c2:#c9a227;          /* couleur d'accent */
+  --c1-pale:#eef2f6;
+  --c2-pale:#fbf5e1;
+  --encre:#1f2328;
+  --gris:#5b6470;
+  --filet:#d5dae0;
+  --echelle:1;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{background:#e9ebee}
+body{
+  font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  color:var(--encre);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* ---------- Barre d'outils (écran seulement) ---------- */
+.barre{
+  position:sticky;top:0;z-index:10;
+  display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center;
+  padding:10px 16px;background:#fff;border-bottom:1px solid var(--filet);
+  box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:14px;
+}
+.barre h1{font-family:Georgia,serif;font-size:17px;color:var(--c1);margin-right:8px}
+.barre label{display:flex;gap:6px;align-items:center;color:var(--gris)}
+.barre select{font:inherit;padding:5px 8px;border:1px solid var(--filet);border-radius:6px;background:#fff;max-width:320px}
+.bascule{display:inline-flex;border:1px solid var(--filet);border-radius:8px;overflow:hidden}
+.bascule button{font:inherit;border:0;background:#fff;padding:6px 14px;cursor:pointer;color:var(--gris)}
+.bascule button.actif{background:var(--c1);color:#fff;font-weight:600}
+.btn-imprimer{
+  font:inherit;font-weight:700;border:0;border-radius:8px;cursor:pointer;
+  padding:8px 18px;background:var(--c1);color:#fff;
+}
+.btn-imprimer:hover{filter:brightness(1.15)}
+.aide{width:100%;text-align:center;font-size:12px;color:var(--gris)}
+
+.message{max-width:640px;margin:40px auto;padding:20px;background:#fff;border-radius:10px;
+  border-left:5px solid #b3261e;line-height:1.5}
+
+/* ---------- La feuille A4 ---------- */
+#pages{padding:24px 0 60px}
+.feuille{
+  width:210mm;height:297mm;margin:0 auto 24px;background:#fff;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
+  position:relative;overflow:hidden;
+  padding:10mm 11mm 9mm;
+  display:flex;flex-direction:column;
+  font-size:calc(10.4pt * var(--echelle));
+  line-height:1.38;
+}
+
+/* En-tête */
+.entete{
+  display:flex;align-items:stretch;gap:0;
+  border-radius:3mm;overflow:hidden;
+  border:0.3mm solid var(--c1);
+  flex:0 0 auto;
+}
+.entete .matiere{
+  background:var(--c1);color:#fff;
+  padding:2.2mm 4mm;display:flex;flex-direction:column;justify-content:center;
+  min-width:38mm;
+}
+.entete .matiere b{font-size:11pt;letter-spacing:.08em;text-transform:uppercase}
+.entete .matiere span{font-size:7.5pt;opacity:.9;margin-top:.6mm}
+.entete .jeu{
+  flex:1;padding:2mm 4mm;display:flex;flex-direction:column;justify-content:center;
+  background:var(--c1-pale);
+}
+.entete .jeu .nom-jeu{font-family:Georgia,serif;font-size:10pt;color:var(--c1);font-weight:bold}
+.entete .jeu .theme{font-size:7.6pt;color:var(--gris)}
+.entete .eleve{
+  padding:2mm 4mm;display:flex;flex-direction:column;justify-content:center;gap:2.2mm;
+  font-size:8pt;color:var(--gris);min-width:52mm;border-left:0.3mm dashed var(--filet)
+}
+.entete .eleve span{border-bottom:0.25mm dotted #9aa3ad;padding-bottom:.4mm}
+
+/* Titre */
+.titre{
+  display:flex;align-items:center;gap:4mm;margin:4.5mm 0 1.5mm;flex:0 0 auto;
+}
+.titre .pastille{
+  flex:0 0 auto;width:13mm;height:13mm;border-radius:50%;
+  background:var(--c2);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:Georgia,serif;font-weight:bold;font-size:15pt;
+  box-shadow:inset 0 0 0 0.8mm rgba(255,255,255,.35);
+}
+.titre h2{
+  font-family:Georgia,serif;font-size:calc(19pt * var(--echelle));line-height:1.1;color:var(--c1);
+}
+.titre .sous{font-size:8pt;color:var(--gris);margin-top:1mm;letter-spacing:.02em}
+.titre .niveau{
+  margin-left:auto;flex:0 0 auto;align-self:flex-start;
+  border:0.35mm solid var(--c1);color:var(--c1);border-radius:10mm;
+  padding:.8mm 3.2mm;font-weight:700;font-size:8.5pt;
+}
+
+.competence{
+  flex:0 0 auto;margin:1mm 0 3mm;padding:1.6mm 3mm;
+  border-left:1.2mm solid var(--c2);background:var(--c2-pale);
+  font-size:calc(8pt * var(--echelle));color:#3d3a2e;border-radius:0 2mm 2mm 0;
+}
+.competence b{color:var(--c1)}
+
+/* Corps en deux colonnes */
+.corps{
+  flex:0 0 auto;
+  display:grid;grid-template-columns:1fr 70mm;gap:5mm;align-content:start;align-items:start;
+}
+.corps.sans-visuel{grid-template-columns:1fr}
+.corps.visuels-larges{grid-template-columns:1fr 84mm}
+.corps.visuels-tres-larges{grid-template-columns:1fr 98mm}
+
+.texte h4{
+  font-family:Georgia,serif;color:var(--c1);font-size:calc(11.5pt * var(--echelle));
+  margin:2.6mm 0 1mm;padding-bottom:.6mm;border-bottom:0.3mm solid var(--filet);
+}
+.texte h4:first-child{margin-top:0}
+.texte p{margin:0 0 1.6mm;text-align:left;hyphens:auto}
+.texte ul,.texte ol{margin:0 0 1.6mm 5mm}
+.texte b{color:#111}
+.texte .encadre{
+  margin:1.8mm 0 2.2mm;padding:1.8mm 3mm;border-radius:2mm;
+  background:var(--c1-pale);border:0.3mm solid color-mix(in srgb, var(--c1) 35%, white);
+}
+.texte table{border-collapse:collapse;width:100%;margin:1.5mm 0 2mm;font-size:.92em}
+.texte th,.texte td{border:0.25mm solid var(--filet);padding:.8mm 1.6mm;text-align:left;vertical-align:top}
+.texte th{background:var(--c1-pale);color:var(--c1)}
+
+.objectifs{
+  margin-bottom:2.5mm;padding:2mm 3mm;border-radius:2mm;
+  border:0.3mm dashed var(--c1);font-size:.9em;
+}
+.objectifs b{color:var(--c1);font-size:.95em;text-transform:uppercase;letter-spacing:.05em}
+.objectifs ul{margin:1mm 0 0 4.5mm}
+
+/* Colonne des visuels */
+.visuels{display:flex;flex-direction:column;gap:3mm}
+.visuel{
+  border:0.3mm solid var(--filet);border-radius:2mm;padding:2mm;background:#fff;
+  break-inside:avoid;
+}
+.visuel .vtitre{
+  font-weight:700;font-size:calc(8.4pt * var(--echelle));color:var(--c1);margin-bottom:1.2mm;
+  display:flex;gap:1.5mm;align-items:baseline;
+}
+.visuel .vtitre i{
+  font-style:normal;font-weight:700;font-size:6.8pt;color:#fff;background:var(--c1);
+  border-radius:1mm;padding:.2mm 1.2mm;text-transform:uppercase;letter-spacing:.04em;
+}
+.visuel svg{width:100%;height:auto;display:block;max-height:calc(78mm * var(--echelle-visuel,1))}
+.visuel img{
+  width:100%;display:block;border-radius:1mm;object-fit:cover;
+  max-height:calc(58mm * var(--echelle-visuel,1));
+}
+.visuel .legende{font-size:calc(7.4pt * var(--echelle));color:var(--gris);margin-top:1.2mm;line-height:1.3}
+.visuel .credit{font-size:6.2pt;color:#8a929b;margin-top:.6mm;line-height:1.25}
+
+.pleine-largeur{margin-top:3mm;flex:0 0 auto}
+.pleine-largeur .visuel svg{max-height:calc(105mm * var(--echelle-pleine,1))}
+.pleine-largeur .visuel img{max-height:calc(80mm * var(--echelle-pleine,1))}
+
+/* Bas de page : frise, document, lexique */
+.bas{flex:0 0 auto;display:flex;flex-direction:column;gap:2.5mm;margin-top:3mm}
+
+.frise{
+  border:0.3mm solid var(--filet);border-radius:2mm;padding:2mm 3mm 2.4mm;
+}
+.frise .vtitre{font-weight:700;font-size:8.4pt;color:var(--c1);margin-bottom:1.5mm}
+.frise .ligne{
+  position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2mm;
+  padding-top:4.2mm;
+}
+.frise .ligne::before{
+  content:"";position:absolute;left:0;right:0;top:1.6mm;height:0.9mm;background:var(--c1);border-radius:1mm;
+}
+.frise .ligne::after{
+  content:"";position:absolute;right:-1.2mm;top:.55mm;border:1.5mm solid transparent;border-left:2.2mm solid var(--c1);
+}
+.frise .evt{position:relative;font-size:calc(7.6pt * var(--echelle));line-height:1.25;text-align:center}
+.frise .evt::before{
+  content:"";position:absolute;left:50%;top:-3.8mm;width:2.6mm;height:2.6mm;margin-left:-1.3mm;
+  border-radius:50%;background:#fff;border:0.7mm solid var(--c2);
+}
+.frise .evt b{display:block;color:var(--c1);font-size:1.05em}
+
+.document{
+  border-radius:2mm;padding:2mm 3.5mm;background:#f7f5f0;border-left:1.2mm solid var(--c2);
+  font-size:calc(8.4pt * var(--echelle));
+}
+.document .dtitre{font-weight:700;color:var(--c1);font-size:.95em;margin-bottom:.8mm}
+.document q{font-style:italic;quotes:"« " " »"}
+.document .citation{font-style:italic}
+.document .dsource{font-size:.85em;color:var(--gris);margin-top:.8mm}
+
+.lexique{
+  border:0.3mm solid var(--c1);border-radius:2mm;overflow:hidden;
+}
+.lexique .vtitre{
+  background:var(--c1);color:#fff;font-weight:700;font-size:8.2pt;padding:.8mm 3mm;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.lexique dl{
+  display:grid;grid-template-columns:1fr 1fr;gap:1mm 5mm;padding:1.6mm 3mm 1.8mm;
+  font-size:calc(7.8pt * var(--echelle));line-height:1.28;
+}
+.lexique dl div{break-inside:avoid}
+.lexique dt{display:inline;font-weight:700;color:var(--c1)}
+.lexique dt::after{content:" : "}
+.lexique dd{display:inline}
+
+/* Pied de page */
+.pied{
+  flex:0 0 auto;margin-top:auto;padding-top:1.6mm;border-top:0.3mm solid var(--filet);
+  display:flex;justify-content:space-between;gap:6mm;font-size:6.4pt;color:#7a838d;line-height:1.3;
+}
+.pied .sources{flex:1}
+.pied .num{white-space:nowrap;font-weight:700;color:var(--c1)}
+.espace-pied{flex:1 1 0;min-height:2mm}
+
+/* Signal (écran) quand la page déborde encore après ajustement */
+.feuille.deborde{outline:3px solid #d93025}
+.feuille.deborde::after{
+  content:"Page trop chargée : texte réduit au minimum";position:absolute;right:4mm;top:2mm;
+  font-size:8pt;color:#d93025;background:#fff;
+}
+
+/* ---------- Impression ---------- */
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body{background:#fff}
+  .barre,.message.ecran{display:none!important}
+  #pages{padding:0}
+  .feuille{margin:0;box-shadow:none;page-break-after:always;break-after:page}
+  .feuille:last-child{page-break-after:auto;break-after:auto}
+  .feuille.deborde{outline:none}
+  .feuille.deborde::after{display:none}
+}

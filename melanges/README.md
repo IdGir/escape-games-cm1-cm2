@@ -17,6 +17,7 @@ Progression de l'enseignant : **sciences, Année B, période 1**. Suite prévue 
 | **Vérifier** | [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#melanges) : tester chaque énigme, voir les médias |
 | **Médias** | [assets/README.md](assets/README.md) : tous les noms de fichiers attendus |
 | **Guide pédagogique** | [GUIDE-PEDAGOGIQUE.md](GUIDE-PEDAGOGIQUE.md) : programmes, déroulés, différenciation, évaluation |
+| **Leçons A4** | [à imprimer, CM1 ou CM2](https://idgir.github.io/escape-games-cm1-cm2/melanges/lecons-imprimables.html) — aussi depuis ⚙️ Réglages dans le jeu : une page illustrée par leçon (cartes, graphiques, compétence du programme) |
 
 Lancement, vérification et dépôt des médias : voir le [README principal](../README.md).
 

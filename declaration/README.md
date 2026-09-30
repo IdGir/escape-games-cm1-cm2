@@ -11,6 +11,7 @@
 | | |
 |---|---|
 | ▶ **Jouer** | [en ligne](https://idgir.github.io/escape-games-cm1-cm2/declaration/) · en local : http://127.0.0.1:8000/declaration/ (avec `lancer.bat`) |
+| 📖 **Leçons A4** | [à imprimer, CM1 ou CM2](https://idgir.github.io/escape-games-cm1-cm2/declaration/lecons-imprimables.html) — aussi depuis ⚙️ Réglages dans le jeu : une page illustrée par leçon (cartes, graphiques, compétence du programme) |
 | 👨‍🏫 **Tableau de bord** | http://127.0.0.1:8000/declaration/prof.html — mode local uniquement |
 | 🔍 **Vérifier** | [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#declaration) : tester chaque salle, voir les médias |
 | 🎞️ **Médias** | [assets/README.md](assets/README.md) : tous les noms de fichiers attendus |

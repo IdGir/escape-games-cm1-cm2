@@ -10,6 +10,7 @@ séance réussie, jusqu'à la **récompense mystère** finale.
 | | |
 |---|---|
 | ▶ **Jouer** | [en ligne](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/) · en local : http://127.0.0.1:8000/mission-geo/ (avec `lancer.bat`) |
+| 📖 **Leçons A4** | [à imprimer, CM1 ou CM2](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/lecons-imprimables.html) — aussi depuis ⚙️ Espace enseignant dans le jeu : une page illustrée par leçon (cartes, graphiques, compétence du programme) |
 | 🔍 **Vérifier** | [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#mission-geo) : ouvrir n'importe quelle séance, voir les médias |
 | 🎞️ **Médias** | [assets/README.md](assets/README.md) : les 93 noms de fichiers attendus |
 

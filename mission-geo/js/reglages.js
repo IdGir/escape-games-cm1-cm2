@@ -74,6 +74,12 @@ const REGLAGES = (function(){
         <button class="bouton-second" id="r-imp-corrige">Corrigé</button>
         <button class="bouton-second" id="r-imp-lecon">Leçon</button>
       </p>
+      <p class="aide-panneau">Leçons A4 illustrées (cartes, graphiques, photos, compétence du programme) :
+      la séance choisie, ou les 16 leçons. L'aperçu s'ouvre dans un nouvel onglet.</p>
+      <p style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="bouton-second" id="r-imp-lecon-a4">📖 Leçon A4 illustrée</button>
+        <button class="bouton-second" id="r-imp-lecons-a4">📖 Les 16 leçons A4</button>
+      </p>
       <p style="display:flex;gap:.5rem;flex-wrap:wrap">
         <button class="bouton-second" id="r-imp-prog">Progression annuelle + solutions</button>
         <button class="bouton-second" id="r-imp-bilan">Bilan de mission</button>
@@ -162,6 +168,11 @@ const REGLAGES = (function(){
         const s = MISSION.parId(seance());
         if(s) IMPRESSION.lecon(s.lecon);
       });
+      g("r-imp-lecon-a4").addEventListener("click", () => {
+        const se = MISSION.parId(seance());
+        window.open("lecons-imprimables.html?niveau=CM2&salle=" + (se ? se.numero : ""), "_blank");
+      });
+      g("r-imp-lecons-a4").addEventListener("click", () => window.open("lecons-imprimables.html?niveau=CM2&lecon=toutes", "_blank"));
       g("r-imp-prog").addEventListener("click",  () => IMPRESSION.progression());
       g("r-imp-bilan").addEventListener("click", () => IMPRESSION.bilan());
 

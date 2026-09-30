@@ -16,6 +16,7 @@ Neuf escape games d'histoire, de géographie, d'EMC et de sciences, jouables dan
 
 - 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
+- 📖 **Leçons à imprimer** (A4 illustrées, CM1 ou CM2) : depuis ⚙️ Réglages dans chaque jeu — voir la partie 2 bis
 
 ---
 
@@ -80,6 +81,34 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | La Station météo disparue | `station-meteo/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [module 1, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/station-meteo/?salle=1&niveau=CM2&enigme=1) |
 | Le Manuscrit de l'abbaye | `moyen-age-abbaye/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fermoir puis fin ; `&enigme=K` vise une énigme | [salle 5, énigme 1, CM1](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/?salle=5&niveau=CM1&enigme=1) |
 | Le Secret du donjon | `chateau-fort/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = inscription, herse et fin ; `&enigme=K` vise une énigme | [salle 2, énigme 4, CM2](https://idgir.github.io/escape-games-cm1-cm2/chateau-fort/?salle=2&niveau=CM2&enigme=4) |
+
+---
+
+## 2 bis. Imprimer les leçons (A4 illustrées)
+
+Chaque jeu propose ses leçons en **pages A4 prêtes à imprimer** : une page par leçon, en version
+**CM1** ou **CM2**, avec l'en-tête du jeu, la **compétence du programme**, le texte de la leçon,
+des **cartes**, **schémas**, **graphiques** et **photos** légendés et sourcés, la frise, un
+document, le lexique et les sources. La taille du texte s'ajuste pour que chaque leçon tienne
+sur sa page.
+
+**Depuis le jeu (volet enseignant)** : ⚙️ **Réglages** → bloc **📖 Leçons à imprimer** → choisir
+« Toutes les leçons » ou une salle → **📖 CM1** ou **📖 CM2**. L'aperçu s'ouvre dans un nouvel
+onglet ; changer de niveau ou de leçon en haut de la page, puis cliquer sur **Imprimer**.
+Mission géographique : ⚙️ **Espace enseignant** → *Impressions* → **📖 Leçon A4 illustrée**
+(séance choisie) ou **📖 Les 16 leçons A4**. Le tableau de bord `prof.html` a aussi un bouton.
+
+**Dans la fenêtre d'impression** : format **A4**, **portrait**, marges « par défaut » (ou
+« aucune »), et cocher **Graphiques d'arrière-plan** pour garder les couleurs. On peut aussi
+choisir « Enregistrer au format PDF ».
+
+Adresse directe : `<jeu>/lecons-imprimables.html?niveau=CM1&salle=3` (une salle) ou
+`?niveau=CM2&lecon=toutes` — par exemple
+[les leçons du Secret du donjon en CM2](https://idgir.github.io/escape-games-cm1-cm2/chateau-fort/lecons-imprimables.html?niveau=CM2&lecon=toutes).
+
+Les cartes sont dessinées à partir de données géographiques réelles (Natural Earth, contours IGN
+des régions) ; les photos sont celles du jeu, avec leur crédit. Pour modifier une leçon
+imprimée ou en régénérer les visuels : [outils-lecons/README.md](outils-lecons/README.md).
 
 ---
 

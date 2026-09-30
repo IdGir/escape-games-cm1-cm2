@@ -14,6 +14,7 @@ le jeu n°02 (le château fort et les paysans, Année B).
 | | |
 |---|---|
 | ▶ **Jouer** | [en ligne](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/) · en local : http://127.0.0.1:8000/moyen-age-abbaye/ (avec `lancer.bat`) |
+| 📖 **Leçons A4** | [à imprimer, CM1 ou CM2](https://idgir.github.io/escape-games-cm1-cm2/moyen-age-abbaye/lecons-imprimables.html) — aussi depuis ⚙️ Réglages dans le jeu : une page illustrée par leçon (cartes, graphiques, compétence du programme) |
 | 👨‍🏫 **Tableau de bord** | http://127.0.0.1:8000/moyen-age-abbaye/prof.html — mode local uniquement |
 | 🔍 **Vérifier** | [page de vérification](https://idgir.github.io/escape-games-cm1-cm2/verifier.html#moyen-age-abbaye) : tester chaque énigme |
 | 🎞️ **Médias** | [assets/README.md](assets/README.md) : les noms de fichiers attendus (tout est facultatif) |
