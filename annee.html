@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'année en escape games — CM1 · CM2</title>
+<meta name="description" content="Vue d'ensemble de l'année : périodes P1 à P5, Années A et B, escape games disponibles et points du programme couverts.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1d3a8a">
+<!--
+  VUE D'ENSEMBLE PUBLIQUE DE L'ANNÉE (amélioration C1)
+  Croise les périodes (P1-P5), les années (A/B), les jeux disponibles et les
+  points du programme couverts. Données : commun/donnees/catalogue.js (tiré du
+  calendrier de production) et, pour les jeux publiés, la compétence de chaque
+  leçon (<jeu>/assets/data/lecons-a4.json).
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main{max-width:1150px;margin:0 auto;padding:0 20px}
+  header{padding-top:26px}
+  h1{margin:0;font-size:clamp(1.5rem,3.5vw,2.1rem)}
+  header p{margin:6px 0 0;color:var(--doux)}
+  .filtres{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:16px 0}
+  .filtres button{font:inherit;padding:7px 14px;border-radius:999px;border:1px solid var(--ligne);background:#fff;cursor:pointer}
+  .filtres button[aria-pressed="true"]{background:var(--encre);color:#fff;border-color:var(--encre)}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:14px;padding:16px 20px;margin-bottom:16px}
+  h2{margin:0 0 4px;font-size:1.2rem} h2 small{color:var(--doux);font-weight:500;font-size:.8em}
+  .jeu{display:grid;grid-template-columns:3.2em 1fr;gap:4px 14px;padding:12px 0;border-top:1px solid var(--ligne)}
+  .jeu:first-of-type{border-top:none}
+  .pastille{width:2.8em;height:2.8em;border-radius:12px;display:grid;place-items:center;font-size:1.4em;color:#fff}
+  .jeu.avenir .pastille{background:#ebe7de !important;color:#8a8f99}
+  .jeu h3{margin:0;font-size:1.05rem}
+  .meta{color:var(--doux);font-size:.88rem}
+  .etiquette{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#efe9dc;margin-right:4px}
+  .etiquette.dispo{background:#e5f5ea;color:#14532d}
+  .competences{margin:6px 0 0;padding-left:1.1em;font-size:.92rem}
+  .competences li{margin:2px 0}
+  .liens a{margin-right:12px;font-size:.9rem}
+  .bilan{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px}
+  .bilan span{background:#fff;border:1px solid var(--ligne);border-radius:10px;padding:6px 12px;font-size:.9rem}
+  footer{max-width:1150px;margin:0 auto;padding:10px 20px 40px;color:var(--doux);font-size:.85rem}
+  @media print{
+    body{background:#fff;font-size:10.5pt} .filtres,#frise,.liens,.noprint{display:none !important}
+    .bloc{break-inside:avoid;border:none;padding:0 0 8px} .pastille{border:1px solid #999;color:#000}
+  }
+</style>
+</head>
+<body>
+<header>
+  <p class="noprint"><a href="index.html">← Accueil des jeux</a></p>
+  <h1>📅 L'année en escape games</h1>
+  <p>Les escape games de la progression CM1-CM2, période par période, avec les points du programme qu'ils travaillent.
+     Les Années A et B alternent d'une année scolaire à l'autre.</p>
+</header>
+<main>
+  <div class="filtres" role="group" aria-label="Filtres">
+    <span>Année :</span>
+    <button data-f="annee" data-v="" aria-pressed="true">A et B</button>
+    <button data-f="annee" data-v="A" aria-pressed="false">Année A</button>
+    <button data-f="annee" data-v="B" aria-pressed="false">Année B</button>
+    <span style="margin-left:10px">Matière :</span>
+    <button data-f="matiere" data-v="" aria-pressed="true">toutes</button>
+    <button data-f="matiere" data-v="Histoire" aria-pressed="false">Histoire</button>
+    <button data-f="matiere" data-v="Géographie" aria-pressed="false">Géographie</button>
+    <button data-f="matiere" data-v="Sciences" aria-pressed="false">Sciences</button>
+    <button data-f="matiere" data-v="EMC" aria-pressed="false">EMC</button>
+    <button class="noprint" onclick="window.print()" style="margin-left:auto">🖨️ Imprimer</button>
+  </div>
+  <div class="bilan" id="bilan"></div>
+  <section class="bloc noprint"><div id="frise"></div></section>
+  <div id="periodes"></div>
+</main>
+<footer>Calendrier de production des jeux (26 jeux d'histoire et de sciences), complété des jeux de géographie et d'EMC déjà publiés.
+  Fiche imprimable par période : <a href="periode.html">fiches de période</a>.</footer>
+
+<script src="commun/donnees/catalogue.js?c2"></script>
+<script src="commun/js/frise.js?c1"></script>
+<script src="commun/js/pwa.js?c1"></script>
+<script>
+"use strict";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const P = ["P1", "P2", "P3", "P4", "P5"];
+const filtre = { annee: "", matiere: "" };
+const COMPETENCES = {};   // dossier → [compétence de chaque leçon]
+
+async function chargerCompetences(){
+  await Promise.all(CATALOGUE.jeux.filter(j => j.dossier).map(async j => {
+    try{
+      const r = await fetch(`${j.dossier}/assets/data/lecons-a4.json`, { cache: "no-cache" });
+      if(r.ok){ const d = await r.json(); COMPETENCES[j.dossier] = Object.values(d.lecons || {}).map(l => l.competence).filter(Boolean); }
+    }catch(e){ /* double-clic (file://) : on garde le résumé du catalogue */ }
+  }));
+}
+const garde = j => (!filtre.annee || j.annee === filtre.annee || j.annee === "AB") && (!filtre.matiere || j.matiere === filtre.matiere);
+
+function carte(j, p){
+  const dispo = !!j.dossier;
+  let comp = [j.competences];
+  if(dispo && COMPETENCES[j.dossier] && COMPETENCES[j.dossier].length){
+    comp = COMPETENCES[j.dossier];
+    if(j.seancesParPeriode && p) comp = (j.seancesParPeriode[p] || []).map(n => `Séance ${n} : ${COMPETENCES[j.dossier][n - 1] || ""}`);
+  }
+  return `<div class="jeu ${dispo ? "" : "avenir"}">
+    <div class="pastille" style="background:${esc(j.couleurs[0])}" aria-hidden="true">${esc(j.icone || "🎲")}</div>
+    <div><h3>${esc(j.titre)}</h3>
+      <div class="meta"><span class="etiquette ${dispo ? "dispo" : ""}">${dispo ? "✔ disponible" : "à venir"}</span>
+        <span class="etiquette">${esc(j.matiere)}</span>${j.annee.length === 1 ? `<span class="etiquette">Année ${esc(j.annee)}</span>` : ""}</div>
+      <ul class="competences">${comp.map(c => `<li>${esc(c)}</li>`).join("")}</ul>
+      ${dispo ? `<div class="liens"><a href="${esc(j.dossier)}/">▶ Jouer</a><a href="${esc(j.dossier)}/lecons-imprimables.html">📖 Leçons A4</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/${esc(j.dossier)}#readme" target="_blank" rel="noopener">📘 Guide</a></div>` : ""}
+    </div></div>`;
+}
+
+function rendre(){
+  document.querySelectorAll(".filtres [data-f]").forEach(b => b.setAttribute("aria-pressed", String(filtre[b.dataset.f] === b.dataset.v)));
+  FRISE.dessiner(document.getElementById("frise"), { annee: filtre.annee });
+  const jeux = CATALOGUE.jeux.filter(garde);
+  const dispo = jeux.filter(j => j.dossier).length;
+  const nbComp = jeux.reduce((s, j) => s + (j.dossier && COMPETENCES[j.dossier] ? COMPETENCES[j.dossier].length : 0), 0);
+  document.getElementById("bilan").innerHTML = `<span><b>${jeux.length}</b> jeux</span><span>✔ <b>${dispo}</b> disponibles</span><span>⏳ <b>${jeux.length - dispo}</b> à venir</span>`
+    + (nbComp ? `<span>🎯 <b>${nbComp}</b> points du programme déjà couverts</span>` : "");
+  let h = "";
+  for(const p of P){
+    const liste = jeux.filter(j => (j.periodes || []).includes(p)).sort((a, b) => (a.annee > b.annee) - (a.annee < b.annee) || (parseInt(a.num, 10) || 99) - (parseInt(b.num, 10) || 99));
+    if(!liste.length) continue;
+    h += `<section class="bloc" id="${p}"><h2>${p} <small>${esc(CATALOGUE.periodes[p])}</small>
+      <a class="noprint" style="font-size:.75em;margin-left:10px" href="periode.html?p=${p}${filtre.annee ? "&annee=" + filtre.annee : ""}">🖨️ fiche de période</a></h2>${liste.map(j => carte(j, p)).join("")}</section>`;
+  }
+  const libres = jeux.filter(j => j.libre);
+  if(libres.length) h += `<section class="bloc"><h2>Révision, à placer librement</h2>${libres.map(j => carte(j)).join("")}</section>`;
+  document.getElementById("periodes").innerHTML = h;
+}
+document.querySelectorAll(".filtres [data-f]").forEach(b => b.addEventListener("click", () => { filtre[b.dataset.f] = b.dataset.v; rendre(); }));
+const q = new URLSearchParams(location.search);
+if(/^[AB]$/.test(q.get("annee") || "")) filtre.annee = q.get("annee");
+rendre();
+chargerCompetences().then(rendre);
+window.ANNEE = { rendre, filtre, COMPETENCES };
+</script>
+</body>
+</html>

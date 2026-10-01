@@ -87,6 +87,24 @@ SECTIONS.B3 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+SECTIONS.C1 = async () => {
+  console.log("\n== C1 : vue d'ensemble de l'année (annee.html) ==");
+  const { w, erreurs } = await charger(RACINE, "", { page: "annee.html", attente: 800 });
+  const d = w.document, C = w.eval("CATALOGUE");
+  ok(d.querySelectorAll("#periodes section").length === 6, "5 périodes + révision libre");
+  ok(d.querySelectorAll("#periodes .jeu").length >= C.jeux.length, "chaque jeu apparaît (Mission géographique dans chaque période)");
+  const mel = [...d.querySelectorAll("#P1 .jeu")].find(x => /Madame Mélange/.test(x.textContent));
+  ok(mel && mel.querySelectorAll(".competences li").length === 5 && /Comparer et mesurer des masses/.test(mel.textContent), "jeu publié : la compétence de chacune de ses 5 leçons");
+  const mg = [...d.querySelectorAll("#P3 .jeu")].find(x => /Mission géographique/.test(x.textContent));
+  ok(mg && mg.querySelectorAll(".competences li").length === 2 && /Séance 9/.test(mg.textContent), "Mission géographique en P3 : séances 9 et 10");
+  ok(/points du programme déjà couverts/.test(d.getElementById("bilan").textContent), "bilan : points du programme couverts");
+  d.querySelector('[data-f="annee"][data-v="A"]').click();
+  ok(![...d.querySelectorAll("#periodes .jeu h3")].some(h => /Secret du donjon/.test(h.textContent)), "filtre Année A : le Secret du donjon (Année B) disparaît");
+  d.querySelector('[data-f="matiere"][data-v="Sciences"]').click();
+  ok([...d.querySelectorAll("#periodes .etiquette")].filter(e => /^(Histoire|EMC|Géographie)$/.test(e.textContent)).length === 0, "filtre Sciences");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

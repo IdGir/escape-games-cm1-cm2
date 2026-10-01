@@ -121,7 +121,7 @@ Créer, à partir de `00-ORDRE-DE-PRODUCTION.md` (aujourd'hui un fichier de
 travail), une page publique qui croise périodes (P1-P5), années (A/B) et
 jeux disponibles avec les points du programme couverts. Rend la progression
 visible sans avoir à ouvrir un fichier de production interne.
-**Jeux concernés :** page d'accueil / nouvelle page · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** page d'accueil / nouvelle page · **Effort :** M · **Statut :** Fait
 
 ### C2 — Bandeau de référence BO sur chaque jeu, une fois confirmée
 Plusieurs `A-VERIFIER.md` (chateau-fort, station-meteo, objets-techniques…)

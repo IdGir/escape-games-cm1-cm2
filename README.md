@@ -15,6 +15,7 @@ Neuf escape games d'histoire, de géographie, d'EMC et de sciences, jouables dan
 | 🏰 | **Le Secret du donjon** — Histoire, le château fort et les paysans | [▶ en ligne](https://idgir.github.io/escape-games-cm1-cm2/chateau-fort/) | [chateau-fort/README.md](chateau-fort/README.md) | [liste](chateau-fort/assets/README.md) |
 
 - 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/ — avec la **frise de l'année** : les 26 jeux de la progression sur les périodes P1 à P5 (Années A et B), en couleur ceux qui sont déjà jouables
+- 📅 **L'année en escape games** (périodes, Années A/B, points du programme couverts) : https://idgir.github.io/escape-games-cm1-cm2/annee.html
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
 - 📖 **Leçons à imprimer** (A4 illustrées, CM1 ou CM2) : depuis ⚙️ Réglages dans chaque jeu — voir la partie 2 bis
 

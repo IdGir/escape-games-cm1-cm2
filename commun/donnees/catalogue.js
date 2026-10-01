@@ -575,7 +575,35 @@ var CATALOGUE = {
     "#2f6b3a",
     "#d9a21b"
    ],
-   "resume": "Une valise volée, seize séances pour réunir les indices, une piste finale en Corse et une récompense mystère."
+   "resume": "Une valise volée, seize séances pour réunir les indices, une piste finale en Corse et une récompense mystère.",
+   "seancesParPeriode": {
+    "P1": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "P2": [
+     6,
+     7,
+     8
+    ],
+    "P3": [
+     9,
+     10
+    ],
+    "P4": [
+     11,
+     12,
+     13
+    ],
+    "P5": [
+     14,
+     15,
+     16
+    ]
+   }
   },
   {
    "num": "T",
