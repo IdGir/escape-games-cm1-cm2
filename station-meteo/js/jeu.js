@@ -10,6 +10,7 @@
 var JEU = {
   id: "station-meteo",
   titre: "La Station météo disparue",
+  motSalle: "Module",          // « Salle 3 », « Escale 3 »… (transitions, fiches)
 
   /* Voix des personnages (narration.js) : débit et hauteur */
   voix: {

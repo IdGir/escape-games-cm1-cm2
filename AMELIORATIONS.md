@@ -110,7 +110,7 @@ production de sous-titres à toutes les vidéos de décor déposées.
 ### B6 — Transitions animées entre salles
 Actuellement une coupure nette d'une salle à l'autre. Ajouter une transition
 courte, désactivable par le réglage « animations réduites » déjà présent.
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ---
 

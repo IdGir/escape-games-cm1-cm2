@@ -10,6 +10,7 @@
 var JEU = {
   id: "tour-du-monde",
   titre: "Le Tour du Monde en 80 minutes",
+  motSalle: "Escale",          // « Salle 3 », « Escale 3 »… (transitions, fiches)
 
   /* Voix des personnages (narration.js) : débit et hauteur */
   voix: {

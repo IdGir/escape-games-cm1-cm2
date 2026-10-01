@@ -19,6 +19,15 @@ est commun n'existe **qu'une fois**, ici, et chaque jeu le charge avec `../commu
 | `js/lecons-a4.js` · `css/lecons-a4.css` | leçons imprimables A4 | les 9 jeux (dont Mission géographique) |
 | `css/animations.css` · `css/personnages.css` · `css/video.css` | animations, portraits, vidéos | les 8 |
 
+### Greffons (chargés après `app.js`)
+
+Ils ajoutent une fonction à tous les jeux **sans modifier** leurs `app.js` : ils complètent les
+fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du jeu (`ETAT`).
+
+| Fichier | Amélioration | Jeux |
+|---|---|---|
+| `js/transitions.js` | B6 — fondu entre écrans, « rideau » à l'entrée d'une salle (désactivé par « animations réduites ») | les 8 + Mission géographique |
+
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres
 (énigme unique par salle) ; `mission-geo` a son propre moteur (16 séances).

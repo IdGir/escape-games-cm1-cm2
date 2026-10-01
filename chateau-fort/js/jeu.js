@@ -10,6 +10,7 @@
 var JEU = {
   id: "chateau-fort",
   titre: "Le Secret du donjon",
+  motSalle: "Salle",          // « Salle 3 », « Escale 3 »… (transitions, fiches)
 
   /* Voix des personnages (narration.js) : débit et hauteur */
   voix: {
