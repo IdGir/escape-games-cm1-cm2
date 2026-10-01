@@ -79,6 +79,15 @@
   .actions .bouton{font-size:.79rem;padding:4px 9px}
   .message{padding:12px 14px;border-radius:10px;background:var(--ambre-clair);color:#7c2d12;margin-bottom:16px}
   .message.erreur{background:var(--rouge-clair);color:var(--rouge)}
+  /* Onglet « Cohérence du moteur » */
+  .tab-coh{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:8px}
+  .tab-coh th,.tab-coh td{border:1px solid var(--ligne);padding:5px 7px;text-align:left;vertical-align:top}
+  .tab-coh th{background:var(--gris);font-weight:600}
+  .tab-coh td.ok{background:var(--vert-clair);color:#14532d}
+  .tab-coh td.ko{background:var(--rouge-clair);color:var(--rouge);font-weight:600}
+  .tab-coh td.av{background:var(--ambre-clair);color:#7c2d12}
+  .bilan-coh{font-weight:600;margin:6px 0 0}
+  .bilan-coh.ok{color:var(--vert)} .bilan-coh.ko{color:var(--rouge)}
   .message a{color:inherit}
   .orphelins{margin:0;padding-left:18px;font-size:.9rem}
   .orphelins li{margin:4px 0}
@@ -142,7 +151,8 @@ const ONGLETS = [
   { id: "station-meteo", titre: "🌦️ La Station météo disparue" },
   { id: "melanges",      titre: "⚗️ Le Laboratoire de Madame Mélange" },
   { id: "objets-techniques", titre: "⚙️ L'Atelier de l'inventeur" },
-  { id: "chateau-fort",  titre: "🏰 Le Secret du donjon" }
+  { id: "chateau-fort",  titre: "🏰 Le Secret du donjon" },
+  { id: "coherence",     titre: "🧬 Cohérence du moteur" }
 ];
 
 let JETON = Date.now();   // anti-cache des aperçus, renouvelé à chaque actualisation
@@ -904,6 +914,7 @@ function rendre(){
       <a href="https://idgir.github.io/escape-games-cm1-cm2/verifier.html">version en ligne</a>.</div>`;
     return;
   }
+  if(actif === "coherence"){ rendreCoherence(zone); return; }
   const jeu = JEUX[actif];
   if(!jeu){ zone.innerHTML = `<div class="message">Chargement…</div>`; return; }
   if(jeu.erreur){ zone.innerHTML = `<div class="message erreur">${esc(jeu.erreur)}</div>`; return; }
@@ -972,6 +983,141 @@ function rendre(){
     </section>`;
 }
 
+
+/* ============================================================
+   ONGLET « COHÉRENCE DU MOTEUR » (amélioration A6)
+   Le moteur partagé est dans commun/ (un seul exemplaire). Cet onglet
+   repère ce qui pourrait faire diverger les jeux :
+     1. un jeu qui charge encore une COPIE LOCALE d'un module du tronc
+        commun (un correctif fait dans commun/ ne l'atteindrait pas) ;
+     2. un jeu qui charge un module commun avec un numéro de version
+        (?cN) plus ancien que les autres (cache du navigateur) ;
+     3. un js/jeu.js absent, mal placé ou incomplet ;
+     4. pour les fichiers qui restent propres à chaque jeu (app.js,
+        reglages.js…), les fonctions présentes dans certains jeux mais
+        absentes d'autres : la trace typique d'un correctif appliqué à un
+        seul jeu et oublié ailleurs.
+   ============================================================ */
+const COH_JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort"];
+const COH_COMMUN_6 = ["constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort"];
+const COH_MODULES = ["media", "audio", "narration", "api", "sync", "fiche-mission", "enigmes", "impression"];
+const COH_PROPRES = ["app", "reglages", "lecons", "decors", "personnages"];
+const COH_CHAMPS = ["id", "titre", "voix", "voixFeminines", "ambiances", "ia"];
+const COH_CHAMPS_6 = ["enigmes", "impression"];
+let COHERENCE = null;
+
+async function texte(chemin){
+  try{ const r = await fetch(enc(chemin) + "?t=" + JETON, { cache: "no-store" }); return r.ok ? await r.text() : null; }
+  catch(e){ return null; }
+}
+const fonctionsDe = src => new Set([...String(src || "").matchAll(/function\s+([A-Za-z_$][\w$]*)\s*\(/g)].map(m => m[1]));
+
+async function analyserCoherence(){
+  const res = { jeux: {}, alertes: 0 };
+  await Promise.all(COH_JEUX.map(async j => {
+    const html = await texte(j + "/index.html");
+    const scripts = html ? [...html.matchAll(/<script src="([^"]+)"/g)].map(m => m[1]) : [];
+    const info = { html: !!html, scripts, modules: {}, locales: [], jeuJs: null, champsManquants: [], propres: {} };
+    const attendus = COH_MODULES.filter(m => COH_COMMUN_6.includes(j) || !["enigmes", "impression"].includes(m));
+    for(const m of attendus){
+      const s = scripts.find(x => new RegExp("(^|/)" + m + "\\.js(\\?|$)").test(x));
+      const commun = !!s && s.startsWith("../commun/js/");
+      const v = s && (s.match(/\?c(\d+)/) || [])[1];
+      info.modules[m] = { src: s || null, commun, version: v ? +v : null };
+      if(s && !commun) info.locales.push(m);
+    }
+    // jeu.js : présent, chargé en premier, champs attendus
+    const iJeu = scripts.findIndex(x => /^js\/jeu\.js(\?|$)/.test(x));
+    info.jeuJs = iJeu < 0 ? "absent" : (iJeu === 0 ? "ok" : "pas en premier");
+    const src = await texte(j + "/js/jeu.js");
+    if(src){
+      const champs = COH_CHAMPS.concat(COH_COMMUN_6.includes(j) ? COH_CHAMPS_6 : []);
+      info.champsManquants = champs.filter(c => !new RegExp("\\n\\s*" + c + "\\s*:").test(src));
+    }
+    // fichiers propres au jeu : liste des fonctions
+    await Promise.all(COH_PROPRES.map(async f => {
+      const s = scripts.find(x => new RegExp("^js/" + f + "\\.js(\\?|$)").test(x));
+      if(s) info.propres[f] = fonctionsDe(await texte(j + "/" + s.split("?")[0]));
+    }));
+    res.jeux[j] = info;
+  }));
+  // version la plus récente de chaque module commun
+  res.versionMax = {};
+  COH_MODULES.forEach(m => {
+    const v = COH_JEUX.map(j => res.jeux[j].modules[m] && res.jeux[j].modules[m].version).filter(x => x != null);
+    res.versionMax[m] = v.length ? Math.max(...v) : null;
+  });
+  // fonctions présentes dans une partie seulement des jeux d'un même groupe
+  res.ecarts = [];
+  const groupes = [["moteur commun", COH_COMMUN_6], ["moteur propre", ["declaration", "tour-du-monde"]]];
+  for(const [nom, jeux] of groupes){
+    for(const f of COH_PROPRES){
+      const ens = jeux.map(j => res.jeux[j].propres[f]).filter(Boolean);
+      if(ens.length < 2) continue;
+      const toutes = new Set(ens.flatMap(s => [...s]));
+      for(const fn of toutes){
+        const avec = jeux.filter(j => res.jeux[j].propres[f] && res.jeux[j].propres[f].has(fn));
+        const sans = jeux.filter(j => res.jeux[j].propres[f] && !res.jeux[j].propres[f].has(fn));
+        if(sans.length && avec.length >= Math.ceil(jeux.length / 2)) res.ecarts.push({ groupe: nom, fichier: f, fonction: fn, avec, sans });
+      }
+    }
+  }
+  for(const j of COH_JEUX){
+    const i = res.jeux[j];
+    res.alertes += i.locales.length + (i.jeuJs !== "ok" ? 1 : 0) + i.champsManquants.length
+      + Object.entries(i.modules).filter(([m, x]) => x.commun && x.version !== res.versionMax[m]).length
+      + Object.values(i.modules).filter(x => !x.src).length;
+  }
+  return res;
+}
+
+function rendreCoherence(zone){
+  if(!COHERENCE){
+    zone.innerHTML = `<div class="message">Analyse des ${COH_JEUX.length} jeux…</div>`;
+    analyserCoherence().then(r => { COHERENCE = r; if(actif === "coherence") rendreCoherence(document.getElementById("contenu")); });
+    return;
+  }
+  const R = COHERENCE;
+  const ent = `<tr><th>Module</th>${COH_JEUX.map(j => `<th>${esc(j)}</th>`).join("")}</tr>`;
+  const lignes = COH_MODULES.map(m => `<tr><td><code>${m}.js</code></td>${COH_JEUX.map(j => {
+    const x = R.jeux[j].modules[m];
+    if(!x) return `<td>—</td>`;
+    if(!x.src) return `<td class="ko">non chargé</td>`;
+    if(!x.commun) return `<td class="ko">copie locale</td>`;
+    if(x.version !== R.versionMax[m]) return `<td class="av">commun, ancienne version (c${x.version ?? "?"})</td>`;
+    return `<td class="ok">commun${x.version ? " · c" + x.version : ""}</td>`;
+  }).join("")}</tr>`).join("");
+  const ligneJeu = `<tr><td><code>jeu.js</code></td>${COH_JEUX.map(j => {
+    const i = R.jeux[j];
+    if(i.jeuJs !== "ok") return `<td class="ko">${esc(i.jeuJs)}</td>`;
+    if(i.champsManquants.length) return `<td class="ko">champ(s) manquant(s) : ${esc(i.champsManquants.join(", "))}</td>`;
+    return `<td class="ok">complet</td>`;
+  }).join("")}</tr>`;
+  const ecarts = R.ecarts.length
+    ? `<table class="tab-coh"><tr><th>Fichier</th><th>Fonction</th><th>Présente dans</th><th>Absente de</th></tr>${R.ecarts.map(e =>
+        `<tr><td><code>${esc(e.fichier)}.js</code> <small>(${esc(e.groupe)})</small></td><td><code>${esc(e.fonction)}</code></td><td>${esc(e.avec.join(", "))}</td><td class="av">${esc(e.sans.join(", "))}</td></tr>`).join("")}</table>`
+    : `<p class="aide">✅ Les fichiers propres à chaque jeu définissent les mêmes fonctions dans tous les jeux d'un même groupe.</p>`;
+  zone.innerHTML = `
+    <section class="bloc">
+      <h2>🧬 Tronc commun : chaque jeu charge-t-il le même moteur ?</h2>
+      <p class="aide">Le moteur partagé n'existe qu'en un exemplaire, dans <code>commun/js/</code> (voir
+        <a href="${esc(lienGitHub("commun/README.md"))}" target="_blank" rel="noopener">commun/README.md</a>).
+        Une case rouge signale un jeu qui garderait sa propre copie : un correctif fait dans <code>commun/</code> ne l'atteindrait pas.
+        Une case orange signale un numéro de version (<code>?cN</code>) plus ancien : les postes risquent de garder l'ancien fichier en mémoire.</p>
+      <p class="bilan-coh ${R.alertes ? "ko" : "ok"}">${R.alertes ? `⚠️ ${R.alertes} point(s) à corriger` : "✅ Les 8 jeux « salles » chargent tous le même tronc commun, à jour."}</p>
+      <div style="overflow-x:auto"><table class="tab-coh">${ent}${lignes}${ligneJeu}</table></div>
+      <p class="aide"><code>enigmes.js</code> et <code>impression.js</code> : declaration et tour-du-monde gardent les leurs (moteur à énigme unique par salle).
+        Mission géographique a son propre moteur et n'apparaît pas ici.</p>
+    </section>
+    <section class="bloc">
+      <h2>🔎 Fichiers propres à chaque jeu : un correctif oublié ?</h2>
+      <p class="aide"><code>app.js</code>, <code>reglages.js</code>… restent dans chaque jeu (ils contiennent ses textes). Une fonction présente
+        dans la plupart des jeux d'un groupe mais absente de certains est souvent un correctif qui n'a pas été recopié partout.
+        À examiner au cas par cas : une fonction peut aussi être volontairement propre à un jeu.</p>
+      ${ecarts}
+    </section>`;
+}
+
 /* ---------------- Chargement ---------------- */
 let chargementEnCours = false;
 async function charger(){
@@ -979,8 +1125,10 @@ async function charger(){
   chargementEnCours = true;
   JETON = Date.now();
   sondes.clear();
+  COHERENCE = null;
   INVENTAIRE = await lireInventaire();
   afficherSource();
+  if(actif === "coherence") rendre();
   await Promise.all(Object.entries(CONSTRUCTEURS).map(async ([id, construire]) => {
     try{
       const jeu = await construire();

@@ -61,7 +61,7 @@ En plus des 4 onglets déjà présents (énigmes, médias, fichiers mal nommés,
 documents), ajouter un onglet qui compare les fichiers `js/` communs entre
 les 8 jeux « salles » pour repérer un correctif appliqué à un seul jeu et
 oublié ailleurs — un vrai risque avec la duplication actuelle (voir A3).
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ### A7 — Contrôle automatique des fichiers enigmes.json avant publication
 Un script qui vérifie, avant un `git push`, la cohérence de chaque

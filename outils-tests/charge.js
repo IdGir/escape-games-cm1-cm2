@@ -32,7 +32,7 @@ function fichierDe(url){
 async function charger(dossierJeu, query = "", options = {}){
   const page = options.page || "index.html";
   const nomJeu = path.relative(RACINE, dossierJeu).split(path.sep).join("/");
-  const urlPage = `http://localhost/${nomJeu}/${page}${query}`;
+  const urlPage = `http://localhost/${nomJeu ? nomJeu + "/" : ""}${page}${query}`;
   const html = fs.readFileSync(path.join(dossierJeu, page), "utf8");
   const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].map(m => {
     const src = (m[1].match(/\bsrc="([^"]+)"/) || [])[1];

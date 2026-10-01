@@ -67,6 +67,7 @@ en ligne, ou en local sur http://127.0.0.1:8000/verifier.html. Un onglet par jeu
 | 🎞️ **Médias** | Chaque emplacement du jeu : aperçu, fichier trouvé et son poids — ou, s'il manque, le nom exact à utiliser (📋 le copie) et le bouton pour le déposer sur GitHub. Filtres *Présents / Manquants / Lourds*. |
 | 🧹 **Fichiers mal nommés** | Les fichiers présents dans les dossiers mais que le jeu ne verra pas (majuscule, faute de frappe, mauvais dossier). |
 | 📚 **Documents** | Les guides du jeu. |
+| 🧬 **Cohérence du moteur** *(dernier onglet)* | Vérifie que les 8 jeux « salles » chargent tous le même tronc commun `commun/js/` (aucune copie locale oubliée, numéros de version à jour, `js/jeu.js` complet) et signale les fonctions présentes dans certains `app.js`/`reglages.js` mais absentes d'autres : la trace d'un correctif recopié dans un seul jeu. |
 
 Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper ou mettre en favori :
 
