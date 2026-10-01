@@ -19,6 +19,8 @@ function disque(){
       && !(["enigmes.js", "impression.js", "variantes.js"].includes(f) && ["declaration", "tour-du-monde"].includes(j))
       && !(j === "mission-geo" && f !== "lecons-a4.js"));
     ok(!locaux.length, `${j} : pas de copie locale d'un module commun (${locaux.join(", ")})`);
+    const cl = path.join(RACINE, j, "CHANGELOG.md");
+    ok(fs.existsSync(cl) && /^# Journal des versions/.test(fs.readFileSync(cl, "utf8")) && /<!-- dernier-commit: [0-9a-f]+ -->/.test(fs.readFileSync(cl, "utf8")), `${j} : journal des versions CHANGELOG.md (F2)`);
     if (j === "mission-geo") continue;
     const html = fs.readFileSync(path.join(RACINE, j, "index.html"), "utf8");
     const scripts = [...html.matchAll(/<script src="([^"]+)"/g)].map(m => m[1]);

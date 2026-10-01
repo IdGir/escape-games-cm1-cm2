@@ -250,7 +250,7 @@ depuis `index.html`, éviterait de chercher dans chaque README.
 Les `RECAP-<jeu>.md` actuels servent à reprendre une conversation interrompue
 (non commités, but différent). Un vrai changelog, commité et durable,
 tracerait les évolutions d'un jeu au fil des mises à jour.
-**Jeux concernés :** tous · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** S · **Statut :** Fait
 
 ### F3 — Contrôle automatique des liens externes cités
 Les `A-VERIFIER.md` citent de nombreux sites de référence (Eduscol, BnF,

@@ -342,6 +342,13 @@ Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur
 
 ---
 
+### Journal des versions
+
+Chaque jeu a son **`CHANGELOG.md`** (journal durable et publié des évolutions, du plus récent au plus ancien).
+Avant de publier : **Invite de commandes** → `E:` → `cd "\IDRISS\PROJET ESCAPE GAMES"` →
+`python outils-docs\maj-journaux.py` (ajoute les nouveaux commits en tête de chaque journal) → `git add */CHANGELOG.md`.
+On peut compléter un journal à la main : le texte existant n'est jamais réécrit.
+
 ## 5. En cas de problème
 
 **Toutes les questions fréquentes, pour tous les jeux, avec recherche :** [faq.html](https://idgir.github.io/escape-games-cm1-cm2/faq.html) (lien sur l'accueil). Le tableau ci-dessous en reprend l'essentiel.
