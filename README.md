@@ -293,6 +293,7 @@ Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur
 | `lancer.bat` affiche « Python n'est pas installé » | Installez Python en cochant « Add Python to PATH », ou jouez en ligne. |
 | Le tableau de bord n'affiche aucune équipe | Il ne fonctionne qu'en mode local, avec les élèves sur l'adresse affichée par `lancer.bat`. |
 | Page blanche ou jeu figé | Chrome ou Edge à jour ; rechargez la page. |
+| Un élève dyslexique ou lecteur fragile | ⚙️ Réglages → Accessibilité → **📖 Lecture facilitée** : police OpenDyslexic ou très lisible, interlignage aéré, espacement. Réglé une fois, valable pour tous les jeux sur cet appareil. |
 | Effacer la progression d'une équipe | Bouton « Rejouer » en fin de partie (Mission géo : ⚙️ → Progression → « Repartir de zéro »). |
 
 Les erreurs « 404 » visibles dans la console du navigateur (F12) sont normales :

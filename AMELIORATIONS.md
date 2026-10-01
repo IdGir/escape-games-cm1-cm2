@@ -222,7 +222,7 @@ d'inactivité ou un nombre d'essais, pour s'adapter au rythme réel de chaque
 En complément des réglages d'accessibilité déjà présents (texte jusqu'à
 150 %, animations réduites) : une police adaptée en option (type
 OpenDyslexic) et un interlignage augmenté.
-**Jeux concernés :** tous · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** S · **Statut :** Fait
 
 ### E5 — Lecture à voix haute des consignes d'énigmes
 La synthèse vocale existe déjà pour les dialogues des personnages ; l'étendre
