@@ -1,4 +1,4 @@
-﻿# Credits des photographies - Le Manuscrit de l'abbaye
+# Credits des photographies - Le Manuscrit de l'abbaye
 
 Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres) ; quelques photos generiques d'illustration viennent de Pixabay
 (Pixabay Content License, https://pixabay.com) ; documents anciens du domaine public : Gallica, BnF. Les videos animees a partir d'une photo
@@ -15,3 +15,7 @@ personnages entierement fictifs.
 | `assets/images/decors/salle3.jpg` | Abbaye de Fontenay, salle des moines | [File:Abbaye de Fontenay - 15.jpg](https://commons.wikimedia.org/wiki/File:Abbaye_de_Fontenay_-_15.jpg) | Benjamin Smith | CC BY-SA 4.0 |
 | `assets/images/decors/salle4.jpg` | Hotel-Dieu de Beaune, grande salle des povres | [File:Beaune hospice lits ass 2.jpg](https://commons.wikimedia.org/wiki/File:Beaune_hospice_lits_ass_2.jpg) | Velvet | CC BY-SA 3.0 |
 | `assets/images/decors/salle5.jpg` | Basilique de Vezelay, nef romane et choeur gothique | [File:Vézelay - Basilique Sainte-Marie-Madeleine - Narthex - 03.jpg](https://commons.wikimedia.org/wiki/File:V%C3%A9zelay_-_Basilique_Sainte-Marie-Madeleine_-_Narthex_-_03.jpg) | Benjamin Smith | CC BY-SA 4.0 |
+
+## Affiche du jeu
+
+`assets/images/affiche.jpg` : composée par `outils-medias/affiches.py` à partir de `assets/images/decors/intro.jpg` (illustration créée avec Agnes AI, scène et personnages fictifs).

@@ -216,6 +216,13 @@
       "cible": "assets/images/s12-intro.jpg",
       "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Scene: a French open-air market in the morning, stalls being set up with fruit and vegetables, no readable signs.",
       "taille": "1344x768"
+    },
+    {
+      "cle": "affiche-fond",
+      "nom": "Affiche du jeu : fond sans texte (B4)",
+      "cible": "assets/images/affiche-fond.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game poster, 16:9 composition, natural light, rich detail, inviting and mysterious atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Keep the left third of the image calm and slightly darker, to leave room for a title. Scene: a vintage leather suitcase lying on a large map of France, with a compass, a magnifying glass, a notebook and travel stamps, warm light.",
+      "taille": "1344x768"
     }
   ],
   "videos": [
@@ -477,6 +484,15 @@
       "cible": "assets/videos/s12-intro.mp4",
       "depuis": "cine-s12-intro",
       "prompt": "Slow pan along the market stalls, awnings moving in the breeze. Photorealistic, cinematic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
+    },
+    {
+      "cle": "bande-annonce-ouverture",
+      "nom": "Bande-annonce : plan d'ouverture (B2)",
+      "cible": "assets/videos/bande-annonce-ouverture.mp4",
+      "depuis": "affiche-fond",
+      "prompt": "Slow cinematic push-in towards the scene, subtle motion of light and dust, nothing new appears, photorealistic, calm. No text appears.",
       "largeur": 1152,
       "hauteur": 768
     }

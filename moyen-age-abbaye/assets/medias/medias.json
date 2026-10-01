@@ -115,6 +115,13 @@
       "cible": "assets/images/personnages/garin.png",
       "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a 12-year-old boy apprentice stonemason of the 12th century, rough linen tunic, leather apron, light stone dust on his hands and hair, holding a small chisel.",
       "taille": "768x1024"
+    },
+    {
+      "cle": "affiche-fond",
+      "nom": "Affiche du jeu : fond sans texte (B4)",
+      "cible": "assets/images/affiche-fond.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game poster, 16:9 composition, natural light, rich detail, inviting and mysterious atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Keep the left third of the image calm and slightly darker, to leave room for a title. Scene: a candle-lit medieval scriptorium in a Romanesque abbey, an open illuminated manuscript with a few missing pages on a wooden desk, quills and ink pots, stone arches, soft morning light.",
+      "taille": "1344x768"
     }
   ],
   "videos": [
@@ -252,6 +259,15 @@
       "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
       "largeur": 768,
       "hauteur": 1152
+    },
+    {
+      "cle": "bande-annonce-ouverture",
+      "nom": "Bande-annonce : plan d'ouverture (B2)",
+      "cible": "assets/videos/bande-annonce-ouverture.mp4",
+      "depuis": "affiche-fond",
+      "prompt": "Slow cinematic push-in towards the scene, subtle motion of light and dust, nothing new appears, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
     }
   ]
 }

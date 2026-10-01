@@ -243,6 +243,26 @@ le `README.md` du dossier `assets/` de chaque jeu.
 
 ---
 
+## 3 bis. Affiches et bandes-annonces
+
+Chaque jeu a une **affiche 16:9** (`<jeu>/assets/images/affiche.jpg`, 1600 × 900) : sur les cartes de l'accueil, et
+téléchargeable (lien « 🖼️ Affiche ») pour l'ENT, un message aux familles ou un diaporama. Elle est composée par
+`outils-medias/affiches.py` à partir d'une illustration du jeu ; pour une illustration dédiée générée avec Agnes, voir
+le pas-à-pas ci-dessous (entrée `affiche-fond` des manifestes `medias.json`).
+
+**Outil : PowerShell** (touche Windows, taper `powershell`, Entrée), Python et Pillow installés (`pip install pillow`) :
+
+```
+cd "E:\IDRISS\PROJET ESCAPE GAMES"
+powershell -ExecutionPolicy Bypass -File outils-medias\produire-medias.ps1 -Jeu melanges
+python outils-medias\affiches.py melanges
+```
+
+1. La première commande génère avec Agnes ce qui manque, dont `assets/images/affiche-fond.jpg` (et le plan d'ouverture
+   de la bande-annonce) ; les fichiers déjà présents ne sont jamais refaits (pas de dépense inutile).
+2. La seconde recompose l'affiche avec ce fond. Recommencer pour chaque jeu (ou sans nom de jeu pour les 9 affiches).
+3. Vérifier l'affiche, puis publier (`git add`, `git commit`, `git push`).
+
 ## 4. Organisation du dépôt
 
 ```

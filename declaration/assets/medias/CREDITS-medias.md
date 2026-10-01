@@ -1,4 +1,4 @@
-﻿# Credits des photographies - Le Secret de la Declaration
+# Credits des photographies - Le Secret de la Declaration
 
 Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres). Les videos animees a partir d'une photo
 sous licence CC BY-SA heritent de cette licence. Personnages et scenes generiques : images creees avec Agnes AI,
@@ -13,3 +13,7 @@ personnages entierement fictifs.
 | `assets/images/documents/bastille.jpg` | La prise de la Bastille | [File:Mort de M. de Pelleport qui s'interposait pour sauver M. de Losme, officier de la Bastille, devant l'Hôtel de Ville, le, P490.jpg](https://commons.wikimedia.org/wiki/File:Mort_de_M._de_Pelleport_qui_s%27interposait_pour_sauver_M._de_Losme,_officier_de_la_Bastille,_devant_l%27H%C3%B4tel_de_Ville,_le,_P490.jpg) | Thévenin, Charles (dit Carle) (Paris, 12–07–1764 - Paris, 28–02–1838), peintre | CC0 |
 | `assets/images/documents/declaration.jpg` | Declaration des droits de l'homme et du citoyen (Le Barbier) | [File:Jean-Jacques Le Barbier - Déclaration des droits de l'homme et du citoyen - P708 - Musée Carnavalet.jpg](https://commons.wikimedia.org/wiki/File:Jean-Jacques_Le_Barbier_-_D%C3%A9claration_des_droits_de_l%27homme_et_du_citoyen_-_P708_-_Mus%C3%A9e_Carnavalet.jpg) | Jean-Jacques-François Le Barbier | Public domain |
 | `assets/images/documents/etats-generaux.jpg` | Le Serment du Jeu de paume (J.-L. David) | [File:Jacques Louis David - Le serment du Jeu de Paume - Google Art Project.jpg](https://commons.wikimedia.org/wiki/File:Jacques_Louis_David_-_Le_serment_du_Jeu_de_Paume_-_Google_Art_Project.jpg) | Jacques-Louis David | Public domain |
+
+## Affiche du jeu
+
+`assets/images/affiche.jpg` : composée par `outils-medias/affiches.py` à partir de `assets/images/decors/intro.jpg` (illustration créée avec Agnes AI, scène et personnages fictifs).

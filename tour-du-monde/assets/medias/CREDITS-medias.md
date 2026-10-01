@@ -1,4 +1,4 @@
-﻿# Credits des photographies - Le Tour du Monde en 80 minutes
+# Credits des photographies - Le Tour du Monde en 80 minutes
 
 Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres). Les videos animees a partir d'une photo
 sous licence CC BY-SA heritent de cette licence. Personnages et scenes generiques : images creees avec Agnes AI,
@@ -17,3 +17,7 @@ personnages entierement fictifs.
 | `assets/images/decors/etape3.jpg` | Foret de l'Inde centrale (Kanha) | [File:Kanha Forest, India...JPG](https://commons.wikimedia.org/wiki/File:Kanha_Forest,_India...JPG) | Aditya thaokar | CC BY-SA 3.0 |
 | `assets/images/decors/etape4.jpg` | Mer de Chine meridionale | [File:USS Charleston (LCS-18) South China Sea 5 February 2023.png](https://commons.wikimedia.org/wiki/File:USS_Charleston_(LCS-18)_South_China_Sea_5_February_2023.png) | Anonymous United States Navy photographer | Public domain |
 | `assets/images/decors/etape5.jpg` | Observatoire royal de Greenwich | [File:View of the Royal Observatory Greenwich from One Tree Hill in Greenwich Park, London, 20260719 0940 4508.jpg](https://commons.wikimedia.org/wiki/File:View_of_the_Royal_Observatory_Greenwich_from_One_Tree_Hill_in_Greenwich_Park,_London,_20260719_0940_4508.jpg) | Jakub Hałun | CC BY 4.0 |
+
+## Affiche du jeu
+
+`assets/images/affiche.jpg` : composée par `outils-medias/affiches.py` à partir de `assets/images/decors/intro.jpg` (illustration créée avec Agnes AI, scène et personnages fictifs).

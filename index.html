@@ -19,6 +19,11 @@
   .jeu{background:var(--papier);border:1px solid var(--ligne);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
   .jeu .bandeau{padding:22px 22px 16px;color:#fff}
   .jeu .bandeau .icone{font-size:2.4rem;line-height:1}
+  .jeu .bandeau{position:relative;aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:flex-end}
+  .jeu .bandeau .affiche{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .jeu .bandeau:has(.affiche) .icone,.jeu .bandeau:has(.affiche) h2,.jeu .bandeau:has(.affiche) .meta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .jeu .telecharger-affiche{font-size:.85rem}
+
   .jeu h2{margin:8px 0 2px;font-size:1.3rem}
   .jeu .meta{font-size:.88rem;opacity:.9}
   .jeu .corps{padding:16px 22px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
@@ -71,6 +76,7 @@
 <main>
   <article class="jeu declaration">
     <div class="bandeau">
+      <img class="affiche" src="declaration/assets/images/affiche.jpg" alt="Affiche : Le Secret de la Déclaration" loading="lazy" onerror="this.remove()">
       <div class="icone">🏛️</div>
       <h2>Le Secret de la Déclaration</h2>
       <div class="meta">Histoire · Révolution française · 45 à 60 min · 5 salles</div>
@@ -79,6 +85,7 @@
       <p>Paris, août 1789 : un article secret de la Déclaration des droits de l'homme a été volé. Quatre fragments à retrouver.</p>
       <a class="jouer" href="declaration/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="declaration/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="declaration/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/declaration#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -87,6 +94,7 @@
 
   <article class="jeu tour">
     <div class="bandeau">
+      <img class="affiche" src="tour-du-monde/assets/images/affiche.jpg" alt="Affiche : Le Tour du Monde en 80 minutes" loading="lazy" onerror="this.remove()">
       <div class="icone">🧭</div>
       <h2>Le Tour du Monde en 80 minutes</h2>
       <div class="meta">Géographie · d'après Jules Verne · 5 escales</div>
@@ -95,6 +103,7 @@
       <p>Le carnet de route de Phileas Fogg a disparu. Cinq escales, cinq énigmes de géographie, et le mystère du 80ᵉ jour.</p>
       <a class="jouer" href="tour-du-monde/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="tour-du-monde/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="tour-du-monde/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/tour-du-monde#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -103,6 +112,7 @@
 
   <article class="jeu mission">
     <div class="bandeau">
+      <img class="affiche" src="mission-geo/assets/images/affiche.jpg" alt="Affiche : Mission géographique — Année A" loading="lazy" onerror="this.remove()">
       <div class="icone">🗺️</div>
       <h2>Mission géographique — Année A</h2>
       <div class="meta">Géographie · toute l'année · 16 séances</div>
@@ -111,6 +121,7 @@
       <p>Une valise volée, seize séances pour réunir les indices, une piste finale en Corse et une récompense mystère.</p>
       <a class="jouer" href="mission-geo/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="mission-geo/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/mission-geo#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
     </div>
@@ -118,6 +129,7 @@
 
   <article class="jeu constitution">
     <div class="bandeau">
+      <img class="affiche" src="constitution/assets/images/affiche.jpg" alt="Affiche : Le Sceau de la République" loading="lazy" onerror="this.remove()">
       <div class="icone">⚖️</div>
       <h2>Le Sceau de la République</h2>
       <div class="meta">EMC · la Constitution de 1958 · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
@@ -126,14 +138,16 @@
       <p>Au Palais-Royal, un coffre scellé le 4 octobre 1958 porte cinq serrures. Cinq mots à trouver, de la cour du Conseil constitutionnel à l'hémicycle. Suite directe du <i>Secret de la Déclaration</i>.</p>
       <a class="jouer" href="constitution/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="constitution/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="constitution/prof.html" hidden>👨‍🏫 Tableau de bord</a>
-        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/main/constitution#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/constitution#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
     </div>
   </article>
 
   <article class="jeu abbaye">
     <div class="bandeau">
+      <img class="affiche" src="moyen-age-abbaye/assets/images/affiche.jpg" alt="Affiche : Le Manuscrit de l'abbaye" loading="lazy" onerror="this.remove()">
       <div class="icone">📜</div>
       <h2>Le Manuscrit de l'abbaye</h2>
       <div class="meta">Histoire · le Moyen Âge · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
@@ -142,6 +156,7 @@
       <p>La veille de la visite de l'évêque, cinq pages d'un manuscrit enluminé ont disparu. De Clovis aux cathédrales gothiques, les apprentis copistes les refont une à une.</p>
       <a class="jouer" href="moyen-age-abbaye/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="moyen-age-abbaye/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="moyen-age-abbaye/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/moyen-age-abbaye#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -150,6 +165,7 @@
 
   <article class="jeu meteo">
     <div class="bandeau">
+      <img class="affiche" src="station-meteo/assets/images/affiche.jpg" alt="Affiche : La Station météo disparue" loading="lazy" onerror="this.remove()">
       <div class="icone">🌦️</div>
       <h2>La Station météo disparue</h2>
       <div class="meta">Sciences · mesures météorologiques · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
@@ -158,6 +174,7 @@
       <p>Un orage a déréglé la station météo de l'école. Thermomètre, girouette, anémomètre, pluviomètre, tableau de relevés : cinq modules à remettre en service pour lancer le bulletin avant la sortie.</p>
       <a class="jouer" href="station-meteo/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="station-meteo/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="station-meteo/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/station-meteo#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -165,6 +182,7 @@
   </article>
   <article class="jeu melanges">
     <div class="bandeau">
+      <img class="affiche" src="melanges/assets/images/affiche.jpg" alt="Affiche : Le Laboratoire de Madame Mélange" loading="lazy" onerror="this.remove()">
       <div class="icone">⚗️</div>
       <h2>Le Laboratoire de Madame Mélange</h2>
       <div class="meta">Sciences · masses, mélanges et séparation · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
@@ -173,6 +191,7 @@
       <p>L'apprentie de Madame Mélange a renversé toutes les fioles. Peser, observer, trier, filtrer, évaporer : cinq opérations à retrouver pour compléter le testament de la chimiste.</p>
       <a class="jouer" href="melanges/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="melanges/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="melanges/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/melanges#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -180,6 +199,7 @@
   </article>
   <article class="jeu objets">
     <div class="bandeau">
+      <img class="affiche" src="objets-techniques/assets/images/affiche.jpg" alt="Affiche : L'Atelier de l'inventeur" loading="lazy" onerror="this.remove()">
       <div class="icone">⚙️</div>
       <h2>L'Atelier de l'inventeur</h2>
       <div class="meta">Sciences · les objets techniques · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
@@ -188,6 +208,7 @@
       <p>L'inventrice est partie en voyage en laissant cinq machines démontées. Besoin, fonction, matériau, énergie, notice : cinq mots pour ouvrir son coffre-fort.</p>
       <a class="jouer" href="objets-techniques/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="objets-techniques/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="objets-techniques/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/objets-techniques#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -195,6 +216,7 @@
   </article>
   <article class="jeu chateau">
     <div class="bandeau">
+      <img class="affiche" src="chateau-fort/assets/images/affiche.jpg" alt="Affiche : Le Secret du donjon" loading="lazy" onerror="this.remove()">
       <div class="icone">🏰</div>
       <h2>Le Secret du donjon</h2>
       <div class="meta">Histoire · le château fort et les paysans au Moyen Âge · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
@@ -203,6 +225,7 @@
       <p>Le seigneur est parti rejoindre le roi. Pages et jeunes paysans parcourent le château et le village pour retrouver les cinq clés de la seigneurie et relever la herse avant l'arrivée du messager du roi.</p>
       <a class="jouer" href="chateau-fort/">▶ Jouer</a>
       <div class="liens">
+        <a class="telecharger-affiche" href="chateau-fort/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
         <a class="prof" href="chateau-fort/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/chateau-fort#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>

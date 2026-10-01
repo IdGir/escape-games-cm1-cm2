@@ -108,6 +108,13 @@
       "prompt": "Warm realistic illustration for a French primary school game: a sunny street in a French town, a public primary school building with a tricolour flag on its façade, children with backpacks walking to the entrance, a doctor's surgery and a recycling point visible along the street, everyday peaceful scene, soft daylight. Faces are generic and fictional. No text, no lettering, no signage, no watermark.",
       "taille": "1344x768",
       "type": "illustration"
+    },
+    {
+      "cle": "affiche-fond",
+      "nom": "Affiche du jeu : fond sans texte (B4)",
+      "cible": "assets/images/affiche-fond.jpg",
+      "prompt": "Photorealistic cinematic wide shot for a children's educational game poster, 16:9 composition, natural light, rich detail, inviting and mysterious atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no watermark. Keep the left third of the image calm and slightly darker, to leave room for a title. Scene: an old sealed wooden chest with five different locks on a table in a classical French palace hall with tall windows, a tricolor ribbon, soft daylight.",
+      "taille": "1344x768"
     }
   ],
   "videos": [
@@ -221,6 +228,15 @@
       "hauteur": 768,
       "images": 121,
       "fps": 24
+    },
+    {
+      "cle": "bande-annonce-ouverture",
+      "nom": "Bande-annonce : plan d'ouverture (B2)",
+      "cible": "assets/videos/bande-annonce-ouverture.mp4",
+      "depuis": "affiche-fond",
+      "prompt": "Slow cinematic push-in towards the scene, subtle motion of light and dust, nothing new appears, photorealistic, calm. No text appears.",
+      "largeur": 1152,
+      "hauteur": 768
     }
   ]
 }

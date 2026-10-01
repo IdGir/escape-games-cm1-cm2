@@ -99,7 +99,7 @@ couleur, jeux à venir en grisé, positionnés sur le calendrier scolaire.
 Remplacer ou compléter les vignettes actuelles (dégradé de couleur + icône
 emoji) par une vraie affiche par jeu, réutilisable aussi pour les partages
 hors du site (ENT, messages aux familles).
-**Jeux concernés :** tous · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** S · **Statut :** Fait
 
 ### B5 — Sous-titres systématiques sur les vidéos de décor
 Le moteur charge déjà automatiquement un fichier `.vtt` du même nom qu'une
