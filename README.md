@@ -35,6 +35,14 @@ fois pour toutes.
   Pour arriver directement dans un jeu, mettez son adresse en favori
   (par exemple `…/declaration/`).
 
+### 🏠 À la maison — mode individuel (devoirs)
+
+Donnez aux élèves l'adresse d'un jeu suivie de `?solo=1`, par exemple
+`https://idgir.github.io/escape-games-cm1-cm2/melanges/?solo=1` (ou `?solo=1&niveau=CM1`). L'élève joue seul,
+avec son prénom ; à la fin, il **copie son compte-rendu** dans un message de l'ENT, le **télécharge** (fichier
+à déposer) ou l'**imprime**. Le compte-rendu porte un code de contrôle ; rassemblez-les dans
+[resultats.html](resultats.html) (export tableur et Schooly).
+
 ### Sur l'ordinateur — sans internet, ou pour vérifier avant de publier
 
 1. Installez **Python 3** (une seule fois : https://www.python.org/downloads/,

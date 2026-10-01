@@ -163,7 +163,7 @@ Ajouter un écran « classement » dédié, projetable au TBI pendant la partie.
 ### D2 — Mode individuel (devoirs à la maison)
 Le jeu est pensé pour des équipes de 3-4 ; un mode solo, avec compte-rendu
 envoyé à l'enseignant, permettrait un usage en dehors de la classe.
-**Jeux concernés :** tous · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** L · **Statut :** Fait
 
 ### D3 — Banque de questions randomisée
 Piocher aléatoirement parmi plusieurs variantes d'une même énigme pour

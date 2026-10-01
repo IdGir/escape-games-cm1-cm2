@@ -33,6 +33,8 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 8 jeux « salles » |
 | `js/jeu-suivant.js` | C4 — « Et ensuite ? » à l'écran de fin : suite directe (Déclaration → Constitution) ou jeu précédent/suivant de la progression | les 8 jeux « salles » |
 | `js/variantes.js` | D3 — banque d'énigmes : une énigme peut avoir des `variantes` dans `enigmes.json` ; la série jouée change à chaque année scolaire (ou se choisit dans ⚙️) | les 6 jeux à moteur commun |
+| `js/compte-rendu.js` | compte-rendu d'une partie (score, énigmes, erreurs, indices, temps, code de contrôle) ; historique des parties de l'appareil (pour `resultats.html`) | les 8 jeux « salles » |
+| `js/mode-solo.js` | D2 — « 🏠 Je joue seul » (`?solo=1`) : prénom, pas de synchronisation, compte-rendu à copier, télécharger ou imprimer pour l'enseignant | les 8 jeux « salles » |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres

@@ -214,6 +214,36 @@ SECTIONS.D3 = async () => {
   ok(c.w.VARIANTES_APPLIQUEES && c.w.VARIANTES_APPLIQUEES.nb === 0 && c.erreurs.length === 0, "chateau-fort (sans variante) : inchangé");
 };
 
+/* ---- D2 : mode individuel et compte-rendu ---- */
+SECTIONS.D2 = async () => {
+  console.log("\n== D2 : mode individuel (devoirs à la maison) ==");
+  for (const j of ["objets-techniques", "declaration"]) {
+    const { w, erreurs } = await charger(J(j), "?solo=1", { attente: 800 });
+    const d = w.document;
+    ok(d.getElementById("mode-solo") && d.getElementById("mode-solo").checked, `${j} : ?solo=1 coche « Je joue seul »`);
+    ok(/prénom/i.test(d.getElementById("input-equipe").placeholder), `${j} : on demande le prénom`);
+    w.ETAT.reglages.cinematiques = false;
+    const inp = d.getElementById("input-equipe"); inp.value = "Léa B."; inp.dispatchEvent(new w.Event("input"));
+    d.querySelector('.opt-niveau[data-niveau="CM1"]').click();
+    let sync = 0; w.fetch = (f => async (u, o) => { if (/\/api\//.test(String(u))) sync++; return f(u, o); })(w.fetch);
+    d.getElementById("btn-demarrer").click(); await dodo(400);
+    ok(w.ETAT.solo === true && sync === 0, `${j} : partie individuelle, aucune synchronisation (${sync} appel)`);
+    // fin de partie simulée
+    w.ETAT.score = 77; w.ETAT.enigmesPremierCoup = 4; w.ETAT.erreursTotal = 2; w.ETAT.tempsParSalle = { 1: 360000, 2: 420000 }; w.ETAT.msEcoules = 1500000;
+    w.finDuJeu(); await dodo(100);
+    const cr = d.getElementById("cr-texte");
+    ok(!!cr && /Léa B\./.test(cr.textContent) && /mode individuel/.test(cr.textContent) && /Score : 77/.test(cr.textContent) && /Code de contrôle : [0-9A-F]{4}-[0-9A-F]{4}/.test(cr.textContent), `${j} : compte-rendu affiché`);
+    const obj = w.COMPTE_RENDU.construire();
+    ok(w.COMPTE_RENDU.verifier(obj), `${j} : code de contrôle valide`);
+    obj.score = 999;
+    ok(!w.COMPTE_RENDU.verifier(obj), `${j} : un score modifié à la main est repéré`);
+    ok(w.COMPTE_RENDU.historique().some(x => x.eleve === "Léa B." && x.mode === "solo"), `${j} : partie gardée dans l'historique de l'appareil`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  const eq = await charger(J("melanges"), "?salle=6&niveau=CM2", { attente: 600 });
+  ok(!eq.w.document.getElementById("compte-rendu"), "en équipe : pas de compte-rendu élève à l'écran de fin");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
