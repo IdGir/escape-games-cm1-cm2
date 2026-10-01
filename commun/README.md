@@ -28,6 +28,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 |---|---|---|
 | `js/transitions.js` | B6 — fondu entre écrans, « rideau » à l'entrée d'une salle (désactivé par « animations réduites ») | les 8 + Mission géographique |
 | `js/accessibilite.js` + `polices/` | E4 — lecture facilitée : police très lisible ou OpenDyslexic, interlignage, espacement (⚙️ Réglages → Accessibilité ; gardé sur l'appareil pour tous les jeux) | les 9 |
+| `js/palier-decouverte.js` | E2 — troisième palier « Découverte » (énigmes CM1 + aide renforcée) | les 8 jeux « salles » |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres

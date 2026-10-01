@@ -58,6 +58,55 @@ SECTIONS.E4 = async () => {
   ok(w.document.body.classList.contains("police-lisible") && w.document.body.classList.contains("interligne-aere"), "chateau-fort : préférence d'un autre jeu appliquée dès l'ouverture");
 };
 
+/* ---- E2 : palier « Découverte » ---- */
+SECTIONS.E2 = async () => {
+  console.log("\n== E2 : palier Découverte ==");
+  for (const j of ["melanges", "constitution"]) {
+    // depuis l'accueil
+    const a = await charger(J(j));
+    const d = a.w.document;
+    const opt = d.querySelector('.opt-niveau[data-palier="decouverte"]');
+    ok(!!opt, `${j} : troisième choix « Découverte » à l'accueil`);
+    opt.click(); await dodo(20);
+    ok(a.w.ETAT.niveau === "CM1" && a.w.ETAT.palier === "decouverte", `${j} : Découverte = énigmes du CM1 + palier`);
+    ok(/Découverte/.test(d.getElementById("apercu-niveau").textContent), `${j} : aperçu « Palier Découverte »`);
+    a.w.ETAT.reglages.cinematiques = false;
+    const inp = d.getElementById("input-equipe"); inp.value = "Les Pousses"; inp.dispatchEvent(new a.w.Event("input"));
+    d.getElementById("btn-demarrer").click(); await dodo(300);
+    ok(a.w.ETAT.palier === "decouverte" && a.w.salleEnigmes(1).length === 3, `${j} : partie lancée au palier Découverte, 3 énigmes en salle 1`);
+    const e = a.w.salleEnigmes(1)[0];
+    ok(!!d.querySelector(`#enigme-${e.id} .feedback.indice`), `${j} : premier indice affiché d'emblée`);
+    ok(a.w.ETAT.score === 0 && a.w.ETAT.indicesTotal === 0, `${j} : indice offert, aucun point retiré (score ${a.w.ETAT.score})`);
+    ok(a.erreurs.length === 0, `${j} : erreurs JS : ` + a.erreurs.join(" | "));
+    // un autre choix remet le palier à zéro
+    const b = await charger(J(j));
+    b.w.document.querySelector('.opt-niveau[data-palier="decouverte"]').click();
+    b.w.document.querySelector('.opt-niveau[data-niveau="CM2"]').click();
+    ok(!b.w.ETAT.palier && b.w.ETAT.niveau === "CM2", `${j} : revenir à CM2 annule le palier`);
+  }
+  // QCM : un choix faux écarté ; coffre : première lettre
+  const { w, erreurs } = await charger(J("melanges"), "?salle=5&niveau=CM1&palier=decouverte");
+  const qcm = [1,2,3,4,5].flatMap(n => w.salleEnigmes(n)).find(e => e.type === "qcm");
+  ok(w.ETAT.palier === "decouverte", "vérification &palier=decouverte");
+  w.afficherCoffre(() => {}); await dodo(20);
+  const c0 = w.document.getElementById("coffre-0");
+  ok(c0 && c0.value === "" && /^P /.test(c0.placeholder) && /5 lettres/.test(c0.placeholder), `coffre : première lettre et longueur (« ${c0 && c0.placeholder} »), champ vide`);
+  w.finDuJeu(); await dodo(50);
+  ok(!!w.document.querySelector("#fin-contenu .bandeau-palier"), "écran de fin : palier rappelé");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+  if (qcm) {
+    const sn = [1,2,3,4,5].find(n => w.salleEnigmes(n).includes(qcm)), k = w.salleEnigmes(sn).indexOf(qcm) + 1;
+    const q = await charger(J("melanges"), `?salle=${sn}&niveau=CM1&palier=decouverte&enigme=${k}`);
+    const n3 = (q.w.donneesNiveau(qcm).questions || []).filter(x => x.options.length >= 3).length;
+    ok(q.w.document.querySelectorAll(`#enigme-${qcm.id} .qcm-option.ecartee`).length === n3, `QCM ${qcm.id} : ${n3} choix faux écarté(s)`);
+    ok(![...q.w.document.querySelectorAll(`#enigme-${qcm.id} .qcm-option.ecartee`)].some(o => +o.dataset.j === q.w.donneesNiveau(qcm).questions[+o.closest(".qcm-question").dataset.i].bonne), "aucune bonne réponse écartée");
+  }
+  // moteur propre : indice offert
+  const dcl = await charger(J("declaration"), "?salle=2&niveau=CM1&palier=decouverte", { attente: 800 });
+  ok(!!dcl.w.document.querySelector(".zone-enigme .feedback.indice") && dcl.w.ETAT.score === 0 && dcl.w.ETAT.indicesUtilises === 0, "declaration : premier indice offert, sans malus");
+  ok(dcl.erreurs.length === 0, "declaration : erreurs JS : " + dcl.erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

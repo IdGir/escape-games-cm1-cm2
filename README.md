@@ -128,6 +128,11 @@ leçons** plutôt que de cliquer au hasard :
   retapent dans le **coffre final**.
 - Les **lettres cachées** sont mélangées et accompagnées de leurres.
 
+**Trois paliers** dans les 8 jeux « salles » : **CM1**, **CM2** et **🌱 Découverte** (classes à triple niveau,
+élèves en difficulté) : les énigmes du CM1 avec une aide renforcée — premier indice offert sans perte de
+points, un choix faux écarté dans les QCM, leçon mise en évidence, première lettre des mots au coffre.
+Vérification : ajouter `&palier=decouverte` à une adresse en `niveau=CM1`.
+
 Scores maximaux : 185 (CM1) / 235 (CM2) pour les jeux à 5 salles (195 / 245 pour l'abbaye, avec le
 fermoir), 95 pour la Déclaration et le Tour du monde ; Mission géographique : 10 points par énigme.
 Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 9 jeux :

@@ -209,7 +209,7 @@ le statut de A2 seulement.
 Au-delà de CM1/CM2 : un palier « découverte », avec assistance renforcée,
 pour les classes à triple niveau ou les élèves très en difficulté — en
 réutilisant le mécanisme de bascule de niveau déjà en place.
-**Jeux concernés :** tous · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** L · **Statut :** Fait
 
 ### E3 — Indices adaptatifs selon le rythme de l'équipe
 Aujourd'hui : 3 indices par énigme, sur demande, coûtant 2 points, quel que
