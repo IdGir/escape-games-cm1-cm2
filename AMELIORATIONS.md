@@ -142,7 +142,7 @@ Le lien entre `declaration` et `constitution` (« suite directe ») n'existe
 aujourd'hui qu'en texte dans les README. L'afficher directement à l'écran de
 fin de partie, et le généraliser aux futurs jeux qui se suivent dans la
 progression.
-**Jeux concernés :** declaration, constitution (puis futurs jeux liés) · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** declaration, constitution (puis futurs jeux liés) · **Effort :** S · **Statut :** Fait
 
 ### C5 — Fiche one-page imprimable par période
 Une fiche de synthèse par période (P1 à P5) destinée à la communication

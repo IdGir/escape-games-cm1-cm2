@@ -164,6 +164,21 @@ SECTIONS.E6 = async () => {
   for (const j of JEUX8) ok(fs.readFileSync(J(j) + "/prof.html", "utf8").includes("','delai')"), `${j} : bouton ⏱️ + dans prof.html`);
 };
 
+/* ---- C4 : jeu précédent / suivant ---- */
+SECTIONS.C4 = async () => {
+  console.log("\n== C4 : jeu précédent / suivant en fin de partie ==");
+  const cas = { declaration: ["suite", "constitution"], constitution: ["precedent", "declaration"], "station-meteo": ["suite", "objets-techniques"], melanges: ["precedent", "chateau-fort"] };
+  for (const [j, [sens, cible]] of Object.entries(cas)) {
+    const { w, erreurs } = await charger(J(j), "?salle=6&niveau=CM2", { attente: 800 });
+    await dodo(200);
+    const a = w.document.querySelector(`#fin-contenu .encart-suite .lien-jeu-${sens}`);
+    ok(!!a && a.getAttribute("href") === `../${cible}/`, `${j} : lien « ${sens} » vers ${cible} (${a ? a.getAttribute("href") : "—"})`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  const t = await charger(J("tour-du-monde"), "?salle=6&niveau=CM2", { attente: 800 });
+  ok(!t.w.document.querySelector(".encart-suite"), "tour-du-monde (jeu libre, hors progression) : pas d'encart");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

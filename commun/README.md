@@ -31,10 +31,17 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/palier-decouverte.js` | E2 — troisième palier « Découverte » (énigmes CM1 + aide renforcée) | les 8 jeux « salles » |
 | `js/indices-adaptatifs.js` | E3 — un indice est proposé (jamais imposé) après un temps sans action ou 2 essais faux ; réglable dans ⚙️ | les 8 jeux « salles » |
 | `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 8 jeux « salles » |
+| `js/jeu-suivant.js` | C4 — « Et ensuite ? » à l'écran de fin : suite directe (Déclaration → Constitution) ou jeu précédent/suivant de la progression | les 8 jeux « salles » |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres
 (énigme unique par salle) ; `mission-geo` a son propre moteur (16 séances).
+
+### Données communes
+
+| Fichier | Contenu |
+|---|---|
+| `donnees/catalogue.js` | les 26 jeux de la progression et les 4 jeux hors liste : matière, année A/B, période, points du programme, dossier publié, liens « suite directe ». Source : `prompts-opus/00-ORDRE-DE-PRODUCTION.md`. **Un jeu publié : renseigner son `dossier`.** |
 
 ## Ce qui reste dans chaque jeu
 

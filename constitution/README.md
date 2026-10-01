@@ -8,7 +8,7 @@
 > promulgation de la Constitution. Sur le couvercle : « Aux apprentis du 26 août 1789 ».
 > Le coffre porte **cinq serrures**, et chacune s'ouvre avec un mot.
 
-Ce jeu est la **suite directe** de *Le Secret de la Déclaration* : la Déclaration des droits de
+Ce jeu est la **suite directe** de *Le Secret de la Déclaration* (lien affiché à l'écran de fin des deux jeux) : la Déclaration des droits de
 l'homme et du citoyen que les élèves y ont sauvée fait aujourd'hui partie du **bloc de
 constitutionnalité**. Les deux jeux se jouent dans l'ordre, ou indépendamment l'un de l'autre.
 
