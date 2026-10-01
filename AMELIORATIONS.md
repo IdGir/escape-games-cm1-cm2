@@ -93,7 +93,7 @@ utilisable en amont en classe ou pour présenter le projet aux collègues/parent
 (26 jeux, périodes P1-P5, années A/B) mais c'est un fichier de travail interne,
 non public. En tirer une frise visuelle sur `index.html` : jeux disponibles en
 couleur, jeux à venir en grisé, positionnés sur le calendrier scolaire.
-**Jeux concernés :** page d'accueil · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** page d'accueil · **Effort :** M · **Statut :** Fait
 
 ### B4 — Affiche/miniature 16:9 par jeu
 Remplacer ou compléter les vignettes actuelles (dégradé de couleur + icône

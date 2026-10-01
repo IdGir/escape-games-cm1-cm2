@@ -52,6 +52,8 @@
   .bouton{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--encre);color:#fff;text-decoration:none;font-weight:600}
   .bouton.clair{background:#ecE9e2;color:var(--encre)}
   .boutons{display:flex;flex-wrap:wrap;gap:8px}
+  .bouton[aria-pressed="true"]{background:var(--encre);color:#fff}
+  button.bouton{border:none;cursor:pointer;font:inherit}
   [hidden]{display:none!important}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
@@ -207,6 +209,22 @@
   </article>
 </main>
 
+<section class="enseignant" id="annee">
+  <div class="boite" style="display:block">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between">
+      <h3>🗓️ Les escape games de l'année</h3>
+      <div class="boutons" role="group" aria-label="Année de la progression">
+        <button class="bouton clair choix-annee" data-annee="" aria-pressed="true" type="button">Années A et B</button>
+        <button class="bouton clair choix-annee" data-annee="A" aria-pressed="false" type="button">Année A</button>
+        <button class="bouton clair choix-annee" data-annee="B" aria-pressed="false" type="button">Année B</button>
+        <a class="bouton" href="annee.html">📅 Vue détaillée de l'année</a>
+      </div>
+    </div>
+    <p>26 jeux d'histoire et de sciences, du Moyen Âge au climat, sur le calendrier des cinq périodes. En couleur : déjà jouables.</p>
+    <div id="frise" style="margin-top:12px"></div>
+  </div>
+</section>
+
 <section class="enseignant" id="hors-ligne">
   <div class="boite">
     <div>
@@ -235,7 +253,25 @@
   </div>
 </section>
 
+<script src="commun/donnees/catalogue.js?c1"></script>
+<script src="commun/js/frise.js?c1"></script>
 <script src="commun/js/pwa.js?c1"></script>
+<script>
+  /* ---- Frise de l'année (B3) ---- */
+  (function(){
+    const el = document.getElementById("frise");
+    let annee = "";
+    try{ annee = localStorage.getItem("escape_annee_frise") || ""; }catch(e){}
+    const maj = () => {
+      FRISE.dessiner(el, { annee });
+      document.querySelectorAll(".choix-annee").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.annee === annee)));
+    };
+    document.querySelectorAll(".choix-annee").forEach(b => b.addEventListener("click", () => {
+      annee = b.dataset.annee; try{ localStorage.setItem("escape_annee_frise", annee); }catch(e){} maj();
+    }));
+    maj();
+  })();
+</script>
 <script>
   /* ---- Hors connexion (A4) : installation et état du service worker ---- */
   (function(){

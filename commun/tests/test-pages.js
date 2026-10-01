@@ -71,6 +71,22 @@ SECTIONS.D5 = async () => {
   ok(/resultats-classe\.jsonl/.test(fs.readFileSync(path.join(RACINE, ".gitignore"), "utf8")), "resultats-classe.jsonl jamais publié (.gitignore)");
 };
 
+SECTIONS.B3 = async () => {
+  console.log("\n== B3 : frise de l'année sur l'accueil ==");
+  const { w, erreurs } = await charger(RACINE, "", { page: "index.html", attente: 300 });
+  const d = w.document, C = w.eval("CATALOGUE");
+  const puces = d.querySelectorAll("#frise .frise-jeu");
+  ok(puces.length === C.jeux.length, `les ${C.jeux.length} jeux du catalogue sont sur la frise (${puces.length})`);
+  const liens = [...d.querySelectorAll("#frise a.frise-jeu")].map(a => a.getAttribute("href"));
+  ok(liens.length === C.jeux.filter(j => j.dossier).length && liens.every(h => require("fs").existsSync(require("path").join(RACINE, h, "index.html"))), `jeux disponibles en lien vers leur dossier (${liens.length})`);
+  ok(d.querySelectorAll("#frise .frise-jeu.avenir").length === C.jeux.filter(j => !j.dossier).length, "jeux à venir en grisé");
+  const a01 = d.querySelector('#frise [data-jeu="moyen-age-abbaye"]');
+  ok(a01 && a01.closest(".frise-case").dataset.periode === "P1 · Année A", "Le Manuscrit de l'abbaye : P1, Année A");
+  d.querySelector('.choix-annee[data-annee="B"]').click();
+  ok(!d.querySelector('#frise [data-jeu="moyen-age-abbaye"]') && !!d.querySelector('#frise [data-jeu="chateau-fort"]'), "filtre Année B");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
