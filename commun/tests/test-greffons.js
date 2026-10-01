@@ -142,6 +142,28 @@ SECTIONS.E3 = async () => {
   ok(!!off.w.document.getElementById("reglages-indices-adaptatifs"), "réglage « Indices proposés » dans ⚙️ Réglages");
 };
 
+/* ---- E6 : minuteur adaptatif par équipe ---- */
+SECTIONS.E6 = async () => {
+  console.log("\n== E6 : délai accordé à une équipe ==");
+  for (const j of ["melanges", "tour-du-monde"]) {
+    const { w, erreurs } = await charger(J(j), "?salle=2&niveau=CM2", { attente: 800 });
+    const debut = w.ETAT.salleDebut;
+    w.traiterCommande({ delaiMin: 3, id: 1 });
+    ok(w.ETAT.salleDebut === debut + 3 * 60000 && w.ETAT.delaiAccordeMin === 3, `${j} : 3 min accordées, chrono de salle décalé`);
+    w.traiterCommande({ delaiMin: 3, id: 1 });
+    ok(w.ETAT.delaiAccordeMin === 3, `${j} : la même commande n'est pas appliquée deux fois`);
+    w.traiterCommande({ delaiMin: 2, id: 2 });
+    ok(w.ETAT.delaiAccordeMin === 5 && /\+5 min/.test((w.document.getElementById("hud-delai") || {}).textContent || ""), `${j} : cumul affiché dans le bandeau (+5 min)`);
+    // la salle est bouclée « en 11 min » mais 5 min ont été accordées : bonus gardé
+    w.ETAT.salleDebut = Date.now() - 11 * 60000 + 5 * 60000; w.ETAT.indicesSalle = 0;
+    const s0 = w.ETAT.score; w.validerSalle(2); await dodo(50);
+    ok(w.ETAT.score > s0, `${j} : bonus de rapidité préservé (score ${s0} → ${w.ETAT.score})`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  const fs = require("fs");
+  for (const j of JEUX8) ok(fs.readFileSync(J(j) + "/prof.html", "utf8").includes("','delai')"), `${j} : bouton ⏱️ + dans prof.html`);
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

@@ -53,7 +53,9 @@ function envoyerEtat(){
     indicesTotal: ETAT.indicesTotal,
     msEcoules: ETAT.msEcoules,
     enPause: ETAT.enPause,
-    fini: ETAT.fini
+    fini: ETAT.fini,
+    palier: ETAT.palier || null,            // E2 : palier « decouverte »
+    delaiMin: ETAT.delaiAccordeMin || 0     // E6 : minutes accordées par l'enseignant
   };
   fetch("/api/etat", {
     method:"POST",
@@ -87,6 +89,9 @@ function traiterCommande(cmd){
   }
   if(cmd.message){
     toast("📣 " + cmd.message);
+  }
+  if(cmd.delaiMin && typeof accorderDelai === "function"){
+    accorderDelai(cmd.delaiMin);   // E6 : délai accordé à cette équipe (bonus préservé)
   }
 }
 

@@ -214,6 +214,12 @@ class Handler(BaseHTTPRequestHandler):
                     "msEcoules": data.get("msEcoules"),
                     "enPause": data.get("enPause", False),
                     "fini": data.get("fini", False),
+                    # Champs facultatifs envoyés par le tronc commun (commun/js/sync.js)
+                    "enigme": data.get("enigme"),
+                    "palier": data.get("palier"),
+                    "delaiMin": data.get("delaiMin", 0),
+                    "enigmesReussies": data.get("enigmesReussies"),
+                    "indicesTotal": data.get("indicesTotal"),
                     "timestamp": time.time()
                 }
                 # Récupérer d'éventuelles commandes prof en attente

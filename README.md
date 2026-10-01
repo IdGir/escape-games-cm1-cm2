@@ -46,7 +46,7 @@ fois pour toutes.
 
 Laissez la fenêtre noire ouverte pendant la séance. Ce mode ajoute les
 **tableaux de bord enseignant en direct** (suivi des équipes, pause générale,
-indices envoyés à la volée) :
+indices envoyés à la volée, **⏱️ + : minutes accordées à une équipe sans lui faire perdre son bonus de rapidité**) :
 `http://127.0.0.1:8000/declaration/prof.html`, `http://127.0.0.1:8000/tour-du-monde/prof.html`,
 `http://127.0.0.1:8000/constitution/prof.html`, `http://127.0.0.1:8000/station-meteo/prof.html`
 et `http://127.0.0.1:8000/objets-techniques/prof.html` (le principe est le même pour chaque jeu).

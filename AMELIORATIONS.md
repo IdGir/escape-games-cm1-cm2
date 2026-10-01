@@ -234,7 +234,7 @@ au-delà de l'immersion narrative.
 Aujourd'hui, le seuil de bonus par salle est fixe (8 à 10 min). Permettre à
 l'enseignant d'accorder, depuis `prof.html`, un délai supplémentaire à une
 équipe précise sans lui faire perdre son bonus de rapidité.
-**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ---
 

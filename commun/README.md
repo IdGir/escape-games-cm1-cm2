@@ -30,6 +30,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/accessibilite.js` + `polices/` | E4 — lecture facilitée : police très lisible ou OpenDyslexic, interlignage, espacement (⚙️ Réglages → Accessibilité ; gardé sur l'appareil pour tous les jeux) | les 9 |
 | `js/palier-decouverte.js` | E2 — troisième palier « Découverte » (énigmes CM1 + aide renforcée) | les 8 jeux « salles » |
 | `js/indices-adaptatifs.js` | E3 — un indice est proposé (jamais imposé) après un temps sans action ou 2 essais faux ; réglable dans ⚙️ | les 8 jeux « salles » |
+| `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 8 jeux « salles » |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres

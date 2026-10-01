@@ -157,16 +157,17 @@ function afficher(equipes){
     return `<tr>
       <td><span class="indicateur ${etat.cls}"></span>${etat.txt}</td>
       <td><b>${escapeHtml(e.equipe||"Anonyme")}</b></td>
-      <td>${e.niveau||"—"}</td>
+      <td>${e.niveau||"—"}${e.palier==="decouverte"?' <span title="Palier Découverte">🌱</span>':""}</td>
       <td><b>${e.salle||0}</b> / 5${e.enigme!==undefined?` <span style="opacity:.6;font-size:.8rem">(énigme ${(e.enigme||0)+1})</span>`:""}</td>
       <td><div class="points-salles">${sallesHTML}</div></td>
       <td><b>⭐ ${e.score||0}</b></td>
       <td class="fragments">📜 ${(e.fragments||[]).length}/5<br><span style="font-size:.75rem;opacity:.7">${fragments}</span></td>
-      <td>${min}min ${String(sec).padStart(2,"0")}s</td>
+      <td>${min}min ${String(sec).padStart(2,"0")}s${e.delaiMin?`<br><span style="font-size:.75rem;color:#7c3aed">+${e.delaiMin} min accordées</span>`:""}</td>
       <td>
         <button onclick="actionEquipe('${escapeAttr(e.equipe)}','pause')" style="background:#c9a227;color:#3a2a00;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">⏸</button>
         <button onclick="actionEquipe('${escapeAttr(e.equipe)}','reprendre')" style="background:#3a9d40;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">▶</button>
         <button onclick="actionEquipe('${escapeAttr(e.equipe)}','indice')" style="background:#1d3a8a;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">💡</button>
+        <button onclick="actionEquipe('${escapeAttr(e.equipe)}','delai')" title="Accorder du temps à cette équipe sans lui faire perdre son bonus de rapidité" style="background:#7c3aed;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">⏱️ +</button>
       </td>
     </tr>`;
   }).join("");
@@ -194,6 +195,10 @@ async function diffuserIndice(){
 async function actionEquipe(equipe, type){
   if(type==="pause") await envoyerCommande(equipe, {pause:true});
   else if(type==="reprendre") await envoyerCommande(equipe, {pause:false});
+  else if(type==="delai"){
+    const n = parseInt(prompt("Minutes supplémentaires pour l'équipe « "+equipe+" » (bonus de rapidité préservé) :", "2"), 10);
+    if(n > 0) await envoyerCommande(equipe, {delaiMin: Math.min(30, n), id: Date.now()});
+  }
   else if(type==="indice"){
     const msg = prompt("Indice pour l'équipe « "+equipe+"\" :");
     if(msg) await envoyerCommande(equipe, {indice: msg});
