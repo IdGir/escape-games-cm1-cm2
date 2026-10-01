@@ -244,7 +244,7 @@ l'enseignant d'accorder, depuis `prof.html`, un délai supplémentaire à une
 Le dépannage existe déjà (voir le tableau « En cas de problème » de
 `mission-geo`) mais reste dispersé par jeu. Une FAQ commune, accessible
 depuis `index.html`, éviterait de chercher dans chaque README.
-**Jeux concernés :** page d'accueil · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** page d'accueil · **Effort :** S · **Statut :** Fait
 
 ### F2 — Journal des versions (CHANGELOG.md) par jeu
 Les `RECAP-<jeu>.md` actuels servent à reprendre une conversation interrompue

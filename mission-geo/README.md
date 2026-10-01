@@ -199,6 +199,8 @@ mission-geo/
 
 ## En cas de problème
 
+Voir aussi l'**aide commune à tous les jeux** : [faq.html](../faq.html).
+
 | Problème | Solution |
 |---|---|
 | Un élève a perdu sa progression | ⚙️ → Progression → Importer le dernier export ; exportez à chaque fin de période. |

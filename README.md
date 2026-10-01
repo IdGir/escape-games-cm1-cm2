@@ -332,6 +332,8 @@ Le livret source `Mission géographique Année A.pdf` reste sur l'ordinateur
 
 ## 5. En cas de problème
 
+**Toutes les questions fréquentes, pour tous les jeux, avec recherche :** [faq.html](https://idgir.github.io/escape-games-cm1-cm2/faq.html) (lien sur l'accueil). Le tableau ci-dessous en reprend l'essentiel.
+
 | Problème | Solution |
 |---|---|
 | Mon image ou ma vidéo n'apparaît pas | Page de vérification : la carte indique le nom attendu, et la rubrique 🧹 signale les fichiers mal nommés. Puis **Ctrl+F5** dans le jeu. |

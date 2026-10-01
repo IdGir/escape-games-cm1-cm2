@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aide et dépannage — Escape games CM1 · CM2</title>
+<meta name="description" content="Questions fréquentes et dépannage communs à tous les escape games CM1-CM2.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1d3a8a">
+<!--
+  FAQ / DÉPANNAGE COMMUNE (amélioration F1)
+  Rassemble le dépannage jusque-là dispersé (README principal, tableau « En cas de
+  problème » de Mission géographique…) et les nouveautés (hors connexion, mode
+  individuel, classement, résultats). Recherche instantanée dans les questions.
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--bleu:#2f55c8}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main{max-width:900px;margin:0 auto;padding:0 20px}
+  header{padding-top:24px} h1{margin:0;font-size:1.7rem} header p{color:var(--doux);margin:6px 0 0}
+  #recherche{width:100%;margin:16px 0 6px;padding:11px 14px;font:inherit;border:2px solid var(--ligne);border-radius:12px;background:#fff}
+  #recherche:focus{outline:none;border-color:var(--bleu)}
+  .rubrique{margin:22px 0 6px;font-size:1.1rem}
+  details{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;margin:8px 0;padding:0 16px}
+  summary{cursor:pointer;padding:12px 0;font-weight:600;list-style-position:outside}
+  details[open] summary{border-bottom:1px dashed var(--ligne)}
+  details .rep{padding:8px 0 14px} details .rep p{margin:6px 0} details code{background:#f0eee9;padding:1px 5px;border-radius:5px}
+  .vide{color:var(--doux);font-style:italic}
+  footer{max-width:900px;margin:0 auto;padding:20px 20px 40px;color:var(--doux);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+  <p><a href="index.html">← Accueil des jeux</a></p>
+  <h1>❓ Aide et dépannage</h1>
+  <p>Les questions qui reviennent, pour tous les jeux. Tapez un mot (vidéo, tablette, imprimer, équipe…).</p>
+  <input type="search" id="recherche" placeholder="🔎 Rechercher : vidéo, tablette, imprimer, progression…" aria-label="Rechercher dans l'aide">
+</header>
+<main id="faq">
+
+<h2 class="rubrique">▶️ Lancer un jeu</h2>
+<details><summary>Quelle adresse donner aux élèves ?</summary><div class="rep">
+  <p>En ligne : <code>https://idgir.github.io/escape-games-cm1-cm2/</code> puis le jeu, ou directement l'adresse du jeu (par ex. <code>…/melanges/</code>). Mettez-la en favori une fois pour toutes.</p>
+  <p>En classe sans internet : lancez <b>lancer.bat</b> sur votre ordinateur ; l'adresse à donner aux autres postes est affichée dans la fenêtre noire (par ex. <code>http://192.168.1.20:8000/</code>).</p></div></details>
+<details><summary>Page blanche, ou jeu figé</summary><div class="rep">
+  <p>Utilisez <b>Chrome</b> ou <b>Edge</b> à jour, puis rechargez la page (<b>Ctrl+F5</b>). Si le problème continue, ouvrez la page de vérification : elle signale les fichiers mal placés.</p></div></details>
+<details><summary>J'ai ouvert index.html en double-clic : pas de vidéo</summary><div class="rep">
+  <p>Le navigateur bloque les vidéos (et les leçons A4, le passeport, les résultats du serveur) quand une page est ouverte en double-clic. Passez par l'adresse en ligne ou par <b>lancer.bat</b>.</p></div></details>
+<details><summary>« Python n'est pas installé » au lancement de lancer.bat</summary><div class="rep">
+  <p>Installez Python depuis <code>https://www.python.org/downloads/</code> en cochant « <b>Add Python to PATH</b> », ou jouez en ligne.</p></div></details>
+
+<h2 class="rubrique">📲 Tablettes, Chromebooks, hors connexion</h2>
+<details><summary>Jouer sur tablette sans internet et sans serveur</summary><div class="rep">
+  <p>Ouvrez une fois l'accueil <b>en ligne</b> dans Chrome ou Edge, attendez « ✅ Prêt hors connexion » dans le bloc <b>📲 Sur tablette, sans internet</b>, puis <b>📲 Installer l'application</b>. Les 9 jeux fonctionnent ensuite sans réseau.</p>
+  <p>Hors connexion, les vidéos sont remplacées par les images ou les décors dessinés (elles sont trop lourdes pour être gardées). Le bouton « 📥 Garder aussi les images » télécharge toutes les images (environ 75 Mo).</p></div></details>
+<details><summary>La tablette affiche une ancienne version du jeu</summary><div class="rep">
+  <p>Reconnectez-la à internet et ouvrez l'accueil : la nouvelle version est téléchargée d'elle-même. Côté dépôt, la liste du hors-connexion se met à jour avec <code>python outils-pwa\maj-hors-ligne.py</code> avant de publier.</p></div></details>
+<details><summary>Le tableau de bord ou l'écran de classement ne montrent aucune équipe</summary><div class="rep">
+  <p>Ils ne fonctionnent qu'en <b>mode local</b> : lancez <b>lancer.bat</b>, et les élèves doivent ouvrir le jeu à l'adresse affichée par le serveur (pas l'adresse en ligne).</p></div></details>
+
+<h2 class="rubrique">🎞️ Images, vidéos, sons</h2>
+<details><summary>Mon image ou ma vidéo n'apparaît pas</summary><div class="rep">
+  <p>Ouvrez la <a href="verifier.html">page de vérification</a> : chaque emplacement indique le <b>nom exact</b> attendu (📋 le copie), et la rubrique 🧹 signale les fichiers mal nommés (majuscule, accent, mauvais dossier). Puis <b>Ctrl+F5</b> dans le jeu.</p></div></details>
+<details><summary>L'ancienne image reste affichée</summary><div class="rep">
+  <p>Le navigateur garde une copie : <b>Ctrl+F5</b>, ou attendez quelques minutes après un envoi sur GitHub.</p></div></details>
+<details><summary>Des erreurs « 404 » dans la console (F12)</summary><div class="rep">
+  <p>C'est normal : le jeu cherche les médias que vous auriez pu déposer, puis se rabat sur ses dessins. Rien n'empêche de jouer.</p></div></details>
+<details><summary>Pas de voix ou pas de son</summary><div class="rep">
+  <p>⚙️ Réglages : vérifiez la narration et le volume. La voix est celle du navigateur (Chrome et Edge ont des voix françaises) ; les décors vidéo sont muets par défaut.</p></div></details>
+
+<h2 class="rubrique">🧩 Pendant la partie</h2>
+<details><summary>Une équipe est bloquée sur une énigme</summary><div class="rep">
+  <p>Le jeu <b>propose</b> lui-même un indice après un moment sans action ou deux essais faux (réglable dans ⚙️ → 💡 Indices proposés). Depuis le tableau de bord, 💡 envoie un indice personnalisé à une équipe.</p></div></details>
+<details><summary>Donner du temps à une équipe sans lui faire perdre son bonus</summary><div class="rep">
+  <p>Tableau de bord (<code>prof.html</code>, mode local) → bouton <b>⏱️ +</b> sur la ligne de l'équipe : les minutes accordées sont ajoutées à sa salle en cours, le bonus de rapidité est préservé.</p></div></details>
+<details><summary>Une classe à trois niveaux, ou des élèves en grande difficulté</summary><div class="rep">
+  <p>Choisissez <b>🌱 Découverte</b> à côté de CM1 et CM2 : les énigmes du CM1, avec le premier indice offert, un choix faux écarté dans les QCM et la première lettre des mots au coffre.</p></div></details>
+<details><summary>Lecture difficile (dyslexie, lecteurs fragiles)</summary><div class="rep">
+  <p>⚙️ Réglages → Accessibilité → <b>📖 Lecture facilitée</b> : police OpenDyslexic ou très lisible, interlignage aéré, espacement. Réglé une fois, valable pour tous les jeux de l'appareil. « Animations réduites » coupe aussi les transitions.</p></div></details>
+<details><summary>Effacer la progression d'une équipe</summary><div class="rep">
+  <p>Bouton « Rejouer » en fin de partie. Mission géographique : ⚙️ → Progression → « Repartir de zéro ».</p></div></details>
+<details><summary>Mission géographique : un élève a perdu sa progression</summary><div class="rep">
+  <p>⚙️ → Progression → <b>Importer</b> le dernier export. Exportez à chaque fin de période (changement de poste, salle informatique).</p></div></details>
+<details><summary>Mission géographique : une séance reste verrouillée</summary><div class="rep">
+  <p>⚙️ → Déroulement → « <b>Ordre libre</b> ».</p></div></details>
+
+<h2 class="rubrique">🖨️ Impressions</h2>
+<details><summary>L'impression déborde, ou les couleurs disparaissent</summary><div class="rep">
+  <p>Format <b>A4 portrait</b>, marges « par défaut » (ou « aucune »), échelle 100 %, et cochez <b>Graphiques d'arrière-plan</b>. On peut aussi « Enregistrer au format PDF ».</p></div></details>
+<details><summary>Imprimer les leçons, la fiche de mission, les évaluations</summary><div class="rep">
+  <p>Dans chaque jeu : ⚙️ Réglages → bloc <b>📖 Leçons à imprimer</b> (CM1 ou CM2), et bloc Impression (fiche de mission, fiches préparatoires, QCM, corrigés).</p></div></details>
+<details><summary>Une fiche pour les familles ou la direction</summary><div class="rep">
+  <p><a href="periode.html">Fiche de période</a> : une page A4 par période (jeux et compétences travaillées), version familles ou direction.</p></div></details>
+
+<h2 class="rubrique">📊 Suivi des élèves</h2>
+<details><summary>Donner un jeu en devoir à la maison</summary><div class="rep">
+  <p>Donnez l'adresse du jeu suivie de <code>?solo=1</code> (par ex. <code>…/melanges/?solo=1&amp;niveau=CM1</code>). L'élève joue seul et envoie son <b>compte-rendu</b> (copié dans un message de l'ENT, fichier ou papier) ; rassemblez-les dans <a href="resultats.html">resultats.html</a>.</p></div></details>
+<details><summary>Garder les scores de l'année, les mettre dans un tableur ou dans Schooly</summary><div class="rep">
+  <p><a href="resultats.html">Résultats de la classe</a> : parties de l'appareil, de la classe (serveur local) et comptes-rendus des élèves ; exports tableur et Schooly. Le fichier de la classe (<code>resultats-classe.jsonl</code>) reste sur votre ordinateur et n'est jamais publié.</p></div></details>
+<details><summary>Suivre les compétences de chaque élève sur l'année</summary><div class="rep">
+  <p><a href="passeport.html">Passeport de compétences</a> : une compétence par leçon de chaque jeu, notée Non acquis / En cours / Acquis, cumulée sur l'année. Données gardées dans le navigateur : exportez-les.</p></div></details>
+<details><summary>Rejouer un jeu l'année suivante sans que les réponses soient connues</summary><div class="rep">
+  <p>Les jeux qui ont une <b>banque d'énigmes</b> changent de série chaque année scolaire ; ⚙️ → 🎲 Banque d'énigmes permet aussi de choisir une série.</p></div></details>
+
+<h2 class="rubrique">🔧 Pour aller plus loin</h2>
+<details><summary>Modifier une énigme sans toucher au code</summary><div class="rep">
+  <p><a href="editeur.html">Éditeur d'énigmes</a> : il ouvre le fichier <code>enigmes.json</code> d'un jeu, permet de modifier textes, réponses et indices, contrôle le tout et enregistre un nouveau fichier à déposer dans <code>&lt;jeu&gt;/assets/data/</code>.</p></div></details>
+<details><summary>Où sont les guides, les solutions, les sources ?</summary><div class="rep">
+  <p>Dans chaque jeu : <code>README.md</code> (salles, énigmes, solutions), <code>GUIDE-PEDAGOGIQUE.md</code> (programmes, déroulés, évaluation), <code>A-VERIFIER.md</code> (points factuels à relire), <code>CHANGELOG.md</code> (évolutions). Liens depuis la <a href="verifier.html">page de vérification</a>, rubrique 📚.</p></div></details>
+<p class="vide" id="aucun" hidden>Aucune question ne correspond. Essayez un autre mot, ou consultez la <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games#readme" target="_blank" rel="noopener">documentation complète</a>.</p>
+</main>
+<footer>Une question qui manque ? Elle a sa place ici : ajoutez un bloc <code>&lt;details&gt;</code> dans <code>faq.html</code>.</footer>
+<script src="commun/js/pwa.js?c1"></script>
+<script>
+"use strict";
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+const champ = document.getElementById("recherche");
+function filtrer(){
+  const mots = norm(champ.value).split(/\s+/).filter(Boolean);
+  let n = 0;
+  document.querySelectorAll("#faq details").forEach(d => {
+    const ok = mots.every(m => norm(d.textContent).includes(m));
+    d.hidden = !ok; if(ok) n++;
+    d.open = mots.length > 0 && ok && n <= 3;
+  });
+  document.querySelectorAll("#faq .rubrique").forEach(h => {
+    let x = h.nextElementSibling, vis = false;
+    while(x && x.tagName === "DETAILS"){ if(!x.hidden) vis = true; x = x.nextElementSibling; }
+    h.hidden = !vis;
+  });
+  document.getElementById("aucun").hidden = n > 0;
+}
+champ.addEventListener("input", filtrer);
+const q = new URLSearchParams(location.search).get("q");
+if(q){ champ.value = q; filtrer(); }
+</script>
+</body>
+</html>

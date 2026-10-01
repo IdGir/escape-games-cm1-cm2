@@ -149,6 +149,27 @@ SECTIONS.C3 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+SECTIONS.F1 = async () => {
+  console.log("\n== F1 : FAQ commune (faq.html) ==");
+  const { w, erreurs } = await charger(RACINE, "", { page: "faq.html", attente: 200 });
+  const d = w.document, n = d.querySelectorAll("#faq details").length;
+  ok(n >= 25, `${n} questions`);
+  const c = d.getElementById("recherche"); c.value = "tablette"; c.dispatchEvent(new w.Event("input"));
+  const vis = [...d.querySelectorAll("#faq details")].filter(x => !x.hidden);
+  ok(vis.length >= 1 && vis.length < n && vis.every(x => /tablette/i.test(x.textContent)), `recherche « tablette » : ${vis.length} réponse(s)`);
+  c.value = "vidéo"; c.dispatchEvent(new w.Event("input"));
+  ok([...d.querySelectorAll("#faq details")].filter(x => !x.hidden).length >= 3, "recherche sans tenir compte des accents (vidéo / video)");
+  c.value = "xyzzy"; c.dispatchEvent(new w.Event("input"));
+  ok(!d.getElementById("aucun").hidden, "aucun résultat : message");
+  const fs = require("fs"), path = require("path");
+  const liens = [...d.querySelectorAll("#faq a[href]")].map(a => a.getAttribute("href")).filter(h => !/^https?:/.test(h));
+  const morts = liens.filter(h => !fs.existsSync(path.join(RACINE, h.split("?")[0])) && h !== "editeur.html");
+  ok(!morts.length, "liens internes valides " + morts.join(", "));
+  const accueil = await charger(RACINE, "", { page: "index.html" });
+  ok(!!accueil.w.document.querySelector('a[href="faq.html"]'), "lien depuis l'accueil");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
