@@ -349,6 +349,14 @@ Avant de publier : **Invite de commandes** → `E:` → `cd "\IDRISS\PROJET ESCA
 `python outils-docs\maj-journaux.py` (ajoute les nouveaux commits en tête de chaque journal) → `git add */CHANGELOG.md`.
 On peut compléter un journal à la main : le texte existant n'est jamais réécrit.
 
+### Les liens cités répondent-ils encore ?
+
+Les `A-VERIFIER.md`, guides et données citent environ 300 sites de référence (Eduscol, BnF, Météo-France…).
+Une fois par période : double-cliquez **`outils-docs\verifier-liens.bat`** (ou, dans l'Invite de commandes,
+`python outils-docs\verifier-liens.py`, ou `--jeu melanges` pour un seul jeu). Le rapport
+`outils-docs\rapport-liens.md` (non publié) liste les liens ❌ introuvables, ↪️ redirigés et ⚠️ à vérifier,
+avec le fichier et la ligne où chacun est cité.
+
 ## 5. En cas de problème
 
 **Toutes les questions fréquentes, pour tous les jeux, avec recherche :** [faq.html](https://idgir.github.io/escape-games-cm1-cm2/faq.html) (lien sur l'accueil). Le tableau ci-dessous en reprend l'essentiel.

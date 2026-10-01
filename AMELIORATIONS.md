@@ -256,7 +256,7 @@ tracerait les évolutions d'un jeu au fil des mises à jour.
 Les `A-VERIFIER.md` citent de nombreux sites de référence (Eduscol, BnF,
 Météo-France…) : un script qui vérifie périodiquement que ces liens
 répondent encore éviterait de découvrir un lien mort face à la classe.
-**Jeux concernés :** tous · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** S · **Statut :** Fait
 
 ### F4 — Mode démonstration en boucle
 Un mode qui enchaîne automatiquement de courts extraits de chaque jeu, sans

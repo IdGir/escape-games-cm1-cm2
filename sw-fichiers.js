@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "e85b08e074";
+self.VERSION_HORS_LIGNE = "a992c257f9";
 self.FICHIERS_CODE = [
 "annee.html",
 "chateau-fort/assets/data/dialogues.json",
