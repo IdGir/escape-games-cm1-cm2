@@ -103,7 +103,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 |---|---|---|
 | Le Secret de la Déclaration | `declaration/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin | [salle 3 en CM1](https://idgir.github.io/escape-games-cm1-cm2/declaration/?salle=3&niveau=CM1) |
 | Le Tour du Monde | `tour-du-monde/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin | [escale 5 en CM2](https://idgir.github.io/escape-games-cm1-cm2/tour-du-monde/?salle=5&niveau=CM2) |
-| Mission géographique | `mission-geo/?seance=N` — N de 1 à 16, ou `final` | [séance 13](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=13) |
+| Mission géographique | `mission-geo/?seance=N&niveau=CM1` (ou `CM2`, `DEC` pour Découverte) — N de 1 à 16, ou `final` | [séance 13 en CM1](https://idgir.github.io/escape-games-cm1-cm2/mission-geo/?seance=13&niveau=CM1) |
 | Le Sceau de la République | `constitution/?salle=N&niveau=CM2` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 2, CM2](https://idgir.github.io/escape-games-cm1-cm2/constitution/?salle=4&niveau=CM2&enigme=2) |
 | Le Laboratoire de Madame Mélange | `melanges/?salle=N&niveau=CM1` — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 5, énigme 4, CM2](https://idgir.github.io/escape-games-cm1-cm2/melanges/?salle=5&niveau=CM2&enigme=4) |
 | L'Atelier de l'inventeur | `objets-techniques/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = fin ; `&enigme=K` vise une énigme | [salle 4, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/objets-techniques/?salle=4&niveau=CM2&enigme=3) |

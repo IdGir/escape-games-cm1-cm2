@@ -232,3 +232,37 @@ mission-geo/
 - La progression déjà enregistrée sur les postes est conservée (pas de remise à zéro).
 - **Feuilles de style** : `css/style.css`, `css/activites.css` et `css/print.css` manquaient au dépôt (le jeu s'affichait sans
   mise en page) ; elles ont été écrites en octobre 2026. Les styles du barème sont dans `css/v2.css`.
+
+
+## 🎚️ CM1, CM2 et Découverte : trois versions de chaque séance
+
+Le niveau se choisit sur l'écran d'accueil (avec le nom de l'équipe). Les séances restent celles du livret
+— mêmes documents, même indice à recopier pour la piste finale — mais se travaillent différemment
+(données : `js/donnees/niveaux.js`) :
+
+| Niveau | Ce qui change |
+|---|---|
+| **CM1 — version guidée** | méthode donnée dans la consigne, moins de distracteurs, calculs découpés en étapes, tableaux réduits à l'essentiel (le secteur d'activité seulement en séance 4, le métier en séance 10), réponses ouvertes plus courtes |
+| **CM2 — livret + 🚀 Pour aller plus loin** | la version complète du livret, plus une activité de raisonnement par séance, construite à partir des documents de la séance (comparer des densités, interpréter le tableau du PNUD, kilomètres alimentaires économisés, sources des fleuves, secteurs d'activité de la chaîne du yaourt…) |
+| **🌱 Découverte** | la version CM1, avec le coup de pouce de chaque énigme affiché d'emblée, sans perte de points |
+
+| Séance | CM1 : guidage | CM2 : pour aller plus loin |
+|---|---|---|
+| 1 | exemple de fonction ; lettres de la ville | services publics de la commune |
+| 2 | moins de distracteurs ; 5 régions repères ; école → commune… | du continent à la commune (Dijon) |
+| 3 | calcul de la surface de l'espace C donné | densités de deux communes imaginaires |
+| 4 | secteur d'activité seulement | lecture du document : 80 %, 18 %, −38 points |
+| 5 | thèmes des légendes | effets positifs et négatifs du tourisme |
+| 6 | sans l'activité intruse | visiteurs par habitant ; habitants il y a 20 ans |
+| 7 | repères des mers ; densités en deux étapes | pourquoi la densité est multipliée par 15 |
+| 8 | nombre de réponses ; méthode du classement | richesse et développement (PNUD) |
+| 9 | additions guidées, deux questions | budget de la famille A |
+| 10 | métier seulement | du champ à l'assiette : les trois secteurs |
+| 11 | première et dernière étape | le yaourt et les trois secteurs |
+| 12 | addition deux par deux | et si la poire venait de France ? |
+| 13 | repères de départ ; les six massifs | massif de la source des fleuves |
+| 14 | repères du schéma | Le Havre, en aval de Paris |
+| 15 | trois ordres de grandeur | part de la douche ; sanitaires + lave-linge |
+| 16 | nombre d'usages par décision | pourquoi arroser la nuit |
+
+Tester : `?seance=N&niveau=CM1` (ou `CM2`, `DEC`) ; la page de vérification a une ligne de boutons par niveau.

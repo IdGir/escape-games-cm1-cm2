@@ -654,7 +654,9 @@ async function construireMission(){
     id: "mission-geo", nom: "Mission géographique — Année A", R,
     defaut: "Sans fichier : dessin intégré, ou emplacement masqué",
     tests: [
-      { titre: "Séances", liens: M.ordre().map(s => ({ libelle: s.numero + ". " + s.titre, url: R + "?seance=" + s.numero })) },
+      { titre: "Séances — CM2 (livret + pour aller plus loin)", liens: M.ordre().map(s => ({ libelle: s.numero + ". " + s.titre, url: R + "?seance=" + s.numero + "&niveau=CM2" })) },
+      { titre: "Séances — CM1 (version guidée)", liens: M.ordre().map(s => ({ libelle: String(s.numero), url: R + "?seance=" + s.numero + "&niveau=CM1" })) },
+      { titre: "Séances — 🌱 Découverte", liens: M.ordre().map(s => ({ libelle: String(s.numero), url: R + "?seance=" + s.numero + "&niveau=DEC" })) },
       { titre: "Fin", liens: [{ libelle: "🧳 Piste finale", url: R + "?seance=final" }] }
     ],
     familles,

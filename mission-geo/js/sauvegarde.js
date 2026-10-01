@@ -49,6 +49,7 @@ const SAUVEGARDE = (function(){
       version: 1,
       equipe: "",
       niveau: "CM2",
+      palier: "",            /* "decouverte" : palier Découverte (contenu CM1 + coups de pouce offerts) */
       debut: null,
       sessions: {},          /* id -> {reussie, points, essais, duree, date, reponses} */
       indices: [],           /* indices debloques, dans l'ordre d'obtention */

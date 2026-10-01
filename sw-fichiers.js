@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "66f4e736c1";
+self.VERSION_HORS_LIGNE = "a7bea08810";
 self.FICHIERS_CODE = [
 "chateau-fort/assets/data/dialogues.json",
 "chateau-fort/assets/data/enigmes.json",
@@ -127,6 +127,7 @@ self.FICHIERS_CODE = [
 "mission-geo/js/cartes.js",
 "mission-geo/js/donnees/final.js",
 "mission-geo/js/donnees/lecons.js",
+"mission-geo/js/donnees/niveaux.js",
 "mission-geo/js/donnees/sessions-p1.js",
 "mission-geo/js/donnees/sessions-p2.js",
 "mission-geo/js/donnees/sessions-p3.js",

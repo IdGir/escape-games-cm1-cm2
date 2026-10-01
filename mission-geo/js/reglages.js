@@ -171,9 +171,9 @@ const REGLAGES = (function(){
       });
       g("r-imp-lecon-a4").addEventListener("click", () => {
         const se = MISSION.parId(seance());
-        window.open("lecons-imprimables.html?niveau=CM2&salle=" + (se ? se.numero : ""), "_blank");
+        window.open("lecons-imprimables.html?niveau=" + (SAUVEGARDE.lire().niveau === "CM1" ? "CM1" : "CM2") + "&salle=" + (se ? se.numero : ""), "_blank");
       });
-      g("r-imp-lecons-a4").addEventListener("click", () => window.open("lecons-imprimables.html?niveau=CM2&lecon=toutes", "_blank"));
+      g("r-imp-lecons-a4").addEventListener("click", () => window.open("lecons-imprimables.html?niveau=" + (SAUVEGARDE.lire().niveau === "CM1" ? "CM1" : "CM2") + "&lecon=toutes", "_blank"));
       g("r-imp-prog").addEventListener("click",  () => IMPRESSION.progression());
       g("r-imp-bilan").addEventListener("click", () => IMPRESSION.bilan());
       g("r-imp-mission").addEventListener("click", () => IMPRESSION.ficheMission());

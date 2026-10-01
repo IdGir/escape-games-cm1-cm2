@@ -1063,7 +1063,7 @@ const ACTIVITES = (function(){
     const compteur  = $("span", "essais", "");
     bVerifier.type = bAide.type = bCorriger.type = "button";
     bCorriger.hidden = true;
-    if(!act.aide) bAide.hidden = true;
+    if(!act.aide || act.aideOfferte) bAide.hidden = true;   // palier Découverte : l'aide est déjà affichée
     barre.appendChild(bVerifier); barre.appendChild(bAide); barre.appendChild(bCorriger); barre.appendChild(compteur);
     section.appendChild(barre);
 

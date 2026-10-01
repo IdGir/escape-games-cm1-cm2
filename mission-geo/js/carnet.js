@@ -30,7 +30,7 @@ const CARNET = (function(){
     document.getElementById("carnet-fait").textContent = faites;
     document.getElementById("jauge-progression").style.width = (faites / total * 100) + "%";
     document.getElementById("carnet-equipe").textContent =
-      etat.equipe ? etat.equipe + " · " + etat.niveau + " · " + SAUVEGARDE.pointsTotaux() + " points"
+      etat.equipe ? etat.equipe + " · " + etat.niveau + (etat.palier === "decouverte" ? " 🌱 Découverte" : "") + " · " + SAUVEGARDE.pointsTotaux() + " points"
                   : "";
 
     MISSION.parPeriode().forEach((seances, periode) => {

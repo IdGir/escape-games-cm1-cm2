@@ -2,7 +2,7 @@
    TESTS AUTOMATIQUES — Mission géographique (Node + jsdom)
    Depuis la racine du dépôt :  node mission-geo/tests/test-jeu.js
    (jsdom requis : voir outils-tests/README.md)
-   Étapes au choix :  node mission-geo/tests/test-jeu.js seances,final
+   Étapes au choix :  node mission-geo/tests/test-jeu.js seances,final  (ou CM1, CM2, DEC)
    Reprise en jsdom de outils-moteur/tester_mission_geo.py : pour chaque
    séance (?seance=N), chaque énigme est résolue avec la correction du
    moteur. Séance 1, énigme 1 : d'abord une vérification vide (fausse),
@@ -17,11 +17,18 @@ const T = compteur("Mission géographique"); const ok = T.ok;
 const clic = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
 const txt = el => el ? el.textContent.replace(/\s+/g, " ") : "";
 
-async function seance(n){
-  const { w, erreurs } = await charger(JEU, `?seance=${n}`, { attente: 700 });
+async function seance(n, niveau = "CM2"){
+  const { w, erreurs } = await charger(JEU, `?seance=${n}&niveau=${niveau}`, { attente: 700 });
   const doc = w.document;
   w.eval("(() => { const o = ACTIVITES.rendre; ACTIVITES.rendre = (a, h, x) => { const r = o(a, h, x); window.__m = r.moteur; return r; }; })()");
   const nb = w.eval("APP.courant.s.activites.length");
+  const D = w.eval("MISSION.DIFFERENCIATION")["s" + String(n).padStart(2, "0")] || {};
+  const livret = w.eval(`MISSION.parId("s${String(n).padStart(2, "0")}").activites.length`);
+  ok(nb === livret + (niveau === "CM2" ? (D.plusCM2 || []).length : 0), `séance ${n} ${niveau} : ${nb} énigmes (livret ${livret}${niveau === "CM2" ? " + pour aller plus loin" : ""})`);
+  if (niveau !== "CM2") for (const k of Object.keys(D.cm1 || {})) {
+    const a = w.eval(`APP.courant.s.activites[${k - 1}]`), r = D.cm1[k];
+    ok(Object.keys(r).every(c => JSON.stringify(a[c]) === JSON.stringify(r[c]) || (niveau === "DEC" && c === "precision")), `séance ${n} ${niveau} : activité ${k} en version guidée`);
+  }
   ok(/10 points/.test(txt(doc.getElementById("session-scene"))), `séance ${n} : barème dans l'introduction`);
   const go = [...doc.querySelectorAll("#session-scene button")].find(b => /Commencer la mission/.test(b.textContent));
   ok(!!go, `séance ${n} : bouton « Commencer la mission »`);
@@ -30,6 +37,10 @@ async function seance(n){
   const valider = () => clic(w, doc.querySelector(".activite .barre-actions .bouton-principal"));
   for (let k = 0; k < nb; k++) {
     ok(await attendreQue(() => doc.querySelector(".activite"), 4000), `séance ${n} énigme ${k + 1} affichée`);
+    if (niveau === "DEC") {
+      const a = w.eval(`APP.courant.s.activites[${k}]`);
+      if (a.aide) ok(doc.querySelector(".activite .precision") && doc.querySelector(".activite .precision").textContent.includes(a.aide) && [...doc.querySelectorAll(".activite .barre-actions button")].find(b => /Coup de pouce/.test(b.textContent)).hidden, `séance ${n} DEC énigme ${k + 1} : coup de pouce affiché d'emblée, bouton masqué`);
+    }
     if (n === 1 && k === 0) {
       valider(); await dodo(30);
       const fb = txt(doc.querySelector(".activite .retour"));
@@ -57,7 +68,7 @@ async function seance(n){
   ok(/Recopie cet indice/.test(scene), `séance ${n} : consigne « Recopie cet indice »`);
   ok(!doc.querySelector("#session-scene .narration, #session-scene .lecon, #session-scene .a-retenir"), `séance ${n} : aucun texte (récit ou leçon) après la résolution`);
   ok(erreurs.length === 0, `séance ${n} : erreurs JS : ` + erreurs.join(" | "));
-  console.log(`  séance ${String(n).padStart(2)} : ${nb} énigmes, ${pts}/${nb * 10} points`);
+  console.log(`  séance ${String(n).padStart(2)} ${niveau} : ${nb} énigmes, ${pts}/${nb * 10} points`);
 }
 
 async function final(){
@@ -74,12 +85,22 @@ async function final(){
   ok(lignes === 17 && (w.__imprime || 0) > 0, `fiche de mission : ${lignes} lignes (attendu 17), impression lancée`);
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
   await testerLeconsA4(JEU, ok);
+  // Accueil : le choix « Découverte » est enregistré (contenu CM1 + palier)
+  const a = await charger(JEU, "", { attente: 600 });
+  a.w.document.getElementById("champ-equipe").value = "Les Pousses";
+  a.w.document.querySelector('input[name="niveau"][value="DEC"]').checked = true;
+  a.w.document.getElementById("form-depart").dispatchEvent(new a.w.Event("submit", { cancelable: true }));
+  const et = a.w.eval("SAUVEGARDE.lire()");
+  ok(et.niveau === "CM1" && et.palier === "decouverte" && a.w.eval("APP.niveauCourant()") === "DEC", "accueil : Découverte = niveau CM1 + palier « decouverte »");
+  ok(a.erreurs.length === 0, "accueil : erreurs JS : " + a.erreurs.join(" | "));
 }
 
 const etapes = (process.argv[2] || "seances,final").split(",");
 (async () => {
   try {
-    if (etapes.includes("seances")) { console.log("\n== Les 16 séances =="); for (let n = 1; n <= 16; n++) await seance(n); }
+    for (const niveau of ["CM2", "CM1", "DEC"]) if (etapes.includes("seances") || etapes.includes(niveau)) {
+      console.log(`\n== Les 16 séances, niveau ${niveau} ==`); for (let n = 1; n <= 16; n++) await seance(n, niveau);
+    }
     if (etapes.includes("final")) await final();
   } catch (e) { T.exception(e); }
   T.fin();

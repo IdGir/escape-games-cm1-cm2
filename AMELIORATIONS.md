@@ -31,7 +31,7 @@ des jeux. Reprendre le modèle de test existant et l'étendre.
 `mission-geo` est le seul jeu sans bascule de niveau CM1/CM2 (les 8 autres
 l'ont, avec un contenu réellement différent, pas seulement une quantité
 différente). C'est l'incohérence de structure la plus visible du dépôt.
-**Jeux concernés :** mission-geo · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** mission-geo · **Effort :** L · **Statut :** Fait
 
 ### A3 — Tronc commun unique pour le moteur partagé
 `app.js`, `enigmes.js`, `decors.js`, `audio.js`, `narration.js`,
@@ -203,7 +203,7 @@ par une).
 Classée aussi ici : c'est le manque le plus direct en matière de niveaux de
 difficulté. Voir A2 pour le détail — ne pas créer de doublon, mettre à jour
 le statut de A2 seulement.
-**Jeux concernés :** mission-geo · **Effort :** L · **Statut :** Proposé (= A2)
+**Jeux concernés :** mission-geo · **Effort :** L · **Statut :** Fait (= A2)
 
 ### E2 — Troisième palier de difficulté
 Au-delà de CM1/CM2 : un palier « découverte », avec assistance renforcée,

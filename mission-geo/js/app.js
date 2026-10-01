@@ -88,6 +88,15 @@ const APP = (function(){
   /* ---------------------------------------------------------
      Ouverture d'une séance
      --------------------------------------------------------- */
+  /* Niveau joué (A2) : CM1 (version guidée), CM2 (livret + « pour aller plus loin »),
+     DEC (palier Découverte : CM1 + coups de pouce offerts). ?niveau=… en vérification. */
+  function niveauCourant(){
+    const p = new URLSearchParams(location.search).get("niveau");
+    if(p) return MISSION.niveauDe(p);
+    const e = SAUVEGARDE.lire();
+    return e.palier === "decouverte" ? "DEC" : MISSION.niveauDe(e.niveau);
+  }
+
   function ouvrirSession(idSession){
     const brut = MISSION.parId(idSession);
     if(!brut) return;
@@ -96,7 +105,7 @@ const APP = (function(){
       return;
     }
     const profil = SAUVEGARDE.lire().profil;
-    const s = substituer(JSON.parse(JSON.stringify(brut)), profil);
+    const s = MISSION.adapter(substituer(JSON.parse(JSON.stringify(brut)), profil), niveauCourant());
 
     courant = {
       s,
@@ -316,7 +325,7 @@ const APP = (function(){
     const etat = SAUVEGARDE.lire();
     if(etat.equipe){
       id("champ-equipe").value = etat.equipe;
-      const radio = document.querySelector('input[name="niveau"][value="' + etat.niveau + '"]');
+      const radio = document.querySelector('input[name="niveau"][value="' + (etat.palier === "decouverte" ? "DEC" : etat.niveau) + '"]');
       if(radio) radio.checked = true;
     }
 
@@ -326,7 +335,9 @@ const APP = (function(){
       if(!nom){ message("Indique d'abord un nom d'équipe.", "erreur"); return; }
       const et = SAUVEGARDE.lire();
       et.equipe = nom;
-      et.niveau = document.querySelector('input[name="niveau"]:checked').value;
+      const choix = document.querySelector('input[name="niveau"]:checked').value;
+      et.niveau = choix === "DEC" ? "CM1" : choix;          // Découverte = contenu CM1 + aide (A2, E2)
+      et.palier = choix === "DEC" ? "decouverte" : "";
       if(!et.debut) et.debut = new Date().toISOString();
       SAUVEGARDE.enregistrer();
       afficherEcran("carnet");
@@ -382,6 +393,6 @@ const APP = (function(){
 
   document.addEventListener("DOMContentLoaded", init);
 
-  return { afficherEcran, ouvrirSession, message, modale, fermerModale,
+  return { afficherEcran, ouvrirSession, message, modale, fermerModale, niveauCourant,
            appliquerReglages, majBarre, get courant(){ return courant; } };
 })();
