@@ -25,7 +25,7 @@ Seuls `chateau-fort`, `moyen-age-abbaye` et `objets-techniques` ont un dossier
 `tour-du-monde`, `station-meteo`, `melanges`, `mission-geo`) n'en ont aucun :
 une régression du moteur partagé peut donc passer inaperçue sur la majorité
 des jeux. Reprendre le modèle de test existant et l'étendre.
-**Jeux concernés :** constitution, declaration, tour-du-monde, station-meteo, melanges, mission-geo · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** constitution, declaration, tour-du-monde, station-meteo, melanges, mission-geo · **Effort :** M · **Statut :** Fait
 
 ### A2 — Différenciation CM1/CM2 pour mission-geo
 `mission-geo` est le seul jeu sans bascule de niveau CM1/CM2 (les 8 autres

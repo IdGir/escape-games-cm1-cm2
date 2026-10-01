@@ -41,3 +41,7 @@ outils-medias/ign-tests/
 # ---- Outils des leçons imprimables : dépendances et données géographiques (réinstallables) ----
 outils-lecons/node_modules/
 outils-lecons/geo-donnees/
+
+# ---- Tests automatiques : dépendance jsdom (réinstallable : cd outils-tests && npm install) ----
+outils-tests/node_modules/
+outils-tests/package-lock.json

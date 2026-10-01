@@ -38,6 +38,11 @@ python outils-moteur\maj_docs.py
 
 ## Tester
 
+**Tests rapides, sans navigateur (recommandé)** : `node outils-tests/tous.js` — les 9 jeux, voir
+[outils-tests/README.md](../outils-tests/README.md).
+
+**Tests dans un vrai navigateur (Playwright)**, plus lents :
+
 Dans une première invite de commandes, à la racine du dépôt : `python -m http.server 8765`.
 Dans une seconde (Playwright requis : `pip install playwright` puis `python -m playwright install chromium`) :
 

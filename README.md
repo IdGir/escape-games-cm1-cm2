@@ -129,7 +129,8 @@ leçons** plutôt que de cliquer au hasard :
 
 Scores maximaux : 185 (CM1) / 235 (CM2) pour les jeux à 5 salles (195 / 245 pour l'abbaye, avec le
 fermoir), 95 pour la Déclaration et le Tour du monde ; Mission géographique : 10 points par énigme.
-Outils et tests : [outils-moteur/README.md](outils-moteur/README.md).
+Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 9 jeux :
+[outils-tests/README.md](outils-tests/README.md).
 
 ---
 
@@ -191,6 +192,7 @@ PROJET ESCAPE GAMES/
 ├── lancer.bat              Serveur local, Windows (double-clic)
 ├── lancer-mac.command      Serveur local, Mac
 ├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
+├── outils-tests/          Tests automatiques des 9 jeux (Node + jsdom) : node outils-tests/tous.js
 │
 ├── declaration/            🏛️ Le Secret de la Déclaration
 │   ├── README.md           Guide du jeu : salles, énigmes, solutions
