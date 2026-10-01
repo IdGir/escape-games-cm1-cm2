@@ -1,0 +1,28 @@
+/* ==== Moteur d'énigmes v2 (outils-moteur) : premier coup, erreurs, anagramme ==== */
+.bandeau-bareme{margin:6px 0 8px;padding:6px 10px;border-radius:8px;font-size:.85rem;
+  background:#fff8e1;border:1px dashed #d4a017;color:#5b4300}
+.enigme-carte.secoue{animation:secoue .4s}
+.feedback.erreur .perte-bonus{margin-top:6px;font-size:.88rem;font-weight:600}
+.feedback.succes.premier-coup{font-size:1.15rem;background:linear-gradient(90deg,#fff3c4,#e8f7e4);
+  border:2px solid #d4a017;color:#2d4a12}
+.aide-type{font-size:.85rem;font-style:italic;opacity:.8;margin:4px 0 8px}
+.carte-match{position:relative}
+.carte-match .num-paire{display:inline-flex;align-items:center;justify-content:center;min-width:1.5em;height:1.5em;
+  margin-right:6px;border-radius:50%;background:#e6e9ef;color:#333;font-weight:700;font-size:.85em}
+.carte-match .num-paire:empty{display:none}
+.carte-match.apparie{border-color:#3b6ea5;background:#eef4fb}
+.carte-match.apparie .num-paire{background:#3b6ea5;color:#fff}
+.carte-intrus.select{outline:3px solid #3b6ea5;background:#eef4fb}
+.slots-lettres{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.slots-lettres .slot{font:inherit;font-weight:800;font-size:1.3rem;width:2.1em;height:2.3em;border-radius:8px;
+  border:2px dashed #9aa4ad;background:#fff;cursor:pointer}
+.slots-lettres .slot.ok{border-style:solid;border-color:#3b6ea5;background:#eef4fb}
+.lettre-clic.utilisee{opacity:.5;background:#dfe3e8;color:#555;text-decoration:line-through;animation:none}
+.enigme-carte.resolue [data-valider]{opacity:.5}
+/* Mot-clé à noter (fin de salle) */
+.mot-cle .a-noter{margin-top:8px;font-size:.95rem;font-weight:700;color:#8a1c1c}
+.coffre-final{max-width:560px;margin:10px auto}
+.coffre-final .coffre-ligne{display:flex;gap:10px;align-items:center;margin:8px 0}
+.coffre-final .coffre-ligne label{flex:1;font-weight:600}
+.coffre-final .coffre-ligne input{flex:1;font:inherit;font-size:1.1rem;padding:6px 10px;border-radius:8px;
+  border:2px solid #9aa4ad;text-transform:uppercase;letter-spacing:.08em}

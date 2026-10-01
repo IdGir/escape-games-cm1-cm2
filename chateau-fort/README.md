@@ -329,7 +329,7 @@ Mots attendus, dans l'ordre : **pièce**, **torchis**, **chaume**, **pain**, **j
 
 #### 4-4 · Le mot caché du village — type `lettres` — CM2
 
-Lettres à cliquer dans l'ordre : **V I L L A G E**
+Lettres marquées, mélangées avec deux leurres (M, T), à ranger : **V I L L A G E**
 
 *Correction affichée :* Le village, c'est l'ensemble des maisons des paysans, serrées autour de l'église, avec les jardins, les champs, les prés et les bois qui les entourent.  
 *Source :* Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge · *Leçon :* `vie-des-paysans`
@@ -417,12 +417,29 @@ Mots attendus, dans l'ordre : **corvée**, **cens**, **banalités**, **justice**
 
 ## Score
 
+<!-- moteur-v2 -->
+### Règles du moteur v2 (octobre 2026)
+
+- **Tout juste du premier coup** : chaque énigme rapporte **10 points** si la première vérification est juste,
+  **3 points seulement** après une erreur. Le barème est rappelé en tête de chaque énigme : les élèves ont
+  intérêt à relire la leçon (bouton 📚) avant de valider.
+- **Retour d'erreur** : le jeu dit seulement **combien** de réponses sont justes (« 2 associations justes sur 4 »),
+  jamais lesquelles. Une réponse incomplète n'est pas comptée comme une erreur.
+- **Aucun texte après la réussite** : ni correction, ni explication, ni dialogue de réussite. Le bouton suivant
+  apparaît tout de suite ; le personnage se tait dès que les élèves touchent l'énigme (le chrono ne s'arrête jamais).
+- **Mots à noter** : le mot gagné en fin de salle n'est affiché **qu'une fois** (« ✍️ Notez ce mot ») ; les élèves
+  le recopient sur la **fiche de mission** (⚙️ Réglages › Impression › « ✍️ Fiche de mission », une par équipe), puis
+  le retapent dans le **coffre final** (10 points du premier coup, 3 après une erreur ; accents et majuscules ignorés).
+- **Lettres cachées** : les lettres marquées sont **dans le désordre**, avec des **leurres** ; on les range dans les cases.
+
+
 | | CM1 | CM2 |
 |---|---|---|
-| Énigmes résolues (5 pts) | 15 × 5 = 75 | 20 × 5 = 100 |
+| Énigmes justes du premier coup (10 pts ; 3 pts après une erreur) | 15 × 10 = 150 | 20 × 10 = 200 |
+| Coffre final ouvert du premier coup (10 pts ; 3 après une erreur) | 10 | 10 |
 | Bonus de rapidité (3 pts par salle) | 15 | 15 |
-| Quizz final de la herse (2 pts × 5) | 10 | 10 |
-| **Total maximal** | **100** | **125** |
+| Quizz final (2 pts × 5) | 10 | 10 |
+| **Total maximal** | **185** | **235** |
 
 Un indice consulté retire **2 points**. Le bonus de rapidité tombe à 2 points si la salle a demandé un indice, et à 0
 au-delà de 8 minutes (CM1) ou 10 minutes (CM2) par salle.
@@ -489,7 +506,7 @@ node chateau-fort/tests/test-chateau-fort.js
 ```
 
 `test_json.py` contrôle les données (JSON valides, clés uniques, liens énigme → leçon, règles du cahier des charges, absence d'emoji).
-`test-chateau-fort.js` joue les parties complètes CM1 et CM2 (scores 100 et 125), teste les mauvaises réponses, les indices, les leçons,
+`test-chateau-fort.js` joue les parties complètes CM1 et CM2 (scores 185 et 235), teste les mauvaises réponses, les indices, les leçons,
 le mode vérification, les réglages, les impressions et `verifier.html`. `generer-readme.py` régénère ce README à partir des données.
 
 ---

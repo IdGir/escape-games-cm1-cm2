@@ -9,7 +9,12 @@
      5. Méridiens, parallèles et fuseaux horaires
 
    Contrat : enigmeSalle(n) rend le HTML, activerEnigme(n)
-   attache les interactions, validerSalle(n) clôt l'étape.
+   attache les interactions, validerSalle(n, erreurs) clôt l'étape.
+
+   Moteur v2 (octobre 2026) : chaque énigme se valide par un bouton ;
+   en cas d'erreur, seul le NOMBRE de réponses justes est donné ;
+   10 points du premier coup, 3 après une erreur ; aucun texte de
+   correction après la réussite (voir js/v2.js).
    ============================================================ */
 
 function enigmeSalle(n){
@@ -113,8 +118,9 @@ function enigme1HTML(){
 
   return `
     <h3>🗺️ Le grand planisphère du Reform Club</h3>
+    ${v2Bandeau()}
     <p class="center" style="opacity:.75;font-style:italic">
-      Clique sur une <b>zone de la carte</b>, puis sur son <b>nom</b> dans la liste du bas.
+      Clique sur une <b>zone de la carte</b>, puis sur son <b>nom</b> dans la liste du bas. Un clic sur une zone nommée efface son nom.
     </p>
     <div class="planisphere">
       <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -139,7 +145,7 @@ function enigme1HTML(){
       </svg>
     </div>
     <div class="legende-carte">
-      <span><i style="background:rgba(47,125,107,.55);border:1px solid #2f7d6b"></i>bien placé</span>
+      <span><i style="background:rgba(59,110,165,.35);border:1px solid #3b6ea5"></i>nom posé</span>
       <span><i style="background:rgba(255,255,255,.4);border:1px dashed #102a41"></i>à compléter</span>
       <span>🔴 équateur &nbsp;·&nbsp; 🟢 méridien de Greenwich</span>
     </div>
@@ -148,6 +154,7 @@ function enigme1HTML(){
         `<div class="etiquette ${e.id.startsWith("oc")||OCEANS_CARTE[e.id]?"ocean":""}" data-val="${e.id}">${e.nom}</div>`
       ).join("")}
     </div>
+    <div class="center"><button class="btn jade" id="btn-verif-1">✅ Vérifier la carte</button></div>
     <div class="feedback" id="fb-1"></div>
     <div class="barre-outils"><button class="btn laiton" id="btn-indice">💡 Indice</button></div>
   `;
@@ -169,8 +176,9 @@ function activerEnigme1(){
   [...cfg.terres, ...cfg.eaux].forEach(e=>noms[e.id] = e.nom);
   const total = Object.keys(noms).length;
 
+  v2Debut();
   let zoneVisee = null;
-  let placees = 0;
+  const poses = {};            // zone → étiquette posée
 
   const planisphere = document.querySelector(".planisphere");
   const svg = planisphere.querySelector("svg");
@@ -178,20 +186,26 @@ function activerEnigme1(){
 
   /* Fond de carte facultatif : si l'enseignant a déposé
      assets/images/cartes/planisphere.jpg, il se glisse SOUS les zones
-     cliquables, qui restent parfaitement utilisables. Sans fichier,
-     le tracé schématique dessiné suffit. */
+     cliquables, qui restent parfaitement utilisables. */
   if(typeof poserFondCarte === "function"){
     poserFondCarte(planisphere, "planisphere", "fond-planisphere");
   }
+  const dessiner = ()=>svg.querySelectorAll(".zone-carte").forEach(z=>{
+    const id = z.dataset.zone, et = poses[id];
+    z.classList.toggle("placee", !!et);
+    z.classList.toggle("visee", z === zoneVisee);
+    const txt = document.getElementById("txt-"+id);
+    if(txt) txt.textContent = et ? et.textContent : "";
+  });
 
-  // 1. Sélection d'une zone de la carte
+  // 1. Sélection d'une zone de la carte (une zone nommée se vide)
   svg.querySelectorAll(".zone-carte").forEach(z=>{
     z.addEventListener("click", ()=>{
-      if(z.classList.contains("bien")) return;
-      svg.querySelectorAll(".zone-carte").forEach(x=>x.classList.remove("visee"));
-      z.classList.add("visee");
-      zoneVisee = z;
+      const id = z.dataset.zone;
+      if(poses[id]){ poses[id].classList.remove("utilisee"); delete poses[id]; zoneVisee = z; }
+      else zoneVisee = (zoneVisee === z) ? null : z;
       if(typeof son === "function") son("clic");
+      dessiner();
     });
   });
 
@@ -199,32 +213,23 @@ function activerEnigme1(){
   banque.addEventListener("click", e=>{
     const et = e.target.closest(".etiquette");
     if(!et || et.classList.contains("utilisee")) return;
-
     if(!zoneVisee){
       retour("fb-1","indice","👉 Choisis d'abord une <b>zone sur la carte</b>, puis son nom.",2200);
       return;
     }
-    const attendu = zoneVisee.dataset.zone;
-    if(et.dataset.val === attendu){
-      zoneVisee.classList.remove("visee");
-      zoneVisee.classList.add("bien");
-      const txt = document.getElementById("txt-"+attendu);
-      if(txt) txt.textContent = noms[attendu];
-      et.classList.add("utilisee");
-      placees++;
-      if(typeof son === "function") son("succes");
-      zoneVisee = null;
-      if(placees === total){
-        retour("fb-1","succes","✨ Le planisphère est complet ! Phileas Fogg peut tracer sa route.");
-        setTimeout(()=>validerSalle(1), 1000);
-      }
-    }else{
-      const rate = zoneVisee;
-      rate.classList.add("mal");
-      setTimeout(()=>rate.classList.remove("mal"), 500);
-      if(typeof son === "function") son("erreur");
-      retour("fb-1","erreur","Ce n'est pas le bon nom pour cette zone. Regarde bien sa position par rapport à l'<b>équateur</b> et au <b>méridien</b>.",2600);
-    }
+    poses[zoneVisee.dataset.zone] = et;
+    et.classList.add("utilisee");
+    zoneVisee = null;
+    if(typeof son === "function") son("clic");
+    dessiner();
+  });
+
+  document.getElementById("btn-verif-1").addEventListener("click", ()=>{
+    const zones = Object.keys(noms);
+    if(zones.some(id=>!poses[id])) return v2Incomplet("fb-1", "Pose un nom sur chaque zone de la carte avant de vérifier.");
+    const justes = zones.filter(id=>poses[id].dataset.val === id).length;
+    if(justes === zones.length) v2Reussite("fb-1", err=>validerSalle(1, err));
+    else v2Echec("fb-1", justes, zones.length, "noms bien placés");
   });
 
   const indices = ETAT.niveau==="CM1"
@@ -274,6 +279,7 @@ function enigme2HTML(){
 
   return `
     <h3>🚢 Le carnet de route du « Mongolia »</h3>
+    ${v2Bandeau()}
     <p class="center" style="opacity:.75;font-style:italic">
       Les pages du carnet se sont mélangées. Remets les escales dans l'<b>ordre du voyage</b> avec les flèches ▲▼.
     </p>
@@ -301,6 +307,7 @@ function enigme2HTML(){
 }
 
 function activerEnigme2(){
+  v2Debut();
   const liste = document.getElementById("carnet-route");
   const bonneCanal = +document.getElementById("q-canal").dataset.bonne;
   let choixCanal = null;
@@ -335,24 +342,11 @@ function activerEnigme2(){
 
   document.getElementById("btn-verif-2").addEventListener("click", ()=>{
     const items = [...liste.querySelectorAll(".item-ordre")];
-    const ordreOk = items.every((it,i)=> +it.dataset.rang === i+1);
-    const canalOk = choixCanal === bonneCanal;
-
-    items.forEach((it,i)=>{
-      it.style.borderColor = (+it.dataset.rang === i+1) ? "var(--jade)" : "var(--sceau)";
-    });
-
-    if(ordreOk && canalOk){
-      retour("fb-2","succes","✨ L'itinéraire est reconstitué ! Le canal de Suez fait gagner des semaines : sans lui, il faudrait contourner toute l'Afrique.");
-      if(typeof son === "function") son("succes");
-      setTimeout(()=>validerSalle(2), 1200);
-    }else if(!ordreOk){
-      retour("fb-2","erreur","L'ordre du voyage n'est pas encore le bon. Souviens-toi : Fogg part vers l'<b>est</b>, de l'Europe vers l'Asie.",3200);
-      if(typeof son === "function") son("erreur");
-    }else{
-      retour("fb-2","erreur","L'itinéraire est bon ! Mais la réponse sur le <b>canal de Suez</b> est incorrecte.",3200);
-      if(typeof son === "function") son("erreur");
-    }
+    if(choixCanal === null) return v2Incomplet("fb-2", "Réponds aussi à la question sur le <b>canal</b> avant de vérifier.");
+    const justes = items.filter((it,i)=> +it.dataset.rang === i+1).length + (choixCanal === bonneCanal ? 1 : 0);
+    const total = items.length + 1;
+    if(justes === total) v2Reussite("fb-2", err=>validerSalle(2, err));
+    else v2Echec("fb-2", justes, total, "réponses justes (escales à la bonne place + question du canal)");
   });
 
   const indices = ETAT.niveau==="CM1"
@@ -391,8 +385,9 @@ function enigme3HTML(){
   const cartes = jeu.map((p,i)=>({id:"c"+(i+1), txt:p.climat}));
   return `
     <h3>🌡️ Le carnet des climats de Mrs Aouda</h3>
+    ${v2Bandeau()}
     <p class="center" style="opacity:.75;font-style:italic">
-      Clique sur un <b>paysage</b>, puis sur le <b>climat</b> qui lui correspond.
+      Clique sur un <b>paysage</b>, puis sur le <b>climat</b> qui lui correspond. Un nouveau clic défait la paire.
     </p>
     <div class="grille-paysages" id="grille-paysages">
       ${jeu.map(p=>`
@@ -405,13 +400,14 @@ function enigme3HTML(){
       <div class="titre-colonne">Les climats</div>
       ${melanger(cartes).map(c=>`<div class="carte-match" data-id="${c.id}">${c.txt}</div>`).join("")}
     </div>
+    <div class="center"><button class="btn jade" id="btn-verif-3">✅ Vérifier les climats</button></div>
     <div class="feedback" id="fb-3"></div>
     <div class="barre-outils"><button class="btn laiton" id="btn-indice">💡 Indice</button></div>
   `;
 }
 
 function activerEnigme3(){
-  let selection = null;
+  v2Debut();
   const paysages = document.querySelectorAll("#grille-paysages .paysage");
 
   /* Photos de paysage facultatives : assets/images/cartes/paysage-desert.jpg,
@@ -420,39 +416,12 @@ function activerEnigme3(){
     paysages.forEach(p=>illustrerVignette(p.querySelector(".vignette"), p.dataset.image));
   }
 
-  paysages.forEach(p=>{
-    p.addEventListener("click", ()=>{
-      if(p.classList.contains("bien")) return;
-      paysages.forEach(x=>x.classList.remove("select"));
-      p.classList.add("select");
-      selection = p;
-      if(typeof son === "function") son("clic");
-    });
-  });
-
-  document.querySelectorAll("#col-climats .carte-match").forEach(c=>{
-    c.addEventListener("click", ()=>{
-      if(!selection){
-        retour("fb-3","indice","👉 Choisis d'abord un <b>paysage</b> en haut.",2000);
-        return;
-      }
-      if(selection.dataset.bon === c.dataset.id){
-        selection.classList.remove("select");
-        selection.classList.add("bien");
-        c.classList.add("bien");
-        selection = null;
-        if(typeof son === "function") son("succes");
-        if(document.querySelectorAll("#grille-paysages .paysage:not(.bien)").length === 0){
-          retour("fb-3","succes","✨ Tous les climats sont identifiés ! Plus on s'éloigne de l'équateur, plus il fait froid.");
-          setTimeout(()=>validerSalle(3), 1100);
-        }
-      }else{
-        c.classList.add("mal");
-        setTimeout(()=>c.classList.remove("mal"), 500);
-        if(typeof son === "function") son("erreur");
-        retour("fb-3","erreur","Ce climat ne correspond pas à ce paysage. Pense à la <b>chaleur</b> et à la <b>pluie</b>.",2400);
-      }
-    });
+  const asso = v2Association("#grille-paysages .paysage", "#col-climats .carte-match");
+  document.getElementById("btn-verif-3").addEventListener("click", ()=>{
+    if(!asso.complet()) return v2Incomplet("fb-3", "Associe chaque paysage à un climat avant de vérifier.");
+    const j = asso.justes();
+    if(j === asso.total) v2Reussite("fb-3", err=>validerSalle(3, err));
+    else v2Echec("fb-3", j, asso.total, "associations justes");
   });
 
   const indices = ETAT.niveau==="CM1"
@@ -494,6 +463,7 @@ function enigme4HTML(){
   const trajets = TRAJETS[ETAT.niveau] || TRAJETS.CM2;
   return `
     <h3>🧮 Le calcul du timonier</h3>
+    ${v2Bandeau()}
     <p class="center" style="opacity:.75;font-style:italic">
       Pour chaque étape : choisis le <b>bon moyen de transport</b>, puis calcule la <b>distance réelle</b> grâce à l'échelle.
     </p>
@@ -528,40 +498,20 @@ function enigme4HTML(){
 }
 
 function activerEnigme4(){
+  v2Debut();
   document.getElementById("btn-verif-4").addEventListener("click", ()=>{
     const lignes = [...document.querySelectorAll(".table-bord tbody tr")];
-    let erreurs = 0, vides = 0;
-
+    let justes = 0, vides = 0;
     lignes.forEach(tr=>{
-      const i    = tr.dataset.i;
-      const sel  = tr.querySelector(`.sel-transport[data-i="${i}"]`);
-      const inp  = tr.querySelector(`.inp-km[data-i="${i}"]`);
-      const tdT  = sel.closest("td");
-      const tdK  = inp.closest("td");
-      tdT.classList.remove("ok","ko");
-      tdK.classList.remove("ok","ko");
-
+      const sel = tr.querySelector(".sel-transport"), inp = tr.querySelector(".inp-km");
       if(!sel.value || inp.value === ""){ vides++; return; }
-
-      if(sel.value === tr.dataset.bon) tdT.classList.add("ok");
-      else { tdT.classList.add("ko"); erreurs++; }
-
-      if(Number(inp.value) === Number(tr.dataset.km)) tdK.classList.add("ok");
-      else { tdK.classList.add("ko"); erreurs++; }
+      if(sel.value === tr.dataset.bon) justes++;
+      if(Number(inp.value) === Number(tr.dataset.km)) justes++;
     });
-
-    if(vides > 0){
-      retour("fb-4","indice", `Il reste <b>${vides}</b> ligne(s) incomplète(s) : choisis un transport et calcule la distance.`, 3000);
-      return;
-    }
-    if(erreurs === 0){
-      retour("fb-4","succes","✨ Journal de bord exact ! Pour lire une carte, on multiplie la mesure en cm par ce qu'indique l'échelle.");
-      if(typeof son === "function") son("succes");
-      setTimeout(()=>validerSalle(4), 1200);
-    }else{
-      retour("fb-4","erreur", `<b>${erreurs}</b> erreur(s) — les cases en rouge sont à corriger. Rappel : 1 cm = 200 km, donc <b>distance = cm × 200</b>.`, 4000);
-      if(typeof son === "function") son("erreur");
-    }
+    if(vides > 0) return v2Incomplet("fb-4", `Il reste <b>${vides}</b> ligne(s) incomplète(s) : choisis un transport et calcule la distance.`);
+    const total = lignes.length * 2;
+    if(justes === total) v2Reussite("fb-4", err=>validerSalle(4, err));
+    else v2Echec("fb-4", justes, total, "cases justes (transports et distances)");
   });
 
   const indices = ETAT.niveau==="CM1"
@@ -605,6 +555,7 @@ function enigme5HTML(){
 
   return `
     <h3>⏰ L'horloge du monde — l'énigme du 80ᵉ jour</h3>
+    ${v2Bandeau()}
     <p class="center" style="opacity:.8;font-style:italic">
       À l'observatoire de Greenwich, il est <b>midi (12 h)</b>. La Terre est découpée en
       <b>24 fuseaux horaires</b> : chaque fuseau vers l'<b>est</b> ajoute 1 heure, chaque fuseau
@@ -643,6 +594,7 @@ function enigme5HTML(){
 }
 
 function activerEnigme5(){
+  v2Debut();
   let choixJour = null;
   const blocJour = document.getElementById("q-jour");
   const bonneJour = +blocJour.dataset.bonne;
@@ -657,35 +609,14 @@ function activerEnigme5(){
 
   document.getElementById("btn-verif-5").addEventListener("click", ()=>{
     const champs = [...document.querySelectorAll("#fuseaux .fuseau-champ")];
-    let erreurs = 0, vides = 0;
-
-    champs.forEach(ch=>{
-      const sel = ch.querySelector(".sel-heure");
-      ch.classList.remove("ok","ko");
-      if(sel.value === ""){ vides++; return; }
-      if(Number(sel.value) === Number(ch.dataset.bon)) ch.classList.add("ok");
-      else { ch.classList.add("ko"); erreurs++; }
-    });
-
-    if(vides > 0){
-      retour("fb-5","indice", `Il reste <b>${vides}</b> ville(s) sans heure.`, 2600);
-      return;
-    }
-    if(choixJour === null){
-      retour("fb-5","indice","Réponds aussi à la question sur le <b>jour gagné</b>.", 2600);
-      return;
-    }
-    if(erreurs === 0 && choixJour === bonneJour){
-      retour("fb-5","succes","✨ Le carnet s'ouvre ! Vous avez compris le secret du 80ᵉ jour.");
-      if(typeof son === "function") son("deverrouille");
-      setTimeout(()=>validerSalle(5), 1400);
-    }else if(erreurs > 0){
-      retour("fb-5","erreur", `<b>${erreurs}</b> heure(s) incorrecte(s). Pars de <b>12 h</b> à Londres, puis <b>ajoute</b> ou <b>retire</b> le décalage indiqué.`, 4000);
-      if(typeof son === "function") son("erreur");
-    }else{
-      retour("fb-5","erreur","Les heures sont exactes ! Mais réfléchis encore à ce qui arrive quand on avance vers l'est en faisant le tour complet de la Terre…", 4000);
-      if(typeof son === "function") son("erreur");
-    }
+    const vides = champs.filter(ch=>ch.querySelector(".sel-heure").value === "").length;
+    if(vides > 0) return v2Incomplet("fb-5", `Il reste <b>${vides}</b> ville(s) sans heure.`);
+    if(choixJour === null) return v2Incomplet("fb-5", "Réponds aussi à la question sur le <b>jour gagné</b>.");
+    const justes = champs.filter(ch=>Number(ch.querySelector(".sel-heure").value) === Number(ch.dataset.bon)).length
+      + (choixJour === bonneJour ? 1 : 0);
+    const total = champs.length + 1;
+    if(justes === total) v2Reussite("fb-5", err=>validerSalle(5, err));
+    else v2Echec("fb-5", justes, total, "réponses justes (heures + question du jour)");
   });
 
   const indices = ETAT.niveau==="CM1"

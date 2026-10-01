@@ -8,6 +8,11 @@
    correction sont gérés ici, une fois pour toutes.
    ========================================================= */
 
+/* Barème v2 (octobre 2026) : tout juste du premier coup = 10 points,
+   après une erreur = 3 points ; un coup de pouce retire 2 points. */
+const PTS_PREMIER_COUP = 10;
+const PTS_APRES_ERREUR = 3;
+
 const ACTIVITES = (function(){
 
   /* ---------------- Outils ---------------- */
@@ -1026,6 +1031,11 @@ const ACTIVITES = (function(){
     const section = $("section", "activite");
     section.dataset.type = act.type;
 
+    /* Moteur v2 (octobre 2026) : le barème du premier coup est rappelé partout */
+    const bareme = $("div", "bandeau-bareme");
+    bareme.innerHTML = "🎯 Tout juste du premier coup : <b>" + PTS_PREMIER_COUP + " points</b> · après une erreur : " +
+      PTS_APRES_ERREUR + " points seulement. Relis la leçon (📚) avant de vérifier !";
+    section.appendChild(bareme);
     section.appendChild($("p", "consigne", act.consigne));
     if(act.precision) section.appendChild($("p", "precision", act.precision));
     if(act.document){
@@ -1061,13 +1071,17 @@ const ACTIVITES = (function(){
     retour.hidden = true;
     section.appendChild(retour);
 
-    const pointsMax = act.points || 3;
     let essais = 0, termine = false, aideUtilisee = false;
 
-    function afficher(classe, texte){
+    function afficher(classe, texte, html){
       retour.className = "retour " + classe;
-      retour.textContent = texte;
+      if(html) retour.innerHTML = texte; else retour.textContent = texte;
       retour.hidden = false;
+    }
+    /* v2 : on ne montre jamais QUELLES réponses sont justes ou fausses */
+    function effacerMarques(){
+      corps.querySelectorAll(".bon, .faux, .mauvais").forEach(e => e.classList.remove("bon", "faux", "mauvais"));
+      corps.querySelectorAll(".reponse span").forEach(e => e.style.borderColor = "");
     }
 
     function conclure(reussi, points, detail){
@@ -1083,19 +1097,23 @@ const ACTIVITES = (function(){
 
     bVerifier.addEventListener("click", () => {
       if(termine) return;
-      essais++;
       const r = moteur.verifier();
+      /* réponse incomplète (message fourni par le type) : pas compté comme une erreur */
+      if(!r.ok && r.message){ effacerMarques(); afficher("faux", "✋ " + r.message); return; }
+      essais++;
       if(r.ok){
-        const malus = Math.min(essais - 1, 2) + (aideUtilisee ? 1 : 0);
-        const points = Math.max(1, pointsMax - malus);
-        afficher("bon", (r.ouverte
-          ? "Réponse enregistrée. Vous en discuterez ensemble."
-          : "Bravo, tout est juste !") + "  (+" + points + " point" + (points > 1 ? "s" : "") + ")");
+        const premier = essais === 1;
+        const points = Math.max(1, (premier ? PTS_PREMIER_COUP : PTS_APRES_ERREUR) - (aideUtilisee ? 2 : 0));
+        if(r.ouverte) afficher("bon", "Réponse enregistrée : vous en discuterez ensemble. +" + points + " points");
+        else afficher("bon" + (premier ? " premier-coup" : ""),
+          premier ? "🎯 <b>Tout juste du premier coup !</b> +" + points + " points" : "✔ Résolue : +" + points + " points", true);
         conclure(true, points, r.reponse);
       } else {
-        const detail = r.message ||
-          ("Il y a " + (r.total - r.faits) + " erreur(s) sur " + r.total + ". Corrige et réessaie.");
-        afficher("faux", detail);
+        effacerMarques();
+        if(typeof SAUVEGARDE !== "undefined" && SAUVEGARDE.compterErreur) SAUVEGARDE.compterErreur();
+        afficher("faux", "✗ <b>Pas tout juste.</b> " + r.faits + " bonne" + (r.faits > 1 ? "s" : "") + " réponse" +
+          (r.faits > 1 ? "s" : "") + " sur " + r.total + "." +
+          (essais === 1 ? '<div class="perte-bonus">Le bonus du premier coup est perdu : vérifie dans la leçon avant de revalider.</div>' : ""), true);
         compteur.textContent = "Essai " + essais;
         if(essais >= 3) bCorriger.hidden = false;
       }
@@ -1103,7 +1121,7 @@ const ACTIVITES = (function(){
 
     bAide.addEventListener("click", () => {
       aideUtilisee = true;
-      afficher("bon", "💡 " + act.aide);
+      afficher("bon", "💡 " + act.aide + " (coup de pouce : 2 points de moins)");
       bAide.disabled = true;
     });
 

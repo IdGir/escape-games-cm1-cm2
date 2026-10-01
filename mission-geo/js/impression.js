@@ -264,7 +264,7 @@ const IMPRESSION = (function(){
     h += cartouche("Progression annuelle", true);
     h += "<h1>Mission géographique — Année A</h1>";
     h += "<p>16 séances réparties sur les cinq périodes, une par élément du programme. " +
-         "Chaque séance réussie dépose un indice dans le carnet ; les 16 indices ouvrent la piste finale.</p>";
+         "Chaque séance réussie révèle un indice une seule fois : les élèves le recopient sur leur fiche de mission ; les 16 indices ouvrent la piste finale.</p>";
     h += "<table><tr><th>P.</th><th>Séance</th><th>Élément du programme</th>" +
          "<th>Leçon</th><th>Indice</th><th>Livret</th></tr>";
     MISSION.ordre().forEach(s => {
@@ -302,6 +302,33 @@ const IMPRESSION = (function(){
     });
     h += "</table>";
     h += pied("Progression annuelle");
+    h += "</section>";
+    imprimer(h);
+  }
+
+  /* ---------------- Fiche de mission (v2, octobre 2026) ----------------
+     Chaque indice n'est affiché qu'une fois, à la fin de sa séance :
+     les élèves le recopient ici et s'en servent dans la piste finale. */
+  function ficheMission(){
+    const sym = MISSION.final.symboles;
+    let h = '<section class="feuille">';
+    h += cartouche("Fiche de mission — à garder toute l'année", false);
+    h += "<h1>Ma fiche de mission</h1>";
+    h += '<p class="encadre"><b>🎯 Barème :</b> une énigme juste <b>du premier coup</b> rapporte ' +
+         PTS_PREMIER_COUP + " points, après une erreur seulement " + PTS_APRES_ERREUR + " points. " +
+         "L'ordinateur dit <b>combien</b> de réponses sont justes, jamais lesquelles : lis la leçon avant de vérifier !<br>" +
+         "<b>✍️ À la fin de chaque séance, un indice s'affiche une seule fois.</b> Recopie-le tout de suite ici : " +
+         "sans cette fiche, impossible de retrouver la valise.</p>";
+    h += '<table class="table-fiche-mission"><tr><th style="width:44%">Séance</th><th>Indice</th></tr>';
+    MISSION.ordre().forEach(s => {
+      const i = s.indice || {};
+      const cellule = i.type === "nombre"
+        ? '<span style="font-size:1.4em">' + ((sym[i.symbole] || {}).glyphe || "◇") + "</span> = ________"
+        : "🗒️ ____________________________________<br><br>______________________________________";
+      h += "<tr><td><b>" + s.numero + ".</b> " + s.titre + "</td><td style='height:2.2em'>" + cellule + "</td></tr>";
+    });
+    h += "</table>";
+    h += pied("Fiche de mission");
     h += "</section>";
     imprimer(h);
   }
@@ -388,5 +415,5 @@ const IMPRESSION = (function(){
     return [...new Set(noms)];
   }
 
-  return { lecon, preparation, ficheEleve, progression, bilan, diplome, mediasAttendus };
+  return { lecon, preparation, ficheEleve, progression, bilan, diplome, ficheMission, mediasAttendus };
 })();

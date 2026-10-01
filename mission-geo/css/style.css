@@ -1,0 +1,1513 @@
+/* =========================================================
+   MISSION GÉOGRAPHIQUE — ANNÉE A
+   Charte écran : « agence secrète de géographie »
+   ---------------------------------------------------------
+   Univers : carnet d'explorateur, papier vélin sur fond
+   kraft, encre bleu nuit, tampons rouges, vert des cartes.
+   Public : élèves de 9 à 11 ans, souvent au tableau blanc
+   interactif. D'où une taille de base généreuse, des
+   contrastes AA et des cibles tactiles d'au moins 48 px.
+
+   La variable --echelle (1, 1.15, 1.3, 1.5) est posée sur
+   :root par app.js depuis l'espace enseignant : elle
+   multiplie la taille de base, et tout le reste est
+   exprimé en rem pour suivre.
+
+   Sommaire
+     1.  Variables de la charte
+     2.  Socle (remise à zéro, typographie, liens)
+     3.  Champs de formulaire et boutons
+     4.  Écrans
+     5.  En-tête de séance (#barre)
+     6.  Accueil
+     7.  Carnet de mission
+     8.  Séance (scène, narration, progression)
+     9.  Piste finale
+     10. Médias
+     11. Leçons et tableaux de données
+     12. Modale et espace enseignant
+     13. Aperçu des fiches A4 (écran)
+     14. Bandeau de message
+     15. Accessibilité, animations
+     16. Adaptations tablette et téléphone
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES DE LA CHARTE
+   ========================================================= */
+:root{
+  --echelle: 1;
+
+  /* Papiers */
+  --kraft:        #d8c29b;
+  --kraft-fonce:  #a9864f;
+  --kraft-pale:   #efe3c8;
+  --velin:        #fbf6ea;
+  --blanc:        #fffdf8;
+  --trait:        #cdb88f;
+
+  /* Encres */
+  --encre:        #1b2a4a;   /* bleu nuit : texte et action principale */
+  --encre-douce:  #45526e;   /* texte secondaire (contraste > 7:1 sur vélin) */
+  --bleu:         #22508f;
+  --bleu-pale:    #e4edf8;
+
+  /* Accents */
+  --rouge:        #b3261e;   /* tampon */
+  --rouge-pale:   #fbe4e1;
+  --vert:         #2b6a3d;   /* vert carte */
+  --vert-pale:    #e2f1df;
+  --or:           #b8861b;
+  --jaune-pale:   #fff3cc;
+
+  /* Formes */
+  --rayon:        14px;
+  --rayon-petit:  9px;
+  --ombre:        0 2px 0 rgba(27,42,74,.08), 0 8px 24px rgba(27,42,74,.10);
+  --ombre-forte:  0 4px 0 rgba(27,42,74,.10), 0 18px 40px rgba(27,42,74,.22);
+  --cible:        48px;      /* taille minimale d'une cible tactile */
+
+  /* Polices : uniquement des polices système (usage hors ligne) */
+  --police-texte: "Segoe UI", "Trebuchet MS", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --police-titre: Georgia, "Book Antiqua", "Palatino Linotype", "Times New Roman", serif;
+  --police-tampon: "Courier New", Courier, ui-monospace, monospace;
+  --police-plume: "Segoe Script", "Bradley Hand", "Brush Script MT", cursive;
+}
+
+
+/* =========================================================
+   2. SOCLE
+   ========================================================= */
+*, *::before, *::after{ box-sizing: border-box; }
+
+/* L'attribut hidden doit toujours l'emporter */
+[hidden]{ display: none !important; }
+
+html{
+  font-size: calc(1.125rem * var(--echelle, 1));   /* 18 px à 100 % */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--police-texte);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--encre);
+  background-color: #e7d9bc;
+  /* bureau de l'agence : kraft légèrement quadrillé */
+  background-image:
+    radial-gradient(ellipse at top, rgba(255,255,255,.45), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(120,90,40,.06) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgba(120,90,40,.06) 0 1px, transparent 1px 32px);
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4{
+  font-family: var(--police-titre);
+  line-height: 1.2;
+  color: var(--encre);
+  margin: 0 0 .6em;
+}
+h1{ font-size: 2.2rem; }
+h2{ font-size: 1.6rem; }
+h3{ font-size: 1.25rem; }
+h4{ font-size: 1.05rem; }
+
+p{ margin: 0 0 .8em; }
+ul, ol{ margin: 0 0 .9em; padding-left: 1.4em; }
+li{ margin-bottom: .25em; }
+b, strong{ font-weight: 700; }
+small{ font-size: .85em; }
+img, svg, video{ max-width: 100%; }
+code{
+  font-family: ui-monospace, Consolas, "Courier New", monospace;
+  font-size: .9em;
+  background: var(--kraft-pale);
+  padding: .05em .35em;
+  border-radius: 4px;
+}
+a{ color: var(--bleu); }
+
+/* Les noms de massifs du dessin SVG ne portent pas de coordonnées :
+   ils s'afficheraient dans le coin de la carte. On les masque. */
+.nom-massif{ display: none; }
+
+
+/* =========================================================
+   3. CHAMPS DE FORMULAIRE ET BOUTONS
+   ========================================================= */
+button, input, select, textarea{
+  font: inherit;
+  color: inherit;
+}
+
+button{ cursor: pointer; }
+button:disabled{ cursor: not-allowed; }
+
+input[type="text"],
+input[type="number"],
+input:not([type]),
+select,
+textarea{
+  min-height: var(--cible);
+  padding: .55rem .8rem;
+  border: 2px solid var(--trait);
+  border-radius: var(--rayon-petit);
+  background: var(--blanc);
+  color: var(--encre);
+  font-size: 1rem;
+  max-width: 100%;
+}
+textarea{ width: 100%; min-height: 7rem; resize: vertical; line-height: 1.5; }
+input::placeholder, textarea::placeholder{ color: #7a7f8c; opacity: 1; }
+input:focus, select:focus, textarea:focus{
+  outline: none;
+  border-color: var(--bleu);
+  box-shadow: 0 0 0 3px rgba(34,80,143,.25);
+}
+input:disabled, select:disabled, textarea:disabled{
+  background: #f1ece0;
+  color: var(--encre-douce);
+  cursor: not-allowed;
+}
+input[type="checkbox"], input[type="radio"]{
+  width: 1.3rem;
+  height: 1.3rem;
+  accent-color: var(--encre);
+  vertical-align: -.2em;
+  margin: 0 .45rem 0 0;
+  cursor: pointer;
+}
+
+/* Étiquettes contenant leur champ : le champ passe à la ligne */
+label > input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+label > select,
+label > textarea{
+  display: block;
+  width: 100%;
+  margin-top: .3rem;
+}
+
+/* --- Bouton principal : encre bleu nuit, effet « tampon pressé » --- */
+.bouton-principal,
+.bouton-second{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-height: var(--cible);
+  padding: .65rem 1.35rem;
+  border-radius: var(--rayon-petit);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.bouton-principal{
+  border: 2px solid var(--encre);
+  background: var(--encre);
+  color: #fff;
+  box-shadow: 0 4px 0 #0d1830;
+}
+.bouton-principal:hover:not(:disabled){ background: #26396a; }
+.bouton-principal:active:not(:disabled){ transform: translateY(3px); box-shadow: 0 1px 0 #0d1830; }
+
+.bouton-second{
+  border: 2px solid var(--encre);
+  background: var(--blanc);
+  color: var(--encre);
+  box-shadow: 0 3px 0 rgba(27,42,74,.25);
+}
+.bouton-second:hover:not(:disabled){ background: var(--bleu-pale); }
+.bouton-second:active:not(:disabled){ transform: translateY(2px); box-shadow: 0 1px 0 rgba(27,42,74,.25); }
+
+.bouton-principal:disabled,
+.bouton-second:disabled{
+  opacity: .45;
+  box-shadow: none;
+}
+
+/* Lien discret (espace enseignant sur l'accueil) */
+.lien-discret{
+  display: inline-block;
+  min-height: var(--cible);
+  padding: .5rem .8rem;
+  border: 0;
+  background: none;
+  color: var(--encre-douce);
+  font-size: .9rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lien-discret:hover{ color: var(--encre); }
+
+/* Message d'aide sous un panneau */
+.aide-panneau{
+  color: var(--encre-douce);
+  font-size: .9rem;
+}
+
+
+/* =========================================================
+   4. ÉCRANS
+   ========================================================= */
+.ecran{ display: none; }
+.ecran.actif{
+  display: block;
+  animation: apparition .35s ease both;
+}
+#ecran-carnet,
+#ecran-session,
+#ecran-final{
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+
+/* =========================================================
+   5. EN-TÊTE DE SÉANCE (#barre)
+   ========================================================= */
+#barre{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .75rem 1rem;
+  padding: .55rem 1.25rem;
+  background: var(--encre);
+  color: #fff;
+  border-bottom: 4px solid var(--rouge);
+  box-shadow: 0 4px 14px rgba(13,24,48,.25);
+}
+
+#barre button{
+  min-width: var(--cible);
+  min-height: var(--cible);
+  padding: .35rem .7rem;
+  border: 2px solid rgba(255,255,255,.35);
+  border-radius: var(--rayon-petit);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: background-color .15s ease;
+}
+#barre button:hover{ background: rgba(255,255,255,.2); }
+
+#barre .lien-retour{
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.barre-titre{
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+}
+#barre-session{
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#barre-element{
+  color: #c9d3e8;
+  font-size: .82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#barre-element:empty{ display: none; }
+
+.barre-outils{
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+}
+#barre .jeton{
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  min-height: 2.4rem;
+  padding: .2rem .75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  font-size: .95rem;
+  white-space: nowrap;
+}
+#barre .jeton b{ font-variant-numeric: tabular-nums; }
+
+
+/* =========================================================
+   6. ACCUEIL
+   ========================================================= */
+#ecran-accueil{
+  position: relative;
+  min-height: 100vh;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+/* Fond : carte ancienne quadrillée, méridiens et rose des vents */
+.accueil-fond{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #d9c6a0;
+  background-image:
+    radial-gradient(circle at 85% 18%, transparent 0 70px, rgba(179,38,30,.18) 71px 73px, transparent 74px 110px, rgba(27,42,74,.12) 111px 112px, transparent 113px),
+    radial-gradient(ellipse at 50% 40%, rgba(255,248,230,.75), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(27,42,74,.09) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, rgba(27,42,74,.09) 0 1px, transparent 1px 64px),
+    linear-gradient(160deg, #e6d6b4, #c9ae7d);
+}
+
+.accueil-carte{
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.4rem 2.6rem 1.8rem;
+  background: var(--velin);
+  border-radius: 6px;
+  box-shadow: var(--ombre-forte);
+  /* double filet intérieur : dossier officiel */
+  outline: 2px solid var(--trait);
+  outline-offset: -12px;
+}
+/* trombone décoratif */
+.accueil-carte::before{
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 2.2rem;
+  width: 22px;
+  height: 58px;
+  border: 4px solid #8d97a8;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 4px var(--velin), inset 0 0 0 7px #8d97a8;
+  transform: rotate(-8deg);
+}
+
+.tampon{
+  display: inline-block;
+  margin: 0 0 1.1rem;
+  padding: .35rem .8rem;
+  border: 3px double var(--rouge);
+  border-radius: 6px;
+  color: var(--rouge);
+  font-family: var(--police-tampon);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  opacity: .92;
+}
+
+.accueil-carte h1{
+  margin-bottom: .15rem;
+  font-size: 2.6rem;
+  letter-spacing: .01em;
+}
+.sous-titre{
+  margin-bottom: 1.4rem;
+  color: var(--vert);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* La lettre du Professeur Atlas : papier ligné */
+.accueil-carte .lettre{
+  position: relative;
+  margin: 0 0 1.6rem;
+  padding: 1.2rem 1.4rem 1rem 2.4rem;
+  background-color: var(--blanc);
+  /* marge rouge du papier à lettres */
+  background-image:
+    linear-gradient(90deg, transparent 1.55rem, rgba(179,38,30,.35) 1.55rem 1.65rem, transparent 1.65rem);
+  border: 1px solid var(--trait);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(27,42,74,.08);
+  font-family: var(--police-titre);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+.accueil-carte .lettre p{ margin-bottom: .6em; }
+.accueil-carte .signature{
+  margin: .4rem 0 0;
+  text-align: right;
+  font-family: var(--police-plume);
+  font-size: 1.45rem;
+  color: var(--bleu);
+}
+
+/* Formulaire de départ */
+#form-depart{
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+#form-depart > label{
+  font-weight: 700;
+}
+#form-depart input[type="text"]{
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.choix-niveau{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.choix-niveau legend{
+  width: 100%;
+  margin-bottom: .35rem;
+  padding: 0;
+  font-weight: 700;
+}
+.choix-niveau label{
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--cible);
+  padding: .4rem 1.1rem .4rem .8rem;
+  border: 2px solid var(--trait);
+  border-radius: 999px;
+  background: var(--blanc);
+  font-weight: 700;
+  cursor: pointer;
+}
+.choix-niveau label:has(input:checked){
+  border-color: var(--encre);
+  background: var(--bleu-pale);
+}
+#form-depart .bouton-principal{
+  justify-self: start;
+  font-size: 1.1rem;
+  padding: .8rem 1.6rem;
+}
+
+.note-accueil{
+  padding: .9rem 1.1rem;
+  border-left: 5px solid var(--vert);
+  background: var(--vert-pale);
+  border-radius: 0 var(--rayon-petit) var(--rayon-petit) 0;
+  font-size: .95rem;
+}
+
+
+/* =========================================================
+   7. CARNET DE MISSION
+   ========================================================= */
+.carnet-entete{
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1.4rem 1.6rem 1.2rem;
+  background: var(--velin);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  border-top: 8px solid var(--kraft-fonce);
+}
+.carnet-entete h2{ margin-bottom: .2rem; font-size: 2rem; }
+#carnet-equipe{
+  margin-bottom: .9rem;
+  color: var(--encre-douce);
+  font-weight: 600;
+}
+#carnet-equipe:empty{ display: none; }
+
+/* Jauge de progression */
+.jauge{
+  height: 1.1rem;
+  overflow: hidden;
+  border: 2px solid var(--encre);
+  border-radius: 999px;
+  background: var(--blanc);
+}
+.jauge-barre{
+  width: 0;
+  height: 100%;
+  background: repeating-linear-gradient(-45deg, var(--vert) 0 10px, #367c4a 10px 20px);
+  border-radius: 999px;
+  transition: width .6s ease;
+}
+.jauge-legende{
+  margin: .45rem 0 0;
+  font-size: .95rem;
+  color: var(--encre-douce);
+}
+.jauge-legende b{ color: var(--encre); }
+
+/* Deux colonnes : séances / indices */
+.carnet-colonnes{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 19rem;   /* suit la taille du texte */
+  gap: 1.5rem;
+  align-items: start;
+}
+.periodes{
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.periode{
+  padding: 1.2rem 1.3rem 1.3rem;
+  background: var(--velin);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+}
+.periode h3{
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: .25rem;
+}
+.etiquette-periode{
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 3px solid var(--rouge);
+  border-radius: 50%;
+  color: var(--rouge);
+  font-family: var(--police-tampon);
+  font-size: 1rem;
+  font-weight: 700;
+  transform: rotate(-8deg);
+}
+.periode .theme{
+  margin: 0 0 1rem 3.3rem;
+  color: var(--encre-douce);
+  font-style: italic;
+  font-size: .95rem;
+}
+
+.grille-seances{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: .9rem;
+}
+
+/* Fiche de séance */
+.carte-seance{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .25rem;
+  min-height: 132px;
+  padding: .9rem 2.8rem 1rem 1rem;
+  border: 2px solid var(--trait);
+  border-radius: var(--rayon-petit);
+  background: var(--blanc);
+  text-align: left;
+  box-shadow: 0 3px 0 rgba(27,42,74,.12);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  overflow-wrap: anywhere;
+}
+.carte-seance:not(:disabled):hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(27,42,74,.14), 0 10px 18px rgba(27,42,74,.12);
+}
+/* séance jouable mais pas encore réussie : c'est la prochaine */
+.carte-seance:not(.reussie):not(:disabled){
+  border-color: var(--encre);
+  box-shadow: 0 3px 0 var(--encre);
+}
+.carte-seance .num{
+  color: var(--rouge);
+  font-family: var(--police-tampon);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.carte-seance .titre{
+  font-family: var(--police-titre);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.carte-seance .lieu{
+  margin-top: auto;
+  color: var(--encre-douce);
+  font-size: .88rem;
+}
+.carte-seance .etat{
+  position: absolute;
+  top: .7rem;
+  right: .75rem;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.carte-seance.reussie{
+  border-color: var(--vert);
+  background: linear-gradient(180deg, var(--vert-pale), var(--blanc) 70%);
+  box-shadow: 0 3px 0 rgba(43,106,61,.35);
+}
+.carte-seance:disabled{
+  background: #f2ecdf;
+  border-style: dashed;
+  box-shadow: none;
+  color: #5f6678;
+}
+.carte-seance:disabled .num{ color: #7d6f5a; }
+
+/* Panneau des indices */
+.panneau-indices{
+  position: sticky;
+  top: 5.5rem;
+  padding: 1.2rem 1.2rem 1.3rem;
+  background: var(--kraft-pale);
+  border: 2px solid var(--kraft);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+}
+.panneau-indices h3{ margin-bottom: .3rem; }
+.panneau-indices .bouton-principal{ width: 100%; margin-top: .4rem; }
+#aide-valise{ margin: .7rem 0 0; }
+#aide-valise:empty{ display: none; }
+
+.indices{
+  display: grid;
+  gap: .55rem;
+  margin: .8rem 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+.indices li{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: 0;
+  padding: .55rem .7rem;
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  border-radius: var(--rayon-petit);
+  box-shadow: 0 2px 0 rgba(27,42,74,.06);
+}
+.indices li > div{
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+.indices li small{ color: var(--encre-douce); }
+.indices .symbole{
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--encre);
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.indices .valeur{
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.indices li.fait .symbole{
+  background: var(--jaune-pale);
+  border: 2px solid var(--or);
+}
+.indices li.indices-vide{
+  display: block;
+  background: transparent;
+  border: 2px dashed var(--kraft-fonce);
+  box-shadow: none;
+  color: var(--encre-douce);
+  font-style: italic;
+}
+
+
+/* =========================================================
+   8. SÉANCE
+   ========================================================= */
+.scene{
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 1.8rem 2rem 1.6rem;
+  background: var(--velin);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+}
+.scene > h2{
+  margin-bottom: .3rem;
+  font-size: 1.9rem;
+}
+
+/* Fil d'Ariane : lieu, thème, compteur d'énigmes */
+.fil{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .3rem .6rem;
+  margin: 0 0 .8rem;
+  color: var(--encre-douce);
+  font-weight: 600;
+  font-size: .95rem;
+}
+.badge-livret{
+  display: inline-block;
+  padding: .1rem .6rem;
+  border: 2px solid var(--rouge);
+  border-radius: 6px;
+  color: var(--rouge);
+  font-family: var(--police-tampon);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+/* Pastilles de progression dans la séance */
+.etapes{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+  margin: 0 0 1.3rem;
+}
+.etapes span{
+  width: .95rem;
+  height: .95rem;
+  border: 2px solid var(--encre);
+  border-radius: 50%;
+  background: var(--blanc);
+  transition: transform .2s ease, background-color .2s ease;
+}
+.etapes span.faite{
+  border-color: var(--vert);
+  background: var(--vert);
+}
+.etapes span.active{
+  border-color: var(--rouge);
+  background: var(--rouge);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(179,38,30,.2);
+}
+
+/* Narration : message de l'agence */
+.narration{
+  position: relative;
+  margin: 1.2rem 0;
+  padding: 1.2rem 1.4rem;
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  border-left: 6px solid var(--kraft-fonce);
+  border-radius: var(--rayon-petit);
+  font-family: var(--police-titre);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+.narration p:last-child{ margin-bottom: 0; }
+
+/* Encart d'information (objectifs, bilan) */
+.avertissement{
+  margin: 1rem 0;
+  padding: .9rem 1.1rem;
+  background: var(--bleu-pale);
+  border: 1px solid #b9cbe6;
+  border-left: 6px solid var(--bleu);
+  border-radius: var(--rayon-petit);
+  line-height: 1.6;
+}
+
+/* Pied de scène : navigation */
+.pied-scene{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 2px dashed var(--trait);
+}
+.pied-scene > :first-child{ margin-right: auto; }
+
+/* Carte de récompense / nouvel indice */
+.recompense{
+  position: relative;
+  margin: 1.6rem 0 .5rem;
+  padding: 1.4rem 1.5rem;
+  text-align: center;
+  background: var(--jaune-pale);
+  border: 3px dashed var(--or);
+  border-radius: var(--rayon);
+}
+.recompense h2{
+  color: var(--rouge);
+  font-size: 1.5rem;
+}
+.recompense p{ font-size: 1.05rem; }
+.recompense .bouton-second{ margin-top: .6rem; }
+
+
+/* =========================================================
+   9. PISTE FINALE
+   ========================================================= */
+.etape-finale{
+  position: relative;
+  margin: 1.4rem 0;
+  padding: 1.2rem 1.3rem 1.3rem;
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  border-left: 7px solid var(--kraft-fonce);
+  border-radius: var(--rayon-petit);
+}
+.etape-finale h3{ padding-right: 2.5rem; }
+.etape-finale.resolue{
+  border-left-color: var(--vert);
+  background: linear-gradient(180deg, var(--vert-pale), var(--blanc) 120px);
+}
+.etape-finale.resolue::after{
+  content: "\2713";
+  position: absolute;
+  top: .9rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--vert);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+.etape-finale > .bouton-principal{ margin-top: .6rem; }
+.etape-finale > input[type="text"]{
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Les valises : un bouton par pays */
+.choix-valises{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: .9rem;
+  margin: 1rem 0 .6rem;
+}
+.choix-valises button{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+  min-height: 7rem;
+  padding: 1.3rem .8rem .9rem;
+  border: 3px solid var(--kraft-fonce);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f3e5c6, #e3cd9f);
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 0 rgba(120,85,30,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+/* poignée de la valise */
+.choix-valises button::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 38px;
+  height: 14px;
+  margin-left: -19px;
+  border: 3px solid var(--kraft-fonce);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+}
+.choix-valises button:hover:not(:disabled){ transform: translateY(-2px); }
+.choix-valises .drapeau{ font-size: 2.6rem; line-height: 1; }
+.choix-valises button.choisie{
+  border-color: var(--encre);
+  background: linear-gradient(180deg, var(--bleu-pale), #c9d8ee);
+  box-shadow: 0 0 0 4px rgba(27,42,74,.25), 0 4px 0 var(--encre);
+}
+.choix-valises button.choisie::before{ border-color: var(--encre); }
+
+/* Calculs à symboles */
+.calcul-symboles{
+  display: inline-block;
+  padding: .1rem .6rem;
+  background: var(--velin);
+  border: 2px solid var(--trait);
+  border-radius: 8px;
+  font-size: 1.5rem;
+  letter-spacing: .06em;
+  line-height: 1.5;
+  white-space: normal;
+}
+.etape-finale p small{
+  color: var(--encre-douce);
+  font-size: .95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Carte quadrillée de la Corse : cases cliquables */
+.grille-corse{
+  display: grid;
+  gap: 5px;
+  max-width: 440px;
+  margin: .6rem 0 .8rem;
+}
+.grille-corse button{
+  aspect-ratio: 1;
+  min-height: var(--cible);
+  padding: 0;
+  border: 2px solid var(--trait);
+  border-radius: 8px;
+  background: var(--blanc);
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--encre-douce);
+  transition: background-color .12s ease;
+}
+.grille-corse button:hover{ background: var(--bleu-pale); }
+.grille-corse button.choisie{
+  border-color: var(--rouge);
+  background: var(--rouge);
+  color: #fff;
+}
+.etape-finale .media-slot{ max-width: 440px; margin-left: 0; }
+.etape-finale > input[type="text"]::placeholder{
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   10. MÉDIAS (vidéo, image, décor dessiné)
+   ========================================================= */
+.media-slot{
+  position: relative;
+  max-width: 820px;
+  margin: 1.2rem auto;
+  overflow: hidden;
+  background: #dceaf6;
+  border: 4px solid var(--blanc);
+  border-radius: var(--rayon-petit);
+  box-shadow: 0 3px 12px rgba(27,42,74,.18);
+}
+.media-slot img,
+.media-slot video{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(56vh, 460px);
+  object-fit: contain;
+  background: #14203a;
+}
+.media-decor svg{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.media-legende{
+  position: absolute;
+  left: .6rem;
+  bottom: .6rem;
+  max-width: calc(100% - 1.2rem);
+  padding: .3rem .75rem;
+  background: rgba(20,32,58,.82);
+  color: #fff;
+  border-radius: 6px;
+  font-size: .85rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+/* Sous un dessin (carte, schéma) la légende passe dessous :
+   en surimpression, elle masquerait la légende de la carte. */
+.media-decor + .media-legende{
+  position: static;
+  max-width: none;
+  border-radius: 0;
+  background: var(--encre);
+  text-align: left;
+}
+.accueil-carte .media-slot{ margin: 0 0 1.4rem; }
+
+
+/* =========================================================
+   11. LEÇONS ET TABLEAUX DE DONNÉES
+   ========================================================= */
+.lecon{
+  margin: 1.2rem 0;
+  line-height: 1.65;
+}
+.lecon > h2{
+  padding-bottom: .35rem;
+  border-bottom: 3px solid var(--encre);
+  font-size: 1.55rem;
+}
+.lecon h3{
+  margin-top: 1.2rem;
+  color: var(--vert);
+}
+.objectifs{
+  margin: 0 0 1rem;
+  padding: .8rem 1.1rem;
+  background: var(--bleu-pale);
+  border-radius: var(--rayon-petit);
+}
+.objectifs ul{ margin: .3rem 0 0; }
+
+/* Vocabulaire : mot / définition */
+.vocabulaire{
+  display: grid;
+  grid-template-columns: minmax(8rem, max-content) 1fr;
+  gap: .35rem 1rem;
+  margin: 0 0 1rem;
+  padding: .8rem 1rem;
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  border-radius: var(--rayon-petit);
+}
+.vocabulaire dt{
+  font-weight: 700;
+  color: var(--encre);
+}
+.vocabulaire dd{ margin: 0; }
+
+/* À retenir : fiche bristol jaune avec marge rouge */
+.a-retenir{
+  position: relative;
+  margin: 1.2rem 0;
+  padding: 1rem 1.2rem 1rem 1.6rem;
+  background: var(--jaune-pale);
+  border: 2px solid var(--or);
+  border-left: 7px solid var(--rouge);
+  border-radius: var(--rayon-petit);
+  font-weight: 600;
+}
+.a-retenir h4{
+  display: inline-block;
+  margin: 0 0 .4rem;
+  color: var(--rouge);
+  font-family: var(--police-tampon);
+  font-size: .95rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.a-retenir p:last-child{ margin-bottom: 0; }
+
+/* Tableaux : enveloppe défilante pour ne jamais élargir la page */
+.enveloppe-tableau{
+  max-width: 100%;
+  margin: .8rem 0 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table{ border-collapse: collapse; }
+.donnees,
+.lecon table,
+.encadre table,
+.enveloppe-tableau > table:not(.a-completer){
+  width: 100%;
+  margin: .6rem 0 1rem;
+  background: var(--blanc);
+  font-size: .95rem;
+}
+.donnees th, .donnees td,
+.lecon table th, .lecon table td,
+.encadre table th, .encadre table td,
+.enveloppe-tableau > table:not(.a-completer) th,
+.enveloppe-tableau > table:not(.a-completer) td{
+  padding: .45rem .65rem;
+  border: 1px solid var(--trait);
+  text-align: left;
+  vertical-align: top;
+}
+.donnees th,
+.lecon table th,
+.encadre table th,
+.enveloppe-tableau > table:not(.a-completer) th{
+  background: var(--kraft-pale);
+  font-weight: 700;
+}
+.donnees tr:nth-child(even) td,
+.lecon table tr:nth-child(even) td{ background: #fbf8f0; }
+
+/* Deux colonnes (réglages, leçons) */
+.deux-colonnes{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   12. MODALE ET ESPACE ENSEIGNANT
+   ========================================================= */
+.modale{
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(.5rem, 3vw, 2rem);
+  overflow-y: auto;
+  background: rgba(14,22,42,.62);
+  animation: fondu .2s ease both;
+}
+body:has(.modale:not([hidden])){ overflow: hidden; }
+
+.modale-boite{
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: auto;
+  padding: 1.8rem 2rem 1.6rem;
+  background: var(--velin);
+  border-radius: var(--rayon);
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  border-top: 8px solid var(--encre);
+  animation: surgir .25s ease both;
+  overflow-wrap: break-word;
+}
+.modale-fermer{
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  float: right;
+  width: var(--cible);
+  height: var(--cible);
+  margin: -.9rem -1.1rem .4rem .8rem;
+  border: 2px solid var(--encre);
+  border-radius: 50%;
+  background: var(--blanc);
+  color: var(--encre);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(27,42,74,.2);
+}
+.modale-fermer:hover{ background: var(--rouge); border-color: var(--rouge); color: #fff; }
+
+#modale-contenu > h2:first-child{ padding-right: 1rem; }
+#modale-contenu h3{
+  margin-top: 1.6rem;
+  padding-top: 1rem;
+  border-top: 2px dashed var(--trait);
+}
+#modale-contenu > label,
+#modale-contenu .deux-colonnes label{
+  display: block;
+  margin-bottom: .6rem;
+  font-weight: 600;
+}
+#modale-contenu label > input,
+#modale-contenu label > select,
+#modale-contenu label > textarea{ font-weight: 400; }
+#modale-contenu p > label{
+  display: inline-flex;
+  align-items: flex-start;
+  gap: .1rem;
+  min-height: 2.2rem;
+  cursor: pointer;
+}
+#modale-contenu p > label > input[type="checkbox"]{ margin-top: .2rem; flex: none; }
+#modale-contenu p[style*="flex"]{ margin: .6rem 0; }
+#modale-contenu label.bouton-second{ font-weight: 700; }
+/* Bibliothèque des leçons : boutons alignés à gauche */
+#modale-contenu li > .bouton-second{ justify-content: flex-start; text-align: left; }
+#modale-contenu .bouton-second{ font-size: .95rem; }
+#r-diag-sortie{ margin-top: .8rem; }
+
+
+/* =========================================================
+   13. APERÇU DES FICHES A4 (écran)
+   Fiches composées par impression.js dans la modale, juste
+   avant l'impression. print.css les met ensuite en page.
+   ========================================================= */
+.apercu-a4{
+  max-width: 210mm;
+  margin: .4rem auto 0;
+  padding: 14mm 13mm;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 14px rgba(0,0,0,.18);
+  font-size: .92rem;
+  line-height: 1.5;
+}
+.feuille h1{
+  margin: .6rem 0 .8rem;
+  padding-bottom: .3rem;
+  border-bottom: 3px solid var(--encre);
+  font-size: 1.6rem;
+}
+.feuille h2{
+  margin: 1.1rem 0 .5rem;
+  font-size: 1.15rem;
+  color: var(--encre);
+}
+.feuille table{
+  width: 100%;
+  margin: .5rem 0 .9rem;
+  font-size: .9rem;
+}
+.feuille th, .feuille td{
+  padding: .35rem .55rem;
+  border: 1px solid #8a8a8a;
+  text-align: left;
+  vertical-align: top;
+}
+.feuille th{ background: #eee6d4; }
+.feuille .encadre{
+  margin: .7rem 0;
+  padding: .6rem .9rem;
+  border: 1.5px solid var(--encre);
+  border-radius: 6px;
+  background: #f7f3ea;
+}
+.feuille .a-retenir{
+  font-weight: 400;
+  border-left-width: 6px;
+}
+
+.cartouche{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .6rem 1.2rem;
+  margin-bottom: .8rem;
+  padding: .55rem .8rem;
+  border: 2px solid var(--encre);
+  border-radius: 6px;
+  font-size: .85rem;
+  line-height: 1.6;
+}
+.cartouche > div:last-child{ text-align: right; }
+.lignes-eleve span{
+  display: inline-block;
+  min-width: 9em;
+  border-bottom: 1px dotted #555;
+}
+.bandeau-corrige{
+  margin: 0 0 .6rem;
+  padding: .35rem .8rem;
+  background: var(--rouge);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.ligne-reponse{
+  display: block;
+  height: 1.9em;
+  border-bottom: 1px dotted #666;
+}
+p > .ligne-reponse,
+td > .ligne-reponse{
+  display: inline-block;
+  min-width: 10em;
+  height: 1.2em;
+  vertical-align: bottom;
+}
+.pied-page{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  padding-top: .35rem;
+  border-top: 1px solid #999;
+  color: #555;
+  font-size: .78rem;
+}
+
+
+/* =========================================================
+   14. BANDEAU DE MESSAGE
+   ========================================================= */
+.bandeau{
+  position: fixed;
+  left: 50%;
+  bottom: 1.2rem;
+  z-index: 120;
+  width: max-content;
+  max-width: min(92vw, 580px);
+  padding: .85rem 1.4rem;
+  background: var(--encre);
+  color: #fff;
+  border-radius: var(--rayon);
+  box-shadow: 0 10px 28px rgba(0,0,0,.3);
+  font-weight: 600;
+  text-align: center;
+  transform: translateX(-50%);
+  animation: monter .3s ease both;
+}
+.bandeau.erreur{ background: var(--rouge); }
+.bandeau.reussite{ background: var(--vert); }
+
+
+/* =========================================================
+   15. ACCESSIBILITÉ, ANIMATIONS
+   ========================================================= */
+:focus-visible{
+  outline: 3px solid var(--or);
+  outline-offset: 2px;
+}
+#barre :focus-visible{ outline-color: #ffd36b; }
+
+@keyframes apparition{
+  from{ opacity: 0; transform: translateY(8px); }
+  to  { opacity: 1; transform: none; }
+}
+@keyframes fondu{
+  from{ opacity: 0; }
+  to  { opacity: 1; }
+}
+@keyframes surgir{
+  from{ opacity: 0; transform: translateY(16px) scale(.98); }
+  to  { opacity: 1; transform: none; }
+}
+@keyframes monter{
+  from{ opacity: 0; transform: translate(-50%, 16px); }
+  to  { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Réglage enseignant « Réduire les animations » */
+body.animations-reduites *,
+body.animations-reduites *::before,
+body.animations-reduites *::after{
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Préférence système équivalente */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* =========================================================
+   16. ADAPTATIONS TABLETTE ET TÉLÉPHONE
+   ========================================================= */
+
+/* Tablette et petits portables */
+@media (max-width: 960px){
+  .carnet-colonnes{ grid-template-columns: minmax(0, 1fr); }
+  .panneau-indices{ position: static; }
+  .indices{ grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+
+  /* En-tête sur deux lignes : le titre de séance garde toute la largeur */
+  #barre{
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "retour outils"
+      "titre  titre";
+    padding: .5rem .8rem;
+    gap: .4rem .6rem;
+  }
+  #barre .lien-retour{ grid-area: retour; }
+  .barre-outils{ grid-area: outils; justify-self: end; gap: .35rem; }
+  .barre-titre{ grid-area: titre; }
+}
+
+@media (max-width: 760px){
+  html{ font-size: calc(1.0625rem * var(--echelle, 1)); }   /* 17 px */
+  h1{ font-size: 1.9rem; }
+  h2{ font-size: 1.4rem; }
+
+  #ecran-accueil{ padding: 1.6rem .9rem 2rem; }
+  .accueil-carte{ padding: 2rem 1.4rem 1.4rem; }
+  .accueil-carte h1{ font-size: 2.1rem; }
+
+  #ecran-carnet,
+  #ecran-session,
+  #ecran-final{ padding: 1rem .9rem 2.5rem; }
+
+  .scene{ padding: 1.3rem 1.2rem 1.2rem; }
+  .scene > h2{ font-size: 1.55rem; }
+  .modale-boite{ padding: 1.4rem 1.2rem 1.2rem; }
+  .modale-fermer{ margin: -.6rem -.6rem .4rem .6rem; }
+  .apercu-a4{ padding: 1.2rem 1rem; }
+
+  .vocabulaire{ grid-template-columns: 1fr; gap: .1rem; }
+  .vocabulaire dd{ margin-bottom: .5rem; }
+}
+
+/* Téléphone */
+@media (max-width: 480px){
+  html{ font-size: calc(1rem * var(--echelle, 1)); }        /* 16 px */
+
+  /* En-tête sur deux lignes : retour + titre, puis la rangée d'outils */
+  #barre{
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "retour titre"
+      "outils outils";
+  }
+  .barre-outils{ justify-self: stretch; justify-content: space-between; }
+  #barre .lien-retour{ padding: .35rem .55rem; }
+  #barre .jeton{ padding: .2rem .55rem; font-size: .88rem; }
+  #barre button{ min-width: 44px; padding: .3rem .45rem; }
+
+  .accueil-carte{ padding: 1.8rem 1.1rem 1.2rem; outline-offset: -7px; }
+  .accueil-carte .lettre{ padding: 1rem .9rem .9rem 2rem; font-size: 1rem; }
+  .accueil-carte h1{ font-size: 1.85rem; }
+  #form-depart .bouton-principal{ justify-self: stretch; }
+
+  .carnet-entete{ padding: 1.1rem 1rem; }
+  .carnet-entete h2{ font-size: 1.6rem; }
+  .periode{ padding: 1rem .9rem 1rem; }
+  .periode .theme{ margin-left: 0; }
+  .grille-seances{ grid-template-columns: minmax(0, 1fr); }
+  .carte-seance{ min-height: 0; }
+  .indices{ grid-template-columns: minmax(0, 1fr); }
+
+  .scene{ padding: 1.1rem .9rem 1rem; border-radius: 10px; }
+  .narration{ padding: 1rem; font-size: 1.02rem; }
+  .pied-scene > *{ flex: 1 1 100%; }
+  .pied-scene > :first-child{ margin-right: 0; }
+
+  .choix-valises{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .etape-finale{ padding: 1rem .9rem; }
+  .etape-finale > .bouton-principal{ width: 100%; margin-left: 0 !important; }
+  .etape-finale > input[type="text"]{ width: 100%; max-width: none !important; }
+  .calcul-symboles{ font-size: 1.25rem; }
+
+  .deux-colonnes{ grid-template-columns: minmax(0, 1fr); }
+  .modale{ padding: .4rem; }
+  .modale-boite{ padding: 1.2rem .9rem 1rem; }
+  .cartouche > div:last-child{ text-align: left; }
+  .media-legende{ font-size: .78rem; }
+}

@@ -499,12 +499,30 @@ Les liens « Tester » ouvrent la salle directement ; **rien n'est sauvegardé**
 
 ## Score
 
+<!-- moteur-v2 -->
+### Règles du moteur v2 (octobre 2026)
+
+- **Tout juste du premier coup** : chaque énigme rapporte **10 points** si la première vérification est juste,
+  **3 points seulement** après une erreur. Le barème est rappelé en tête de chaque énigme : les élèves ont
+  intérêt à relire la leçon (bouton 📚) avant de valider.
+- **Retour d'erreur** : le jeu dit seulement **combien** de réponses sont justes (« 2 associations justes sur 4 »),
+  jamais lesquelles. Une réponse incomplète n'est pas comptée comme une erreur.
+- **Aucun texte après la réussite** : ni correction, ni explication, ni dialogue de réussite. Le bouton suivant
+  apparaît tout de suite ; le personnage se tait dès que les élèves touchent l'énigme (le chrono ne s'arrête jamais).
+- **Mots à noter** : le mot gagné en fin de salle n'est affiché **qu'une fois** (« ✍️ Notez ce mot ») ; les élèves
+  le recopient sur la **fiche de mission** (⚙️ Réglages › Impression › « ✍️ Fiche de mission », une par équipe), puis
+  le retapent dans le **coffre final** (10 points du premier coup, 3 après une erreur ; accents et majuscules ignorés).
+- **Lettres cachées** : les lettres marquées sont **dans le désordre**, avec des **leurres** ; on les range dans les cases.
+
+
 | | CM1 | CM2 |
 |---|---|---|
-| Énigmes résolues (5 pts) | 15 × 5 = 75 | 20 × 5 = 100 |
+| Énigmes justes du premier coup (10 pts ; 3 pts après une erreur) | 15 × 10 = 150 | 20 × 10 = 200 |
+| Fermoir du manuscrit (10 pts ; 3 après une erreur) | 10 | 10 |
+| Coffre final ouvert du premier coup (10 pts ; 3 après une erreur) | 10 | 10 |
 | Bonus de rapidité (3 pts par salle) | 15 | 15 |
 | Quizz final (2 pts × 5) | 10 | 10 |
-| **Total maximal** | **100** | **125** |
+| **Total maximal** | **195** | **245** |
 
 Un indice consulté retire **2 points**. Le bonus de rapidité tombe à 2 points si la salle a demandé un
 indice, et à 0 au-delà de 8 minutes (CM1) ou 10 minutes (CM2) par salle. Le fermoir final ne rapporte pas
@@ -597,7 +615,7 @@ sans quoi une colonne remplie de grandes cartes n'offrait plus de zone vide où 
 | `ordre` | remet dans l'ordre avec ▲▼ | 1-2, 2-1, fermoir |
 | `tri` | range des cartes (dont des dessins) dans des colonnes | 3-1, 4-3, 5-3 |
 | `trous` | place des étiquettes dans un texte | 2-2, 3-2 |
-| `lettres` | clique des lettres cachées, dans l'ordre | 2-4 |
+| `lettres` | range dans les cases des lettres cachées, mélangées, avec des leurres | 2-4 |
 | `code` | compose un cadenas à chiffres | 3-4 |
 | `intrus` | repère l'intrus | 5-2 |
 | `plan` | place des étiquettes sur une carte ou un schéma | 1-4, 2-3, 5-1 |
@@ -615,7 +633,7 @@ node moyen-age-abbaye/tests/test-verifier.js     (onglet de verifier.html)
 ```
 
 Le test vérifie les données (JSON, clés dupliquées, leçons citées), joue une partie complète en CM1 et
-en CM2 (scores 100 et 125), le fermoir, les indices, une mauvaise réponse sur chacune des 20 énigmes,
+en CM2 (scores 195 et 245), le fermoir, les indices, une mauvaise réponse sur chacune des 20 énigmes,
 le mode vérification, les réglages, les leçons et les impressions.
 
 ```

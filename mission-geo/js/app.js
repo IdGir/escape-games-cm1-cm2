@@ -102,7 +102,7 @@ const APP = (function(){
       s,
       etape: 0,                                   /* 0 = intro, 1..n = activités, n+1 = fin */
       points: 0,
-      maximum: s.activites.reduce((t, a) => t + (a.points || 3), 0),
+      maximum: s.activites.length * PTS_PREMIER_COUP,     /* v2 : 10 points par énigme juste du premier coup */
       resultats: [],
       debut: demarrerChrono()
     };
@@ -155,7 +155,9 @@ const APP = (function(){
     const encart = $("div", "avertissement");
     encart.innerHTML = "<b>Objectif de la séance :</b> " + s.element +
       "<br><b>Durée conseillée :</b> environ " + s.duree + " minutes." +
-      "<br><b>Nombre d'énigmes :</b> " + s.activites.length + ".";
+      "<br><b>Nombre d'énigmes :</b> " + s.activites.length + "." +
+      "<br><b>🎯 Barème :</b> tout juste du premier coup = " + PTS_PREMIER_COUP + " points ; après une erreur = " +
+      PTS_APRES_ERREUR + " points seulement. Lisez la leçon avant de répondre !";
     scene.appendChild(encart);
 
     const pied = $("div", "pied-scene");
@@ -217,15 +219,14 @@ const APP = (function(){
     }
   }
 
+  /* v2 (octobre 2026) : aucun texte après la résolution. Le dénouement
+     n'affiche plus que le bilan chiffré et l'indice, qui n'est montré
+     QU'UNE FOIS : les élèves le notent sur leur fiche de mission et
+     s'en servent dans la piste finale (le carnet n'en garde que la trace). */
   function dessinerDenouement(scene){
     const { s } = courant;
     arreterChrono();
     const duree = Math.round((Date.now() - courant.debut) / 1000);
-
-    if(s.fin && s.fin.media) scene.appendChild(MEDIAS.bloc(s.fin.media));
-    const n = $("div", "narration");
-    n.innerHTML = s.fin ? s.fin.texte : "";
-    scene.appendChild(n);
 
     /* enregistrement */
     const dejaReussie = SAUVEGARDE.estReussie(s.id);
@@ -242,46 +243,38 @@ const APP = (function(){
       { session: s.id, numero: s.numero, seance: s.titre }, s.indice));
 
     /* bilan */
+    const premiers = courant.resultats.filter(r => r && r.reussi && r.essais === 1).length;
     const bilan = $("div", "avertissement");
     bilan.innerHTML =
       "<b>Bilan de la séance :</b> " + courant.points + " points sur " + courant.maximum +
+      " · 🎯 justes du premier coup : " + premiers + "/" + s.activites.length +
       " · durée " + Math.floor(duree / 60) + " min " + (duree % 60) + " s.";
     scene.appendChild(bilan);
 
-    /* leçon */
-    const leconBloc = $("div");
-    leconBloc.innerHTML = LECONS.corps(s.lecon, { sansMedia: true });
-    scene.appendChild(leconBloc);
-    const l = MISSION.lecons[s.lecon];
-    if(l && l.media) scene.appendChild(MEDIAS.bloc(l.media));
-
-    /* indice */
+    /* indice, affiché une seule fois */
     const F = MISSION.final;
     const carteIndice = $("div", "recompense");
-    carteIndice.appendChild($("h2", null, "🔎 Nouvel indice pour ton carnet"));
+    carteIndice.appendChild($("h2", null, "🔎 Indice de la séance " + s.numero));
     if(s.indice.type === "nombre"){
       const g = (F.symboles[s.indice.symbole] || {}).glyphe || "◇";
       const p = $("p");
       p.innerHTML = '<span style="font-size:2.6rem">' + g + '</span> <b style="font-size:1.8rem"> = ' +
         s.indice.valeur + "</b>";
       carteIndice.appendChild(p);
-      carteIndice.appendChild($("p", null, s.indice.libelle));
     } else {
-      carteIndice.appendChild($("p", null, "« " + s.indice.texte + " »"));
-      carteIndice.appendChild($("p", null, s.indice.libelle));
+      carteIndice.appendChild($("p", "indice-fait", "« " + s.indice.texte + " »"));
     }
+    carteIndice.appendChild($("p", "a-noter",
+      "✍️ Recopie cet indice sur ta fiche de mission : il ne sera plus affiché ! Tu en auras besoin pour la piste finale."));
     if(!nouveau && dejaReussie)
-      carteIndice.appendChild($("p", "aide-panneau", "(cet indice était déjà dans ton carnet)"));
+      carteIndice.appendChild($("p", "aide-panneau", "(séance déjà réussie : cet indice était déjà noté)"));
     scene.appendChild(carteIndice);
 
     const pied = $("div", "pied-scene");
-    const impr = $("button", "bouton-second", "🖨️ Imprimer la leçon");
-    impr.type = "button";
-    impr.addEventListener("click", () => IMPRESSION.lecon(s.lecon));
     const retour = $("button", "bouton-principal", "Retourner au carnet de mission →");
     retour.type = "button";
     retour.addEventListener("click", quitterSession);
-    pied.appendChild(impr); pied.appendChild(retour);
+    pied.appendChild(retour);
     scene.appendChild(pied);
   }
 

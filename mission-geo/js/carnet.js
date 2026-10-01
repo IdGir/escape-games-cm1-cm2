@@ -83,28 +83,22 @@ const CARNET = (function(){
     ul.innerHTML = "";
 
     if(!etat.indices.length){
-      const li = $("li", "indices-vide", "Aucun indice pour l'instant. Réussis ta première séance !");
+      const li = $("li", "indices-vide", "Aucun indice pour l'instant. Réussis ta première séance et recopie son indice sur ta fiche de mission !");
       ul.appendChild(li);
     }
 
+    /* v2 : le carnet garde la TRACE des indices, pas leur contenu : les
+       élèves les ont recopiés sur leur fiche de mission (affichés une fois). */
     etat.indices
       .slice()
       .sort((a, b) => a.numero - b.numero)
       .forEach(i => {
         const li = $("li", i.type === "fait" ? "fait" : "");
-        if(i.type === "nombre"){
-          li.appendChild($("span", "symbole", (sym[i.symbole] || {}).glyphe || "◇"));
-          const t = $("div");
-          t.appendChild($("span", "valeur", "= " + i.valeur));
-          t.appendChild($("small", null, i.libelle));
-          li.appendChild(t);
-        } else {
-          li.appendChild($("span", "symbole", "🗒️"));
-          const t = $("div");
-          t.appendChild($("span", null, i.texte));
-          t.appendChild($("small", null, i.libelle));
-          li.appendChild(t);
-        }
+        li.appendChild($("span", "symbole", i.type === "nombre" ? ((sym[i.symbole] || {}).glyphe || "◇") : "🗒️"));
+        const t = $("div");
+        t.appendChild($("span", "valeur", i.type === "nombre" ? "= ? (sur ta fiche)" : "indice noté sur ta fiche"));
+        t.appendChild($("small", null, "Séance " + i.numero + " — " + (i.seance || "")));
+        li.appendChild(t);
         ul.appendChild(li);
       });
 
@@ -171,17 +165,15 @@ const CARNET = (function(){
 
     const rappel = $("div", "narration");
     rappel.innerHTML = "<p>Tu atterris à l'aéroport d'Ajaccio. Il est temps d'utiliser " +
-      "tous les indices glanés au cours de ton aventure…</p>";
+      "tous les indices glanés au cours de ton aventure… <b>Sors ta fiche de mission</b> : " +
+      "c'est là que tu les as notés.</p>";
     boite.appendChild(rappel);
 
     /* ---- Étape 1 : le pays ---- */
     const e1 = $("section", "etape-finale" + (etat.final.pays ? " resolue" : ""));
     e1.appendChild($("h3", null, "1. À qui appartient la valise ?"));
     e1.appendChild($("p", null, F.pays.consigne));
-    const listeFaits = $("ul");
-    etat.indices.filter(i => i.type === "fait").forEach(i => listeFaits.appendChild($("li", null, i.texte)));
-    if(!listeFaits.children.length) listeFaits.appendChild($("li", null, "(aucun indice textuel récolté)"));
-    e1.appendChild(listeFaits);
+    e1.appendChild($("p", "aide-panneau", "🗒️ Relis les indices écrits (phrases) de ta fiche de mission et élimine les pays un par un."));
 
     const choix = $("div", "choix-valises");
     F.pays.propositions.forEach(p => {
@@ -212,12 +204,12 @@ const CARNET = (function(){
         SAUVEGARDE.enregistrer();
         e1.classList.add("resolue");
         retour1.className = "retour bon";
-        retour1.innerHTML = "✅ " + F.pays.explication;
+        retour1.innerHTML = "✅ C'est bien ce pays.";
         retour1.hidden = false;
         valider1.disabled = true;
       } else {
         retour1.className = "retour faux";
-        retour1.textContent = "Ce pays ne colle pas à tous les indices. Relis-les un par un et élimine.";
+        retour1.textContent = "✗ Ce pays ne colle pas à tous les indices de ta fiche.";
         retour1.hidden = false;
       }
     });
@@ -226,7 +218,7 @@ const CARNET = (function(){
     if(etat.final.pays){
       valider1.disabled = true;
       retour1.className = "retour bon";
-      retour1.innerHTML = "✅ " + F.pays.explication;
+      retour1.innerHTML = "✅ C'est bien ce pays.";
       retour1.hidden = false;
     }
     boite.appendChild(e1);
@@ -243,8 +235,6 @@ const CARNET = (function(){
       p.appendChild($("b", null, c.titre + " : "));
       const calc = $("span", "calcul-symboles", ecrireCalcul(c.termes));
       p.appendChild(calc);
-      const detail = $("small", null, "  →  " + ecrireCalculDetaille(c.termes));
-      p.appendChild(detail);
       e2.appendChild(p);
       attendus[c.cle] = calculer(c.termes);
     });
@@ -284,20 +274,19 @@ const CARNET = (function(){
     valider2.addEventListener("click", () => {
       if(!choixCase){ APP.message("Choisis une case sur la carte.", "erreur"); return; }
       if(attendus.colonne === null || attendus.ligne === null){
-        APP.message("Il te manque des indices chiffrés pour faire ce calcul.", "erreur"); return;
+        APP.message("Il manque des séances réussies : tous les indices ne sont pas encore connus.", "erreur"); return;
       }
       if(choixCase.c === attendus.colonne && choixCase.l === attendus.ligne){
         etat.final.colonne = choixCase.c; etat.final.ligne = choixCase.l;
         SAUVEGARDE.enregistrer();
         e2.classList.add("resolue");
         retour2.className = "retour bon";
-        retour2.textContent = "✅ Colonne " + attendus.colonne + ", ligne " + attendus.ligne +
-          " : " + F.carte.lieu + ". C'est bien là.";
+        retour2.textContent = "✅ C'est la bonne case.";
         retour2.hidden = false;
         valider2.disabled = true;
       } else {
         retour2.className = "retour faux";
-        retour2.textContent = "Ce n'est pas la bonne case. Refais tes deux calculs, dans l'ordre.";
+        retour2.textContent = "✗ Ce n'est pas la bonne case. Vérifie les valeurs de ta fiche et tes deux calculs.";
         retour2.hidden = false;
       }
     });
@@ -306,8 +295,7 @@ const CARNET = (function(){
     if(dejaCase){
       valider2.disabled = true;
       retour2.className = "retour bon";
-      retour2.textContent = "✅ Colonne " + etat.final.colonne + ", ligne " + etat.final.ligne +
-        " : " + F.carte.lieu + ".";
+      retour2.textContent = "✅ C'est la bonne case.";
       retour2.hidden = false;
     }
     boite.appendChild(e2);
@@ -318,7 +306,7 @@ const CARNET = (function(){
     e3.appendChild($("p", null, F.cadenas.consigne));
     const pc = $("p");
     pc.appendChild($("span", "calcul-symboles", ecrireCalcul(F.cadenas.termes)));
-    pc.appendChild($("small", null, "  →  " + ecrireCalculDetaille(F.cadenas.termes)));
+
     e3.appendChild(pc);
 
     const champ = document.createElement("input");
@@ -335,7 +323,7 @@ const CARNET = (function(){
     const codeAttendu = calculer(F.cadenas.termes);
     valider3.addEventListener("click", () => {
       if(codeAttendu === null){
-        APP.message("Il te manque des indices chiffrés pour trouver le code.", "erreur"); return;
+        APP.message("Il manque des séances réussies : tous les indices ne sont pas encore connus.", "erreur"); return;
       }
       if(parseInt(champ.value, 10) === codeAttendu){
         etat.final.code = codeAttendu;
@@ -348,7 +336,7 @@ const CARNET = (function(){
         verifierDenouement();
       } else {
         retour3.className = "retour faux";
-        retour3.textContent = "Le cadenas résiste. Vérifie ton calcul.";
+        retour3.textContent = "✗ Le cadenas résiste. Vérifie les valeurs de ta fiche et ton calcul.";
         retour3.hidden = false;
       }
     });

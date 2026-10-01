@@ -83,6 +83,7 @@ const REGLAGES = (function(){
       <p style="display:flex;gap:.5rem;flex-wrap:wrap">
         <button class="bouton-second" id="r-imp-prog">Progression annuelle + solutions</button>
         <button class="bouton-second" id="r-imp-bilan">Bilan de mission</button>
+        <button class="bouton-principal" id="r-imp-mission">✍️ Fiche de mission (1 par élève ou équipe)</button>
       </p>
 
       <h3>💾 Progression</h3>
@@ -175,6 +176,7 @@ const REGLAGES = (function(){
       g("r-imp-lecons-a4").addEventListener("click", () => window.open("lecons-imprimables.html?niveau=CM2&lecon=toutes", "_blank"));
       g("r-imp-prog").addEventListener("click",  () => IMPRESSION.progression());
       g("r-imp-bilan").addEventListener("click", () => IMPRESSION.bilan());
+      g("r-imp-mission").addEventListener("click", () => IMPRESSION.ficheMission());
 
       g("r-export").addEventListener("click", () => SAUVEGARDE.exporter());
       g("r-import").addEventListener("change", ev => {

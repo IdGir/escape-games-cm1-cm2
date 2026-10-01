@@ -170,3 +170,24 @@ tour-du-monde/
 └── js/          app (moteur), enigmes, decors, personnages, media (vidéos/images),
                  narration, lecons, impression, reglages, api (IA), sync (tableau de bord)
 ```
+
+## Règles du moteur v2
+
+<!-- moteur-v2 -->
+### Règles du moteur v2 (octobre 2026)
+
+- **Tout juste du premier coup** : chaque énigme rapporte **10 points** si la première vérification est juste,
+  **3 points seulement** après une erreur. Le barème est rappelé en tête de chaque énigme : les élèves ont
+  intérêt à relire la leçon (bouton 📚) avant de valider.
+- **Retour d'erreur** : le jeu dit seulement **combien** de réponses sont justes (« 2 associations justes sur 4 »),
+  jamais lesquelles. Une réponse incomplète n'est pas comptée comme une erreur.
+- **Aucun texte après la réussite** : ni correction, ni explication, ni dialogue de réussite. Le bouton suivant
+  apparaît tout de suite ; le personnage se tait dès que les élèves touchent l'énigme (le chrono ne s'arrête jamais).
+- **Mots à noter** : le mot gagné en fin de escale n'est affiché **qu'une fois** (« ✍️ Notez ce mot ») ; les élèves
+  le recopient sur la **fiche de mission** (⚙️ Réglages › Impression › « ✍️ Fiche de mission », une par équipe), puis
+  le retapent dans le **coffre final** (10 points du premier coup, 3 après une erreur ; accents et majuscules ignorés).
+- **Lettres cachées** : les lettres marquées sont **dans le désordre**, avec des **leurres** ; on les range dans les cases.
+
+Le coffre final demande les 4 cachets de voyage (ROSE DES VENTS, LE CANAL, LES CLIMATS, LA VAPEUR). Score maximal : **95 points** (5 × 10 + 5 × 5 de rapidité + 10 de coffre + 10 de quizz).
+
+**Feuilles de style** : elles manquaient au dépôt (le jeu s'affichait sans mise en page). Elles ont été restaurées en octobre 2026 à partir de la charte commune (Constitution) avec la charte « carnet de voyage » propre au jeu (`outils-moteur/theme-tour-du-monde.css`).

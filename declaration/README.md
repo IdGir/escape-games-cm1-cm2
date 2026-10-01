@@ -59,7 +59,7 @@ n'est sauvegardé**, une partie en cours sur le poste reste intacte.
 <summary>⚠️ Solutions — à ne pas projeter en classe</summary>
 
 ### Salle 1 — Le cahier de doléances codé
-Cliquer **dans l'ordre** les lettres cachées dans le texte : **L-I-B-E-R-T-É** → **LIBERTÉ**.
+Ranger dans les 7 cases les lettres marquées du texte, **mélangées et avec deux leurres** : → **LIBERTÉ**.
 - CM1 : les lettres sont des capitales rouges, en début de phrase.
 - CM2 : lettres minuscules discrètes, en tête de mots-clés d'un texte plus long.
 
@@ -109,10 +109,9 @@ Chaque énigme propose trois indices (bouton 💡), différents en CM1 et en CM2
 
 ## Score
 
-Chaque salle réussie rapporte **10 points**, plus **5 points** si elle est
-résolue en moins de 3 minutes (2 points en moins de 6 minutes). Consulter un
-indice retire 2 points, sans descendre sous 5 points par salle. Un quizz
-final clôt la partie ; le score maximal est de **85 points**.
+Chaque énigme juste **du premier coup** rapporte **10 points** (3 après une erreur), plus **5 points** si la salle
+est bouclée en moins de 3 minutes (2 en moins de 6). Un indice retire 2 points. Le **coffre final** (les 4 fragments de la devise (LIBERTÉ, ÉGALITÉ, FRATERNITÉ, 1789) à retaper) rapporte 10 points du premier coup, 3 après une erreur. Un quizz final clôt la partie ;
+le score maximal est de **95 points**.
 
 ---
 
@@ -161,3 +160,24 @@ declaration/
 └── js/          app (moteur), enigmes, decors, personnages, media (vidéos/images),
                  narration, lecons, impression, reglages, api (IA), sync (tableau de bord)
 ```
+
+## Règles du moteur v2
+
+<!-- moteur-v2 -->
+### Règles du moteur v2 (octobre 2026)
+
+- **Tout juste du premier coup** : chaque énigme rapporte **10 points** si la première vérification est juste,
+  **3 points seulement** après une erreur. Le barème est rappelé en tête de chaque énigme : les élèves ont
+  intérêt à relire la leçon (bouton 📚) avant de valider.
+- **Retour d'erreur** : le jeu dit seulement **combien** de réponses sont justes (« 2 associations justes sur 4 »),
+  jamais lesquelles. Une réponse incomplète n'est pas comptée comme une erreur.
+- **Aucun texte après la réussite** : ni correction, ni explication, ni dialogue de réussite. Le bouton suivant
+  apparaît tout de suite ; le personnage se tait dès que les élèves touchent l'énigme (le chrono ne s'arrête jamais).
+- **Mots à noter** : le mot gagné en fin de salle n'est affiché **qu'une fois** (« ✍️ Notez ce mot ») ; les élèves
+  le recopient sur la **fiche de mission** (⚙️ Réglages › Impression › « ✍️ Fiche de mission », une par équipe), puis
+  le retapent dans le **coffre final** (10 points du premier coup, 3 après une erreur ; accents et majuscules ignorés).
+- **Lettres cachées** : les lettres marquées sont **dans le désordre**, avec des **leurres** ; on les range dans les cases.
+
+Le coffre final demande les 4 fragments de la devise (LIBERTÉ, ÉGALITÉ, FRATERNITÉ, 1789). Score maximal : **95 points** (5 × 10 + 5 × 5 de rapidité + 10 de coffre + 10 de quizz).
+
+**Feuilles de style** : elles manquaient au dépôt (le jeu s'affichait sans mise en page). Elles ont été restaurées en octobre 2026 à partir de la charte commune (Constitution).

@@ -217,3 +217,18 @@ mission-geo/
 * Consommation d'eau : 150 L/jour/habitant ; usages agricole 48 %, domestique
   24 %, énergétique 22 %, industriel 6 %.
 * Francetvinfo.fr, août 2022 — surfréquentation touristique d'Étretat.
+
+## Règles du moteur v2 (octobre 2026)
+
+<!-- moteur-v2 -->
+- **Barème** : chaque énigme rapporte **10 points** juste du premier coup, **3 points** après une erreur ; un coup de pouce
+  retire 2 points. Le barème est rappelé en tête de chaque énigme et dans l'introduction de la séance.
+- **Retour d'erreur** : seulement le **nombre** de bonnes réponses, sans marquer lesquelles. « Voir la correction » reste
+  proposé après 3 essais (0 point).
+- **Fin de séance** : plus de récit ni de leçon après la résolution ; seuls le bilan chiffré et l'**indice** s'affichent,
+  **une seule fois** : les élèves le recopient sur leur **fiche de mission** (⚙️ Espace enseignant › « ✍️ Fiche de mission »,
+  2 pages, à garder toute l'année). Le carnet garde la trace des indices obtenus, pas leur contenu, et la piste finale
+  ne recopie plus les valeurs : les élèves calculent avec leur fiche.
+- La progression déjà enregistrée sur les postes est conservée (pas de remise à zéro).
+- **Feuilles de style** : `css/style.css`, `css/activites.css` et `css/print.css` manquaient au dépôt (le jeu s'affichait sans
+  mise en page) ; elles ont été écrites en octobre 2026. Les styles du barème sont dans `css/v2.css`.

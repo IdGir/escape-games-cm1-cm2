@@ -256,7 +256,7 @@ refaites et le temps ; il permet une pause générale, un message à toutes les 
 
 ### Ce que le jeu mesure tout seul
 
-Le score (100 en CM1, 125 en CM2), le nombre d'indices, le temps par salle, les badges et le quizz final
+Le score (195 en CM1, 245 en CM2), le nombre d'indices, le temps par salle, les badges et le quizz final
 (5 questions). Le bouton **🖨️ Imprimer le bilan** produit une page par équipe.
 
 ### Les supports imprimables
@@ -332,3 +332,22 @@ photos locales prolonge parfaitement l'énigme 5-3.
 - Lumni : vidéos pour prolonger.
 
 Le détail des vérifications et les points à recontrôler sont dans [A-VERIFIER.md](A-VERIFIER.md).
+
+## Déroulé en classe (moteur v2)
+
+<!-- moteur-v2 -->
+### Règles du moteur v2 (octobre 2026)
+
+- **Tout juste du premier coup** : chaque énigme rapporte **10 points** si la première vérification est juste,
+  **3 points seulement** après une erreur. Le barème est rappelé en tête de chaque énigme : les élèves ont
+  intérêt à relire la leçon (bouton 📚) avant de valider.
+- **Retour d'erreur** : le jeu dit seulement **combien** de réponses sont justes (« 2 associations justes sur 4 »),
+  jamais lesquelles. Une réponse incomplète n'est pas comptée comme une erreur.
+- **Aucun texte après la réussite** : ni correction, ni explication, ni dialogue de réussite. Le bouton suivant
+  apparaît tout de suite ; le personnage se tait dès que les élèves touchent l'énigme (le chrono ne s'arrête jamais).
+- **Mots à noter** : le mot gagné en fin de salle n'est affiché **qu'une fois** (« ✍️ Notez ce mot ») ; les élèves
+  le recopient sur la **fiche de mission** (⚙️ Réglages › Impression › « ✍️ Fiche de mission », une par équipe), puis
+  le retapent dans le **coffre final** (10 points du premier coup, 3 après une erreur ; accents et majuscules ignorés).
+- **Lettres cachées** : les lettres marquées sont **dans le désordre**, avec des **leurres** ; on les range dans les cases.
+
+**À préparer** : imprimer une fiche de mission par équipe (⚙️ Réglages › Impression). Annoncer aux élèves que le mot de chaque salle ne s'affiche qu'une fois et que les erreurs coûtent cher.

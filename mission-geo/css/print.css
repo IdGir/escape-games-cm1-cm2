@@ -1,0 +1,280 @@
+/* =========================================================
+   MISSION GÉOGRAPHIQUE — IMPRESSION A4
+   ---------------------------------------------------------
+   Chargée avec media="print".
+   impression.js compose les fiches (leçon, fiche élève,
+   corrigé, préparation, progression, bilan, diplôme) dans la
+   modale, à l'intérieur de .apercu-a4 > section.feuille,
+   puis appelle window.print(). Cette feuille :
+     - masque l'en-tête, les boutons, le bandeau, la croix de
+       la modale, et les écrans quand une fiche est ouverte ;
+     - remet la modale dans le flux pour que la fiche puisse
+       s'étendre sur plusieurs pages ;
+     - met en page la fiche au format A4 en noir sur blanc.
+   Si l'on imprime sans fiche ouverte (Ctrl+P sur une leçon
+   ou une séance), seul le contenu utile de l'écran actif
+   est imprimé.
+   ========================================================= */
+
+
+/* ---------- Format de page ---------- */
+@page{
+  size: A4 portrait;
+  margin: 13mm 14mm 15mm;
+}
+
+
+/* ---------- Neutralisation de la charte écran ---------- */
+html{
+  font-size: 11pt !important;      /* ignore --echelle : la fiche garde sa taille */
+}
+html, body{
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+body{
+  margin: 0;
+  font-family: var(--police-texte, Arial, sans-serif);
+  line-height: 1.45;
+  background-image: none !important;
+}
+*, *::before, *::after{
+  animation: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+/* Garder les fonds colorés (encadrés, bandeau corrigé) si le navigateur le permet */
+*{
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+
+/* ---------- Coupures de page ---------- */
+h1, h2, h3, h4{
+  break-after: avoid;
+  page-break-after: avoid;
+}
+img, svg, .lecon dl{ break-inside: avoid; page-break-inside: avoid; }
+/* les grands tableaux (progression, bilan) peuvent se couper entre deux lignes */
+tr{ break-inside: avoid; page-break-inside: avoid; }
+
+
+/* ---------- Éléments jamais imprimés ---------- */
+#barre,
+.bandeau,
+.modale-fermer,
+.accueil-fond,
+.bouton-principal,
+.bouton-second,
+.barre-actions,
+.pied-scene,
+.etapes,
+.lien-discret,
+#form-depart,
+video{
+  display: none !important;
+}
+
+
+/* ---------- Une fiche est ouverte : on n'imprime qu'elle ---------- */
+body:has(#modale:not([hidden])) .ecran{
+  display: none !important;
+}
+.modale{
+  position: static !important;
+  display: block !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: none !important;
+}
+.modale[hidden]{ display: none !important; }
+.modale-boite{
+  max-width: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+}
+.apercu-a4{
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+  font-size: 11pt !important;
+}
+
+
+/* ---------- La fiche ---------- */
+.feuille{
+  color: #000;
+  font-size: 11pt;
+  line-height: 1.45;
+}
+.feuille + .feuille{ break-before: page; page-break-before: always; }
+
+.feuille h1{
+  margin: 4mm 0 3mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 2.5pt solid #1b2a4a;
+  color: #1b2a4a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18pt;
+}
+.feuille h2{
+  margin: 5mm 0 2mm;
+  color: #1b2a4a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13pt;
+}
+.feuille h1, .feuille h2, .feuille h3{
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.feuille p, .feuille li{ orphans: 3; widows: 3; }
+
+.feuille table{
+  width: 100%;
+  margin: 2mm 0 4mm;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+.feuille th, .feuille td{
+  padding: 1.4mm 2mm;
+  border: .6pt solid #555;
+  text-align: left;
+  vertical-align: top;
+}
+.feuille th{ background: #ece4d2 !important; }
+.feuille tr{ break-inside: avoid; page-break-inside: avoid; }
+.feuille thead{ display: table-header-group; }
+
+.feuille .encadre,
+.feuille .a-retenir{
+  margin: 3mm 0;
+  padding: 2.5mm 3.5mm;
+  border: 1pt solid #1b2a4a;
+  border-radius: 2mm;
+  background: #f6f2e8 !important;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.feuille .a-retenir{
+  border-left: 4pt solid #b3261e;
+  background: #fff6d6 !important;
+  font-weight: 400;
+}
+
+/* Cartouche élève */
+.cartouche{
+  display: flex;
+  flex-wrap: nowrap !important;
+  justify-content: space-between;
+  gap: 6mm;
+  margin-bottom: 3mm;
+  padding: 2mm 3mm;
+  border: 1.2pt solid #1b2a4a;
+  border-radius: 2mm;
+  font-size: 9.5pt;
+  line-height: 1.7;
+}
+.cartouche > div{ flex: 1 1 auto; min-width: 0; }
+.cartouche > div:last-child{ text-align: right; }
+.lignes-eleve span{
+  display: inline-block;
+  min-width: 32mm;
+  border-bottom: .6pt dotted #333;
+}
+
+.bandeau-corrige{
+  margin: 0 0 2mm;
+  padding: 1.5mm 3mm;
+  background: #b3261e !important;
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Lignes d'écriture */
+.ligne-reponse{
+  display: block;
+  height: 8mm;
+  border-bottom: .6pt dotted #444;
+}
+p > .ligne-reponse,
+td > .ligne-reponse{
+  display: inline-block;
+  min-width: 45mm;
+  height: 4.5mm;
+}
+
+/* Pied de fiche : dans le flux, en bas du contenu */
+.pied-page{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6mm;
+  padding-top: 1.5mm;
+  border-top: .6pt solid #888;
+  color: #444;
+  font-size: 8.5pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+
+/* ---------- Impression sans fiche : l'écran actif ---------- */
+.ecran:not(.actif){ display: none !important; }
+#ecran-carnet,
+#ecran-session,
+#ecran-final,
+#ecran-accueil{
+  max-width: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+.scene,
+.accueil-carte,
+.carnet-entete,
+.periode,
+.panneau-indices{
+  max-width: none !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: none !important;
+}
+.accueil-carte::before{ display: none !important; }
+.carnet-colonnes{ display: block !important; }
+.panneau-indices{ position: static !important; margin-top: 6mm; }
+
+.lecon{ font-size: 11pt; }
+.lecon > h2{ border-bottom: 2pt solid #1b2a4a; }
+.lecon table, .donnees{ font-size: 10pt; }
+.a-retenir, .objectifs, .vocabulaire, .narration, .avertissement, .recompense, .etape-finale{
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.media-slot{
+  max-width: 120mm !important;
+  margin: 3mm auto !important;
+  border: .6pt solid #999 !important;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.media-slot img{ max-height: 90mm !important; background: none !important; }
+.media-legende{
+  position: static !important;
+  background: none !important;
+  color: #333 !important;
+  font-style: italic;
+}
+.enveloppe-tableau{ overflow: visible !important; }
+.activite.validee::after{ display: none !important; }

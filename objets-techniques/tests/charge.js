@@ -21,6 +21,9 @@ async function charger(dossierJeu, query=""){
   w.HTMLMediaElement.prototype.pause = function(){};
   w.HTMLMediaElement.prototype.load = function(){};
   w.Image = class { set src(v){ setTimeout(()=>this.onerror && this.onerror(), 0); } };
+  // jsdom ne fournit pas CSS.escape (le moteur v2 s'en sert pour vider un trou ou une case de plan)
+  if(!w.CSS) w.CSS = {};
+  if(!w.CSS.escape) w.CSS.escape = s => String(s).replace(/["\\]/g, "\\$&");
   w.addEventListener("error", e=>erreurs.push("JS: "+e.message));
   w.console.error = (...a)=>erreurs.push(a.join(" "));
   const injecter = code => { const el = w.document.createElement("script"); el.textContent = code; w.document.body.appendChild(el); };

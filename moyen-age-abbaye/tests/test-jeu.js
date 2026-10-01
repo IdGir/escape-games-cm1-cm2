@@ -4,9 +4,16 @@
    Lancement, depuis la racine du dépôt :
        npm install jsdom          (une seule fois, hors dépôt)
        node moyen-age-abbaye/tests/test-jeu.js
-   Vérifie : données JSON, leçons, parties complètes CM1 et CM2
-   (scores 100 et 125), mécanisme final, tests négatifs, indices,
-   mode vérification, réglages, impressions.
+   Moteur d'énigmes v2 (outils-moteur/enigmes.js) : chaque énigme se
+   valide par un bouton « Vérifier » ; une erreur n'indique que le
+   NOMBRE de réponses justes, sans marquer bien/mal ; aucune
+   correction après la réussite ; 10 points du premier coup, 3 après
+   erreur ; coffre final où l'on retape les 5 mots-clés, puis fermoir.
+   Vérifie : données JSON, leçons, partie CM1 sans faute (195 points =
+   scoreMax()), partie CM2 avec une erreur, un coffre raté et un
+   fermoir raté (245 − 21), mots-clés « Notez ce mot », coffre final,
+   fermoir, indices (−2 points), chaque énigme en mode vérification
+   (erreur puis 3 points), tri, réglages, impressions.
    ============================================================ */
 const fs = require("fs");
 const path = require("path");
@@ -163,76 +170,116 @@ async function ouvrir(recherche = "", stockage = {}){
 }
 const REGLAGES_TEST = JSON.stringify({ cinematiques:false, narrationActive:false, sonsActifs:false, decorsVideo:false });
 
-/* ---------- Solveurs : résolvent l'énigme affichée par l'interface ---------- */
+/* ---------- Solveurs : résolvent l'énigme affichée par l'interface ----------
+   Moteur d'énigmes v2 : chaque type se valide par le bouton [data-valider]
+   (calqué sur le solveur de outils-moteur/tester_parties.py). Avec
+   faux = true, la réponse composée contient volontairement une erreur. */
 function clic(el){ el.dispatchEvent(new el.ownerDocument.defaultView.MouseEvent("click", { bubbles:true })); }
+const norm = s => String(s||"").trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]/g,"");
 function donneesNiv(w, e){ const n = w.ETAT.niveau.toLowerCase(); return e[n] || e.commun || e.cm2 || e.cm1; }
-function resoudre(w, e, carte){
+function resoudre(w, e, carte, faux = false){
   const d = donneesNiv(w, e), q = s => carte.querySelector(s), qa = s => [...carte.querySelectorAll(s)];
+  // remise à zéro d'une tentative précédente (comme le ferait un élève)
+  qa(".slots-lettres .slot.ok").forEach(clic);
+  qa(".trou[data-pose], .plan-case[data-pose]").forEach(clic);
   switch(e.type){
     case "qcm":
-      d.questions.forEach((x, i) => clic(q(`.qcm-question[data-i="${i}"] .qcm-option[data-j="${x.bonne}"]`)));
-      clic(q("[data-valider]")); break;
-    case "vraifaux":
-      d.affirmations.forEach((a, i) => clic(q(`.vf-ligne[data-i="${i}"] .vf-btn[data-rep="${a.vrai ? "vrai" : "faux"}"]`)));
-      clic(q("[data-valider]")); break;
-    case "association":
-      qa('[data-col="g"] .carte-match').forEach(g => { clic(g); clic(q(`[data-col="d"] .carte-match[data-id="${g.dataset.bon}"]`)); });
+      d.questions.forEach((x, i) => clic(q(`.qcm-question[data-i="${i}"] .qcm-option[data-j="${faux && i === 0 ? (x.bonne + 1) % x.options.length : x.bonne}"]`)));
       break;
+    case "vraifaux":
+      d.affirmations.forEach((a, i) => clic(q(`.vf-ligne[data-i="${i}"] .vf-btn[data-rep="${(faux && i === 0 ? !a.vrai : !!a.vrai) ? "vrai" : "faux"}"]`)));
+      break;
+    case "association": {
+      // on apparie gauche → droite (même numéro de paire), rien n'est corrigé avant « Vérifier »
+      const g = qa('[data-col="g"] .carte-match');
+      g.forEach((c, i) => { clic(c); clic(q(`[data-col="d"] .carte-match[data-id="${faux && g.length > 1 ? g[(i + 1) % g.length].dataset.bon : c.dataset.bon}"]`)); });
+      break;
+    }
     case "ordre": {
       const liste = q(".liste-ordre");
       for(let r = 1; r <= d.items.length; r++){
-        let it = liste.querySelector(`.item-ordre[data-rang="${r}"]`);
+        const it = liste.querySelector(`.item-ordre[data-rang="${r}"]`);
         while([...liste.children].indexOf(it) > r - 1) clic(it.querySelector(".btn-monter"));
       }
-      clic(q("[data-valider]")); break;
-    }
-    case "tri":
-      qa(".carte-tri").forEach(c => { clic(c); clic(q(`.tri-colonne[data-col="${c.dataset.col}"] .tri-zone`)); });
-      clic(q("[data-valider]")); break;
-    case "trous":
-      qa(".trou").forEach(t => { clic(qa(".etiquette:not(.posee)").find(x => x.dataset.mot === t.dataset.rep)); clic(t); });
-      clic(q("[data-valider]")); break;
-    case "plan":
-      qa(".plan-case").forEach(c => { clic(qa(".etiquette:not(.posee)").find(x => x.dataset.mot === c.dataset.rep)); clic(c); });
-      clic(q("[data-valider]")); break;
-    case "lettres":
-      d.cible.forEach(l => clic(qa(`[data-l="${l}"]:not(.utilisee)`)[0]));
+      if(faux) clic(liste.children[0].querySelector(".btn-descendre"));
       break;
+    }
+    case "tri": {
+      // clic sur une carte, puis sur une colonne
+      const cols = qa(".tri-colonne");
+      qa(".carte-tri").forEach((c, i) => {
+        let col = c.dataset.col;
+        if(faux && i === 0) col = (cols.find(k => k.dataset.col !== col) || cols[0]).dataset.col;
+        clic(c); clic(q(`.tri-colonne[data-col="${col}"] .tri-zone`));
+      });
+      break;
+    }
+    case "trous": case "plan": {
+      const cibles = qa(e.type === "trous" ? ".trou" : ".plan-case");
+      const reps = cibles.map(c => c.dataset.rep);
+      if(faux && reps.length > 1) [reps[0], reps[1]] = [reps[1], reps[0]];
+      cibles.forEach((c, i) => { clic(qa(".etiquette:not(.posee)").find(x => norm(x.dataset.mot) === norm(reps[i]))); clic(c); });
+      break;
+    }
+    case "lettres": {
+      // anagramme : les lettres [data-l] cliquées remplissent les cases (des leurres existent)
+      let cible = d.cible.slice();
+      if(faux){
+        [cible[0], cible[cible.length - 1]] = [cible[cible.length - 1], cible[0]];
+        if(norm(cible.join("")) === norm(d.cible.join(""))) cible.reverse();
+      }
+      cible.forEach(l => clic(qa("[data-l]:not(.utilisee)").find(x => norm(x.dataset.l) === norm(l))));
+      break;
+    }
     case "code":
-      d.champs.forEach((c, i) => { q(`#code-${i}`).value = c.valeur; });
-      clic(q("[data-valider]")); break;
+      d.champs.forEach((c, i) => { q(`#code-${i}`).value = faux && i === 0 ? "0" : c.valeur; });
+      break;
     case "intrus":
-      clic(q('.carte-intrus[data-intrus="1"]')); break;
+      // sélection, puis « C'est l'intrus ! »
+      clic(q(`.carte-intrus[data-intrus="${faux ? 0 : 1}"]`));
+      break;
     default: throw new Error("type inconnu " + e.type);
   }
+  clic(q("[data-valider]"));
 }
-/* Mauvaise réponse volontaire : l'énigme ne doit pas être validée */
-function seTromper(w, e, carte){
-  const d = donneesNiv(w, e), q = s => carte.querySelector(s), qa = s => [...carte.querySelectorAll(s)];
-  switch(e.type){
-    case "qcm":
-      d.questions.forEach((x, i) => clic(q(`.qcm-question[data-i="${i}"] .qcm-option[data-j="${(x.bonne + 1) % x.options.length}"]`)));
-      clic(q("[data-valider]")); return true;
-    case "vraifaux":
-      d.affirmations.forEach((a, i) => clic(q(`.vf-ligne[data-i="${i}"] .vf-btn[data-rep="${a.vrai ? "faux" : "vrai"}"]`)));
-      clic(q("[data-valider]")); return true;
-    case "code":
-      d.champs.forEach((c, i) => { q(`#code-${i}`).value = "0"; });
-      clic(q("[data-valider]")); return true;
-    case "intrus":
-      clic(q('.carte-intrus[data-intrus="0"]')); return true;
-    case "association": {
-      const g = qa('[data-col="g"] .carte-match')[0];
-      clic(g); clic(qa('[data-col="d"] .carte-match').find(x => x.dataset.id !== g.dataset.bon)); return true;
-    }
-    case "tri": case "trous": case "plan": case "ordre":
-      clic(q("[data-valider]")); return e.type !== "ordre";   // incomplet → refusé (l'ordre peut être juste par hasard)
-    default: return false;
-  }
+const texteSansBalises = s => String(s||"").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+/* Débuts des textes de correction / explication d'une énigme. */
+function textesCorrection(e){
+  const t = [];
+  const parcourir = o => { if(o && typeof o === "object") Object.entries(o).forEach(([k, v]) => {
+    if(/^(correction|explication)$/.test(k)) [].concat(typeof v === "object" && v ? Object.values(v) : v).forEach(x => typeof x === "string" && t.push(texteSansBalises(x)));
+    else parcourir(v);
+  }); };
+  parcourir(e);
+  // on écarte les extraits qui figurent aussi dans l'énoncé affiché (même phrase qu'une affirmation…)
+  const enonce = texteSansBalises(JSON.stringify(e, (k, v) => /^(correction|explication)$/.test(k) ? undefined : v));
+  return t.filter(x => x.length >= 12).map(x => x.slice(0, 40)).filter(x => !enonce.includes(x));
 }
+/* Après une vérification fausse : seul le NOMBRE de réponses justes est donné. */
+function controlerErreur(carte, e, etiquette){
+  const fb = carte.querySelector("#fb-" + e.id).textContent;
+  ok(!carte.classList.contains("resolue"), `${etiquette} (${e.type}) : mauvaise réponse refusée`);
+  ok(/Pas tout juste/.test(fb) && (e.type === "intrus" ? /Ce n'est pas l'intrus/.test(fb) : /\b\d+ [^.]+ sur \d+\./.test(fb)),
+     `${etiquette} (${e.type}) : message « N … sur M » attendu, obtenu « ${fb.replace(/\s+/g, " ").slice(0, 90)} »`);
+  ok(!carte.querySelector(".bien, .mal, .correct, .incorrect"), `${etiquette} (${e.type}) : des éléments sont marqués bien/mal`);
+}
+/* Après la réussite : les points, et aucune correction, explication ni source. */
+function controlerReussite(carte, e, pts, etiquette){
+  const fb = carte.querySelector("#fb-" + e.id).textContent;
+  ok(fb.includes("+" + pts + " points") && (pts === 10) === /Tout juste du premier coup/.test(fb), `${etiquette} : « +${pts} points » attendu, obtenu « ${fb.slice(0, 80)} »`);
+  const copie = carte.cloneNode(true);
+  copie.querySelectorAll(".barre-outils, .consigne").forEach(x => x.remove());   // la source figure dès le début dans la barre d'outils
+  const txt = copie.textContent.replace(/\s+/g, " ");
+  const fuite = textesCorrection(e).find(x => txt.includes(x));
+  ok(!carte.querySelector(".correction, .source-correction, .explication") && !fuite && !(e.source && fb.includes(e.source)),
+     `${etiquette} : aucune correction affichée après la réussite` + (fuite ? " (trouvé : « " + fuite + " »)" : ""));
+}
+const bareme = w => w.eval("({premier:PTS_PREMIER_COUP, apres:PTS_APRES_ERREUR, rapidite:PTS_RAPIDITE, quiz:PTS_QUIZ, nbQuiz:NB_QUIZ, malus:MALUS_INDICE, coffre:PTS_COFFRE_PREMIER, coffreApres:PTS_COFFRE_APRES})");
 
-/* ---------- 3. Partie complète ---------- */
-async function partie(niveau, { indiceSalle = 0 } = {}){
+/* ---------- 3. Partie complète ----------
+   avecErreurs : la première énigme, le coffre final et le fermoir sont
+   d'abord ratés (3 points au lieu de 10 pour chacun). */
+async function partie(niveau, { indiceSalle = 0, avecErreurs = false } = {}){
   const { w, erreurs } = await ouvrir("", { escape_reglages_moyenage: REGLAGES_TEST });
   const doc = w.document;
   clic(doc.querySelector(`.opt-niveau[data-niveau="${niveau}"]`));
@@ -240,15 +287,15 @@ async function partie(niveau, { indiceSalle = 0 } = {}){
   inp.value = "Les Testeurs"; inp.dispatchEvent(new w.Event("input"));
   ok(!doc.getElementById("btn-demarrer").disabled, "bouton de départ actif");
   clic(doc.getElementById("btn-demarrer"));
-  let indicesPris = 0;
+  const B = bareme(w);
+  let indicesPris = 0, total = 0;
   for(let s = 1; s <= 5; s++){
     await attendre(() => w.ETAT.salle === s && doc.querySelector("#zone-enigme .enigme-carte"), 8000, `salle ${s}`);
     const liste = w.salleEnigmes(s);
     for(let k = 0; k < liste.length; k++){
       const e = liste[k];
       await attendre(() => doc.getElementById("enigme-" + e.id), 8000, "énigme " + e.id);
-      const carte = doc.getElementById("enigme-" + e.id);
-      const c2 = carte;
+      const c2 = doc.getElementById("enigme-" + e.id);
       if(indiceSalle === s && k === 0){
         const avant = w.ETAT.score;
         clic(c2.querySelector("#indice-" + e.id));
@@ -256,38 +303,69 @@ async function partie(niveau, { indiceSalle = 0 } = {}){
         ok(c2.querySelector(".feedback.indice"), "l'indice s'affiche");
         indicesPris++;
       }
+      const avant = w.ETAT.score, premiere = avecErreurs && total === 0;
+      if(premiere){ resoudre(w, e, c2, true); controlerErreur(c2, e, e.id); }
       resoudre(w, e, c2);
       await attendre(() => c2.classList.contains("resolue"), 3000, "résolution " + e.id);
-      ok(c2.querySelector(".correction") && c2.querySelector(".source-correction"), `${e.id} : correction et source affichées`);
+      const pts = premiere ? B.apres : B.premier;
+      controlerReussite(c2, e, pts, e.id);
+      total++;
       if(k < liste.length - 1){
         await attendre(() => doc.getElementById("btn-enigme-suivante"), 4000, "bouton énigme suivante");
+        ok(w.ETAT.score - avant === pts, `${e.id} : +${pts} points au score (obtenu ${w.ETAT.score - avant})`);
         clic(doc.getElementById("btn-enigme-suivante"));
       }
     }
-    if(s < 5){
-      await attendre(() => doc.getElementById("btn-salle-suivante"), 15000, "bouton page suivante " + s);
-      ok(w.ETAT.motsCles.includes(DI.salles[s-1].motCle), `mot-clé ${DI.salles[s-1].motCle}`);
-      clic(doc.getElementById("btn-salle-suivante"));
-    }
+    // fin de page : plus de dialogue de réussite, le bouton suivant apparaît tout de suite
+    const id = s < 5 ? "btn-salle-suivante" : "btn-coffre-final";
+    await attendre(() => doc.getElementById(id), 2500, "bouton " + id + " après la page " + s);
+    const zone = doc.getElementById("zone-enigme").textContent;
+    ok(w.ETAT.motsCles.includes(DI.salles[s-1].motCle) && zone.includes(DI.salles[s-1].motCle) && /Notez ce mot/.test(zone), `mot-clé ${DI.salles[s-1].motCle} affiché avec « Notez ce mot »`);
+    clic(doc.getElementById(id));
+    await pause(100);
+    ok(!doc.querySelector(".mot-cle"), `page ${s} : le mot-clé n'est plus affiché ensuite`);
   }
+  /* Coffre final : les 5 mots sont à retaper, rien n'est prérempli */
+  await attendre(() => doc.getElementById("coffre-final"), 4000, "coffre final");
+  const champs = DI.salles.map((x, i) => doc.getElementById("coffre-" + i));
+  ok(champs.every(c => c && c.value === ""), "coffre final : les 5 champs sont vides");
+  ok(!DI.salles.some(x => doc.getElementById("coffre-final").textContent.includes(x.motCle)), "coffre final : aucun mot-clé affiché");
+  if(avecErreurs){
+    champs.forEach((c, i) => c.value = i === 0 ? "gaulois" : DI.salles[i].motCle);
+    clic(doc.getElementById("btn-coffre"));
+    ok(!w.ETAT.coffreOuvert && /4 mots justes sur 5/.test(doc.getElementById("fb-coffre").textContent), "coffre final : un mot faux est refusé (« 4 mots justes sur 5 »)");
+  }
+  const avantCoffre = w.ETAT.score;
+  champs.forEach((c, i) => c.value = norm(DI.salles[i].motCle));   // minuscules, sans accent (CHARITÉ → charite)
+  clic(doc.getElementById("btn-coffre"));
+  ok(w.ETAT.coffreOuvert, "coffre final : s'ouvre avec les bons mots (accents et casse ignorés)");
+  ok(w.ETAT.score - avantCoffre === (avecErreurs ? B.coffreApres : B.coffre), `coffre final : +${avecErreurs ? B.coffreApres : B.coffre} points`);
   /* Mécanisme final : le fermoir (frise) */
   await attendre(() => doc.getElementById("enigme-final"), 8000, "fermoir");
   ok(w.ETAT.motsCles.length === 5, "5 mots-clés");
   ok(doc.querySelectorAll(".incipit .mot-incipit").length === 5, "l'incipit affiche les 5 mots");
   const fin = w.ENIGMES().final, cf = doc.getElementById("enigme-final");
-  clic(cf.querySelector("[data-valider]"));   // ordre de départ mélangé : on essaie, puis on résout
+  const avantFermoir = w.ETAT.score;
+  if(avecErreurs){ resoudre(w, fin, cf, true); controlerErreur(cf, fin, "fermoir"); }
   resoudre(w, fin, cf);
+  await attendre(() => cf.classList.contains("resolue"), 3000, "résolution du fermoir");
+  controlerReussite(cf, fin, avecErreurs ? B.apres : B.premier, "fermoir");
   await attendre(() => doc.querySelector("#quizz .qcm-question"), 8000, "écran de fin");
   ok(w.ETAT.fermoir === true, "fermoir ouvert");
+  ok(w.ETAT.score - avantFermoir === (avecErreurs ? B.apres : B.premier), `fermoir : +${avecErreurs ? B.apres : B.premier} points`);
   /* Quizz final */
   const quizz = w.quizzCourant();
   quizz.forEach((x, i) => clic(doc.querySelector(`#quizz .qcm-question[data-i="${i}"] .qcm-option[data-j="${x.bonne}"]`)));
   clic(doc.getElementById("btn-voir-score"));
   await pause(50);
-  const max = niveau === "CM1" ? 100 : 125;
-  ok(w.scoreMax() === max, `score maximal ${niveau} = ${w.scoreMax()}`);
-  const attendu = max - 2*indicesPris - (indicesPris ? 1 : 0);   // indice : −2, et bonus de rapidité 3 → 2
+  // barème v2 : énigmes × 10 + coffre 10 + fermoir 10 + 5 salles × 3 + quizz 5 × 2
+  const max = total * B.premier + B.coffre + B.premier + 5 * B.rapidite + B.nbQuiz * B.quiz;
+  ok(w.scoreMax() === max && max === (niveau === "CM1" ? 195 : 245), `score maximal ${niveau} = ${w.scoreMax()} (attendu ${max})`);
+  const attendu = max - 2*indicesPris - (indicesPris ? 1 : 0)   // indice : −2, et bonus de rapidité 3 → 2
+    - (avecErreurs ? (B.premier - B.apres) * 2 + (B.coffre - B.coffreApres) : 0);
   ok(w.ETAT.score === attendu, `score final ${niveau} : ${w.ETAT.score} (attendu ${attendu})`);
+  ok(w.ETAT.erreursTotal === (avecErreurs ? 3 : 0) && w.ETAT.enigmesPremierCoup === total - (avecErreurs ? 1 : 0),
+     `bilan : ${w.ETAT.erreursTotal} erreur(s), ${w.ETAT.enigmesPremierCoup} énigme(s) du premier coup`);
   ok(doc.getElementById("score-recap").textContent.includes(String(attendu)), "bilan affiché");
   /* Impression du bilan */
   clic(doc.getElementById("btn-imprimer-bilan"));
@@ -302,21 +380,33 @@ const faire = e => ETAPE === "tout" || ETAPE === e;
 (async () => {
   try{
     if(faire("cm1")){ console.log("2. Partie complète CM1");  await partie("CM1"); }
-    if(faire("cm2")){ console.log("3. Partie complète CM2");  await partie("CM2"); }
+    if(faire("cm2")){ console.log("3. Partie complète CM2 (une erreur, coffre et fermoir ratés une fois)");  await partie("CM2", { avecErreurs: true }); }
     if(faire("indice")){ console.log("4. Indice en salle 2 (CM2)"); await partie("CM2", { indiceSalle: 2 }); }
     if(faire("verif")){
-    console.log("5. Chaque énigme en mode vérification : mauvaise réponse refusée, puis résolution");
+    console.log("5. Chaque énigme en mode vérification : erreur « N … sur M », puis résolution à 3 points");
     for(const s of E.salles) for(const e of s.enigmes){
       const niv = (!e.niveaux || e.niveaux.includes("CM1")) ? "CM1" : "CM2";
-      const { w } = await ouvrir(`?salle=${s.num}&niveau=${niv}&enigme=${w_rang(e, s, niv)}`, { escape_reglages_moyenage: REGLAGES_TEST });
+      const { w, erreurs } = await ouvrir(`?salle=${s.num}&niveau=${niv}&enigme=${w_rang(e, s, niv)}`, { escape_reglages_moyenage: REGLAGES_TEST });
       await attendre(() => w.document.getElementById("enigme-" + e.id), 6000, "vérif " + e.id);
       const carte = w.document.getElementById("enigme-" + e.id);
-      const teste = seTromper(w, e, carte);
+      const B = bareme(w);
+      // une réponse incomplète n'est pas une erreur (l'ordre, lui, est toujours complet : on ne le valide pas au hasard)
+      if(e.type !== "ordre"){
+        clic(carte.querySelector("[data-valider]"));
+        ok(!carte.classList.contains("resolue") && w.ETAT.erreursTotal === 0, `${e.id} (${e.type}) : une réponse incomplète ne compte pas comme erreur`);
+      }
+      const errAvant = w.ETAT.erreursTotal;
+      resoudre(w, e, carte, true);
       await pause(30);
-      if(teste) ok(!carte.classList.contains("resolue"), `${e.id} (${e.type}) : mauvaise réponse refusée`);
+      controlerErreur(carte, e, e.id);
+      ok(w.ETAT.erreursTotal === errAvant + 1, `${e.id} (${e.type}) : une erreur comptée`);
       resoudre(w, e, carte);
       await attendre(() => carte.classList.contains("resolue"), 3000, "résolution " + e.id);
+      controlerReussite(carte, e, B.apres, e.id);
+      await attendre(() => w.ETAT.enigmesReussies === 1, 2000, "points de " + e.id);
+      ok(w.ETAT.score === B.apres, `${e.id} : ${B.apres} points après une erreur (score ${w.ETAT.score})`);
       ok(w.localStorage.getItem("escape_moyenage_v1") === null, `${e.id} : le mode vérification ne sauvegarde rien`);
+      ok(erreurs.length === 0, `${e.id} : erreurs JavaScript : ` + erreurs.join(" | "));
       w.close();
     }
     }

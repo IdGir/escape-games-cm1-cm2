@@ -23,6 +23,7 @@ const ETAT = {
   indicesTotal: 0,
   quiz: {repondu:false, score:0},
   fini: false,
+  enigmesPremierCoup: 0, erreursTotal: 0, coffreOuvert: false, coffrePremierCoup: false,
   reglages: {
     narrationActive: true,
     volume: 1,
@@ -40,15 +41,17 @@ const ETAT = {
   }
 };
 
-/* Score maximal atteignable, utilisé pour le barème affiché et imprimé :
-     5 escales × (10 pts + 5 pts de rapidité) = 75
-   + quizz final 5 questions × 2 pts          = 10
-   ------------------------------------------------
-                                                85  */
-const SCORE_MAX = 85;
+/* Score maximal atteignable (moteur v2, octobre 2026) :
+     5 énigmes justes du premier coup × 10 pts = 50   (3 pts après une erreur)
+   + 5 escales × 5 pts de rapidité             = 25
+   + coffre final ouvert du premier coup       = 10   (3 pts après une erreur)
+   + quizz final 5 questions × 2 pts           = 10
+   -------------------------------------------------
+                                                 95  */
+const SCORE_MAX = 5*PTS_PREMIER_COUP + 5*5 + PTS_COFFRE_PREMIER + 10;
 
 const CLE_SAUVEGARDE = "escape_tourdumonde_v1";
-const VERSION_APP = "v1";
+const VERSION_APP = "v2";   // v2 : moteur v2 (premier coup, coffre final)
 let DONNEES = null;
 
 function resetEtatJeu(){
@@ -67,6 +70,8 @@ function resetEtatJeu(){
   ETAT.indicesTotal = 0;
   ETAT.quiz = {repondu:false, score:0};
   ETAT.fini = false;
+  ETAT.enigmesPremierCoup = 0; ETAT.erreursTotal = 0;
+  ETAT.coffreOuvert = false; ETAT.coffrePremierCoup = false;
 }
 
 /* ---- Chargement des données ----
@@ -368,6 +373,10 @@ document.addEventListener("DOMContentLoaded", async ()=>{
       ETAT.badges = enCours.badges || ETAT.badges;
       ETAT.msEcoules = enCours.msEcoules || 0;
       ETAT.indicesTotal = enCours.indicesTotal || 0;
+      ETAT.enigmesPremierCoup = enCours.enigmesPremierCoup || 0;
+      ETAT.erreursTotal = enCours.erreursTotal || 0;
+      ETAT.coffreOuvert = !!enCours.coffreOuvert;
+      ETAT.coffrePremierCoup = !!enCours.coffrePremierCoup;
       ETAT.debut = Date.now() - ETAT.msEcoules;
       ETAT.fini = false;
       entrerDansLeJeu(true);
@@ -441,6 +450,7 @@ function afficherSalle(n){
   if(typeof ambiance === "function") ambiance(salle.decor);
   lancerDialogueIntro(salle);
   activerEnigme(n);
+  v2TairePersonnage(c.querySelector(".zone-enigme"));
   majHUD();
   sauvegarder();
 }
@@ -469,84 +479,81 @@ function consigneSalle(n){
   const cm1 = ETAT.niveau==="CM1";
   return {
     1: cm1
-      ? "Clique sur une <b>zone de la carte</b>, puis sur son <b>nom</b> en bas. Place les <b>5 continents</b> et les <b>3 océans</b>."
-      : "Clique sur une <b>zone de la carte</b>, puis sur son <b>nom</b> en bas. Place les <b>6 continents</b>, l'<b>Antarctique</b> et les <b>5 océans</b>.",
+      ? "Clique sur une <b>zone de la carte</b>, puis sur son <b>nom</b> en bas. Place les <b>5 continents</b> et les <b>3 océans</b>, puis clique sur « Vérifier »."
+      : "Clique sur une <b>zone de la carte</b>, puis sur son <b>nom</b> en bas. Place les <b>6 continents</b>, l'<b>Antarctique</b> et les <b>5 océans</b>, puis clique sur « Vérifier ».",
     2: cm1
       ? "Remets les <b>4 escales</b> dans l'ordre du voyage avec les flèches ▲▼, puis réponds à la question sur le canal."
       : "Remets les <b>7 escales</b> dans l'ordre du voyage avec les flèches ▲▼, puis réponds à la question sur le canal de Suez.",
     3: cm1
-      ? "Clique sur un <b>paysage</b>, puis sur le <b>climat</b> qui lui va. Associe les <b>4 paires</b>."
-      : "Clique sur un <b>paysage</b>, puis sur le <b>climat</b> qui lui va. Associe les <b>6 paires</b> et repère la zone climatique.",
+      ? "Clique sur un <b>paysage</b>, puis sur le <b>climat</b> qui lui va. Associe les <b>4 paires</b>, puis clique sur « Vérifier »."
+      : "Clique sur un <b>paysage</b>, puis sur le <b>climat</b> qui lui va. Associe les <b>6 paires</b>, puis clique sur « Vérifier ».",
     4: "Pour chaque étape : choisis le <b>moyen de transport</b>, puis calcule la <b>distance réelle</b> (mesure en cm × échelle).",
     5: "Calcule l'<b>heure locale</b> de chaque ville à partir de midi à Londres, puis réponds à la grande question du <b>jour gagné</b>.",
   }[n] || "";
 }
 
-/* ---- Validation d'une escale ---- */
-function validerSalle(n){
+/* ---- Validation d'une escale (moteur v2) ----
+   erreurs : nombre de vérifications fausses sur l'énigme de l'escale.
+   Aucun texte après la réussite : le cachet s'affiche une seule fois
+   (à noter sur la fiche de mission) et le bouton suivant apparaît aussitôt. */
+function validerSalle(n, erreurs){
   const salle = DONNEES.salles[n-1];
   const duree = Date.now() - ETAT.salleDebut;
+  const dejaValidee = ETAT.tempsParSalle[n] !== undefined;   // reprise après rechargement
   ETAT.tempsParSalle[n] = duree;
-
   if(salle.fragment && !ETAT.fragments.includes(salle.fragment)){
     ETAT.fragments.push(salle.fragment);
     if(typeof son === "function") setTimeout(()=>son("fragment"), 600);
   }
-
-  let pts = 10, raison = "";
-  if(duree < 180000){ pts += 5; raison = "rapidité 🏃"; if(salle.badge_rapidite) ETAT.badges[salle.badge_rapidite] = true; }
-  else if(duree < 360000){ pts += 2; }
-  if(ETAT.indicesUtilises > 0 && raison !== "rapidité 🏃") pts = Math.max(5, pts-2);
-  ajouterScore(pts, raison);
-
+  ajouterScore(erreurs ? PTS_APRES_ERREUR : PTS_PREMIER_COUP, erreurs ? "énigme résolue" : "tout juste du premier coup 🎯");
+  let pts = 0;
+  if(duree < 180000){ pts = 5; if(salle.badge_rapidite) ETAT.badges[salle.badge_rapidite] = true; }
+  else if(duree < 360000){ pts = 2; }
+  if(pts && !dejaValidee) setTimeout(()=>ajouterScore(pts, "rapidité 🏃"), 900);
   // Le badge du géographe récompense un parcours sans indice
   if(n === 5 && ETAT.indicesTotal === 0) ETAT.badges.geographe = true;
+  confettis(erreurs ? 15 : 45);
 
+  const zoneEnigme = document.querySelector("#salle-contenu .zone-enigme");
+  const dlg = document.querySelector("#salle-contenu .personnage-scene");
+  if(dlg) dlg.remove();
+  if("speechSynthesis" in window) speechSynthesis.cancel();
+
+  // Escale 5 : le coffre final (recopier les 4 cachets notés), puis la fin
   if(n === 5){
-    confettis(60);
     sauvegarder();
-    setTimeout(()=>lancerCine("final", "Le quatre-vingtième jour", finDuJeu), 1200);
+    const b = document.createElement("div");
+    b.className = "boutons";
+    b.innerHTML = `<button class="btn grand jade" id="btn-coffre-final">🔐 Ouvrir le carnet de Phileas Fogg</button>`;
+    zoneEnigme.appendChild(b);
+    b.querySelector("button").addEventListener("click", ()=>afficherCoffre(()=>setTimeout(()=>lancerCine("final", "Le quatre-vingtième jour", finDuJeu), 600)));
+    b.scrollIntoView({behavior:"smooth", block:"center"});
     return;
   }
 
-  /* Affiche le bouton d'escale suivante. Idempotent : peut être appelé
-     plusieurs fois sans créer de doublon. */
-  function afficherBoutonSuivant(){
-    const c = document.getElementById("salle-contenu");
-    const zoneEnigme = c && c.querySelector(".zone-enigme");
-    if(!zoneEnigme || c.querySelector("#btn-salle-suivante")) return;
-    const zone = document.createElement("div");
-    zone.className = "boutons";
-    zone.innerHTML = `<button class="btn grand jade" id="btn-salle-suivante">➡️ Escale suivante</button>`;
-    zoneEnigme.appendChild(zone);
-    zone.querySelector("#btn-salle-suivante").addEventListener("click", ()=>{
-      ETAT.salle++;
-      if(ETAT.salle > 5) finDuJeu();
-      else afficherSalle(ETAT.salle);
-    });
-  }
-
-  /* Filet de sécurité : sur certains postes, la synthèse vocale ne démarre
-     jamais (pas de voix installée, lecture bloquée tant que l'élève n'a
-     rien cliqué…) et l'événement de fin de réplique n'arrive pas. Sans ce
-     minuteur, l'équipe resterait bloquée sur une énigme déjà réussie. */
-  const filet = setTimeout(afficherBoutonSuivant, 12000);
-
-  afficherDialogue({
-    perso: salle.dialogue_reussite.perso,
-    nom:   salle.dialogue_reussite.nom,
-    texte: salle.dialogue_reussite.texte +
-      `<div class="sous-titre" style="margin-top:8px;font-size:.85rem">⏱️ ${Math.floor(duree/60000)} min ${Math.floor((duree%60000)/1000)} s · +${pts} points${salle.fragment?` · 🛂 Cachet obtenu : <b>${salle.fragment}</b>`:""}</div>`,
-    onFini: ()=>{
-      clearTimeout(filet);
-      if(typeof geste === "function" && typeof persoCourant === "function"){
-        geste(persoCourant(), "joie", 1600);
-      }
-      afficherBoutonSuivant();
-    }
+  zoneEnigme.innerHTML = v2MotANoter(`Cachet de voyage obtenu à l'escale ${n}`, salle.fragment)
+    + `<div class="boutons"><button class="btn grand jade" id="btn-salle-suivante">➡️ Escale suivante</button></div>`;
+  zoneEnigme.querySelector("#btn-salle-suivante").addEventListener("click", ()=>{
+    ETAT.salle++;
+    if(ETAT.salle > 5) finDuJeu();
+    else afficherSalle(ETAT.salle);
   });
-  confettis(40);
+  zoneEnigme.scrollIntoView({behavior:"smooth", block:"center"});
   sauvegarder();
+}
+
+/* ---- Coffre final : les 4 cachets notés sur la fiche de mission ---- */
+function afficherCoffre(suite){
+  if(ETAT.coffreOuvert){ suite(); return; }
+  const zone = document.querySelector("#salle-contenu .zone-enigme");
+  const lignes = DONNEES.salles.filter(s=>s.fragment).map(s=>({label:`Escale ${s.num} — ${s.titre}`, mot:s.fragment}));
+  v2Coffre(zone, "Le carnet de Phileas Fogg", lignes, (pts, premier)=>{
+    ETAT.coffreOuvert = true;
+    if(premier) ETAT.coffrePremierCoup = true;
+    ajouterScore(pts, premier ? "coffre ouvert du premier coup 🎯" : "coffre ouvert");
+    confettis(60);
+    sauvegarder();
+  }, suite);
 }
 
 /* ============================================================
@@ -684,6 +691,7 @@ function construireQuizz(){
   const btnVoir = document.getElementById("btn-voir-score");
   if(!btnVoir) return;
   btnVoir.onclick = ()=>{
+    if(ETAT.quiz.repondu) return;   // quizz déjà compté : pas de points en double
     let score = 0;
     QUIZZ.forEach((item,i)=>{
       const qi = cont.querySelector(`.qcm-question[data-i="${i}"]`);
@@ -714,9 +722,9 @@ function construireQuizz(){
     const min = Math.floor(ETAT.msEcoules/60000);
     const sec = Math.floor((ETAT.msEcoules%60000)/1000);
     const nbBadges = Object.values(ETAT.badges).filter(Boolean).length;
-    const mention = ETAT.score>=78 ? "🏆 Maître du Tour du Monde"
-                  : ETAT.score>=64 ? "🥈 Grand Voyageur"
-                  : ETAT.score>=50 ? "🥉 Explorateur confirmé"
+    const mention = ETAT.score>=0.9*SCORE_MAX ? "🏆 Maître du Tour du Monde"
+                  : ETAT.score>=0.75*SCORE_MAX ? "🥈 Grand Voyageur"
+                  : ETAT.score>=0.6*SCORE_MAX ? "🥉 Explorateur confirmé"
                   : "🧭 Apprenti géographe";
     recap.innerHTML = `
       <div class="carnet-final">
@@ -726,7 +734,8 @@ function construireQuizz(){
         <div style="font-size:1.1rem;color:var(--abysse-2);font-weight:bold">${mention}</div>
         <hr style="border:none;border-top:1px solid var(--velin-ombre);margin:12px 0">
         <div>⏱️ Temps : <b>${min} min ${sec} s</b></div>
-        <div>🛂 Cachets : <b>${ETAT.fragments.length}/4</b></div>
+        <div>🎯 Justes du premier coup : <b>${ETAT.enigmesPremierCoup||0}/5</b> · ✗ Erreurs : <b>${ETAT.erreursTotal||0}</b></div>
+        <div>🛂 Cachets : <b>${ETAT.fragments.length}/4</b>${ETAT.coffreOuvert?" · carnet ouvert":""}</div>
         <div>📝 Quizz : <b>${ETAT.quiz.score}/${QUIZZ.length}</b></div>
         <div>🏅 Badges : <b>${nbBadges}/4</b></div>
         <div>Niveau : <b>${ETAT.niveau}</b></div>
@@ -753,3 +762,5 @@ window.aller = aller;
 window.appliquerReglages = appliquerReglages;
 window.QUIZZ = QUIZZ;
 window.SCORE_MAX = SCORE_MAX;
+window.afficherCoffre = afficherCoffre;
+window.FICHE_MISSION_LIBELLE = "Escale";

@@ -1,0 +1,224 @@
+/* ============================================================
+   ANIMATIONS — Personnages vivants, décors animés
+   ============================================================ */
+
+/* ---- Portrait : clignement naturel des yeux ---- */
+.portrait .portrait-svg .yeux .paupiere {
+  transform-origin:center bottom;
+  animation:cligne 4.5s infinite;
+}
+@keyframes cligne{
+  0%,92%,100%{transform:scaleY(1)}
+  94%,96%{transform:scaleY(.08)}
+}
+
+/* ---- Portrait : bouche qui bouge pendant la parole ----
+   Deux mécanismes :
+   1. Animation CSS d'ambiance (bouge tant que .parle est actif)
+   2. JS pilote des classes .bouche-petite / .bouche-moyenne / .bouche-grande
+      aux frontières de mots (boundary events) → réalisme accru */
+.portrait .portrait-svg .bouche {
+  transform-origin:center center;
+  transition:transform .08s ease-out;
+}
+/* États de bouche pilotés par JS (réalistes) */
+.portrait.parle .portrait-svg .bouche.bouche-fermee   { transform:scaleY(.5)  scaleX(.95); }
+.portrait.parle .portrait-svg .bouche.bouche-petite   { transform:scaleY(.85) scaleX(1); }
+.portrait.parle .portrait-svg .bouche.bouche-moyenne  { transform:scaleY(1.25) scaleX(1.05); }
+.portrait.parle .portrait-svg .bouche.bouche-grande   { transform:scaleY(1.7)  scaleX(1.1); }
+
+/* Animation d'ambiance pendant la parole (en plus du pilotage JS) :
+   micro-variations aléatoires pour un effet naturel même sans boundary events */
+.portrait.parle .portrait-svg .bouche {
+  animation:parle-bouche .18s infinite alternate ease-in-out;
+}
+@keyframes parle-bouche{
+  0%{transform:scaleY(.9) scaleX(.98)}
+  100%{transform:scaleY(1.35) scaleX(1.04)}
+}
+/* Quand on n'a pas d'info boundary, la bouche alterne ouverte/fermée via .parle-bouche-bas */
+.portrait.parle .portrait-svg .bouche-ouverte { opacity:1; }
+.portrait.parle .portrait-svg .bouche-fermee { opacity:0; }
+.portrait .portrait-svg .bouche-ouverte { opacity:0; }
+.portrait .portrait-svg .bouche-fermee { opacity:1; transition:opacity .1s; }
+
+/* Légère tête qui hoche pendant la parole (vivacité) */
+.portrait.parle .portrait-svg .tete {
+  animation:hoche-tete 1.6s ease-in-out infinite;
+}
+@keyframes hoche-tete{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  25%{transform:translateY(-1px) rotate(.6deg)}
+  75%{transform:translateY(0) rotate(-.4deg)}
+}
+/* Sourcils légèrement animés pendant la parole (expression) */
+.portrait.parle .portrait-svg .sourcils {
+  animation:sourcils-parle 2.5s ease-in-out infinite;
+  transform-origin:center;
+}
+@keyframes sourcils-parle{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-1px)}
+}
+
+/* ---- Portrait : respiration (légère oscillation) ---- */
+.portrait .portrait-svg .tete,
+.portrait .portrait-svg .corps {
+  transform-origin:center bottom;
+}
+.portrait .portrait-svg .tete {
+  animation:respire-tete 4s ease-in-out infinite;
+}
+.portrait .portrait-svg .corps {
+  animation:respire-corps 4s ease-in-out infinite;
+}
+@keyframes respire-tete{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-1.5px)}
+}
+@keyframes respire-corps{
+  0%,100%{transform:scaleY(1)}
+  50%{transform:scaleY(1.015)}
+}
+
+/* ---- Apparition du personnage (entrée en scène) ---- */
+.personnage-scene.entrer .portrait{
+  animation:entre-portrait .6s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes entre-portrait{
+  0%{transform:translateX(-40px) scale(.6);opacity:0}
+  100%{transform:translateX(0) scale(1);opacity:1}
+}
+.personnage-scene.entrer .bulle{
+  animation:entre-bulle .5s .2s both cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes entre-bulle{
+  0%{transform:scale(.6);opacity:0}
+  100%{transform:scale(1);opacity:1}
+}
+
+/* ---- Décor animé : pluie (Salle 1) ---- */
+.pluie { position:absolute;inset:0;overflow:hidden;pointer-events:none; }
+.pluie::before, .pluie::after {
+  content:"";position:absolute;inset:-20%;
+  background-image:
+    linear-gradient(105deg, transparent 48%, rgba(180,200,230,.4) 49%, rgba(180,200,230,.4) 51%, transparent 52%);
+  background-size:14px 60px;
+  animation:tombe-pluie .6s linear infinite;
+}
+.pluie::after {
+  background-image:
+    linear-gradient(105deg, transparent 49%, rgba(180,200,230,.25) 50%, transparent 51%);
+  background-size:22px 80px;
+  animation-duration:.9s;
+  opacity:.7;
+}
+@keyframes tombe-pluie{to{transform:translateY(60px)}}
+
+/* ---- Décor animé : bougie vacillante (Salle 2) ---- */
+.bougie-flamme {
+  transform-origin:bottom center;
+  animation:vacille .25s infinite alternate;
+  filter:drop-shadow(0 0 8px rgba(255,180,60,.8));
+}
+@keyframes vacille{
+  0%{transform:scaleX(1) scaleY(1) rotate(-2deg)}
+  100%{transform:scaleX(.9) scaleY(1.1) rotate(2deg)}
+}
+
+/* ---- Décor animé : feuillage Tuileries (Salle 3) ---- */
+.feuillage {
+  transform-origin:center bottom;
+  animation:balancement 4s ease-in-out infinite;
+}
+@keyframes balancement{
+  0%,100%{transform:rotate(-1.5deg)}
+  50%{transform:rotate(1.5deg)}
+}
+
+/* ---- Décor animé : fumée Bastille (Salle 4) ---- */
+.fumee {
+  position:absolute;pointer-events:none;
+  animation:fumee-monte 6s linear infinite;
+  opacity:0;
+}
+@keyframes fumee-monte{
+  0%{transform:translateY(0) scale(.5);opacity:0}
+  20%{opacity:.5}
+  100%{transform:translateY(-120px) scale(2);opacity:0}
+}
+
+/* ---- Décor animé : tic-tac pendule (Salle 5) ---- */
+.pendule-aiguille {
+  transform-origin:bottom center;
+  animation:tic-tac 1s steps(1,end) infinite alternate;
+}
+@keyframes tic-tac{
+  0%{transform:rotate(-8deg)}
+  100%{transform:rotate(8deg)}
+}
+
+/* ---- Transitions entre salles ---- */
+.transition-salle{
+  position:fixed;inset:0;background:var(--bleu-nuit);z-index:500;
+  display:flex;align-items:center;justify-content:center;color:var(--or-clair);
+  font-size:1.8rem;font-weight:bold;letter-spacing:3px;
+  animation:transition-volet 1.4s ease;
+}
+@keyframes transition-volet{
+  0%{opacity:0;transform:scaleY(0);transform-origin:top}
+  30%{opacity:1;transform:scaleY(1)}
+  70%{opacity:1;transform:scaleY(1)}
+  100%{opacity:0;transform:scaleY(0);transform-origin:bottom}
+}
+
+/* ---- Fragments qui s'assemblent ---- */
+.fragment-anim{
+  display:inline-block;animation:fragment-assemble .8s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes fragment-assemble{
+  0%{transform:scale(0) rotate(-180deg);opacity:0}
+  100%{transform:scale(1) rotate(0);opacity:1}
+}
+
+/* ---- Pulsation bouton indice ---- */
+.btn.or:active { animation:pulse-btn .3s; }
+@keyframes pulse-btn{50%{transform:scale(.95)}}
+
+/* ---- Apparition feedback ---- */
+.feedback.show{animation:feedback-apparait .4s}
+@keyframes feedback-apparait{
+  0%{transform:translateY(-8px);opacity:0}
+  100%{transform:translateY(0);opacity:1}
+}
+
+/* ---- Surbrillance indice cliquable ---- */
+.lettre-clic.cm1{animation:pulse-indice 2s infinite}
+@keyframes pulse-indice{
+  0%,100%{background:transparent}
+  50%{background:rgba(178,34,34,.18)}
+}
+
+/* ---- Effet "machine à écrire" pour dialogue ----
+   Remarque : le découpage du texte est géré en JS (machineEcrire dans narration.js).
+   On ne met QUE le curseur clignotant, pas d'animation de width. */
+.bulle .texte.dactylographie{
+  border-right:2px solid var(--encre);
+  animation:caret .8s step-end infinite;
+}
+@keyframes caret{50%{border-color:transparent}}
+
+/* ---- Surlignage carte active ---- */
+.carte-match.hover-actif{outline:3px solid var(--or-clair);outline-offset:2px}
+
+/* ---- Chargement ---- */
+.spinner{
+  display:inline-block;width:18px;height:18px;border:3px solid rgba(255,255,255,.3);
+  border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---- Réduction des animations pour acces. ---- */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01s !important;animation-iteration-count:1 !important;transition-duration:.01s !important}
+}

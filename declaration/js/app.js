@@ -20,6 +20,7 @@ const ETAT = {
   indicesUtilises: 0,
   quiz: {repondu:false, score:0},
   fini: false,
+  enigmesPremierCoup: 0, erreursTotal: 0, coffreOuvert: false, coffrePremierCoup: false,
   reglages: {
     narrationActive: true,
     volume: 1,
@@ -37,12 +38,14 @@ const ETAT = {
   }
 };
 
-/* Score maximal atteignable, utilisé pour le barème affiché et imprimé :
-     5 salles × (10 pts + 5 pts de rapidité) = 75
-   + quizz final 5 questions × 2 pts         = 10
-   -----------------------------------------------
-                                               85  */
-const SCORE_MAX = 85;
+/* Score maximal atteignable (moteur v2, octobre 2026) :
+     5 énigmes justes du premier coup × 10 pts = 50   (3 pts après une erreur)
+   + 5 salles × 5 pts de rapidité              = 25
+   + coffre final ouvert du premier coup       = 10   (3 pts après une erreur)
+   + quizz final 5 questions × 2 pts           = 10
+   -------------------------------------------------
+                                                 95  */
+const SCORE_MAX = 5*PTS_PREMIER_COUP + 5*5 + PTS_COFFRE_PREMIER + 10;
 
 const CLE_SAUVEGARDE = "escape_declaration_v2";
 let DONNEES = null; // dialogues.json chargé
@@ -64,6 +67,8 @@ function resetEtatJeu(){
   ETAT.indicesUtilises = 0;
   ETAT.quiz = {repondu:false, score:0};
   ETAT.fini = false;
+  ETAT.enigmesPremierCoup = 0; ETAT.erreursTotal = 0;
+  ETAT.coffreOuvert = false; ETAT.coffrePremierCoup = false;
 }
 
 /* ---- Chargement des données ----
@@ -291,7 +296,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
   // antérieure (v1 ou v2 sans reset propre), on l'efface pour repartir à zéro.
   // Évite le bug "on arrive directement à la fin" si une partie terminée
   // d'une ancienne version est restée dans localStorage.
-  const VERSION_APP = "v6";
+  const VERSION_APP = "v7";   // v7 : moteur v2 (premier coup, coffre final)
   try{
     const vStockee = localStorage.getItem("escape_app_version");
     const etatBrut = localStorage.getItem(CLE_SAUVEGARDE);
@@ -389,6 +394,10 @@ document.addEventListener("DOMContentLoaded", async ()=>{
       ETAT.fragments = partieEnCours.fragments || [];
       ETAT.badges = partieEnCours.badges || ETAT.badges;
       ETAT.msEcoules = partieEnCours.msEcoules || 0;
+      ETAT.enigmesPremierCoup = partieEnCours.enigmesPremierCoup || 0;
+      ETAT.erreursTotal = partieEnCours.erreursTotal || 0;
+      ETAT.coffreOuvert = !!partieEnCours.coffreOuvert;
+      ETAT.coffrePremierCoup = !!partieEnCours.coffrePremierCoup;
       ETAT.debut = Date.now() - ETAT.msEcoules;
       ETAT.fini = false;
       entrerDansLeJeu(true);
@@ -475,6 +484,7 @@ function afficherSalle(n){
   lancerDialogueIntro(salle);
   // Activer les interactions de l'énigme
   activerEnigme(n);
+  v2TairePersonnage(c.querySelector(".zone-enigme"));
   majHUD();
   sauvegarder();
 }
@@ -506,81 +516,78 @@ function consigneSalle(n){
   const cm1 = ETAT.niveau==="CM1";
   const consignes = {
     1: cm1
-      ? "Lis le texte. Les lettres <b style='color:var(--rouge)'>en rouge soulignées</b> sont cachées. Clique dessus <b>dans l'ordre</b> pour former le mot mystère."
-      : "Lis le cahier de doléances. Certaines lettres sont marquées. Clique sur les lettres marquées <b>dans l'ordre</b> pour révéler le mot caché.",
+      ? "Lis le texte. Les lettres <b style='color:var(--rouge)'>en rouge</b> sont <b>dans le désordre</b> et <b>deux sont des pièges</b>. Range les bonnes dans les 7 cases : elles forment ce que réclament les habitants, un mot de la devise de la France."
+      : "Lis le cahier de doléances. Neuf lettres sont marquées, <b>dans le désordre</b> ; <b>deux sont des pièges</b>. Range les autres dans les 7 cases pour écrire ce que réclament les habitants, un mot de la devise de la France.",
     2: cm1
-      ? "Clique sur un extrait à gauche, puis sur l'image correspondante à droite. Associe les <b>3 paires</b> !"
-      : "Remets ces <b>5 événements de 1789</b> dans l'ordre chronologique (du plus ancien au plus récent) avec les flèches ▲▼.",
+      ? "Associe chaque extrait de la Marseillaise à l'image qui lui correspond (<b>3 paires</b>), puis clique sur « Vérifier »."
+      : "Remets ces <b>5 événements de 1789</b> dans l'ordre chronologique (du plus ancien au plus récent) avec les flèches ▲▼, puis clique sur « Vérifier ».",
     3: "Déchiffre les <b>3 rébus</b> et choisis le bon mot pour compléter la phrase de la Déclaration.",
-    4: "Clique sur un <b>portrait</b>, puis sur sa <b>citation</b>. Associe toutes les paires !",
-    5: "Clique sur une <b>case vide</b> du plan, puis sur l'<b>étiquette</b> à y placer. Remplis tout le plan !",
+    4: "Associe chaque <b>portrait</b> à sa <b>citation</b>, puis clique sur « Vérifier ».",
+    5: "Clique sur une <b>case</b> du plan, puis sur l'<b>étiquette</b> à y placer. Remplis tout le plan, puis clique sur « Vérifier ».",
   };
   return consignes[n] || "";
 }
 
-/* ---- Validation d'une salle (après réussite énigme) ---- */
-function validerSalle(n){
+/* ---- Validation d'une salle (moteur v2) ----
+   erreurs : nombre de vérifications fausses sur l'énigme de la salle.
+   Aucun texte après la réussite : le fragment s'affiche une seule fois
+   (à noter sur la fiche de mission) et le bouton suivant apparaît aussitôt. */
+function validerSalle(n, erreurs){
   const salle = DONNEES.salles[n-1];
   const duree = Date.now() - ETAT.salleDebut;
+  const dejaValidee = ETAT.tempsParSalle[n] !== undefined;   // reprise après rechargement
   ETAT.tempsParSalle[n] = duree;
   if(salle.fragment && !ETAT.fragments.includes(salle.fragment)){
     ETAT.fragments.push(salle.fragment);
-    // Scintillement sonore du fragment récupéré
     if(typeof son === "function") setTimeout(()=>son("fragment"), 600);
   }
-  let pts = 10, raison = "";
-  if(duree < 180000){ pts += 5; raison = "rapidité 🏃"; if(salle.badge_rapidite) ETAT.badges[salle.badge_rapidite]=true; }
-  else if(duree < 360000){ pts += 2; }
-  if(ETAT.indicesUtilises > 0 && raison!=="rapidité 🏃") pts = Math.max(5, pts-2);
-  ajouterScore(pts, raison);
+  ajouterScore(erreurs ? PTS_APRES_ERREUR : PTS_PREMIER_COUP, erreurs ? "énigme résolue" : "tout juste du premier coup 🎯");
+  let pts = 0;
+  if(duree < 180000){ pts = 5; if(salle.badge_rapidite) ETAT.badges[salle.badge_rapidite] = true; }
+  else if(duree < 360000){ pts = 2; }
+  if(pts && !dejaValidee) setTimeout(()=>ajouterScore(pts, "rapidité 🏃"), 900);
+  confettis(erreurs ? 15 : 45);
 
-  // Cas particulier : la salle 5 n'a pas de "dialogue_reussite" (elle mène à la fin)
+  const zoneEnigme = document.querySelector("#salle-contenu .zone-enigme");
+  const dlg = document.querySelector("#salle-contenu .personnage-scene");
+  if(dlg) dlg.remove();
+  if("speechSynthesis" in window) speechSynthesis.cancel();
+
+  // Salle 5 : le coffre final (recopier les 4 fragments notés), puis la fin
   if(n === 5){
-    confettis(60);
     sauvegarder();
-    // Cinématique de fin, si l'enseignant a fourni final.mp4
-    setTimeout(()=>lancerCine("final", "L'article secret", finDuJeu), 1200);
+    const b = document.createElement("div");
+    b.className = "boutons";
+    b.innerHTML = `<button class="btn grand vert" id="btn-coffre-final">🔐 Ouvrir le coffre de l'article secret</button>`;
+    zoneEnigme.appendChild(b);
+    b.querySelector("button").addEventListener("click", ()=>afficherCoffre(()=>setTimeout(()=>lancerCine("final", "L'article secret", finDuJeu), 600)));
+    b.scrollIntoView({behavior:"smooth", block:"center"});
     return;
   }
 
-  /* Affiche le bouton de salle suivante. Idempotent. */
-  function afficherBoutonSuivant(){
-    const c = document.getElementById("salle-contenu");
-    const zoneEnigme = c && c.querySelector(".zone-enigme");
-    if(!zoneEnigme || c.querySelector("#btn-salle-suivante")) return;
-    const zone = document.createElement("div");
-    zone.className = "boutons";
-    zone.innerHTML = `<button class="btn grand vert" id="btn-salle-suivante">${n<5?"➡️ Salle suivante":"🏆 Finaliser l'aventure"}</button>`;
-    zoneEnigme.appendChild(zone);
-    zone.querySelector("#btn-salle-suivante").addEventListener("click", ()=>{
-      ETAT.salle++;
-      if(ETAT.salle > 5) finDuJeu();
-      else afficherSalle(ETAT.salle);
-    });
-  }
-
-  /* Filet de sécurité : sur certains postes, la synthèse vocale ne démarre
-     jamais (pas de voix installée, lecture bloquée tant que l'élève n'a rien
-     cliqué…) et l'événement de fin de réplique n'arrive pas. Sans ce
-     minuteur, l'équipe resterait bloquée sur une énigme déjà réussie. */
-  const filet = setTimeout(afficherBoutonSuivant, 12000);
-
-  // Afficher le dialogue de réussite + bouton suivant (salles 1 à 4)
-  afficherDialogue({
-    perso: salle.dialogue_reussite.perso,
-    nom: salle.dialogue_reussite.nom,
-    texte: salle.dialogue_reussite.texte + ` <div class="sous-titre" style="margin-top:8px;font-size:.85rem">⏱️ ${Math.floor(duree/60000)} min ${Math.floor((duree%60000)/1000)} s · +${pts} points${salle.fragment?` · 📜 Fragment gagné : <b>${salle.fragment}</b>`:""}</div>`,
-    onFini: ()=>{
-      clearTimeout(filet);
-      // Le personnage manifeste sa joie une fois sa réplique terminée
-      if(typeof geste === "function" && typeof persoCourant === "function"){
-        geste(persoCourant(), "joie", 1600);
-      }
-      afficherBoutonSuivant();
-    }
+  zoneEnigme.innerHTML = v2MotANoter(`Fragment de la devise retrouvé dans la salle ${n}`, salle.fragment)
+    + `<div class="boutons"><button class="btn grand vert" id="btn-salle-suivante">➡️ Salle suivante</button></div>`;
+  zoneEnigme.querySelector("#btn-salle-suivante").addEventListener("click", ()=>{
+    ETAT.salle++;
+    if(ETAT.salle > 5) finDuJeu();
+    else afficherSalle(ETAT.salle);
   });
-  confettis(40);
+  zoneEnigme.scrollIntoView({behavior:"smooth", block:"center"});
   sauvegarder();
+}
+
+/* ---- Coffre final : les 4 fragments notés sur la fiche de mission ---- */
+function afficherCoffre(suite){
+  if(ETAT.coffreOuvert){ suite(); return; }
+  const zone = document.querySelector("#salle-contenu .zone-enigme");
+  const lignes = DONNEES.salles.filter(s=>s.fragment).map(s=>({label:`Salle ${s.num} — ${s.titre}`, mot:s.fragment}));
+  v2Coffre(zone, "Le coffre de l'article secret", lignes, (pts, premier)=>{
+    ETAT.coffreOuvert = true;
+    if(premier) ETAT.coffrePremierCoup = true;
+    ajouterScore(pts, premier ? "coffre ouvert du premier coup 🎯" : "coffre ouvert");
+    confettis(60);
+    sauvegarder();
+  }, suite);
 }
 
 /* ============================================================
@@ -709,6 +716,7 @@ function construireQuizz(){
   const btnVoir = document.getElementById("btn-voir-score");
   if(btnVoir){
     btnVoir.onclick = ()=>{
+      if(ETAT.quiz.repondu) return;   // quizz déjà compté : pas de points en double
       let score = 0;
       QUIZZ.forEach((item,i)=>{
         const qi = cont.querySelector(`.qcm-question[data-i="${i}"]`);
@@ -737,9 +745,9 @@ function construireQuizz(){
       const sec = Math.floor((ETAT.msEcoules%60000)/1000);
       const nbBadges = Object.values(ETAT.badges).filter(Boolean).length;
       let mention = "";
-      if(ETAT.score>=78) mention="🏆 Maître de la Révolution";
-      else if(ETAT.score>=64) mention="🥈 Patriote éclairé";
-      else if(ETAT.score>=50) mention="🥉 Bon citoyen";
+      if(ETAT.score>=0.9*SCORE_MAX) mention="🏆 Maître de la Révolution";
+      else if(ETAT.score>=0.75*SCORE_MAX) mention="🥈 Patriote éclairé";
+      else if(ETAT.score>=0.6*SCORE_MAX) mention="🥉 Bon citoyen";
       else mention="📜 Apprenti motivé";
       recap.innerHTML = `
         <div class="article-secret">
@@ -749,7 +757,8 @@ function construireQuizz(){
           <div style="font-size:1.1rem;color:var(--bleu-fonce);font-weight:bold">${mention}</div>
           <hr style="border:none;border-top:1px solid #c9b78a;margin:12px 0">
           <div>⏱️ Temps : <b>${min} min ${sec} s</b></div>
-          <div>📜 Fragments : <b>${ETAT.fragments.length}/4</b></div>
+          <div>🎯 Justes du premier coup : <b>${ETAT.enigmesPremierCoup||0}/5</b> · ✗ Erreurs : <b>${ETAT.erreursTotal||0}</b></div>
+          <div>📜 Fragments : <b>${ETAT.fragments.length}/4</b>${ETAT.coffreOuvert?" · coffre ouvert":""}</div>
           <div>📝 Quizz : <b>${ETAT.quiz.score}/${QUIZZ.length}</b></div>
           <div>🏅 Badges : <b>${nbBadges}/4</b></div>
           <div>Niveau : <b>${ETAT.niveau}</b></div>
@@ -774,3 +783,4 @@ window.toast = toast;
 window.confettis = confettis;
 window.activerBoutonIndice = activerBoutonIndice;
 window.SCORE_MAX = SCORE_MAX;
+window.afficherCoffre = afficherCoffre;

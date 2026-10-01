@@ -17,6 +17,7 @@ const ETAT = {
   enigme: 0,                 // index de l'énigme en cours dans la salle
   score: 0,
   motsCles: [],              // mots-clés des pages déjà refaites
+  enigmesPremierCoup: 0, erreursTotal: 0, coffreOuvert: false, coffrePremierCoup: false,
   badges: {vitesse:false, copiste:false, charite:false, maitre:false},
   debut: null,
   msEcoules: 0,
@@ -44,7 +45,11 @@ const ETAT = {
   }
 };
 
-const PTS_ENIGME   = 5;    // par énigme résolue
+const PTS_PREMIER_COUP   = 10;   // énigme juste du premier coup
+const PTS_APRES_ERREUR   = 3;    // énigme résolue après une ou plusieurs erreurs
+const PTS_COFFRE_PREMIER = 10;   // coffre final ouvert du premier coup
+const PTS_COFFRE_APRES   = 3;    // coffre final ouvert après erreur
+const PTS_ENIGME = PTS_PREMIER_COUP;   // (compatibilité)
 const PTS_RAPIDITE = 3;    // bonus par salle bouclée rapidement
 const PTS_QUIZ     = 2;    // par bonne réponse au quizz final
 const NB_QUIZ      = 5;
@@ -62,17 +67,18 @@ function enigmesDe(salle){
 }
 /** Score maximal atteignable, pour le barème affiché et imprimé. */
 function scoreMax(){
-  return nbEnigmesTotal()*PTS_ENIGME + NB_SALLES*PTS_RAPIDITE + NB_QUIZ*PTS_QUIZ;
+  return nbEnigmesTotal()*PTS_PREMIER_COUP + PTS_COFFRE_PREMIER + PTS_PREMIER_COUP /* fermoir */ + NB_SALLES*PTS_RAPIDITE + NB_QUIZ*PTS_QUIZ;
 }
 
 const CLE_SAUVEGARDE = "escape_moyenage_v1";
-const VERSION_APP = "v1";
+const VERSION_APP = "v2";   // v2 : barème du premier coup, coffre final
 let DONNEES = null;   // dialogues.json
 let ENIGMES = null;   // enigmes.json
 
 function resetEtatJeu(){
   Object.assign(ETAT, {
     equipe:"", niveau:"CM2", salle:1, enigme:0, score:0, motsCles:[],
+    enigmesPremierCoup:0, erreursTotal:0, coffreOuvert:false, coffrePremierCoup:false,
     badges:{vitesse:false, copiste:false, charite:false, maitre:false},
     debut:null, msEcoules:0, enPause:false, tempsParSalle:{}, salleDebut:null,
     indicesSalle:0, indicesTotal:0, enigmesReussies:0,
@@ -264,9 +270,10 @@ function filEnigmes(total){
 function serruresHTML(){
   return `<div class="coffre-serrures" aria-label="Les cinq pages du livre">${DONNEES.salles.map((s,i)=>{
     const ouverte = ETAT.motsCles.includes(s.motCle);
+    const lisible = ouverte && ETAT.coffreOuvert;
     return `<div class="serrure ${ouverte?"ouverte":""}">
       <span class="icone" aria-hidden="true">${ouverte?"📜":"▫️"}</span>
-      <span class="mot">${ouverte?s.motCle:"Page "+(i+1)+" : à refaire"}</span>
+      <span class="mot">${lisible?s.motCle:ouverte?"🔓 trouvé":"Page "+(i+1)+" : à refaire"}</span>
     </div>`;
   }).join("")}</div>`;
 }
@@ -343,6 +350,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     if(VERIF.salle > NB_SALLES){
       // Écran de fin : on simule une partie complète
       ETAT.motsCles = DONNEES.salles.map(s=>s.motCle);
+      ETAT.coffreOuvert = true;
       ETAT.enigmesReussies = nbEnigmesTotal();
       ETAT.score = Math.round(scoreMax()*0.8);
       appliquerReglages(); demarrerTimer(); aller("ecran-salle"); afficherFermoir();
@@ -363,7 +371,9 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         enigme:partie.enigme||0, score:partie.score||0, motsCles:partie.motsCles||[],
         badges:partie.badges||ETAT.badges, msEcoules:partie.msEcoules||0,
         enigmesReussies:partie.enigmesReussies||0, indicesTotal:partie.indicesTotal||0,
-        tempsParSalle:partie.tempsParSalle||{}, fini:false
+        tempsParSalle:partie.tempsParSalle||{}, fini:false,
+        enigmesPremierCoup:partie.enigmesPremierCoup||0, erreursTotal:partie.erreursTotal||0,
+        coffreOuvert:!!partie.coffreOuvert, coffrePremierCoup:!!partie.coffrePremierCoup
       });
       ETAT.debut = Date.now() - ETAT.msEcoules;
       entrerDansLeJeu(true);
@@ -472,19 +482,23 @@ function afficherEnigmeCourante(){
   if(ETAT.enigme >= liste.length){ validerSalle(ETAT.salle); return; }
   const e = liste[ETAT.enigme];
   zone.innerHTML = filEnigmes(liste.length) + enigmeHTML(e, ETAT.enigme+1, liste.length);
-  activerEnigme(e, ()=>reussirEnigme(e, liste));
+  // v2 : taire le personnage dès que les élèves commencent l'énigme (le chrono ne s'arrête jamais)
+  zone.addEventListener("pointerdown", ()=>{ if("speechSynthesis" in window) speechSynthesis.cancel(); }, {once:true});
+  activerEnigme(e, (en, indices, erreurs)=>reussirEnigme(e, liste, indices, erreurs));
   zone.scrollIntoView({behavior:"smooth", block:"nearest"});
   sauvegarder();
 }
 
-function reussirEnigme(e, liste){
+function reussirEnigme(e, liste, indices, erreurs){
   ETAT.enigmesReussies++;
-  ajouterScore(PTS_ENIGME, "énigme résolue");
-  confettis(18);
+  const premierCoup = !erreurs;
+  if(premierCoup) ETAT.enigmesPremierCoup = (ETAT.enigmesPremierCoup || 0) + 1;
+  ajouterScore(premierCoup ? PTS_PREMIER_COUP : PTS_APRES_ERREUR, premierCoup ? "tout juste du premier coup 🎯" : "énigme résolue");
+  confettis(premierCoup ? 40 : 12);
   ETAT.enigme++;
   sauvegarder();
   if(ETAT.enigme >= liste.length){
-    setTimeout(()=>validerSalle(ETAT.salle), 900);
+    setTimeout(()=>validerSalle(ETAT.salle), 700);
   }else{
     const zone = document.getElementById("zone-enigme");
     const suite = document.createElement("div");
@@ -496,10 +510,17 @@ function reussirEnigme(e, liste){
   }
 }
 
+/* Une vérification fausse (compteur pour le bilan et le tableau de bord). */
+function compterErreur(){
+  ETAT.erreursTotal = (ETAT.erreursTotal || 0) + 1;
+  sauvegarder();
+}
+
 /* ---- Salle bouclée : la page est refaite ---- */
 function validerSalle(n){
   const salle = DONNEES.salles[n-1];
   const duree = Date.now() - ETAT.salleDebut;
+  const dejaValidee = ETAT.tempsParSalle[n] !== undefined;   // reprise après rechargement
   ETAT.tempsParSalle[n] = duree;
 
   if(salle.motCle && !ETAT.motsCles.includes(salle.motCle)) ETAT.motsCles.push(salle.motCle);
@@ -509,7 +530,7 @@ function validerSalle(n){
   const seuil = (ETAT.niveau === "CM1" ? 8 : 10) * 60000;  // rythme attendu par salle
   if(duree < seuil && ETAT.indicesSalle === 0){ pts = PTS_RAPIDITE; raison = "salle rapide et sans indice 🏃"; }
   else if(duree < seuil){ pts = Math.max(1, PTS_RAPIDITE-1); raison = "salle rapide"; }
-  if(pts) ajouterScore(pts, raison);
+  if(pts && !dejaValidee) ajouterScore(pts, raison);
   attribuerBadges(n, duree);
 
   const zone = document.getElementById("zone-enigme");
@@ -517,16 +538,14 @@ function validerSalle(n){
     <div class="mot-cle">
       <div class="lib">Page ${n} refaite — mot-clé</div>
       <div class="val">${salle.motCle}</div>
+      <div class="a-noter">✍️ Notez ce mot sur votre fiche de mission : il ne sera plus affiché !</div>
     </div>
-    ${serruresHTML()}
-    <p class="center" style="opacity:.8">⏱️ ${Math.floor(duree/60000)} min ${Math.floor((duree%60000)/1000)} s dans cette salle
-       · 💡 ${ETAT.indicesSalle} indice${ETAT.indicesSalle>1?"s":""}</p>
   `;
   confettis(50);
   sauvegarder();
 
   if(n === NB_SALLES){
-    setTimeout(afficherFermoir, 1600);
+    ajouterBoutonCoffre(()=>setTimeout(afficherFermoir, 1600));
     return;
   }
 
@@ -542,17 +561,72 @@ function validerSalle(n){
     });
     b.scrollIntoView({behavior:"smooth", block:"center"});
   }
-  const filet = setTimeout(boutonSuivant, 12000);   // si la synthèse vocale ne démarre pas
-  afficherDialogue({
-    perso: salle.dialogue_reussite.perso,
-    nom: salle.dialogue_reussite.nom,
-    texte: salle.dialogue_reussite.texte,
-    onFini: ()=>{
-      clearTimeout(filet);
-      if(typeof geste === "function" && typeof persoCourant === "function") geste(persoCourant(), "joie", 1600);
-      boutonSuivant();
+  boutonSuivant();
+}
+
+/* ============================================================
+   LE COFFRE FINAL — les élèves retapent les mots notés sur leur
+   fiche de mission, salle par salle. Rien n'est rempli pour eux.
+   ============================================================ */
+function afficherCoffre(suite){
+  if(ETAT.coffreOuvert){ suite(); return; }
+  const zone = document.getElementById("zone-enigme") || document.getElementById("salle-contenu");
+  const dlg = document.querySelector("#salle-contenu .personnage-scene");
+  if(dlg) dlg.remove();
+  let erreurs = 0;
+  zone.innerHTML = `
+    <div class="enigme-carte coffre-final" id="coffre-final">
+      <div class="enigme-tete"><span class="enigme-num">Énigme finale</span><h3>🔐 Le coffre final</h3></div>
+      <div class="bandeau-bareme">🎯 Tout juste du premier coup : <b>${PTS_COFFRE_PREMIER} points</b> · après une erreur : ${PTS_COFFRE_APRES} points seulement</div>
+      <div class="consigne">Recopiez, salle par salle, les mots que vous avez notés sur votre fiche de mission. Les accents et les majuscules ne comptent pas.</div>
+      ${DONNEES.salles.map((s,i)=>`<div class="coffre-ligne">
+        <label for="coffre-${i}">Salle ${s.num} — ${s.titre}</label>
+        <input type="text" id="coffre-${i}" autocomplete="off" spellcheck="false" maxlength="24">
+      </div>`).join("")}
+      <div class="feedback" id="fb-coffre"></div>
+      <div class="center"><button class="btn grand vert" id="btn-coffre">🔓 Ouvrir le coffre</button></div>
+    </div>`;
+  const fb = document.getElementById("fb-coffre");
+  const valider = ()=>{
+    const champs = DONNEES.salles.map((s,i)=>document.getElementById("coffre-"+i));
+    if(champs.some(c=>!c.value.trim())){
+      fb.className = "feedback indice show"; fb.innerHTML = "✋ Il manque au moins un mot."; return;
     }
-  });
+    const justes = DONNEES.salles.filter((s,i)=>normaliser(champs[i].value) === normaliser(s.motCle)).length;
+    if(justes === DONNEES.salles.length){
+      ETAT.coffreOuvert = true;
+      champs.forEach(c=>c.disabled = true);
+      document.getElementById("btn-coffre").disabled = true;
+      ajouterScore(erreurs ? PTS_COFFRE_APRES : PTS_COFFRE_PREMIER, erreurs ? "coffre ouvert" : "coffre ouvert du premier coup 🎯");
+      if(!erreurs) ETAT.coffrePremierCoup = true;
+      fb.className = "feedback succes" + (erreurs ? "" : " premier-coup") + " show";
+      fb.innerHTML = erreurs ? `✔ Le coffre s'ouvre : +${PTS_COFFRE_APRES} points.` : `🎯 <b>Tout juste du premier coup !</b> +${PTS_COFFRE_PREMIER} points`;
+      if(typeof son === "function") son("deverrouille");
+      confettis(60);
+      sauvegarder();
+      setTimeout(suite, 900);
+    }else{
+      erreurs++;
+      if(typeof compterErreur === "function") compterErreur();
+      if(typeof son === "function") son("erreur");
+      fb.className = "feedback erreur show";
+      fb.innerHTML = `✗ <b>Le coffre reste fermé.</b> ${justes} mot${justes>1?"s":""} juste${justes>1?"s":""} sur ${DONNEES.salles.length}.`
+        + (erreurs === 1 ? `<div class="perte-bonus">Le bonus du premier coup est perdu : vérifiez votre fiche de mission.</div>` : "");
+    }
+  };
+  document.getElementById("btn-coffre").addEventListener("click", valider);
+  zone.querySelectorAll("input").forEach(inp=>inp.addEventListener("keydown", ev=>{ if(ev.key === "Enter") valider(); }));
+  zone.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function ajouterBoutonCoffre(suite){
+  const zone = document.getElementById("zone-enigme");
+  const b = document.createElement("div");
+  b.className = "boutons";
+  b.innerHTML = `<button class="btn grand vert" id="btn-coffre-final">🔐 Aller au coffre final</button>`;
+  zone.appendChild(b);
+  b.querySelector("button").addEventListener("click", ()=>afficherCoffre(suite));
+  b.scrollIntoView({behavior:"smooth", block:"center"});
 }
 
 /* ---- Badges ---- */
@@ -595,8 +669,9 @@ function afficherFermoir(){
     <div id="zone-dialogue"></div>
     <div class="zone-enigme" id="zone-enigme">${enigmeHTML(fin, 1, 1)}</div>`;
   if(cf.texte) afficherDialogue({perso: cf.perso || "anselme", nom: (DONNEES.personnages[cf.perso||"anselme"]||{}).nom || "", texte: cf.texte});
-  activerEnigme(fin, ()=>{
+  activerEnigme(fin, (en, indices, erreurs)=>{
     ETAT.fermoir = true;
+    ajouterScore(erreurs ? PTS_APRES_ERREUR : PTS_PREMIER_COUP, erreurs ? "fermoir ouvert" : "fermoir ouvert du premier coup 🎯");
     sauvegarder();
     if(typeof son === "function") son("deverrouille");
     setTimeout(()=>lancerCine("final", "Le livre est complet", finDuJeu), 1400);
@@ -650,7 +725,7 @@ function finDuJeu(){
       <button class="btn gris" id="btn-imprimer-bilan">🖨️ Imprimer le bilan</button>
     </div>
   `;
-  const fin = DONNEES.salles[NB_SALLES-1].dialogue_fin;
+  const fin = null;   // v2 : aucun texte après la résolution
   if(fin){
     setTimeout(()=>{
       const scene = document.createElement("div");
@@ -727,6 +802,7 @@ function construireQuizz(){
     });
   });
   document.getElementById("btn-voir-score").onclick = ()=>{
+    if(ETAT.quiz.repondu) return;   // quizz déjà compté : pas de points en double
     let score = 0;
     QUIZZ.forEach((item,i)=>{
       const qi = cont.querySelector(`.qcm-question[data-i="${i}"]`);
@@ -773,6 +849,7 @@ function afficherRecap(){
       <hr style="border:none;border-top:1px solid #c9b78a;margin:12px 0">
       <div>⏱️ Temps : <b>${min} min ${sec} s</b></div>
       <div>🧩 Énigmes : <b>${ETAT.enigmesReussies}/${nbEnigmesTotal()}</b></div>
+      <div>🎯 Justes du premier coup : <b>${ETAT.enigmesPremierCoup||0}/${nbEnigmesTotal()}</b> · ✗ Erreurs : <b>${ETAT.erreursTotal||0}</b></div>
       <div>📜 Pages refaites : <b>${ETAT.motsCles.length}/${NB_SALLES}</b></div>
       <div>💡 Indices utilisés : <b>${ETAT.indicesTotal}</b></div>
       <div>📝 Quizz : <b>${ETAT.quiz.score}/${NB_QUIZ}</b></div>

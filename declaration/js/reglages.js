@@ -235,6 +235,7 @@ function ouvrirReglages(){
         <button class="btn bleu" id="btn-imprimer-qcm">📝 QCM (15 questions)</button>
         <button class="btn bleu" id="btn-imprimer-fermees">✅ Questions fermées (V/F + réponses courtes)</button>
         <button class="btn bleu" id="btn-imprimer-docs">📄 Étude de documents</button>
+        <button class="btn vert" id="btn-imprimer-mission">✍️ Fiche de mission (1 par équipe)</button>
         <button class="btn or" id="btn-imprimer-tout">📚 Tout imprimer (élève + corrigés)</button>
       </div>
     </div>
@@ -254,6 +255,7 @@ function ouvrirReglages(){
   corps.querySelector("#btn-imprimer-qcm").addEventListener("click", ()=>imprimerFiches("qcm"));
   corps.querySelector("#btn-imprimer-fermees").addEventListener("click", ()=>imprimerFiches("fermees"));
   corps.querySelector("#btn-imprimer-docs").addEventListener("click", ()=>imprimerFiches("docs"));
+  corps.querySelector("#btn-imprimer-mission").addEventListener("click", ()=>imprimerFicheMission());
   corps.querySelector("#btn-imprimer-tout").addEventListener("click", ()=>imprimerFiches("tout"));
   const ouvrirLeconsA4 = n => window.open("lecons-imprimables.html?niveau=" + n + "&" + corps.querySelector("#reg-lecon-a4").value, "_blank");
   corps.querySelector("#btn-lecons-a4-cm1").addEventListener("click", ()=>ouvrirLeconsA4("CM1"));

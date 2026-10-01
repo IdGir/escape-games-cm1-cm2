@@ -16,7 +16,7 @@ pluviomètre, organiser des relevés et les exploiter pour prévoir.
 | Progression de l'enseignant | Année A, période 1 — jeu n°03 |
 | Durée | 60 à 75 minutes, ou cinq séances de 25 minutes |
 | Énigmes | **15 en CM1** (3 par module), **20 en CM2** (4 par module) |
-| Score maximal | **100 en CM1**, **125 en CM2** ; un indice coûte 2 points |
+| Score maximal | **185 en CM1**, **235 en CM2** (10 pts par énigme juste du premier coup, 3 après une erreur) ; un indice coûte 2 points |
 | Types d'énigmes | les 10 types du moteur + le type `instrument`, propre à ce jeu (11 en CM2, 10 en CM1) |
 | Médias | aucun n'est nécessaire : décors et personnages dessinés en SVG et animés |
 | Réseau | aucun : pas de CDN, pas de police distante, pas de bibliothèque externe |
@@ -208,6 +208,22 @@ Les conventions de mesure, elles, sont réelles et sourcées (voir « Sources »
 </details>
 
 ## Score
+
+<!-- moteur-v2 -->
+### Règles du moteur v2 (octobre 2026)
+
+- **Tout juste du premier coup** : chaque énigme rapporte **10 points** si la première vérification est juste,
+  **3 points seulement** après une erreur. Le barème est rappelé en tête de chaque énigme : les élèves ont
+  intérêt à relire la leçon (bouton 📚) avant de valider.
+- **Retour d'erreur** : le jeu dit seulement **combien** de réponses sont justes (« 2 associations justes sur 4 »),
+  jamais lesquelles. Une réponse incomplète n'est pas comptée comme une erreur.
+- **Aucun texte après la réussite** : ni correction, ni explication, ni dialogue de réussite. Le bouton suivant
+  apparaît tout de suite ; le personnage se tait dès que les élèves touchent l'énigme (le chrono ne s'arrête jamais).
+- **Mots à noter** : le mot gagné en fin de salle n'est affiché **qu'une fois** (« ✍️ Notez ce mot ») ; les élèves
+  le recopient sur la **fiche de mission** (⚙️ Réglages › Impression › « ✍️ Fiche de mission », une par équipe), puis
+  le retapent dans le **coffre final** (10 points du premier coup, 3 après une erreur ; accents et majuscules ignorés).
+- **Lettres cachées** : les lettres marquées sont **dans le désordre**, avec des **leurres** ; on les range dans les cases.
+
 
 | | CM1 | CM2 |
 |---|---|---|

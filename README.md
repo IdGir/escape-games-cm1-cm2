@@ -112,6 +112,27 @@ imprimée ou en régénérer les visuels : [outils-lecons/README.md](outils-leco
 
 ---
 
+## 2 ter. Règles de jeu communes (moteur v2, octobre 2026)
+
+Les 9 jeux suivent les mêmes règles, pensées pour que les élèves **réfléchissent et consultent les
+leçons** plutôt que de cliquer au hasard :
+
+- **Tout juste du premier coup = 10 points**, après une erreur = **3 points** seulement (rappel en
+  tête de chaque énigme). Le chrono n'est pas touché.
+- En cas d'erreur, le jeu dit **combien** de réponses sont justes, **jamais lesquelles**.
+- **Aucun texte après la réussite** (ni correction, ni dialogue) : le bouton suivant apparaît tout de
+  suite et le personnage se tait dès que les élèves touchent l'énigme.
+- Le **mot gagné** à la fin d'une salle n'est affiché **qu'une fois** : les élèves le notent sur leur
+  **fiche de mission** (⚙️ Réglages → Impression → **✍️ Fiche de mission**, une par équipe), puis le
+  retapent dans le **coffre final**.
+- Les **lettres cachées** sont mélangées et accompagnées de leurres.
+
+Scores maximaux : 185 (CM1) / 235 (CM2) pour les jeux à 5 salles (195 / 245 pour l'abbaye, avec le
+fermoir), 95 pour la Déclaration et le Tour du monde ; Mission géographique : 10 points par énigme.
+Outils et tests : [outils-moteur/README.md](outils-moteur/README.md).
+
+---
+
 ## 3. Ajouter ou remplacer une image ou une vidéo
 
 **La règle** : chaque jeu a **un seul dossier médias**, `<jeu>/assets/`, et chaque

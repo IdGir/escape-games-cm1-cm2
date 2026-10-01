@@ -119,6 +119,12 @@ const SAUVEGARDE = (function(){
     return true;
   }
 
+  /* v2 : vérification fausse (compteur pour le bilan enseignant) */
+  function compterErreur(){
+    etat.erreurs = (etat.erreurs || 0) + 1;
+    enregistrer();
+  }
+
   function reussies(){
     return Object.values(etat.sessions).filter(s => s.reussie).length;
   }
@@ -167,7 +173,7 @@ const SAUVEGARDE = (function(){
   }
 
   return {
-    charger, enregistrer, lire, majSession, ajouterIndice,
+    charger, enregistrer, lire, majSession, ajouterIndice, compterErreur,
     reussies, estReussie, pointsTotaux, reinitialiser,
     exporter, importer, REGLAGES_DEFAUT, PROFIL_DEFAUT
   };
