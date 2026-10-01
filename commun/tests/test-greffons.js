@@ -107,6 +107,41 @@ SECTIONS.E2 = async () => {
   ok(dcl.erreurs.length === 0, "declaration : erreurs JS : " + dcl.erreurs.join(" | "));
 };
 
+/* ---- E3 : indices adaptatifs ---- */
+SECTIONS.E3 = async () => {
+  console.log("\n== E3 : indices adaptatifs ==");
+  // délai d'inactivité : on raccourcit le délai à 1 s pour le test
+  const reg = JSON.stringify({ actif: true, delaiCM1: 1, delaiCM2: 1, erreurs: 2 });
+  for (const j of ["melanges", "declaration"]) {
+    const { w, erreurs } = await charger(J(j), "?salle=2&niveau=CM2", { stockage: { escape_indices_adaptatifs: reg }, attente: 800 });
+    const p = await attendreQue(() => w.document.querySelector(".proposition-indice"), 4000);
+    ok(!!p, `${j} : indice proposé après le délai sans action`);
+    const s0 = w.ETAT.score;
+    w.ETAT.score = 10;
+    p && p.querySelector(".oui").click(); await dodo(30);
+    ok(!w.document.querySelector(".proposition-indice") && w.document.querySelectorAll(".feedback.indice").length >= 1, `${j} : « Voir un indice » affiche un indice`);
+    ok(w.ETAT.score === 8, `${j} : l'indice coûte 2 points comme d'habitude (score ${w.ETAT.score})`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // après 2 essais faux (délai long)
+  const reg2 = JSON.stringify({ actif: true, delaiCM1: 300, delaiCM2: 300, erreurs: 2 });
+  const { w } = await charger(J("objets-techniques"), "?salle=1&niveau=CM2", { stockage: { escape_indices_adaptatifs: reg2 } });
+  await dodo(1200);
+  ok(!w.document.querySelector(".proposition-indice"), "objets-techniques : rien de proposé avant le délai");
+  w.ETAT.erreursTotal += 2; await dodo(1200);
+  const p2 = w.document.querySelector(".proposition-indice");
+  ok(!!p2 && /2 essais/.test(p2.textContent), "objets-techniques : indice proposé après 2 essais faux");
+  p2 && p2.querySelector(".non").click(); await dodo(30);
+  ok(!w.document.querySelector(".proposition-indice"), "« Pas maintenant » retire la proposition");
+  // désactivé
+  const off = await charger(J("chateau-fort"), "?salle=1&niveau=CM1", { stockage: { escape_indices_adaptatifs: JSON.stringify({ actif: false, delaiCM1: 1, delaiCM2: 1, erreurs: 2 }) } });
+  await dodo(1500);
+  ok(!off.w.document.querySelector(".proposition-indice"), "chateau-fort : rien quand le réglage est désactivé");
+  // réglage dans ⚙️
+  off.w.ouvrirReglages(); await dodo(50);
+  ok(!!off.w.document.getElementById("reglages-indices-adaptatifs"), "réglage « Indices proposés » dans ⚙️ Réglages");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

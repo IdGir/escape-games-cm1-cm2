@@ -216,7 +216,7 @@ Aujourd'hui : 3 indices par énigme, sur demande, coûtant 2 points, quel que
 soit le temps déjà passé. Proposer automatiquement un indice après un délai
 d'inactivité ou un nombre d'essais, pour s'adapter au rythme réel de chaque
 équipe plutôt qu'à un barème fixe.
-**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ### E4 — Police et réglages dyslexie-amis
 En complément des réglages d'accessibilité déjà présents (texte jusqu'à

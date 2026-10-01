@@ -128,6 +128,10 @@ leçons** plutôt que de cliquer au hasard :
   retapent dans le **coffre final**.
 - Les **lettres cachées** sont mélangées et accompagnées de leurres.
 
+**Indices proposés** : quand une équipe reste longtemps sans agir sur une énigme (2 min en CM1, 3 min en
+CM2) ou se trompe deux fois, le jeu lui *propose* un indice (−2 points, comme d'habitude) ; elle peut refuser.
+Réglable dans ⚙️ Réglages → 💡 Indices proposés.
+
 **Trois paliers** dans les 8 jeux « salles » : **CM1**, **CM2** et **🌱 Découverte** (classes à triple niveau,
 élèves en difficulté) : les énigmes du CM1 avec une aide renforcée — premier indice offert sans perte de
 points, un choix faux écarté dans les QCM, leçon mise en évidence, première lettre des mots au coffre.
