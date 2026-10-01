@@ -10,6 +10,11 @@ Points à contrôler avant la classe : [A-VERIFIER.md](A-VERIFIER.md).
 
 ## 1. Place dans les programmes
 
+> 📘 **Référence officielle du programme** (vérifiée sur education.gouv.fr le 1er octobre 2026, affichée aussi sur l'écran d'accueil du jeu) :
+>
+> - Histoire-géographie, cycle 3 : [Arrêté du 22 avril 2026 — BO n° 22 du 28 mai 2026](https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A) (NOR MENE2608631A) — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
+
 
 ## 🎯 Compétences du programme, énigme par énigme
 

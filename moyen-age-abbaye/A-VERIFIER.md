@@ -37,3 +37,11 @@ quelques points qu'il reste utile de relire avant usage en classe.
    souvent d'adresse. Vous pouvez les remplacer par des liens précis dans `assets/data/lecons.json`.
 4. **Écart programme / progression.** Clovis et Charlemagne ne sont plus des attendus du programme 2026
    de cycle 3 : ils sont gardés parce que la progression de l'enseignant les demande (voir le guide, § 1).
+
+## ✅ Référence du programme officiel — confirmée le 1er octobre 2026
+
+La référence exacte, signalée plus haut comme non confirmée, a été vérifiée sur le site du Bulletin officiel :
+
+- Histoire-géographie, cycle 3 : Arrêté du 22 avril 2026 — BO n° 22 du 28 mai 2026 (NOR MENE2608631A), https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
+Elle est désormais affichée dans le jeu (écran d'accueil), le README et le guide. Attention : en 2026-2027, le CM2 relève encore des programmes précédents ; les nouveaux s'y appliquent à la rentrée 2027.

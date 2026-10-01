@@ -25,3 +25,11 @@ vérifiés, ou demandent un contrôle de l'enseignant avant usage en classe.
 
 Aucune date, aucun chiffre du jeu n'a été inventé : les masses des énigmes (fioles, tasses, bocaux) sont des
 données d'exercice, présentées comme des mesures faites dans le jeu, et non comme des faits.
+
+## ✅ Référence du programme officiel — confirmée le 1er octobre 2026
+
+La référence exacte, signalée plus haut comme non confirmée, a été vérifiée sur le site du Bulletin officiel :
+
+- Sciences et technologie, cycles 2 et 3 : Arrêté du 5 juin 2026 — BO n° 24 du 11 juin 2026 (NOR MENE2611650A), https://www.education.gouv.fr/bo/2026/Hebdo24/MENE2611650A — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
+Elle est désormais affichée dans le jeu (écran d'accueil), le README et le guide. Attention : en 2026-2027, le CM2 relève encore des programmes précédents ; les nouveaux s'y appliquent à la rentrée 2027.

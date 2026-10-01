@@ -39,7 +39,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "La veille de la visite de l'évêque, cinq pages d'un manuscrit enluminé ont disparu. De Clovis aux cathédrales gothiques, les apprentis copistes les refont une à une.",
-   "prompt": "01-moyen-age-abbaye.md"
+   "prompt": "01-moyen-age-abbaye.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "02",
@@ -58,7 +61,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "Le seigneur est parti rejoindre le roi. Pages et jeunes paysans parcourent le château et le village pour retrouver les cinq clés de la seigneurie et relever la herse.",
-   "prompt": "02-chateau-fort.md"
+   "prompt": "02-chateau-fort.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "03",
@@ -77,7 +83,10 @@ var CATALOGUE = {
     "#f2c14e"
    ],
    "resume": "Un orage a déréglé la station météo de l'école : cinq modules à remettre en service pour lancer le bulletin avant la sortie.",
-   "prompt": "03-station-meteo.md"
+   "prompt": "03-station-meteo.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "04",
@@ -96,7 +105,10 @@ var CATALOGUE = {
     "#a8461b"
    ],
    "resume": "L'inventrice est partie en voyage en laissant cinq machines démontées. Besoin, fonction, matériau, énergie, notice : cinq mots pour ouvrir son coffre-fort.",
-   "prompt": "04-objets-techniques.md"
+   "prompt": "04-objets-techniques.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "05",
@@ -115,7 +127,10 @@ var CATALOGUE = {
     "#8e3b62"
    ],
    "resume": "L'apprentie de Madame Mélange a renversé toutes les fioles. Peser, observer, trier, filtrer, évaporer : cinq opérations à retrouver.",
-   "prompt": "05-melanges.md"
+   "prompt": "05-melanges.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "06",
@@ -134,7 +149,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "06-versailles.md"
+   "prompt": "06-versailles.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "07",
@@ -153,7 +171,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "07-renaissance.md"
+   "prompt": "07-renaissance.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "08",
@@ -172,7 +193,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "08-alimentation.md"
+   "prompt": "08-alimentation.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "09",
@@ -191,7 +215,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "09-lumiere.md"
+   "prompt": "09-lumiere.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "10",
@@ -210,7 +237,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "10-etats-matiere.md"
+   "prompt": "10-etats-matiere.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "11",
@@ -229,7 +259,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "11-mouvement.md"
+   "prompt": "11-mouvement.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "12",
@@ -248,7 +281,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "12-traite-colonies.md"
+   "prompt": "12-traite-colonies.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "13",
@@ -267,7 +303,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "13-grandes-explorations.md"
+   "prompt": "13-grandes-explorations.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "14",
@@ -286,7 +325,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "14-electricite.md"
+   "prompt": "14-electricite.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "15",
@@ -305,7 +347,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "15-naissances-animaux.md"
+   "prompt": "15-naissances-animaux.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "16",
@@ -324,7 +369,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "16-napoleon-republique.md"
+   "prompt": "16-napoleon-republique.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "17",
@@ -343,7 +391,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "17-vivant-ecosystemes.md"
+   "prompt": "17-vivant-ecosystemes.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "18",
@@ -362,7 +413,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "18-programmation-robot.md"
+   "prompt": "18-programmation-robot.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "19",
@@ -381,7 +435,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "19-grande-guerre.md"
+   "prompt": "19-grande-guerre.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "20",
@@ -400,7 +457,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "20-seconde-guerre.md"
+   "prompt": "20-seconde-guerre.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "21",
@@ -419,7 +479,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "21-age-industriel.md"
+   "prompt": "21-age-industriel.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "22",
@@ -438,7 +501,10 @@ var CATALOGUE = {
     "#c9a227"
    ],
    "resume": "",
-   "prompt": "22-europe.md"
+   "prompt": "22-europe.md",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "23",
@@ -457,7 +523,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "23-terre-active.md"
+   "prompt": "23-terre-active.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "24",
@@ -476,7 +545,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "24-reproduction.md"
+   "prompt": "24-reproduction.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "25",
@@ -495,7 +567,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "25-cerveau.md"
+   "prompt": "25-cerveau.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "26",
@@ -514,7 +589,10 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "",
-   "prompt": "26-climat.md"
+   "prompt": "26-climat.md",
+   "programme": [
+    "st2026"
+   ]
   },
   {
    "num": "D",
@@ -533,7 +611,10 @@ var CATALOGUE = {
     "#1d3a8a",
     "#b22222"
    ],
-   "resume": "Paris, août 1789 : un article secret de la Déclaration des droits de l'homme a été volé. Quatre fragments à retrouver."
+   "resume": "Paris, août 1789 : un article secret de la Déclaration des droits de l'homme a été volé. Quatre fragments à retrouver.",
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "C",
@@ -552,7 +633,11 @@ var CATALOGUE = {
     "#5b2b6b",
     "#c9a227"
    ],
-   "resume": "Au Palais-Royal, un coffre scellé le 4 octobre 1958 porte cinq serrures. Cinq mots à trouver, de la cour du Conseil constitutionnel à l'hémicycle."
+   "resume": "Au Palais-Royal, un coffre scellé le 4 octobre 1958 porte cinq serrures. Cinq mots à trouver, de la cour du Conseil constitutionnel à l'hémicycle.",
+   "programme": [
+    "emc2024",
+    "hg2026"
+   ]
   },
   {
    "num": "G",
@@ -603,7 +688,10 @@ var CATALOGUE = {
      15,
      16
     ]
-   }
+   },
+   "programme": [
+    "hg2026"
+   ]
   },
   {
    "num": "T",
@@ -620,7 +708,34 @@ var CATALOGUE = {
     "#0f4c5c",
     "#c08a3e"
    ],
-   "resume": "Le carnet de route de Phileas Fogg a disparu. Cinq escales, cinq énigmes de géographie, et le mystère du 80ᵉ jour."
+   "resume": "Le carnet de route de Phileas Fogg a disparu. Cinq escales, cinq énigmes de géographie, et le mystère du 80ᵉ jour.",
+   "programme": [
+    "hg2026"
+   ]
   }
- ]
+ ],
+ "programmes": {
+  "hg2026": {
+   "discipline": "Histoire-géographie, cycle 3",
+   "texte": "Arrêté du 22 avril 2026 — BO n° 22 du 28 mai 2026",
+   "nor": "MENE2608631A",
+   "lien": "https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A",
+   "vigueur": "en CM1 à la rentrée 2026, en CM2 à la rentrée 2027"
+  },
+  "st2026": {
+   "discipline": "Sciences et technologie, cycles 2 et 3",
+   "texte": "Arrêté du 5 juin 2026 — BO n° 24 du 11 juin 2026",
+   "nor": "MENE2611650A",
+   "lien": "https://www.education.gouv.fr/bo/2026/Hebdo24/MENE2611650A",
+   "vigueur": "en CM1 à la rentrée 2026, en CM2 à la rentrée 2027"
+  },
+  "emc2024": {
+   "discipline": "Enseignement moral et civique, cycles 2 et 3",
+   "texte": "Programme d'EMC — BO n° 24 du 13 juin 2024",
+   "nor": "",
+   "lien": "https://pia.ac-paris.fr/portail/jcms/p1_3697458/bo-n-24-du-13-juin-2024-programme-d-emc",
+   "vigueur": "en vigueur depuis la rentrée 2024"
+  }
+ },
+ "programmesVerifies": "2026-10-01"
 };

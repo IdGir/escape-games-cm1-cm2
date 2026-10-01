@@ -18,3 +18,11 @@ restent les points suivants.
    matériaux d'origine végétale ou animale ; verre et céramiques). Certaines ressources en
    comptent davantage (composites, minéraux, organiques…). Les exemples choisis évitent les cas
    ambigus (caoutchouc naturel ou synthétique, textiles mélangés).
+
+## ✅ Référence du programme officiel — confirmée le 1er octobre 2026
+
+La référence exacte, signalée plus haut comme non confirmée, a été vérifiée sur le site du Bulletin officiel :
+
+- Sciences et technologie, cycles 2 et 3 : Arrêté du 5 juin 2026 — BO n° 24 du 11 juin 2026 (NOR MENE2611650A), https://www.education.gouv.fr/bo/2026/Hebdo24/MENE2611650A — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
+Elle est désormais affichée dans le jeu (écran d'accueil), le README et le guide. Attention : en 2026-2027, le CM2 relève encore des programmes précédents ; les nouveaux s'y appliquent à la rentrée 2027.

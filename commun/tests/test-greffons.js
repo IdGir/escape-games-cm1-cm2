@@ -244,6 +244,20 @@ SECTIONS.D2 = async () => {
   ok(!eq.w.document.getElementById("compte-rendu"), "en équipe : pas de compte-rendu élève à l'écran de fin");
 };
 
+/* ---- C2 : bandeau de référence officielle ---- */
+SECTIONS.C2 = async () => {
+  console.log("\n== C2 : référence du programme officiel ==");
+  const attendu = { melanges: /BO n° 24 du 11 juin 2026/, "chateau-fort": /BO n° 22 du 28 mai 2026/, constitution: /BO n° 24 du 13 juin 2024[\s\S]*BO n° 22 du 28 mai 2026/, "mission-geo": /BO n° 22 du 28 mai 2026/ };
+  for (const [j, re] of Object.entries(attendu)) {
+    const { w, erreurs } = await charger(J(j), "", { attente: 600 });
+    const b = w.document.querySelector("#ecran-accueil .bandeau-bo");
+    ok(!!b && re.test(b.textContent) && b.querySelector("a[href^='https://']"), `${j} : bandeau sur l'écran d'accueil (« ${b ? b.textContent.slice(0, 70) : "—"}… »)`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  const fs = require("fs");
+  for (const j of JEUX8.concat(["mission-geo"])) ok(/Référence officielle du programme/.test(fs.readFileSync(J(j) + "/README.md", "utf8")), `${j} : référence dans le README`);
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

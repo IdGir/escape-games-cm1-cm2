@@ -33,3 +33,11 @@ La recherche en ligne était disponible pendant la production : les faits ci-des
 7. **Pages et écuyers** : le parcours page → écuyer → chevalier est présenté comme le cursus type d'un jeune noble.
 8. **Sites cités sans consultation directe** : guedelon.fr, citedelarchitecture.fr, lumni.fr, histoire-image.org (liens
    génériques vers les ressources de référence demandées).
+
+## ✅ Référence du programme officiel — confirmée le 1er octobre 2026
+
+La référence exacte, signalée plus haut comme non confirmée, a été vérifiée sur le site du Bulletin officiel :
+
+- Histoire-géographie, cycle 3 : Arrêté du 22 avril 2026 — BO n° 22 du 28 mai 2026 (NOR MENE2608631A), https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
+Elle est désormais affichée dans le jeu (écran d'accueil), le README et le guide. Attention : en 2026-2027, le CM2 relève encore des programmes précédents ; les nouveaux s'y appliquent à la rentrée 2027.

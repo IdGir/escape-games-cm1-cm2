@@ -128,7 +128,7 @@ Plusieurs `A-VERIFIER.md` (chateau-fort, station-meteo, objets-techniques…)
 signalent que la référence exacte du Bulletin officiel n'a pas pu être
 confirmée en ligne pendant la production. Une fois vérifiée, l'afficher
 clairement dans le jeu et le guide (aujourd'hui elle reste en note interne).
-**Jeux concernés :** tous · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** S · **Statut :** Fait
 
 ### C3 — Passeport de compétences cumulé sur l'année
 Chaque `GUIDE-PEDAGOGIQUE.md` contient déjà une grille d'observation par jeu,

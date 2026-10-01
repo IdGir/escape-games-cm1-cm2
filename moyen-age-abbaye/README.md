@@ -29,6 +29,11 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 _Histoire, cycle 3 — Année A, période 1 — Thème 1 : « Le Moyen Âge — Clovis et Charlemagne dans la continuité de l'empire romain » (programme d'histoire-géographie du cycle 3, BO 2026)._
 
 
+
+> 📘 **Référence officielle du programme** (vérifiée sur education.gouv.fr le 1er octobre 2026, affichée aussi sur l'écran d'accueil du jeu) :
+>
+> - Histoire-géographie, cycle 3 : [Arrêté du 22 avril 2026 — BO n° 22 du 28 mai 2026](https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A) (NOR MENE2608631A) — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
 | Salle | Compétence du programme |
 |---|---|
 | **1.** Le baptême de Clovis | Repère chronologique : la fin de l'Empire romain (476) et l'avènement des royaumes francs. |

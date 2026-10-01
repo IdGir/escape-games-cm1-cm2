@@ -28,6 +28,11 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 _Sciences et technologie, cycle 3 — Année B, période 1 — Thème « États et constitution de la matière à l'échelle macroscopique » (BO 2026)._
 
 
+
+> 📘 **Référence officielle du programme** (vérifiée sur education.gouv.fr le 1er octobre 2026, affichée aussi sur l'écran d'accueil du jeu) :
+>
+> - Sciences et technologie, cycles 2 et 3 : [Arrêté du 5 juin 2026 — BO n° 24 du 11 juin 2026](https://www.education.gouv.fr/bo/2026/Hebdo24/MENE2611650A) (NOR MENE2611650A) — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
 | Salle | Compétence du programme |
 |---|---|
 | **1.** La salle des balances | Comparer et mesurer des masses de différents objets ou liquides de diverses manières. |

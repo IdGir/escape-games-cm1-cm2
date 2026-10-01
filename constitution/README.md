@@ -30,6 +30,12 @@ Lancement, vérification et dépôt des médias : voir le [README principal](../
 _Enseignement moral et civique, cycle 3 (BO n° 24 du 13 juin 2024) et Histoire, cycle 3 — Année B, période 4 — « Lois protectrices des droits et des libertés » (BO 2026)._
 
 
+
+> 📘 **Référence officielle du programme** (vérifiée sur education.gouv.fr le 1er octobre 2026, affichée aussi sur l'écran d'accueil du jeu) :
+>
+> - Enseignement moral et civique, cycles 2 et 3 : [Programme d'EMC — BO n° 24 du 13 juin 2024](https://pia.ac-paris.fr/portail/jcms/p1_3697458/bo-n-24-du-13-juin-2024-programme-d-emc) — en vigueur depuis la rentrée 2024.
+> - Histoire-géographie, cycle 3 : [Arrêté du 22 avril 2026 — BO n° 22 du 28 mai 2026](https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A) (NOR MENE2608631A) — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
 | Salle | Compétence du programme |
 |---|---|
 | **1.** La cour du Palais-Royal | EMC — Identifier les règles communes qui organisent la vie collective : qu'est-ce qu'une Constitution ? |

@@ -13,6 +13,11 @@ fonctionnement et de la constitution d'objets techniques. »
 
 ## 1. Place dans les programmes
 
+> 📘 **Référence officielle du programme** (vérifiée sur education.gouv.fr le 1er octobre 2026, affichée aussi sur l'écran d'accueil du jeu) :
+>
+> - Sciences et technologie, cycles 2 et 3 : [Arrêté du 5 juin 2026 — BO n° 24 du 11 juin 2026](https://www.education.gouv.fr/bo/2026/Hebdo24/MENE2611650A) (NOR MENE2611650A) — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
+
 
 ## 🎯 Compétences du programme, énigme par énigme
 

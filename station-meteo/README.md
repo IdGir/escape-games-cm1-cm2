@@ -26,6 +26,11 @@ pluviomètre, organiser des relevés et les exploiter pour prévoir.
 _Sciences et technologie, cycle 3 — Année A, période 1 — Thème « La planète Terre » (BO 2026)._
 
 
+
+> 📘 **Référence officielle du programme** (vérifiée sur education.gouv.fr le 1er octobre 2026, affichée aussi sur l'écran d'accueil du jeu) :
+>
+> - Sciences et technologie, cycles 2 et 3 : [Arrêté du 5 juin 2026 — BO n° 24 du 11 juin 2026](https://www.education.gouv.fr/bo/2026/Hebdo24/MENE2611650A) (NOR MENE2611650A) — en CM1 à la rentrée 2026, en CM2 à la rentrée 2027.
+
 | Salle | Compétence du programme |
 |---|---|
 | **1.** L'abri météo | Réaliser des mesures météorologiques en utilisant des capteurs : le thermomètre. |
