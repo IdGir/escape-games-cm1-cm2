@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Démonstration — Escape games CM1 · CM2</title>
+<!--
+  MODE DÉMONSTRATION EN BOUCLE (amélioration F4)
+  Pour la salle des professeurs, les portes ouvertes ou une réunion avec les
+  familles : enchaîne automatiquement de courts extraits de chaque jeu, sans
+  aucune manipulation. Chaque extrait s'ouvre en MODE VÉRIFICATION (rien n'est
+  enregistré sur l'appareil), voix coupée par défaut.
+  Adresse : demo.html (ou demo.html?duree=30&son=1). Espace : pause ; → : suivant.
+-->
+<style>
+  :root{--encre:#f4f1ea;--doux:#b9c1d3}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:#0d1424;color:var(--encre);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff}
+  .carton{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:4vw;
+    background:radial-gradient(circle at 30% 20%,var(--c1,#1d3a8a),#0d1424 70%);transition:opacity .6s ease;z-index:5}
+  .carton.cache{opacity:0;pointer-events:none}
+  .carton .ic{font-size:clamp(3rem,9vw,6rem)} .carton h1{margin:0;font-size:clamp(1.8rem,5vw,3.4rem)}
+  .carton .meta{color:var(--doux);font-size:clamp(1rem,2vw,1.4rem)} .carton p{max-width:900px;font-size:clamp(1rem,2.2vw,1.5rem);margin:6px 0 0}
+  .bandeau{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:center;gap:12px;padding:8px 14px;background:rgba(13,20,36,.86);font-size:.95rem}
+  .bandeau .titre{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bandeau button{font:inherit;color:var(--encre);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 12px;cursor:pointer}
+  .progression{position:fixed;left:0;bottom:0;height:3px;background:#e6c757;z-index:7;width:0}
+  body.calme .carton{transition:none}
+  @media (prefers-reduced-motion: reduce){ .carton{transition:none} }
+</style>
+</head>
+<body>
+<iframe id="cadre" title="Extrait d'un escape game" src="about:blank"></iframe>
+<div class="carton" id="carton"><div class="ic">🎓</div><h1>Escape games pédagogiques</h1><div class="meta">CM1 · CM2 — histoire, géographie, EMC, sciences</div>
+  <p>Démonstration : un court extrait de chaque jeu, en boucle.</p></div>
+<div class="bandeau">
+  <span class="titre" id="titre">—</span>
+  <button id="b-pause" type="button" title="Pause (barre d'espace)">⏸</button>
+  <button id="b-suivant" type="button" title="Extrait suivant (flèche droite)">⏭</button>
+  <button id="b-son" type="button" title="Voix des personnages">🔇</button>
+  <select id="b-duree" title="Durée de chaque extrait" style="font:inherit;border-radius:999px;padding:3px 8px">
+    <option value="12">12 s</option><option value="20" selected>20 s</option><option value="30">30 s</option><option value="45">45 s</option></select>
+  <button id="b-plein" type="button" title="Plein écran">⛶</button>
+  <a href="index.html" style="color:var(--doux)">Quitter</a>
+</div>
+<div class="progression" id="prog"></div>
+
+<script src="commun/donnees/catalogue.js?c2"></script>
+<script>
+"use strict";
+/* Extraits : une salle ou une séance représentative de chaque jeu publié */
+const EXTRAITS = {
+  "moyen-age-abbaye": "?salle=3&niveau=CM2", "chateau-fort": "?salle=1&niveau=CM2", "station-meteo": "?salle=1&niveau=CM1&enigme=1",
+  "objets-techniques": "?salle=4&niveau=CM2", "melanges": "?salle=2&niveau=CM1", "declaration": "?salle=1&niveau=CM2",
+  "constitution": "?salle=4&niveau=CM2", "mission-geo": "?seance=13&niveau=CM1", "tour-du-monde": "?salle=1&niveau=CM2"
+};
+const q = new URLSearchParams(location.search);
+const jeux = CATALOGUE.jeux.filter(j => j.dossier && EXTRAITS[j.dossier]);
+const etat = { i: -1, pause: false, son: q.get("son") === "1", duree: +(q.get("duree") || 20), debut: 0, ecoule: 0, timer: null };
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+if([12, 20, 30, 45].includes(etat.duree)) $("b-duree").value = String(etat.duree);
+$("b-son").textContent = etat.son ? "🔊" : "🔇";
+
+/* Dans l'extrait : voix coupée (sauf choix contraire), cinématiques sautées */
+function preparer(){
+  try{
+    const w = $("cadre").contentWindow;
+    if(!etat.son){
+      if(w.speechSynthesis) w.speechSynthesis.cancel();
+      if(typeof w.setNarrationActif === "function") w.setNarrationActif(false);
+      if(w.eval) w.eval("typeof ETAT !== 'undefined' && ETAT.reglages && (ETAT.reglages.narrationActive = false, ETAT.reglages.cinematiques = false)");
+    }
+  }catch(e){ /* page ouverte en double-clic : le navigateur interdit l'accès, sans gravité */ }
+}
+$("cadre").addEventListener("load", () => { preparer(); setTimeout(preparer, 600); });
+
+function montrer(i){
+  etat.i = (i + jeux.length) % jeux.length;
+  const j = jeux[etat.i];
+  const c = $("carton");
+  c.style.setProperty("--c1", j.couleurs[0]);
+  c.innerHTML = `<div class="ic">${esc(j.icone)}</div><h1>${esc(j.titre)}</h1><div class="meta">${esc(j.matiere)}${j.annee && j.annee.length === 1 ? " · Année " + esc(j.annee) : ""}${j.periodes && j.periodes.length === 1 ? " · " + esc(j.periodes[0]) : ""}</div><p>${esc(j.resume || j.competences)}</p>`;
+  c.classList.remove("cache");
+  $("titre").textContent = `${j.icone} ${j.titre} — ${etat.i + 1} / ${jeux.length}`;
+  $("cadre").src = `${j.dossier}/${EXTRAITS[j.dossier]}`;
+  setTimeout(() => c.classList.add("cache"), 3500);     // carton de présentation, puis l'extrait
+  etat.debut = Date.now(); etat.ecoule = 0;
+}
+function tic(){
+  if(etat.pause){ etat.debut = Date.now() - etat.ecoule; return; }
+  etat.ecoule = Date.now() - etat.debut;
+  $("prog").style.width = Math.min(100, 100 * etat.ecoule / (etat.duree * 1000)) + "%";
+  if(etat.ecoule >= etat.duree * 1000) montrer(etat.i + 1);
+}
+$("b-pause").addEventListener("click", () => { etat.pause = !etat.pause; $("b-pause").textContent = etat.pause ? "▶" : "⏸"; });
+$("b-suivant").addEventListener("click", () => montrer(etat.i + 1));
+$("b-son").addEventListener("click", () => { etat.son = !etat.son; $("b-son").textContent = etat.son ? "🔊" : "🔇"; if(!etat.son) preparer(); });
+$("b-duree").addEventListener("change", e => { etat.duree = +e.target.value; });
+$("b-plein").addEventListener("click", () => { if(document.fullscreenElement) document.exitFullscreen(); else if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen(); });
+document.addEventListener("keydown", e => { if(e.key === " "){ e.preventDefault(); $("b-pause").click(); } if(e.key === "ArrowRight") montrer(etat.i + 1); if(e.key === "ArrowLeft") montrer(etat.i - 1); });
+setTimeout(() => { montrer(0); etat.timer = setInterval(tic, 250); }, 2500);
+window.DEMO = { etat, montrer, jeux, EXTRAITS };
+</script>
+</body>
+</html>

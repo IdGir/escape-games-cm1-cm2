@@ -262,4 +262,4 @@ répondent encore éviterait de découvrir un lien mort face à la classe.
 Un mode qui enchaîne automatiquement de courts extraits de chaque jeu, sans
 manipulation — utile en salle des professeurs, portes ouvertes, ou réunion
 avec les familles.
-**Jeux concernés :** page d'accueil · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** page d'accueil · **Effort :** M · **Statut :** Fait

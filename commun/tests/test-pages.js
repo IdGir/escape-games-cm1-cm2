@@ -170,6 +170,25 @@ SECTIONS.F1 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+SECTIONS.F4 = async () => {
+  console.log("\n== F4 : démonstration en boucle (demo.html) ==");
+  const fs = require("fs"), path = require("path");
+  const { w, erreurs } = await charger(RACINE, "?duree=12", { page: "demo.html", attente: 200 });
+  const D = w.DEMO;
+  ok(D.jeux.length === 9 && D.jeux.every(j => fs.existsSync(path.join(RACINE, j.dossier, "index.html"))), "un extrait pour chacun des 9 jeux publiés");
+  ok(D.jeux.every(j => /[?&](salle|seance)=/.test(D.EXTRAITS[j.dossier])), "extraits en mode vérification (rien n'est enregistré)");
+  await dodo(2700);
+  ok(D.etat.i === 0 && /\/\?/.test(w.document.getElementById("cadre").getAttribute("src")), "premier extrait lancé : " + w.document.getElementById("cadre").getAttribute("src"));
+  ok(/1 \/ 9/.test(w.document.getElementById("titre").textContent), "bandeau : 1 / 9");
+  w.document.getElementById("b-suivant").click();
+  ok(D.etat.i === 1, "⏭ extrait suivant");
+  w.document.getElementById("b-pause").click(); const avant = D.etat.i; await dodo(400);
+  ok(D.etat.pause && D.etat.i === avant, "⏸ pause");
+  D.montrer(8); D.montrer(D.etat.i + 1);
+  ok(D.etat.i === 0, "la boucle repart au premier jeu");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
