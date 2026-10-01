@@ -9,13 +9,17 @@ lettres cachées mélangées avec des leurres. Le personnage se tait dès que le
 
 | Fichier | Rôle | Installé dans |
 |---|---|---|
-| `enigmes.js` | moteur des 10 types d'énigmes (validation par bouton, retours chiffrés) | `<jeu>/js/enigmes.js` (6 jeux à moteur commun) |
+| ~~`enigmes.js`~~ | **déplacé dans le tronc commun** : `commun/js/enigmes.js` (11 types, dont « instrument ») | chargé par les 6 jeux à moteur commun |
 | `enigmes-v2.css` | styles du barème, des paires numérotées, des cases de lettres, du coffre | fin de `<jeu>/css/enigmes.css` |
-| `fiche-mission.js` | fiche de mission A4 (⚙️ Réglages → Impression) | `<jeu>/js/fiche-mission.js` (8 jeux) |
+| ~~`fiche-mission.js`~~ | **déplacé dans le tronc commun** : `commun/js/fiche-mission.js` | chargé par les 8 jeux « salles » |
 | `v2-ancien.js` | aides v2 pour les jeux à moteur propre (anagramme, association, coffre…) | `declaration/js/v2.js`, `tour-du-monde/js/v2.js` |
 | `theme-tour-du-monde.css` | charte « carnet de voyage » du Tour du monde | fin de `tour-du-monde/css/style.css` |
 
 Mission géographique a son propre moteur (`mission-geo/js/activites.js`), adapté directement.
+
+> **Depuis le tronc commun (A3, octobre 2026)**, le moteur partagé n'existe plus qu'en un exemplaire,
+> dans [`commun/`](../commun/README.md). `installer.py` et `installer_anciens.py` ont déjà été appliqués :
+> relancés, ils s'arrêtent avec un message. Ils restent ici pour mémoire.
 
 ## Installer / réinstaller (idempotent)
 

@@ -71,15 +71,15 @@ def carte(spec):
 
 
 def copier_modele(jeu, scripts):
-    """Copie la page, le script et la feuille de style communs dans le dossier du jeu."""
+    """Copie la page des leçons dans le dossier du jeu. Le script et la feuille de style
+    sont dans le tronc commun (commun/js/lecons-a4.js, commun/css/lecons-a4.css) : rien à copier."""
     mod = os.path.join(ICI, "modele")
     html = open(os.path.join(mod, "lecons-imprimables.html"), encoding="utf-8").read()
     if scripts:
         tags = "".join(f'  <script src="{s}"></script>\n' for s in scripts)
-        html = html.replace('  <script src="js/lecons-a4.js"></script>', tags + '  <script src="js/lecons-a4.js"></script>')
+        balise = '  <script src="../commun/js/lecons-a4.js?c1"></script>'
+        html = html.replace(balise, tags + balise)
     ecrire(os.path.join(RACINE, jeu, "lecons-imprimables.html"), html)
-    for src, dst in (("lecons-a4.js", "js"), ("lecons-a4.css", "css")):
-        ecrire(os.path.join(RACINE, jeu, dst, src), open(os.path.join(mod, src), encoding="utf-8").read())
 
 
 def ecrire(chemin, contenu):

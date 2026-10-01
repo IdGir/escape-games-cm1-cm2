@@ -102,4 +102,13 @@ async function attendreQue(fn, max = 6000){
 }
 const clic = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
 
-module.exports = { charger, compteur, dodo, attendreQue, clic, RACINE };
+/** Leçons imprimables A4 : la page se construit (toutes les leçons, CM2) sans erreur. */
+async function testerLeconsA4(dossierJeu, ok){
+  if (!fs.existsSync(path.join(dossierJeu, "lecons-imprimables.html"))) return;
+  const { w, erreurs } = await charger(dossierJeu, "?niveau=CM2&lecon=toutes", { page: "lecons-imprimables.html", attente: 1500 });
+  const n = w.document.querySelectorAll(".page, .feuille, section").length;
+  ok(n >= 1 && !/undefined|NaN/.test(w.document.body.innerHTML), `leçons imprimables A4 : ${n} page(s) construite(s)`);
+  ok(erreurs.length === 0, "leçons imprimables A4 : erreurs JS : " + erreurs.join(" | "));
+}
+
+module.exports = { charger, compteur, dodo, attendreQue, clic, RACINE, testerLeconsA4 };

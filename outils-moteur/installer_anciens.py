@@ -15,6 +15,14 @@ Idempotent. Les énigmes elles-mêmes sont réécrites à la main dans chaque je
 import os
 import re
 import shutil
+import sys
+
+# Depuis le tronc commun (amélioration A3, octobre 2026), le moteur n'existe plus qu'en UN
+# exemplaire dans commun/js/ : ce script d'installation du moteur v2 a déjà été appliqué et
+# recopierait des fichiers devenus inutiles dans les jeux. Il est conservé pour mémoire.
+if os.path.exists(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "commun", "js", "enigmes.js")):
+    print("Moteur v2 déjà installé. Depuis le tronc commun, corrigez directement commun/js/ (voir commun/README.md).")
+    sys.exit(0)
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M = os.path.join(RACINE, "outils-moteur")

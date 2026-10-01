@@ -193,6 +193,8 @@ PROJET ESCAPE GAMES/
 ├── lancer-mac.command      Serveur local, Mac
 ├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
 ├── outils-tests/          Tests automatiques des 9 jeux (Node + jsdom) : node outils-tests/tous.js
+├── commun/                ★ Tronc commun du moteur (médias, sons, voix, énigmes, impressions…) : un seul
+│                           exemplaire pour tous les jeux — voir commun/README.md
 │
 ├── declaration/            🏛️ Le Secret de la Déclaration
 │   ├── README.md           Guide du jeu : salles, énigmes, solutions
@@ -204,7 +206,7 @@ PROJET ESCAPE GAMES/
 │   │   ├── images/         decors/, personnages/, documents/
 │   │   └── data/           textes : dialogues, leçons, évaluations
 │   ├── css/
-│   └── js/
+│   └── js/                 jeu.js = ce qui est propre au jeu ; le moteur est dans commun/
 │
 ├── tour-du-monde/          🧭 Même organisation (+ assets/images/cartes/)
 │
@@ -225,7 +227,7 @@ PROJET ESCAPE GAMES/
 │   │   ├── videos/         décors, cinématiques (+ personnages/)
 │   │   └── images/         decors/, personnages/, cartes/, documents/
 │   ├── css/                (+ enigmes.css)
-│   └── js/                 enigmes.js = moteur générique à 10 types d'énigmes
+│   └── js/                 jeu.js ; moteur d'énigmes commun : commun/js/enigmes.js
 │
 ├── station-meteo/          🌦️ La Station météo disparue (sciences)
 │   ├── README.md           Guide du jeu : modules, énigmes, solutions, sources
@@ -236,7 +238,7 @@ PROJET ESCAPE GAMES/
 │   ├── prof.html           Tableau de bord enseignant (mode local)
 │   ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json (5 leçons rédigées)
 │   ├── css/
-│   └── js/                 enigmes.js = moteur + type « instrument » (thermomètre, pluviomètre)
+│   └── js/                 jeu.js ; type « instrument » dans commun/js/enigmes.js
 │
 ├── melanges/               ⚗️ Le Laboratoire de Madame Mélange (sciences)
 │   ├── README.md           Guide du jeu : salles, énigmes, solutions
@@ -245,7 +247,7 @@ PROJET ESCAPE GAMES/
 │   ├── index.html · prof.html
 │   ├── assets/data/        ★ enigmes.json, lecons.json (leçons rédigées), dialogues, évaluations
 │   ├── css/
-│   └── js/                 même moteur à 10 types d'énigmes
+│   └── js/                 jeu.js ; moteur commun (commun/js/)
 │
 ├── objets-techniques/      ⚙️ L'Atelier de l'inventeur (sciences, les objets techniques)
 │   ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
@@ -253,7 +255,7 @@ PROJET ESCAPE GAMES/
 │   ├── A-VERIFIER.md       Points à contrôler
 │   ├── index.html · prof.html
 │   ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json (5 leçons rédigées)
-│   ├── css/ · js/          même moteur à 10 types d'énigmes que constitution/
+│   ├── css/ · js/          moteur commun (commun/js/)
 │   └── tests/              tests Node + jsdom
 │
 ├── moyen-age-abbaye/       📜 Le Manuscrit de l'abbaye (histoire, le Moyen Âge)
@@ -262,7 +264,7 @@ PROJET ESCAPE GAMES/
 │   ├── A-VERIFIER.md       Faits vérifiés et points à relire
 │   ├── index.html · prof.html
 │   ├── assets/data/        ★ enigmes.json (+ le fermoir) · lecons.json = 5 leçons rédigées
-│   ├── css/ · js/          même moteur que constitution/
+│   ├── css/ · js/          moteur commun (commun/js/)
 │   └── tests/              test-jeu.js (Node + jsdom)
 │
 └── chateau-fort/           🏰 Le Secret du donjon (histoire, le château fort et les paysans)
@@ -271,7 +273,7 @@ PROJET ESCAPE GAMES/
     ├── A-VERIFIER.md       Faits vérifiés et points à relire
     ├── index.html · prof.html
     ├── assets/data/        ★ enigmes.json (20 énigmes) · lecons.json = 5 leçons rédigées
-    ├── css/ · js/          même moteur à 10 types d'énigmes que constitution/
+    ├── css/ · js/          moteur commun (commun/js/)
     └── tests/              test_json.py · test-chateau-fort.js (Node + jsdom)
 ```
 

@@ -331,7 +331,7 @@ directement la leçon correspondante.
 | les décors dessinés | `js/decors.js` |
 | les personnages dessinés | `js/personnages.js` |
 
-Le moteur `js/enigmes.js` est celui de `constitution/` (dix types d'énigmes pilotés par JSON).
+Le moteur `commun/js/enigmes.js` (tronc commun, partagé par tous les jeux) est celui de `constitution/` (dix types d'énigmes pilotés par JSON).
 Les dix types sont utilisés : `qcm`, `vraifaux`, `association`, `ordre`, `tri`, `trous`,
 `lettres`, `code`, `intrus`, `plan`. Après une modification d'un fichier `js/` ou `css/`,
 augmentez son numéro de version dans `index.html` (`app.js?v1` → `app.js?v2`).

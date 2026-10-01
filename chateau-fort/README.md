@@ -477,7 +477,7 @@ lexique, un schéma ou une frise, un document et leurs sources en pied de leçon
 | les décors dessinés | `js/decors.js` |
 | les personnages dessinés | `js/personnages.js` |
 
-**Aucune énigme n'est écrite en dur** : le moteur `js/enigmes.js` est celui de `constitution/`, dans la version déjà reprise par `moyen-age-abbaye/` (bouton « Leçon », source affichée dans la correction) ; aucun type d'énigme n'a été ajouté.
+**Aucune énigme n'est écrite en dur** : le moteur `commun/js/enigmes.js` (tronc commun, partagé par tous les jeux) est celui de `constitution/`, dans la version déjà reprise par `moyen-age-abbaye/` (bouton « Leçon », source affichée dans la correction) ; aucun type d'énigme n'a été ajouté.
 Après une modification d'un fichier `js/` ou `css/`, augmentez son numéro de version dans `index.html` (`app.js?v1` → `app.js?v2`).
 
 ```

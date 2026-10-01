@@ -9,7 +9,7 @@ d'ouvrir le jeu (⚙️ Réglages → 📖 Leçons à imprimer).
 
 | Fichier | Rôle |
 |---|---|
-| `modele/lecons-imprimables.html`, `modele/lecons-a4.js`, `modele/lecons-a4.css` | La page commune à tous les jeux (copiée dans chaque jeu par `construire.py`). Elle lit `assets/data/lecons.json` (le texte des leçons, déjà utilisé dans le jeu) et `assets/data/lecons-a4.json` (les compléments pour l'impression), met en page et ajuste la taille du texte pour que chaque leçon tienne sur sa page. |
+| `modele/lecons-imprimables.html` · `commun/js/lecons-a4.js` · `commun/css/lecons-a4.css` | La page commune à tous les jeux (la page est copiée dans chaque jeu par `construire.py` ; le script et la feuille de style restent en un seul exemplaire dans le tronc commun `commun/`). Elle lit `assets/data/lecons.json` (le texte des leçons, déjà utilisé dans le jeu) et `assets/data/lecons-a4.json` (les compléments pour l'impression), met en page et ajuste la taille du texte pour que chaque leçon tienne sur sa page. |
 | `jeux/<jeu>.py` | La configuration d'un jeu : en-tête et couleurs, **compétence du programme** de chaque leçon, liste des visuels (cartes, schémas, graphiques, photos). Pour la Constitution, les cinq leçons rédigées pour l'impression sont ici (`LECONS_BASE`). |
 | `graphiques.py` | Graphiques et schémas SVG : barres, courbes, diagramme climatique, calendrier circulaire, étapes, tableaux. |
 | `carte.mjs` | Cartes SVG dessinées à partir de données géographiques réelles (projection conique conforme pour la France, Robinson pour le monde). |

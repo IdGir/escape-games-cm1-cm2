@@ -496,7 +496,7 @@ les liste avec leur état.
 | les décors dessinés | `js/decors.js` |
 | les personnages dessinés | `js/personnages.js` |
 
-**Aucune énigme n'est écrite en dur.** `js/enigmes.js` est un moteur générique qui sait rendre
+**Aucune énigme n'est écrite en dur.** `commun/js/enigmes.js` (tronc commun, partagé par tous les jeux) est un moteur générique qui sait rendre
 dix types d'énigmes ; `enigmes.json` décrit les 20 énigmes de ce jeu. Ajouter une énigme, c'est
 ajouter un objet JSON.
 

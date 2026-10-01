@@ -12,7 +12,7 @@
      interdits : expressions de correction interdites après la réussite
    ============================================================ */
 const fs = require("fs"), path = require("path");
-const { charger, compteur, dodo, attendreQue } = require("./charge");
+const { charger, compteur, dodo, attendreQue, testerLeconsA4 } = require("./charge");
 
 function lancer(dossierJeu, cfg){
   const JEU = path.resolve(dossierJeu);
@@ -98,6 +98,7 @@ function lancer(dossierJeu, cfg){
       const p = await charger(JEU, "", { page: "prof.html" });
       ok(p.erreurs.length === 0, "prof.html : erreurs JS : " + p.erreurs.join(" | "));
     }
+    await testerLeconsA4(JEU, ok);
   }
 
   const etapes = (process.argv[2] || "partie,divers").split(",");

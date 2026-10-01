@@ -497,7 +497,7 @@ Les points qui méritent une vérification complémentaire sont listés dans [A-
 | les décors dessinés | `js/decors.js` |
 | les personnages dessinés | `js/personnages.js` |
 
-Le moteur `js/enigmes.js` est le même que celui du *Sceau de la République* : dix types d'énigmes pilotés par le JSON. Ce jeu les utilise tous les dix.
+Le moteur `commun/js/enigmes.js` (tronc commun, partagé par tous les jeux) est le même que celui du *Sceau de la République* : dix types d'énigmes pilotés par le JSON. Ce jeu les utilise tous les dix.
 
 | Type | Ce que fait l'élève | Utilisé ici |
 |---|---|---|

@@ -11,7 +11,7 @@
    piste finale sans valeurs recopiées, fiche de mission (16 séances).
    ============================================================ */
 const path = require("path");
-const { charger, compteur, dodo, attendreQue } = require("../../outils-tests/charge");
+const { charger, compteur, dodo, attendreQue, testerLeconsA4 } = require("../../outils-tests/charge");
 const JEU = path.resolve(__dirname, "..");
 const T = compteur("Mission géographique"); const ok = T.ok;
 const clic = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
@@ -73,6 +73,7 @@ async function final(){
   const lignes = doc.querySelectorAll(".table-fiche-mission tr").length;
   ok(lignes === 17 && (w.__imprime || 0) > 0, `fiche de mission : ${lignes} lignes (attendu 17), impression lancée`);
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+  await testerLeconsA4(JEU, ok);
 }
 
 const etapes = (process.argv[2] || "seances,final").split(",");

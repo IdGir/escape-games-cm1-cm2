@@ -41,7 +41,7 @@ proches d'un dossier à l'autre). Un correctif ou une amélioration du moteur
 doit aujourd'hui être recopié à la main dans huit dossiers. Faire converger
 vers un socle commun versionné, avec uniquement les données (`enigmes.json`,
 `decors.js` propre au décor) qui restent par jeu.
-**Jeux concernés :** tous sauf mission-geo · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** tous sauf mission-geo · **Effort :** L · **Statut :** Fait
 
 ### A4 — Mode hors-ligne installable (PWA)
 Aucun `manifest.json` ni `service worker` dans le dépôt : l'usage sans

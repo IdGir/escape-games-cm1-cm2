@@ -601,7 +601,7 @@ Les noms attendus (5 décors, 2 cinématiques, 4 personnages, 5 illustrations d'
 | les décors dessinés | `js/decors.js` |
 | les personnages dessinés | `js/personnages.js` |
 
-Le moteur `js/enigmes.js` est celui du *Sceau de la République* (10 types d'énigmes pilotés par JSON).
+Le moteur `commun/js/enigmes.js` (tronc commun, partagé par tous les jeux) est celui du *Sceau de la République* (10 types d'énigmes pilotés par JSON).
 Aucun type n'a été ajouté ; trois retouches seulement dans la copie de ce jeu : le bouton sous l'énigme
 ouvre la **leçon** rattachée, la correction affiche la **source**, et, dans le type `tri`, un clic
 n'importe où dans une colonne (titre compris, ou sur une carte déjà posée) y dépose la carte choisie —

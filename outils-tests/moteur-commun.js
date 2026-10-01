@@ -12,7 +12,7 @@
    réduit donc à :   require("../../outils-tests/moteur-commun").lancer(__dirname + "/..", {titre:"…"})
    ============================================================ */
 const fs = require("fs"), path = require("path");
-const { charger, compteur, dodo, attendreQue } = require("./charge");
+const { charger, compteur, dodo, attendreQue, testerLeconsA4 } = require("./charge");
 
 function lancer(dossierJeu, cfg = {}){
   const JEU = path.resolve(dossierJeu);
@@ -267,9 +267,10 @@ function lancer(dossierJeu, cfg = {}){
   /* ---- Tableau de bord enseignant : la page se charge sans erreur ---- */
   async function prof(){
     if (!fs.existsSync(JEU + "/prof.html")) return;
-    console.log("\n== Tableau de bord enseignant (prof.html) ==");
+    console.log("\n== Tableau de bord (prof.html) et leçons imprimables A4 ==");
     const p = await charger(JEU, "", { page: "prof.html" });
     ok(p.erreurs.length === 0, "prof.html : erreurs JS : " + p.erreurs.join(" | "));
+    await testerLeconsA4(JEU, ok);
   }
 
   const etapes = (process.argv[2] || "partie,types,divers,prof").split(",");
