@@ -326,6 +326,7 @@ def main():
     print("  ✅ Serveur démarré sur le port {} (multi-thread, vidéo activée)".format(PORT))
     print()
     print("  🏠 ACCUEIL (tous les jeux)  →  http://{}:{}/".format(ip, PORT))
+    print("  📺 CLASSEMENT À PROJETER   →  http://{}:{}/classement.html".format(ip, PORT))
     print()
     print("  📱 ADRESSES À DONNER AUX ÉLÈVES :")
     print("     Révolution française  →  http://{}:{}/declaration/".format(ip, PORT))

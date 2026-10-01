@@ -51,6 +51,10 @@ indices envoyés à la volée, **⏱️ + : minutes accordées à une équipe sa
 `http://127.0.0.1:8000/constitution/prof.html`, `http://127.0.0.1:8000/station-meteo/prof.html`
 et `http://127.0.0.1:8000/objets-techniques/prof.html` (le principe est le même pour chaque jeu).
 
+**📺 Écran de classement à projeter** (séparé du pilotage) : `http://127.0.0.1:8000/classement.html` — bouton
+« 📺 Écran de classement » dans chaque tableau de bord. Par défaut, il montre la **progression** des équipes
+(salles franchies), pas les scores ; on peut choisir « les scores ». Aucune commande n'y est possible.
+
 > Un double-clic direct sur un `index.html` lance aussi le jeu, mais **sans les
 > vidéos** (le navigateur les bloque) : préférez l'une des deux méthodes ci-dessus.
 

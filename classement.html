@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classement en direct — Escape games CM1 · CM2</title>
+<!--
+  ÉCRAN DE CLASSEMENT À PROJETER (amélioration D1)
+  Séparé du tableau de bord prof.html (pilotage) : à afficher au TBI pendant la partie.
+  Adresse : http://<ordinateur>:8000/classement.html?jeu=melanges  (mode local, lancer.bat)
+  Paramètres : jeu=<dossier> (ou absent : tous les jeux) ; affichage=progression | score
+  Aucune action possible depuis cet écran : il ne fait que lire /api/equipes.
+-->
+<style>
+  :root{--fond:#0d1424;--carte:#17213a;--encre:#f4f1ea;--doux:#a9b3c7;--or:#e6c757;--vert:#4ade80;--ligne:#2a3656}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 0%,#1b2a4d,var(--fond) 60%);color:var(--encre);
+    font:clamp(16px,1.6vw,26px)/1.35 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding:18px 3vw 8px}
+  h1{margin:0;font-size:1.7em;letter-spacing:.01em}
+  h1 small{display:block;font-size:.5em;color:var(--doux);font-weight:500;margin-top:4px}
+  .reglages{display:flex;gap:10px;flex-wrap:wrap;font-size:.65em}
+  .reglages select,.reglages button{font:inherit;padding:6px 10px;border-radius:10px;border:1px solid var(--ligne);background:var(--carte);color:var(--encre)}
+  main{padding:8px 3vw 30px}
+  ol{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  li{display:grid;grid-template-columns:2.6em 1fr auto;align-items:center;gap:16px;background:var(--carte);border:1px solid var(--ligne);
+    border-radius:18px;padding:14px 22px;transition:transform .4s ease}
+  li.fini{border-color:var(--vert)}
+  .rang{font-size:1.6em;font-weight:800;text-align:center;color:var(--or)}
+  .nom{font-size:1.25em;font-weight:700}
+  .nom small{font-size:.6em;color:var(--doux);font-weight:500;margin-left:8px}
+  .barre{height:.7em;margin-top:8px;border-radius:999px;background:#0b1120;overflow:hidden}
+  .barre span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#3b82f6,var(--vert));transition:width .8s ease}
+  .droite{text-align:right;white-space:nowrap}
+  .droite .score{font-size:1.5em;font-weight:800}
+  .droite .etat{font-size:.7em;color:var(--doux)}
+  .vide{text-align:center;color:var(--doux);padding:12vh 2vw;font-size:1.2em}
+  footer{position:fixed;bottom:8px;right:3vw;font-size:.55em;color:var(--doux)}
+  @media (prefers-reduced-motion: reduce){ li,.barre span{transition:none} }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="titre">🏆 Classement en direct<small id="sous-titre">Escape games CM1 · CM2</small></h1>
+  <div class="reglages">
+    <label>Jeu <select id="choix-jeu"><option value="">Tous les jeux</option></select></label>
+    <label>Afficher <select id="choix-affichage">
+      <option value="progression">la progression (salles)</option>
+      <option value="score">les scores</option>
+    </select></label>
+    <button id="plein-ecran" type="button">⛶ Plein écran</button>
+  </div>
+</header>
+<main><ol id="liste"></ol><div class="vide" id="vide" hidden></div></main>
+<footer id="maj"></footer>
+
+<script src="commun/donnees/catalogue.js"></script>
+<script>
+"use strict";
+const params = new URLSearchParams(location.search);
+const JEUX = (typeof CATALOGUE !== "undefined" ? CATALOGUE.jeux : []).filter(j => j.dossier && j.dossier !== "mission-geo");
+const sel = document.getElementById("choix-jeu"), aff = document.getElementById("choix-affichage");
+JEUX.forEach(j => sel.insertAdjacentHTML("beforeend", `<option value="${j.dossier}">${j.icone || ""} ${j.titre}</option>`));
+sel.value = params.get("jeu") || "";
+aff.value = params.get("affichage") === "score" ? "score" : "progression";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+
+function majAdresse(){
+  const p = new URLSearchParams();
+  if(sel.value) p.set("jeu", sel.value);
+  if(aff.value === "score") p.set("affichage", "score");
+  history.replaceState(null, "", location.pathname + (p.toString() ? "?" + p : ""));
+  const j = JEUX.find(x => x.dossier === sel.value);
+  document.getElementById("sous-titre").textContent = j ? `${j.icone || ""} ${j.titre}` : "Tous les jeux en cours";
+  rafraichir();
+}
+sel.addEventListener("change", majAdresse);
+aff.addEventListener("change", majAdresse);
+document.getElementById("plein-ecran").addEventListener("click", () => {
+  if(document.fullscreenElement) document.exitFullscreen(); else if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+});
+
+/** Avancement de 0 à 1 : salles bouclées (+ part de la salle en cours), 1 si fini. */
+function avancement(e){
+  if(e.fini) return 1;
+  const n = 5, s = Math.max(1, Math.min(n, +e.salle || 1));
+  const nbEnig = e.niveau === "CM1" ? 3 : 4;
+  const dansSalle = e.enigme != null ? Math.min(1, (+e.enigme || 0) / nbEnig) : 0;
+  return Math.min(1, ((s - 1) + dansSalle) / n);
+}
+/** Ordre : progression (puis score), ou score (puis progression). Égalités : temps le plus court. */
+function trier(equipes){
+  const parScore = aff.value === "score";
+  return equipes.slice().sort((a, b) =>
+    (parScore ? (b.score || 0) - (a.score || 0) : avancement(b) - avancement(a)) ||
+    (parScore ? avancement(b) - avancement(a) : (b.score || 0) - (a.score || 0)) ||
+    ((a.msEcoules || 0) - (b.msEcoules || 0)));
+}
+function rendre(equipes){
+  const liste = document.getElementById("liste"), vide = document.getElementById("vide");
+  const miennes = equipes.filter(e => !sel.value || (e.jeu || "declaration") === sel.value);
+  if(!miennes.length){ liste.innerHTML = ""; vide.hidden = false; vide.textContent = "En attente des équipes… Les élèves ouvrent le jeu à l'adresse affichée par lancer.bat."; return; }
+  vide.hidden = true;
+  const parScore = aff.value === "score";
+  liste.innerHTML = trier(miennes).map((e, i) => {
+    const jeu = JEUX.find(j => j.dossier === e.jeu);
+    const pct = Math.round(avancement(e) * 100);
+    const mot = e.jeu === "tour-du-monde" ? "Escale" : e.jeu === "station-meteo" ? "Module" : "Salle";
+    const etat = e.fini ? "🏁 Terminé" : e.enPause ? "⏸ En pause" : `${mot} ${e.salle || 1}/5`;
+    return `<li class="${e.fini ? "fini" : ""}">
+      <div class="rang">${i + 1}</div>
+      <div><div class="nom">${esc(e.equipe || "Équipe")}<small>${!sel.value && jeu ? (jeu.icone || "") + " " + esc(jeu.titre) + " · " : ""}${esc(e.niveau || "")}${e.palier === "decouverte" ? " 🌱" : ""}</small></div>
+        <div class="barre" role="img" aria-label="Progression ${pct} %"><span style="width:${pct}%"></span></div></div>
+      <div class="droite">${parScore ? `<div class="score">⭐ ${e.score || 0}</div>` : `<div class="score">${pct} %</div>`}<div class="etat">${etat}</div></div>
+    </li>`;
+  }).join("");
+}
+async function rafraichir(){
+  try{
+    const r = await fetch("/api/equipes", { cache: "no-store" });
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    rendre(d.equipes || []);
+    document.getElementById("maj").textContent = "Mis à jour à " + new Date().toLocaleTimeString("fr-FR");
+  }catch(e){
+    document.getElementById("liste").innerHTML = "";
+    const v = document.getElementById("vide"); v.hidden = false;
+    v.innerHTML = "📡 Cet écran a besoin du serveur local : lancez <b>lancer.bat</b>, puis ouvrez <b>http://127.0.0.1:8000/classement.html</b>.";
+  }
+}
+majAdresse();
+setInterval(rafraichir, 2000);
+window.CLASSEMENT = { avancement, trier, rendre };
+</script>
+</body>
+</html>

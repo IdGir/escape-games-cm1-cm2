@@ -158,7 +158,7 @@ sans avoir à assembler l'information à la main depuis les guides séparés.
 Le tableau de bord enseignant (`prof.html`) suit déjà chaque équipe en
 temps réel, mais c'est un outil de pilotage, pas un écran de projection.
 Ajouter un écran « classement » dédié, projetable au TBI pendant la partie.
-**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ### D2 — Mode individuel (devoirs à la maison)
 Le jeu est pensé pour des équipes de 3-4 ; un mode solo, avec compte-rendu
