@@ -183,6 +183,17 @@ Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatique
 
 ---
 
+## 2 quater. Modifier une énigme sans écrire de code : editeur.html
+
+**[editeur.html](https://idgir.github.io/escape-games-cm1-cm2/editeur.html)** ouvre le fichier `enigmes.json` d'un des
+6 jeux à moteur commun et présente chaque énigme sous forme de formulaire (titre, niveaux CM1/CM2, consigne,
+contenu — questions, paires, cartes, cases… —, indices, corrigé, variantes). Les **contrôles** sont faits en
+direct (bonne réponse présente, réponses parmi les étiquettes, identifiants uniques, nombre d'énigmes par niveau).
+**👁️ Tester dans le jeu** ouvre l'énigme modifiée dans le jeu, sans rien enregistrer. Pour garder la modification :
+**💾 Télécharger enigmes.json** puis le déposer dans `<jeu>/assets/data/` ; ou, avec `lancer.bat` sur l'ordinateur
+de l'enseignant, **💾 Enregistrer dans le jeu** (l'ancien fichier est gardé : `enigmes.json.avant-…`).
+Déclaration et Tour du monde (énigmes écrites dans le code) et Mission géographique ne sont pas concernés.
+
 ## 3. Ajouter ou remplacer une image ou une vidéo
 
 **La règle** : chaque jeu a **un seul dossier médias**, `<jeu>/assets/`, et chaque

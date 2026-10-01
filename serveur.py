@@ -236,6 +236,30 @@ class Handler(BaseHTTPRequestHandler):
                     with open(FICHIER_RESULTATS, "a", encoding="utf-8") as f:
                         f.write(json.dumps(data, ensure_ascii=False) + "\n")
             self.json_reponse({"ok": True})
+        elif path == "/api/enigmes" and methode == "POST":
+            # Éditeur d'énigmes (editeur.html, D4) : écrit <jeu>/assets/data/enigmes.json.
+            # Réservé à l'ordinateur de l'enseignant (127.0.0.1) : les postes élèves ne peuvent rien écrire.
+            jeu = data.get("jeu", "")
+            if self.client_address[0] not in ("127.0.0.1", "::1"):
+                self.json_reponse({"ok": False, "erreur": "enregistrement réservé à l'ordinateur qui a lancé le serveur"})
+            elif jeu not in ("melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution"):
+                self.json_reponse({"ok": False, "erreur": "jeu inconnu"})
+            else:
+                try:
+                    contenu = data.get("contenu", "")
+                    if not isinstance(json.loads(contenu).get("salles"), list):
+                        raise ValueError("pas de salles")
+                    cible = os.path.join(jeu, "assets", "data", "enigmes.json")
+                    sauvegarde = cible + ".avant-" + time.strftime("%Y%m%d-%H%M%S")
+                    with open(cible, encoding="utf-8") as f:
+                        ancien = f.read()
+                    with open(sauvegarde, "w", encoding="utf-8", newline="\n") as f:
+                        f.write(ancien)
+                    with open(cible, "w", encoding="utf-8", newline="\n") as f:
+                        f.write(contenu)
+                    self.json_reponse({"ok": True, "sauvegarde": os.path.basename(sauvegarde)})
+                except (ValueError, AttributeError, OSError) as e:
+                    self.json_reponse({"ok": False, "erreur": "fichier refusé : " + str(e)})
         elif path == "/api/resultats" and methode == "GET":
             # Tous les comptes-rendus gardés sur cet ordinateur (lus par resultats.html)
             liste = []

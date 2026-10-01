@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Éditeur d'énigmes — Escape games CM1 · CM2</title>
+<!--
+  ÉDITEUR GRAPHIQUE (NO-CODE) DES ÉNIGMES (amélioration D4) — page enseignant
+  Les README promettent « aucune énigme écrite en dur » : tout est dans
+  <jeu>/assets/data/enigmes.json. Cette page édite ce fichier sans écrire de JSON :
+  formulaires pour chaque énigme (11 types), contrôles en direct (réponses
+  présentes, niveaux, identifiants…), essai dans le jeu, puis enregistrement :
+    • en ligne : « Télécharger enigmes.json », à déposer dans <jeu>/assets/data/ ;
+    • avec lancer.bat, sur l'ordinateur de l'enseignant : « Enregistrer dans le jeu »
+      (une copie de l'ancien fichier est gardée : enigmes.json.avant-AAAAMMJJ-HHMMSS).
+  Jeux concernés : les 6 jeux à moteur commun (énigmes en JSON).
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--bleu:#2f55c8;--vert:#15803d;--rouge:#b91c1c;--ambre:#b45309}
+  *{box-sizing:border-box}
+  body{margin:0;font:14.5px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header{padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;border-bottom:1px solid var(--ligne);background:#fff;position:sticky;top:0;z-index:5}
+  header h1{margin:0;font-size:1.25rem}
+  button,select,input,textarea{font:inherit}
+  button,select{padding:6px 11px;border-radius:9px;border:1px solid var(--ligne);background:#fff;cursor:pointer}
+  button.principal{background:var(--encre);color:#fff;border-color:var(--encre)}
+  button.petit{padding:2px 7px;font-size:.82rem}
+  .disposition{display:grid;grid-template-columns:300px 1fr;gap:14px;padding:14px 18px;align-items:start}
+  aside,.editeur{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;padding:12px}
+  aside{position:sticky;top:76px;max-height:calc(100vh - 92px);overflow:auto}
+  .salle{margin:8px 0 2px;font-weight:700;font-size:.9rem;display:flex;justify-content:space-between;align-items:center}
+  .item{display:flex;gap:6px;align-items:center;padding:5px 7px;border-radius:8px;cursor:pointer;font-size:.88rem}
+  .item:hover{background:#f2efe8} .item.actif{background:#e6edff;outline:1px solid var(--bleu)}
+  .item .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .badge{font-size:.72rem;padding:0 6px;border-radius:999px;background:#efe9dc;white-space:nowrap}
+  .badge.err{background:#fdecec;color:var(--rouge)}
+  label.champ{display:block;margin:8px 0}
+  label.champ > span{display:block;font-weight:600;font-size:.86rem;margin-bottom:2px}
+  label.champ small{font-weight:400;color:var(--doux)}
+  input[type=text],input[type=number],textarea,select.plein{width:100%;padding:6px 8px;border:1px solid var(--ligne);border-radius:8px;background:#fff}
+  textarea{min-height:2.4em;resize:vertical}
+  fieldset{border:1px solid var(--ligne);border-radius:10px;margin:8px 0;padding:6px 10px 10px}
+  legend{font-weight:700;font-size:.88rem;padding:0 4px}
+  .element{border:1px dashed var(--ligne);border-radius:9px;padding:4px 8px 8px;margin:6px 0;position:relative;background:#fcfbf8}
+  .element .outils{display:flex;gap:4px;justify-content:flex-end}
+  .onglets{display:flex;gap:4px;margin-top:8px}
+  .onglets button[aria-pressed="true"]{background:var(--encre);color:#fff}
+  .controles{margin-top:12px;padding:10px 12px;border-radius:10px;background:#f7f5f0;font-size:.88rem}
+  .controles li.err{color:var(--rouge)} .controles li.av{color:var(--ambre)}
+  .ok{color:var(--vert)}
+  .aide{color:var(--doux);font-size:.86rem}
+  #msg{font-size:.88rem}
+  @media (max-width:860px){ .disposition{grid-template-columns:1fr} aside{position:static;max-height:none} }
+</style>
+</head>
+<body>
+<header>
+  <h1>✏️ Éditeur d'énigmes</h1>
+  <label>Jeu <select id="choix-jeu"></select></label>
+  <label class="aide" style="cursor:pointer;text-decoration:underline">ou ouvrir un fichier enigmes.json<input type="file" id="fichier" accept=".json" hidden></label>
+  <span style="flex:1"></span>
+  <button id="b-tester" title="Ouvre le jeu sur l'énigme choisie, avec vos modifications (sans rien enregistrer)">👁️ Tester dans le jeu</button>
+  <button id="b-annuler" title="Revenir au fichier tel qu'il était à l'ouverture">↩️ Tout annuler</button>
+  <button class="principal" id="b-telecharger">💾 Télécharger enigmes.json</button>
+  <button class="principal" id="b-enregistrer" hidden title="Écrit le fichier dans le dossier du jeu (lancer.bat, sur cet ordinateur)">💾 Enregistrer dans le jeu</button>
+  <span id="msg"></span>
+</header>
+<div class="disposition">
+  <aside><div id="arbre"><p class="aide">Choisissez un jeu.</p></div>
+    <div style="margin-top:10px"><label class="aide">Ajouter une énigme de type
+      <select id="nouveau-type"></select></label> <button id="b-ajouter" class="petit">➕ dans la salle choisie</button></div>
+    <div id="bilan" class="controles"></div></aside>
+  <section class="editeur" id="editeur"><p class="aide">Choisissez une énigme dans la liste.<br>
+    Chaque champ correspond à ce que voient les élèves. Les niveaux : CM1, CM2, ou les deux. Les données peuvent être les mêmes pour les deux niveaux, ou différentes.</p></section>
+</div>
+
+<script src="commun/donnees/catalogue.js?c2"></script>
+<script>
+"use strict";
+const JEUX = ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution"];
+const TYPES = {
+  qcm: "QCM", vraifaux: "Vrai ou faux", association: "Association (paires)", ordre: "Remettre dans l'ordre", tri: "Tri en colonnes",
+  trous: "Texte à trous", lettres: "Lettres cachées", code: "Cadenas à code", intrus: "Trouver l'intrus", plan: "Plan / schéma à compléter",
+  instrument: "Instrument gradué (thermomètre, pluviomètre)"
+};
+/* Modèle de données de départ pour une nouvelle énigme */
+const MODELES = {
+  qcm: { questions: [{ q: "", options: ["", "", ""], bonne: 0 }] },
+  vraifaux: { affirmations: [{ txt: "", vrai: true }, { txt: "", vrai: false }] },
+  association: { paires: [{ g: "", d: "" }, { g: "", d: "" }, { g: "", d: "" }] },
+  ordre: { items: [{ txt: "", rang: 1 }, { txt: "", rang: 2 }, { txt: "", rang: 3 }] },
+  tri: { colonnes: [{ id: "c1", titre: "" }, { id: "c2", titre: "" }], cartes: [{ txt: "", col: "c1" }, { txt: "", col: "c2" }] },
+  trous: { texte: "Le [[mot]] manquant…", etiquettes: [] },
+  lettres: { cible: ["M", "O", "T"], texte: "<p>Texte où les lettres <span data-l=\"M\">M</span>… sont marquées.</p>" },
+  code: { champs: [{ libelle: "", valeur: "", longueur: 3 }] },
+  intrus: { cartes: [{ txt: "", intrus: false }, { txt: "", intrus: false }, { txt: "", intrus: true }] },
+  plan: { titre: "", colonnes: 2, cases: [{ libelle: "", reponse: "" }, { libelle: "", reponse: "" }], etiquettes: [] },
+  instrument: { instrument: "thermometre", unite: "°C", min: -10, max: 40, pas: 1, etiquettes: 10, items: [{ libelle: "", mode: "lire", valeur: 20 }] }
+};
+/* Libellés en français des clés du JSON */
+const LIB = {
+  questions: "Questions", q: "Question", options: "Choix proposés", bonne: "Bonne réponse", explication: "Explication (corrigé imprimé seulement)",
+  affirmations: "Affirmations", txt: "Texte", vrai: "Cette affirmation est vraie", paires: "Paires", g: "À gauche", d: "À droite (la bonne réponse)",
+  items: "Éléments", rang: "Position dans le bon ordre (1 = premier)", sous: "Précision (petit texte)", colonnes: "Colonnes", id: "Identifiant",
+  titre: "Titre", cartes: "Cartes", col: "Colonne attendue", texte: "Texte", etiquettes: "Étiquettes proposées (avec les leurres ; vide = seulement les bonnes)",
+  cible: "Lettres du mot, dans l'ordre", champs: "Cases du cadenas", libelle: "Libellé", valeur: "Réponse attendue", longueur: "Nombre de caractères",
+  numerique: "Réponse numérique", intrus: "C'est l'intrus", cases: "Cases du plan", reponse: "Bonne réponse", instrument: "Instrument", unite: "Unité",
+  min: "Minimum", max: "Maximum", pas: "Pas des graduations", mode: "Mode", base: "Nom du fichier image (sans extension)", legende: "Légende", source: "Source"
+};
+Object.assign(LIB, { "options[]": "Choix", "etiquettes[]": "Étiquette", "cible[]": "Lettre", "indices[]": "Indice" });
+const AIDE = {
+  texte: "Écrire les bonnes réponses entre doubles crochets : « la [[densité]] est [[faible]] ».",
+  cible: "Une lettre par case. Dans le texte, chaque lettre à trouver (et chaque leurre) s'écrit <span data-l=\"A\">A</span>.",
+  etiquettes: "Ajoutez des mots pièges : ils seront mélangés aux bonnes réponses."
+};
+
+let jeu = null, DATA = null, ORIGINE = null, LECONS = [], sel = null;     // sel = {s, e} indices
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const msg = (t, cl) => { $("msg").innerHTML = t ? `<span class="${cl || ""}">${t}</span>` : ""; };
+const clone = o => JSON.parse(JSON.stringify(o));
+
+/* ---------------- Chargement ---------------- */
+$("choix-jeu").innerHTML = `<option value="">—</option>` + JEUX.map(j => { const c = (typeof CATALOGUE !== "undefined" ? CATALOGUE.jeux.find(x => x.dossier === j) : null);
+  return `<option value="${j}">${c ? c.icone + " " + c.titre : j}</option>`; }).join("");
+$("nouveau-type").innerHTML = Object.entries(TYPES).map(([k, v]) => `<option value="${k}">${v}</option>`).join("");
+async function ouvrirJeu(j){
+  jeu = j; sel = null;
+  try{
+    const r = await fetch(`${j}/assets/data/enigmes.json`, { cache: "no-store" }); if(!r.ok) throw 0;
+    installer(await r.json());
+    try{ const l = await fetch(`${j}/assets/data/lecons.json`); if(l.ok){ const x = await l.json(); LECONS = (Array.isArray(x.lecons) ? x.lecons : Object.values(x.lecons || x)).map(z => ({ id: z.id, titre: z.titre })).filter(z => z.id); } }catch(e){ LECONS = []; }
+    msg(`Fichier ${j}/assets/data/enigmes.json ouvert.`, "ok");
+  }catch(e){ msg("Impossible de lire le fichier du jeu (page ouverte en double-clic ?). Utilisez « ouvrir un fichier ».", "err"); }
+  history.replaceState(null, "", "?jeu=" + j);
+}
+function installer(d){
+  if(!d || !Array.isArray(d.salles)) { msg("Ce fichier n'est pas un enigmes.json d'escape game.", "err"); return; }
+  DATA = d; ORIGINE = clone(d); rendreArbre(); rendreEditeur();
+}
+$("choix-jeu").addEventListener("change", e => e.target.value && ouvrirJeu(e.target.value));
+$("fichier").addEventListener("change", async e => { try{ installer(JSON.parse(await e.target.files[0].text())); jeu = jeu || ""; msg("Fichier ouvert.", "ok"); }catch(x){ msg("Fichier illisible (JSON invalide).", "err"); } });
+
+/* ---------------- Contrôles (validation) ---------------- */
+function niveauxDe(e){ return e.niveaux && e.niveaux.length ? e.niveaux : ["CM1", "CM2"]; }
+function donnees(e, n){ return e[n.toLowerCase()] || e.commun || e.cm2 || e.cm1 || {}; }
+function controler(e, ids){
+  const err = [], av = [], N = x => String(x == null ? "" : x).trim();
+  if(!N(e.id)) err.push("identifiant manquant"); else if(ids && ids.get(e.id) > 1) err.push(`identifiant « ${e.id} » utilisé deux fois`);
+  if(!N(e.titre)) err.push("titre manquant");
+  if(!TYPES[e.type]) err.push(`type inconnu : ${e.type}`);
+  if(!e.consigne || (typeof e.consigne === "object" && !Object.values(e.consigne).some(N))) err.push("consigne manquante");
+  for(const n of niveauxDe(e)){
+    const d = donnees(e, n), p = `${n} : `;
+    switch(e.type){
+      case "qcm": (d.questions || []).length || err.push(p + "aucune question");
+        (d.questions || []).forEach((q, i) => { if(!N(q.q)) err.push(`${p}question ${i + 1} vide`); if(!q.options || q.options.length < 2) err.push(`${p}question ${i + 1} : au moins 2 choix`);
+          else if(!(q.bonne >= 0 && q.bonne < q.options.length)) err.push(`${p}question ${i + 1} : bonne réponse non choisie`); if((q.options || []).some(o => !N(o))) err.push(`${p}question ${i + 1} : un choix est vide`); }); break;
+      case "vraifaux": if((d.affirmations || []).length < 2) err.push(p + "au moins 2 affirmations");
+        (d.affirmations || []).forEach((a, i) => N(a.txt) || err.push(`${p}affirmation ${i + 1} vide`));
+        if((d.affirmations || []).every(a => a.vrai) || (d.affirmations || []).every(a => !a.vrai)) av.push(p + "toutes les affirmations ont la même réponse"); break;
+      case "association": if((d.paires || []).length < 2) err.push(p + "au moins 2 paires");
+        (d.paires || []).forEach((x, i) => { if(!N(x.g) || !N(x.d)) err.push(`${p}paire ${i + 1} incomplète`); });
+        if(new Set((d.paires || []).map(x => N(x.d))).size !== (d.paires || []).length) err.push(p + "deux paires ont la même réponse à droite"); break;
+      case "ordre": { const r = (d.items || []).map(x => +x.rang).sort((a, b) => a - b);
+        if(r.length < 3) err.push(p + "au moins 3 éléments"); if(r.some((x, i) => x !== i + 1)) err.push(p + "les positions doivent aller de 1 à " + r.length + ", sans doublon");
+        (d.items || []).forEach((x, i) => N(x.txt) || err.push(`${p}élément ${i + 1} vide`)); break; }
+      case "tri": { const ids2 = (d.colonnes || []).map(c => c.id);
+        if(ids2.length < 2) err.push(p + "au moins 2 colonnes"); if(new Set(ids2).size !== ids2.length) err.push(p + "identifiants de colonnes en double");
+        (d.cartes || []).forEach((c, i) => { if(!N(c.txt)) err.push(`${p}carte ${i + 1} vide`); if(!ids2.includes(c.col)) err.push(`${p}carte ${i + 1} : colonne attendue inconnue`); });
+        ids2.forEach(id => (d.cartes || []).some(c => c.col === id) || av.push(`${p}la colonne « ${id} » ne reçoit aucune carte`)); break; }
+      case "trous": { const bonnes = [...String(d.texte || "").matchAll(/\[\[(.+?)\]\]/g)].map(m => m[1]);
+        if(!bonnes.length) err.push(p + "aucun trou : écrire les réponses entre [[ ]]");
+        if((d.etiquettes || []).length) bonnes.forEach(b => d.etiquettes.includes(b) || err.push(`${p}la réponse « ${b} » manque dans les étiquettes`)); break; }
+      case "plan": if((d.cases || []).length < 2) err.push(p + "au moins 2 cases");
+        (d.cases || []).forEach((c, i) => { if(!N(c.reponse)) err.push(`${p}case ${i + 1} sans réponse`); if((d.etiquettes || []).length && !d.etiquettes.includes(c.reponse)) err.push(`${p}la réponse « ${c.reponse} » manque dans les étiquettes`); }); break;
+      case "lettres": { const S = x => String(x).toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const marquees = [...String(d.texte || "").matchAll(/data-l=["']([^"']+)["']/g)].map(m => S(m[1]));
+        if(!(d.cible || []).length) err.push(p + "mot à trouver vide");
+        const reste = marquees.slice();
+        (d.cible || []).forEach(l => { const i = reste.indexOf(S(l)); if(i < 0) err.push(`${p}la lettre « ${l} » n'est pas (assez de fois) marquée dans le texte`); else reste.splice(i, 1); });
+        if(marquees.length < (d.cible || []).length + 2) av.push(p + "règle v2 : au moins deux lettres pièges en plus du mot"); break; }
+      case "code": if(!(d.champs || []).length) err.push(p + "aucune case");
+        (d.champs || []).forEach((c, i) => { if(!N(c.valeur)) err.push(`${p}case ${i + 1} sans réponse`); if(c.longueur && String(c.valeur).length > c.longueur) err.push(`${p}case ${i + 1} : réponse plus longue que le nombre de caractères`); }); break;
+      case "intrus": if((d.cartes || []).filter(c => c.intrus).length !== 1) err.push(p + "il faut exactement un intrus");
+        (d.cartes || []).forEach((c, i) => N(c.txt) || err.push(`${p}carte ${i + 1} vide`)); break;
+      case "instrument": if(!(+d.min < +d.max)) err.push(p + "minimum ≥ maximum");
+        (d.items || []).forEach((x, i) => { if(!(x.valeur >= d.min && x.valeur <= d.max)) err.push(`${p}mesure ${i + 1} hors de l'échelle`);
+          if(Math.abs(((x.valeur - d.min) / (d.pas || 1)) - Math.round((x.valeur - d.min) / (d.pas || 1))) > 1e-9) av.push(`${p}mesure ${i + 1} pas sur une graduation`); }); break;
+    }
+  }
+  return { err, av };
+}
+function bilanGlobal(){
+  const ids = new Map(); DATA.salles.forEach(s => s.enigmes.forEach(e => ids.set(e.id, (ids.get(e.id) || 0) + 1)));
+  let nErr = 0; const lignes = [];
+  DATA.salles.forEach(s => {
+    const c1 = s.enigmes.filter(e => niveauxDe(e).includes("CM1")).length, c2 = s.enigmes.filter(e => niveauxDe(e).includes("CM2")).length;
+    if(c1 > c2) lignes.push(`<li class="err">Salle ${s.num} : plus d'énigmes en CM1 (${c1}) qu'en CM2 (${c2})</li>`), nErr++;
+    if(c1 !== 3 || c2 !== 4) lignes.push(`<li class="av">Salle ${s.num} : ${c1} énigmes en CM1, ${c2} en CM2 (barème habituel : 3 et 4)</li>`);
+    s.enigmes.forEach(e => { const r = controler(e, ids); nErr += r.err.length; });
+  });
+  return { nErr, lignes, ids };
+}
+
+/* ---------------- Arbre des salles ---------------- */
+function rendreArbre(){
+  if(!DATA){ $("arbre").innerHTML = ""; return; }
+  const b = bilanGlobal();
+  $("arbre").innerHTML = DATA.salles.map((s, si) => `<div class="salle"><span>Salle ${esc(s.num)}${s.titre ? " — " + esc(s.titre) : ""}</span></div>` +
+    s.enigmes.map((e, ei) => { const r = controler(e, b.ids);
+      return `<div class="item ${sel && sel.s === si && sel.e === ei ? "actif" : ""}" data-s="${si}" data-e="${ei}">
+        <span class="t">${esc(e.id)} · ${esc(e.titre || "(sans titre)")}</span><span class="badge">${esc(TYPES[e.type] ? e.type : "?")}</span>
+        <span class="badge">${niveauxDe(e).join("+")}</span>${r.err.length ? `<span class="badge err">${r.err.length}</span>` : ""}</div>`; }).join("")).join("");
+  $("bilan").innerHTML = (b.nErr ? `<b class="err" style="color:var(--rouge)">⚠️ ${b.nErr} erreur(s) à corriger avant d'enregistrer</b>` : `<b class="ok">✔ Aucune erreur</b>`) + (b.lignes.length ? `<ul>${b.lignes.join("")}</ul>` : "");
+}
+$("arbre").addEventListener("click", e => { const it = e.target.closest(".item"); if(!it) return; sel = { s: +it.dataset.s, e: +it.dataset.e }; rendreArbre(); rendreEditeur(); });
+
+/* ---------------- Formulaire générique ---------------- */
+function champ(cle, valeur, majeur, contexte){
+  const lab = LIB[cle] || (/\[\]$/.test(cle) ? (/^Indices/.test(cle) ? "Indice" : "Élément") : cle), aide = AIDE[cle] ? `<small> — ${esc(AIDE[cle])}</small>` : "";
+  const w = document.createElement("label"); w.className = "champ";
+  if(typeof valeur === "boolean"){
+    w.innerHTML = `<input type="checkbox" ${valeur ? "checked" : ""}> ${esc(lab)}`;
+    w.querySelector("input").addEventListener("change", ev => majeur(ev.target.checked)); return w;
+  }
+  if(cle === "bonne" && contexte && Array.isArray(contexte.options)){
+    w.innerHTML = `<span>${esc(lab)}</span><select class="plein">${contexte.options.map((o, i) => `<option value="${i}" ${i === valeur ? "selected" : ""}>${i + 1}. ${esc(o || "(vide)")}</option>`).join("")}</select>`;
+    w.querySelector("select").addEventListener("change", ev => majeur(+ev.target.value)); return w;
+  }
+  if(cle === "col" && contexte && contexte.__colonnes){
+    w.innerHTML = `<span>${esc(lab)}</span><select class="plein">${contexte.__colonnes.map(c => `<option value="${esc(c.id)}" ${c.id === valeur ? "selected" : ""}>${esc(c.titre || c.id)}</option>`).join("")}</select>`;
+    w.querySelector("select").addEventListener("change", ev => majeur(ev.target.value)); return w;
+  }
+  if(cle === "mode" || cle === "instrument"){
+    const opts = cle === "mode" ? [["lire", "lire la valeur"], ["regler", "régler l'instrument"]] : [["thermometre", "thermomètre"], ["pluviometre", "pluviomètre"]];
+    w.innerHTML = `<span>${esc(lab)}</span><select class="plein">${opts.map(([v, t]) => `<option value="${v}" ${v === valeur ? "selected" : ""}>${t}</option>`).join("")}</select>`;
+    w.querySelector("select").addEventListener("change", ev => majeur(ev.target.value)); return w;
+  }
+  if(typeof valeur === "number"){
+    w.innerHTML = `<span>${esc(lab)}${aide}</span><input type="number" step="any" value="${valeur}">`;
+    w.querySelector("input").addEventListener("input", ev => majeur(ev.target.value === "" ? 0 : +ev.target.value)); return w;
+  }
+  const long = String(valeur || "").length > 70 || /texte|explication|correction|consigne/.test(cle);
+  w.innerHTML = `<span>${esc(lab)}${aide}</span>` + (long ? `<textarea rows="${Math.min(8, 2 + Math.floor(String(valeur || "").length / 90))}"></textarea>` : `<input type="text">`);
+  const x = w.querySelector("input,textarea"); x.value = valeur == null ? "" : valeur;
+  x.addEventListener("input", ev => majeur(ev.target.value)); return w;
+}
+function vide(modele){ if(typeof modele === "string") return ""; if(typeof modele === "number") return modele; if(typeof modele === "boolean") return false;
+  if(Array.isArray(modele)) return []; const o = {}; Object.entries(modele || {}).forEach(([k, v]) => o[k] = vide(v)); return o; }
+/** Formulaire d'un objet (récursif) ; majTout() recalcule contrôles et arbre */
+function formulaire(obj, majTout, contexte){
+  const f = document.createDocumentFragment();
+  const cles = Object.keys(obj).sort((a, b) => (a === "bonne") - (b === "bonne"));
+  for(const k of cles){
+    const v = obj[k];
+    if(Array.isArray(v)){
+      const fs = document.createElement("fieldset"); fs.innerHTML = `<legend>${esc(LIB[k] || k)}</legend>`;
+      if(AIDE[k]) fs.insertAdjacentHTML("beforeend", `<p class="aide">${esc(AIDE[k])}</p>`);
+      const dessiner = () => {
+        fs.querySelectorAll(":scope > .element, :scope > .ajout").forEach(x => x.remove());
+        v.forEach((el, i) => {
+          const b = document.createElement("div"); b.className = "element";
+          b.innerHTML = `<div class="outils"><span class="aide" style="margin-right:auto">${i + 1}</span><button class="petit" data-a="h" title="Monter">▲</button><button class="petit" data-a="b" title="Descendre">▼</button><button class="petit" data-a="c" title="Dupliquer">⧉</button><button class="petit" data-a="x" title="Supprimer">✕</button></div>`;
+          if(el && typeof el === "object"){ b.appendChild(formulaire(el, majTout, k === "cartes" && obj.colonnes ? Object.assign({ __colonnes: obj.colonnes }, el) : el)); }
+          else b.appendChild(champ(k + "[]", el, nv => { v[i] = nv; majTout(); }));
+          b.querySelector(".outils").addEventListener("click", ev => { const a = ev.target.dataset.a; if(!a) return; ev.preventDefault();
+            if(a === "h" && i > 0) [v[i - 1], v[i]] = [v[i], v[i - 1]];
+            if(a === "b" && i < v.length - 1) [v[i + 1], v[i]] = [v[i], v[i + 1]];
+            if(a === "c") v.splice(i + 1, 0, clone(v[i]));
+            if(a === "x") v.splice(i, 1);
+            dessiner(); majTout(); });
+          fs.appendChild(b);
+        });
+        const add = document.createElement("button"); add.className = "petit ajout"; add.textContent = "➕ Ajouter";
+        add.addEventListener("click", ev => { ev.preventDefault(); v.push(v.length ? vide(v[v.length - 1]) : ""); dessiner(); majTout(); });
+        fs.appendChild(add);
+      };
+      dessiner(); f.appendChild(fs);
+    }else if(v && typeof v === "object"){
+      const fs = document.createElement("fieldset"); fs.innerHTML = `<legend>${esc(LIB[k] || k)}</legend>`; fs.appendChild(formulaire(v, majTout, v)); f.appendChild(fs);
+    }else{
+      f.appendChild(champ(k, v, nv => { obj[k] = nv; majTout(); }, contexte || obj));
+    }
+  }
+  return f;
+}
+
+/* ---------------- Éditeur d'une énigme ---------------- */
+function rendreEditeur(){
+  const z = $("editeur");
+  if(!DATA || !sel){ return; }
+  const e = DATA.salles[sel.s].enigmes[sel.e];
+  const majTout = () => { rendreArbre(); controlesEnigme(); };
+  z.innerHTML = `<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><h2 style="margin:0;font-size:1.1rem">Énigme ${esc(e.id)} — ${esc(TYPES[e.type] || e.type)}</h2>
+      <span style="flex:1"></span><button class="petit" id="e-monter">▲ Monter</button><button class="petit" id="e-descendre">▼ Descendre</button>
+      <button class="petit" id="e-dupliquer">⧉ Dupliquer</button><button class="petit" id="e-supprimer">✕ Supprimer</button></div><div id="e-corps"></div><div id="e-controles" class="controles"></div>`;
+  const c = $("e-corps");
+  // champs communs
+  c.appendChild(champ("id", e.id, v => { e.id = v; majTout(); }));
+  c.appendChild(champ("titre", e.titre, v => { e.titre = v; majTout(); }));
+  const niv = document.createElement("div"); niv.className = "champ";
+  niv.innerHTML = `<span style="font-weight:600;font-size:.86rem">Niveaux</span> <label><input type="checkbox" value="CM1"> CM1</label> <label><input type="checkbox" value="CM2"> CM2</label>`;
+  niv.querySelectorAll("input").forEach(x => { x.checked = niveauxDe(e).includes(x.value); x.addEventListener("change", () => {
+    const l = [...niv.querySelectorAll("input:checked")].map(y => y.value); if(l.length === 2 || !l.length) delete e.niveaux; else e.niveaux = l; majTout(); }); });
+  c.appendChild(niv);
+  if(LECONS.length){
+    const l = document.createElement("label"); l.className = "champ";
+    l.innerHTML = `<span>Leçon liée (bouton 📚)</span><select class="plein"><option value="">—</option>${LECONS.map(x => `<option value="${esc(x.id)}" ${x.id === e.lecon ? "selected" : ""}>${esc(x.titre || x.id)}</option>`).join("")}</select>`;
+    l.querySelector("select").addEventListener("change", ev => { if(ev.target.value) e.lecon = ev.target.value; else delete e.lecon; majTout(); });
+    c.appendChild(l);
+  }
+  // consigne : commune ou par niveau
+  const cons = document.createElement("fieldset"); cons.innerHTML = `<legend>Consigne</legend><label><input type="checkbox" id="cons-diff"> différente en CM1 et en CM2</label><div></div>`;
+  const dessinerConsigne = () => { const d = cons.querySelector("div"); d.innerHTML = "";
+    if(typeof e.consigne === "object" && e.consigne){ ["cm1", "cm2"].forEach(n => d.appendChild(champ("consigne", e.consigne[n] || "", v => { e.consigne[n] = v; majTout(); }))); d.children[0].querySelector("span").textContent = "Consigne CM1"; d.children[1].querySelector("span").textContent = "Consigne CM2"; }
+    else d.appendChild(champ("consigne", e.consigne || "", v => { e.consigne = v; majTout(); })); };
+  cons.querySelector("#cons-diff").checked = typeof e.consigne === "object" && !!e.consigne;
+  cons.querySelector("#cons-diff").addEventListener("change", ev => { e.consigne = ev.target.checked ? { cm1: String(e.consigne || ""), cm2: String(e.consigne || "") } : (e.consigne && e.consigne.cm2) || ""; dessinerConsigne(); majTout(); });
+  dessinerConsigne(); c.appendChild(cons);
+  // données : commun ou cm1/cm2
+  const don = document.createElement("fieldset");
+  const separees = !!(e.cm1 || e.cm2) && !e.commun;
+  don.innerHTML = `<legend>Contenu de l'énigme</legend><label><input type="checkbox" id="don-diff" ${separees ? "checked" : ""}> contenu différent en CM1 et en CM2</label><div class="onglets"></div><div class="zone"></div>`;
+  let onglet = separees ? (e.cm1 ? "cm1" : "cm2") : "commun";
+  const dessinerDonnees = () => {
+    const sep = don.querySelector("#don-diff").checked;
+    const og = don.querySelector(".onglets"); og.innerHTML = sep ? ["cm1", "cm2"].map(n => `<button data-n="${n}" aria-pressed="${onglet === n}">${n.toUpperCase()}</button>`).join("") : "";
+    og.querySelectorAll("button").forEach(b => b.addEventListener("click", ev => { ev.preventDefault(); onglet = b.dataset.n; dessinerDonnees(); }));
+    const zone = don.querySelector(".zone"); zone.innerHTML = "";
+    const cle = sep ? onglet : "commun";
+    if(!e[cle]) e[cle] = clone(MODELES[e.type] || {});
+    zone.appendChild(formulaire(e[cle], () => { majTout(); }));
+  };
+  don.querySelector("#don-diff").addEventListener("change", ev => {
+    if(ev.target.checked){ const base = e.commun || clone(MODELES[e.type] || {}); e.cm1 = clone(base); e.cm2 = clone(base); delete e.commun; onglet = "cm1"; }
+    else{ e.commun = e.cm2 || e.cm1 || clone(MODELES[e.type] || {}); delete e.cm1; delete e.cm2; onglet = "commun"; }
+    dessinerDonnees(); majTout(); });
+  dessinerDonnees(); c.appendChild(don);
+  // indices
+  const ind = document.createElement("fieldset"); ind.innerHTML = `<legend>Indices (💡, −2 points chacun)</legend>`;
+  if(Array.isArray(e.indices)) e.indices = { commun: e.indices };
+  e.indices = e.indices || {};
+  ["cm1", "cm2"].filter(n => niveauxDe(e).includes(n.toUpperCase())).forEach(n => { e.indices[n] = e.indices[n] || []; const o = {}; o["Indices " + n.toUpperCase()] = e.indices[n]; ind.appendChild(formulaire(o, majTout)); });
+  c.appendChild(ind);
+  ["source", "correction"].forEach(k => c.appendChild(champ(k, e[k] || "", v => { e[k] = v; majTout(); })));
+  c.lastChild.querySelector("span").innerHTML = "Corrigé <small>— pour le README, le guide et les corrigés imprimés ; jamais affiché après la réussite</small>";
+  if(e.variantes){ const v = document.createElement("fieldset"); v.innerHTML = `<legend>🎲 Variantes (banque d'énigmes)</legend><p class="aide">Chaque variante ne contient que ce qui change.</p>`; v.appendChild(formulaire({ variantes: e.variantes }, majTout)); c.appendChild(v); }
+  // déplacements
+  const liste = DATA.salles[sel.s].enigmes;
+  $("e-monter").onclick = () => { if(sel.e > 0){ [liste[sel.e - 1], liste[sel.e]] = [liste[sel.e], liste[sel.e - 1]]; sel.e--; rendreArbre(); rendreEditeur(); } };
+  $("e-descendre").onclick = () => { if(sel.e < liste.length - 1){ [liste[sel.e + 1], liste[sel.e]] = [liste[sel.e], liste[sel.e + 1]]; sel.e++; rendreArbre(); rendreEditeur(); } };
+  $("e-dupliquer").onclick = () => { const x = clone(e); x.id = e.id + "-copie"; liste.splice(sel.e + 1, 0, x); sel.e++; rendreArbre(); rendreEditeur(); };
+  $("e-supprimer").onclick = () => { if(!confirm(`Supprimer l'énigme ${e.id} ?`)) return; liste.splice(sel.e, 1); sel = null; rendreArbre(); $("editeur").innerHTML = `<p class="aide">Énigme supprimée.</p>`; };
+  controlesEnigme();
+}
+function controlesEnigme(){
+  if(!sel || !$("e-controles")) return;
+  const r = controler(DATA.salles[sel.s].enigmes[sel.e], bilanGlobal().ids);
+  $("e-controles").innerHTML = r.err.length || r.av.length
+    ? `<b>Contrôles</b><ul>${r.err.map(x => `<li class="err">✗ ${esc(x)}</li>`).join("")}${r.av.map(x => `<li class="av">⚠ ${esc(x)}</li>`).join("")}</ul>` : `<b class="ok">✔ Énigme complète</b>`;
+}
+$("b-ajouter").addEventListener("click", () => {
+  if(!DATA) return; const s = sel ? sel.s : 0, salle = DATA.salles[s], t = $("nouveau-type").value;
+  const e = { id: `${salle.num}-${salle.enigmes.length + 1}`, titre: "Nouvelle énigme", type: t, consigne: "", commun: clone(MODELES[t]), indices: { cm1: [], cm2: [] } };
+  while(bilanGlobal().ids.has(e.id)) e.id += "b";
+  salle.enigmes.push(e); sel = { s, e: salle.enigmes.length - 1 }; rendreArbre(); rendreEditeur();
+});
+
+/* ---------------- Tester, annuler, enregistrer ---------------- */
+const texteJSON = () => JSON.stringify(DATA, null, 2) + "\n";
+$("b-tester").addEventListener("click", () => {
+  if(!DATA || !jeu) return msg("Choisissez d'abord un jeu dans la liste.", "err");
+  try{ localStorage.setItem("escape_apercu_enigmes_" + jeu, JSON.stringify(DATA)); }catch(e){ return msg("Aperçu impossible : stockage du navigateur indisponible.", "err"); }
+  const s = sel ? DATA.salles[sel.s] : DATA.salles[0], e = sel ? DATA.salles[sel.s].enigmes[sel.e] : null;
+  const niv = e && e.niveaux && e.niveaux.length === 1 ? e.niveaux[0] : "CM2";
+  const rang = e ? s.enigmes.filter(x => niveauxDe(x).includes(niv)).indexOf(e) + 1 : 1;
+  window.open(`${jeu}/?salle=${s.num}&niveau=${niv}&enigme=${Math.max(1, rang)}&apercu=1`, "_blank");
+});
+$("b-annuler").addEventListener("click", () => { if(ORIGINE && confirm("Annuler toutes les modifications depuis l'ouverture du fichier ?")){ DATA = clone(ORIGINE); sel = null; rendreArbre(); $("editeur").innerHTML = ""; msg("Modifications annulées."); } });
+function pret(){ const b = bilanGlobal(); if(b.nErr){ msg(`⚠️ ${b.nErr} erreur(s) : corrigez-les d'abord (liste à gauche).`, "err"); return false; } return true; }
+$("b-telecharger").addEventListener("click", () => {
+  if(!DATA || !pret()) return;
+  window.__dernierExport = { nom: "enigmes.json", contenu: texteJSON() };
+  try{ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([texteJSON()], { type: "application/json" })); a.download = "enigmes.json"; document.body.appendChild(a); a.click(); a.remove(); }catch(e){}
+  msg(`Fichier téléchargé : déposez-le dans <b>${esc(jeu || "le jeu")}/assets/data/</b> (il remplace l'ancien), puis publiez.`, "ok");
+});
+$("b-enregistrer").addEventListener("click", async () => {
+  if(!DATA || !jeu || !pret()) return;
+  try{
+    const r = await fetch("/api/enigmes", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ jeu, contenu: texteJSON() }) });
+    const d = await r.json();
+    if(r.ok && d.ok){ ORIGINE = clone(DATA); msg(`✔ Enregistré dans ${esc(jeu)}/assets/data/enigmes.json (ancienne version gardée : ${esc(d.sauvegarde || "")}).`, "ok"); }
+    else msg("Enregistrement refusé : " + esc(d.erreur || r.status), "err");
+  }catch(e){ msg("Serveur local introuvable : téléchargez le fichier à la place.", "err"); }
+});
+fetch("/api/info", { cache: "no-store" }).then(r => { if(r.ok) $("b-enregistrer").hidden = false; }).catch(() => {});
+window.addEventListener("beforeunload", ev => { if(DATA && ORIGINE && JSON.stringify(DATA) !== JSON.stringify(ORIGINE)){ ev.preventDefault(); ev.returnValue = ""; } });
+const q = new URLSearchParams(location.search).get("jeu");
+if(q && JEUX.includes(q)){ $("choix-jeu").value = q; ouvrirJeu(q); }
+window.EDITEUR = { get DATA(){ return DATA; }, controler, bilanGlobal, ouvrirJeu, texteJSON, choisir: (s, e) => { sel = { s, e }; rendreArbre(); rendreEditeur(); } };
+</script>
+</body>
+</html>

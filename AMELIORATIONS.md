@@ -176,7 +176,7 @@ Chaque README promet déjà « aucune énigme écrite en dur » et un contenu
 entièrement en JSON — mais modifier `enigmes.json` suppose encore d'éditer du
 JSON à la main. Une petite interface locale qui édite ce JSON visuellement
 tiendrait complètement cette promesse.
-**Jeux concernés :** tous · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** L · **Statut :** Fait
 
 ### D5 — Export des résultats vers un tableur ou vers Schooly
 Centraliser les scores de la classe sur l'année (aujourd'hui uniquement des

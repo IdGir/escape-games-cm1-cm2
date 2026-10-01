@@ -59,6 +59,15 @@
   const origine = window.chargerDonnees;
   window.chargerDonnees = async function(){
     const res = await origine.apply(this, arguments);
+    /* Aperçu depuis l'éditeur d'énigmes (editeur.html, D4) : ?apercu=1 joue la version
+       en cours d'édition, gardée dans le navigateur, sans rien enregistrer. */
+    if(new URLSearchParams(location.search).get("apercu") === "1"){
+      try{
+        const a = JSON.parse(localStorage.getItem("escape_apercu_enigmes_" + JEU.id) || "null");
+        if(a && Array.isArray(a.salles)){ ENIGMES = a; window.APERCU_EDITEUR = true;
+          setTimeout(() => { if(typeof toast === "function") toast("✏️ Aperçu de l'éditeur d'énigmes : rien n'est enregistré"); }, 400); }
+      }catch(e){}
+    }
     if(typeof ENIGMES !== "undefined" && ENIGMES) appliquer(ENIGMES);
     return res;
   };

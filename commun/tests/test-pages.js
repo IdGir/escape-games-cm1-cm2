@@ -163,7 +163,7 @@ SECTIONS.F1 = async () => {
   ok(!d.getElementById("aucun").hidden, "aucun résultat : message");
   const fs = require("fs"), path = require("path");
   const liens = [...d.querySelectorAll("#faq a[href]")].map(a => a.getAttribute("href")).filter(h => !/^https?:/.test(h));
-  const morts = liens.filter(h => !fs.existsSync(path.join(RACINE, h.split("?")[0])) && h !== "editeur.html");
+  const morts = liens.filter(h => !fs.existsSync(path.join(RACINE, h.split("?")[0])));
   ok(!morts.length, "liens internes valides " + morts.join(", "));
   const accueil = await charger(RACINE, "", { page: "index.html" });
   ok(!!accueil.w.document.querySelector('a[href="faq.html"]'), "lien depuis l'accueil");
@@ -187,6 +187,49 @@ SECTIONS.F4 = async () => {
   D.montrer(8); D.montrer(D.etat.i + 1);
   ok(D.etat.i === 0, "la boucle repart au premier jeu");
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
+SECTIONS.D4 = async () => {
+  console.log("\n== D4 : éditeur d'énigmes (editeur.html) ==");
+  const path = require("path");
+  for (const j of ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution"]) {
+    const { w, erreurs } = await charger(RACINE, "?jeu=" + j, { page: "editeur.html", attente: 600 });
+    await attendreQue(() => w.document.querySelectorAll("#arbre .item").length, 3000);
+    const E = w.EDITEUR, b = E.bilanGlobal();
+    ok(w.document.querySelectorAll("#arbre .item").length === 20 && b.nErr === 0, `${j} : 20 énigmes ouvertes, aucune erreur signalée sur le jeu publié (${b.nErr})`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  const { w, erreurs } = await charger(RACINE, "?jeu=melanges", { page: "editeur.html", attente: 600 });
+  await attendreQue(() => w.document.querySelectorAll("#arbre .item").length, 3000);
+  const d = w.document, E = w.EDITEUR;
+  const iq = E.DATA.salles[0].enigmes.findIndex(e => e.type === "qcm");
+  E.choisir(0, iq);
+  const titre = d.querySelector("#e-corps input[type=text]:nth-of-type(1)");
+  const champs = [...d.querySelectorAll("#e-corps label.champ")];
+  const champTitre = champs.find(l => /^Titre/.test(l.textContent)).querySelector("input");
+  champTitre.value = "Deux balances (modifié)"; champTitre.dispatchEvent(new w.Event("input"));
+  ok(E.DATA.salles[0].enigmes[iq].titre === "Deux balances (modifié)", "un champ modifié change le fichier");
+  const q0 = (E.DATA.salles[0].enigmes[iq].commun || E.DATA.salles[0].enigmes[iq].cm2 || E.DATA.salles[0].enigmes[iq].cm1).questions[0];
+  q0.bonne = 99;
+  ok(E.controler(E.DATA.salles[0].enigmes[iq]).err.some(x => /bonne réponse non choisie/.test(x)), "contrôle : bonne réponse hors des choix");
+  q0.bonne = 0;
+  d.getElementById("nouveau-type").value = "intrus"; d.getElementById("b-ajouter").click();
+  const n = E.DATA.salles[0].enigmes[E.DATA.salles[0].enigmes.length - 1];
+  ok(n.type === "intrus" && E.controler(n).err.length > 0, "nouvelle énigme « intrus » ajoutée, à compléter (contrôles)");
+  ok(E.bilanGlobal().lignes.some(l => /4 énigmes en CM1, 5 en CM2/.test(l)), "bilan : nombre d'énigmes par niveau signalé");
+  d.getElementById("b-telecharger").click();
+  ok(!w.__dernierExport, "téléchargement refusé tant qu'il reste des erreurs");
+  E.DATA.salles[0].enigmes.pop();
+  d.getElementById("b-telecharger").click();
+  ok(w.__dernierExport && JSON.parse(w.__dernierExport.contenu).salles.length === 5, "téléchargement d'un enigmes.json valide");
+  // aperçu dans le jeu
+  d.getElementById("b-tester").click();
+  const stock = w.localStorage.getItem("escape_apercu_enigmes_melanges");
+  const jeu = await charger(path.join(RACINE, "melanges"), "?salle=1&niveau=CM2&apercu=1", { stockage: { escape_apercu_enigmes_melanges: stock } });
+  ok(jeu.w.salleEnigmes(1).some(e => e.titre === "Deux balances (modifié)") && jeu.w.APERCU_EDITEUR, "« Tester dans le jeu » : le jeu joue la version modifiée");
+  const sans = await charger(path.join(RACINE, "melanges"), "?salle=1&niveau=CM2", { stockage: { escape_apercu_enigmes_melanges: stock } });
+  ok(!sans.w.salleEnigmes(1).some(e => e.titre === "Deux balances (modifié)"), "sans ?apercu=1 : le jeu publié reste intact");
+  ok(erreurs.length === 0 && jeu.erreurs.length === 0, "erreurs JS : " + erreurs.concat(jeu.erreurs).join(" | "));
 };
 
 module.exports = { SECTIONS, avecEquipes };
