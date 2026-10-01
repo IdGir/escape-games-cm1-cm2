@@ -135,7 +135,7 @@ Chaque `GUIDE-PEDAGOGIQUE.md` contient déjà une grille d'observation par jeu,
 mais rien ne cumule ces grilles d'un jeu à l'autre. Un passeport élève qui
 additionne les compétences validées jeu après jeu rendrait la progression
 individuelle visible sur l'année, pas seulement jeu par jeu.
-**Jeux concernés :** tous · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** L · **Statut :** Fait
 
 ### C4 — Liens « jeu précédent / suivant » affichés dans le jeu
 Le lien entre `declaration` et `constitution` (« suite directe ») n'existe

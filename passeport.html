@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passeport de compétences — Escape games CM1 · CM2</title>
+<!--
+  PASSEPORT DE COMPÉTENCES CUMULÉ SUR L'ANNÉE (amélioration C3) — page enseignant
+  Chaque GUIDE-PEDAGOGIQUE.md propose une grille d'observation par jeu ; ce passeport
+  les cumule d'un jeu à l'autre, pour chaque élève : les compétences du programme de
+  chaque leçon (lecons-a4.json des jeux publiés), notées Non acquis / En cours / Acquis.
+  Les données restent sur cet appareil (navigateur) : exporter régulièrement (💾).
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--n:#b91c1c;--e:#b45309;--a:#15803d}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main{max-width:1150px;margin:0 auto;padding:0 20px}
+  header{padding-top:22px} h1{margin:0;font-size:1.6rem} header p{margin:4px 0 0;color:var(--doux)}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .ligne{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+  button,select,textarea,input{font:inherit}
+  button,select{padding:6px 12px;border-radius:9px;border:1px solid var(--ligne);background:#fff;cursor:pointer}
+  button.principal{background:var(--encre);color:#fff;border-color:var(--encre)}
+  textarea{width:100%;min-height:80px;padding:8px;border-radius:9px;border:1px solid var(--ligne)}
+  .jeu{margin-top:14px} .jeu h3{margin:0 0 4px;font-size:1.02rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .jeu h3 .resultat{font-size:.8rem;font-weight:500;color:var(--doux)}
+  .comp{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:5px 0;border-top:1px dashed var(--ligne)}
+  .etats{display:inline-flex;border:1px solid var(--ligne);border-radius:999px;overflow:hidden}
+  .etats button{border:none;border-radius:0;padding:4px 10px;font-size:.82rem;background:#fff}
+  .etats button[aria-pressed="true"][data-v="N"]{background:var(--n);color:#fff}
+  .etats button[aria-pressed="true"][data-v="E"]{background:var(--e);color:#fff}
+  .etats button[aria-pressed="true"][data-v="A"]{background:var(--a);color:#fff}
+  .jauges{display:flex;flex-wrap:wrap;gap:10px}
+  .jauge{flex:1;min-width:180px;border:1px solid var(--ligne);border-radius:10px;padding:8px 10px}
+  .jauge .barre{height:9px;border-radius:999px;background:#eee;overflow:hidden;display:flex;margin-top:4px}
+  .jauge .barre span{display:block;height:100%}
+  table.classe{border-collapse:collapse;width:100%;font-size:.86rem} table.classe th,table.classe td{border:1px solid var(--ligne);padding:4px 6px;text-align:center}
+  table.classe th:first-child,table.classe td:first-child{text-align:left}
+  .aide{color:var(--doux);font-size:.88rem}
+  .impression{display:none}
+  @media print{
+    body{background:#fff;font-size:10pt} header,main{display:none} .impression{display:block}
+    .fiche{page-break-after:always;padding:10mm 12mm} .fiche h1{font-size:16pt;margin:0}
+    .fiche table{width:100%;border-collapse:collapse;font-size:9pt;margin-top:6px} .fiche td,.fiche th{border:1px solid #bbb;padding:3px 5px;text-align:left}
+    @page{size:A4 portrait;margin:8mm}
+  }
+</style>
+</head>
+<body>
+<header>
+  <p><a href="index.html">← Accueil des jeux</a> · <a href="resultats.html">📊 Résultats</a> · <a href="annee.html">📅 L'année</a></p>
+  <h1>🎓 Passeport de compétences</h1>
+  <p>Les compétences du programme travaillées dans les escape games, cumulées jeu après jeu pour chaque élève, sur toute l'année.</p>
+</header>
+<main>
+  <section class="bloc">
+    <h2 style="margin:0 0 6px;font-size:1.05rem">1. La classe</h2>
+    <p class="aide">Un prénom (et l'initiale du nom) par ligne. Les données restent dans ce navigateur, sur cet appareil : pensez à exporter (💾) pour les garder ou les transférer.</p>
+    <textarea id="liste-eleves" placeholder="Léa B.&#10;Tom R.&#10;Inès M."></textarea>
+    <div class="ligne"><button class="principal" id="btn-eleves">✔ Enregistrer la liste</button><span id="msg" class="aide"></span></div>
+  </section>
+
+  <section class="bloc">
+    <div class="ligne">
+      <label>Élève <select id="choix-eleve"></select></label>
+      <label>Afficher <select id="choix-vue"><option value="eleve">le passeport de l'élève</option><option value="classe">la vue de la classe</option></select></label>
+      <button id="btn-imprimer">🖨️ Imprimer les passeports</button>
+      <button id="btn-export">💾 Exporter (JSON)</button>
+      <label class="aide" style="cursor:pointer;text-decoration:underline">📂 Importer<input type="file" id="fichier" accept=".json" hidden></label>
+      <button id="btn-csv">📄 CSV (tableur, Schooly)</button>
+    </div>
+    <div id="vue"></div>
+  </section>
+</main>
+<div class="impression" id="impression"></div>
+
+<script src="commun/donnees/catalogue.js?c2"></script>
+<script>
+"use strict";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const CLE = "escape_passeport";
+const LIB = { N: "Non acquis", E: "En cours", A: "Acquis" };
+let D = { eleves: [], notes: {} };            // notes[eleve][cle] = {v:"N|E|A", date}
+try{ D = Object.assign(D, JSON.parse(localStorage.getItem(CLE) || "{}")); }catch(e){}
+const sauver = () => { try{ localStorage.setItem(CLE, JSON.stringify(D)); }catch(e){ msg("Impossible d'enregistrer dans ce navigateur."); } };
+const msg = t => { document.getElementById("msg").textContent = t; };
+
+/* Compétences : une par leçon de chaque jeu publié, dans l'ordre de la progression */
+let COMPETENCES = [];   // {cle, jeu, titre, matiere, icone, rang, texte}
+async function chargerCompetences(){
+  const jeux = CATALOGUE.jeux.filter(j => j.dossier)
+    .sort((a, b) => ((a.periodes[0] || "P9") > (b.periodes[0] || "P9")) - ((a.periodes[0] || "P9") < (b.periodes[0] || "P9")) || (parseInt(a.num, 10) || 99) - (parseInt(b.num, 10) || 99));
+  const liste = [];
+  for(const j of jeux){
+    let comps = [j.competences];
+    try{ const r = await fetch(`${j.dossier}/assets/data/lecons-a4.json`); if(r.ok) comps = Object.values((await r.json()).lecons || {}).map(l => l.competence).filter(Boolean); }catch(e){}
+    comps.forEach((t, i) => liste.push({ cle: `${j.dossier}|${i + 1}`, jeu: j.dossier, titre: j.titre, matiere: j.matiere, icone: j.icone, couleur: j.couleurs[0], rang: i + 1,
+      texte: (j.seancesParPeriode ? `Séance ${i + 1} : ` : "") + t }));
+  }
+  COMPETENCES = liste;
+}
+/* Résultats des parties (D5) : rappel « joué, xx % » à côté de chaque jeu */
+function resultatsDe(eleve, jeu){
+  let h = []; try{ h = JSON.parse(localStorage.getItem("escape_resultats") || "[]"); }catch(e){}
+  return h.filter(r => r.jeu === jeu && r.termine && r.scoreMax && String(r.eleve).trim().toLowerCase() === eleve.trim().toLowerCase());
+}
+function bilan(eleve){
+  const n = D.notes[eleve] || {}, par = {};
+  COMPETENCES.forEach(c => { const m = par[c.matiere] || (par[c.matiere] = { N: 0, E: 0, A: 0, total: 0 }); m.total++; if(n[c.cle]) m[n[c.cle].v]++; });
+  return par;
+}
+function jauges(eleve){
+  return `<div class="jauges">${Object.entries(bilan(eleve)).map(([m, x]) => `<div class="jauge"><b>${esc(m)}</b> — ${x.A} acquise${x.A > 1 ? "s" : ""} sur ${x.total}
+    <div class="barre"><span style="width:${100 * x.A / x.total}%;background:var(--a)"></span><span style="width:${100 * x.E / x.total}%;background:var(--e)"></span><span style="width:${100 * x.N / x.total}%;background:var(--n)"></span></div></div>`).join("")}</div>`;
+}
+function vueEleve(eleve){
+  if(!eleve) return `<p class="aide">Enregistrez d'abord la liste de la classe.</p>`;
+  const n = D.notes[eleve] || {};
+  let h = jauges(eleve), jeuCourant = null;
+  for(const c of COMPETENCES){
+    if(c.jeu !== jeuCourant){
+      if(jeuCourant) h += `</div>`;
+      jeuCourant = c.jeu;
+      const r = resultatsDe(eleve, c.jeu);
+      h += `<div class="jeu"><h3><span>${esc(c.icone)} ${esc(c.titre)}</span><span class="resultat">${esc(c.matiere)}${r.length ? ` · 🎲 joué ${r.length} fois, meilleur score ${Math.max(...r.map(x => Math.round(100 * x.score / x.scoreMax)))} %` : ""}</span></h3>`;
+    }
+    const v = n[c.cle] ? n[c.cle].v : "";
+    h += `<div class="comp"><span>${esc(c.texte)}</span><span class="etats" data-cle="${esc(c.cle)}">${["N", "E", "A"].map(x =>
+      `<button type="button" data-v="${x}" aria-pressed="${v === x}" title="${LIB[x]}">${LIB[x]}</button>`).join("")}</span></div>`;
+  }
+  return h + (jeuCourant ? "</div>" : "");
+}
+function vueClasse(){
+  const jeux = [...new Set(COMPETENCES.map(c => c.jeu))];
+  const info = j => COMPETENCES.find(c => c.jeu === j);
+  return `<div style="overflow-x:auto;margin-top:10px"><table class="classe"><tr><th>Élève</th>${jeux.map(j => `<th title="${esc(info(j).titre)}">${esc(info(j).icone)}</th>`).join("")}<th>Total acquis</th></tr>
+    ${D.eleves.map(e => { const n = D.notes[e] || {}; let tot = 0;
+      return `<tr><td>${esc(e)}</td>${jeux.map(j => { const cs = COMPETENCES.filter(c => c.jeu === j); const a = cs.filter(c => n[c.cle] && n[c.cle].v === "A").length; tot += a;
+        return `<td>${cs.some(c => n[c.cle]) ? `${a}/${cs.length}` : "—"}</td>`; }).join("")}<td><b>${tot}</b> / ${COMPETENCES.length}</td></tr>`; }).join("")}</table></div>
+    <p class="aide">Chaque case : compétences acquises sur le nombre de compétences du jeu (une par leçon).</p>`;
+}
+function rendre(){
+  const sel = document.getElementById("choix-eleve"), garde = sel.value;
+  sel.innerHTML = D.eleves.map(e => `<option>${esc(e)}</option>`).join("");
+  if(D.eleves.includes(garde)) sel.value = garde;
+  document.getElementById("liste-eleves").value = D.eleves.join("\n");
+  const vue = document.getElementById("choix-vue").value;
+  document.getElementById("vue").innerHTML = vue === "classe" ? vueClasse() : vueEleve(sel.value);
+}
+document.getElementById("vue").addEventListener("click", e => {
+  const b = e.target.closest(".etats button"); if(!b) return;
+  const eleve = document.getElementById("choix-eleve").value, cle = b.parentNode.dataset.cle;
+  D.notes[eleve] = D.notes[eleve] || {};
+  if(D.notes[eleve][cle] && D.notes[eleve][cle].v === b.dataset.v) delete D.notes[eleve][cle];      // second clic : on efface
+  else D.notes[eleve][cle] = { v: b.dataset.v, date: new Date().toISOString().slice(0, 10) };
+  sauver(); rendre();
+});
+document.getElementById("btn-eleves").addEventListener("click", () => {
+  const l = [...new Set(document.getElementById("liste-eleves").value.split("\n").map(x => x.trim()).filter(Boolean))];
+  const retires = D.eleves.filter(e => !l.includes(e) && D.notes[e] && Object.keys(D.notes[e]).length);
+  if(retires.length && !confirm(`Retirer ${retires.join(", ")} et leurs évaluations ?`)) return;
+  retires.forEach(e => delete D.notes[e]);
+  D.eleves = l; sauver(); rendre(); msg(`${l.length} élève(s) enregistré(s).`);
+});
+["choix-eleve", "choix-vue"].forEach(id => document.getElementById(id).addEventListener("change", rendre));
+function telecharger(nom, contenu, type){
+  window.__dernierExport = { nom, contenu };
+  try{ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([contenu], { type })); a.download = nom; document.body.appendChild(a); a.click(); a.remove(); }catch(e){}
+}
+document.getElementById("btn-export").addEventListener("click", () => telecharger(`passeport-competences-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(D, null, 1), "application/json"));
+document.getElementById("fichier").addEventListener("change", async e => {
+  try{ const o = JSON.parse(await e.target.files[0].text()); if(!Array.isArray(o.eleves) || typeof o.notes !== "object") throw 0;
+    if(!confirm("Remplacer le passeport de cet appareil par celui du fichier ?")) return; D = o; sauver(); rendre(); msg("Passeport importé."); }
+  catch(x){ msg("Fichier illisible : choisissez un export du passeport (.json)."); }
+});
+document.getElementById("btn-csv").addEventListener("click", () => {
+  const c = v => /[;"\n]/.test(String(v)) ? '"' + String(v).replace(/"/g, '""') + '"' : String(v);
+  const l = [["eleve", "matiere", "jeu", "competence", "etat", "date"]];
+  D.eleves.forEach(e => COMPETENCES.forEach(k => { const n = (D.notes[e] || {})[k.cle]; if(n) l.push([e, k.matiere, k.titre, k.texte, LIB[n.v], n.date]); }));
+  telecharger(`passeport-competences-${new Date().toISOString().slice(0, 10)}.csv`, "﻿" + l.map(r => r.map(c).join(";")).join("\r\n"), "text/csv;charset=utf-8");
+});
+document.getElementById("btn-imprimer").addEventListener("click", () => {
+  document.getElementById("impression").innerHTML = D.eleves.map(e => { const n = D.notes[e] || {};
+    return `<section class="fiche"><h1>🎓 Passeport de compétences — ${esc(e)}</h1><p>Escape games CM1-CM2 · année ${new Date().getFullYear()}</p>${jauges(e)}
+      <table><tr><th>Jeu</th><th>Compétence du programme</th><th>État</th></tr>${COMPETENCES.map(c => `<tr><td>${esc(c.titre)}</td><td>${esc(c.texte)}</td><td>${n[c.cle] ? LIB[n[c.cle].v] : ""}</td></tr>`).join("")}</table></section>`; }).join("");
+  window.print();
+});
+rendre();
+chargerCompetences().then(rendre);
+window.PASSEPORT = { get D(){ return D; }, get COMPETENCES(){ return COMPETENCES; }, rendre };
+</script>
+</body>
+</html>

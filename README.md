@@ -86,6 +86,14 @@ comptes-rendus envoyés par les élèves en mode individuel (fichiers déposés 
 contrôle). Exports : **tableur** (CSV pour Excel/LibreOffice), **Schooly** (CSV, une ligne par élève et par
 partie), sauvegarde JSON. Rien n'est envoyé sur internet.
 
+## 1 ter. Le passeport de compétences : passeport.html
+
+**[passeport.html](https://idgir.github.io/escape-games-cm1-cm2/passeport.html)** cumule, pour chaque élève et
+sur toute l'année, les compétences du programme travaillées dans les escape games (une par leçon de chaque jeu
+publié) : *Non acquis / En cours / Acquis*, avec une jauge par matière, une vue de la classe, l'impression
+d'un passeport par élève et un export CSV (tableur, Schooly). Les données restent dans le navigateur de
+l'appareil : exportez-les régulièrement (💾).
+
 ## 2. Tout vérifier : la page de vérification
 
 **[verifier.html](https://idgir.github.io/escape-games-cm1-cm2/verifier.html)** —

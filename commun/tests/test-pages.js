@@ -125,6 +125,30 @@ SECTIONS.C5 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+SECTIONS.C3 = async () => {
+  console.log("\n== C3 : passeport de compétences (passeport.html) ==");
+  const hist = JSON.stringify([{ type: "escape-game-compte-rendu", jeu: "melanges", eleve: "Léa B.", termine: true, score: 200, scoreMax: 235 }]);
+  const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200, stockage: { escape_resultats: hist } });
+  const d = w.document, P = w.PASSEPORT;
+  ok(P.COMPETENCES.length === 5 * 6 + 8 + 6 + 16, `compétences des 9 jeux publiés, une par leçon (${P.COMPETENCES.length})`);
+  d.getElementById("liste-eleves").value = "Léa B.\nTom R.\n\nLéa B.";
+  d.getElementById("btn-eleves").click();
+  ok(P.D.eleves.join(",") === "Léa B.,Tom R.", "liste de la classe (doublons et lignes vides ignorés)");
+  const btn = (cle, v) => d.querySelector(`.etats[data-cle="${cle}"] button[data-v="${v}"]`);
+  btn("melanges|1", "A").click(); btn("melanges|2", "E").click(); btn("chateau-fort|1", "N").click();
+  ok(P.D.notes["Léa B."]["melanges|1"].v === "A" && P.D.notes["Léa B."]["melanges|2"].v === "E", "évaluations enregistrées");
+  ok(JSON.parse(w.localStorage.getItem("escape_passeport")).notes["Léa B."]["chateau-fort|1"].v === "N", "gardé sur l'appareil");
+  btn("melanges|2", "E").click();
+  ok(!P.D.notes["Léa B."]["melanges|2"], "second clic : évaluation effacée");
+  ok(/joué 1 fois, meilleur score 85 %/.test(d.getElementById("vue").textContent), "rappel des résultats de l'élève (D5)");
+  ok(/Sciences<\/b> — 1 acquise sur/.test(d.getElementById("vue").innerHTML), "jauge par matière (cumul)");
+  const v = d.getElementById("choix-vue"); v.value = "classe"; v.dispatchEvent(new w.Event("change"));
+  ok(d.querySelectorAll("table.classe tr").length === 3 && d.querySelector("table.classe").innerHTML.includes(`<b>1</b> / ${P.COMPETENCES.length}`), "vue de la classe : total cumulé");
+  d.getElementById("btn-csv").click();
+  ok(w.__dernierExport.contenu.split("\r\n").length === 3 && /Léa B\.;Sciences;Le Laboratoire de Madame Mélange;.*;Acquis;/.test(w.__dernierExport.contenu), "export CSV (tableur, Schooly)");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
