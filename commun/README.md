@@ -32,6 +32,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/indices-adaptatifs.js` | E3 — un indice est proposé (jamais imposé) après un temps sans action ou 2 essais faux ; réglable dans ⚙️ | les 8 jeux « salles » |
 | `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 8 jeux « salles » |
 | `js/jeu-suivant.js` | C4 — « Et ensuite ? » à l'écran de fin : suite directe (Déclaration → Constitution) ou jeu précédent/suivant de la progression | les 8 jeux « salles » |
+| `js/variantes.js` | D3 — banque d'énigmes : une énigme peut avoir des `variantes` dans `enigmes.json` ; la série jouée change à chaque année scolaire (ou se choisit dans ⚙️) | les 6 jeux à moteur commun |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres
@@ -66,3 +67,11 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 
 Un nouveau texte propre à un jeu ne s'écrit jamais dans `commun/` : on ajoute un champ dans `JEU`
 (avec une valeur par défaut dans le module commun) et on le remplit dans chaque `js/jeu.js`.
+
+## Écrire des variantes d'une énigme (banque d'énigmes, D3)
+
+Dans `assets/data/enigmes.json`, ajouter à l'énigme un tableau `variantes`. Chaque variante ne contient
+que les champs qui changent (`cm1`, `cm2`, `commun`, `consigne`, `indices`, `correction`…) ; le type, la
+compétence et la leçon restent ceux de l'énigme. Exemple : `melanges`, énigmes 1-3 et 2-4 (calculs de
+masses). Règles : même difficulté, faits vérifiés comme pour l'énigme d'origine, corrigé à jour.
+Tester une série : `…/?salle=1&niveau=CM1&enigme=3&serie=1`. Les corrigés imprimés suivent la série jouée.

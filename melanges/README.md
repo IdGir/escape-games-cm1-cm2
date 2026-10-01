@@ -527,3 +527,17 @@ melanges/
 └── js/            app (moteur), enigmes (les 10 types), decors, personnages, media,
                    narration, audio, lecons, impression, api, sync, reglages
 ```
+
+
+## 🎲 Banque d'énigmes (variantes)
+
+Les énigmes **1-3** (« Peser un liquide ») et **2-4** (« Le cadenas de la cuisine ») ont deux variantes
+chacune (mêmes calculs, autres masses). La série jouée change à chaque année scolaire : **2026-2027 :
+énigmes d'origine**, 2027-2028 : série 1, 2028-2029 : série 2. On peut la choisir dans ⚙️ Réglages →
+🎲 Banque d'énigmes (même réglage sur tous les postes).
+
+| Énigme | Série 1 | Série 2 |
+|---|---|---|
+| 1-3 CM1 | 280 · 650 | 320 · 850 |
+| 1-3 CM2 | 270 · 920 · 90 | 180 · 920 · 85 |
+| 2-4 CM2 | 275 · 220 · 25 | 440 · 270 · 40 |

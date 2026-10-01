@@ -1000,7 +1000,7 @@ function rendre(){
    ============================================================ */
 const COH_JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort"];
 const COH_COMMUN_6 = ["constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort"];
-const COH_MODULES = ["media", "audio", "narration", "api", "sync", "fiche-mission", "enigmes", "impression", "transitions", "accessibilite", "palier-decouverte", "indices-adaptatifs", "minuteur-equipe", "jeu-suivant"];
+const COH_MODULES = ["media", "audio", "narration", "api", "sync", "fiche-mission", "enigmes", "impression", "transitions", "accessibilite", "palier-decouverte", "indices-adaptatifs", "minuteur-equipe", "jeu-suivant", "variantes"];
 const COH_PROPRES = ["app", "reglages", "lecons", "decors", "personnages"];
 const COH_CHAMPS = ["id", "titre", "voix", "voixFeminines", "ambiances", "ia"];
 const COH_CHAMPS_6 = ["enigmes", "impression"];
@@ -1018,7 +1018,7 @@ async function analyserCoherence(){
     const html = await texte(j + "/index.html");
     const scripts = html ? [...html.matchAll(/<script src="([^"]+)"/g)].map(m => m[1]) : [];
     const info = { html: !!html, scripts, modules: {}, locales: [], jeuJs: null, champsManquants: [], propres: {} };
-    const attendus = COH_MODULES.filter(m => COH_COMMUN_6.includes(j) || !["enigmes", "impression"].includes(m));
+    const attendus = COH_MODULES.filter(m => COH_COMMUN_6.includes(j) || !["enigmes", "impression", "variantes"].includes(m));
     for(const m of attendus){
       const s = scripts.find(x => new RegExp("(^|/)" + m + "\\.js(\\?|$)").test(x));
       const commun = !!s && s.startsWith("../commun/js/");

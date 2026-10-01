@@ -16,7 +16,7 @@ function disque(){
   console.log("\n== Tronc commun sur le disque ==");
   for (const j of JEUX8.concat(["mission-geo"])) {
     const locaux = COMMUNS.filter(f => fs.existsSync(path.join(RACINE, j, "js", f))
-      && !(["enigmes.js", "impression.js"].includes(f) && ["declaration", "tour-du-monde"].includes(j))
+      && !(["enigmes.js", "impression.js", "variantes.js"].includes(f) && ["declaration", "tour-du-monde"].includes(j))
       && !(j === "mission-geo" && f !== "lecons-a4.js"));
     ok(!locaux.length, `${j} : pas de copie locale d'un module commun (${locaux.join(", ")})`);
     if (j === "mission-geo") continue;

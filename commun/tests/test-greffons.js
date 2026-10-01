@@ -179,6 +179,41 @@ SECTIONS.C4 = async () => {
   ok(!t.w.document.querySelector(".encart-suite"), "tour-du-monde (jeu libre, hors progression) : pas d'encart");
 };
 
+/* ---- D3 : banque d'énigmes à variantes ---- */
+SECTIONS.D3 = async () => {
+  console.log("\n== D3 : variantes d'énigmes ==");
+  const lib = (w, id) => [...w.document.querySelectorAll(`#enigme-${id} label, #enigme-${id} .code-libelle, #enigme-${id} .champ-code`)].map(x => x.textContent).join(" | ");
+  const resoudreCode = async (w, e) => {
+    const d = w.donneesNiveau(e);
+    d.champs.forEach((c, i) => { w.document.querySelector("#code-" + i).value = c.valeur; });
+    w.document.querySelector(`#enigme-${e.id} [data-valider]`).click(); await dodo(30);
+    return w.document.getElementById("enigme-" + e.id).classList.contains("resolue");
+  };
+  const a = await charger(J("melanges"), "?salle=1&niveau=CM1&enigme=3&serie=0");
+  const e0 = a.w.salleEnigmes(1)[2];
+  ok(e0.id === "1-3" && e0._serie === 0 && a.w.donneesNiveau(e0).champs[0].valeur === "250", "série 0 : énigme d'origine (250)");
+  for (const s of [1, 2]) {
+    const { w, erreurs } = await charger(J("melanges"), `?salle=1&niveau=CM1&enigme=3&serie=${s}`);
+    const e = w.salleEnigmes(1)[2];
+    ok(e._serie === s && w.donneesNiveau(e).champs[0].valeur !== "250", `série ${s} : variante jouée (${w.donneesNiveau(e).champs.map(c => c.valeur).join(", ")})`);
+    ok(w.document.getElementById("enigme-1-3").textContent.includes(w.donneesNiveau(e).champs[0].libelle), `série ${s} : la carte affiche les données de la variante`);
+    ok(await resoudreCode(w, e), `série ${s} : la variante se résout avec ses propres valeurs`);
+    ok(erreurs.length === 0, `série ${s} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // automatique : la série dépend de l'année scolaire, identique pour tous les postes
+  const b = await charger(J("melanges"), "?salle=2&niveau=CM2&enigme=4");
+  const e24 = b.w.salleEnigmes(2).find(x => x.id === "2-4");
+  const attendu = (b.w.VARIANTES.anneeScolaire() - 2026) % 3;
+  ok(e24._serie === attendu, `automatique : série ${e24._serie} (année scolaire ${b.w.VARIANTES.anneeScolaire()} → ${attendu})`);
+  ok(b.w.VARIANTES.choix({ variantes: [{}, {}] }, { mode: "auto" }) === (b.w.VARIANTES.anneeScolaire() - 2026) % 3 && b.w.VARIANTES.anneeScolaire(new Date(2027, 8, 15)) === 2027 && b.w.VARIANTES.anneeScolaire(new Date(2027, 3, 15)) === 2026, "année scolaire : septembre 2027 → 2027, avril 2027 → 2026");
+  // réglage dans ⚙️
+  b.w.ouvrirReglages(); await dodo(50);
+  ok(!!b.w.document.getElementById("reglages-variantes"), "réglage « Banque d'énigmes » dans ⚙️ Réglages");
+  // jeux sans variantes : rien ne change
+  const c = await charger(J("chateau-fort"), "?salle=1&niveau=CM1");
+  ok(c.w.VARIANTES_APPLIQUEES && c.w.VARIANTES_APPLIQUEES.nb === 0 && c.erreurs.length === 0, "chateau-fort (sans variante) : inchangé");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

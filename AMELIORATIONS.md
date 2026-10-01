@@ -169,7 +169,7 @@ envoyé à l'enseignant, permettrait un usage en dehors de la classe.
 Piocher aléatoirement parmi plusieurs variantes d'une même énigme pour
 permettre de rejouer un jeu d'une année sur l'autre sans que les réponses
 soient déjà connues des élèves (frères et sœurs, redoublants).
-**Jeux concernés :** tous · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** L · **Statut :** Fait
 
 ### D4 — Éditeur graphique (no-code) des énigmes
 Chaque README promet déjà « aucune énigme écrite en dur » et un contenu

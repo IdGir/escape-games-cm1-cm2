@@ -255,7 +255,103 @@
               }
             ]
           },
-          "lecon": "masses"
+          "lecon": "masses",
+          "variantes": [
+            {
+              "cm1": {
+                "champs": [
+                  {
+                    "libelle": "L'eau du bécher (bécher vide 60 g, plein 340 g)",
+                    "valeur": "280",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Le sirop de la bouteille (bouteille vide 450 g, pleine 1 100 g)",
+                    "valeur": "650",
+                    "longueur": 3
+                  }
+                ]
+              },
+              "cm2": {
+                "champs": [
+                  {
+                    "libelle": "L'eau : bécher vide 95 g, bécher plein 365 g",
+                    "valeur": "270",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Un litre d'huile : flacon vide 0,25 kg, flacon plein 1 170 g",
+                    "valeur": "920",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Le sucre : bol vide 140 g, bol avec le sucre 230 g",
+                    "valeur": "90",
+                    "longueur": 3
+                  }
+                ]
+              },
+              "indices": {
+                "cm1": [
+                  "Pour le bécher : 340 − 60.",
+                  "Pour la bouteille : 1 100 − 450.",
+                  "Les deux résultats sont 280 et 650."
+                ],
+                "cm2": [
+                  "Pour l'eau : 365 − 95.",
+                  "Pour l'huile, convertis d'abord : 0,25 kg = 250 g. Puis 1 170 − 250.",
+                  "Pour le sucre : 230 − 140. La balance tarée aurait affiché ce nombre directement."
+                ]
+              }
+            },
+            {
+              "cm1": {
+                "champs": [
+                  {
+                    "libelle": "L'eau du bécher (bécher vide 75 g, plein 395 g)",
+                    "valeur": "320",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Le sirop de la bouteille (bouteille vide 380 g, pleine 1 230 g)",
+                    "valeur": "850",
+                    "longueur": 3
+                  }
+                ]
+              },
+              "cm2": {
+                "champs": [
+                  {
+                    "libelle": "L'eau : bécher vide 110 g, bécher plein 290 g",
+                    "valeur": "180",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Un litre d'huile : flacon vide 0,35 kg, flacon plein 1 270 g",
+                    "valeur": "920",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Le sucre : bol vide 160 g, bol avec le sucre 245 g",
+                    "valeur": "85",
+                    "longueur": 3
+                  }
+                ]
+              },
+              "indices": {
+                "cm1": [
+                  "Pour le bécher : 395 − 75.",
+                  "Pour la bouteille : 1 230 − 380.",
+                  "Les deux résultats sont 320 et 850."
+                ],
+                "cm2": [
+                  "Pour l'eau : 290 − 110.",
+                  "Pour l'huile, convertis d'abord : 0,35 kg = 350 g. Puis 1 270 − 350.",
+                  "Pour le sucre : 245 − 160. La balance tarée aurait affiché ce nombre directement."
+                ]
+              }
+            }
+          ]
         },
         {
           "id": "1-4",
@@ -601,7 +697,67 @@
               }
             ]
           },
-          "lecon": "conservation"
+          "lecon": "conservation",
+          "variantes": [
+            {
+              "commun": {
+                "champs": [
+                  {
+                    "libelle": "250 g d'eau + 25 g de sel, après dissolution",
+                    "valeur": "275",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Bol d'eau sucrée : 380 g. Le bol vide pèse 130 g, le sucre 30 g. Masse de l'eau ?",
+                    "valeur": "220",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "On fait évaporer toute l'eau salée du premier nombre. Masse de sel retrouvée ?",
+                    "valeur": "25",
+                    "longueur": 3
+                  }
+                ]
+              },
+              "indices": {
+                "cm2": [
+                  "Premier nombre : 250 + 25.",
+                  "Deuxième nombre : enlève le bol vide, puis enlève le sucre.",
+                  "Troisième nombre : l'eau part, le sel reste. Combien de sel avait-on mis ?"
+                ]
+              },
+              "correction": "La masse se conserve : 250 g d'eau + 25 g de sel = 275 g d'eau salée. Pour l'eau du bol : 380 − 130 − 30 = 220 g. Et quand toute l'eau s'évapore, on retrouve exactement les 25 g de sel."
+            },
+            {
+              "commun": {
+                "champs": [
+                  {
+                    "libelle": "400 g d'eau + 40 g de sel, après dissolution",
+                    "valeur": "440",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "Bol d'eau sucrée : 465 g. Le bol vide pèse 170 g, le sucre 25 g. Masse de l'eau ?",
+                    "valeur": "270",
+                    "longueur": 3
+                  },
+                  {
+                    "libelle": "On fait évaporer toute l'eau salée du premier nombre. Masse de sel retrouvée ?",
+                    "valeur": "40",
+                    "longueur": 3
+                  }
+                ]
+              },
+              "indices": {
+                "cm2": [
+                  "Premier nombre : 400 + 40.",
+                  "Deuxième nombre : enlève le bol vide, puis enlève le sucre.",
+                  "Troisième nombre : l'eau part, le sel reste. Combien de sel avait-on mis ?"
+                ]
+              },
+              "correction": "La masse se conserve : 400 g d'eau + 40 g de sel = 440 g d'eau salée. Pour l'eau du bol : 465 − 170 − 25 = 270 g. Et quand toute l'eau s'évapore, on retrouve exactement les 40 g de sel."
+            }
+          ]
         }
       ]
     },
