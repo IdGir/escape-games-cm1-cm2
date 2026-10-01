@@ -105,6 +105,26 @@ SECTIONS.C1 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+SECTIONS.C5 = async () => {
+  console.log("\n== C5 : fiche de période (periode.html) ==");
+  const hist = JSON.stringify([{ type: "escape-game-compte-rendu", jeu: "melanges", termine: true, score: 200, scoreMax: 235, total: 20, premierCoup: 16 },
+                               { type: "escape-game-compte-rendu", jeu: "declaration", termine: true, score: 90, scoreMax: 95, total: 5, premierCoup: 5 }]);
+  const { w, erreurs } = await charger(RACINE, "?p=P1&annee=B&public=familles", { page: "periode.html", attente: 800, stockage: { escape_resultats: hist } });
+  const d = w.document;
+  const titres = [...d.querySelectorAll(".jeu h2")].map(h => h.textContent);
+  ok(titres.includes("Le Secret du donjon") && titres.includes("Le Laboratoire de Madame Mélange") && titres.includes("Mission géographique") && titres.length === 3, "P1 Année B : donjon, mélanges, Mission géographique (" + titres.join(", ") + ")");
+  ok(/escape games pédagogiques/.test(d.querySelector(".mot").textContent), "texte pour les familles");
+  ok(/1 partie terminée/.test(d.getElementById("page").textContent) && /85 %/.test(d.getElementById("page").textContent), "chiffres anonymes de la période (1 partie, 85 %)");
+  ok(!/Tom|Léa|équipe/i.test(d.querySelector(".jeux").textContent), "aucun nom d'élève");
+  const s = d.getElementById("choix-public"); s.value = "direction"; s.dispatchEvent(new w.Event("change"));
+  ok(/programmes 2026/.test(d.querySelector(".mot").textContent), "texte pour la direction");
+  const a = d.getElementById("choix-avenir"); a.checked = true; a.dispatchEvent(new w.Event("change"));
+  ok(d.querySelectorAll(".jeu.avenir").length === 0, "P1 : tous les jeux de la période sont déjà publiés");
+  const p = d.getElementById("choix-p"); p.value = "P2"; p.dispatchEvent(new w.Event("change"));
+  ok(d.querySelectorAll(".jeu.avenir").length === 3, "P2 Année B : 3 jeux à venir");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

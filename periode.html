@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiche de période — Escape games CM1 · CM2</title>
+<!--
+  FICHE ONE-PAGE IMPRIMABLE PAR PÉRIODE (amélioration C5)
+  Pour la direction, les familles ou l'inspection : les escape games de la période
+  et les compétences travaillées, sur UNE page A4. Aucun nom d'élève.
+  Adresse : periode.html?p=P1&annee=A&public=familles
+  Les zones en pointillés (classe, enseignant, mot d'accompagnement) se modifient
+  directement à l'écran avant d'imprimer.
+-->
+<style>
+  :root{--encre:#1f2430;--doux:#5d6472;--ligne:#ddd6c8;--accent:#1d3a8a}
+  *{box-sizing:border-box}
+  body{margin:0;background:#e9e5dc;font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--encre)}
+  .barre{max-width:210mm;margin:14px auto;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:.95rem}
+  .barre select,.barre button{font:inherit;padding:6px 10px;border-radius:8px;border:1px solid #c9c2b2;background:#fff}
+  .barre button.principal{background:var(--encre);color:#fff;border-color:var(--encre);cursor:pointer}
+  .page{width:210mm;min-height:297mm;margin:0 auto 30px;background:#fff;padding:14mm 15mm 12mm;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;flex-direction:column}
+  .entete{display:flex;justify-content:space-between;gap:12px;border-bottom:3px solid var(--accent);padding-bottom:6px}
+  .entete h1{margin:0;font-size:20pt;line-height:1.1}
+  .entete .sous{color:var(--doux);font-size:11pt}
+  .entete .droite{text-align:right;font-size:10pt;color:var(--doux)}
+  [contenteditable]{border-bottom:1px dashed #b9b2a2;outline:none;min-width:4em;display:inline-block}
+  [contenteditable]:focus{background:#fffbe6}
+  .mot{margin:8px 0 6px;font-size:11pt}
+  .jeux{display:grid;gap:7px;margin-top:6px}
+  .jeu{display:grid;grid-template-columns:13mm 1fr;gap:3px 10px;border:1px solid var(--ligne);border-radius:8px;padding:7px 9px;break-inside:avoid}
+  .jeu .pastille{width:13mm;height:13mm;border-radius:8px;display:grid;place-items:center;font-size:17pt;color:#fff}
+  .jeu h2{margin:0;font-size:12pt} .jeu .meta{font-size:9pt;color:var(--doux)}
+  .jeu p{margin:2px 0;font-size:10pt}
+  .jeu ul{margin:3px 0 0;padding-left:1.1em;font-size:9.5pt} .jeu li{margin:1px 0}
+  .jeu.avenir{opacity:.6}
+  .chiffres{display:flex;gap:8px;margin-top:8px;font-size:10pt}
+  .chiffres span{border:1px solid var(--ligne);border-radius:8px;padding:4px 8px}
+  .pied{margin-top:auto;padding-top:8px;border-top:1px solid var(--ligne);font-size:8.5pt;color:var(--doux);display:flex;justify-content:space-between;gap:10px}
+  .vide{color:var(--doux);font-style:italic;padding:12px 0}
+  @page{size:A4 portrait;margin:0}
+  @media print{ body{background:#fff} .barre{display:none} .page{box-shadow:none;margin:0} [contenteditable]{border-bottom:none} }
+</style>
+</head>
+<body>
+<div class="barre">
+  <a href="annee.html">← L'année</a>
+  <label>Période <select id="choix-p"><option>P1</option><option>P2</option><option>P3</option><option>P4</option><option>P5</option></select></label>
+  <label>Année <select id="choix-annee"><option value="A">Année A</option><option value="B">Année B</option></select></label>
+  <label>Pour <select id="choix-public"><option value="familles">les familles</option><option value="direction">la direction / l'inspection</option></select></label>
+  <label><input type="checkbox" id="choix-avenir"> montrer les jeux à venir</label>
+  <button class="principal" onclick="window.print()">🖨️ Imprimer (A4)</button>
+</div>
+<article class="page" id="page"></article>
+
+<script src="commun/donnees/catalogue.js?c2"></script>
+<script>
+"use strict";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const q = new URLSearchParams(location.search);
+const etat = {
+  p: /^P[1-5]$/.test(q.get("p") || "") ? q.get("p") : "P1",
+  annee: q.get("annee") === "B" ? "B" : "A",
+  public: q.get("public") === "direction" ? "direction" : "familles",
+  avenir: q.get("avenir") === "1"
+};
+const COMP = {}, LECONS = {};
+async function charger(){
+  await Promise.all(CATALOGUE.jeux.filter(j => j.dossier).map(async j => {
+    try{
+      const a = await fetch(`${j.dossier}/assets/data/lecons-a4.json`); if(a.ok) COMP[j.dossier] = Object.values((await a.json()).lecons || {}).map(l => l.competence).filter(Boolean);
+    }catch(e){}
+  }));
+}
+/* Parties jouées sur cet appareil pour ces jeux (historique des résultats, D5) : chiffres anonymes */
+function chiffres(jeux){
+  let h = []; try { h = JSON.parse(localStorage.getItem("escape_resultats") || "[]"); } catch(e) {}
+  const ids = jeux.map(j => j.dossier).filter(Boolean);
+  const l = h.filter(r => ids.includes(r.jeu) && r.termine && r.scoreMax);
+  if(!l.length) return "";
+  const moy = Math.round(100 * l.reduce((s, r) => s + r.score / r.scoreMax, 0) / l.length);
+  return `<div class="chiffres"><span>🎲 ${l.length} partie${l.length > 1 ? "s" : ""} terminée${l.length > 1 ? "s" : ""}</span><span>📈 réussite moyenne : ${moy} %</span>
+    <span>🎯 énigmes justes du premier coup : ${Math.round(100 * l.reduce((s, r) => s + (r.total ? r.premierCoup / r.total : 0), 0) / l.length)} %</span></div>`;
+}
+function rendre(){
+  ["choix-p", "choix-annee", "choix-public"].forEach((id, i) => document.getElementById(id).value = [etat.p, etat.annee, etat.public][i]);
+  document.getElementById("choix-avenir").checked = etat.avenir;
+  history.replaceState(null, "", `?p=${etat.p}&annee=${etat.annee}&public=${etat.public}${etat.avenir ? "&avenir=1" : ""}`);
+  const C = CATALOGUE;
+  const jeux = C.jeux.filter(j => (j.periodes || []).includes(etat.p) && (j.annee === etat.annee || j.annee === "AB") && (j.dossier || etat.avenir))
+    .sort((a, b) => !!b.dossier - !!a.dossier || (parseInt(a.num, 10) || 99) - (parseInt(b.num, 10) || 99));
+  const familles = etat.public === "familles";
+  const intro = familles
+    ? `Pendant cette période, la classe a travaillé avec des <b>escape games pédagogiques</b> : en équipe, les élèves résolvent des énigmes pour avancer dans une histoire, en s'appuyant sur des leçons. Voici les jeux et ce qu'ils ont permis de travailler.`
+    : `Escape games utilisés en ${etat.p} (${esc(C.periodes[etat.p])}), Année ${etat.annee} de la progression d'histoire-géographie, de sciences et d'EMC du cycle 3 (programmes 2026). Pour chaque jeu : les compétences du programme travaillées, leçon par leçon.`;
+  const carte = j => {
+    let comp = COMP[j.dossier] && COMP[j.dossier].length ? COMP[j.dossier] : [j.competences];
+    if(j.seancesParPeriode && COMP[j.dossier]) comp = (j.seancesParPeriode[etat.p] || []).map(n => `Séance ${n} : ${COMP[j.dossier][n - 1] || ""}`);
+    return `<div class="jeu ${j.dossier ? "" : "avenir"}"><div class="pastille" style="background:${esc(j.couleurs[0])}">${esc(j.icone || "🎲")}</div>
+      <div><h2>${esc(j.titre)}</h2><div class="meta">${esc(j.matiere)}${j.dossier ? "" : " · à venir"}</div>
+      ${familles && j.resume ? `<p>${esc(j.resume)}</p>` : ""}
+      <ul>${comp.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div></div>`;
+  };
+  document.getElementById("page").innerHTML = `
+    <div class="entete"><div><h1>Nos escape games — ${etat.p}</h1>
+      <div class="sous">${esc(C.periodes[etat.p])} · Année ${etat.annee} · CM1-CM2</div></div>
+      <div class="droite">Classe : <span contenteditable="true">………</span><br>Enseignant(e) : <span contenteditable="true">………</span><br>École : <span contenteditable="true">………</span></div></div>
+    <p class="mot">${intro}</p>
+    <div class="jeux">${jeux.map(carte).join("") || `<p class="vide">Aucun escape game publié pour cette période et cette année (cochez « montrer les jeux à venir »).</p>`}</div>
+    ${chiffres(jeux)}
+    <p class="mot" contenteditable="true" style="display:block;margin-top:10px">${familles ? "Mot de l'enseignant(e) : ……………………………………………" : "Observations : ……………………………………………"}</p>
+    <div class="pied"><span>Escape games pédagogiques CM1-CM2 — idgir.github.io/escape-games-cm1-cm2</span><span>Fiche du ${new Date().toLocaleDateString("fr-FR")}</span></div>`;
+}
+document.getElementById("choix-p").addEventListener("change", e => { etat.p = e.target.value; rendre(); });
+document.getElementById("choix-annee").addEventListener("change", e => { etat.annee = e.target.value; rendre(); });
+document.getElementById("choix-public").addEventListener("change", e => { etat.public = e.target.value; rendre(); });
+document.getElementById("choix-avenir").addEventListener("change", e => { etat.avenir = e.target.checked; rendre(); });
+rendre();
+charger().then(rendre);
+window.PERIODE = { rendre, etat };
+</script>
+</body>
+</html>

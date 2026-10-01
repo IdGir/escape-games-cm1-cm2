@@ -148,7 +148,7 @@ progression.
 Une fiche de synthèse par période (P1 à P5) destinée à la communication
 (direction, parents, inspection) : jeux joués, compétences travaillées,
 sans avoir à assembler l'information à la main depuis les guides séparés.
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ---
 

@@ -16,6 +16,7 @@ Neuf escape games d'histoire, de géographie, d'EMC et de sciences, jouables dan
 
 - 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/ — avec la **frise de l'année** : les 26 jeux de la progression sur les périodes P1 à P5 (Années A et B), en couleur ceux qui sont déjà jouables
 - 📅 **L'année en escape games** (périodes, Années A/B, points du programme couverts) : https://idgir.github.io/escape-games-cm1-cm2/annee.html
+- 🗓️ **Fiche de période** (une page A4 pour la direction ou les familles : jeux et compétences travaillées) : https://idgir.github.io/escape-games-cm1-cm2/periode.html?p=P1&annee=A
 - 🔍 **Page de vérification** (énigmes, médias) : https://idgir.github.io/escape-games-cm1-cm2/verifier.html
 - 📖 **Leçons à imprimer** (A4 illustrées, CM1 ou CM2) : depuis ⚙️ Réglages dans chaque jeu — voir la partie 2 bis
 
