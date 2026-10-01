@@ -68,6 +68,15 @@ et `http://127.0.0.1:8000/objets-techniques/prof.html` (le principe est le même
 
 ---
 
+## 1 bis. Les résultats de l'année : resultats.html
+
+**[resultats.html](https://idgir.github.io/escape-games-cm1-cm2/resultats.html)** rassemble les comptes-rendus de
+parties, au lieu de bilans A4 isolés : parties jouées sur l'appareil, parties de la classe gardées par le
+serveur local (`lancer.bat` : fichier `resultats-classe.jsonl` sur votre ordinateur, **jamais publié**),
+comptes-rendus envoyés par les élèves en mode individuel (fichiers déposés ou textes collés, avec code de
+contrôle). Exports : **tableur** (CSV pour Excel/LibreOffice), **Schooly** (CSV, une ligne par élève et par
+partie), sauvegarde JSON. Rien n'est envoyé sur internet.
+
 ## 2. Tout vérifier : la page de vérification
 
 **[verifier.html](https://idgir.github.io/escape-games-cm1-cm2/verifier.html)** —

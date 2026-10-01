@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Résultats de la classe — Escape games CM1 · CM2</title>
+<!--
+  RÉSULTATS DE L'ANNÉE (amélioration D5) — page enseignant
+  Rassemble les comptes-rendus de parties, au lieu d'impressions A4 isolées :
+    1. les parties terminées sur CET appareil (historique gardé par les jeux) ;
+    2. en classe avec lancer.bat : toutes les parties de la classe (fichier
+       resultats-classe.jsonl sur l'ordinateur de l'enseignant, jamais publié) ;
+    3. les comptes-rendus envoyés par les élèves (mode individuel) : fichiers
+       .json déposés ici, ou textes collés depuis l'ENT.
+  Exports : tableur (CSV pour Excel / LibreOffice), Schooly (CSV), sauvegarde JSON.
+  Tout reste dans le navigateur : rien n'est envoyé sur internet.
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--bleu:#2f55c8;--vert:#15803d;--rouge:#b91c1c;--ambre:#b45309}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header{padding:22px 20px 8px;max-width:1200px;margin:0 auto}
+  h1{margin:0;font-size:1.6rem} header p{margin:4px 0 0;color:var(--doux)}
+  main{max-width:1200px;margin:0 auto;padding:10px 20px 40px;display:grid;gap:16px}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;padding:14px 18px}
+  .bloc h2{margin:0 0 6px;font-size:1.05rem}
+  .aide{color:var(--doux);font-size:.9rem;margin:4px 0}
+  .ligne{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+  button,select,input[type=search]{font:inherit;padding:7px 12px;border-radius:9px;border:1px solid var(--ligne);background:#fff}
+  button{cursor:pointer} button.principal{background:var(--encre);color:#fff;border-color:var(--encre)}
+  textarea{width:100%;min-height:90px;font:inherit;padding:8px;border-radius:9px;border:1px solid var(--ligne)}
+  .depot{border:2px dashed var(--ligne);border-radius:12px;padding:14px;text-align:center;color:var(--doux)}
+  .depot.survol{border-color:var(--bleu);background:#eef3ff}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  th,td{border-bottom:1px solid var(--ligne);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#f0eee9;position:sticky;top:0}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .ok{color:var(--vert)} .ko{color:var(--rouge);font-weight:600}
+  .pastille{display:inline-block;padding:2px 8px;border-radius:999px;background:#f0eee9;font-size:.8rem}
+  .table-defile{overflow-x:auto;max-height:60vh}
+  #message{min-height:1.4em}
+</style>
+</head>
+<body>
+<header>
+  <h1>📊 Résultats de la classe</h1>
+  <p>Toutes les parties de l'année au même endroit, prêtes pour un tableur ou pour Schooly. <a href="index.html">← Accueil des jeux</a></p>
+</header>
+<main>
+  <section class="bloc">
+    <h2>1. Rassembler les comptes-rendus</h2>
+    <div class="ligne">
+      <button id="btn-appareil">💻 Parties jouées sur cet appareil</button>
+      <button id="btn-serveur">🏫 Parties de la classe (serveur local)</button>
+      <span class="aide">Le serveur local (lancer.bat) garde toutes les parties de l'année sur votre ordinateur.</span>
+    </div>
+    <div class="depot" id="depot" style="margin-top:10px">📥 Déposez ici les fichiers <b>compte-rendu-….json</b> envoyés par les élèves,
+      ou <label style="text-decoration:underline;cursor:pointer">choisissez-les<input type="file" id="fichiers" accept=".json,application/json" multiple hidden></label>.</div>
+    <p class="aide" style="margin-top:10px">… ou collez un ou plusieurs comptes-rendus reçus par message (texte commençant par « Compte-rendu — ») :</p>
+    <textarea id="colle" placeholder="Compte-rendu — Le Laboratoire de Madame Mélange (escape game)&#10;Élève : …"></textarea>
+    <div class="ligne"><button id="btn-colle">➕ Ajouter les comptes-rendus collés</button><span id="message" class="aide"></span></div>
+  </section>
+
+  <section class="bloc">
+    <h2>2. Les résultats</h2>
+    <div class="ligne">
+      <input type="search" id="filtre-eleve" placeholder="Élève ou équipe…">
+      <select id="filtre-jeu"><option value="">Tous les jeux</option></select>
+      <select id="filtre-mode"><option value="">En équipe et individuel</option><option value="equipe">En équipe</option><option value="solo">Individuel</option></select>
+      <span class="pastille" id="compte">0 partie</span>
+    </div>
+    <div class="table-defile" style="margin-top:10px"><table>
+      <thead><tr><th>Date</th><th>Élève / équipe</th><th>Jeu</th><th>Niveau</th><th class="num">Score</th><th class="num">%</th>
+        <th class="num">Énigmes</th><th class="num">1er coup</th><th class="num">Erreurs</th><th class="num">Indices</th><th class="num">Durée</th><th>Contrôle</th></tr></thead>
+      <tbody id="corps"></tbody>
+    </table></div>
+  </section>
+
+  <section class="bloc">
+    <h2>3. Exporter</h2>
+    <div class="ligne">
+      <button class="principal" id="exp-tableur">📊 Tableur (CSV)</button>
+      <button class="principal" id="exp-schooly">🎓 Schooly (CSV)</button>
+      <button id="exp-json">💾 Sauvegarde complète (JSON)</button>
+      <button id="btn-vider">🗑️ Vider l'historique de cet appareil</button>
+    </div>
+    <p class="aide">Le CSV « tableur » s'ouvre directement dans Excel ou LibreOffice (séparateur point-virgule). Le CSV « Schooly » a une ligne
+      par élève et par partie : <code>eleve ; date ; matiere ; activite ; niveau ; note ; note_max ; pourcentage ; observation</code>
+      (si l'import de Schooly attend d'autres noms de colonnes, renommez-les dans la première ligne). Seuls les filtres en cours sont exportés.</p>
+  </section>
+</main>
+
+<script src="commun/donnees/catalogue.js"></script>
+<script>
+"use strict";
+/* Même empreinte que commun/js/compte-rendu.js (code de contrôle) */
+function empreinte(texte){
+  let h = 0x811c9dc5;
+  for(const c of String(texte)){ h ^= c.codePointAt(0); h = Math.imul(h, 0x01000193) >>> 0; }
+  const x = h.toString(16).toUpperCase().padStart(8, "0");
+  return x.slice(0, 4) + "-" + x.slice(4);
+}
+const canon = cr => JSON.stringify(Object.keys(cr).filter(k => k !== "code" && k !== "_source" && k !== "_valide").sort().reduce((o, k) => (o[k] = cr[k], o), {}));
+const valide = cr => cr.code ? cr.code === empreinte(canon(cr)) : null;
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const JEUX = typeof CATALOGUE !== "undefined" ? CATALOGUE.jeux : [];
+const infoJeu = id => JEUX.find(j => j.dossier === id || j.id === id) || {};
+
+let RESULTATS = [];
+const cle = r => [r.jeu, r.eleve, r.mode, r.partie || r.date].join("|");
+function ajouter(liste, source){
+  let n = 0;
+  for(const r of liste){
+    if(!r || r.type !== "escape-game-compte-rendu") continue;
+    r._source = r._source || source;
+    r._valide = r._valide !== undefined ? r._valide : valide(r);
+    const i = RESULTATS.findIndex(x => cle(x) === cle(r));
+    if(i >= 0) RESULTATS[i] = r; else { RESULTATS.push(r); n++; }
+  }
+  RESULTATS.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  rendre();
+  return n;
+}
+const message = t => { document.getElementById("message").textContent = t; };
+
+/* ---- Sources ---- */
+document.getElementById("btn-appareil").addEventListener("click", () => {
+  let h = []; try { h = JSON.parse(localStorage.getItem("escape_resultats") || "[]"); } catch(e) {}
+  message(`${ajouter(h, "appareil")} partie(s) ajoutée(s) depuis cet appareil.`);
+});
+document.getElementById("btn-serveur").addEventListener("click", async () => {
+  try{
+    const r = await fetch("/api/resultats", { cache: "no-store" });
+    if(!r.ok) throw 0;
+    const d = await r.json();
+    message(`${ajouter(d.resultats || [], "serveur")} partie(s) ajoutée(s) depuis le serveur local.`);
+  }catch(e){ message("Serveur local introuvable : lancez lancer.bat puis ouvrez http://127.0.0.1:8000/resultats.html"); }
+});
+async function lireFichiers(fichiers){
+  let n = 0, err = 0;
+  for(const f of fichiers){
+    try{ const o = JSON.parse(await f.text()); n += ajouter(Array.isArray(o) ? o : [o], "fichier"); }catch(e){ err++; }
+  }
+  message(`${n} compte(s)-rendu(s) ajouté(s)` + (err ? `, ${err} fichier(s) illisible(s)` : "") + ".");
+}
+document.getElementById("fichiers").addEventListener("change", e => lireFichiers([...e.target.files]));
+const depot = document.getElementById("depot");
+["dragenter", "dragover"].forEach(t => depot.addEventListener(t, e => { e.preventDefault(); depot.classList.add("survol"); }));
+["dragleave", "drop"].forEach(t => depot.addEventListener(t, e => { e.preventDefault(); depot.classList.remove("survol"); }));
+depot.addEventListener("drop", e => lireFichiers([...(e.dataTransfer && e.dataTransfer.files || [])]));
+
+/** Texte collé (format de COMPTE_RENDU.texte) → compte-rendu partiel, sans code vérifiable. */
+function lireTexte(t){
+  const blocs = String(t).split(/(?=Compte-rendu — )/).map(b => b.trim()).filter(b => /^Compte-rendu — /.test(b));
+  return blocs.map(b => {
+    const g = re => { const m = b.match(re); return m ? m[1].trim() : ""; };
+    const titre = g(/^Compte-rendu — (.+?) \(escape game\)/m);
+    const jeu = (JEUX.find(j => j.titre === titre) || {}).dossier || "";
+    const qui = b.match(/^(Élève|Équipe) : (.+?) · (CM1|CM2)(?: \(palier Découverte\))? · (mode individuel|en équipe)/m) || [];
+    const score = b.match(/Score : (\d+)(?: \/ (\d+))?/) || [];
+    const en = b.match(/Énigmes : (\d+)\/(\d+) \((\d+) du premier coup\)/) || [];
+    const d = g(/^Date : (\d\d\/\d\d\/\d{4} \d\d:\d\d)/m), [jj, mm, aaaa, hh] = d ? d.split(/[\/ ]/) : [];
+    return { type: "escape-game-compte-rendu", version: 1, jeu, titre, eleve: qui[2] || "", mode: qui[4] === "mode individuel" ? "solo" : "equipe",
+      niveau: qui[3] || "", palier: /palier Découverte/.test(b) ? "decouverte" : "", date: d ? `${aaaa}-${mm}-${jj}T${hh}` : "", termine: !/NON terminée/.test(b),
+      dureeMin: +g(/Durée : ([\d.]+) min/) || 0, score: +score[1] || 0, scoreMax: score[2] ? +score[2] : null, enigmes: +en[1] || 0, total: +en[2] || 0,
+      premierCoup: +en[3] || 0, erreurs: +g(/Erreurs : (\d+)/) || 0, indices: +g(/Indices : (\d+)/) || 0, quiz: g(/Quizz final : (\d)\/5/) ? +g(/Quizz final : (\d)\/5/) : null,
+      _code_texte: g(/Code de contrôle : ([0-9A-F]{4}-[0-9A-F]{4})/), _valide: null };
+  });
+}
+document.getElementById("btn-colle").addEventListener("click", () => {
+  const l = lireTexte(document.getElementById("colle").value);
+  message(l.length ? `${ajouter(l, "texte")} compte(s)-rendu(s) ajouté(s) (texte collé : code non vérifiable, préférez le fichier).` : "Aucun compte-rendu reconnu dans le texte collé.");
+});
+
+/* ---- Tableau et filtres ---- */
+const filtres = () => ({ eleve: document.getElementById("filtre-eleve").value.trim().toLowerCase(), jeu: document.getElementById("filtre-jeu").value, mode: document.getElementById("filtre-mode").value });
+function visibles(){
+  const f = filtres();
+  return RESULTATS.filter(r => (!f.eleve || String(r.eleve).toLowerCase().includes(f.eleve)) && (!f.jeu || r.jeu === f.jeu) && (!f.mode || r.mode === f.mode));
+}
+const pct = r => r.scoreMax ? Math.round(100 * r.score / r.scoreMax) : "";
+const dateFr = s => { const d = new Date(s); return isNaN(d) ? (s || "") : d.toLocaleDateString("fr-FR") + " " + d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }); };
+function rendre(){
+  const sel = document.getElementById("filtre-jeu"), garde = sel.value;
+  const jeux = [...new Set(RESULTATS.map(r => r.jeu).filter(Boolean))];
+  sel.innerHTML = `<option value="">Tous les jeux</option>` + jeux.map(j => `<option value="${esc(j)}">${esc(infoJeu(j).titre || j)}</option>`).join("");
+  sel.value = jeux.includes(garde) ? garde : "";
+  const v = visibles();
+  document.getElementById("compte").textContent = `${v.length} partie${v.length > 1 ? "s" : ""}`;
+  document.getElementById("corps").innerHTML = v.map(r => `<tr>
+    <td>${esc(dateFr(r.date))}</td><td><b>${esc(r.eleve)}</b>${r.mode === "solo" ? ' <span class="pastille">🏠 individuel</span>' : ""}</td>
+    <td>${esc(infoJeu(r.jeu).icone || "")} ${esc(r.titre || r.jeu)}</td><td>${esc(r.niveau)}${r.palier === "decouverte" ? " 🌱" : ""}</td>
+    <td class="num">${r.score}${r.scoreMax ? " / " + r.scoreMax : ""}</td><td class="num">${pct(r)}</td>
+    <td class="num">${r.enigmes}/${r.total}</td><td class="num">${r.premierCoup}</td><td class="num">${r.erreurs}</td><td class="num">${r.indices}</td>
+    <td class="num">${r.dureeMin} min</td>
+    <td>${r._valide === true ? '<span class="ok">✔ vérifié</span>' : r._valide === false ? '<span class="ko">✗ modifié ?</span>' : '<span class="aide">texte collé</span>'}</td></tr>`).join("")
+    || `<tr><td colspan="12" class="aide">Aucune partie pour l'instant : utilisez les boutons ci-dessus.</td></tr>`;
+}
+["filtre-eleve", "filtre-jeu", "filtre-mode"].forEach(id => document.getElementById(id).addEventListener("input", rendre));
+
+/* ---- Exports ---- */
+const cellule = v => { const s = String(v == null ? "" : v); return /[;"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+const csv = lignes => "\ufeff" + lignes.map(l => l.map(cellule).join(";")).join("\r\n");
+function telecharger(nom, contenu, type){
+  window.__dernierExport = { nom, contenu };
+  try{
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([contenu], { type }));
+    a.download = nom; document.body.appendChild(a); a.click(); a.remove();
+  }catch(e){ message("Le téléchargement a été bloqué par le navigateur : " + e.message); }
+}
+const aujourdhui = () => new Date().toISOString().slice(0, 10);
+const nombre = n => String(n).replace(".", ",");
+document.getElementById("exp-tableur").addEventListener("click", () => {
+  const l = [["Date", "Élève / équipe", "Mode", "Jeu", "Matière", "Niveau", "Palier", "Score", "Score max", "Pourcentage", "Énigmes réussies", "Énigmes", "Du premier coup", "Erreurs", "Indices", "Quizz /5", "Durée (min)", "Temps accordé (min)", "Contrôle"]];
+  visibles().forEach(r => l.push([dateFr(r.date), r.eleve, r.mode === "solo" ? "individuel" : "équipe", r.titre || r.jeu, infoJeu(r.jeu).matiere || "", r.niveau, r.palier === "decouverte" ? "Découverte" : "",
+    r.score, r.scoreMax || "", pct(r), r.enigmes, r.total, r.premierCoup, r.erreurs, r.indices, r.quiz == null ? "" : r.quiz, nombre(r.dureeMin), r.delaiAccordeMin || 0,
+    r._valide === true ? "vérifié" : r._valide === false ? "MODIFIÉ ?" : "non vérifiable"]));
+  telecharger(`resultats-escape-games-${aujourdhui()}.csv`, csv(l), "text/csv;charset=utf-8");
+});
+document.getElementById("exp-schooly").addEventListener("click", () => {
+  const l = [["eleve", "date", "matiere", "activite", "niveau", "note", "note_max", "pourcentage", "observation"]];
+  visibles().forEach(r => l.push([r.eleve, String(r.date).slice(0, 10), infoJeu(r.jeu).matiere || "", "Escape game : " + (r.titre || r.jeu), r.niveau, r.score, r.scoreMax || "", pct(r),
+    `${r.mode === "solo" ? "Individuel" : "En équipe"}${r.palier === "decouverte" ? ", palier Découverte" : ""} ; ${r.premierCoup}/${r.total} énigmes du premier coup ; ${r.erreurs} erreur(s) ; ${r.indices} indice(s) ; ${r.dureeMin} min`]));
+  telecharger(`schooly-escape-games-${aujourdhui()}.csv`, csv(l), "text/csv;charset=utf-8");
+});
+document.getElementById("exp-json").addEventListener("click", () => telecharger(`resultats-escape-games-${aujourdhui()}.json`, JSON.stringify(visibles(), null, 1), "application/json"));
+document.getElementById("btn-vider").addEventListener("click", () => {
+  if(!confirm("Effacer l'historique des parties gardé sur CET appareil ? (Exportez d'abord si besoin.)")) return;
+  try { localStorage.removeItem("escape_resultats"); } catch(e) {}
+  RESULTATS = RESULTATS.filter(r => r._source !== "appareil"); rendre(); message("Historique de cet appareil effacé.");
+});
+rendre();
+window.RESULTATS_PAGE = { ajouter, lireTexte, valide, get liste(){ return RESULTATS; } };
+</script>
+</body>
+</html>

@@ -40,6 +40,7 @@
       eleve: ETAT.equipe || "", mode: ETAT.solo ? "solo" : "equipe",
       niveau: ETAT.niveau || "", palier: ETAT.palier || "",
       date: new Date().toISOString().slice(0, 16),
+      partie: ETAT.debut ? new Date(ETAT.debut).toISOString().slice(0, 16) : "",   // identifie la partie (début)
       termine: !!ETAT.fini, dureeMin: Math.round((ETAT.msEcoules || 0) / 6000) / 10,
       score: ETAT.score || 0, scoreMax: max,
       enigmes: reussies, total, premierCoup: ETAT.enigmesPremierCoup || 0,
@@ -73,10 +74,14 @@
   function memoriser(cr){
     if(!cr || !cr.eleve || /^Vérification$/.test(cr.eleve)) return;
     try{
-      const h = historique().filter(x => !(x.jeu === cr.jeu && x.eleve === cr.eleve && x.date.slice(0, 10) === cr.date.slice(0, 10) && x.mode === cr.mode));
+      const h = historique().filter(x => !(x.jeu === cr.jeu && x.eleve === cr.eleve && x.mode === cr.mode && (x.partie || x.date) === (cr.partie || cr.date)));
       h.push(cr);
       localStorage.setItem(CLE_HIST, JSON.stringify(h.slice(-100)));
     }catch(e){}
+    // En classe, avec lancer.bat : le résultat est aussi gardé sur l'ordinateur de l'enseignant
+    if(typeof SYNC !== "undefined" && SYNC.serveurOk && cr.termine){
+      fetch("/api/resultat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(cr) }).catch(() => {});
+    }
   }
 
   /* Fin de partie : mémorisée ; mise à jour quand le quizz est validé */

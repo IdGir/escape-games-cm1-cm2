@@ -182,7 +182,7 @@ tiendrait complètement cette promesse.
 Centraliser les scores de la classe sur l'année (aujourd'hui uniquement des
 impressions A4 isolées par partie), avec un export réutilisable dans le
 suivi élève déjà en place ([[schooly]]).
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ### D6 — QR-code de démarrage de séance
 Un QR-code affiché en début de séance pour rejoindre directement la bonne

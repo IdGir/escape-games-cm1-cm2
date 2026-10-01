@@ -40,6 +40,37 @@ SECTIONS.D1 = async () => {
   ok(/lancer\.bat/.test(sans.w.document.getElementById("vide").textContent), "sans serveur : message explicatif");
 };
 
+SECTIONS.D5 = async () => {
+  console.log("\n== D5 : résultats de la classe (resultats.html) ==");
+  const path = require("path");
+  // deux comptes-rendus fabriqués par un vrai jeu
+  const jeu = await charger(path.join(RACINE, "objets-techniques"), "?salle=6&niveau=CM2", { attente: 600 });
+  Object.assign(jeu.w.ETAT, { equipe: "Les Engrenages", score: 180, enigmesPremierCoup: 17, erreursTotal: 3, debut: Date.now() - 2400000, msEcoules: 2400000 });
+  const cr1 = jeu.w.COMPTE_RENDU.construire();
+  Object.assign(jeu.w.ETAT, { equipe: "Tom R.", solo: true, score: 150, debut: Date.now() - 3000000 });
+  const cr2 = jeu.w.COMPTE_RENDU.construire();
+  const triche = Object.assign({}, cr2, { eleve: "Zoé K.", score: 235 });     // modifié à la main
+  const texte = jeu.w.COMPTE_RENDU.texte(Object.assign({}, cr2, { eleve: "Inès M." }));
+  const { w, erreurs } = await charger(RACINE, "", { page: "resultats.html", stockage: { escape_resultats: JSON.stringify([cr1, cr2, triche]) } });
+  const d = w.document;
+  d.getElementById("btn-appareil").click(); await dodo(50);
+  ok(d.querySelectorAll("#corps tr").length === 3, `3 parties de cet appareil (${d.querySelectorAll("#corps tr").length})`);
+  ok(d.querySelectorAll("#corps .ok").length === 2 && d.querySelectorAll("#corps .ko").length === 1, "codes de contrôle : 2 vérifiés, 1 modifié repéré");
+  d.getElementById("colle").value = "Bonjour maîtresse,\n" + texte + "\nMerci";
+  d.getElementById("btn-colle").click(); await dodo(30);
+  ok(w.RESULTATS_PAGE.liste.some(r => r.eleve === "Inès M." && r.score === 150 && r.mode === "solo" && r.niveau === "CM2"), "texte collé depuis un message : compte-rendu reconnu");
+  const f = d.getElementById("filtre-mode"); f.value = "solo"; f.dispatchEvent(new w.Event("input"));
+  ok(d.querySelectorAll("#corps tr").length === 3, "filtre « individuel » : 3 parties");
+  d.getElementById("exp-tableur").click();
+  const e1 = w.__dernierExport;
+  ok(e1 && e1.contenu.startsWith("\ufeffDate;Élève / équipe;") && e1.contenu.split("\r\n").length === 4, "export tableur : CSV point-virgule, 3 lignes (filtre appliqué)");
+  d.getElementById("exp-schooly").click();
+  ok(w.__dernierExport.contenu.startsWith("\ufeffeleve;date;matiere;activite;niveau;note;note_max;pourcentage;observation") && /Tom R\.;\d{4}-\d\d-\d\d;Sciences;Escape game : L'Atelier de l'inventeur;CM2;150;235;64;/.test(w.__dernierExport.contenu), "export Schooly : une ligne par élève et par partie");
+  ok(erreurs.length === 0 && jeu.erreurs.length === 0, "erreurs JS : " + erreurs.concat(jeu.erreurs).join(" | "));
+  const fs = require("fs");
+  ok(/resultats-classe\.jsonl/.test(fs.readFileSync(path.join(RACINE, ".gitignore"), "utf8")), "resultats-classe.jsonl jamais publié (.gitignore)");
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

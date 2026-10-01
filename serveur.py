@@ -30,6 +30,9 @@ from urllib.parse import urlparse, parse_qs, unquote
 ETATS_EQUIPES = {}        # { "Les Patriotes": {salle, score, fragments, ...} }
 COMMANDES_PROF = {}       # { "equipe": {"pause":bool, "indice":"..."} }
 LOCK = threading.Lock()
+# Résultats des parties terminées, gardés toute l'année sur CET ordinateur (amélioration D5).
+# Fichier jamais publié (.gitignore) : il contient les prénoms des élèves.
+FICHIER_RESULTATS = "resultats-classe.jsonl"
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 
 def get_ip_locale():
@@ -225,6 +228,24 @@ class Handler(BaseHTTPRequestHandler):
                 # Récupérer d'éventuelles commandes prof en attente
                 cmd = COMMANDES_PROF.pop(equipe, None)
             self.json_reponse({"ok": True, "commande": cmd})
+        elif path == "/api/resultat" and methode == "POST":
+            # Compte-rendu d'une partie terminée (commun/js/compte-rendu.js)
+            if data.get("type") == "escape-game-compte-rendu":
+                with LOCK:
+                    with open(FICHIER_RESULTATS, "a", encoding="utf-8") as f:
+                        f.write(json.dumps(data, ensure_ascii=False) + "\n")
+            self.json_reponse({"ok": True})
+        elif path == "/api/resultats" and methode == "GET":
+            # Tous les comptes-rendus gardés sur cet ordinateur (lus par resultats.html)
+            liste = []
+            if os.path.exists(FICHIER_RESULTATS):
+                with open(FICHIER_RESULTATS, encoding="utf-8") as f:
+                    for ligne in f:
+                        try:
+                            liste.append(json.loads(ligne))
+                        except ValueError:
+                            pass
+            self.json_reponse({"resultats": liste})
         elif path == "/api/equipes" and methode == "GET":
             # Le prof récupère tous les états
             with LOCK:
