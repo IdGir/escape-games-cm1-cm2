@@ -35,6 +35,13 @@ fois pour toutes.
   Pour arriver directement dans un jeu, mettez son adresse en favori
   (par exemple `…/declaration/`).
 
+### 📲 Sur tablette, sans internet — application installable
+
+Ouvrez une fois l'accueil en ligne dans Chrome ou Edge : quand le bloc **📲 Sur tablette, sans internet**
+indique « ✅ Prêt hors connexion », les 9 jeux fonctionnent **sans réseau et sans serveur**. Le bouton
+**📲 Installer l'application** les place sur l'écran d'accueil de la tablette. Hors connexion, les vidéos sont
+remplacées par les images ou les décors dessinés. Détails et mise à jour : [outils-pwa/README.md](outils-pwa/README.md).
+
 ### 🏠 À la maison — mode individuel (devoirs)
 
 Donnez aux élèves l'adresse d'un jeu suivie de `?solo=1`, par exemple

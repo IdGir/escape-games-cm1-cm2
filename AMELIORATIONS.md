@@ -47,7 +47,7 @@ vers un socle commun versionné, avec uniquement les données (`enigmes.json`,
 Aucun `manifest.json` ni `service worker` dans le dépôt : l'usage sans
 internet suppose de lancer `serveur.py` sur un poste. Une PWA installable sur
 tablette fonctionnerait hors connexion sans aucun serveur à démarrer.
-**Jeux concernés :** tous · **Effort :** L · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** L · **Statut :** Fait
 
 ### A5 — Export/reprise de partie pour tous les jeux « salles »
 Seul `mission-geo` a un export/import de progression en JSON. Les 8 jeux

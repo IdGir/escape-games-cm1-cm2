@@ -54,6 +54,9 @@
   .boutons{display:flex;flex-wrap:wrap;gap:8px}
   [hidden]{display:none!important}
 </style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1d3a8a">
+<link rel="apple-touch-icon" href="commun/icones/icone-apple-180.png">
 </head>
 <body>
 
@@ -204,6 +207,20 @@
   </article>
 </main>
 
+<section class="enseignant" id="hors-ligne">
+  <div class="boite">
+    <div>
+      <h3>📲 Sur tablette, sans internet</h3>
+      <p id="hl-etat">Ouvrez cette page une fois avec internet : les jeux restent ensuite jouables hors connexion, sans lancer serveur.py.</p>
+      <p id="hl-images" hidden></p>
+    </div>
+    <div class="boutons">
+      <button class="bouton" id="hl-installer" type="button" hidden>📲 Installer l'application</button>
+      <button class="bouton clair" id="hl-preparer" type="button" hidden>📥 Garder aussi les images de tous les jeux</button>
+    </div>
+  </div>
+</section>
+
 <section class="enseignant">
   <div class="boite">
     <div>
@@ -218,7 +235,44 @@
   </div>
 </section>
 
+<script src="commun/js/pwa.js?c1"></script>
 <script>
+  /* ---- Hors connexion (A4) : installation et état du service worker ---- */
+  (function(){
+    const etat = document.getElementById("hl-etat"), img = document.getElementById("hl-images");
+    const inst = document.getElementById("hl-installer"), prep = document.getElementById("hl-preparer");
+    let invite = null;
+    window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); invite = e; inst.hidden = false; });
+    inst.addEventListener("click", async () => { if(!invite) return; invite.prompt(); await invite.userChoice; invite = null; inst.hidden = true; });
+    if(!("serviceWorker" in navigator) || !/^https?:$/.test(location.protocol)){
+      etat.textContent = "Mode hors connexion indisponible ici (page ouverte en double-clic, ou navigateur trop ancien) : utilisez l'adresse en ligne dans Chrome ou Edge.";
+      return;
+    }
+    navigator.serviceWorker.addEventListener("message", ev => {
+      const m = ev.data || {};
+      if(m.demande === "etat"){
+        const pret = m.code >= m.codeTotal;
+        etat.innerHTML = pret ? `✅ <b>Prêt hors connexion</b> sur cet appareil (version ${m.version}). Les vidéos, trop lourdes, sont remplacées par les images ou les décors dessinés.`
+                              : `⏳ Préparation du hors-connexion : ${m.code} / ${m.codeTotal} fichiers…`;
+        const jeux = Object.entries(m.images || {});
+        const total = jeux.reduce((s, [, x]) => s + x.total, 0), gardees = jeux.reduce((s, [, x]) => s + x.gardees, 0);
+        img.hidden = false; img.textContent = `Images gardées : ${gardees} / ${total}.`;
+        prep.hidden = gardees >= total;
+        if(!pret) setTimeout(demander, 2500);
+      }
+      if(m.demande === "preparer-images"){ setTimeout(demander, 300); }
+    });
+    const demander = () => navigator.serviceWorker.ready.then(r => r.active && r.active.postMessage({ type: "etat" }));
+    prep.addEventListener("click", () => {
+      prep.disabled = true; prep.textContent = "⏳ Téléchargement des images…";
+      navigator.serviceWorker.ready.then(r => {
+        ["declaration","tour-du-monde","mission-geo","constitution","moyen-age-abbaye","station-meteo","melanges","objets-techniques","chateau-fort"]
+          .forEach(j => r.active.postMessage({ type: "preparer-images", jeu: j }));
+      });
+    });
+    navigator.serviceWorker.ready.then(demander);
+  })();
+
   /* Les tableaux de bord suivent les équipes en direct : ils n'existent
      qu'avec le serveur local (lancer.bat). On ne les montre que s'il répond. */
   fetch("/api/info", {cache:"no-store"})

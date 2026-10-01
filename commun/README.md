@@ -35,6 +35,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/variantes.js` | D3 — banque d'énigmes : une énigme peut avoir des `variantes` dans `enigmes.json` ; la série jouée change à chaque année scolaire (ou se choisit dans ⚙️) | les 6 jeux à moteur commun |
 | `js/compte-rendu.js` | compte-rendu d'une partie (score, énigmes, erreurs, indices, temps, code de contrôle) ; historique des parties de l'appareil (pour `resultats.html`) | les 8 jeux « salles » |
 | `js/mode-solo.js` | D2 — « 🏠 Je joue seul » (`?solo=1`) : prénom, pas de synchronisation, compte-rendu à copier, télécharger ou imprimer pour l'enseignant | les 8 jeux « salles » |
+| `js/pwa.js` | A4 — enregistre le service worker `sw.js` (application installable, hors connexion ; voir `outils-pwa/README.md`) | les 9 jeux et l'accueil |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres
@@ -44,6 +45,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 
 | Fichier | Contenu |
 |---|---|
+| `icones/` | icônes de l'application installable (dessinées par `outils-pwa/icones.py`) |
 | `donnees/catalogue.js` | les 26 jeux de la progression et les 4 jeux hors liste : matière, année A/B, période, points du programme, dossier publié, liens « suite directe ». Source : `prompts-opus/00-ORDRE-DE-PRODUCTION.md`. **Un jeu publié : renseigner son `dossier`.** |
 
 ## Ce qui reste dans chaque jeu
