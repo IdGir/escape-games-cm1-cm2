@@ -96,6 +96,8 @@ def maj(jeu):
                  "(contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique\n"
                  "git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.\n\n"
                  + "\n".join(sections(nouveaux)))
+    # même jour déjà présent juste en dessous : une seule rubrique datée
+    corps = re.sub(r"(\n## (.+)\n\n(?:- .*\n)+)\n## \2\n\n", r"\1", corps)
     with open(chemin, "w", encoding="utf-8", newline="\n") as f:
         f.write(corps.rstrip() + f"\n\n<!-- dernier-commit: {tete} -->\n")
     print(f"{jeu} : {len(nouveaux)} entrée(s)")

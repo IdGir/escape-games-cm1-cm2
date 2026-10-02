@@ -4,8 +4,15 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 2 octobre 2026
+
+- B2 : bande-annonce de 16 s pour chaque jeu
+
 ## 1 octobre 2026
 
+- B4 : affiche 16:9 pour chacun des 9 jeux
+- C2 : référence officielle du programme vérifiée et affichée partout
+- F2 : journal des versions (CHANGELOG.md) pour chacun des 9 jeux
 - D4 : éditeur graphique (no-code) des énigmes (editeur.html)
 - C1 : vue d'ensemble publique de l'année (annee.html)
 - B3 : frise visuelle des 26 jeux sur l'accueil
@@ -37,4 +44,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Ajoute l'escape game n°04 L'Atelier de l'inventeur (sciences, les objets techniques)
 
-<!-- dernier-commit: 9878079 -->
+<!-- dernier-commit: a3167f8 -->

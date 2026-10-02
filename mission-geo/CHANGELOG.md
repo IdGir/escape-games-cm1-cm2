@@ -4,8 +4,15 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 2 octobre 2026
+
+- B2 : bande-annonce de 16 s pour chaque jeu
+
 ## 1 octobre 2026
 
+- B4 : affiche 16:9 pour chacun des 9 jeux
+- C2 : référence officielle du programme vérifiée et affichée partout
+- F2 : journal des versions (CHANGELOG.md) pour chacun des 9 jeux
 - F1 : FAQ / dépannage commune, visible depuis l'accueil (faq.html)
 - A2 : différenciation CM1 / CM2 (et Découverte) pour Mission géographique
 - A4 : application installable, jouable hors connexion (PWA)
@@ -47,4 +54,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Mission géographique Année A : escape game filé sur toute l'année
 
-<!-- dernier-commit: 9878079 -->
+<!-- dernier-commit: a3167f8 -->
