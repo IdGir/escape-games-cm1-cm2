@@ -152,6 +152,7 @@ const ONGLETS = [
   { id: "melanges",      titre: "⚗️ Le Laboratoire de Madame Mélange" },
   { id: "objets-techniques", titre: "⚙️ L'Atelier de l'inventeur" },
   { id: "chateau-fort",  titre: "🏰 Le Secret du donjon" },
+  { id: "versailles",    titre: "👑 De l'édit de Nantes à Versailles" },
   { id: "coherence",     titre: "🧬 Cohérence du moteur" }
 ];
 
@@ -731,6 +732,68 @@ async function construireChateau(){
 }
 
 
+async function construireVersailles(){
+  const R = "versailles/";
+  const [dial, lec, enig] = await Promise.all([
+    json(R + "assets/data/dialogues.json"),
+    json(R + "assets/data/lecons.json"),
+    json(R + "assets/data/enigmes.json")
+  ]);
+  const lien = (n, niv, e) => `${R}?salle=${n}&niveau=${niv}` + (e ? "&enigme=" + e : "");
+  const deux = n => [{ libelle: "CM1", url: lien(n, "CM1") }, { libelle: "CM2", url: lien(n, "CM2") }];
+  const salles = dial.salles;
+  const persoSalles = p => salles.filter(s => [s.dialogue_intro, s.dialogue_fin].some(d => d && d.perso === p))
+                                 .map(s => ({ libelle: "Salle " + s.num, url: lien(s.num, "CM2") }));
+  /* Énigmes du niveau demandé, dans l'ordre où le jeu les présente */
+  const enigmesDe = (num, niv) => {
+    const b = (enig.salles || []).find(x => x.num === num);
+    return b ? (b.enigmes || []).filter(e => !e.niveaux || e.niveaux.includes(niv)) : [];
+  };
+  const illustrations = [];
+  (enig.salles || []).forEach(b => (b.enigmes || []).forEach(e => {
+    if(!e.media || !e.media.base) return;
+    const niv = (!e.niveaux || e.niveaux.includes("CM1")) ? "CM1" : "CM2";
+    const rang = enigmesDe(b.num, niv).findIndex(x => x.id === e.id) + 1;
+    illustrations.push(imageSeule(R + "assets/images/cartes/", e.media.base,
+      `Énigme ${e.id} — ${e.titre}`,
+      (e.media.legende || "Illustration facultative") + ". Sans fichier, l'énigme reste jouable.",
+      EXT.image, [{ libelle: "Salle " + b.num + " · " + niv, url: lien(b.num, niv, rang) }]));
+  }));
+  return {
+    id: "versailles", nom: "De l'édit de Nantes à Versailles", R,
+    defaut: "Sans fichier : décor dessiné",
+    tests: ["CM1", "CM2"].map(niv => ({ titre: niv + " — " + salles.reduce((t,s)=>t+enigmesDe(s.num,niv).length,0) + " énigmes", liens: [
+      ...salles.flatMap(s => [
+        { libelle: s.num + ". " + s.titre, url: lien(s.num, niv) },
+        ...enigmesDe(s.num, niv).map((e, i) => ({ libelle: "   ↳ " + e.id + " " + e.titre + " (" + e.type + ")", url: lien(s.num, niv, i + 1) }))
+      ]),
+      { libelle: "🏁 Le coffre, le pli scellé (quizz) et la fin", url: lien(6, niv) }
+    ]})),
+    familles: [
+      { titre: "Décors et cinématiques", slots: [
+        decor(R, "intro", "Cinématique d'ouverture", "Plein écran au clic sur « Suivre le pli ». Sautée si absente.", [{ libelle: "Accueil", url: R }]),
+        ...salles.map(s => decor(R, "salle" + s.num, `Salle ${s.num} — ${s.titre}`,
+          "Décor de fond de la salle" + (s.num === 3 ? ", et de l'écran d'accueil" : "") + ".", deux(s.num))),
+        decor(R, "final", "Cinématique de fin", "Plein écran quand les sceaux se lèvent. Sautée si absente.", [{ libelle: "Fin", url: lien(6, "CM2") }])
+      ]},
+      { titre: "Personnages", slots: Object.entries(dial.personnages || {}).map(([cle, p]) =>
+          personnage(R, cle, (p && p.nom) || cle, persoSalles(cle))) },
+      { titre: "Illustrations d'énigmes (facultatives)", slots: illustrations },
+      { titre: "Documents des leçons (📚)", slots: listeLecons(lec)
+          .filter(l => l.document && l.document.type === "image")
+          .map(l => imageSeule(R + "assets/images/documents/", l.document.fichier || l.id, l.document.titre,
+            `Leçon « ${l.titre} ». Format .jpg uniquement.`, EXT.jpg)) }
+    ],
+    docs: [
+      { libelle: "📘 Guide du jeu (énigmes et solutions)", url: lienGitHub(R + "README.md") },
+      { libelle: "🎞️ Liste des médias", url: lienGitHub(R + "assets/README.md") },
+      { libelle: "📖 Guide pédagogique", url: lienGitHub(R + "GUIDE-PEDAGOGIQUE.md") },
+      { libelle: "✅ Points vérifiés et à relire", url: lienGitHub(R + "A-VERIFIER.md") },
+      { libelle: "▶ Écran d'accueil du jeu", url: R }
+    ]
+  };
+}
+
 const CONSTRUCTEURS = {
   "declaration": construireDeclaration,
   "tour-du-monde": construireTour,
@@ -740,7 +803,8 @@ const CONSTRUCTEURS = {
   "station-meteo": construireMeteo,
   "melanges": construireMelanges,
   "objets-techniques": construireObjetsTechniques,
-  "chateau-fort": construireChateau
+  "chateau-fort": construireChateau,
+  "versailles": construireVersailles
 };
 
 /* ---------------- Quels fichiers existent ? ----------------
@@ -1002,8 +1066,8 @@ function rendre(){
         absentes d'autres : la trace typique d'un correctif appliqué à un
         seul jeu et oublié ailleurs.
    ============================================================ */
-const COH_JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort"];
-const COH_COMMUN_6 = ["constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort"];
+const COH_JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles"];
+const COH_COMMUN_6 = ["constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles"];
 const COH_MODULES = ["media", "audio", "narration", "api", "sync", "fiche-mission", "enigmes", "impression", "transitions", "accessibilite", "palier-decouverte", "indices-adaptatifs", "minuteur-equipe", "jeu-suivant", "variantes", "compte-rendu", "mode-solo", "pwa", "bandeau-bo"];
 const COH_PROPRES = ["app", "reglages", "lecons", "decors", "personnages"];
 const COH_CHAMPS = ["id", "titre", "voix", "voixFeminines", "ambiances", "ia"];

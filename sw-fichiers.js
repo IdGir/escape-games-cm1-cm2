@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "cdfe889407";
+self.VERSION_HORS_LIGNE = "50fec20e2a";
 self.FICHIERS_CODE = [
 "annee.html",
 "chateau-fort/assets/data/dialogues.json",
@@ -223,7 +223,24 @@ self.FICHIERS_CODE = [
 "tour-du-monde/js/v2.js",
 "tour-du-monde/lecons-imprimables.html",
 "tour-du-monde/prof.html",
-"verifier.html"
+"verifier.html",
+"versailles/assets/data/dialogues.json",
+"versailles/assets/data/enigmes.json",
+"versailles/assets/data/evaluations.json",
+"versailles/assets/data/lecons-a4.json",
+"versailles/assets/data/lecons.json",
+"versailles/css/enigmes.css",
+"versailles/css/print.css",
+"versailles/css/style.css",
+"versailles/index.html",
+"versailles/js/app.js",
+"versailles/js/decors.js",
+"versailles/js/jeu.js",
+"versailles/js/lecons.js",
+"versailles/js/personnages.js",
+"versailles/js/reglages.js",
+"versailles/lecons-imprimables.html",
+"versailles/prof.html"
 ];
 self.IMAGES_JEUX = {
 "chateau-fort": [
@@ -414,5 +431,9 @@ self.IMAGES_JEUX = {
 "tour-du-monde/assets/images/personnages/fix.png",
 "tour-du-monde/assets/images/personnages/fogg.png",
 "tour-du-monde/assets/images/personnages/passepartout.png"
+],
+"versailles": [
+"versailles/assets/images/affiche-fond.jpg",
+"versailles/assets/images/affiche.jpg"
 ]
 };

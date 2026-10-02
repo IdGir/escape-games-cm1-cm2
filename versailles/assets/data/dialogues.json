@@ -1,0 +1,152 @@
+{
+ "metadata": {
+  "jeu": "De l'édit de Nantes à Versailles",
+  "sujet": "La monarchie en France : Henri IV et l'édit de Nantes (la naissance du protestantisme) ; Louis XIV, le Roi-Soleil à Versailles (la monarchie absolue) — histoire, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "lien_autres_jeux": "Voisin du jeu n°07 (la Renaissance, année B). Prépare le jeu « Le Secret de la Déclaration » : la fin de la monarchie absolue en 1789.",
+  "sources": "Château de Versailles (ressources pédagogiques) ; Musée protestant ; Archives nationales ; Encyclopédie Larousse ; Lumni ; Vikidia."
+ },
+ "personnages": {
+  "gabriel": {
+   "nom": "Gabriel",
+   "role": "Apprenti secrétaire au cabinet du roi, à Versailles, 12 ans"
+  },
+  "suzanne": {
+   "nom": "Suzanne",
+   "role": "Imprimeuse protestante (huguenote), en 1598"
+  },
+  "mathurin": {
+   "nom": "Mathurin",
+   "role": "Boulanger catholique, voisin de Suzanne, en 1598"
+  },
+  "margot": {
+   "nom": "Margot",
+   "role": "Aide-jardinière dans l'équipe d'André Le Nôtre, 11 ans"
+  },
+  "isabeau": {
+   "nom": "Dame Isabeau",
+   "role": "Dame de la cour de Louis XIV"
+  }
+ },
+ "intro_accueil": "Bonjour, et bienvenue au cabinet du roi. Je m'appelle Gabriel, je suis apprenti secrétaire. Nous sommes à Versailles, au printemps 1682 : la cour vient de s'y installer. En rangeant les archives, j'ai trouvé un pli scellé, daté de 1598 et adressé « au roi de France ». Il est fermé par cinq sceaux de cire. Depuis plus de quatre-vingts ans, il est passé de main en main : chacun de ses gardiens y a posé un sceau et caché un mot. Vous êtes secrétaires du roi, vous aussi. Suivez le voyage du pli, retrouvez les cinq mots, et nous pourrons lever les sceaux.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "L'imprimerie de Suzanne",
+   "decor": "imprimerie",
+   "motCle": "RÉFORME",
+   "lieu": "Une imprimerie, dans une petite ville du royaume, en 1598",
+   "description": "Des feuilles fraîchement imprimées sèchent sur des fils. La grande presse de bois grince. Sur l'établi, une Bible en français et un almanach où quelqu'un a noté des dates.",
+   "sens": [
+    "À voir : la presse et les lettres de plomb",
+    "À entendre : le grincement de la vis",
+    "À sentir : l'encre et le papier"
+   ],
+   "dialogue_intro": {
+    "perso": "suzanne",
+    "nom": "Suzanne",
+    "texte": "Entrez, mais ne touchez pas l'encre : elle tache pour des semaines. Je m'appelle Suzanne, je suis imprimeuse, et je suis protestante. Il y a quatre-vingts ans, un moine allemand, Luther, a critiqué l'Église. Grâce aux imprimeries comme la mienne, ses idées ont fait le tour de l'Europe. Depuis, les chrétiens de France sont divisés, et ils se sont fait la guerre pendant plus de trente ans. Le premier sceau du pli est le mien. Pour l'ouvrir, comprenez d'où viennent ces troubles."
+   },
+   "dialogue_reussite": {
+    "perso": "suzanne",
+    "nom": "Suzanne",
+    "texte": "Vous avez compris. Le mot de mon sceau est <b>RÉFORME</b> : c'est le nom du mouvement né avec Luther et Calvin. Il a fait naître les protestants. Maintenant, sortez dans la rue : mon voisin Mathurin a gardé le pli après moi. Lui est catholique. Et pourtant, nous sommes amis."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "La rue des deux voisins",
+   "decor": "rue",
+   "motCle": "TOLÉRANCE",
+   "lieu": "Une rue de la même ville, au printemps 1598",
+   "description": "D'un côté, la boulangerie de Mathurin ; de l'autre, l'imprimerie de Suzanne. Au bout de la rue, le clocher de l'église. Sur la place, un crieur lit à voix haute un texte du roi.",
+   "sens": [
+    "À voir : le clocher et l'affiche du roi",
+    "À entendre : la voix du crieur",
+    "À sentir : le pain chaud"
+   ],
+   "dialogue_intro": {
+    "perso": "mathurin",
+    "nom": "Mathurin",
+    "texte": "Bonjour ! Mathurin, boulanger. Moi, je vais à la messe chaque dimanche ; ma voisine Suzanne va au culte protestant. Pendant les guerres, nos deux familles avaient peur l'une de l'autre. Mais écoutez le crieur : le roi Henri IV vient de signer un édit, à Nantes. Il dit ce qui est permis et ce qui ne l'est pas. Lisez-le bien : le deuxième sceau est le mien."
+   },
+   "dialogue_reussite": {
+    "perso": "mathurin",
+    "nom": "Mathurin",
+    "texte": "Bravo. Le mot de mon sceau est <b>TOLÉRANCE</b> : accepter, pour vivre en paix, que son voisin n'ait pas la même religion. Ce n'est pas encore l'égalité, mais c'est la paix. Le pli va maintenant voyager longtemps. Je le confie à un messager du roi. Quatre-vingts ans plus tard, vous le retrouverez dans les jardins d'un très grand château."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "Les jardins de Versailles",
+   "decor": "jardins",
+   "motCle": "SOLEIL",
+   "lieu": "Les jardins du château de Versailles, en 1682",
+   "description": "Des allées droites, des parterres dessinés comme des broderies, des fontaines. Au fond, un bassin où un dieu sort de l'eau sur son char. Le château, immense, brille au soleil.",
+   "sens": [
+    "À voir : les parterres, les statues dorées",
+    "À entendre : les jets d'eau",
+    "À sentir : le buis taillé"
+   ],
+   "dialogue_intro": {
+    "perso": "margot",
+    "nom": "Margot",
+    "texte": "Chut, ne marchez pas sur les bordures, elles viennent d'être taillées ! Je suis Margot, aide-jardinière dans l'équipe de monsieur Le Nôtre. Le pli a été apporté ici, à Versailles. Le roi Louis XIV a transformé le petit château de chasse de son père en un palais immense. Tout, ici, parle de lui et de son emblème. Retrouvez-vous sur le plan, puis vous aurez le troisième sceau."
+   },
+   "dialogue_reussite": {
+    "perso": "margot",
+    "nom": "Margot",
+    "texte": "Le mot de mon sceau est <b>SOLEIL</b>. Louis XIV a choisi le Soleil comme emblème : comme lui, il veut être au centre de tout et tout éclairer. Montez maintenant au château. Dame Isabeau vous attend près de la chambre du roi. Soyez à l'heure : ici, tout se fait à l'heure."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "La chambre du roi",
+   "decor": "chambre",
+   "motCle": "ÉTIQUETTE",
+   "lieu": "L'antichambre et la chambre du roi, au château de Versailles",
+   "description": "Un lit entouré d'une balustrade dorée. Des courtisans attendent, debout, dans l'antichambre. Un huissier garde la porte et laisse entrer chacun selon son rang.",
+   "sens": [
+    "À voir : la balustrade et les tentures",
+    "À entendre : les pas et les chuchotements",
+    "À sentir : la cire des bougies"
+   ],
+   "dialogue_intro": {
+    "perso": "isabeau",
+    "nom": "Dame Isabeau",
+    "texte": "Bonjour, mes jeunes secrétaires. Je suis Dame Isabeau. Ici, rien n'est laissé au hasard. Le roi se lève, prie, travaille, mange et se couche devant sa cour, chaque jour à la même heure. Qui entre en premier, qui a le droit de s'asseoir, qui tend la chemise du roi : tout est réglé. Montrez-moi que vous connaissez la journée du roi, et je vous donnerai le quatrième sceau."
+   },
+   "dialogue_reussite": {
+    "perso": "isabeau",
+    "nom": "Dame Isabeau",
+    "texte": "Parfait. Le mot de mon sceau est <b>ÉTIQUETTE</b> : ce sont les règles de la cour. Grâce à elles, le roi tient les nobles près de lui, occupés à lui plaire. Allez maintenant au cabinet du Conseil : Gabriel y a préparé le coffre pour lever les sceaux."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "Le cabinet du Conseil",
+   "decor": "conseil",
+   "motCle": "ABSOLUE",
+   "lieu": "Le cabinet du Conseil, au château de Versailles",
+   "description": "Une grande table couverte d'un tapis vert, des fauteuils, des cartes du royaume. C'est ici que le roi réunit ses ministres et prend ses décisions.",
+   "sens": [
+    "À voir : la table du Conseil et les cartes",
+    "À entendre : le grattement des plumes",
+    "À sentir : la cire à cacheter"
+   ],
+   "dialogue_intro": {
+    "perso": "gabriel",
+    "nom": "Gabriel",
+    "texte": "Vous voilà ! Ici, le roi décide de tout : les lois, la justice, la guerre, les impôts. Il écoute ses ministres, mais c'est lui qui tranche. On dit que son pouvoir vient de Dieu. Comparez-le à son grand-père, Henri IV, ouvrez le cadenas du coffre du Conseil, et le dernier sceau sera à nous."
+   },
+   "dialogue_fin": {
+    "perso": "gabriel",
+    "nom": "Gabriel",
+    "texte": "Le mot du dernier sceau est <b>ABSOLUE</b>, comme la monarchie de Louis XIV. Nous avons les cinq mots : écrivez-les dans le coffre, dans l'ordre des salles, et les sceaux du pli se lèveront."
+   }
+  }
+ ]
+}

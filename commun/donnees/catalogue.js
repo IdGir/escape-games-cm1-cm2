@@ -142,13 +142,13 @@ var CATALOGUE = {
     "P2"
    ],
    "competences": "La naissance du protestantisme (édit de Nantes) ; la monarchie absolue à Versailles.",
-   "dossier": null,
+   "dossier": "versailles",
    "icone": "👑",
    "couleurs": [
-    "#6b4a2b",
+    "#2a3f6b",
     "#c9a227"
    ],
-   "resume": "",
+   "resume": "Un pli scellé de 1598 traverse un siècle de monarchie : de l'imprimerie d'une huguenote aux jardins de Versailles, les secrétaires du roi lèvent ses cinq sceaux.",
    "prompt": "06-versailles.md",
    "programme": [
     "hg2026"
