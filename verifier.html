@@ -816,6 +816,8 @@ function chercherOrphelins(jeu, slots){
   for(const [chemin, taille] of INVENTAIRE.fichiers){
     if(!chemin.startsWith(jeu.R + "assets/") || chemin.startsWith(jeu.R + "assets/data/")) continue;
     if(/\/README\.md$/i.test(chemin)) continue;
+    // affiche et bande-annonce du jeu (B2/B4) : produites par outils-medias/affiches.py et bande-annonce.py
+    if(/\/assets\/(images\/affiche(-fond)?\.jpg|videos\/bande-annonce(-ouverture)?\.mp4)$/i.test(chemin)) continue;
     const exact = attendus.get(chemin.toLowerCase());
     if(exact !== chemin) liste.push({ chemin, taille, suggestion: exact || null });
   }

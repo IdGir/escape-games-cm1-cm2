@@ -23,6 +23,12 @@
   .jeu .bandeau .affiche{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   .jeu .bandeau:has(.affiche) .icone,.jeu .bandeau:has(.affiche) h2,.jeu .bandeau:has(.affiche) .meta{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .jeu .telecharger-affiche{font-size:.85rem}
+  .jeu .bande-annonce{font-size:.85rem}
+  #lecteur-ba{border:0;padding:0;background:#000;border-radius:12px;width:min(960px,94vw);box-shadow:0 10px 40px rgba(0,0,0,.6)}
+  #lecteur-ba::backdrop{background:rgba(5,8,20,.82)}
+  #lecteur-ba video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+  #lecteur-ba .barre{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem .9rem;color:#fff;font-size:.95rem}
+  #lecteur-ba button{font:inherit;background:#fff2;color:#fff;border:0;border-radius:8px;padding:.3rem .8rem;cursor:pointer}
 
   .jeu h2{margin:8px 0 2px;font-size:1.3rem}
   .jeu .meta{font-size:.88rem;opacity:.9}
@@ -86,6 +92,7 @@
       <a class="jouer" href="declaration/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="declaration/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="declaration/assets/videos/bande-annonce.mp4" data-titre="Le Secret de la Déclaration">🎬 Bande-annonce</a>
         <a class="prof" href="declaration/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/declaration#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -104,6 +111,7 @@
       <a class="jouer" href="tour-du-monde/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="tour-du-monde/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="tour-du-monde/assets/videos/bande-annonce.mp4" data-titre="Le Tour du Monde en 80 minutes">🎬 Bande-annonce</a>
         <a class="prof" href="tour-du-monde/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/tour-du-monde#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -122,6 +130,7 @@
       <a class="jouer" href="mission-geo/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="mission-geo/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="mission-geo/assets/videos/bande-annonce.mp4" data-titre="Mission géographique — Année A">🎬 Bande-annonce</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/mission-geo#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
     </div>
@@ -139,6 +148,7 @@
       <a class="jouer" href="constitution/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="constitution/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="constitution/assets/videos/bande-annonce.mp4" data-titre="Le Sceau de la République">🎬 Bande-annonce</a>
         <a class="prof" href="constitution/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/constitution#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -157,6 +167,7 @@
       <a class="jouer" href="moyen-age-abbaye/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="moyen-age-abbaye/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="moyen-age-abbaye/assets/videos/bande-annonce.mp4" data-titre="Le Manuscrit de l'abbaye">🎬 Bande-annonce</a>
         <a class="prof" href="moyen-age-abbaye/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/moyen-age-abbaye#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -175,6 +186,7 @@
       <a class="jouer" href="station-meteo/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="station-meteo/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="station-meteo/assets/videos/bande-annonce.mp4" data-titre="La Station météo disparue">🎬 Bande-annonce</a>
         <a class="prof" href="station-meteo/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/station-meteo#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -192,6 +204,7 @@
       <a class="jouer" href="melanges/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="melanges/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="melanges/assets/videos/bande-annonce.mp4" data-titre="Le Laboratoire de Madame Mélange">🎬 Bande-annonce</a>
         <a class="prof" href="melanges/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/melanges#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -209,6 +222,7 @@
       <a class="jouer" href="objets-techniques/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="objets-techniques/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="objets-techniques/assets/videos/bande-annonce.mp4" data-titre="L'Atelier de l'inventeur">🎬 Bande-annonce</a>
         <a class="prof" href="objets-techniques/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/objets-techniques#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -226,6 +240,7 @@
       <a class="jouer" href="chateau-fort/">▶ Jouer</a>
       <div class="liens">
         <a class="telecharger-affiche" href="chateau-fort/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="chateau-fort/assets/videos/bande-annonce.mp4" data-titre="Le Secret du donjon">🎬 Bande-annonce</a>
         <a class="prof" href="chateau-fort/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/chateau-fort#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
@@ -343,6 +358,28 @@
   fetch("/api/info", {cache:"no-store"})
     .then(r => { if(r.ok) document.querySelectorAll(".prof").forEach(a => a.hidden = false); })
     .catch(() => {});
+</script>
+<dialog id="lecteur-ba" aria-label="Bande-annonce">
+  <video playsinline controls preload="none"></video>
+  <div class="barre"><span class="titre"></span><button type="button" value="fermer">✕ Fermer</button></div>
+</dialog>
+<script>
+/* B2 — bandes-annonces : lecture dans une fenêtre (lien direct si <dialog> indisponible) */
+(function(){
+  var d = document.getElementById("lecteur-ba"); if(!d || typeof d.showModal !== "function") return;
+  var v = d.querySelector("video");
+  function fermer(){ v.pause(); v.removeAttribute("src"); v.load(); if(d.open) d.close(); }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("a.bande-annonce"); if(!a) return;
+    e.preventDefault();
+    d.querySelector(".titre").textContent = "🎬 " + (a.dataset.titre || "Bande-annonce");
+    v.src = a.getAttribute("href"); d.showModal(); var p = v.play(); if(p && p.catch) p.catch(function(){});
+  });
+  d.querySelector("button").addEventListener("click", fermer);
+  d.addEventListener("click", function(e){ if(e.target === d) fermer(); });
+  d.addEventListener("close", function(){ v.pause(); });
+  v.addEventListener("error", function(){ if(v.getAttribute("src")) d.querySelector(".titre").textContent = "Bande-annonce indisponible (pas encore générée ?)"; });
+})();
 </script>
 </body>
 </html>

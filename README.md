@@ -256,12 +256,21 @@ le pas-à-pas ci-dessous (entrée `affiche-fond` des manifestes `medias.json`).
 cd "E:\IDRISS\PROJET ESCAPE GAMES"
 powershell -ExecutionPolicy Bypass -File outils-medias\produire-medias.ps1 -Jeu melanges
 python outils-medias\affiches.py melanges
+python outils-medias\bande-annonce.py melanges
 ```
 
-1. La première commande génère avec Agnes ce qui manque, dont `assets/images/affiche-fond.jpg` (et le plan d'ouverture
-   de la bande-annonce) ; les fichiers déjà présents ne sont jamais refaits (pas de dépense inutile).
-2. La seconde recompose l'affiche avec ce fond. Recommencer pour chaque jeu (ou sans nom de jeu pour les 9 affiches).
-3. Vérifier l'affiche, puis publier (`git add`, `git commit`, `git push`).
+1. La première commande génère avec Agnes ce qui manque, dont `assets/images/affiche-fond.jpg` et
+   `assets/videos/bande-annonce-ouverture.mp4` (plan d'ouverture de la bande-annonce) ; les fichiers déjà présents ne
+   sont jamais refaits (pas de dépense inutile).
+2. La deuxième recompose l'affiche avec ce fond.
+3. La troisième remonte la bande-annonce (il faut aussi **ffmpeg** : `winget install ffmpeg`, puis rouvrir PowerShell).
+   Recommencer pour chaque jeu (ou sans nom de jeu pour les 9).
+4. Vérifier l'affiche et la bande-annonce, puis publier (`git add`, `git commit`, `git push`).
+
+Chaque jeu a aussi une **bande-annonce** d'environ 16 s (`<jeu>/assets/videos/bande-annonce.mp4`, 1280 × 720, sans son),
+lisible depuis sa carte de l'accueil (lien « 🎬 Bande-annonce ») : l'affiche, quatre plans du jeu en fondu enchaîné, puis
+un carton « À jouer en classe ». C'est un montage gratuit et local (`outils-medias/bande-annonce.py`) des médias déjà
+présents dans le jeu ; il intègre automatiquement le plan d'ouverture Agnes dès qu'il existe.
 
 ## 4. Organisation du dépôt
 

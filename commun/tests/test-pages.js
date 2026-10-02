@@ -232,6 +232,46 @@ SECTIONS.D4 = async () => {
   ok(erreurs.length === 0 && jeu.erreurs.length === 0, "erreurs JS : " + erreurs.concat(jeu.erreurs).join(" | "));
 };
 
+SECTIONS.B2 = async () => {
+  console.log("\n== B2 : bandes-annonces ==");
+  const fs = require("fs"), path = require("path"), { execFileSync } = require("child_process");
+  const { w, erreurs } = await charger(RACINE, "", { page: "index.html", attente: 300 });
+  const d = w.document, C = w.eval("CATALOGUE");
+  const jeux = C.jeux.filter(j => j.dossier).map(j => j.dossier);
+  const liens = [...d.querySelectorAll("a.bande-annonce")];
+  ok(liens.length === jeux.length, `un lien « Bande-annonce » par jeu disponible (${liens.length}/${jeux.length})`);
+  const manquants = liens.map(a => a.getAttribute("href")).filter(h => !fs.existsSync(path.join(RACINE, h)));
+  ok(manquants.length === 0, "chaque bande-annonce existe" + (manquants.length ? " — manquent : " + manquants.join(", ") : ""));
+  let ffprobe = true;
+  for (const a of liens) {
+    const f = path.join(RACINE, a.getAttribute("href")); if (!fs.existsSync(f)) continue;
+    let s = null;
+    try { s = execFileSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height:format=duration", "-of", "json", f]).toString(); }
+    catch (e) { if (e.code === "ENOENT") { ffprobe = false; break; } }
+    const j = s && JSON.parse(s), v = j && j.streams[0], dur = j && parseFloat(j.format.duration);
+    ok(v && v.width === 1280 && v.height === 720 && dur >= 15 && dur <= 20, `${a.getAttribute("href").split("/")[0]} : 1280×720, ${dur ? dur.toFixed(1) : "?"} s (15 à 20 s)`);
+  }
+  if (!ffprobe) console.log("  (ffprobe absent : durées non vérifiées)");
+  // lecteur : le clic ouvre la fenêtre avec la bonne vidéo
+  const dlg = d.getElementById("lecteur-ba");
+  ok(!!dlg, "fenêtre de lecture présente");
+  if (dlg && typeof dlg.showModal === "function") {
+    liens[0].click();
+    ok(dlg.open && dlg.querySelector("video").getAttribute("src") === liens[0].getAttribute("href"), "le clic ouvre la bande-annonce dans la fenêtre");
+    dlg.querySelector("button").click();
+    ok(!dlg.open, "bouton Fermer");
+  }
+  // vérificateur : ces fichiers ne sont pas signalés « mal nommés »
+  const v = fs.readFileSync(path.join(RACINE, "verifier.html"), "utf8");
+  const m = v.match(/if\((\/\\\/assets\\\/\(images[^\n]*?\/i)\.test\(chemin\)\) continue;/);
+  ok(!!m, "verifier.html ignore affiche et bande-annonce dans les orphelins");
+  if (m) { const re = eval(m[1]); ok(["melanges/assets/videos/bande-annonce.mp4", "melanges/assets/images/affiche.jpg", "melanges/assets/images/affiche-fond.jpg", "melanges/assets/videos/bande-annonce-ouverture.mp4"].every(c => re.test(c)) && !re.test("melanges/assets/videos/salle1.mp4"), "motif d'exception correct"); }
+  // crédits
+  const sansCredit = jeux.filter(j => !/\n## Bande-annonce\n/.test(fs.readFileSync(path.join(RACINE, j, "assets/medias/CREDITS-medias.md"), "utf8")));
+  ok(sansCredit.length === 0, "crédit « Bande-annonce » dans chaque CREDITS-medias.md" + (sansCredit.length ? " — manque : " + sansCredit.join(", ") : ""));
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

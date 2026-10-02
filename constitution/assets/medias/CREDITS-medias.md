@@ -15,3 +15,7 @@ personnages entierement fictifs.
 ## Affiche du jeu
 
 `assets/images/affiche.jpg` : composée par `outils-medias/affiches.py` à partir de `assets/images/decors/salle1.jpg` (Photo : Zairon, CC BY-SA 4.0, Wikimedia Commons ; l'affiche reprend cette licence).
+
+## Bande-annonce
+
+`assets/videos/bande-annonce.mp4` : montage (outils-medias/bande-annonce.py) de l'affiche et des médias du jeu `assets/videos/intro.mp4`, `assets/images/decors/salle2.jpg`, `assets/images/decors/salle4.jpg`, `assets/videos/final.mp4` ; les crédits et licences de ces médias, indiqués ci-dessus, s'appliquent.

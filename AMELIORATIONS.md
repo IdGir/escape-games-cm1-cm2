@@ -86,7 +86,7 @@ l'identité visuelle reste cohérente malgré la production jeu par jeu.
 l'API Agnes à partir de photos/images (clé déjà configurée et testée d'après
 `diag.txt`). Prolonger ce pipeline pour produire une bande-annonce par jeu,
 utilisable en amont en classe ou pour présenter le projet aux collègues/parents.
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ### B3 — Frise visuelle des 26 jeux sur l'accueil
 `prompts-opus/00-ORDRE-DE-PRODUCTION.md` contient déjà tout le calendrier

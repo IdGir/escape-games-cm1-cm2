@@ -30,3 +30,7 @@ personnages entierement fictifs.
 ## Affiche du jeu
 
 `assets/images/affiche.jpg` : composée par `outils-medias/affiches.py` à partir de `assets/images/mission-intro.jpg` (illustration créée avec Agnes AI, scène et personnages fictifs).
+
+## Bande-annonce
+
+`assets/videos/bande-annonce.mp4` : montage (outils-medias/bande-annonce.py) de l'affiche et des médias du jeu `assets/videos/mission-intro.mp4`, `assets/videos/s12-coeur.mp4`, `assets/videos/s16-coeur.mp4`, `assets/videos/final-intro.mp4` ; les crédits et licences de ces médias, indiqués ci-dessus, s'appliquent.

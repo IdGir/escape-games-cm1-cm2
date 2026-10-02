@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "0148db5851";
+self.VERSION_HORS_LIGNE = "cdfe889407";
 self.FICHIERS_CODE = [
 "annee.html",
 "chateau-fort/assets/data/dialogues.json",
@@ -227,6 +227,7 @@ self.FICHIERS_CODE = [
 ];
 self.IMAGES_JEUX = {
 "chateau-fort": [
+"chateau-fort/assets/images/affiche.jpg",
 "chateau-fort/assets/images/cartes/e1-2.jpg",
 "chateau-fort/assets/images/cartes/e4-1.jpg",
 "chateau-fort/assets/images/cartes/e5-2.jpg",
@@ -245,6 +246,7 @@ self.IMAGES_JEUX = {
 "chateau-fort/assets/images/personnages/perrine.png"
 ],
 "constitution": [
+"constitution/assets/images/affiche.jpg",
 "constitution/assets/images/cartes/e1-1.jpg",
 "constitution/assets/images/cartes/e1-3.jpg",
 "constitution/assets/images/cartes/e2-1.jpg",
@@ -279,6 +281,7 @@ self.IMAGES_JEUX = {
 "constitution/assets/lecons/valeurs-et-principes-de-la-republique.pdf"
 ],
 "declaration": [
+"declaration/assets/images/affiche.jpg",
 "declaration/assets/images/decors/final.jpg",
 "declaration/assets/images/decors/intro.jpg",
 "declaration/assets/images/decors/salle1.jpg",
@@ -295,6 +298,7 @@ self.IMAGES_JEUX = {
 "declaration/assets/images/personnages/maximilien.png"
 ],
 "melanges": [
+"melanges/assets/images/affiche.jpg",
 "melanges/assets/images/cartes/e5-1.jpg",
 "melanges/assets/images/decors/final.jpg",
 "melanges/assets/images/decors/intro.jpg",
@@ -310,6 +314,7 @@ self.IMAGES_JEUX = {
 "melanges/assets/images/personnages/yann.png"
 ],
 "mission-geo": [
+"mission-geo/assets/images/affiche.jpg",
 "mission-geo/assets/images/final-intro.jpg",
 "mission-geo/assets/images/mission-intro.jpg",
 "mission-geo/assets/images/s01-intro.jpg",
@@ -341,6 +346,7 @@ self.IMAGES_JEUX = {
 "mission-geo/assets/images/s16-intro.jpg"
 ],
 "moyen-age-abbaye": [
+"moyen-age-abbaye/assets/images/affiche.jpg",
 "moyen-age-abbaye/assets/images/cartes/e1-2.jpg",
 "moyen-age-abbaye/assets/images/cartes/e2-3.jpg",
 "moyen-age-abbaye/assets/images/cartes/e3-2.jpg",
@@ -359,6 +365,7 @@ self.IMAGES_JEUX = {
 "moyen-age-abbaye/assets/images/personnages/garin.png"
 ],
 "objets-techniques": [
+"objets-techniques/assets/images/affiche.jpg",
 "objets-techniques/assets/images/decors/final.jpg",
 "objets-techniques/assets/images/decors/intro.jpg",
 "objets-techniques/assets/images/decors/salle1.jpg",
@@ -372,6 +379,7 @@ self.IMAGES_JEUX = {
 "objets-techniques/assets/images/personnages/zoe.png"
 ],
 "station-meteo": [
+"station-meteo/assets/images/affiche.jpg",
 "station-meteo/assets/images/cartes/e1-2.jpg",
 "station-meteo/assets/images/cartes/e2-2.jpg",
 "station-meteo/assets/images/cartes/e3-2.jpg",
@@ -388,6 +396,7 @@ self.IMAGES_JEUX = {
 "station-meteo/assets/images/personnages/vasseur.png"
 ],
 "tour-du-monde": [
+"tour-du-monde/assets/images/affiche.jpg",
 "tour-du-monde/assets/images/cartes/paysage-banquise.jpg",
 "tour-du-monde/assets/images/cartes/paysage-campagne.jpg",
 "tour-du-monde/assets/images/cartes/paysage-desert.jpg",
