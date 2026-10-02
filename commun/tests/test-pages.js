@@ -121,7 +121,7 @@ SECTIONS.C5 = async () => {
   const a = d.getElementById("choix-avenir"); a.checked = true; a.dispatchEvent(new w.Event("change"));
   ok(d.querySelectorAll(".jeu.avenir").length === 0, "P1 : tous les jeux de la période sont déjà publiés");
   const p = d.getElementById("choix-p"); p.value = "P2"; p.dispatchEvent(new w.Event("change"));
-  ok(d.querySelectorAll(".jeu.avenir").length === 3, "P2 Année B : 3 jeux à venir");
+  ok(d.querySelectorAll(".jeu.avenir").length === 2, "P2 Année B : 2 jeux à venir");
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
@@ -130,7 +130,7 @@ SECTIONS.C3 = async () => {
   const hist = JSON.stringify([{ type: "escape-game-compte-rendu", jeu: "melanges", eleve: "Léa B.", termine: true, score: 200, scoreMax: 235 }]);
   const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200, stockage: { escape_resultats: hist } });
   const d = w.document, P = w.PASSEPORT;
-  ok(P.COMPETENCES.length === 5 * 7 + 8 + 6 + 16, `compétences des 10 jeux publiés, une par leçon (${P.COMPETENCES.length})`);
+  ok(P.COMPETENCES.length === 5 * 8 + 8 + 6 + 16, `compétences des 11 jeux publiés, une par leçon (${P.COMPETENCES.length})`);
   d.getElementById("liste-eleves").value = "Léa B.\nTom R.\n\nLéa B.";
   d.getElementById("btn-eleves").click();
   ok(P.D.eleves.join(",") === "Léa B.,Tom R.", "liste de la classe (doublons et lignes vides ignorés)");
@@ -175,16 +175,16 @@ SECTIONS.F4 = async () => {
   const fs = require("fs"), path = require("path");
   const { w, erreurs } = await charger(RACINE, "?duree=12", { page: "demo.html", attente: 200 });
   const D = w.DEMO;
-  ok(D.jeux.length === 10 && D.jeux.every(j => fs.existsSync(path.join(RACINE, j.dossier, "index.html"))), "un extrait pour chacun des 10 jeux publiés");
+  ok(D.jeux.length === 11 && D.jeux.every(j => fs.existsSync(path.join(RACINE, j.dossier, "index.html"))), "un extrait pour chacun des 11 jeux publiés");
   ok(D.jeux.every(j => /[?&](salle|seance)=/.test(D.EXTRAITS[j.dossier])), "extraits en mode vérification (rien n'est enregistré)");
   await dodo(2700);
   ok(D.etat.i === 0 && /\/\?/.test(w.document.getElementById("cadre").getAttribute("src")), "premier extrait lancé : " + w.document.getElementById("cadre").getAttribute("src"));
-  ok(/1 \/ 10/.test(w.document.getElementById("titre").textContent), "bandeau : 1 / 10");
+  ok(/1 \/ 11/.test(w.document.getElementById("titre").textContent), "bandeau : 1 / 11");
   w.document.getElementById("b-suivant").click();
   ok(D.etat.i === 1, "⏭ extrait suivant");
   w.document.getElementById("b-pause").click(); const avant = D.etat.i; await dodo(400);
   ok(D.etat.pause && D.etat.i === avant, "⏸ pause");
-  D.montrer(9); D.montrer(D.etat.i + 1);
+  D.montrer(10); D.montrer(D.etat.i + 1);
   ok(D.etat.i === 0, "la boucle repart au premier jeu");
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
@@ -192,7 +192,7 @@ SECTIONS.F4 = async () => {
 SECTIONS.D4 = async () => {
   console.log("\n== D4 : éditeur d'énigmes (editeur.html) ==");
   const path = require("path");
-  for (const j of ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles"]) {
+  for (const j of ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance"]) {
     const { w, erreurs } = await charger(RACINE, "?jeu=" + j, { page: "editeur.html", attente: 600 });
     await attendreQue(() => w.document.querySelectorAll("#arbre .item").length, 3000);
     const E = w.EDITEUR, b = E.bilanGlobal();

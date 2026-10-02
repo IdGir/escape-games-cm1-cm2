@@ -164,13 +164,13 @@ var CATALOGUE = {
     "P2"
    ],
    "competences": "François Ier, protecteur des arts et des lettres à la Renaissance (Léonard de Vinci).",
-   "dossier": null,
+   "dossier": "renaissance",
    "icone": "🎨",
    "couleurs": [
-    "#6b4a2b",
+    "#8a4b1e",
     "#c9a227"
    ],
-   "resume": "",
+   "resume": "À Amboise, en 1518, un coup de vent disperse cinq pages du carnet de Léonard de Vinci : les élèves les retrouvent avant la grande fête de François Ier.",
    "prompt": "07-renaissance.md",
    "programme": [
     "hg2026"

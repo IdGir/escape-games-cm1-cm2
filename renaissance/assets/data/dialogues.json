@@ -1,0 +1,152 @@
+{
+ "metadata": {
+  "jeu": "L'Atelier de Léonard à Amboise",
+  "sujet": "La monarchie en France : François Ier, un protecteur des arts et des lettres à la Renaissance, grâce à l'aide de Léonard de Vinci — histoire, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "lien_autres_jeux": "Voisin du jeu n°06 (Henri IV, Louis XIV, année A). Les châteaux de la Loire prolongent le jeu n°02 (le château fort) : l'architecture passe de la défense au prestige.",
+  "sources": "Château royal d'Amboise ; Château du Clos Lucé ; Château de Chambord ; Musée du Louvre ; Collège de France ; Encyclopédie Larousse ; Vikidia ; Lumni."
+ },
+ "personnages": {
+  "tommaso": {
+   "nom": "Tommaso",
+   "role": "Apprenti de Léonard de Vinci, 12 ans, venu d'Italie"
+  },
+  "jacquet": {
+   "nom": "Maître Jacquet",
+   "role": "Imprimeur à Amboise"
+  },
+  "helene": {
+   "nom": "Dame Hélène",
+   "role": "Dame de la cour de François Ier"
+  },
+  "colombe": {
+   "nom": "Colombe",
+   "role": "Fille d'un maître maçon des chantiers du roi, 11 ans"
+  },
+  "bastien": {
+   "nom": "Bastien",
+   "role": "Jeune peintre de la cour, élève des artistes italiens"
+  }
+ },
+ "intro_accueil": "Ah, vous voilà ! Je suis Tommaso, l'apprenti de maître Léonard de Vinci. Nous sommes à Amboise, au printemps 1518, et le roi François Ier prépare une grande fête au château. Ce matin, un coup de vent a fait s'envoler cinq pages du carnet de mon maître. Cinq personnes les ont ramassées, et chacune veut d'abord savoir si vous comprenez ce qu'il y a dessus. Le maître en a besoin avant la fête. Aidez-moi à retrouver les cinq pages, et notez bien le mot écrit sur chacune.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "L'imprimerie de Maître Jacquet",
+   "decor": "imprimerie",
+   "motCle": "ANTIQUITÉ",
+   "lieu": "Une imprimerie de la ville d'Amboise, au printemps 1518",
+   "description": "Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes.",
+   "sens": [
+    "À voir : la presse et les livres empilés",
+    "À entendre : le claquement de la presse",
+    "À sentir : l'encre fraîche"
+   ],
+   "dialogue_intro": {
+    "perso": "jacquet",
+    "nom": "Maître Jacquet",
+    "texte": "Bonjour, jeunes gens. Une page de carnet est tombée dans ma cour. Je l'ai gardée, car elle parle de mon métier. Grâce à l'imprimerie, un livre se fabrique en centaines d'exemplaires. On imprime les textes des anciens Grecs et Romains, que les savants redécouvrent. Tout le monde parle d'un temps nouveau, venu d'Italie. Dites-moi d'où il vient, et la page est à vous."
+   },
+   "dialogue_reussite": {
+    "perso": "jacquet",
+    "nom": "Maître Jacquet",
+    "texte": "Bien répondu. Le mot écrit sur la page est <b>ANTIQUITÉ</b> : c'est elle que la Renaissance fait renaître. Allez maintenant au château. Dame Hélène prépare la fête ; elle a ramassé une autre page."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "La grande salle d'Amboise",
+   "decor": "salle",
+   "motCle": "MÉCÈNE",
+   "lieu": "La grande salle du château royal d'Amboise",
+   "description": "On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire.",
+   "sens": [
+    "À voir : la salamandre et la lettre F",
+    "À entendre : les musiciens qui s'accordent",
+    "À sentir : les bouquets de la fête"
+   ],
+   "dialogue_intro": {
+    "perso": "helene",
+    "nom": "Dame Hélène",
+    "texte": "Bienvenue au château d'Amboise. Le roi a grandi ici, vous le saviez ? Depuis qu'il est roi, il fait venir d'Italie des peintres, des sculpteurs, des savants. Il aime aussi les livres et les langues. Mais attention, c'est aussi un roi qui fait la guerre. La page que j'ai ramassée parle de lui. Montrez-moi que vous le connaissez."
+   },
+   "dialogue_reussite": {
+    "perso": "helene",
+    "nom": "Dame Hélène",
+    "texte": "Parfait. Le mot de la page est <b>MÉCÈNE</b> : celui qui protège et aide les artistes et les savants. Descendez maintenant au manoir du Cloux, où travaille maître Léonard. Tommaso vous y attend."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "L'atelier du Cloux",
+   "decor": "atelier",
+   "motCle": "OBSERVER",
+   "lieu": "L'atelier de Léonard, au manoir du Cloux, près du château",
+   "description": "Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger.",
+   "sens": [
+    "À voir : les dessins et le chevalet",
+    "À entendre : le grattement de la plume",
+    "À sentir : l'huile de lin et la cire"
+   ],
+   "dialogue_intro": {
+    "perso": "tommaso",
+    "nom": "Tommaso",
+    "texte": "Voici l'atelier de mon maître. Le roi lui a donné ce manoir et un beau titre : premier peintre, ingénieur et architecte du roi. Le maître peint, dessine des machines, imagine des canaux, et il regarde tout : l'eau, les oiseaux, les plantes. Ses pages sont un vrai désordre ! La troisième page est ici, quelque part. Aidez-moi à la retrouver."
+   },
+   "dialogue_reussite": {
+    "perso": "tommaso",
+    "nom": "Tommaso",
+    "texte": "La voilà ! Le mot est <b>OBSERVER</b> : le maître dit qu'il faut d'abord regarder la nature pour la comprendre et la peindre. Colombe, la fille du maître maçon, a la quatrième page. Elle est au cabinet des plans."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "Le cabinet des plans",
+   "decor": "plans",
+   "motCle": "SALAMANDRE",
+   "lieu": "Le cabinet des plans, au château d'Amboise",
+   "description": "Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord.",
+   "sens": [
+    "À voir : les plans, la règle et le compas",
+    "À entendre : le froissement des grandes feuilles",
+    "À sentir : la poussière de craie"
+   ],
+   "dialogue_intro": {
+    "perso": "colombe",
+    "nom": "Colombe",
+    "texte": "Bonjour ! Je m'appelle Colombe, mon père est maître maçon. Ici, on dessine les châteaux du roi. Ce ne sont plus des forteresses : on veut de grandes fenêtres, des escaliers magnifiques, tout bien symétrique, comme dans l'Antiquité. Le roi rêve d'un château encore plus grand, à Chambord. Lisez les plans avec moi, et je vous donne la page."
+   },
+   "dialogue_reussite": {
+    "perso": "colombe",
+    "nom": "Colombe",
+    "texte": "Bravo ! Le mot de la page est <b>SALAMANDRE</b> : l'emblème du roi, sculpté sur ses châteaux. Dernière page : Bastien l'a emportée dans la galerie des tableaux."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "La galerie des tableaux",
+   "decor": "galerie",
+   "motCle": "PERSPECTIVE",
+   "lieu": "La galerie des tableaux du château",
+   "description": "Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer.",
+   "sens": [
+    "À voir : les tableaux et leurs cadres dorés",
+    "À entendre : les pas sur le parquet",
+    "À sentir : le vernis"
+   ],
+   "dialogue_intro": {
+    "perso": "bastien",
+    "nom": "Bastien",
+    "texte": "Ah, la dernière page ! Je l'étudiais, car je veux peindre comme les Italiens. Regardez ces tableaux : on dirait des fenêtres ouvertes sur le monde. Le secret, ce sont des règles de dessin. Les corps aussi ont leurs règles. Prouvez-moi que vous savez lire un tableau, et la page est à vous."
+   },
+   "dialogue_fin": {
+    "perso": "helene",
+    "nom": "Dame Hélène",
+    "texte": "Le mot de la dernière page est <b>PERSPECTIVE</b>. Vous avez les cinq mots ! Écrivez-les dans le coffre, dans l'ordre des salles, et le carnet de maître Léonard sera complet pour la fête."
+   }
+  }
+ ]
+}

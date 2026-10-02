@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "50fec20e2a";
+self.VERSION_HORS_LIGNE = "e6f3f0cf8a";
 self.FICHIERS_CODE = [
 "annee.html",
 "chateau-fort/assets/data/dialogues.json",
@@ -183,6 +183,23 @@ self.FICHIERS_CODE = [
 "objets-techniques/prof.html",
 "passeport.html",
 "periode.html",
+"renaissance/assets/data/dialogues.json",
+"renaissance/assets/data/enigmes.json",
+"renaissance/assets/data/evaluations.json",
+"renaissance/assets/data/lecons-a4.json",
+"renaissance/assets/data/lecons.json",
+"renaissance/css/enigmes.css",
+"renaissance/css/print.css",
+"renaissance/css/style.css",
+"renaissance/index.html",
+"renaissance/js/app.js",
+"renaissance/js/decors.js",
+"renaissance/js/jeu.js",
+"renaissance/js/lecons.js",
+"renaissance/js/personnages.js",
+"renaissance/js/reglages.js",
+"renaissance/lecons-imprimables.html",
+"renaissance/prof.html",
 "resultats.html",
 "station-meteo/assets/data/dialogues.json",
 "station-meteo/assets/data/enigmes.json",
@@ -394,6 +411,10 @@ self.IMAGES_JEUX = {
 "objets-techniques/assets/images/personnages/eleonore.png",
 "objets-techniques/assets/images/personnages/marcel.png",
 "objets-techniques/assets/images/personnages/zoe.png"
+],
+"renaissance": [
+"renaissance/assets/images/affiche-fond.jpg",
+"renaissance/assets/images/affiche.jpg"
 ],
 "station-meteo": [
 "station-meteo/assets/images/affiche.jpg",
