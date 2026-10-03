@@ -270,16 +270,31 @@ spécificités (syntaxe, paramètres, limites) :
 Ne cite aucun nom d'artiste vivant dans les prompts ; vérifie dans `PRODUCTION-MEDIAS.md` les rappels sur les
 conditions d'usage (usage scolaire, publication) à contrôler par l'enseignant.
 
-### 7.7 Option : génération automatisée via une API (clé fournie par l'enseignant)
+### 7.7 Génération automatisée via l'API Agnes AI (clé fournie par l'enseignant)
 
-Écris un script **facultatif** `outils-medias/generer-medias.py` qui lit `medias.csv`, appelle une API d'images
-(fournisseur configurable par variable d'environnement : `MEDIA_API_URL`, `MEDIA_API_KEY`, modèle, ratio), enregistre
-les résultats dans un dossier **`assets/medias-proposes/`** (jamais directement dans `assets/images/`), avec
-reprise sur erreur, limite de coût (`--max-images`), journal. Une page `outils-medias/choisir-medias.html` permet à
-l'enseignant de comparer et **valider** chaque proposition (copie vers le bon nom) ; rien n'est publié sans
-validation. **Ne jamais écrire de clé dans le dépôt** (variable d'environnement ou secret de l'environnement
-uniquement) ; si la clé ou le réseau sont absents, le script s'arrête proprement avec un message. Ne le lance que
-si `MEDIA_API_KEY` est défini et si l'API est documentée et accessible ; sinon livre-le non testé en le disant.
+Fournisseur retenu : **Agnes AI** (images : texte→image, édition ; vidéo : image→vidéo, vidéo avec audio
+synchronisé). API **compatible OpenAI** ; URL de base `https://apihub.agnes-ai.com/v1` ; authentification par en-tête
+`Authorization: Bearer $AGNES_API_KEY`. Index de la documentation : `https://wiki.agnes-ai.com/llms.txt` (lis-le,
+puis les pages des modèles d'image et de vidéo : noms de modèles, endpoints, paramètres de ratio/taille/durée,
+format de réponse — certaines générations vidéo sont asynchrones : prévois l'interrogation d'état).
+**N'invente aucun nom de modèle ni de paramètre** : tout vient de la documentation. Si `wiki.agnes-ai.com` ou
+`apihub.agnes-ai.com` est bloqué par le réseau, ou si `AGNES_API_KEY` est absent, livre le script **non testé**
+en le disant clairement et continue sans lui.
+
+Script **facultatif** `outils-medias/generer-medias.py` (Python standard + `requests` si disponible) :
+- lit `medias.csv` (identifiant, type image/vidéo, prompt, ratio, image de départ pour les vidéos) ;
+- appelle l'API ; enregistre dans **`assets/medias-proposes/<id>-v1.webp|mp4`** (jamais directement dans
+  `assets/images/` ni `assets/videos/`), avec reprise sur erreur et sans régénérer ce qui existe ;
+- options `--seulement <id>`, `--variantes N` (2-4 propositions par décor), `--max-images` et `--max-videos`
+  (**plafond de coût**), `--essai` (affiche les appels sans les faire), journal `generation.log` ;
+- ordre imposé : portraits de référence → cadre → décors → vidéos (image de départ = décor **validé**) ;
+- la clé n'est lue que dans la variable d'environnement `AGNES_API_KEY` : **jamais écrite** dans un fichier, un
+  journal, un commit ou une page web ; `.gitignore` exclut `assets/medias-proposes/` ;
+- page `outils-medias/choisir-medias.html` : compare les propositions et le secours de Claude côte à côte ;
+  l'enseignant **valide** (téléchargement/renommage vers le nom attendu du § 7.5). Rien n'entre dans le jeu sans
+  validation ; refuser une proposition ne change rien (le secours reste).
+Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux spécificités des modèles Agnes
+(version « Agnes » ajoutée à côté de Midjourney/Flux/etc. dans `PRODUCTION-MEDIAS.md`).
 
 ## 8. Qualité, tests, intégration
 
