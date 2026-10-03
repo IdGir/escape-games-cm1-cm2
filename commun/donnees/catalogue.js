@@ -185,14 +185,14 @@ var CATALOGUE = {
    "periodes": [
     "P2"
    ],
-   "competences": "Besoins alimentaires et nutrition humaine ; production et conservation des aliments.",
-   "dossier": null,
+   "competences": "Besoins alimentaires et nutrition humaine : grandir, des besoins qui varient, mâcher, digérer ; le sang livre les nutriments.",
+   "dossier": "alimentation",
    "icone": "🍲",
    "couleurs": [
     "#2b5d6b",
     "#7fb3c8"
    ],
-   "resume": "",
+   "resume": "Au restaurant Le Grand Couvert, la cheffe Rosalie prépare le repas d'un coureur cycliste : les élèves, ses commis, retrouvent les cinq mots du coffre, de la croissance au sang qui livre les nutriments.",
    "prompt": "08-alimentation.md",
    "programme": [
     "st2026"

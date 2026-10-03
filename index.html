@@ -8,7 +8,7 @@
 <style>
   :root{
     --fond:#f6f4ef; --papier:#fff; --encre:#1f2430; --doux:#5d6472; --ligne:#e2ddd2;
-    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227;
+    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227; --ali:#2b5d6b; --ali-2:#d9a21b;
   }
   *{box-sizing:border-box}
   body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
@@ -58,6 +58,8 @@
   .versailles .jouer{background:var(--ver)}
   .renaissance .bandeau{background:linear-gradient(135deg,var(--ren),#2e1a0c 60%,var(--ren-2))}
   .renaissance .jouer{background:var(--ren)}
+  .alimentation .bandeau{background:linear-gradient(135deg,var(--ali),#10262d 60%,var(--ali-2))}
+  .alimentation .jouer{background:var(--ali)}
   .meteo .bandeau{background:linear-gradient(135deg,var(--met),#0f3350 60%,var(--met-2))}
   .meteo .jouer{background:var(--met)}
   .enseignant{max-width:1100px;margin:0 auto 50px;padding:0 20px}
@@ -286,6 +288,24 @@
       </div>
     </div>
   </article>
+  <article class="jeu alimentation">
+    <div class="bandeau">
+      <img class="affiche" src="alimentation/assets/images/affiche.jpg" alt="Affiche : Le Grand Repas du chef" loading="lazy" onerror="this.remove()">
+      <div class="icone">🍲</div>
+      <h2>Le Grand Repas du chef</h2>
+      <div class="meta">Sciences · L'alimentation humaine : besoins alimentaires et nutrition · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
+    </div>
+    <div class="corps">
+      <p>Au restaurant Le Grand Couvert, la cheffe Rosalie prépare le repas de Basile, coureur cycliste. Ses commis retrouvent les cinq mots du coffre : grandir, bouger, mâcher, digérer, et le sang qui livre les nutriments aux muscles.</p>
+      <a class="jouer" href="alimentation/">▶ Jouer</a>
+      <div class="liens">
+        <a class="telecharger-affiche" href="alimentation/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="alimentation/assets/videos/bande-annonce.mp4" data-titre="Le Grand Repas du chef">🎬 Bande-annonce</a>
+        <a class="prof" href="alimentation/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/alimentation#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
 </main>
 
 <section class="enseignant" id="annee">
@@ -386,7 +406,7 @@
     prep.addEventListener("click", () => {
       prep.disabled = true; prep.textContent = "⏳ Téléchargement des images…";
       navigator.serviceWorker.ready.then(r => {
-        ["declaration","tour-du-monde","mission-geo","constitution","moyen-age-abbaye","station-meteo","melanges","objets-techniques","chateau-fort","versailles","renaissance"]
+        ["declaration","tour-du-monde","mission-geo","constitution","moyen-age-abbaye","station-meteo","melanges","objets-techniques","chateau-fort","versailles","renaissance","alimentation"]
           .forEach(j => r.active.postMessage({ type: "preparer-images", jeu: j }));
       });
     });

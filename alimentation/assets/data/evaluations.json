@@ -1,0 +1,671 @@
+{
+ "metadata": {
+  "sujet": "Alimentation humaine : besoins alimentaires et nutrition humaine",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "programme": "Sciences et technologie, cycle 3 — thème « Le corps humain et la santé », Alimentation humaine : besoins alimentaires et nutrition humaine (BO n° 24 du 11 juin 2026). Progression de l'enseignant : année A, période 2.",
+  "sources": "Voir README.md du jeu, section Sources."
+ },
+ "quizz_final": {
+  "CM1": [
+   {
+    "q": "D'où vient la matière qui permet à un enfant de grandir ?",
+    "options": [
+     "De l'air",
+     "Des aliments",
+     "Du soleil"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "Qui a les plus grands besoins en énergie ?",
+    "options": [
+     "Un enfant qui lit",
+     "Un bébé qui dort",
+     "Un coureur un jour d'étape"
+    ],
+    "bonne": 2
+   },
+   {
+    "q": "Quelles dents broient les aliments ?",
+    "options": [
+     "Les molaires",
+     "Les incisives",
+     "Les canines"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "Où les nutriments passent-ils dans le sang ?",
+    "options": [
+     "Dans l'œsophage",
+     "Dans l'intestin grêle",
+     "Dans la bouche"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "Pourquoi le cœur bat-il plus vite pendant un effort ?",
+    "options": [
+     "Les aliments passent par le cœur",
+     "Le cœur a froid",
+     "Les muscles ont besoin de plus de nutriments"
+    ],
+    "bonne": 2
+   }
+  ],
+  "CM2": [
+   {
+    "q": "D'où vient la matière qui permet à un enfant de grandir ?",
+    "options": [
+     "De l'air",
+     "Des aliments",
+     "Du soleil",
+     "De l'eau seulement"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "Un jour d'étape de montagne, les besoins de Basile sont environ…",
+    "options": [
+     "identiques",
+     "deux fois plus petits",
+     "deux fois plus grands qu'au repos",
+     "dix fois plus grands"
+    ],
+    "bonne": 2
+   },
+   {
+    "q": "Quelles dents broient les aliments ?",
+    "options": [
+     "Les prémolaires et les molaires",
+     "Les incisives",
+     "Les canines",
+     "Les dents de lait seulement"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "Quel organe aide la digestion sans que les aliments le traversent ?",
+    "options": [
+     "L'estomac",
+     "Le foie",
+     "L'œsophage",
+     "L'intestin grêle"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "Pourquoi le cœur bat-il plus vite pendant un effort ?",
+    "options": [
+     "Les aliments passent par le cœur",
+     "Le cœur a froid",
+     "Le sang devient plus lourd",
+     "Les muscles ont besoin de plus de nutriments"
+    ],
+    "bonne": 3
+   }
+  ]
+ },
+ "fiches_preparatoires": [
+  {
+   "salle": 1,
+   "titre": "La cour du potager et du poulailler — grandir",
+   "objectifs": [
+    "Lire un tableau de mesures",
+    "Comprendre que grandir demande de la matière"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "croissance",
+     "def": "augmentation de la taille et de la masse"
+    },
+    {
+     "mot": "matière",
+     "def": "ce qui compose le corps"
+    },
+    {
+     "mot": "masse",
+     "def": "ce que pèse un être vivant (g, kg)"
+    }
+   ],
+   "contexte": "Un poussin passe de 40 g à 450 g en 4 semaines (relevé fictif) : la matière de son corps vient de sa nourriture."
+  },
+  {
+   "salle": 2,
+   "titre": "La salle des menus — des besoins qui changent",
+   "objectifs": [
+    "Dire ce qui fait varier les besoins",
+    "Relier l'effort et la dépense d'énergie"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "besoins alimentaires",
+     "def": "quantité et variété d'aliments nécessaires"
+    },
+    {
+     "mot": "kilocalorie (kcal)",
+     "def": "unité d'énergie des aliments"
+    },
+    {
+     "mot": "activité physique",
+     "def": "mouvement qui fait travailler les muscles"
+    }
+   ],
+   "contexte": "Les besoins changent avec l'âge, la croissance et l'activité physique ; il n'y a pas d'aliment interdit."
+  },
+  {
+   "salle": 3,
+   "titre": "La table de dégustation — mâcher",
+   "objectifs": [
+    "Nommer les dents et leur rôle",
+    "Expliquer le rôle de la salive"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "mastication",
+     "def": "action de mâcher"
+    },
+    {
+     "mot": "salive",
+     "def": "liquide qui mouille les aliments"
+    },
+    {
+     "mot": "bol alimentaire",
+     "def": "bouchée mâchée, prête à être avalée"
+    }
+   ],
+   "contexte": "Incisives (couper), canines (déchirer), prémolaires et molaires (broyer) ; 20 dents de lait, 32 dents chez l'adulte."
+  },
+  {
+   "salle": 4,
+   "titre": "Le cabinet du Grand Tunnel — digérer",
+   "objectifs": [
+    "Nommer et situer les organes digestifs",
+    "Dire où les nutriments passent dans le sang"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "digestion",
+     "def": "transformation des aliments en nutriments"
+    },
+    {
+     "mot": "nutriments",
+     "def": "éléments utilisables par les organes"
+    },
+    {
+     "mot": "tube digestif",
+     "def": "de la bouche à l'anus"
+    }
+   ],
+   "contexte": "Bouche, œsophage, estomac, intestin grêle (environ 6 m), gros intestin ; le foie aide sans être traversé."
+  },
+  {
+   "salle": 5,
+   "titre": "La salle d'entraînement — le sang",
+   "objectifs": [
+    "Expliquer le rôle du cœur et du sang",
+    "Mesurer son pouls"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "pouls",
+     "def": "battement du sang au poignet ou au cou"
+    },
+    {
+     "mot": "fréquence cardiaque",
+     "def": "battements du cœur par minute"
+    },
+    {
+     "mot": "circulation sanguine",
+     "def": "trajet du sang poussé par le cœur"
+    }
+   ],
+   "contexte": "Le sang livre les nutriments aux organes ; pendant un effort, le cœur accélère pour les muscles."
+  }
+ ],
+ "qcm": {
+  "CM1": [
+   {
+    "q": "D'où vient la matière qui fait grandir un poussin ?",
+    "options": [
+     "de la lampe",
+     "de sa nourriture",
+     "de l'air seulement"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Un enfant de 6 à 10 ans grandit d'environ…",
+    "options": [
+     "5 à 6 cm par an",
+     "20 cm par an",
+     "1 m par an"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Quelle activité dépense le plus d'énergie ?",
+    "options": [
+     "dormir",
+     "lire",
+     "grimper un col à vélo"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Qui a les plus grands besoins en énergie ?",
+    "options": [
+     "un bébé d'un an",
+     "un coureur un jour d'étape",
+     "un enfant de 5 ans"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Quelles dents coupent et croquent ?",
+    "options": [
+     "les incisives",
+     "les molaires",
+     "les canines"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Quel liquide mouille les aliments dans la bouche ?",
+    "options": [
+     "le sang",
+     "la salive",
+     "le lait"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Quel tuyau relie la bouche à l'estomac ?",
+    "options": [
+     "l'œsophage",
+     "l'intestin",
+     "la trachée"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Où les nutriments passent-ils dans le sang ?",
+    "options": [
+     "dans la bouche",
+     "dans l'estomac",
+     "dans l'intestin grêle"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Le cœur fonctionne comme…",
+    "options": [
+     "une pompe",
+     "un filtre",
+     "une poche à aliments"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Pendant un effort, le cœur bat…",
+    "options": [
+     "moins vite",
+     "plus vite",
+     "pareil"
+    ],
+    "bonne": 1,
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "Caramel a mangé 700 g de nourriture et grossi de 410 g. Que devient le reste ?",
+    "options": [
+     "il disparaît",
+     "il donne de l'énergie ou il est rejeté",
+     "il devient de l'air"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "À quel moment la croissance est-elle de nouveau rapide ?",
+    "options": [
+     "à la puberté",
+     "vers 8 ans",
+     "chez l'adulte"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Quelle unité mesure l'énergie apportée par les aliments ?",
+    "options": [
+     "le gramme",
+     "la kilocalorie",
+     "le litre"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Un enfant de 10 ans a besoin d'environ…",
+    "options": [
+     "500 kcal par jour",
+     "1 800 à 2 200 kcal par jour",
+     "6 000 kcal par jour"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Laquelle de ces raisons ne change pas les besoins ?",
+    "options": [
+     "l'âge",
+     "l'activité physique",
+     "la couleur des yeux"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Combien de dents a un adulte, dents de sagesse comprises ?",
+    "options": [
+     "20",
+     "28",
+     "32"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Quelles dents l'enfant n'a-t-il pas parmi ses dents de lait ?",
+    "options": [
+     "les prémolaires",
+     "les incisives",
+     "les canines"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Dans l'estomac, la bouchée devient…",
+    "options": [
+     "un morceau dur",
+     "une bouillie",
+     "de l'air"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Quel organe n'est pas traversé par les aliments ?",
+    "options": [
+     "l'estomac",
+     "le foie",
+     "le gros intestin"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Que fait le gros intestin ?",
+    "options": [
+     "il récupère l'eau et forme les excréments",
+     "il mâche",
+     "il pompe le sang"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Lou compte 30 battements en 15 secondes. Son pouls est de…",
+    "options": [
+     "60",
+     "120",
+     "45"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Pourquoi le cœur accélère-t-il pendant un effort ?",
+    "options": [
+     "pour livrer plus de nutriments aux muscles",
+     "parce que les aliments passent par le cœur",
+     "pour digérer plus vite"
+    ],
+    "bonne": 0,
+    "pts": 1
+   }
+  ]
+ },
+ "questions_fermees": {
+  "CM1": [
+   {
+    "q": "Pour grandir, le corps a besoin de matière.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Tout le monde a besoin de la même quantité d'aliments.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Les aliments passent par le cœur.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Le cœur bat plus vite pendant un effort.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Comment s'appelle l'action de mâcher ?",
+    "type": "court",
+    "rep": "la mastication",
+    "pts": 1
+   },
+   {
+    "q": "Cite une sorte de dent.",
+    "type": "court",
+    "rep": "incisive, canine, prémolaire ou molaire (une réponse)",
+    "pts": 1
+   },
+   {
+    "q": "Où va la bouchée après l'œsophage ?",
+    "type": "court",
+    "rep": "dans l'estomac",
+    "pts": 1
+   },
+   {
+    "q": "Que transporte le sang jusqu'aux muscles ?",
+    "type": "court",
+    "rep": "les nutriments",
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "Les besoins alimentaires augmentent avec l'activité physique.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "L'intestin grêle est plus court que le gros intestin.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Le foie fait partie de l'appareil digestif.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Un enfant a 32 dents de lait.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Comment appelle-t-on la bouchée mâchée et mouillée de salive ?",
+    "type": "court",
+    "rep": "le bol alimentaire",
+    "pts": 1
+   },
+   {
+    "q": "Cite, dans l'ordre, les organes traversés par les aliments.",
+    "type": "court",
+    "rep": "bouche, œsophage, estomac, intestin grêle, gros intestin",
+    "pts": 1
+   },
+   {
+    "q": "Comment mesure-t-on son pouls en une minute ?",
+    "type": "court",
+    "rep": "compter les battements pendant 15 secondes, puis multiplier par 4",
+    "pts": 1
+   },
+   {
+    "q": "Pourquoi un coureur cycliste mange-t-il plus un jour de course ?",
+    "type": "court",
+    "rep": "ses muscles travaillent longtemps : il dépense beaucoup plus d'énergie",
+    "pts": 1
+   }
+  ]
+ },
+ "etudes_documents": {
+  "CM1": [
+   {
+    "titre": "Le carnet du poulailler",
+    "document": {
+     "contenu": "Caramel pèse 40 g à sa naissance, 180 g à 2 semaines et 450 g à 4 semaines. Il mange de plus en plus chaque semaine.",
+     "source": "Relevé fictif, carnet de Nathan."
+    },
+    "questions": [
+     {
+      "q": "Combien pèse Caramel à sa naissance ?",
+      "type": "court",
+      "rep": "40 g",
+      "pts": 1
+     },
+     {
+      "q": "De combien a-t-il grossi en 4 semaines ?",
+      "type": "court",
+      "rep": "410 g",
+      "pts": 1
+     },
+     {
+      "q": "D'où vient la matière qui l'a fait grossir ?",
+      "type": "court",
+      "rep": "de sa nourriture",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "Le pouls de Lou",
+    "document": {
+     "contenu": "Au repos, Lou compte 22 battements en 15 secondes. Après avoir couru, elle en compte 40 en 15 secondes.",
+     "source": "Relevés fictifs."
+    },
+    "questions": [
+     {
+      "q": "Calcule le pouls de Lou au repos, en une minute.",
+      "type": "court",
+      "rep": "88 battements par minute",
+      "pts": 1
+     },
+     {
+      "q": "Son cœur bat-il plus vite ou moins vite après la course ?",
+      "type": "court",
+      "rep": "plus vite",
+      "pts": 1
+     },
+     {
+      "q": "Pourquoi ?",
+      "type": "court",
+      "rep": "les muscles ont besoin de plus de nutriments (et de sang)",
+      "pts": 1
+     }
+    ]
+   }
+  ],
+  "CM2": [
+   {
+    "titre": "Les besoins de Basile",
+    "document": {
+     "contenu": "Jour de repos : environ 2 800 kcal. Jour d'étape de montagne : environ 6 000 kcal. Un enfant de 10 ans : environ 1 800 à 2 200 kcal par jour.",
+     "source": "Ordres de grandeur (voir A-VERIFIER.md)."
+    },
+    "questions": [
+     {
+      "q": "Combien de fois plus d'énergie Basile dépense-t-il environ un jour d'étape ?",
+      "type": "court",
+      "rep": "environ deux fois plus",
+      "pts": 1
+     },
+     {
+      "q": "Explique pourquoi.",
+      "type": "court",
+      "rep": "ses muscles travaillent sans arrêt pendant des heures",
+      "pts": 1
+     },
+     {
+      "q": "Cite deux autres raisons qui font varier les besoins.",
+      "type": "court",
+      "rep": "l'âge et la croissance",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "Le Grand Tunnel",
+    "document": {
+     "contenu": "Déplié, l'intestin grêle mesure environ 6 m chez l'adulte. C'est à travers sa paroi que les nutriments passent dans le sang.",
+     "source": "D'après Vikidia, « Intestin grêle »."
+    },
+    "questions": [
+     {
+      "q": "Quelle est la longueur de l'intestin grêle ?",
+      "type": "court",
+      "rep": "environ 6 m",
+      "pts": 1
+     },
+     {
+      "q": "Que se passe-t-il dans l'intestin grêle ?",
+      "type": "court",
+      "rep": "les nutriments passent dans le sang",
+      "pts": 1
+     },
+     {
+      "q": "Que fait ensuite le sang de ces nutriments ?",
+      "type": "court",
+      "rep": "il les apporte à tous les organes, dont les muscles",
+      "pts": 1
+     }
+    ]
+   }
+  ]
+ }
+}

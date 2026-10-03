@@ -1,0 +1,148 @@
+{
+ "metadata": {
+  "jeu": "Le Grand Repas du chef",
+  "sujet": "Alimentation humaine : besoins alimentaires et nutrition humaine (croissance, variation des besoins, mastication, digestion, circulation sanguine et effort) — sciences, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "lien_autres_jeux": "Prolonge les séances 9 à 12 de la géographie (mission-geo/ : pratiques alimentaires, chaîne du yaourt). Prépare le jeu n°15 (le développement des animaux).",
+  "sources": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026) ; Santé publique France ; La main à la pâte ; Vikidia ; Wikipédia."
+ },
+ "personnages": {
+  "rosalie": {
+   "nom": "Rosalie",
+   "role": "Cheffe du restaurant Le Grand Couvert"
+  },
+  "nathan": {
+   "nom": "Nathan",
+   "role": "Commis : il s'occupe du potager et du poulailler"
+  },
+  "ines": {
+   "nom": "Docteure Inès",
+   "role": "Médecin de l'équipe cycliste"
+  },
+  "basile": {
+   "nom": "Basile",
+   "role": "Coureur cycliste"
+  }
+ },
+ "intro_accueil": "Bonsoir, et bienvenue au Grand Couvert ! Je suis Rosalie, la cheffe. Demain, Basile, un coureur cycliste, grimpe une étape de montagne, et je dois lui préparer le repas de ce soir. Mais mon carnet de recettes, le Livre des cinq services, est enfermé dans un coffre à cinq cadenas. Chaque mot du code est caché dans une pièce du restaurant, et chacun parle de ce que deviennent nos aliments dans le corps. Vous êtes mes commis : retrouvez les cinq mots, notez-les bien, et nous ouvrirons le coffre ensemble.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La cour du potager et du poulailler",
+   "decor": "potager",
+   "motCle": "GRANDIR",
+   "lieu": "La cour du restaurant, entre le potager et le poulailler",
+   "description": "Des rangs de salades et de carottes, un poulailler en bois, des poules qui picorent. Dans un coin, sous une lampe, le petit Caramel trottine.",
+   "sens": [
+    "À voir : le poulailler et le potager",
+    "À entendre : les poules qui caquettent",
+    "À sentir : la terre et l'herbe coupée"
+   ],
+   "dialogue_intro": {
+    "perso": "nathan",
+    "nom": "Nathan",
+    "texte": "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie. Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines. La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…"
+   },
+   "dialogue_reussite": {
+    "perso": "nathan",
+    "nom": "Nathan",
+    "texte": "Bravo ! Le premier mot est <b>GRANDIR</b> : pour grandir, Caramel comme Lou fabriquent de la matière avec leurs aliments. Montez à la salle des menus : la docteure Inès vous y attend."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "La salle des menus",
+   "decor": "menus",
+   "motCle": "BOUGER",
+   "lieu": "La salle des menus, au premier étage du restaurant",
+   "description": "Un grand tableau couvert de menus, des fiches épinglées, une balance de cuisine. Sur la table, le carnet de la docteure et le maillot de Basile.",
+   "sens": [
+    "À voir : les menus et les fiches",
+    "À entendre : la craie sur le tableau",
+    "À sentir : le café de la docteure"
+   ],
+   "dialogue_intro": {
+    "perso": "ines",
+    "nom": "Docteure Inès",
+    "texte": "Je suis la docteure Inès Morel, médecin de l'équipe cycliste. Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins. Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi."
+   },
+   "dialogue_reussite": {
+    "perso": "ines",
+    "nom": "Docteure Inès",
+    "texte": "Exactement. Le deuxième mot est <b>BOUGER</b> : plus on bouge, plus le corps dépense d'énergie. Descendez à la table de dégustation : la cheffe vous attend."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "La table de dégustation",
+   "decor": "degustation",
+   "motCle": "MÂCHER",
+   "lieu": "La table de dégustation, près des cuisines",
+   "description": "Une longue table nappée de blanc : du pain de campagne, des pommes, des carottes croquantes. Sur une étagère, le moulage d'une mâchoire prêté par un dentiste.",
+   "sens": [
+    "À voir : les plats à goûter",
+    "À entendre : le pain qui craque",
+    "À sentir : le pain tout juste sorti du four"
+   ],
+   "dialogue_intro": {
+    "perso": "rosalie",
+    "nom": "Rosalie",
+    "texte": "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert. Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche. Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !"
+   },
+   "dialogue_reussite": {
+    "perso": "rosalie",
+    "nom": "Rosalie",
+    "texte": "Parfait ! Le troisième mot est <b>MÂCHER</b> : les dents et la salive préparent une bouchée molle. Suivez-la maintenant : la docteure Inès vous montre son Grand Tunnel."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "Le cabinet du Grand Tunnel",
+   "decor": "cabinet",
+   "motCle": "DIGÉRER",
+   "lieu": "Le cabinet de la docteure Inès, à côté de la salle d'entraînement",
+   "description": "Sur le bureau, une grande maquette du corps humain que l'on peut ouvrir. Au mur, des affiches sur la digestion. Une bouchée en pâte à modeler attend au départ du Grand Tunnel.",
+   "sens": [
+    "À voir : la maquette du corps",
+    "À entendre : le tic-tac de l'horloge",
+    "À sentir : le savon des mains propres"
+   ],
+   "dialogue_intro": {
+    "perso": "ines",
+    "nom": "Docteure Inès",
+    "texte": "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel. Une bouchée y fait un long voyage, et chaque organe a son travail. Si vous retrouvez le chemin, le quatrième cadenas sautera."
+   },
+   "dialogue_reussite": {
+    "perso": "ines",
+    "nom": "Docteure Inès",
+    "texte": "Bien joué ! Le quatrième mot est <b>DIGÉRER</b> : transformer les aliments en nutriments. Basile s'entraîne à côté : allez voir où ces nutriments s'en vont."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "La salle d'entraînement",
+   "decor": "entrainement",
+   "motCle": "SANG",
+   "lieu": "La salle d'entraînement, au fond du restaurant",
+   "description": "Un vélo de course monté sur un home-trainer, un écran qui affiche la vitesse et le pouls, une gourde d'eau. Basile pédale, les joues rouges.",
+   "sens": [
+    "À voir : le home-trainer et son écran",
+    "À entendre : le ronronnement du vélo",
+    "À sentir : la fraîcheur du ventilateur"
+   ],
+   "dialogue_intro": {
+    "perso": "basile",
+    "nom": "Basile",
+    "texte": "Salut ! Moi, c'est Basile. Demain, je grimpe le col ! Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère. Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous."
+   },
+   "dialogue_fin": {
+    "perso": "rosalie",
+    "nom": "Rosalie",
+    "texte": "Le dernier mot est <b>SANG</b> : c'est lui qui livre les nutriments aux muscles. Vous avez les cinq mots ! Écrivez-les dans le coffre, dans l'ordre des salles, et le Livre des cinq services sera à nous."
+   }
+  }
+ ]
+}

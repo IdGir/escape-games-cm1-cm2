@@ -1,7 +1,24 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "e6f3f0cf8a";
+self.VERSION_HORS_LIGNE = "60c8f25bda";
 self.FICHIERS_CODE = [
+"alimentation/assets/data/dialogues.json",
+"alimentation/assets/data/enigmes.json",
+"alimentation/assets/data/evaluations.json",
+"alimentation/assets/data/lecons-a4.json",
+"alimentation/assets/data/lecons.json",
+"alimentation/css/enigmes.css",
+"alimentation/css/print.css",
+"alimentation/css/style.css",
+"alimentation/index.html",
+"alimentation/js/app.js",
+"alimentation/js/decors.js",
+"alimentation/js/jeu.js",
+"alimentation/js/lecons.js",
+"alimentation/js/personnages.js",
+"alimentation/js/reglages.js",
+"alimentation/lecons-imprimables.html",
+"alimentation/prof.html",
 "annee.html",
 "chateau-fort/assets/data/dialogues.json",
 "chateau-fort/assets/data/enigmes.json",
@@ -260,6 +277,10 @@ self.FICHIERS_CODE = [
 "versailles/prof.html"
 ];
 self.IMAGES_JEUX = {
+"alimentation": [
+"alimentation/assets/images/affiche-fond.jpg",
+"alimentation/assets/images/affiche.jpg"
+],
 "chateau-fort": [
 "chateau-fort/assets/images/affiche.jpg",
 "chateau-fort/assets/images/cartes/e1-2.jpg",

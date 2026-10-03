@@ -20,7 +20,7 @@ from playwright.async_api import async_playwright
 
 BASE = "http://127.0.0.1:8765"
 JEUX = ["moyen-age-abbaye", "chateau-fort", "station-meteo", "objets-techniques", "melanges",
-        "constitution", "declaration", "tour-du-monde", "mission-geo", "versailles", "renaissance"]
+        "constitution", "declaration", "tour-du-monde", "mission-geo", "versailles", "renaissance", "alimentation"]
 erreurs = []
 
 

@@ -4,7 +4,7 @@ dans le tableau de bord (prof.html) de chaque jeu. Idempotent."""
 import os, re, sys
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JEUX = ["chateau-fort", "moyen-age-abbaye", "station-meteo", "objets-techniques", "melanges",
-        "constitution", "declaration", "tour-du-monde", "versailles", "renaissance"]
+        "constitution", "declaration", "tour-du-monde", "versailles", "renaissance", "alimentation"]
 SANS_SALLE = {"declaration", "tour-du-monde"}
 MARQUE = "btn-lecons-a4"
 
