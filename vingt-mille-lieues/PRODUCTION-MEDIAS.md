@@ -416,3 +416,223 @@ Start frame: the approved grand salon. Slow push-in toward the organ; the salon 
 ```
 Image de départ : le grand salon validé. Lent travelling avant vers l'orgue ; les lampes du salon vacillent deux fois puis s'éteignent ; il ne reste que la lumière bleue des hublots ; une lueur rouge d'alarme pulse doucement. Aucun personnage ne parle, aucun texte.
 ```
+
+
+### video-transition-e1 — `assets/videos/transition-e1.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 1 · statut : à produire avec l'escale 1
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : décor validé de l'escale
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+À rédiger avec l'escale 1. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : décor validé de l'escale ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+ No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+À rédiger avec l'escale 1. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e3 — `assets/videos/transition-e3.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 3 · statut : à produire avec l'escale 3
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e3.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+Le sas des scaphandres : lent travelling avant vers la porte ronde ; des bulles montent derrière les hublots, les lampes ambrées vacillent doucement. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e3.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The diving-suit airlock: slow push-in toward the round door; bubbles rise behind the portholes, the amber lamps flicker softly. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+Le sas des scaphandres : lent travelling avant vers la porte ronde ; des bulles montent derrière les hublots, les lampes ambrées vacillent doucement. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e4 — `assets/videos/transition-e4.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 4 · statut : à produire avec l'escale 4
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e4.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+L'épave de Vanikoro : lent travelling avant sur le canon et le sextant ; des particules flottent dans le faisceau du fanal, un banc de poissons passe. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e4.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The Vanikoro wreck: slow push-in on the cannon and the sextant; particles drift in the lamp beam, a school of fish passes. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+L'épave de Vanikoro : lent travelling avant sur le canon et le sextant ; des particules flottent dans le faisceau du fanal, un banc de poissons passe. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e5 — `assets/videos/transition-e5.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 5 · statut : à produire avec l'escale 5
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e5.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+Le banc de perles : lent travelling avant vers l'huître géante ; le faisceau des lampes glisse sur les coquilles, la perle luit. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e5.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The pearl bed: slow push-in toward the giant oyster; lamp beams glide over the shells, the pearl glows. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+Le banc de perles : lent travelling avant vers l'huître géante ; le faisceau des lampes glisse sur les coquilles, la perle luit. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e6 — `assets/videos/transition-e6.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 6 · statut : à produire avec l'escale 6
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e6.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+La cage du pilote dans le tunnel : léger travelling avant ; la roche défile derrière les vitres éclairées par le fanal, vibration discrète de la coque. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e6.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The pilot's cage in the tunnel: gentle push-in; rock slides past the lit windows, a faint hull vibration. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+La cage du pilote dans le tunnel : léger travelling avant ; la roche défile derrière les vitres éclairées par le fanal, vibration discrète de la coque. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e7 — `assets/videos/transition-e7.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 7 · statut : à produire avec l'escale 7
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e7.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+Le salon près de Santorin : lent travelling avant vers les hublots ; l'eau bouillonne, lueurs rouges et orangées du volcan, bulles denses. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e7.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The salon near Santorin: slow push-in toward the portholes; the water boils, red and orange volcano glow, dense bubbles. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+Le salon près de Santorin : lent travelling avant vers les hublots ; l'eau bouillonne, lueurs rouges et orangées du volcan, bulles denses. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e8 — `assets/videos/transition-e8.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 8 · statut : à produire avec l'escale 8
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e8.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+La mer des Sargasses : lent travelling avant sur la bouée ; les algues dorées ondulent au rythme des vagues, un petit crabe passe. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e8.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The Sargasso Sea: slow push-in on the buoy; golden seaweed sways with the waves, a small crab scuttles by. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+La mer des Sargasses : lent travelling avant sur la bouée ; les algues dorées ondulent au rythme des vagues, un petit crabe passe. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e9 — `assets/videos/transition-e9.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 9 · statut : à produire avec l'escale 9
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e9.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+La banquise : lent travelling avant ; l'aurore australe ondule dans le ciel, des cristaux de glace tourbillonnent dans le vent. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e9.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The ice field: slow push-in; the southern aurora ripples in the sky, ice crystals swirl in the wind. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+La banquise : lent travelling avant ; l'aurore australe ondule dans le ciel, des cristaux de glace tourbillonnent dans le vent. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e10 — `assets/videos/transition-e10.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 10 · statut : à produire avec l'escale 10
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e10.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+Le salon, derrière la vitre : lent travelling avant ; une ombre immense passe devant la vitre, les lampes vacillent. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e10.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+The salon, behind the window: slow push-in; an immense shadow passes in front of the glass, the lamps flicker. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+Le salon, derrière la vitre : lent travelling avant ; une ombre immense passe devant la vitre, les lampes vacillent. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-transition-e11 — `assets/videos/transition-e11.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 11 · statut : à produire avec l'escale 11
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
+- Référence / image de départ : assets/medias-depart/transition-e11.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+La baie de Vigo : lent travelling avant vers le trésor ; des rayons ondulent, l'or étincelle, les plongeurs avancent d'un pas. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/transition-e11.jpg ; durée 6-10 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+Vigo bay: slow push-in toward the treasure; light rays ripple, the gold glints, the divers take a step forward. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+La baie de Vigo : lent travelling avant vers le trésor ; des rayons ondulent, l'or étincelle, les plongeurs avancent d'un pas. Aucun personnage ne parle, aucun texte, aucune lettre.
+```

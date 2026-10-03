@@ -115,9 +115,32 @@ ajoute(id="video-transition-e2", type="vidéo", fichier="assets/videos/transitio
        statut="cinématique en direct active", zones="", effets="sous-titres et voix dans le code (dialogues.json)",
        fr="Image de départ : le grand salon validé. Lent travelling avant vers l'orgue ; les lampes du salon vacillent deux fois puis s'éteignent ; il ne reste que la lumière bleue des hublots ; une lueur rouge d'alarme pulse doucement. Aucun personnage ne parle, aucun texte.",
        en="Start frame: the approved grand salon. Slow push-in toward the organ; the salon lamps flicker twice then go out; only the blue light of the portholes remains; a soft red alarm glow pulses. No character speaking, no text.")
+MOUV = {
+    3: ("Le sas des scaphandres : lent travelling avant vers la porte ronde ; des bulles montent derrière les hublots, les lampes ambrées vacillent doucement.",
+        "The diving-suit airlock: slow push-in toward the round door; bubbles rise behind the portholes, the amber lamps flicker softly."),
+    4: ("L'épave de Vanikoro : lent travelling avant sur le canon et le sextant ; des particules flottent dans le faisceau du fanal, un banc de poissons passe.",
+        "The Vanikoro wreck: slow push-in on the cannon and the sextant; particles drift in the lamp beam, a school of fish passes."),
+    5: ("Le banc de perles : lent travelling avant vers l'huître géante ; le faisceau des lampes glisse sur les coquilles, la perle luit.",
+        "The pearl bed: slow push-in toward the giant oyster; lamp beams glide over the shells, the pearl glows."),
+    6: ("La cage du pilote dans le tunnel : léger travelling avant ; la roche défile derrière les vitres éclairées par le fanal, vibration discrète de la coque.",
+        "The pilot's cage in the tunnel: gentle push-in; rock slides past the lit windows, a faint hull vibration."),
+    7: ("Le salon près de Santorin : lent travelling avant vers les hublots ; l'eau bouillonne, lueurs rouges et orangées du volcan, bulles denses.",
+        "The salon near Santorin: slow push-in toward the portholes; the water boils, red and orange volcano glow, dense bubbles."),
+    8: ("La mer des Sargasses : lent travelling avant sur la bouée ; les algues dorées ondulent au rythme des vagues, un petit crabe passe.",
+        "The Sargasso Sea: slow push-in on the buoy; golden seaweed sways with the waves, a small crab scuttles by."),
+    9: ("La banquise : lent travelling avant ; l'aurore australe ondule dans le ciel, des cristaux de glace tourbillonnent dans le vent.",
+        "The ice field: slow push-in; the southern aurora ripples in the sky, ice crystals swirl in the wind."),
+    10: ("Le salon, derrière la vitre : lent travelling avant ; une ombre immense passe devant la vitre, les lampes vacillent.",
+         "The salon, behind the window: slow push-in; an immense shadow passes in front of the glass, the lamps flicker."),
+    11: ("La baie de Vigo : lent travelling avant vers le trésor ; des rayons ondulent, l'or étincelle, les plongeurs avancent d'un pas.",
+         "Vigo bay: slow push-in toward the treasure; light rays ripple, the gold glints, the divers take a step forward."),
+}
 for n in [1] + list(range(3, 12)):
-    ajoute(id=f"video-transition-e{n}", type="vidéo", fichier=f"assets/videos/transition-e{n}.mp4", dim="1280×720", duree="6-10 s", ratio="16:9", escale=str(n), ref="décor validé de l'escale",
-           statut=f"à produire avec l'escale {n}", zones="", effets="sous-titres dans le code", fr=f"À rédiger avec l'escale {n}.", en="")
+    dep = f"assets/medias-depart/transition-e{n}.jpg" if n in MOUV else ""
+    fr_mouv, en_mouv = MOUV.get(n, (f"À rédiger avec l'escale {n}.", ""))
+    ajoute(id=f"video-transition-e{n}", type="vidéo", fichier=f"assets/videos/transition-e{n}.mp4", dim="1280×720", duree="6-10 s", ratio="16:9", escale=str(n), ref=dep or "décor validé de l'escale",
+           statut=f"à produire avec l'escale {n}", zones="", effets="sous-titres dans le code",
+           fr=fr_mouv + " Aucun personnage ne parle, aucun texte, aucune lettre.", en=en_mouv + " No character speaking, no text, no letters.")
 ajoute(id="video-fin", type="vidéo", fichier="assets/videos/fin.mp4", dim="1280×720", duree="45 s", ratio="16:9", escale="11", ref="decor-pont-nautilus", statut="à produire en fin de campagne", zones="", effets="", fr="À rédiger avec l'escale 11 (le Nautilus regagne la surface).", en="")
 ajoute(id="video-bande-annonce", type="vidéo", fichier="assets/videos/bande-annonce.mp4", dim="1280×720", duree="15-20 s", ratio="16:9", escale="toutes", ref="décors validés", statut="à monter en fin de campagne", zones="", effets="", fr="Montage des décors validés (outils-medias/bande-annonce.py du dépôt, après intégration).", en="")
 
