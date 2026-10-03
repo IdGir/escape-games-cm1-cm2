@@ -68,7 +68,7 @@ ses cartes et son journal de bord à cause d'une avarie ; pour regagner la surfa
 épuisée, l'équipage doit, escale après escale, reconstituer le journal en retrouvant des **fragments** (le mot de
 chaque escale) puis ouvrir le **coffre du capitaine** (final).
 
-**Campagne en 10 escales** (≈ 25-30 min chacune, 3 à 4 énigmes par escale ; sauvegarde/reprise ; jouable en
+**Campagne en 11 escales** (≈ 25-30 min chacune, 3 à 4 énigmes par escale ; sauvegarde/reprise ; jouable en
 séances séparées ou en continu ; l'enseignant peut **choisir/ordonner les escales** par période P1→P5).
 Proposition à ajuster selon le programme réel (tu es libre de réordonner/fusionner, pas de supprimer une
 compétence couverte) :
@@ -84,7 +84,8 @@ compétence couverte) :
 | 7 | Crète, Santorin, Atlantide | Histoire + sciences | Antiquité (mythes, Grèce, Rome/Gaule selon programme), volcans et séismes |
 | 8 | Sargasses et Gulf Stream | Sciences | Écosystèmes, chaînes alimentaires, classification, biodiversité, courants/climat |
 | 9 | Le pôle Sud | Sciences + géo | États de l'eau, banquise, saisons/jour polaire, Terre-Lune-Soleil, Antarctique |
-| 10 | Vigo, puis le Maelström | Histoire + géo | Louis XIV et la guerre de succession d'Espagne (1702), Europe/UE, marées ; évasion → coffre final |
+| 10 | Les poulpes (le combat sur la plate-forme) | Sciences | Classification (invertébrés, mollusques céphalopodes), régimes alimentaires et chaînes alimentaires, respiration en milieu aquatique, adaptations du vivant, manque d'air (thème du chrono) |
+| 11 | Vigo, puis le Maelström | Histoire + géo | Louis XIV et la guerre de succession d'Espagne (1702), Europe/UE, marées et courants (le Maelström, Norvège) ; évasion → coffre final |
 
 Si un point du programme CM1/CM2 n'entre dans aucune escale (ex. Moyen Âge, Gaule, Clovis, EMC), trouve **un
 ancrage vraiment crédible** (flashback d'Aronnax, relique du musée du Nautilus, bibliothèque de Nemo, légende
@@ -193,7 +194,7 @@ ce niveau **atteignable dès qu'un humain dépose les images**.
 - **Si l'image est absente**, le moteur affiche le décor dessiné de secours (SVG/Canvas animé) : le jeu est toujours
   jouable. Le décor de secours doit être soigné (dégradés, lumière volumétrique, silhouettes), mais il est
   assumé comme un niveau inférieur.
-- **Vidéos** (intro, 10 transitions, fin, bande-annonce) : lecture d'un `.mp4`/`.webm` si présent, sinon
+- **Vidéos** (intro, 11 transitions, fin, bande-annonce) : lecture d'un `.mp4`/`.webm` si présent, sinon
   cinématique en direct (images fixes + Ken Burns + effets + sous-titres + voix + musique). Les fichiers attendus,
   leurs noms, durées (6-10 s transitions, 60-90 s intro, 45 s fin), poids (≤ 6 Mo chacune, H.264, 1280×720)
   sont listés dans `assets/README.md`. Tente un rendu par Chromium/Playwright (déjà installé, ne lance pas
@@ -428,7 +429,7 @@ fie-toi aux descriptions) :
     fuselée en tôle rivetée patinée, **rangée de hublots ronds lumineux ambrés**, petite tourelle/cage du pilote, mâts
     fins, rambardes, vue en banquise au soleil rasant (pôle Sud), **aspirée par le tourbillon du Maelström**, attaquée par
     un **calmar/poulpe géant** pendant que l'équipage riposte sur le pont (mer sombre, ciel d'orage, écume). Ce sont
-    les images-clés des **escales 9 et 10** et des vidéos de transition « grand spectacle ». **Définis dans la charte
+    les images-clés des **escales 9 (banquise), 10 (poulpe) et 11 (Maelström)** et des vidéos de transition « grand spectacle ». **Définis dans la charte
     UNE silhouette canonique du Nautilus** (fuseau long de métal riveté, hublots ambre alignés, cage du pilote en
     laiton, fanal, canot encastré — d'après le pont et la tourelle de ces références, en restant fidèle au
     « fuseau cylindro-conique » de Verne, sans cheminée ni voile) et rappelle-la mot pour mot dans tous les prompts
