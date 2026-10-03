@@ -1,5 +1,11 @@
 # Journal des versions — Le Journal du Nautilus
 
+## 2026-10-03 — escales 7 à 11, campagne complète
+- Escales 7 (Santorin, Atlantide), 8 (Sargasses, Gulf Stream, traite, câble), 9 (pôle Sud, « Faute d'air »), 10 (poulpes),
+  11 (Vigo, Renaissance, Maelström, Union européenne) : 17 énigmes × 5 grades ; nouveaux rayons Terre active, Communication,
+  Vivre ensemble ; relecture sceptique (COHERENCE.md § 5) ; scénarimages ; décors Agnes déposés.
+- Moteur : paramètre « debut » de la jauge d'air (l'air ne baisse qu'après l'énigme indiquée).
+
 ## 2026-10-03 — escales 1 à 6
 - Moteur de campagne (escales enchaînées, coffre final, « Plonger plus profond », choix des escales dans les réglages).
 - Escales 1 (chasse au monstre), 3 (forêt de Crespo), 4 (Vanikoro), 5 (Ceylan), 6 (Suez) : 16 énigmes × 5 grades,

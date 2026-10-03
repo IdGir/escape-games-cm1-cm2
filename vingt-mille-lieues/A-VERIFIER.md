@@ -43,3 +43,16 @@ relecture sceptique. À contrôler avant la diffusion.
 - Durées du voyage de Ned (Port-Saïd → Marseille ≈ 6 j, Le Havre → Québec ≈ 12 j en 1868) : ordres de grandeur.
 - Exportations de Ceylan en 1868 (café, cannelle, perles), profondeurs de disparition des couleurs (escale 3), date et
   contenu de la boîte de fer-blanc de Lapérouse (tradition rapportée par Verne).
+
+## Escales 7 à 11
+- Température de l'eau près de Santorin dans le roman (II, ch. VI) ; éruption de Néa Kaméni (1866) ; Akrotiri (vers 1600 av. J.-C.,
+  fouilles depuis 1967) ; lien Santorin-Atlantide présenté comme hypothèse.
+- Chapitre exact où le Nautilus longe le câble transatlantique (II, ch. XIX ou XX ?).
+- Températures moyennes de janvier : Brest ≈ 7 °C, Saint-Jean de Terre-Neuve ≈ −5 °C.
+- Traite : ≈ 12 millions de déportés (estimation) ; abolitions 1794, 1802 (rétablissement), 1848 ; loi Taubira 2001 ;
+  esclavage encore légal au Brésil et à Cuba en 1868.
+- Eau de mer : congélation vers −2 °C (−1,9 °C en moyenne) ; récit de « Faute d'air » (sondage, pioches, eau bouillante, réservoirs).
+- Calmar : ≈ 100 000 œufs par ponte, survie ≈ 1/1 000 (ordre de grandeur) ; part des neurones du poulpe dans les bras (« une grande partie »).
+- Vigo (23 octobre 1702) : une partie du trésor débarquée avant la bataille ; « L'État, c'est moi » apocryphe.
+- La Joconde « vers 1503-1519 » ; Léonard au Clos Lucé 1516-1519.
+- UE : 27 membres ; euro « une vingtaine » de pays (21 depuis l'entrée de la Bulgarie, à confirmer) ; Norvège dans Schengen.

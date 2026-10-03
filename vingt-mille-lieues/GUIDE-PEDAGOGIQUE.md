@@ -483,4 +483,344 @@ lire un vrai baromètre ; lire l'extrait du roman (Partie I, ch. XII) ; débattr
 | `fiche de la Bibliothèque` | Rayon Géographie, fiche 4 « Se déplacer » |
 | `types par grade` | 🐚 association · ⚓ ordre · 🧭 ordre · 🔭 ordre · 🔱 code |
 
+### e7-1 — La mer qui bout
+
+| Champ | Contenu |
+|---|---|
+| `id` | e7-1 |
+| `escale` | 7 |
+| `decor` | volcan-santorin |
+| `objets_cliquables` | thermometre, hublot-gauche, carte-archipel (objet principal : thermometre) |
+| `personnage_emetteur` | Conseil |
+| `probleme_narratif` | Près de Santorin, le thermomètre extérieur du salon monte sans arrêt ; derrière les hublots, l'eau bouillonne et se teinte de rouge. Conseil veut noter dans son carnet d'où vient cette chaleur, schéma à l'appui, avant que le capitaine ne décide de rester ou de s'éloigner. |
+| `enjeu` | Tant qu'on ignore que la chaleur monte du volcan sous la mer, on croit pouvoir rester : or plus le Nautilus s'en approche, plus l'eau devient brûlante. |
+| `episode_du_roman` | Partie II, ch. VI « L'Archipel en feu » : l'eau atteint une température telle que le capitaine fait virer de bord. |
+| `competence_programme` | Sciences : la Terre active — décrire un volcan (cratère, cheminée, magma, lave, cendres) ; relier l'éruption à la chaleur interne de la Terre. |
+| `pourquoi_ce_savoir_ici` | On ne comprend pourquoi la mer bout ici qu'en sachant ce qu'il y a sous l'île : un volcan en activité. |
+| `reaction_du_decor` | L'aiguille du thermomètre redescend : le Nautilus s'écarte du volcan. |
+| `liberte_ou_anachronisme` | L'éruption de Santorin (Néa Kaméni, 1866) est réelle ; les températures sont celles du roman (A-VERIFIER.md). Le schéma est simplifié pour le cycle 3. |
+| `niveau_variantes` | Mousse : 3 cases du volcan. Matelot : 5 cases. Timonier : 5 cases et étiquettes pièges. Lieutenant : texte à trous sur l'éruption + justification. Second : QCM sur l'origine de la chaleur et des îles volcaniques + justification. |
+| `fiche de la Bibliothèque` | Rayon Terre active, fiche 1 « Les volcans » |
+| `types par grade` | 🐚 plan · ⚓ plan · 🧭 plan · 🔭 trous · 🔱 qcm |
+
+### e7-2 — Ned veut débarquer
+
+| Champ | Contenu |
+|---|---|
+| `id` | e7-2 |
+| `escale` | 7 |
+| `decor` | volcan-santorin |
+| `objets_cliquables` | hublot-droit, carte-archipel, manometre (objet principal : hublot-droit) |
+| `personnage_emetteur` | Ned Land |
+| `probleme_narratif` | Par le hublot, Ned Land voit la côte toute proche. Une île, des maisons : l'occasion de s'enfuir ! Mais l'île tremble et fume. Avant qu'il ne se jette à l'eau, il faut lui montrer ce qui est dangereux ici, et ce que font les habitants d'un pays de volcans et de séismes pour se protéger. |
+| `enjeu` | Débarquer sans connaître les dangers d'un volcan en éruption, c'est risquer les cendres, la lave et les secousses. |
+| `episode_du_roman` | Fil du roman : Ned Land guette chaque côte pour s'évader (Partie II, ch. VI-VIII) ; l'éruption de Santorin de 1866 s'accompagna de secousses. |
+| `competence_programme` | Sciences : la Terre active — identifier les risques liés aux volcans et aux séismes ; connaître des mesures de prévention et de protection. |
+| `pourquoi_ce_savoir_ici` | Devant une île en éruption, savoir reconnaître un danger et le bon réflexe décide d'un départ ou d'un drame. |
+| `reaction_du_decor` | Ned recule du hublot ; le Nautilus s'éloigne doucement de l'île. |
+| `liberte_ou_anachronisme` | Les mesures de prévention (surveillance, alerte, évacuation) sont celles d'aujourd'hui : c'est le dossier de l'équipe de secours (XXIᵉ siècle). |
+| `niveau_variantes` | Mousse : bonne ou mauvaise idée. Matelot : volcan ou séisme. Timonier : avant, pendant, après. Lieutenant : prévention ou protection + justification. Second : ordre de l'alerte + justification. |
+| `fiche de la Bibliothèque` | Rayon Terre active, fiche 2 « Volcans et séismes : les risques » |
+| `types par grade` | 🐚 tri · ⚓ tri · 🧭 tri · 🔭 tri · 🔱 ordre |
+
+### e7-3 — Le mot sur la roche
+
+| Champ | Contenu |
+|---|---|
+| `id` | e7-3 |
+| `escale` | 7 |
+| `decor` | atlantide |
+| `objets_cliquables` | temple, volcan-atlantide, statues (objet principal : temple) |
+| `personnage_emetteur` | Le professeur Aronnax |
+| `probleme_narratif` | Au fond de l'Atlantique, Nemo conduit Aronnax au milieu de ruines englouties par un volcan. Sur un rocher, il écrit un seul mot : ATLANTIS. Aronnax, savant, est bouleversé mais prudent : l'Atlantide est-elle une ville réelle ou un récit ? Il veut trier ce qu'on sait vraiment de ce qu'on raconte. |
+| `enjeu` | Un savant qui confond un récit et une preuve écrit des erreurs dans son livre : Aronnax doit pouvoir distinguer ce que racontent les textes de ce que prouvent les fouilles. |
+| `episode_du_roman` | Partie II, ch. IX « Un continent disparu » : Nemo écrit ATLANTIS à la craie sur un rocher, devant Aronnax stupéfait. |
+| `competence_programme` | Histoire : distinguer un mythe (récit) d'un fait prouvé par des traces (fouilles, documents) ; se repérer dans le temps (frise). |
+| `pourquoi_ce_savoir_ici` | Devant les ruines que montre Nemo, la question de l'historien se pose : comment sait-on qu'une chose a existé ? |
+| `reaction_du_decor` | Les lettres ATLANTIS brillent un instant sur le rocher, sous la lueur du volcan. |
+| `liberte_ou_anachronisme` | Les ruines de l'Atlantide sont une invention de Verne. L'Atlantide est un récit de Platon (vers 360 av. J.-C.). L'éruption de Santorin (vers 1600 av. J.-C.) et la ville d'Akrotiri, fouillée depuis 1967, sont réelles ; le lien avec le mythe est une hypothèse (A-VERIFIER.md). |
+| `niveau_variantes` | Mousse : vrai ou faux simple. Matelot : vrai ou faux sur récit, trace, fouille. Timonier : frise chronologique. Lieutenant : QCM fait, hypothèse, récit + justification. Second : tri fait prouvé, hypothèse, récit inventé + justification. |
+| `fiche de la Bibliothèque` | Rayon Histoire, fiche 6 « Mythe ou histoire ? » |
+| `types par grade` | 🐚 vraifaux · ⚓ vraifaux · 🧭 ordre · 🔭 qcm · 🔱 tri |
+
+### e8-1 — Qui mange qui ?
+
+| Champ | Contenu |
+|---|---|
+| `id` | e8-1 |
+| `escale` | 8 |
+| `decor` | sargasses |
+| `objets_cliquables` | algues, crabes, bouee (objet principal : algues) |
+| `personnage_emetteur` | Conseil |
+| `probleme_narratif` | Le Nautilus a fait surface au milieu d'une mer couverte d'algues dorées. Dessous, tout un monde vit caché : petits crabes, crevettes, poissons. Conseil veut ranger ces êtres vivants dans son carnet, non pas par familles cette fois, mais selon qui mange qui. |
+| `enjeu` | Ned veut arracher toutes les algues pour libérer l'hélice ; s'il comprend que tout ce petit monde en dépend, il dégagera seulement l'hélice. |
+| `episode_du_roman` | Partie II, ch. XI « La mer de Sargasses » : Aronnax décrit cette mer d'algues flottantes, peuplée de petits animaux. |
+| `competence_programme` | Sciences : le vivant dans son environnement — chaînes alimentaires, producteurs et consommateurs, interdépendance dans un écosystème. |
+| `pourquoi_ce_savoir_ici` | La mer des Sargasses est un écosystème à elle seule : sans algues, pas d'abri ni de nourriture pour ses habitants. |
+| `reaction_du_decor` | Entre les algues, des crabes et des poissons apparaissent un instant, puis replongent. |
+| `liberte_ou_anachronisme` | Les chaînes alimentaires sont simplifiées. Les anguilles d'Europe pondent bien en mer des Sargasses (savoir du XXᵉ siècle, présenté comme dossier de l'équipe de secours). |
+| `niveau_variantes` | Mousse : animal ↔ nourriture. Matelot : chaîne alimentaire (4 maillons). Timonier : chaîne de 5 maillons avec rôles. Lieutenant : texte à trous producteur/consommateur + justification. Second : QCM sur l'interdépendance + justification. |
+| `fiche de la Bibliothèque` | Rayon Vivant, fiche 4 « Qui mange qui ? Les chaînes alimentaires » |
+| `types par grade` | 🐚 association · ⚓ ordre · 🧭 ordre · 🔭 trous · 🔱 qcm |
+
+### e8-2 — Le fleuve dans la mer
+
+| Champ | Contenu |
+|---|---|
+| `id` | e8-2 |
+| `escale` | 8 |
+| `decor` | sargasses |
+| `objets_cliquables` | bouee, carte-courants, algues (objet principal : bouee) |
+| `personnage_emetteur` | Le professeur Aronnax |
+| `probleme_narratif` | La bouée-phare prise dans les algues dérive lentement : un courant l'emporte. Sur la carte des courants dépliée sur le pont, Aronnax suit une large flèche rouge : le Gulf Stream, « fleuve » d'eau chaude qui traverse l'Atlantique. Il veut comprendre pourquoi les algues s'accumulent ici, au milieu de ce grand tourbillon, et pourquoi Brest a des hivers plus doux que Terre-Neuve, à la même latitude. |
+| `enjeu` | Pour sortir de la mer d'algues sans gaspiller d'énergie, il faut savoir où passe le courant et dans quel sens il porte le Nautilus. |
+| `episode_du_roman` | Partie II, ch. XI et ch. XIX « Le Gulf Stream » : Aronnax décrit ce « fleuve » chaud au milieu de l'océan et ses effets sur le climat. |
+| `competence_programme` | Géographie et sciences : les grands courants marins, leur influence sur le climat ; lire une carte et des relevés de températures. |
+| `pourquoi_ce_savoir_ici` | La mer des Sargasses est au centre du grand tourbillon de courants dont le Gulf Stream fait partie : c'est lui qui retient les algues et adoucit l'Europe. |
+| `reaction_du_decor` | La flèche rouge du Gulf Stream s'illumine sur la carte, du golfe du Mexique jusqu'à l'Europe. |
+| `liberte_ou_anachronisme` | Les températures moyennes de janvier sont des ordres de grandeur actuels (A-VERIFIER.md). Les chapitres XI et XIX sont rapprochés dans cette escale. |
+| `niveau_variantes` | Mousse : QCM courant chaud. Matelot : tri villes douces / froides. Timonier : écart de températures (code). Lieutenant : QCM sur l'effet du courant + justification. Second : vrai ou faux sur courants et climat + justification. |
+| `fiche de la Bibliothèque` | Rayon Terre active, fiche 3 « Courants marins et climat » |
+| `types par grade` | 🐚 qcm · ⚓ tri · 🧭 code · 🔭 qcm · 🔱 vraifaux |
+
+### e8-3 — Les chaînes de l'épave
+
+| Champ | Contenu |
+|---|---|
+| `id` | e8-3 |
+| `escale` | 8 |
+| `decor` | sargasses |
+| `objets_cliquables` | carte-courants, bouee, algues (objet principal : carte-courants) |
+| `personnage_emetteur` | Le capitaine Nemo |
+| `probleme_narratif` | Dans les algues, les plongeurs du Nautilus ont trouvé l'épave d'un ancien navire négrier : des fers, des chaînes. Nemo les fait déposer sur la carte des courants et confie aux mousses une tâche : retracer la route de ce navire et dater son histoire, pour la vitrine du musée. Il ne veut pas qu'on oublie. |
+| `enjeu` | Sans l'histoire de cette route, ces chaînes ne seraient que de la ferraille : on oublierait des millions de personnes. |
+| `episode_du_roman` | Fil du roman : Nemo se veut l'ennemi des oppresseurs et l'ami des opprimés (Partie II, ch. VIII et XXI). L'épave est inventée. |
+| `competence_programme` | Histoire : la traite atlantique et l'esclavage (le commerce triangulaire) ; les abolitions ; se repérer sur une carte et sur une frise. |
+| `pourquoi_ce_savoir_ici` | La route des navires négriers suivait les vents et les courants de l'Atlantique : on la lit sur cette carte. |
+| `reaction_du_decor` | Le triangle Europe, Afrique, Amériques se dessine sur la carte, puis s'efface lentement. |
+| `liberte_ou_anachronisme` | L'épave est inventée. En 1868, l'esclavage existe encore au Brésil et à Cuba ; la loi française de 2001 (loi Taubira) est un dossier de l'équipe de secours. Les chiffres sont des estimations d'historiens (A-VERIFIER.md). |
+| `niveau_variantes` | Mousse : les 3 trajets du triangle dans l'ordre. Matelot : schéma du triangle. Timonier : schéma avec étiquettes pièges. Lieutenant : frise des abolitions + justification. Second : QCM sur le commerce triangulaire + justification. |
+| `fiche de la Bibliothèque` | Rayon Histoire, fiche 7 « La traite et l'esclavage » |
+| `types par grade` | 🐚 ordre · ⚓ plan · 🧭 plan · 🔭 ordre · 🔱 qcm |
+
+### e8-4 — Le fil sous la mer
+
+| Champ | Contenu |
+|---|---|
+| `id` | e8-4 |
+| `escale` | 8 |
+| `decor` | cable |
+| `objets_cliquables` | cable, plongeurs, hublot-cable (objet principal : cable) |
+| `personnage_emetteur` | Ned Land |
+| `probleme_narratif` | Près de Terre-Neuve, sur le fond, un long serpent couvert de coquillages : le câble télégraphique qui relie l'Europe à l'Amérique. Ned Land n'en revient pas : un message passerait par là jusqu'au Canada ? Avant de rêver d'y accrocher le sien, il veut comprendre comment l'on communique d'un bout à l'autre du monde, hier et aujourd'hui. |
+| `enjeu` | Si Ned comprend qu'on ne lit pas un message en touchant le câble, il renonce à l'abîmer, et l'Europe ne perd pas sa ligne avec l'Amérique. |
+| `episode_du_roman` | Vraisemblance : Partie II, ch. XIX, le Nautilus remonte l'Atlantique vers Terre-Neuve, où repose le câble transatlantique posé en 1866 par le Great Eastern (chapitre exact à vérifier). |
+| `competence_programme` | Géographie : communiquer d'un bout à l'autre du monde grâce à l'internet ; un monde de réseaux ; des habitants inégalement connectés. |
+| `pourquoi_ce_savoir_ici` | Le câble de 1866 est l'ancêtre direct des câbles sous-marins qui transportent aujourd'hui presque tout l'internet entre les continents. |
+| `reaction_du_decor` | Une lueur court le long du câble, comme un message qui passe. |
+| `liberte_ou_anachronisme` | Le câble de 1866 est réel ; la place du passage dans le roman est à vérifier (A-VERIFIER.md). Internet est un dossier de l'équipe de secours (XXIᵉ siècle). |
+| `niveau_variantes` | Mousse : hier ou aujourd'hui. Matelot : inventions dans l'ordre. Timonier : QCM sur les câbles et internet. Lieutenant : durées d'un message (code) + justification. Second : bien ou mal connectés + justification. |
+| `fiche de la Bibliothèque` | Rayon Communication, fiche 1 « Communiquer d'un bout à l'autre du monde » |
+| `types par grade` | 🐚 tri · ⚓ ordre · 🧭 qcm · 🔭 code · 🔱 tri |
+
+### e9-1 — Le ciel de la banquise
+
+| Champ | Contenu |
+|---|---|
+| `id` | e9-1 |
+| `escale` | 9 |
+| `decor` | banquise |
+| `objets_cliquables` | instruments-meteo, aurore, icebergs (objet principal : instruments-meteo) |
+| `personnage_emetteur` | Le professeur Aronnax |
+| `probleme_narratif` | Le Nautilus a fait surface au bord de la banquise, sous une aurore australe. Avant de plonger sous la glace, Nemo veut connaître le temps qui vient : une tempête refermerait les passages. Aronnax, sur le pont, relève les instruments de la petite station météorologique. |
+| `enjeu` | Si l'on ne sait pas lire les instruments, on plonge sans savoir qu'une tempête approche et que la glace va se refermer derrière nous. |
+| `episode_du_roman` | Partie II, ch. XIII « La banquise » : Aronnax note les températures, le vent, les glaces ; Nemo choisit le moment de plonger. |
+| `competence_programme` | Sciences : la météorologie — mesurer le temps qu'il fait avec des instruments (thermomètre, baromètre, anémomètre, girouette, pluviomètre) ; interpréter des relevés. |
+| `pourquoi_ce_savoir_ici` | Au bord de la banquise, le temps décide de tout : une baisse du baromètre annonce la tempête qui refermera les passages. |
+| `reaction_du_decor` | Les aiguilles des instruments s'agitent, puis se fixent : la mesure est prise. |
+| `liberte_ou_anachronisme` | Le pluviomètre et l'anémomètre existent en 1868 ; la petite station sur le pont est inventée. Unités de pression en millimètres de mercure, comme à l'époque. |
+| `niveau_variantes` | Mousse : instrument ↔ ce qu'il mesure. Matelot : instrument ↔ mesure et unité. Timonier : écarts de température et de pression (code). Lieutenant : QCM de prévision + justification. Second : rapport à trous + justification. |
+| `fiche de la Bibliothèque` | Rayon Terre active, fiche 4 « Le temps qu'il fait » |
+| `types par grade` | 🐚 association · ⚓ association · 🧭 code · 🔭 qcm · 🔱 trous |
+
+### e9-2 — Le pavillon du pôle
+
+| Champ | Contenu |
+|---|---|
+| `id` | e9-2 |
+| `escale` | 9 |
+| `decor` | pole |
+| `objets_cliquables` | pavillon, sextant, manchots (objet principal : pavillon) |
+| `personnage_emetteur` | Conseil |
+| `probleme_narratif` | Au pôle Sud, Nemo déploie un pavillon noir marqué d'un N d'or : il prend possession de cette terre en son seul nom. Conseil, troublé, se demande ce que signifie un drapeau, et ce que représentent ceux d'un pays. L'équipe de secours du XXIᵉ siècle lui envoie un dossier sur les symboles de la République française. |
+| `enjeu` | Sans comprendre ce qu'est un symbole, on ne voit pas la différence entre le drapeau d'un homme seul et celui d'un peuple tout entier. |
+| `episode_du_roman` | Partie II, ch. XIV « Le pôle Sud » : le 21 mars 1868, Nemo déploie son pavillon noir au N d'or et prend possession du pôle. |
+| `competence_programme` | EMC : connaître les symboles de la République française (drapeau, hymne, devise, Marianne, fête nationale) et ce qu'ils signifient. |
+| `pourquoi_ce_savoir_ici` | Le geste de Nemo, qui plante son propre drapeau, oblige à se demander ce qu'un drapeau représente. |
+| `reaction_du_decor` | Le pavillon claque au vent ; le N d'or brille un instant sous le soleil rasant. |
+| `liberte_ou_anachronisme` | En 1868, la France est un Empire (Napoléon III), pas une République ; son drapeau est déjà tricolore. Les symboles de la République sont présentés comme dossier de l'équipe de secours (XXIᵉ siècle). Le premier homme réellement arrivé au pôle Sud est Roald Amundsen, en 1911. |
+| `niveau_variantes` | Mousse : l'intrus parmi les symboles. Matelot : symbole ou non. Timonier : symbole ↔ description. Lieutenant : vrai ou faux + justification. Second : QCM sur le sens des symboles + justification. |
+| `fiche de la Bibliothèque` | Rayon Vivre ensemble, fiche 1 « Les symboles de la République » |
+| `types par grade` | 🐚 intrus · ⚓ tri · 🧭 association · 🔭 vraifaux · 🔱 qcm |
+
+### e9-3 — Faute d'air
+
+| Champ | Contenu |
+|---|---|
+| `id` | e9-3 |
+| `escale` | 9 |
+| `decor` | banquise |
+| `objets_cliquables` | icebergs, glaces, instruments-meteo (objet principal : icebergs) |
+| `personnage_emetteur` | Ned Land |
+| `probleme_narratif` | Sur le chemin du retour, un iceberg se retourne : le Nautilus est enfermé sous la glace. L'air s'épuise. L'équipage creuse à la pioche, et le capitaine fait injecter de l'eau bouillante pour que l'eau autour de la coque ne gèle pas. Ned Land, pioche en main, veut comprendre ce qui se passe avec cette eau qui gèle, fond et bout. |
+| `enjeu` | Si l'eau autour du Nautilus gèle, la prison se referme : il faut savoir comment empêcher l'eau de passer à l'état solide. |
+| `episode_du_roman` | Partie II, ch. XV-XVI « Faute d'air » : le Nautilus emprisonné ; l'équipage creuse, des jets d'eau bouillante retardent la congélation, et le navire brise enfin la glace de tout son poids. |
+| `competence_programme` | Sciences : les états de l'eau (solide, liquide, gaz) et les changements d'état ; températures de fusion et d'ébullition ; l'eau de mer gèle vers −2 °C. |
+| `pourquoi_ce_savoir_ici` | Sous la glace, la survie dépend d'un changement d'état : garder l'eau liquide autour de la coque. |
+| `reaction_du_decor` | Une secousse : le Nautilus, alourdi, brise la glace sous lui et retrouve l'eau libre ; la jauge d'air remonte. |
+| `liberte_ou_anachronisme` | Le récit suit le roman ; la température de congélation de l'eau de mer (environ −2 °C) est une valeur moyenne (A-VERIFIER.md). |
+| `niveau_variantes` | Mousse : tri solide, liquide, gaz. Matelot : schéma des changements d'état. Timonier : QCM sur les températures. Lieutenant : calcul de températures + justification. Second : ordre des actions du roman + justification. |
+| `fiche de la Bibliothèque` | Rayon Matière et lumière, fiche 4 « Les états de l'eau » |
+| `types par grade` | 🐚 tri · ⚓ plan · 🧭 qcm · 🔭 code · 🔱 ordre |
+
+### e10-1 — Le monstre à la vitre
+
+| Champ | Contenu |
+|---|---|
+| `id` | e10-1 |
+| `escale` | 10 |
+| `decor` | salon |
+| `objets_cliquables` | hublots, vitrines, epure (objet principal : hublots) |
+| `personnage_emetteur` | Conseil |
+| `probleme_narratif` | Derrière la grande vitre du salon, un œil énorme, des bras couverts de ventouses. Conseil, fidèle à lui-même, veut d'abord le classer : poisson, crustacé, mollusque ? Le classer, c'est savoir comment il se défend, et où il est vulnérable. |
+| `enjeu` | Mal classé, le monstre est mal compris : on frapperait une carapace qu'il n'a pas, au lieu de viser son corps mou. |
+| `episode_du_roman` | Partie II, ch. XVIII « Les poulpes » : Conseil et Aronnax observent un calmar géant par la vitre du salon et discutent de sa classification. |
+| `competence_programme` | Sciences : classer les êtres vivants selon les caractères qu'ils partagent (mollusques, céphalopodes, crustacés, poissons). |
+| `pourquoi_ce_savoir_ici` | Devant un animal inconnu, la classification dit ce qu'il a (corps mou, bras à ventouses) et ce qu'il n'a pas (squelette, carapace). |
+| `reaction_du_decor` | Derrière la vitre, le grand œil s'éloigne ; une ventouse se décolle lentement. |
+| `liberte_ou_anachronisme` | Verne appelle « poulpes » des calmars géants, à huit bras chez lui. On distingue ici poulpe (8 bras) et calmar (8 bras et 2 tentacules). |
+| `niveau_variantes` | Mousse : l'intrus parmi les céphalopodes. Matelot : tri mollusque, crustacé, poisson. Timonier : vrai ou faux sur les céphalopodes. Lieutenant : tri par caractères + justification. Second : QCM sur la classification + justification. |
+| `fiche de la Bibliothèque` | Rayon Vivant, fiche 5 « Les céphalopodes » |
+| `types par grade` | 🐚 intrus · ⚓ tri · 🧭 vraifaux · 🔭 tri · 🔱 qcm |
+
+### e10-2 — La hache et le harpon
+
+| Champ | Contenu |
+|---|---|
+| `id` | e10-2 |
+| `escale` | 10 |
+| `decor` | plateforme-poulpe |
+| `objets_cliquables` | oeil, tentacules, equipage (objet principal : oeil) |
+| `personnage_emetteur` | Ned Land |
+| `probleme_narratif` | L'hélice est bloquée : le Nautilus remonte, et l'équipage monte sur la plate-forme, hache à la main, sous l'orage. Les bras du monstre frappent de partout. Ned Land, harpon levé, guette. Il faut réagir vite et juste : voir, décider, frapper. Comment notre corps fait-il cela, et comment le monstre fait-il de même ? |
+| `enjeu` | Celui qui ne voit pas venir le bras, ou qui réagit trop tard, est emporté : la vitesse du message entre l'œil, le cerveau et les muscles décide du combat. |
+| `episode_du_roman` | Partie II, ch. XVIII : combat sur la plate-forme ; Nemo frappe à la hache, Ned Land plonge son harpon au cœur du calmar ; un marin est emporté. |
+| `competence_programme` | Sciences : le fonctionnement du corps humain — les organes des sens, les nerfs, le cerveau et les muscles ; le cerveau commande les mouvements. |
+| `pourquoi_ce_savoir_ici` | Au cœur du combat, chaque geste suit le même chemin : un sens perçoit, le cerveau décide, les muscles agissent. |
+| `reaction_du_decor` | Un choc : un bras tranché retombe ; le monstre recule dans un nuage d'encre. |
+| `liberte_ou_anachronisme` | Le combat suit le roman. La proportion de neurones dans les bras du poulpe est une valeur approchée (A-VERIFIER.md). |
+| `niveau_variantes` | Mousse : 3 étapes (voir, décider, agir). Matelot : 5 étapes. Timonier : schéma sens → nerfs → cerveau → nerfs → muscles. Lieutenant : QCM + justification. Second : texte à trous sur le poulpe + justification. |
+| `fiche de la Bibliothèque` | Rayon Vivant, fiche 6 « Le cerveau commande les mouvements » |
+| `types par grade` | 🐚 ordre · ⚓ ordre · 🧭 plan · 🔭 qcm · 🔱 trous |
+
+### e10-3 — Les bocaux du musée
+
+| Champ | Contenu |
+|---|---|
+| `id` | e10-3 |
+| `escale` | 10 |
+| `decor` | salon |
+| `objets_cliquables` | vitrines, hublots, orgue (objet principal : vitrines) |
+| `personnage_emetteur` | Le professeur Aronnax |
+| `probleme_narratif` | Le combat est fini ; un homme a disparu. Nemo veut savoir s'il faut fuir ces parages. Dans les vitrines du salon, Aronnax a des bocaux : des grappes d'œufs de calmar, des œufs de tortue, un jeune dauphin conservé. Si les calmars se reproduisent ici, d'autres viendront. Encore faut-il savoir comment ils naissent et grandissent. |
+| `enjeu` | Si l'on comprend que ces calmars pondent ici des milliers d'œufs, on sait qu'il faut quitter ces parages sans attendre. |
+| `episode_du_roman` | Partie II, ch. XVIII-XIX : après le combat, Nemo pleure son compagnon ; le Nautilus quitte les Lucayes et remonte vers le nord. |
+| `competence_programme` | Sciences : reproduction et développement des animaux — ovipares et vivipares, stades de développement (œuf, larve, jeune, adulte), nombre de petits et soins. |
+| `pourquoi_ce_savoir_ici` | Savoir comment se reproduit un animal, c'est savoir s'il va revenir, et combien. |
+| `reaction_du_decor` | Le Nautilus s'éloigne ; dans le salon, le grand orgue se tait et les bocaux scintillent doucement. |
+| `liberte_ou_anachronisme` | Les bocaux du musée sont inventés. Les nombres d'œufs sont des ordres de grandeur (A-VERIFIER.md). |
+| `niveau_variantes` | Mousse : ovipare ou vivipare. Matelot : tri avec animaux marins variés. Timonier : stades du développement dans l'ordre. Lieutenant : calcul de survie des œufs + justification. Second : vrai ou faux sur les stratégies + justification. |
+| `fiche de la Bibliothèque` | Rayon Vivant, fiche 7 « Naître et grandir » |
+| `types par grade` | 🐚 tri · ⚓ tri · 🧭 ordre · 🔭 code · 🔱 vraifaux |
+
+### e11-1 — L'or des galions
+
+| Champ | Contenu |
+|---|---|
+| `id` | e11-1 |
+| `escale` | 11 |
+| `decor` | baie-vigo |
+| `objets_cliquables` | galions, tresor, plongeurs (objet principal : galions) |
+| `personnage_emetteur` | Le professeur Aronnax |
+| `probleme_narratif` | Au fond de la baie de Vigo, en Espagne, les plongeurs du Nautilus ramassent des lingots et des pièces d'or dans les épaves de galions. Aronnax veut comprendre comment ce trésor est arrivé là : une guerre voulue par Louis XIV, un roi qui décidait de tout. Pour juger l'usage que Nemo fait de cet or, il faut d'abord connaître son histoire. |
+| `enjeu` | Sans l'histoire de ces galions, Aronnax prend Nemo pour un pilleur d'épaves ; avec elle, il comprend d'où vient cet or et à qui il appartenait. |
+| `episode_du_roman` | Partie II, ch. VIII « La baie de Vigo » : Nemo raconte la bataille de 1702 et montre ses plongeurs ramassant l'or des galions. |
+| `competence_programme` | Histoire : Louis XIV, un monarque absolu ; la guerre de Succession d'Espagne ; se repérer sur une frise. |
+| `pourquoi_ce_savoir_ici` | Ces galions ont coulé à cause d'une guerre décidée par Louis XIV pour placer son petit-fils sur le trône d'Espagne. |
+| `reaction_du_decor` | Sous le fanal, l'or des coffres éventrés étincelle un instant. |
+| `liberte_ou_anachronisme` | La bataille de Vigo (23 octobre 1702) est réelle ; le trésor a en grande partie été débarqué avant le combat, et la richesse des épaves reste discutée (A-VERIFIER.md). La phrase « L'État, c'est moi » est une légende. |
+| `niveau_variantes` | Mousse : QCM sur Louis XIV. Matelot : frise du règne. Timonier : fait ↔ explication. Lieutenant : tri des signes de la monarchie absolue + justification. Second : texte à trous sur Vigo + justification. |
+| `fiche de la Bibliothèque` | Rayon Histoire, fiche 8 « Louis XIV, roi absolu » |
+| `types par grade` | 🐚 qcm · ⚓ ordre · 🧭 association · 🔭 tri · 🔱 trous |
+
+### e11-2 — Le dernier soir au salon
+
+| Champ | Contenu |
+|---|---|
+| `id` | e11-2 |
+| `escale` | 11 |
+| `decor` | salle-orgue |
+| `objets_cliquables` | toiles, orgue, vitrines-orgue (objet principal : toiles) |
+| `personnage_emetteur` | Le capitaine Nemo |
+| `probleme_narratif` | C'est la nuit de l'évasion. Pour gagner le canot, il faut traverser le salon, où Nemo joue de l'orgue, seul. Il ne se retourne pas ; il parle à mi-voix de ses toiles de maîtres, Léonard de Vinci, Raphaël, Titien, « ce que les hommes ont fait de plus beau ». Il confie aux mousses un dernier travail : ranger ces œuvres dans l'ordre de leur siècle, pour que leur mémoire au moins survive. |
+| `enjeu` | Ce dernier service rendu, Nemo reste à son orgue et ne retient personne : le chemin du canot est libre. |
+| `episode_du_roman` | Partie I, ch. XI (les toiles de maîtres du salon : Raphaël, Léonard de Vinci, Titien…) et Partie II, ch. XXII : la dernière nuit, Aronnax traverse le salon où Nemo joue de l'orgue. |
+| `competence_programme` | Histoire : la Renaissance — un temps de découvertes, d'artistes et d'inventions ; François Iᵉʳ et Léonard de Vinci. |
+| `pourquoi_ce_savoir_ici` | Le salon de Nemo est un musée de la Renaissance : ses toiles racontent ce temps d'artistes et d'inventeurs. |
+| `reaction_du_decor` | Le lustre s'éclaire doucement ; l'orgue joue un dernier accord. |
+| `liberte_ou_anachronisme` | La tâche confiée par Nemo est inventée. Les dates sont celles des manuels ; Léonard a dessiné un appareil pour respirer sous l'eau, il n'a pas construit de sous-marin. |
+| `niveau_variantes` | Mousse : artiste ↔ œuvre. Matelot : QCM sur la Renaissance. Timonier : frise. Lieutenant : vrai ou faux + justification. Second : tri Moyen Âge ou Renaissance + justification. |
+| `fiche de la Bibliothèque` | Rayon Histoire, fiche 9 « La Renaissance » |
+| `types par grade` | 🐚 association · ⚓ qcm · 🧭 ordre · 🔭 vraifaux · 🔱 tri |
+
+### e11-3 — Le programme de l'évasion
+
+| Champ | Contenu |
+|---|---|
+| `id` | e11-3 |
+| `escale` | 11 |
+| `decor` | maelstrom |
+| `objets_cliquables` | canot, tourbillon, fanal (objet principal : canot) |
+| `personnage_emetteur` | Ned Land |
+| `probleme_narratif` | Le canot est fixé sur le dos du Nautilus par des boulons. Dehors, la mer gronde : le Nautilus approche du Maelström. Ned Land a tout prévu, mais dans le noir, sans un mot, chacun doit exécuter les ordres dans l'ordre exact. Il faut écrire le plan comme un programme : des instructions précises, des répétitions, des conditions. |
+| `enjeu` | Une instruction oubliée ou mal placée, et le canot reste boulonné au Nautilus, entraîné avec lui dans le tourbillon. |
+| `episode_du_roman` | Partie II, ch. XXII : Ned, Aronnax et Conseil se glissent dans le canot ; ils dévissent les écrous quand le Nautilus est happé par le Maelström. |
+| `competence_programme` | Technologie et mathématiques : programmer — écrire une suite d'instructions (algorithme), utiliser une boucle « répéter » et une condition « si… alors ». |
+| `pourquoi_ce_savoir_ici` | Dans le noir et le vacarme, un plan exécuté pas à pas, sans ambiguïté, est le seul qui marche : c'est exactement ce qu'est un programme. |
+| `reaction_du_decor` | Un craquement : le canot se détache et part en tournoyant sur les vagues. |
+| `liberte_ou_anachronisme` | Écrire le plan comme un programme est un choix pédagogique ; le vocabulaire (boucle, condition) est celui d'aujourd'hui. |
+| `niveau_variantes` | Mousse : 3 instructions dans l'ordre. Matelot : 5 instructions. Timonier : QCM sur la boucle et la condition. Lieutenant : exécuter un programme (code) + justification. Second : compléter le programme avec des blocs + justification. |
+| `fiche de la Bibliothèque` | Rayon Communication, fiche 2 « Programmer » |
+| `types par grade` | 🐚 ordre · ⚓ ordre · 🧭 qcm · 🔭 code · 🔱 plan |
+
+### e11-4 — Le réveil aux Lofoten
+
+| Champ | Contenu |
+|---|---|
+| `id` | e11-4 |
+| `escale` | 11 |
+| `decor` | maelstrom |
+| `objets_cliquables` | cote, canot, tourbillon (objet principal : cote) |
+| `personnage_emetteur` | Conseil |
+| `probleme_narratif` | Rejetés par le Maelström, les trois compagnons se réveillent dans une cabane de pêcheurs des îles Lofoten, en Norvège. Conseil veut savoir comment rentrer en France, et l'équipe de secours du XXIᵉ siècle lui répond par un dossier sur l'Europe d'aujourd'hui : quels pays font partie de l'Union européenne, et la Norvège en est-elle ? |
+| `enjeu` | Pour organiser le retour, il faut savoir quels pays on traverse et ce qui change d'un pays à l'autre (frontières, monnaie). |
+| `episode_du_roman` | Partie II, ch. XXIII « Conclusion » : réveil dans une cabane de pêcheurs des îles Lofoten ; ils attendent un bateau pour regagner la France. |
+| `competence_programme` | Géographie : la France dans l'Union européenne — pays membres, symboles, monnaie, libre circulation ; repérer la Norvège, pays européen non membre. |
+| `pourquoi_ce_savoir_ici` | Les Lofoten sont en Norvège : un pays d'Europe qui n'a pas choisi d'entrer dans l'Union européenne. |
+| `reaction_du_decor` | Sur la mer apaisée, la route du retour se dessine, de la Norvège vers la France. |
+| `liberte_ou_anachronisme` | L'Union européenne n'existe pas en 1868 : c'est le dossier de l'équipe de secours (XXIᵉ siècle). Le nombre de pays utilisant l'euro évolue ; on dit « une vingtaine » (A-VERIFIER.md). |
+| `niveau_variantes` | Mousse : tri pays membres ou non. Matelot : tri avec pays plus difficiles. Timonier : symboles de l'UE. Lieutenant : QCM sur l'UE + justification. Second : vrai ou faux sur la Norvège, Schengen et l'euro + justification. |
+| `fiche de la Bibliothèque` | Rayon Géographie, fiche 5 « L'Union européenne » |
+| `types par grade` | 🐚 tri · ⚓ tri · 🧭 association · 🔭 qcm · 🔱 vraifaux |
+
 <!-- ANCRAGE:FIN -->

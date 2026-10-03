@@ -8,7 +8,7 @@
    correction est vue tout de suite), cache d'abord pour le reste.
    Changer VERSION à chaque publication (le test le contrôle).
    ============================================================ */
-const VERSION = "vml-escales-1-6";
+const VERSION = "vml-campagne-1";
 const FICHIERS = [
   "./", "index.html", "prof.html", "medias.html", "lecons-imprimables.html", "manifest.webmanifest",
   "css/nautilus.css", "css/enigmes-nautilus.css",

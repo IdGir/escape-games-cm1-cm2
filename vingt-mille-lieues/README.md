@@ -1,7 +1,7 @@
 # ⚓ Vingt mille lieues sous les mers — Le Journal du Nautilus
 
 Escape game immersif de cycle 3 (CM1-CM2), d'après le roman de Jules Verne (1869-1870, domaine public), **5 grades** de
-difficulté, campagne prévue en **11 escales**. **État : escales 1 à 6 jouables (pilote validé : escale 2) ; escales 7 à 11 en cours.**
+difficulté, campagne prévue en **11 escales**. **État : campagne complète, 11 escales et coffre final (en attente de validation des escales 3 à 11).**
 
 - Jouer : `vingt-mille-lieues/index.html` (en ligne, ou `lancer.bat` puis http://127.0.0.1:8000/vingt-mille-lieues/).
 - Tableau de bord enseignant (mode local) : `prof.html` · médias : `medias.html` · leçons A4 : `lecons-imprimables.html`.
@@ -256,3 +256,193 @@ Compétence : Géographie : se déplacer — comment se déplace-t-on ailleurs ?
 - **🧭 Timonier** (ordre) — 1. Du Nautilus au quai ; 2. Du quai à la gare maritime ; 3. De Port-Saïd à Marseille ; 4. De Marseille au Havre ; 5. Du Havre à Québec
 - **🔭 Lieutenant** (ordre) — 1. Canot jusqu'au quai de Port-Saïd ; 2. Paquebot Port-Saïd → Marseille ; 3. Train Marseille → Paris → Le Havre ; 4. Paquebot Le Havre → Québec ; 5. Diligence ou train vers son village · Justification : « On choisit le moyen de transport selon la distance à parcourir, le milieu (mer ou terre) et ce qui existe à l'époque. »
 - **🔱 Second** (code) — 20 jours = ? heures 480 ; Combien de fois plus long en 1868 ? 24 · Justification : « Les progrès des transports (vapeur, chemin de fer, puis avion) ont raccourci les durées de voyage : le monde paraît plus petit. »
+
+### Escale 7 — L'archipel en feu et l'Atlantide · mot du journal : **ATLANTIS**
+
+*Deuxième partie, ch. VI « L'Archipel en feu » (le Nautilus traverse des eaux brûlantes près de Santorin, en pleine éruption) et ch. IX « Un continent disparu » (Nemo conduit Aronnax aux ruines de l'Atlantide et écrit ATLANTIS sur la roche).*
+
+#### 7.1 La mer qui bout — volcan-santorin, objet « thermometre », Conseil
+
+Compétence : Sciences : la Terre active — décrire un volcan (cratère, cheminée, magma, lave, cendres) ; relier l'éruption à la chaleur interne de la Terre. · Fiche : Rayon Terre active, fiche 1 « Les volcans »
+
+- **🐚 Mousse** (plan) — En haut : l'ouverture d'où sort l'éruption : cratère · Sur les pentes : la roche fondue qui coule : lave · Tout en bas : la réserve de roche fondue : magma
+- **⚓ Matelot** (plan) — Le nuage gris qui monte dans le ciel : cendres · L'ouverture au sommet : cratère · La roche fondue qui coule dehors : lave · Le conduit qui monte vers le sommet : cheminée · La poche de roche fondue sous le volcan : magma
+- **🧭 Timonier** (plan) — Le nuage de poussières de roche : cendres · L'ouverture au sommet : cratère · La roche fondue qui coule dehors : lave · Le conduit qui monte vers le sommet : cheminée · La poche de roche fondue en profondeur : magma
+- **🔭 Lieutenant** (trous) — Mots : magma, cheminée, cratère, cendres, lave, chauffe · Étiquettes pièges : glace, refroidit, sable · Justification : « La chaleur vient de l'intérieur de la Terre : sous le volcan, le magma chauffe les roches et l'eau ; près d'une île volcanique en activité, la mer peut devenir brûlante. »
+- **🔱 Second** (qcm) — Q1 : de l'intérieur de la Terre, par le magma · Q2 : la lave refroidie s'empile et forme de la roche nouvelle · Q3 : il s'éloigne : plus près du volcan, l'eau est plus chaude · Justification : « En refroidissant, la lave devient une roche dure : couche après couche, les éruptions construisent le volcan, et parfois une île. »
+
+#### 7.2 Ned veut débarquer — volcan-santorin, objet « hublot-droit », Ned Land
+
+Compétence : Sciences : la Terre active — identifier les risques liés aux volcans et aux séismes ; connaître des mesures de prévention et de protection. · Fiche : Rayon Terre active, fiche 2 « Volcans et séismes : les risques »
+
+- **🐚 Mousse** (tri) — Bonne idée : s'éloigner du volcan, écouter les consignes des sauveteurs, se protéger le nez et la bouche des cendres · Mauvaise idée : aller voir la lave de près, nager dans l'eau brûlante, grimper au sommet du volcan
+- **⚓ Matelot** (tri) — Volcan : une coulée de lave, une pluie de cendres, des gaz brûlants · Séisme : le sol qui tremble, des maisons qui s'effondrent, des fissures dans les routes
+- **🧭 Timonier** (tri) — Avant : surveiller le volcan avec des appareils de mesure, préparer un plan d'évacuation · Pendant : s'abriter sous une table solide quand le sol tremble, suivre l'évacuation vers une zone sûre · Après : attendre l'autorisation pour rentrer chez soi, vérifier que la maison n'est pas fissurée
+- **🔭 Lieutenant** (tri) — Prévention : on s'y prépare longtemps avant : construire des bâtiments qui résistent aux secousses, interdire de construire au pied du volcan, faire des exercices d'alerte à l'école · Protection : on se met à l'abri pendant la crise : évacuer la zone dangereuse, s'éloigner des fenêtres pendant le séisme · Justification : « La prévention se fait longtemps avant (surveiller, construire solide, s'entraîner) ; la protection se fait pendant la crise (s'abriter, évacuer). »
+- **🔱 Second** (ordre) — 1. Les appareils des scientifiques enregistrent des secousses et un gonflement du volcan. ; 2. Les scientifiques préviennent les autorités : l'éruption approche. ; 3. Les autorités déclenchent l'alerte et l'évacuation. ; 4. Les habitants suivent les consignes et rejoignent une zone sûre. ; 5. Après l'éruption, les habitants rentrent quand on les y autorise. · Justification : « Un volcan surveillé donne souvent des signes avant l'éruption (secousses, gonflement, gaz) : on peut alors alerter et évacuer à temps. »
+
+#### 7.3 Le mot sur la roche — atlantide, objet « temple », Le professeur Aronnax
+
+Compétence : Histoire : distinguer un mythe (récit) d'un fait prouvé par des traces (fouilles, documents) ; se repérer dans le temps (frise). · Fiche : Rayon Histoire, fiche 6 « Mythe ou histoire ? »
+
+- **🐚 Mousse** (vraifaux) — VRAI — L'Atlantide est racontée dans un très vieux livre, écrit par Platon. · FAUX — Des archéologues ont retrouvé la ville de l'Atlantide au fond de l'océan. · VRAI — Jules Verne imagine les ruines de l'Atlantide dans son roman. · VRAI — Une éruption volcanique peut ensevelir une ville.
+- **⚓ Matelot** (vraifaux) — VRAI — Un mythe est un récit ancien qui n'est pas prouvé par des traces. · VRAI — Une trace (objet, ruine, document) aide à prouver qu'un fait a eu lieu. · FAUX — Si un récit est très vieux, il est forcément vrai. · VRAI — À Santorin, des archéologues ont fouillé une vraie ville ensevelie par des cendres : Akrotiri. · FAUX — Le mot écrit par Nemo prouve que l'Atlantide a existé.
+- **🧭 Timonier** (ordre) — 1. Éruption géante de Santorin ; la ville d'Akrotiri est ensevelie ; 2. Platon raconte l'histoire de l'Atlantide engloutie ; 3. Nouvelle éruption de Santorin (Néa Kaméni) ; 4. Jules Verne publie Vingt mille lieues sous les mers ; 5. Début des fouilles d'Akrotiri
+- **🔭 Lieutenant** (qcm) — Q1 : un fait prouvé par les fouilles · Q2 : une hypothèse de savants · Q3 : le récit de Platon (un mythe) · Justification : « Un fait est prouvé par des traces ; une hypothèse est une explication possible, pas encore prouvée ; un mythe est un récit qu'aucune trace ne confirme. »
+- **🔱 Second** (tri) — Fait prouvé : Akrotiri a été ensevelie sous les cendres de Santorin., Santorin est entrée en éruption en 1866. · Hypothèse : L'éruption de Santorin aurait inspiré le mythe de l'Atlantide. · Récit (mythe ou roman) : L'Atlantide était une île plus grande que l'Asie., Le capitaine Nemo a marché dans les ruines de l'Atlantide. · Justification : « C'est une explication possible que des savants proposent, mais aucune trace ne la prouve : on ne peut pas savoir à quoi pensait Platon. »
+
+### Escale 8 — La mer des Sargasses et le câble · mot du journal : **SARGASSES**
+
+*Deuxième partie, ch. XI « La mer de Sargasses » (le Nautilus traverse une mer couverte d'algues flottantes) ; ch. XIX « Le Gulf Stream » (le grand courant chaud) ; puis le câble télégraphique transatlantique, posé sur le fond près de Terre-Neuve.*
+
+#### 8.1 Qui mange qui ? — sargasses, objet « algues », Conseil
+
+Compétence : Sciences : le vivant dans son environnement — chaînes alimentaires, producteurs et consommateurs, interdépendance dans un écosystème. · Fiche : Rayon Vivant, fiche 4 « Qui mange qui ? Les chaînes alimentaires »
+
+- **🐚 Mousse** (association) — la petite crevette → des morceaux d'algues · le petit poisson → des crevettes · le thon → des petits poissons
+- **⚓ Matelot** (ordre) — 1. l'algue sargasse ; 2. la petite crevette ; 3. le poisson volant ; 4. le thon
+- **🧭 Timonier** (ordre) — 1. La lumière du soleil ; 2. L'algue sargasse ; 3. La crevette ; 4. Le poisson volant ; 5. Le requin
+- **🔭 Lieutenant** (trous) — Mots : producteur, lumière, consommateur, décomposeurs · Étiquettes pièges : prédateur, nuit, minéral · Justification : « Les végétaux (et les algues) sont des producteurs : ils fabriquent leur propre matière grâce à la lumière ; les animaux sont des consommateurs : ils mangent d'autres êtres vivants. »
+- **🔱 Second** (qcm) — Q1 : manqueraient de nourriture et d'abri, et diminueraient · Q2 : ils diminueraient aussi, car leurs proies diminuent · Q3 : un milieu et tous les êtres vivants qui y vivent et dépendent les uns des autres · Justification : « Dans un écosystème, les êtres vivants dépendent les uns des autres : si un maillon disparaît, toute la chaîne est touchée. »
+
+#### 8.2 Le fleuve dans la mer — sargasses, objet « bouee », Le professeur Aronnax
+
+Compétence : Géographie et sciences : les grands courants marins, leur influence sur le climat ; lire une carte et des relevés de températures. · Fiche : Rayon Terre active, fiche 3 « Courants marins et climat »
+
+- **🐚 Mousse** (qcm) — Q1 : un courant d'eau chaude · Q2 : l'Europe
+- **⚓ Matelot** (tri) — Hiver doux (côte réchauffée par le courant) : Brest (France), Cork (Irlande) · Hiver très froid : Saint-Jean de Terre-Neuve (Canada), Québec (Canada)
+- **🧭 Timonier** (code) — Écart de température (en °C) 12
+- **🔭 Lieutenant** (qcm) — Q1 : le Gulf Stream apporte de l'eau chaude sur les côtes d'Europe · Q2 : elle est au centre d'un grand tourbillon de courants qui les retient · Justification : « Un courant chaud réchauffe l'air au-dessus de lui et adoucit le climat des côtes qu'il longe. »
+- **🔱 Second** (vraifaux) — VRAI — Les courants marins transportent de la chaleur d'une région à une autre. · VRAI — Sans le Gulf Stream, l'hiver serait sans doute plus froid sur les côtes d'Europe de l'Ouest. · FAUX — Le climat d'un lieu ne dépend que de sa latitude. · VRAI — Au XXIᵉ siècle, des scientifiques surveillent ce courant, car le réchauffement climatique pourrait le ralentir. · Justification : « Le climat dépend de la latitude, mais aussi de la mer, des courants, du relief et de l'altitude. »
+
+#### 8.3 Les chaînes de l'épave — sargasses, objet « carte-courants », Le capitaine Nemo
+
+Compétence : Histoire : la traite atlantique et l'esclavage (le commerce triangulaire) ; les abolitions ; se repérer sur une carte et sur une frise. · Fiche : Rayon Histoire, fiche 7 « La traite et l'esclavage »
+
+- **🐚 Mousse** (ordre) — 1. D'Europe vers l'Afrique, avec des tissus, des armes et de l'alcool. ; 2. D'Afrique vers les Amériques, avec des Africains réduits en esclavage. ; 3. Des Amériques vers l'Europe, avec du sucre, du coton et du café.
+- **⚓ Matelot** (plan) — Europe → Afrique : tissus, armes, alcool · Afrique → Amériques : captifs africains · Amériques → Europe : sucre, coton, café
+- **🧭 Timonier** (plan) — Port de départ en France : Nantes · Europe → Afrique : tissus, armes, alcool · Afrique → Amériques : captifs africains · Travail forcé dans les Amériques : plantations · Amériques → Europe : sucre, coton, café
+- **🔭 Lieutenant** (ordre) — 1. Début de la traite atlantique vers les Amériques ; 2. Première abolition de l'esclavage par la Révolution française ; 3. Napoléon rétablit l'esclavage dans les colonies ; 4. Abolition définitive en France (Victor Schœlcher) ; 5. La loi Taubira reconnaît la traite et l'esclavage comme crimes contre l'humanité · Justification : « La France reconnaît officiellement que la traite et l'esclavage sont des crimes contre l'humanité, pour qu'on ne les oublie pas. »
+- **🔱 Second** (qcm) — Q1 : les navires reliaient trois continents en trois trajets · Q2 : environ 12 millions · Q3 : les armateurs et les planteurs · Justification : « Les armateurs des ports européens et les propriétaires des plantations s'enrichissaient grâce au travail forcé des esclaves, privés de liberté et de tout droit. »
+
+#### 8.4 Le fil sous la mer — cable, objet « cable », Ned Land
+
+Compétence : Géographie : communiquer d'un bout à l'autre du monde grâce à l'internet ; un monde de réseaux ; des habitants inégalement connectés. · Fiche : Rayon Communication, fiche 1 « Communiquer d'un bout à l'autre du monde »
+
+- **🐚 Mousse** (tri) — Existait en 1868 : la lettre envoyée par bateau, le télégramme par câble · Seulement aujourd'hui : le message sur un téléphone portable, l'appel vidéo par internet, le courriel (e-mail)
+- **⚓ Matelot** (ordre) — 1. La lettre portée par un navire à voile ; 2. Le télégraphe par câble sous l'Atlantique (1866) ; 3. Le téléphone (1876) ; 4. Internet dans les maisons (années 1990) ; 5. Le smartphone (années 2000)
+- **🧭 Timonier** (qcm) — Q1 : par des câbles posés au fond des océans · Q2 : un ensemble de lignes qui relient des lieux entre eux · Q3 : des messages télégraphiques en code (points et traits)
+- **🔭 Lieutenant** (code) — 10 jours = ? heures 240 ; Combien de fois plus rapide, le télégramme (1 h) ? 240 · Justification : « Avec le câble, un message traverse l'océan en quelques minutes au lieu de plusieurs jours : l'information va plus vite que les navires. »
+- **🔱 Second** (tri) — Bien connecté : un habitant d'une grande ville d'Europe, avec la fibre, une ville côtière où arrive un câble sous-marin · Peu ou pas connecté : un village de montagne isolé, sans antenne, une famille qui n'a pas les moyens d'acheter un ordinateur, une île lointaine sans câble, reliée seulement par satellite · Justification : « Les habitants de la planète sont inégalement connectés : cela dépend du lieu (villes, campagnes, îles), des réseaux installés et de l'argent dont on dispose. »
+
+### Escale 9 — Le pôle Sud et la prison de glace · mot du journal : **BANQUISE**
+
+*Deuxième partie, ch. XIII « La banquise », XIV « Le pôle Sud » (Nemo plante son pavillon noir marqué d'un N d'or, le 21 mars 1868), XV « Accident ou incident ? » et XVI « Faute d'air » (le Nautilus est emprisonné sous la glace ; l'équipage creuse, injecte de l'eau bouillante, et l'air vient à manquer).*
+
+#### 9.1 Le ciel de la banquise — banquise, objet « instruments-meteo », Le professeur Aronnax
+
+Compétence : Sciences : la météorologie — mesurer le temps qu'il fait avec des instruments (thermomètre, baromètre, anémomètre, girouette, pluviomètre) ; interpréter des relevés. · Fiche : Rayon Terre active, fiche 4 « Le temps qu'il fait »
+
+- **🐚 Mousse** (association) — le thermomètre → la température de l'air · la girouette → la direction du vent · le pluviomètre → la quantité de pluie ou de neige
+- **⚓ Matelot** (association) — le thermomètre → la température, en degrés Celsius (°C) · le baromètre → la pression de l'air, en millimètres de mercure (mm) · l'anémomètre → la vitesse du vent, en kilomètres par heure (km/h) · la girouette → la direction d'où vient le vent · le pluviomètre → la hauteur de pluie tombée, en millimètres (mm)
+- **🧭 Timonier** (code) — De combien de degrés la température a-t-elle monté ? 9 ; De combien de millimètres le baromètre a-t-il baissé ? 11
+- **🔭 Lieutenant** (qcm) — Q1 : une tempête · Q2 : plonger maintenant, avant que la tempête ne referme les passages · Justification : « Quand le baromètre baisse vite et que le vent forcit, le mauvais temps approche ; quand il monte, le temps s'améliore. »
+- **🔱 Second** (trous) — Mots : baromètre, diminue, anémomètre, girouette, tempête · Étiquettes pièges : augmente, pluviomètre, accalmie · Justification : « Une prévision s'appuie sur des mesures et sur l'expérience ; elle dit ce qui est probable, pas ce qui est sûr. »
+
+#### 9.2 Le pavillon du pôle — pole, objet « pavillon », Conseil
+
+Compétence : EMC : connaître les symboles de la République française (drapeau, hymne, devise, Marianne, fête nationale) et ce qu'ils signifient. · Fiche : Rayon Vivre ensemble, fiche 1 « Les symboles de la République »
+
+- **🐚 Mousse** (intrus) — Intrus : le pavillon noir au N d'or
+- **⚓ Matelot** (tri) — Symbole officiel de la République : La Marseillaise, le 14 Juillet, fête nationale, la devise « Liberté, Égalité, Fraternité », le drapeau tricolore · Pas un symbole officiel : le coq, la tour Eiffel
+- **🧭 Timonier** (association) — Le drapeau tricolore → bleu, blanc, rouge, né pendant la Révolution · La Marseillaise → l'hymne national, chant composé en 1792 · La devise → « Liberté, Égalité, Fraternité », inscrite sur les mairies et les écoles · Marianne → une femme coiffée d'un bonnet phrygien, visage de la République · Le 14 Juillet → la fête nationale, en souvenir de 1789 et de 1790
+- **🔭 Lieutenant** (vraifaux) — VRAI — Le drapeau de la République représente tous les citoyens, pas une seule personne. · VRAI — Les symboles de la République sont inscrits dans la Constitution. · FAUX — Le pavillon de Nemo est un symbole de la France. · VRAI — La devise rappelle des valeurs que partagent les citoyens. · Justification : « Un symbole de la République représente la nation tout entière, c'est-à-dire tous les citoyens et les valeurs qu'ils partagent. »
+- **🔱 Second** (qcm) — Q1 : tous les citoyens ont les mêmes droits devant la loi · Q2 : pour rappeler les valeurs que l'école transmet à tous les élèves · Q3 : être solidaires les uns des autres · Justification : « La loi est la même pour tous : les citoyens ont les mêmes droits et les mêmes devoirs, quelles que soient leur origine ou leur religion. »
+
+#### 9.3 Faute d'air — banquise, objet « icebergs », Ned Land
+
+Compétence : Sciences : les états de l'eau (solide, liquide, gaz) et les changements d'état ; températures de fusion et d'ébullition ; l'eau de mer gèle vers −2 °C. · Fiche : Rayon Matière et lumière, fiche 4 « Les états de l'eau »
+
+- **🐚 Mousse** (tri) — Solide : la banquise, l'iceberg · Liquide : l'eau de mer sous la glace, l'eau bouillante des pompes · Gaz : la vapeur d'eau (invisible) au-dessus de l'eau bouillante
+- **⚓ Matelot** (plan) — Glace → eau liquide : fusion · Eau liquide → glace : solidification · Eau liquide → vapeur : vaporisation · Vapeur → eau liquide : condensation
+- **🧭 Timonier** (qcm) — Q1 : 0 °C · Q2 : 100 °C · Q3 : un peu en dessous de 0 °C, vers −2 °C
+- **🔭 Lieutenant** (code) — Dans combien d'heures gèlera-t-elle, sans rien faire ? 2 ; Sa température après les jets d'eau bouillante (en °C) ? 2 · Justification : « Tant que l'eau reste au-dessus de sa température de solidification, elle reste liquide : en la réchauffant, on l'empêche de geler. »
+- **🔱 Second** (ordre) — 1. Sonder la glace pour trouver la paroi la plus mince, sous la coque. ; 2. Creuser la glace à la pioche, par équipes, en scaphandre. ; 3. Injecter de l'eau bouillante pour empêcher l'eau de geler autour du navire. ; 4. Remplir les réservoirs pour alourdir le Nautilus. ; 5. Le Nautilus brise la glace amincie de tout son poids et retrouve l'eau libre. · Justification : « Tant que l'eau reste au-dessus de sa température de solidification, elle reste liquide : en la réchauffant, on l'empêche de geler. »
+
+### Escale 10 — Les poulpes géants · mot du journal : **POULPE**
+
+*Deuxième partie, ch. XVIII « Les poulpes » : par les vitres du salon, Aronnax et Conseil observent des calmars gigantesques ; l'un d'eux bloque l'hélice. Le Nautilus remonte, l'équipage combat à la hache sur la plate-forme ; Ned Land frappe au cœur ; un marin est emporté.*
+
+#### 10.1 Le monstre à la vitre — salon, objet « hublots », Conseil
+
+Compétence : Sciences : classer les êtres vivants selon les caractères qu'ils partagent (mollusques, céphalopodes, crustacés, poissons). · Fiche : Rayon Vivant, fiche 5 « Les céphalopodes »
+
+- **🐚 Mousse** (intrus) — Intrus : le crabe
+- **⚓ Matelot** (tri) — Mollusques (corps mou) : le calmar géant, le poulpe, l'huître · Crustacés (carapace, pattes articulées) : le homard, la crevette · Poissons (squelette, nageoires) : le thon, le requin
+- **🧭 Timonier** (vraifaux) — VRAI — Le poulpe et le calmar sont des mollusques, comme l'escargot. · FAUX — Le poulpe a un squelette, comme le poisson. · VRAI — Le calmar a huit bras et deux longs tentacules. · VRAI — Les céphalopodes ont des ventouses sur leurs bras. · FAUX — Le calmar est un poisson parce qu'il nage.
+- **🔭 Lieutenant** (tri) — Le calmar l'a : un corps mou, des bras avec des ventouses, des yeux · Le calmar ne l'a pas : un squelette osseux, des nageoires avec des rayons osseux, une carapace · Justification : « On classe les êtres vivants selon les caractères qu'ils possèdent (corps mou, squelette, carapace…), pas selon ce qu'ils font ni où ils vivent. »
+- **🔱 Second** (qcm) — Q1 : dont les pieds (les bras) sont sur la tête · Q2 : le nautile · Q3 : la baleine est un mammifère et le requin un poisson : le milieu ne suffit pas à classer · Justification : « On classe les êtres vivants selon les caractères qu'ils possèdent (corps mou, squelette, carapace…), pas selon ce qu'ils font ni où ils vivent. »
+
+#### 10.2 La hache et le harpon — plateforme-poulpe, objet « oeil », Ned Land
+
+Compétence : Sciences : le fonctionnement du corps humain — les organes des sens, les nerfs, le cerveau et les muscles ; le cerveau commande les mouvements. · Fiche : Rayon Vivant, fiche 6 « Le cerveau commande les mouvements »
+
+- **🐚 Mousse** (ordre) — 1. Les yeux de Ned voient le bras arriver. ; 2. Le cerveau de Ned décide de frapper. ; 3. Les muscles du bras de Ned lancent le harpon.
+- **⚓ Matelot** (ordre) — 1. Les yeux perçoivent le bras du monstre. ; 2. Un nerf transmet le message au cerveau. ; 3. Le cerveau analyse et décide. ; 4. Un nerf transmet l'ordre aux muscles. ; 5. Les muscles se contractent : le harpon part.
+- **🧭 Timonier** (plan) — 1. Perçoit : organe des sens (œil) · 2. Transmet : nerf · 3. Décide : cerveau · 4. Transmet l'ordre : nerf moteur · 5. Agit : muscle
+- **🔭 Lieutenant** (qcm) — Q1 : l'ouïe (entendre le bruit) · Q2 : le cerveau · Q3 : ses oreilles captent l'alerte, son cerveau décide de se retourner plus vite · Justification : « Les organes des sens captent des informations ; les nerfs les transmettent au cerveau, qui décide ; d'autres nerfs portent l'ordre aux muscles. »
+- **🔱 Second** (trous) — Mots : yeux, cerveau, nerfs, muscles, bras · Étiquettes pièges : os, nageoires, poumons · Justification : « Le poulpe a un cerveau, mais une grande partie de ses cellules nerveuses est dans ses bras : un bras peut réagir sans attendre le cerveau. »
+
+#### 10.3 Les bocaux du musée — salon, objet « vitrines », Le professeur Aronnax
+
+Compétence : Sciences : reproduction et développement des animaux — ovipares et vivipares, stades de développement (œuf, larve, jeune, adulte), nombre de petits et soins. · Fiche : Rayon Vivant, fiche 7 « Naître et grandir »
+
+- **🐚 Mousse** (tri) — Ovipare (pond des œufs) : le calmar, la tortue de mer, le manchot · Vivipare (naît du ventre de sa mère) : le dauphin, la baleine, le phoque
+- **⚓ Matelot** (tri) — Ovipare : le poulpe, le saumon, le crabe, l'oiseau albatros · Vivipare : le cachalot, le lamantin, l'être humain
+- **🧭 Timonier** (ordre) — 1. L'œuf, accroché sous la femelle ; 2. La larve, minuscule, qui nage avec le plancton ; 3. Le jeune crabe, qui mue pour grandir ; 4. Le crabe adulte, qui peut se reproduire
+- **🔭 Lieutenant** (code) — Nombre d'adultes pour une ponte de calmar 100 ; Petits de dauphin en 12 ans 4 · Justification : « Les animaux qui ne s'occupent pas de leurs petits ont beaucoup de descendants, car la plupart meurent jeunes ; ceux qui les protègent en ont peu. »
+- **🔱 Second** (vraifaux) — VRAI — La femelle poulpe garde ses œufs jusqu'à leur éclosion, sans manger, puis meurt. · FAUX — Le dauphin pond des œufs. · VRAI — Un animal qui protège ses petits en a souvent peu. · FAUX — Tous les œufs pondus deviennent des adultes. · VRAI — Là où des calmars pondent, de nombreux jeunes calmars naîtront. · Justification : « Les animaux qui ne s'occupent pas de leurs petits ont beaucoup de descendants, car la plupart meurent jeunes ; ceux qui les protègent en ont peu. »
+
+### Escale 11 — Le trésor de Vigo et le Maelström · mot du journal : **MAELSTROM**
+
+*Deuxième partie, ch. VIII « La baie de Vigo » (Nemo puise l'or des galions coulés en 1702) ; ch. XXII « Les dernières paroles du capitaine Nemo » (Nemo joue de l'orgue dans le salon, la nuit ; les trois prisonniers s'enfuient dans le canot, happé par le Maelström au large de la Norvège) et ch. XXIII « Conclusion » (ils se réveillent dans une cabane de pêcheurs des îles Lofoten).*
+
+#### 11.1 L'or des galions — baie-vigo, objet « galions », Le professeur Aronnax
+
+Compétence : Histoire : Louis XIV, un monarque absolu ; la guerre de Succession d'Espagne ; se repérer sur une frise. · Fiche : Rayon Histoire, fiche 8 « Louis XIV, roi absolu »
+
+- **🐚 Mousse** (qcm) — Q1 : Louis XIV · Q2 : Versailles
+- **⚓ Matelot** (ordre) — 1. Louis XIV devient roi, à 4 ans ; 2. Il décide de gouverner seul, sans Premier ministre ; 3. La cour s'installe à Versailles ; 4. Bataille de Vigo : les galions sont coulés ; 5. Mort de Louis XIV
+- **🧭 Timonier** (association) — Le petit-fils de Louis XIV devient roi d'Espagne (1700) → le roi d'Espagne, mort sans enfant, l'a choisi comme héritier · L'Angleterre et la Hollande font la guerre à la France → elles refusent qu'une même famille règne sur la France et l'Espagne · Des galions rapportent l'or d'Amérique → l'Espagne a des colonies en Amérique · Les galions sont coulés à Vigo (1702) → la flotte anglaise et hollandaise attaque la baie
+- **🔭 Lieutenant** (tri) — Signe de la monarchie absolue : le roi décide seul de la guerre et de la paix, le roi dit tenir son pouvoir de Dieu, les nobles vivent à la cour, sous les yeux du roi, à Versailles · Pas un signe de la monarchie absolue : les citoyens élisent leurs députés, une Constitution limite le pouvoir du roi · Justification : « Dans une monarchie absolue, le roi détient tous les pouvoirs (faire les lois, rendre la justice, décider de la guerre) et dit les tenir de Dieu. »
+- **🔱 Second** (trous) — Mots : Louis XIV, Espagne, guerre, 1702, colonies · Étiquettes pièges : Napoléon, Italie, 1789 · Justification : « Dans une monarchie absolue, le roi détient tous les pouvoirs (faire les lois, rendre la justice, décider de la guerre) et dit les tenir de Dieu. »
+
+#### 11.2 Le dernier soir au salon — salle-orgue, objet « toiles », Le capitaine Nemo
+
+Compétence : Histoire : la Renaissance — un temps de découvertes, d'artistes et d'inventions ; François Iᵉʳ et Léonard de Vinci. · Fiche : Rayon Histoire, fiche 9 « La Renaissance »
+
+- **🐚 Mousse** (association) — Léonard de Vinci → La Joconde · Michel-Ange → les peintures du plafond de la chapelle Sixtine · Gutenberg → l'imprimerie à caractères mobiles
+- **⚓ Matelot** (qcm) — Q1 : les XVᵉ et XVIᵉ siècles, un temps d'artistes, de savants et de découvertes · Q2 : François Iᵉʳ · Q3 : l'imprimerie
+- **🧭 Timonier** (ordre) — 1. Gutenberg met au point l'imprimerie ; 2. Christophe Colomb atteint l'Amérique ; 3. Léonard de Vinci peint La Joconde ; 4. François Iᵉʳ remporte la bataille de Marignan ; 5. Léonard de Vinci meurt à Amboise, au Clos Lucé
+- **🔭 Lieutenant** (vraifaux) — VRAI — Léonard de Vinci était peintre, mais aussi ingénieur et inventeur. · VRAI — Léonard de Vinci a dessiné un appareil pour respirer sous l'eau. · FAUX — Léonard de Vinci a construit un vrai sous-marin. · VRAI — François Iᵉʳ a protégé des artistes et fait construire des châteaux, comme Chambord. · Justification : « Léonard de Vinci a imaginé et dessiné de nombreuses machines (machine volante, appareil pour respirer sous l'eau) ; la plupart n'ont jamais été construites de son vivant. »
+- **🔱 Second** (tri) — Moyen Âge : des livres copiés à la main par des moines, des châteaux forts pour se défendre · Renaissance : des livres imprimés en grand nombre, des châteaux d'agrément, comme Chambord, des peintres qui étudient la perspective et le corps humain · Justification : « On redécouvre les œuvres et les savoirs de l'Antiquité ; artistes et savants observent la nature et le corps humain, et l'imprimerie diffuse les idées. »
+
+#### 11.3 Le programme de l'évasion — maelstrom, objet « canot », Ned Land
+
+Compétence : Technologie et mathématiques : programmer — écrire une suite d'instructions (algorithme), utiliser une boucle « répéter » et une condition « si… alors ». · Fiche : Rayon Communication, fiche 2 « Programmer »
+
+- **🐚 Mousse** (ordre) — 1. Monter dans le canot. ; 2. Refermer le panneau au-dessus de nous. ; 3. Dévisser les boulons qui tiennent le canot.
+- **⚓ Matelot** (ordre) — 1. Attendre que le capitaine joue de l'orgue. ; 2. Traverser le salon sans bruit. ; 3. Monter dans le canot et refermer le panneau. ; 4. Répéter 4 fois : dévisser un boulon. ; 5. Si le canot est libre, alors ramer vers la côte.
+- **🧭 Timonier** (qcm) — Q1 : 4 fois l'instruction « dévisser un boulon » · Q2 : on ne rame que si le canot est libre · Q3 : une suite d'instructions précises pour résoudre un problème
+- **🔭 Lieutenant** (code) — Nombre total de coups de rame 25 ; Nombre de fois où l'on tourne à gauche 3 · Justification : « Dans une boucle « répéter n fois », toutes les instructions à l'intérieur sont exécutées n fois, dans l'ordre ; puis le programme continue. »
+- **🔱 Second** (plan) — Ligne 1 : ___ que le capitaine joue de l'orgue : attendre · Ligne 2 : ___ 4 fois : dévisser un boulon : répéter · Ligne 3 : ___ le canot est libre, alors ramer vers la côte : si · Ligne 4 : sinon, ___ le dernier boulon : dévisser · Justification : « Une boucle rend le programme plus court et évite les oublis : on écrit une fois ce qui se répète. »
+
+#### 11.4 Le réveil aux Lofoten — maelstrom, objet « cote », Conseil
+
+Compétence : Géographie : la France dans l'Union européenne — pays membres, symboles, monnaie, libre circulation ; repérer la Norvège, pays européen non membre. · Fiche : Rayon Géographie, fiche 5 « L'Union européenne »
+
+- **🐚 Mousse** (tri) — Membre de l'Union européenne : la France, l'Allemagne, l'Espagne · Pas membre : la Norvège, le Canada
+- **⚓ Matelot** (tri) — Membre de l'Union européenne : la Suède, le Danemark, la Belgique · Pas membre : la Norvège, la Suisse, le Royaume-Uni (sorti en 2020)
+- **🧭 Timonier** (association) — Le drapeau → un cercle de 12 étoiles d'or sur fond bleu · La devise → « Unie dans la diversité » · L'hymne → l'« Ode à la joie », musique de Beethoven · La monnaie → l'euro, utilisé par une vingtaine de pays · La journée de l'Europe → le 9 mai
+- **🔭 Lieutenant** (qcm) — Q1 : 27 · Q2 : pour garantir la paix entre eux après les guerres mondiales · Q3 : les citoyens des pays membres · Justification : « Après la Seconde Guerre mondiale, des pays européens décident de coopérer pour garantir la paix et développer les échanges : six pays fondent la Communauté européenne en 1957 (traité de Rome). »
+- **🔱 Second** (vraifaux) — VRAI — La Norvège a refusé d'entrer dans l'Union européenne, par référendum. · VRAI — On peut circuler entre la France et la Norvège sans contrôle habituel aux frontières (espace Schengen). · FAUX — Tous les pays de l'Union européenne utilisent l'euro. · FAUX — Être en Europe, c'est forcément être membre de l'Union européenne. · Justification : « L'Europe est un continent ; l'Union européenne est une association de 27 pays qui ont choisi d'y entrer. Certains pays d'Europe n'en font pas partie (Norvège, Suisse, Royaume-Uni). »

@@ -1,0 +1,1117 @@
+{
+  "escale": {
+    "numero": 8,
+    "id": "sargasses",
+    "titre": "La mer des Sargasses et le câble",
+    "lieu": "Atlantique Nord, de la mer des Sargasses au banc de Terre-Neuve, 1868",
+    "matiere": "Sciences, Géographie et Histoire",
+    "periode_conseillee": "Sciences : écosystème ; Géographie : climat, communiquer grâce à internet ; Histoire : la traite et l'esclavage",
+    "episode": "Deuxième partie, ch. XI « La mer de Sargasses » (le Nautilus traverse une mer couverte d'algues flottantes) ; ch. XIX « Le Gulf Stream » (le grand courant chaud) ; puis le câble télégraphique transatlantique, posé sur le fond près de Terre-Neuve.",
+    "scenarimage": "scenarimages/escale-08.md",
+    "mot": "SARGASSES",
+    "mot_origine": "La mer d'algues que traverse le Nautilus, immobile au milieu des courants de l'Atlantique (Partie II, ch. XI).",
+    "air": null,
+    "cinematique_ouverture": "transition-e8",
+    "cinematique_fin": "fin-e8",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e8-1",
+        "escale": 8,
+        "ordre": 1,
+        "titre": "Qui mange qui ?",
+        "decor": "sargasses",
+        "objet_principal": "algues",
+        "objets_cliquables": [
+          "algues",
+          "crabes",
+          "bouee"
+        ],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Le Nautilus a fait surface au milieu d'une mer couverte d'algues dorées. Dessous, tout un monde vit caché : petits crabes, crevettes, poissons. Conseil veut ranger ces êtres vivants dans son carnet, non pas par familles cette fois, mais selon qui mange qui.",
+        "enjeu": "Ned veut arracher toutes les algues pour libérer l'hélice ; s'il comprend que tout ce petit monde en dépend, il dégagera seulement l'hélice.",
+        "episode_du_roman": "Partie II, ch. XI « La mer de Sargasses » : Aronnax décrit cette mer d'algues flottantes, peuplée de petits animaux.",
+        "competence_programme": "Sciences : le vivant dans son environnement — chaînes alimentaires, producteurs et consommateurs, interdépendance dans un écosystème.",
+        "pourquoi_ce_savoir_ici": "La mer des Sargasses est un écosystème à elle seule : sans algues, pas d'abri ni de nourriture pour ses habitants.",
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "Entre les algues, des crabes et des poissons apparaissent un instant, puis replongent."
+        },
+        "liberte_ou_anachronisme": "Les chaînes alimentaires sont simplifiées. Les anguilles d'Europe pondent bien en mer des Sargasses (savoir du XXᵉ siècle, présenté comme dossier de l'équipe de secours).",
+        "lecon": "ecosysteme",
+        "type": "ordre",
+        "niveau_variantes": "Mousse : animal ↔ nourriture. Matelot : chaîne alimentaire (4 maillons). Timonier : chaîne de 5 maillons avec rôles. Lieutenant : texte à trous producteur/consommateur + justification. Second : QCM sur l'interdépendance + justification.",
+        "mousse": {
+          "type": "association",
+          "dialogue": "Chacun ici a son repas. Je voudrais savoir lequel, pour ne fâcher personne.",
+          "consigne": "Relie chaque être vivant à ce qu'il mange.",
+          "paires": [
+            {
+              "g": "la petite crevette",
+              "icone": "🦐",
+              "d": "des morceaux d'algues"
+            },
+            {
+              "g": "le petit poisson",
+              "icone": "🐟",
+              "d": "des crevettes"
+            },
+            {
+              "g": "le thon",
+              "icone": "🐠",
+              "d": "des petits poissons"
+            }
+          ],
+          "indices": [
+            "Fiche « Qui mange qui ? Les chaînes alimentaires ».",
+            "Le plus petit mange les algues."
+          ]
+        },
+        "matelot": {
+          "type": "ordre",
+          "dialogue": "Une chaîne, comme celle de l'ancre : chaque maillon tient au suivant. Remettez-les dans l'ordre.",
+          "consigne": "Range la chaîne alimentaire : du premier maillon (qui ne mange personne) au dernier.",
+          "items": [
+            {
+              "txt": "l'algue sargasse"
+            },
+            {
+              "txt": "la petite crevette"
+            },
+            {
+              "txt": "le poisson volant"
+            },
+            {
+              "txt": "le thon"
+            }
+          ],
+          "indices": [
+            "Fiche « Qui mange qui ? ».",
+            "La flèche veut dire « est mangé par »."
+          ]
+        },
+        "timonier": {
+          "type": "ordre",
+          "dialogue": "Le capitaine dit que chaque maillon a un rôle : producteur ou consommateur. Rangeons-les, avec leur rôle.",
+          "consigne": "Range la chaîne alimentaire dans l'ordre.",
+          "items": [
+            {
+              "txt": "La lumière du soleil",
+              "sous": "l'énergie de départ"
+            },
+            {
+              "txt": "L'algue sargasse",
+              "sous": "producteur : elle fabrique sa matière avec la lumière"
+            },
+            {
+              "txt": "La crevette",
+              "sous": "consommateur : mange l'algue"
+            },
+            {
+              "txt": "Le poisson volant",
+              "sous": "consommateur : mange la crevette"
+            },
+            {
+              "txt": "Le requin",
+              "sous": "consommateur : mange le poisson"
+            }
+          ],
+          "indices": [
+            "Fiche « Qui mange qui ? ».",
+            "Tout commence par la lumière et la plante."
+          ]
+        },
+        "lieutenant": {
+          "type": "trous",
+          "dialogue": "J'ai écrit une note pour le capitaine, mais l'eau de mer a effacé des mots. Complétez-la, et dites-moi sur quoi vous vous appuyez.",
+          "consigne": "Complète la note de Conseil. Certaines étiquettes ne servent pas. Puis justifie.",
+          "texte": "L'algue sargasse est un [[producteur]] : grâce à la [[lumière]], elle fabrique sa propre matière. La crevette qui la mange est un [[consommateur]]. Le poisson qui mange la crevette aussi. Les restes des êtres morts sont transformés par les [[décomposeurs]], qui rendent au milieu ce que les algues utiliseront.",
+          "etiquettes": [
+            "producteur",
+            "lumière",
+            "consommateur",
+            "décomposeurs",
+            "prédateur",
+            "nuit",
+            "minéral"
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche montre que l'algue est un producteur ?",
+            "options": [
+              "Les végétaux (et les algues) sont des producteurs : ils fabriquent leur propre matière grâce à la lumière ; les animaux sont des consommateurs : ils mangent d'autres êtres vivants.",
+              "La mer des Sargasses est dans l'Atlantique.",
+              "Le thon nage vite.",
+              "Les crabes vivent entre les algues."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Qui mange qui ? », niveau approfondi.",
+            "Producteur : qui fabrique ; consommateur : qui mange."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Ned veut arracher les algues pour dégager l'hélice. Toutes ? Expliquons-lui ce qui arriverait, avant qu'il ne prenne la gaffe.",
+          "consigne": "Réponds avec la fiche « Qui mange qui ? », puis justifie.",
+          "questions": [
+            {
+              "q": "Si toutes les algues disparaissaient, les crevettes…",
+              "options": [
+                "manqueraient de nourriture et d'abri, et diminueraient",
+                "seraient plus nombreuses",
+                "ne changeraient pas",
+                "deviendraient des producteurs"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Et les thons ?",
+              "options": [
+                "ils diminueraient aussi, car leurs proies diminuent",
+                "ils augmenteraient",
+                "ils mangeraient les algues à la place",
+                "rien ne changerait pour eux"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Un écosystème, c'est…",
+              "options": [
+                "un milieu et tous les êtres vivants qui y vivent et dépendent les uns des autres",
+                "une seule espèce d'animal",
+                "un bateau rempli d'algues",
+                "une carte des courants"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie tes réponses 1 et 2 ?",
+            "options": [
+              "Dans un écosystème, les êtres vivants dépendent les uns des autres : si un maillon disparaît, toute la chaîne est touchée.",
+              "Les anguilles pondent en mer des Sargasses.",
+              "Les algues flottent.",
+              "Le requin est un consommateur."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Qui mange qui ? », encadré.",
+            "Suis la chaîne maillon par maillon."
+          ]
+        }
+      },
+      {
+        "id": "e8-2",
+        "escale": 8,
+        "ordre": 2,
+        "titre": "Le fleuve dans la mer",
+        "decor": "sargasses",
+        "objet_principal": "bouee",
+        "objets_cliquables": [
+          "bouee",
+          "carte-courants",
+          "algues"
+        ],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "La bouée-phare prise dans les algues dérive lentement : un courant l'emporte. Sur la carte des courants dépliée sur le pont, Aronnax suit une large flèche rouge : le Gulf Stream, « fleuve » d'eau chaude qui traverse l'Atlantique. Il veut comprendre pourquoi les algues s'accumulent ici, au milieu de ce grand tourbillon, et pourquoi Brest a des hivers plus doux que Terre-Neuve, à la même latitude.",
+        "enjeu": "Pour sortir de la mer d'algues sans gaspiller d'énergie, il faut savoir où passe le courant et dans quel sens il porte le Nautilus.",
+        "episode_du_roman": "Partie II, ch. XI et ch. XIX « Le Gulf Stream » : Aronnax décrit ce « fleuve » chaud au milieu de l'océan et ses effets sur le climat.",
+        "competence_programme": "Géographie et sciences : les grands courants marins, leur influence sur le climat ; lire une carte et des relevés de températures.",
+        "pourquoi_ce_savoir_ici": "La mer des Sargasses est au centre du grand tourbillon de courants dont le Gulf Stream fait partie : c'est lui qui retient les algues et adoucit l'Europe.",
+        "reaction_du_decor": {
+          "effet": "carte",
+          "description": "La flèche rouge du Gulf Stream s'illumine sur la carte, du golfe du Mexique jusqu'à l'Europe."
+        },
+        "liberte_ou_anachronisme": "Les températures moyennes de janvier sont des ordres de grandeur actuels (A-VERIFIER.md). Les chapitres XI et XIX sont rapprochés dans cette escale.",
+        "lecon": "climat",
+        "type": "qcm",
+        "niveau_variantes": "Mousse : QCM courant chaud. Matelot : tri villes douces / froides. Timonier : écart de températures (code). Lieutenant : QCM sur l'effet du courant + justification. Second : vrai ou faux sur courants et climat + justification.",
+        "mousse": {
+          "type": "qcm",
+          "dialogue": "Un fleuve au milieu de la mer ? Regardons ensemble cette carte des courants.",
+          "consigne": "Observe la flèche rouge sur la carte des courants.",
+          "questions": [
+            {
+              "q": "Le Gulf Stream est…",
+              "options": [
+                "un courant d'eau chaude",
+                "un courant d'eau glacée",
+                "une île",
+                "un bateau"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Il part du golfe du Mexique et va vers…",
+              "options": [
+                "l'Europe",
+                "le pôle Sud",
+                "l'Afrique du Sud",
+                "l'Australie"
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « Courants marins et climat ».",
+            "Rouge sur la carte : courant chaud."
+          ]
+        },
+        "matelot": {
+          "type": "tri",
+          "dialogue": "Sur la carte, des villes à la même hauteur, mais des hivers bien différents. Rangez-les selon leur hiver.",
+          "consigne": "Ces villes sont à peu près à la même latitude. Range-les selon leur hiver : doux ou très froid ?",
+          "colonnes": [
+            {
+              "id": "doux",
+              "titre": "Hiver doux (côte réchauffée par le courant)",
+              "icone": "🌤️"
+            },
+            {
+              "id": "froid",
+              "titre": "Hiver très froid",
+              "icone": "❄️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "Brest (France)",
+              "col": "doux"
+            },
+            {
+              "txt": "Cork (Irlande)",
+              "col": "doux"
+            },
+            {
+              "txt": "Saint-Jean de Terre-Neuve (Canada)",
+              "col": "froid"
+            },
+            {
+              "txt": "Québec (Canada)",
+              "col": "froid"
+            }
+          ],
+          "indices": [
+            "Fiche « Courants marins et climat ».",
+            "Le courant chaud arrive sur les côtes d'Europe."
+          ]
+        },
+        "timonier": {
+          "type": "code",
+          "dialogue": "Des chiffres, plutôt que des impressions : voyons de combien le courant réchauffe la côte européenne.",
+          "consigne": "<div class='doc-carnet'><b>Relevés de janvier</b> (moyennes) — Brest : 7 °C. Saint-Jean de Terre-Neuve : −5 °C. Les deux villes sont à peu près à la même latitude.</div>Calcule.",
+          "champs": [
+            {
+              "libelle": "Écart de température (en °C)",
+              "valeur": "12",
+              "longueur": 3
+            }
+          ],
+          "indices": [
+            "De −5 à 0, puis de 0 à 7.",
+            "5 + 7."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Pourquoi les algues s'accumulent-elles ici, et pourquoi l'Europe a-t-elle chaud ? Je crois que c'est la même réponse.",
+          "consigne": "Réponds avec la fiche « Courants marins et climat », puis justifie.",
+          "questions": [
+            {
+              "q": "Pourquoi l'hiver est-il plus doux à Brest qu'à Terre-Neuve ?",
+              "options": [
+                "le Gulf Stream apporte de l'eau chaude sur les côtes d'Europe",
+                "Brest est plus près de l'équateur que Terre-Neuve",
+                "il y a plus de soleil en Bretagne",
+                "Terre-Neuve est en altitude"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi les algues restent-elles dans la mer des Sargasses ?",
+              "options": [
+                "elle est au centre d'un grand tourbillon de courants qui les retient",
+                "le vent les colle au fond",
+                "elles sont attachées aux rochers",
+                "le Nautilus les retient"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse 1 ?",
+            "options": [
+              "Un courant chaud réchauffe l'air au-dessus de lui et adoucit le climat des côtes qu'il longe.",
+              "Le Gulf Stream part du golfe du Mexique.",
+              "La mer des Sargasses est couverte d'algues.",
+              "Brest est un port de Bretagne."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Courants marins et climat ».",
+            "Même latitude : la différence vient d'ailleurs."
+          ]
+        },
+        "second": {
+          "type": "vraifaux",
+          "dialogue": "L'équipe de secours dit que ce courant pourrait changer à leur époque. Triez le vrai du faux avant que j'écrive quoi que ce soit.",
+          "consigne": "Vrai ou faux ? Puis justifie.",
+          "affirmations": [
+            {
+              "txt": "Les courants marins transportent de la chaleur d'une région à une autre.",
+              "vrai": true
+            },
+            {
+              "txt": "Sans le Gulf Stream, l'hiver serait sans doute plus froid sur les côtes d'Europe de l'Ouest.",
+              "vrai": true
+            },
+            {
+              "txt": "Le climat d'un lieu ne dépend que de sa latitude.",
+              "vrai": false
+            },
+            {
+              "txt": "Au XXIᵉ siècle, des scientifiques surveillent ce courant, car le réchauffement climatique pourrait le ralentir.",
+              "vrai": true
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche montre que l'affirmation 3 est fausse ?",
+            "options": [
+              "Le climat dépend de la latitude, mais aussi de la mer, des courants, du relief et de l'altitude.",
+              "Le Gulf Stream est un courant chaud.",
+              "Saint-Jean de Terre-Neuve est au Canada.",
+              "Les algues sont des producteurs."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Courants marins et climat », niveau expert.",
+            "Brest et Terre-Neuve ont la même latitude, mais pas le même climat."
+          ]
+        }
+      },
+      {
+        "id": "e8-3",
+        "escale": 8,
+        "ordre": 3,
+        "titre": "Les chaînes de l'épave",
+        "decor": "sargasses",
+        "objet_principal": "carte-courants",
+        "objets_cliquables": [
+          "carte-courants",
+          "bouee",
+          "algues"
+        ],
+        "personnage_emetteur": "nemo",
+        "probleme_narratif": "Dans les algues, les plongeurs du Nautilus ont trouvé l'épave d'un ancien navire négrier : des fers, des chaînes. Nemo les fait déposer sur la carte des courants et confie aux mousses une tâche : retracer la route de ce navire et dater son histoire, pour la vitrine du musée. Il ne veut pas qu'on oublie.",
+        "enjeu": "Sans l'histoire de cette route, ces chaînes ne seraient que de la ferraille : on oublierait des millions de personnes.",
+        "episode_du_roman": "Fil du roman : Nemo se veut l'ennemi des oppresseurs et l'ami des opprimés (Partie II, ch. VIII et XXI). L'épave est inventée.",
+        "competence_programme": "Histoire : la traite atlantique et l'esclavage (le commerce triangulaire) ; les abolitions ; se repérer sur une carte et sur une frise.",
+        "pourquoi_ce_savoir_ici": "La route des navires négriers suivait les vents et les courants de l'Atlantique : on la lit sur cette carte.",
+        "reaction_du_decor": {
+          "effet": "carte",
+          "description": "Le triangle Europe, Afrique, Amériques se dessine sur la carte, puis s'efface lentement."
+        },
+        "liberte_ou_anachronisme": "L'épave est inventée. En 1868, l'esclavage existe encore au Brésil et à Cuba ; la loi française de 2001 (loi Taubira) est un dossier de l'équipe de secours. Les chiffres sont des estimations d'historiens (A-VERIFIER.md).",
+        "lecon": "traite",
+        "type": "plan",
+        "niveau_variantes": "Mousse : les 3 trajets du triangle dans l'ordre. Matelot : schéma du triangle. Timonier : schéma avec étiquettes pièges. Lieutenant : frise des abolitions + justification. Second : QCM sur le commerce triangulaire + justification.",
+        "mousse": {
+          "type": "ordre",
+          "dialogue": "Ce navire faisait un voyage en trois parties. Remettez-les dans l'ordre, sur la carte.",
+          "consigne": "Remets dans l'ordre les trois trajets du navire négrier. Aide-toi de la fiche « La traite et l'esclavage ».",
+          "items": [
+            {
+              "txt": "D'Europe vers l'Afrique, avec des tissus, des armes et de l'alcool."
+            },
+            {
+              "txt": "D'Afrique vers les Amériques, avec des Africains réduits en esclavage."
+            },
+            {
+              "txt": "Des Amériques vers l'Europe, avec du sucre, du coton et du café."
+            }
+          ],
+          "indices": [
+            "Fiche « La traite et l'esclavage », la carte du triangle.",
+            "Le navire part d'un port d'Europe, comme Nantes ou Bordeaux."
+          ]
+        },
+        "matelot": {
+          "type": "plan",
+          "dialogue": "Placez sur la carte ce que le navire transportait, à chaque côté du triangle.",
+          "consigne": "Place chaque cargaison sur le bon trajet.",
+          "titre": "Le commerce triangulaire",
+          "colonnes": 3,
+          "cases": [
+            {
+              "libelle": "Europe → Afrique",
+              "reponse": "tissus, armes, alcool"
+            },
+            {
+              "libelle": "Afrique → Amériques",
+              "reponse": "captifs africains"
+            },
+            {
+              "libelle": "Amériques → Europe",
+              "reponse": "sucre, coton, café"
+            }
+          ],
+          "indices": [
+            "Fiche « La traite et l'esclavage ».",
+            "Le sucre et le café poussaient dans les plantations d'Amérique."
+          ]
+        },
+        "timonier": {
+          "type": "plan",
+          "dialogue": "Sur ma carte, des mots se sont glissés qui n'ont rien à faire là. Placez seulement les bons, et retrouvez les ports.",
+          "consigne": "Place les bonnes étiquettes. Certaines ne servent pas.",
+          "titre": "Le commerce triangulaire",
+          "colonnes": 3,
+          "cases": [
+            {
+              "libelle": "Port de départ en France",
+              "reponse": "Nantes"
+            },
+            {
+              "libelle": "Europe → Afrique",
+              "reponse": "tissus, armes, alcool"
+            },
+            {
+              "libelle": "Afrique → Amériques",
+              "reponse": "captifs africains"
+            },
+            {
+              "libelle": "Travail forcé dans les Amériques",
+              "reponse": "plantations"
+            },
+            {
+              "libelle": "Amériques → Europe",
+              "reponse": "sucre, coton, café"
+            }
+          ],
+          "etiquettes": [
+            "Nantes",
+            "tissus, armes, alcool",
+            "captifs africains",
+            "plantations",
+            "sucre, coton, café",
+            "perles de Ceylan",
+            "Marseille",
+            "charbon"
+          ],
+          "indices": [
+            "Fiche « La traite et l'esclavage ».",
+            "Nantes fut le premier port négrier français."
+          ]
+        },
+        "lieutenant": {
+          "type": "ordre",
+          "dialogue": "Pour la vitrine, je veux des dates exactes : quand cela a commencé, quand on y a mis fin. Rangez-les, puis expliquez ce que la dernière signifie.",
+          "consigne": "Range ces événements du plus ancien au plus récent, puis justifie.",
+          "items": [
+            {
+              "txt": "Début de la traite atlantique vers les Amériques",
+              "sous": "XVIᵉ siècle"
+            },
+            {
+              "txt": "Première abolition de l'esclavage par la Révolution française",
+              "sous": "1794"
+            },
+            {
+              "txt": "Napoléon rétablit l'esclavage dans les colonies",
+              "sous": "1802"
+            },
+            {
+              "txt": "Abolition définitive en France (Victor Schœlcher)",
+              "sous": "1848"
+            },
+            {
+              "txt": "La loi Taubira reconnaît la traite et l'esclavage comme crimes contre l'humanité",
+              "sous": "2001"
+            }
+          ],
+          "justification": {
+            "question": "Que signifie la loi de 2001 ?",
+            "options": [
+              "La France reconnaît officiellement que la traite et l'esclavage sont des crimes contre l'humanité, pour qu'on ne les oublie pas.",
+              "Elle abolit l'esclavage pour la première fois.",
+              "Elle rétablit l'esclavage.",
+              "Elle interdit de parler de l'esclavage."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « La traite et l'esclavage », la frise.",
+            "1794 avant 1802 avant 1848."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Ce commerce a enrichi des ports et ruiné des peuples. Je veux que vous sachiez dire pourquoi, et combien.",
+          "consigne": "Réponds avec la fiche « La traite et l'esclavage », puis justifie.",
+          "questions": [
+            {
+              "q": "On appelle ce commerce « triangulaire » parce que…",
+              "options": [
+                "les navires reliaient trois continents en trois trajets",
+                "les navires avaient trois mâts",
+                "il durait trois ans",
+                "il y avait trois ports"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Combien d'Africains ont été déportés vers les Amériques, selon les historiens ?",
+              "options": [
+                "environ 12 millions",
+                "environ 1 000",
+                "environ 100 000",
+                "personne ne le sait, même à peu près"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Qui s'enrichissait le plus grâce à ce commerce ?",
+              "options": [
+                "les armateurs et les planteurs",
+                "les captifs africains",
+                "les marins du Nautilus",
+                "les pêcheurs de perles"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse 3 ?",
+            "options": [
+              "Les armateurs des ports européens et les propriétaires des plantations s'enrichissaient grâce au travail forcé des esclaves, privés de liberté et de tout droit.",
+              "Nantes est un port.",
+              "Le sucre vient des Amériques.",
+              "Victor Schœlcher a fait abolir l'esclavage en 1848."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « La traite et l'esclavage », niveau expert.",
+            "Les historiens estiment environ 12 millions de personnes déportées."
+          ]
+        }
+      },
+      {
+        "id": "e8-4",
+        "escale": 8,
+        "ordre": 4,
+        "titre": "Le fil sous la mer",
+        "decor": "cable",
+        "objet_principal": "cable",
+        "objets_cliquables": [
+          "cable",
+          "plongeurs",
+          "hublot-cable"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "Près de Terre-Neuve, sur le fond, un long serpent couvert de coquillages : le câble télégraphique qui relie l'Europe à l'Amérique. Ned Land n'en revient pas : un message passerait par là jusqu'au Canada ? Avant de rêver d'y accrocher le sien, il veut comprendre comment l'on communique d'un bout à l'autre du monde, hier et aujourd'hui.",
+        "enjeu": "Si Ned comprend qu'on ne lit pas un message en touchant le câble, il renonce à l'abîmer, et l'Europe ne perd pas sa ligne avec l'Amérique.",
+        "episode_du_roman": "Vraisemblance : Partie II, ch. XIX, le Nautilus remonte l'Atlantique vers Terre-Neuve, où repose le câble transatlantique posé en 1866 par le Great Eastern (chapitre exact à vérifier).",
+        "competence_programme": "Géographie : communiquer d'un bout à l'autre du monde grâce à l'internet ; un monde de réseaux ; des habitants inégalement connectés.",
+        "pourquoi_ce_savoir_ici": "Le câble de 1866 est l'ancêtre direct des câbles sous-marins qui transportent aujourd'hui presque tout l'internet entre les continents.",
+        "reaction_du_decor": {
+          "effet": "lumiere",
+          "description": "Une lueur court le long du câble, comme un message qui passe."
+        },
+        "liberte_ou_anachronisme": "Le câble de 1866 est réel ; la place du passage dans le roman est à vérifier (A-VERIFIER.md). Internet est un dossier de l'équipe de secours (XXIᵉ siècle).",
+        "lecon": "reseaux",
+        "type": "tri",
+        "niveau_variantes": "Mousse : hier ou aujourd'hui. Matelot : inventions dans l'ordre. Timonier : QCM sur les câbles et internet. Lieutenant : durées d'un message (code) + justification. Second : bien ou mal connectés + justification.",
+        "mousse": {
+          "type": "tri",
+          "dialogue": "Pour écrire à ma mère au Canada, en 1868, je n'ai pas grand-chose. Vous, à votre époque, vous avez quoi ? Rangez !",
+          "consigne": "Range chaque moyen de communiquer : existait-il en 1868, ou seulement aujourd'hui ?",
+          "colonnes": [
+            {
+              "id": "1868",
+              "titre": "Existait en 1868",
+              "icone": "✉️"
+            },
+            {
+              "id": "aujourdhui",
+              "titre": "Seulement aujourd'hui",
+              "icone": "📱"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "la lettre envoyée par bateau",
+              "col": "1868"
+            },
+            {
+              "txt": "le télégramme par câble",
+              "col": "1868"
+            },
+            {
+              "txt": "le message sur un téléphone portable",
+              "col": "aujourdhui"
+            },
+            {
+              "txt": "l'appel vidéo par internet",
+              "col": "aujourdhui"
+            },
+            {
+              "txt": "le courriel (e-mail)",
+              "col": "aujourdhui"
+            }
+          ],
+          "indices": [
+            "Fiche « Communiquer d'un bout à l'autre du monde ».",
+            "En 1868, pas d'électricité dans les maisons, pas d'écran."
+          ]
+        },
+        "matelot": {
+          "type": "ordre",
+          "dialogue": "Lettre, télégraphe, et puis quoi ? Rangez les inventions dans l'ordre, que je sache ce qui m'attend.",
+          "consigne": "Range ces moyens de communiquer du plus ancien au plus récent.",
+          "items": [
+            {
+              "txt": "La lettre portée par un navire à voile"
+            },
+            {
+              "txt": "Le télégraphe par câble sous l'Atlantique (1866)"
+            },
+            {
+              "txt": "Le téléphone (1876)"
+            },
+            {
+              "txt": "Internet dans les maisons (années 1990)"
+            },
+            {
+              "txt": "Le smartphone (années 2000)"
+            }
+          ],
+          "indices": [
+            "Fiche « Communiquer d'un bout à l'autre du monde », la frise.",
+            "Le câble de 1866 est sous tes yeux."
+          ]
+        },
+        "timonier": {
+          "type": "qcm",
+          "dialogue": "L'équipe de secours dit que leur internet passe encore par des câbles comme celui-ci. Je ne les crois qu'à moitié.",
+          "consigne": "Réponds avec la fiche « Communiquer d'un bout à l'autre du monde ».",
+          "questions": [
+            {
+              "q": "Aujourd'hui, la plupart des données d'internet entre les continents passent…",
+              "options": [
+                "par des câbles posés au fond des océans",
+                "par des pigeons voyageurs",
+                "par des lettres",
+                "uniquement par la radio"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Un réseau, c'est…",
+              "options": [
+                "un ensemble de lignes qui relient des lieux entre eux",
+                "un seul fil isolé",
+                "un bateau",
+                "une carte des courants"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Le câble de 1866 transportait…",
+              "options": [
+                "des messages télégraphiques en code (points et traits)",
+                "des vidéos",
+                "du courrier en papier",
+                "de l'eau douce"
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « Communiquer d'un bout à l'autre du monde ».",
+            "Les satellites ne transportent qu'une petite partie des données."
+          ]
+        },
+        "lieutenant": {
+          "type": "code",
+          "dialogue": "Combien de temps pour que ma mère sache que je suis vivant ? Par bateau, par câble, par internet. Calculez.",
+          "consigne": "<div class='doc-carnet'><b>Carnet de Ned</b> — Une lettre par paquebot d'Europe au Canada : environ 10 jours. Un télégramme par câble en 1866 : quelques minutes de transmission, mais il faut aller au bureau du télégraphe (environ 1 heure en tout). Un courriel aujourd'hui : moins d'une seconde.</div>Calcule.",
+          "champs": [
+            {
+              "libelle": "10 jours = ? heures",
+              "valeur": "240",
+              "longueur": 4
+            },
+            {
+              "libelle": "Combien de fois plus rapide, le télégramme (1 h) ?",
+              "valeur": "240",
+              "longueur": 4
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique ce que le câble a changé ?",
+            "options": [
+              "Avec le câble, un message traverse l'océan en quelques minutes au lieu de plusieurs jours : l'information va plus vite que les navires.",
+              "Le câble est couvert de coquillages.",
+              "Le téléphone date de 1876.",
+              "Ned Land est canadien."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "10 × 24.",
+            "240 heures ÷ 1 heure."
+          ]
+        },
+        "second": {
+          "type": "tri",
+          "dialogue": "Votre équipe de secours dit que tout le monde n'est pas relié de la même façon, même aujourd'hui. Comme en 1868, alors ? Montrez-moi.",
+          "consigne": "Range chaque situation, puis justifie.",
+          "colonnes": [
+            {
+              "id": "bien",
+              "titre": "Bien connecté",
+              "icone": "📶"
+            },
+            {
+              "id": "mal",
+              "titre": "Peu ou pas connecté",
+              "icone": "🚫"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "un habitant d'une grande ville d'Europe, avec la fibre",
+              "col": "bien"
+            },
+            {
+              "txt": "une ville côtière où arrive un câble sous-marin",
+              "col": "bien"
+            },
+            {
+              "txt": "un village de montagne isolé, sans antenne",
+              "col": "mal"
+            },
+            {
+              "txt": "une famille qui n'a pas les moyens d'acheter un ordinateur",
+              "col": "mal"
+            },
+            {
+              "txt": "une île lointaine sans câble, reliée seulement par satellite",
+              "col": "mal"
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ce classement ?",
+            "options": [
+              "Les habitants de la planète sont inégalement connectés : cela dépend du lieu (villes, campagnes, îles), des réseaux installés et de l'argent dont on dispose.",
+              "Le câble de 1866 a été posé par le Great Eastern.",
+              "Internet est apparu dans les maisons dans les années 1990.",
+              "Un réseau relie des lieux entre eux."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Communiquer d'un bout à l'autre du monde », encadré.",
+            "Lieu, réseaux, argent."
+          ]
+        }
+      }
+    ]
+  },
+  "rayons": [
+    {
+      "id": "technologie",
+      "titre": "Rayon Communication",
+      "icone": "📡"
+    }
+  ],
+  "lecons": [
+    {
+      "id": "ecosysteme",
+      "rayon": "vivant",
+      "fiche": 4,
+      "icone": "🦐",
+      "titre": "Qui mange qui ? Les chaînes alimentaires",
+      "escale": 8,
+      "competence": "Chaînes alimentaires, producteurs et consommateurs, écosystème.",
+      "essentiel": "<p>Une <b>chaîne alimentaire</b> montre qui mange qui. La flèche veut dire « est mangé par ». Exemple en mer des Sargasses : algue sargasse → crevette → poisson volant → thon.</p>",
+      "approfondi": "<p>Les végétaux (et les algues) sont des producteurs : ils fabriquent leur propre matière grâce à la lumière ; les animaux sont des consommateurs : ils mangent d'autres êtres vivants. Les <b>décomposeurs</b> (bactéries, champignons) transforment les restes des êtres morts.</p>",
+      "expert": "<div class='encadre'>Un <b>écosystème</b> est un milieu et tous les êtres vivants qui y vivent. Dans un écosystème, les êtres vivants dépendent les uns des autres : si un maillon disparaît, toute la chaîne est touchée. La mer des Sargasses abrite crabes, crevettes et poissons ; les anguilles d'Europe y viennent pondre.</div>",
+      "dans_le_roman": "Le Nautilus traverse la mer des Sargasses, couverte d'algues flottantes (Partie II, ch. XI)."
+    },
+    {
+      "id": "climat",
+      "rayon": "terre",
+      "fiche": 3,
+      "icone": "🌡️",
+      "titre": "Courants marins et climat",
+      "escale": 8,
+      "competence": "Les grands courants marins et leur influence sur le climat.",
+      "essentiel": "<p>Dans l'océan, l'eau se déplace : ce sont les <b>courants marins</b>. Le <b>Gulf Stream</b> est un courant d'<b>eau chaude</b> qui part du golfe du Mexique et traverse l'Atlantique vers l'<b>Europe</b>.</p>",
+      "approfondi": "<p>Un courant chaud réchauffe l'air au-dessus de lui et adoucit le climat des côtes qu'il longe. Brest (7 °C en janvier) et Saint-Jean de Terre-Neuve (−5 °C) sont à peu près à la même latitude, mais Brest est réchauffée par le courant. La mer des Sargasses est au centre d'un grand tourbillon de courants qui retient les algues.</p>",
+      "expert": "<p>Le climat dépend de la latitude, mais aussi de la mer, des courants, du relief et de l'altitude. Au XXIᵉ siècle, des scientifiques surveillent le Gulf Stream : le réchauffement climatique pourrait le ralentir.</p>",
+      "dans_le_roman": "Aronnax décrit le Gulf Stream comme un fleuve chaud au milieu de l'océan (Partie II, ch. XIX)."
+    },
+    {
+      "id": "traite",
+      "rayon": "histoire",
+      "fiche": 7,
+      "icone": "⛓️",
+      "titre": "La traite et l'esclavage",
+      "escale": 8,
+      "competence": "La traite atlantique, l'esclavage, les abolitions.",
+      "essentiel": "<p>Du XVIᵉ au XIXᵉ siècle, des navires européens partent de ports comme <b>Nantes</b> ou Bordeaux. Ils font un voyage en trois trajets, le <b>commerce triangulaire</b> : Europe → Afrique (tissus, armes, alcool) ; Afrique → Amériques (des <b>captifs africains</b> réduits en esclavage) ; Amériques → Europe (sucre, coton, café).</p>",
+      "approfondi": "<p>Dans les Amériques, les esclaves sont forcés de travailler dans les <b>plantations</b>. La Révolution abolit l'esclavage en <b>1794</b> ; Napoléon le rétablit en <b>1802</b> ; il est aboli définitivement en France en <b>1848</b>, grâce à Victor Schœlcher. En <b>2001</b>, la loi Taubira reconnaît la traite et l'esclavage comme des crimes contre l'humanité. En 1868, l'esclavage existe encore au Brésil et à Cuba.</p>",
+      "expert": "<p>Les historiens estiment qu'environ 12 millions d'Africains ont été déportés vers les Amériques. Les armateurs des ports européens et les propriétaires des plantations s'enrichissaient grâce au travail forcé des esclaves, privés de liberté et de tout droit.</p>",
+      "dans_le_roman": "Nemo se dit l'ennemi des oppresseurs et l'ami des opprimés (Partie II, ch. VIII)."
+    },
+    {
+      "id": "reseaux",
+      "rayon": "technologie",
+      "fiche": 1,
+      "icone": "📡",
+      "titre": "Communiquer d'un bout à l'autre du monde",
+      "escale": 8,
+      "competence": "Communiquer grâce à l'internet ; un monde de réseaux ; des habitants inégalement connectés.",
+      "essentiel": "<p>En 1868, on communique par <b>lettre</b> (portée par bateau) ou par <b>télégramme</b>. En <b>1866</b>, un câble posé au fond de l'Atlantique relie l'Europe à l'Amérique. Aujourd'hui, on utilise le téléphone portable, le courriel, l'appel vidéo par <b>internet</b>.</p>",
+      "approfondi": "<p>Frise : lettre par voilier ; télégraphe par câble (1866) ; téléphone (1876) ; internet dans les maisons (années 1990) ; smartphone (années 2000). Un <b>réseau</b> est un ensemble de lignes qui relient des lieux. Aujourd'hui, la plupart des données d'internet entre les continents passent par des câbles posés au fond des océans ; les satellites n'en transportent qu'une petite partie.</p>",
+      "expert": "<div class='encadre'>Avec le câble, un message traverse l'océan en quelques minutes au lieu de plusieurs jours : l'information va plus vite que les navires. Mais les habitants de la planète sont inégalement connectés : cela dépend du lieu (villes, campagnes, îles), des réseaux installés et de l'argent dont on dispose.</div>",
+      "dans_le_roman": "Le Nautilus longe le câble transatlantique, couvert de coquillages, sur le fond de l'océan (Deuxième partie)."
+    }
+  ],
+  "decors": {
+    "sargasses": {
+      "titre": "La mer des Sargasses",
+      "reference": null,
+      "ambiance": [
+        "vagues",
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 40,
+          "y": 0,
+          "w": 50,
+          "h": 40
+        },
+        {
+          "type": "lueur",
+          "x": 36,
+          "y": 24,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 60,
+          "nombre": 20
+        },
+        {
+          "type": "vignette",
+          "force": 0.45
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "bouee",
+          "libelle": "La bouée-phare",
+          "x": 31,
+          "y": 18,
+          "w": 11,
+          "h": 34,
+          "description": "Une bouée-phare, à demi prise dans les algues."
+        },
+        {
+          "id": "carte-courants",
+          "libelle": "La carte des courants",
+          "x": 21,
+          "y": 55,
+          "w": 35,
+          "h": 26,
+          "description": "La carte de l'Atlantique : des flèches rouges (courants chauds) et bleues (courants froids)."
+        },
+        {
+          "id": "algues",
+          "libelle": "Les sargasses",
+          "x": 45,
+          "y": 35,
+          "w": 55,
+          "h": 30,
+          "description": "Des algues dorées, à perte de vue, qui flottent grâce à de petites boules d'air."
+        },
+        {
+          "id": "crabes",
+          "libelle": "Les petits crabes",
+          "x": 62,
+          "y": 70,
+          "w": 17,
+          "h": 14,
+          "description": "De petits crabes vivent cachés entre les algues."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "cable": {
+      "titre": "Le câble transatlantique",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 22,
+          "r": 8,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 30,
+          "y": 0,
+          "w": 30,
+          "h": 40
+        },
+        {
+          "type": "poissons",
+          "x": 0,
+          "y": 5,
+          "w": 45,
+          "h": 30,
+          "nombre": 6
+        },
+        {
+          "type": "bulles",
+          "x": 10,
+          "y": 30,
+          "w": 25,
+          "h": 50,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "cable",
+          "libelle": "Le câble",
+          "x": 24,
+          "y": 32,
+          "w": 30,
+          "h": 40,
+          "description": "Un long câble couvert de coquillages, qui file vers l'Amérique."
+        },
+        {
+          "id": "plongeurs",
+          "libelle": "Les plongeurs",
+          "x": 8,
+          "y": 45,
+          "w": 21,
+          "h": 30,
+          "description": "Deux plongeurs du Nautilus examinent le câble à la lumière de leurs lampes."
+        },
+        {
+          "id": "hublot-cable",
+          "libelle": "Le grand hublot",
+          "x": 82,
+          "y": 32,
+          "w": 16,
+          "h": 36,
+          "description": "Derrière le hublot, le salon éclairé du Nautilus."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  },
+  "dialogues": {
+    "cinematiques": {
+      "transition-e8": {
+        "titre": "Escale 8 — La mer des Sargasses",
+        "plans": [
+          {
+            "decor": "sargasses",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "Une mer sans rivages, couverte d'algues dorées, immobile au milieu des courants. Le Nautilus a fait surface au milieu des sargasses.",
+            "mouvement": "zoom"
+          },
+          {
+            "decor": "sargasses",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "ned",
+            "texte": "Des algues dans l'hélice, à présent ! Ce bateau ne me mènera jamais nulle part.",
+            "mouvement": "glisse"
+          }
+        ]
+      },
+      "fin-e8": {
+        "titre": "Le fil sous la mer",
+        "plans": [
+          {
+            "decor": "cable",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "ned",
+            "texte": "Un fil, rien qu'un fil, et l'Europe parle à l'Amérique. Un jour, je vous le dis, je passerai par là, moi aussi.",
+            "mouvement": "zoom"
+          }
+        ]
+      }
+    },
+    "fin_escale": {
+      "8": {
+        "personnage": "conseil",
+        "texte": "Notez le mot de cette escale : le nom de la mer d'algues où le Nautilus a fait surface."
+      }
+    }
+  }
+}

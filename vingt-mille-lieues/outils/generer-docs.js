@@ -20,7 +20,7 @@ const fiche = id => { const l = L.lecons.find(x => x.id === id); const r = L.ray
 let R = `# ⚓ Vingt mille lieues sous les mers — Le Journal du Nautilus
 
 Escape game immersif de cycle 3 (CM1-CM2), d'après le roman de Jules Verne (1869-1870, domaine public), **5 grades** de
-difficulté, campagne prévue en **11 escales**. **État : escales 1 à 6 jouables (pilote validé : escale 2) ; escales 7 à 11 en cours.**
+difficulté, campagne prévue en **11 escales**. **État : campagne complète, 11 escales et coffre final (en attente de validation des escales 3 à 11).**
 
 - Jouer : \`vingt-mille-lieues/index.html\` (en ligne, ou \`lancer.bat\` puis http://127.0.0.1:8000/vingt-mille-lieues/).
 - Tableau de bord enseignant (mode local) : \`prof.html\` · médias : \`medias.html\` · leçons A4 : \`lecons-imprimables.html\`.

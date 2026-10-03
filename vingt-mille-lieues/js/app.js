@@ -76,7 +76,8 @@ VML.CLE_PARTIE = "vml_partie";
     VML.majHUD();
   };
   const airEscale = () => (VML.escale(VML.ETAT.escale) || {}).air || null;
-  const pompeEnMarche = () => { const a = airEscale(); return !a || !a.pompe || !!(VML.ETAT.resolues || {})[a.pompe]; };
+  /* l'air baisse tant que la « pompe » n'est pas réparée ; avec « debut », seulement après cette énigme-là */
+  const pompeEnMarche = () => { const a = airEscale(), r = VML.ETAT.resolues || {}; return !a || !a.pompe || !!r[a.pompe] || (!!a.debut && !r[a.debut]); };
 
   function demarrerChrono(){
     clearInterval(tic); dernierTic = Date.now();

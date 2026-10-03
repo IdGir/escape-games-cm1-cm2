@@ -85,19 +85,21 @@ Source : `references/programmation-2026.pdf` (programmation histoire, géographi
 fournie par l'enseignant après la validation de l'escale pilote. Chaque escale garde l'ordre du roman ; les notions
 postérieures à 1870 sont présentées comme un **dossier de l'équipe de secours (carnet du XXIᵉ siècle)** (§ 3 bis, règle 7).
 
+✅ = réalisée (escales 1 et 3 à 11 : en attente de validation de l'enseignant).
+
 | # | Escale (roman) | Énigmes prévues (lieu → notion) | Programmation (année, période) |
 |---|---|---|---|
-| 1 | La chasse au « monstre » (*Abraham Lincoln*, 1867) | salle des machines à vapeur → énergies et machines ; cambuse → conservation des aliments, chaîne de production du biscuit de mer ; passerelle → vitesse : distance et durée | Hist. B P5 âge industriel · Sc. A P2 conservation des aliments · Géo B P4 chaîne de production · Sc. B P2 mouvement |
+| 1 | La chasse au « monstre » (*Abraham Lincoln*, 1867) | salle des machines à vapeur → énergies et machines ; cambuse → conservation des aliments, chaîne de production du biscuit de mer ; passerelle → vitesse : distance et durée | Hist. B P5 âge industriel · Sc. A P2 conservation des aliments · Géo B P4 chaîne de production · Sc. B P2 mouvement ✅ |
 | **2** | **Dans le ventre du Nautilus** | **carré, machines, cabine, salon → électricité, objets techniques, chaîne d'énergie** | **Sc. A P3 électricité · Sc. A P1 objets techniques · Sc. A P2 énergie** ✅ |
-| 3 | La forêt de l'île Crespo (promenade sous-marine) | sas → air comprimé, états de la matière ; forêt → lumière sous l'eau ; récif → panorama du vivant, classification | Sc. A P2 lumière · Sc. A P4 panorama du vivant · Sc. B P1 matière |
-| 4 | Vanikoro et Lapérouse | épaves → progrès techniques des explorations ; cabine → Louis XVI, contexte de 1789, fin de la monarchie absolue | Hist. B P3 explorations · Hist. A P4 Révolution |
-| 5 | Les perles de Ceylan | banc d'huîtres → masses (la perle géante) ; carré → colonies, échanges commerciaux ; pont → inégalités dans le monde | Sc. B P1 masses · Hist. A P3 échanges avec les colonies · Géo B P2 inégalités |
-| 6 | Le tunnel arabique et Suez | carte → se déplacer, moyens de transport, canal ; hublot → le Nil, usages de l'eau douce et conflits d'usage | Géo A P1-P2 se déplacer · Géo B P5 eau douce |
-| 7 | Santorin et l'Atlantide | volcan sous-marin → la Terre, planète active ; temple englouti → activité interne, séismes | Sc. A P5 / B P5 Terre active |
-| 8 | Sargasses, Gulf Stream, câble transatlantique | épave → traite des esclaves et plantations ; câble → communiquer grâce à internet (dossier XXIᵉ s.) ; Gulf Stream → climat, écosystème, chaînes alimentaires | Hist. A P3 traite · Géo A P3-P4 internet · Sc. A P4 écosystème · Sc. B P5 climat |
-| 9 | Le pôle Sud (« Faute d'air ») | banquise → états de l'eau, mélanges (eau salée) ; instruments → mesures météorologiques ; drapeau de Nemo → symboles et rites de la République | Sc. B P1-P2 états de la matière, mélanges · Sc. A P1 météo · Hist. B P4 République |
-| 10 | Les poulpes | plate-forme → développement des animaux (ovipares) et reproduction ; salon → le cerveau, attention et perception | Sc. B P3 développement · Sc. A P5 reproduction · Sc. B P5 cerveau |
-| 11 | Vigo, le Maelström, le coffre | cabine → Louis XIV (1702) ; carte → Europe / Union européenne (la Norvège hors UE) ; poste de pilotage → programmer la manœuvre ; salle de l'orgue → coffre final (Léonard de Vinci et François Ier, tableaux du musée de Nemo) | Hist. A P2 Louis XIV · Géo A P5 UE · Hist. B P5 construction de l'UE · Sc. B P4 programmation · Hist. B P2 Renaissance |
+| 3 | La forêt de l'île Crespo (promenade sous-marine) | sas → air comprimé, états de la matière ; forêt → lumière sous l'eau ; récif → panorama du vivant, classification | Sc. A P2 lumière · Sc. A P4 panorama du vivant · Sc. B P1 matière ✅ |
+| 4 | Vanikoro et Lapérouse | épaves → progrès techniques des explorations ; cabine → Louis XVI, contexte de 1789, fin de la monarchie absolue | Hist. B P3 explorations · Hist. A P4 Révolution ✅ |
+| 5 | Les perles de Ceylan | banc d'huîtres → masses (la perle géante) ; carré → colonies, échanges commerciaux ; pont → inégalités dans le monde | Sc. B P1 masses · Hist. A P3 échanges avec les colonies · Géo B P2 inégalités ✅ |
+| 6 | Le tunnel arabique et Suez | carte → se déplacer, moyens de transport, canal ; hublot → le Nil, usages de l'eau douce et conflits d'usage | Géo A P1-P2 se déplacer · Géo B P5 eau douce ✅ |
+| 7 | Santorin et l'Atlantide | volcan sous-marin → la Terre, planète active ; temple englouti → activité interne, séismes | Sc. A P5 / B P5 Terre active ✅ |
+| 8 | Sargasses, Gulf Stream, câble transatlantique | épave → traite des esclaves et plantations ; câble → communiquer grâce à internet (dossier XXIᵉ s.) ; Gulf Stream → climat, écosystème, chaînes alimentaires | Hist. A P3 traite · Géo A P3-P4 internet · Sc. A P4 écosystème · Sc. B P5 climat ✅ |
+| 9 | Le pôle Sud (« Faute d'air ») | banquise → états de l'eau, mélanges (eau salée) ; instruments → mesures météorologiques ; drapeau de Nemo → symboles et rites de la République | Sc. B P1-P2 états de la matière, mélanges · Sc. A P1 météo · Hist. B P4 République ✅ |
+| 10 | Les poulpes | plate-forme → développement des animaux (ovipares) et reproduction ; salon → le cerveau, attention et perception | Sc. B P3 développement · Sc. A P5 reproduction · Sc. B P5 cerveau ✅ |
+| 11 | Vigo, le Maelström, le coffre | cabine → Louis XIV (1702) ; carte → Europe / Union européenne (la Norvège hors UE) ; poste de pilotage → programmer la manœuvre ; salle de l'orgue → coffre final (Léonard de Vinci et François Ier, tableaux du musée de Nemo) | Hist. A P2 Louis XIV · Géo A P5 UE · Hist. B P5 construction de l'UE · Sc. B P4 programmation · Hist. B P2 Renaissance ✅ |
 
 **Non couvert à ce stade, déclaré dans le guide** (ancrage Verne trop artificiel ; ces notions sont travaillées par
 d'autres jeux du dépôt) : Moyen Âge (Clovis, Charlemagne, Église, roman/gothique, château fort, paysans), Henri IV et

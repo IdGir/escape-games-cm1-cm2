@@ -96,14 +96,18 @@ for did, esc, ref, zones, effets, fr, en in DECORS:
            en=en + " Keep exactly the composition, perspective and object placement of the provided reference image.")
 
 A_VENIR = [("pont-lincoln", 1, "pont de la frégate Abraham Lincoln, 1867"), ("machines-vapeur", 1, "salle des machines à vapeur et charbon de la frégate (références salle-machines 1-4)"),
-           ("pont-nautilus", 1, "pont du Nautilus en surface (références pont 1-3)"), ("sas", 3, "sas et vestiaire des scaphandres"), ("recif-crespo", 3, "forêt sous-marine de Crespo (références récif)"),
-           ("vanikoro", 4, "récif de Vanikoro, épaves de Lapérouse"), ("banc-perles", 5, "banc d'huîtres perlières de Ceylan"), ("tunnel-suez", 6, "Arabian Tunnel, mer Rouge et isthme de Suez"),
-           ("atlantide", 7, "temple englouti (références atlantide)"), ("sargasses", 8, "mer des Sargasses"), ("banquise", 9, "Nautilus dans la banquise (référence nautilus-banquise)"),
-           ("plateforme-poulpe", 10, "combat contre les poulpes (référence nautilus-poulpe)"), ("vigo", 11, "baie de Vigo, galions engloutis"), ("maelstrom", 11, "Maelström (référence nautilus-maelstrom)"),
-           ("salle-orgue", 11, "salle de l'orgue et coffre du capitaine (variante du salon)")]
+           ("cambuse", 1, "cambuse de la frégate"), ("pont-nautilus", 1, "pont du Nautilus en surface (références pont 1-3)"),
+           ("sas", 3, "sas et vestiaire des scaphandres"), ("recif", 3, "plaine sous-marine et récif"), ("foret-crespo", 3, "forêt sous-marine de Crespo"),
+           ("epave-vanikoro", 4, "récif de Vanikoro, épaves de Lapérouse"), ("banc-perles", 5, "banc d'huîtres perlières de Ceylan"), ("pont-ceylan", 5, "pont du Nautilus au large de Ceylan"),
+           ("tunnel-arabique", 6, "cage du pilote dans l'Arabian Tunnel"), ("pont-port-said", 6, "pont du Nautilus devant Port-Saïd, la nuit"),
+           ("volcan-santorin", 7, "salon près de Santorin en éruption"), ("atlantide", 7, "temple englouti (références atlantide)"),
+           ("sargasses", 8, "mer des Sargasses"), ("cable", 8, "câble transatlantique sur le fond"), ("banquise", 9, "Nautilus dans la banquise (référence nautilus-banquise)"), ("pole", 9, "le pôle Sud, pavillon de Nemo"),
+           ("plateforme-poulpe", 10, "combat contre les poulpes (référence nautilus-poulpe)"), ("baie-vigo", 11, "baie de Vigo, galions engloutis"), ("maelstrom", 11, "Maelström (référence nautilus-maelstrom)"),
+           ("salle-orgue", 11, "salle de l'orgue (variante du salon)")]
 for did, esc, desc in A_VENIR:
-    ajoute(id="decor-" + did, type="image", fichier=f"assets/images/decors/{did}.webp", dim="1920×1080", duree="", ratio="16:9", escale=str(esc), ref="", statut=f"à produire avec l'escale {esc}",
-           zones="à définir", effets="à définir", fr=f"À rédiger avec l'escale {esc} : {desc}.", en="")
+    ajoute(id="decor-" + did, type="image", fichier=f"assets/images/decors/{did}.webp", dim="1920×1080", duree="", ratio="16:9", escale=str(esc), ref="",
+           statut="déposé (Agnes, à valider par l'enseignant)" if os.path.exists(os.path.join(JEU, "assets", "images", "decors", did + ".webp")) else f"à produire avec l'escale {esc}",
+           zones="voir assets/data/decors-fx.json", effets="voir assets/data/decors-fx.json", fr=f"Escale {esc} : {desc}.", en="")
 
 ajoute(id="video-intro", type="vidéo", fichier="assets/videos/intro.mp4", dim="1280×720", duree="60-90 s", ratio="16:9", escale="1", ref="decor-pont-nautilus (validé)", statut="à produire après l'escale 1",
        zones="", effets="sous-titres et voix dans le code", fr="À rédiger avec l'escale 1 (la chasse au « monstre »).", en="")

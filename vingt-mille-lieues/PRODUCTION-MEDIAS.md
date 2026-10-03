@@ -77,21 +77,28 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | decor-carre | `assets/images/decors/carre.webp` | 1920×1080 | — | 2 | référence active |
 | decor-machines | `assets/images/decors/machines.webp` | 1920×1080 | — | 2 | secours actif (décor dessiné) |
 | decor-cabine | `assets/images/decors/cabine.webp` | 1920×1080 | — | 2 | référence active |
-| decor-pont-lincoln | `assets/images/decors/pont-lincoln.webp` | 1920×1080 | — | 1 | à produire avec l'escale 1 |
-| decor-machines-vapeur | `assets/images/decors/machines-vapeur.webp` | 1920×1080 | — | 1 | à produire avec l'escale 1 |
+| decor-pont-lincoln | `assets/images/decors/pont-lincoln.webp` | 1920×1080 | — | 1 | déposé (Agnes, à valider par l'enseignant) |
+| decor-machines-vapeur | `assets/images/decors/machines-vapeur.webp` | 1920×1080 | — | 1 | déposé (Agnes, à valider par l'enseignant) |
+| decor-cambuse | `assets/images/decors/cambuse.webp` | 1920×1080 | — | 1 | déposé (Agnes, à valider par l'enseignant) |
 | decor-pont-nautilus | `assets/images/decors/pont-nautilus.webp` | 1920×1080 | — | 1 | à produire avec l'escale 1 |
-| decor-sas | `assets/images/decors/sas.webp` | 1920×1080 | — | 3 | à produire avec l'escale 3 |
-| decor-recif-crespo | `assets/images/decors/recif-crespo.webp` | 1920×1080 | — | 3 | à produire avec l'escale 3 |
-| decor-vanikoro | `assets/images/decors/vanikoro.webp` | 1920×1080 | — | 4 | à produire avec l'escale 4 |
-| decor-banc-perles | `assets/images/decors/banc-perles.webp` | 1920×1080 | — | 5 | à produire avec l'escale 5 |
-| decor-tunnel-suez | `assets/images/decors/tunnel-suez.webp` | 1920×1080 | — | 6 | à produire avec l'escale 6 |
-| decor-atlantide | `assets/images/decors/atlantide.webp` | 1920×1080 | — | 7 | à produire avec l'escale 7 |
-| decor-sargasses | `assets/images/decors/sargasses.webp` | 1920×1080 | — | 8 | à produire avec l'escale 8 |
-| decor-banquise | `assets/images/decors/banquise.webp` | 1920×1080 | — | 9 | à produire avec l'escale 9 |
-| decor-plateforme-poulpe | `assets/images/decors/plateforme-poulpe.webp` | 1920×1080 | — | 10 | à produire avec l'escale 10 |
-| decor-vigo | `assets/images/decors/vigo.webp` | 1920×1080 | — | 11 | à produire avec l'escale 11 |
-| decor-maelstrom | `assets/images/decors/maelstrom.webp` | 1920×1080 | — | 11 | à produire avec l'escale 11 |
-| decor-salle-orgue | `assets/images/decors/salle-orgue.webp` | 1920×1080 | — | 11 | à produire avec l'escale 11 |
+| decor-sas | `assets/images/decors/sas.webp` | 1920×1080 | — | 3 | déposé (Agnes, à valider par l'enseignant) |
+| decor-recif | `assets/images/decors/recif.webp` | 1920×1080 | — | 3 | déposé (Agnes, à valider par l'enseignant) |
+| decor-foret-crespo | `assets/images/decors/foret-crespo.webp` | 1920×1080 | — | 3 | déposé (Agnes, à valider par l'enseignant) |
+| decor-epave-vanikoro | `assets/images/decors/epave-vanikoro.webp` | 1920×1080 | — | 4 | déposé (Agnes, à valider par l'enseignant) |
+| decor-banc-perles | `assets/images/decors/banc-perles.webp` | 1920×1080 | — | 5 | déposé (Agnes, à valider par l'enseignant) |
+| decor-pont-ceylan | `assets/images/decors/pont-ceylan.webp` | 1920×1080 | — | 5 | déposé (Agnes, à valider par l'enseignant) |
+| decor-tunnel-arabique | `assets/images/decors/tunnel-arabique.webp` | 1920×1080 | — | 6 | déposé (Agnes, à valider par l'enseignant) |
+| decor-pont-port-said | `assets/images/decors/pont-port-said.webp` | 1920×1080 | — | 6 | déposé (Agnes, à valider par l'enseignant) |
+| decor-volcan-santorin | `assets/images/decors/volcan-santorin.webp` | 1920×1080 | — | 7 | déposé (Agnes, à valider par l'enseignant) |
+| decor-atlantide | `assets/images/decors/atlantide.webp` | 1920×1080 | — | 7 | déposé (Agnes, à valider par l'enseignant) |
+| decor-sargasses | `assets/images/decors/sargasses.webp` | 1920×1080 | — | 8 | déposé (Agnes, à valider par l'enseignant) |
+| decor-cable | `assets/images/decors/cable.webp` | 1920×1080 | — | 8 | déposé (Agnes, à valider par l'enseignant) |
+| decor-banquise | `assets/images/decors/banquise.webp` | 1920×1080 | — | 9 | déposé (Agnes, à valider par l'enseignant) |
+| decor-pole | `assets/images/decors/pole.webp` | 1920×1080 | — | 9 | déposé (Agnes, à valider par l'enseignant) |
+| decor-plateforme-poulpe | `assets/images/decors/plateforme-poulpe.webp` | 1920×1080 | — | 10 | déposé (Agnes, à valider par l'enseignant) |
+| decor-baie-vigo | `assets/images/decors/baie-vigo.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
+| decor-maelstrom | `assets/images/decors/maelstrom.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
+| decor-salle-orgue | `assets/images/decors/salle-orgue.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
 | video-intro | `assets/videos/intro.mp4` | 1280×720 | 60-90 s | 1 | à produire après l'escale 1 |
 | video-transition-e2 | `assets/videos/transition-e2.mp4` | 1280×720 | 8-10 s | 2 | cinématique en direct active |
 | video-transition-e1 | `assets/videos/transition-e1.mp4` | 1280×720 | 6-10 s | 1 | à produire avec l'escale 1 |
