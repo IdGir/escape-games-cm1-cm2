@@ -179,14 +179,25 @@ def main():
                     print(f"[essai] POST {BASE}/v1/videos → {os.path.relpath(cible, JEU)}\n        " + json.dumps(corps, ensure_ascii=False)[:400]); faites_v += 1; continue
                 r = {}
                 for essai_file in range(30):
-                    r = appel("POST", BASE + "/v1/videos", corps)
+                    try:
+                        r = appel("POST", BASE + "/v1/videos", corps)
+                    except RuntimeError as e:
+                        if "video_queue_full" in str(e) or "HTTP 503" in str(e) or "HTTP 502" in str(e):
+                            journal(f"{l['id']} : file d'attente pleine, nouvel essai dans 60 s"); time.sleep(60); continue
+                        raise
                     if r.get("code") != "video_queue_full": break
                     journal(f"{l['id']} : file d'attente pleine, nouvel essai dans 60 s"); time.sleep(60)
                 vid = r.get("video_id")
-                if not vid: journal(f"{l['id']} : création refusée ({json.dumps(r)[:200]})"); continue; journal(f"{l['id']} : tâche vidéo {vid} créée")
-                for _ in range(900):
-                    time.sleep(2)
-                    s = appel("GET", f"{BASE}/agnesapi?video_id={vid}&model_name={MODELE_VIDEO}")
+                if not vid:
+                    journal(f"{l['id']} : création refusée ({json.dumps(r)[:200]})"); continue
+                journal(f"{l['id']} : tâche vidéo {vid} créée")
+                for _ in range(200):
+                    time.sleep(10)
+                    try:
+                        s = appel("GET", f"{BASE}/agnesapi?video_id={vid}&model_name={MODELE_VIDEO}")
+                    except RuntimeError as e:
+                        if "HTTP 429" in str(e): time.sleep(30); continue
+                        raise
                     if s.get("status") == "completed" and s.get("url"):
                         telecharger(s["url"], cible); journal(f"{l['id']}-v{v} : vidéo reçue"); break
                     if s.get("status") == "failed":
