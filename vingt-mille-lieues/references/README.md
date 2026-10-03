@@ -11,3 +11,5 @@
 - `style-atlantide-1.png`, `-2.png` : scaphandriers devant un temple grec englouti (§ 7.8, point 7).
 - `style-pont-1.png` à `-3.png` : pont du Nautilus en surface (§ 7.8, point 8).
 - `personnage-nemo-1.png`, `-2.png` : **portrait de référence du capitaine Nemo** (§ 7.8, point 9). À passer en `image` de référence à chaque génération où Nemo apparaît.
+- `style-recif-1.webp`, `-2.webp` : récif corallien / forêt sous-marine (§ 7.8, point 10).
+- `style-nautilus-banquise.png`, `-maelstrom.png`, `-poulpe.png` : le Nautilus vu de l'extérieur (glace, tourbillon, calmar géant) (§ 7.8, point 11).

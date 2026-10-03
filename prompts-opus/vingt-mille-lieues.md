@@ -325,7 +325,7 @@ Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux sp�
 
 ### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
 
-Dix-neuf images servent (dix-huit sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
+Vingt-quatre images servent (vingt-trois sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
 fie-toi aux descriptions) :
 1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
    forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
@@ -415,6 +415,28 @@ fie-toi aux descriptions) :
    serviteur, lunettes), Ned Land (harponneur canadien, large, chemise de marin, bonnet, harpon). Génère leurs
    portraits de référence **avant** tout décor avec personnages, fais-les valider par l'enseignant, puis déposes-les
    dans `references/` sous le nom `personnage-<nom>-1.png`.
+
+10. **Récifs et « forêt » sous-marine (`references/style-recif-1.webp`, `-2.webp`)** : récif corallien lumineux, eau bleu
+    turquoise, **rayons de soleil** tombant de la surface, grands coraux ramifiés en forme d'arbres, coraux-tables,
+    cerveaux, éventails, herbier de zostères sur sable blanc, **poissons-clowns, poissons-perroquets, bancs de petits
+    poissons, méduses**, silhouette du Nautilus au loin. Décor de l'escale 3 (forêt de Crespo, Pacifique) et de
+    l'escale 8 (Sargasses/écosystèmes) : **sert de support à des énigmes de sciences** (chaînes alimentaires,
+    classification, adaptations au milieu, milieu de vie). Attention scientifique : vérifie que chaque espèce
+    représentée convient à la mer visée (récif tropical ≠ Sargasses ≠ pôle) ; sinon indique-le dans les prompts
+    (« espèces de récif tropical du Pacifique ») et dans `A-VERIFIER.md`.
+11. **Le Nautilus vu de l'extérieur (`references/style-nautilus-banquise.png`, `-maelstrom.png`, `-poulpe.png`)** : coque
+    fuselée en tôle rivetée patinée, **rangée de hublots ronds lumineux ambrés**, petite tourelle/cage du pilote, mâts
+    fins, rambardes, vue en banquise au soleil rasant (pôle Sud), **aspirée par le tourbillon du Maelström**, attaquée par
+    un **calmar/poulpe géant** pendant que l'équipage riposte sur le pont (mer sombre, ciel d'orage, écume). Ce sont
+    les images-clés des **escales 9 et 10** et des vidéos de transition « grand spectacle ». **Définis dans la charte
+    UNE silhouette canonique du Nautilus** (fuseau long de métal riveté, hublots ambre alignés, cage du pilote en
+    laiton, fanal, canot encastré — d'après le pont et la tourelle de ces références, en restant fidèle au
+    « fuseau cylindro-conique » de Verne, sans cheminée ni voile) et rappelle-la mot pour mot dans tous les prompts
+    d'extérieur, car les références fournies montrent des variantes (tourelle plus ou moins haute) à homogénéiser.
+    Nuances scientifiques à respecter dans les énigmes : l'Antarctique est un continent recouvert d'une calotte
+    glaciaire entourée de banquise (ne pas confondre banquise, iceberg et inlandsis) ; le Maelström norvégien est un
+    courant de marée violent, pas un « trou » sans fond ; les poulpes/calmars géants existent mais l'attaque du
+    roman est romancée.
 
 Cohérence : tous les décors partagent la même lumière (ambre chaud + bleu aquatique par les hublots), les mêmes
 motifs (appliques en coquille, hublots ronds rivetés, lampes à abat-jour vert, fauteuils capitonnés verts, tapis
