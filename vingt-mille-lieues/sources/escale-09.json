@@ -1,0 +1,916 @@
+{
+  "escale": {
+    "numero": 9,
+    "id": "pole-sud",
+    "titre": "Le pôle Sud et la prison de glace",
+    "lieu": "Banquise antarctique et pôle Sud, mars 1868",
+    "matiere": "Sciences et Enseignement moral et civique",
+    "periode_conseillee": "Sciences : états de l'eau, météorologie ; EMC : les symboles de la République",
+    "episode": "Deuxième partie, ch. XIII « La banquise », XIV « Le pôle Sud » (Nemo plante son pavillon noir marqué d'un N d'or, le 21 mars 1868), XV « Accident ou incident ? » et XVI « Faute d'air » (le Nautilus est emprisonné sous la glace ; l'équipage creuse, injecte de l'eau bouillante, et l'air vient à manquer).",
+    "scenarimage": "scenarimages/escale-09.md",
+    "mot": "BANQUISE",
+    "mot_origine": "La mer gelée sous laquelle le Nautilus a gagné le pôle, et qui a failli devenir sa prison (Partie II, ch. XIII-XVI).",
+    "air": {
+      "depart": 100,
+      "perte_par_minute": 1,
+      "perte_par_indice": 3,
+      "plancher": 25,
+      "pompe": "e9-3",
+      "plein": "e9-3",
+      "debut": "e9-2"
+    },
+    "cinematique_ouverture": "transition-e9",
+    "cinematique_fin": "fin-e9",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e9-1",
+        "escale": 9,
+        "ordre": 1,
+        "titre": "Le ciel de la banquise",
+        "decor": "banquise",
+        "objet_principal": "instruments-meteo",
+        "objets_cliquables": [
+          "instruments-meteo",
+          "aurore",
+          "icebergs"
+        ],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "Le Nautilus a fait surface au bord de la banquise, sous une aurore australe. Avant de plonger sous la glace, Nemo veut connaître le temps qui vient : une tempête refermerait les passages. Aronnax, sur le pont, relève les instruments de la petite station météorologique.",
+        "enjeu": "Si l'on ne sait pas lire les instruments, on plonge sans savoir qu'une tempête approche et que la glace va se refermer derrière nous.",
+        "episode_du_roman": "Partie II, ch. XIII « La banquise » : Aronnax note les températures, le vent, les glaces ; Nemo choisit le moment de plonger.",
+        "competence_programme": "Sciences : la météorologie — mesurer le temps qu'il fait avec des instruments (thermomètre, baromètre, anémomètre, girouette, pluviomètre) ; interpréter des relevés.",
+        "pourquoi_ce_savoir_ici": "Au bord de la banquise, le temps décide de tout : une baisse du baromètre annonce la tempête qui refermera les passages.",
+        "reaction_du_decor": {
+          "effet": "aiguilles",
+          "description": "Les aiguilles des instruments s'agitent, puis se fixent : la mesure est prise."
+        },
+        "liberte_ou_anachronisme": "Le pluviomètre et l'anémomètre existent en 1868 ; la petite station sur le pont est inventée. Unités de pression en millimètres de mercure, comme à l'époque.",
+        "lecon": "meteo",
+        "type": "association",
+        "niveau_variantes": "Mousse : instrument ↔ ce qu'il mesure. Matelot : instrument ↔ mesure et unité. Timonier : écarts de température et de pression (code). Lieutenant : QCM de prévision + justification. Second : rapport à trous + justification.",
+        "mousse": {
+          "type": "association",
+          "dialogue": "Ces instruments, je les ai vus mille fois sans bien savoir lequel mesure quoi. Aidez un savant distrait.",
+          "consigne": "Relie chaque instrument à ce qu'il mesure. Aide-toi de la fiche « Le temps qu'il fait ».",
+          "paires": [
+            {
+              "g": "le thermomètre",
+              "icone": "🌡️",
+              "d": "la température de l'air"
+            },
+            {
+              "g": "la girouette",
+              "icone": "🧭",
+              "d": "la direction du vent"
+            },
+            {
+              "g": "le pluviomètre",
+              "icone": "🌧️",
+              "d": "la quantité de pluie ou de neige"
+            }
+          ],
+          "indices": [
+            "Fiche « Le temps qu'il fait ».",
+            "Pluvio-mètre : il mesure la pluie."
+          ]
+        },
+        "matelot": {
+          "type": "association",
+          "dialogue": "Pour le journal, il me faut la mesure ET son unité. Le capitaine n'accepte pas un chiffre tout seul.",
+          "consigne": "Relie chaque instrument à ce qu'il mesure.",
+          "paires": [
+            {
+              "g": "le thermomètre",
+              "icone": "🌡️",
+              "d": "la température, en degrés Celsius (°C)"
+            },
+            {
+              "g": "le baromètre",
+              "icone": "⏲️",
+              "d": "la pression de l'air, en millimètres de mercure (mm)"
+            },
+            {
+              "g": "l'anémomètre",
+              "icone": "💨",
+              "d": "la vitesse du vent, en kilomètres par heure (km/h)"
+            },
+            {
+              "g": "la girouette",
+              "icone": "🧭",
+              "d": "la direction d'où vient le vent"
+            },
+            {
+              "g": "le pluviomètre",
+              "icone": "🌧️",
+              "d": "la hauteur de pluie tombée, en millimètres (mm)"
+            }
+          ],
+          "indices": [
+            "Fiche « Le temps qu'il fait », le tableau.",
+            "Baro- : la pression ; anémo- : le vent."
+          ]
+        },
+        "timonier": {
+          "type": "code",
+          "dialogue": "Deux relevés, à quatre heures d'écart. Calculons ce qui a changé : les chiffres parlent mieux que mes impressions.",
+          "consigne": "<div class='doc-carnet'><b>Relevés d'Aronnax</b> — À 8 h : thermomètre −12 °C, baromètre 752 mm. À midi : thermomètre −3 °C, baromètre 741 mm.</div>Calcule.",
+          "champs": [
+            {
+              "libelle": "De combien de degrés la température a-t-elle monté ?",
+              "valeur": "9",
+              "longueur": 3
+            },
+            {
+              "libelle": "De combien de millimètres le baromètre a-t-il baissé ?",
+              "valeur": "11",
+              "longueur": 3
+            }
+          ],
+          "indices": [
+            "De −12 à 0, puis de 0 à −3 : attention au sens.",
+            "752 − 741."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Le baromètre baisse vite, le vent forcit. Le capitaine attend mon avis. Que dois-je lui dire ?",
+          "consigne": "<div class='doc-carnet'>Baromètre : 752 → 741 mm en 4 heures. Anémomètre : 20 → 60 km/h. Girouette : le vent tourne à l'ouest.</div>Réponds, puis justifie.",
+          "questions": [
+            {
+              "q": "Ces relevés annoncent plutôt…",
+              "options": [
+                "une tempête",
+                "un beau temps calme",
+                "une chaleur tropicale",
+                "rien de particulier"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quel conseil donner au capitaine ?",
+              "options": [
+                "plonger maintenant, avant que la tempête ne referme les passages",
+                "attendre une semaine sur le pont",
+                "sortir les canots",
+                "ouvrir tous les panneaux"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse 1 ?",
+            "options": [
+              "Quand le baromètre baisse vite et que le vent forcit, le mauvais temps approche ; quand il monte, le temps s'améliore.",
+              "Le thermomètre mesure la température.",
+              "La girouette indique d'où vient le vent.",
+              "Le pluviomètre mesure la pluie."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Le temps qu'il fait », encadré.",
+            "Baisse rapide du baromètre = danger."
+          ]
+        },
+        "second": {
+          "type": "trous",
+          "dialogue": "Je rédige le bulletin pour le capitaine. Il me manque des mots ; complétez-le, et dites-moi d'où vient votre certitude.",
+          "consigne": "Complète le bulletin d'Aronnax. Certaines étiquettes ne servent pas. Puis justifie.",
+          "texte": "Le [[baromètre]] a baissé de 11 mm en quatre heures : la pression de l'air [[diminue]]. L'[[anémomètre]] indique un vent qui forcit, et la [[girouette]] montre qu'il tourne à l'ouest. Une [[tempête]] approche : il faut plonger avant que les glaces ne se referment.",
+          "etiquettes": [
+            "baromètre",
+            "diminue",
+            "anémomètre",
+            "girouette",
+            "tempête",
+            "augmente",
+            "pluviomètre",
+            "accalmie"
+          ],
+          "justification": {
+            "question": "Pourquoi une prévision n'est-elle jamais une certitude ?",
+            "options": [
+              "Une prévision s'appuie sur des mesures et sur l'expérience ; elle dit ce qui est probable, pas ce qui est sûr.",
+              "Parce que les instruments sont toujours faux.",
+              "Parce que le capitaine ne croit pas aux mesures.",
+              "Parce qu'il fait froid au pôle."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Le temps qu'il fait ».",
+            "Le vent forcit : l'anémomètre ; sa direction : la girouette."
+          ]
+        }
+      },
+      {
+        "id": "e9-2",
+        "escale": 9,
+        "ordre": 2,
+        "titre": "Le pavillon du pôle",
+        "decor": "pole",
+        "objet_principal": "pavillon",
+        "objets_cliquables": [
+          "pavillon",
+          "sextant",
+          "manchots"
+        ],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Au pôle Sud, Nemo déploie un pavillon noir marqué d'un N d'or : il prend possession de cette terre en son seul nom. Conseil, troublé, se demande ce que signifie un drapeau, et ce que représentent ceux d'un pays. L'équipe de secours du XXIᵉ siècle lui envoie un dossier sur les symboles de la République française.",
+        "enjeu": "Sans comprendre ce qu'est un symbole, on ne voit pas la différence entre le drapeau d'un homme seul et celui d'un peuple tout entier.",
+        "episode_du_roman": "Partie II, ch. XIV « Le pôle Sud » : le 21 mars 1868, Nemo déploie son pavillon noir au N d'or et prend possession du pôle.",
+        "competence_programme": "EMC : connaître les symboles de la République française (drapeau, hymne, devise, Marianne, fête nationale) et ce qu'ils signifient.",
+        "pourquoi_ce_savoir_ici": "Le geste de Nemo, qui plante son propre drapeau, oblige à se demander ce qu'un drapeau représente.",
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "Le pavillon claque au vent ; le N d'or brille un instant sous le soleil rasant."
+        },
+        "liberte_ou_anachronisme": "En 1868, la France est un Empire (Napoléon III), pas une République ; son drapeau est déjà tricolore. Les symboles de la République sont présentés comme dossier de l'équipe de secours (XXIᵉ siècle). Le premier homme réellement arrivé au pôle Sud est Roald Amundsen, en 1911.",
+        "lecon": "symboles",
+        "type": "tri",
+        "niveau_variantes": "Mousse : l'intrus parmi les symboles. Matelot : symbole ou non. Timonier : symbole ↔ description. Lieutenant : vrai ou faux + justification. Second : QCM sur le sens des symboles + justification.",
+        "mousse": {
+          "type": "intrus",
+          "dialogue": "Monsieur dit que chaque pays a ses symboles. L'équipe de secours m'a envoyé ceux de la République française. Mais l'un d'eux n'en est pas un…",
+          "consigne": "Lequel n'est PAS un symbole officiel de la République française ? Aide-toi de la fiche « Les symboles de la République ».",
+          "cartes": [
+            {
+              "txt": "le drapeau bleu, blanc, rouge",
+              "icone": "🇫🇷",
+              "intrus": false
+            },
+            {
+              "txt": "la devise « Liberté, Égalité, Fraternité »",
+              "icone": "📜",
+              "intrus": false
+            },
+            {
+              "txt": "Marianne",
+              "icone": "👩",
+              "intrus": false
+            },
+            {
+              "txt": "le pavillon noir au N d'or",
+              "icone": "🏴",
+              "intrus": true
+            }
+          ],
+          "indices": [
+            "Fiche « Les symboles de la République ».",
+            "Le N d'or, c'est Nemo."
+          ]
+        },
+        "matelot": {
+          "type": "tri",
+          "dialogue": "Je veux ranger correctement le dossier de l'équipe de secours. Qu'est-ce qui est un symbole officiel, et qu'est-ce qui n'en est pas un ?",
+          "consigne": "Range chaque élément.",
+          "colonnes": [
+            {
+              "id": "officiel",
+              "titre": "Symbole officiel de la République",
+              "icone": "🇫🇷"
+            },
+            {
+              "id": "non",
+              "titre": "Pas un symbole officiel",
+              "icone": "✖️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "La Marseillaise",
+              "col": "officiel"
+            },
+            {
+              "txt": "le 14 Juillet, fête nationale",
+              "col": "officiel"
+            },
+            {
+              "txt": "la devise « Liberté, Égalité, Fraternité »",
+              "col": "officiel"
+            },
+            {
+              "txt": "le drapeau tricolore",
+              "col": "officiel"
+            },
+            {
+              "txt": "le coq",
+              "col": "non"
+            },
+            {
+              "txt": "la tour Eiffel",
+              "col": "non"
+            }
+          ],
+          "indices": [
+            "Fiche « Les symboles de la République », la liste officielle.",
+            "Le coq est souvent utilisé, mais il n'est pas un symbole officiel."
+          ]
+        },
+        "timonier": {
+          "type": "association",
+          "dialogue": "Chaque symbole a son histoire, comme chaque pavillon a son navire. Relions-les.",
+          "consigne": "Relie chaque symbole à sa description.",
+          "paires": [
+            {
+              "g": "Le drapeau tricolore",
+              "icone": "🇫🇷",
+              "d": "bleu, blanc, rouge, né pendant la Révolution"
+            },
+            {
+              "g": "La Marseillaise",
+              "icone": "🎵",
+              "d": "l'hymne national, chant composé en 1792"
+            },
+            {
+              "g": "La devise",
+              "icone": "📜",
+              "d": "« Liberté, Égalité, Fraternité », inscrite sur les mairies et les écoles"
+            },
+            {
+              "g": "Marianne",
+              "icone": "👩",
+              "d": "une femme coiffée d'un bonnet phrygien, visage de la République"
+            },
+            {
+              "g": "Le 14 Juillet",
+              "icone": "🎆",
+              "d": "la fête nationale, en souvenir de 1789 et de 1790"
+            }
+          ],
+          "indices": [
+            "Fiche « Les symboles de la République ».",
+            "Le bonnet phrygien est le bonnet de la liberté."
+          ]
+        },
+        "lieutenant": {
+          "type": "vraifaux",
+          "dialogue": "Nemo dit que ce drapeau est le sien et celui de personne d'autre. Un drapeau de pays, c'est pourtant autre chose. Démêlons cela.",
+          "consigne": "Vrai ou faux ? Puis justifie.",
+          "affirmations": [
+            {
+              "txt": "Le drapeau de la République représente tous les citoyens, pas une seule personne.",
+              "vrai": true
+            },
+            {
+              "txt": "Les symboles de la République sont inscrits dans la Constitution.",
+              "vrai": true
+            },
+            {
+              "txt": "Le pavillon de Nemo est un symbole de la France.",
+              "vrai": false
+            },
+            {
+              "txt": "La devise rappelle des valeurs que partagent les citoyens.",
+              "vrai": true
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique la différence entre le pavillon de Nemo et un drapeau national ?",
+            "options": [
+              "Un symbole de la République représente la nation tout entière, c'est-à-dire tous les citoyens et les valeurs qu'ils partagent.",
+              "Le drapeau français est bleu, blanc, rouge.",
+              "La Marseillaise date de 1792.",
+              "Nemo a atteint le pôle le 21 mars 1868."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Les symboles de la République », niveau expert.",
+            "Nemo ne représente que lui-même."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Le dossier dit que la devise est écrite au fronton des écoles. Pourquoi là ? Je veux comprendre le sens, pas seulement les mots.",
+          "consigne": "Réponds avec la fiche « Les symboles de la République », puis justifie.",
+          "questions": [
+            {
+              "q": "« Égalité » signifie que…",
+              "options": [
+                "tous les citoyens ont les mêmes droits devant la loi",
+                "tout le monde a le même métier",
+                "tout le monde a la même taille",
+                "seuls certains ont des droits"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi la devise est-elle inscrite sur les écoles ?",
+              "options": [
+                "pour rappeler les valeurs que l'école transmet à tous les élèves",
+                "pour décorer les murs",
+                "pour indiquer l'adresse",
+                "parce que Nemo l'a demandé"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "« Fraternité » veut dire…",
+              "options": [
+                "être solidaires les uns des autres",
+                "avoir des frères",
+                "obéir au capitaine",
+                "vivre seul"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse 1 ?",
+            "options": [
+              "La loi est la même pour tous : les citoyens ont les mêmes droits et les mêmes devoirs, quelles que soient leur origine ou leur religion.",
+              "Marianne porte un bonnet phrygien.",
+              "Le 14 Juillet est la fête nationale.",
+              "Le coq n'est pas un symbole officiel."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Les symboles de la République », niveau approfondi.",
+            "Égalité : devant la loi."
+          ]
+        }
+      },
+      {
+        "id": "e9-3",
+        "escale": 9,
+        "ordre": 3,
+        "titre": "Faute d'air",
+        "decor": "banquise",
+        "objet_principal": "icebergs",
+        "objets_cliquables": [
+          "icebergs",
+          "glaces",
+          "instruments-meteo"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "Sur le chemin du retour, un iceberg se retourne : le Nautilus est enfermé sous la glace. L'air s'épuise. L'équipage creuse à la pioche, et le capitaine fait injecter de l'eau bouillante pour que l'eau autour de la coque ne gèle pas. Ned Land, pioche en main, veut comprendre ce qui se passe avec cette eau qui gèle, fond et bout.",
+        "enjeu": "Si l'eau autour du Nautilus gèle, la prison se referme : il faut savoir comment empêcher l'eau de passer à l'état solide.",
+        "episode_du_roman": "Partie II, ch. XV-XVI « Faute d'air » : le Nautilus emprisonné ; l'équipage creuse, des jets d'eau bouillante retardent la congélation, et le navire brise enfin la glace de tout son poids.",
+        "competence_programme": "Sciences : les états de l'eau (solide, liquide, gaz) et les changements d'état ; températures de fusion et d'ébullition ; l'eau de mer gèle vers −2 °C.",
+        "pourquoi_ce_savoir_ici": "Sous la glace, la survie dépend d'un changement d'état : garder l'eau liquide autour de la coque.",
+        "reaction_du_decor": {
+          "effet": "secousse",
+          "description": "Une secousse : le Nautilus, alourdi, brise la glace sous lui et retrouve l'eau libre ; la jauge d'air remonte."
+        },
+        "liberte_ou_anachronisme": "Le récit suit le roman ; la température de congélation de l'eau de mer (environ −2 °C) est une valeur moyenne (A-VERIFIER.md).",
+        "lecon": "etats-eau",
+        "type": "plan",
+        "niveau_variantes": "Mousse : tri solide, liquide, gaz. Matelot : schéma des changements d'état. Timonier : QCM sur les températures. Lieutenant : calcul de températures + justification. Second : ordre des actions du roman + justification.",
+        "mousse": {
+          "type": "tri",
+          "dialogue": "De la glace dessus, de l'eau dessous, de la vapeur des pompes : c'est toujours de l'eau ? Rangez-moi ça, je creuse en attendant.",
+          "consigne": "Range chaque eau selon son état. Aide-toi de la fiche « Les états de l'eau ».",
+          "colonnes": [
+            {
+              "id": "solide",
+              "titre": "Solide",
+              "icone": "🧊"
+            },
+            {
+              "id": "liquide",
+              "titre": "Liquide",
+              "icone": "💧"
+            },
+            {
+              "id": "gaz",
+              "titre": "Gaz",
+              "icone": "♨️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "la banquise",
+              "col": "solide"
+            },
+            {
+              "txt": "l'iceberg",
+              "col": "solide"
+            },
+            {
+              "txt": "l'eau de mer sous la glace",
+              "col": "liquide"
+            },
+            {
+              "txt": "l'eau bouillante des pompes",
+              "col": "liquide"
+            },
+            {
+              "txt": "la vapeur d'eau (invisible) au-dessus de l'eau bouillante",
+              "col": "gaz"
+            }
+          ],
+          "indices": [
+            "Fiche « Les états de l'eau ».",
+            "La vapeur d'eau est invisible : c'est un gaz."
+          ]
+        },
+        "matelot": {
+          "type": "plan",
+          "dialogue": "Fondre, geler, bouillir… Les marins ont leurs mots, les savants les leurs. Mettez les mots des savants sur ce schéma.",
+          "consigne": "Place le nom de chaque changement d'état.",
+          "titre": "Les changements d'état de l'eau",
+          "colonnes": 2,
+          "cases": [
+            {
+              "libelle": "Glace → eau liquide",
+              "reponse": "fusion"
+            },
+            {
+              "libelle": "Eau liquide → glace",
+              "reponse": "solidification"
+            },
+            {
+              "libelle": "Eau liquide → vapeur",
+              "reponse": "vaporisation"
+            },
+            {
+              "libelle": "Vapeur → eau liquide",
+              "reponse": "condensation"
+            }
+          ],
+          "indices": [
+            "Fiche « Les états de l'eau », le schéma.",
+            "Solidification : devenir solide."
+          ]
+        },
+        "timonier": {
+          "type": "qcm",
+          "dialogue": "À combien de degrés ça gèle, à combien ça bout ? Et l'eau de mer, alors ? Des réponses précises : nos vies en dépendent.",
+          "consigne": "Réponds avec la fiche « Les états de l'eau ».",
+          "questions": [
+            {
+              "q": "L'eau douce gèle à…",
+              "options": [
+                "0 °C",
+                "100 °C",
+                "−20 °C",
+                "10 °C"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "L'eau douce bout, au niveau de la mer, à…",
+              "options": [
+                "100 °C",
+                "0 °C",
+                "50 °C",
+                "37 °C"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "L'eau de mer, salée, gèle…",
+              "options": [
+                "un peu en dessous de 0 °C, vers −2 °C",
+                "à 0 °C exactement",
+                "à 100 °C",
+                "jamais"
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « Les états de l'eau ».",
+            "Le sel abaisse la température à laquelle l'eau gèle."
+          ]
+        },
+        "lieutenant": {
+          "type": "code",
+          "dialogue": "L'eau autour de la coque refroidit. Combien de temps avant qu'elle gèle ? Et l'eau bouillante, ça suffit ? Calculez, vite.",
+          "consigne": "<div class='doc-carnet'><b>Relevés du capitaine</b> — L'eau de mer gèle à −2 °C. Autour de la coque, elle est à −1 °C et perd 1 °C toutes les 2 heures. Les jets d'eau bouillante la réchauffent de 3 °C.</div>Calcule.",
+          "champs": [
+            {
+              "libelle": "Dans combien d'heures gèlera-t-elle, sans rien faire ?",
+              "valeur": "2",
+              "longueur": 2
+            },
+            {
+              "libelle": "Sa température après les jets d'eau bouillante (en °C) ?",
+              "valeur": "2",
+              "longueur": 3
+            }
+          ],
+          "justification": {
+            "question": "Pourquoi les jets d'eau bouillante empêchent-ils la prison de se refermer ?",
+            "options": [
+              "Tant que l'eau reste au-dessus de sa température de solidification, elle reste liquide : en la réchauffant, on l'empêche de geler.",
+              "L'eau bouillante est plus lourde que la glace.",
+              "La vapeur pousse le Nautilus vers le haut.",
+              "L'eau de mer ne gèle jamais."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "De −1 à −2 : 1 °C de moins, soit 2 heures.",
+            "−1 + 3."
+          ]
+        },
+        "second": {
+          "type": "ordre",
+          "dialogue": "Le capitaine a un plan, mais il le garde pour lui. Remettez ses ordres dans l'ordre, et que je comprenne enfin pourquoi l'eau chaude.",
+          "consigne": "Remets dans l'ordre les actions qui ont sauvé le Nautilus, puis justifie.",
+          "items": [
+            {
+              "txt": "Sonder la glace pour trouver la paroi la plus mince, sous la coque."
+            },
+            {
+              "txt": "Creuser la glace à la pioche, par équipes, en scaphandre."
+            },
+            {
+              "txt": "Injecter de l'eau bouillante pour empêcher l'eau de geler autour du navire."
+            },
+            {
+              "txt": "Remplir les réservoirs pour alourdir le Nautilus."
+            },
+            {
+              "txt": "Le Nautilus brise la glace amincie de tout son poids et retrouve l'eau libre."
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique pourquoi l'eau chaude est utile ?",
+            "options": [
+              "Tant que l'eau reste au-dessus de sa température de solidification, elle reste liquide : en la réchauffant, on l'empêche de geler.",
+              "La glace flotte sur l'eau.",
+              "La vapeur d'eau est invisible.",
+              "L'eau douce bout à 100 °C."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Les états de l'eau » et le récit du roman.",
+            "On amincit d'abord la glace, on alourdit ensuite."
+          ]
+        }
+      }
+    ]
+  },
+  "rayons": [
+    {
+      "id": "emc",
+      "titre": "Rayon Vivre ensemble",
+      "icone": "⚖️"
+    }
+  ],
+  "lecons": [
+    {
+      "id": "meteo",
+      "rayon": "terre",
+      "fiche": 4,
+      "icone": "🌦️",
+      "titre": "Le temps qu'il fait",
+      "escale": 9,
+      "competence": "Mesurer le temps qu'il fait ; lire des relevés ; prévoir.",
+      "essentiel": "<p>Pour connaître le temps qu'il fait, on utilise des <b>instruments</b> : le <b>thermomètre</b> mesure la température de l'air ; la <b>girouette</b> indique la direction du vent ; le <b>pluviomètre</b> mesure la quantité de pluie ou de neige.</p>",
+      "approfondi": "<table class='tab-lecon'><tr><th>Instrument</th><th>Mesure</th><th>Unité</th></tr><tr><td>thermomètre</td><td>température</td><td>degré Celsius (°C)</td></tr><tr><td>baromètre</td><td>pression de l'air</td><td>millimètre de mercure (mm), aujourd'hui hectopascal (hPa)</td></tr><tr><td>anémomètre</td><td>vitesse du vent</td><td>km/h</td></tr><tr><td>girouette</td><td>direction d'où vient le vent</td><td>—</td></tr><tr><td>pluviomètre</td><td>hauteur de pluie</td><td>mm</td></tr></table>",
+      "expert": "<div class='encadre'>Quand le baromètre baisse vite et que le vent forcit, le mauvais temps approche ; quand il monte, le temps s'améliore. Une prévision s'appuie sur des mesures et sur l'expérience ; elle dit ce qui est probable, pas ce qui est sûr.</div>",
+      "dans_le_roman": "Au bord de la banquise, Aronnax note les températures, le vent et l'état des glaces (Partie II, ch. XIII)."
+    },
+    {
+      "id": "symboles",
+      "rayon": "emc",
+      "fiche": 1,
+      "icone": "🇫🇷",
+      "titre": "Les symboles de la République",
+      "escale": 9,
+      "competence": "Connaître les symboles de la République française et leur sens.",
+      "essentiel": "<p>Les symboles officiels de la République française : le <b>drapeau</b> bleu, blanc, rouge ; l'hymne national, <b>La Marseillaise</b> ; la devise <b>« Liberté, Égalité, Fraternité »</b> ; <b>Marianne</b> ; la fête nationale du <b>14 Juillet</b>. Le coq est souvent utilisé, mais il n'est pas un symbole officiel.</p>",
+      "approfondi": "<p>Le drapeau tricolore est né pendant la Révolution. La Marseillaise est un chant composé en 1792. Marianne porte un bonnet phrygien, le bonnet de la liberté. La devise est inscrite sur les mairies et les écoles. Le 14 Juillet rappelle la prise de la Bastille (1789) et la fête de la Fédération (1790). Égalité : la loi est la même pour tous : les citoyens ont les mêmes droits et les mêmes devoirs, quelles que soient leur origine ou leur religion. Fraternité : être solidaires.</p>",
+      "expert": "<div class='encadre'>Un symbole de la République représente la nation tout entière, c'est-à-dire tous les citoyens et les valeurs qu'ils partagent. Ces symboles sont inscrits dans la Constitution. La devise est écrite sur les écoles pour rappeler les valeurs que l'école transmet à tous les élèves.</div>",
+      "dans_le_roman": "Au pôle Sud, Nemo déploie un pavillon noir au N d'or, qui ne représente que lui (Partie II, ch. XIV)."
+    },
+    {
+      "id": "etats-eau",
+      "rayon": "matiere",
+      "fiche": 4,
+      "icone": "🧊",
+      "titre": "Les états de l'eau",
+      "escale": 9,
+      "competence": "Les trois états de l'eau et les changements d'état.",
+      "essentiel": "<p>L'eau existe sous trois <b>états</b> : <b>solide</b> (glace, neige, banquise), <b>liquide</b> (eau de mer, eau du robinet), <b>gaz</b> (la vapeur d'eau, invisible).</p>",
+      "approfondi": "<p>Les changements d'état : glace → eau liquide : <b>fusion</b> ; eau liquide → glace : <b>solidification</b> ; eau liquide → vapeur : <b>vaporisation</b> ; vapeur → eau liquide : <b>condensation</b>. L'eau douce gèle à <b>0 °C</b> et bout à <b>100 °C</b> (au niveau de la mer). Le sel abaisse la température à laquelle l'eau gèle : l'eau de mer gèle vers <b>−2 °C</b>.</p>",
+      "expert": "<div class='encadre'>Tant que l'eau reste au-dessus de sa température de solidification, elle reste liquide : en la réchauffant, on l'empêche de geler. C'est ce que fait le capitaine Nemo avec ses jets d'eau bouillante.</div>",
+      "dans_le_roman": "Emprisonné sous la glace, le Nautilus injecte de l'eau bouillante autour de sa coque (Partie II, ch. XVI)."
+    }
+  ],
+  "decors": {
+    "banquise": {
+      "titre": "La banquise",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "glace"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 50,
+          "y": 10,
+          "r": 25,
+          "couleur": "#7dffb0",
+          "pulse": 0.4
+        },
+        {
+          "type": "lueur",
+          "x": 64,
+          "y": 66,
+          "r": 4,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 70,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "aurore",
+          "libelle": "L'aurore australe",
+          "x": 30,
+          "y": 0,
+          "w": 60,
+          "h": 20,
+          "description": "De grands voiles verts ondulent dans le ciel du sud."
+        },
+        {
+          "id": "icebergs",
+          "libelle": "Les icebergs",
+          "x": 8,
+          "y": 14,
+          "w": 28,
+          "h": 24,
+          "description": "Des montagnes de glace, dont la plus grande partie est cachée sous l'eau."
+        },
+        {
+          "id": "glaces",
+          "libelle": "Les glaces flottantes",
+          "x": 0,
+          "y": 42,
+          "w": 12,
+          "h": 30,
+          "description": "Des plaques de banquise qui se resserrent autour de la coque."
+        },
+        {
+          "id": "instruments-meteo",
+          "libelle": "La station météorologique",
+          "x": 82,
+          "y": 70,
+          "w": 10,
+          "h": 26,
+          "description": "Un baromètre, un thermomètre et un anémomètre, sur le pont."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pole": {
+      "titre": "Le pôle Sud",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "glace"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 10,
+          "r": 14,
+          "couleur": "#fff1c4",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 20,
+          "y": 7,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 70,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.45
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "pavillon",
+          "libelle": "Le pavillon de Nemo",
+          "x": 59,
+          "y": 11,
+          "w": 19,
+          "h": 35,
+          "description": "Un pavillon noir, marqué d'un N d'or."
+        },
+        {
+          "id": "sextant",
+          "libelle": "Le sextant et le chronomètre",
+          "x": 52,
+          "y": 45,
+          "w": 17,
+          "h": 27,
+          "description": "Le sextant et le chronomètre qui ont permis de faire le point, à midi, le 21 mars."
+        },
+        {
+          "id": "manchots",
+          "libelle": "Les manchots",
+          "x": 20,
+          "y": 50,
+          "w": 10,
+          "h": 22,
+          "description": "Des manchots, curieux, qui ne craignent pas les visiteurs."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  },
+  "dialogues": {
+    "cinematiques": {
+      "transition-e9": {
+        "titre": "Escale 9 — Le pôle Sud",
+        "plans": [
+          {
+            "decor": "banquise",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "Plein sud, toujours plus au sud. Devant nous, la banquise. Le capitaine veut passer dessous, jusqu'au pôle.",
+            "mouvement": "zoom",
+            "video": "transition-e9"
+          },
+          {
+            "decor": "banquise",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "nemo",
+            "texte": "Sous la glace, l'air ne se renouvelle pas. Surveillez la jauge, messieurs.",
+            "mouvement": "glisse"
+          }
+        ]
+      },
+      "fin-e9": {
+        "titre": "L'air libre",
+        "plans": [
+          {
+            "decor": "banquise",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "La glace a cédé. Le panneau s'ouvre, l'air pur entre à flots. Je respire. Nous vivons.",
+            "mouvement": "zoom"
+          }
+        ]
+      }
+    },
+    "fin_escale": {
+      "9": {
+        "personnage": "ned",
+        "texte": "Notez le mot de cette escale : la mer gelée qui a failli nous garder pour toujours."
+      }
+    }
+  }
+}

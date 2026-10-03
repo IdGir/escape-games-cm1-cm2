@@ -1,0 +1,496 @@
+{
+  "_commentaire": "Textes parlés (voix du navigateur + sous-titres) : cinématiques et accueil. Les textes restent ici, jamais incrustés dans les images ni les vidéos : une vidéo déposée (assets/videos/<id>.mp4) est sous-titrée avec ces lignes. Citations du roman : à vérifier sur le texte (voir A-VERIFIER.md).",
+  "accueil": {
+    "personnage": "aronnax",
+    "texte": "Novembre 1867. Le monstre que poursuivait la frégate Abraham Lincoln n'était pas un narval géant : c'est un navire sous-marin, le Nautilus, commandé par le mystérieux capitaine Nemo. Vous, les jeunes mousses de la frégate, avez été recueillis à son bord avec Conseil, Ned Land et moi-même. Nemo nous laisse libres d'aller dans son navire… à condition de ne jamais le quitter. Aidez l'équipage, et reconstituez le journal de bord du Nautilus."
+  },
+  "cinematiques": {
+    "transition-e2": {
+      "titre": "Escale 2 — Dans le ventre du Nautilus",
+      "video": "transition-e2",
+      "plans": [
+        {
+          "decor": "salon",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "nemo",
+          "texte": "Voici le salon du Nautilus, professeur. Ici, tout se fait par l'électricité : elle m'éclaire, elle me chauffe, elle fait tourner mes machines.",
+          "mouvement": "zoom"
+        },
+        {
+          "decor": "salon",
+          "etat": "normal",
+          "duree": 5,
+          "personnage": "aronnax",
+          "texte": "Mais d'où tirez-vous tant d'énergie, capitaine, au fond de la mer ?",
+          "mouvement": "glisse"
+        },
+        {
+          "decor": "salon",
+          "etat": "panne",
+          "duree": 5,
+          "personnage": null,
+          "texte": "Un claquement sec. Une odeur de brûlé monte du carré des officiers. Les lampes s'éteignent.",
+          "effet": "coupure",
+          "mouvement": "secousse"
+        },
+        {
+          "decor": "carre",
+          "etat": "panne",
+          "duree": 6,
+          "personnage": "nemo",
+          "texte": "Un court-circuit. Le feu a dévoré mes cartes et le journal de bord… et une part de notre air. Vous êtes à bord : aidez mon équipage.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e2": {
+      "titre": "Le Nautilus fait surface",
+      "plans": [
+        {
+          "decor": "salon",
+          "etat": "victoire",
+          "duree": 6,
+          "personnage": "aronnax",
+          "texte": "Les panneaux s'ouvrent… l'océan ! Le Nautilus remonte, l'air frais entre par les écoutilles.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin": {
+      "titre": "Le Nautilus regagne la surface",
+      "plans": [
+        {
+          "decor": "salon",
+          "etat": "victoire",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Le journal est reconstitué. Le capitaine Nemo nous rend la liberté : nous allons revoir la terre ferme, et raconter ce voyage de vingt mille lieues sous les mers.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e1": {
+      "titre": "Escale 1 — La chasse au « monstre »",
+      "plans": [
+        {
+          "decor": "pont-lincoln",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "aronnax",
+          "texte": "1867. Sur toutes les mers, des navires ont aperçu une chose énorme, lumineuse, plus rapide qu'aucune baleine. Le gouvernement des États-Unis envoie la frégate Abraham Lincoln la chasser, et m'invite à bord.",
+          "mouvement": "zoom"
+        },
+        {
+          "decor": "machines-vapeur",
+          "etat": "normal",
+          "duree": 9,
+          "video": "travelling-machines-vapeur",
+          "personnage": "conseil",
+          "texte": "Monsieur, la frégate file à toute vapeur. Dans la chaufferie, on ne compte plus les pelletées de charbon.",
+          "mouvement": "zoom"
+        },
+        {
+          "decor": "pont-lincoln",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "ned",
+          "texte": "Moi, Ned Land, je l'aurai, votre monstre. Mais pour lancer un harpon, il faut d'abord le rattraper !",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e1": {
+      "titre": "Par-dessus bord",
+      "plans": [
+        {
+          "decor": "pont-lincoln",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Un choc terrible. Je suis projeté à la mer… Quand je reprends mes esprits, je suis allongé sur le dos du « monstre » : sous mes mains, des plaques de tôle boulonnées !",
+          "mouvement": "secousse",
+          "effet": "alarme"
+        }
+      ]
+    },
+    "transition-e3": {
+      "titre": "Escale 3 — La forêt de l'île Crespo",
+      "plans": [
+        {
+          "decor": "sas",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "nemo",
+          "texte": "Professeur, voulez-vous chasser avec moi dans mes forêts de l'île Crespo ? Ce sont des forêts sous-marines. Nous irons à pied, au fond de la mer.",
+          "mouvement": "zoom",
+          "video": "transition-e3"
+        },
+        {
+          "decor": "sas",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "aronnax",
+          "texte": "À pied, au fond de l'eau ! Il faut d'abord apprendre à se fier à ces scaphandres.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e3": {
+      "titre": "Retour à bord",
+      "plans": [
+        {
+          "decor": "foret-crespo",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "aronnax",
+          "texte": "Nous revenons fourbus, éblouis. Le capitaine a gardé ses trophées ; moi, des images pour toute une vie.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e4": {
+      "titre": "Escale 4 — Vanikoro et Lapérouse",
+      "plans": [
+        {
+          "decor": "epave-vanikoro",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "nemo",
+          "texte": "Nous voici à Vanikoro, professeur. Ici dorment deux navires de votre pays, perdus depuis quatre-vingts ans.",
+          "mouvement": "zoom",
+          "video": "transition-e4"
+        },
+        {
+          "decor": "epave-vanikoro",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "aronnax",
+          "texte": "Des épaves… Celles que toute la France a cherchées ?",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e4": {
+      "titre": "Un tombeau sous la mer",
+      "plans": [
+        {
+          "decor": "epave-vanikoro",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "nemo",
+          "texte": "Un capitaine ne pouvait rêver plus beau tombeau, ni plus tranquille.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e5": {
+      "titre": "Escale 5 — Les perles de Ceylan",
+      "plans": [
+        {
+          "decor": "banc-perles",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "nemo",
+          "texte": "L'île de Ceylan, professeur. Demain, je vous emmène sur le banc de Manaar, là où l'on pêche les perles.",
+          "mouvement": "zoom",
+          "video": "transition-e5"
+        },
+        {
+          "decor": "banc-perles",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "ned",
+          "texte": "Des perles ? Pourvu qu'il n'y ait pas de requins, au moins.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e5": {
+      "titre": "Du pays des opprimés",
+      "plans": [
+        {
+          "decor": "banc-perles",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "nemo",
+          "texte": "Cet homme est du pays des opprimés. J'en suis encore, et j'en serai jusqu'à mon dernier souffle.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e6": {
+      "titre": "Escale 6 — Le tunnel arabique et Suez",
+      "plans": [
+        {
+          "decor": "tunnel-arabique",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "La mer Rouge est un cul-de-sac, capitaine. Pour gagner la Méditerranée, il faudra faire le tour de l'Afrique.",
+          "mouvement": "zoom",
+          "video": "transition-e6"
+        },
+        {
+          "decor": "tunnel-arabique",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "nemo",
+          "texte": "Après-demain, professeur, nous serons en Méditerranée. Par-dessous l'isthme.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e6": {
+      "titre": "La Méditerranée",
+      "plans": [
+        {
+          "decor": "pont-port-said",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "ned",
+          "texte": "La terre, si près ! Mais le capitaine replonge déjà. Ce n'est que partie remise.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e7": {
+      "titre": "Escale 7 — L'archipel en feu",
+      "plans": [
+        {
+          "decor": "volcan-santorin",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "La Méditerranée, enfin. Mais près des îles grecques, la mer change de couleur, et le thermomètre s'affole.",
+          "mouvement": "zoom",
+          "video": "transition-e7"
+        },
+        {
+          "decor": "volcan-santorin",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "nemo",
+          "texte": "Santorin est en éruption, professeur. Le spectacle est rare. Ne restons pas trop longtemps.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e7": {
+      "titre": "Un continent disparu",
+      "plans": [
+        {
+          "decor": "atlantide",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Le capitaine a ramassé un morceau de craie et, sur un rocher, il a écrit un seul mot. Puis il m'a fait signe de remonter.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e8": {
+      "titre": "Escale 8 — La mer des Sargasses",
+      "plans": [
+        {
+          "decor": "sargasses",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Une mer sans rivages, couverte d'algues dorées, immobile au milieu des courants. Le Nautilus a fait surface au milieu des sargasses.",
+          "mouvement": "zoom",
+          "video": "transition-e8"
+        },
+        {
+          "decor": "sargasses",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "ned",
+          "texte": "Des algues dans l'hélice, à présent ! Ce bateau ne me mènera jamais nulle part.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e8": {
+      "titre": "Le fil sous la mer",
+      "plans": [
+        {
+          "decor": "cable",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "ned",
+          "texte": "Un fil, rien qu'un fil, et l'Europe parle à l'Amérique. Un jour, je vous le dis, je passerai par là, moi aussi.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e9": {
+      "titre": "Escale 9 — Le pôle Sud",
+      "plans": [
+        {
+          "decor": "banquise",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Plein sud, toujours plus au sud. Devant nous, la banquise. Le capitaine veut passer dessous, jusqu'au pôle.",
+          "mouvement": "zoom",
+          "video": "transition-e9"
+        },
+        {
+          "decor": "banquise",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "nemo",
+          "texte": "Sous la glace, l'air ne se renouvelle pas. Surveillez la jauge, messieurs.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e9": {
+      "titre": "L'air libre",
+      "plans": [
+        {
+          "decor": "banquise",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "La glace a cédé. Le panneau s'ouvre, l'air pur entre à flots. Je respire. Nous vivons.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e10": {
+      "titre": "Escale 10 — Les poulpes",
+      "plans": [
+        {
+          "decor": "salon",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "conseil",
+          "texte": "Monsieur, regardez la vitre ! Un œil, grand comme une assiette. Et des bras… je n'ose pas les compter.",
+          "mouvement": "zoom",
+          "video": "transition-e10"
+        },
+        {
+          "decor": "salon",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "aronnax",
+          "texte": "Un calmar géant, Conseil. Les marins en parlaient ; je n'y croyais pas.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e10": {
+      "titre": "Le compagnon perdu",
+      "plans": [
+        {
+          "decor": "plateforme-poulpe",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Les monstres ont fui. Mais l'un des nôtres a été emporté. Le capitaine, debout près du fanal, pleurait.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "transition-e11": {
+      "titre": "Escale 11 — Le trésor de Vigo et le Maelström",
+      "plans": [
+        {
+          "decor": "baie-vigo",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "nemo",
+          "texte": "Vous vous demandiez d'où vient ma fortune, professeur ? Regardez : la baie de Vigo. Je ne fais que ramasser ce que les hommes ont perdu.",
+          "mouvement": "zoom",
+          "video": "transition-e11"
+        },
+        {
+          "decor": "maelstrom",
+          "etat": "normal",
+          "duree": 6,
+          "personnage": "ned",
+          "texte": "Des mois plus tard, au large de la Norvège. C'est ce soir ou jamais, monsieur. Ce soir, nous partons.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin-e11": {
+      "titre": "Conclusion",
+      "plans": [
+        {
+          "decor": "maelstrom",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Le canot a tournoyé, puis tout est devenu noir. Je me suis réveillé dans une cabane de pêcheurs des îles Lofoten. Du Nautilus, je ne sais plus rien.",
+          "mouvement": "zoom"
+        },
+        {
+          "decor": "salle-orgue",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "aronnax",
+          "texte": "Ai-je rêvé ? Non : il me reste ce journal. Et le coffre du capitaine, qui ne s'ouvre qu'avec les mots de nos escales.",
+          "mouvement": "glisse"
+        }
+      ]
+    }
+  },
+  "fin_escale": {
+    "2": {
+      "personnage": "nemo",
+      "texte": "Mon navire vous doit une fière chandelle. Sous le divan, ma boîte de bord a échappé au feu ; sur son couvercle est gravée la devise du Nautilus. Notez-la bien : c'est la première page de notre nouveau journal."
+    },
+    "1": {
+      "personnage": "aronnax",
+      "texte": "Ce n'était pas un narval, mais un navire sous-marin. Conseil, Ned Land et moi sommes maintenant prisonniers de son équipage. Notez bien ce premier mot du journal : c'est celui de notre erreur."
+    },
+    "3": {
+      "personnage": "conseil",
+      "texte": "La collection est classée, Monsieur, et le capitaine l'a acceptée. Il a même inscrit un mot dans le nouveau journal : le nom de son île."
+    },
+    "4": {
+      "personnage": "nemo",
+      "texte": "Les archives sont rangées. Notez dans le journal le nom de l'un des deux navires : il porte celui d'un instrument qui guidait les explorateurs."
+    },
+    "5": {
+      "personnage": "conseil",
+      "texte": "Le pêcheur est sauf, Monsieur, et notre carnet bien tenu. Le capitaine nous laisse inscrire un mot : celui de ce qu'il cache au fond de sa grotte."
+    },
+    "6": {
+      "personnage": "aronnax",
+      "texte": "Nous avons franchi l'Afrique par-dessous. Notez le mot de cette escale : le nom de la bande de terre que le Nautilus a traversée sans la voir."
+    },
+    "7": {
+      "personnage": "aronnax",
+      "texte": "Notez le mot de cette escale : celui que le capitaine a écrit sur la roche, au milieu des ruines."
+    },
+    "8": {
+      "personnage": "conseil",
+      "texte": "Notez le mot de cette escale : le nom de la mer d'algues où le Nautilus a fait surface."
+    },
+    "9": {
+      "personnage": "ned",
+      "texte": "Notez le mot de cette escale : la mer gelée qui a failli nous garder pour toujours."
+    },
+    "10": {
+      "personnage": "conseil",
+      "texte": "Notez le mot de cette escale : le nom que Jules Verne donne aux monstres qui nous ont attaqués."
+    },
+    "11": {
+      "personnage": "aronnax",
+      "texte": "Notez le mot de cette dernière escale : le nom du tourbillon où le Nautilus a disparu. Puis rassemblez tous vos mots : le coffre du capitaine vous attend."
+    }
+  },
+  "sas": [
+    "La pression monte dans le sas : il se verrouille. Profitez-en pour relire la fiche.",
+    "Sas verrouillé. Un bon marin vérifie ses instruments avant d'agir : la Bibliothèque est ouverte.",
+    "Le sas se purge… Relisez la fiche de la Bibliothèque avant de réessayer."
+  ],
+  "coffre": {
+    "personnage": "nemo",
+    "texte": "Mon coffre ne s'ouvre qu'avec les mots du journal de bord, dans l'ordre des escales. Vous les avez notés, j'espère : il n'y a pas d'autre copie."
+  }
+}

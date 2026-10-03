@@ -1,0 +1,2694 @@
+{
+  "_commentaire": "Décors : une image de fond + des effets animés + des zones cliquables, en % de l'image (x, y = coin haut-gauche ; w, h = largeur, hauteur). Cascade d'image : fichier déposé assets/images/decors/<id>.webp|.jpg|.png → image de référence de l'enseignant (champ « reference ») → décor dessiné (js/decors-secours.js, aligné sur la référence). Après dépôt d'une nouvelle image, recaler zones et effets avec outils/caler-effets.html (export JSON) ; un bloc « calages » propre à chaque source est possible : calages.depose / calages.reference / calages.secours remplacent alors zones et effets pour cette source.",
+  "version": 1,
+  "decors": {
+    "salon": {
+      "titre": "Le grand salon",
+      "reference": "references/style-salon-nautilus.png",
+      "ambiance": [
+        "sousMarin",
+        "salon"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 38
+      },
+      "effets": [
+        {
+          "type": "caustiques",
+          "x": 30,
+          "y": 50,
+          "w": 40,
+          "h": 28,
+          "intensite": 0.55
+        },
+        {
+          "type": "lueur",
+          "x": 22.5,
+          "y": 15,
+          "r": 7,
+          "couleur": "#ffcf7a",
+          "pulse": 0.25
+        },
+        {
+          "type": "lueur",
+          "x": 73,
+          "y": 15,
+          "r": 7,
+          "couleur": "#ffcf7a",
+          "pulse": 0.25
+        },
+        {
+          "type": "lueur",
+          "x": 47.5,
+          "y": 6,
+          "r": 9,
+          "couleur": "#fff1c4",
+          "pulse": 0.35,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 42,
+          "y": 35,
+          "r": 5,
+          "couleur": "#3fd2ff",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 54,
+          "y": 35,
+          "r": 5,
+          "couleur": "#3fd2ff",
+          "pulse": 0.2
+        },
+        {
+          "type": "poissons",
+          "x": 39,
+          "y": 29,
+          "w": 6,
+          "h": 12,
+          "nombre": 3
+        },
+        {
+          "type": "poissons",
+          "x": 51.5,
+          "y": 29,
+          "w": 6,
+          "h": 12,
+          "nombre": 3
+        },
+        {
+          "type": "poussiere",
+          "x": 25,
+          "y": 10,
+          "w": 50,
+          "h": 60,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "epure",
+          "libelle": "L'épure du Nautilus, sur le divan",
+          "x": 40,
+          "y": 41,
+          "w": 18,
+          "h": 12,
+          "description": "Le plan, la coupe et l'élévation du Nautilus, à l'encre bleue. Le capitaine l'a laissée là."
+        },
+        {
+          "id": "hublots",
+          "libelle": "Les hublots du salon",
+          "x": 37.5,
+          "y": 27,
+          "w": 7,
+          "h": 16,
+          "description": "Derrière la vitre épaisse, l'eau sombre. Des poissons passent dans la lumière du salon."
+        },
+        {
+          "id": "orgue",
+          "libelle": "Le grand orgue",
+          "x": 45,
+          "y": 17,
+          "w": 6.5,
+          "h": 22,
+          "description": "L'orgue du capitaine. Ses tuyaux montent jusqu'au plafond ; le clavier est fermé à clé."
+        },
+        {
+          "id": "vitrines",
+          "libelle": "Les vitrines du musée",
+          "x": 2,
+          "y": 42,
+          "w": 18,
+          "h": 28,
+          "description": "Coraux, coquillages, étoiles de mer : Conseil les a déjà tous classés deux fois."
+        }
+      ],
+      "etats": {
+        "panne": {
+          "filtre": "brightness(.42) saturate(.6) hue-rotate(-12deg)",
+          "alarme": true
+        },
+        "normal": {
+          "filtre": "none"
+        },
+        "victoire": {
+          "filtre": "brightness(1.08) saturate(1.1)",
+          "ocean": true
+        }
+      },
+      "calages": {
+        "depose": {
+          "zones": [
+            {
+              "id": "epure",
+              "libelle": "L'épure du Nautilus, sur le divan",
+              "x": 41,
+              "y": 64,
+              "w": 17,
+              "h": 14,
+              "description": "Le plan, la coupe et l'élévation du Nautilus, à l'encre bleue. Le capitaine l'a laissée là."
+            },
+            {
+              "id": "hublots",
+              "libelle": "Les hublots du salon",
+              "x": 36,
+              "y": 45,
+              "w": 8,
+              "h": 15,
+              "description": "Derrière la vitre épaisse, l'eau sombre. Des poissons passent dans la lumière du salon."
+            },
+            {
+              "id": "orgue",
+              "libelle": "Le grand orgue",
+              "x": 44,
+              "y": 34,
+              "w": 10,
+              "h": 26,
+              "description": "L'orgue du capitaine. Ses tuyaux montent jusqu'au plafond ; le clavier est fermé à clé."
+            },
+            {
+              "id": "vitrines",
+              "libelle": "Les vitrines du musée",
+              "x": 0,
+              "y": 58,
+              "w": 18,
+              "h": 28,
+              "description": "Coraux, coquillages, étoiles de mer : Conseil les a déjà tous classés deux fois."
+            }
+          ],
+          "effets": [
+            {
+              "type": "caustiques",
+              "x": 28,
+              "y": 72,
+              "w": 44,
+              "h": 24,
+              "intensite": 0.55
+            },
+            {
+              "type": "lueur",
+              "x": 14,
+              "y": 39,
+              "r": 6,
+              "couleur": "#ffcf7a",
+              "pulse": 0.25
+            },
+            {
+              "type": "lueur",
+              "x": 83,
+              "y": 39,
+              "r": 6,
+              "couleur": "#ffcf7a",
+              "pulse": 0.25
+            },
+            {
+              "type": "lueur",
+              "x": 48,
+              "y": 10,
+              "r": 10,
+              "couleur": "#fff1c4",
+              "pulse": 0.35,
+              "scintille": true
+            },
+            {
+              "type": "lueur",
+              "x": 40,
+              "y": 52,
+              "r": 5,
+              "couleur": "#3fd2ff",
+              "pulse": 0.2
+            },
+            {
+              "type": "lueur",
+              "x": 57,
+              "y": 52,
+              "r": 5,
+              "couleur": "#3fd2ff",
+              "pulse": 0.2
+            },
+            {
+              "type": "poissons",
+              "x": 37,
+              "y": 46,
+              "w": 6,
+              "h": 13,
+              "nombre": 3
+            },
+            {
+              "type": "poissons",
+              "x": 54,
+              "y": 46,
+              "w": 6,
+              "h": 13,
+              "nombre": 3
+            },
+            {
+              "type": "poissons",
+              "x": 14,
+              "y": 34,
+              "w": 8,
+              "h": 28,
+              "nombre": 3
+            },
+            {
+              "type": "poussiere",
+              "x": 20,
+              "y": 10,
+              "w": 60,
+              "h": 60,
+              "nombre": 40
+            },
+            {
+              "type": "vignette",
+              "force": 0.5
+            },
+            {
+              "type": "grain",
+              "force": 0.04
+            }
+          ]
+        }
+      }
+    },
+    "carre": {
+      "titre": "Le carré des officiers",
+      "reference": "references/style-salle-officiers-3.png",
+      "ambiance": [
+        "sousMarin",
+        "carre"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 37,
+          "y": 43,
+          "r": 11,
+          "couleur": "#b8ffb0",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 66.5,
+          "y": 28,
+          "r": 8,
+          "couleur": "#38c8ff",
+          "pulse": 0.15
+        },
+        {
+          "type": "bulles",
+          "x": 62,
+          "y": 18,
+          "w": 9,
+          "h": 22,
+          "nombre": 10
+        },
+        {
+          "type": "fumee",
+          "x": 30,
+          "y": 70,
+          "w": 30,
+          "h": 40,
+          "nombre": 24,
+          "etat": "panne"
+        },
+        {
+          "type": "etincelles",
+          "x": 13,
+          "y": 28,
+          "etat": "panne"
+        },
+        {
+          "type": "poussiere",
+          "x": 15,
+          "y": 20,
+          "w": 60,
+          "h": 60,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "table",
+          "libelle": "Les objets de la grande table",
+          "x": 18,
+          "y": 60,
+          "w": 34,
+          "h": 34,
+          "description": "Cartes roussies, compas, règles, un verre, des bouchons… Conseil a tout aligné."
+        },
+        {
+          "id": "journal",
+          "libelle": "Le journal de bord",
+          "x": 56,
+          "y": 78,
+          "w": 24,
+          "h": 18,
+          "description": "Il ne reste du journal de bord que la reliure et des pages noircies. Tout sera à reconstituer."
+        },
+        {
+          "id": "tableau-cadrans",
+          "libelle": "Le tableau des cadrans",
+          "x": 6.5,
+          "y": 14,
+          "w": 13,
+          "h": 21,
+          "description": "Les aiguilles des cadrans électriques sont tombées à zéro."
+        }
+      ],
+      "etats": {
+        "panne": {
+          "filtre": "brightness(.55) saturate(.75)",
+          "alarme": true
+        },
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "calages": {
+        "depose": {
+          "zones": [
+            {
+              "id": "table",
+              "libelle": "Les objets de la grande table",
+              "x": 18,
+              "y": 60,
+              "w": 34,
+              "h": 34,
+              "description": "Cartes roussies, compas, règles, un verre, des bouchons… Conseil a tout aligné."
+            },
+            {
+              "id": "journal",
+              "libelle": "Le journal de bord",
+              "x": 56,
+              "y": 78,
+              "w": 24,
+              "h": 18,
+              "description": "Il ne reste du journal de bord que la reliure et des pages noircies. Tout sera à reconstituer."
+            },
+            {
+              "id": "tableau-cadrans",
+              "libelle": "Le tableau des cadrans",
+              "x": 6.5,
+              "y": 14,
+              "w": 13,
+              "h": 21,
+              "description": "Les aiguilles des cadrans électriques sont tombées à zéro."
+            }
+          ],
+          "effets": [
+            {
+              "type": "lueur",
+              "x": 37,
+              "y": 36,
+              "r": 11,
+              "couleur": "#b8ffb0",
+              "pulse": 0.2
+            },
+            {
+              "type": "lueur",
+              "x": 66.5,
+              "y": 28,
+              "r": 8,
+              "couleur": "#38c8ff",
+              "pulse": 0.15
+            },
+            {
+              "type": "bulles",
+              "x": 62,
+              "y": 18,
+              "w": 9,
+              "h": 22,
+              "nombre": 10
+            },
+            {
+              "type": "fumee",
+              "x": 30,
+              "y": 70,
+              "w": 30,
+              "h": 40,
+              "nombre": 24,
+              "etat": "panne"
+            },
+            {
+              "type": "etincelles",
+              "x": 13,
+              "y": 28,
+              "etat": "panne"
+            },
+            {
+              "type": "poussiere",
+              "x": 15,
+              "y": 20,
+              "w": 60,
+              "h": 60,
+              "nombre": 30
+            },
+            {
+              "type": "vignette",
+              "force": 0.6
+            },
+            {
+              "type": "grain",
+              "force": 0.05
+            }
+          ]
+        }
+      }
+    },
+    "machines": {
+      "titre": "La salle des machines électriques",
+      "reference": null,
+      "ambiance": [
+        "sousMarin",
+        "machines"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 50,
+          "y": 18,
+          "r": 14,
+          "couleur": "#7fd8ff",
+          "pulse": 0.35
+        },
+        {
+          "type": "lueur",
+          "x": 17,
+          "y": 62,
+          "r": 10,
+          "couleur": "#8cf0c8",
+          "pulse": 0.3
+        },
+        {
+          "type": "etincelles",
+          "x": 50,
+          "y": 47,
+          "etat": "panne"
+        },
+        {
+          "type": "rayons",
+          "x": 50,
+          "y": 0,
+          "w": 30,
+          "h": 70
+        },
+        {
+          "type": "poussiere",
+          "x": 5,
+          "y": 10,
+          "w": 90,
+          "h": 70,
+          "nombre": 45
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.06
+        }
+      ],
+      "zones": [
+        {
+          "id": "tableau-bornes",
+          "libelle": "Le grand tableau de laiton",
+          "x": 34,
+          "y": 22,
+          "w": 32,
+          "h": 50,
+          "description": "Des bornes de laiton, des fils débranchés, des ampoules éteintes."
+        },
+        {
+          "id": "accumulateurs",
+          "libelle": "Les piles du Nautilus",
+          "x": 3,
+          "y": 46,
+          "w": 27,
+          "h": 44,
+          "description": "Les grandes piles au sodium du Nautilus. Elles bourdonnent doucement : elles sont chargées."
+        },
+        {
+          "id": "cadrans",
+          "libelle": "Les cadrans de contrôle",
+          "x": 70,
+          "y": 13,
+          "w": 23,
+          "h": 28,
+          "description": "Les cadrans des circuits : salon, coursive, pompe à air. Tous à zéro."
+        }
+      ],
+      "etats": {
+        "panne": {
+          "filtre": "brightness(.5) saturate(.7)",
+          "alarme": true
+        },
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "calages": {
+        "depose": {
+          "zones": [
+            {
+              "id": "tableau-bornes",
+              "libelle": "Le grand tableau de laiton",
+              "x": 33,
+              "y": 14,
+              "w": 34,
+              "h": 58,
+              "description": "Des bornes de laiton, des fils débranchés, des ampoules éteintes."
+            },
+            {
+              "id": "accumulateurs",
+              "libelle": "Les piles du Nautilus",
+              "x": 0,
+              "y": 8,
+              "w": 28,
+              "h": 82,
+              "description": "Les grandes piles au sodium du Nautilus. Elles bourdonnent doucement : elles sont chargées."
+            },
+            {
+              "id": "cadrans",
+              "libelle": "Les cadrans de contrôle",
+              "x": 74,
+              "y": 1,
+              "w": 20,
+              "h": 35,
+              "description": "Les cadrans des circuits : salon, coursive, pompe à air. Tous à zéro."
+            }
+          ],
+          "effets": [
+            {
+              "type": "lueur",
+              "x": 50,
+              "y": 19,
+              "r": 9,
+              "couleur": "#cfe8ff",
+              "pulse": 0.3
+            },
+            {
+              "type": "lueur",
+              "x": 12,
+              "y": 50,
+              "r": 12,
+              "couleur": "#5ff0d0",
+              "pulse": 0.35
+            },
+            {
+              "type": "lueur",
+              "x": 83,
+              "y": 68,
+              "r": 9,
+              "couleur": "#ffb46a",
+              "pulse": 0.15
+            },
+            {
+              "type": "etincelles",
+              "x": 46,
+              "y": 45,
+              "etat": "panne"
+            },
+            {
+              "type": "etincelles",
+              "x": 58,
+              "y": 52,
+              "etat": "panne"
+            },
+            {
+              "type": "rayons",
+              "x": 50,
+              "y": 0,
+              "w": 26,
+              "h": 60
+            },
+            {
+              "type": "poussiere",
+              "x": 20,
+              "y": 5,
+              "w": 60,
+              "h": 70,
+              "nombre": 45
+            },
+            {
+              "type": "vignette",
+              "force": 0.5
+            },
+            {
+              "type": "grain",
+              "force": 0.04
+            }
+          ]
+        }
+      }
+    },
+    "cabine": {
+      "titre": "La chambre du capitaine Nemo",
+      "reference": "references/style-cabine-capitaine-2.png",
+      "ambiance": [
+        "sousMarin",
+        "cabine"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 57,
+          "y": 43,
+          "r": 9,
+          "couleur": "#b8ffb0",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 89,
+          "y": 9,
+          "r": 7,
+          "couleur": "#ffcf7a",
+          "pulse": 0.2
+        },
+        {
+          "type": "caustiques",
+          "x": 46,
+          "y": 6,
+          "w": 18,
+          "h": 36,
+          "intensite": 0.4
+        },
+        {
+          "type": "bulles",
+          "x": 48,
+          "y": 8,
+          "w": 15,
+          "h": 34,
+          "nombre": 12
+        },
+        {
+          "type": "poissons",
+          "x": 47,
+          "y": 8,
+          "w": 16,
+          "h": 32,
+          "nombre": 4,
+          "meduses": true
+        },
+        {
+          "type": "poussiere",
+          "x": 20,
+          "y": 10,
+          "w": 60,
+          "h": 60,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "mur-instruments",
+          "libelle": "Le mur des instruments",
+          "x": 68,
+          "y": 4,
+          "w": 17,
+          "h": 42,
+          "description": "Baromètre, horloges, manomètre, une carte du ciel : tout ce dont un capitaine a besoin."
+        },
+        {
+          "id": "bureau",
+          "libelle": "Le bureau du capitaine",
+          "x": 40,
+          "y": 49,
+          "w": 31,
+          "h": 20,
+          "description": "Une loupe, un compas, des rouleaux de plans. Les cartes marines, elles, ont brûlé dans le carré."
+        },
+        {
+          "id": "hublot-cabine",
+          "libelle": "Le hublot",
+          "x": 46,
+          "y": 5,
+          "w": 18,
+          "h": 38,
+          "description": "Des méduses dérivent, très près de la vitre."
+        }
+      ],
+      "etats": {
+        "panne": {
+          "filtre": "brightness(.6) saturate(.8)"
+        },
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pont-lincoln": {
+      "titre": "Le pont de l'Abraham Lincoln",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 40,
+          "y": 41,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 51,
+          "y": 34,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 92,
+          "y": 50,
+          "r": 9,
+          "couleur": "#3fa8ff",
+          "pulse": 0.6
+        },
+        {
+          "type": "poussiere",
+          "x": 5,
+          "y": 5,
+          "w": 90,
+          "h": 50,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "livre-quart",
+          "libelle": "Le livre de quart, sur le pupitre",
+          "x": 20,
+          "y": 42,
+          "w": 27,
+          "h": 22,
+          "description": "L'officier de quart y note l'heure, le cap et les distances relevées au loch."
+        },
+        {
+          "id": "loch",
+          "libelle": "Le loch et son sablier",
+          "x": 9,
+          "y": 66,
+          "w": 29,
+          "h": 32,
+          "description": "La corde à nœuds du loch, enroulée sur son tambour : on la laisse filer pendant que coule le sablier."
+        },
+        {
+          "id": "longue-vue",
+          "libelle": "La longue-vue",
+          "x": 55,
+          "y": 40,
+          "w": 13,
+          "h": 44,
+          "description": "Dans la lunette, la lueur bleue glisse sous la surface, plus vite qu'aucun cétacé."
+        },
+        {
+          "id": "harpon",
+          "libelle": "Le harpon de Ned Land",
+          "x": 68,
+          "y": 8,
+          "w": 17,
+          "h": 84,
+          "description": "Le harpon du roi des harponneurs, sa corde lovée dans la baille."
+        },
+        {
+          "id": "lueur-mer",
+          "libelle": "La lueur sur la mer",
+          "x": 86,
+          "y": 32,
+          "w": 14,
+          "h": 28,
+          "description": "Une lumière électrique, bleue et intense, qui palpite sous l'eau."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "machines-vapeur": {
+      "titre": "La chaufferie de la frégate",
+      "reference": "references/style-salle-machines-3.png",
+      "ambiance": [
+        "machines",
+        "vapeur"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 26,
+          "y": 72,
+          "r": 10,
+          "couleur": "#ff8a2e",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 72,
+          "y": 74,
+          "r": 9,
+          "couleur": "#ff8a2e",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "fumee",
+          "x": 40,
+          "y": 15,
+          "w": 20,
+          "h": 35,
+          "nombre": 14
+        },
+        {
+          "type": "rayons",
+          "x": 82,
+          "y": 0,
+          "w": 24,
+          "h": 60
+        },
+        {
+          "type": "poussiere",
+          "x": 20,
+          "y": 10,
+          "w": 60,
+          "h": 70,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "chaudiere",
+          "libelle": "La chaudière et son foyer",
+          "x": 6,
+          "y": 38,
+          "w": 26,
+          "h": 50,
+          "description": "Une chaudière de cuivre rivetée ; dans le foyer, le charbon rougeoie."
+        },
+        {
+          "id": "manometre-vapeur",
+          "libelle": "Le manomètre de la chaudière",
+          "x": 71,
+          "y": 42,
+          "w": 8,
+          "h": 12,
+          "description": "L'aiguille approche de la zone rouge : la pression de la vapeur monte."
+        },
+        {
+          "id": "chauffeur",
+          "libelle": "Le chauffeur",
+          "x": 45,
+          "y": 40,
+          "w": 9,
+          "h": 26,
+          "description": "Un chauffeur pellette le charbon sans relâche, couvert de suie."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "cambuse": {
+      "titre": "La cambuse",
+      "reference": null,
+      "ambiance": [
+        "coque"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 53,
+          "y": 21,
+          "r": 12,
+          "couleur": "#ffc86a",
+          "pulse": 0.25,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 40,
+          "y": 10,
+          "w": 30,
+          "h": 70
+        },
+        {
+          "type": "poussiere",
+          "x": 25,
+          "y": 10,
+          "w": 55,
+          "h": 70,
+          "nombre": 45
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "etagere-vivres",
+          "libelle": "Les réserves de la cambuse",
+          "x": 60,
+          "y": 8,
+          "w": 40,
+          "h": 52,
+          "description": "Bocaux de confiture et de choucroute, jambons fumés, citrons, boîtes de fer-blanc."
+        },
+        {
+          "id": "tonneaux",
+          "libelle": "Les tonneaux",
+          "x": 0,
+          "y": 20,
+          "w": 29,
+          "h": 55,
+          "description": "Viande salée et morue, sous la saumure."
+        },
+        {
+          "id": "biscuits",
+          "libelle": "Les caisses de biscuit de mer",
+          "x": 50,
+          "y": 38,
+          "w": 24,
+          "h": 26,
+          "description": "Des biscuits si durs qu'on les trempe dans le café."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "sas": {
+      "titre": "Le sas des scaphandres",
+      "reference": null,
+      "ambiance": [
+        "coque",
+        "machines"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 50,
+          "y": 20,
+          "r": 8,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 43,
+          "y": 32,
+          "w": 14,
+          "h": 38,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 20
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "scaphandres",
+          "libelle": "Les scaphandres",
+          "x": 20,
+          "y": 30,
+          "w": 17,
+          "h": 50,
+          "description": "Les scaphandres Rouquayrol-Denayrouze, réservoir d'air au dos."
+        },
+        {
+          "id": "porte-sas",
+          "libelle": "La porte du sas",
+          "x": 43,
+          "y": 32,
+          "w": 14,
+          "h": 38,
+          "description": "La porte ronde qui s'ouvre sur la mer, une fois le sas rempli."
+        },
+        {
+          "id": "niveau-eau",
+          "libelle": "Vannes et manomètre",
+          "x": 58,
+          "y": 24,
+          "w": 12,
+          "h": 32,
+          "description": "Les vannes qui remplissent le sas et le manomètre de pression."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "recif": {
+      "titre": "La plaine sous-marine",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "caustiques",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 60
+        },
+        {
+          "type": "rayons",
+          "x": 20,
+          "y": 0,
+          "w": 60,
+          "h": 50
+        },
+        {
+          "type": "bulles",
+          "x": 28,
+          "y": 10,
+          "w": 50,
+          "h": 40,
+          "nombre": 18
+        },
+        {
+          "type": "poissons",
+          "x": 30,
+          "y": 30,
+          "w": 40,
+          "h": 30,
+          "nombre": 6
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "faune-recif",
+          "libelle": "Le banc de poissons",
+          "x": 28,
+          "y": 30,
+          "w": 24,
+          "h": 32,
+          "description": "Un banc de poissons argentés, des poissons-clowns, des coraux."
+        },
+        {
+          "id": "tortue",
+          "libelle": "La tortue",
+          "x": 54,
+          "y": 60,
+          "w": 18,
+          "h": 20,
+          "description": "Une tortue de mer glisse au ras du sable."
+        },
+        {
+          "id": "etoile-mer",
+          "libelle": "L'étoile de mer",
+          "x": 39,
+          "y": 77,
+          "w": 10,
+          "h": 11,
+          "description": "Une étoile de mer orangée, posée sur le sable, près d'un oursin."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "foret-crespo": {
+      "titre": "La forêt de l'île Crespo",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 45,
+          "y": 0,
+          "w": 30,
+          "h": 45
+        },
+        {
+          "type": "lueur",
+          "x": 29,
+          "y": 72,
+          "r": 6,
+          "couleur": "#ffd68a",
+          "pulse": 0.35,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 44,
+          "y": 55,
+          "w": 20,
+          "h": 30,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "lampe-ruhmkorff",
+          "libelle": "La lampe Ruhmkorff",
+          "x": 22,
+          "y": 64,
+          "w": 10,
+          "h": 17,
+          "description": "La lampe électrique des plongeurs, alimentée par une pile."
+        },
+        {
+          "id": "gorgone",
+          "libelle": "La gorgone",
+          "x": 67,
+          "y": 33,
+          "w": 21,
+          "h": 48,
+          "description": "Une gorgone rouge, qui paraît grise dans la pénombre."
+        },
+        {
+          "id": "rayons-surface",
+          "libelle": "La lumière de la surface",
+          "x": 50,
+          "y": 0,
+          "w": 22,
+          "h": 22,
+          "description": "La lumière du soleil, de plus en plus faible avec la profondeur."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "epave-vanikoro": {
+      "titre": "Les épaves de Vanikoro",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "caustiques",
+          "x": 10,
+          "y": 40,
+          "w": 80,
+          "h": 40,
+          "intensite": 0.5
+        },
+        {
+          "type": "lueur",
+          "x": 80,
+          "y": 44,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "bulles",
+          "x": 78,
+          "y": 10,
+          "w": 10,
+          "h": 40,
+          "nombre": 12
+        },
+        {
+          "type": "poissons",
+          "x": 5,
+          "y": 30,
+          "w": 50,
+          "h": 40,
+          "nombre": 5
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 35
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "instruments-epave",
+          "libelle": "Le compas et le sextant dans le sable",
+          "x": 60,
+          "y": 42,
+          "w": 15,
+          "h": 40,
+          "description": "Un compas de marine et un sextant de laiton, rongés par le sel."
+        },
+        {
+          "id": "canons",
+          "libelle": "Les canons couverts de coraux",
+          "x": 20,
+          "y": 20,
+          "w": 38,
+          "h": 50,
+          "description": "Des canons de bronze, envahis de concrétions : un navire du siècle dernier."
+        },
+        {
+          "id": "coque",
+          "libelle": "La coque",
+          "x": 30,
+          "y": 1,
+          "w": 65,
+          "h": 17,
+          "description": "Une coque immense au-dessus de l'épave : c'est le Nautilus, immobile, qui éclaire la scène."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "banc-perles": {
+      "titre": "Le banc de perles de Manaar",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 78,
+          "y": 0,
+          "w": 30,
+          "h": 60
+        },
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 38,
+          "r": 8,
+          "couleur": "#fff6e0",
+          "pulse": 0.35
+        },
+        {
+          "type": "lueur",
+          "x": 17,
+          "y": 56,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "bulles",
+          "x": 8,
+          "y": 10,
+          "w": 25,
+          "h": 50,
+          "nombre": 14
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "huitre-geante",
+          "libelle": "L'huître géante",
+          "x": 41,
+          "y": 21,
+          "w": 23,
+          "h": 32,
+          "description": "Une huître de la taille d'un fauteuil ; entre ses valves, une perle laiteuse énorme."
+        },
+        {
+          "id": "pecheur",
+          "libelle": "Le pêcheur de perles",
+          "x": 73,
+          "y": 11,
+          "w": 15,
+          "h": 47,
+          "description": "Un pêcheur indien, une pierre au pied pour descendre plus vite, un filet à la main, sans aucun scaphandre."
+        },
+        {
+          "id": "requin",
+          "libelle": "Le requin",
+          "x": 86,
+          "y": 18,
+          "w": 14,
+          "h": 14,
+          "description": "Un grand requin rôde au loin."
+        },
+        {
+          "id": "banc",
+          "libelle": "Le banc d'huîtres",
+          "x": 30,
+          "y": 60,
+          "w": 40,
+          "h": 38,
+          "description": "Des milliers d'huîtres perlières sur le fond rocheux."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pont-ceylan": {
+      "titre": "Au large de Ceylan",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 34,
+          "y": 25,
+          "r": 14,
+          "couleur": "#ffd9a0",
+          "pulse": 0.15
+        },
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 40,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "vignette",
+          "force": 0.45
+        },
+        {
+          "type": "grain",
+          "force": 0.03
+        }
+      ],
+      "zones": [
+        {
+          "id": "barques",
+          "libelle": "Les voiles au large",
+          "x": 9,
+          "y": 33,
+          "w": 48,
+          "h": 13,
+          "description": "Barques de pêcheurs et navires marchands, sur une mer d'or."
+        },
+        {
+          "id": "cage-pilote",
+          "libelle": "La cage du pilote",
+          "x": 60,
+          "y": 24,
+          "w": 13,
+          "h": 32,
+          "description": "La cage vitrée de laiton d'où le Nautilus est gouverné."
+        },
+        {
+          "id": "fanal",
+          "libelle": "Le fanal",
+          "x": 50,
+          "y": 36,
+          "w": 6,
+          "h": 12,
+          "description": "Le fanal électrique, éteint en surface pour ne pas être vu."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "tunnel-arabique": {
+      "titre": "La cage du pilote, dans le tunnel",
+      "reference": null,
+      "ambiance": [
+        "sousMarin",
+        "machines"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 45,
+          "y": 22,
+          "r": 9,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 30,
+          "y": 5,
+          "w": 30,
+          "h": 50
+        },
+        {
+          "type": "bulles",
+          "x": 55,
+          "y": 8,
+          "w": 18,
+          "h": 45,
+          "nombre": 16
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "carte-route",
+          "libelle": "La carte de route",
+          "x": 72,
+          "y": 76,
+          "w": 24,
+          "h": 24,
+          "description": "La mer Rouge, l'isthme de Suez, la Méditerranée ; et, autour, toute l'Afrique."
+        },
+        {
+          "id": "carte-nil",
+          "libelle": "La carte du Nil",
+          "x": 0,
+          "y": 78,
+          "w": 25,
+          "h": 22,
+          "description": "Le Nil serpente dans le désert ; un fin trait bleu le relie à l'isthme."
+        },
+        {
+          "id": "gouvernail",
+          "libelle": "Le gouvernail",
+          "x": 37,
+          "y": 52,
+          "w": 25,
+          "h": 46,
+          "description": "La roue du gouvernail, que le capitaine tient lui-même dans le tunnel."
+        },
+        {
+          "id": "vitres-tunnel",
+          "libelle": "Les vitres de la cage",
+          "x": 52,
+          "y": 6,
+          "w": 23,
+          "h": 48,
+          "description": "La roche défile, éclairée par le fanal ; le courant entraîne le Nautilus."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pont-port-said": {
+      "titre": "Devant Port-Saïd",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 90,
+          "y": 18,
+          "r": 7,
+          "couleur": "#ffcf7a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 61,
+          "y": 72,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "lumieres-port",
+          "libelle": "Les lumières de Port-Saïd",
+          "x": 78,
+          "y": 8,
+          "w": 22,
+          "h": 22,
+          "description": "Le phare et les lumières de la ville neuve, née avec les chantiers du canal."
+        },
+        {
+          "id": "canal",
+          "libelle": "L'entrée du canal",
+          "x": 0,
+          "y": 15,
+          "w": 34,
+          "h": 14,
+          "description": "Les quais et les chantiers du canal, qui n'est pas encore ouvert."
+        },
+        {
+          "id": "lanterne",
+          "libelle": "La lanterne de quart",
+          "x": 57,
+          "y": 60,
+          "w": 8,
+          "h": 18,
+          "description": "Une lanterne, à peine ouverte, pour ne pas être vu de la côte."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "volcan-santorin": {
+      "titre": "Le salon, près de Santorin",
+      "reference": null,
+      "ambiance": [
+        "sousMarin",
+        "vapeur"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 27,
+          "y": 32,
+          "r": 14,
+          "couleur": "#ff6a2a",
+          "pulse": 0.5,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 74,
+          "y": 32,
+          "r": 14,
+          "couleur": "#ff6a2a",
+          "pulse": 0.5,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 13,
+          "y": 10,
+          "w": 27,
+          "h": 45,
+          "nombre": 22
+        },
+        {
+          "type": "bulles",
+          "x": 61,
+          "y": 10,
+          "w": 26,
+          "h": 45,
+          "nombre": 22
+        },
+        {
+          "type": "lueur",
+          "x": 4,
+          "y": 11,
+          "r": 5,
+          "couleur": "#ffe6a6",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 96,
+          "y": 11,
+          "r": 5,
+          "couleur": "#ffe6a6",
+          "pulse": 0.2
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "thermometre",
+          "libelle": "Le thermomètre extérieur",
+          "x": 42,
+          "y": 6,
+          "w": 7,
+          "h": 36,
+          "description": "Le mercure monte sans arrêt : l'eau, dehors, devient brûlante."
+        },
+        {
+          "id": "manometre",
+          "libelle": "Le manomètre",
+          "x": 50,
+          "y": 10,
+          "w": 9,
+          "h": 16,
+          "description": "La pression de l'eau : le Nautilus est à faible profondeur."
+        },
+        {
+          "id": "hublot-gauche",
+          "libelle": "Le hublot de bâbord",
+          "x": 13,
+          "y": 7,
+          "w": 27,
+          "h": 51,
+          "description": "L'eau bouillonne, rougie par la lueur du volcan sous-marin."
+        },
+        {
+          "id": "hublot-droit",
+          "libelle": "Le hublot de tribord",
+          "x": 61,
+          "y": 7,
+          "w": 26,
+          "h": 51,
+          "description": "La côte de l'île, toute proche, fume et tremble."
+        },
+        {
+          "id": "carte-archipel",
+          "libelle": "La carte de l'archipel",
+          "x": 35,
+          "y": 50,
+          "w": 28,
+          "h": 15,
+          "description": "Santorin et ses îlots : Néa Kaméni est marquée d'une croix rouge."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "atlantide": {
+      "titre": "Les ruines de l'Atlantide",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 40
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 84,
+          "y": 25,
+          "r": 12,
+          "couleur": "#ff6a2a",
+          "pulse": 0.5,
+          "scintille": true
+        },
+        {
+          "type": "etincelles",
+          "x": 75,
+          "y": 13,
+          "w": 18,
+          "h": 20
+        },
+        {
+          "type": "poissons",
+          "x": 0,
+          "y": 10,
+          "w": 100,
+          "h": 50,
+          "nombre": 4,
+          "meduses": true
+        },
+        {
+          "type": "bulles",
+          "x": 36,
+          "y": 55,
+          "w": 30,
+          "h": 40,
+          "nombre": 14
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "temple",
+          "libelle": "Le temple englouti",
+          "x": 36,
+          "y": 4,
+          "w": 24,
+          "h": 52,
+          "description": "Des colonnes brisées, à demi couvertes d'algues : une ville morte."
+        },
+        {
+          "id": "statues",
+          "libelle": "Les statues",
+          "x": 28,
+          "y": 25,
+          "w": 8,
+          "h": 45,
+          "description": "Une statue debout, rongée par la mer, garde l'entrée."
+        },
+        {
+          "id": "volcan-atlantide",
+          "libelle": "Le volcan",
+          "x": 75,
+          "y": 12,
+          "w": 19,
+          "h": 34,
+          "description": "Un volcan sous-marin rougeoie : c'est lui qui éclaire les ruines."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "sargasses": {
+      "titre": "La mer des Sargasses",
+      "reference": null,
+      "ambiance": [
+        "vagues",
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 40,
+          "y": 0,
+          "w": 50,
+          "h": 40
+        },
+        {
+          "type": "lueur",
+          "x": 36,
+          "y": 24,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 60,
+          "nombre": 20
+        },
+        {
+          "type": "vignette",
+          "force": 0.45
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "bouee",
+          "libelle": "La bouée-phare",
+          "x": 31,
+          "y": 18,
+          "w": 11,
+          "h": 34,
+          "description": "Une bouée-phare, à demi prise dans les algues."
+        },
+        {
+          "id": "carte-courants",
+          "libelle": "La carte des courants",
+          "x": 21,
+          "y": 55,
+          "w": 35,
+          "h": 26,
+          "description": "La carte de l'Atlantique : des flèches rouges (courants chauds) et bleues (courants froids)."
+        },
+        {
+          "id": "algues",
+          "libelle": "Les sargasses",
+          "x": 45,
+          "y": 35,
+          "w": 55,
+          "h": 30,
+          "description": "Des algues dorées, à perte de vue, qui flottent grâce à de petites boules d'air."
+        },
+        {
+          "id": "crabes",
+          "libelle": "Les petits crabes",
+          "x": 62,
+          "y": 70,
+          "w": 17,
+          "h": 14,
+          "description": "De petits crabes vivent cachés entre les algues."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "cable": {
+      "titre": "Le câble transatlantique",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 22,
+          "r": 8,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 30,
+          "y": 0,
+          "w": 30,
+          "h": 40
+        },
+        {
+          "type": "poissons",
+          "x": 0,
+          "y": 5,
+          "w": 45,
+          "h": 30,
+          "nombre": 6
+        },
+        {
+          "type": "bulles",
+          "x": 10,
+          "y": 30,
+          "w": 25,
+          "h": 50,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "cable",
+          "libelle": "Le câble",
+          "x": 24,
+          "y": 32,
+          "w": 30,
+          "h": 40,
+          "description": "Un long câble couvert de coquillages, qui file vers l'Amérique."
+        },
+        {
+          "id": "plongeurs",
+          "libelle": "Les plongeurs",
+          "x": 8,
+          "y": 45,
+          "w": 21,
+          "h": 30,
+          "description": "Deux plongeurs du Nautilus examinent le câble à la lumière de leurs lampes."
+        },
+        {
+          "id": "hublot-cable",
+          "libelle": "Le grand hublot",
+          "x": 82,
+          "y": 32,
+          "w": 16,
+          "h": 36,
+          "description": "Derrière le hublot, le salon éclairé du Nautilus."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "banquise": {
+      "titre": "La banquise",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "glace"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 50,
+          "y": 10,
+          "r": 25,
+          "couleur": "#7dffb0",
+          "pulse": 0.4
+        },
+        {
+          "type": "lueur",
+          "x": 64,
+          "y": 66,
+          "r": 4,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 70,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "aurore",
+          "libelle": "L'aurore australe",
+          "x": 30,
+          "y": 0,
+          "w": 60,
+          "h": 20,
+          "description": "De grands voiles verts ondulent dans le ciel du sud."
+        },
+        {
+          "id": "icebergs",
+          "libelle": "Les icebergs",
+          "x": 8,
+          "y": 14,
+          "w": 28,
+          "h": 24,
+          "description": "Des montagnes de glace, dont la plus grande partie est cachée sous l'eau."
+        },
+        {
+          "id": "glaces",
+          "libelle": "Les glaces flottantes",
+          "x": 0,
+          "y": 42,
+          "w": 12,
+          "h": 30,
+          "description": "Des plaques de banquise qui se resserrent autour de la coque."
+        },
+        {
+          "id": "instruments-meteo",
+          "libelle": "La station météorologique",
+          "x": 82,
+          "y": 70,
+          "w": 10,
+          "h": 26,
+          "description": "Un baromètre, un thermomètre et un anémomètre, sur le pont."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pole": {
+      "titre": "Le pôle Sud",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "glace"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 10,
+          "r": 14,
+          "couleur": "#fff1c4",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 20,
+          "y": 7,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 70,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.45
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "pavillon",
+          "libelle": "Le pavillon de Nemo",
+          "x": 59,
+          "y": 11,
+          "w": 19,
+          "h": 35,
+          "description": "Un pavillon noir, marqué d'un N d'or."
+        },
+        {
+          "id": "sextant",
+          "libelle": "Le sextant et le chronomètre",
+          "x": 52,
+          "y": 45,
+          "w": 17,
+          "h": 27,
+          "description": "Le sextant et le chronomètre qui ont permis de faire le point, à midi, le 21 mars."
+        },
+        {
+          "id": "manchots",
+          "libelle": "Les manchots",
+          "x": 20,
+          "y": 50,
+          "w": 10,
+          "h": 22,
+          "description": "Des manchots, curieux, qui ne craignent pas les visiteurs."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "plateforme-poulpe": {
+      "titre": "La plate-forme, sous l'orage",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 82,
+          "y": 28,
+          "r": 8,
+          "couleur": "#cfe3ff",
+          "pulse": 0.8,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 46,
+          "y": 77,
+          "r": 4,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 60
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "oeil",
+          "libelle": "L'œil du monstre",
+          "x": 47,
+          "y": 37,
+          "w": 10,
+          "h": 13,
+          "description": "Un œil énorme, glauque, qui fixe la plate-forme."
+        },
+        {
+          "id": "tentacules",
+          "libelle": "Les bras",
+          "x": 28,
+          "y": 30,
+          "w": 22,
+          "h": 40,
+          "description": "Des bras épais, couverts de ventouses, enroulés autour de la coque."
+        },
+        {
+          "id": "equipage",
+          "libelle": "L'équipage",
+          "x": 60,
+          "y": 48,
+          "w": 28,
+          "h": 32,
+          "description": "Les marins, hache à la main ; Ned Land lève son harpon."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "baie-vigo": {
+      "titre": "Les galions de la baie de Vigo",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 35,
+          "y": 0,
+          "w": 30,
+          "h": 45
+        },
+        {
+          "type": "caustiques",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 40
+        },
+        {
+          "type": "lueur",
+          "x": 46,
+          "y": 55,
+          "r": 5,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 10,
+          "y": 76,
+          "r": 7,
+          "couleur": "#ffd24a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "poissons",
+          "x": 0,
+          "y": 20,
+          "w": 100,
+          "h": 40,
+          "nombre": 6
+        },
+        {
+          "type": "bulles",
+          "x": 25,
+          "y": 20,
+          "w": 50,
+          "h": 50,
+          "nombre": 16
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "galions",
+          "libelle": "Les galions",
+          "x": 5,
+          "y": 15,
+          "w": 22,
+          "h": 45,
+          "description": "La coque éventrée d'un galion espagnol, couchée dans la vase depuis 1702."
+        },
+        {
+          "id": "tresor",
+          "libelle": "Le trésor",
+          "x": 0,
+          "y": 62,
+          "w": 22,
+          "h": 18,
+          "description": "Des coffres ouverts, débordant de pièces et de lingots d'or."
+        },
+        {
+          "id": "plongeurs",
+          "libelle": "Les plongeurs",
+          "x": 41,
+          "y": 28,
+          "w": 16,
+          "h": 45,
+          "description": "Les marins du Nautilus, lampe à la main, ramassent l'or."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "salle-orgue": {
+      "titre": "Le salon, la dernière nuit",
+      "reference": null,
+      "ambiance": [
+        "salon"
+      ],
+      "kenBurns": {
+        "echelle": 1.04,
+        "duree": 40
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 48,
+          "y": 10,
+          "r": 12,
+          "couleur": "#ffe6a6",
+          "pulse": 0.2,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 16,
+          "y": 25,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 79,
+          "y": 25,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.2
+        },
+        {
+          "type": "poussiere",
+          "x": 20,
+          "y": 0,
+          "w": 60,
+          "h": 80,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "orgue",
+          "libelle": "Le grand orgue",
+          "x": 43,
+          "y": 30,
+          "w": 11,
+          "h": 25,
+          "description": "Le capitaine joue, seul, sans se retourner."
+        },
+        {
+          "id": "toiles",
+          "libelle": "Les toiles de maîtres",
+          "x": 23,
+          "y": 2,
+          "w": 12,
+          "h": 34,
+          "description": "Entre les boiseries, des toiles de la Renaissance, Léonard, Raphaël, Titien."
+        },
+        {
+          "id": "vitrines-orgue",
+          "libelle": "Les vitrines",
+          "x": 82,
+          "y": 35,
+          "w": 18,
+          "h": 38,
+          "description": "Coquillages et coraux, la collection d'une vie."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "maelstrom": {
+      "titre": "Le Maelström",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 28
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 49,
+          "y": 24,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "fumee",
+          "x": 50,
+          "y": 5,
+          "w": 10,
+          "h": 15
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 60
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "canot",
+          "libelle": "Le canot",
+          "x": 65,
+          "y": 52,
+          "w": 35,
+          "h": 30,
+          "description": "Le canot, qu'il faut détacher du Nautilus ; Ned s'y tient déjà."
+        },
+        {
+          "id": "tourbillon",
+          "libelle": "Le tourbillon",
+          "x": 0,
+          "y": 40,
+          "w": 25,
+          "h": 35,
+          "description": "Les vagues tournent de plus en plus vite : le Maelström aspire tout."
+        },
+        {
+          "id": "fanal",
+          "libelle": "Le fanal",
+          "x": 46,
+          "y": 20,
+          "w": 7,
+          "h": 9,
+          "description": "Le fanal du Nautilus, seule lumière dans la tempête."
+        },
+        {
+          "id": "cote",
+          "libelle": "La côte de Norvège",
+          "x": 60,
+          "y": 8,
+          "w": 40,
+          "h": 32,
+          "description": "Les falaises des îles Lofoten, toutes proches."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  }
+}
