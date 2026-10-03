@@ -35,3 +35,11 @@ relecture sceptique. À contrôler avant la diffusion.
 - Baromètre : 760 → 752 mm de mercure en 6 h = baisse nette annonçant une dégradation (≈ 10,7 hPa) ; valeur plausible.
 - Décor « salle des machines » : la référence fournie est une machinerie **à vapeur et charbon** ; elle n'est PAS utilisée pour le
   Nautilus (électrique) et est réservée à l'escale 1 (frégate *Abraham Lincoln*).
+
+## Escales 3 à 6
+- Distances de route (ordres de grandeur) : Suez → Port-Saïd par l'isthme ≈ 160 km, en contournant l'Afrique ≈ 20 000 km ;
+  Londres → Bombay ≈ 20 000 km par le Cap, ≈ 11 600 km par Suez ; vapeur ≈ 400 km/jour (≈ 9 nœuds).
+- Canal d'eau douce depuis le Nil pour les chantiers de l'isthme (achevé vers 1863) ; inauguration du canal le 17 novembre 1869.
+- Durées du voyage de Ned (Port-Saïd → Marseille ≈ 6 j, Le Havre → Québec ≈ 12 j en 1868) : ordres de grandeur.
+- Exportations de Ceylan en 1868 (café, cannelle, perles), profondeurs de disparition des couleurs (escale 3), date et
+  contenu de la boîte de fer-blanc de Lapérouse (tradition rapportée par Verne).

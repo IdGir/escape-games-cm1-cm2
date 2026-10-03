@@ -24,7 +24,9 @@ const avant = w => {
     set src(v){
       this._src = v;
       const f = path.join(RACINE, decodeURIComponent(new URL(v, w.location.href).pathname));
-      setTimeout(() => { if(fs.existsSync(f)){ this.naturalWidth = 1600; this.naturalHeight = 900; this.onload && this.onload(); } else this.onerror && this.onerror(); }, 0);
+      /* les vrais fichiers déposés sont ignorés : on teste la cascade comme dans un dépôt neuf */
+      const depose = /assets[\\/]images[\\/](decors|personnages)[\\/]/.test(f) && !FAUX.includes(f);
+      setTimeout(() => { if(!depose && fs.existsSync(f)){ this.naturalWidth = 1600; this.naturalHeight = 900; this.onload && this.onload(); } else this.onerror && this.onerror(); }, 0);
     }
     get src(){ return this._src; }
   };

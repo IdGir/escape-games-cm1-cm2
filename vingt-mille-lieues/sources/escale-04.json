@@ -1,0 +1,390 @@
+{
+  "escale": {
+    "numero": 4,
+    "id": "vanikoro",
+    "titre": "Vanikoro et Lapérouse",
+    "lieu": "Récifs de Vanikoro, Pacifique sud, décembre 1867",
+    "matiere": "Histoire",
+    "periode_conseillee": "P3 Année B (explorations) et P4 Année A (Révolution)",
+    "episode": "Première partie, ch. XIX « Vanikoro » : le Nautilus passe sur les épaves de l'expédition de Lapérouse ; Nemo montre à Aronnax une boîte de fer-blanc contenant les instructions de l'expédition annotées par Louis XVI.",
+    "scenarimage": "scenarimages/escale-04.md",
+    "mot": "ASTROLABE",
+    "mot_origine": "L'Astrolabe, l'un des deux navires de l'expédition de Lapérouse, avec La Boussole.",
+    "air": null,
+    "cinematique_ouverture": "transition-e4",
+    "cinematique_fin": "fin-e4",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e4-1", "escale": 4, "ordre": 1, "titre": "Les instruments engloutis",
+        "decor": "epave-vanikoro", "objet_principal": "instruments-epave", "objets_cliquables": ["instruments-epave", "canons", "coque"],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "Sous le Nautilus, une épave couverte de coraux. Quels navires étaient-ce ? Aronnax aperçoit dans le sable un compas et un sextant : en reconnaissant ces instruments et leur usage, on comprendra que l'on se trouve sur les restes d'une grande expédition d'exploration, dont les navires portaient les noms mêmes de deux instruments.",
+        "enjeu": "Identifier l'épave, c'est résoudre l'un des grands mystères de la marine française.",
+        "episode_du_roman": "Partie I, ch. XIX « Vanikoro » : le Nautilus survole les épaves des deux navires de Lapérouse, La Boussole et L'Astrolabe, perdus en 1788.",
+        "competence_programme": "Histoire : les progrès techniques qui ont permis aux Européens de s'aventurer vers de nouveaux territoires (boussole, astrolabe, sextant, chronomètre, cartes).",
+        "pourquoi_ce_savoir_ici": "Ces instruments sont ceux des explorateurs : savoir à quoi ils servaient, c'est reconnaître une expédition.",
+        "reaction_du_decor": { "effet": "eclat", "description": "Le sable se soulève ; la boussole et le sextant brillent sous le fanal." },
+        "liberte_ou_anachronisme": "Lieutenant et Second : le calcul de la longitude par le chronomètre (15° par heure) est une notion de collège, donnée dans la fiche.",
+        "lecon": "instruments-explorateurs", "type": "association",
+        "niveau_variantes": "Mousse : 3 instruments. Matelot : 4 instruments. Timonier : 5 instruments dont le chronomètre. Lieutenant : QCM sur la latitude et la longitude + justification. Second : calcul d'une longitude par l'heure (code) + justification.",
+        "mousse": {
+          "dialogue": "Regardez dans le sable : des instruments de marine ! Si nous savons à quoi ils servaient, nous saurons qui naviguait ici.",
+          "consigne": "Relie chaque instrument à ce qu'il permettait de faire.",
+          "paires": [
+            { "g": "La boussole", "icone": "🧭", "d": "trouver la direction du nord" },
+            { "g": "La longue-vue", "icone": "🔭", "d": "voir loin" },
+            { "g": "La carte", "icone": "🗺️", "d": "dessiner et retrouver les routes" }
+          ],
+          "indices": ["Fiche « Les instruments des explorateurs ».", "L'aiguille de la boussole montre toujours le nord."]
+        },
+        "matelot": {
+          "dialogue": "Une boussole, un astrolabe… Ces noms me disent quelque chose. Retrouvons d'abord l'usage de chaque instrument.",
+          "consigne": "Relie chaque instrument des explorateurs à son usage.",
+          "paires": [
+            { "g": "La boussole", "icone": "🧭", "d": "trouver le nord, donc garder sa direction" },
+            { "g": "L'astrolabe", "icone": "☀️", "d": "mesurer la hauteur du Soleil pour savoir si l'on est loin de l'équateur" },
+            { "g": "Le loch et le sablier", "icone": "⏳", "d": "mesurer la vitesse du navire" },
+            { "g": "La carte", "icone": "🗺️", "d": "noter les côtes découvertes et les routes" }
+          ],
+          "indices": ["Fiche « Les instruments des explorateurs », tableau.", "La hauteur du Soleil change quand on va vers le nord ou vers le sud."]
+        },
+        "timonier": {
+          "dialogue": "Cinq instruments, cinq progrès. Sans eux, aucun navigateur n'aurait osé quitter les côtes. Reconnaissons-les tous.",
+          "consigne": "Relie chaque instrument ou invention à ce qu'il a permis.",
+          "paires": [
+            { "g": "La boussole", "icone": "🧭", "d": "garder sa direction même sans voir les étoiles" },
+            { "g": "L'astrolabe, puis le sextant", "icone": "☀️", "d": "trouver sa latitude (distance à l'équateur) grâce au Soleil" },
+            { "g": "Le chronomètre de marine", "icone": "⏱️", "d": "trouver sa longitude en comparant les heures" },
+            { "g": "La caravelle", "icone": "⛵", "d": "naviguer loin, même contre le vent" },
+            { "g": "Les cartes et portulans", "icone": "🗺️", "d": "garder la mémoire des côtes et des routes" }
+          ],
+          "indices": ["Fiche « Les instruments des explorateurs ».", "Latitude : grâce au Soleil ; longitude : grâce à l'heure."]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Lapérouse emportait les meilleurs chronomètres de son temps. Pourquoi tant de soin pour des horloges ? Expliquez-le, preuves à l'appui.",
+          "consigne": "Réponds avec la fiche « Les instruments des explorateurs ».",
+          "questions": [
+            { "q": "La latitude (distance à l'équateur) se trouve…", "options": ["en mesurant la hauteur du Soleil à midi (astrolabe, sextant)", "avec la boussole", "avec le loch", "en goûtant l'eau de mer"], "bonne": 0 },
+            { "q": "La longitude se trouve…", "options": ["en comparant l'heure locale à l'heure du port de départ, gardée par un chronomètre", "avec la boussole seule", "en mesurant la profondeur", "en comptant les étoiles"], "bonne": 0 }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique la réponse 2 ?",
+            "options": [
+              "La Terre fait un tour (360°) en 24 heures : chaque heure d'écart entre l'heure locale et l'heure du port de départ correspond à 15° de longitude.",
+              "La boussole indique le nord.",
+              "Le sextant mesure la hauteur du Soleil.",
+              "La caravelle peut naviguer contre le vent."
+            ],
+            "bonne": 0
+          },
+          "indices": ["Fiche, encadré « La longitude et l'heure ».", "Un chronomètre garde l'heure de Paris pendant tout le voyage."]
+        },
+        "second": {
+          "type": "code",
+          "dialogue": "Voici, dans le journal de l'Astrolabe, un relevé que l'eau n'a pas effacé. Avec lui, on peut dire où se trouvait le navire. À vous.",
+          "consigne": "<div class='doc-carnet'><b>Journal de bord (relevé du jeu)</b> — « Le Soleil est au plus haut : il est midi, heure locale. Le chronomètre réglé sur l'heure de Paris indique 16 heures. »</div>Calcule. Le navire est-il à l'est ou à l'ouest de Paris ? (Écris EST ou OUEST.)",
+          "champs": [
+            { "libelle": "Heures d'écart", "valeur": "4", "longueur": 2 },
+            { "libelle": "Degrés de longitude", "valeur": "60", "longueur": 3 },
+            { "libelle": "Est ou ouest ?", "valeur": "OUEST", "longueur": 5, "numerique": false }
+          ],
+          "justification": {
+            "question": "Pourquoi le navire est-il à l'ouest de Paris ?",
+            "options": [
+              "Le Soleil se lève à l'est : quand il est midi chez lui, il est déjà plus tard à Paris ; le navire est donc à l'ouest.",
+              "Parce que l'Astrolabe allait toujours vers l'ouest.",
+              "Parce que la boussole indique le nord.",
+              "Parce que 60 est un nombre pair."
+            ],
+            "bonne": 0
+          },
+          "indices": ["Fiche, encadré « La longitude et l'heure » : 1 heure = 15°.", "Il est plus tard à Paris : Paris a vu le Soleil avant le navire."]
+        }
+      },
+      {
+        "id": "e4-2", "escale": 4, "ordre": 2, "titre": "La boîte de fer-blanc",
+        "decor": "cabine", "objet_principal": "bureau", "objets_cliquables": ["bureau", "mur-instruments", "hublot-cabine"],
+        "personnage_emetteur": "nemo",
+        "probleme_narratif": "Dans sa chambre, Nemo ouvre une boîte de fer-blanc trouvée dans l'épave : les instructions de l'expédition, annotées de la main du roi Louis XVI. Les feuillets se sont mélangés : pour les ranger dans les archives du Nautilus, il faut remettre les événements dans l'ordre, de l'avènement du roi jusqu'à la découverte des épaves.",
+        "enjeu": "Mal datés, ces documents uniques perdraient leur valeur de preuve.",
+        "episode_du_roman": "Partie I, ch. XIX « Vanikoro » : Nemo montre une boîte de fer-blanc aux armes de France, contenant les instructions du ministère de la Marine annotées par Louis XVI.",
+        "competence_programme": "Histoire : le temps de la Révolution ; contexte du royaume en 1789 ; fin de la monarchie absolue et de l'Ancien Régime ; repères chronologiques.",
+        "pourquoi_ce_savoir_ici": "Ranger des archives, c'est se repérer dans le temps : l'expédition partie sous un roi absolu disparaît juste avant la Révolution.",
+        "reaction_du_decor": { "effet": "aiguilles", "description": "Les feuillets se rangent ; les horloges du mur sonnent l'heure." },
+        "liberte_ou_anachronisme": "Le mot de Louis XVI demandant des nouvelles de Lapérouse avant sa mort est rapporté par la tradition (voir A-VERIFIER.md) ; il n'est pas utilisé comme preuve.",
+        "lecon": "laperouse-revolution", "type": "ordre",
+        "niveau_variantes": "Mousse : 4 événements. Matelot : 5. Timonier : 6 avec dates. Lieutenant : 7 avec dates + justification. Second : 7 événements sans dates, à retrouver avec la fiche + justification.",
+        "mousse": {
+          "dialogue": "Ces feuillets ont traversé quatre-vingts ans de mer. Remettez-les dans l'ordre : je n'aime pas le désordre dans mes archives.",
+          "consigne": "Remets les événements dans l'ordre, du plus ancien au plus récent.",
+          "items": [
+            { "txt": "Le roi Louis XVI envoie Lapérouse explorer le monde.", "sous": "1785" },
+            { "txt": "Les navires de Lapérouse font naufrage à Vanikoro.", "sous": "1788" },
+            { "txt": "La prise de la Bastille.", "sous": "1789" },
+            { "txt": "On retrouve enfin les épaves.", "sous": "1828" }
+          ],
+          "indices": ["Fiche « Lapérouse et la Révolution », frise.", "Compare les années."]
+        },
+        "matelot": {
+          "dialogue": "Votre roi a vu partir ses navires, puis il a perdu son trône. Dans quel ordre ? Les dates sont là, si l'on sait les lire.",
+          "consigne": "Remets les événements dans l'ordre chronologique.",
+          "items": [
+            { "txt": "Louis XVI devient roi de France.", "sous": "1774" },
+            { "txt": "Départ de Lapérouse, de Brest.", "sous": "1785" },
+            { "txt": "Naufrage à Vanikoro.", "sous": "1788" },
+            { "txt": "Prise de la Bastille ; Déclaration des droits de l'homme et du citoyen.", "sous": "1789" },
+            { "txt": "Exécution de Louis XVI.", "sous": "1793" }
+          ],
+          "indices": ["Fiche « Lapérouse et la Révolution », frise.", "Le plus ancien en haut."]
+        },
+        "timonier": {
+          "dialogue": "Lapérouse est parti sujet d'un roi absolu. S'il était revenu, il aurait trouvé un autre pays. Rangez ces feuillets et vous verrez pourquoi.",
+          "consigne": "Remets les six événements dans l'ordre chronologique.",
+          "items": [
+            { "txt": "Avènement de Louis XVI, roi absolu.", "sous": "1774" },
+            { "txt": "L'expédition de Lapérouse quitte Brest.", "sous": "1er août 1785" },
+            { "txt": "Dernières nouvelles, depuis l'Australie ; naufrage à Vanikoro.", "sous": "1788" },
+            { "txt": "États généraux, prise de la Bastille, abolition des privilèges.", "sous": "1789" },
+            { "txt": "Fin de la royauté : la République est proclamée.", "sous": "1792" },
+            { "txt": "Dumont d'Urville retrouve le lieu du naufrage.", "sous": "1828" }
+          ],
+          "indices": ["Fiche « Lapérouse et la Révolution », frise.", "1792 vient avant 1828 et après 1789."]
+        },
+        "lieutenant": {
+          "dialogue": "Sept feuillets, sept dates. Rangez-les, et dites-moi ce qui rend cette boîte si précieuse aux yeux de l'histoire.",
+          "consigne": "Remets les sept événements dans l'ordre, puis justifie.",
+          "items": [
+            { "txt": "Avènement de Louis XVI.", "sous": "1774" },
+            { "txt": "Le roi annote de sa main les instructions de l'expédition.", "sous": "1785" },
+            { "txt": "Départ de Brest de La Boussole et de L'Astrolabe.", "sous": "1er août 1785" },
+            { "txt": "Naufrage à Vanikoro.", "sous": "1788" },
+            { "txt": "Déclaration des droits de l'homme et du citoyen.", "sous": "26 août 1789" },
+            { "txt": "Abolition de la royauté.", "sous": "septembre 1792" },
+            { "txt": "Exécution de Louis XVI.", "sous": "21 janvier 1793" }
+          ],
+          "justification": {
+            "question": "Pourquoi l'expédition appartient-elle à l'Ancien Régime ?",
+            "options": [
+              "Elle a été décidée et organisée par un roi absolu, avant 1789 et la fin de l'Ancien Régime.",
+              "Parce que ses navires étaient en bois.",
+              "Parce qu'elle a été retrouvée en 1828.",
+              "Parce que Lapérouse était explorateur."
+            ],
+            "bonne": 0
+          },
+          "indices": ["Fiche « Lapérouse et la Révolution ».", "Le roi annote les instructions avant le départ."]
+        },
+        "second": {
+          "dialogue": "Les dates ont été effacées par l'eau de mer. Il vous reste vos connaissances et votre fiche. Rangez, puis expliquez ce qui a changé pendant le voyage.",
+          "consigne": "Remets les sept événements dans l'ordre chronologique (sans dates), puis justifie.",
+          "items": [
+            { "txt": "Avènement de Louis XVI." },
+            { "txt": "Départ de l'expédition de Lapérouse." },
+            { "txt": "Naufrage à Vanikoro." },
+            { "txt": "Réunion des états généraux." },
+            { "txt": "Prise de la Bastille." },
+            { "txt": "Proclamation de la République." },
+            { "txt": "Les épaves sont retrouvées par Dumont d'Urville." }
+          ],
+          "justification": {
+            "question": "Que montre la place du naufrage dans cette frise ?",
+            "options": [
+              "L'expédition a disparu juste avant la Révolution : partie d'une monarchie absolue, elle ne pouvait plus rentrer dans le même pays.",
+              "La Révolution a causé le naufrage.",
+              "Dumont d'Urville était révolutionnaire.",
+              "Les états généraux ont été réunis après la République."
+            ],
+            "bonne": 0
+          },
+          "indices": ["Fiche « Lapérouse et la Révolution », frise complète.", "Les états généraux se réunissent en mai 1789, avant la prise de la Bastille."]
+        }
+      },
+      {
+        "id": "e4-3", "escale": 4, "ordre": 3, "titre": "Les papiers d'un autre monde",
+        "decor": "carre", "objet_principal": "table", "objets_cliquables": ["table", "tableau-cadrans", "journal"],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Au fond de la boîte, d'autres papiers : certains parlent de privilèges et d'un roi « par la grâce de Dieu », d'autres d'égalité et de nation. Conseil, chargé de les archiver, veut les séparer : ceux de l'ancien royaume et ceux des temps nouveaux. Il les étale sur la table du carré.",
+        "enjeu": "Mélanger ces papiers, ce serait mélanger deux mondes que la Révolution a séparés.",
+        "episode_du_roman": "Vraisemblance : la boîte de Lapérouse contient des papiers officiels (Partie I, ch. XIX) ; Conseil classe tout ce qui lui passe entre les mains.",
+        "competence_programme": "Histoire : la société d'Ancien Régime (trois ordres, privilèges) ; fin de la monarchie absolue ; affirmation des nouveaux principes (Déclaration des droits de l'homme et du citoyen).",
+        "pourquoi_ce_savoir_ici": "Pour archiver ces papiers, il faut reconnaître ce qui appartient à l'Ancien Régime et ce qu'a apporté 1789.",
+        "reaction_du_decor": { "effet": "eclat", "description": "Les papiers se rangent en deux piles nettes ; la lampe s'avive." },
+        "liberte_ou_anachronisme": "Les papiers postérieurs à 1788 n'ont pas pu se trouver dans la boîte : ils sont présentés comme les documents que Nemo y a ajoutés pour comparer (vraisemblance assumée).",
+        "lecon": "ancien-regime", "type": "tri",
+        "niveau_variantes": "Mousse : avant / après 1789, 4 papiers. Matelot : les trois ordres. Timonier : Ancien Régime / nouveaux principes. Lieutenant : idem, plus difficile + justification. Second : QCM sur privilèges et égalité + justification.",
+        "mousse": {
+          "dialogue": "Je voudrais deux piles, Monsieur : ce qui vient d'avant 1789 et ce qui vient d'après. Le reste viendra ensuite.",
+          "consigne": "Range chaque papier : avant la Révolution ou après ?",
+          "colonnes": [
+            { "id": "avant", "titre": "Avant 1789 : le roi décide de tout", "icone": "👑" },
+            { "id": "apres", "titre": "Après 1789 : les droits de l'homme", "icone": "📜" }
+          ],
+          "cartes": [
+            { "txt": "« Louis, roi par la grâce de Dieu, ordonne… »", "col": "avant" },
+            { "txt": "« Seuls les nobles peuvent chasser. »", "col": "avant" },
+            { "txt": "« Les hommes naissent et demeurent libres et égaux en droits. »", "col": "apres" },
+            { "txt": "« Les privilèges sont abolis. »", "col": "apres" }
+          ],
+          "indices": ["Fiche « L'Ancien Régime et 1789 ».", "L'égalité des droits vient avec la Révolution."]
+        },
+        "matelot": {
+          "dialogue": "Dans l'ancien royaume, chacun appartenait à un « ordre ». Rangeons ces personnes comme le faisaient les états généraux.",
+          "consigne": "Range chaque personne dans son ordre de la société d'Ancien Régime.",
+          "colonnes": [
+            { "id": "clerge", "titre": "Le clergé (ceux qui prient)", "icone": "⛪" },
+            { "id": "noblesse", "titre": "La noblesse (ceux qui combattent)", "icone": "⚔️" },
+            { "id": "tiers", "titre": "Le tiers état (ceux qui travaillent)", "icone": "🔨" }
+          ],
+          "cartes": [
+            { "txt": "un évêque", "col": "clerge" },
+            { "txt": "un moine", "col": "clerge" },
+            { "txt": "un comte", "col": "noblesse" },
+            { "txt": "le comte de Lapérouse, officier de marine", "col": "noblesse" },
+            { "txt": "un paysan", "col": "tiers" },
+            { "txt": "un marchand", "col": "tiers" },
+            { "txt": "un charpentier de marine", "col": "tiers" }
+          ],
+          "indices": ["Fiche « L'Ancien Régime et 1789 » : les trois ordres.", "Lapérouse portait le titre de comte."]
+        },
+        "timonier": {
+          "dialogue": "Deux mondes dans une même boîte. Je les sépare : l'Ancien Régime d'un côté, les principes nouveaux de l'autre.",
+          "consigne": "Range chaque idée : Ancien Régime ou nouveaux principes de 1789 ?",
+          "colonnes": [
+            { "id": "ar", "titre": "Ancien Régime", "icone": "👑" },
+            { "id": "nouveau", "titre": "Nouveaux principes (1789)", "icone": "📜" }
+          ],
+          "cartes": [
+            { "txt": "le roi a tous les pouvoirs (monarchie absolue)", "col": "ar" },
+            { "txt": "la société est divisée en trois ordres", "col": "ar" },
+            { "txt": "le clergé et la noblesse ont des privilèges", "col": "ar" },
+            { "txt": "seul le tiers état paie la taille", "col": "ar" },
+            { "txt": "les hommes naissent libres et égaux en droits", "col": "nouveau" },
+            { "txt": "le pouvoir appartient à la nation", "col": "nouveau" },
+            { "txt": "les privilèges sont abolis (nuit du 4 août)", "col": "nouveau" },
+            { "txt": "chacun paie l'impôt selon ses moyens", "col": "nouveau" }
+          ],
+          "indices": ["Fiche « L'Ancien Régime et 1789 », tableau.", "La taille est un impôt de l'Ancien Régime."]
+        },
+        "lieutenant": {
+          "dialogue": "Certains papiers sont trompeurs : il faut les lire jusqu'au bout. Rangez-les, puis donnez la phrase qui fonde tout le reste.",
+          "consigne": "Range chaque idée, puis justifie.",
+          "colonnes": [
+            { "id": "ar", "titre": "Ancien Régime", "icone": "👑" },
+            { "id": "nouveau", "titre": "Nouveaux principes (1789)", "icone": "📜" }
+          ],
+          "cartes": [
+            { "txt": "le roi tient son pouvoir de Dieu", "col": "ar" },
+            { "txt": "les nobles ne paient pas la taille", "col": "ar" },
+            { "txt": "on peut être emprisonné sur simple ordre du roi (lettre de cachet)", "col": "ar" },
+            { "txt": "les emplois sont ouverts à tous selon leurs talents", "col": "nouveau" },
+            { "txt": "la souveraineté réside dans la nation", "col": "nouveau" },
+            { "txt": "nul ne peut être arrêté que dans les cas prévus par la loi", "col": "nouveau" },
+            { "txt": "la liberté d'opinion, même religieuse", "col": "nouveau" }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la Déclaration de 1789 met fin à la société des ordres ?",
+            "options": [
+              "« Les hommes naissent et demeurent libres et égaux en droits. »",
+              "« Le roi tient son pouvoir de Dieu. »",
+              "« Seul le tiers état paie la taille. »",
+              "« Les états généraux sont réunis à Versailles. »"
+            ],
+            "bonne": 0
+          },
+          "indices": ["Fiche « L'Ancien Régime et 1789 ».", "La lettre de cachet permettait d'enfermer quelqu'un sans jugement."]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Le capitaine m'a demandé : « Qu'est-ce qu'un privilège ? » J'ai voulu répondre vite, et je me suis trompé. Aidez-moi à répondre juste.",
+          "consigne": "Réponds en t'appuyant sur la fiche.",
+          "questions": [
+            { "q": "Un privilège, sous l'Ancien Régime, c'est…", "options": ["un avantage réservé à certains, par exemple ne pas payer certains impôts", "un impôt payé par tous", "une loi votée par la nation", "un titre de capitaine"], "bonne": 0 },
+            { "q": "Qui supporte l'essentiel des impôts avant 1789 ?", "options": ["le tiers état", "le clergé", "la noblesse", "le roi"], "bonne": 0 },
+            { "q": "La nuit du 4 août 1789…", "options": ["les députés abolissent les privilèges", "le roi est exécuté", "Lapérouse quitte Brest", "la République est proclamée"], "bonne": 0 }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche relie tes réponses 1 et 3 ?",
+            "options": [
+              "Le 4 août 1789, les députés abolissent les privilèges : la loi devient la même pour tous.",
+              "Louis XVI devient roi en 1774.",
+              "La Bastille est prise le 14 juillet 1789.",
+              "Lapérouse était comte."
+            ],
+            "bonne": 0
+          },
+          "indices": ["Fiche « L'Ancien Régime et 1789 ».", "Le tiers état représentait l'immense majorité de la population."]
+        }
+      }
+    ]
+  },
+  "lecons": [
+    {
+      "id": "instruments-explorateurs", "rayon": "histoire", "fiche": 2, "icone": "🧭", "titre": "Les instruments des explorateurs", "escale": 4,
+      "competence": "Les progrès techniques qui ont permis aux Européens de s'aventurer vers de nouveaux territoires.",
+      "essentiel": "<p>À partir du XVᵉ siècle, des progrès techniques permettent aux Européens de naviguer loin des côtes et de découvrir de nouveaux territoires.</p><table class='tab-lecon'><tr><th>Instrument</th><th>À quoi il sert</th></tr><tr><td>🧭 boussole</td><td>trouver le nord, donc garder sa direction, même sans voir les étoiles</td></tr><tr><td>☀️ astrolabe, puis sextant</td><td>mesurer la hauteur du Soleil pour savoir si l'on est loin de l'équateur (la latitude)</td></tr><tr><td>⏳ loch et sablier</td><td>mesurer la vitesse du navire</td></tr><tr><td>🗺️ cartes et portulans</td><td>noter les côtes découvertes, garder la mémoire des routes</td></tr><tr><td>🔭 longue-vue</td><td>voir loin</td></tr><tr><td>⛵ caravelle</td><td>navire léger qui peut naviguer loin, même contre le vent</td></tr></table>",
+      "approfondi": "<p>Au XVIIIᵉ siècle, le <b>chronomètre de marine</b> permet enfin de trouver sa <b>longitude</b> (sa position est-ouest) en comparant les heures. L'expédition de Lapérouse (1785) emportait les meilleurs instruments de son temps ; ses deux navires s'appelaient <i>La Boussole</i> et <i>L'Astrolabe</i>.</p>",
+      "expert": "<div class='encadre'><b>La longitude et l'heure</b>. La Terre fait un tour (360°) en 24 heures : chaque heure d'écart entre l'heure locale et l'heure du port de départ correspond à 15° de longitude. Le Soleil se lève à l'est : si, quand il est midi à bord, il est plus tard à Paris (le chronomètre l'indique), le navire est à l'ouest de Paris.</div>",
+      "dans_le_roman": "Le Nautilus survole les épaves de La Boussole et de L'Astrolabe à Vanikoro (Partie I, ch. XIX)."
+    },
+    {
+      "id": "laperouse-revolution", "rayon": "histoire", "fiche": 3, "icone": "📜", "titre": "Lapérouse et la Révolution", "escale": 4,
+      "competence": "Le temps de la Révolution : contexte du royaume en 1789 ; fin de la monarchie absolue.",
+      "essentiel": "<p>En 1785, le roi <b>Louis XVI</b> envoie Lapérouse explorer le Pacifique. L'expédition disparaît en <b>1788</b>. En <b>1789</b>, la Révolution commence : prise de la Bastille, Déclaration des droits de l'homme et du citoyen. Les épaves ne sont retrouvées qu'en <b>1828</b>.</p><table class='tab-lecon'><tr><th>Date</th><th>Événement</th></tr><tr><td>1774</td><td>Louis XVI devient roi de France</td></tr><tr><td>1er août 1785</td><td>départ de l'expédition de Lapérouse, de Brest</td></tr><tr><td>1788</td><td>dernières nouvelles depuis l'Australie ; naufrage à Vanikoro</td></tr><tr><td>mai 1789</td><td>réunion des états généraux</td></tr><tr><td>14 juillet 1789</td><td>prise de la Bastille</td></tr><tr><td>4 août 1789</td><td>abolition des privilèges</td></tr><tr><td>26 août 1789</td><td>Déclaration des droits de l'homme et du citoyen</td></tr><tr><td>septembre 1792</td><td>fin de la royauté, proclamation de la République</td></tr><tr><td>21 janvier 1793</td><td>exécution de Louis XVI</td></tr><tr><td>1828</td><td>Dumont d'Urville retrouve le lieu du naufrage</td></tr></table>",
+      "approfondi": "<p>Avant l'expédition, le roi annote de sa main les instructions de Lapérouse. L'expédition, décidée et organisée par un roi absolu, appartient à l'<b>Ancien Régime</b>.</p>",
+      "expert": "<p>L'expédition a disparu juste avant la Révolution : partie d'une monarchie absolue, elle ne pouvait plus rentrer dans le même pays. Selon une tradition, Louis XVI aurait demandé, peu avant sa mort, si l'on avait des nouvelles de Lapérouse.</p>",
+      "dans_le_roman": "Nemo montre à Aronnax les instructions de l'expédition annotées par Louis XVI (Partie I, ch. XIX)."
+    },
+    {
+      "id": "ancien-regime", "rayon": "histoire", "fiche": 4, "icone": "👑", "titre": "L'Ancien Régime et 1789", "escale": 4,
+      "competence": "Société d'Ancien Régime ; fin de la monarchie absolue ; nouveaux principes de 1789.",
+      "essentiel": "<p>Avant 1789, le roi a tous les pouvoirs : c'est la <b>monarchie absolue</b>. La société est divisée en <b>trois ordres</b> : le <b>clergé</b> (ceux qui prient), la <b>noblesse</b> (ceux qui combattent), le <b>tiers état</b> (ceux qui travaillent : paysans, artisans, marchands). En 1789, la Révolution proclame que « les hommes naissent et demeurent libres et égaux en droits ».</p>",
+      "approfondi": "<table class='tab-lecon'><tr><th>Ancien Régime</th><th>Nouveaux principes (1789)</th></tr><tr><td>le roi a tous les pouvoirs ; il tient son pouvoir de Dieu</td><td>le pouvoir (la souveraineté) appartient à la nation</td></tr><tr><td>trois ordres ; le clergé et la noblesse ont des <b>privilèges</b> (avantages réservés)</td><td>les privilèges sont abolis (nuit du 4 août 1789) ; égalité des droits</td></tr><tr><td>seul le tiers état paie la taille</td><td>chacun paie l'impôt selon ses moyens</td></tr><tr><td>on peut être emprisonné sur ordre du roi (lettre de cachet)</td><td>nul ne peut être arrêté que dans les cas prévus par la loi ; liberté d'opinion, même religieuse ; emplois ouverts à tous selon leurs talents</td></tr></table>",
+      "expert": "<p>Un <b>privilège</b>, c'est un avantage réservé à certains, par exemple ne pas payer certains impôts. Le tiers état, l'immense majorité de la population, supporte l'essentiel des impôts. Le 4 août 1789, les députés abolissent les privilèges : la loi devient la même pour tous.</p>",
+      "dans_le_roman": "Le comte de Lapérouse, noble et officier de marine, servait le roi Louis XVI (Partie I, ch. XIX)."
+    }
+  ],
+  "decors": {
+    "epave-vanikoro": {
+      "titre": "Les épaves de Vanikoro",
+      "reference": null,
+      "ambiance": ["sousMarin"],
+      "kenBurns": { "echelle": 1.05, "duree": 34 },
+      "effets": [
+        { "type": "caustiques", "x": 10, "y": 40, "w": 80, "h": 40, "intensite": 0.5 },
+        { "type": "lueur", "x": 80, "y": 44, "r": 6, "couleur": "#ffcf7a", "pulse": 0.3 },
+        { "type": "bulles", "x": 78, "y": 10, "w": 10, "h": 40, "nombre": 12 },
+        { "type": "poissons", "x": 5, "y": 30, "w": 50, "h": 40, "nombre": 5 },
+        { "type": "poussiere", "x": 10, "y": 10, "w": 80, "h": 70, "nombre": 35 },
+        { "type": "vignette", "force": 0.55 }, { "type": "grain", "force": 0.04 }
+      ],
+      "zones": [
+        { "id": "instruments-epave", "libelle": "Le compas et le sextant dans le sable", "x": 60, "y": 42, "w": 15, "h": 40, "description": "Un compas de marine et un sextant de laiton, rongés par le sel." },
+        { "id": "canons", "libelle": "Les canons couverts de coraux", "x": 20, "y": 20, "w": 38, "h": 50, "description": "Des canons de bronze, envahis de concrétions : un navire du siècle dernier." },
+        { "id": "coque", "libelle": "La coque", "x": 30, "y": 1, "w": 65, "h": 17, "description": "Une coque immense au-dessus de l'épave : c'est le Nautilus, immobile, qui éclaire la scène." }
+      ],
+      "etats": { "normal": { "filtre": "none" } }
+    }
+  },
+  "dialogues": {
+    "cinematiques": {
+      "transition-e4": {
+        "titre": "Escale 4 — Vanikoro et Lapérouse",
+        "plans": [
+          { "decor": "salon", "etat": "normal", "duree": 7, "personnage": "nemo", "texte": "Nous voici à Vanikoro, professeur. Ici dorment deux navires de votre pays, perdus depuis quatre-vingts ans.", "mouvement": "zoom" },
+          { "decor": "epave-vanikoro", "etat": "normal", "duree": 6, "personnage": "aronnax", "texte": "Des épaves… Celles que toute la France a cherchées ?", "mouvement": "glisse" }
+        ]
+      },
+      "fin-e4": {
+        "titre": "Un tombeau sous la mer",
+        "plans": [
+          { "decor": "epave-vanikoro", "etat": "normal", "duree": 6, "personnage": "nemo", "texte": "Un capitaine ne pouvait rêver plus beau tombeau, ni plus tranquille.", "mouvement": "zoom" }
+        ]
+      }
+    },
+    "fin_escale": {
+      "4": { "personnage": "nemo", "texte": "Les archives sont rangées. Notez dans le journal le nom de l'un des deux navires : il porte celui d'un instrument qui guidait les explorateurs." }
+    }
+  }
+}

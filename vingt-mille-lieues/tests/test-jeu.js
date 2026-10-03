@@ -17,14 +17,7 @@ const lire = f => JSON.parse(fs.readFileSync(path.join(JEU, "assets", "data", f)
 const D = { enigmes: lire("enigmes.json"), lecons: lire("lecons.json"), fx: lire("decors-fx.json"), dialogues: lire("dialogues.json"), persos: lire("personnages.json") };
 const avant = w => { w.VML_RAPIDE = true; };
 
-/* Solutions justes d'un circuit, par grade (fils à poser, interrupteurs à fermer, fils à retirer) */
-const CIRCUITS = {
-  mousse: { fils: [["L1b", "P-"]], fermes: {} },
-  matelot: { fils: [["P+", "K1a"], ["K1b", "L1a"], ["L1b", "Ma"], ["Mb", "P-"]], fermes: { K1: true } },
-  timonier: { fils: [["P+", "L1a"], ["L1b", "P-"], ["P+", "L2a"], ["L2b", "P-"]], fermes: {} },
-  lieutenant: { fils: [["P+", "L1a"], ["L1b", "P-"], ["P+", "L2a"], ["L2b", "P-"], ["P+", "K2a"], ["K2b", "Ma"], ["Mb", "P-"]], fermes: { K2: true } },
-  second: { retirer: true, fils: [["P+", "L1a"], ["L1b", "P-"], ["P+", "L2a"], ["L2b", "P-"], ["P+", "K2a"], ["K2b", "Ma"], ["Mb", "P-"]], fermes: { K2: true } }
-};
+const E2 = () => D.enigmes.escales.find(x => x.numero === 2);
 
 /** Répond juste à l'énigme ouverte (ou faux si « faux » est vrai). */
 async function repondre(w, e, grade, faux){
@@ -66,8 +59,26 @@ async function repondre(w, e, grade, faux){
       if(faux && i === 0) j = (j + 1) % b.questions[+q.dataset.i].options.length;
       clic(w, q.querySelector(`.qcm-option[data-j="${j}"]`));
     });
+  }else if(type === "code"){
+    b.champs.forEach((c, i) => { const inp = carte.querySelector("#code-" + i); inp.value = (faux && i === 0) ? String(c.valeur) + "9" : String(c.valeur); });
+  }else if(type === "vraifaux"){
+    carte.querySelectorAll(".vf-ligne").forEach((l, i) => { const v = !!b.affirmations[+l.dataset.i].vrai; clic(w, l.querySelector(`[data-rep="${(faux && i === 0) ? !v ? "vrai" : "faux" : v ? "vrai" : "faux"}"]`)); });
+  }else if(type === "intrus"){
+    clic(w, carte.querySelector(`.carte-intrus[data-intrus="${faux ? 0 : 1}"]`));
+  }else if(type === "plan"){
+    [...carte.querySelectorAll(".plan-case")].forEach((cs, i) => {
+      let mot = cs.dataset.rep;
+      if(faux && i === 0) mot = [...carte.querySelectorAll(".etiquette")].map(x => x.dataset.mot).find(x => x !== mot);
+      clic(w, carte.querySelector(`.etiquette[data-mot="${mot}"]:not(.posee)`)); clic(w, cs);
+    });
+  }else if(type === "lettres"){
+    const cible = b.cible.map(String), pris = new Set();
+    cible.forEach((l, i) => {
+      const el = [...carte.querySelectorAll("[data-l]")].find(x => !pris.has(x) && (faux && i === 0 ? x.dataset.l !== l : x.dataset.l === l));
+      pris.add(el); clic(w, el);
+    });
   }else if(type === "circuit"){
-    const s = CIRCUITS[grade];
+    const s = b.solution;
     const c = carte._circuit;
     if(s.retirer) c.fils.splice(0, c.fils.length, ...c.fils.filter(f => f.fixe));
     (faux ? s.fils.slice(0, s.fils.length - 1) : s.fils).forEach(([de, a]) => c.fils.push({ de, a }));
@@ -85,8 +96,12 @@ async function repondre(w, e, grade, faux){
     /* ================= Données ================= */
     if(faire("donnees")){
       console.log("== Données ==");
-      const es = D.enigmes.escales.find(x => x.numero === 2);
-      ok(es && es.enigmes.length >= 3 && es.enigmes.length <= 4, "escale 2 : 3 à 4 énigmes");
+      ok(D.enigmes.escales.every(x => x.enigmes.length >= 3 && x.enigmes.length <= 4), "chaque escale : 3 à 4 énigmes");
+      ok(D.enigmes.escales.map(x => x.numero).every((n, i, t) => !i || n > t[i - 1]), "escales rangées dans l'ordre du roman");
+      ok(new Set(D.enigmes.escales.map(x => x.mot)).size === D.enigmes.escales.length, "un mot différent par escale");
+      const ids = D.enigmes.escales.flatMap(x => x.enigmes.map(e => e.id));
+      ok(new Set(ids).size === ids.length, "identifiants d'énigmes uniques");
+      for(const es of D.enigmes.escales){
       ok(D.enigmes.niveaux.map(n => n.id).join() === GRADES.join(), "5 grades dans l'ordre");
       const emb = fs.readFileSync(path.join(JEU, "js", "donnees-embarquees.js"), "utf8");
       const m = emb.match(/window\.VML_DONNEES_EMBARQUEES = ([\s\S]*);\s*$/);
@@ -112,9 +127,11 @@ async function repondre(w, e, grade, faux){
       }
       for(const g of GRADES){
         const types = es.enigmes.map(e => e[g].type || e.type);
-        ok(types.every((t, i) => i === 0 || t !== types[i - 1]), `${g} : jamais deux énigmes de même type d'affilée (${types.join(", ")})`);
+        ok(types.every((t, i) => i === 0 || t !== types[i - 1]), `escale ${es.numero} ${g} : jamais deux énigmes de même type d'affilée (${types.join(", ")})`);
       }
-      ok(es.enigmes.every(e => D.lecons.lecons.some(l => l.id === e.lecon)), "chaque énigme renvoie à une fiche existante");
+      ok(es.enigmes.every(e => D.lecons.lecons.some(l => l.id === e.lecon)), `escale ${es.numero} : chaque énigme renvoie à une fiche existante`);
+      ok(es.enigmes.every(e => e.type !== "circuit" || GRADES.every(g => e[g].solution)), `escale ${es.numero} : solution de référence pour chaque circuit`);
+      }
       const textes = JSON.stringify(D);
       ok(!/CE2|CM1|CM2|6e|5e/.test(JSON.stringify(D.enigmes.escales)), "aucune étiquette scolaire dans les énigmes affichées");
       ok(!/[A-Za-z0-9_-]{20,}\.(?:apihub)|AGNES_API_KEY\s*=|Bearer\s+[A-Za-z0-9]/.test(textes), "aucune clé d'API dans les données");
@@ -144,9 +161,9 @@ async function repondre(w, e, grade, faux){
       ok(!(r.tension.L1 > 0.15), "interrupteur ouvert : circuit ouvert");
       r = V.simulerCircuit(comps, f(["P+", "L1a"], ["L1b", "P-"], ["L1a", "L1b"]), {});
       ok(!(r.tension.L1 > 0.15), "lampe court-circuitée par un fil : éteinte");
-      const e = D.enigmes.escales[0].enigmes[1];
+      const e = E2().enigmes[1];
       for(const g of GRADES){
-        const s = CIRCUITS[g];
+        const s = e[g].solution;
         let fils = (e[g].fils || []).filter(x => !s.retirer || x.fixe).concat(s.fils.map(([de, a]) => ({ de, a })));
         const fermes = Object.assign({}, s.fermes);
         const v = V.verifierCircuit(e[g], fils, fermes);
@@ -158,16 +175,15 @@ async function repondre(w, e, grade, faux){
       ok(!serie.liste.every(x => x.ok) && serie.liste.filter(x => x.ok).length >= 3, "timonier : le montage en série est refusé (lampes non indépendantes)");
       const derivMatelot = V.verifierCircuit(e.matelot, f(["P+", "K1a"], ["K1b", "L1a"], ["L1b", "P-"], ["K1b", "Ma"], ["Mb", "P-"]), { K1: true });
       ok(!derivMatelot.liste.every(x => x.ok), "matelot : une dérivation est refusée (la consigne exige une seule boucle)");
-      const sansRetrait = V.verifierCircuit(e.second, e.second.fils.concat(CIRCUITS.second.fils.map(([de, a]) => ({ de, a }))), { K2: true });
+      const sansRetrait = V.verifierCircuit(e.second, e.second.fils.concat(e.second.solution.fils.map(([de, a]) => ({ de, a }))), { K2: true });
       ok(!sansRetrait.liste.every(x => x.ok), "second : garder le fil de secours (court-circuit) est refusé");
     }
 
     /* ================= Partie complète aux 5 grades ================= */
     if(faire("partie")){
-      console.log("== Partie complète, 5 grades ==");
-      const es = D.enigmes.escales[0];
-      for(const g of GRADES){
-        const { w, erreurs } = await charger(JEU, `?verif=1&escale=2&niveau=${g}&enigme=1`, { avant });
+      console.log("== Partie complète, toutes escales, 5 grades ==");
+      for(const es of D.enigmes.escales) for(const g of GRADES){
+        const { w, erreurs } = await charger(JEU, `?verif=1&escale=${es.numero}&niveau=${g}&enigme=1`, { avant });
         const d = w.document;
         ok(await attendreQue(() => d.querySelector("#scene-jeu .zone.cible")), `${g} : décor et objet cible affichés`);
         ok(d.querySelector("#scene-jeu").dataset.source === "secours", `${g} : décor de secours (aucune image dans jsdom)`);
@@ -181,13 +197,13 @@ async function repondre(w, e, grade, faux){
           ok(!d.getElementById("panneau-enigme").classList.contains("ouvert"), `${g} ${e.id} : examiner un autre objet n'ouvre pas l'énigme`);
           clic(w, d.querySelector(`.zone[data-zone="${e.objet_principal}"]`));
           ok(await attendreQue(() => d.getElementById("enigme-" + e.id)), `${g} ${e.id} : l'énigme s'ouvre depuis l'objet du décor`);
-          if(e.id === "e2-1") clic(w, d.querySelector("[data-fiche]"));
+          if(e === es.enigmes[0]) clic(w, d.querySelector("[data-fiche]"));
           const score0 = w.VML.ETAT.score;
           await repondre(w, e, g);
           ok(await attendreQue(() => w.VML.ETAT.resolues[e.id]), `${g} ${e.id} : résolue du premier coup`);
-          const attendu = 10 + (e.id === "e2-1" ? 2 : 0);
+          const attendu = 10 + (e === es.enigmes[0] ? 2 : 0);
           ok(w.VML.ETAT.score - score0 === attendu, `${g} ${e.id} : +${attendu} points (obtenu ${w.VML.ETAT.score - score0})`);
-          if(e.id === "e2-1") ok(/Bien documenté/.test(d.getElementById("fb-" + e.id).innerHTML), `${g} : bonus « Bien documenté » affiché`);
+          if(e === es.enigmes[0]) ok(/Bien documenté/.test(d.getElementById("fb-" + e.id).innerHTML), `${g} : bonus « Bien documenté » affiché`);
           ok(!/Bravo|correction|La bonne réponse/i.test(d.getElementById("fb-" + e.id).textContent), `${g} ${e.id} : aucun texte de correction après la réussite`);
           await attendreQue(() => !d.getElementById("panneau-enigme").classList.contains("ouvert"));
           ok(d.querySelector(`.reaction-${e.reaction_du_decor.effet}`) || d.querySelector("#scene-jeu").classList.contains("flash-lumiere") || e.reaction_du_decor.effet === "hublots" || e.reaction_du_decor.effet === "lumiere", `${g} ${e.id} : le décor réagit (${e.reaction_du_decor.effet})`);
@@ -195,13 +211,15 @@ async function repondre(w, e, grade, faux){
           await dodo(200);
         }
         ok(await attendreQue(() => d.body.dataset.ecran === "ecran-fin", 4000), `${g} : écran de fin d'escale`);
-        ok(d.querySelector(".fragment-mot") && d.querySelector(".fragment-mot").textContent === es.mot, `${g} : le fragment ${es.mot} s'affiche`);
+        ok(d.querySelector(".fragment-mot") && d.querySelector(".fragment-mot").textContent === es.mot, `escale ${es.numero} ${g} : le fragment ${es.mot} s'affiche`);
         ok(d.getElementById("bilan").hidden, `${g} : bilan caché tant que le mot n'est pas noté`);
         clic(w, d.getElementById("btn-mot-note"));
         ok(!d.querySelector(".fragment-mot") && !d.getElementById("bilan").hidden, `${g} : le mot disparaît une fois noté, le bilan apparaît`);
-        const max = es.enigmes.length * 12 + 10;
-        ok(w.VML.ETAT.score === 40 + 2 + 5 + 5 && d.querySelector(".bilan-score").textContent.includes("/ " + max), `${g} : score ${w.VML.ETAT.score} (40 + 2 documenté + 5 maître-nageur + 5 rapidité) sur ${max}`);
+        const max = es.enigmes.length * 12 + 10, att = es.enigmes.length * 10 + 2 + 5 + 5;
+        ok(w.VML.ETAT.score === att && d.querySelector(".bilan-score").textContent.includes("/ " + max), `escale ${es.numero} ${g} : score ${w.VML.ETAT.score} (= ${att}) sur ${max}`);
         ok((g === "second") === !d.getElementById("btn-plonger"), `${g} : « plonger plus profond » proposé sauf au dernier grade`);
+        const derniere = es === D.enigmes.escales[D.enigmes.escales.length - 1];
+        ok(derniere ? !!d.getElementById("btn-coffre") : !!d.getElementById("btn-escale-suivante"), `escale ${es.numero} : bouton ${derniere ? "coffre" : "escale suivante"}`);
         ok(erreurs.length === 0, `${g} : aucune erreur JS (${erreurs.join(" | ")})`);
         w.close();
       }
@@ -210,7 +228,7 @@ async function repondre(w, e, grade, faux){
     /* ================= Erreurs, sas, barème après erreur ================= */
     if(faire("erreurs")){
       console.log("== Erreurs et sas de sécurité ==");
-      const es = D.enigmes.escales[0];
+      const es = E2();
       for(const [g, k] of [["matelot", 0], ["timonier", 2], ["lieutenant", 3], ["second", 1]]){
         const e = es.enigmes[k];
         const { w, erreurs } = await charger(JEU, `?verif=1&escale=2&niveau=${g}&enigme=${k + 1}`, { avant });
@@ -258,7 +276,7 @@ async function repondre(w, e, grade, faux){
     /* ================= Aides : indices, Mousse, justification, mélange ================= */
     if(faire("aides")){
       console.log("== Aides ==");
-      const es = D.enigmes.escales[0];
+      const es = E2();
       let { w } = await charger(JEU, `?verif=1&escale=2&niveau=mousse&enigme=3`, { avant });
       let d = w.document;
       await attendreQue(() => w.VML.ouvrirEnigmeCourante); w.VML.ouvrirEnigmeCourante();
@@ -313,7 +331,7 @@ async function repondre(w, e, grade, faux){
       ok(await attendreQue(() => d.body.dataset.ecran === "ecran-cine"), "cinématique d'escale lancée");
       clic(w, d.querySelector(".cine-passer"));
       ok(await attendreQue(() => d.body.dataset.ecran === "ecran-jeu"), "cinématique passée : la scène s'ouvre");
-      ok(w.VML.ETAT.air < 100, "jauge d'air entamée par l'avarie (décor)");
+      ok(w.VML.ETAT.escale === D.enigmes.escales[0].numero, "la campagne commence à la première escale");
       const sauve = JSON.parse(w.localStorage.getItem("vml_partie"));
       ok(sauve && sauve.equipe === "Les Hublots" && sauve.niveau === "timonier" && sauve.introVue, "partie sauvegardée");
       clic(w, d.getElementById("btn-reglages"));

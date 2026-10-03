@@ -118,7 +118,7 @@ VML.Scene = class {
     this.hote.dataset.decor = id;
     this.hote.dataset.source = src.type;
     if(src.type === "secours"){
-      this.fond.innerHTML = (VML.SVG_DECORS && VML.SVG_DECORS[id]) ? VML.SVG_DECORS[id] : "";
+      this.fond.innerHTML = (VML.SVG_DECORS && VML.SVG_DECORS[id]) ? VML.SVG_DECORS[id] : VML.svgGenerique(d);
       this.fond.classList.add("svg");
     }else{
       this.fond.classList.remove("svg");
@@ -397,6 +397,15 @@ VML.Scene = class {
     if(effet === "lumiere"){ this.hote.classList.add("flash-lumiere"); setTimeout(() => this.hote.classList.remove("flash-lumiere"), 1600); this.setEtat("normal"); }
     if(effet === "aiguilles"){ el.innerHTML = '<div class="balayage"></div>'; }
     if(effet === "hublots"){ this.setEtat("victoire"); this.hote.classList.add("tremble"); setTimeout(() => this.hote.classList.remove("tremble"), 1200); }
+    /* Réactions génériques, posées sur la zone de l'objet (aucun texte) */
+    if(effet === "eclat") el.innerHTML = Array.from({ length: 14 }, (_, i) => `<span class="etoile" style="left:${(i * 37) % 100}%;top:${(i * 53) % 100}%;animation-delay:${(i % 7) * 0.12}s"></span>`).join("");
+    if(effet === "vapeur") el.innerHTML = Array.from({ length: 8 }, (_, i) => `<span class="nuage" style="left:${10 + i * 11}%;animation-delay:${i * 0.15}s"></span>`).join("");
+    if(effet === "secousse"){ this.hote.classList.add("tremble", "flash-blanc"); setTimeout(() => this.hote.classList.remove("tremble", "flash-blanc"), 1300); }
+    if(effet === "ouverture") el.innerHTML = '<div class="volet g"></div><div class="volet d"></div>';
+    if(effet === "carte") el.innerHTML = '<svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="trace" d="M5 80 C 30 20, 60 90, 95 15" /></svg>';
+    if(effet === "givre") el.innerHTML = '<div class="givre"></div>';
+    if(effet === "alarme"){ this.hote.classList.add("en-alarme"); setTimeout(() => this.hote.classList.remove("en-alarme"), 2400); }
+    if(effet === "calme"){ this.setEtat("normal"); }
     r.appendChild(el);
     if(VML.son) VML.son("reaction-" + effet);
     return el;
@@ -409,6 +418,16 @@ VML.Scene = class {
     if(this.raf) cancelAnimationFrame(this.raf);
     this.raf = null;
   }
+};
+
+/** Décor de secours générique (si ni fichier, ni référence, ni dessin propre) : ambiance sans objet. */
+VML.svgGenerique = function(d){
+  const chaud = /pont|cambuse|vapeur|cabine|salon|carre|orgue|vigo/.test((d && d.titre || "").toLowerCase() + JSON.stringify(d && d.ambiance || ""));
+  return `<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${(d && d.titre) || "décor"} (décor de secours)">
+    <defs><radialGradient id="gG" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="${chaud ? "#6a3d1c" : "#1f6a8a"}"/><stop offset="1" stop-color="#05121a"/></radialGradient></defs>
+    <rect width="1600" height="900" fill="url(#gG)"/>
+    ${Array.from({ length: 9 }, (_, i) => `<path d="M${i * 200} 900 Q ${i * 200 + 100} ${620 + (i % 3) * 30} ${i * 200 + 200} 900Z" fill="#000" opacity=".25"/>`).join("")}
+  </svg>`;
 };
 
 VML.rgba = function(hex, a){

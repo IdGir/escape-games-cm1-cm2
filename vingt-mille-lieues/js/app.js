@@ -16,11 +16,20 @@ VML.CLE_PARTIE = "vml_partie";
   const $ = s => document.querySelector(s);
   let scene = null, tic = null, dernierTic = 0, insiste = null;
 
-  const nouvelEtat = (equipe, niveau) => ({
-    version: 1, equipe, niveau, escale: 2, indexEnigme: 0, score: 0, resolues: {}, enigmes: {},
-    fichesConsultees: [], indicesTotal: 0, indicesEscale: 0, erreursTotal: 0, msEcoules: 0,
-    debut: Date.now(), enPause: false, escaleTerminee: false, mots: [], motVu: false, bonus: {},
-    air: 100, introVue: false, delaiAccordeMin: 0
+  /* Escales jouables : celles des données, filtrées par le réglage enseignant, dans l'ordre du roman */
+  VML.escalesJouables = function(){
+    const toutes = ((VML.D.enigmes || {}).escales || []).map(x => x.numero).sort((a, b) => a - b);
+    const choix = VML.reglage ? VML.reglage("escales") : null;
+    const f = Array.isArray(choix) && choix.length ? toutes.filter(n => choix.includes(n)) : toutes;
+    return f.length ? f : toutes;
+  };
+  VML.escaleSuivante = function(n){ const l = VML.escalesJouables(); const i = l.indexOf(n); return i >= 0 && i < l.length - 1 ? l[i + 1] : null; };
+
+  const nouvelEtat = (equipe, niveau, escale) => ({
+    version: 2, equipe, niveau, escale: escale || VML.escalesJouables()[0], indexEnigme: 0, score: 0, resolues: {}, enigmes: {},
+    fichesConsultees: [], indicesTotal: 0, indicesEscale: 0, erreursTotal: 0, msEcoules: 0, msTotal: 0,
+    debut: Date.now(), enPause: false, escaleTerminee: false, mots: [], motVu: false, bonus: {}, bonusEscales: {},
+    escalesFaites: [], air: 100, introVue: false, delaiAccordeMin: 0, coffreOuvert: false, final: false
   });
 
   VML.sauver = function(){
@@ -66,7 +75,8 @@ VML.CLE_PARTIE = "vml_partie";
     if(cause === "indice") VML.ETAT.air = Math.max(a.plancher || 25, (VML.ETAT.air || 100) - (a.perte_par_indice || 3));
     VML.majHUD();
   };
-  const pompeEnMarche = () => !!(VML.ETAT.resolues || {})["e2-2"];
+  const airEscale = () => (VML.escale(VML.ETAT.escale) || {}).air || null;
+  const pompeEnMarche = () => { const a = airEscale(); return !a || !a.pompe || !!(VML.ETAT.resolues || {})[a.pompe]; };
 
   function demarrerChrono(){
     clearInterval(tic); dernierTic = Date.now();
@@ -74,6 +84,7 @@ VML.CLE_PARTIE = "vml_partie";
       const E = VML.ETAT, now = Date.now(), dt = now - dernierTic; dernierTic = now;
       if(!E || E.enPause || E.escaleTerminee || document.body.dataset.ecran !== "ecran-jeu") return;
       E.msEcoules = (E.msEcoules || 0) + dt;
+      E.msTotal = (E.msTotal || 0) + dt;
       const es = VML.escale(E.escale) || {}; const a = es.air || {};
       if(E.introVue && !pompeEnMarche()) E.air = Math.max(a.plancher || 25, (E.air || 100) - (a.perte_par_minute || 1) * dt / 60000);
       VML.majHUD();
@@ -146,8 +157,13 @@ VML.CLE_PARTIE = "vml_partie";
     VML.sauver();
     VML.demarrerSync();
     demarrerChrono();
+    if(etat.final){ VML.ouvrirCoffre(); return; }
     if(etat.escaleTerminee){ finEscale(true); return; }
-    if(!etat.introVue){ VML.jouerCinematique("transition-e2").then(() => { VML.ETAT.introVue = true; VML.sauver(); entrerEnigme(); }); }
+    const es = VML.escale(etat.escale) || {};
+    if(!etat.introVue){
+      etat.air = (es.air || {}).depart || 100;
+      VML.jouerCinematique(es.cinematique_ouverture || ("transition-e" + etat.escale)).then(() => { VML.ETAT.introVue = true; VML.sauver(); entrerEnigme(); });
+    }
     else entrerEnigme();
   }
 
@@ -189,9 +205,18 @@ VML.CLE_PARTIE = "vml_partie";
         if(passe) break;
         await sc.afficher(p.decor, { etat: p.etat, actives: [] });
         const hote = ov.querySelector(".cine-scene");
+        /* Plan filmé (vidéo déposée) : il se pose au-dessus du décor ; sans fichier, le décor animé reste */
+        const anc = ov.querySelector(".cine-plan-video"); if(anc) anc.remove();
+        const urlPlan = p.video ? await VML.sonderVideo(p.video) : null;
+        if(urlPlan){
+          const v = document.createElement("video");
+          v.className = "cine-plan-video"; v.muted = true; v.playsInline = true; v.src = urlPlan;
+          ov.querySelector(".cine-scene").after(v);
+          try{ v.play(); }catch(e){}
+        }
         hote.classList.remove("mvt-zoom", "mvt-glisse", "mvt-secousse"); void hote.offsetWidth;
         hote.classList.add("mvt-" + (p.mouvement || "zoom"));
-        if(p.effet === "coupure"){ hote.classList.add("coupure"); if(VML.son) VML.son("alarme"); VML.ETAT.air = ((VML.escale(VML.ETAT.escale) || {}).air || {}).apres_avarie || 62; VML.majHUD(); }
+        if(p.effet === "coupure" || p.effet === "alarme"){ if(p.effet === "coupure") hote.classList.add("coupure"); if(VML.son) VML.son("alarme"); const a = (VML.escale(VML.ETAT.escale) || {}).air || {}; if(a.apres_avarie) VML.ETAT.air = a.apres_avarie; VML.majHUD(); }
         st.innerHTML = sousTitre(p);
         const portrait = st.querySelector(".portrait-ovale"); if(portrait) VML.installerPortrait(portrait);
         await Promise.race([
@@ -200,6 +225,7 @@ VML.CLE_PARTIE = "vml_partie";
         ]);
       }
       sc.detruire();
+      const pv = ov.querySelector(".cine-plan-video"); if(pv) pv.remove();
     };
     await Promise.race([jouer(), fin]);
     appliquerEffetsCine(c);
@@ -210,18 +236,28 @@ VML.CLE_PARTIE = "vml_partie";
     return (p.personnage ? VML.htmlPortrait(p.personnage, "cine") : "") + `<div><b>${pe ? pe.court || pe.nom : ""}</b> ${pe ? "— " : ""}<span>${p.texte}</span></div>`;
   }
   function appliquerEffetsCine(c){
-    if(c.plans.some(p => p.effet === "coupure") && VML.ETAT && !VML.ETAT.introVue){
-      VML.ETAT.air = ((VML.escale(VML.ETAT.escale) || {}).air || {}).apres_avarie || 62;
+    const a = VML.ETAT ? ((VML.escale(VML.ETAT.escale) || {}).air || {}) : {};
+    if(c.plans.some(p => p.effet === "coupure" || p.effet === "alarme") && VML.ETAT && !VML.ETAT.introVue && a.apres_avarie){
+      VML.ETAT.air = a.apres_avarie;
     }
   }
 
   /* ---------------- Escale ---------------- */
+  /* États des décors (panne, alarme, victoire…) : règles « etats_decor » de l'escale.
+     { decor, etat, jusqua: idEnigme } vaut tant que l'énigme n'est pas résolue ;
+     { decor, etat, apres: idEnigme } vaut une fois l'énigme résolue (la dernière règle qui s'applique gagne). */
   function etatDecor(decor){
-    const r = VML.ETAT.resolues || {};
-    if(decor === "carre") return r["e2-1"] ? "normal" : "panne";
-    if(decor === "machines" || decor === "salon") return r["e2-2"] ? (r["e2-4"] ? "victoire" : "normal") : "panne";
-    return "normal";
+    const r = VML.ETAT.resolues || {}, es = VML.escale(VML.ETAT.escale) || {};
+    let etat = "normal";
+    (es.etats_decor || []).forEach(g => {
+      if(g.decor !== decor) return;
+      if(g.jusqua && !r[g.jusqua]) etat = g.etat;
+      if(g.apres && r[g.apres]) etat = g.etat;
+      if(!g.jusqua && !g.apres) etat = g.etat;
+    });
+    return etat;
   }
+  VML.etatDecor = etatDecor;
 
   function entrerEnigme(){
     const E = VML.ETAT, es = VML.escale(E.escale);
@@ -281,7 +317,8 @@ VML.CLE_PARTIE = "vml_partie";
   function reussite(e){
     const E = VML.ETAT;
     const re = e.reaction_du_decor || {};
-    if(re.effet === "lumiere" || re.effet === "hublots") E.air = re.effet === "hublots" ? 100 : E.air;
+    const a = airEscale();
+    if(a && a.plein === e.id) E.air = 100;
     scene.reaction(re.effet, e.objet_principal);
     VML.masquerPlaque($("#plaque"));
     E.indexEnigme++;
@@ -290,7 +327,8 @@ VML.CLE_PARTIE = "vml_partie";
     setTimeout(() => {
       scene.viderReactions();
       if(E.indexEnigme >= VML.escale(E.escale).enigmes.length){
-        VML.jouerCinematique("fin-e2").then(() => finEscale());
+        const es = VML.escale(E.escale) || {};
+        VML.jouerCinematique(es.cinematique_fin || ("fin-e" + E.escale)).then(() => finEscale());
       }else{
         const hote = $("#scene-jeu");
         hote.classList.add("fondu");
@@ -306,14 +344,17 @@ VML.CLE_PARTIE = "vml_partie";
       E.escaleTerminee = true;
       E.air = 100;
       const B = VML.BAREME;
-      E.bonus = E.bonus || {};
+      E.bonus = {};
       if((E.indicesEscale || 0) === 0) E.bonus.maitreNageur = B.maitreNageur;
       const ref = (VML.reglage("dureeEscaleMin") || 25) + (E.delaiAccordeMin || 0);
       const min = (E.msEcoules || 0) / 60000;
       const rap = min <= ref - 5 ? B.rapidite[0].pts : min <= ref ? B.rapidite[1].pts : 0;
       if(rap) E.bonus.rapidite = rap;
+      E.bonusEscales = E.bonusEscales || {};
+      E.bonusEscales[E.escale] = Object.assign({}, E.bonus);
       E.score = (E.score || 0) + (E.bonus.maitreNageur || 0) + (E.bonus.rapidite || 0);
       if(!(E.mots || []).includes(es.mot)) E.mots = (E.mots || []).concat([es.mot]);
+      E.escalesFaites = [...new Set((E.escalesFaites || []).concat([E.escale]))];
       VML.sauver();
       VML.memoriserCompteRendu();
       if(VML.envoyerEtat) VML.envoyerEtat();
@@ -323,6 +364,8 @@ VML.CLE_PARTIE = "vml_partie";
     const f = $("#fin-contenu");
     const d = ((VML.D.dialogues || {}).fin_escale || {})[E.escale];
     const g = VML.gradeSuivant(E.niveau);
+    const suivante = VML.escaleSuivante(E.escale);
+    const esS = suivante ? VML.escale(suivante) : null;
     const fragment = !E.motVu
       ? `<div class="fragment" id="fragment">
           <div class="fragment-titre">Fragment du journal de bord — escale ${E.escale}</div>
@@ -336,13 +379,14 @@ VML.CLE_PARTIE = "vml_partie";
       ${fragment}
       <div class="bilan" ${E.motVu ? "" : "hidden"} id="bilan">
         <h2>⚓ Escale ${E.escale} accomplie</h2>
-        <p class="bilan-score">Score : <b>${E.score}</b> / ${VML.scoreMaxEscale(E.escale)}</p>
-        <p>${E.bonus && E.bonus.maitreNageur ? "🏊 <b>Maître-nageur</b> : escale sans indice, +" + E.bonus.maitreNageur + " · " : ""}${E.bonus && E.bonus.rapidite ? "⏱️ <b>Rapidité</b> +" + E.bonus.rapidite + " · " : ""}📚 Bien documenté : ${Object.values(E.resolues || {}).filter(r => r.bienDoc).length} fois</p>
+        <p class="bilan-score">Escale : <b>${VML.scoreEscale(E.escale)}</b> / ${VML.scoreMaxEscale(E.escale)} · total du voyage : <b>${E.score}</b></p>
+        <p>${E.bonus && E.bonus.maitreNageur ? "🏊 <b>Maître-nageur</b> : escale sans indice, +" + E.bonus.maitreNageur + " · " : ""}${E.bonus && E.bonus.rapidite ? "⏱️ <b>Rapidité</b> +" + E.bonus.rapidite + " · " : ""}📚 Bien documenté : ${es.enigmes.filter(x => (E.resolues[x.id] || {}).bienDoc).length} fois</p>
         ${VML.htmlJournal()}
         <div class="boutons-fin">
-          ${g ? `<button class="btn-laiton" id="btn-plonger">🌊 Plonger plus profond : rejouer en ${VML.infoGrade(g).icone} ${VML.infoGrade(g).nom}</button>` : ""}
+          ${esS ? `<button class="btn-laiton principal" id="btn-escale-suivante">🗺️ Escale ${suivante} : ${esS.titre}</button>`
+                : `<button class="btn-laiton principal" id="btn-coffre">🔐 Ouvrir le coffre du capitaine</button>`}
+          ${g ? `<button class="btn-laiton" id="btn-plonger">🌊 Plonger plus profond : rejouer cette escale en ${VML.infoGrade(g).icone} ${VML.infoGrade(g).nom}</button>` : ""}
           <button class="btn-laiton" id="btn-imprimer-journal">🖨️ Imprimer le journal de bord</button>
-          <button class="btn-laiton gris" disabled title="Les autres escales seront produites après validation de l'escale pilote">🗺️ Escale 3 — en préparation</button>
         </div>
       </div>`;
     if(d && !reprise) VML.plaque($("#fin-plaque"), { perso: d.personnage, texte: d.texte });
@@ -356,13 +400,74 @@ VML.CLE_PARTIE = "vml_partie";
     };
     if(!E.motVu && VML.son) VML.son("orgue");
     const bp = $("#btn-plonger");
-    if(bp) bp.onclick = () => {
-      const n = nouvelEtat(E.equipe, g);
-      n.mots = E.mots.slice(); n.motVu = true; n.introVue = true; n.air = 62;
-      lancer(n);
-    };
+    if(bp) bp.onclick = () => { VML.taire(); rejouerEscale(g); };
+    const bs = $("#btn-escale-suivante");
+    if(bs) bs.onclick = () => { VML.taire(); passerEscale(suivante); };
+    const bc = $("#btn-coffre");
+    if(bc) bc.onclick = () => { VML.taire(); E.final = true; VML.sauver(); VML.ouvrirCoffre(); };
     $("#btn-imprimer-journal").onclick = () => VML.imprimer(VML.htmlJournal(), "Journal de bord");
   }
+
+  function reinitialiserEscale(E){
+    Object.assign(E, { indexEnigme: 0, escaleTerminee: false, indicesEscale: 0, msEcoules: 0, motVu: false, introVue: false, bonus: {}, delaiAccordeMin: 0 });
+  }
+  function passerEscale(n){
+    const E = VML.ETAT;
+    E.escale = n; reinitialiserEscale(E);
+    VML.sauver(); lancer(E);
+  }
+  /* « Plonger plus profond » : la même escale au grade supérieur ; ses points sont remplacés */
+  function rejouerEscale(g){
+    const E = VML.ETAT, es = VML.escale(E.escale);
+    E.score = Math.max(0, (E.score || 0) - VML.scoreEscale(E.escale));
+    es.enigmes.forEach(x => { delete E.resolues[x.id]; delete E.enigmes[x.id]; });
+    delete (E.bonusEscales || {})[E.escale];
+    E.niveau = g; ETAT = E;
+    reinitialiserEscale(E);
+    E.motVu = true; E.introVue = true;
+    VML.sauver(); lancer(E);
+  }
+
+  /* ---------------- Coffre du capitaine (final) ---------------- */
+  VML.ouvrirCoffre = function(){
+    const E = VML.ETAT;
+    VML.aller("ecran-fin");
+    const l = VML.escalesJouables().filter(n => (E.escalesFaites || []).includes(n));
+    const C = (VML.D.dialogues || {}).coffre || {};
+    E.coffre = E.coffre || { erreurs: 0 };
+    $("#fin-contenu").innerHTML = `
+      <div class="fin-plaque" id="coffre-plaque"></div>
+      <div class="coffre ${E.coffreOuvert ? "ouvert" : ""}">
+        <h2>🔐 Le coffre du capitaine Nemo</h2>
+        <p>Retapez, case par case, les fragments du journal de bord notés sur votre fiche de mission.</p>
+        <div class="coffre-cases">${l.map(n => `<label class="coffre-case">Escale ${n}<input type="text" data-escale="${n}" autocomplete="off" maxlength="16" ${E.coffreOuvert ? "disabled" : ""}></label>`).join("")}</div>
+        <div class="feedback" id="fb-coffre" role="status"></div>
+        <div class="boutons-fin">${E.coffreOuvert ? "" : `<button class="btn-laiton principal" id="btn-ouvrir-coffre">🔓 Ouvrir</button>`}
+          <button class="btn-laiton" id="btn-journal-final">🖨️ Journal de bord complet</button></div>
+      </div>`;
+    if(C.personnage && !E.coffreOuvert) VML.plaque($("#coffre-plaque"), { perso: C.personnage, texte: C.texte });
+    $("#btn-journal-final").onclick = () => VML.imprimer(VML.htmlJournal(true), "Journal de bord complet");
+    const bo = $("#btn-ouvrir-coffre");
+    if(bo) bo.onclick = () => {
+      const champs = [...document.querySelectorAll(".coffre-case input")];
+      if(champs.some(c => !c.value.trim())){ const fb = $("#fb-coffre"); fb.className = "feedback indice show"; fb.textContent = "✋ Toutes les cases ne sont pas remplies."; return; }
+      const justes = champs.filter(c => normaliser(c.value) === normaliser((VML.escale(+c.dataset.escale) || {}).mot)).length;
+      const fb = $("#fb-coffre");
+      if(justes === champs.length){
+        const pts = E.coffre.erreurs ? VML.BAREME.coffre.apresErreur : VML.BAREME.coffre.premierCoup;
+        E.score += pts; E.coffreOuvert = true; E.fini = true;
+        fb.className = "feedback succes show"; fb.innerHTML = `🔓 <b>Le coffre s'ouvre.</b> +${pts} points`;
+        if(VML.son) VML.son("fragment");
+        VML.sauver(); VML.memoriserCompteRendu();
+        setTimeout(() => VML.jouerCinematique("fin").then(() => VML.ouvrirCoffre()), VML.d(1600));
+      }else{
+        E.coffre.erreurs++;
+        if(VML.son) VML.son("erreur");
+        fb.className = "feedback erreur show"; fb.innerHTML = `✗ <b>Le coffre reste fermé.</b> ${justes} fragment${justes > 1 ? "s" : ""} juste${justes > 1 ? "s" : ""} sur ${champs.length}. Relisez votre fiche de mission.`;
+        VML.sauver();
+      }
+    };
+  };
 
   /* ---------------- Démarrage ---------------- */
   VML.demarrer = async function(){
@@ -377,16 +482,18 @@ VML.CLE_PARTIE = "vml_partie";
     VML.modeVerif = verif;
     if(verif){
       const g = VML.gradeValide(VML.parametre("niveau")) || "matelot";
-      const n = nouvelEtat("Vérification", g);
-      n.escale = +(VML.parametre("escale") || 2);
+      const n = nouvelEtat("Vérification", g, +(VML.parametre("escale") || VML.escalesJouables()[0]));
       n.indexEnigme = Math.max(0, (+(VML.parametre("enigme") || 1)) - 1);
-      n.introVue = true; n.air = 62;
+      n.introVue = true; n.air = ((VML.escale(n.escale) || {}).air || {}).apres_avarie || 100;
       const es = VML.escale(n.escale);
       if(es) es.enigmes.slice(0, n.indexEnigme).forEach(e => n.resolues[e.id] = { pts: 0, bienDoc: 0, erreurs: 0, indices: 0, fiches: [], ms: 0, premier: false, verif: true });
       document.body.classList.add("mode-verif");
       VML.ETAT = ETAT = n;
       demarrerChrono();
-      if(VML.parametre("fin") === "1"){ n.indexEnigme = es.enigmes.length; finEscale(); }
+      if(VML.parametre("coffre") === "1"){
+        n.escalesFaites = VML.escalesJouables(); n.mots = n.escalesFaites.map(x => VML.escale(x).mot); n.final = true; VML.ouvrirCoffre();
+      }
+      else if(VML.parametre("fin") === "1"){ n.indexEnigme = es.enigmes.length; finEscale(); }
       else entrerEnigme();
       return;
     }

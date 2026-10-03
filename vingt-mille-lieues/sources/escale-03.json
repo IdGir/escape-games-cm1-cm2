@@ -1,0 +1,1064 @@
+{
+  "escale": {
+    "numero": 3,
+    "id": "foret-de-crespo",
+    "titre": "La forêt de l'île Crespo",
+    "lieu": "Pacifique nord, près de l'île Crespo, novembre 1867",
+    "matiere": "Sciences",
+    "periode_conseillee": "P1 Année B (matière) ou P2/P4 Année A (lumière, vivant)",
+    "episode": "Première partie, ch. XV « Une invitation par lettre », XVI « Promenade en plaine », XVII « Une forêt sous-marine »",
+    "scenarimage": "scenarimages/escale-03.md",
+    "mot": "CRESPO",
+    "mot_origine": "L'île Crespo, près de laquelle le capitaine Nemo invite Aronnax à chasser dans sa « forêt » sous-marine (Partie I, ch. XV).",
+    "air": {
+      "depart": 100,
+      "perte_par_minute": 0,
+      "perte_par_indice": 3,
+      "plancher": 30
+    },
+    "cinematique_ouverture": "transition-e3",
+    "cinematique_fin": "fin-e3",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e3-1",
+        "escale": 3,
+        "ordre": 1,
+        "titre": "Les réservoirs d'air",
+        "decor": "sas",
+        "objet_principal": "scaphandres",
+        "objets_cliquables": [
+          "scaphandres",
+          "porte-sas",
+          "niveau-eau"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "Le capitaine Nemo invite à chasser dans sa forêt sous-marine. Dans le vestiaire, chacun reçoit un scaphandre et un réservoir d'air comprimé. Ned Land se méfie : il ne voit rien dans son réservoir, il le croit vide, et refuse de sortir sans preuve. Avant de remplir le sas d'eau, il faut prouver ce que contient un réservoir.",
+        "enjeu": "Sortir avec un réservoir vide, c'est l'asphyxie au fond de la mer.",
+        "episode_du_roman": "Partie I, ch. XVI « Promenade en plaine » : avant de sortir, Aronnax revêt un scaphandre muni d'un réservoir d'air comprimé ; le sas se remplit d'eau.",
+        "competence_programme": "Sciences : états et constitution de la matière à l'échelle macroscopique ; l'air est de la matière (il occupe de l'espace, il a une masse, il se comprime) ; propriétés des solides, liquides et gaz.",
+        "pourquoi_ce_savoir_ici": "On ne voit pas l'air : seules ses propriétés (masse, volume, compressibilité) permettent de savoir s'il est là.",
+        "reaction_du_decor": {
+          "effet": "ouverture",
+          "description": "La porte ronde du sas pivote : l'eau envahit le sas, les bulles montent."
+        },
+        "liberte_ou_anachronisme": "Les masses et volumes des réservoirs sont des nombres du jeu ; la masse d'un litre d'air (environ 1,2 g) est réelle.",
+        "lecon": "air-matiere",
+        "type": "qcm",
+        "niveau_variantes": "Mousse : vrai/faux sur l'air. Matelot : comparer deux masses à la balance. Timonier : trier solides, liquides, gaz par leurs propriétés. Lieutenant : calcul de la masse d'air comprimé + justification. Second : QCM (masse, compressibilité) + justification.",
+        "mousse": {
+          "type": "vraifaux",
+          "dialogue": "Je regarde dans ce réservoir et je ne vois rien du tout. Il est vide, je vous dis ! Prouvez-moi le contraire, ou je reste à bord.",
+          "consigne": "Vrai ou faux ? Aide-toi de la fiche « L'air, c'est de la matière ».",
+          "affirmations": [
+            {
+              "txt": "L'air est invisible, mais il existe.",
+              "vrai": true
+            },
+            {
+              "txt": "L'air ne prend pas de place.",
+              "vrai": false
+            },
+            {
+              "txt": "Quand on remplit le sas d'eau, l'eau chasse l'air.",
+              "vrai": true
+            },
+            {
+              "txt": "Un réservoir plein d'air est exactement aussi lourd qu'un réservoir vide.",
+              "vrai": false
+            }
+          ],
+          "indices": [
+            "Fiche « L'air, c'est de la matière » : lis la partie sur la place et la masse de l'air.",
+            "Une seringue bouchée qu'on ne peut pas enfoncer jusqu'au bout : quelque chose y prend de la place."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Deux réservoirs, tout pareils. L'un serait plein, l'autre vide. Je n'y vois aucune différence… mais la balance du vestiaire, elle, en voit peut-être une.",
+          "consigne": "<div class='doc-carnet'><b>Pesée au vestiaire</b> : réservoir A = 12 kg 000 g ; réservoir B = 12 kg 600 g. Même modèle, même acier.</div>Réponds aux deux questions.",
+          "questions": [
+            {
+              "q": "Lequel des deux réservoirs est rempli d'air comprimé ?",
+              "options": [
+                "le réservoir B, le plus lourd",
+                "le réservoir A, le plus léger",
+                "aucun des deux : l'air ne pèse rien",
+                "on ne peut pas savoir sans l'ouvrir"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi peut-on faire entrer une grande quantité d'air dans un petit réservoir ?",
+              "options": [
+                "Parce que l'air se comprime.",
+                "Parce que l'air est un liquide.",
+                "Parce que l'air n'a pas de masse.",
+                "Parce que l'acier absorbe l'air."
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « L'air, c'est de la matière » : l'air a une masse.",
+            "La différence de masse vient de ce qu'il y a dedans."
+          ]
+        },
+        "timonier": {
+          "type": "tri",
+          "dialogue": "Le capitaine dit que dans ce sas il y a trois états de la matière. Moi, je ne vois que de l'eau et du fer. Montrez-les-moi.",
+          "consigne": "Classe chaque élément du sas selon son état : solide, liquide ou gaz.",
+          "colonnes": [
+            {
+              "id": "solide",
+              "titre": "Solide : il a une forme propre",
+              "icone": "🧊"
+            },
+            {
+              "id": "liquide",
+              "titre": "Liquide : il prend la forme du récipient, sa surface reste horizontale",
+              "icone": "💧"
+            },
+            {
+              "id": "gaz",
+              "titre": "Gaz : il occupe tout l'espace et se comprime",
+              "icone": "💨"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "le casque de cuivre",
+              "col": "solide"
+            },
+            {
+              "txt": "les semelles de plomb",
+              "col": "solide"
+            },
+            {
+              "txt": "l'eau de mer qui monte dans le sas",
+              "col": "liquide"
+            },
+            {
+              "txt": "l'huile des charnières",
+              "col": "liquide"
+            },
+            {
+              "txt": "l'air comprimé du réservoir",
+              "col": "gaz"
+            },
+            {
+              "txt": "les bulles qui remontent",
+              "col": "gaz"
+            }
+          ],
+          "indices": [
+            "Fiche « L'air, c'est de la matière », tableau des trois états.",
+            "Les bulles, c'est de l'air entouré d'eau."
+          ]
+        },
+        "lieutenant": {
+          "type": "code",
+          "dialogue": "Si l'air a une masse, je veux savoir combien pèse celui que je vais emporter. Un nombre, et je serai rassuré.",
+          "consigne": "<div class='doc-carnet'><b>Données du vestiaire</b> : le réservoir a un volume de 10 litres ; on y fait entrer 50 fois plus d'air qu'il n'en contient à l'air libre. Fiche : 1 litre d'air pèse environ 1,2 g.</div>Calcule, puis ouvre le cadenas du râtelier.",
+          "champs": [
+            {
+              "libelle": "Litres d'air à l'air libre",
+              "valeur": "500",
+              "longueur": 4
+            },
+            {
+              "libelle": "Masse de cet air (en g)",
+              "valeur": "600",
+              "longueur": 4
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ton calcul ?",
+            "options": [
+              "L'air a une masse : à l'air libre, un litre d'air pèse environ 1,2 gramme.",
+              "L'air est invisible.",
+              "Un liquide prend la forme du récipient.",
+              "Les bulles remontent vers la surface."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "10 litres « 50 fois » : 10 × 50.",
+            "Puis 500 litres × 1,2 g."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Le capitaine m'a lancé une énigme, comme un défi : « L'eau, on ne la serre pas ; l'air, si. » Je veux comprendre pourquoi, preuves à l'appui.",
+          "consigne": "<div class='doc-carnet'><b>Essai du vestiaire</b> : deux seringues bouchées, l'une pleine d'air, l'autre pleine d'eau. On appuie sur les pistons.</div>",
+          "questions": [
+            {
+              "q": "Que se passe-t-il ?",
+              "options": [
+                "Le piston de la seringue d'air s'enfonce un peu, celui de la seringue d'eau presque pas.",
+                "Les deux pistons s'enfoncent jusqu'au bout.",
+                "Aucun piston ne bouge.",
+                "Le piston de la seringue d'eau s'enfonce, pas celui de l'air."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Un réservoir de 10 L contient l'équivalent de 500 L d'air libre. Sa masse d'air est d'environ…",
+              "options": [
+                "600 g",
+                "12 g",
+                "6 kg",
+                "1,2 g"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi le sas se vide-t-il de son air quand l'eau y entre ?",
+              "options": [
+                "Deux matières ne peuvent pas occuper la même place : l'eau chasse l'air.",
+                "L'air se dissout entièrement dans l'eau.",
+                "L'air devient de l'eau.",
+                "L'air n'existe pas sous la mer."
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique la question 1 ?",
+            "options": [
+              "Un gaz se comprime : on peut le serrer dans un plus petit volume ; un liquide se comprime très peu.",
+              "L'air a une masse.",
+              "Un solide a une forme propre.",
+              "L'air est invisible."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « L'air, c'est de la matière », partie « Gaz et liquides ».",
+            "500 × 1,2 g."
+          ]
+        }
+      },
+      {
+        "id": "e3-2",
+        "escale": 3,
+        "ordre": 2,
+        "titre": "La plaine aux mille couleurs",
+        "decor": "recif",
+        "objet_principal": "faune-recif",
+        "objets_cliquables": [
+          "faune-recif",
+          "tortue",
+          "etoile-mer"
+        ],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Sur la plaine sous-marine, Conseil voudrait tout classer pour le musée du capitaine, mais on ne parle pas sous un casque de cuivre : il faut se mettre d'accord avant de remonter sur ce qui ira dans chaque vitrine. Le capitaine ne gardera qu'une collection bien rangée.",
+        "enjeu": "Une collection mal classée sera refusée par le capitaine, et la sortie n'aura servi à rien.",
+        "episode_du_roman": "Partie I, ch. XVI « Promenade en plaine » : Aronnax et Conseil traversent une plaine couverte d'êtres marins de toutes sortes ; Conseil, grand classificateur, ne peut s'empêcher de les ranger.",
+        "competence_programme": "Sciences : panorama du vivant ; organisation des êtres vivants (classer selon les caractères partagés) ; biodiversité.",
+        "pourquoi_ce_savoir_ici": "Classer, c'est regrouper les êtres vivants par ce qu'ils ont en commun : exactement le travail d'un musée.",
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "Un banc de poissons argentés s'ouvre et se referme ; la plaine scintille."
+        },
+        "liberte_ou_anachronisme": "Les animaux représentés sont ceux d'un récif tropical du Pacifique, cohérents avec le lieu.",
+        "lecon": "classer-vivant",
+        "type": "tri",
+        "niveau_variantes": "Mousse : trouver l'intrus parmi des poissons. Matelot : vertébrés et invertébrés. Timonier : associer chaque groupe à son caractère. Lieutenant : intrus (le dauphin) + justification. Second : groupes emboîtés en 3 colonnes + justification.",
+        "mousse": {
+          "type": "intrus",
+          "dialogue": "Pour la vitrine des poissons, je n'en veux que des vrais. L'un de ces animaux n'a rien à y faire.",
+          "consigne": "Lequel de ces animaux n'est pas un poisson ?",
+          "cartes": [
+            {
+              "txt": "le poisson-clown",
+              "icone": "🐠",
+              "intrus": false
+            },
+            {
+              "txt": "le poisson-perroquet",
+              "icone": "🐟",
+              "intrus": false
+            },
+            {
+              "txt": "le requin",
+              "icone": "🦈",
+              "intrus": false
+            },
+            {
+              "txt": "l'étoile de mer",
+              "icone": "⭐",
+              "intrus": true
+            }
+          ],
+          "indices": [
+            "Fiche « Classer le vivant » : un poisson a des nageoires et des écailles, et respire avec des branchies.",
+            "Cherche l'animal sans nageoires."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Deux grandes vitrines : les animaux qui ont un squelette à l'intérieur du corps, et ceux qui n'en ont pas. Rangeons-les, Monsieur me l'a assez expliqué.",
+          "consigne": "Classe les animaux de la plaine : vertébrés ou invertébrés ?",
+          "colonnes": [
+            {
+              "id": "vertebre",
+              "titre": "Vertébrés (squelette interne, colonne vertébrale)",
+              "icone": "🦴"
+            },
+            {
+              "id": "invertebre",
+              "titre": "Invertébrés (pas de colonne vertébrale)",
+              "icone": "🐚"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "le poisson-clown",
+              "col": "vertebre"
+            },
+            {
+              "txt": "la tortue de mer",
+              "col": "vertebre"
+            },
+            {
+              "txt": "le requin",
+              "col": "vertebre"
+            },
+            {
+              "txt": "l'étoile de mer",
+              "col": "invertebre"
+            },
+            {
+              "txt": "le crabe",
+              "col": "invertebre"
+            },
+            {
+              "txt": "la méduse",
+              "col": "invertebre"
+            },
+            {
+              "txt": "l'oursin",
+              "col": "invertebre"
+            }
+          ],
+          "indices": [
+            "Fiche « Classer le vivant » : vertébrés et invertébrés.",
+            "Le requin a un squelette de cartilage, mais une colonne vertébrale : c'est un vertébré."
+          ]
+        },
+        "timonier": {
+          "type": "association",
+          "dialogue": "Chaque vitrine aura une étiquette : le caractère que partagent tous ses habitants. Encore faut-il le connaître.",
+          "consigne": "Relie chaque groupe au caractère que partagent tous ses membres.",
+          "paires": [
+            {
+              "g": "Les poissons",
+              "icone": "🐟",
+              "d": "des nageoires, des branchies, souvent des écailles"
+            },
+            {
+              "g": "Les reptiles marins (tortue)",
+              "icone": "🐢",
+              "d": "des poumons et une peau couverte d'écailles ou d'une carapace ; ils pondent sur la terre"
+            },
+            {
+              "g": "Les crustacés (crabe)",
+              "icone": "🦀",
+              "d": "une carapace et des pattes articulées"
+            },
+            {
+              "g": "Les mollusques (bénitier)",
+              "icone": "🐚",
+              "d": "un corps mou, souvent protégé par une coquille"
+            },
+            {
+              "g": "Les échinodermes (étoile de mer, oursin)",
+              "icone": "⭐",
+              "d": "une peau épineuse et un corps en cinq parties"
+            }
+          ],
+          "indices": [
+            "Fiche « Classer le vivant », tableau des groupes.",
+            "On classe par ce que les animaux ont, pas par l'endroit où ils vivent."
+          ]
+        },
+        "lieutenant": {
+          "type": "intrus",
+          "dialogue": "Un piège, Monsieur ! Tous nagent avec des nageoires, mais l'un d'eux n'a rien à faire dans la vitrine des poissons.",
+          "consigne": "Trouve l'intrus de la vitrine « Poissons », puis justifie.",
+          "cartes": [
+            {
+              "txt": "le mérou",
+              "icone": "🐟",
+              "intrus": false
+            },
+            {
+              "txt": "le requin",
+              "icone": "🦈",
+              "intrus": false
+            },
+            {
+              "txt": "la raie",
+              "icone": "🐟",
+              "intrus": false
+            },
+            {
+              "txt": "le dauphin",
+              "icone": "🐬",
+              "intrus": true
+            },
+            {
+              "txt": "le poisson-clown",
+              "icone": "🐠",
+              "intrus": false
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche prouve ta réponse ?",
+            "options": [
+              "On classe par les caractères partagés : le dauphin respire avec des poumons et allaite ses petits, comme les mammifères ; les poissons respirent avec des branchies.",
+              "Les poissons vivent dans l'eau.",
+              "Les nageoires servent à nager.",
+              "Le requin a un squelette de cartilage."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Classer le vivant », encadré « Attention aux ressemblances ».",
+            "Comment respire chacun d'eux ?"
+          ]
+        },
+        "second": {
+          "type": "tri",
+          "dialogue": "Le capitaine range son musée en groupes emboîtés, comme les tiroirs d'un cabinet. Je voudrais le même ordre, du plus large au plus précis.",
+          "consigne": "Range chaque animal dans le groupe le PLUS PRÉCIS qui lui convient, puis justifie.",
+          "colonnes": [
+            {
+              "id": "poissons",
+              "titre": "Vertébrés > poissons",
+              "icone": "🐟"
+            },
+            {
+              "id": "mammiferes",
+              "titre": "Vertébrés > mammifères",
+              "icone": "🐬"
+            },
+            {
+              "id": "mollusques",
+              "titre": "Invertébrés > mollusques",
+              "icone": "🐚"
+            },
+            {
+              "id": "cnidaires",
+              "titre": "Invertébrés > cnidaires (corps mou, tentacules urticants)",
+              "icone": "🪼"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "le requin",
+              "col": "poissons"
+            },
+            {
+              "txt": "l'hippocampe",
+              "col": "poissons"
+            },
+            {
+              "txt": "le dauphin",
+              "col": "mammiferes"
+            },
+            {
+              "txt": "le dugong",
+              "col": "mammiferes"
+            },
+            {
+              "txt": "le bénitier géant",
+              "col": "mollusques"
+            },
+            {
+              "txt": "le poulpe",
+              "col": "mollusques"
+            },
+            {
+              "txt": "la méduse",
+              "col": "cnidaires"
+            },
+            {
+              "txt": "le corail",
+              "col": "cnidaires"
+            }
+          ],
+          "justification": {
+            "question": "Pourquoi le corail va-t-il avec la méduse ?",
+            "options": [
+              "Le corail est un animal : de petits polypes au corps mou et aux tentacules urticants, comme les méduses.",
+              "Le corail est une plante marine.",
+              "Le corail est une roche.",
+              "Le corail et la méduse sont tous les deux colorés."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Classer le vivant », groupes emboîtés et encadré sur le corail.",
+            "L'hippocampe est un poisson, malgré sa forme ; le poulpe est un mollusque sans coquille."
+          ]
+        }
+      },
+      {
+        "id": "e3-3",
+        "escale": 3,
+        "ordre": 3,
+        "titre": "La lampe dans la forêt",
+        "decor": "foret-crespo",
+        "objet_principal": "lampe-ruhmkorff",
+        "objets_cliquables": [
+          "lampe-ruhmkorff",
+          "gorgone",
+          "rayons-surface"
+        ],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "Dans la forêt sous-marine, la lumière baisse avec la profondeur. Une gorgone qu'on disait rouge vif paraît grise ; le capitaine fait signe d'allumer les lampes électriques. Aronnax, fasciné, veut comprendre où sont passées les couleurs avant de décider s'il faut continuer à descendre ou remonter.",
+        "enjeu": "Sans comprendre la lumière, on se perd dans l'obscurité : ici, on ne retrouve son chemin qu'en voyant.",
+        "episode_du_roman": "Partie I, ch. XVII « Une forêt sous-marine » : la lumière diminue avec la profondeur ; les promeneurs allument leurs lampes électriques (appareils de Ruhmkorff).",
+        "competence_programme": "Sciences : la lumière — sources de lumière et objets éclairés, propagation rectiligne, ombres, absorption de la lumière par l'eau.",
+        "pourquoi_ce_savoir_ici": "Savoir comment la lumière voyage et s'éteint dans l'eau, c'est savoir ce qu'on voit vraiment, et quand allumer sa lampe.",
+        "reaction_du_decor": {
+          "effet": "lumiere",
+          "description": "Les lampes s'allument : la gorgone retrouve son rouge, la forêt sort de l'ombre."
+        },
+        "liberte_ou_anachronisme": "Les profondeurs indiquées pour la disparition des couleurs sont des ordres de grandeur (voir A-VERIFIER.md).",
+        "lecon": "lumiere",
+        "type": "tri",
+        "niveau_variantes": "Mousse : sources de lumière et objets éclairés. Matelot : vrai/faux sur la propagation et l'ombre. Timonier : ordre de disparition des couleurs. Lieutenant : QCM sur la gorgone grise + justification. Second : lecture d'un tableau de profondeurs (code) + justification.",
+        "mousse": {
+          "dialogue": "Il fait sombre ici ! Certaines choses brillent toutes seules, d'autres ne se voient que si on les éclaire. Aidez-moi à les ranger.",
+          "consigne": "Range chaque élément : il produit sa propre lumière, ou il est seulement éclairé ?",
+          "colonnes": [
+            {
+              "id": "source",
+              "titre": "Produit sa lumière (source)",
+              "icone": "💡"
+            },
+            {
+              "id": "eclaire",
+              "titre": "Est seulement éclairé",
+              "icone": "🪨"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "le Soleil",
+              "icone": "☀️",
+              "col": "source"
+            },
+            {
+              "txt": "la lampe du scaphandrier",
+              "icone": "🔦",
+              "col": "source"
+            },
+            {
+              "txt": "le fanal du Nautilus",
+              "icone": "🔆",
+              "col": "source"
+            },
+            {
+              "txt": "la gorgone",
+              "icone": "🪸",
+              "col": "eclaire"
+            },
+            {
+              "txt": "le rocher",
+              "icone": "🪨",
+              "col": "eclaire"
+            },
+            {
+              "txt": "le casque de cuivre",
+              "icone": "⛑️",
+              "col": "eclaire"
+            }
+          ],
+          "indices": [
+            "Fiche « La lumière sous la mer » : une source produit de la lumière, un objet éclairé la renvoie.",
+            "La gorgone ne brille pas dans le noir."
+          ]
+        },
+        "matelot": {
+          "type": "vraifaux",
+          "dialogue": "Le capitaine projette son ombre sur le sable. Je voudrais comprendre comment voyage cette lumière, avant de m'aventurer plus loin.",
+          "consigne": "Vrai ou faux ?",
+          "affirmations": [
+            {
+              "txt": "La lumière se propage en ligne droite.",
+              "vrai": true
+            },
+            {
+              "txt": "L'ombre d'un scaphandrier se forme du côté opposé à la lampe.",
+              "vrai": true
+            },
+            {
+              "txt": "Un rocher produit sa propre lumière.",
+              "vrai": false
+            },
+            {
+              "txt": "Plus on descend, plus il fait clair.",
+              "vrai": false
+            }
+          ],
+          "indices": [
+            "Fiche « La lumière sous la mer » : propagation et ombre.",
+            "L'eau absorbe la lumière du Soleil peu à peu."
+          ]
+        },
+        "timonier": {
+          "type": "ordre",
+          "dialogue": "Les couleurs s'éteignent l'une après l'autre à mesure que l'on descend. Dans quel ordre ? Si je le sais, je saurai à quelle profondeur nous sommes rien qu'en regardant.",
+          "consigne": "Remets les couleurs dans l'ordre où elles disparaissent quand on descend : de la première absorbée à la dernière.",
+          "items": [
+            {
+              "txt": "Le rouge"
+            },
+            {
+              "txt": "L'orange"
+            },
+            {
+              "txt": "Le jaune"
+            },
+            {
+              "txt": "Le vert"
+            },
+            {
+              "txt": "Le bleu"
+            }
+          ],
+          "indices": [
+            "Fiche « La lumière sous la mer », partie « L'eau absorbe les couleurs ».",
+            "La mer profonde paraît bleue : c'est la couleur qui va le plus loin."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Cette gorgone était rouge vif près de la surface, et ici elle est grise. Elle n'a pourtant pas changé ! Expliquez-moi, avant que j'allume ma lampe.",
+          "consigne": "Réponds, puis justifie.",
+          "questions": [
+            {
+              "q": "Pourquoi la gorgone rouge paraît-elle grise à 20 m de profondeur ?",
+              "options": [
+                "La lumière rouge du Soleil a été absorbée par l'eau avant d'arriver jusqu'à elle.",
+                "La gorgone change de couleur la nuit.",
+                "L'eau peint les objets en gris.",
+                "Les yeux ne voient plus sous l'eau."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Que se passe-t-il quand on l'éclaire avec la lampe électrique, de près ?",
+              "options": [
+                "Elle paraît de nouveau rouge.",
+                "Elle reste grise.",
+                "Elle devient bleue.",
+                "Elle devient transparente."
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie la réponse 2 ?",
+            "options": [
+              "Un objet ne paraît rouge que si une lumière contenant du rouge l'éclaire ; la lampe proche apporte cette lumière avant que l'eau ne l'absorbe.",
+              "La lumière se propage en ligne droite.",
+              "Le Soleil est une source de lumière.",
+              "L'ombre se forme du côté opposé à la lampe."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « La lumière sous la mer », partie « Voir une couleur ».",
+            "Près de la lampe, la lumière n'a presque pas traversé d'eau."
+          ]
+        },
+        "second": {
+          "type": "code",
+          "dialogue": "J'ai noté, en descendant, les couleurs qui restaient visibles. À vous d'en tirer la profondeur où nous sommes, et la lampe qu'il nous faut.",
+          "consigne": "<div class='doc-carnet'><b>Carnet d'Aronnax</b> (ordres de grandeur) — rouge disparu vers 5 m · orange vers 15 m · jaune vers 25 m · vert vers 35 m · au-delà, il ne reste que le bleu, de plus en plus sombre. Ici, je vois encore du vert, mais plus de jaune.</div>Donne la profondeur (entre deux nombres du carnet) et le nombre de couleurs encore visibles.",
+          "champs": [
+            {
+              "libelle": "Profondeur au moins (m)",
+              "valeur": "25",
+              "longueur": 3
+            },
+            {
+              "libelle": "Au plus (m)",
+              "valeur": "35",
+              "longueur": 3
+            },
+            {
+              "libelle": "Couleurs encore visibles",
+              "valeur": "2",
+              "longueur": 2
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche permet de raisonner ainsi ?",
+            "options": [
+              "L'eau absorbe les couleurs les unes après les autres : d'abord le rouge, puis l'orange, le jaune, le vert ; le bleu va le plus loin.",
+              "La lumière se propage en ligne droite.",
+              "Une source produit sa propre lumière.",
+              "Un objet ne paraît rouge que si on l'éclaire avec du rouge."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Plus de jaune : on est plus bas que 25 m ; encore du vert : pas encore à 35 m.",
+            "Restent le vert et le bleu."
+          ]
+        }
+      }
+    ]
+  },
+  "rayons": [
+    {
+      "id": "matiere",
+      "titre": "Rayon Matière et lumière",
+      "icone": "💧"
+    }
+  ],
+  "lecons": [
+    {
+      "id": "air-matiere",
+      "rayon": "matiere",
+      "fiche": 1,
+      "icone": "💨",
+      "titre": "L'air, c'est de la matière",
+      "escale": 3,
+      "competence": "États et constitution de la matière ; propriétés des solides, liquides et gaz.",
+      "essentiel": "<p>L'air est <b>invisible</b>, mais c'est de la <b>matière</b> : il <b>prend de la place</b> (une seringue bouchée ne s'enfonce pas jusqu'au bout) et il a une <b>masse</b> (un réservoir plein d'air comprimé est plus lourd que vide).</p><p>Deux matières ne peuvent pas occuper la même place : quand l'eau entre dans le sas, elle chasse l'air.</p>",
+      "approfondi": "<h4>Trois états de la matière</h4><table class='tab-lecon'><tr><th>Solide</th><th>Liquide</th><th>Gaz</th></tr><tr><td>il a une forme propre ; on peut le saisir</td><td>il prend la forme du récipient ; sa surface reste horizontale</td><td>il occupe tout l'espace disponible ; il se comprime</td></tr><tr><td>cuivre, plomb, glace</td><td>eau, huile</td><td>air, vapeur d'eau, bulles</td></tr></table>",
+      "expert": "<div class='encadre'><b>Gaz et liquides</b>. Un gaz se comprime : on peut le serrer dans un plus petit volume ; un liquide se comprime très peu. L'air a une masse : à l'air libre, un litre d'air pèse environ 1,2 gramme. Un réservoir de 10 L dans lequel on a fait entrer 50 fois son volume d'air contient l'équivalent de 500 L d'air libre.</div>",
+      "dans_le_roman": "Avant la promenade sous-marine, Aronnax revêt un scaphandre muni d'un réservoir d'air comprimé (Partie I, ch. XVI)."
+    },
+    {
+      "id": "classer-vivant",
+      "rayon": "vivant",
+      "fiche": 3,
+      "icone": "🐠",
+      "titre": "Classer le vivant",
+      "escale": 3,
+      "competence": "Panorama du vivant ; classer les êtres vivants selon leurs caractères partagés ; biodiversité.",
+      "essentiel": "<p>Pour <b>classer</b> les êtres vivants, on regarde ce qu'ils <b>ont</b> en commun (squelette, nageoires, coquille…), pas ce qu'ils font ni où ils vivent.</p><p>Les <b>vertébrés</b> ont un squelette interne avec une colonne vertébrale (poissons, tortues, dauphins). Les <b>invertébrés</b> n'en ont pas (étoile de mer, crabe, méduse, oursin).</p><p>Un <b>poisson</b> a des nageoires, des écailles le plus souvent, et respire avec des branchies.</p>",
+      "approfondi": "<table class='tab-lecon'><tr><th>Groupe</th><th>Caractère partagé</th></tr><tr><td>poissons</td><td>des nageoires, des branchies, souvent des écailles</td></tr><tr><td>reptiles marins (tortue)</td><td>des poumons et une peau couverte d'écailles ou d'une carapace ; ils pondent sur la terre</td></tr><tr><td>mammifères marins (dauphin)</td><td>des poumons ; les femelles allaitent leurs petits</td></tr><tr><td>crustacés (crabe)</td><td>une carapace et des pattes articulées</td></tr><tr><td>mollusques (bénitier, poulpe)</td><td>un corps mou, souvent protégé par une coquille</td></tr><tr><td>échinodermes (étoile de mer, oursin)</td><td>une peau épineuse et un corps en cinq parties</td></tr></table><p>Le requin a un squelette de cartilage, mais une colonne vertébrale : c'est un vertébré, un poisson.</p>",
+      "expert": "<div class='encadre attention'><b>Attention aux ressemblances</b>. On classe par les caractères partagés : le dauphin respire avec des poumons et allaite ses petits, comme les mammifères ; les poissons respirent avec des branchies. L'hippocampe est un poisson ; le poulpe est un mollusque sans coquille.</div><p><b>Groupes emboîtés</b> : vertébrés > poissons ; invertébrés > mollusques… Le corail est un animal : de petits polypes au corps mou et aux tentacules urticants, comme les méduses (groupe des cnidaires).</p>",
+      "dans_le_roman": "Conseil, « classificateur » passionné, range tout ce qu'il voit pendant la promenade (Partie I, ch. XVI)."
+    },
+    {
+      "id": "lumiere",
+      "rayon": "matiere",
+      "fiche": 2,
+      "icone": "🔦",
+      "titre": "La lumière sous la mer",
+      "escale": 3,
+      "competence": "La lumière : sources et objets éclairés, propagation rectiligne, ombres, absorption.",
+      "essentiel": "<p>Une <b>source de lumière</b> produit sa propre lumière (le Soleil, une lampe). Un <b>objet éclairé</b> ne fait que renvoyer la lumière qu'il reçoit (un rocher, une gorgone).</p><p>La lumière se propage <b>en ligne droite</b>. Un objet opaque arrête la lumière : son <b>ombre</b> se forme du côté opposé à la source.</p><p>L'eau absorbe peu à peu la lumière du Soleil : plus on descend, plus il fait sombre.</p>",
+      "approfondi": "<div class='encadre'><b>L'eau absorbe les couleurs</b>. La lumière du Soleil contient toutes les couleurs. L'eau absorbe les couleurs les unes après les autres : d'abord le rouge, puis l'orange, le jaune, le vert ; le bleu va le plus loin. C'est pourquoi la mer profonde paraît bleue.</div>",
+      "expert": "<h4>Voir une couleur</h4><p>Un objet ne paraît rouge que si une lumière contenant du rouge l'éclaire ; la lampe proche apporte cette lumière avant que l'eau ne l'absorbe. En profondeur, sans lampe, un objet rouge paraît gris ou noir. Ordres de grandeur : rouge disparu vers 5 m, orange vers 15 m, jaune vers 25 m, vert vers 35 m.</p>",
+      "dans_le_roman": "Dans la forêt de Crespo, la lumière baisse ; les promeneurs allument leurs lampes électriques (Partie I, ch. XVII)."
+    }
+  ],
+  "dialogues": {
+    "cinematiques": {
+      "transition-e3": {
+        "titre": "Escale 3 — La forêt de l'île Crespo",
+        "plans": [
+          {
+            "decor": "cabine",
+            "etat": "normal",
+            "duree": 8,
+            "personnage": "nemo",
+            "texte": "Professeur, voulez-vous chasser avec moi dans mes forêts de l'île Crespo ? Ce sont des forêts sous-marines. Nous irons à pied, au fond de la mer.",
+            "mouvement": "zoom"
+          },
+          {
+            "decor": "sas",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "aronnax",
+            "texte": "À pied, au fond de l'eau ! Il faut d'abord apprendre à se fier à ces scaphandres.",
+            "mouvement": "glisse"
+          }
+        ]
+      },
+      "fin-e3": {
+        "titre": "Retour à bord",
+        "plans": [
+          {
+            "decor": "foret-crespo",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "aronnax",
+            "texte": "Nous revenons fourbus, éblouis. Le capitaine a gardé ses trophées ; moi, des images pour toute une vie.",
+            "mouvement": "zoom"
+          }
+        ]
+      }
+    },
+    "fin_escale": {
+      "3": {
+        "personnage": "conseil",
+        "texte": "La collection est classée, Monsieur, et le capitaine l'a acceptée. Il a même inscrit un mot dans le nouveau journal : le nom de son île."
+      }
+    }
+  },
+  "decors": {
+    "sas": {
+      "titre": "Le sas des scaphandres",
+      "reference": null,
+      "ambiance": [
+        "coque",
+        "machines"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 50,
+          "y": 20,
+          "r": 8,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 43,
+          "y": 32,
+          "w": 14,
+          "h": 38,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 20
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "scaphandres",
+          "libelle": "Les scaphandres",
+          "x": 20,
+          "y": 30,
+          "w": 17,
+          "h": 50,
+          "description": "Les scaphandres Rouquayrol-Denayrouze, réservoir d'air au dos."
+        },
+        {
+          "id": "porte-sas",
+          "libelle": "La porte du sas",
+          "x": 43,
+          "y": 32,
+          "w": 14,
+          "h": 38,
+          "description": "La porte ronde qui s'ouvre sur la mer, une fois le sas rempli."
+        },
+        {
+          "id": "niveau-eau",
+          "libelle": "Vannes et manomètre",
+          "x": 58,
+          "y": 24,
+          "w": 12,
+          "h": 32,
+          "description": "Les vannes qui remplissent le sas et le manomètre de pression."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "recif": {
+      "titre": "La plaine sous-marine",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "caustiques",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 60
+        },
+        {
+          "type": "rayons",
+          "x": 20,
+          "y": 0,
+          "w": 60,
+          "h": 50
+        },
+        {
+          "type": "bulles",
+          "x": 28,
+          "y": 10,
+          "w": 50,
+          "h": 40,
+          "nombre": 18
+        },
+        {
+          "type": "poissons",
+          "x": 30,
+          "y": 30,
+          "w": 40,
+          "h": 30,
+          "nombre": 6
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "faune-recif",
+          "libelle": "Le banc de poissons",
+          "x": 28,
+          "y": 30,
+          "w": 24,
+          "h": 32,
+          "description": "Un banc de poissons argentés, des poissons-clowns, des coraux."
+        },
+        {
+          "id": "tortue",
+          "libelle": "La tortue",
+          "x": 54,
+          "y": 60,
+          "w": 18,
+          "h": 20,
+          "description": "Une tortue de mer glisse au ras du sable."
+        },
+        {
+          "id": "etoile-mer",
+          "libelle": "L'étoile de mer",
+          "x": 39,
+          "y": 77,
+          "w": 10,
+          "h": 11,
+          "description": "Une étoile de mer orangée, posée sur le sable, près d'un oursin."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "foret-crespo": {
+      "titre": "La forêt de l'île Crespo",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 45,
+          "y": 0,
+          "w": 30,
+          "h": 45
+        },
+        {
+          "type": "lueur",
+          "x": 29,
+          "y": 72,
+          "r": 6,
+          "couleur": "#ffd68a",
+          "pulse": 0.35,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 44,
+          "y": 55,
+          "w": 20,
+          "h": 30,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "lampe-ruhmkorff",
+          "libelle": "La lampe Ruhmkorff",
+          "x": 22,
+          "y": 64,
+          "w": 10,
+          "h": 17,
+          "description": "La lampe électrique des plongeurs, alimentée par une pile."
+        },
+        {
+          "id": "gorgone",
+          "libelle": "La gorgone",
+          "x": 67,
+          "y": 33,
+          "w": 21,
+          "h": 48,
+          "description": "Une gorgone rouge, qui paraît grise dans la pénombre."
+        },
+        {
+          "id": "rayons-surface",
+          "libelle": "La lumière de la surface",
+          "x": 50,
+          "y": 0,
+          "w": 22,
+          "h": 22,
+          "description": "La lumière du soleil, de plus en plus faible avec la profondeur."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  }
+}

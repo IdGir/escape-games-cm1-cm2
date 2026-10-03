@@ -1,5 +1,12 @@
 # Journal des versions — Le Journal du Nautilus
 
+## 2026-10-03 — escales 1 à 6
+- Moteur de campagne (escales enchaînées, coffre final, « Plonger plus profond », choix des escales dans les réglages).
+- Escales 1 (chasse au monstre), 3 (forêt de Crespo), 4 (Vanikoro), 5 (Ceylan), 6 (Suez) : 16 énigmes × 5 grades,
+  alignées sur la programmation 2026 de l'enseignant (PLAN.md § 4) ; relecture sceptique (COHERENCE.md § 4) ; scénarimages.
+- Décors générés avec Agnes (images, accord de l'enseignant) et déposés ; travelling vidéo de la salle des machines à vapeur
+  monté localement (ffmpeg) à partir des 4 images fournies.
+
 ## 2026-10-03 — escale pilote (en attente de validation)
 - Plan, base de référence des tests, scénarimage de l'escale 2.
 - Escale 2 « Dans le ventre du Nautilus » : 4 énigmes × 5 grades (tri, circuit, association/QCM, ordre/trous), ancrées

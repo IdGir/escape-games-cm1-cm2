@@ -1,0 +1,912 @@
+{
+  "escale": {
+    "numero": 6,
+    "id": "tunnel-arabique",
+    "titre": "Le tunnel arabique et Suez",
+    "lieu": "De la mer Rouge à la Méditerranée, février 1868",
+    "matiere": "Géographie",
+    "periode_conseillee": "P1-P2 Année A (se déplacer) et P5 Année B (eau douce)",
+    "episode": "Deuxième partie, ch. IV « La mer Rouge » et ch. V « Arabian-Tunnel » : Nemo fait passer le Nautilus de la mer Rouge à la Méditerranée par un tunnel sous l'isthme de Suez, alors que le canal est en construction.",
+    "scenarimage": "scenarimages/escale-06.md",
+    "mot": "ISTHME",
+    "mot_origine": "L'isthme de Suez, que le Nautilus franchit par-dessous, par le tunnel secret de Nemo (Partie II, ch. V).",
+    "air": null,
+    "cinematique_ouverture": "transition-e6",
+    "cinematique_fin": "fin-e6",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e6-1",
+        "escale": 6,
+        "ordre": 1,
+        "titre": "Le passage secret",
+        "decor": "tunnel-arabique",
+        "objet_principal": "carte-route",
+        "objets_cliquables": [
+          "carte-route",
+          "gouvernail",
+          "vitres-tunnel"
+        ],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "Aronnax ne croit pas au « tunnel arabique » : pour passer de la mer Rouge à la Méditerranée, il faudrait contourner toute l'Afrique. Dans la cage du pilote, la carte de route permet de comparer les itinéraires avant que Nemo ne lance le Nautilus dans le courant.",
+        "enjeu": "Si Aronnax ne mesure pas ce que l'isthme fait gagner, il prend le capitaine pour un fou ; or ce raccourci secret est l'avance du Nautilus sur tous les navires du monde.",
+        "episode_du_roman": "Partie II, ch. V « Arabian-Tunnel » : Nemo révèle un passage souterrain sous l'isthme de Suez ; Aronnax n'y croyait pas.",
+        "competence_programme": "Géographie : se déplacer — itinéraires, distances, canaux ; comment se déplace-t-on d'un bout à l'autre du monde ?",
+        "pourquoi_ce_savoir_ici": "Comparer des itinéraires sur une carte, c'est comprendre pourquoi un passage par l'isthme change tout pour la navigation.",
+        "reaction_du_decor": {
+          "effet": "carte",
+          "description": "La route du Nautilus s'illumine sur la carte, sous l'isthme."
+        },
+        "liberte_ou_anachronisme": "Le tunnel arabique est une invention de Verne : il n'existe pas. Le canal de Suez, lui, est inauguré le 17 novembre 1869. Les distances sont des ordres de grandeur (A-VERIFIER.md).",
+        "lecon": "itineraires",
+        "type": "code",
+        "niveau_variantes": "Mousse : lire la carte (contourner l'Afrique). Matelot : différence de distances. Timonier : QCM sur la carte et le canal. Lieutenant : durées de trajet selon la vitesse (code) + justification. Second : QCM sur les échanges que change le canal + justification.",
+        "mousse": {
+          "type": "qcm",
+          "dialogue": "Un tunnel sous l'Égypte ? Impossible ! Regardez la carte : sans passage, par où faudrait-il aller ?",
+          "consigne": "Observe la carte de route sur la table du pilote.",
+          "questions": [
+            {
+              "q": "Sans canal ni tunnel, pour aller de la mer Rouge à la Méditerranée en bateau, il faut faire le tour…",
+              "options": [
+                "de l'Afrique",
+                "de l'Europe",
+                "de l'Amérique",
+                "de l'Australie"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "L'isthme de Suez sépare…",
+              "options": [
+                "la mer Rouge et la mer Méditerranée",
+                "l'océan Atlantique et l'océan Pacifique",
+                "deux fleuves",
+                "deux montagnes"
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « Itinéraires et canaux » : regarde la carte.",
+            "L'Afrique est entre la mer Rouge et l'océan Atlantique."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Si le capitaine dit vrai, combien de chemin économise-t-on ? Calculons, plutôt que de discuter.",
+          "consigne": "<div class='doc-carnet'><b>Carte de route</b> (ordres de grandeur) — De Suez à Port-Saïd par l'isthme : environ 160 km. De Suez à Port-Saïd en contournant l'Afrique : environ 20 000 km.</div>Calcule la distance économisée.",
+          "champs": [
+            {
+              "libelle": "Kilomètres économisés",
+              "valeur": "19840",
+              "longueur": 6
+            }
+          ],
+          "indices": [
+            "Fiche « Itinéraires et canaux ».",
+            "20 000 − 160."
+          ]
+        },
+        "timonier": {
+          "type": "qcm",
+          "dialogue": "Le canal de Monsieur de Lesseps n'est pas encore ouvert, et le capitaine a déjà son tunnel. Je veux comprendre ce que cela change pour tous les navires.",
+          "consigne": "Réponds avec la fiche « Itinéraires et canaux ».",
+          "questions": [
+            {
+              "q": "Le canal de Suez relie…",
+              "options": [
+                "la Méditerranée à la mer Rouge, donc à l'océan Indien",
+                "l'Atlantique au Pacifique",
+                "la Manche à la mer du Nord",
+                "le Nil à la mer Noire"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pour un navire qui va d'Europe en Inde, le canal…",
+              "options": [
+                "raccourcit le trajet de plusieurs milliers de kilomètres",
+                "allonge le trajet",
+                "ne change rien",
+                "oblige à passer par l'Amérique"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Le tunnel du Nautilus…",
+              "options": [
+                "est une invention de Jules Verne",
+                "existe vraiment sous l'isthme",
+                "a été creusé par Lesseps",
+                "relie Paris à Londres"
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « Itinéraires et canaux ».",
+            "Le canal n'est inauguré qu'en 1869."
+          ]
+        },
+        "lieutenant": {
+          "dialogue": "Pour un vapeur qui file 10 nœuds, que vaut ce raccourci en jours de mer ? Voilà ce qui intéresse les armateurs, et le capitaine aussi.",
+          "consigne": "<div class='doc-carnet'><b>Carte de route</b> — Londres → Bombay (Inde) : environ 20 000 km par le cap de Bonne-Espérance, environ 11 600 km par Suez. Un vapeur parcourt environ 400 km par jour.</div>Calcule, arrondis à l'unité.",
+          "champs": [
+            {
+              "libelle": "Jours par le Cap",
+              "valeur": "50",
+              "longueur": 3
+            },
+            {
+              "libelle": "Jours par Suez",
+              "valeur": "29",
+              "longueur": 3
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique pourquoi les armateurs voulaient ce canal ?",
+            "options": [
+              "Un trajet plus court fait gagner du temps, du charbon et de l'argent : le canal de Suez rapproche l'Europe de l'Asie.",
+              "Le tunnel arabique est une invention de Verne.",
+              "Le canal mesure environ 160 km.",
+              "Le Nil est le plus long fleuve d'Afrique."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "20 000 ÷ 400 ; 11 600 ÷ 400.",
+            "29 jours en arrondissant 29."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Le capitaine dit que ce canal changera le commerce du monde. Montrez-moi que vous comprenez pourquoi, et pour qui.",
+          "consigne": "Réponds avec les fiches « Itinéraires et canaux » et « Colonies et échanges ».",
+          "questions": [
+            {
+              "q": "Quels échanges le canal de Suez facilite-t-il le plus ?",
+              "options": [
+                "entre l'Europe et l'Asie (Inde, Chine)",
+                "entre l'Amérique et l'Australie",
+                "entre la France et l'Espagne",
+                "entre l'Égypte et le Nil"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quel pays européen, maître de l'Inde, utilisera le plus ce canal ?",
+              "options": [
+                "le Royaume-Uni",
+                "la Suisse",
+                "la Norvège",
+                "l'Autriche"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi un raccourci est-il aussi une économie d'énergie pour un vapeur ?",
+              "options": [
+                "Moins de distance, c'est moins de charbon brûlé.",
+                "Le canal pousse les navires.",
+                "L'eau du canal est plus légère.",
+                "Les navires y vont à la voile."
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse 1 ?",
+            "options": [
+              "Un trajet plus court fait gagner du temps, du charbon et de l'argent : le canal de Suez rapproche l'Europe de l'Asie.",
+              "Le canal est inauguré le 17 novembre 1869.",
+              "Le tunnel du Nautilus n'existe pas.",
+              "Port-Saïd est sur la Méditerranée."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Itinéraires et canaux ».",
+            "L'Inde était une colonie britannique."
+          ]
+        }
+      },
+      {
+        "id": "e6-2",
+        "escale": 6,
+        "ordre": 2,
+        "titre": "Le fleuve et le désert",
+        "decor": "tunnel-arabique",
+        "objet_principal": "carte-nil",
+        "objets_cliquables": [
+          "carte-nil",
+          "gouvernail",
+          "vitres-tunnel"
+        ],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Sur l'autre carte du pilote, Conseil remarque un mince trait bleu : un canal d'eau douce creusé depuis le Nil pour abreuver les milliers d'ouvriers du canal, en plein désert. Il veut classer les usages de cette eau rare, car le Nautilus, lui, doit fabriquer la sienne en distillant l'eau de mer.",
+        "enjeu": "Mal partagée, l'eau douce manque toujours à quelqu'un : ouvriers de l'isthme, paysans du Nil… ou équipage du Nautilus.",
+        "episode_du_roman": "Vraisemblance : Partie II, ch. IV-V, le Nautilus longe l'isthme de Suez où l'on creuse le canal ; un canal d'eau douce, venu du Nil, alimentait réellement les chantiers (1863).",
+        "competence_programme": "Géographie : les usages de l'eau douce ; repérer les principaux fleuves ; l'eau, ressource convoitée faisant l'objet de conflits d'usage.",
+        "pourquoi_ce_savoir_ici": "Dans un pays de désert, chaque usage de l'eau du fleuve compte : c'est là que naissent les conflits d'usage.",
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "Le trait bleu du Nil s'illumine sur la carte."
+        },
+        "liberte_ou_anachronisme": "Le barrage d'Assouan (1970) et le grand barrage éthiopien sont présentés comme un dossier de l'équipe de secours (XXIᵉ siècle).",
+        "lecon": "eau-douce",
+        "type": "tri",
+        "niveau_variantes": "Mousse : eau douce ou salée. Matelot : usages de l'eau douce. Timonier : association usage ↔ exemple au bord du Nil. Lieutenant : conflit d'usage ou non + justification. Second : tri des acteurs du conflit du Nil + justification.",
+        "mousse": {
+          "dialogue": "Eau douce, eau salée : on ne boit que l'une des deux. Je voudrais être sûr de ne pas me tromper de tonneau.",
+          "consigne": "Range chaque eau : douce ou salée ?",
+          "colonnes": [
+            {
+              "id": "douce",
+              "titre": "Eau douce",
+              "icone": "💧"
+            },
+            {
+              "id": "salee",
+              "titre": "Eau salée",
+              "icone": "🌊"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "l'eau du Nil",
+              "col": "douce"
+            },
+            {
+              "txt": "l'eau d'un puits",
+              "col": "douce"
+            },
+            {
+              "txt": "l'eau de pluie",
+              "col": "douce"
+            },
+            {
+              "txt": "l'eau de la mer Rouge",
+              "col": "salee"
+            },
+            {
+              "txt": "l'eau de la Méditerranée",
+              "col": "salee"
+            },
+            {
+              "txt": "l'eau de l'océan Indien",
+              "col": "salee"
+            }
+          ],
+          "indices": [
+            "Fiche « L'eau douce, une ressource convoitée ».",
+            "Les fleuves et la pluie apportent de l'eau douce."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Ce fleuve fait vivre tout un pays. Je voudrais ranger tout ce qu'on fait de son eau.",
+          "consigne": "Range chaque activité : est-ce un usage de l'eau douce du fleuve ?",
+          "colonnes": [
+            {
+              "id": "usage",
+              "titre": "Usage de l'eau douce",
+              "icone": "💧"
+            },
+            {
+              "id": "non",
+              "titre": "Pas un usage de l'eau douce",
+              "icone": "🚫"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "boire",
+              "col": "usage"
+            },
+            {
+              "txt": "arroser les champs (irrigation)",
+              "col": "usage"
+            },
+            {
+              "txt": "abreuver les troupeaux",
+              "col": "usage"
+            },
+            {
+              "txt": "naviguer sur le fleuve",
+              "col": "usage"
+            },
+            {
+              "txt": "pêcher la morue en mer",
+              "col": "non"
+            },
+            {
+              "txt": "récolter le sel de mer",
+              "col": "non"
+            }
+          ],
+          "indices": [
+            "Fiche « L'eau douce, une ressource convoitée », liste des usages.",
+            "La morue et le sel viennent de la mer."
+          ]
+        },
+        "timonier": {
+          "type": "association",
+          "dialogue": "Chaque usage a son exemple au bord du Nil. Le capitaine aime les classements précis : moi aussi.",
+          "consigne": "Relie chaque usage de l'eau du Nil à un exemple.",
+          "paires": [
+            {
+              "g": "Usage domestique",
+              "icone": "🏠",
+              "d": "boire, cuisiner, se laver dans les villages"
+            },
+            {
+              "g": "Agriculture",
+              "icone": "🌾",
+              "d": "irriguer les champs de coton et de blé"
+            },
+            {
+              "g": "Transport",
+              "icone": "⛵",
+              "d": "les felouques qui descendent le fleuve"
+            },
+            {
+              "g": "Industrie et énergie",
+              "icone": "⚡",
+              "d": "aujourd'hui, l'électricité du barrage d'Assouan"
+            },
+            {
+              "g": "Chantiers",
+              "icone": "⛏️",
+              "d": "le canal d'eau douce qui abreuvait les ouvriers de l'isthme"
+            }
+          ],
+          "indices": [
+            "Fiche « L'eau douce, une ressource convoitée ».",
+            "Le barrage d'Assouan date de 1970 : c'est un exemple d'aujourd'hui."
+          ]
+        },
+        "lieutenant": {
+          "dialogue": "Le capitaine parle de « conflits d'usage ». Je voudrais savoir reconnaître une vraie rivalité pour l'eau d'une simple utilisation.",
+          "consigne": "Range chaque situation, puis justifie.",
+          "colonnes": [
+            {
+              "id": "conflit",
+              "titre": "Conflit d'usage",
+              "icone": "⚔️"
+            },
+            {
+              "id": "simple",
+              "titre": "Simple usage, sans rivalité",
+              "icone": "🤝"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "un pays en amont construit un barrage ; le pays en aval craint de manquer d'eau",
+              "col": "conflit"
+            },
+            {
+              "txt": "les villes et les agriculteurs se disputent l'eau pendant une sécheresse",
+              "col": "conflit"
+            },
+            {
+              "txt": "une usine rejette ses eaux sales dans le fleuve où d'autres puisent leur eau",
+              "col": "conflit"
+            },
+            {
+              "txt": "un pêcheur pêche dans le fleuve en crue, où l'eau abonde",
+              "col": "simple"
+            },
+            {
+              "txt": "une famille puise l'eau d'un puits qui ne manque jamais",
+              "col": "simple"
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche définit un conflit d'usage ?",
+            "options": [
+              "Il y a conflit d'usage quand plusieurs utilisateurs veulent la même eau alors qu'il n'y en a pas assez pour tous, ou quand l'usage des uns gâte l'eau des autres.",
+              "Le Nil est le plus long fleuve d'Afrique.",
+              "L'eau de mer est salée.",
+              "On irrigue les champs de coton."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « L'eau douce, une ressource convoitée », encadré.",
+            "Amont : vers la source ; aval : vers la mer."
+          ]
+        },
+        "second": {
+          "dialogue": "Le dossier de l'équipe de secours parle d'un grand barrage en Éthiopie et d'une Égypte inquiète. Démêlez les intérêts de chacun, comme le ferait un diplomate.",
+          "consigne": "<div class='doc-carnet'><b>Dossier de l'équipe de secours (XXIᵉ siècle)</b> — L'Éthiopie, en amont, a construit un grand barrage sur le Nil Bleu pour produire de l'électricité. L'Égypte, en aval, où presque tous les habitants vivent près du fleuve, craint que le débit baisse. Le Soudan, entre les deux, espère mieux contrôler les crues.</div>Range chaque argument selon le pays qui le défend, puis justifie.",
+          "colonnes": [
+            {
+              "id": "ethiopie",
+              "titre": "Éthiopie (amont)",
+              "icone": "⬆️"
+            },
+            {
+              "id": "egypte",
+              "titre": "Égypte (aval)",
+              "icone": "⬇️"
+            },
+            {
+              "id": "soudan",
+              "titre": "Soudan (entre les deux)",
+              "icone": "↔️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "« Nous avons besoin d'électricité pour nous développer. »",
+              "col": "ethiopie"
+            },
+            {
+              "txt": "« L'eau qui naît sur nos montagnes nous appartient aussi. »",
+              "col": "ethiopie"
+            },
+            {
+              "txt": "« Sans le Nil, notre pays est un désert. »",
+              "col": "egypte"
+            },
+            {
+              "txt": "« Si le réservoir se remplit trop vite, le débit baissera chez nous. »",
+              "col": "egypte"
+            },
+            {
+              "txt": "« Un barrage en amont limitera nos inondations. »",
+              "col": "soudan"
+            }
+          ],
+          "justification": {
+            "question": "Pourquoi l'Égypte est-elle la plus inquiète ?",
+            "options": [
+              "Elle est en aval : elle reçoit l'eau après les autres, et presque toute sa population dépend du fleuve dans un pays de désert.",
+              "Elle n'utilise pas l'eau du Nil.",
+              "Elle est en amont du barrage.",
+              "Elle produit trop d'électricité."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « L'eau douce, une ressource convoitée », encadré sur le Nil.",
+            "Amont, aval : qui reçoit l'eau en premier ?"
+          ]
+        }
+      },
+      {
+        "id": "e6-3",
+        "escale": 6,
+        "ordre": 3,
+        "titre": "Le plan d'évasion de Ned",
+        "decor": "pont-port-said",
+        "objet_principal": "lumieres-port",
+        "objets_cliquables": [
+          "lumieres-port",
+          "canal",
+          "lanterne"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "Le Nautilus fait surface devant Port-Saïd, la nuit. Ned Land voit les lumières de la ville et rêve de s'évader jusqu'au Canada. Mais par où, et comment ? Il faut choisir, pour chaque étape du voyage, le moyen de transport adapté à la distance et au lieu.",
+        "enjeu": "Un mauvais plan, et Ned se jette à l'eau pour rien : l'évasion échoue avant de commencer.",
+        "episode_du_roman": "Partie II, ch. V-VI : le Nautilus débouche en Méditerranée près de Port-Saïd ; Ned Land pense sans cesse à s'évader.",
+        "competence_programme": "Géographie : se déplacer — comment se déplace-t-on ailleurs ? quels moyens de transport, pour aller où ?",
+        "pourquoi_ce_savoir_ici": "Choisir un moyen de transport, c'est tenir compte de la distance, du lieu (mer, terre) et de l'époque.",
+        "reaction_du_decor": {
+          "effet": "carte",
+          "description": "Un itinéraire en pointillés se trace de Port-Saïd vers l'ouest."
+        },
+        "liberte_ou_anachronisme": "Les moyens de transport de 1868 sont ceux du roman ; la comparaison avec aujourd'hui (avion) est signalée comme dossier du XXIᵉ siècle.",
+        "lecon": "se-deplacer",
+        "type": "ordre",
+        "niveau_variantes": "Mousse : moyen de transport ↔ lieu. Matelot : étapes du voyage dans l'ordre. Timonier : étapes avec le moyen adapté. Lieutenant : idem avec durées + justification. Second : comparer 1868 et aujourd'hui (code) + justification.",
+        "mousse": {
+          "type": "association",
+          "dialogue": "Tonnerre, la terre ! Pour rentrer chez moi, il me faudra changer de moyen de transport à chaque étape. Aidez-moi à choisir.",
+          "consigne": "Relie chaque moyen de transport à l'endroit où on l'utilise.",
+          "paires": [
+            {
+              "g": "le paquebot à vapeur",
+              "icone": "🚢",
+              "d": "pour traverser la mer"
+            },
+            {
+              "g": "le train",
+              "icone": "🚂",
+              "d": "pour traverser un pays par voie ferrée"
+            },
+            {
+              "g": "la marche à pied",
+              "icone": "🚶",
+              "d": "pour aller du quai à la gare"
+            }
+          ],
+          "indices": [
+            "Fiche « Se déplacer ».",
+            "Sur la mer, il faut un bateau."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Port-Saïd, puis la France, puis l'océan, puis Québec. Dans quel ordre, et sans me perdre en route !",
+          "consigne": "Remets les étapes de l'évasion de Ned dans l'ordre.",
+          "items": [
+            {
+              "txt": "Gagner le port de Port-Saïd à la nage ou en canot."
+            },
+            {
+              "txt": "Prendre un paquebot à vapeur pour traverser la Méditerranée jusqu'à Marseille."
+            },
+            {
+              "txt": "Prendre le train à travers la France jusqu'au Havre."
+            },
+            {
+              "txt": "Prendre un paquebot transatlantique jusqu'à Québec."
+            }
+          ],
+          "indices": [
+            "Fiche « Se déplacer » et la carte.",
+            "La Méditerranée vient avant l'Atlantique."
+          ]
+        },
+        "timonier": {
+          "dialogue": "Chaque étape a son moyen de transport, choisi selon la distance et le lieu. Rangez-les, et nous verrons si mon plan tient.",
+          "consigne": "Remets les étapes dans l'ordre ; chacune indique le moyen de transport choisi.",
+          "items": [
+            {
+              "txt": "Du Nautilus au quai",
+              "sous": "canot à rames : courte distance sur l'eau"
+            },
+            {
+              "txt": "Du quai à la gare maritime",
+              "sous": "à pied : quelques centaines de mètres"
+            },
+            {
+              "txt": "De Port-Saïd à Marseille",
+              "sous": "paquebot à vapeur : traversée de la Méditerranée"
+            },
+            {
+              "txt": "De Marseille au Havre",
+              "sous": "chemin de fer : longue distance sur terre"
+            },
+            {
+              "txt": "Du Havre à Québec",
+              "sous": "paquebot transatlantique : traversée de l'océan"
+            }
+          ],
+          "indices": [
+            "Fiche « Se déplacer ».",
+            "Marseille est au sud de la France, Le Havre au nord-ouest."
+          ]
+        },
+        "lieutenant": {
+          "dialogue": "Combien de temps me faudra-t-il ? Rangez les étapes, puis dites-moi ce qui décide du moyen de transport.",
+          "consigne": "Remets les étapes dans l'ordre, puis justifie.",
+          "items": [
+            {
+              "txt": "Canot jusqu'au quai de Port-Saïd",
+              "sous": "environ 1 heure"
+            },
+            {
+              "txt": "Paquebot Port-Saïd → Marseille",
+              "sous": "environ 6 jours"
+            },
+            {
+              "txt": "Train Marseille → Paris → Le Havre",
+              "sous": "environ 1 jour"
+            },
+            {
+              "txt": "Paquebot Le Havre → Québec",
+              "sous": "environ 12 jours"
+            },
+            {
+              "txt": "Diligence ou train vers son village",
+              "sous": "quelques jours"
+            }
+          ],
+          "justification": {
+            "question": "Qu'est-ce qui décide du moyen de transport à chaque étape ?",
+            "options": [
+              "On choisit le moyen de transport selon la distance à parcourir, le milieu (mer ou terre) et ce qui existe à l'époque.",
+              "On prend toujours le plus rapide, même s'il n'existe pas.",
+              "On choisit le moins cher, quel que soit le lieu.",
+              "On choisit au hasard."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Se déplacer ».",
+            "L'océan Atlantique se traverse en dernier."
+          ]
+        },
+        "second": {
+          "type": "code",
+          "dialogue": "Votre équipe de secours prétend qu'au XXIᵉ siècle ce voyage se fait en une journée. Comparons, chiffres en main.",
+          "consigne": "<div class='doc-carnet'><b>Dossier du XXIᵉ siècle</b> — Port-Saïd → Québec en avion, avec une correspondance : environ 20 heures. <b>En 1868</b> (étapes de Ned) : environ 20 jours.</div>Calcule.",
+          "champs": [
+            {
+              "libelle": "20 jours = ? heures",
+              "valeur": "480",
+              "longueur": 4
+            },
+            {
+              "libelle": "Combien de fois plus long en 1868 ?",
+              "valeur": "24",
+              "longueur": 3
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique cet écart ?",
+            "options": [
+              "Les progrès des transports (vapeur, chemin de fer, puis avion) ont raccourci les durées de voyage : le monde paraît plus petit.",
+              "Ned Land marchait lentement.",
+              "Québec était plus loin en 1868.",
+              "Les paquebots allaient plus vite que les avions."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "20 × 24 heures.",
+            "480 ÷ 20."
+          ]
+        }
+      }
+    ]
+  },
+  "lecons": [
+    {
+      "id": "itineraires",
+      "rayon": "geographie",
+      "fiche": 2,
+      "icone": "🗺️",
+      "titre": "Itinéraires et canaux",
+      "escale": 6,
+      "competence": "Se déplacer : itinéraires, distances, canaux, échanges.",
+      "essentiel": "<p>Un <b>isthme</b> est une bande de terre étroite entre deux mers. L'isthme de Suez, en Égypte, sépare la <b>mer Rouge</b> de la <b>mer Méditerranée</b>. Sans passage, un bateau doit faire le <b>tour de l'Afrique</b> pour aller de l'une à l'autre.</p><p>Un <b>canal</b> est une voie d'eau creusée par les humains. Le <b>canal de Suez</b>, long d'environ 160 km, est inauguré le 17 novembre 1869 (Ferdinand de Lesseps).</p>",
+      "approfondi": "<p>Le canal relie la Méditerranée à la mer Rouge, donc à l'océan Indien : il raccourcit de plusieurs milliers de kilomètres la route d'Europe en Asie (Inde, Chine). Ordres de grandeur : de Suez à Port-Saïd, environ 160 km par l'isthme, environ 20 000 km en contournant l'Afrique ; Londres → Bombay, environ 20 000 km par le cap de Bonne-Espérance, environ 11 600 km par Suez.</p><div class='encadre attention'>Le « tunnel arabique » du Nautilus est une invention de Jules Verne : il n'existe pas.</div>",
+      "expert": "<p>Un trajet plus court fait gagner du temps, du charbon et de l'argent : le canal de Suez rapproche l'Europe de l'Asie. Un vapeur de l'époque parcourt environ 400 km par jour. Le Royaume-Uni, maître de l'Inde, en sera le premier utilisateur.</p>",
+      "dans_le_roman": "Nemo fait passer le Nautilus sous l'isthme de Suez par un tunnel secret (Partie II, ch. V)."
+    },
+    {
+      "id": "eau-douce",
+      "rayon": "geographie",
+      "fiche": 3,
+      "icone": "💧",
+      "titre": "L'eau douce, une ressource convoitée",
+      "escale": 6,
+      "competence": "Les usages de l'eau douce ; les fleuves ; l'eau, ressource convoitée et conflits d'usage.",
+      "essentiel": "<p>L'<b>eau douce</b> (fleuves, lacs, nappes, puits, pluie) se boit ; l'<b>eau salée</b> (mers, océans) ne se boit pas. L'eau douce est rare : moins de 3 litres sur 100 de l'eau de la Terre.</p><p>Usages de l'eau douce : boire, cuisiner, se laver ; irriguer les champs ; abreuver les troupeaux ; naviguer ; produire de l'électricité ; fabriquer (industrie).</p>",
+      "approfondi": "<p>Le <b>Nil</b> est le plus long fleuve d'Afrique. En Égypte, pays de désert, presque toute la population vit le long du fleuve. En 1863, un canal d'eau douce venu du Nil a été creusé pour abreuver les ouvriers du canal de Suez.</p><table class='tab-lecon'><tr><th>Usage</th><th>Exemple au bord du Nil</th></tr><tr><td>domestique</td><td>boire, cuisiner, se laver</td></tr><tr><td>agriculture</td><td>irriguer le coton et le blé</td></tr><tr><td>transport</td><td>les felouques</td></tr><tr><td>énergie</td><td>aujourd'hui, le barrage d'Assouan (1970)</td></tr></table>",
+      "expert": "<div class='encadre'><b>Conflit d'usage</b>. Il y a conflit d'usage quand plusieurs utilisateurs veulent la même eau alors qu'il n'y en a pas assez pour tous, ou quand l'usage des uns gâte l'eau des autres. Amont : vers la source ; aval : vers la mer. Aujourd'hui, l'Éthiopie (en amont) a construit un grand barrage sur le Nil Bleu ; l'Égypte, en aval, reçoit l'eau après les autres et presque toute sa population dépend du fleuve dans un pays de désert : elle s'inquiète. Le Soudan, entre les deux, espère mieux contrôler les crues.</div>",
+      "dans_le_roman": "Le Nautilus longe l'isthme de Suez où l'on creuse le canal (Partie II, ch. IV-V) ; à bord, l'eau douce est obtenue en distillant l'eau de mer."
+    },
+    {
+      "id": "se-deplacer",
+      "rayon": "geographie",
+      "fiche": 4,
+      "icone": "🚂",
+      "titre": "Se déplacer",
+      "escale": 6,
+      "competence": "Se déplacer : quels moyens de transport, pour aller où ?",
+      "essentiel": "<p>On choisit un <b>moyen de transport</b> selon la <b>distance</b> et le <b>milieu</b> : à pied pour quelques centaines de mètres ; en train sur une voie ferrée pour traverser un pays ; en bateau pour traverser la mer.</p>",
+      "approfondi": "<p>En 1868 : canot à rames pour une courte distance sur l'eau ; paquebot à vapeur pour la Méditerranée (Port-Saïd → Marseille, environ 6 jours) ; chemin de fer pour les longues distances sur terre (Marseille → Le Havre, environ 1 jour) ; paquebot transatlantique pour l'océan (Le Havre → Québec, environ 12 jours).</p>",
+      "expert": "<p>On choisit le moyen de transport selon la distance à parcourir, le milieu (mer ou terre) et ce qui existe à l'époque. Les progrès des transports (vapeur, chemin de fer, puis avion) ont raccourci les durées de voyage : le monde paraît plus petit. Aujourd'hui, Port-Saïd → Québec se fait en avion en environ 20 heures.</p>",
+      "dans_le_roman": "Ned Land ne pense qu'à s'évader dès que le Nautilus approche d'une côte (Partie II, ch. VI)."
+    }
+  ],
+  "decors": {
+    "tunnel-arabique": {
+      "titre": "La cage du pilote, dans le tunnel",
+      "reference": null,
+      "ambiance": [
+        "sousMarin",
+        "machines"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 45,
+          "y": 22,
+          "r": 9,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 30,
+          "y": 5,
+          "w": 30,
+          "h": 50
+        },
+        {
+          "type": "bulles",
+          "x": 55,
+          "y": 8,
+          "w": 18,
+          "h": 45,
+          "nombre": 16
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "carte-route",
+          "libelle": "La carte de route",
+          "x": 72,
+          "y": 76,
+          "w": 24,
+          "h": 24,
+          "description": "La mer Rouge, l'isthme de Suez, la Méditerranée ; et, autour, toute l'Afrique."
+        },
+        {
+          "id": "carte-nil",
+          "libelle": "La carte du Nil",
+          "x": 0,
+          "y": 78,
+          "w": 25,
+          "h": 22,
+          "description": "Le Nil serpente dans le désert ; un fin trait bleu le relie à l'isthme."
+        },
+        {
+          "id": "gouvernail",
+          "libelle": "Le gouvernail",
+          "x": 37,
+          "y": 52,
+          "w": 25,
+          "h": 46,
+          "description": "La roue du gouvernail, que le capitaine tient lui-même dans le tunnel."
+        },
+        {
+          "id": "vitres-tunnel",
+          "libelle": "Les vitres de la cage",
+          "x": 52,
+          "y": 6,
+          "w": 23,
+          "h": 48,
+          "description": "La roche défile, éclairée par le fanal ; le courant entraîne le Nautilus."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pont-port-said": {
+      "titre": "Devant Port-Saïd",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 90,
+          "y": 18,
+          "r": 7,
+          "couleur": "#ffcf7a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 61,
+          "y": 72,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "lumieres-port",
+          "libelle": "Les lumières de Port-Saïd",
+          "x": 78,
+          "y": 8,
+          "w": 22,
+          "h": 22,
+          "description": "Le phare et les lumières de la ville neuve, née avec les chantiers du canal."
+        },
+        {
+          "id": "canal",
+          "libelle": "L'entrée du canal",
+          "x": 0,
+          "y": 15,
+          "w": 34,
+          "h": 14,
+          "description": "Les quais et les chantiers du canal, qui n'est pas encore ouvert."
+        },
+        {
+          "id": "lanterne",
+          "libelle": "La lanterne de quart",
+          "x": 57,
+          "y": 60,
+          "w": 8,
+          "h": 18,
+          "description": "Une lanterne, à peine ouverte, pour ne pas être vu de la côte."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  },
+  "dialogues": {
+    "cinematiques": {
+      "transition-e6": {
+        "titre": "Escale 6 — Le tunnel arabique et Suez",
+        "plans": [
+          {
+            "decor": "carre",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "La mer Rouge est un cul-de-sac, capitaine. Pour gagner la Méditerranée, il faudra faire le tour de l'Afrique.",
+            "mouvement": "zoom"
+          },
+          {
+            "decor": "tunnel-arabique",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "nemo",
+            "texte": "Après-demain, professeur, nous serons en Méditerranée. Par-dessous l'isthme.",
+            "mouvement": "glisse"
+          }
+        ]
+      },
+      "fin-e6": {
+        "titre": "La Méditerranée",
+        "plans": [
+          {
+            "decor": "pont-port-said",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "ned",
+            "texte": "La terre, si près ! Mais le capitaine replonge déjà. Ce n'est que partie remise.",
+            "mouvement": "zoom"
+          }
+        ]
+      }
+    },
+    "fin_escale": {
+      "6": {
+        "personnage": "aronnax",
+        "texte": "Nous avons franchi l'Afrique par-dessous. Notez le mot de cette escale : le nom de la bande de terre que le Nautilus a traversée sans la voir."
+      }
+    }
+  }
+}

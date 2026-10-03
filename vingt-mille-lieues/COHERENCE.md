@@ -46,3 +46,26 @@ visible au grade Matelot ; mesures à rattacher par leurs **unités** au grade T
 
 Personnages inventés : les mousses de l'*Abraham Lincoln* (les élèves). Fil rouge inventé : l'avarie et le journal de bord à
 reconstituer. Fragment `MOBILIS` : devise du Nautilus dans le roman (*Mobilis in mobili*).
+
+## 4. Relecture sceptique des escales 1, 3, 4, 5 et 6 (3 octobre 2026)
+
+Mêmes questions qu'au § 2, mêmes règles R9 à R12. Corrections faites avant intégration.
+
+| Énigme | Pourquoi ici ? | Pourquoi maintenant ? | Pourquoi ce personnage ? | Si l'on échoue ? | Verdict initial | Après correction |
+|---|---|---|---|---|---|---|
+| e1-1 Le livre de quart | relevés de vitesse sur le pont | début : la lueur file | Aronnax tient le journal | la chasse est perdue d'avance | ✅ ancrée | — |
+| e1-2 Forcer les feux | chaufferie de la frégate | obstacle : pas assez rapide | Conseil, méthodique | chaudière poussée sans méthode | ✅ ancrée | — |
+| e1-3 La cambuse | vivres d'une chasse qui dure | rebondissement : des mois de mer | Ned Land, marin de longs cours | faim, scorbut | ✅ ancrée | consigne Mousse reformulée |
+| e1-4 Le harpon de Ned Land | le harpon frappe le « monstre » | résolution | Ned est le harponneur | tirer sur un navire habité | ✅ ancrée | — |
+| e3-1 Les réservoirs d'air | sas des scaphandres (ch. XV-XVI) | avant de sortir | Conseil, d'habitude confiant | asphyxie | ⚠️ 3 énigmes, 2 émetteurs | ✅ Ned, méfiant (il refuse la promenade chez Verne) |
+| e3-2 La plaine aux mille couleurs | « Promenade en plaine » (ch. XVI) | pendant la promenade | Conseil classificateur | collection refusée | ✅ ancrée | — |
+| e3-3 La lampe dans la forêt | forêt de l'île Crespo, pénombre | rebondissement : il fait noir | Aronnax, la lampe Ruhmkorff | perdu dans l'obscurité | ✅ ancrée | — |
+| e4-1 Les instruments engloutis | épave de Vanikoro (II, ch. XIX) | début | Aronnax, savant | mystère non résolu | ✅ ancrée | — |
+| e4-2 La boîte de fer-blanc | archives de Nemo | après la plongée | Nemo confie un travail (R9 : tâche, pas question) | documents sans valeur de preuve | ⚠️ limite R9 | ✅ maintenu : Nemo délègue un classement, il n'interroge pas |
+| e4-3 Les papiers d'un autre monde | carré, papiers triés | résolution | Conseil classe | confusion des deux régimes | ✅ ancrée | — |
+| e5-1 La perle géante | banc de Manaar (II, ch. II-III) | début | Conseil et sa balance | perle refusée | ✅ ancrée | — |
+| e5-2 Le pêcheur de perles | pêcheur sauvé du requin | obstacle | Ned, indigné | Ned refuse de repartir | ✅ ancrée (enjeu moral tiré du roman, pas plaqué) | — |
+| e5-3 Les voiles de Ceylan | surface au large de Ceylan | résolution | Conseil (3ᵉ fois) | Nautilus repéré | ⚠️ 3 énigmes, 2 émetteurs | ✅ Aronnax à la longue-vue ; une seule énigme Matelot « tri » de suite → QCM |
+| e6-1 Le passage secret | cage du pilote, tunnel (II, ch. V) | avant le tunnel | Aronnax n'y croit pas (ch. IV) | « tunnel trop étroit » : aucun calcul ne l'évite (R11) | ⚠️ à renforcer | ✅ enjeu : comprendre l'avance que donne le raccourci |
+| e6-2 Le fleuve et le désert | carte du Nil, chantiers de l'isthme | pendant la traversée | Conseil classe les usages | enjeu de survie sans lien au tri (R11) | ⚠️ à renforcer | ✅ enjeu : l'eau mal partagée manque à quelqu'un |
+| e6-3 Le plan d'évasion de Ned | surface devant Port-Saïd | résolution | Ned rêve de fuir (fil du roman) | évasion ratée | ✅ ancrée | — |

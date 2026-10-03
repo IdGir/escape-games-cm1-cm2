@@ -105,6 +105,25 @@ var VML = window.VML || (window.VML = {});
       const id = setInterval(() => { if(actif() && Math.random() < 0.25) accord([131, 165, 196], ctx.currentTime, 3.5, 0.02); }, 7000);
       return { stop(){ clearInterval(id); } };
     },
+    vent(){
+      const s = bruit(), f = ctx.createBiquadFilter(), g = ctx.createGain(), lfo = ctx.createOscillator(), lg = ctx.createGain();
+      f.type = "bandpass"; f.frequency.value = 500; f.Q.value = 0.6; g.gain.value = 0.05;
+      lfo.frequency.value = 0.12; lg.gain.value = 300; lfo.connect(lg); lg.connect(f.frequency);
+      s.connect(f); f.connect(g); g.connect(maitre); s.start(); lfo.start();
+      return { stop(){ try{ g.gain.setTargetAtTime(0, ctx.currentTime, 0.4); s.stop(ctx.currentTime + 1.5); lfo.stop(ctx.currentTime + 1.5); }catch(e){} } };
+    },
+    vagues(){
+      const id = setInterval(() => { if(actif()){ const t = ctx.currentTime; souffle(t, 2.2, 0.05, 350, 0.5); } }, 4200);
+      return { stop(){ clearInterval(id); } };
+    },
+    vapeur(){
+      const id = setInterval(() => { if(actif() && Math.random() < 0.5){ const t = ctx.currentTime; souffle(t, 0.9, 0.04, 2600, 1.2); osc(55, "sawtooth", t, 0.5, 0.02, 45); } }, 2300);
+      return { stop(){ clearInterval(id); } };
+    },
+    glace(){
+      const id = setInterval(() => { if(actif() && Math.random() < 0.3){ const t = ctx.currentTime; osc(1800 + Math.random() * 900, "sine", t, 0.4, 0.015, 900); osc(90, "triangle", t + 0.2, 0.8, 0.03, 60); } }, 3500);
+      return { stop(){ clearInterval(id); } };
+    },
     carre(){ return FABRIQUES.coque(); },
     cabine(){ return FABRIQUES.coque(); },
     coque(){

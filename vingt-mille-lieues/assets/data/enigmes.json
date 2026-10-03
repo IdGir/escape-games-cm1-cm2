@@ -40,6 +40,926 @@
   ],
   "escales": [
     {
+      "numero": 1,
+      "id": "chasse-au-monstre",
+      "titre": "La chasse au « monstre »",
+      "lieu": "À bord de la frégate Abraham Lincoln, Pacifique, 1867",
+      "matiere": "Histoire, sciences et technologie",
+      "periode_conseillee": "P5 Année B (âge industriel) ou P2 Année A (conservation des aliments)",
+      "episode": "Première partie, ch. I à VII (le « monstre », la frégate Abraham Lincoln, le harpon de Ned Land, la chute à la mer)",
+      "scenarimage": "scenarimages/escale-01.md",
+      "mot": "NARVAL",
+      "mot_origine": "Le professeur Aronnax croyait d'abord que le « monstre » était un narval géant (Partie I, ch. II).",
+      "air": null,
+      "cinematique_ouverture": "transition-e1",
+      "cinematique_fin": "fin-e1",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e1-1",
+          "escale": 1,
+          "ordre": 1,
+          "titre": "Le livre de quart",
+          "decor": "pont-lincoln",
+          "objet_principal": "livre-quart",
+          "objets_cliquables": [
+            "livre-quart",
+            "loch",
+            "longue-vue"
+          ],
+          "personnage_emetteur": "aronnax",
+          "probleme_narratif": "Une lueur bleuâtre file sous la surface, devant la frégate. Le commandant Farragut veut savoir s'il peut la rattraper avant l'aube. Aronnax ouvre le livre de quart, où l'officier note les heures et les distances relevées au loch : il faut en tirer des durées et des vitesses.",
+          "enjeu": "Si la lueur est plus rapide, la chasse est perdue d'avance ; sinon, il faut forcer la marche tout de suite.",
+          "episode_du_roman": "Partie I, ch. VI « À toute vapeur » : pendant des semaines, la frégate poursuit la lueur que l'on prend pour un animal ; elle ne parvient pas à la rattraper.",
+          "competence_programme": "Sciences : mesurer une distance et une durée lors du déplacement d'un objet ; différents types de mouvement.",
+          "pourquoi_ce_savoir_ici": "Pour savoir qui va le plus vite, il faut comparer les distances parcourues en une même durée : c'est exactement ce que note le livre de quart.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "Un tracé lumineux se dessine sur la mer : la route de la frégate et celle de la lueur."
+          },
+          "liberte_ou_anachronisme": "Les relevés du livre de quart sont inventés pour le jeu (nombres simples). Le nœud (1 mille marin par heure) et le mille marin (1 852 m) sont les vraies unités de la marine.",
+          "lecon": "deplacement",
+          "type": "code",
+          "niveau_variantes": "Mousse : lire une durée en heures, reconnaître un mouvement circulaire. Matelot : durée en minutes et distance en une heure. Timonier : deux vitesses en nœuds à comparer. Lieutenant : écart de distance après 3 h + type de mouvement + justification. Second : temps de rattrapage avec avance, conversion en km/h + justification.",
+          "mousse": {
+            "type": "qcm",
+            "dialogue": "Regardez le livre de quart : l'officier y écrit l'heure de chaque observation. Aidez-moi à le lire avant que la lueur ne disparaisse.",
+            "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — quart de nuit : début 20 h, fin minuit. « La lueur tourne autour de la frégate en décrivant un grand cercle. »</div>Réponds aux deux questions.",
+            "questions": [
+              {
+                "q": "Combien de temps dure le quart de nuit ?",
+                "options": [
+                  "4 heures",
+                  "2 heures",
+                  "12 heures",
+                  "8 heures"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "La lueur tourne en cercle autour de la frégate. Son mouvement est…",
+                "options": [
+                  "circulaire",
+                  "rectiligne (en ligne droite)",
+                  "immobile",
+                  "de haut en bas"
+                ],
+                "bonne": 0
+              }
+            ],
+            "indices": [
+              "Fiche « Mesurer un déplacement » : pour une durée, on part de l'heure du début et on compte jusqu'à l'heure de la fin.",
+              "De 20 h à minuit (24 h), compte les heures une à une."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Le livre de quart dit tout, à qui sait compter. Combien de temps a duré la poursuite, et quelle distance la frégate parcourt-elle en une heure ?",
+            "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Lueur aperçue à 21 h 40. Lueur perdue de vue à 23 h 10. » — « Relevé au loch : 30 milles parcourus en 2 heures. »</div>Ouvre le cadenas du livre de quart avec les deux nombres.",
+            "champs": [
+              {
+                "libelle": "Durée de la poursuite (en minutes)",
+                "valeur": "90",
+                "longueur": 4
+              },
+              {
+                "libelle": "Milles parcourus en 1 heure",
+                "valeur": "15",
+                "longueur": 3
+              }
+            ],
+            "indices": [
+              "Fiche « Mesurer un déplacement » : de 21 h 40 à 22 h 40, il y a 1 heure ; continue jusqu'à 23 h 10.",
+              "30 milles en 2 heures : partage en deux parts égales."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Le commandant ne veut pas d'impressions, il veut des vitesses. Calculez-les en nœuds : un nœud, c'est un mille marin parcouru en une heure.",
+            "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Frégate : 45 milles en 2 h 30. » — « Lueur, mesurée d'après les relèvements : 48 milles en 2 heures. »</div>Calcule les deux vitesses en nœuds.",
+            "champs": [
+              {
+                "libelle": "Vitesse de la frégate (nœuds)",
+                "valeur": "18",
+                "longueur": 3
+              },
+              {
+                "libelle": "Vitesse de la lueur (nœuds)",
+                "valeur": "24",
+                "longueur": 3
+              }
+            ],
+            "indices": [
+              "Fiche « Mesurer un déplacement » : la vitesse en nœuds, c'est le nombre de milles parcourus en une heure.",
+              "2 h 30, c'est 2 heures et demie : 45 milles en 2 h 30 font 9 milles par demi-heure."
+            ]
+          },
+          "lieutenant": {
+            "type": "qcm",
+            "dialogue": "Le commandant veut savoir de combien la lueur nous distance, et si sa trajectoire est prévisible. Deux calculs, une justification : comme un vrai rapport d'officier.",
+            "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Frégate : 18 nœuds. Lueur : 24 nœuds, en ligne droite vers l'ouest. Puis, à minuit, elle tourne autour de nous en grand cercle. »</div>",
+            "questions": [
+              {
+                "q": "Après 3 heures de poursuite en ligne droite, de combien de milles la lueur a-t-elle augmenté son avance ?",
+                "options": [
+                  "18 milles",
+                  "6 milles",
+                  "42 milles",
+                  "72 milles"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "À minuit, le mouvement de la lueur passe…",
+                "options": [
+                  "de rectiligne à circulaire",
+                  "de circulaire à rectiligne",
+                  "de rectiligne à immobile",
+                  "de circulaire à immobile"
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche permet de répondre à la question 1 ?",
+              "options": [
+                "Quand deux objets vont dans le même sens, l'écart entre eux change chaque heure de la différence de leurs vitesses.",
+                "Un nœud, c'est une vitesse d'un mille marin par heure.",
+                "Un mouvement est circulaire quand l'objet tourne autour d'un point.",
+                "La durée, c'est l'heure de la fin moins l'heure du début."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Mesurer un déplacement », partie « Rattraper ou être distancé ».",
+              "Chaque heure, la lueur gagne 24 − 18 milles."
+            ]
+          },
+          "second": {
+            "type": "code",
+            "dialogue": "Ned Land parie que nous ne la rattraperons jamais. Moi, je crois qu'il suffit d'un peu d'arithmétique. Prouvez-le, et convertissez pour notre ami canadien, qui pense en kilomètres.",
+            "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Ralentie, la lueur file maintenant à 15 nœuds avec 12 milles d'avance. La frégate force la marche à 18 nœuds. » — « 1 mille marin = 1 852 m. »</div>Calcule, puis ouvre le cadenas. Arrondis la vitesse en km/h à l'unité.",
+            "champs": [
+              {
+                "libelle": "Heures pour la rattraper",
+                "valeur": "4",
+                "longueur": 2
+              },
+              {
+                "libelle": "18 nœuds ≈ ? km/h",
+                "valeur": "33",
+                "longueur": 3
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie ton premier calcul ?",
+              "options": [
+                "Quand deux objets vont dans le même sens, l'écart entre eux change chaque heure de la différence de leurs vitesses.",
+                "Un nœud, c'est une vitesse d'un mille marin par heure.",
+                "Un mille marin mesure environ 1 852 mètres.",
+                "Pour une durée, on calcule l'heure de la fin moins l'heure du début."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Chaque heure, la frégate reprend 18 − 15 = 3 milles. Combien d'heures pour reprendre 12 milles ?",
+              "18 × 1,852 km, puis arrondis."
+            ]
+          }
+        },
+        {
+          "id": "e1-2",
+          "escale": 1,
+          "ordre": 2,
+          "titre": "Forcer les feux",
+          "decor": "machines-vapeur",
+          "objet_principal": "chaudiere",
+          "objets_cliquables": [
+            "chaudiere",
+            "manometre-vapeur",
+            "chauffeur"
+          ],
+          "personnage_emetteur": "conseil",
+          "probleme_narratif": "Le commandant fait « forcer les feux » pour gagner de la vitesse. Dans la chaufferie, le mécanicien surveille le manomètre : trop de vapeur, et la chaudière peut exploser. Conseil, qui ne fait rien sans méthode, veut remettre dans l'ordre le trajet de l'énergie, du charbon jusqu'à l'hélice, pour savoir où agit chaque pelletée.",
+          "enjeu": "Sans vitesse, la lueur s'échappe ; sans méthode, on pousse la chaudière au-delà du raisonnable.",
+          "episode_du_roman": "Partie I, ch. VI « À toute vapeur » : le commandant Farragut fait pousser les feux au maximum pour atteindre l'animal.",
+          "competence_programme": "Histoire : l'âge industriel — énergies et machines ; la machine à vapeur, révolution industrielle et progrès technique.",
+          "pourquoi_ce_savoir_ici": "Comprendre la chaîne charbon → chaleur → vapeur → mouvement, c'est comprendre pourquoi « forcer les feux » fait avancer la frégate, et pourquoi cela a des limites.",
+          "reaction_du_decor": {
+            "effet": "vapeur",
+            "description": "Les foyers rougeoient plus fort, un jet de vapeur siffle, la machine accélère."
+          },
+          "liberte_ou_anachronisme": "La salle des machines est celle d'une frégate à vapeur (charbon), pas celle du Nautilus, électrique : le contraste est voulu (voir escale 2).",
+          "lecon": "machine-vapeur",
+          "type": "ordre",
+          "niveau_variantes": "Mousse : 4 étapes. Matelot : 5 étapes avec les pièces. Timonier : 6 étapes avec les transformations d'énergie. Lieutenant : texte à trous sur les formes d'énergie + justification. Second : QCM qui compare la frégate à vapeur et le Nautilus électrique + justification.",
+          "mousse": {
+            "dialogue": "Ranger avant d'agir, voilà ma devise. Du charbon jusqu'à l'hélice, dans quel ordre tout cela se passe-t-il ?",
+            "consigne": "Remets les étapes dans l'ordre, du charbon jusqu'à l'hélice.",
+            "items": [
+              {
+                "txt": "Le charbon brûle dans le foyer."
+              },
+              {
+                "txt": "L'eau de la chaudière chauffe et devient de la vapeur."
+              },
+              {
+                "txt": "La vapeur pousse le piston."
+              },
+              {
+                "txt": "L'hélice tourne et la frégate avance."
+              }
+            ],
+            "indices": [
+              "Fiche « La machine à vapeur » : tout commence par le feu.",
+              "L'hélice est à la fin : c'est elle qui fait avancer la frégate."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Le mécanicien a nommé chaque pièce, mais il n'a pas le temps de les ranger. Moi, je les classerais dans l'ordre où la force les traverse.",
+            "consigne": "Remets dans l'ordre le trajet de l'énergie dans la machine.",
+            "items": [
+              {
+                "txt": "Le foyer",
+                "sous": "le charbon y brûle"
+              },
+              {
+                "txt": "La chaudière",
+                "sous": "l'eau y bout et devient vapeur"
+              },
+              {
+                "txt": "Le cylindre",
+                "sous": "la vapeur y pousse le piston"
+              },
+              {
+                "txt": "La bielle et l'arbre",
+                "sous": "ils transforment le va-et-vient en rotation"
+              },
+              {
+                "txt": "L'hélice",
+                "sous": "elle pousse l'eau : la frégate avance"
+              }
+            ],
+            "indices": [
+              "Fiche « La machine à vapeur » : regarde le schéma, de gauche à droite.",
+              "Le piston fait un va-et-vient : il faut une pièce pour le transformer en rotation avant l'hélice."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Monsieur dirait que l'énergie ne fait que changer de forme. Voyons si l'on peut suivre ces changements, maillon par maillon.",
+            "consigne": "Remets dans l'ordre les six maillons ; chacun dit ce que devient l'énergie.",
+            "items": [
+              {
+                "txt": "Le charbon",
+                "sous": "il contient l'énergie (source)"
+              },
+              {
+                "txt": "La combustion dans le foyer",
+                "sous": "l'énergie devient chaleur"
+              },
+              {
+                "txt": "La chaudière",
+                "sous": "la chaleur transforme l'eau en vapeur sous pression"
+              },
+              {
+                "txt": "Le piston dans le cylindre",
+                "sous": "la vapeur produit un mouvement de va-et-vient"
+              },
+              {
+                "txt": "La bielle et l'arbre",
+                "sous": "le va-et-vient devient rotation"
+              },
+              {
+                "txt": "L'hélice",
+                "sous": "la rotation pousse l'eau : la frégate avance"
+              }
+            ],
+            "indices": [
+              "Fiche « La machine à vapeur » : source → chaleur → vapeur → mouvement.",
+              "Le va-et-vient vient avant la rotation."
+            ]
+          },
+          "lieutenant": {
+            "type": "trous",
+            "dialogue": "Le commandant voudrait un rapport écrit sur la machine. Je vous propose de le compléter : chaque mot à sa place, et rien d'approximatif.",
+            "consigne": "Complète le rapport de Conseil. Certaines étiquettes ne servent pas. Puis justifie.",
+            "texte": "Le charbon contient une énergie [[chimique]]. En brûlant, il libère de la [[chaleur]] qui transforme l'eau de la chaudière en [[vapeur]]. Sous pression, la vapeur pousse le [[piston]] : l'énergie devient [[mouvement]]. Le [[manomètre]] permet de surveiller la pression pour éviter l'explosion.",
+            "etiquettes": [
+              "chimique",
+              "chaleur",
+              "vapeur",
+              "piston",
+              "mouvement",
+              "manomètre",
+              "électrique",
+              "glace",
+              "boussole"
+            ],
+            "justification": {
+              "question": "Pourquoi « forcer les feux » fait-il aller la frégate plus vite ?",
+              "options": [
+                "Plus de charbon brûlé donne plus de chaleur, donc plus de vapeur sous pression, donc un piston poussé plus fort.",
+                "La fumée noire pousse la frégate vers l'avant.",
+                "Le charbon rend l'eau plus légère.",
+                "La machine à vapeur a été perfectionnée au XVIIIᵉ siècle."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « La machine à vapeur », partie « L'énergie change de forme ».",
+              "Trois étiquettes sont des pièges : la frégate n'a pas de piles, et la glace n'a rien à faire dans une chaudière."
+            ]
+          },
+          "second": {
+            "type": "qcm",
+            "dialogue": "On murmure que le monstre n'a ni cheminée ni fumée. Si c'est une machine, elle ne ressemble à aucune autre. Comparons notre frégate à ce qu'il faudrait pour égaler le « monstre ».",
+            "consigne": "<div class='doc-carnet'><b>Carnet du mécanicien</b> — « Consommation à toute vapeur : plusieurs tonnes de charbon par jour. Soutes presque vides au bout de quelques semaines. Fumée noire, escarbilles, chaleur insupportable dans la chaufferie. »</div>",
+            "questions": [
+              {
+                "q": "Pourquoi une frégate à vapeur doit-elle régulièrement faire escale ?",
+                "options": [
+                  "Pour remplir ses soutes de charbon.",
+                  "Pour vider sa vapeur.",
+                  "Pour recharger ses piles électriques.",
+                  "Pour refroidir son hélice."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Que montre la fumée noire qui sort de la cheminée ?",
+                "options": [
+                  "Le charbon brûle dans le foyer : c'est une combustion.",
+                  "L'eau de la chaudière s'évapore.",
+                  "Le piston est usé.",
+                  "La frégate va plus vite que le vent."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Une machine qui avance sans fumée ni cheminée doit…",
+                "options": [
+                  "tirer son énergie d'une autre source que la combustion de charbon à bord.",
+                  "être un animal.",
+                  "être immobile.",
+                  "brûler plus de charbon."
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche explique ta réponse à la question 3 ?",
+              "options": [
+                "Une machine ne crée pas d'énergie : il faut une source (charbon, vent, eau, piles…) et chaque source a ses traces : le charbon brûlé produit fumée et chaleur.",
+                "La machine à vapeur a été perfectionnée par James Watt au XVIIIᵉ siècle.",
+                "Le manomètre mesure la pression de la vapeur.",
+                "La bielle transforme un va-et-vient en rotation."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « La machine à vapeur », partie « D'où vient l'énergie ? ».",
+              "Pas de fumée, donc pas de combustion à bord : l'énergie vient d'ailleurs."
+            ]
+          }
+        },
+        {
+          "id": "e1-3",
+          "escale": 1,
+          "ordre": 3,
+          "titre": "La cambuse",
+          "decor": "cambuse",
+          "objet_principal": "etagere-vivres",
+          "objets_cliquables": [
+            "etagere-vivres",
+            "tonneaux",
+            "biscuits"
+          ],
+          "personnage_emetteur": "ned",
+          "probleme_narratif": "La chasse peut durer des mois. Le cambusier doit savoir quels vivres consommer d'abord et lesquels garder pour la fin. Ned Land connaît la morue salée, mais les boîtes de fer-blanc et les bocaux, nouveautés du siècle, le laissent méfiant : il faut trier les vivres selon leur façon d'être conservés.",
+          "enjeu": "Des vivres gâtés au milieu du Pacifique, c'est la faim et la maladie pour tout l'équipage.",
+          "episode_du_roman": "Partie I, ch. IV-V : l'Abraham Lincoln part pour une campagne de plusieurs mois ; vraisemblance : une frégate de 1867 emporte salaisons, biscuit de mer et conserves.",
+          "competence_programme": "Sciences : production et conservation des aliments (salaison, séchage, fumage, conserve) ; produits agricoles et produits transformés.",
+          "pourquoi_ce_savoir_ici": "Savoir comment un aliment est conservé, c'est savoir combien de temps il tiendra en mer.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "La lanterne s'avive ; les rayons de la cambuse s'éclairent, rangés."
+          },
+          "liberte_ou_anachronisme": "La conserve en récipient fermé et chauffé (Nicolas Appert) date du début du XIXᵉ siècle ; la chèvre du bord est une vraisemblance.",
+          "lecon": "conservation",
+          "type": "association",
+          "niveau_variantes": "Mousse : 3 aliments et leur méthode. Matelot : 5 aliments et leur méthode. Timonier : 5 méthodes et ce qu'elles font aux microbes. Lieutenant : QCM (scorbut, ce qui n'existait pas en 1867) + justification. Second : tri en trois colonnes (on retire l'eau / on chauffe et on ferme / frais) + justification.",
+          "mousse": {
+            "dialogue": "La morue salée, je connais. Mais le reste… Dites-moi comment chaque vivre est conservé, que je sache ce qui va tenir.",
+            "consigne": "Relie chaque aliment à la façon dont il est conservé.",
+            "paires": [
+              {
+                "g": "La morue",
+                "icone": "🐟",
+                "d": "avec beaucoup de sel"
+              },
+              {
+                "g": "Le jambon",
+                "icone": "🍖",
+                "d": "à la fumée"
+              },
+              {
+                "g": "Les petits pois",
+                "icone": "🥫",
+                "d": "dans une boîte fermée, chauffée"
+              }
+            ],
+            "indices": [
+              "Fiche « Conserver les aliments » : chaque méthode a sa ligne.",
+              "Le jambon pend au-dessus d'un feu de bois : c'est le fumage."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Le cambusier m'a montré cinq sortes de vivres. Je veux savoir comment chacun a été préparé, que je ne mange pas d'abord ce qui peut attendre.",
+            "consigne": "Relie chaque vivre de la cambuse à sa méthode de conservation.",
+            "paires": [
+              {
+                "g": "La morue",
+                "icone": "🐟",
+                "d": "la salaison (le sel)"
+              },
+              {
+                "g": "Le jambon",
+                "icone": "🍖",
+                "d": "le fumage"
+              },
+              {
+                "g": "Le biscuit de mer",
+                "icone": "🍪",
+                "d": "le séchage (cuit et séché très dur)"
+              },
+              {
+                "g": "Les petits pois en boîte",
+                "icone": "🥫",
+                "d": "la conserve (chauffée dans une boîte fermée)"
+              },
+              {
+                "g": "La confiture",
+                "icone": "🍯",
+                "d": "le sucre"
+              }
+            ],
+            "indices": [
+              "Fiche « Conserver les aliments » : lis le tableau des méthodes.",
+              "Le biscuit de mer n'est ni salé ni sucré : on l'a rendu sec."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Chaque méthode, c'est une ruse contre ce qui gâte la nourriture. Je veux savoir laquelle fait quoi : on ne fait confiance qu'à ce qu'on comprend.",
+            "consigne": "Relie chaque méthode de conservation à ce qu'elle fait aux microbes qui gâtent les aliments.",
+            "paires": [
+              {
+                "g": "Saler",
+                "icone": "🧂",
+                "d": "le sel retire l'eau dont les microbes ont besoin"
+              },
+              {
+                "g": "Sécher",
+                "icone": "☀️",
+                "d": "on enlève l'eau de l'aliment"
+              },
+              {
+                "g": "Mettre en conserve",
+                "icone": "🥫",
+                "d": "la chaleur tue les microbes et la boîte fermée empêche d'autres d'entrer"
+              },
+              {
+                "g": "Garder au froid",
+                "icone": "🧊",
+                "d": "le froid ralentit les microbes"
+              },
+              {
+                "g": "Sucrer fortement",
+                "icone": "🍯",
+                "d": "beaucoup de sucre retient l'eau, comme le sel"
+              }
+            ],
+            "indices": [
+              "Fiche « Conserver les aliments » : les microbes ont besoin d'eau et de chaleur pour se multiplier.",
+              "La conserve agit de deux façons à la fois."
+            ]
+          },
+          "lieutenant": {
+            "type": "qcm",
+            "dialogue": "Le cambusier a embarqué des citrons et de la choucroute, et il refuse qu'on y touche. J'aimerais comprendre avant de me fâcher.",
+            "consigne": "Réponds à partir de la fiche « Conserver les aliments ».",
+            "questions": [
+              {
+                "q": "Pourquoi embarque-t-on des citrons et de la choucroute pour une longue campagne ?",
+                "options": [
+                  "Pour prévenir le scorbut, une maladie due au manque de vitamine C.",
+                  "Pour remplacer le sel.",
+                  "Parce qu'ils se conservent mieux que le biscuit.",
+                  "Pour nourrir les chaudières."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Laquelle de ces méthodes n'existait pas à bord en 1867 ?",
+                "options": [
+                  "le congélateur électrique",
+                  "la conserve en boîte fermée et chauffée",
+                  "la salaison",
+                  "le fumage"
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche permet de répondre à la question 1 ?",
+              "options": [
+                "Sans fruits ni légumes frais, les marins des longues traversées souffraient du scorbut, causé par un manque de vitamine C ; citrons et choucroute en apportent.",
+                "Le sel retire l'eau dont les microbes ont besoin.",
+                "La conserve date du début du XIXᵉ siècle.",
+                "Le froid ralentit les microbes."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Conserver les aliments », encadré « Le mal des marins ».",
+              "Électricité domestique et moteurs frigorifiques sont bien postérieurs au roman pour un navire."
+            ]
+          },
+          "second": {
+            "type": "tri",
+            "dialogue": "Le cambusier compte ses vivres et fait des grimaces. Avant de manger, je veux savoir ce qui tiendra jusqu'au bout, et pourquoi.",
+            "consigne": "Classe chaque vivre selon la façon dont il résiste aux microbes, puis justifie.",
+            "colonnes": [
+              {
+                "id": "eau",
+                "titre": "On lui a retiré l'eau (sel, séchage, sucre, fumée)",
+                "icone": "🧂"
+              },
+              {
+                "id": "chaleur",
+                "titre": "Chauffé puis fermé (conserve)",
+                "icone": "🥫"
+              },
+              {
+                "id": "frais",
+                "titre": "Frais : à consommer vite",
+                "icone": "⏳"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "morue salée",
+                "col": "eau"
+              },
+              {
+                "txt": "biscuit de mer",
+                "col": "eau"
+              },
+              {
+                "txt": "confiture",
+                "col": "eau"
+              },
+              {
+                "txt": "jambon fumé",
+                "col": "eau"
+              },
+              {
+                "txt": "petits pois en boîte de fer-blanc",
+                "col": "chaleur"
+              },
+              {
+                "txt": "viande en bocal stérilisé",
+                "col": "chaleur"
+              },
+              {
+                "txt": "poisson pêché ce matin",
+                "col": "frais"
+              },
+              {
+                "txt": "lait de la chèvre du bord",
+                "col": "frais"
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche explique pourquoi la confiture se classe avec le sel ?",
+              "options": [
+                "Beaucoup de sucre retient l'eau, comme le sel : les microbes ne peuvent plus s'en servir.",
+                "La chaleur tue les microbes.",
+                "Le froid ralentit les microbes.",
+                "Les fruits sont des produits agricoles."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Conserver les aliments » : trois façons de lutter contre les microbes.",
+              "Un bocal ou une boîte chauffés et fermés vont ensemble."
+            ]
+          }
+        },
+        {
+          "id": "e1-4",
+          "escale": 1,
+          "ordre": 4,
+          "titre": "Le harpon de Ned Land",
+          "decor": "pont-lincoln",
+          "objet_principal": "harpon",
+          "objets_cliquables": [
+            "harpon",
+            "lueur-mer",
+            "loch"
+          ],
+          "personnage_emetteur": "ned",
+          "probleme_narratif": "La frégate est enfin à portée. Ned Land lance son harpon : il rebondit en sonnant comme sur du métal. Avant que le commandant ne fasse donner le canon, il faut décider : cette « bête » est-elle un être vivant ou une machine ?",
+          "enjeu": "Si c'est une machine, il y a des hommes à bord, et l'on tire peut-être sur un navire.",
+          "episode_du_roman": "Partie I, ch. VI-VII : Ned Land lance son harpon, qui frappe un corps dur ; Aronnax, tombé à la mer, découvre ensuite des plaques de tôle boulonnées.",
+          "competence_programme": "Sciences : caractéristiques du vivant (naître, grandir, se nourrir, respirer, se reproduire, mourir) ; distinguer un être vivant d'un objet technique.",
+          "pourquoi_ce_savoir_ici": "Les indices observés ne prouvent pas tous la même chose : seuls les caractères du vivant permettent de trancher.",
+          "reaction_du_decor": {
+            "effet": "secousse",
+            "description": "Un choc ébranle la frégate ; une gerbe d'eau balaie le pont."
+          },
+          "liberte_ou_anachronisme": "La bioluminescence (lumière produite par des êtres vivants) est citée pour montrer qu'une lumière seule ne prouve rien.",
+          "lecon": "vivant-ou-objet",
+          "type": "tri",
+          "niveau_variantes": "Mousse : êtres vivants ou objets fabriqués. Matelot : caractères du vivant ou de l'objet technique. Timonier et Lieutenant : indices sur le « monstre » en 3 colonnes, dont « ne permet pas de conclure » (+ justification pour Lieutenant). Second : QCM sur la preuve et le contre-exemple + justification.",
+          "mousse": {
+            "dialogue": "Tonnerre ! Mon harpon a rebondi en sonnant comme une marmite ! Rangeons d'abord ce qui vit et ce qui a été fabriqué, que je sache sur quoi je tire.",
+            "consigne": "Range chaque élément : être vivant ou objet fabriqué par les humains ?",
+            "colonnes": [
+              {
+                "id": "vivant",
+                "titre": "Être vivant",
+                "icone": "🐋"
+              },
+              {
+                "id": "objet",
+                "titre": "Objet fabriqué",
+                "icone": "⚙️"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "une baleine",
+                "icone": "🐋",
+                "col": "vivant"
+              },
+              {
+                "txt": "un narval",
+                "icone": "🐳",
+                "col": "vivant"
+              },
+              {
+                "txt": "une mouette",
+                "icone": "🕊️",
+                "col": "vivant"
+              },
+              {
+                "txt": "une frégate",
+                "icone": "⛵",
+                "col": "objet"
+              },
+              {
+                "txt": "un harpon",
+                "icone": "🔱",
+                "col": "objet"
+              },
+              {
+                "txt": "une lanterne",
+                "icone": "🏮",
+                "col": "objet"
+              }
+            ],
+            "indices": [
+              "Fiche « Être vivant ou objet ? » : un être vivant naît, grandit, se nourrit et meurt.",
+              "Une frégate ne grandit pas : on la construit."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Vivant ou pas vivant, voilà la question. Le professeur dit qu'il y a des règles pour le savoir. Moi, je veux les voir écrites.",
+            "consigne": "Range chaque phrase : elle décrit un être vivant ou un objet technique ?",
+            "colonnes": [
+              {
+                "id": "vivant",
+                "titre": "Un être vivant…",
+                "icone": "🐋"
+              },
+              {
+                "id": "objet",
+                "titre": "Un objet technique…",
+                "icone": "⚙️"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "naît et grandit",
+                "col": "vivant"
+              },
+              {
+                "txt": "se nourrit",
+                "col": "vivant"
+              },
+              {
+                "txt": "respire",
+                "col": "vivant"
+              },
+              {
+                "txt": "se reproduit",
+                "col": "vivant"
+              },
+              {
+                "txt": "est fabriqué par des humains",
+                "col": "objet"
+              },
+              {
+                "txt": "a besoin d'une source d'énergie fournie (charbon, piles…)",
+                "col": "objet"
+              },
+              {
+                "txt": "est fait de pièces assemblées (rivets, boulons)",
+                "col": "objet"
+              },
+              {
+                "txt": "répond à un besoin humain",
+                "col": "objet"
+              }
+            ],
+            "indices": [
+              "Fiche « Être vivant ou objet ? » : deux listes, une pour chaque colonne.",
+              "Un objet technique peut bouger et consommer de l'énergie, mais il ne grandit pas et ne se reproduit pas."
+            ]
+          },
+          "timonier": {
+            "dialogue": "On a vu des choses étranges cette nuit. Mais attention : toutes ne prouvent rien ! Triez-les, avant que le canon ne parle.",
+            "consigne": "Classe chaque observation sur le « monstre ».",
+            "colonnes": [
+              {
+                "id": "machine",
+                "titre": "Indique une machine",
+                "icone": "⚙️"
+              },
+              {
+                "id": "vivant",
+                "titre": "Indique un être vivant",
+                "icone": "🐋"
+              },
+              {
+                "id": "rien",
+                "titre": "Ne permet pas de conclure",
+                "icone": "❔"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le harpon sonne comme sur du fer",
+                "col": "machine"
+              },
+              {
+                "txt": "on devine des plaques boulonnées",
+                "col": "machine"
+              },
+              {
+                "txt": "sa lumière s'éteint d'un coup, comme une lampe qu'on coupe",
+                "col": "machine"
+              },
+              {
+                "txt": "il brille dans la nuit",
+                "col": "rien"
+              },
+              {
+                "txt": "il souffle des jets d'eau",
+                "col": "rien"
+              },
+              {
+                "txt": "il nage plus vite que la frégate",
+                "col": "rien"
+              },
+              {
+                "txt": "des oiseaux de mer le suivent pour manger les poissons qu'il fait fuir",
+                "col": "rien"
+              }
+            ],
+            "indices": [
+              "Fiche « Être vivant ou objet ? », encadré « Un indice n'est pas une preuve ».",
+              "Une baleine aussi souffle de l'eau, et certains animaux produisent de la lumière."
+            ]
+          },
+          "lieutenant": {
+            "dialogue": "Le commandant veut un avis écrit et motivé. Chaque observation à sa place, et une phrase pour expliquer celle qui trompe tout le monde.",
+            "consigne": "Classe chaque observation, puis justifie.",
+            "colonnes": [
+              {
+                "id": "machine",
+                "titre": "Indique une machine",
+                "icone": "⚙️"
+              },
+              {
+                "id": "vivant",
+                "titre": "Indique un être vivant",
+                "icone": "🐋"
+              },
+              {
+                "id": "rien",
+                "titre": "Ne permet pas de conclure",
+                "icone": "❔"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le harpon sonne comme sur du fer",
+                "col": "machine"
+              },
+              {
+                "txt": "on devine des rivets et des plaques de tôle",
+                "col": "machine"
+              },
+              {
+                "txt": "il n'a jamais été vu manger",
+                "col": "rien"
+              },
+              {
+                "txt": "il brille dans la nuit",
+                "col": "rien"
+              },
+              {
+                "txt": "il souffle des jets d'eau",
+                "col": "rien"
+              },
+              {
+                "txt": "il a des petits qui le suivent",
+                "col": "vivant"
+              },
+              {
+                "txt": "sa taille n'a pas changé depuis un an d'observations",
+                "col": "rien"
+              }
+            ],
+            "justification": {
+              "question": "Pourquoi « il brille dans la nuit » ne prouve-t-il rien ?",
+              "options": [
+                "Certains êtres vivants produisent leur propre lumière (bioluminescence) ; une machine peut aussi porter des lampes.",
+                "Toutes les machines brillent.",
+                "Aucun animal ne vit la nuit.",
+                "Un être vivant naît, grandit, se nourrit et meurt."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Être vivant ou objet ? », encadré « Un indice n'est pas une preuve ».",
+              "Avoir des petits, c'est se reproduire : un caractère du vivant."
+            ]
+          },
+          "second": {
+            "type": "qcm",
+            "dialogue": "Le professeur a écrit partout qu'il s'agissait d'un narval géant. Un savant doit savoir dire « je me suis trompé » : il ne faut qu'une preuve pour cela.",
+            "consigne": "Réponds en raisonnant comme un savant : une seule preuve suffit à réfuter une hypothèse ; aucun indice ne suffit à la prouver.",
+            "questions": [
+              {
+                "q": "Quelle observation suffit à réfuter l'hypothèse du « narval géant » ?",
+                "options": [
+                  "Des plaques de tôle assemblées par des boulons.",
+                  "Il nage très vite.",
+                  "Il souffle des jets d'eau.",
+                  "Il brille dans la nuit."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Quel ensemble de caractères définit un être vivant ?",
+                "options": [
+                  "Il naît, grandit, se nourrit, se reproduit et meurt.",
+                  "Il bouge et fait du bruit.",
+                  "Il est grand et il nage.",
+                  "Il brille et consomme de l'énergie."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Lequel de ces indices ne permet PAS de trancher ?",
+                "options": [
+                  "Il souffle des jets d'eau.",
+                  "Le harpon sonne comme sur du fer.",
+                  "On voit des rivets.",
+                  "Sa lumière s'éteint d'un coup comme une lampe coupée."
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+              "options": [
+                "Un objet technique est fait de pièces fabriquées et assemblées par des humains ; aucun être vivant n'est boulonné.",
+                "Certains êtres vivants produisent leur propre lumière.",
+                "Un être vivant respire.",
+                "Une baleine souffle de l'eau par son évent."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Être vivant ou objet ? » : cherche ce qu'aucun être vivant ne peut avoir.",
+              "Une baleine souffle aussi : cet indice convient aux deux hypothèses."
+            ]
+          }
+        }
+      ]
+    },
+    {
       "numero": 2,
       "id": "ventre-du-nautilus",
       "titre": "Dans le ventre du Nautilus",
@@ -56,7 +976,9 @@
         "apres_avarie": 62,
         "perte_par_minute": 1,
         "perte_par_indice": 3,
-        "plancher": 25
+        "plancher": 25,
+        "pompe": "e2-2",
+        "plein": "e2-4"
       },
       "enigmes": [
         {
@@ -470,7 +1392,16 @@
             "indices": [
               "Fiche « Le circuit électrique » : le courant doit faire une boucle complète, sans interruption.",
               "Un fil part déjà de la borne + : il faut revenir à la borne − en passant par le lustre."
-            ]
+            ],
+            "solution": {
+              "fils": [
+                [
+                  "L1b",
+                  "P-"
+                ]
+              ],
+              "fermes": {}
+            }
           },
           "matelot": {
             "dialogue": "Une seule boucle suffira pour l'instant : les piles, la manette, le lustre et la pompe à air, l'un après l'autre. Et la manette doit pouvoir tout arrêter.",
@@ -529,7 +1460,30 @@
             "indices": [
               "Fiche « Le circuit électrique » : le courant doit faire une boucle complète. Ici, une seule boucle passe par tous les appareils, l'un après l'autre.",
               "Une boucle : borne + → manette → lustre → pompe → borne −. N'oublie pas de fermer la manette."
-            ]
+            ],
+            "solution": {
+              "fils": [
+                [
+                  "P+",
+                  "K1a"
+                ],
+                [
+                  "K1b",
+                  "L1a"
+                ],
+                [
+                  "L1b",
+                  "Ma"
+                ],
+                [
+                  "Mb",
+                  "P-"
+                ]
+              ],
+              "fermes": {
+                "K1": true
+              }
+            }
           },
           "timonier": {
             "dialogue": "Le capitaine exige que le salon reste éclairé même si une ampoule grille. Deux lampes, l'une au salon, l'autre dans la coursive… À vous de choisir le bon montage.",
@@ -571,7 +1525,28 @@
             "indices": [
               "Fiche « Le circuit électrique » : compare « en série » et « en dérivation ». Lequel garde une lampe allumée si l'autre grille ?",
               "En dérivation, chaque lampe a sa propre boucle qui revient à les piles."
-            ]
+            ],
+            "solution": {
+              "fils": [
+                [
+                  "P+",
+                  "L1a"
+                ],
+                [
+                  "L1b",
+                  "P-"
+                ],
+                [
+                  "P+",
+                  "L2a"
+                ],
+                [
+                  "L2b",
+                  "P-"
+                ]
+              ],
+              "fermes": {}
+            }
           },
           "lieutenant": {
             "dialogue": "Trois appareils, deux exigences. Les deux lampes doivent être indépendantes, et l'interrupteur de la pompe ne doit commander que la pompe : on doit pouvoir l'arrêter sans plonger le salon dans le noir.",
@@ -647,7 +1622,42 @@
             "indices": [
               "Fiche « Le circuit électrique », partie « En dérivation » : dessine trois boucles qui partent toutes de les piles.",
               "L'interrupteur K2 doit être dans la boucle de la pompe, pas dans celles des lampes."
-            ]
+            ],
+            "solution": {
+              "fils": [
+                [
+                  "P+",
+                  "L1a"
+                ],
+                [
+                  "L1b",
+                  "P-"
+                ],
+                [
+                  "P+",
+                  "L2a"
+                ],
+                [
+                  "L2b",
+                  "P-"
+                ],
+                [
+                  "P+",
+                  "K2a"
+                ],
+                [
+                  "K2b",
+                  "Ma"
+                ],
+                [
+                  "Mb",
+                  "P-"
+                ]
+              ],
+              "fermes": {
+                "K2": true
+              }
+            }
           },
           "second": {
             "dialogue": "Un matelot a posé, dans la précipitation, un « fil de secours » entre les deux bornes de les piles… C'est peut-être lui, notre incendie. Contrôlez tout avant de mettre sous tension.",
@@ -730,7 +1740,43 @@
             "indices": [
               "Fiche « Le circuit électrique », encadré « Danger » : que se passe-t-il quand on relie directement les deux bornes ?",
               "Retire le fil qui relie + à − sans passer par aucun appareil, puis monte trois boucles en dérivation, K2 dans celle de la pompe."
-            ]
+            ],
+            "solution": {
+              "retirer": true,
+              "fils": [
+                [
+                  "P+",
+                  "L1a"
+                ],
+                [
+                  "L1b",
+                  "P-"
+                ],
+                [
+                  "P+",
+                  "L2a"
+                ],
+                [
+                  "L2b",
+                  "P-"
+                ],
+                [
+                  "P+",
+                  "K2a"
+                ],
+                [
+                  "K2b",
+                  "Ma"
+                ],
+                [
+                  "Mb",
+                  "P-"
+                ]
+              ],
+              "fermes": {
+                "K2": true
+              }
+            }
           }
         },
         {
@@ -1125,6 +2171,2832 @@
             "indices": [
               "Fiche « La chaîne d'énergie », encadré « Dans le roman » : d'où vient le sodium ?",
               "Les deux premiers maillons sont avant les piles."
+            ]
+          }
+        }
+      ],
+      "etats_decor": [
+        {
+          "decor": "carre",
+          "etat": "panne",
+          "jusqua": "e2-1"
+        },
+        {
+          "decor": "machines",
+          "etat": "panne",
+          "jusqua": "e2-2"
+        },
+        {
+          "decor": "salon",
+          "etat": "panne",
+          "jusqua": "e2-2"
+        },
+        {
+          "decor": "salon",
+          "etat": "victoire",
+          "apres": "e2-4"
+        }
+      ],
+      "cinematique_ouverture": "transition-e2",
+      "cinematique_fin": "fin-e2"
+    },
+    {
+      "numero": 3,
+      "id": "foret-de-crespo",
+      "titre": "La forêt de l'île Crespo",
+      "lieu": "Pacifique nord, près de l'île Crespo, novembre 1867",
+      "matiere": "Sciences",
+      "periode_conseillee": "P1 Année B (matière) ou P2/P4 Année A (lumière, vivant)",
+      "episode": "Première partie, ch. XV « Une invitation par lettre », XVI « Promenade en plaine », XVII « Une forêt sous-marine »",
+      "scenarimage": "scenarimages/escale-03.md",
+      "mot": "CRESPO",
+      "mot_origine": "L'île Crespo, près de laquelle le capitaine Nemo invite Aronnax à chasser dans sa « forêt » sous-marine (Partie I, ch. XV).",
+      "air": {
+        "depart": 100,
+        "perte_par_minute": 0,
+        "perte_par_indice": 3,
+        "plancher": 30
+      },
+      "cinematique_ouverture": "transition-e3",
+      "cinematique_fin": "fin-e3",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e3-1",
+          "escale": 3,
+          "ordre": 1,
+          "titre": "Les réservoirs d'air",
+          "decor": "sas",
+          "objet_principal": "scaphandres",
+          "objets_cliquables": [
+            "scaphandres",
+            "porte-sas",
+            "niveau-eau"
+          ],
+          "personnage_emetteur": "ned",
+          "probleme_narratif": "Le capitaine Nemo invite à chasser dans sa forêt sous-marine. Dans le vestiaire, chacun reçoit un scaphandre et un réservoir d'air comprimé. Ned Land se méfie : il ne voit rien dans son réservoir, il le croit vide, et refuse de sortir sans preuve. Avant de remplir le sas d'eau, il faut prouver ce que contient un réservoir.",
+          "enjeu": "Sortir avec un réservoir vide, c'est l'asphyxie au fond de la mer.",
+          "episode_du_roman": "Partie I, ch. XVI « Promenade en plaine » : avant de sortir, Aronnax revêt un scaphandre muni d'un réservoir d'air comprimé ; le sas se remplit d'eau.",
+          "competence_programme": "Sciences : états et constitution de la matière à l'échelle macroscopique ; l'air est de la matière (il occupe de l'espace, il a une masse, il se comprime) ; propriétés des solides, liquides et gaz.",
+          "pourquoi_ce_savoir_ici": "On ne voit pas l'air : seules ses propriétés (masse, volume, compressibilité) permettent de savoir s'il est là.",
+          "reaction_du_decor": {
+            "effet": "ouverture",
+            "description": "La porte ronde du sas pivote : l'eau envahit le sas, les bulles montent."
+          },
+          "liberte_ou_anachronisme": "Les masses et volumes des réservoirs sont des nombres du jeu ; la masse d'un litre d'air (environ 1,2 g) est réelle.",
+          "lecon": "air-matiere",
+          "type": "qcm",
+          "niveau_variantes": "Mousse : vrai/faux sur l'air. Matelot : comparer deux masses à la balance. Timonier : trier solides, liquides, gaz par leurs propriétés. Lieutenant : calcul de la masse d'air comprimé + justification. Second : QCM (masse, compressibilité) + justification.",
+          "mousse": {
+            "type": "vraifaux",
+            "dialogue": "Je regarde dans ce réservoir et je ne vois rien du tout. Il est vide, je vous dis ! Prouvez-moi le contraire, ou je reste à bord.",
+            "consigne": "Vrai ou faux ? Aide-toi de la fiche « L'air, c'est de la matière ».",
+            "affirmations": [
+              {
+                "txt": "L'air est invisible, mais il existe.",
+                "vrai": true
+              },
+              {
+                "txt": "L'air ne prend pas de place.",
+                "vrai": false
+              },
+              {
+                "txt": "Quand on remplit le sas d'eau, l'eau chasse l'air.",
+                "vrai": true
+              },
+              {
+                "txt": "Un réservoir plein d'air est exactement aussi lourd qu'un réservoir vide.",
+                "vrai": false
+              }
+            ],
+            "indices": [
+              "Fiche « L'air, c'est de la matière » : lis la partie sur la place et la masse de l'air.",
+              "Une seringue bouchée qu'on ne peut pas enfoncer jusqu'au bout : quelque chose y prend de la place."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Deux réservoirs, tout pareils. L'un serait plein, l'autre vide. Je n'y vois aucune différence… mais la balance du vestiaire, elle, en voit peut-être une.",
+            "consigne": "<div class='doc-carnet'><b>Pesée au vestiaire</b> : réservoir A = 12 kg 000 g ; réservoir B = 12 kg 600 g. Même modèle, même acier.</div>Réponds aux deux questions.",
+            "questions": [
+              {
+                "q": "Lequel des deux réservoirs est rempli d'air comprimé ?",
+                "options": [
+                  "le réservoir B, le plus lourd",
+                  "le réservoir A, le plus léger",
+                  "aucun des deux : l'air ne pèse rien",
+                  "on ne peut pas savoir sans l'ouvrir"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Pourquoi peut-on faire entrer une grande quantité d'air dans un petit réservoir ?",
+                "options": [
+                  "Parce que l'air se comprime.",
+                  "Parce que l'air est un liquide.",
+                  "Parce que l'air n'a pas de masse.",
+                  "Parce que l'acier absorbe l'air."
+                ],
+                "bonne": 0
+              }
+            ],
+            "indices": [
+              "Fiche « L'air, c'est de la matière » : l'air a une masse.",
+              "La différence de masse vient de ce qu'il y a dedans."
+            ]
+          },
+          "timonier": {
+            "type": "tri",
+            "dialogue": "Le capitaine dit que dans ce sas il y a trois états de la matière. Moi, je ne vois que de l'eau et du fer. Montrez-les-moi.",
+            "consigne": "Classe chaque élément du sas selon son état : solide, liquide ou gaz.",
+            "colonnes": [
+              {
+                "id": "solide",
+                "titre": "Solide : il a une forme propre",
+                "icone": "🧊"
+              },
+              {
+                "id": "liquide",
+                "titre": "Liquide : il prend la forme du récipient, sa surface reste horizontale",
+                "icone": "💧"
+              },
+              {
+                "id": "gaz",
+                "titre": "Gaz : il occupe tout l'espace et se comprime",
+                "icone": "💨"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le casque de cuivre",
+                "col": "solide"
+              },
+              {
+                "txt": "les semelles de plomb",
+                "col": "solide"
+              },
+              {
+                "txt": "l'eau de mer qui monte dans le sas",
+                "col": "liquide"
+              },
+              {
+                "txt": "l'huile des charnières",
+                "col": "liquide"
+              },
+              {
+                "txt": "l'air comprimé du réservoir",
+                "col": "gaz"
+              },
+              {
+                "txt": "les bulles qui remontent",
+                "col": "gaz"
+              }
+            ],
+            "indices": [
+              "Fiche « L'air, c'est de la matière », tableau des trois états.",
+              "Les bulles, c'est de l'air entouré d'eau."
+            ]
+          },
+          "lieutenant": {
+            "type": "code",
+            "dialogue": "Si l'air a une masse, je veux savoir combien pèse celui que je vais emporter. Un nombre, et je serai rassuré.",
+            "consigne": "<div class='doc-carnet'><b>Données du vestiaire</b> : le réservoir a un volume de 10 litres ; on y fait entrer 50 fois plus d'air qu'il n'en contient à l'air libre. Fiche : 1 litre d'air pèse environ 1,2 g.</div>Calcule, puis ouvre le cadenas du râtelier.",
+            "champs": [
+              {
+                "libelle": "Litres d'air à l'air libre",
+                "valeur": "500",
+                "longueur": 4
+              },
+              {
+                "libelle": "Masse de cet air (en g)",
+                "valeur": "600",
+                "longueur": 4
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie ton calcul ?",
+              "options": [
+                "L'air a une masse : à l'air libre, un litre d'air pèse environ 1,2 gramme.",
+                "L'air est invisible.",
+                "Un liquide prend la forme du récipient.",
+                "Les bulles remontent vers la surface."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "10 litres « 50 fois » : 10 × 50.",
+              "Puis 500 litres × 1,2 g."
+            ]
+          },
+          "second": {
+            "type": "qcm",
+            "dialogue": "Le capitaine m'a lancé une énigme, comme un défi : « L'eau, on ne la serre pas ; l'air, si. » Je veux comprendre pourquoi, preuves à l'appui.",
+            "consigne": "<div class='doc-carnet'><b>Essai du vestiaire</b> : deux seringues bouchées, l'une pleine d'air, l'autre pleine d'eau. On appuie sur les pistons.</div>",
+            "questions": [
+              {
+                "q": "Que se passe-t-il ?",
+                "options": [
+                  "Le piston de la seringue d'air s'enfonce un peu, celui de la seringue d'eau presque pas.",
+                  "Les deux pistons s'enfoncent jusqu'au bout.",
+                  "Aucun piston ne bouge.",
+                  "Le piston de la seringue d'eau s'enfonce, pas celui de l'air."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Un réservoir de 10 L contient l'équivalent de 500 L d'air libre. Sa masse d'air est d'environ…",
+                "options": [
+                  "600 g",
+                  "12 g",
+                  "6 kg",
+                  "1,2 g"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Pourquoi le sas se vide-t-il de son air quand l'eau y entre ?",
+                "options": [
+                  "Deux matières ne peuvent pas occuper la même place : l'eau chasse l'air.",
+                  "L'air se dissout entièrement dans l'eau.",
+                  "L'air devient de l'eau.",
+                  "L'air n'existe pas sous la mer."
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche explique la question 1 ?",
+              "options": [
+                "Un gaz se comprime : on peut le serrer dans un plus petit volume ; un liquide se comprime très peu.",
+                "L'air a une masse.",
+                "Un solide a une forme propre.",
+                "L'air est invisible."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « L'air, c'est de la matière », partie « Gaz et liquides ».",
+              "500 × 1,2 g."
+            ]
+          }
+        },
+        {
+          "id": "e3-2",
+          "escale": 3,
+          "ordre": 2,
+          "titre": "La plaine aux mille couleurs",
+          "decor": "recif",
+          "objet_principal": "faune-recif",
+          "objets_cliquables": [
+            "faune-recif",
+            "tortue",
+            "etoile-mer"
+          ],
+          "personnage_emetteur": "conseil",
+          "probleme_narratif": "Sur la plaine sous-marine, Conseil voudrait tout classer pour le musée du capitaine, mais on ne parle pas sous un casque de cuivre : il faut se mettre d'accord avant de remonter sur ce qui ira dans chaque vitrine. Le capitaine ne gardera qu'une collection bien rangée.",
+          "enjeu": "Une collection mal classée sera refusée par le capitaine, et la sortie n'aura servi à rien.",
+          "episode_du_roman": "Partie I, ch. XVI « Promenade en plaine » : Aronnax et Conseil traversent une plaine couverte d'êtres marins de toutes sortes ; Conseil, grand classificateur, ne peut s'empêcher de les ranger.",
+          "competence_programme": "Sciences : panorama du vivant ; organisation des êtres vivants (classer selon les caractères partagés) ; biodiversité.",
+          "pourquoi_ce_savoir_ici": "Classer, c'est regrouper les êtres vivants par ce qu'ils ont en commun : exactement le travail d'un musée.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "Un banc de poissons argentés s'ouvre et se referme ; la plaine scintille."
+          },
+          "liberte_ou_anachronisme": "Les animaux représentés sont ceux d'un récif tropical du Pacifique, cohérents avec le lieu.",
+          "lecon": "classer-vivant",
+          "type": "tri",
+          "niveau_variantes": "Mousse : trouver l'intrus parmi des poissons. Matelot : vertébrés et invertébrés. Timonier : associer chaque groupe à son caractère. Lieutenant : intrus (le dauphin) + justification. Second : groupes emboîtés en 3 colonnes + justification.",
+          "mousse": {
+            "type": "intrus",
+            "dialogue": "Pour la vitrine des poissons, je n'en veux que des vrais. L'un de ces animaux n'a rien à y faire.",
+            "consigne": "Lequel de ces animaux n'est pas un poisson ?",
+            "cartes": [
+              {
+                "txt": "le poisson-clown",
+                "icone": "🐠",
+                "intrus": false
+              },
+              {
+                "txt": "le poisson-perroquet",
+                "icone": "🐟",
+                "intrus": false
+              },
+              {
+                "txt": "le requin",
+                "icone": "🦈",
+                "intrus": false
+              },
+              {
+                "txt": "l'étoile de mer",
+                "icone": "⭐",
+                "intrus": true
+              }
+            ],
+            "indices": [
+              "Fiche « Classer le vivant » : un poisson a des nageoires et des écailles, et respire avec des branchies.",
+              "Cherche l'animal sans nageoires."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Deux grandes vitrines : les animaux qui ont un squelette à l'intérieur du corps, et ceux qui n'en ont pas. Rangeons-les, Monsieur me l'a assez expliqué.",
+            "consigne": "Classe les animaux de la plaine : vertébrés ou invertébrés ?",
+            "colonnes": [
+              {
+                "id": "vertebre",
+                "titre": "Vertébrés (squelette interne, colonne vertébrale)",
+                "icone": "🦴"
+              },
+              {
+                "id": "invertebre",
+                "titre": "Invertébrés (pas de colonne vertébrale)",
+                "icone": "🐚"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le poisson-clown",
+                "col": "vertebre"
+              },
+              {
+                "txt": "la tortue de mer",
+                "col": "vertebre"
+              },
+              {
+                "txt": "le requin",
+                "col": "vertebre"
+              },
+              {
+                "txt": "l'étoile de mer",
+                "col": "invertebre"
+              },
+              {
+                "txt": "le crabe",
+                "col": "invertebre"
+              },
+              {
+                "txt": "la méduse",
+                "col": "invertebre"
+              },
+              {
+                "txt": "l'oursin",
+                "col": "invertebre"
+              }
+            ],
+            "indices": [
+              "Fiche « Classer le vivant » : vertébrés et invertébrés.",
+              "Le requin a un squelette de cartilage, mais une colonne vertébrale : c'est un vertébré."
+            ]
+          },
+          "timonier": {
+            "type": "association",
+            "dialogue": "Chaque vitrine aura une étiquette : le caractère que partagent tous ses habitants. Encore faut-il le connaître.",
+            "consigne": "Relie chaque groupe au caractère que partagent tous ses membres.",
+            "paires": [
+              {
+                "g": "Les poissons",
+                "icone": "🐟",
+                "d": "des nageoires, des branchies, souvent des écailles"
+              },
+              {
+                "g": "Les reptiles marins (tortue)",
+                "icone": "🐢",
+                "d": "des poumons et une peau couverte d'écailles ou d'une carapace ; ils pondent sur la terre"
+              },
+              {
+                "g": "Les crustacés (crabe)",
+                "icone": "🦀",
+                "d": "une carapace et des pattes articulées"
+              },
+              {
+                "g": "Les mollusques (bénitier)",
+                "icone": "🐚",
+                "d": "un corps mou, souvent protégé par une coquille"
+              },
+              {
+                "g": "Les échinodermes (étoile de mer, oursin)",
+                "icone": "⭐",
+                "d": "une peau épineuse et un corps en cinq parties"
+              }
+            ],
+            "indices": [
+              "Fiche « Classer le vivant », tableau des groupes.",
+              "On classe par ce que les animaux ont, pas par l'endroit où ils vivent."
+            ]
+          },
+          "lieutenant": {
+            "type": "intrus",
+            "dialogue": "Un piège, Monsieur ! Tous nagent avec des nageoires, mais l'un d'eux n'a rien à faire dans la vitrine des poissons.",
+            "consigne": "Trouve l'intrus de la vitrine « Poissons », puis justifie.",
+            "cartes": [
+              {
+                "txt": "le mérou",
+                "icone": "🐟",
+                "intrus": false
+              },
+              {
+                "txt": "le requin",
+                "icone": "🦈",
+                "intrus": false
+              },
+              {
+                "txt": "la raie",
+                "icone": "🐟",
+                "intrus": false
+              },
+              {
+                "txt": "le dauphin",
+                "icone": "🐬",
+                "intrus": true
+              },
+              {
+                "txt": "le poisson-clown",
+                "icone": "🐠",
+                "intrus": false
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche prouve ta réponse ?",
+              "options": [
+                "On classe par les caractères partagés : le dauphin respire avec des poumons et allaite ses petits, comme les mammifères ; les poissons respirent avec des branchies.",
+                "Les poissons vivent dans l'eau.",
+                "Les nageoires servent à nager.",
+                "Le requin a un squelette de cartilage."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Classer le vivant », encadré « Attention aux ressemblances ».",
+              "Comment respire chacun d'eux ?"
+            ]
+          },
+          "second": {
+            "type": "tri",
+            "dialogue": "Le capitaine range son musée en groupes emboîtés, comme les tiroirs d'un cabinet. Je voudrais le même ordre, du plus large au plus précis.",
+            "consigne": "Range chaque animal dans le groupe le PLUS PRÉCIS qui lui convient, puis justifie.",
+            "colonnes": [
+              {
+                "id": "poissons",
+                "titre": "Vertébrés > poissons",
+                "icone": "🐟"
+              },
+              {
+                "id": "mammiferes",
+                "titre": "Vertébrés > mammifères",
+                "icone": "🐬"
+              },
+              {
+                "id": "mollusques",
+                "titre": "Invertébrés > mollusques",
+                "icone": "🐚"
+              },
+              {
+                "id": "cnidaires",
+                "titre": "Invertébrés > cnidaires (corps mou, tentacules urticants)",
+                "icone": "🪼"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le requin",
+                "col": "poissons"
+              },
+              {
+                "txt": "l'hippocampe",
+                "col": "poissons"
+              },
+              {
+                "txt": "le dauphin",
+                "col": "mammiferes"
+              },
+              {
+                "txt": "le dugong",
+                "col": "mammiferes"
+              },
+              {
+                "txt": "le bénitier géant",
+                "col": "mollusques"
+              },
+              {
+                "txt": "le poulpe",
+                "col": "mollusques"
+              },
+              {
+                "txt": "la méduse",
+                "col": "cnidaires"
+              },
+              {
+                "txt": "le corail",
+                "col": "cnidaires"
+              }
+            ],
+            "justification": {
+              "question": "Pourquoi le corail va-t-il avec la méduse ?",
+              "options": [
+                "Le corail est un animal : de petits polypes au corps mou et aux tentacules urticants, comme les méduses.",
+                "Le corail est une plante marine.",
+                "Le corail est une roche.",
+                "Le corail et la méduse sont tous les deux colorés."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Classer le vivant », groupes emboîtés et encadré sur le corail.",
+              "L'hippocampe est un poisson, malgré sa forme ; le poulpe est un mollusque sans coquille."
+            ]
+          }
+        },
+        {
+          "id": "e3-3",
+          "escale": 3,
+          "ordre": 3,
+          "titre": "La lampe dans la forêt",
+          "decor": "foret-crespo",
+          "objet_principal": "lampe-ruhmkorff",
+          "objets_cliquables": [
+            "lampe-ruhmkorff",
+            "gorgone",
+            "rayons-surface"
+          ],
+          "personnage_emetteur": "aronnax",
+          "probleme_narratif": "Dans la forêt sous-marine, la lumière baisse avec la profondeur. Une gorgone qu'on disait rouge vif paraît grise ; le capitaine fait signe d'allumer les lampes électriques. Aronnax, fasciné, veut comprendre où sont passées les couleurs avant de décider s'il faut continuer à descendre ou remonter.",
+          "enjeu": "Sans comprendre la lumière, on se perd dans l'obscurité : ici, on ne retrouve son chemin qu'en voyant.",
+          "episode_du_roman": "Partie I, ch. XVII « Une forêt sous-marine » : la lumière diminue avec la profondeur ; les promeneurs allument leurs lampes électriques (appareils de Ruhmkorff).",
+          "competence_programme": "Sciences : la lumière — sources de lumière et objets éclairés, propagation rectiligne, ombres, absorption de la lumière par l'eau.",
+          "pourquoi_ce_savoir_ici": "Savoir comment la lumière voyage et s'éteint dans l'eau, c'est savoir ce qu'on voit vraiment, et quand allumer sa lampe.",
+          "reaction_du_decor": {
+            "effet": "lumiere",
+            "description": "Les lampes s'allument : la gorgone retrouve son rouge, la forêt sort de l'ombre."
+          },
+          "liberte_ou_anachronisme": "Les profondeurs indiquées pour la disparition des couleurs sont des ordres de grandeur (voir A-VERIFIER.md).",
+          "lecon": "lumiere",
+          "type": "tri",
+          "niveau_variantes": "Mousse : sources de lumière et objets éclairés. Matelot : vrai/faux sur la propagation et l'ombre. Timonier : ordre de disparition des couleurs. Lieutenant : QCM sur la gorgone grise + justification. Second : lecture d'un tableau de profondeurs (code) + justification.",
+          "mousse": {
+            "dialogue": "Il fait sombre ici ! Certaines choses brillent toutes seules, d'autres ne se voient que si on les éclaire. Aidez-moi à les ranger.",
+            "consigne": "Range chaque élément : il produit sa propre lumière, ou il est seulement éclairé ?",
+            "colonnes": [
+              {
+                "id": "source",
+                "titre": "Produit sa lumière (source)",
+                "icone": "💡"
+              },
+              {
+                "id": "eclaire",
+                "titre": "Est seulement éclairé",
+                "icone": "🪨"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le Soleil",
+                "icone": "☀️",
+                "col": "source"
+              },
+              {
+                "txt": "la lampe du scaphandrier",
+                "icone": "🔦",
+                "col": "source"
+              },
+              {
+                "txt": "le fanal du Nautilus",
+                "icone": "🔆",
+                "col": "source"
+              },
+              {
+                "txt": "la gorgone",
+                "icone": "🪸",
+                "col": "eclaire"
+              },
+              {
+                "txt": "le rocher",
+                "icone": "🪨",
+                "col": "eclaire"
+              },
+              {
+                "txt": "le casque de cuivre",
+                "icone": "⛑️",
+                "col": "eclaire"
+              }
+            ],
+            "indices": [
+              "Fiche « La lumière sous la mer » : une source produit de la lumière, un objet éclairé la renvoie.",
+              "La gorgone ne brille pas dans le noir."
+            ]
+          },
+          "matelot": {
+            "type": "vraifaux",
+            "dialogue": "Le capitaine projette son ombre sur le sable. Je voudrais comprendre comment voyage cette lumière, avant de m'aventurer plus loin.",
+            "consigne": "Vrai ou faux ?",
+            "affirmations": [
+              {
+                "txt": "La lumière se propage en ligne droite.",
+                "vrai": true
+              },
+              {
+                "txt": "L'ombre d'un scaphandrier se forme du côté opposé à la lampe.",
+                "vrai": true
+              },
+              {
+                "txt": "Un rocher produit sa propre lumière.",
+                "vrai": false
+              },
+              {
+                "txt": "Plus on descend, plus il fait clair.",
+                "vrai": false
+              }
+            ],
+            "indices": [
+              "Fiche « La lumière sous la mer » : propagation et ombre.",
+              "L'eau absorbe la lumière du Soleil peu à peu."
+            ]
+          },
+          "timonier": {
+            "type": "ordre",
+            "dialogue": "Les couleurs s'éteignent l'une après l'autre à mesure que l'on descend. Dans quel ordre ? Si je le sais, je saurai à quelle profondeur nous sommes rien qu'en regardant.",
+            "consigne": "Remets les couleurs dans l'ordre où elles disparaissent quand on descend : de la première absorbée à la dernière.",
+            "items": [
+              {
+                "txt": "Le rouge"
+              },
+              {
+                "txt": "L'orange"
+              },
+              {
+                "txt": "Le jaune"
+              },
+              {
+                "txt": "Le vert"
+              },
+              {
+                "txt": "Le bleu"
+              }
+            ],
+            "indices": [
+              "Fiche « La lumière sous la mer », partie « L'eau absorbe les couleurs ».",
+              "La mer profonde paraît bleue : c'est la couleur qui va le plus loin."
+            ]
+          },
+          "lieutenant": {
+            "type": "qcm",
+            "dialogue": "Cette gorgone était rouge vif près de la surface, et ici elle est grise. Elle n'a pourtant pas changé ! Expliquez-moi, avant que j'allume ma lampe.",
+            "consigne": "Réponds, puis justifie.",
+            "questions": [
+              {
+                "q": "Pourquoi la gorgone rouge paraît-elle grise à 20 m de profondeur ?",
+                "options": [
+                  "La lumière rouge du Soleil a été absorbée par l'eau avant d'arriver jusqu'à elle.",
+                  "La gorgone change de couleur la nuit.",
+                  "L'eau peint les objets en gris.",
+                  "Les yeux ne voient plus sous l'eau."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Que se passe-t-il quand on l'éclaire avec la lampe électrique, de près ?",
+                "options": [
+                  "Elle paraît de nouveau rouge.",
+                  "Elle reste grise.",
+                  "Elle devient bleue.",
+                  "Elle devient transparente."
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie la réponse 2 ?",
+              "options": [
+                "Un objet ne paraît rouge que si une lumière contenant du rouge l'éclaire ; la lampe proche apporte cette lumière avant que l'eau ne l'absorbe.",
+                "La lumière se propage en ligne droite.",
+                "Le Soleil est une source de lumière.",
+                "L'ombre se forme du côté opposé à la lampe."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « La lumière sous la mer », partie « Voir une couleur ».",
+              "Près de la lampe, la lumière n'a presque pas traversé d'eau."
+            ]
+          },
+          "second": {
+            "type": "code",
+            "dialogue": "J'ai noté, en descendant, les couleurs qui restaient visibles. À vous d'en tirer la profondeur où nous sommes, et la lampe qu'il nous faut.",
+            "consigne": "<div class='doc-carnet'><b>Carnet d'Aronnax</b> (ordres de grandeur) — rouge disparu vers 5 m · orange vers 15 m · jaune vers 25 m · vert vers 35 m · au-delà, il ne reste que le bleu, de plus en plus sombre. Ici, je vois encore du vert, mais plus de jaune.</div>Donne la profondeur (entre deux nombres du carnet) et le nombre de couleurs encore visibles.",
+            "champs": [
+              {
+                "libelle": "Profondeur au moins (m)",
+                "valeur": "25",
+                "longueur": 3
+              },
+              {
+                "libelle": "Au plus (m)",
+                "valeur": "35",
+                "longueur": 3
+              },
+              {
+                "libelle": "Couleurs encore visibles",
+                "valeur": "2",
+                "longueur": 2
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche permet de raisonner ainsi ?",
+              "options": [
+                "L'eau absorbe les couleurs les unes après les autres : d'abord le rouge, puis l'orange, le jaune, le vert ; le bleu va le plus loin.",
+                "La lumière se propage en ligne droite.",
+                "Une source produit sa propre lumière.",
+                "Un objet ne paraît rouge que si on l'éclaire avec du rouge."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Plus de jaune : on est plus bas que 25 m ; encore du vert : pas encore à 35 m.",
+              "Restent le vert et le bleu."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "id": "vanikoro",
+      "titre": "Vanikoro et Lapérouse",
+      "lieu": "Récifs de Vanikoro, Pacifique sud, décembre 1867",
+      "matiere": "Histoire",
+      "periode_conseillee": "P3 Année B (explorations) et P4 Année A (Révolution)",
+      "episode": "Première partie, ch. XIX « Vanikoro » : le Nautilus passe sur les épaves de l'expédition de Lapérouse ; Nemo montre à Aronnax une boîte de fer-blanc contenant les instructions de l'expédition annotées par Louis XVI.",
+      "scenarimage": "scenarimages/escale-04.md",
+      "mot": "ASTROLABE",
+      "mot_origine": "L'Astrolabe, l'un des deux navires de l'expédition de Lapérouse, avec La Boussole.",
+      "air": null,
+      "cinematique_ouverture": "transition-e4",
+      "cinematique_fin": "fin-e4",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e4-1",
+          "escale": 4,
+          "ordre": 1,
+          "titre": "Les instruments engloutis",
+          "decor": "epave-vanikoro",
+          "objet_principal": "instruments-epave",
+          "objets_cliquables": [
+            "instruments-epave",
+            "canons",
+            "coque"
+          ],
+          "personnage_emetteur": "aronnax",
+          "probleme_narratif": "Sous le Nautilus, une épave couverte de coraux. Quels navires étaient-ce ? Aronnax aperçoit dans le sable un compas et un sextant : en reconnaissant ces instruments et leur usage, on comprendra que l'on se trouve sur les restes d'une grande expédition d'exploration, dont les navires portaient les noms mêmes de deux instruments.",
+          "enjeu": "Identifier l'épave, c'est résoudre l'un des grands mystères de la marine française.",
+          "episode_du_roman": "Partie I, ch. XIX « Vanikoro » : le Nautilus survole les épaves des deux navires de Lapérouse, La Boussole et L'Astrolabe, perdus en 1788.",
+          "competence_programme": "Histoire : les progrès techniques qui ont permis aux Européens de s'aventurer vers de nouveaux territoires (boussole, astrolabe, sextant, chronomètre, cartes).",
+          "pourquoi_ce_savoir_ici": "Ces instruments sont ceux des explorateurs : savoir à quoi ils servaient, c'est reconnaître une expédition.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "Le sable se soulève ; la boussole et le sextant brillent sous le fanal."
+          },
+          "liberte_ou_anachronisme": "Lieutenant et Second : le calcul de la longitude par le chronomètre (15° par heure) est une notion de collège, donnée dans la fiche.",
+          "lecon": "instruments-explorateurs",
+          "type": "association",
+          "niveau_variantes": "Mousse : 3 instruments. Matelot : 4 instruments. Timonier : 5 instruments dont le chronomètre. Lieutenant : QCM sur la latitude et la longitude + justification. Second : calcul d'une longitude par l'heure (code) + justification.",
+          "mousse": {
+            "dialogue": "Regardez dans le sable : des instruments de marine ! Si nous savons à quoi ils servaient, nous saurons qui naviguait ici.",
+            "consigne": "Relie chaque instrument à ce qu'il permettait de faire.",
+            "paires": [
+              {
+                "g": "La boussole",
+                "icone": "🧭",
+                "d": "trouver la direction du nord"
+              },
+              {
+                "g": "La longue-vue",
+                "icone": "🔭",
+                "d": "voir loin"
+              },
+              {
+                "g": "La carte",
+                "icone": "🗺️",
+                "d": "dessiner et retrouver les routes"
+              }
+            ],
+            "indices": [
+              "Fiche « Les instruments des explorateurs ».",
+              "L'aiguille de la boussole montre toujours le nord."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Une boussole, un astrolabe… Ces noms me disent quelque chose. Retrouvons d'abord l'usage de chaque instrument.",
+            "consigne": "Relie chaque instrument des explorateurs à son usage.",
+            "paires": [
+              {
+                "g": "La boussole",
+                "icone": "🧭",
+                "d": "trouver le nord, donc garder sa direction"
+              },
+              {
+                "g": "L'astrolabe",
+                "icone": "☀️",
+                "d": "mesurer la hauteur du Soleil pour savoir si l'on est loin de l'équateur"
+              },
+              {
+                "g": "Le loch et le sablier",
+                "icone": "⏳",
+                "d": "mesurer la vitesse du navire"
+              },
+              {
+                "g": "La carte",
+                "icone": "🗺️",
+                "d": "noter les côtes découvertes et les routes"
+              }
+            ],
+            "indices": [
+              "Fiche « Les instruments des explorateurs », tableau.",
+              "La hauteur du Soleil change quand on va vers le nord ou vers le sud."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Cinq instruments, cinq progrès. Sans eux, aucun navigateur n'aurait osé quitter les côtes. Reconnaissons-les tous.",
+            "consigne": "Relie chaque instrument ou invention à ce qu'il a permis.",
+            "paires": [
+              {
+                "g": "La boussole",
+                "icone": "🧭",
+                "d": "garder sa direction même sans voir les étoiles"
+              },
+              {
+                "g": "L'astrolabe, puis le sextant",
+                "icone": "☀️",
+                "d": "trouver sa latitude (distance à l'équateur) grâce au Soleil"
+              },
+              {
+                "g": "Le chronomètre de marine",
+                "icone": "⏱️",
+                "d": "trouver sa longitude en comparant les heures"
+              },
+              {
+                "g": "La caravelle",
+                "icone": "⛵",
+                "d": "naviguer loin, même contre le vent"
+              },
+              {
+                "g": "Les cartes et portulans",
+                "icone": "🗺️",
+                "d": "garder la mémoire des côtes et des routes"
+              }
+            ],
+            "indices": [
+              "Fiche « Les instruments des explorateurs ».",
+              "Latitude : grâce au Soleil ; longitude : grâce à l'heure."
+            ]
+          },
+          "lieutenant": {
+            "type": "qcm",
+            "dialogue": "Lapérouse emportait les meilleurs chronomètres de son temps. Pourquoi tant de soin pour des horloges ? Expliquez-le, preuves à l'appui.",
+            "consigne": "Réponds avec la fiche « Les instruments des explorateurs ».",
+            "questions": [
+              {
+                "q": "La latitude (distance à l'équateur) se trouve…",
+                "options": [
+                  "en mesurant la hauteur du Soleil à midi (astrolabe, sextant)",
+                  "avec la boussole",
+                  "avec le loch",
+                  "en goûtant l'eau de mer"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "La longitude se trouve…",
+                "options": [
+                  "en comparant l'heure locale à l'heure du port de départ, gardée par un chronomètre",
+                  "avec la boussole seule",
+                  "en mesurant la profondeur",
+                  "en comptant les étoiles"
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche explique la réponse 2 ?",
+              "options": [
+                "La Terre fait un tour (360°) en 24 heures : chaque heure d'écart entre l'heure locale et l'heure du port de départ correspond à 15° de longitude.",
+                "La boussole indique le nord.",
+                "Le sextant mesure la hauteur du Soleil.",
+                "La caravelle peut naviguer contre le vent."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche, encadré « La longitude et l'heure ».",
+              "Un chronomètre garde l'heure de Paris pendant tout le voyage."
+            ]
+          },
+          "second": {
+            "type": "code",
+            "dialogue": "Voici, dans le journal de l'Astrolabe, un relevé que l'eau n'a pas effacé. Avec lui, on peut dire où se trouvait le navire. À vous.",
+            "consigne": "<div class='doc-carnet'><b>Journal de bord (relevé du jeu)</b> — « Le Soleil est au plus haut : il est midi, heure locale. Le chronomètre réglé sur l'heure de Paris indique 16 heures. »</div>Calcule. Le navire est-il à l'est ou à l'ouest de Paris ? (Écris EST ou OUEST.)",
+            "champs": [
+              {
+                "libelle": "Heures d'écart",
+                "valeur": "4",
+                "longueur": 2
+              },
+              {
+                "libelle": "Degrés de longitude",
+                "valeur": "60",
+                "longueur": 3
+              },
+              {
+                "libelle": "Est ou ouest ?",
+                "valeur": "OUEST",
+                "longueur": 5,
+                "numerique": false
+              }
+            ],
+            "justification": {
+              "question": "Pourquoi le navire est-il à l'ouest de Paris ?",
+              "options": [
+                "Le Soleil se lève à l'est : quand il est midi chez lui, il est déjà plus tard à Paris ; le navire est donc à l'ouest.",
+                "Parce que l'Astrolabe allait toujours vers l'ouest.",
+                "Parce que la boussole indique le nord.",
+                "Parce que 60 est un nombre pair."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche, encadré « La longitude et l'heure » : 1 heure = 15°.",
+              "Il est plus tard à Paris : Paris a vu le Soleil avant le navire."
+            ]
+          }
+        },
+        {
+          "id": "e4-2",
+          "escale": 4,
+          "ordre": 2,
+          "titre": "La boîte de fer-blanc",
+          "decor": "cabine",
+          "objet_principal": "bureau",
+          "objets_cliquables": [
+            "bureau",
+            "mur-instruments",
+            "hublot-cabine"
+          ],
+          "personnage_emetteur": "nemo",
+          "probleme_narratif": "Dans sa chambre, Nemo ouvre une boîte de fer-blanc trouvée dans l'épave : les instructions de l'expédition, annotées de la main du roi Louis XVI. Les feuillets se sont mélangés : pour les ranger dans les archives du Nautilus, il faut remettre les événements dans l'ordre, de l'avènement du roi jusqu'à la découverte des épaves.",
+          "enjeu": "Mal datés, ces documents uniques perdraient leur valeur de preuve.",
+          "episode_du_roman": "Partie I, ch. XIX « Vanikoro » : Nemo montre une boîte de fer-blanc aux armes de France, contenant les instructions du ministère de la Marine annotées par Louis XVI.",
+          "competence_programme": "Histoire : le temps de la Révolution ; contexte du royaume en 1789 ; fin de la monarchie absolue et de l'Ancien Régime ; repères chronologiques.",
+          "pourquoi_ce_savoir_ici": "Ranger des archives, c'est se repérer dans le temps : l'expédition partie sous un roi absolu disparaît juste avant la Révolution.",
+          "reaction_du_decor": {
+            "effet": "aiguilles",
+            "description": "Les feuillets se rangent ; les horloges du mur sonnent l'heure."
+          },
+          "liberte_ou_anachronisme": "Le mot de Louis XVI demandant des nouvelles de Lapérouse avant sa mort est rapporté par la tradition (voir A-VERIFIER.md) ; il n'est pas utilisé comme preuve.",
+          "lecon": "laperouse-revolution",
+          "type": "ordre",
+          "niveau_variantes": "Mousse : 4 événements. Matelot : 5. Timonier : 6 avec dates. Lieutenant : 7 avec dates + justification. Second : 7 événements sans dates, à retrouver avec la fiche + justification.",
+          "mousse": {
+            "dialogue": "Ces feuillets ont traversé quatre-vingts ans de mer. Remettez-les dans l'ordre : je n'aime pas le désordre dans mes archives.",
+            "consigne": "Remets les événements dans l'ordre, du plus ancien au plus récent.",
+            "items": [
+              {
+                "txt": "Le roi Louis XVI envoie Lapérouse explorer le monde.",
+                "sous": "1785"
+              },
+              {
+                "txt": "Les navires de Lapérouse font naufrage à Vanikoro.",
+                "sous": "1788"
+              },
+              {
+                "txt": "La prise de la Bastille.",
+                "sous": "1789"
+              },
+              {
+                "txt": "On retrouve enfin les épaves.",
+                "sous": "1828"
+              }
+            ],
+            "indices": [
+              "Fiche « Lapérouse et la Révolution », frise.",
+              "Compare les années."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Votre roi a vu partir ses navires, puis il a perdu son trône. Dans quel ordre ? Les dates sont là, si l'on sait les lire.",
+            "consigne": "Remets les événements dans l'ordre chronologique.",
+            "items": [
+              {
+                "txt": "Louis XVI devient roi de France.",
+                "sous": "1774"
+              },
+              {
+                "txt": "Départ de Lapérouse, de Brest.",
+                "sous": "1785"
+              },
+              {
+                "txt": "Naufrage à Vanikoro.",
+                "sous": "1788"
+              },
+              {
+                "txt": "Prise de la Bastille ; Déclaration des droits de l'homme et du citoyen.",
+                "sous": "1789"
+              },
+              {
+                "txt": "Exécution de Louis XVI.",
+                "sous": "1793"
+              }
+            ],
+            "indices": [
+              "Fiche « Lapérouse et la Révolution », frise.",
+              "Le plus ancien en haut."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Lapérouse est parti sujet d'un roi absolu. S'il était revenu, il aurait trouvé un autre pays. Rangez ces feuillets et vous verrez pourquoi.",
+            "consigne": "Remets les six événements dans l'ordre chronologique.",
+            "items": [
+              {
+                "txt": "Avènement de Louis XVI, roi absolu.",
+                "sous": "1774"
+              },
+              {
+                "txt": "L'expédition de Lapérouse quitte Brest.",
+                "sous": "1er août 1785"
+              },
+              {
+                "txt": "Dernières nouvelles, depuis l'Australie ; naufrage à Vanikoro.",
+                "sous": "1788"
+              },
+              {
+                "txt": "États généraux, prise de la Bastille, abolition des privilèges.",
+                "sous": "1789"
+              },
+              {
+                "txt": "Fin de la royauté : la République est proclamée.",
+                "sous": "1792"
+              },
+              {
+                "txt": "Dumont d'Urville retrouve le lieu du naufrage.",
+                "sous": "1828"
+              }
+            ],
+            "indices": [
+              "Fiche « Lapérouse et la Révolution », frise.",
+              "1792 vient avant 1828 et après 1789."
+            ]
+          },
+          "lieutenant": {
+            "dialogue": "Sept feuillets, sept dates. Rangez-les, et dites-moi ce qui rend cette boîte si précieuse aux yeux de l'histoire.",
+            "consigne": "Remets les sept événements dans l'ordre, puis justifie.",
+            "items": [
+              {
+                "txt": "Avènement de Louis XVI.",
+                "sous": "1774"
+              },
+              {
+                "txt": "Le roi annote de sa main les instructions de l'expédition.",
+                "sous": "1785"
+              },
+              {
+                "txt": "Départ de Brest de La Boussole et de L'Astrolabe.",
+                "sous": "1er août 1785"
+              },
+              {
+                "txt": "Naufrage à Vanikoro.",
+                "sous": "1788"
+              },
+              {
+                "txt": "Déclaration des droits de l'homme et du citoyen.",
+                "sous": "26 août 1789"
+              },
+              {
+                "txt": "Abolition de la royauté.",
+                "sous": "septembre 1792"
+              },
+              {
+                "txt": "Exécution de Louis XVI.",
+                "sous": "21 janvier 1793"
+              }
+            ],
+            "justification": {
+              "question": "Pourquoi l'expédition appartient-elle à l'Ancien Régime ?",
+              "options": [
+                "Elle a été décidée et organisée par un roi absolu, avant 1789 et la fin de l'Ancien Régime.",
+                "Parce que ses navires étaient en bois.",
+                "Parce qu'elle a été retrouvée en 1828.",
+                "Parce que Lapérouse était explorateur."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Lapérouse et la Révolution ».",
+              "Le roi annote les instructions avant le départ."
+            ]
+          },
+          "second": {
+            "dialogue": "Les dates ont été effacées par l'eau de mer. Il vous reste vos connaissances et votre fiche. Rangez, puis expliquez ce qui a changé pendant le voyage.",
+            "consigne": "Remets les sept événements dans l'ordre chronologique (sans dates), puis justifie.",
+            "items": [
+              {
+                "txt": "Avènement de Louis XVI."
+              },
+              {
+                "txt": "Départ de l'expédition de Lapérouse."
+              },
+              {
+                "txt": "Naufrage à Vanikoro."
+              },
+              {
+                "txt": "Réunion des états généraux."
+              },
+              {
+                "txt": "Prise de la Bastille."
+              },
+              {
+                "txt": "Proclamation de la République."
+              },
+              {
+                "txt": "Les épaves sont retrouvées par Dumont d'Urville."
+              }
+            ],
+            "justification": {
+              "question": "Que montre la place du naufrage dans cette frise ?",
+              "options": [
+                "L'expédition a disparu juste avant la Révolution : partie d'une monarchie absolue, elle ne pouvait plus rentrer dans le même pays.",
+                "La Révolution a causé le naufrage.",
+                "Dumont d'Urville était révolutionnaire.",
+                "Les états généraux ont été réunis après la République."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Lapérouse et la Révolution », frise complète.",
+              "Les états généraux se réunissent en mai 1789, avant la prise de la Bastille."
+            ]
+          }
+        },
+        {
+          "id": "e4-3",
+          "escale": 4,
+          "ordre": 3,
+          "titre": "Les papiers d'un autre monde",
+          "decor": "carre",
+          "objet_principal": "table",
+          "objets_cliquables": [
+            "table",
+            "tableau-cadrans",
+            "journal"
+          ],
+          "personnage_emetteur": "conseil",
+          "probleme_narratif": "Au fond de la boîte, d'autres papiers : certains parlent de privilèges et d'un roi « par la grâce de Dieu », d'autres d'égalité et de nation. Conseil, chargé de les archiver, veut les séparer : ceux de l'ancien royaume et ceux des temps nouveaux. Il les étale sur la table du carré.",
+          "enjeu": "Mélanger ces papiers, ce serait mélanger deux mondes que la Révolution a séparés.",
+          "episode_du_roman": "Vraisemblance : la boîte de Lapérouse contient des papiers officiels (Partie I, ch. XIX) ; Conseil classe tout ce qui lui passe entre les mains.",
+          "competence_programme": "Histoire : la société d'Ancien Régime (trois ordres, privilèges) ; fin de la monarchie absolue ; affirmation des nouveaux principes (Déclaration des droits de l'homme et du citoyen).",
+          "pourquoi_ce_savoir_ici": "Pour archiver ces papiers, il faut reconnaître ce qui appartient à l'Ancien Régime et ce qu'a apporté 1789.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "Les papiers se rangent en deux piles nettes ; la lampe s'avive."
+          },
+          "liberte_ou_anachronisme": "Les papiers postérieurs à 1788 n'ont pas pu se trouver dans la boîte : ils sont présentés comme les documents que Nemo y a ajoutés pour comparer (vraisemblance assumée).",
+          "lecon": "ancien-regime",
+          "type": "tri",
+          "niveau_variantes": "Mousse : avant / après 1789, 4 papiers. Matelot : les trois ordres. Timonier : Ancien Régime / nouveaux principes. Lieutenant : idem, plus difficile + justification. Second : QCM sur privilèges et égalité + justification.",
+          "mousse": {
+            "dialogue": "Je voudrais deux piles, Monsieur : ce qui vient d'avant 1789 et ce qui vient d'après. Le reste viendra ensuite.",
+            "consigne": "Range chaque papier : avant la Révolution ou après ?",
+            "colonnes": [
+              {
+                "id": "avant",
+                "titre": "Avant 1789 : le roi décide de tout",
+                "icone": "👑"
+              },
+              {
+                "id": "apres",
+                "titre": "Après 1789 : les droits de l'homme",
+                "icone": "📜"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "« Louis, roi par la grâce de Dieu, ordonne… »",
+                "col": "avant"
+              },
+              {
+                "txt": "« Seuls les nobles peuvent chasser. »",
+                "col": "avant"
+              },
+              {
+                "txt": "« Les hommes naissent et demeurent libres et égaux en droits. »",
+                "col": "apres"
+              },
+              {
+                "txt": "« Les privilèges sont abolis. »",
+                "col": "apres"
+              }
+            ],
+            "indices": [
+              "Fiche « L'Ancien Régime et 1789 ».",
+              "L'égalité des droits vient avec la Révolution."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Dans l'ancien royaume, chacun appartenait à un « ordre ». Rangeons ces personnes comme le faisaient les états généraux.",
+            "consigne": "Range chaque personne dans son ordre de la société d'Ancien Régime.",
+            "colonnes": [
+              {
+                "id": "clerge",
+                "titre": "Le clergé (ceux qui prient)",
+                "icone": "⛪"
+              },
+              {
+                "id": "noblesse",
+                "titre": "La noblesse (ceux qui combattent)",
+                "icone": "⚔️"
+              },
+              {
+                "id": "tiers",
+                "titre": "Le tiers état (ceux qui travaillent)",
+                "icone": "🔨"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "un évêque",
+                "col": "clerge"
+              },
+              {
+                "txt": "un moine",
+                "col": "clerge"
+              },
+              {
+                "txt": "un comte",
+                "col": "noblesse"
+              },
+              {
+                "txt": "le comte de Lapérouse, officier de marine",
+                "col": "noblesse"
+              },
+              {
+                "txt": "un paysan",
+                "col": "tiers"
+              },
+              {
+                "txt": "un marchand",
+                "col": "tiers"
+              },
+              {
+                "txt": "un charpentier de marine",
+                "col": "tiers"
+              }
+            ],
+            "indices": [
+              "Fiche « L'Ancien Régime et 1789 » : les trois ordres.",
+              "Lapérouse portait le titre de comte."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Deux mondes dans une même boîte. Je les sépare : l'Ancien Régime d'un côté, les principes nouveaux de l'autre.",
+            "consigne": "Range chaque idée : Ancien Régime ou nouveaux principes de 1789 ?",
+            "colonnes": [
+              {
+                "id": "ar",
+                "titre": "Ancien Régime",
+                "icone": "👑"
+              },
+              {
+                "id": "nouveau",
+                "titre": "Nouveaux principes (1789)",
+                "icone": "📜"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le roi a tous les pouvoirs (monarchie absolue)",
+                "col": "ar"
+              },
+              {
+                "txt": "la société est divisée en trois ordres",
+                "col": "ar"
+              },
+              {
+                "txt": "le clergé et la noblesse ont des privilèges",
+                "col": "ar"
+              },
+              {
+                "txt": "seul le tiers état paie la taille",
+                "col": "ar"
+              },
+              {
+                "txt": "les hommes naissent libres et égaux en droits",
+                "col": "nouveau"
+              },
+              {
+                "txt": "le pouvoir appartient à la nation",
+                "col": "nouveau"
+              },
+              {
+                "txt": "les privilèges sont abolis (nuit du 4 août)",
+                "col": "nouveau"
+              },
+              {
+                "txt": "chacun paie l'impôt selon ses moyens",
+                "col": "nouveau"
+              }
+            ],
+            "indices": [
+              "Fiche « L'Ancien Régime et 1789 », tableau.",
+              "La taille est un impôt de l'Ancien Régime."
+            ]
+          },
+          "lieutenant": {
+            "dialogue": "Certains papiers sont trompeurs : il faut les lire jusqu'au bout. Rangez-les, puis donnez la phrase qui fonde tout le reste.",
+            "consigne": "Range chaque idée, puis justifie.",
+            "colonnes": [
+              {
+                "id": "ar",
+                "titre": "Ancien Régime",
+                "icone": "👑"
+              },
+              {
+                "id": "nouveau",
+                "titre": "Nouveaux principes (1789)",
+                "icone": "📜"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le roi tient son pouvoir de Dieu",
+                "col": "ar"
+              },
+              {
+                "txt": "les nobles ne paient pas la taille",
+                "col": "ar"
+              },
+              {
+                "txt": "on peut être emprisonné sur simple ordre du roi (lettre de cachet)",
+                "col": "ar"
+              },
+              {
+                "txt": "les emplois sont ouverts à tous selon leurs talents",
+                "col": "nouveau"
+              },
+              {
+                "txt": "la souveraineté réside dans la nation",
+                "col": "nouveau"
+              },
+              {
+                "txt": "nul ne peut être arrêté que dans les cas prévus par la loi",
+                "col": "nouveau"
+              },
+              {
+                "txt": "la liberté d'opinion, même religieuse",
+                "col": "nouveau"
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la Déclaration de 1789 met fin à la société des ordres ?",
+              "options": [
+                "« Les hommes naissent et demeurent libres et égaux en droits. »",
+                "« Le roi tient son pouvoir de Dieu. »",
+                "« Seul le tiers état paie la taille. »",
+                "« Les états généraux sont réunis à Versailles. »"
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « L'Ancien Régime et 1789 ».",
+              "La lettre de cachet permettait d'enfermer quelqu'un sans jugement."
+            ]
+          },
+          "second": {
+            "type": "qcm",
+            "dialogue": "Le capitaine m'a demandé : « Qu'est-ce qu'un privilège ? » J'ai voulu répondre vite, et je me suis trompé. Aidez-moi à répondre juste.",
+            "consigne": "Réponds en t'appuyant sur la fiche.",
+            "questions": [
+              {
+                "q": "Un privilège, sous l'Ancien Régime, c'est…",
+                "options": [
+                  "un avantage réservé à certains, par exemple ne pas payer certains impôts",
+                  "un impôt payé par tous",
+                  "une loi votée par la nation",
+                  "un titre de capitaine"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Qui supporte l'essentiel des impôts avant 1789 ?",
+                "options": [
+                  "le tiers état",
+                  "le clergé",
+                  "la noblesse",
+                  "le roi"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "La nuit du 4 août 1789…",
+                "options": [
+                  "les députés abolissent les privilèges",
+                  "le roi est exécuté",
+                  "Lapérouse quitte Brest",
+                  "la République est proclamée"
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche relie tes réponses 1 et 3 ?",
+              "options": [
+                "Le 4 août 1789, les députés abolissent les privilèges : la loi devient la même pour tous.",
+                "Louis XVI devient roi en 1774.",
+                "La Bastille est prise le 14 juillet 1789.",
+                "Lapérouse était comte."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « L'Ancien Régime et 1789 ».",
+              "Le tiers état représentait l'immense majorité de la population."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "id": "perles-de-ceylan",
+      "titre": "Les perles de Ceylan",
+      "lieu": "Banc de Manaar, au large de Ceylan (aujourd'hui Sri Lanka), janvier 1868",
+      "matiere": "Sciences, histoire, géographie",
+      "periode_conseillee": "P1 Année B (masses), P3 Année A (colonies), P2 Année B (inégalités)",
+      "episode": "Deuxième partie, ch. II « Une nouvelle proposition du capitaine Nemo » et ch. III « Une perle de dix millions »",
+      "scenarimage": "scenarimages/escale-05.md",
+      "mot": "PERLE",
+      "mot_origine": "La perle géante que Nemo laisse grandir dans son huître, au fond d'une grotte (Partie II, ch. III).",
+      "air": null,
+      "cinematique_ouverture": "transition-e5",
+      "cinematique_fin": "fin-e5",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e5-1",
+          "escale": 5,
+          "ordre": 1,
+          "titre": "La perle géante",
+          "decor": "banc-perles",
+          "objet_principal": "huitre-geante",
+          "objets_cliquables": [
+            "huitre-geante",
+            "banc",
+            "requin"
+          ],
+          "personnage_emetteur": "conseil",
+          "probleme_narratif": "Dans une grotte, le capitaine montre une huître géante qui cache une perle énorme. Conseil a pesé, à bord, les perles ramassées sur le banc ; le capitaine affirme que la sienne pèse plus que toutes réunies. Avant de remonter, il faut comparer les masses notées dans le carnet de Conseil.",
+          "enjeu": "Le capitaine laisse sa perle grandir ; il ne la confiera qu'à qui sait mesurer avec rigueur.",
+          "episode_du_roman": "Partie II, ch. III « Une perle de dix millions » : dans une grotte, Nemo montre à Aronnax une huître gigantesque contenant une perle énorme, qu'il laisse grossir.",
+          "competence_programme": "Sciences : comparer et mesurer des masses (balance, unités g et kg) ; propriétés de la matière.",
+          "pourquoi_ce_savoir_ici": "« Plus lourd », « plus léger » : seule une mesure dans la même unité permet de comparer des perles si différentes.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "La valve de l'huître s'entrouvre : la perle luit sous le fanal."
+          },
+          "liberte_ou_anachronisme": "Les masses du carnet de Conseil sont inventées pour le jeu.",
+          "lecon": "masses",
+          "type": "code",
+          "niveau_variantes": "Mousse : lire une balance, choisir l'instrument. Matelot : ranger 5 masses (g et kg). Timonier : additionner et convertir (code). Lieutenant : équilibre d'une balance de Roberval + justification. Second : masse par différence (code) + justification.",
+          "mousse": {
+            "type": "qcm",
+            "dialogue": "J'ai posé une perle et un coquillage sur les plateaux de la balance. Lequel est le plus lourd ? Je voudrais que vous le disiez sans hésiter.",
+            "consigne": "<div class='doc-carnet'>Sur la balance à deux plateaux, le plateau de la perle descend ; le plateau du coquillage monte.</div>",
+            "questions": [
+              {
+                "q": "Lequel est le plus lourd ?",
+                "options": [
+                  "la perle",
+                  "le coquillage",
+                  "ils ont la même masse",
+                  "on ne peut pas savoir"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Pour comparer des masses, on utilise…",
+                "options": [
+                  "une balance",
+                  "une règle",
+                  "un thermomètre",
+                  "une boussole"
+                ],
+                "bonne": 0
+              }
+            ],
+            "indices": [
+              "Fiche « Mesurer des masses » : sur une balance à deux plateaux, le plus lourd descend.",
+              "Une règle mesure des longueurs."
+            ]
+          },
+          "matelot": {
+            "type": "ordre",
+            "dialogue": "Mon carnet est bien tenu, mais les unités se mélangent : des grammes, des kilogrammes. Rangez ces masses, de la plus légère à la plus lourde.",
+            "consigne": "Range les objets du carnet de Conseil, du plus léger au plus lourd. Attention aux unités : 1 kg = 1 000 g.",
+            "items": [
+              {
+                "txt": "une petite perle",
+                "sous": "2 g"
+              },
+              {
+                "txt": "un coquillage",
+                "sous": "80 g"
+              },
+              {
+                "txt": "le poignard du capitaine",
+                "sous": "250 g"
+              },
+              {
+                "txt": "une huître ordinaire",
+                "sous": "0,5 kg"
+              },
+              {
+                "txt": "la perle géante (estimée)",
+                "sous": "1 kg 500 g"
+              }
+            ],
+            "indices": [
+              "Fiche « Mesurer des masses » : convertis tout en grammes.",
+              "0,5 kg = 500 g."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Le capitaine prétend que sa perle pèse plus que toutes nos perles réunies. Additionnons, et nous verrons.",
+            "consigne": "<div class='doc-carnet'><b>Carnet de Conseil</b> — 40 perles de 5 g ; 60 perles de 10 g ; 1 grosse perle de 150 g. Perle du capitaine, estimée : 1 kg 500 g.</div>Calcule, puis ouvre le cadenas.",
+            "champs": [
+              {
+                "libelle": "Masse de toutes nos perles (g)",
+                "valeur": "950",
+                "longueur": 4
+              },
+              {
+                "libelle": "La perle du capitaine pèse de plus (g)",
+                "valeur": "550",
+                "longueur": 4
+              }
+            ],
+            "indices": [
+              "40 × 5 g + 60 × 10 g + 150 g.",
+              "1 kg 500 g = 1 500 g."
+            ]
+          },
+          "lieutenant": {
+            "type": "qcm",
+            "dialogue": "Sur la balance de Roberval du bord, une perle d'un côté, des masses marquées de l'autre. L'équilibre ne ment pas : déduisez.",
+            "consigne": "<div class='doc-carnet'>Plateau gauche : la perle + une masse de 5 g. Plateau droit : une masse de 20 g + une masse de 2 g. La balance est en équilibre.</div>",
+            "questions": [
+              {
+                "q": "Quelle est la masse de la perle ?",
+                "options": [
+                  "17 g",
+                  "27 g",
+                  "22 g",
+                  "5 g"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Si l'on retire la masse de 5 g du plateau gauche, la balance…",
+                "options": [
+                  "penche du côté droit",
+                  "penche du côté gauche",
+                  "reste en équilibre",
+                  "se casse"
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche permet de répondre à la question 1 ?",
+              "options": [
+                "À l'équilibre, la masse totale d'un plateau est égale à la masse totale de l'autre.",
+                "1 kg = 1 000 g.",
+                "On utilise une balance pour mesurer une masse.",
+                "Le plateau le plus lourd descend."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Mesurer des masses », encadré « L'équilibre ».",
+              "perle + 5 = 22."
+            ]
+          },
+          "second": {
+            "type": "code",
+            "dialogue": "On ne pèse pas une perle restée dans son huître. Mais le capitaine a pesé l'huître pleine et une coquille vide de même taille. À vous de faire parler ces nombres.",
+            "consigne": "<div class='doc-carnet'>Huître géante pleine (coquille + chair + perle) : 312 kg 400 g. Coquille vide de même taille : 300 kg. Chair seule, estimée : 10 kg 900 g.</div>Calcule la masse de la perle, en grammes puis en kilogrammes (avec virgule).",
+            "champs": [
+              {
+                "libelle": "Masse de la perle (g)",
+                "valeur": "1500",
+                "longueur": 5
+              },
+              {
+                "libelle": "en kg",
+                "valeur": "1,5",
+                "longueur": 4
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie ton calcul ?",
+              "options": [
+                "La masse d'un ensemble est la somme des masses de ses parties : on retrouve une partie en soustrayant les autres.",
+                "À l'équilibre, les deux plateaux ont la même masse.",
+                "La perle est plus lourde que l'huître.",
+                "1 g = 1 000 kg."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "312 kg 400 g − 300 kg − 10 kg 900 g.",
+              "1 500 g = 1,5 kg."
+            ]
+          }
+        },
+        {
+          "id": "e5-2",
+          "escale": 5,
+          "ordre": 2,
+          "titre": "Le pêcheur de perles",
+          "decor": "banc-perles",
+          "objet_principal": "pecheur",
+          "objets_cliquables": [
+            "pecheur",
+            "banc",
+            "requin"
+          ],
+          "personnage_emetteur": "ned",
+          "probleme_narratif": "Un pêcheur indien plonge sans scaphandre, une pierre au pied, pour quelques huîtres. Un requin l'attaque ; le capitaine et Ned Land le sauvent, et Nemo lui donne un sac de perles. Ned, révolté, veut comprendre : pourquoi cet homme risque-t-il sa vie pour si peu, quand d'autres s'enrichissent de son travail ? Avant de repartir, il faut mesurer ces inégalités.",
+          "enjeu": "Ned refuse de repartir sans comprendre ; Nemo, lui, se dit « de ce pays-là », celui des opprimés.",
+          "episode_du_roman": "Partie II, ch. III : Nemo et Ned Land sauvent un pêcheur de perles attaqué par un requin ; Nemo lui donne un sachet de perles et se dit du « pays des opprimés ».",
+          "competence_programme": "Géographie : les inégalités dans le monde — identifier les manifestations des inégalités de niveau de vie ; localiser les grandes aires géographiques.",
+          "pourquoi_ce_savoir_ici": "Mesurer la pauvreté ou la richesse d'un pays demande des indicateurs : on ne peut pas juger à l'œil.",
+          "reaction_du_decor": {
+            "effet": "calme",
+            "description": "Le requin s'éloigne ; le pêcheur remonte vers la lumière."
+          },
+          "liberte_ou_anachronisme": "Les indicateurs d'aujourd'hui (espérance de vie, école, eau potable) sont un dossier de l'équipe de secours (XXIᵉ siècle) ; les pays A et B du tableau sont fictifs.",
+          "lecon": "inegalites",
+          "type": "tri",
+          "niveau_variantes": "Mousse : signes de vie difficile ou aisée. Matelot : indicateurs de niveau de vie. Timonier : tableau de deux pays fictifs. Lieutenant : aires géographiques et indicateurs + justification. Second : QCM sur les indicateurs et leurs pièges + justification.",
+          "mousse": {
+            "dialogue": "Ce brave homme plonge sans rien, pour quelques huîtres ! Ce n'est pas juste. Aidez-moi à voir ce qui rend une vie difficile.",
+            "consigne": "Range chaque situation : vie aisée ou vie difficile ?",
+            "colonnes": [
+              {
+                "id": "aisee",
+                "titre": "Vie aisée",
+                "icone": "🏠"
+              },
+              {
+                "id": "difficile",
+                "titre": "Vie difficile",
+                "icone": "⚠️"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "aller à l'école chaque jour",
+                "col": "aisee"
+              },
+              {
+                "txt": "avoir de l'eau potable au robinet",
+                "col": "aisee"
+              },
+              {
+                "txt": "être soigné quand on est malade",
+                "col": "aisee"
+              },
+              {
+                "txt": "travailler enfant pour nourrir sa famille",
+                "col": "difficile"
+              },
+              {
+                "txt": "risquer sa vie pour quelques pièces",
+                "col": "difficile"
+              },
+              {
+                "txt": "aller chercher l'eau loin de chez soi",
+                "col": "difficile"
+              }
+            ],
+            "indices": [
+              "Fiche « Les inégalités dans le monde ».",
+              "L'école, l'eau, les soins : ce sont des signes de niveau de vie."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Le capitaine dit qu'on peut mesurer la richesse d'un pays avec des « indicateurs ». Moi, je ne connais que la pêche. Rangez-les pour moi.",
+            "consigne": "Range chaque indicateur : il montre un niveau de vie élevé ou faible ?",
+            "colonnes": [
+              {
+                "id": "eleve",
+                "titre": "Niveau de vie élevé",
+                "icone": "📈"
+              },
+              {
+                "id": "faible",
+                "titre": "Niveau de vie faible",
+                "icone": "📉"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "on vit en moyenne plus de 80 ans",
+                "col": "eleve"
+              },
+              {
+                "txt": "presque tous les enfants vont à l'école",
+                "col": "eleve"
+              },
+              {
+                "txt": "presque tous les logements ont l'eau potable",
+                "col": "eleve"
+              },
+              {
+                "txt": "beaucoup d'enfants meurent avant 5 ans",
+                "col": "faible"
+              },
+              {
+                "txt": "beaucoup d'adultes ne savent pas lire",
+                "col": "faible"
+              },
+              {
+                "txt": "une grande partie des habitants vit avec très peu d'argent",
+                "col": "faible"
+              }
+            ],
+            "indices": [
+              "Fiche « Les inégalités dans le monde », liste des indicateurs.",
+              "L'espérance de vie est la durée de vie moyenne."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Le capitaine a sorti un tableau de sa bibliothèque : deux pays, sans nom. Lequel est le plus riche ? Avec quoi le prouver ? Je veux des chiffres, moi.",
+            "consigne": "<div class='doc-carnet'><b>Tableau (pays fictifs)</b><table><tr><th></th><th>Pays A</th><th>Pays B</th></tr><tr><td>Espérance de vie</td><td>82 ans</td><td>63 ans</td></tr><tr><td>Enfants scolarisés</td><td>99 sur 100</td><td>65 sur 100</td></tr><tr><td>Accès à l'eau potable</td><td>100 sur 100</td><td>55 sur 100</td></tr><tr><td>Médecins pour 10 000 habitants</td><td>35</td><td>2</td></tr></table></div>Range chaque affirmation.",
+            "colonnes": [
+              {
+                "id": "vrai",
+                "titre": "Le tableau le prouve",
+                "icone": "✅"
+              },
+              {
+                "id": "faux",
+                "titre": "Le tableau dit le contraire",
+                "icone": "❌"
+              },
+              {
+                "id": "rien",
+                "titre": "Le tableau ne le dit pas",
+                "icone": "❔"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "On vit plus longtemps dans le pays A.",
+                "col": "vrai"
+              },
+              {
+                "txt": "Dans le pays B, environ 45 personnes sur 100 n'ont pas l'eau potable.",
+                "col": "vrai"
+              },
+              {
+                "txt": "Le pays B a plus de médecins que le pays A.",
+                "col": "faux"
+              },
+              {
+                "txt": "Tous les enfants du pays B vont à l'école.",
+                "col": "faux"
+              },
+              {
+                "txt": "Le pays A est plus grand que le pays B.",
+                "col": "rien"
+              },
+              {
+                "txt": "Les habitants du pays B pêchent des perles.",
+                "col": "rien"
+              }
+            ],
+            "indices": [
+              "Fiche « Les inégalités dans le monde » : lire un tableau ligne par ligne.",
+              "100 − 55 = 45."
+            ]
+          },
+          "lieutenant": {
+            "dialogue": "Où vivent ceux qui, comme ce pêcheur, n'ont presque rien ? Le capitaine a un planisphère. Je veux savoir, et je veux une preuve.",
+            "consigne": "Range chaque affirmation sur les inégalités dans le monde, puis justifie.",
+            "colonnes": [
+              {
+                "id": "vrai",
+                "titre": "Exact",
+                "icone": "✅"
+              },
+              {
+                "id": "faux",
+                "titre": "Faux",
+                "icone": "❌"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Les pays au niveau de vie le plus faible se trouvent surtout en Afrique subsaharienne et en Asie du Sud.",
+                "col": "vrai"
+              },
+              {
+                "txt": "On mesure le niveau de vie avec plusieurs indicateurs : espérance de vie, école, revenu.",
+                "col": "vrai"
+              },
+              {
+                "txt": "Dans un même pays, il peut y avoir des riches et des pauvres.",
+                "col": "vrai"
+              },
+              {
+                "txt": "Un seul indicateur suffit toujours pour comparer deux pays.",
+                "col": "faux"
+              },
+              {
+                "txt": "Les inégalités n'existent qu'entre pays, jamais dans un pays.",
+                "col": "faux"
+              },
+              {
+                "txt": "Tous les pays d'Asie ont le même niveau de vie.",
+                "col": "faux"
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche prouve qu'il y a des inégalités à l'intérieur d'un pays ?",
+              "options": [
+                "Dans un même pays, certains vivent dans l'aisance et d'autres dans la pauvreté : ici, le pêcheur risque sa vie quand le marchand de perles s'enrichit.",
+                "L'espérance de vie est la durée moyenne de la vie.",
+                "L'Afrique subsaharienne est au sud du Sahara.",
+                "Ceylan s'appelle aujourd'hui le Sri Lanka."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Les inégalités dans le monde ».",
+              "Pense au pêcheur et au marchand."
+            ]
+          },
+          "second": {
+            "type": "qcm",
+            "dialogue": "Le capitaine me prête son dossier. Il prétend qu'un chiffre seul peut mentir. Montrez-moi comment ne pas se laisser tromper.",
+            "consigne": "<div class='doc-carnet'><b>Dossier (pays fictifs)</b> — Pays C : revenu moyen élevé, mais 1 habitant sur 4 sans eau potable. Pays D : revenu moyen plus faible, espérance de vie 79 ans, presque tous les enfants scolarisés.</div>",
+            "questions": [
+              {
+                "q": "Que montre le pays C ?",
+                "options": [
+                  "Un revenu moyen élevé peut cacher de fortes inégalités entre habitants.",
+                  "Tous ses habitants sont riches.",
+                  "Il n'a aucun problème.",
+                  "L'eau potable ne compte pas."
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Pour comparer le niveau de vie de C et de D, il vaut mieux…",
+                "options": [
+                  "croiser plusieurs indicateurs (revenu, santé, école, eau)",
+                  "ne regarder que le revenu",
+                  "ne regarder que la taille du pays",
+                  "compter les perles"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Ceylan, au temps du roman, était…",
+                "options": [
+                  "une colonie britannique",
+                  "un pays indépendant",
+                  "une région française",
+                  "une île déserte"
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie ta réponse 2 ?",
+              "options": [
+                "Un indicateur seul peut tromper : une moyenne cache les écarts ; on croise plusieurs indicateurs.",
+                "L'espérance de vie est la durée moyenne de la vie.",
+                "Ceylan s'appelle aujourd'hui le Sri Lanka.",
+                "Les pays riches se trouvent tous au nord."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Les inégalités dans le monde », encadré « Une moyenne peut tromper ».",
+              "Fiche « Colonies et échanges » pour la question 3."
+            ]
+          }
+        },
+        {
+          "id": "e5-3",
+          "escale": 5,
+          "ordre": 3,
+          "titre": "Les voiles de Ceylan",
+          "decor": "pont-ceylan",
+          "objet_principal": "barques",
+          "objets_cliquables": [
+            "barques",
+            "cage-pilote",
+            "fanal"
+          ],
+          "personnage_emetteur": "aronnax",
+          "probleme_narratif": "Le Nautilus fait surface au large de Ceylan. Des voiles partout : barques de pêcheurs et navires de commerce de la colonie britannique. Le capitaine ne veut croiser aucun navire de commerce. Aronnax, à la longue-vue, classe les cargaisons pour savoir quels bateaux partent vers l'Europe et lesquels en reviennent.",
+          "enjeu": "Se faire voir d'un navire de la colonie, c'est révéler le Nautilus au monde.",
+          "episode_du_roman": "Partie II, ch. II-III : le Nautilus croise au large de Ceylan, colonie britannique, près des bancs de perles de Manaar ; Nemo évite les navires.",
+          "competence_programme": "Histoire : les échanges commerciaux avec les colonies (produits des colonies vers l'Europe, produits manufacturés vers les colonies).",
+          "pourquoi_ce_savoir_ici": "Savoir ce que transportent les navires, c'est savoir d'où ils viennent et où ils vont, donc lesquels éviter.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "Une route se dessine sur la mer : des navires vers l'Europe, d'autres vers Ceylan."
+          },
+          "liberte_ou_anachronisme": "Ceylan exportait surtout du café, de la cannelle et des perles vers 1868 ; le thé ne l'emportera qu'après 1880 (A-VERIFIER.md).",
+          "lecon": "colonies",
+          "type": "tri",
+          "niveau_variantes": "Mousse : produit et lieu d'origine. Matelot : marchandises qui partent ou arrivent. Timonier : association produit ↔ origine et destination. Lieutenant : QCM sur la colonie et l'échange inégal + justification. Second : tri en trois colonnes + justification.",
+          "mousse": {
+            "type": "association",
+            "dialogue": "Ces navires sont chargés. D'où vient chaque marchandise ? Un naturaliste ne range bien que ce qu'il comprend.",
+            "consigne": "Relie chaque marchandise au lieu où elle a été produite.",
+            "paires": [
+              {
+                "g": "le café",
+                "icone": "☕",
+                "d": "les plantations de Ceylan"
+              },
+              {
+                "g": "la cannelle",
+                "icone": "🌿",
+                "d": "les arbres de Ceylan"
+              },
+              {
+                "g": "les tissus de coton",
+                "icone": "🧵",
+                "d": "les usines d'Angleterre"
+              }
+            ],
+            "indices": [
+              "Fiche « Colonies et échanges ».",
+              "Les usines sont en Europe."
+            ]
+          },
+          "matelot": {
+            "type": "qcm",
+            "dialogue": "Deux sortes de navires : ceux qui partent vers l'Europe, et ceux qui arrivent à Ceylan. Leurs cargaisons les trahissent.",
+            "consigne": "Pour chaque cargaison, dis si elle part de la colonie vers l'Europe, ou si elle arrive d'Europe dans la colonie.",
+            "questions": [
+              {
+                "q": "Des sacs de café : …",
+                "options": [
+                  "elle part de Ceylan vers l'Europe",
+                  "elle arrive d'Europe à Ceylan"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Des bottes de cannelle : …",
+                "options": [
+                  "elle part de Ceylan vers l'Europe",
+                  "elle arrive d'Europe à Ceylan"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Des perles : …",
+                "options": [
+                  "elle part de Ceylan vers l'Europe",
+                  "elle arrive d'Europe à Ceylan"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Des tissus de coton tissés en usine : …",
+                "options": [
+                  "elle part de Ceylan vers l'Europe",
+                  "elle arrive d'Europe à Ceylan"
+                ],
+                "bonne": 1
+              },
+              {
+                "q": "Des outils et des machines : …",
+                "options": [
+                  "elle part de Ceylan vers l'Europe",
+                  "elle arrive d'Europe à Ceylan"
+                ],
+                "bonne": 1
+              },
+              {
+                "q": "Des fusils pour les soldats : …",
+                "options": [
+                  "elle part de Ceylan vers l'Europe",
+                  "elle arrive d'Europe à Ceylan"
+                ],
+                "bonne": 1
+              }
+            ],
+            "indices": [
+              "Fiche « Colonies et échanges » : matières premières et produits agricoles d'un côté, produits fabriqués de l'autre.",
+              "Les usines sont en Europe."
+            ]
+          },
+          "timonier": {
+            "type": "association",
+            "dialogue": "Je voudrais une étiquette pour chaque cargaison : d'où elle vient et où elle va. Le capitaine appelle cela « l'échange colonial ».",
+            "consigne": "Relie chaque cargaison à son trajet.",
+            "paires": [
+              {
+                "g": "le café de Ceylan",
+                "icone": "☕",
+                "d": "des plantations de la colonie vers Londres"
+              },
+              {
+                "g": "les perles de Manaar",
+                "icone": "🦪",
+                "d": "du banc de perles vers les marchands d'Europe"
+              },
+              {
+                "g": "les tissus de coton",
+                "icone": "🧵",
+                "d": "des usines anglaises vers les marchés de la colonie"
+              },
+              {
+                "g": "les rails de chemin de fer",
+                "icone": "🛤️",
+                "d": "des forges anglaises vers les routes des plantations"
+              },
+              {
+                "g": "les soldats et fonctionnaires",
+                "icone": "💂",
+                "d": "de Grande-Bretagne vers la colonie, pour la gouverner"
+              }
+            ],
+            "indices": [
+              "Fiche « Colonies et échanges », schéma de l'échange colonial.",
+              "La colonie est gouvernée depuis l'Europe."
+            ]
+          },
+          "lieutenant": {
+            "type": "qcm",
+            "dialogue": "Le capitaine dit que cet échange n'est pas égal. Je veux comprendre pourquoi, avant de le croire.",
+            "consigne": "Réponds avec la fiche « Colonies et échanges ».",
+            "questions": [
+              {
+                "q": "Qu'est-ce qu'une colonie ?",
+                "options": [
+                  "un territoire dominé et gouverné par un pays étranger",
+                  "un pays allié et indépendant",
+                  "une île déserte",
+                  "une association de pêcheurs"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Pourquoi l'échange est-il inégal ?",
+                "options": [
+                  "La colonie fournit des produits bruts bon marché et achète cher des produits fabriqués, au profit de la métropole.",
+                  "La colonie vend tout plus cher que l'Europe.",
+                  "Les navires ne transportent rien.",
+                  "La colonie fabrique toutes les machines."
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie la réponse 2 ?",
+              "options": [
+                "La métropole achète à bas prix les produits agricoles de la colonie et lui vend ses produits fabriqués : les profits reviennent surtout à la métropole et à ses marchands.",
+                "Ceylan exporte du café et de la cannelle.",
+                "Ceylan s'appelle aujourd'hui le Sri Lanka.",
+                "Les perles sont pêchées à Manaar."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Colonies et échanges ».",
+              "Pense au pêcheur payé quelques pièces."
+            ]
+          },
+          "second": {
+            "dialogue": "Trois sortes de voiles, trois rôles. Le capitaine veut savoir lesquelles éviter. Classez, et justifiez.",
+            "consigne": "Range chaque élément dans le rôle qu'il joue dans le système colonial, puis justifie.",
+            "colonnes": [
+              {
+                "id": "brut",
+                "titre": "Produit de la colonie (agricole ou brut)",
+                "icone": "🌿"
+              },
+              {
+                "id": "fabrique",
+                "titre": "Produit fabriqué en métropole",
+                "icone": "🏭"
+              },
+              {
+                "id": "pouvoir",
+                "titre": "Contrôle de la colonie",
+                "icone": "⚓"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le café",
+                "col": "brut"
+              },
+              {
+                "txt": "la cannelle",
+                "col": "brut"
+              },
+              {
+                "txt": "les perles",
+                "col": "brut"
+              },
+              {
+                "txt": "les tissus de coton",
+                "col": "fabrique"
+              },
+              {
+                "txt": "les machines à vapeur",
+                "col": "fabrique"
+              },
+              {
+                "txt": "le gouverneur britannique",
+                "col": "pouvoir"
+              },
+              {
+                "txt": "les navires de guerre de la Royal Navy",
+                "col": "pouvoir"
+              }
+            ],
+            "justification": {
+              "question": "Pourquoi le capitaine évite-t-il les navires de guerre de la colonie ?",
+              "options": [
+                "Ils assurent le contrôle de la colonie par la métropole : le Nautilus, navire d'un homme qui se dit du « pays des opprimés », y serait un ennemi.",
+                "Ils transportent du café.",
+                "Ils sont plus lents que le Nautilus.",
+                "Ils pêchent des perles."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Colonies et échanges ».",
+              "Une colonie se gouverne et se défend depuis la métropole."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "id": "tunnel-arabique",
+      "titre": "Le tunnel arabique et Suez",
+      "lieu": "De la mer Rouge à la Méditerranée, février 1868",
+      "matiere": "Géographie",
+      "periode_conseillee": "P1-P2 Année A (se déplacer) et P5 Année B (eau douce)",
+      "episode": "Deuxième partie, ch. IV « La mer Rouge » et ch. V « Arabian-Tunnel » : Nemo fait passer le Nautilus de la mer Rouge à la Méditerranée par un tunnel sous l'isthme de Suez, alors que le canal est en construction.",
+      "scenarimage": "scenarimages/escale-06.md",
+      "mot": "ISTHME",
+      "mot_origine": "L'isthme de Suez, que le Nautilus franchit par-dessous, par le tunnel secret de Nemo (Partie II, ch. V).",
+      "air": null,
+      "cinematique_ouverture": "transition-e6",
+      "cinematique_fin": "fin-e6",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e6-1",
+          "escale": 6,
+          "ordre": 1,
+          "titre": "Le passage secret",
+          "decor": "tunnel-arabique",
+          "objet_principal": "carte-route",
+          "objets_cliquables": [
+            "carte-route",
+            "gouvernail",
+            "vitres-tunnel"
+          ],
+          "personnage_emetteur": "aronnax",
+          "probleme_narratif": "Aronnax ne croit pas au « tunnel arabique » : pour passer de la mer Rouge à la Méditerranée, il faudrait contourner toute l'Afrique. Dans la cage du pilote, la carte de route permet de comparer les itinéraires avant que Nemo ne lance le Nautilus dans le courant.",
+          "enjeu": "Si Aronnax ne mesure pas ce que l'isthme fait gagner, il prend le capitaine pour un fou ; or ce raccourci secret est l'avance du Nautilus sur tous les navires du monde.",
+          "episode_du_roman": "Partie II, ch. V « Arabian-Tunnel » : Nemo révèle un passage souterrain sous l'isthme de Suez ; Aronnax n'y croyait pas.",
+          "competence_programme": "Géographie : se déplacer — itinéraires, distances, canaux ; comment se déplace-t-on d'un bout à l'autre du monde ?",
+          "pourquoi_ce_savoir_ici": "Comparer des itinéraires sur une carte, c'est comprendre pourquoi un passage par l'isthme change tout pour la navigation.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "La route du Nautilus s'illumine sur la carte, sous l'isthme."
+          },
+          "liberte_ou_anachronisme": "Le tunnel arabique est une invention de Verne : il n'existe pas. Le canal de Suez, lui, est inauguré le 17 novembre 1869. Les distances sont des ordres de grandeur (A-VERIFIER.md).",
+          "lecon": "itineraires",
+          "type": "code",
+          "niveau_variantes": "Mousse : lire la carte (contourner l'Afrique). Matelot : différence de distances. Timonier : QCM sur la carte et le canal. Lieutenant : durées de trajet selon la vitesse (code) + justification. Second : QCM sur les échanges que change le canal + justification.",
+          "mousse": {
+            "type": "qcm",
+            "dialogue": "Un tunnel sous l'Égypte ? Impossible ! Regardez la carte : sans passage, par où faudrait-il aller ?",
+            "consigne": "Observe la carte de route sur la table du pilote.",
+            "questions": [
+              {
+                "q": "Sans canal ni tunnel, pour aller de la mer Rouge à la Méditerranée en bateau, il faut faire le tour…",
+                "options": [
+                  "de l'Afrique",
+                  "de l'Europe",
+                  "de l'Amérique",
+                  "de l'Australie"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "L'isthme de Suez sépare…",
+                "options": [
+                  "la mer Rouge et la mer Méditerranée",
+                  "l'océan Atlantique et l'océan Pacifique",
+                  "deux fleuves",
+                  "deux montagnes"
+                ],
+                "bonne": 0
+              }
+            ],
+            "indices": [
+              "Fiche « Itinéraires et canaux » : regarde la carte.",
+              "L'Afrique est entre la mer Rouge et l'océan Atlantique."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Si le capitaine dit vrai, combien de chemin économise-t-on ? Calculons, plutôt que de discuter.",
+            "consigne": "<div class='doc-carnet'><b>Carte de route</b> (ordres de grandeur) — De Suez à Port-Saïd par l'isthme : environ 160 km. De Suez à Port-Saïd en contournant l'Afrique : environ 20 000 km.</div>Calcule la distance économisée.",
+            "champs": [
+              {
+                "libelle": "Kilomètres économisés",
+                "valeur": "19840",
+                "longueur": 6
+              }
+            ],
+            "indices": [
+              "Fiche « Itinéraires et canaux ».",
+              "20 000 − 160."
+            ]
+          },
+          "timonier": {
+            "type": "qcm",
+            "dialogue": "Le canal de Monsieur de Lesseps n'est pas encore ouvert, et le capitaine a déjà son tunnel. Je veux comprendre ce que cela change pour tous les navires.",
+            "consigne": "Réponds avec la fiche « Itinéraires et canaux ».",
+            "questions": [
+              {
+                "q": "Le canal de Suez relie…",
+                "options": [
+                  "la Méditerranée à la mer Rouge, donc à l'océan Indien",
+                  "l'Atlantique au Pacifique",
+                  "la Manche à la mer du Nord",
+                  "le Nil à la mer Noire"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Pour un navire qui va d'Europe en Inde, le canal…",
+                "options": [
+                  "raccourcit le trajet de plusieurs milliers de kilomètres",
+                  "allonge le trajet",
+                  "ne change rien",
+                  "oblige à passer par l'Amérique"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Le tunnel du Nautilus…",
+                "options": [
+                  "est une invention de Jules Verne",
+                  "existe vraiment sous l'isthme",
+                  "a été creusé par Lesseps",
+                  "relie Paris à Londres"
+                ],
+                "bonne": 0
+              }
+            ],
+            "indices": [
+              "Fiche « Itinéraires et canaux ».",
+              "Le canal n'est inauguré qu'en 1869."
+            ]
+          },
+          "lieutenant": {
+            "dialogue": "Pour un vapeur qui file 10 nœuds, que vaut ce raccourci en jours de mer ? Voilà ce qui intéresse les armateurs, et le capitaine aussi.",
+            "consigne": "<div class='doc-carnet'><b>Carte de route</b> — Londres → Bombay (Inde) : environ 20 000 km par le cap de Bonne-Espérance, environ 11 600 km par Suez. Un vapeur parcourt environ 400 km par jour.</div>Calcule, arrondis à l'unité.",
+            "champs": [
+              {
+                "libelle": "Jours par le Cap",
+                "valeur": "50",
+                "longueur": 3
+              },
+              {
+                "libelle": "Jours par Suez",
+                "valeur": "29",
+                "longueur": 3
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche explique pourquoi les armateurs voulaient ce canal ?",
+              "options": [
+                "Un trajet plus court fait gagner du temps, du charbon et de l'argent : le canal de Suez rapproche l'Europe de l'Asie.",
+                "Le tunnel arabique est une invention de Verne.",
+                "Le canal mesure environ 160 km.",
+                "Le Nil est le plus long fleuve d'Afrique."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "20 000 ÷ 400 ; 11 600 ÷ 400.",
+              "29 jours en arrondissant 29."
+            ]
+          },
+          "second": {
+            "type": "qcm",
+            "dialogue": "Le capitaine dit que ce canal changera le commerce du monde. Montrez-moi que vous comprenez pourquoi, et pour qui.",
+            "consigne": "Réponds avec les fiches « Itinéraires et canaux » et « Colonies et échanges ».",
+            "questions": [
+              {
+                "q": "Quels échanges le canal de Suez facilite-t-il le plus ?",
+                "options": [
+                  "entre l'Europe et l'Asie (Inde, Chine)",
+                  "entre l'Amérique et l'Australie",
+                  "entre la France et l'Espagne",
+                  "entre l'Égypte et le Nil"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Quel pays européen, maître de l'Inde, utilisera le plus ce canal ?",
+                "options": [
+                  "le Royaume-Uni",
+                  "la Suisse",
+                  "la Norvège",
+                  "l'Autriche"
+                ],
+                "bonne": 0
+              },
+              {
+                "q": "Pourquoi un raccourci est-il aussi une économie d'énergie pour un vapeur ?",
+                "options": [
+                  "Moins de distance, c'est moins de charbon brûlé.",
+                  "Le canal pousse les navires.",
+                  "L'eau du canal est plus légère.",
+                  "Les navires y vont à la voile."
+                ],
+                "bonne": 0
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche justifie ta réponse 1 ?",
+              "options": [
+                "Un trajet plus court fait gagner du temps, du charbon et de l'argent : le canal de Suez rapproche l'Europe de l'Asie.",
+                "Le canal est inauguré le 17 novembre 1869.",
+                "Le tunnel du Nautilus n'existe pas.",
+                "Port-Saïd est sur la Méditerranée."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Itinéraires et canaux ».",
+              "L'Inde était une colonie britannique."
+            ]
+          }
+        },
+        {
+          "id": "e6-2",
+          "escale": 6,
+          "ordre": 2,
+          "titre": "Le fleuve et le désert",
+          "decor": "tunnel-arabique",
+          "objet_principal": "carte-nil",
+          "objets_cliquables": [
+            "carte-nil",
+            "gouvernail",
+            "vitres-tunnel"
+          ],
+          "personnage_emetteur": "conseil",
+          "probleme_narratif": "Sur l'autre carte du pilote, Conseil remarque un mince trait bleu : un canal d'eau douce creusé depuis le Nil pour abreuver les milliers d'ouvriers du canal, en plein désert. Il veut classer les usages de cette eau rare, car le Nautilus, lui, doit fabriquer la sienne en distillant l'eau de mer.",
+          "enjeu": "Mal partagée, l'eau douce manque toujours à quelqu'un : ouvriers de l'isthme, paysans du Nil… ou équipage du Nautilus.",
+          "episode_du_roman": "Vraisemblance : Partie II, ch. IV-V, le Nautilus longe l'isthme de Suez où l'on creuse le canal ; un canal d'eau douce, venu du Nil, alimentait réellement les chantiers (1863).",
+          "competence_programme": "Géographie : les usages de l'eau douce ; repérer les principaux fleuves ; l'eau, ressource convoitée faisant l'objet de conflits d'usage.",
+          "pourquoi_ce_savoir_ici": "Dans un pays de désert, chaque usage de l'eau du fleuve compte : c'est là que naissent les conflits d'usage.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "Le trait bleu du Nil s'illumine sur la carte."
+          },
+          "liberte_ou_anachronisme": "Le barrage d'Assouan (1970) et le grand barrage éthiopien sont présentés comme un dossier de l'équipe de secours (XXIᵉ siècle).",
+          "lecon": "eau-douce",
+          "type": "tri",
+          "niveau_variantes": "Mousse : eau douce ou salée. Matelot : usages de l'eau douce. Timonier : association usage ↔ exemple au bord du Nil. Lieutenant : conflit d'usage ou non + justification. Second : tri des acteurs du conflit du Nil + justification.",
+          "mousse": {
+            "dialogue": "Eau douce, eau salée : on ne boit que l'une des deux. Je voudrais être sûr de ne pas me tromper de tonneau.",
+            "consigne": "Range chaque eau : douce ou salée ?",
+            "colonnes": [
+              {
+                "id": "douce",
+                "titre": "Eau douce",
+                "icone": "💧"
+              },
+              {
+                "id": "salee",
+                "titre": "Eau salée",
+                "icone": "🌊"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "l'eau du Nil",
+                "col": "douce"
+              },
+              {
+                "txt": "l'eau d'un puits",
+                "col": "douce"
+              },
+              {
+                "txt": "l'eau de pluie",
+                "col": "douce"
+              },
+              {
+                "txt": "l'eau de la mer Rouge",
+                "col": "salee"
+              },
+              {
+                "txt": "l'eau de la Méditerranée",
+                "col": "salee"
+              },
+              {
+                "txt": "l'eau de l'océan Indien",
+                "col": "salee"
+              }
+            ],
+            "indices": [
+              "Fiche « L'eau douce, une ressource convoitée ».",
+              "Les fleuves et la pluie apportent de l'eau douce."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Ce fleuve fait vivre tout un pays. Je voudrais ranger tout ce qu'on fait de son eau.",
+            "consigne": "Range chaque activité : est-ce un usage de l'eau douce du fleuve ?",
+            "colonnes": [
+              {
+                "id": "usage",
+                "titre": "Usage de l'eau douce",
+                "icone": "💧"
+              },
+              {
+                "id": "non",
+                "titre": "Pas un usage de l'eau douce",
+                "icone": "🚫"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "boire",
+                "col": "usage"
+              },
+              {
+                "txt": "arroser les champs (irrigation)",
+                "col": "usage"
+              },
+              {
+                "txt": "abreuver les troupeaux",
+                "col": "usage"
+              },
+              {
+                "txt": "naviguer sur le fleuve",
+                "col": "usage"
+              },
+              {
+                "txt": "pêcher la morue en mer",
+                "col": "non"
+              },
+              {
+                "txt": "récolter le sel de mer",
+                "col": "non"
+              }
+            ],
+            "indices": [
+              "Fiche « L'eau douce, une ressource convoitée », liste des usages.",
+              "La morue et le sel viennent de la mer."
+            ]
+          },
+          "timonier": {
+            "type": "association",
+            "dialogue": "Chaque usage a son exemple au bord du Nil. Le capitaine aime les classements précis : moi aussi.",
+            "consigne": "Relie chaque usage de l'eau du Nil à un exemple.",
+            "paires": [
+              {
+                "g": "Usage domestique",
+                "icone": "🏠",
+                "d": "boire, cuisiner, se laver dans les villages"
+              },
+              {
+                "g": "Agriculture",
+                "icone": "🌾",
+                "d": "irriguer les champs de coton et de blé"
+              },
+              {
+                "g": "Transport",
+                "icone": "⛵",
+                "d": "les felouques qui descendent le fleuve"
+              },
+              {
+                "g": "Industrie et énergie",
+                "icone": "⚡",
+                "d": "aujourd'hui, l'électricité du barrage d'Assouan"
+              },
+              {
+                "g": "Chantiers",
+                "icone": "⛏️",
+                "d": "le canal d'eau douce qui abreuvait les ouvriers de l'isthme"
+              }
+            ],
+            "indices": [
+              "Fiche « L'eau douce, une ressource convoitée ».",
+              "Le barrage d'Assouan date de 1970 : c'est un exemple d'aujourd'hui."
+            ]
+          },
+          "lieutenant": {
+            "dialogue": "Le capitaine parle de « conflits d'usage ». Je voudrais savoir reconnaître une vraie rivalité pour l'eau d'une simple utilisation.",
+            "consigne": "Range chaque situation, puis justifie.",
+            "colonnes": [
+              {
+                "id": "conflit",
+                "titre": "Conflit d'usage",
+                "icone": "⚔️"
+              },
+              {
+                "id": "simple",
+                "titre": "Simple usage, sans rivalité",
+                "icone": "🤝"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "un pays en amont construit un barrage ; le pays en aval craint de manquer d'eau",
+                "col": "conflit"
+              },
+              {
+                "txt": "les villes et les agriculteurs se disputent l'eau pendant une sécheresse",
+                "col": "conflit"
+              },
+              {
+                "txt": "une usine rejette ses eaux sales dans le fleuve où d'autres puisent leur eau",
+                "col": "conflit"
+              },
+              {
+                "txt": "un pêcheur pêche dans le fleuve en crue, où l'eau abonde",
+                "col": "simple"
+              },
+              {
+                "txt": "une famille puise l'eau d'un puits qui ne manque jamais",
+                "col": "simple"
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche définit un conflit d'usage ?",
+              "options": [
+                "Il y a conflit d'usage quand plusieurs utilisateurs veulent la même eau alors qu'il n'y en a pas assez pour tous, ou quand l'usage des uns gâte l'eau des autres.",
+                "Le Nil est le plus long fleuve d'Afrique.",
+                "L'eau de mer est salée.",
+                "On irrigue les champs de coton."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « L'eau douce, une ressource convoitée », encadré.",
+              "Amont : vers la source ; aval : vers la mer."
+            ]
+          },
+          "second": {
+            "dialogue": "Le dossier de l'équipe de secours parle d'un grand barrage en Éthiopie et d'une Égypte inquiète. Démêlez les intérêts de chacun, comme le ferait un diplomate.",
+            "consigne": "<div class='doc-carnet'><b>Dossier de l'équipe de secours (XXIᵉ siècle)</b> — L'Éthiopie, en amont, a construit un grand barrage sur le Nil Bleu pour produire de l'électricité. L'Égypte, en aval, où presque tous les habitants vivent près du fleuve, craint que le débit baisse. Le Soudan, entre les deux, espère mieux contrôler les crues.</div>Range chaque argument selon le pays qui le défend, puis justifie.",
+            "colonnes": [
+              {
+                "id": "ethiopie",
+                "titre": "Éthiopie (amont)",
+                "icone": "⬆️"
+              },
+              {
+                "id": "egypte",
+                "titre": "Égypte (aval)",
+                "icone": "⬇️"
+              },
+              {
+                "id": "soudan",
+                "titre": "Soudan (entre les deux)",
+                "icone": "↔️"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "« Nous avons besoin d'électricité pour nous développer. »",
+                "col": "ethiopie"
+              },
+              {
+                "txt": "« L'eau qui naît sur nos montagnes nous appartient aussi. »",
+                "col": "ethiopie"
+              },
+              {
+                "txt": "« Sans le Nil, notre pays est un désert. »",
+                "col": "egypte"
+              },
+              {
+                "txt": "« Si le réservoir se remplit trop vite, le débit baissera chez nous. »",
+                "col": "egypte"
+              },
+              {
+                "txt": "« Un barrage en amont limitera nos inondations. »",
+                "col": "soudan"
+              }
+            ],
+            "justification": {
+              "question": "Pourquoi l'Égypte est-elle la plus inquiète ?",
+              "options": [
+                "Elle est en aval : elle reçoit l'eau après les autres, et presque toute sa population dépend du fleuve dans un pays de désert.",
+                "Elle n'utilise pas l'eau du Nil.",
+                "Elle est en amont du barrage.",
+                "Elle produit trop d'électricité."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « L'eau douce, une ressource convoitée », encadré sur le Nil.",
+              "Amont, aval : qui reçoit l'eau en premier ?"
+            ]
+          }
+        },
+        {
+          "id": "e6-3",
+          "escale": 6,
+          "ordre": 3,
+          "titre": "Le plan d'évasion de Ned",
+          "decor": "pont-port-said",
+          "objet_principal": "lumieres-port",
+          "objets_cliquables": [
+            "lumieres-port",
+            "canal",
+            "lanterne"
+          ],
+          "personnage_emetteur": "ned",
+          "probleme_narratif": "Le Nautilus fait surface devant Port-Saïd, la nuit. Ned Land voit les lumières de la ville et rêve de s'évader jusqu'au Canada. Mais par où, et comment ? Il faut choisir, pour chaque étape du voyage, le moyen de transport adapté à la distance et au lieu.",
+          "enjeu": "Un mauvais plan, et Ned se jette à l'eau pour rien : l'évasion échoue avant de commencer.",
+          "episode_du_roman": "Partie II, ch. V-VI : le Nautilus débouche en Méditerranée près de Port-Saïd ; Ned Land pense sans cesse à s'évader.",
+          "competence_programme": "Géographie : se déplacer — comment se déplace-t-on ailleurs ? quels moyens de transport, pour aller où ?",
+          "pourquoi_ce_savoir_ici": "Choisir un moyen de transport, c'est tenir compte de la distance, du lieu (mer, terre) et de l'époque.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "Un itinéraire en pointillés se trace de Port-Saïd vers l'ouest."
+          },
+          "liberte_ou_anachronisme": "Les moyens de transport de 1868 sont ceux du roman ; la comparaison avec aujourd'hui (avion) est signalée comme dossier du XXIᵉ siècle.",
+          "lecon": "se-deplacer",
+          "type": "ordre",
+          "niveau_variantes": "Mousse : moyen de transport ↔ lieu. Matelot : étapes du voyage dans l'ordre. Timonier : étapes avec le moyen adapté. Lieutenant : idem avec durées + justification. Second : comparer 1868 et aujourd'hui (code) + justification.",
+          "mousse": {
+            "type": "association",
+            "dialogue": "Tonnerre, la terre ! Pour rentrer chez moi, il me faudra changer de moyen de transport à chaque étape. Aidez-moi à choisir.",
+            "consigne": "Relie chaque moyen de transport à l'endroit où on l'utilise.",
+            "paires": [
+              {
+                "g": "le paquebot à vapeur",
+                "icone": "🚢",
+                "d": "pour traverser la mer"
+              },
+              {
+                "g": "le train",
+                "icone": "🚂",
+                "d": "pour traverser un pays par voie ferrée"
+              },
+              {
+                "g": "la marche à pied",
+                "icone": "🚶",
+                "d": "pour aller du quai à la gare"
+              }
+            ],
+            "indices": [
+              "Fiche « Se déplacer ».",
+              "Sur la mer, il faut un bateau."
+            ]
+          },
+          "matelot": {
+            "dialogue": "Port-Saïd, puis la France, puis l'océan, puis Québec. Dans quel ordre, et sans me perdre en route !",
+            "consigne": "Remets les étapes de l'évasion de Ned dans l'ordre.",
+            "items": [
+              {
+                "txt": "Gagner le port de Port-Saïd à la nage ou en canot."
+              },
+              {
+                "txt": "Prendre un paquebot à vapeur pour traverser la Méditerranée jusqu'à Marseille."
+              },
+              {
+                "txt": "Prendre le train à travers la France jusqu'au Havre."
+              },
+              {
+                "txt": "Prendre un paquebot transatlantique jusqu'à Québec."
+              }
+            ],
+            "indices": [
+              "Fiche « Se déplacer » et la carte.",
+              "La Méditerranée vient avant l'Atlantique."
+            ]
+          },
+          "timonier": {
+            "dialogue": "Chaque étape a son moyen de transport, choisi selon la distance et le lieu. Rangez-les, et nous verrons si mon plan tient.",
+            "consigne": "Remets les étapes dans l'ordre ; chacune indique le moyen de transport choisi.",
+            "items": [
+              {
+                "txt": "Du Nautilus au quai",
+                "sous": "canot à rames : courte distance sur l'eau"
+              },
+              {
+                "txt": "Du quai à la gare maritime",
+                "sous": "à pied : quelques centaines de mètres"
+              },
+              {
+                "txt": "De Port-Saïd à Marseille",
+                "sous": "paquebot à vapeur : traversée de la Méditerranée"
+              },
+              {
+                "txt": "De Marseille au Havre",
+                "sous": "chemin de fer : longue distance sur terre"
+              },
+              {
+                "txt": "Du Havre à Québec",
+                "sous": "paquebot transatlantique : traversée de l'océan"
+              }
+            ],
+            "indices": [
+              "Fiche « Se déplacer ».",
+              "Marseille est au sud de la France, Le Havre au nord-ouest."
+            ]
+          },
+          "lieutenant": {
+            "dialogue": "Combien de temps me faudra-t-il ? Rangez les étapes, puis dites-moi ce qui décide du moyen de transport.",
+            "consigne": "Remets les étapes dans l'ordre, puis justifie.",
+            "items": [
+              {
+                "txt": "Canot jusqu'au quai de Port-Saïd",
+                "sous": "environ 1 heure"
+              },
+              {
+                "txt": "Paquebot Port-Saïd → Marseille",
+                "sous": "environ 6 jours"
+              },
+              {
+                "txt": "Train Marseille → Paris → Le Havre",
+                "sous": "environ 1 jour"
+              },
+              {
+                "txt": "Paquebot Le Havre → Québec",
+                "sous": "environ 12 jours"
+              },
+              {
+                "txt": "Diligence ou train vers son village",
+                "sous": "quelques jours"
+              }
+            ],
+            "justification": {
+              "question": "Qu'est-ce qui décide du moyen de transport à chaque étape ?",
+              "options": [
+                "On choisit le moyen de transport selon la distance à parcourir, le milieu (mer ou terre) et ce qui existe à l'époque.",
+                "On prend toujours le plus rapide, même s'il n'existe pas.",
+                "On choisit le moins cher, quel que soit le lieu.",
+                "On choisit au hasard."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "Fiche « Se déplacer ».",
+              "L'océan Atlantique se traverse en dernier."
+            ]
+          },
+          "second": {
+            "type": "code",
+            "dialogue": "Votre équipe de secours prétend qu'au XXIᵉ siècle ce voyage se fait en une journée. Comparons, chiffres en main.",
+            "consigne": "<div class='doc-carnet'><b>Dossier du XXIᵉ siècle</b> — Port-Saïd → Québec en avion, avec une correspondance : environ 20 heures. <b>En 1868</b> (étapes de Ned) : environ 20 jours.</div>Calcule.",
+            "champs": [
+              {
+                "libelle": "20 jours = ? heures",
+                "valeur": "480",
+                "longueur": 4
+              },
+              {
+                "libelle": "Combien de fois plus long en 1868 ?",
+                "valeur": "24",
+                "longueur": 3
+              }
+            ],
+            "justification": {
+              "question": "Quelle phrase de la fiche explique cet écart ?",
+              "options": [
+                "Les progrès des transports (vapeur, chemin de fer, puis avion) ont raccourci les durées de voyage : le monde paraît plus petit.",
+                "Ned Land marchait lentement.",
+                "Québec était plus loin en 1868.",
+                "Les paquebots allaient plus vite que les avions."
+              ],
+              "bonne": 0
+            },
+            "indices": [
+              "20 × 24 heures.",
+              "480 ÷ 20."
             ]
           }
         }

@@ -776,6 +776,983 @@
           "filtre": "none"
         }
       }
+    },
+    "pont-lincoln": {
+      "titre": "Le pont de l'Abraham Lincoln",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 40,
+          "y": 41,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 51,
+          "y": 34,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 92,
+          "y": 50,
+          "r": 9,
+          "couleur": "#3fa8ff",
+          "pulse": 0.6
+        },
+        {
+          "type": "poussiere",
+          "x": 5,
+          "y": 5,
+          "w": 90,
+          "h": 50,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "livre-quart",
+          "libelle": "Le livre de quart, sur le pupitre",
+          "x": 20,
+          "y": 42,
+          "w": 27,
+          "h": 22,
+          "description": "L'officier de quart y note l'heure, le cap et les distances relevées au loch."
+        },
+        {
+          "id": "loch",
+          "libelle": "Le loch et son sablier",
+          "x": 9,
+          "y": 66,
+          "w": 29,
+          "h": 32,
+          "description": "La corde à nœuds du loch, enroulée sur son tambour : on la laisse filer pendant que coule le sablier."
+        },
+        {
+          "id": "longue-vue",
+          "libelle": "La longue-vue",
+          "x": 55,
+          "y": 40,
+          "w": 13,
+          "h": 44,
+          "description": "Dans la lunette, la lueur bleue glisse sous la surface, plus vite qu'aucun cétacé."
+        },
+        {
+          "id": "harpon",
+          "libelle": "Le harpon de Ned Land",
+          "x": 68,
+          "y": 8,
+          "w": 17,
+          "h": 84,
+          "description": "Le harpon du roi des harponneurs, sa corde lovée dans la baille."
+        },
+        {
+          "id": "lueur-mer",
+          "libelle": "La lueur sur la mer",
+          "x": 86,
+          "y": 32,
+          "w": 14,
+          "h": 28,
+          "description": "Une lumière électrique, bleue et intense, qui palpite sous l'eau."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "machines-vapeur": {
+      "titre": "La chaufferie de la frégate",
+      "reference": "references/style-salle-machines-3.png",
+      "ambiance": [
+        "machines",
+        "vapeur"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 26,
+          "y": 72,
+          "r": 10,
+          "couleur": "#ff8a2e",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 72,
+          "y": 74,
+          "r": 9,
+          "couleur": "#ff8a2e",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "fumee",
+          "x": 40,
+          "y": 15,
+          "w": 20,
+          "h": 35,
+          "nombre": 14
+        },
+        {
+          "type": "rayons",
+          "x": 82,
+          "y": 0,
+          "w": 24,
+          "h": 60
+        },
+        {
+          "type": "poussiere",
+          "x": 20,
+          "y": 10,
+          "w": 60,
+          "h": 70,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "chaudiere",
+          "libelle": "La chaudière et son foyer",
+          "x": 6,
+          "y": 38,
+          "w": 26,
+          "h": 50,
+          "description": "Une chaudière de cuivre rivetée ; dans le foyer, le charbon rougeoie."
+        },
+        {
+          "id": "manometre-vapeur",
+          "libelle": "Le manomètre de la chaudière",
+          "x": 71,
+          "y": 42,
+          "w": 8,
+          "h": 12,
+          "description": "L'aiguille approche de la zone rouge : la pression de la vapeur monte."
+        },
+        {
+          "id": "chauffeur",
+          "libelle": "Le chauffeur",
+          "x": 45,
+          "y": 40,
+          "w": 9,
+          "h": 26,
+          "description": "Un chauffeur pellette le charbon sans relâche, couvert de suie."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "cambuse": {
+      "titre": "La cambuse",
+      "reference": null,
+      "ambiance": [
+        "coque"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 53,
+          "y": 21,
+          "r": 12,
+          "couleur": "#ffc86a",
+          "pulse": 0.25,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 40,
+          "y": 10,
+          "w": 30,
+          "h": 70
+        },
+        {
+          "type": "poussiere",
+          "x": 25,
+          "y": 10,
+          "w": 55,
+          "h": 70,
+          "nombre": 45
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "etagere-vivres",
+          "libelle": "Les réserves de la cambuse",
+          "x": 60,
+          "y": 8,
+          "w": 40,
+          "h": 52,
+          "description": "Bocaux de confiture et de choucroute, jambons fumés, citrons, boîtes de fer-blanc."
+        },
+        {
+          "id": "tonneaux",
+          "libelle": "Les tonneaux",
+          "x": 0,
+          "y": 20,
+          "w": 29,
+          "h": 55,
+          "description": "Viande salée et morue, sous la saumure."
+        },
+        {
+          "id": "biscuits",
+          "libelle": "Les caisses de biscuit de mer",
+          "x": 50,
+          "y": 38,
+          "w": 24,
+          "h": 26,
+          "description": "Des biscuits si durs qu'on les trempe dans le café."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "sas": {
+      "titre": "Le sas des scaphandres",
+      "reference": null,
+      "ambiance": [
+        "coque",
+        "machines"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 50,
+          "y": 20,
+          "r": 8,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 43,
+          "y": 32,
+          "w": 14,
+          "h": 38,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 20
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "scaphandres",
+          "libelle": "Les scaphandres",
+          "x": 20,
+          "y": 30,
+          "w": 17,
+          "h": 50,
+          "description": "Les scaphandres Rouquayrol-Denayrouze, réservoir d'air au dos."
+        },
+        {
+          "id": "porte-sas",
+          "libelle": "La porte du sas",
+          "x": 43,
+          "y": 32,
+          "w": 14,
+          "h": 38,
+          "description": "La porte ronde qui s'ouvre sur la mer, une fois le sas rempli."
+        },
+        {
+          "id": "niveau-eau",
+          "libelle": "Vannes et manomètre",
+          "x": 58,
+          "y": 24,
+          "w": 12,
+          "h": 32,
+          "description": "Les vannes qui remplissent le sas et le manomètre de pression."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "recif": {
+      "titre": "La plaine sous-marine",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "caustiques",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 60
+        },
+        {
+          "type": "rayons",
+          "x": 20,
+          "y": 0,
+          "w": 60,
+          "h": 50
+        },
+        {
+          "type": "bulles",
+          "x": 28,
+          "y": 10,
+          "w": 50,
+          "h": 40,
+          "nombre": 18
+        },
+        {
+          "type": "poissons",
+          "x": 30,
+          "y": 30,
+          "w": 40,
+          "h": 30,
+          "nombre": 6
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "faune-recif",
+          "libelle": "Le banc de poissons",
+          "x": 28,
+          "y": 30,
+          "w": 24,
+          "h": 32,
+          "description": "Un banc de poissons argentés, des poissons-clowns, des coraux."
+        },
+        {
+          "id": "tortue",
+          "libelle": "La tortue",
+          "x": 54,
+          "y": 60,
+          "w": 18,
+          "h": 20,
+          "description": "Une tortue de mer glisse au ras du sable."
+        },
+        {
+          "id": "etoile-mer",
+          "libelle": "L'étoile de mer",
+          "x": 39,
+          "y": 77,
+          "w": 10,
+          "h": 11,
+          "description": "Une étoile de mer orangée, posée sur le sable, près d'un oursin."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "foret-crespo": {
+      "titre": "La forêt de l'île Crespo",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 45,
+          "y": 0,
+          "w": 30,
+          "h": 45
+        },
+        {
+          "type": "lueur",
+          "x": 29,
+          "y": 72,
+          "r": 6,
+          "couleur": "#ffd68a",
+          "pulse": 0.35,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 44,
+          "y": 55,
+          "w": 20,
+          "h": 30,
+          "nombre": 12
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "lampe-ruhmkorff",
+          "libelle": "La lampe Ruhmkorff",
+          "x": 22,
+          "y": 64,
+          "w": 10,
+          "h": 17,
+          "description": "La lampe électrique des plongeurs, alimentée par une pile."
+        },
+        {
+          "id": "gorgone",
+          "libelle": "La gorgone",
+          "x": 67,
+          "y": 33,
+          "w": 21,
+          "h": 48,
+          "description": "Une gorgone rouge, qui paraît grise dans la pénombre."
+        },
+        {
+          "id": "rayons-surface",
+          "libelle": "La lumière de la surface",
+          "x": 50,
+          "y": 0,
+          "w": 22,
+          "h": 22,
+          "description": "La lumière du soleil, de plus en plus faible avec la profondeur."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "epave-vanikoro": {
+      "titre": "Les épaves de Vanikoro",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "caustiques",
+          "x": 10,
+          "y": 40,
+          "w": 80,
+          "h": 40,
+          "intensite": 0.5
+        },
+        {
+          "type": "lueur",
+          "x": 80,
+          "y": 44,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "bulles",
+          "x": 78,
+          "y": 10,
+          "w": 10,
+          "h": 40,
+          "nombre": 12
+        },
+        {
+          "type": "poissons",
+          "x": 5,
+          "y": 30,
+          "w": 50,
+          "h": 40,
+          "nombre": 5
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 35
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "instruments-epave",
+          "libelle": "Le compas et le sextant dans le sable",
+          "x": 60,
+          "y": 42,
+          "w": 15,
+          "h": 40,
+          "description": "Un compas de marine et un sextant de laiton, rongés par le sel."
+        },
+        {
+          "id": "canons",
+          "libelle": "Les canons couverts de coraux",
+          "x": 20,
+          "y": 20,
+          "w": 38,
+          "h": 50,
+          "description": "Des canons de bronze, envahis de concrétions : un navire du siècle dernier."
+        },
+        {
+          "id": "coque",
+          "libelle": "La coque",
+          "x": 30,
+          "y": 1,
+          "w": 65,
+          "h": 17,
+          "description": "Une coque immense au-dessus de l'épave : c'est le Nautilus, immobile, qui éclaire la scène."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "banc-perles": {
+      "titre": "Le banc de perles de Manaar",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 78,
+          "y": 0,
+          "w": 30,
+          "h": 60
+        },
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 38,
+          "r": 8,
+          "couleur": "#fff6e0",
+          "pulse": 0.35
+        },
+        {
+          "type": "lueur",
+          "x": 17,
+          "y": 56,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "bulles",
+          "x": 8,
+          "y": 10,
+          "w": 25,
+          "h": 50,
+          "nombre": 14
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "huitre-geante",
+          "libelle": "L'huître géante",
+          "x": 41,
+          "y": 21,
+          "w": 23,
+          "h": 32,
+          "description": "Une huître de la taille d'un fauteuil ; entre ses valves, une perle laiteuse énorme."
+        },
+        {
+          "id": "pecheur",
+          "libelle": "Le pêcheur de perles",
+          "x": 73,
+          "y": 11,
+          "w": 15,
+          "h": 47,
+          "description": "Un pêcheur indien, une pierre au pied pour descendre plus vite, un filet à la main, sans aucun scaphandre."
+        },
+        {
+          "id": "requin",
+          "libelle": "Le requin",
+          "x": 86,
+          "y": 18,
+          "w": 14,
+          "h": 14,
+          "description": "Un grand requin rôde au loin."
+        },
+        {
+          "id": "banc",
+          "libelle": "Le banc d'huîtres",
+          "x": 30,
+          "y": 60,
+          "w": 40,
+          "h": 38,
+          "description": "Des milliers d'huîtres perlières sur le fond rocheux."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pont-ceylan": {
+      "titre": "Au large de Ceylan",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 34,
+          "y": 25,
+          "r": 14,
+          "couleur": "#ffd9a0",
+          "pulse": 0.15
+        },
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 40,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "vignette",
+          "force": 0.45
+        },
+        {
+          "type": "grain",
+          "force": 0.03
+        }
+      ],
+      "zones": [
+        {
+          "id": "barques",
+          "libelle": "Les voiles au large",
+          "x": 9,
+          "y": 33,
+          "w": 48,
+          "h": 13,
+          "description": "Barques de pêcheurs et navires marchands, sur une mer d'or."
+        },
+        {
+          "id": "cage-pilote",
+          "libelle": "La cage du pilote",
+          "x": 60,
+          "y": 24,
+          "w": 13,
+          "h": 32,
+          "description": "La cage vitrée de laiton d'où le Nautilus est gouverné."
+        },
+        {
+          "id": "fanal",
+          "libelle": "Le fanal",
+          "x": 50,
+          "y": 36,
+          "w": 6,
+          "h": 12,
+          "description": "Le fanal électrique, éteint en surface pour ne pas être vu."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "tunnel-arabique": {
+      "titre": "La cage du pilote, dans le tunnel",
+      "reference": null,
+      "ambiance": [
+        "sousMarin",
+        "machines"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 45,
+          "y": 22,
+          "r": 9,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 30,
+          "y": 5,
+          "w": 30,
+          "h": 50
+        },
+        {
+          "type": "bulles",
+          "x": 55,
+          "y": 8,
+          "w": 18,
+          "h": 45,
+          "nombre": 16
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "carte-route",
+          "libelle": "La carte de route",
+          "x": 72,
+          "y": 76,
+          "w": 24,
+          "h": 24,
+          "description": "La mer Rouge, l'isthme de Suez, la Méditerranée ; et, autour, toute l'Afrique."
+        },
+        {
+          "id": "carte-nil",
+          "libelle": "La carte du Nil",
+          "x": 0,
+          "y": 78,
+          "w": 25,
+          "h": 22,
+          "description": "Le Nil serpente dans le désert ; un fin trait bleu le relie à l'isthme."
+        },
+        {
+          "id": "gouvernail",
+          "libelle": "Le gouvernail",
+          "x": 37,
+          "y": 52,
+          "w": 25,
+          "h": 46,
+          "description": "La roue du gouvernail, que le capitaine tient lui-même dans le tunnel."
+        },
+        {
+          "id": "vitres-tunnel",
+          "libelle": "Les vitres de la cage",
+          "x": 52,
+          "y": 6,
+          "w": 23,
+          "h": 48,
+          "description": "La roche défile, éclairée par le fanal ; le courant entraîne le Nautilus."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pont-port-said": {
+      "titre": "Devant Port-Saïd",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 90,
+          "y": 18,
+          "r": 7,
+          "couleur": "#ffcf7a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 61,
+          "y": 72,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "lumieres-port",
+          "libelle": "Les lumières de Port-Saïd",
+          "x": 78,
+          "y": 8,
+          "w": 22,
+          "h": 22,
+          "description": "Le phare et les lumières de la ville neuve, née avec les chantiers du canal."
+        },
+        {
+          "id": "canal",
+          "libelle": "L'entrée du canal",
+          "x": 0,
+          "y": 15,
+          "w": 34,
+          "h": 14,
+          "description": "Les quais et les chantiers du canal, qui n'est pas encore ouvert."
+        },
+        {
+          "id": "lanterne",
+          "libelle": "La lanterne de quart",
+          "x": 57,
+          "y": 60,
+          "w": 8,
+          "h": 18,
+          "description": "Une lanterne, à peine ouverte, pour ne pas être vu de la côte."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
     }
   }
 }

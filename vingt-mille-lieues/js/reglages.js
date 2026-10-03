@@ -14,7 +14,7 @@ var VML = window.VML || (window.VML = {});
 VML.REGLAGES_DEFAUT = {
   niveauImpose: null, indices: true, delaiIndiceMin: null, antiTatonnement: true,
   sons: true, voix: true, debitVoix: 1, animationsReduites: false, lecture: "normale",
-  sansReference: false, dureeEscaleMin: 25, escales: [2]
+  sansReference: false, dureeEscaleMin: 25, escales: null
 };
 
 (function(){
@@ -56,8 +56,8 @@ VML.REGLAGES_DEFAUT = {
             <p class="note">Les équivalences scolaires ne sont visibles qu'ici et dans le tableau de bord. Pour régler une équipe à distance : <code>prof.html</code>.</p>
           </section>
           <section><h4>🗺️ Escales</h4>
-            ${es.map(x => ligne("reg-es-" + x.numero, `Escale ${x.numero} — ${x.titre}`, `<input type="checkbox" checked disabled>`)).join("")}
-            <p class="note">Escale pilote seule pour l'instant ; les dix autres escales seront ajoutées après validation.</p>
+            ${es.map(x => ligne("reg-es-" + x.numero, `Escale ${x.numero} — ${x.titre} <small>(${x.periode_conseillee || ""})</small>`, `<input type="checkbox" data-escale="${x.numero}" ${VML.escalesJouables().includes(x.numero) ? "checked" : ""}>`)).join("")}
+            <p class="note">Décochez les escales à ne pas jouer (une séance par escale, ou toute la campagne). Le coffre final s'ouvre avec les mots des escales jouées.</p>
           </section>
           <section><h4>⏱️ Temps et aides</h4>
             ${ligne("reg-duree", "Durée de référence d'une escale (bonus de rapidité)", `<input type="number" id="reg-duree" min="10" max="60" value="${r.dureeEscaleMin}"> min`)}
@@ -96,6 +96,10 @@ VML.REGLAGES_DEFAUT = {
     el.querySelector(".fermer-reglages").addEventListener("click", fermer);
     el.onclick = ev => { if(ev.target === el) fermer(); };
     el.querySelectorAll("[data-cle]").forEach(c => c.addEventListener("change", () => VML.changerReglage(c.dataset.cle, c.checked)));
+    el.querySelectorAll("[data-escale]").forEach(c => c.addEventListener("change", () => {
+      const l = [...el.querySelectorAll("[data-escale]")].filter(x => x.checked).map(x => +x.dataset.escale);
+      VML.changerReglage("escales", l.length ? l : null);
+    }));
     el.querySelector("#reg-niveau").addEventListener("change", ev => { VML.changerReglage("niveauImpose", ev.target.value || null); if(ev.target.value && VML.changerGrade) VML.changerGrade(ev.target.value); });
     el.querySelector("#reg-duree").addEventListener("change", ev => VML.changerReglage("dureeEscaleMin", Math.max(10, +ev.target.value || 25)));
     el.querySelector("#reg-delai").addEventListener("change", ev => VML.changerReglage("delaiIndiceMin", +ev.target.value || null));

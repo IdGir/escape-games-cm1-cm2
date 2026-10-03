@@ -2,6 +2,16 @@
   "_commentaire": "Bibliothèque du Nautilus : fiches de leçon courtes, rangées par rayons. Chaque fiche a trois parties : « essentiel » (tous les grades), « approfondi » (Timonier, Lieutenant, Second), « expert » (Lieutenant, Second). Les énigmes y renvoient par leur champ « lecon » ; la fiche ne donne jamais la réponse d'une énigme toute faite, mais tout ce qu'il faut pour la trouver.",
   "rayons": [
     {
+      "id": "histoire",
+      "titre": "Rayon Histoire",
+      "icone": "📜"
+    },
+    {
+      "id": "geographie",
+      "titre": "Rayon Géographie",
+      "icone": "🌍"
+    },
+    {
       "id": "electricite",
       "titre": "Rayon Électricité",
       "icone": "⚡"
@@ -10,9 +20,71 @@
       "id": "navigation",
       "titre": "Rayon Navigation",
       "icone": "🧭"
+    },
+    {
+      "id": "vivant",
+      "titre": "Rayon Vivant",
+      "icone": "🐚"
+    },
+    {
+      "id": "matiere",
+      "titre": "Rayon Matière et lumière",
+      "icone": "💧"
     }
   ],
   "lecons": [
+    {
+      "id": "machine-vapeur",
+      "rayon": "histoire",
+      "fiche": 1,
+      "icone": "🚂",
+      "titre": "La machine à vapeur",
+      "escale": 1,
+      "competence": "L'âge industriel : énergies et machines ; révolution industrielle et progrès technique.",
+      "essentiel": "<p>Au XIXᵉ siècle, la <b>machine à vapeur</b> transforme le travail, les usines et les transports (trains, navires) : c'est la <b>révolution industrielle</b>.</p><p>Comment elle marche : le <b>charbon</b> brûle dans le <b>foyer</b> ; la chaleur fait bouillir l'eau de la <b>chaudière</b> ; la <b>vapeur</b> pousse un <b>piston</b> ; le mouvement fait tourner une roue ou une <b>hélice</b>.</p>",
+      "approfondi": "<h4>Les pièces de la machine</h4><p>Foyer → chaudière (eau et vapeur) → cylindre (la vapeur y pousse le piston, qui fait un va-et-vient) → bielle et arbre (le va-et-vient devient rotation) → hélice ou roues.</p><div class='encadre attention'>Le <b>manomètre</b> mesure la pression de la vapeur : trop de pression, et la chaudière peut exploser.</div>",
+      "expert": "<h4>L'énergie change de forme</h4><p>Le charbon contient une énergie <b>chimique</b> ; en brûlant (combustion), il libère de la <b>chaleur</b> ; la vapeur sous pression produit un <b>mouvement</b>. Plus de charbon brûlé donne plus de chaleur, donc plus de vapeur sous pression, donc un piston poussé plus fort.</p><div class='encadre'><b>D'où vient l'énergie ?</b> Une machine ne crée pas d'énergie : il faut une source (charbon, vent, eau, piles…) et chaque source a ses traces : le charbon brûlé produit fumée et chaleur. La machine à vapeur a été perfectionnée par James Watt au XVIIIᵉ siècle.</div>",
+      "dans_le_roman": "Le commandant Farragut fait pousser les feux de l'Abraham Lincoln pour atteindre l'« animal » (Partie I, ch. VI)."
+    },
+    {
+      "id": "deplacement",
+      "rayon": "navigation",
+      "fiche": 2,
+      "icone": "⏱️",
+      "titre": "Mesurer un déplacement",
+      "escale": 1,
+      "competence": "Mesurer une distance et une durée lors d'un déplacement ; différents types de mouvement.",
+      "essentiel": "<p>Pour décrire un déplacement, on mesure une <b>distance</b> (en kilomètres, en milles…) et une <b>durée</b> (en heures, en minutes).</p><div class='encadre'><b>Calculer une durée</b> : on part de l'heure du début et on compte jusqu'à l'heure de la fin. Exemple : de 21 h 40 à 22 h 40, il y a 1 heure ; de 22 h 40 à 23 h 10, 30 minutes. 1 heure = 60 minutes.</div><h4>Types de mouvement</h4><p><b>Rectiligne</b> : l'objet avance en ligne droite. <b>Circulaire</b> : il tourne autour d'un point. <b>Curviligne</b> : il suit une courbe.</p>",
+      "approfondi": "<h4>La vitesse</h4><p>La <b>vitesse</b>, c'est la distance parcourue en une heure. Si un navire parcourt 30 milles en 2 heures, il parcourt 15 milles en 1 heure.</p><p>En mer, on mesure la vitesse en <b>nœuds</b> : un nœud, c'est une vitesse d'un mille marin par heure. Le mille marin mesure environ 1 852 mètres.</p><p>On mesurait la vitesse avec le <b>loch</b> : une planchette jetée à l'eau, attachée à une corde à nœuds que l'on laissait filer pendant un temps mesuré au sablier.</p>",
+      "expert": "<div class='encadre'><b>Rattraper ou être distancé</b>. Quand deux objets vont dans le même sens, l'écart entre eux change chaque heure de la différence de leurs vitesses. Exemple : à 20 nœuds contre 15, on reprend 5 milles par heure ; pour reprendre 10 milles d'avance, il faut 2 heures. Pour convertir des nœuds en km/h, on multiplie par 1,852.</div>",
+      "dans_le_roman": "Le « monstre » distance l'Abraham Lincoln pendant des semaines (Partie I, ch. VI)."
+    },
+    {
+      "id": "conservation",
+      "rayon": "vivant",
+      "fiche": 1,
+      "icone": "🥫",
+      "titre": "Conserver les aliments",
+      "escale": 1,
+      "competence": "Production et conservation des aliments ; produits agricoles et produits transformés.",
+      "essentiel": "<p>Les aliments se gâtent à cause de <b>microbes</b> qui se multiplient. On les conserve en les empêchant de se développer.</p><table class='tab-lecon'><tr><th>Méthode</th><th>Exemple</th></tr><tr><td>🧂 la salaison (beaucoup de sel)</td><td>morue, viande salée</td></tr><tr><td>🔥 le fumage (à la fumée)</td><td>jambon, hareng</td></tr><tr><td>☀️ le séchage (on enlève l'eau)</td><td>biscuit de mer, fruits secs</td></tr><tr><td>🍯 le sucre</td><td>confiture</td></tr><tr><td>🥫 la conserve (chauffée dans une boîte ou un bocal fermés)</td><td>petits pois, viande en bocal</td></tr><tr><td>🧊 le froid</td><td>glacière, réfrigérateur</td></tr></table>",
+      "approfondi": "<h4>Ce que fait chaque méthode</h4><p>Les microbes ont besoin d'<b>eau</b> et de <b>chaleur</b> pour se multiplier. Le sel retire l'eau dont les microbes ont besoin ; on enlève l'eau en séchant ; beaucoup de sucre retient l'eau, comme le sel ; la chaleur tue les microbes et la boîte fermée empêche d'autres d'entrer ; le froid ralentit les microbes.</p><p>Un produit <b>agricole</b> sort de la ferme tel quel (citron, blé, lait) ; un produit <b>transformé</b> (ou dérivé) a été préparé (confiture, biscuit, jambon fumé).</p>",
+      "expert": "<div class='encadre'><b>Le mal des marins</b>. Sans fruits ni légumes frais, les marins des longues traversées souffraient du scorbut, causé par un manque de vitamine C ; citrons et choucroute en apportent.</div><p>La conserve en récipient fermé et chauffé a été mise au point par Nicolas Appert au début du XIXᵉ siècle. Le congélateur électrique est une invention du XXᵉ siècle.</p>",
+      "dans_le_roman": "L'Abraham Lincoln part pour une campagne de plusieurs mois (Partie I, ch. IV)."
+    },
+    {
+      "id": "vivant-ou-objet",
+      "rayon": "vivant",
+      "fiche": 2,
+      "icone": "🐋",
+      "titre": "Être vivant ou objet ?",
+      "escale": 1,
+      "competence": "Caractéristiques du vivant ; distinguer un être vivant d'un objet technique.",
+      "essentiel": "<p>Un <b>être vivant</b> naît, grandit, se nourrit, respire, se reproduit et meurt. Une baleine, un narval, une mouette sont des êtres vivants.</p><p>Un <b>objet technique</b> est fabriqué par des humains pour répondre à un besoin : une frégate, un harpon, une lanterne. Il ne grandit pas et ne se reproduit pas.</p>",
+      "approfondi": "<table class='tab-lecon'><tr><th>Un être vivant…</th><th>Un objet technique…</th></tr><tr><td>naît et grandit ; se nourrit ; respire ; se reproduit ; meurt</td><td>est fabriqué par des humains ; répond à un besoin humain ; est fait de pièces assemblées (rivets, boulons) ; a besoin d'une source d'énergie fournie (charbon, piles…)</td></tr></table><div class='encadre attention'><b>Un indice n'est pas une preuve</b>. Bouger vite, souffler de l'eau ou briller la nuit ne suffit pas : une baleine souffle de l'eau par son évent, une pompe aussi ; certains animaux produisent de la lumière, une machine peut porter des lampes.</div>",
+      "expert": "<p>Certains êtres vivants produisent leur propre lumière (<b>bioluminescence</b>) : méduses, poissons des profondeurs. Un savant cherche la preuve qui permet de trancher : un objet technique est fait de pièces fabriquées et assemblées par des humains ; aucun être vivant n'est boulonné. Une seule preuve contraire suffit à abandonner une hypothèse.</p>",
+      "dans_le_roman": "Aronnax croit d'abord à un narval géant, puis découvre des plaques de tôle boulonnées (Partie I, ch. II et VII)."
+    },
     {
       "id": "conducteurs-isolants",
       "rayon": "electricite",
@@ -40,6 +112,19 @@
       "dans_le_roman": "Nemo tire son électricité de piles au sodium (Partie I, ch. XII). Les ampoules dessinées dans le jeu sont une simplification : les lampes à incandescence pratiques datent de 1879, dix ans après le roman."
     },
     {
+      "id": "chaine-energie",
+      "rayon": "electricite",
+      "fiche": 3,
+      "icone": "⚙️",
+      "titre": "La chaîne d'énergie",
+      "escale": 2,
+      "competence": "Objets techniques et énergie : source d'énergie ; chaîne d'énergie ; formes d'énergie.",
+      "essentiel": "<p>Un objet a besoin d'<b>énergie</b> pour fonctionner. L'énergie part d'une <b>source</b> (une pile, une batterie, le vent, les muscles…) et arrive à la partie qui <b>agit</b> (la lampe qui éclaire, la roue ou l'hélice qui tourne).</p><p>Exemple d'une lampe de poche : la pile garde l'énergie → on appuie sur l'interrupteur → le courant circule dans les fils → l'ampoule s'allume.</p>",
+      "approfondi": "<h4>Les maillons de la chaîne</h4><ol><li><b>stocker</b> l'énergie (pile, batterie)</li><li><b>commander</b> : laisser passer ou non (interrupteur, manette)</li><li><b>distribuer</b> le courant (fils, câbles)</li><li><b>convertir</b> : changer l'énergie électrique en mouvement, en lumière ou en chaleur (moteur, lampe, radiateur)</li><li><b>transmettre</b> le mouvement (arbre, engrenages, chaîne, courroie)</li><li><b>agir</b> : l'effet utile (la roue tourne, l'hélice pousse l'eau)</li></ol><p class='note-fiche'>Au collège, on dira : alimenter (stocker), distribuer (l'interrupteur commande le passage), convertir, transmettre.</p>",
+      "expert": "<h4>Les formes d'énergie</h4><p>Une pile contient une énergie <b>chimique</b> qu'elle fournit sous forme <b>électrique</b>. Un moteur convertit l'énergie électrique en énergie de <b>mouvement</b> ; une lampe, en énergie <b>lumineuse</b> (et un peu de chaleur). Un objet ne crée pas d'énergie : il la reçoit d'une source et la transforme.</p><div class='encadre'><b>Dans le roman</b> : Nemo tire le sodium de ses piles du sel de l'eau de mer : la mer fournit la matière de sa réserve d'énergie. Mais extraire le sodium demande lui-même de l'énergie (dans le roman, du charbon tiré de mines sous-marines).</div>",
+      "dans_le_roman": "Dans le salon, Nemo montre à Aronnax l'épure du Nautilus et lui explique comment ses piles font tourner l'hélice (Partie I, ch. XIII)."
+    },
+    {
       "id": "instruments",
       "rayon": "navigation",
       "fiche": 1,
@@ -53,17 +138,160 @@
       "dans_le_roman": "Dans sa chambre, Nemo montre à Aronnax les instruments « nécessaires à la navigation » ; le manomètre lui donne la profondeur par la pression de l'eau (Partie I, ch. XII)."
     },
     {
-      "id": "chaine-energie",
-      "rayon": "electricite",
+      "id": "air-matiere",
+      "rayon": "matiere",
+      "fiche": 1,
+      "icone": "💨",
+      "titre": "L'air, c'est de la matière",
+      "escale": 3,
+      "competence": "États et constitution de la matière ; propriétés des solides, liquides et gaz.",
+      "essentiel": "<p>L'air est <b>invisible</b>, mais c'est de la <b>matière</b> : il <b>prend de la place</b> (une seringue bouchée ne s'enfonce pas jusqu'au bout) et il a une <b>masse</b> (un réservoir plein d'air comprimé est plus lourd que vide).</p><p>Deux matières ne peuvent pas occuper la même place : quand l'eau entre dans le sas, elle chasse l'air.</p>",
+      "approfondi": "<h4>Trois états de la matière</h4><table class='tab-lecon'><tr><th>Solide</th><th>Liquide</th><th>Gaz</th></tr><tr><td>il a une forme propre ; on peut le saisir</td><td>il prend la forme du récipient ; sa surface reste horizontale</td><td>il occupe tout l'espace disponible ; il se comprime</td></tr><tr><td>cuivre, plomb, glace</td><td>eau, huile</td><td>air, vapeur d'eau, bulles</td></tr></table>",
+      "expert": "<div class='encadre'><b>Gaz et liquides</b>. Un gaz se comprime : on peut le serrer dans un plus petit volume ; un liquide se comprime très peu. L'air a une masse : à l'air libre, un litre d'air pèse environ 1,2 gramme. Un réservoir de 10 L dans lequel on a fait entrer 50 fois son volume d'air contient l'équivalent de 500 L d'air libre.</div>",
+      "dans_le_roman": "Avant la promenade sous-marine, Aronnax revêt un scaphandre muni d'un réservoir d'air comprimé (Partie I, ch. XVI)."
+    },
+    {
+      "id": "lumiere",
+      "rayon": "matiere",
+      "fiche": 2,
+      "icone": "🔦",
+      "titre": "La lumière sous la mer",
+      "escale": 3,
+      "competence": "La lumière : sources et objets éclairés, propagation rectiligne, ombres, absorption.",
+      "essentiel": "<p>Une <b>source de lumière</b> produit sa propre lumière (le Soleil, une lampe). Un <b>objet éclairé</b> ne fait que renvoyer la lumière qu'il reçoit (un rocher, une gorgone).</p><p>La lumière se propage <b>en ligne droite</b>. Un objet opaque arrête la lumière : son <b>ombre</b> se forme du côté opposé à la source.</p><p>L'eau absorbe peu à peu la lumière du Soleil : plus on descend, plus il fait sombre.</p>",
+      "approfondi": "<div class='encadre'><b>L'eau absorbe les couleurs</b>. La lumière du Soleil contient toutes les couleurs. L'eau absorbe les couleurs les unes après les autres : d'abord le rouge, puis l'orange, le jaune, le vert ; le bleu va le plus loin. C'est pourquoi la mer profonde paraît bleue.</div>",
+      "expert": "<h4>Voir une couleur</h4><p>Un objet ne paraît rouge que si une lumière contenant du rouge l'éclaire ; la lampe proche apporte cette lumière avant que l'eau ne l'absorbe. En profondeur, sans lampe, un objet rouge paraît gris ou noir. Ordres de grandeur : rouge disparu vers 5 m, orange vers 15 m, jaune vers 25 m, vert vers 35 m.</p>",
+      "dans_le_roman": "Dans la forêt de Crespo, la lumière baisse ; les promeneurs allument leurs lampes électriques (Partie I, ch. XVII)."
+    },
+    {
+      "id": "classer-vivant",
+      "rayon": "vivant",
       "fiche": 3,
-      "icone": "⚙️",
-      "titre": "La chaîne d'énergie",
-      "escale": 2,
-      "competence": "Objets techniques et énergie : source d'énergie ; chaîne d'énergie ; formes d'énergie.",
-      "essentiel": "<p>Un objet a besoin d'<b>énergie</b> pour fonctionner. L'énergie part d'une <b>source</b> (une pile, une batterie, le vent, les muscles…) et arrive à la partie qui <b>agit</b> (la lampe qui éclaire, la roue ou l'hélice qui tourne).</p><p>Exemple d'une lampe de poche : la pile garde l'énergie → on appuie sur l'interrupteur → le courant circule dans les fils → l'ampoule s'allume.</p>",
-      "approfondi": "<h4>Les maillons de la chaîne</h4><ol><li><b>stocker</b> l'énergie (pile, batterie)</li><li><b>commander</b> : laisser passer ou non (interrupteur, manette)</li><li><b>distribuer</b> le courant (fils, câbles)</li><li><b>convertir</b> : changer l'énergie électrique en mouvement, en lumière ou en chaleur (moteur, lampe, radiateur)</li><li><b>transmettre</b> le mouvement (arbre, engrenages, chaîne, courroie)</li><li><b>agir</b> : l'effet utile (la roue tourne, l'hélice pousse l'eau)</li></ol><p class='note-fiche'>Au collège, on dira : alimenter (stocker), distribuer (l'interrupteur commande le passage), convertir, transmettre.</p>",
-      "expert": "<h4>Les formes d'énergie</h4><p>Une pile contient une énergie <b>chimique</b> qu'elle fournit sous forme <b>électrique</b>. Un moteur convertit l'énergie électrique en énergie de <b>mouvement</b> ; une lampe, en énergie <b>lumineuse</b> (et un peu de chaleur). Un objet ne crée pas d'énergie : il la reçoit d'une source et la transforme.</p><div class='encadre'><b>Dans le roman</b> : Nemo tire le sodium de ses piles du sel de l'eau de mer : la mer fournit la matière de sa réserve d'énergie. Mais extraire le sodium demande lui-même de l'énergie (dans le roman, du charbon tiré de mines sous-marines).</div>",
-      "dans_le_roman": "Dans le salon, Nemo montre à Aronnax l'épure du Nautilus et lui explique comment ses piles font tourner l'hélice (Partie I, ch. XIII)."
+      "icone": "🐠",
+      "titre": "Classer le vivant",
+      "escale": 3,
+      "competence": "Panorama du vivant ; classer les êtres vivants selon leurs caractères partagés ; biodiversité.",
+      "essentiel": "<p>Pour <b>classer</b> les êtres vivants, on regarde ce qu'ils <b>ont</b> en commun (squelette, nageoires, coquille…), pas ce qu'ils font ni où ils vivent.</p><p>Les <b>vertébrés</b> ont un squelette interne avec une colonne vertébrale (poissons, tortues, dauphins). Les <b>invertébrés</b> n'en ont pas (étoile de mer, crabe, méduse, oursin).</p><p>Un <b>poisson</b> a des nageoires, des écailles le plus souvent, et respire avec des branchies.</p>",
+      "approfondi": "<table class='tab-lecon'><tr><th>Groupe</th><th>Caractère partagé</th></tr><tr><td>poissons</td><td>des nageoires, des branchies, souvent des écailles</td></tr><tr><td>reptiles marins (tortue)</td><td>des poumons et une peau couverte d'écailles ou d'une carapace ; ils pondent sur la terre</td></tr><tr><td>mammifères marins (dauphin)</td><td>des poumons ; les femelles allaitent leurs petits</td></tr><tr><td>crustacés (crabe)</td><td>une carapace et des pattes articulées</td></tr><tr><td>mollusques (bénitier, poulpe)</td><td>un corps mou, souvent protégé par une coquille</td></tr><tr><td>échinodermes (étoile de mer, oursin)</td><td>une peau épineuse et un corps en cinq parties</td></tr></table><p>Le requin a un squelette de cartilage, mais une colonne vertébrale : c'est un vertébré, un poisson.</p>",
+      "expert": "<div class='encadre attention'><b>Attention aux ressemblances</b>. On classe par les caractères partagés : le dauphin respire avec des poumons et allaite ses petits, comme les mammifères ; les poissons respirent avec des branchies. L'hippocampe est un poisson ; le poulpe est un mollusque sans coquille.</div><p><b>Groupes emboîtés</b> : vertébrés > poissons ; invertébrés > mollusques… Le corail est un animal : de petits polypes au corps mou et aux tentacules urticants, comme les méduses (groupe des cnidaires).</p>",
+      "dans_le_roman": "Conseil, « classificateur » passionné, range tout ce qu'il voit pendant la promenade (Partie I, ch. XVI)."
+    },
+    {
+      "id": "instruments-explorateurs",
+      "rayon": "histoire",
+      "fiche": 2,
+      "icone": "🧭",
+      "titre": "Les instruments des explorateurs",
+      "escale": 4,
+      "competence": "Les progrès techniques qui ont permis aux Européens de s'aventurer vers de nouveaux territoires.",
+      "essentiel": "<p>À partir du XVᵉ siècle, des progrès techniques permettent aux Européens de naviguer loin des côtes et de découvrir de nouveaux territoires.</p><table class='tab-lecon'><tr><th>Instrument</th><th>À quoi il sert</th></tr><tr><td>🧭 boussole</td><td>trouver le nord, donc garder sa direction, même sans voir les étoiles</td></tr><tr><td>☀️ astrolabe, puis sextant</td><td>mesurer la hauteur du Soleil pour savoir si l'on est loin de l'équateur (la latitude)</td></tr><tr><td>⏳ loch et sablier</td><td>mesurer la vitesse du navire</td></tr><tr><td>🗺️ cartes et portulans</td><td>noter les côtes découvertes, garder la mémoire des routes</td></tr><tr><td>🔭 longue-vue</td><td>voir loin</td></tr><tr><td>⛵ caravelle</td><td>navire léger qui peut naviguer loin, même contre le vent</td></tr></table>",
+      "approfondi": "<p>Au XVIIIᵉ siècle, le <b>chronomètre de marine</b> permet enfin de trouver sa <b>longitude</b> (sa position est-ouest) en comparant les heures. L'expédition de Lapérouse (1785) emportait les meilleurs instruments de son temps ; ses deux navires s'appelaient <i>La Boussole</i> et <i>L'Astrolabe</i>.</p>",
+      "expert": "<div class='encadre'><b>La longitude et l'heure</b>. La Terre fait un tour (360°) en 24 heures : chaque heure d'écart entre l'heure locale et l'heure du port de départ correspond à 15° de longitude. Le Soleil se lève à l'est : si, quand il est midi à bord, il est plus tard à Paris (le chronomètre l'indique), le navire est à l'ouest de Paris.</div>",
+      "dans_le_roman": "Le Nautilus survole les épaves de La Boussole et de L'Astrolabe à Vanikoro (Partie I, ch. XIX)."
+    },
+    {
+      "id": "laperouse-revolution",
+      "rayon": "histoire",
+      "fiche": 3,
+      "icone": "📜",
+      "titre": "Lapérouse et la Révolution",
+      "escale": 4,
+      "competence": "Le temps de la Révolution : contexte du royaume en 1789 ; fin de la monarchie absolue.",
+      "essentiel": "<p>En 1785, le roi <b>Louis XVI</b> envoie Lapérouse explorer le Pacifique. L'expédition disparaît en <b>1788</b>. En <b>1789</b>, la Révolution commence : prise de la Bastille, Déclaration des droits de l'homme et du citoyen. Les épaves ne sont retrouvées qu'en <b>1828</b>.</p><table class='tab-lecon'><tr><th>Date</th><th>Événement</th></tr><tr><td>1774</td><td>Louis XVI devient roi de France</td></tr><tr><td>1er août 1785</td><td>départ de l'expédition de Lapérouse, de Brest</td></tr><tr><td>1788</td><td>dernières nouvelles depuis l'Australie ; naufrage à Vanikoro</td></tr><tr><td>mai 1789</td><td>réunion des états généraux</td></tr><tr><td>14 juillet 1789</td><td>prise de la Bastille</td></tr><tr><td>4 août 1789</td><td>abolition des privilèges</td></tr><tr><td>26 août 1789</td><td>Déclaration des droits de l'homme et du citoyen</td></tr><tr><td>septembre 1792</td><td>fin de la royauté, proclamation de la République</td></tr><tr><td>21 janvier 1793</td><td>exécution de Louis XVI</td></tr><tr><td>1828</td><td>Dumont d'Urville retrouve le lieu du naufrage</td></tr></table>",
+      "approfondi": "<p>Avant l'expédition, le roi annote de sa main les instructions de Lapérouse. L'expédition, décidée et organisée par un roi absolu, appartient à l'<b>Ancien Régime</b>.</p>",
+      "expert": "<p>L'expédition a disparu juste avant la Révolution : partie d'une monarchie absolue, elle ne pouvait plus rentrer dans le même pays. Selon une tradition, Louis XVI aurait demandé, peu avant sa mort, si l'on avait des nouvelles de Lapérouse.</p>",
+      "dans_le_roman": "Nemo montre à Aronnax les instructions de l'expédition annotées par Louis XVI (Partie I, ch. XIX)."
+    },
+    {
+      "id": "ancien-regime",
+      "rayon": "histoire",
+      "fiche": 4,
+      "icone": "👑",
+      "titre": "L'Ancien Régime et 1789",
+      "escale": 4,
+      "competence": "Société d'Ancien Régime ; fin de la monarchie absolue ; nouveaux principes de 1789.",
+      "essentiel": "<p>Avant 1789, le roi a tous les pouvoirs : c'est la <b>monarchie absolue</b>. La société est divisée en <b>trois ordres</b> : le <b>clergé</b> (ceux qui prient), la <b>noblesse</b> (ceux qui combattent), le <b>tiers état</b> (ceux qui travaillent : paysans, artisans, marchands). En 1789, la Révolution proclame que « les hommes naissent et demeurent libres et égaux en droits ».</p>",
+      "approfondi": "<table class='tab-lecon'><tr><th>Ancien Régime</th><th>Nouveaux principes (1789)</th></tr><tr><td>le roi a tous les pouvoirs ; il tient son pouvoir de Dieu</td><td>le pouvoir (la souveraineté) appartient à la nation</td></tr><tr><td>trois ordres ; le clergé et la noblesse ont des <b>privilèges</b> (avantages réservés)</td><td>les privilèges sont abolis (nuit du 4 août 1789) ; égalité des droits</td></tr><tr><td>seul le tiers état paie la taille</td><td>chacun paie l'impôt selon ses moyens</td></tr><tr><td>on peut être emprisonné sur ordre du roi (lettre de cachet)</td><td>nul ne peut être arrêté que dans les cas prévus par la loi ; liberté d'opinion, même religieuse ; emplois ouverts à tous selon leurs talents</td></tr></table>",
+      "expert": "<p>Un <b>privilège</b>, c'est un avantage réservé à certains, par exemple ne pas payer certains impôts. Le tiers état, l'immense majorité de la population, supporte l'essentiel des impôts. Le 4 août 1789, les députés abolissent les privilèges : la loi devient la même pour tous.</p>",
+      "dans_le_roman": "Le comte de Lapérouse, noble et officier de marine, servait le roi Louis XVI (Partie I, ch. XIX)."
+    },
+    {
+      "id": "inegalites",
+      "rayon": "geographie",
+      "fiche": 1,
+      "icone": "🌍",
+      "titre": "Les inégalités dans le monde",
+      "escale": 5,
+      "competence": "Identifier les manifestations des inégalités de niveau de vie dans le monde ; localiser les grandes aires.",
+      "essentiel": "<p>Dans le monde, tout le monde ne vit pas de la même façon : c'est l'<b>inégalité</b> de niveau de vie. Une vie difficile, c'est par exemple ne pas avoir d'eau potable, ne pas aller à l'école, ne pas être soigné, devoir travailler enfant.</p>",
+      "approfondi": "<h4>Les indicateurs</h4><p>Pour comparer, on utilise des <b>indicateurs</b> : l'<b>espérance de vie</b> (durée moyenne de la vie), la part des enfants scolarisés, l'accès à l'eau potable, le nombre de médecins, le revenu des habitants, la part des enfants qui meurent avant 5 ans. Pour lire un tableau, on compare ligne par ligne, et on ne lui fait pas dire ce qu'il ne dit pas.</p><p>Les pays au niveau de vie le plus faible se trouvent surtout en Afrique subsaharienne et en Asie du Sud ; mais tous les pays d'un continent n'ont pas le même niveau de vie.</p>",
+      "expert": "<div class='encadre attention'><b>Une moyenne peut tromper</b>. Un indicateur seul peut tromper : une moyenne cache les écarts ; on croise plusieurs indicateurs. Dans un même pays, certains vivent dans l'aisance et d'autres dans la pauvreté : ici, le pêcheur risque sa vie quand le marchand de perles s'enrichit.</div>",
+      "dans_le_roman": "Nemo sauve un pêcheur de perles et se dit « de ce pays-là », celui des opprimés (Partie II, ch. III)."
+    },
+    {
+      "id": "colonies",
+      "rayon": "histoire",
+      "fiche": 5,
+      "icone": "⛵",
+      "titre": "Colonies et échanges",
+      "escale": 5,
+      "competence": "Les échanges commerciaux avec les colonies.",
+      "essentiel": "<p>Une <b>colonie</b> est un territoire dominé et gouverné par un pays étranger, la <b>métropole</b>. Au temps du roman, Ceylan (aujourd'hui le Sri Lanka) est une colonie britannique.</p><p>Les colonies envoient vers l'Europe des <b>produits agricoles et bruts</b> (café, cannelle, perles). L'Europe y envoie des <b>produits fabriqués</b> dans ses usines (tissus de coton, outils, machines).</p>",
+      "approfondi": "<h4>L'échange colonial</h4><p>Café des plantations vers Londres ; perles vers les marchands d'Europe ; tissus de coton des usines anglaises vers les marchés de la colonie ; rails et machines des forges anglaises vers les plantations ; soldats et fonctionnaires de Grande-Bretagne vers la colonie, pour la gouverner et la défendre (navires de guerre de la Royal Navy, gouverneur).</p>",
+      "expert": "<p>La métropole achète à bas prix les produits agricoles de la colonie et lui vend ses produits fabriqués : les profits reviennent surtout à la métropole et à ses marchands. Vers 1868, Ceylan exporte surtout du café, de la cannelle et des perles ; le thé ne dominera qu'à la fin du siècle.</p>",
+      "dans_le_roman": "Le Nautilus croise au large de Ceylan et de ses bancs de perles (Partie II, ch. II-III)."
+    },
+    {
+      "id": "masses",
+      "rayon": "matiere",
+      "fiche": 3,
+      "icone": "⚖️",
+      "titre": "Mesurer des masses",
+      "escale": 5,
+      "competence": "Comparer et mesurer des masses ; unités (g, kg) ; balance.",
+      "essentiel": "<p>La <b>masse</b> d'un objet se mesure avec une <b>balance</b>, en grammes (g) ou en kilogrammes (kg). <b>1 kg = 1 000 g</b>.</p><p>Sur une balance à deux plateaux, le plateau le plus lourd descend ; le plus léger monte.</p><p>Pour comparer des masses, on les écrit dans la même unité : 0,5 kg = 500 g ; 1 kg 500 g = 1 500 g.</p>",
+      "approfondi": "<p>On peut additionner des masses : 40 perles de 5 g pèsent 40 × 5 g = 200 g.</p>",
+      "expert": "<div class='encadre'><b>L'équilibre</b>. À l'équilibre, la masse totale d'un plateau est égale à la masse totale de l'autre. La masse d'un ensemble est la somme des masses de ses parties : on retrouve une partie en soustrayant les autres. 1,5 kg = 1 500 g.</div>",
+      "dans_le_roman": "Nemo montre une huître géante qui renferme une perle énorme (Partie II, ch. III)."
+    },
+    {
+      "id": "itineraires",
+      "rayon": "geographie",
+      "fiche": 2,
+      "icone": "🗺️",
+      "titre": "Itinéraires et canaux",
+      "escale": 6,
+      "competence": "Se déplacer : itinéraires, distances, canaux, échanges.",
+      "essentiel": "<p>Un <b>isthme</b> est une bande de terre étroite entre deux mers. L'isthme de Suez, en Égypte, sépare la <b>mer Rouge</b> de la <b>mer Méditerranée</b>. Sans passage, un bateau doit faire le <b>tour de l'Afrique</b> pour aller de l'une à l'autre.</p><p>Un <b>canal</b> est une voie d'eau creusée par les humains. Le <b>canal de Suez</b>, long d'environ 160 km, est inauguré le 17 novembre 1869 (Ferdinand de Lesseps).</p>",
+      "approfondi": "<p>Le canal relie la Méditerranée à la mer Rouge, donc à l'océan Indien : il raccourcit de plusieurs milliers de kilomètres la route d'Europe en Asie (Inde, Chine). Ordres de grandeur : de Suez à Port-Saïd, environ 160 km par l'isthme, environ 20 000 km en contournant l'Afrique ; Londres → Bombay, environ 20 000 km par le cap de Bonne-Espérance, environ 11 600 km par Suez.</p><div class='encadre attention'>Le « tunnel arabique » du Nautilus est une invention de Jules Verne : il n'existe pas.</div>",
+      "expert": "<p>Un trajet plus court fait gagner du temps, du charbon et de l'argent : le canal de Suez rapproche l'Europe de l'Asie. Un vapeur de l'époque parcourt environ 400 km par jour. Le Royaume-Uni, maître de l'Inde, en sera le premier utilisateur.</p>",
+      "dans_le_roman": "Nemo fait passer le Nautilus sous l'isthme de Suez par un tunnel secret (Partie II, ch. V)."
+    },
+    {
+      "id": "eau-douce",
+      "rayon": "geographie",
+      "fiche": 3,
+      "icone": "💧",
+      "titre": "L'eau douce, une ressource convoitée",
+      "escale": 6,
+      "competence": "Les usages de l'eau douce ; les fleuves ; l'eau, ressource convoitée et conflits d'usage.",
+      "essentiel": "<p>L'<b>eau douce</b> (fleuves, lacs, nappes, puits, pluie) se boit ; l'<b>eau salée</b> (mers, océans) ne se boit pas. L'eau douce est rare : moins de 3 litres sur 100 de l'eau de la Terre.</p><p>Usages de l'eau douce : boire, cuisiner, se laver ; irriguer les champs ; abreuver les troupeaux ; naviguer ; produire de l'électricité ; fabriquer (industrie).</p>",
+      "approfondi": "<p>Le <b>Nil</b> est le plus long fleuve d'Afrique. En Égypte, pays de désert, presque toute la population vit le long du fleuve. En 1863, un canal d'eau douce venu du Nil a été creusé pour abreuver les ouvriers du canal de Suez.</p><table class='tab-lecon'><tr><th>Usage</th><th>Exemple au bord du Nil</th></tr><tr><td>domestique</td><td>boire, cuisiner, se laver</td></tr><tr><td>agriculture</td><td>irriguer le coton et le blé</td></tr><tr><td>transport</td><td>les felouques</td></tr><tr><td>énergie</td><td>aujourd'hui, le barrage d'Assouan (1970)</td></tr></table>",
+      "expert": "<div class='encadre'><b>Conflit d'usage</b>. Il y a conflit d'usage quand plusieurs utilisateurs veulent la même eau alors qu'il n'y en a pas assez pour tous, ou quand l'usage des uns gâte l'eau des autres. Amont : vers la source ; aval : vers la mer. Aujourd'hui, l'Éthiopie (en amont) a construit un grand barrage sur le Nil Bleu ; l'Égypte, en aval, reçoit l'eau après les autres et presque toute sa population dépend du fleuve dans un pays de désert : elle s'inquiète. Le Soudan, entre les deux, espère mieux contrôler les crues.</div>",
+      "dans_le_roman": "Le Nautilus longe l'isthme de Suez où l'on creuse le canal (Partie II, ch. IV-V) ; à bord, l'eau douce est obtenue en distillant l'eau de mer."
+    },
+    {
+      "id": "se-deplacer",
+      "rayon": "geographie",
+      "fiche": 4,
+      "icone": "🚂",
+      "titre": "Se déplacer",
+      "escale": 6,
+      "competence": "Se déplacer : quels moyens de transport, pour aller où ?",
+      "essentiel": "<p>On choisit un <b>moyen de transport</b> selon la <b>distance</b> et le <b>milieu</b> : à pied pour quelques centaines de mètres ; en train sur une voie ferrée pour traverser un pays ; en bateau pour traverser la mer.</p>",
+      "approfondi": "<p>En 1868 : canot à rames pour une courte distance sur l'eau ; paquebot à vapeur pour la Méditerranée (Port-Saïd → Marseille, environ 6 jours) ; chemin de fer pour les longues distances sur terre (Marseille → Le Havre, environ 1 jour) ; paquebot transatlantique pour l'océan (Le Havre → Québec, environ 12 jours).</p>",
+      "expert": "<p>On choisit le moyen de transport selon la distance à parcourir, le milieu (mer ou terre) et ce qui existe à l'époque. Les progrès des transports (vapeur, chemin de fer, puis avion) ont raccourci les durées de voyage : le monde paraît plus petit. Aujourd'hui, Port-Saïd → Québec se fait en avion en environ 20 heures.</p>",
+      "dans_le_roman": "Ned Land ne pense qu'à s'évader dès que le Nautilus approche d'une côte (Partie II, ch. VI)."
     }
   ]
 }

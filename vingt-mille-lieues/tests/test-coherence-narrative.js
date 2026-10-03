@@ -17,7 +17,7 @@ let oks = 0, echecs = 0;
 const ok = (c, m) => { if(c) oks++; else { echecs++; console.log("  ✗ " + m); } };
 const CHAMPS = ["id", "escale", "decor", "objets_cliquables", "personnage_emetteur", "probleme_narratif", "enjeu", "episode_du_roman",
   "competence_programme", "pourquoi_ce_savoir_ici", "reaction_du_decor", "niveau_variantes"];
-const EFFETS = ["cable-neuf", "lumiere", "aiguilles", "hublots"];
+const EFFETS = ["cable-neuf", "lumiere", "aiguilles", "hublots", "eclat", "vapeur", "secousse", "ouverture", "carte", "givre", "alarme", "calme"];
 const guide = fs.existsSync(path.join(JEU, "GUIDE-PEDAGOGIQUE.md")) ? fs.readFileSync(path.join(JEU, "GUIDE-PEDAGOGIQUE.md"), "utf8") : "";
 const coherence = fs.existsSync(path.join(JEU, "COHERENCE.md")) ? fs.readFileSync(path.join(JEU, "COHERENCE.md"), "utf8") : "";
 

@@ -24,7 +24,7 @@ var PTS_PREMIER_COUP = 10, PTS_APRES_ERREUR = 3;
 /* Délais d'animation (divisés par 20 quand les tests posent window.VML_RAPIDE) */
 VML.d = ms => (window.VML_RAPIDE ? Math.round(ms / 20) : ms);
 
-VML.BAREME = { premierCoup: 10, apresErreur: 3, indice: 2, bienDocumente: 2, maitreNageur: 5, rapidite: [ { min: 20, pts: 5 }, { min: 25, pts: 3 } ] };
+VML.BAREME = { premierCoup: 10, apresErreur: 3, indice: 2, bienDocumente: 2, maitreNageur: 5, rapidite: [ { min: 20, pts: 5 }, { min: 25, pts: 3 } ], coffre: { premierCoup: 20, apresErreur: 6 } };
 
 /** État d'une énigme (persistant dans la partie). */
 VML.etatEnigme = function(id){
