@@ -36,20 +36,24 @@ bibliothèque de leçons active), **sans casser les 12 autres jeux**.
 2. **Avant toute modification**, lance `node outils-tests/tous.js` et consigne le résultat (base de référence) dans
    `vingt-mille-lieues/BASELINE-TESTS.md`. Après chaque série de commits qui touche `commun/`, relance-le : tout
    écart avec la base est une régression à corriger avant de continuer.
-3. **Périmètre d'écriture** : tu crées `vingt-mille-lieues/` (tout ce qui est propre au jeu) ; tu n'écris **pas** dans
-   les dossiers des 12 autres jeux, sauf ajout explicite et minimal (liens/compteurs d'accueil, catalogue,
-   `sw-fichiers.js`, `outils-tests/tous.js`, `README.md`).
-4. **Moteur commun (`commun/`)** : préfère **ajouter de nouveaux fichiers** (ex. `commun/js/niveaux-5.js`,
-   `commun/js/decor-interactif.js`, `commun/js/zones-cliquables.js`) chargés **uniquement** par le nouveau jeu, plutôt
-   que modifier `enigmes.js`, `media.js`, `palier-decouverte.js`… Si une modification d'un fichier existant est
-   inévitable, elle doit être **rétro-compatible** (comportement identique si l'option n'est pas activée), minimale,
-   commentée, et couverte par un test qui prouve que les 12 jeux se comportent comme avant.
-5. **Contrôle final obligatoire** : `git diff --stat <branche de base>...HEAD` doit montrer uniquement
-   `vingt-mille-lieues/`, `prompts-opus/`, de nouveaux fichiers `commun/` et les modifications listées au point 3 ;
-   joins ce diff commenté au compte rendu final. Toute modification d'un fichier existant de `commun/` est justifiée une
-   par une.
-6. **Données et hors-ligne** : n'ajoute rien au service worker qui change le cache des autres jeux ; incrémente la
-   version du cache de façon sûre et teste le hors-ligne d'un autre jeu.
+3. **RÈGLE D'OR : tu n'AJOUTES que des fichiers, tu ne MODIFIES, SUPPRIMES ni RENOMMES aucun fichier existant.**
+   Zéro exception. Tu écris dans `vingt-mille-lieues/` et, si besoin de code partagé nouveau, dans
+   `commun/js/nouveaux/`, `commun/css/nouveaux/`, `commun/donnees/nouveaux/` (fichiers **nouveaux**, chargés uniquement par
+   le nouveau jeu). Le nouveau jeu doit fonctionner **sans qu'aucun fichier existant soit changé** : copie et adapte
+   dans `vingt-mille-lieues/` ou dans `commun/*/nouveaux/` ce dont tu as besoin (moteur d'énigmes à 5 niveaux, zones
+   cliquables, etc.) plutôt que d'éditer `enigmes.js`, `media.js`, `palier-decouverte.js`, `variantes.js`, etc.
+4. **Intégration à l'accueil, au catalogue, au hors-ligne, aux tests globaux et au README : NE LA FAIS PAS** dans cette
+   PR. Prépare-la dans `vingt-mille-lieues/INTEGRATION.md` (liste précise des lignes à ajouter dans
+   `commun/donnees/catalogue.js`, `index.html`, `annee.html`, `sw-fichiers.js`, `outils-tests/tous.js`, `README.md`,
+   avec les blocs exacts à coller) ; l'enseignant l'appliquera lui-même dans une **seconde PR** après avoir validé le jeu.
+   Le jeu reste jouable par son adresse directe `vingt-mille-lieues/index.html` et a son propre service worker limité à
+   son dossier (portée `vingt-mille-lieues/`), qui ne partage aucun cache avec les autres jeux.
+5. **Contrôle automatique obligatoire** : le script `outils-tests/verifier-isolation.sh` (déjà présent dans le dépôt)
+   compare ta branche à la branche de base et **échoue si un seul fichier existant est modifié/supprimé** ou si un
+   fichier est ajouté hors des dossiers autorisés. Lance-le **avant chaque commit et avant chaque push** ; il doit
+   afficher « ✅ OK ». Joins sa sortie complète au compte rendu final. N'édite pas ce script pour le faire passer.
+6. **Test de non-régression en complément** : `node outils-tests/tous.js` identique à la base de référence, et
+   vérification dans Chromium qu'un autre jeu (ex. `alimentation/`) se charge sans erreur console.
 
 ## 1. Lis d'abord (obligatoire, avant d'écrire une ligne)
 
@@ -556,7 +560,7 @@ distinctifs, ni leurs éléments d'interface.
 
 ## 8. Qualité, tests, intégration
 
-- Ajoute le jeu au **catalogue** (`commun/donnees/catalogue.js` : hors liste ou nouvelle entrée, `dossier`, couleurs,
+- **Intégration (à NE PAS appliquer toi-même, cf. § 0 bis.4 — fournis-la dans `INTEGRATION.md`)** : ajout du jeu au **catalogue** (`commun/donnees/catalogue.js` : hors liste ou nouvelle entrée, `dossier`, couleurs,
   programme), à l'accueil `index.html`, à `annee.html`, `verifier.html`, `editeur.html` (si compatible), `sw.js`/
   `sw-fichiers.js` (hors-ligne), `outils-tests/tous.js` et `README.md` (tableau des jeux, compteurs « douze » → « treize »).
 - **Tests automatiques** : `vingt-mille-lieues/tests/test-jeu.js` sur le modèle des autres jeux (partie complète aux
