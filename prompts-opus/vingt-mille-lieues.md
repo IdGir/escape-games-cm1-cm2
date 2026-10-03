@@ -29,6 +29,28 @@ Le jeu doit :
 13ᵉ jeu **sur ce moteur**, en l'étendant proprement là où il est insuffisant (5 niveaux, campagne en escales,
 bibliothèque de leçons active), **sans casser les 12 autres jeux**.
 
+## 0 bis. Garde-fous : ne casser aucun des 12 jeux existants (priorité absolue)
+
+1. **Travaille uniquement sur la branche de la session** (jamais directement sur la branche principale `escape-games`),
+   ouvre une PR en brouillon, **ne fusionne jamais**.
+2. **Avant toute modification**, lance `node outils-tests/tous.js` et consigne le résultat (base de référence) dans
+   `vingt-mille-lieues/BASELINE-TESTS.md`. Après chaque série de commits qui touche `commun/`, relance-le : tout
+   écart avec la base est une régression à corriger avant de continuer.
+3. **Périmètre d'écriture** : tu crées `vingt-mille-lieues/` (tout ce qui est propre au jeu) ; tu n'écris **pas** dans
+   les dossiers des 12 autres jeux, sauf ajout explicite et minimal (liens/compteurs d'accueil, catalogue,
+   `sw-fichiers.js`, `outils-tests/tous.js`, `README.md`).
+4. **Moteur commun (`commun/`)** : préfère **ajouter de nouveaux fichiers** (ex. `commun/js/niveaux-5.js`,
+   `commun/js/decor-interactif.js`, `commun/js/zones-cliquables.js`) chargés **uniquement** par le nouveau jeu, plutôt
+   que modifier `enigmes.js`, `media.js`, `palier-decouverte.js`… Si une modification d'un fichier existant est
+   inévitable, elle doit être **rétro-compatible** (comportement identique si l'option n'est pas activée), minimale,
+   commentée, et couverte par un test qui prouve que les 12 jeux se comportent comme avant.
+5. **Contrôle final obligatoire** : `git diff --stat <branche de base>...HEAD` doit montrer uniquement
+   `vingt-mille-lieues/`, `prompts-opus/`, de nouveaux fichiers `commun/` et les modifications listées au point 3 ;
+   joins ce diff commenté au compte rendu final. Toute modification d'un fichier existant de `commun/` est justifiée une
+   par une.
+6. **Données et hors-ligne** : n'ajoute rien au service worker qui change le cache des autres jeux ; incrémente la
+   version du cache de façon sûre et teste le hors-ligne d'un autre jeu.
+
 ## 1. Lis d'abord (obligatoire, avant d'écrire une ligne)
 
 - `README.md` (surtout § 2 ter « Règles de jeu communes », § 4 « Organisation du dépôt »), `AMELIORATIONS.md`
