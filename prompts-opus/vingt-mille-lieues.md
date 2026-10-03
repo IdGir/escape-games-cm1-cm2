@@ -325,7 +325,7 @@ Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux sp�
 
 ### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
 
-Huit images servent (sept sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
+Douze images servent (onze sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
 fie-toi aux descriptions) :
 1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
    forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
@@ -365,6 +365,21 @@ fie-toi aux descriptions) :
    Atmosphère chaleureuse, usée, « vécue ». Contraste voulu avec le grand salon (plus luxueux) : **le Nautilus a
    deux ambiances — salons de bois et de laiton, coursives et salles de travail de métal patiné et de cuivre**.
    Ces pièces servent de décors d'énigmes (cartes, instruments, cadrans, journal de bord).
+
+6. **Salle des machines (`references/style-salle-machines-1.png` à `-4.png`)** : 4 images successives d'un **travelling
+   avant** (du sas riveté d'entrée vers le fond) dans une chaufferie/machinerie industrielle de style steampunk
+   réaliste : passerelle en caillebotis métallique, **rambardes et tuyauteries de cuivre**, grosses chaudières rivetées
+   en cuivre/bronze aux foyers incandescents, charbon répandu au sol, manomètres, volants de vannes, escalier en
+   colimaçon, rayons de lumière poussiéreux et vapeur dans la pénombre, dominante brun-cuivre + orange feu + vert-de-gris.
+   Ces 4 plans servent de **modèle d'une transition vidéo** (caméra qui avance) : fabrique la vidéo par génération
+   image→vidéo (mode `keyframe` avec première et dernière image) ou, à défaut, par un travelling Ken Burns entre
+   les 4 plans.
+   **Attention à la cohérence avec Verne et les sciences** : cette machinerie est à **vapeur et à charbon**. Le
+   Nautilus de Verne est **électrique** (piles au sodium) et n'a ni charbon ni cheminée. Utilise donc ce décor pour
+   l'**escale 1 (frégate *Abraham Lincoln*, machine à vapeur, révolution industrielle)** et pour une énigme
+   « énergie : vapeur contre électricité » ; pour la salle des machines du Nautilus, décline la même charte en
+   **version électrique** (accumulateurs, bobines, tableaux de cadrans de laiton, câbles gainés, lumière bleutée,
+   pas de charbon ni de flammes) et mets cette différence dans les énigmes de sciences et dans `A-VERIFIER.md`.
 
 Cohérence : tous les décors partagent la même lumière (ambre chaud + bleu aquatique par les hublots), les mêmes
 motifs (appliques en coquille, hublots ronds rivetés, lampes à abat-jour vert, fauteuils capitonnés verts, tapis
