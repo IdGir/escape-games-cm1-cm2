@@ -323,6 +323,32 @@ Script **facultatif** `outils-medias/generer-medias.py` (Python standard + `requ
 Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux spécificités des modèles Agnes
 (version « Agnes » ajoutée à côté de Midjourney/Flux/etc. dans `PRODUCTION-MEDIAS.md`).
 
+### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
+
+Deux captures servent d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
+fie-toi aux descriptions) :
+1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
+   forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
+   (fioles, livres, gargouille, chaudron), profondeur nette (avant-plan sombre, plan moyen éclairé), cadre
+   d'interface en bois et métal cloué pour les dialogues. Effets animés posés dessus (vapeur, flammes, lueurs).
+2. **Scène « cabinet victorien » de style cinématographique semi-réaliste** (salon boisé, haute fenêtre sur un
+   monument éclairé par un jour pluvieux gris-bleu, cheminée avec vrai feu, globe terrestre en laiton, fauteuil
+   Chesterfield en cuir, rideaux de velours à motifs, chapeau haut-de-forme, personnage en costume d'époque tenant
+   une montre à gousset) : rendu **photoréaliste de cinéma**, lumière chaude du feu contre lumière froide de la fenêtre,
+   matériaux crédibles (bois ciré, cuir, laiton, marbre), personnage expressif bien intégré. **C'est le niveau
+   visé pour les scènes avec personnages** (Nemo, Aronnax, Conseil, Ned Land).
+
+Traduction pour Verne (à inscrire telle quelle dans la charte de `PRODUCTION-MEDIAS.md`) : mêmes principes
+(contraste chaud/froid, matières nobles, détails narratifs, personnage « jouant » une action précise) transposés au
+**Nautilus** : grand salon boisé avec bibliothèque et orgue, hublot géant ouvrant sur l'eau bleu-vert éclairée par
+les projecteurs, laiton, cuir, cuivre, instruments de navigation, lumière électrique ambrée. Garde **une direction
+photoréaliste cinéma pour les scènes à personnages** et **une direction peinture numérique pour les décors
+sans personnage**, mais avec la même palette et la même lumière pour que l'ensemble soit homogène.
+Pour les vidéos, privilégie les mouvements discrets de ces références : léger travelling, flammes/eau qui bougent,
+personnage qui effectue un geste simple (regarde une montre, tourne un globe), jamais de scène d'action rapide.
+Rappel : ces captures sont des **références d'ambiance** ; ne reproduis ni leurs personnages, ni leurs objets
+distinctifs, ni leurs éléments d'interface.
+
 ## 8. Qualité, tests, intégration
 
 - Ajoute le jeu au **catalogue** (`commun/donnees/catalogue.js` : hors liste ou nouvelle entrée, `dossier`, couleurs,
