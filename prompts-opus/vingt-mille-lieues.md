@@ -325,7 +325,7 @@ Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux sp�
 
 ### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
 
-Deux captures servent d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
+Trois images servent d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
 fie-toi aux descriptions) :
 1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
    forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
@@ -337,6 +337,18 @@ fie-toi aux descriptions) :
    une montre à gousset) : rendu **photoréaliste de cinéma**, lumière chaude du feu contre lumière froide de la fenêtre,
    matériaux crédibles (bois ciré, cuir, laiton, marbre), personnage expressif bien intégré. **C'est le niveau
    visé pour les scènes avec personnages** (Nemo, Aronnax, Conseil, Ned Land).
+
+3. **Grand salon du Nautilus (référence directe, `references/style-salon-nautilus.png`)** : vaste salon-musée en
+   enfilade, boiseries sombres cirées, parquet en point de Hongrie avec tapis à médaillon, lustre à pendeloques,
+   appliques en coquillage lumineuses, double étage de bibliothèques à galerie, **grand orgue au fond**, deux
+   hublots ronds géants sur l'océan bleu turquoise (lumière froide qui se reflète en caustiques sur le sol), vitrines
+   de coraux, coquillages et étoiles de mer au premier plan. Perspective centrale symétrique, profondeur forte,
+   éclairage doré chaud des lampes contre le bleu des hublots. **C'est le décor-pivot du jeu** (hub entre les
+   escales et salle de l'orgue/coffre final) : décline-le en variantes (de nuit, alarme rouge, pression, panne
+   d'électricité, victoire) à partir de cette image de référence, et réutilise ses matériaux dans tous les autres
+   décors intérieurs (salle des machines, bibliothèque, cabine, sas). Effets animés prévus : caustiques qui
+   ondulent sur le parquet, poissons/bancs derrière les hublots, scintillement du lustre, bulles, poussière en
+   suspension dans les rayons.
 
 Traduction pour Verne (à inscrire telle quelle dans la charte de `PRODUCTION-MEDIAS.md`) : mêmes principes
 (contraste chaud/froid, matières nobles, détails narratifs, personnage « jouant » une action précise) transposés au

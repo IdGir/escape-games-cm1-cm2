@@ -4,3 +4,4 @@
   (rendu cinéma photoréaliste, lumière chaude/froide, matières nobles). Voir `prompts-opus/vingt-mille-lieues.md` § 7.8.
   À utiliser comme **image de référence de style** (par exemple dans le paramètre `image` de l'API d'images Agnes),
   sans reproduire son personnage ni ses objets.
+- `style-salon-nautilus.png` : référence de l'enseignant pour le **grand salon du Nautilus** (voir § 7.8, point 3).
