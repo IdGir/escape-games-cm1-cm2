@@ -325,7 +325,7 @@ Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux sp�
 
 ### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
 
-Dix-sept images servent (seize sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
+Dix-neuf images servent (dix-huit sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
 fie-toi aux descriptions) :
 1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
    forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
@@ -398,6 +398,23 @@ fie-toi aux descriptions) :
    écume, reflets, petits nuages ; travelling avant possible (plans 1 → 3). Sert pour l'escale 1 (la
    rencontre avec le « monstre »), le **début et la fin du jeu** et les moments « lever de la tête hors de l'eau ».
    Aucune cheminée ni voile : le Nautilus est électrique.
+
+9. **Le capitaine Nemo (référence officielle du personnage : `references/personnage-nemo-1.png`, `-2.png`)** : homme
+   d'une cinquantaine d'années, cheveux gris plaqués en arrière, **barbe poivre et sel taillée**, regard grave, intense et
+   mélancolique ; **long manteau/redingote bleu marine à double rang de boutons dorés**, gilet et col blancs sobres,
+   chaîne de montre ; posture droite, mains dans le dos ou main posée sur le cadre du hublot, face à l'océan.
+   Cadrage : plan américain/mi-cuisse, hublot rond de laiton à sa gauche avec méduses et poissons phosphorescents,
+   bibliothèque, lampe à abat-jour vert, carte déroulée et compas sur la table (donc dans sa cabine). Lumière
+   latérale bleue froide + ambre chaud, rendu photoréaliste cinéma. **Ce visage et ce costume sont la fiche
+   d'identité de Nemo** : recopie sa description à l'identique dans tous les prompts, et passe ces deux images en
+   `image` de référence à chaque génération (API images Agnes, mode image→image / multi-images) pour garder la
+   même personne dans toutes les scènes. Ton du personnage : énigmatique, cultivé, jamais caricatural ni méchant
+   (cf. § 3 : Nemo « vu à travers ses notes »).
+   **À produire ensuite, avec la même méthode** (référence = ces portraits + la charte) : Aronnax (savant, 40 ans,
+   redingote brune, carnets, regard curieux), Conseil (domestique-classificateur, flegmatique, tenue soignée de
+   serviteur, lunettes), Ned Land (harponneur canadien, large, chemise de marin, bonnet, harpon). Génère leurs
+   portraits de référence **avant** tout décor avec personnages, fais-les valider par l'enseignant, puis déposes-les
+   dans `references/` sous le nom `personnage-<nom>-1.png`.
 
 Cohérence : tous les décors partagent la même lumière (ambre chaud + bleu aquatique par les hublots), les mêmes
 motifs (appliques en coquille, hublots ronds rivetés, lampes à abat-jour vert, fauteuils capitonnés verts, tapis

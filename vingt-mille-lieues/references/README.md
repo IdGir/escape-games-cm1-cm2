@@ -10,3 +10,4 @@
 - `style-salle-machines-1.png` à `-4.png` : séquence de **travelling avant** dans une salle des machines à vapeur (§ 7.8, point 6).
 - `style-atlantide-1.png`, `-2.png` : scaphandriers devant un temple grec englouti (§ 7.8, point 7).
 - `style-pont-1.png` à `-3.png` : pont du Nautilus en surface (§ 7.8, point 8).
+- `personnage-nemo-1.png`, `-2.png` : **portrait de référence du capitaine Nemo** (§ 7.8, point 9). À passer en `image` de référence à chaque génération où Nemo apparaît.
