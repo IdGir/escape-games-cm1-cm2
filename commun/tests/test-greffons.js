@@ -10,7 +10,7 @@ const path = require("path");
 const { charger, compteur, dodo, attendreQue, RACINE } = require("../../outils-tests/charge");
 const T = compteur("Greffons du tronc commun"); const ok = T.ok;
 const J = j => path.join(RACINE, j);
-const JEUX8 = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation"];
+const JEUX8 = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere"];
 const SECTIONS = {};
 
 /* ---- B6 : transitions entre salles ---- */

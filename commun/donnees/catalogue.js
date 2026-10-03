@@ -207,14 +207,14 @@ var CATALOGUE = {
    "periodes": [
     "P2"
    ],
-   "competences": "La lumière (matière, mouvement, énergie et information).",
-   "dossier": null,
+   "competences": "La lumière : sources, matériaux, ombres, ombre d'un bâton, phases de la Lune.",
+   "dossier": "lumiere",
    "icone": "💡",
    "couleurs": [
-    "#2b5d6b",
-    "#7fb3c8"
+    "#1d3557",
+    "#f2c230"
    ],
-   "resume": "",
+   "resume": "Sur l'île Lumière, le phare ne s'allume plus et un voilier approche des rochers : les apprentis gardiens retrouvent les cinq mots du code, de la source de lumière aux phases de la Lune.",
    "prompt": "09-lumiere.md",
    "programme": [
     "st2026"

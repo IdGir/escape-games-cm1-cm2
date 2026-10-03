@@ -6,7 +6,7 @@
  Sert les jeux (declaration/, tour-du-monde/, mission-geo/,
  constitution/, station-meteo/, melanges/, moyen-age-abbaye/,
  objets-techniques/, chateau-fort/, versailles/, renaissance/,
- alimentation/),
+ alimentation/, lumiere/),
  la page d'accueil et verifier.html, depuis la racine du projet.
 ============================================================
  Serveur HTTP stdlib + mini-API REST pour le pilotage prof.
@@ -243,7 +243,7 @@ class Handler(BaseHTTPRequestHandler):
             jeu = data.get("jeu", "")
             if self.client_address[0] not in ("127.0.0.1", "::1"):
                 self.json_reponse({"ok": False, "erreur": "enregistrement réservé à l'ordinateur qui a lancé le serveur"})
-            elif jeu not in ("melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation"):
+            elif jeu not in ("melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere"):
                 self.json_reponse({"ok": False, "erreur": "jeu inconnu"})
             else:
                 try:
@@ -291,7 +291,7 @@ class Handler(BaseHTTPRequestHandler):
             # Inventaire des médias déposés, lu par verifier.html :
             # { "declaration/assets/videos/salle4.mp4": taille, ... }
             fichiers = {}
-            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo", "melanges", "moyen-age-abbaye", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation"):
+            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo", "melanges", "moyen-age-abbaye", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere"):
                 for racine, _, noms in os.walk(os.path.join(jeu, "assets")):
                     for nom in noms:
                         chemin = os.path.join(racine, nom)
@@ -388,6 +388,7 @@ def main():
     print("     Versailles (hist.)    →  http://{}:{}/versailles/".format(ip, PORT))
     print("     Renaissance (hist.)   →  http://{}:{}/renaissance/".format(ip, PORT))
     print("     Alimentation (sc.)    →  http://{}:{}/alimentation/".format(ip, PORT))
+    print("     Lumière (sciences)    →  http://{}:{}/lumiere/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
@@ -401,6 +402,7 @@ def main():
     print("     http://127.0.0.1:{}/versailles/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/renaissance/prof.html".format(PORT))
     print("     http://127.0.0.1:{}/alimentation/prof.html".format(PORT))
+    print("     http://127.0.0.1:{}/lumiere/prof.html".format(PORT))
     print()
     print("  🔍 VÉRIFICATION (médias, accès direct aux énigmes) :")
     print("     http://127.0.0.1:{}/verifier.html".format(PORT))

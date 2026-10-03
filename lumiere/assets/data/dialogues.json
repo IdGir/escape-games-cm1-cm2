@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "jeu": "Le Phare de l'île Lumière",
+    "sujet": "La lumière : sources et objets éclairés, trajet de la lumière, matériaux transparents, translucides et opaques, ombre propre et ombre portée, ombre d'un bâton au cours de la journée, phases de la Lune, signaux lumineux — sciences, cycle 3",
+    "niveaux": [
+      "CM1",
+      "CM2"
+    ],
+    "lien_autres_jeux": "Prolonge « La Station météo disparue » (n°03 : mesures dans la cour). Prépare le jeu n°14 « La Centrale en panne » (l'électricité : la lampe) et le jeu n°23 (la Terre, planète active).",
+    "sources": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026) ; La main à la pâte ; Vikidia ; ministère de la Transition écologique (phares)."
+  },
+  "personnages": {
+    "maelle": {
+      "nom": "Maëlle",
+      "role": "Gardienne du phare de l'île Lumière"
+    },
+    "salome": {
+      "nom": "Salomé",
+      "role": "Ingénieure en signalisation maritime"
+    },
+    "nils": {
+      "nom": "Nils",
+      "role": "Neveu de Maëlle, 9 ans, passionné d'ombres"
+    },
+    "achille": {
+      "nom": "Achille",
+      "role": "Horloger du port, constructeur de cadrans solaires"
+    },
+    "yasmine": {
+      "nom": "Capitaine Yasmine",
+      "role": "Capitaine du voilier La Mouette"
+    }
+  },
+  "intro_accueil": "Bonsoir, et bienvenue sur l'île Lumière ! Je suis Maëlle, la gardienne du phare. La nuit tombe, et mon phare ne s'allume plus : son tableau de commande est verrouillé par un code de cinq mots. Au large, La Mouette, le voilier de la capitaine Yasmine, approche des rochers. Chaque mot du code est caché dans une pièce du phare, et chacun parle de la lumière. Vous êtes mes apprentis gardiens : retrouvez les cinq mots, notez-les bien, et nous rallumerons le phare ensemble.",
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La lanterne du phare",
+      "decor": "lanterne",
+      "motCle": "SOURCE",
+      "lieu": "La lanterne, tout en haut du phare",
+      "description": "Une petite pièce ronde entourée de vitres. Au centre, la grosse lampe du phare, éteinte, entourée de sa lentille en verre. Dehors, la mer devient sombre et un voilier approche.",
+      "sens": [
+        "À voir : la grosse lampe éteinte et la mer au loin",
+        "À entendre : le vent qui siffle contre les vitres",
+        "À sentir : l'odeur du sel et du métal"
+      ],
+      "dialogue_intro": {
+        "perso": "maelle",
+        "nom": "Maëlle",
+        "texte": "Voici la lanterne, le cœur du phare. Ma lampe est éteinte, et sans elle les marins ne voient pas les rochers. Pour trouver le premier mot du code, il faut d'abord savoir d'où vient la lumière et comment elle voyage jusqu'à nos yeux."
+      },
+      "dialogue_reussite": {
+        "perso": "maelle",
+        "nom": "Maëlle",
+        "texte": "Bravo ! Le premier mot est <b>SOURCE</b> : une source produit sa lumière, qui voyage en ligne droite. Descendez à l'atelier des vitres : Salomé, l'ingénieure, vous y attend."
+      }
+    },
+    {
+      "num": 2,
+      "titre": "L'atelier des vitres",
+      "decor": "atelier",
+      "motCle": "OPAQUE",
+      "lieu": "L'atelier, au pied de l'escalier du phare",
+      "description": "Un établi couvert de plaques de verre, de papier calque, de planches et de feuilles d'aluminium. Une lampe de bureau éclaire un banc d'essai.",
+      "sens": [
+        "À voir : les plaques de verre alignées sur l'établi",
+        "À entendre : le cliquetis des outils",
+        "À sentir : l'odeur du bois fraîchement coupé"
+      ],
+      "dialogue_intro": {
+        "perso": "salome",
+        "nom": "Salomé",
+        "texte": "Bonsoir ! Je suis Salomé, ingénieure en signalisation maritime. Je teste les vitres de la lanterne : la lumière du phare doit passer à travers sans être arrêtée. Aidez-moi à classer mes matériaux, et le deuxième mot sera à vous."
+      },
+      "dialogue_reussite": {
+        "perso": "salome",
+        "nom": "Salomé",
+        "texte": "Parfait ! Le deuxième mot est <b>OPAQUE</b> : un objet opaque arrête la lumière, et c'est derrière lui que naît l'ombre. Montez voir Nils : il passe ses soirées à jouer avec les ombres."
+      }
+    },
+    {
+      "num": 3,
+      "titre": "La chambre aux ombres",
+      "decor": "chambre",
+      "motCle": "OMBRE",
+      "lieu": "La chambre du gardien, au deuxième étage",
+      "description": "Un lit sous la fenêtre ronde, un drap tendu en guise d'écran, une lampe de poche et des figurines découpées dans du carton : un bateau, une mouette, un phare.",
+      "sens": [
+        "À voir : les silhouettes noires sur le drap blanc",
+        "À entendre : le craquement du plancher",
+        "À sentir : la laine de la couverture"
+      ],
+      "dialogue_intro": {
+        "perso": "nils",
+        "nom": "Nils",
+        "texte": "Salut ! Moi, c'est Nils, le neveu de Maëlle. Regardez mon théâtre d'ombres : quand j'approche la lampe, le bateau devient géant ! Ma tante a caché le troisième mot dans mon cahier d'expériences. Il faut comprendre comment naît une ombre."
+      },
+      "dialogue_reussite": {
+        "perso": "nils",
+        "nom": "Nils",
+        "texte": "Génial ! Le troisième mot est <b>OMBRE</b>. Dans la cour, Achille, l'horloger, a planté un bâton : il dit que son ombre lui donne l'heure. Allez voir ça !"
+      }
+    },
+    {
+      "num": 4,
+      "titre": "La cour du cadran solaire",
+      "decor": "cour",
+      "motCle": "SOLEIL",
+      "lieu": "La cour du phare, autour du cadran solaire",
+      "description": "Une cour pavée entourée d'un muret. Au centre, un bâton planté dans le sol ; autour, des traits peints et des heures. Sur un banc, l'appareil photo et le carnet d'Achille.",
+      "sens": [
+        "À voir : les traits du cadran peints sur les pavés",
+        "À entendre : les mouettes qui rentrent au nid",
+        "À sentir : les pavés encore tièdes du soleil de la journée"
+      ],
+      "dialogue_intro": {
+        "perso": "achille",
+        "nom": "Achille",
+        "texte": "Bonsoir, jeunes gens. Je suis Achille, horloger du port. Toute la journée, j'ai photographié l'ombre de ce bâton. Elle n'est jamais au même endroit ni de la même longueur. Rangez mes photos et lisez mon carnet : le quatrième mot est caché dedans. Et retenez bien ceci : on ne regarde jamais le Soleil en face."
+      },
+      "dialogue_reussite": {
+        "perso": "achille",
+        "nom": "Achille",
+        "texte": "Excellent ! Le quatrième mot est <b>SOLEIL</b> : l'ombre tourne avec lui, toujours à l'opposé. Vite, montez à la galerie du phare : la capitaine Yasmine appelle à la radio."
+      }
+    },
+    {
+      "num": 5,
+      "titre": "La galerie du phare",
+      "decor": "galerie",
+      "motCle": "LUNE",
+      "lieu": "La galerie extérieure, autour de la lanterne, face à la mer",
+      "description": "Un balcon étroit avec une rambarde, tout en haut du phare. Le vent souffle fort. Entre deux nuages, un disque pâle éclaire la mer ; au loin, une petite lumière clignote : c'est La Mouette.",
+      "sens": [
+        "À voir : la lumière du bateau qui clignote au loin",
+        "À entendre : la radio qui grésille",
+        "À sentir : le vent froid et les embruns"
+      ],
+      "dialogue_intro": {
+        "perso": "yasmine",
+        "nom": "Capitaine Yasmine",
+        "texte": "Ici la capitaine Yasmine, à bord de La Mouette ! Je vois la côte, mais pas votre phare. Je dessine la Lune chaque soir dans mon carnet de bord : aidez-moi à remettre mes pages en ordre, puis lisez le message de ma lampe à signaux. Le dernier mot est dans le ciel."
+      },
+      "dialogue_fin": {
+        "perso": "maelle",
+        "nom": "Maëlle",
+        "texte": "Le dernier mot est <b>LUNE</b> : elle ne brille que parce que le Soleil l'éclaire. Vous avez les cinq mots ! Tapez-les sur le tableau de commande, dans l'ordre des salles, et mon phare se rallumera."
+      }
+    }
+  ]
+}

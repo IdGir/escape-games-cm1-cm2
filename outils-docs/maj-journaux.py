@@ -14,7 +14,7 @@ Repère technique en fin de fichier : <!-- dernier-commit: … -->.
 import os, re, subprocess, sys, datetime
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JEUX = ["declaration", "tour-du-monde", "mission-geo", "constitution", "moyen-age-abbaye",
-        "chateau-fort", "station-meteo", "melanges", "objets-techniques", "versailles", "renaissance", "alimentation"]
+        "chateau-fort", "station-meteo", "melanges", "objets-techniques", "versailles", "renaissance", "alimentation", "lumiere"]
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 REPERE = re.compile(r"<!-- dernier-commit: ([0-9a-f]+) -->")
 

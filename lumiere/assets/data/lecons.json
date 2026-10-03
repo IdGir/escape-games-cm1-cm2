@@ -1,0 +1,235 @@
+{
+  "lecons": [
+    {
+      "id": "sources",
+      "salle": 1,
+      "icone": "I",
+      "titre": "D'où vient la lumière ? Comment voyage-t-elle ?",
+      "duree": "3 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Distinguer une source de lumière et un objet éclairé",
+        "Comprendre que l'on voit un objet quand sa lumière entre dans l'œil",
+        "Savoir que la lumière se propage en ligne droite",
+        "Reconnaître un signal lumineux"
+      ],
+      "contenu": {
+        "cm1": "<h4>Les sources de lumière</h4><p>Une <b>source de lumière</b> produit sa propre lumière : le Soleil, une flamme, une lampe allumée, un écran allumé. Un <b>objet éclairé</b> ne fait que renvoyer la lumière qu'il reçoit : la Lune, un livre, une voile, un miroir. Dans le noir complet, on ne les voit pas.</p><h4>Voir un objet</h4><p>Pour voir un objet, il faut que de la lumière parte de cet objet et <b>entre dans notre œil</b>. L'œil ne lance pas de rayons : il reçoit la lumière. La lumière voyage <b>en ligne droite</b>. On la dessine avec un trait droit et une flèche : c'est un <b>rayon</b>.</p><h4>La lumière transmet des messages</h4><p>Un phare, un feu tricolore, une lampe qui clignote en Morse envoient des <b>signaux lumineux</b>.</p><div class='encadre'><b>Sécurité.</b> Ne jamais regarder le Soleil directement, même avec des lunettes de soleil : cela peut abîmer les yeux pour toujours. Ne jamais diriger un pointeur laser vers les yeux de quelqu'un.</div>",
+        "cm2": "<h4>Sources et objets éclairés</h4><p>Une <b>source de lumière</b> produit sa propre lumière : le Soleil et les autres étoiles, une flamme, une lampe ou un écran allumés. Tous les autres objets sont des <b>objets éclairés</b> : ils renvoient une partie de la lumière qu'ils reçoivent. La Lune brille la nuit, mais elle ne fait que renvoyer la lumière du Soleil. Une lampe éteinte, elle, n'est plus une source.</p><h4>Comment voit-on ?</h4><p>On voit un objet quand la lumière qu'il produit ou qu'il renvoie <b>entre dans notre œil</b>. Pour voir la voile d'un bateau la nuit, la lumière fait donc deux trajets : de la lampe du phare à la voile, puis de la voile à l'œil. L'œil reçoit la lumière, il n'en envoie pas.</p><h4>La lumière va en ligne droite</h4><p>Dans l'air, la lumière se propage <b>en ligne droite</b>, très vite : environ 300 000 km par seconde. On le voit quand le faisceau d'un phare traverse la brume. Sur un schéma, on dessine un <b>rayon de lumière</b> par un trait droit muni d'une flèche dans le sens du trajet.</p><h4>Un signal lumineux</h4><p>La lumière transporte aussi des informations. Chaque phare a son propre rythme d'éclats : la nuit, les marins le reconnaissent. Avec le code Morse, une lampe envoie des éclats courts et longs qui forment des lettres.</p><div class='encadre'><b>Sécurité.</b> Ne jamais regarder le Soleil directement, même avec des lunettes de soleil : cela peut abîmer les yeux pour toujours. Ne jamais diriger un pointeur laser vers les yeux de quelqu'un.</div>"
+      },
+      "lexique": [
+        {
+          "mot": "source de lumière",
+          "def": "objet qui produit sa propre lumière"
+        },
+        {
+          "mot": "objet éclairé",
+          "def": "objet qui renvoie la lumière qu'il reçoit"
+        },
+        {
+          "mot": "rayon de lumière",
+          "def": "trait droit avec une flèche qui représente le trajet de la lumière"
+        },
+        {
+          "mot": "signal lumineux",
+          "def": "lumière qui transmet une information (phare, feu, Morse)"
+        }
+      ],
+      "schema": {
+        "titre": "Le trajet de la lumière : de la source à l'objet, de l'objet à l'œil",
+        "svg": "<svg viewBox=\"0 0 380 200\" role=\"img\" aria-label=\"La lumière part de la lampe du phare, éclaire la voile, puis la voile renvoie de la lumière qui entre dans l'œil. Les trajets sont des lignes droites.\" style=\"display:block;max-width:520px;width:100%;margin:8px auto\"><rect width=\"380\" height=\"200\" fill=\"#1d2b44\"/><rect x=\"0\" y=\"150\" width=\"380\" height=\"50\" fill=\"#24476b\"/><polygon points=\"30,150 58,150 53,70 35,70\" fill=\"#f4f1ea\" stroke=\"#333\"/><rect x=\"34\" y=\"52\" width=\"20\" height=\"18\" fill=\"#d9e8f5\" stroke=\"#333\"/><circle cx=\"44\" cy=\"61\" r=\"6\" fill=\"#ffd23f\"/><path d=\"M260 150 L330 150 L320 165 L270 165 Z\" fill=\"#7a4b2a\"/><line x1=\"295\" y1=\"150\" x2=\"295\" y2=\"80\" stroke=\"#333\" stroke-width=\"2\"/><polygon points=\"297,84 297,146 335,146\" fill=\"#fdfdf8\"/><circle cx=\"150\" cy=\"160\" r=\"14\" fill=\"#e8b98f\" stroke=\"#333\"/><circle cx=\"158\" cy=\"158\" r=\"2\" fill=\"#222\"/><line x1=\"52.0\" y1=\"62.0\" x2=\"300.0\" y2=\"112.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"300.0,112.0 289.3,114.6 291.1,105.5\" fill=\"#e6a100\"/><line x1=\"300.0\" y1=\"120.0\" x2=\"166.0\" y2=\"156.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"166.0,156.0 174.4,148.9 176.8,157.9\" fill=\"#e6a100\"/><g font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#fff\"><text x=\"10\" y=\"40\">source : la lampe</text><text x=\"245\" y=\"192\">objet éclairé : la voile</text><text x=\"70\" y=\"192\">l'œil reçoit la lumière</text><text x=\"120\" y=\"30\">la lumière va en ligne droite</text></g></svg>"
+      },
+      "document": {
+        "type": "text",
+        "titre": "Le code Morse",
+        "contenu": "Dans le code Morse, chaque lettre est une suite d'éclats courts (•) et longs (—). Exemples : E = •, I = ••, L = •—••, N = —•, U = ••—, S = •••, O = ———. Le signal de détresse SOS s'écrit ••• ——— •••. Les bateaux peuvent l'envoyer avec une lampe à signaux.",
+        "source": "D'après Vikidia, « Alphabet morse »."
+      },
+      "sources": "Programme de sciences et technologie, cycle 3, arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026 (thème « La matière, les mouvements et les signaux », sous-thème « Lumière ») ; La main à la pâte, « La lumière, cycle 3 » (Nogent-sur-Oise) et « Parcours 8 : Ombres et lumière » ; Vikidia, « Vitesse de la lumière », « Phare », « Alphabet morse »."
+    },
+    {
+      "id": "matieres",
+      "salle": 2,
+      "icone": "II",
+      "titre": "Transparent, translucide, opaque",
+      "duree": "3 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Observer et classer des matériaux : transparents, translucides, opaques",
+        "Justifier un classement par une expérience",
+        "Savoir qu'un miroir renvoie la lumière"
+      ],
+      "contenu": {
+        "cm1": "<h4>Trois sortes de matériaux</h4><p>On place un matériau entre une lampe et ses yeux, et on regarde.</p><ul><li><b>Transparent</b> : la lumière passe, et on voit nettement à travers (une vitre, l'eau claire, le film alimentaire).</li><li><b>Translucide</b> : la lumière passe, mais on ne voit pas nettement à travers (le papier calque, le verre dépoli).</li><li><b>Opaque</b> : la lumière ne passe pas (le bois, le carton, la feuille d'aluminium). Derrière un objet opaque, il y a de l'<b>ombre</b>.</li></ul><h4>Le miroir</h4><p>Un miroir est opaque : la lumière ne le traverse pas. Mais il la <b>renvoie</b> dans une direction précise.</p>",
+        "cm2": "<h4>Classer des matériaux</h4><p>Pour classer un matériau, on fait une expérience : on le place entre une lampe et ses yeux, puis on se pose deux questions. La lumière passe-t-elle ? Voit-on nettement à travers ?</p><ul><li>Un matériau <b>transparent</b> laisse passer la lumière, et on voit nettement les objets à travers : une vitre, l'eau claire, le film alimentaire.</li><li>Un matériau <b>translucide</b> laisse passer la lumière, mais elle est dispersée : on ne voit pas nettement à travers. C'est le cas du papier calque, du papier sulfurisé ou du verre dépoli des salles de bains, qui laisse entrer le jour sans qu'on voie à l'intérieur.</li><li>Un matériau <b>opaque</b> ne laisse pas passer la lumière : le bois, le carton, le métal. C'est derrière un objet opaque que se forme une <b>ombre</b>.</li></ul><h4>Opaque ne veut pas dire sombre</h4><p>La feuille d'aluminium brille, et pourtant elle est opaque. Un <b>miroir</b> aussi est opaque : il ne laisse pas passer la lumière, il la <b>renvoie</b> dans une direction précise. Placé derrière une lampe, il renvoie vers l'avant la lumière qui partait vers l'arrière.</p><h4>Le verre du phare</h4><p>Les vitres de la lanterne d'un phare doivent être transparentes : la lumière doit sortir vers la mer sans être arrêtée.</p>"
+      },
+      "lexique": [
+        {
+          "mot": "transparent",
+          "def": "qui laisse passer la lumière ; on voit nettement à travers"
+        },
+        {
+          "mot": "translucide",
+          "def": "qui laisse passer la lumière, mais on ne voit pas nettement à travers"
+        },
+        {
+          "mot": "opaque",
+          "def": "qui ne laisse pas passer la lumière"
+        },
+        {
+          "mot": "miroir",
+          "def": "surface qui renvoie la lumière dans une direction précise"
+        }
+      ],
+      "schema": {
+        "titre": "La lumière d'une lampe devant trois matériaux",
+        "svg": "<svg viewBox=\"0 0 380 170\" role=\"img\" aria-label=\"Trois matériaux devant une lampe : la vitre transparente laisse passer la lumière, le papier calque translucide la laisse passer en la dispersant, le bois opaque l'arrête et fait de l'ombre.\" style=\"display:block;max-width:520px;width:100%;margin:8px auto\"><rect width=\"380\" height=\"170\" fill=\"#f6f2e8\"/><circle cx=\"32\" cy=\"70\" r=\"10\" fill=\"#ffd23f\" stroke=\"#c99a00\"/><line x1=\"44.0\" y1=\"70.0\" x2=\"72.0\" y2=\"70.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"72.0,70.0 62.0,74.6 62.0,65.4\" fill=\"#e6a100\"/><rect x=\"76\" y=\"34\" width=\"10\" height=\"72\" fill=\"#cfe8f7\" stroke=\"#555\"/><line x1=\"90.0\" y1=\"70.0\" x2=\"124.0\" y2=\"70.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"124.0,70.0 114.0,74.6 114.0,65.4\" fill=\"#e6a100\"/><text x=\"80\" y=\"130\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#1d3557\">transparent</text><text x=\"80\" y=\"148\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#333\">ex. : vitre</text><circle cx=\"154\" cy=\"70\" r=\"10\" fill=\"#ffd23f\" stroke=\"#c99a00\"/><line x1=\"166.0\" y1=\"70.0\" x2=\"194.0\" y2=\"70.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"194.0,70.0 184.0,74.6 184.0,65.4\" fill=\"#e6a100\"/><rect x=\"198\" y=\"34\" width=\"10\" height=\"72\" fill=\"#e9e4d4\" stroke=\"#555\"/><line x1=\"212.0\" y1=\"70.0\" x2=\"242.0\" y2=\"56.0\" stroke=\"#e6a100\" stroke-width=\"1.5\"/><polygon points=\"242.0,56.0 234.9,64.4 231.0,56.0\" fill=\"#e6a100\"/><line x1=\"212.0\" y1=\"70.0\" x2=\"242.0\" y2=\"70.0\" stroke=\"#e6a100\" stroke-width=\"1.5\"/><polygon points=\"242.0,70.0 232.0,74.6 232.0,65.4\" fill=\"#e6a100\"/><line x1=\"212.0\" y1=\"70.0\" x2=\"242.0\" y2=\"84.0\" stroke=\"#e6a100\" stroke-width=\"1.5\"/><polygon points=\"242.0,84.0 231.0,84.0 234.9,75.6\" fill=\"#e6a100\"/><text x=\"202\" y=\"130\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#1d3557\">translucide</text><text x=\"202\" y=\"148\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#333\">ex. : papier calque</text><circle cx=\"276\" cy=\"70\" r=\"10\" fill=\"#ffd23f\" stroke=\"#c99a00\"/><line x1=\"288.0\" y1=\"70.0\" x2=\"316.0\" y2=\"70.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"316.0,70.0 306.0,74.6 306.0,65.4\" fill=\"#e6a100\"/><rect x=\"320\" y=\"34\" width=\"10\" height=\"72\" fill=\"#8a5a33\" stroke=\"#555\"/><rect x=\"334\" y=\"40\" width=\"34\" height=\"60\" fill=\"#3a3a3a\" opacity=\".35\"/><text x=\"324\" y=\"130\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#1d3557\">opaque</text><text x=\"324\" y=\"148\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#333\">ex. : bois</text></svg>"
+      },
+      "document": {
+        "type": "text",
+        "titre": "La lentille de Fresnel",
+        "contenu": "En 1823, le physicien français Augustin Fresnel invente une lentille de verre « à échelons ». Elle est essayée en juillet 1823 au phare de Cordouan, à l'entrée de l'estuaire de la Gironde. Cette invention équipe encore les phares du monde entier. Le phare de Cordouan, en service depuis 1611, est le plus ancien phare français encore en activité.",
+        "source": "D'après le ministère de la Transition écologique (DREAL), fiche « Les phares »."
+      },
+      "sources": "Programme de sciences et technologie, cycle 3, arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026 (« Observer et classer des matériaux selon qu'ils sont transparents, opaques à la lumière ou translucides ») ; La main à la pâte, « Parcours 8 : Ombres et lumière » ; ministère de la Transition écologique (DREAL), fiche « Les phares »."
+    },
+    {
+      "id": "ombres",
+      "salle": 3,
+      "icone": "III",
+      "titre": "Ombre propre, ombre portée",
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Produire une ombre avec une source et un objet opaque",
+        "Distinguer ombre propre et ombre portée",
+        "Relier la position et la taille de l'ombre à celles de la source et de l'objet"
+      ],
+      "contenu": {
+        "cm1": "<h4>Comment naît une ombre ?</h4><p>Pour obtenir une ombre, il faut une <b>source de lumière</b> et un <b>objet opaque</b>. L'objet arrête la lumière : derrière lui, la lumière n'arrive pas.</p><h4>Deux ombres</h4><p>L'<b>ombre propre</b> est la partie de l'objet qui n'est pas éclairée. L'<b>ombre portée</b> est la tache sombre que l'objet dessine sur le sol, le mur ou un écran.</p><h4>Où et quelle taille ?</h4><p>L'objet est toujours <b>entre</b> la source et son ombre portée ; l'ombre est <b>à l'opposé</b> de la source. Si l'écran ne bouge pas, plus on approche la lampe de l'objet, plus l'ombre portée est grande.</p>",
+        "cm2": "<h4>Une ombre, c'est un manque de lumière</h4><p>Une ombre se forme quand un <b>objet opaque</b> arrête une partie de la lumière d'une <b>source</b>. Comme la lumière va en ligne droite, elle ne peut pas contourner l'objet : derrière lui reste une zone non éclairée. Un objet transparent, lui, ne donne presque pas d'ombre.</p><h4>Ombre propre et ombre portée</h4><p>Sur l'objet, la partie tournée vers la source est éclairée ; l'autre partie, non éclairée, est son <b>ombre propre</b>. Sur le sol, un mur ou un écran, la tache sombre dessinée par l'objet est son <b>ombre portée</b>. Sur un schéma, on précise toujours la source, l'ombre propre et l'ombre portée.</p><h4>La position de l'ombre</h4><p>La source, l'objet et l'ombre portée sont alignés : l'objet est <b>entre</b> la source et l'ombre, et l'ombre se forme <b>à l'opposé</b> de la source. Si la source se déplace vers la gauche, l'ombre portée part vers la droite.</p><h4>La taille de l'ombre</h4><p>Pour la faire varier, on déplace un seul élément à la fois (l'écran, la source ou l'objet) et on garde les deux autres immobiles. Plus l'objet est proche de la source, plus son ombre portée est grande. Placé à mi-distance entre la source et l'écran, il donne une ombre deux fois plus grande que lui.</p>"
+      },
+      "lexique": [
+        {
+          "mot": "ombre propre",
+          "def": "partie de l'objet qui n'est pas éclairée"
+        },
+        {
+          "mot": "ombre portée",
+          "def": "zone sombre que l'objet dessine sur le sol, un mur ou un écran"
+        },
+        {
+          "mot": "objet opaque",
+          "def": "objet qui arrête la lumière"
+        },
+        {
+          "mot": "écran",
+          "def": "surface claire sur laquelle on observe l'ombre portée"
+        }
+      ],
+      "schema": {
+        "titre": "Source, objet opaque, ombre propre et ombre portée",
+        "svg": "<svg viewBox=\"0 0 380 230\" role=\"img\" aria-label=\"Schéma vu de côté : une lampe allumée à gauche, une balle sur un pied au milieu, un écran blanc à droite. Des traits droits partent de la lampe, frôlent la balle et vont jusqu'à l'écran. La moitié droite de la balle est sombre ; une tache sombre apparaît sur l'écran. Repères numérotés de 1 à 3.\" style=\"display:block;max-width:460px;width:100%;margin:10px auto;background:#f3f7fb;border:2px solid #3d5a80;border-radius:10px\"><rect x=\"0\" y=\"0\" width=\"380\" height=\"230\" fill=\"#eae3d2\"/><rect x=\"0\" y=\"196\" width=\"380\" height=\"34\" fill=\"#b9a27f\"/><rect x=\"22\" y=\"150\" width=\"34\" height=\"46\" fill=\"#555\"/><polygon points=\"18,150 60,150 52,110 26,110\" fill=\"#3d5a80\"/><circle cx=\"40\" cy=\"104\" r=\"12\" fill=\"#ffd23f\" stroke=\"#c99a00\" stroke-width=\"2\"/><rect x=\"320\" y=\"20\" width=\"16\" height=\"176\" fill=\"#fbfbf6\" stroke=\"#666\" stroke-width=\"2\"/><rect x=\"167\" y=\"130\" width=\"6\" height=\"66\" fill=\"#777\"/><line x1=\"40\" y1=\"104\" x2=\"320\" y2=\"161.2\" stroke=\"#e6a100\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><line x1=\"40\" y1=\"104\" x2=\"320\" y2=\"46.8\" stroke=\"#e6a100\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><ellipse cx=\"328\" cy=\"104\" rx=\"6\" ry=\"57.2\" fill=\"#2b2b2b\"/><circle cx=\"170\" cy=\"104\" r=\"26\" fill=\"#ffe9a8\" stroke=\"#333\" stroke-width=\"1.5\"/><path d=\"M170 78 A26 26 0 0 1 170 130 A8 26 0 0 0 170 78 Z\" fill=\"#3a3a3a\"/><g font-family=\"Arial,sans-serif\" font-size=\"11\" fill=\"#1d3557\" font-weight=\"bold\"><text x=\"6\" y=\"222\">source de lumière</text><text x=\"104\" y=\"166\">objet opaque</text><text x=\"186\" y=\"70\">ombre propre</text><text x=\"196\" y=\"222\">ombre portée (sur l'écran)</text></g></svg>"
+      },
+      "document": {
+        "type": "text",
+        "titre": "Le cahier d'expériences de Nils",
+        "contenu": "« L'écran est fixe. Lampe très loin : l'ombre du bateau a presque sa taille. Lampe à mi-chemin : elle est plus grande. Lampe tout près : le bateau devient géant ! La moitié de la balle tournée vers le mur reste sombre. »",
+        "source": "Cahier inventé pour le jeu ; expérience décrite par La main à la pâte."
+      },
+      "sources": "Programme de sciences et technologie, cycle 3, arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026 (« distinguer ombre propre et ombre portée » ; « associer leurs positions et leurs tailles à celles de la source lumineuse et de l'objet opaque ») ; La main à la pâte, « Parcours 8 : Ombres et lumière »."
+    },
+    {
+      "id": "soleil",
+      "salle": 4,
+      "icone": "IV",
+      "titre": "L'ombre d'un bâton au fil de la journée",
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Observer l'ombre d'un bâton au cours d'une journée ensoleillée",
+        "Relier sa direction et sa longueur à la position du Soleil",
+        "Comprendre le principe du cadran solaire"
+      ],
+      "contenu": {
+        "cm1": "<h4>Le Soleil se déplace dans le ciel</h4><p>Vu de la cour, le Soleil se lève du côté de l'<b>est</b>, monte dans le ciel, puis se couche du côté de l'<b>ouest</b>. Au milieu de la journée, il est le plus haut, du côté du <b>sud</b> : c'est le <b>midi solaire</b>.</p><h4>L'ombre du bâton bouge</h4><p>L'ombre d'un bâton est toujours <b>à l'opposé</b> du Soleil. Le matin, elle est longue et tournée vers l'ouest. Au midi solaire, elle est la plus courte, tournée vers le nord. Le soir, elle s'allonge vers l'est. Un <b>cadran solaire</b> utilise cette ombre pour donner l'heure.</p><div class='encadre'><b>Sécurité.</b> Ne jamais regarder le Soleil directement, même avec des lunettes de soleil : cela peut abîmer les yeux pour toujours. Ne jamais diriger un pointeur laser vers les yeux de quelqu'un.</div>",
+        "cm2": "<h4>Le trajet apparent du Soleil</h4><p>Depuis la cour de récréation, le Soleil semble se déplacer dans le ciel : il se lève du côté de l'<b>est</b>, monte jusqu'à son point le plus haut, du côté du <b>sud</b>, puis redescend et se couche du côté de l'<b>ouest</b>. Le moment où il est le plus haut s'appelle le <b>midi solaire</b>. Ce mouvement n'est qu'apparent : c'est la Terre qui tourne sur elle-même.</p><h4>Une ombre qui tourne et qui change de longueur</h4><p>Le Soleil est la source, le bâton est l'objet opaque : l'ombre portée est donc toujours <b>à l'opposé</b> du Soleil. Le matin, elle est longue et tournée vers l'ouest. Elle raccourcit jusqu'au midi solaire, où elle est la plus courte et tournée vers le nord. L'après-midi, elle s'allonge vers l'est. Plus le Soleil est haut, plus l'ombre est courte.</p><h4>Le midi solaire n'est pas midi à la montre</h4><p>En France, l'ombre la plus courte n'arrive pas à 12 h à nos montres : en été, c'est plutôt vers 14 h. Les <b>cadrans solaires</b>, eux, donnent l'heure du Soleil.</p><div class='encadre'><b>Sécurité.</b> Ne jamais regarder le Soleil directement, même avec des lunettes de soleil : cela peut abîmer les yeux pour toujours. Ne jamais diriger un pointeur laser vers les yeux de quelqu'un.</div>"
+      },
+      "lexique": [
+        {
+          "mot": "midi solaire",
+          "def": "moment où le Soleil est le plus haut dans le ciel ; l'ombre est la plus courte"
+        },
+        {
+          "mot": "cadran solaire",
+          "def": "instrument qui indique l'heure grâce à l'ombre d'une tige"
+        },
+        {
+          "mot": "points cardinaux",
+          "def": "nord, sud, est, ouest"
+        },
+        {
+          "mot": "gnomon",
+          "def": "bâton ou tige dont on observe l'ombre"
+        }
+      ],
+      "schema": {
+        "titre": "Le trajet apparent du Soleil dans la journée, vu depuis la France",
+        "svg": "<svg viewBox=\"0 0 380 210\" role=\"img\" aria-label=\"Le trajet apparent du Soleil dans la journée, vu depuis la France : il se lève du côté de l'est, monte le plus haut au midi solaire, côté sud, et se couche du côté de l'ouest. Un bâton est planté au milieu.\" style=\"display:block;max-width:520px;width:100%;margin:8px auto\"><rect width=\"380\" height=\"210\" fill=\"#dcefff\"/><rect x=\"0\" y=\"160\" width=\"380\" height=\"50\" fill=\"#a9cf8c\"/><path d=\"M30 160 Q190 -10 350 160\" fill=\"none\" stroke=\"#e6a100\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/><circle cx=\"52\" cy=\"132\" r=\"12\" fill=\"#ffd23f\" stroke=\"#c99a00\" stroke-width=\"2\"/><text x=\"52\" y=\"114\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#1d3557\">matin</text><circle cx=\"190\" cy=\"76\" r=\"12\" fill=\"#ffd23f\" stroke=\"#c99a00\" stroke-width=\"2\"/><text x=\"190\" y=\"58\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#1d3557\">midi solaire</text><circle cx=\"328\" cy=\"132\" r=\"12\" fill=\"#ffd23f\" stroke=\"#c99a00\" stroke-width=\"2\"/><text x=\"328\" y=\"114\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#1d3557\">soir</text><line x1=\"190\" y1=\"160\" x2=\"190\" y2=\"128\" stroke=\"#7a4b2a\" stroke-width=\"4\"/><g font-family=\"Arial,sans-serif\" font-size=\"12\" font-weight=\"bold\" fill=\"#1d3557\"><text x=\"20\" y=\"198\">EST (lever)</text><text x=\"270\" y=\"198\">OUEST (coucher)</text><text x=\"160\" y=\"198\">SUD</text></g></svg>"
+      },
+      "document": {
+        "type": "text",
+        "titre": "Le carnet d'Achille (fin juin, bâton de 1 m)",
+        "contenu": "10 h : 118 cm. 12 h : 62 cm. 14 h : 47 cm. 16 h : 76 cm. 18 h : 151 cm. L'ombre la plus courte a été mesurée à 14 h : c'était le midi solaire.",
+        "source": "Relevé fictif, calculé pour une journée de fin juin en France (voir A-VERIFIER.md)."
+      },
+      "sources": "Programme de sciences et technologie, cycle 3, arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026 (« L'élève observe la position de l'ombre d'un bâton sur le sol au cours d'une journée ensoleillée et l'associe au déplacement du Soleil dans le ciel du point de vue de la cour de récréation ») ; Fondation La main à la pâte, séquence « La Terre en mouvement » (ombre la plus courte vers 14 h en été)."
+    },
+    {
+      "id": "lune",
+      "salle": 5,
+      "icone": "V",
+      "titre": "Les phases de la Lune",
+      "duree": "4 min",
+      "niveau": "CM1-CM2",
+      "objectifs": [
+        "Observer, schématiser et nommer les phases de la Lune",
+        "Savoir que la Lune est éclairée par le Soleil",
+        "Constater l'existence d'un cycle : la lunaison"
+      ],
+      "contenu": {
+        "cm1": "<h4>La Lune est éclairée</h4><p>La Lune ne produit pas de lumière : elle est <b>éclairée par le Soleil</b>, comme une balle éclairée par une lampe. Une moitié de la Lune est toujours éclairée.</p><h4>Les phases</h4><p>D'un soir à l'autre, on ne voit pas la même partie éclairée : ce sont les <b>phases</b> de la Lune. Dans l'ordre : la <b>nouvelle lune</b> (on ne la voit presque pas), le <b>premier quartier</b> (la moitié droite éclairée), la <b>pleine lune</b> (tout le disque), le <b>dernier quartier</b> (la moitié gauche). Puis tout recommence : c'est un cycle, la <b>lunaison</b>, qui dure environ un mois.</p>",
+        "cm2": "<h4>Une boule éclairée par le Soleil</h4><p>La Lune n'est pas une source de lumière : c'est un objet éclairé, qui renvoie la lumière du Soleil. Comme une balle éclairée par une lampe, elle a toujours une moitié éclairée et une moitié dans l'ombre.</p><h4>Pourquoi des phases ?</h4><p>La Lune tourne autour de la Terre. Selon sa position, nous voyons une partie plus ou moins grande de sa moitié éclairée : ce sont les <b>phases</b>. Ce n'est pas l'ombre de la Terre qui la cache (cela, c'est une éclipse, un phénomène rare).</p><h4>L'ordre des phases</h4><p>Depuis la France, on observe : la <b>nouvelle lune</b>, presque invisible ; le <b>premier croissant</b>, éclairé à droite ; le <b>premier quartier</b>, moitié droite éclairée ; la Lune gibbeuse ; la <b>pleine lune</b>, environ 15 jours après la nouvelle lune ; puis la partie éclairée diminue : <b>dernier quartier</b> (moitié gauche), <b>dernier croissant</b>, et de nouveau la nouvelle lune.</p><h4>Un cycle : la lunaison</h4><p>D'une nouvelle lune à la suivante, il s'écoule environ <b>29 jours et demi</b> (29,53 jours) : c'est une <b>lunaison</b>. En dessinant la Lune chaque soir pendant deux lunaisons, on constate que le cycle se répète.</p>"
+      },
+      "lexique": [
+        {
+          "mot": "phase",
+          "def": "aspect de la partie éclairée de la Lune que l'on voit depuis la Terre"
+        },
+        {
+          "mot": "lunaison",
+          "def": "durée d'un cycle de phases, environ 29 jours et demi"
+        },
+        {
+          "mot": "croissant",
+          "def": "mince partie éclairée en forme d'arc"
+        },
+        {
+          "mot": "quartier",
+          "def": "phase où l'on voit la moitié du disque éclairée"
+        }
+      ],
+      "schema": {
+        "titre": "Les phases de la Lune vues depuis la France",
+        "svg": "<svg viewBox=\"0 0 380 120\" role=\"img\" aria-label=\"Les huit phases de la Lune, vues depuis la France, de la nouvelle lune au dernier croissant ; une lunaison dure environ 29 jours et demi.\" style=\"display:block;max-width:560px;width:100%;margin:8px auto\"><rect width=\"380\" height=\"120\" fill=\"#0f1a2b\"/><circle cx=\"24\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><text x=\"24\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">nouvelle</text><text x=\"24\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">lune</text><circle cx=\"71\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M71 12 A18 18 0 0 1 71 48 A12.73 18 0 0 0 71 12 Z\" fill=\"#f7f1d0\"/><text x=\"71\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">premier</text><text x=\"71\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">croissant</text><circle cx=\"118\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M118 12 A18 18 0 0 1 118 48 A0.00 18 0 0 1 118 12 Z\" fill=\"#f7f1d0\"/><text x=\"118\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">premier</text><text x=\"118\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">quartier</text><circle cx=\"165\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M165 12 A18 18 0 0 1 165 48 A12.73 18 0 0 1 165 12 Z\" fill=\"#f7f1d0\"/><text x=\"165\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">gibbeuse</text><text x=\"165\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">croissante</text><circle cx=\"212\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><circle cx=\"212\" cy=\"30\" r=\"18\" fill=\"#f7f1d0\"/><text x=\"212\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">pleine</text><text x=\"212\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">lune</text><circle cx=\"259\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M259 12 A18 18 0 0 0 259 48 A12.73 18 0 0 0 259 12 Z\" fill=\"#f7f1d0\"/><text x=\"259\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">gibbeuse</text><text x=\"259\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">décroissante</text><circle cx=\"306\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M306 12 A18 18 0 0 0 306 48 A0.00 18 0 0 0 306 12 Z\" fill=\"#f7f1d0\"/><text x=\"306\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">dernier</text><text x=\"306\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">quartier</text><circle cx=\"353\" cy=\"30\" r=\"18\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M353 12 A18 18 0 0 0 353 48 A12.73 18 0 0 1 353 12 Z\" fill=\"#f7f1d0\"/><text x=\"353\" y=\"64\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">dernier</text><text x=\"353\" y=\"75\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"8.5\" fill=\"#fff\">croissant</text><line x1=\"20.0\" y1=\"92.0\" x2=\"360.0\" y2=\"92.0\" stroke=\"#ffd23f\" stroke-width=\"2\"/><polygon points=\"360.0,92.0 350.0,96.6 350.0,87.4\" fill=\"#ffd23f\"/><text x=\"190\" y=\"110\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"10\" fill=\"#fff\">une lunaison : environ 29 jours et demi</text></svg>"
+      },
+      "document": {
+        "type": "text",
+        "titre": "Le carnet de bord de la capitaine",
+        "contenu": "« Lundi : mince croissant éclairé à droite, juste après le coucher du Soleil. Dimanche suivant : la moitié droite est éclairée, c'est le premier quartier. Encore une semaine : pleine lune, la mer est toute argentée. »",
+        "source": "Carnet inventé pour le jeu, d'après Vikidia, « Phases de la Lune »."
+      },
+      "sources": "Programme de sciences et technologie, cycle 3, arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026 (« Observer, schématiser et nommer les phases de la Lune ») ; Vikidia, « Phases de la Lune » ; La main à la pâte, « Parcours 8 : Ombres et lumière » (la Lune renvoie la lumière du Soleil)."
+    }
+  ]
+}

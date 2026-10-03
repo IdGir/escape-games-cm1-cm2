@@ -1,0 +1,1355 @@
+{
+  "metadata": {
+    "jeu": "Le Phare de l'île Lumière",
+    "version": 1,
+    "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+    "types": [
+      "qcm",
+      "vraifaux",
+      "association",
+      "ordre",
+      "tri",
+      "trous",
+      "lettres",
+      "code",
+      "intrus",
+      "plan"
+    ],
+    "sources": "Programme de sciences et technologie du cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; La main à la pâte ; Vikidia ; ministère de la Transition écologique (phares). Relevés de l'ombre du bâton : fictifs, calculés. Détail : README.md, section Sources.",
+    "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e3-1\",\"legende\":\"…\",\"source\":\"…\"}. Déposez alors e3-1.jpg dans assets/images/cartes/ (ou e3-1.mp4 dans assets/videos/ avec \"type\":\"video\"). Sans fichier, l'énigme reste jouable. Les schémas (trajet de la lumière, ombres, cour, phases de la Lune) sont dessinés en SVG par script : ne pas les remplacer par des images générées par IA."
+  },
+  "salles": [
+    {
+      "num": 1,
+      "titre": "La lanterne du phare — D'où vient la lumière ?",
+      "enigmes": [
+        {
+          "id": "1-1",
+          "titre": "Ce qui brille et ce qui est éclairé",
+          "type": "tri",
+          "consigne": {
+            "cm1": "Maëlle, la gardienne, range sa liste : certaines choses produisent leur propre lumière, d'autres renvoient seulement la lumière qu'elles reçoivent. Range chaque carte dans la bonne colonne. Clique sur une carte, puis sur une colonne.",
+            "cm2": "Maëlle range sa liste. Une source de lumière produit sa propre lumière ; un objet éclairé ne fait que renvoyer la lumière qu'il reçoit. Range chaque carte. Attention : certaines cartes brillent sans être des sources."
+          },
+          "source": "La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III » (le Soleil et les étoiles produisent leur lumière, la Lune renvoie celle du Soleil) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
+          "correction": "Le Soleil, les étoiles, une flamme, une lampe allumée et un écran allumé produisent leur lumière : ce sont des sources. La Lune, la voile, le miroir ou une lampe éteinte ne font que renvoyer la lumière qu'ils reçoivent : ce sont des objets éclairés.",
+          "indices": {
+            "cm1": [
+              "Demande-toi : s'il fait tout noir autour, est-ce que cette chose brille encore ?",
+              "La Lune brille la nuit, mais c'est le Soleil qui l'éclaire.",
+              "Un miroir ne brille que si une lumière arrive sur lui."
+            ],
+            "cm2": [
+              "Demande-toi : dans une pièce totalement noire, cette chose se verrait-elle ?",
+              "Une lampe éteinte ne produit rien : c'est un objet comme un autre.",
+              "La Lune et le miroir renvoient une lumière venue d'ailleurs."
+            ]
+          },
+          "cm1": {
+            "colonnes": [
+              {
+                "id": "source",
+                "titre": "Source de lumière (elle produit sa lumière)"
+              },
+              {
+                "id": "eclaire",
+                "titre": "Objet éclairé (il renvoie la lumière reçue)"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le Soleil",
+                "col": "source"
+              },
+              {
+                "txt": "la flamme d'une bougie",
+                "col": "source"
+              },
+              {
+                "txt": "la lampe allumée du phare",
+                "col": "source"
+              },
+              {
+                "txt": "la Lune",
+                "col": "eclaire"
+              },
+              {
+                "txt": "la voile blanche d'un bateau",
+                "col": "eclaire"
+              },
+              {
+                "txt": "un miroir",
+                "col": "eclaire"
+              }
+            ]
+          },
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "source",
+                "titre": "Source de lumière"
+              },
+              {
+                "id": "eclaire",
+                "titre": "Objet éclairé"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "le Soleil",
+                "col": "source"
+              },
+              {
+                "txt": "une étoile",
+                "col": "source"
+              },
+              {
+                "txt": "la flamme d'une bougie",
+                "col": "source"
+              },
+              {
+                "txt": "l'écran allumé d'une tablette",
+                "col": "source"
+              },
+              {
+                "txt": "la Lune",
+                "col": "eclaire"
+              },
+              {
+                "txt": "la lampe du phare, éteinte",
+                "col": "eclaire"
+              },
+              {
+                "txt": "la voile blanche d'un bateau",
+                "col": "eclaire"
+              },
+              {
+                "txt": "un miroir",
+                "col": "eclaire"
+              }
+            ]
+          },
+          "lecon": "sources"
+        },
+        {
+          "id": "1-2",
+          "titre": "Le trajet de la lumière",
+          "type": "plan",
+          "consigne": {
+            "cm1": "Pour voir la voile du bateau, la lumière fait un voyage. Place chaque étiquette sur le bon repère du schéma. Clique sur une étiquette, puis sur la case du repère.<svg viewBox=\"0 0 380 230\" role=\"img\" aria-label=\"Schéma de nuit : un phare à gauche, un voilier à droite, une gardienne sur la jetée. Deux traits droits avec des flèches vont de la lampe du phare à la voile, puis de la voile à l'œil de la gardienne. Repères numérotés de 1 à 3.\" style=\"display:block;max-width:460px;width:100%;margin:10px auto;background:#f3f7fb;border:2px solid #3d5a80;border-radius:10px\"><rect x=\"0\" y=\"0\" width=\"380\" height=\"230\" fill=\"#1d2b44\"/><rect x=\"0\" y=\"170\" width=\"380\" height=\"60\" fill=\"#24476b\"/><path d=\"M0 182 Q20 176 40 182 T80 182 T120 182 T160 182 T200 182 T240 182 T280 182 T320 182 T360 182 T400 182\" stroke=\"#5d8bb8\" stroke-width=\"2\" fill=\"none\"/><path d=\"M0 230 L0 160 Q30 150 70 158 L95 230 Z\" fill=\"#5a5048\"/><polygon points=\"30,158 62,158 56,62 36,62\" fill=\"#f4f1ea\" stroke=\"#333\" stroke-width=\"1.5\"/><rect x=\"33\" y=\"92\" width=\"26\" height=\"12\" fill=\"#c0392b\"/><rect x=\"31\" y=\"124\" width=\"30\" height=\"12\" fill=\"#c0392b\"/><rect x=\"34\" y=\"44\" width=\"24\" height=\"18\" fill=\"#d9e8f5\" stroke=\"#333\" stroke-width=\"1.5\"/><polygon points=\"30,44 62,44 46,30\" fill=\"#333\"/><circle cx=\"46\" cy=\"53\" r=\"7\" fill=\"#ffd23f\"/><path d=\"M250 168 L330 168 L318 184 L262 184 Z\" fill=\"#7a4b2a\" stroke=\"#333\" stroke-width=\"1.5\"/><line x1=\"290\" y1=\"168\" x2=\"290\" y2=\"92\" stroke=\"#333\" stroke-width=\"2.5\"/><polygon points=\"292,96 292,164 336,164\" fill=\"#fdfdf8\" stroke=\"#555\" stroke-width=\"1.2\"/><rect x=\"120\" y=\"196\" width=\"110\" height=\"10\" fill=\"#8a8178\"/><circle cx=\"150\" cy=\"168\" r=\"17\" fill=\"#e8b98f\" stroke=\"#333\" stroke-width=\"1.5\"/><path d=\"M134 160 Q150 140 168 160 L166 154 Q150 146 136 156 Z\" fill=\"#4a2f1f\"/><ellipse cx=\"160\" cy=\"166\" rx=\"4\" ry=\"3\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1\"/><circle cx=\"161.5\" cy=\"166\" r=\"1.6\" fill=\"#222\"/><rect x=\"138\" y=\"184\" width=\"24\" height=\"12\" fill=\"#2e86ab\"/><line x1=\"54.0\" y1=\"56.0\" x2=\"300.0\" y2=\"120.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"300.0,120.0 289.2,122.0 291.5,113.0\" fill=\"#e6a100\"/><line x1=\"300.0\" y1=\"128.0\" x2=\"170.0\" y2=\"164.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"170.0,164.0 178.4,156.9 180.8,165.8\" fill=\"#e6a100\"/><circle cx=\"46\" cy=\"20\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"46\" y=\"25\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">1</text><circle cx=\"318\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"318\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">2</text><circle cx=\"150\" cy=\"126\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"150\" y=\"131\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">3</text></svg>",
+            "cm2": "Pour voir la voile du bateau, la lumière fait un voyage. Place chaque étiquette sur le bon repère du schéma. Une étiquette est un piège : elle décrit un trajet qui n'existe pas.<svg viewBox=\"0 0 380 230\" role=\"img\" aria-label=\"Schéma de nuit : un phare à gauche, un voilier à droite, une gardienne sur la jetée. Deux traits droits avec des flèches vont de la lampe du phare à la voile, puis de la voile à l'œil de la gardienne. Repères numérotés de 1 à 4.\" style=\"display:block;max-width:460px;width:100%;margin:10px auto;background:#f3f7fb;border:2px solid #3d5a80;border-radius:10px\"><rect x=\"0\" y=\"0\" width=\"380\" height=\"230\" fill=\"#1d2b44\"/><rect x=\"0\" y=\"170\" width=\"380\" height=\"60\" fill=\"#24476b\"/><path d=\"M0 182 Q20 176 40 182 T80 182 T120 182 T160 182 T200 182 T240 182 T280 182 T320 182 T360 182 T400 182\" stroke=\"#5d8bb8\" stroke-width=\"2\" fill=\"none\"/><path d=\"M0 230 L0 160 Q30 150 70 158 L95 230 Z\" fill=\"#5a5048\"/><polygon points=\"30,158 62,158 56,62 36,62\" fill=\"#f4f1ea\" stroke=\"#333\" stroke-width=\"1.5\"/><rect x=\"33\" y=\"92\" width=\"26\" height=\"12\" fill=\"#c0392b\"/><rect x=\"31\" y=\"124\" width=\"30\" height=\"12\" fill=\"#c0392b\"/><rect x=\"34\" y=\"44\" width=\"24\" height=\"18\" fill=\"#d9e8f5\" stroke=\"#333\" stroke-width=\"1.5\"/><polygon points=\"30,44 62,44 46,30\" fill=\"#333\"/><circle cx=\"46\" cy=\"53\" r=\"7\" fill=\"#ffd23f\"/><path d=\"M250 168 L330 168 L318 184 L262 184 Z\" fill=\"#7a4b2a\" stroke=\"#333\" stroke-width=\"1.5\"/><line x1=\"290\" y1=\"168\" x2=\"290\" y2=\"92\" stroke=\"#333\" stroke-width=\"2.5\"/><polygon points=\"292,96 292,164 336,164\" fill=\"#fdfdf8\" stroke=\"#555\" stroke-width=\"1.2\"/><rect x=\"120\" y=\"196\" width=\"110\" height=\"10\" fill=\"#8a8178\"/><circle cx=\"150\" cy=\"168\" r=\"17\" fill=\"#e8b98f\" stroke=\"#333\" stroke-width=\"1.5\"/><path d=\"M134 160 Q150 140 168 160 L166 154 Q150 146 136 156 Z\" fill=\"#4a2f1f\"/><ellipse cx=\"160\" cy=\"166\" rx=\"4\" ry=\"3\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1\"/><circle cx=\"161.5\" cy=\"166\" r=\"1.6\" fill=\"#222\"/><rect x=\"138\" y=\"184\" width=\"24\" height=\"12\" fill=\"#2e86ab\"/><line x1=\"54.0\" y1=\"56.0\" x2=\"300.0\" y2=\"120.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"300.0,120.0 289.2,122.0 291.5,113.0\" fill=\"#e6a100\"/><line x1=\"300.0\" y1=\"128.0\" x2=\"170.0\" y2=\"164.0\" stroke=\"#e6a100\" stroke-width=\"3\"/><polygon points=\"170.0,164.0 178.4,156.9 180.8,165.8\" fill=\"#e6a100\"/><circle cx=\"46\" cy=\"20\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"46\" y=\"25\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">1</text><circle cx=\"318\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"318\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">2</text><circle cx=\"150\" cy=\"126\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"150\" y=\"131\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">3</text><circle cx=\"178\" cy=\"76\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"178\" y=\"81\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">4</text></svg>"
+          },
+          "source": "La main à la pâte, « La lumière, cycle 3 », document de travail pour les maîtres (centre pilote de Nogent-sur-Oise) (« la lumière se déplace en ligne droite » ; les objets renvoient la lumière dans l'œil) ; schéma dessiné pour le jeu",
+          "correction": "La lumière part de la lampe (la source), voyage en ligne droite jusqu'à la voile (l'objet éclairé), qui en renvoie une partie jusqu'à l'œil. L'œil n'envoie rien : il reçoit la lumière.",
+          "indices": {
+            "cm1": [
+              "Suis les flèches : elles montrent le sens du voyage de la lumière.",
+              "Le voyage commence là où la lumière est produite.",
+              "Le repère 3 est l'œil : c'est là que le voyage se termine."
+            ],
+            "cm2": [
+              "Suis les flèches : elles montrent le sens du voyage.",
+              "Le repère 4 est posé sur un trait droit, entre la lampe et la voile.",
+              "Aucune flèche ne sort de l'œil : l'étiquette qui le dit est le piège."
+            ]
+          },
+          "cm1": {
+            "titre": "Le trajet de la lumière",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "source de lumière"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "objet éclairé"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "œil qui reçoit la lumière"
+              }
+            ],
+            "etiquettes": [
+              "source de lumière",
+              "objet éclairé",
+              "œil qui reçoit la lumière"
+            ]
+          },
+          "cm2": {
+            "titre": "Le trajet de la lumière",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "source de lumière"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "objet éclairé"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "œil qui reçoit la lumière"
+              },
+              {
+                "libelle": "Repère 4",
+                "reponse": "rayon de lumière en ligne droite"
+              }
+            ],
+            "etiquettes": [
+              "source de lumière",
+              "objet éclairé",
+              "œil qui reçoit la lumière",
+              "rayon de lumière en ligne droite",
+              "rayon qui sort de l'œil"
+            ]
+          },
+          "lecon": "sources"
+        },
+        {
+          "id": "1-3",
+          "titre": "Le signal qui n'est pas lumineux",
+          "type": "intrus",
+          "consigne": {
+            "cm1": "La lumière sert aussi à envoyer des messages. Trois de ces objets envoient un signal lumineux. Trouve celui qui envoie un autre genre de signal. Clique sur l'intrus, puis vérifie.",
+            "cm2": "La lumière transporte des informations. Quatre de ces objets transmettent une information grâce à la lumière. Trouve l'intrus, puis vérifie."
+          },
+          "source": "Vikidia, « Phare » (chaque phare a son rythme) ; Vikidia, « Alphabet morse » (Morse lumineux) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (thème « Signaux »)",
+          "correction": "Le phare, le feu tricolore et la lampe qui clignote en Morse envoient un signal lumineux. La corne de brume envoie un signal sonore : on l'entend, on ne le voit pas.",
+          "indices": {
+            "cm1": [
+              "Un signal lumineux se voit avec les yeux.",
+              "Lequel de ces objets s'entend au lieu de se voir ?",
+              "Par temps de brouillard, les bateaux s'en servent pour se faire entendre."
+            ],
+            "cm2": [
+              "Un signal lumineux se voit ; un autre genre de signal peut s'entendre.",
+              "Le voyant d'un appareil est une petite lampe qui informe.",
+              "La brume cache la lumière : on utilise alors un son."
+            ]
+          },
+          "cm1": {
+            "cartes": [
+              {
+                "txt": "Le phare qui envoie ses éclats",
+                "intrus": false
+              },
+              {
+                "txt": "Le feu tricolore du carrefour",
+                "intrus": false
+              },
+              {
+                "txt": "La lampe qui clignote en Morse",
+                "intrus": false
+              },
+              {
+                "txt": "La corne de brume du port",
+                "intrus": true
+              }
+            ]
+          },
+          "cm2": {
+            "cartes": [
+              {
+                "txt": "Le phare et son rythme d'éclats",
+                "intrus": false
+              },
+              {
+                "txt": "Le feu tricolore du carrefour",
+                "intrus": false
+              },
+              {
+                "txt": "La lampe à signaux d'un bateau (Morse)",
+                "intrus": false
+              },
+              {
+                "txt": "Le voyant rouge d'une télévision en veille",
+                "intrus": false
+              },
+              {
+                "txt": "La corne de brume du port",
+                "intrus": true
+              }
+            ]
+          },
+          "lecon": "sources"
+        },
+        {
+          "id": "1-4",
+          "titre": "Les questions de la gardienne",
+          "type": "qcm",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Maëlle vous pose deux questions. Pour chacune, une seule réponse est exacte. Pense au schéma du trajet de la lumière, puis vérifie.",
+          "source": "La main à la pâte, « La lumière, cycle 3 », document de travail pour les maîtres (centre pilote de Nogent-sur-Oise) ; La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III »",
+          "correction": "On voit un objet quand la lumière qu'il renvoie entre dans notre œil. Dans l'air, la lumière voyage en ligne droite : c'est pour cela que le faisceau du phare est bien droit dans la brume.",
+          "indices": {
+            "cm2": [
+              "L'œil ne lance pas de rayons : il reçoit.",
+              "La voile ne produit pas de lumière : elle renvoie celle de la lampe.",
+              "Dans la brume ou la poussière, on voit le faisceau : il est droit."
+            ]
+          },
+          "commun": {
+            "questions": [
+              {
+                "q": "La gardienne voit la voile du bateau, la nuit, quand le phare l'éclaire. Quel est le trajet de la lumière ?",
+                "options": [
+                  "De l'œil de la gardienne vers la voile",
+                  "De la lampe vers la voile, puis de la voile vers l'œil",
+                  "De la voile vers la lampe, puis vers l'œil",
+                  "La voile produit sa propre lumière"
+                ],
+                "bonne": 1,
+                "explication": "La lumière part de la source, puis l'objet éclairé en renvoie vers l'œil."
+              },
+              {
+                "q": "Comment la lumière voyage-t-elle dans l'air ?",
+                "options": [
+                  "En zigzag",
+                  "En contournant les obstacles",
+                  "En ligne droite",
+                  "Seulement la nuit"
+                ],
+                "bonne": 2,
+                "explication": "La lumière se propage en ligne droite."
+              }
+            ]
+          },
+          "lecon": "sources"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "titre": "L'atelier des vitres — La lumière passe-t-elle ?",
+      "enigmes": [
+        {
+          "id": "2-1",
+          "titre": "Les trois mots de Salomé",
+          "type": "association",
+          "consigne": {
+            "cm1": "Salomé, l'ingénieure, utilise trois mots pour parler des matériaux. Relie chaque mot à sa définition. Clique sur un mot, puis sur sa définition.",
+            "cm2": "Salomé utilise cinq mots de l'atelier. Relie chaque mot à sa définition. Lis bien chaque définition jusqu'au bout avant de relier."
+          },
+          "source": "La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III » (transparents, translucides, opaques) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
+          "correction": "Un matériau transparent laisse passer la lumière et on voit nettement à travers ; un matériau translucide laisse passer la lumière mais on ne voit pas nettement à travers ; un matériau opaque ne laisse pas passer la lumière.",
+          "indices": {
+            "cm1": [
+              "Pense à une vitre : on voit tout à travers.",
+              "Pense à du papier calque : la lumière passe, mais tout est flou.",
+              "Pense à une planche de bois : derrière, c'est l'ombre."
+            ],
+            "cm2": [
+              "Trans-parent : la lumière passe et l'image aussi.",
+              "Un miroir ne laisse pas passer la lumière : il la renvoie.",
+              "Derrière un objet opaque, la lumière n'arrive pas."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "transparent",
+                "d": "laisse passer la lumière : on voit nettement à travers"
+              },
+              {
+                "g": "translucide",
+                "d": "laisse passer la lumière, mais on ne voit pas nettement à travers"
+              },
+              {
+                "g": "opaque",
+                "d": "ne laisse pas passer la lumière"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "transparent",
+                "d": "laisse passer la lumière : on voit nettement à travers"
+              },
+              {
+                "g": "translucide",
+                "d": "laisse passer la lumière, mais on ne voit pas nettement à travers"
+              },
+              {
+                "g": "opaque",
+                "d": "ne laisse pas passer la lumière"
+              },
+              {
+                "g": "un miroir",
+                "d": "renvoie la lumière dans une direction précise"
+              },
+              {
+                "g": "l'ombre",
+                "d": "zone que la lumière n'atteint pas, derrière un objet opaque"
+              }
+            ]
+          },
+          "lecon": "matieres"
+        },
+        {
+          "id": "2-2",
+          "titre": "Le banc d'essai des matériaux",
+          "type": "tri",
+          "consigne": {
+            "cm1": "Salomé a placé chaque matériau devant une lampe. Range-les dans les trois colonnes. Clique sur une carte, puis sur une colonne.",
+            "cm2": "Salomé a placé chaque matériau devant une lampe allumée et a regardé à travers. Range-les dans les trois colonnes. Pour chacun, imagine l'expérience."
+          },
+          "source": "La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III » ; La main à la pâte, « La lumière, cycle 3 », document de travail pour les maîtres (centre pilote de Nogent-sur-Oise) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« Observer et classer des matériaux selon qu'ils sont transparents, opaques à la lumière ou translucides »)",
+          "correction": "Transparents : la vitre, l'eau claire, le film alimentaire. Translucides : le papier calque, le verre dépoli, le papier sulfurisé. Opaques : le bois, le carton, la feuille d'aluminium.",
+          "indices": {
+            "cm1": [
+              "Pose-toi deux questions : la lumière passe-t-elle ? Voit-on nettement à travers ?",
+              "Le verre dépoli des salles de bains laisse passer la lumière mais cache ce qui est derrière.",
+              "Le carton et le bois arrêtent toute la lumière."
+            ],
+            "cm2": [
+              "Deux questions : la lumière passe-t-elle ? Voit-on nettement à travers ?",
+              "Le papier sulfurisé, comme le calque, laisse passer une lumière diffuse.",
+              "L'aluminium brille, mais aucune lumière ne passe à travers."
+            ]
+          },
+          "cm1": {
+            "colonnes": [
+              {
+                "id": "transparent",
+                "titre": "Transparent"
+              },
+              {
+                "id": "translucide",
+                "titre": "Translucide"
+              },
+              {
+                "id": "opaque",
+                "titre": "Opaque"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "la vitre de la lanterne",
+                "col": "transparent"
+              },
+              {
+                "txt": "l'eau claire d'un verre",
+                "col": "transparent"
+              },
+              {
+                "txt": "le papier calque",
+                "col": "translucide"
+              },
+              {
+                "txt": "le verre dépoli de la porte",
+                "col": "translucide"
+              },
+              {
+                "txt": "la planche de bois",
+                "col": "opaque"
+              },
+              {
+                "txt": "le carton",
+                "col": "opaque"
+              }
+            ]
+          },
+          "cm2": {
+            "colonnes": [
+              {
+                "id": "transparent",
+                "titre": "Transparent"
+              },
+              {
+                "id": "translucide",
+                "titre": "Translucide"
+              },
+              {
+                "id": "opaque",
+                "titre": "Opaque"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "la vitre de la lanterne",
+                "col": "transparent"
+              },
+              {
+                "txt": "l'eau claire d'un verre",
+                "col": "transparent"
+              },
+              {
+                "txt": "le film alimentaire",
+                "col": "transparent"
+              },
+              {
+                "txt": "le papier calque",
+                "col": "translucide"
+              },
+              {
+                "txt": "le verre dépoli de la porte",
+                "col": "translucide"
+              },
+              {
+                "txt": "le papier sulfurisé",
+                "col": "translucide"
+              },
+              {
+                "txt": "la planche de bois",
+                "col": "opaque"
+              },
+              {
+                "txt": "le carton",
+                "col": "opaque"
+              },
+              {
+                "txt": "la feuille d'aluminium",
+                "col": "opaque"
+              }
+            ]
+          },
+          "lecon": "matieres"
+        },
+        {
+          "id": "2-3",
+          "titre": "Le carnet d'essais",
+          "type": "trous",
+          "consigne": {
+            "cm1": "Salomé a écrit son carnet d'essais, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Deux étiquettes sont en trop.",
+            "cm2": "Complète le carnet d'essais de Salomé. Clique sur une étiquette, puis sur le trou où elle va. Trois étiquettes sont en trop."
+          },
+          "source": "La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III » ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
+          "correction": "Mots à placer : transparentes, translucide, opaque, ombre (et, en CM2, renvoie). La vitre laisse voir nettement la mer, le verre dépoli brouille l'image, le bois arrête toute la lumière ; le miroir la renvoie.",
+          "indices": {
+            "cm1": [
+              "La lumière du phare traverse les vitres et on voit la mer à travers.",
+              "Le verre dépoli laisse passer la lumière, mais tout est flou.",
+              "Le dernier mot désigne la zone où la lumière n'arrive pas."
+            ],
+            "cm2": [
+              "Relis les définitions de l'énigme précédente.",
+              "Un miroir ne laisse pas passer la lumière : il la renvoie.",
+              "Les étiquettes « brillant » et « lumineux » ne sont pas des mots du carnet."
+            ]
+          },
+          "cm1": {
+            "texte": "<p>Les vitres de la lanterne sont [[transparentes]] : la lumière du phare les traverse et on voit la mer à travers. La porte de la réserve a un verre dépoli : il laisse passer la lumière, mais on ne voit pas nettement à travers. Il est [[translucide]]. Le volet de bois arrête toute la lumière : il est [[opaque]]. Derrière lui, il y a de l'[[ombre]].</p>",
+            "etiquettes": [
+              "transparentes",
+              "translucide",
+              "opaque",
+              "ombre",
+              "lumineux",
+              "brillant"
+            ]
+          },
+          "cm2": {
+            "texte": "<p>Essai n°1 : les vitres de la lanterne sont [[transparentes]] ; on voit nettement la mer à travers. Essai n°2 : le verre dépoli de la réserve est [[translucide]] ; la lumière passe, mais les formes sont floues. Essai n°3 : le volet de bois est [[opaque]] ; il ne laisse passer aucune lumière, et derrière lui se forme une [[ombre]]. Essai n°4 : le miroir ne laisse pas passer la lumière, il la [[renvoie]] vers la mer.</p>",
+            "etiquettes": [
+              "transparentes",
+              "translucide",
+              "opaque",
+              "ombre",
+              "renvoie",
+              "lumineux",
+              "brillant",
+              "produit"
+            ]
+          },
+          "lecon": "matieres"
+        },
+        {
+          "id": "2-4",
+          "titre": "Les questions de l'ingénieure",
+          "type": "qcm",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Salomé vous pose deux questions sur l'atelier. Pour chacune, une seule réponse est exacte.",
+          "source": "La main à la pâte, « La lumière, cycle 3 », document de travail pour les maîtres (centre pilote de Nogent-sur-Oise) ; La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III »",
+          "correction": "Le verre dépoli, translucide, laisse entrer la lumière tout en cachant ce qui est derrière. Le miroir, placé derrière une lampe, renvoie vers l'avant la lumière qui partait vers l'arrière.",
+          "indices": {
+            "cm2": [
+              "Dans une salle de bains, on veut de la lumière, mais pas qu'on nous voie.",
+              "Un miroir renvoie la lumière qu'il reçoit.",
+              "La lumière qui part vers l'arrière d'une lampe serait perdue sans miroir."
+            ]
+          },
+          "commun": {
+            "questions": [
+              {
+                "q": "Pourquoi met-on souvent du verre dépoli (translucide) à la fenêtre d'une salle de bains ?",
+                "options": [
+                  "Pour laisser entrer la lumière sans qu'on voie nettement à l'intérieur",
+                  "Pour empêcher toute lumière d'entrer",
+                  "Pour que la pièce soit dans le noir",
+                  "Parce qu'il produit de la lumière"
+                ],
+                "bonne": 0,
+                "explication": "Translucide : la lumière passe, l'image non."
+              },
+              {
+                "q": "Salomé place un miroir derrière la lampe d'un projecteur. À quoi sert-il ?",
+                "options": [
+                  "À fabriquer de la lumière",
+                  "À cacher la lampe",
+                  "À renvoyer vers l'avant la lumière qui partait vers l'arrière",
+                  "À rendre la lampe transparente"
+                ],
+                "bonne": 2,
+                "explication": "Le miroir renvoie la lumière."
+              }
+            ]
+          },
+          "lecon": "matieres"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "titre": "La chambre aux ombres — Comment naît une ombre ?",
+      "enigmes": [
+        {
+          "id": "3-1",
+          "titre": "Le schéma de Nils",
+          "type": "plan",
+          "consigne": {
+            "cm1": "Nils a éclairé une balle avec une lampe, devant un écran blanc. Place chaque étiquette sur le bon repère de son schéma. Clique sur une étiquette, puis sur la case du repère.<svg viewBox=\"0 0 380 230\" role=\"img\" aria-label=\"Schéma vu de côté : une lampe allumée à gauche, une balle sur un pied au milieu, un écran blanc à droite. Des traits droits partent de la lampe, frôlent la balle et vont jusqu'à l'écran. La moitié droite de la balle est sombre ; une tache sombre apparaît sur l'écran. Repères numérotés de 1 à 3.\" style=\"display:block;max-width:460px;width:100%;margin:10px auto;background:#f3f7fb;border:2px solid #3d5a80;border-radius:10px\"><rect x=\"0\" y=\"0\" width=\"380\" height=\"230\" fill=\"#eae3d2\"/><rect x=\"0\" y=\"196\" width=\"380\" height=\"34\" fill=\"#b9a27f\"/><rect x=\"22\" y=\"150\" width=\"34\" height=\"46\" fill=\"#555\"/><polygon points=\"18,150 60,150 52,110 26,110\" fill=\"#3d5a80\"/><circle cx=\"40\" cy=\"104\" r=\"12\" fill=\"#ffd23f\" stroke=\"#c99a00\" stroke-width=\"2\"/><rect x=\"320\" y=\"20\" width=\"16\" height=\"176\" fill=\"#fbfbf6\" stroke=\"#666\" stroke-width=\"2\"/><rect x=\"167\" y=\"130\" width=\"6\" height=\"66\" fill=\"#777\"/><line x1=\"40\" y1=\"104\" x2=\"320\" y2=\"161.2\" stroke=\"#e6a100\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><line x1=\"40\" y1=\"104\" x2=\"320\" y2=\"46.8\" stroke=\"#e6a100\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><ellipse cx=\"328\" cy=\"104\" rx=\"6\" ry=\"57.2\" fill=\"#2b2b2b\"/><circle cx=\"170\" cy=\"104\" r=\"26\" fill=\"#ffe9a8\" stroke=\"#333\" stroke-width=\"1.5\"/><path d=\"M170 78 A26 26 0 0 1 170 130 A8 26 0 0 0 170 78 Z\" fill=\"#3a3a3a\"/><circle cx=\"40\" cy=\"76\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"40\" y=\"81\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">1</text><circle cx=\"184\" cy=\"60\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"184\" y=\"65\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">2</text><circle cx=\"300\" cy=\"30.845239335059176\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"300\" y=\"35.845239335059176\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">3</text></svg>",
+            "cm2": "Nils a éclairé une balle avec une lampe, devant un écran blanc. Place chaque étiquette sur le bon repère de son schéma. Une étiquette est en trop.<svg viewBox=\"0 0 380 230\" role=\"img\" aria-label=\"Schéma vu de côté : une lampe allumée à gauche, une balle sur un pied au milieu, un écran blanc à droite. Des traits droits partent de la lampe, frôlent la balle et vont jusqu'à l'écran. La moitié droite de la balle est sombre ; une tache sombre apparaît sur l'écran. Repères numérotés de 1 à 4.\" style=\"display:block;max-width:460px;width:100%;margin:10px auto;background:#f3f7fb;border:2px solid #3d5a80;border-radius:10px\"><rect x=\"0\" y=\"0\" width=\"380\" height=\"230\" fill=\"#eae3d2\"/><rect x=\"0\" y=\"196\" width=\"380\" height=\"34\" fill=\"#b9a27f\"/><rect x=\"22\" y=\"150\" width=\"34\" height=\"46\" fill=\"#555\"/><polygon points=\"18,150 60,150 52,110 26,110\" fill=\"#3d5a80\"/><circle cx=\"40\" cy=\"104\" r=\"12\" fill=\"#ffd23f\" stroke=\"#c99a00\" stroke-width=\"2\"/><rect x=\"320\" y=\"20\" width=\"16\" height=\"176\" fill=\"#fbfbf6\" stroke=\"#666\" stroke-width=\"2\"/><rect x=\"167\" y=\"130\" width=\"6\" height=\"66\" fill=\"#777\"/><line x1=\"40\" y1=\"104\" x2=\"320\" y2=\"161.2\" stroke=\"#e6a100\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><line x1=\"40\" y1=\"104\" x2=\"320\" y2=\"46.8\" stroke=\"#e6a100\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><ellipse cx=\"328\" cy=\"104\" rx=\"6\" ry=\"57.2\" fill=\"#2b2b2b\"/><circle cx=\"170\" cy=\"104\" r=\"26\" fill=\"#ffe9a8\" stroke=\"#333\" stroke-width=\"1.5\"/><path d=\"M170 78 A26 26 0 0 1 170 130 A8 26 0 0 0 170 78 Z\" fill=\"#3a3a3a\"/><circle cx=\"40\" cy=\"76\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"40\" y=\"81\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">1</text><circle cx=\"184\" cy=\"60\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"184\" y=\"65\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">2</text><circle cx=\"300\" cy=\"30.845239335059176\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"300\" y=\"35.845239335059176\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">3</text><circle cx=\"140\" cy=\"144\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"140\" y=\"149\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">4</text></svg>"
+          },
+          "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« distinguer ombre propre et ombre portée ») ; La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III » ; schéma dessiné pour le jeu",
+          "correction": "La lampe est la source de lumière. Sur la balle, la partie tournée vers la lampe est éclairée ; la partie non éclairée est l'ombre propre. Sur l'écran, la tache sombre est l'ombre portée.",
+          "indices": {
+            "cm1": [
+              "Le repère 1 est sur la lampe.",
+              "L'ombre propre est SUR l'objet : c'est sa partie non éclairée.",
+              "L'ombre portée est projetée plus loin, sur l'écran."
+            ],
+            "cm2": [
+              "L'ombre propre est sur l'objet ; l'ombre portée est sur l'écran.",
+              "Le côté de la balle tourné vers la lampe reçoit la lumière.",
+              "La balle est opaque : l'étiquette « objet transparent » est en trop."
+            ]
+          },
+          "cm1": {
+            "titre": "Le schéma de Nils",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "source de lumière"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "ombre propre"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "ombre portée"
+              }
+            ],
+            "etiquettes": [
+              "source de lumière",
+              "ombre propre",
+              "ombre portée"
+            ]
+          },
+          "cm2": {
+            "titre": "Le schéma de Nils",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "source de lumière"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "ombre propre"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "ombre portée"
+              },
+              {
+                "libelle": "Repère 4",
+                "reponse": "partie éclairée"
+              }
+            ],
+            "etiquettes": [
+              "source de lumière",
+              "ombre propre",
+              "ombre portée",
+              "partie éclairée",
+              "objet transparent"
+            ]
+          },
+          "lecon": "ombres"
+        },
+        {
+          "id": "3-2",
+          "titre": "Les affirmations de Nils",
+          "type": "vraifaux",
+          "consigne": {
+            "cm1": "Nils fait trois affirmations sur les ombres. Pour chacune, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+            "cm2": "Nils fait cinq affirmations sur les ombres. Pour chacune, réponds « Vrai » ou « Faux », puis vérifie. Attention aux pièges."
+          },
+          "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (utiliser « entre », « à l'opposé de ») ; La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III »",
+          "correction": "Pour obtenir une ombre, il faut une source de lumière et un objet opaque. L'objet est entre la source et son ombre portée, qui se forme à l'opposé de la source.",
+          "indices": {
+            "cm1": [
+              "Sans lumière, pas d'ombre ; sans objet, pas d'ombre non plus.",
+              "L'ombre portée est derrière l'objet, du côté où la lumière n'arrive pas.",
+              "Dans l'ordre : la lampe, puis l'objet, puis l'ombre."
+            ],
+            "cm2": [
+              "Dans l'ordre : la source, puis l'objet, puis l'ombre portée.",
+              "Une vitre laisse passer la lumière : son ombre est très pâle.",
+              "L'ombre propre est sur l'objet lui-même."
+            ]
+          },
+          "cm1": {
+            "affirmations": [
+              {
+                "txt": "Pour avoir une ombre, il faut une source de lumière et un objet opaque.",
+                "vrai": true,
+                "explication": "Les deux sont nécessaires."
+              },
+              {
+                "txt": "L'ombre portée se forme du même côté que la lampe.",
+                "vrai": false,
+                "explication": "Elle se forme à l'opposé de la lampe."
+              },
+              {
+                "txt": "L'objet se trouve entre la lampe et son ombre portée.",
+                "vrai": true,
+                "explication": "Lampe, objet, ombre : dans cet ordre."
+              }
+            ]
+          },
+          "cm2": {
+            "affirmations": [
+              {
+                "txt": "Pour avoir une ombre, il faut une source de lumière et un objet opaque.",
+                "vrai": true,
+                "explication": "Les deux sont nécessaires."
+              },
+              {
+                "txt": "L'ombre portée se forme du même côté que la lampe.",
+                "vrai": false,
+                "explication": "Elle se forme à l'opposé de la lampe."
+              },
+              {
+                "txt": "L'objet se trouve entre la lampe et son ombre portée.",
+                "vrai": true,
+                "explication": "Lampe, objet, ombre : dans cet ordre."
+              },
+              {
+                "txt": "Une vitre transparente donne une ombre aussi sombre qu'une planche de bois.",
+                "vrai": false,
+                "explication": "La vitre laisse passer la lumière."
+              },
+              {
+                "txt": "L'ombre propre est la partie de l'objet qui n'est pas éclairée.",
+                "vrai": true,
+                "explication": "Elle est sur l'objet."
+              }
+            ]
+          },
+          "lecon": "ombres"
+        },
+        {
+          "id": "3-3",
+          "titre": "Le théâtre d'ombres",
+          "type": "ordre",
+          "consigne": {
+            "cm1": "Nils fait un théâtre d'ombres. L'écran et la figurine du bateau ne bougent pas ; Nils déplace seulement la lampe. Range les essais de la plus petite ombre portée (en haut) à la plus grande (en bas). Utilise les flèches ▲ et ▼, puis vérifie.",
+            "cm2": "Nils fait quatre essais avec la même figurine. Range-les de la plus petite ombre portée sur l'écran (en haut) à la plus grande (en bas). Compare bien les distances."
+          },
+          "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« faire varier la taille d'une ombre portée en déplaçant soit l'écran, soit la source, soit l'obstacle ») ; La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III » (objet à mi-distance : ombre deux fois plus grande)",
+          "correction": "Plus la figurine est près de la lampe (et loin de l'écran), plus son ombre portée est grande. Placée à mi-distance entre la lampe et l'écran, elle donne une ombre deux fois plus grande qu'elle.",
+          "indices": {
+            "cm1": [
+              "Approche ta main d'une lampe : son ombre sur le mur grandit.",
+              "La lampe tout près de la figurine donne la plus grande ombre.",
+              "La lampe très loin donne la plus petite ombre."
+            ],
+            "cm2": [
+              "Plus la figurine est près de la lampe, plus l'ombre est grande.",
+              "Figurine collée près de l'écran : l'ombre a presque sa taille.",
+              "À mi-distance entre la lampe et l'écran, l'ombre est deux fois plus grande ; plus près de la lampe, encore plus."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "La lampe est très loin de la figurine.",
+                "rang": 1
+              },
+              {
+                "txt": "La lampe est à mi-chemin.",
+                "rang": 2
+              },
+              {
+                "txt": "La lampe est tout près de la figurine.",
+                "rang": 3
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "Lampe à 1 m de l'écran ; figurine à 20 cm de l'écran.",
+                "rang": 1
+              },
+              {
+                "txt": "Lampe à 1,5 m de l'écran ; figurine à 50 cm de l'écran.",
+                "rang": 2
+              },
+              {
+                "txt": "Lampe à 1 m de l'écran ; figurine au milieu, à 50 cm de l'écran.",
+                "rang": 3
+              },
+              {
+                "txt": "Lampe à 1 m de l'écran ; figurine à 25 cm de la lampe.",
+                "rang": 4
+              }
+            ]
+          },
+          "lecon": "ombres"
+        },
+        {
+          "id": "3-4",
+          "titre": "Le mot de la boîte à ombres",
+          "type": "lettres",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Trouve le mot qui manque : « La partie d'un objet qui n'est pas éclairée s'appelle l'ombre … ». Ses lettres sont cachées en couleur dans le mot de Nils, dans le désordre. Clique-les dans l'ordre qui forme le mot (6 lettres). Quatre lettres sont des pièges.",
+          "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« distinguer ombre propre et ombre portée »)",
+          "correction": "C'est l'ombre propre : elle est sur l'objet lui-même. L'ombre portée, elle, est projetée sur le sol, le mur ou l'écran.",
+          "indices": {
+            "cm2": [
+              "Ce n'est pas « portée » : l'ombre portée est sur l'écran.",
+              "Le mot commence par P.",
+              "Le mot veut aussi dire « qui n'est pas sale »."
+            ]
+          },
+          "commun": {
+            "cible": [
+              "P",
+              "R",
+              "O",
+              "P",
+              "R",
+              "E"
+            ],
+            "texte": "<p>Ce soir, j'<b data-l='E'>e</b>ssaie ma boîte à ombres. Je <b data-l='P'>p</b>ose la lam<b data-l='P'>p</b>e sur la table, je <b data-l='T'>t</b>ourne la balle, et la moitié du côté du mu<b data-l='R'>r</b> reste sombre. Sur l'écran, le bateau dessine sa <b data-l='S'>s</b>ilh<b data-l='O'>o</b>uette n<b data-l='O'>o</b>ire. <b data-l='M'>M</b>a tante Maëlle dit que j'ai l'œil d'un vrai ga<b data-l='R'>r</b>dien de phare.</p>"
+          },
+          "lecon": "ombres"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "titre": "La cour du cadran solaire — L'ombre tourne avec le Soleil",
+      "enigmes": [
+        {
+          "id": "4-1",
+          "titre": "Les photos d'Achille",
+          "type": "ordre",
+          "consigne": {
+            "cm1": "Achille, l'horloger, a photographié l'ombre d'un bâton planté dans la cour, plusieurs fois dans la même journée ensoleillée. Le Soleil se lève du côté de l'est. Range ses photos du matin (en haut) au soir (en bas).",
+            "cm2": "Achille a photographié l'ombre d'un bâton planté dans la cour, cinq fois dans la même journée ensoleillée. Range ses photos du matin (en haut) au soir (en bas). Pense au trajet du Soleil, de l'est vers l'ouest en passant par le sud."
+          },
+          "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« observer la position de l'ombre d'un bâton sur le sol au cours d'une journée ensoleillée ») ; Fondation La main à la pâte, séquence « La Terre en mouvement » (cycle 3)",
+          "correction": "L'ombre est toujours à l'opposé du Soleil. Le matin, le Soleil est côté est : l'ombre, longue, est tournée vers l'ouest. Au midi solaire, le Soleil est le plus haut : l'ombre est la plus courte et tournée vers le nord. Le soir, l'ombre s'allonge vers l'est.",
+          "indices": {
+            "cm1": [
+              "L'ombre est toujours du côté opposé au Soleil.",
+              "Le matin, le Soleil est à l'est : l'ombre part vers l'ouest.",
+              "L'ombre la plus courte arrive quand le Soleil est le plus haut."
+            ],
+            "cm2": [
+              "L'ombre est toujours du côté opposé au Soleil.",
+              "Elle tourne de l'ouest vers l'est en passant par le nord.",
+              "Elle raccourcit jusqu'au midi solaire, puis s'allonge."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "Ombre très longue, tournée vers l'ouest",
+                "rang": 1
+              },
+              {
+                "txt": "Ombre la plus courte de la journée, tournée vers le nord",
+                "rang": 2
+              },
+              {
+                "txt": "Ombre qui s'allonge, tournée vers le nord-est",
+                "rang": 3
+              },
+              {
+                "txt": "Ombre très longue, tournée vers l'est",
+                "rang": 4
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "Ombre très longue, tournée vers l'ouest",
+                "rang": 1
+              },
+              {
+                "txt": "Ombre qui raccourcit, tournée vers le nord-ouest",
+                "rang": 2
+              },
+              {
+                "txt": "Ombre la plus courte de la journée, tournée vers le nord",
+                "rang": 3
+              },
+              {
+                "txt": "Ombre qui s'allonge, tournée vers le nord-est",
+                "rang": 4
+              },
+              {
+                "txt": "Ombre très longue, tournée vers l'est",
+                "rang": 5
+              }
+            ]
+          },
+          "lecon": "soleil"
+        },
+        {
+          "id": "4-2",
+          "titre": "Les questions de l'horloger",
+          "type": "qcm",
+          "consigne": {
+            "cm1": "Achille vous pose une question. Clique sur la bonne réponse, puis vérifie.",
+            "cm2": "Achille vous pose deux questions. Pour chacune, une seule réponse est exacte."
+          },
+          "source": "Fondation La main à la pâte, séquence « La Terre en mouvement » (cycle 3) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
+          "correction": "L'ombre se forme à l'opposé de la source : le matin, le Soleil est du côté de l'est, l'ombre du côté de l'ouest. Vers le milieu de la journée, le Soleil est au plus haut : l'ombre est la plus courte, tournée vers le nord en France.",
+          "indices": {
+            "cm1": [
+              "Le bâton est entre le Soleil et son ombre.",
+              "L'ombre est à l'opposé du Soleil.",
+              "L'opposé de l'est, c'est l'ouest."
+            ],
+            "cm2": [
+              "L'ombre est à l'opposé du Soleil.",
+              "Plus le Soleil est haut dans le ciel, plus l'ombre est courte.",
+              "En France, au milieu de la journée, le Soleil est du côté du sud."
+            ]
+          },
+          "cm1": {
+            "questions": [
+              {
+                "q": "Ce matin, le Soleil est du côté de l'est. De quel côté du bâton se trouve son ombre ?",
+                "options": [
+                  "Du côté de l'est",
+                  "Du côté de l'ouest",
+                  "Il n'y a pas d'ombre le matin",
+                  "Juste sous le bâton"
+                ],
+                "bonne": 1,
+                "explication": "L'ombre est à l'opposé du Soleil."
+              }
+            ]
+          },
+          "cm2": {
+            "questions": [
+              {
+                "q": "Pourquoi l'ombre du bâton est-elle la plus courte vers le milieu de la journée ?",
+                "options": [
+                  "Parce que le Soleil est alors le plus bas",
+                  "Parce que le bâton rétrécit à la chaleur",
+                  "Parce que le Soleil est alors le plus haut dans le ciel",
+                  "Parce que la Terre s'arrête de tourner"
+                ],
+                "bonne": 2,
+                "explication": "Soleil haut, ombre courte."
+              },
+              {
+                "q": "En France, au midi solaire, de quel côté est tournée l'ombre du bâton ?",
+                "options": [
+                  "Vers le nord",
+                  "Vers le sud",
+                  "Vers l'est",
+                  "Vers l'ouest"
+                ],
+                "bonne": 0,
+                "explication": "Le Soleil est au sud, l'ombre au nord."
+              }
+            ]
+          },
+          "lecon": "soleil"
+        },
+        {
+          "id": "4-3",
+          "titre": "Le plan de la cour",
+          "type": "plan",
+          "consigne": {
+            "cm1": "Achille a dessiné la cour vue de dessus, avec trois ombres du même bâton. Place chaque moment de la journée sur le bon repère. Le nord est en haut du plan.<svg viewBox=\"0 0 380 270\" role=\"img\" aria-label=\"Cour vue de dessus, le nord en haut, l'est à droite, l'ouest à gauche. Un bâton planté au milieu ; trois ombres sombres partent de son pied, de longueurs et de directions différentes, chacune avec un repère numéroté.\" style=\"display:block;max-width:460px;width:100%;margin:10px auto;background:#f3f7fb;border:2px solid #3d5a80;border-radius:10px\"><rect x=\"0\" y=\"0\" width=\"380\" height=\"270\" fill=\"#cfe3b5\"/><rect x=\"70\" y=\"45\" width=\"240\" height=\"190\" rx=\"10\" fill=\"#e9dcc0\" stroke=\"#9c8a66\" stroke-width=\"2\"/><g font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1d3557\"><line x1=\"34\" y1=\"18\" x2=\"34\" y2=\"66\" stroke=\"#1d3557\" stroke-width=\"2\"/><line x1=\"10\" y1=\"42\" x2=\"58\" y2=\"42\" stroke=\"#1d3557\" stroke-width=\"2\"/><polygon points=\"34,12 29,24 39,24\" fill=\"#c0392b\"/><text x=\"34\" y=\"10\" text-anchor=\"middle\">N</text><text x=\"34\" y=\"82\" text-anchor=\"middle\">S</text><text x=\"66\" y=\"47\" text-anchor=\"middle\">E</text><text x=\"4\" y=\"47\" text-anchor=\"middle\">O</text></g><line x1=\"190\" y1=\"165\" x2=\"73.8\" y2=\"144.5\" stroke=\"#3b3b3b\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\".75\"/><circle cx=\"58.0\" cy=\"141.7\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"58.0\" y=\"146.7\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">1</text><line x1=\"190\" y1=\"165\" x2=\"190.0\" y2=\"125.0\" stroke=\"#3b3b3b\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\".75\"/><circle cx=\"190.0\" cy=\"109.0\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"190.0\" y=\"114.0\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">2</text><line x1=\"190\" y1=\"165\" x2=\"306.2\" y2=\"144.5\" stroke=\"#3b3b3b\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\".75\"/><circle cx=\"322.0\" cy=\"141.7\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"322.0\" y=\"146.7\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">3</text><circle cx=\"190\" cy=\"165\" r=\"6\" fill=\"#7a4b2a\" stroke=\"#333\" stroke-width=\"2\"/><text x=\"190\" y=\"189\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#333\">bâton</text></svg>",
+            "cm2": "Achille a dessiné la cour vue de dessus, avec quatre ombres du même bâton. Place chaque moment sur le bon repère. Une étiquette est en trop : à ce moment-là, il n'y a pas d'ombre du Soleil.<svg viewBox=\"0 0 380 270\" role=\"img\" aria-label=\"Cour vue de dessus, le nord en haut, l'est à droite, l'ouest à gauche. Un bâton planté au milieu ; quatre ombres sombres partent de son pied, de longueurs et de directions différentes, chacune avec un repère numéroté.\" style=\"display:block;max-width:460px;width:100%;margin:10px auto;background:#f3f7fb;border:2px solid #3d5a80;border-radius:10px\"><rect x=\"0\" y=\"0\" width=\"380\" height=\"270\" fill=\"#cfe3b5\"/><rect x=\"70\" y=\"45\" width=\"240\" height=\"190\" rx=\"10\" fill=\"#e9dcc0\" stroke=\"#9c8a66\" stroke-width=\"2\"/><g font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1d3557\"><line x1=\"34\" y1=\"18\" x2=\"34\" y2=\"66\" stroke=\"#1d3557\" stroke-width=\"2\"/><line x1=\"10\" y1=\"42\" x2=\"58\" y2=\"42\" stroke=\"#1d3557\" stroke-width=\"2\"/><polygon points=\"34,12 29,24 39,24\" fill=\"#c0392b\"/><text x=\"34\" y=\"10\" text-anchor=\"middle\">N</text><text x=\"34\" y=\"82\" text-anchor=\"middle\">S</text><text x=\"66\" y=\"47\" text-anchor=\"middle\">E</text><text x=\"4\" y=\"47\" text-anchor=\"middle\">O</text></g><line x1=\"190\" y1=\"165\" x2=\"73.8\" y2=\"144.5\" stroke=\"#3b3b3b\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\".75\"/><circle cx=\"58.0\" cy=\"141.7\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"58.0\" y=\"146.7\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">1</text><line x1=\"190\" y1=\"165\" x2=\"154.4\" y2=\"114.2\" stroke=\"#3b3b3b\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\".75\"/><circle cx=\"145.3\" cy=\"101.1\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"145.3\" y=\"106.1\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">2</text><line x1=\"190\" y1=\"165\" x2=\"190.0\" y2=\"125.0\" stroke=\"#3b3b3b\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\".75\"/><circle cx=\"190.0\" cy=\"109.0\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"190.0\" y=\"114.0\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">3</text><line x1=\"190\" y1=\"165\" x2=\"235.0\" y2=\"111.4\" stroke=\"#3b3b3b\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\".75\"/><circle cx=\"245.3\" cy=\"99.1\" r=\"11\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"245.3\" y=\"104.1\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#c0392b\">4</text><circle cx=\"190\" cy=\"165\" r=\"6\" fill=\"#7a4b2a\" stroke=\"#333\" stroke-width=\"2\"/><text x=\"190\" y=\"189\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"12\" fill=\"#333\">bâton</text></svg>"
+          },
+          "source": "Fondation La main à la pâte, séquence « La Terre en mouvement » (cycle 3) ; plan dessiné pour le jeu (simplifié, sans échelle)",
+          "correction": "Le matin, l'ombre longue est tournée vers l'ouest ; au midi solaire, elle est la plus courte, vers le nord ; le soir, elle s'allonge vers l'est. La nuit, il n'y a pas d'ombre du Soleil.",
+          "indices": {
+            "cm1": [
+              "Repère la rose des vents : O, c'est l'ouest ; E, c'est l'est.",
+              "Le matin, l'ombre est du côté de l'ouest.",
+              "L'ombre la plus courte est celle du midi solaire."
+            ],
+            "cm2": [
+              "L'ombre tourne de l'ouest vers l'est en passant par le nord.",
+              "La plus courte est celle du midi solaire.",
+              "À minuit, le Soleil est couché : pas d'ombre."
+            ]
+          },
+          "cm1": {
+            "titre": "Le plan de la cour",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "le matin"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "au midi solaire"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "le soir"
+              }
+            ],
+            "etiquettes": [
+              "le matin",
+              "au midi solaire",
+              "le soir"
+            ]
+          },
+          "cm2": {
+            "titre": "Le plan de la cour",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "tôt le matin"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "en fin de matinée"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "au midi solaire"
+              },
+              {
+                "libelle": "Repère 4",
+                "reponse": "dans l'après-midi"
+              }
+            ],
+            "etiquettes": [
+              "tôt le matin",
+              "en fin de matinée",
+              "au midi solaire",
+              "dans l'après-midi",
+              "à minuit"
+            ]
+          },
+          "lecon": "soleil"
+        },
+        {
+          "id": "4-4",
+          "titre": "Le carnet de l'été",
+          "type": "code",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "Fin juin, Achille a mesuré l'ombre d'un bâton de 1 m toutes les deux heures. Lis son carnet, puis ouvre le cadenas.<div class=\"doc-titre\"><i>Carnet d'Achille — fin juin, bâton de 1 m (relevé fictif)</i></div><table class=\"tableau-releves\"><tr><th>Heure (à la montre)</th><th>Longueur de l'ombre du bâton</th></tr><tr><td>10 h</td><td>118 cm</td></tr><tr><td>12 h</td><td>62 cm</td></tr><tr><td>14 h</td><td>47 cm</td></tr><tr><td>16 h</td><td>76 cm</td></tr><tr><td>18 h</td><td>151 cm</td></tr></table><p class=\"question-doc\"><b>À quelle heure l'ombre était-elle la plus courte, et combien mesurait-elle ?</b></p>",
+          "source": "Relevé fictif, calculé pour une journée de fin juin en France (voir A-VERIFIER.md) ; Fondation La main à la pâte, séquence « La Terre en mouvement » (cycle 3) (ombre la plus courte vers 14 h en été)",
+          "correction": "L'ombre la plus courte (47 cm) a été mesurée à 14 h : c'est le moment où le Soleil était le plus haut, le midi solaire. En été, en France, il arrive bien après 12 h à nos montres.",
+          "indices": {
+            "cm2": [
+              "Cherche le plus petit nombre de la deuxième colonne.",
+              "Le plus petit nombre est 47.",
+              "Regarde l'heure écrite sur la même ligne que 47 cm."
+            ]
+          },
+          "commun": {
+            "champs": [
+              {
+                "libelle": "Heure (en h)",
+                "valeur": "14",
+                "longueur": 2
+              },
+              {
+                "libelle": "Longueur (en cm)",
+                "valeur": "47",
+                "longueur": 3
+              }
+            ]
+          },
+          "lecon": "soleil"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "titre": "La galerie du phare — La Lune et le signal du bateau",
+      "enigmes": [
+        {
+          "id": "5-1",
+          "titre": "Le carnet de la Lune",
+          "type": "ordre",
+          "consigne": {
+            "cm1": "La capitaine Yasmine dessine la Lune tous les soirs dans son carnet de bord. Range ces phases dans l'ordre d'une lunaison, en commençant par la nouvelle lune (en haut). Utilise les flèches ▲ et ▼.",
+            "cm2": "La capitaine Yasmine a dessiné la Lune six soirs, mais les pages sont mélangées et les noms effacés. Range les dessins dans l'ordre d'une lunaison, en commençant par la nouvelle lune (en haut). Dessins faits depuis la France."
+          },
+          "source": "Vikidia, « Phases de la Lune » (lunaison : 29,53 jours) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« Observer, schématiser et nommer les phases de la Lune ») ; dessins faits pour le jeu",
+          "correction": "Ordre d'une lunaison : nouvelle lune, premier croissant, premier quartier, pleine lune, dernier quartier, dernier croissant, puis de nouveau la nouvelle lune. En France, la partie éclairée grandit d'abord à droite. En CM2, l'ordre des dessins est D, B, F, A, E, C.",
+          "indices": {
+            "cm1": [
+              "Après la nouvelle lune, la partie éclairée grandit.",
+              "La pleine lune arrive au milieu de la lunaison.",
+              "Le dernier quartier vient juste avant la nouvelle lune suivante."
+            ],
+            "cm2": [
+              "La nouvelle lune est le disque presque invisible.",
+              "D'abord, la partie éclairée grandit à droite ; ensuite, elle diminue et il ne reste que la gauche.",
+              "Le mince croissant éclairé à gauche est le dernier dessin."
+            ]
+          },
+          "cm1": {
+            "items": [
+              {
+                "txt": "nouvelle lune",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"nouvelle lune\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/></svg>",
+                "rang": 1
+              },
+              {
+                "txt": "premier quartier",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"premier quartier\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M26 4 A22 22 0 0 1 26 48 A0.00 22 0 0 1 26 4 Z\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 2
+              },
+              {
+                "txt": "pleine lune",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"pleine lune\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 3
+              },
+              {
+                "txt": "dernier quartier",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"dernier quartier\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M26 4 A22 22 0 0 0 26 48 A0.00 22 0 0 0 26 4 Z\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 4
+              }
+            ]
+          },
+          "cm2": {
+            "items": [
+              {
+                "txt": "Dessin D",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"Dessin D\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/></svg>",
+                "rang": 1
+              },
+              {
+                "txt": "Dessin B",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"Dessin B\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M26 4 A22 22 0 0 1 26 48 A15.56 22 0 0 0 26 4 Z\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 2
+              },
+              {
+                "txt": "Dessin F",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"Dessin F\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M26 4 A22 22 0 0 1 26 48 A0.00 22 0 0 1 26 4 Z\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 3
+              },
+              {
+                "txt": "Dessin A",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"Dessin A\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 4
+              },
+              {
+                "txt": "Dessin E",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"Dessin E\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M26 4 A22 22 0 0 0 26 48 A0.00 22 0 0 0 26 4 Z\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 5
+              },
+              {
+                "txt": "Dessin C",
+                "sous": "<svg viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" role=\"img\" aria-label=\"Dessin C\" style=\"vertical-align:middle;background:#0f1a2b;border-radius:8px\"><circle cx=\"26\" cy=\"26\" r=\"22\" fill=\"#2e3a4d\" stroke=\"#8796ab\" stroke-width=\"1.5\"/><path d=\"M26 4 A22 22 0 0 0 26 48 A15.56 22 0 0 1 26 4 Z\" fill=\"#f7f1d0\"/></svg>",
+                "rang": 6
+              }
+            ]
+          },
+          "lecon": "lune"
+        },
+        {
+          "id": "5-2",
+          "titre": "Les mots de la capitaine",
+          "type": "association",
+          "consigne": {
+            "cm1": "Relie chaque phase de la Lune à ce que l'on voit dans le ciel. Clique sur une phase, puis sur sa description.",
+            "cm2": "Relie chaque mot de la capitaine à sa description. Lis bien chaque description jusqu'au bout."
+          },
+          "source": "Vikidia, « Phases de la Lune » (lunaison : 29,53 jours) ; La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III » (la Lune renvoie la lumière du Soleil)",
+          "correction": "À la nouvelle lune, on ne voit presque pas la Lune ; au premier quartier, on voit la moitié droite éclairée ; à la pleine lune, tout le disque ; au dernier quartier, la moitié gauche. La Lune ne fait que renvoyer la lumière du Soleil.",
+          "indices": {
+            "cm1": [
+              "« Pleine » veut dire « complète » : tout le disque.",
+              "À la nouvelle lune, la face éclairée ne nous fait pas face.",
+              "Premier quartier : la moitié droite ; dernier quartier : la moitié gauche."
+            ],
+            "cm2": [
+              "Une lunaison va d'une nouvelle lune à la suivante.",
+              "La Lune est un objet éclairé, pas une source.",
+              "Le croissant du début de la lunaison est éclairé à droite."
+            ]
+          },
+          "cm1": {
+            "paires": [
+              {
+                "g": "la nouvelle lune",
+                "d": "on ne la voit presque pas"
+              },
+              {
+                "g": "le premier quartier",
+                "d": "on voit la moitié droite éclairée"
+              },
+              {
+                "g": "la pleine lune",
+                "d": "on voit tout le disque éclairé"
+              },
+              {
+                "g": "le dernier quartier",
+                "d": "on voit la moitié gauche éclairée"
+              }
+            ]
+          },
+          "cm2": {
+            "paires": [
+              {
+                "g": "la nouvelle lune",
+                "d": "on ne la voit presque pas"
+              },
+              {
+                "g": "le premier croissant",
+                "d": "un mince croissant éclairé à droite, le soir"
+              },
+              {
+                "g": "la pleine lune",
+                "d": "on voit tout le disque éclairé"
+              },
+              {
+                "g": "une lunaison",
+                "d": "environ 29 jours et demi, d'une nouvelle lune à la suivante"
+              },
+              {
+                "g": "la Lune",
+                "d": "elle renvoie la lumière qu'elle reçoit du Soleil"
+              }
+            ]
+          },
+          "lecon": "lune"
+        },
+        {
+          "id": "5-3",
+          "titre": "Le message lumineux de La Mouette",
+          "type": "code",
+          "consigne": {
+            "cm1": "Le bateau de la capitaine, <i>La Mouette</i>, répond au phare avec sa lampe à signaux. Un éclat court s'écrit •, un éclat long s'écrit —. Décode le mot avec le tableau, puis écris-le dans le cadenas.<div class=\"message-morse\" style=\"font-size:1.45em;letter-spacing:3px;text-align:center;background:#0f1a2b;color:#ffd23f;padding:10px;border-radius:10px;margin:8px 0\"><span style=\"white-space:nowrap\">•—••   ••—   —•   •</span></div><table class=\"tableau-releves\" style=\"margin:8px auto;border-collapse:collapse;text-align:left\"><tr><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>A</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•—</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>E</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>L</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•—••</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>N</b> <span style=\"font-size:1.15em;letter-spacing:2px\">—•</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>O</b> <span style=\"font-size:1.15em;letter-spacing:2px\">———</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>S</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•••</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>U</b> <span style=\"font-size:1.15em;letter-spacing:2px\">••—</span></td></tr></table>",
+            "cm2": "Le bateau de la capitaine, <i>La Mouette</i>, répond au phare avec sa lampe à signaux. Un éclat court s'écrit •, un éclat long s'écrit —. Décode les deux mots avec le tableau (attention, il contient des lettres inutiles), puis ouvre le cadenas.<div class=\"message-morse\" style=\"font-size:1.45em;letter-spacing:3px;text-align:center;background:#0f1a2b;color:#ffd23f;padding:10px;border-radius:10px;margin:8px 0\"><span style=\"white-space:nowrap\">•——•   •—••   •   ••   —•   •</span><span style=\"display:inline-block;width:2.2em\"></span><span style=\"white-space:nowrap\">•—••   ••—   —•   •</span></div><table class=\"tableau-releves\" style=\"margin:8px auto;border-collapse:collapse;text-align:left\"><tr><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>A</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•—</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>E</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>I</b> <span style=\"font-size:1.15em;letter-spacing:2px\">••</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>L</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•—••</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>N</b> <span style=\"font-size:1.15em;letter-spacing:2px\">—•</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>P</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•——•</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>R</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•—•</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>S</b> <span style=\"font-size:1.15em;letter-spacing:2px\">•••</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>T</b> <span style=\"font-size:1.15em;letter-spacing:2px\">—</span></td><td style=\"padding:4px 8px;border:1px solid #9fb3c8\"><b>U</b> <span style=\"font-size:1.15em;letter-spacing:2px\">••—</span></td></tr></table>"
+          },
+          "source": "Vikidia, « Alphabet morse » (code international) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (thème « Signaux »)",
+          "correction": "Le message est « PLEINE LUNE » (en CM1 : « LUNE »). Avec des éclats courts et longs, la lumière transporte un message : c'est un signal lumineux.",
+          "indices": {
+            "cm1": [
+              "Le message a 4 lettres, séparées par de grands espaces.",
+              "La première lettre est • — • • : c'est le L.",
+              "La dernière lettre est un seul éclat court : le E."
+            ],
+            "cm2": [
+              "Le premier mot a 6 lettres, le second 4.",
+              "Un seul éclat court, c'est le E ; deux éclats courts, c'est le I.",
+              "Le second mot commence par • — • • : le L."
+            ]
+          },
+          "cm1": {
+            "champs": [
+              {
+                "libelle": "Le mot décodé",
+                "valeur": "LUNE",
+                "longueur": 4,
+                "numerique": false
+              }
+            ]
+          },
+          "cm2": {
+            "champs": [
+              {
+                "libelle": "Premier mot",
+                "valeur": "PLEINE",
+                "longueur": 6,
+                "numerique": false
+              },
+              {
+                "libelle": "Second mot",
+                "valeur": "LUNE",
+                "longueur": 4,
+                "numerique": false
+              }
+            ]
+          },
+          "lecon": "sources"
+        },
+        {
+          "id": "5-4",
+          "titre": "Le journal de bord",
+          "type": "vraifaux",
+          "niveaux": [
+            "CM2"
+          ],
+          "consigne": "La capitaine a noté cinq phrases dans son journal de bord. Pour chacune, réponds « Vrai » ou « Faux ». Attention : une erreur très répandue s'est glissée.",
+          "source": "Vikidia, « Phases de la Lune » (lunaison : 29,53 jours) (lunaison 29,53 jours ; pleine lune environ 15 jours après la nouvelle lune) ; La main à la pâte (Lorraine), « Parcours 8 : Ombres et lumière, cycle III »",
+          "correction": "La Lune ne produit pas de lumière : elle renvoie celle du Soleil. Les phases ne viennent pas de l'ombre de la Terre : selon sa position autour de la Terre, nous voyons une partie plus ou moins grande de sa moitié éclairée.",
+          "indices": {
+            "cm2": [
+              "La Lune est un objet éclairé.",
+              "Une lunaison dure environ un mois.",
+              "L'ombre de la Terre sur la Lune, c'est une éclipse, un phénomène rare : pas les phases de chaque mois."
+            ]
+          },
+          "commun": {
+            "affirmations": [
+              {
+                "txt": "La Lune produit sa propre lumière.",
+                "vrai": false,
+                "explication": "Elle renvoie la lumière du Soleil."
+              },
+              {
+                "txt": "Une lunaison dure environ 29 jours et demi.",
+                "vrai": true,
+                "explication": "29,53 jours exactement."
+              },
+              {
+                "txt": "La pleine lune revient environ 15 jours après la nouvelle lune.",
+                "vrai": true,
+                "explication": "Au milieu de la lunaison."
+              },
+              {
+                "txt": "Les phases existent parce que l'ombre de la Terre cache une partie de la Lune.",
+                "vrai": false,
+                "explication": "Elles dépendent de la partie éclairée que nous voyons."
+              },
+              {
+                "txt": "En France, quand la Lune grandit, on voit d'abord un croissant éclairé à droite.",
+                "vrai": true,
+                "explication": "C'est le premier croissant."
+              }
+            ]
+          },
+          "lecon": "lune"
+        }
+      ]
+    }
+  ]
+}

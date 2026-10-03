@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "60c8f25bda";
+self.VERSION_HORS_LIGNE = "7aa901fed0";
 self.FICHIERS_CODE = [
 "alimentation/assets/data/dialogues.json",
 "alimentation/assets/data/enigmes.json",
@@ -118,6 +118,23 @@ self.FICHIERS_CODE = [
 "editeur.html",
 "faq.html",
 "index.html",
+"lumiere/assets/data/dialogues.json",
+"lumiere/assets/data/enigmes.json",
+"lumiere/assets/data/evaluations.json",
+"lumiere/assets/data/lecons-a4.json",
+"lumiere/assets/data/lecons.json",
+"lumiere/css/enigmes.css",
+"lumiere/css/print.css",
+"lumiere/css/style.css",
+"lumiere/index.html",
+"lumiere/js/app.js",
+"lumiere/js/decors.js",
+"lumiere/js/jeu.js",
+"lumiere/js/lecons.js",
+"lumiere/js/personnages.js",
+"lumiere/js/reglages.js",
+"lumiere/lecons-imprimables.html",
+"lumiere/prof.html",
 "manifest.webmanifest",
 "melanges/assets/data/dialogues.json",
 "melanges/assets/data/enigmes.json",
@@ -351,6 +368,10 @@ self.IMAGES_JEUX = {
 "declaration/assets/images/personnages/louise.png",
 "declaration/assets/images/personnages/marquis.png",
 "declaration/assets/images/personnages/maximilien.png"
+],
+"lumiere": [
+"lumiere/assets/images/affiche-fond.jpg",
+"lumiere/assets/images/affiche.jpg"
 ],
 "melanges": [
 "melanges/assets/images/affiche.jpg",

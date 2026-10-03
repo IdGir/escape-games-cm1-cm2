@@ -1,0 +1,671 @@
+{
+  "metadata": {
+    "sujet": "La lumière : sources, trajet, matériaux, ombres, ombre du bâton, phases de la Lune, signaux lumineux",
+    "niveaux": [
+      "CM1",
+      "CM2"
+    ],
+    "programme": "Sciences et technologie, cycle 3 — thème « La matière, les mouvements et les signaux », sous-thème « Signaux : la lumière » (BO n° 24 du 11 juin 2026). Progression de l'enseignant : année A, période 2 (« Matière, mouvement, énergie et information. La lumière. »).",
+    "sources": "Voir README.md du jeu, section Sources."
+  },
+  "quizz_final": {
+    "CM1": [
+      {
+        "q": "Laquelle de ces choses est une source de lumière ?",
+        "options": [
+          "La Lune",
+          "Une flamme de bougie",
+          "Un miroir"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Comment voyage la lumière dans l'air ?",
+        "options": [
+          "En zigzag",
+          "En tournant autour des objets",
+          "En ligne droite"
+        ],
+        "bonne": 2
+      },
+      {
+        "q": "Comment appelle-t-on un matériau qui ne laisse pas passer la lumière ?",
+        "options": [
+          "Opaque",
+          "Transparent",
+          "Translucide"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "Le matin, le Soleil est à l'est. Où est l'ombre d'un bâton ?",
+        "options": [
+          "Du côté de l'est",
+          "Du côté de l'ouest",
+          "Juste sous le bâton"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Pourquoi voit-on la Lune briller la nuit ?",
+        "options": [
+          "Elle produit sa lumière",
+          "Elle reflète les lampes des villes",
+          "Elle est éclairée par le Soleil"
+        ],
+        "bonne": 2
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Pour voir la voile d'un bateau la nuit, quel est le trajet de la lumière ?",
+        "options": [
+          "Œil, puis voile",
+          "Voile, puis lampe",
+          "Lampe, puis voile, puis œil",
+          "La voile produit sa lumière"
+        ],
+        "bonne": 2
+      },
+      {
+        "q": "Le papier calque laisse passer la lumière, mais on ne voit pas nettement à travers. Il est…",
+        "options": [
+          "translucide",
+          "transparent",
+          "opaque",
+          "lumineux"
+        ],
+        "bonne": 0
+      },
+      {
+        "q": "Comment s'appelle la partie d'un objet qui n'est pas éclairée ?",
+        "options": [
+          "L'ombre portée",
+          "Le rayon",
+          "Le reflet",
+          "L'ombre propre"
+        ],
+        "bonne": 3
+      },
+      {
+        "q": "Quand l'ombre d'un bâton est-elle la plus courte ?",
+        "options": [
+          "Au lever du Soleil",
+          "Au midi solaire, quand le Soleil est le plus haut",
+          "Au coucher du Soleil",
+          "Elle a toujours la même longueur"
+        ],
+        "bonne": 1
+      },
+      {
+        "q": "Combien de temps dure environ une lunaison ?",
+        "options": [
+          "7 jours",
+          "24 heures",
+          "29 jours et demi",
+          "365 jours"
+        ],
+        "bonne": 2
+      }
+    ]
+  },
+  "fiches_preparatoires": [
+    {
+      "salle": 1,
+      "titre": "La lanterne du phare — sources et trajet de la lumière",
+      "objectifs": [
+        "Distinguer source de lumière et objet éclairé",
+        "Savoir que la lumière va en ligne droite jusqu'à l'œil"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "source de lumière",
+          "def": "produit sa propre lumière"
+        },
+        {
+          "mot": "objet éclairé",
+          "def": "renvoie la lumière reçue"
+        },
+        {
+          "mot": "rayon de lumière",
+          "def": "trait droit fléché qui montre le trajet"
+        }
+      ],
+      "contexte": "On voit un objet quand la lumière qu'il renvoie entre dans l'œil. La lumière sert aussi de signal (phare, feux, Morse). Ne jamais regarder le Soleil."
+    },
+    {
+      "salle": 2,
+      "titre": "L'atelier des vitres — transparent, translucide, opaque",
+      "objectifs": [
+        "Classer des matériaux par une expérience",
+        "Justifier son classement"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "transparent",
+          "def": "la lumière passe, on voit nettement"
+        },
+        {
+          "mot": "translucide",
+          "def": "la lumière passe, on ne voit pas nettement"
+        },
+        {
+          "mot": "opaque",
+          "def": "la lumière ne passe pas"
+        }
+      ],
+      "contexte": "On place le matériau entre une lampe et ses yeux. Un miroir est opaque : il renvoie la lumière."
+    },
+    {
+      "salle": 3,
+      "titre": "La chambre aux ombres — ombre propre et ombre portée",
+      "objectifs": [
+        "Produire une ombre",
+        "Relier position et taille de l'ombre aux positions de la source et de l'objet"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "ombre propre",
+          "def": "partie non éclairée de l'objet"
+        },
+        {
+          "mot": "ombre portée",
+          "def": "tache sombre sur le sol ou l'écran"
+        },
+        {
+          "mot": "entre, à l'opposé de",
+          "def": "mots pour situer l'objet et l'ombre"
+        }
+      ],
+      "contexte": "Source, objet et ombre portée sont alignés. Plus l'objet est près de la source, plus l'ombre portée est grande."
+    },
+    {
+      "salle": 4,
+      "titre": "La cour du cadran solaire — l'ombre d'un bâton",
+      "objectifs": [
+        "Relier l'ombre d'un bâton à la position du Soleil",
+        "Repérer le midi solaire"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "midi solaire",
+          "def": "Soleil au plus haut, ombre la plus courte"
+        },
+        {
+          "mot": "cadran solaire",
+          "def": "donne l'heure grâce à une ombre"
+        },
+        {
+          "mot": "est, ouest, sud, nord",
+          "def": "lever, coucher, Soleil de midi, ombre de midi"
+        }
+      ],
+      "contexte": "Le Soleil se lève à l'est et se couche à l'ouest ; l'ombre est toujours à l'opposé. Ne jamais regarder le Soleil."
+    },
+    {
+      "salle": 5,
+      "titre": "La galerie du phare — les phases de la Lune",
+      "objectifs": [
+        "Nommer et ordonner les phases de la Lune",
+        "Savoir que la Lune est éclairée par le Soleil"
+      ],
+      "vocabulaire": [
+        {
+          "mot": "phase",
+          "def": "partie éclairée de la Lune que l'on voit"
+        },
+        {
+          "mot": "lunaison",
+          "def": "cycle d'environ 29 jours et demi"
+        },
+        {
+          "mot": "quartier, croissant",
+          "def": "moitié éclairée, mince arc éclairé"
+        }
+      ],
+      "contexte": "Nouvelle lune, premier quartier, pleine lune, dernier quartier : puis le cycle recommence."
+    }
+  ],
+  "qcm": {
+    "CM1": [
+      {
+        "q": "Lequel de ces objets produit sa propre lumière ?",
+        "options": [
+          "la Lune",
+          "le Soleil",
+          "un livre"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "La Lune est…",
+        "options": [
+          "une source de lumière",
+          "une étoile",
+          "un objet éclairé"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Pour voir un objet, il faut que…",
+        "options": [
+          "sa lumière entre dans l'œil",
+          "l'œil envoie des rayons",
+          "il fasse nuit"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Sur un schéma, un rayon de lumière se dessine…",
+        "options": [
+          "par un trait en vagues",
+          "par un trait droit avec une flèche",
+          "par un rond"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Une vitre est…",
+        "options": [
+          "transparente",
+          "translucide",
+          "opaque"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Le verre dépoli d'une salle de bains est…",
+        "options": [
+          "transparent",
+          "opaque",
+          "translucide"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Pour obtenir une ombre, il faut une source de lumière et…",
+        "options": [
+          "un objet transparent",
+          "un objet opaque",
+          "un miroir seulement"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "La tache sombre que l'objet dessine sur l'écran s'appelle…",
+        "options": [
+          "l'ombre portée",
+          "l'ombre propre",
+          "la lumière"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Au midi solaire, l'ombre d'un bâton est…",
+        "options": [
+          "la plus longue de la journée",
+          "absente",
+          "la plus courte de la journée"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "La phase où l'on voit tout le disque éclairé s'appelle…",
+        "options": [
+          "la nouvelle lune",
+          "la pleine lune",
+          "le premier quartier"
+        ],
+        "bonne": 1,
+        "pts": 1
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Lequel de ces objets est une source de lumière ?",
+        "options": [
+          "une lampe éteinte",
+          "une étoile",
+          "la Lune"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Que fait un objet éclairé ?",
+        "options": [
+          "Il produit sa lumière",
+          "Il absorbe toute la lumière",
+          "Il renvoie une partie de la lumière qu'il reçoit"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "À quelle vitesse environ la lumière voyage-t-elle ?",
+        "options": [
+          "300 000 km par seconde",
+          "300 km par heure",
+          "3 km par seconde"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Dans le code Morse, la lettre E s'écrit…",
+        "options": [
+          "———",
+          "•",
+          "•—••"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Lequel de ces matériaux est opaque, mais brillant ?",
+        "options": [
+          "la feuille d'aluminium",
+          "le papier calque",
+          "la vitre"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "Que fait un miroir placé derrière une lampe ?",
+        "options": [
+          "Il produit de la lumière",
+          "Il laisse passer la lumière",
+          "Il renvoie la lumière vers l'avant"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Où se trouve l'objet par rapport à la source et à son ombre portée ?",
+        "options": [
+          "derrière l'ombre",
+          "entre les deux",
+          "derrière la source"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "L'écran est fixe. Pour agrandir l'ombre portée d'un objet, on peut…",
+        "options": [
+          "rapprocher l'objet de la lampe",
+          "éloigner l'objet de la lampe",
+          "éteindre la lampe"
+        ],
+        "bonne": 0,
+        "pts": 1
+      },
+      {
+        "q": "En France, au midi solaire, l'ombre d'un bâton est tournée vers…",
+        "options": [
+          "le sud",
+          "l'est",
+          "le nord"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "En été, en France, l'ombre la plus courte arrive à nos montres plutôt vers…",
+        "options": [
+          "12 h",
+          "14 h",
+          "10 h"
+        ],
+        "bonne": 1,
+        "pts": 1
+      },
+      {
+        "q": "Pourquoi la Lune a-t-elle des phases ?",
+        "options": [
+          "L'ombre de la Terre la cache chaque soir",
+          "Elle s'allume et s'éteint",
+          "Selon sa position, on voit plus ou moins sa moitié éclairée"
+        ],
+        "bonne": 2,
+        "pts": 1
+      },
+      {
+        "q": "Après le premier quartier et la pleine lune vient…",
+        "options": [
+          "le dernier quartier",
+          "le premier croissant",
+          "le premier quartier"
+        ],
+        "bonne": 0,
+        "pts": 1
+      }
+    ]
+  },
+  "questions_fermees": {
+    "CM1": [
+      {
+        "q": "Le Soleil est une source de lumière.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "La Lune produit sa propre lumière.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Le papier calque est opaque.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "L'ombre portée se forme à l'opposé de la source de lumière.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Cite deux sources de lumière.",
+        "type": "court",
+        "rep": "par exemple le Soleil, une flamme, une lampe allumée, un écran allumé",
+        "pts": 1
+      },
+      {
+        "q": "Comment s'appelle la partie d'un objet qui n'est pas éclairée ?",
+        "type": "court",
+        "rep": "l'ombre propre",
+        "pts": 1
+      },
+      {
+        "q": "De quel côté le Soleil se lève-t-il ?",
+        "type": "court",
+        "rep": "du côté de l'est",
+        "pts": 1
+      },
+      {
+        "q": "Cite deux phases de la Lune.",
+        "type": "court",
+        "rep": "nouvelle lune, premier quartier, pleine lune, dernier quartier (deux réponses)",
+        "pts": 1
+      }
+    ],
+    "CM2": [
+      {
+        "q": "Une lampe éteinte est une source de lumière.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "La lumière se propage en ligne droite.",
+        "type": "vf",
+        "bonne": "vrai",
+        "pts": 1
+      },
+      {
+        "q": "Un miroir est un matériau transparent.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Les phases de la Lune viennent de l'ombre de la Terre.",
+        "type": "vf",
+        "bonne": "faux",
+        "pts": 1
+      },
+      {
+        "q": "Explique comment on voit un objet qui n'est pas une source de lumière.",
+        "type": "court",
+        "rep": "il est éclairé par une source et renvoie une partie de cette lumière, qui entre dans l'œil",
+        "pts": 1
+      },
+      {
+        "q": "Quelle différence y a-t-il entre un matériau transparent et un matériau translucide ?",
+        "type": "court",
+        "rep": "les deux laissent passer la lumière, mais on ne voit nettement à travers que le transparent",
+        "pts": 1
+      },
+      {
+        "q": "Pourquoi l'ombre d'un bâton change-t-elle de direction au cours de la journée ?",
+        "type": "court",
+        "rep": "le Soleil se déplace dans le ciel (de l'est vers l'ouest) et l'ombre est toujours à l'opposé",
+        "pts": 1
+      },
+      {
+        "q": "Qu'est-ce qu'une lunaison ?",
+        "type": "court",
+        "rep": "la durée d'un cycle de phases, d'une nouvelle lune à la suivante, environ 29 jours et demi",
+        "pts": 1
+      }
+    ]
+  },
+  "etudes_documents": {
+    "CM1": [
+      {
+        "titre": "Le banc d'essai de Salomé",
+        "document": {
+          "contenu": "Salomé place chaque matériau devant une lampe. Vitre : on voit la lampe nettement. Papier calque : on voit une lumière floue. Carton : on ne voit plus du tout la lampe.",
+          "source": "Expérience inventée pour le jeu, d'après La main à la pâte."
+        },
+        "questions": [
+          {
+            "q": "Quel matériau est transparent ?",
+            "type": "court",
+            "rep": "la vitre",
+            "pts": 1
+          },
+          {
+            "q": "Quel matériau est translucide ?",
+            "type": "court",
+            "rep": "le papier calque",
+            "pts": 1
+          },
+          {
+            "q": "Pourquoi n'y a-t-il pas de lumière derrière le carton ?",
+            "type": "court",
+            "rep": "il est opaque : il ne laisse pas passer la lumière",
+            "pts": 1
+          }
+        ]
+      },
+      {
+        "titre": "Le carnet de bord de la capitaine",
+        "document": {
+          "contenu": "« Lundi : premier quartier, la moitié droite de la Lune est éclairée. Lundi suivant : pleine lune, tout le disque est éclairé. »",
+          "source": "Carnet inventé pour le jeu, d'après Vikidia, « Phases de la Lune »."
+        },
+        "questions": [
+          {
+            "q": "Quelle phase la capitaine voit-elle le premier lundi ?",
+            "type": "court",
+            "rep": "le premier quartier",
+            "pts": 1
+          },
+          {
+            "q": "Combien de jours séparent les deux observations ?",
+            "type": "court",
+            "rep": "7 jours",
+            "pts": 1
+          },
+          {
+            "q": "D'où vient la lumière de la Lune ?",
+            "type": "court",
+            "rep": "du Soleil, qui l'éclaire",
+            "pts": 1
+          }
+        ]
+      }
+    ],
+    "CM2": [
+      {
+        "titre": "Le carnet d'Achille",
+        "document": {
+          "contenu": "Fin juin, bâton de 1 m. 10 h : 118 cm. 12 h : 62 cm. 14 h : 47 cm. 16 h : 76 cm. 18 h : 151 cm.",
+          "source": "Relevé fictif, calculé pour une journée de fin juin en France."
+        },
+        "questions": [
+          {
+            "q": "À quelle heure l'ombre est-elle la plus courte ?",
+            "type": "court",
+            "rep": "à 14 h",
+            "pts": 1
+          },
+          {
+            "q": "Comment appelle-t-on ce moment ?",
+            "type": "court",
+            "rep": "le midi solaire",
+            "pts": 1
+          },
+          {
+            "q": "Pourquoi l'ombre est-elle plus longue à 18 h qu'à 14 h ?",
+            "type": "court",
+            "rep": "le Soleil est plus bas dans le ciel",
+            "pts": 1
+          }
+        ]
+      },
+      {
+        "titre": "La lentille de Fresnel",
+        "document": {
+          "contenu": "En 1823, Augustin Fresnel invente une lentille de verre à échelons, essayée en juillet 1823 au phare de Cordouan. Elle équipe encore les phares du monde entier.",
+          "source": "D'après le ministère de la Transition écologique (DREAL), fiche « Les phares »."
+        },
+        "questions": [
+          {
+            "q": "En quelle année la lentille de Fresnel a-t-elle été inventée ?",
+            "type": "court",
+            "rep": "en 1823",
+            "pts": 1
+          },
+          {
+            "q": "La lentille d'un phare doit-elle être opaque, translucide ou transparente ? Pourquoi ?",
+            "type": "court",
+            "rep": "transparente : la lumière doit la traverser pour partir vers la mer",
+            "pts": 1
+          },
+          {
+            "q": "À quoi sert la lumière d'un phare ?",
+            "type": "court",
+            "rep": "à guider les marins : c'est un signal lumineux qui leur permet de se repérer",
+            "pts": 1
+          }
+        ]
+      }
+    ]
+  }
+}

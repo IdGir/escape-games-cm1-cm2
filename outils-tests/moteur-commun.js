@@ -6,7 +6,7 @@
    partagent le moteur d'énigmes v2 (outils-moteur/enigmes.js) :
    constitution, station-meteo, melanges, objets-techniques,
    moyen-age-abbaye, chateau-fort, versailles, renaissance,
-   alimentation.
+   alimentation, lumiere.
 
    Tout est déduit des données du jeu (enigmes.json, dialogues.json) :
    nombre d'énigmes par niveau, mots-clés, barème. Un test de jeu se

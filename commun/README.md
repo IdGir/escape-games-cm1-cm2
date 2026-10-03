@@ -8,16 +8,16 @@ est commun n'existe **qu'une fois**, ici, et chaque jeu le charge avec `../commu
 
 | Fichier | Rôle | Jeux qui le chargent |
 |---|---|---|
-| `js/media.js` | vidéos, images et décors dessinés (cascade), cinématiques | les 11 jeux « salles » |
-| `js/audio.js` | sons et ambiances synthétisés (aucun fichier audio) | les 11 |
-| `js/narration.js` | personnages qui parlent (voix du navigateur), sous-titres | les 11 |
-| `js/api.js` | assistant IA facultatif (Albert, DeepSeek) | les 11 |
-| `js/sync.js` | envoi de l'état de l'équipe au tableau de bord `prof.html` | les 11 |
-| `js/fiche-mission.js` | fiche de mission A4 | les 11 |
-| `js/enigmes.js` | moteur des 11 types d'énigmes (v2) | les 9 jeux à moteur commun* |
-| `js/impression.js` | bilan, fiches préparatoires, QCM, corrigés | les 9 jeux à moteur commun* |
-| `js/lecons-a4.js` · `css/lecons-a4.css` | leçons imprimables A4 | les 12 jeux (dont Mission géographique) |
-| `css/animations.css` · `css/personnages.css` · `css/video.css` | animations, portraits, vidéos | les 11 |
+| `js/media.js` | vidéos, images et décors dessinés (cascade), cinématiques | les 12 jeux « salles » |
+| `js/audio.js` | sons et ambiances synthétisés (aucun fichier audio) | les 12 |
+| `js/narration.js` | personnages qui parlent (voix du navigateur), sous-titres | les 12 |
+| `js/api.js` | assistant IA facultatif (Albert, DeepSeek) | les 12 |
+| `js/sync.js` | envoi de l'état de l'équipe au tableau de bord `prof.html` | les 12 |
+| `js/fiche-mission.js` | fiche de mission A4 | les 12 |
+| `js/enigmes.js` | moteur des 11 types d'énigmes (v2) | les 10 jeux à moteur commun* |
+| `js/impression.js` | bilan, fiches préparatoires, QCM, corrigés | les 10 jeux à moteur commun* |
+| `js/lecons-a4.js` · `css/lecons-a4.css` | leçons imprimables A4 | les 13 jeux (dont Mission géographique) |
+| `css/animations.css` · `css/personnages.css` · `css/video.css` | animations, portraits, vidéos | les 12 |
 
 ### Greffons (chargés après `app.js`)
 
@@ -26,18 +26,18 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 
 | Fichier | Amélioration | Jeux |
 |---|---|---|
-| `js/transitions.js` | B6 — fondu entre écrans, « rideau » à l'entrée d'une salle (désactivé par « animations réduites ») | les 11 jeux « salles » + Mission géographique |
-| `js/accessibilite.js` + `polices/` | E4 — lecture facilitée : police très lisible ou OpenDyslexic, interlignage, espacement (⚙️ Réglages → Accessibilité ; gardé sur l'appareil pour tous les jeux) | les 12 |
-| `js/palier-decouverte.js` | E2 — troisième palier « Découverte » (énigmes CM1 + aide renforcée) | les 11 jeux « salles » |
-| `js/indices-adaptatifs.js` | E3 — un indice est proposé (jamais imposé) après un temps sans action ou 2 essais faux ; réglable dans ⚙️ | les 11 jeux « salles » |
-| `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 11 jeux « salles » |
-| `js/jeu-suivant.js` | C4 — « Et ensuite ? » à l'écran de fin : suite directe (Déclaration → Constitution) ou jeu précédent/suivant de la progression | les 11 jeux « salles » |
-| `js/variantes.js` | D3 — banque d'énigmes : une énigme peut avoir des `variantes` dans `enigmes.json` ; la série jouée change à chaque année scolaire (ou se choisit dans ⚙️) | les 9 jeux à moteur commun |
-| `js/compte-rendu.js` | compte-rendu d'une partie (score, énigmes, erreurs, indices, temps, code de contrôle) ; historique des parties de l'appareil (pour `resultats.html`) | les 11 jeux « salles » |
-| `js/mode-solo.js` | D2 — « 🏠 Je joue seul » (`?solo=1`) : prénom, pas de synchronisation, compte-rendu à copier, télécharger ou imprimer pour l'enseignant | les 11 jeux « salles » |
-| `js/pwa.js` | A4 — enregistre le service worker `sw.js` (application installable, hors connexion ; voir `outils-pwa/README.md`) | les 12 jeux et l'accueil |
+| `js/transitions.js` | B6 — fondu entre écrans, « rideau » à l'entrée d'une salle (désactivé par « animations réduites ») | les 12 jeux « salles » + Mission géographique |
+| `js/accessibilite.js` + `polices/` | E4 — lecture facilitée : police très lisible ou OpenDyslexic, interlignage, espacement (⚙️ Réglages → Accessibilité ; gardé sur l'appareil pour tous les jeux) | les 13 |
+| `js/palier-decouverte.js` | E2 — troisième palier « Découverte » (énigmes CM1 + aide renforcée) | les 12 jeux « salles » |
+| `js/indices-adaptatifs.js` | E3 — un indice est proposé (jamais imposé) après un temps sans action ou 2 essais faux ; réglable dans ⚙️ | les 12 jeux « salles » |
+| `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 12 jeux « salles » |
+| `js/jeu-suivant.js` | C4 — « Et ensuite ? » à l'écran de fin : suite directe (Déclaration → Constitution) ou jeu précédent/suivant de la progression | les 12 jeux « salles » |
+| `js/variantes.js` | D3 — banque d'énigmes : une énigme peut avoir des `variantes` dans `enigmes.json` ; la série jouée change à chaque année scolaire (ou se choisit dans ⚙️) | les 10 jeux à moteur commun |
+| `js/compte-rendu.js` | compte-rendu d'une partie (score, énigmes, erreurs, indices, temps, code de contrôle) ; historique des parties de l'appareil (pour `resultats.html`) | les 12 jeux « salles » |
+| `js/mode-solo.js` | D2 — « 🏠 Je joue seul » (`?solo=1`) : prénom, pas de synchronisation, compte-rendu à copier, télécharger ou imprimer pour l'enseignant | les 12 jeux « salles » |
+| `js/pwa.js` | A4 — enregistre le service worker `sw.js` (application installable, hors connexion ; voir `outils-pwa/README.md`) | les 13 jeux et l'accueil |
 
-\* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation.
+\* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation, lumiere.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres
 (énigme unique par salle) ; `mission-geo` a son propre moteur (16 séances).
 
