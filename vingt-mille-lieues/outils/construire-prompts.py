@@ -139,7 +139,7 @@ for n in [1] + list(range(3, 12)):
     dep = f"assets/medias-depart/transition-e{n}.jpg" if n in MOUV else ""
     fr_mouv, en_mouv = MOUV.get(n, (f"À rédiger avec l'escale {n}.", ""))
     ajoute(id=f"video-transition-e{n}", type="vidéo", fichier=f"assets/videos/transition-e{n}.mp4", dim="1280×720", duree="6-10 s", ratio="16:9", escale=str(n), ref=dep or "décor validé de l'escale",
-           statut=f"à produire avec l'escale {n}", zones="", effets="sous-titres dans le code",
+           statut=("déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)" if os.path.exists(os.path.join(JEU, "assets", "videos", f"transition-e{n}.mp4")) else f"à produire avec l'escale {n}"), zones="", effets="sous-titres dans le code",
            fr=fr_mouv + " Aucun personnage ne parle, aucun texte, aucune lettre.", en=en_mouv + " No character speaking, no text, no letters.")
 ajoute(id="video-fin", type="vidéo", fichier="assets/videos/fin.mp4", dim="1280×720", duree="45 s", ratio="16:9", escale="11", ref="decor-pont-nautilus", statut="à produire en fin de campagne", zones="", effets="", fr="À rédiger avec l'escale 11 (le Nautilus regagne la surface).", en="")
 ajoute(id="video-bande-annonce", type="vidéo", fichier="assets/videos/bande-annonce.mp4", dim="1280×720", duree="15-20 s", ratio="16:9", escale="toutes", ref="décors validés", statut="à monter en fin de campagne", zones="", effets="", fr="Montage des décors validés (outils-medias/bande-annonce.py du dépôt, après intégration).", en="")

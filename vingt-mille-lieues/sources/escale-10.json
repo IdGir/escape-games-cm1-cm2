@@ -16,78 +16,190 @@
     "etats_decor": [],
     "enigmes": [
       {
-        "id": "e10-1", "escale": 10, "ordre": 1, "titre": "Le monstre à la vitre",
-        "decor": "salon", "objet_principal": "hublots", "objets_cliquables": ["hublots", "vitrines", "epure"],
+        "id": "e10-1",
+        "escale": 10,
+        "ordre": 1,
+        "titre": "Le monstre à la vitre",
+        "decor": "salon",
+        "objet_principal": "hublots",
+        "objets_cliquables": [
+          "hublots",
+          "vitrines",
+          "epure"
+        ],
         "personnage_emetteur": "conseil",
         "probleme_narratif": "Derrière la grande vitre du salon, un œil énorme, des bras couverts de ventouses. Conseil, fidèle à lui-même, veut d'abord le classer : poisson, crustacé, mollusque ? Le classer, c'est savoir comment il se défend, et où il est vulnérable.",
         "enjeu": "Mal classé, le monstre est mal compris : on frapperait une carapace qu'il n'a pas, au lieu de viser son corps mou.",
         "episode_du_roman": "Partie II, ch. XVIII « Les poulpes » : Conseil et Aronnax observent un calmar géant par la vitre du salon et discutent de sa classification.",
         "competence_programme": "Sciences : classer les êtres vivants selon les caractères qu'ils partagent (mollusques, céphalopodes, crustacés, poissons).",
         "pourquoi_ce_savoir_ici": "Devant un animal inconnu, la classification dit ce qu'il a (corps mou, bras à ventouses) et ce qu'il n'a pas (squelette, carapace).",
-        "reaction_du_decor": { "effet": "hublots", "description": "Derrière la vitre, le grand œil s'éloigne ; une ventouse se décolle lentement." },
+        "reaction_du_decor": {
+          "effet": "hublots",
+          "description": "Derrière la vitre, le grand œil s'éloigne ; une ventouse se décolle lentement."
+        },
         "liberte_ou_anachronisme": "Verne appelle « poulpes » des calmars géants, à huit bras chez lui. On distingue ici poulpe (8 bras) et calmar (8 bras et 2 tentacules).",
-        "lecon": "cephalopodes", "type": "tri",
+        "lecon": "cephalopodes",
+        "type": "tri",
         "niveau_variantes": "Mousse : l'intrus parmi les céphalopodes. Matelot : tri mollusque, crustacé, poisson. Timonier : vrai ou faux sur les céphalopodes. Lieutenant : tri par caractères + justification. Second : QCM sur la classification + justification.",
         "mousse": {
           "type": "intrus",
           "dialogue": "Monsieur, cet animal a des bras sur la tête ! Ses cousins ont la même chose. Sauf un, que je vous laisse trouver.",
           "consigne": "Lequel n'est PAS un céphalopode (un animal à bras sur la tête) ? Aide-toi de la fiche « Les céphalopodes ».",
           "cartes": [
-            { "txt": "le poulpe", "icone": "🐙", "intrus": false },
-            { "txt": "le calmar", "icone": "🦑", "intrus": false },
-            { "txt": "la seiche", "icone": "🦑", "intrus": false },
-            { "txt": "le crabe", "icone": "🦀", "intrus": true }
+            {
+              "txt": "le poulpe",
+              "icone": "🐙",
+              "intrus": false
+            },
+            {
+              "txt": "le calmar",
+              "icone": "🦑",
+              "intrus": false
+            },
+            {
+              "txt": "la seiche",
+              "icone": "🦑",
+              "intrus": false
+            },
+            {
+              "txt": "le crabe",
+              "icone": "🦀",
+              "intrus": true
+            }
           ],
-          "indices": ["Fiche « Les céphalopodes ».", "Le crabe a des pattes et une carapace."]
+          "indices": [
+            "Fiche « Les céphalopodes ».",
+            "Le crabe a des pattes et une carapace."
+          ]
         },
         "matelot": {
           "type": "tri",
           "dialogue": "Je range chaque animal dans son embranchement, comme il se doit. Le monstre d'abord, les autres ensuite.",
           "consigne": "Range chaque animal dans son groupe.",
           "colonnes": [
-            { "id": "mollusque", "titre": "Mollusques (corps mou)", "icone": "🐌" },
-            { "id": "crustace", "titre": "Crustacés (carapace, pattes articulées)", "icone": "🦀" },
-            { "id": "poisson", "titre": "Poissons (squelette, nageoires)", "icone": "🐟" }
+            {
+              "id": "mollusque",
+              "titre": "Mollusques (corps mou)",
+              "icone": "🐌"
+            },
+            {
+              "id": "crustace",
+              "titre": "Crustacés (carapace, pattes articulées)",
+              "icone": "🦀"
+            },
+            {
+              "id": "poisson",
+              "titre": "Poissons (squelette, nageoires)",
+              "icone": "🐟"
+            }
           ],
           "cartes": [
-            { "txt": "le calmar géant", "col": "mollusque" },
-            { "txt": "le poulpe", "col": "mollusque" },
-            { "txt": "l'huître", "col": "mollusque" },
-            { "txt": "le homard", "col": "crustace" },
-            { "txt": "la crevette", "col": "crustace" },
-            { "txt": "le thon", "col": "poisson" },
-            { "txt": "le requin", "col": "poisson" }
+            {
+              "txt": "le calmar géant",
+              "col": "mollusque"
+            },
+            {
+              "txt": "le poulpe",
+              "col": "mollusque"
+            },
+            {
+              "txt": "l'huître",
+              "col": "mollusque"
+            },
+            {
+              "txt": "le homard",
+              "col": "crustace"
+            },
+            {
+              "txt": "la crevette",
+              "col": "crustace"
+            },
+            {
+              "txt": "le thon",
+              "col": "poisson"
+            },
+            {
+              "txt": "le requin",
+              "col": "poisson"
+            }
           ],
-          "indices": ["Fiche « Les céphalopodes » et fiche « Classer le vivant ».", "Le poulpe a un corps mou, comme l'huître."]
+          "indices": [
+            "Fiche « Les céphalopodes » et fiche « Classer le vivant ».",
+            "Le poulpe a un corps mou, comme l'huître."
+          ]
         },
         "timonier": {
           "type": "vraifaux",
           "dialogue": "Le professeur m'a donné des affirmations à vérifier. Je ne note rien qui ne soit sûr.",
           "consigne": "Vrai ou faux ?",
           "affirmations": [
-            { "txt": "Le poulpe et le calmar sont des mollusques, comme l'escargot.", "vrai": true },
-            { "txt": "Le poulpe a un squelette, comme le poisson.", "vrai": false },
-            { "txt": "Le calmar a huit bras et deux longs tentacules.", "vrai": true },
-            { "txt": "Les céphalopodes ont des ventouses sur leurs bras.", "vrai": true },
-            { "txt": "Le calmar est un poisson parce qu'il nage.", "vrai": false }
+            {
+              "txt": "Le poulpe et le calmar sont des mollusques, comme l'escargot.",
+              "vrai": true
+            },
+            {
+              "txt": "Le poulpe a un squelette, comme le poisson.",
+              "vrai": false
+            },
+            {
+              "txt": "Le calmar a huit bras et deux longs tentacules.",
+              "vrai": true
+            },
+            {
+              "txt": "Les céphalopodes ont des ventouses sur leurs bras.",
+              "vrai": true
+            },
+            {
+              "txt": "Le calmar est un poisson parce qu'il nage.",
+              "vrai": false
+            }
           ],
-          "indices": ["Fiche « Les céphalopodes ».", "Nager ne suffit pas pour être un poisson."]
+          "indices": [
+            "Fiche « Les céphalopodes ».",
+            "Nager ne suffit pas pour être un poisson."
+          ]
         },
         "lieutenant": {
           "type": "tri",
           "dialogue": "Pour classer, on ne regarde pas ce que l'animal fait, mais ce qu'il a. Triez les caractères du monstre, et dites-moi lesquels comptent.",
           "consigne": "Range chaque caractère : le calmar géant l'a-t-il ou non ? Puis justifie.",
           "colonnes": [
-            { "id": "oui", "titre": "Le calmar l'a", "icone": "✅" },
-            { "id": "non", "titre": "Le calmar ne l'a pas", "icone": "❌" }
+            {
+              "id": "oui",
+              "titre": "Le calmar l'a",
+              "icone": "✅"
+            },
+            {
+              "id": "non",
+              "titre": "Le calmar ne l'a pas",
+              "icone": "❌"
+            }
           ],
           "cartes": [
-            { "txt": "un corps mou", "col": "oui" },
-            { "txt": "des bras avec des ventouses", "col": "oui" },
-            { "txt": "des yeux", "col": "oui" },
-            { "txt": "un squelette osseux", "col": "non" },
-            { "txt": "des nageoires avec des rayons osseux", "col": "non" },
-            { "txt": "une carapace", "col": "non" }
+            {
+              "txt": "un corps mou",
+              "col": "oui"
+            },
+            {
+              "txt": "des bras avec des ventouses",
+              "col": "oui"
+            },
+            {
+              "txt": "des yeux",
+              "col": "oui"
+            },
+            {
+              "txt": "un squelette osseux",
+              "col": "non"
+            },
+            {
+              "txt": "des nageoires avec des rayons osseux",
+              "col": "non"
+            },
+            {
+              "txt": "une carapace",
+              "col": "non"
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche dit comment on classe ?",
@@ -99,16 +211,46 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Classer le vivant », encadré.", "Ce qu'il a, pas ce qu'il fait."]
+          "indices": [
+            "Fiche « Classer le vivant », encadré.",
+            "Ce qu'il a, pas ce qu'il fait."
+          ]
         },
         "second": {
           "type": "qcm",
           "dialogue": "Le professeur prétend que le Nautilus porte le nom d'un cousin de ce monstre. Prouvez-le-moi, et le reste avec.",
           "consigne": "Réponds avec la fiche « Les céphalopodes », puis justifie.",
           "questions": [
-            { "q": "« Céphalopode » veut dire…", "options": ["dont les pieds (les bras) sont sur la tête", "qui vit au fond", "qui a huit yeux", "qui a une carapace"], "bonne": 0 },
-            { "q": "Quel céphalopode vit dans une coquille et a donné son nom au navire ?", "options": ["le nautile", "la seiche", "le homard", "la méduse"], "bonne": 0 },
-            { "q": "La baleine et le requin vivent dans la mer. Pourtant…", "options": ["la baleine est un mammifère et le requin un poisson : le milieu ne suffit pas à classer", "ils sont tous deux des poissons", "ils sont tous deux des mollusques", "ils sont tous deux des mammifères"], "bonne": 0 }
+            {
+              "q": "« Céphalopode » veut dire…",
+              "options": [
+                "dont les pieds (les bras) sont sur la tête",
+                "qui vit au fond",
+                "qui a huit yeux",
+                "qui a une carapace"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quel céphalopode vit dans une coquille et a donné son nom au navire ?",
+              "options": [
+                "le nautile",
+                "la seiche",
+                "le homard",
+                "la méduse"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "La baleine et le requin vivent dans la mer. Pourtant…",
+              "options": [
+                "la baleine est un mammifère et le requin un poisson : le milieu ne suffit pas à classer",
+                "ils sont tous deux des poissons",
+                "ils sont tous deux des mollusques",
+                "ils sont tous deux des mammifères"
+              ],
+              "bonne": 0
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche justifie ta réponse 3 ?",
@@ -120,45 +262,83 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Les céphalopodes ».", "Céphalo- : la tête ; -pode : le pied."]
+          "indices": [
+            "Fiche « Les céphalopodes ».",
+            "Céphalo- : la tête ; -pode : le pied."
+          ]
         }
       },
       {
-        "id": "e10-2", "escale": 10, "ordre": 2, "titre": "La hache et le harpon",
-        "decor": "plateforme-poulpe", "objet_principal": "oeil", "objets_cliquables": ["oeil", "tentacules", "equipage"],
+        "id": "e10-2",
+        "escale": 10,
+        "ordre": 2,
+        "titre": "La hache et le harpon",
+        "decor": "plateforme-poulpe",
+        "objet_principal": "oeil",
+        "objets_cliquables": [
+          "oeil",
+          "tentacules",
+          "equipage"
+        ],
         "personnage_emetteur": "ned",
         "probleme_narratif": "L'hélice est bloquée : le Nautilus remonte, et l'équipage monte sur la plate-forme, hache à la main, sous l'orage. Les bras du monstre frappent de partout. Ned Land, harpon levé, guette. Il faut réagir vite et juste : voir, décider, frapper. Comment notre corps fait-il cela, et comment le monstre fait-il de même ?",
         "enjeu": "Celui qui ne voit pas venir le bras, ou qui réagit trop tard, est emporté : la vitesse du message entre l'œil, le cerveau et les muscles décide du combat.",
         "episode_du_roman": "Partie II, ch. XVIII : combat sur la plate-forme ; Nemo frappe à la hache, Ned Land plonge son harpon au cœur du calmar ; un marin est emporté.",
         "competence_programme": "Sciences : le fonctionnement du corps humain — les organes des sens, les nerfs, le cerveau et les muscles ; le cerveau commande les mouvements.",
         "pourquoi_ce_savoir_ici": "Au cœur du combat, chaque geste suit le même chemin : un sens perçoit, le cerveau décide, les muscles agissent.",
-        "reaction_du_decor": { "effet": "secousse", "description": "Un choc : un bras tranché retombe ; le monstre recule dans un nuage d'encre." },
+        "reaction_du_decor": {
+          "effet": "secousse",
+          "description": "Un choc : un bras tranché retombe ; le monstre recule dans un nuage d'encre."
+        },
         "liberte_ou_anachronisme": "Le combat suit le roman. La proportion de neurones dans les bras du poulpe est une valeur approchée (A-VERIFIER.md).",
-        "lecon": "cerveau", "type": "ordre",
+        "lecon": "cerveau",
+        "type": "ordre",
         "niveau_variantes": "Mousse : 3 étapes (voir, décider, agir). Matelot : 5 étapes. Timonier : schéma sens → nerfs → cerveau → nerfs → muscles. Lieutenant : QCM + justification. Second : texte à trous sur le poulpe + justification.",
         "mousse": {
           "type": "ordre",
           "dialogue": "Un bras arrive sur moi ! Je le vois, je décide, je frappe. Dans quel ordre, déjà ? Vite !",
           "consigne": "Remets dans l'ordre ce qui se passe quand Ned frappe le bras du monstre.",
           "items": [
-            { "txt": "Les yeux de Ned voient le bras arriver." },
-            { "txt": "Le cerveau de Ned décide de frapper." },
-            { "txt": "Les muscles du bras de Ned lancent le harpon." }
+            {
+              "txt": "Les yeux de Ned voient le bras arriver."
+            },
+            {
+              "txt": "Le cerveau de Ned décide de frapper."
+            },
+            {
+              "txt": "Les muscles du bras de Ned lancent le harpon."
+            }
           ],
-          "indices": ["Fiche « Le cerveau commande les mouvements ».", "D'abord percevoir, puis décider, puis agir."]
+          "indices": [
+            "Fiche « Le cerveau commande les mouvements ».",
+            "D'abord percevoir, puis décider, puis agir."
+          ]
         },
         "matelot": {
           "type": "ordre",
           "dialogue": "Le professeur dit qu'entre mes yeux et mes bras, il y a des messagers. Rangez-les, que je sache qui remercier.",
           "consigne": "Remets dans l'ordre le trajet du message.",
           "items": [
-            { "txt": "Les yeux perçoivent le bras du monstre." },
-            { "txt": "Un nerf transmet le message au cerveau." },
-            { "txt": "Le cerveau analyse et décide." },
-            { "txt": "Un nerf transmet l'ordre aux muscles." },
-            { "txt": "Les muscles se contractent : le harpon part." }
+            {
+              "txt": "Les yeux perçoivent le bras du monstre."
+            },
+            {
+              "txt": "Un nerf transmet le message au cerveau."
+            },
+            {
+              "txt": "Le cerveau analyse et décide."
+            },
+            {
+              "txt": "Un nerf transmet l'ordre aux muscles."
+            },
+            {
+              "txt": "Les muscles se contractent : le harpon part."
+            }
           ],
-          "indices": ["Fiche « Le cerveau commande les mouvements ».", "Les nerfs vont dans les deux sens : vers le cerveau, puis vers les muscles."]
+          "indices": [
+            "Fiche « Le cerveau commande les mouvements ».",
+            "Les nerfs vont dans les deux sens : vers le cerveau, puis vers les muscles."
+          ]
         },
         "timonier": {
           "type": "plan",
@@ -167,23 +347,76 @@
           "titre": "Voir, décider, agir",
           "colonnes": 5,
           "cases": [
-            { "libelle": "1. Perçoit", "reponse": "organe des sens (œil)" },
-            { "libelle": "2. Transmet", "reponse": "nerf" },
-            { "libelle": "3. Décide", "reponse": "cerveau" },
-            { "libelle": "4. Transmet l'ordre", "reponse": "nerf moteur" },
-            { "libelle": "5. Agit", "reponse": "muscle" }
+            {
+              "libelle": "1. Perçoit",
+              "reponse": "organe des sens (œil)"
+            },
+            {
+              "libelle": "2. Transmet",
+              "reponse": "nerf"
+            },
+            {
+              "libelle": "3. Décide",
+              "reponse": "cerveau"
+            },
+            {
+              "libelle": "4. Transmet l'ordre",
+              "reponse": "nerf moteur"
+            },
+            {
+              "libelle": "5. Agit",
+              "reponse": "muscle"
+            }
           ],
-          "etiquettes": ["organe des sens (œil)", "nerf", "cerveau", "nerf moteur", "muscle", "cœur", "estomac"],
-          "indices": ["Fiche « Le cerveau commande les mouvements », le schéma.", "Le cœur pompe le sang : il ne décide de rien."]
+          "etiquettes": [
+            "organe des sens (œil)",
+            "nerf",
+            "cerveau",
+            "nerf moteur",
+            "muscle",
+            "cœur",
+            "estomac"
+          ],
+          "indices": [
+            "Fiche « Le cerveau commande les mouvements », le schéma.",
+            "Le cœur pompe le sang : il ne décide de rien."
+          ]
         },
         "lieutenant": {
           "type": "qcm",
           "dialogue": "Un marin a été pris : il n'a pas vu le bras arriver dans son dos. Comprenons, pour que cela n'arrive à personne d'autre.",
           "consigne": "Réponds avec la fiche « Le cerveau commande les mouvements », puis justifie.",
           "questions": [
-            { "q": "Un bras arrive dans le dos : quel sens peut prévenir ?", "options": ["l'ouïe (entendre le bruit)", "le goût", "l'odorat seulement", "aucun"], "bonne": 0 },
-            { "q": "Quel organe décide du geste ?", "options": ["le cerveau", "le muscle", "le cœur", "l'estomac"], "bonne": 0 },
-            { "q": "Pourquoi crier « Attention, derrière toi ! » peut sauver un marin ?", "options": ["ses oreilles captent l'alerte, son cerveau décide de se retourner plus vite", "le cri fait peur au monstre à coup sûr", "le cri donne de la force aux muscles", "cela ne sert à rien"], "bonne": 0 }
+            {
+              "q": "Un bras arrive dans le dos : quel sens peut prévenir ?",
+              "options": [
+                "l'ouïe (entendre le bruit)",
+                "le goût",
+                "l'odorat seulement",
+                "aucun"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quel organe décide du geste ?",
+              "options": [
+                "le cerveau",
+                "le muscle",
+                "le cœur",
+                "l'estomac"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi crier « Attention, derrière toi ! » peut sauver un marin ?",
+              "options": [
+                "ses oreilles captent l'alerte, son cerveau décide de se retourner plus vite",
+                "le cri fait peur au monstre à coup sûr",
+                "le cri donne de la force aux muscles",
+                "cela ne sert à rien"
+              ],
+              "bonne": 0
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche justifie ta réponse 3 ?",
@@ -195,14 +428,26 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Le cerveau commande les mouvements ».", "Les sens alertent le cerveau."]
+          "indices": [
+            "Fiche « Le cerveau commande les mouvements ».",
+            "Les sens alertent le cerveau."
+          ]
         },
         "second": {
           "type": "trous",
           "dialogue": "Le professeur dit que ce monstre a un cerveau, lui aussi, et même des « cerveaux » dans les bras. Complétez sa note ; je la relirai entre deux coups de hache.",
           "consigne": "Complète la note d'Aronnax. Certaines étiquettes ne servent pas. Puis justifie.",
           "texte": "Comme nous, le poulpe perçoit avec ses [[yeux]], très perfectionnés. Son [[cerveau]] décide, et des [[nerfs]] portent les ordres jusqu'aux [[muscles]] de ses bras. Mais une grande partie de ses cellules nerveuses se trouve dans ses [[bras]] : chacun peut réagir un peu seul.",
-          "etiquettes": ["yeux", "cerveau", "nerfs", "muscles", "bras", "os", "nageoires", "poumons"],
+          "etiquettes": [
+            "yeux",
+            "cerveau",
+            "nerfs",
+            "muscles",
+            "bras",
+            "os",
+            "nageoires",
+            "poumons"
+          ],
           "justification": {
             "question": "Quelle phrase de la fiche montre que le poulpe n'est pas organisé tout à fait comme nous ?",
             "options": [
@@ -213,78 +458,174 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Le cerveau commande les mouvements », niveau expert.", "Le poulpe n'a pas d'os."]
+          "indices": [
+            "Fiche « Le cerveau commande les mouvements », niveau expert.",
+            "Le poulpe n'a pas d'os."
+          ]
         }
       },
       {
-        "id": "e10-3", "escale": 10, "ordre": 3, "titre": "Les bocaux du musée",
-        "decor": "salon", "objet_principal": "vitrines", "objets_cliquables": ["vitrines", "hublots", "orgue"],
+        "id": "e10-3",
+        "escale": 10,
+        "ordre": 3,
+        "titre": "Les bocaux du musée",
+        "decor": "salon",
+        "objet_principal": "vitrines",
+        "objets_cliquables": [
+          "vitrines",
+          "hublots",
+          "orgue"
+        ],
         "personnage_emetteur": "aronnax",
         "probleme_narratif": "Le combat est fini ; un homme a disparu. Nemo veut savoir s'il faut fuir ces parages. Dans les vitrines du salon, Aronnax a des bocaux : des grappes d'œufs de calmar, des œufs de tortue, un jeune dauphin conservé. Si les calmars se reproduisent ici, d'autres viendront. Encore faut-il savoir comment ils naissent et grandissent.",
         "enjeu": "Si l'on comprend que ces calmars pondent ici des milliers d'œufs, on sait qu'il faut quitter ces parages sans attendre.",
         "episode_du_roman": "Partie II, ch. XVIII-XIX : après le combat, Nemo pleure son compagnon ; le Nautilus quitte les Lucayes et remonte vers le nord.",
         "competence_programme": "Sciences : reproduction et développement des animaux — ovipares et vivipares, stades de développement (œuf, larve, jeune, adulte), nombre de petits et soins.",
         "pourquoi_ce_savoir_ici": "Savoir comment se reproduit un animal, c'est savoir s'il va revenir, et combien.",
-        "reaction_du_decor": { "effet": "calme", "description": "Le Nautilus s'éloigne ; dans le salon, le grand orgue se tait et les bocaux scintillent doucement." },
+        "reaction_du_decor": {
+          "effet": "calme",
+          "description": "Le Nautilus s'éloigne ; dans le salon, le grand orgue se tait et les bocaux scintillent doucement."
+        },
         "liberte_ou_anachronisme": "Les bocaux du musée sont inventés. Les nombres d'œufs sont des ordres de grandeur (A-VERIFIER.md).",
-        "lecon": "reproduction", "type": "tri",
+        "lecon": "reproduction",
+        "type": "tri",
         "niveau_variantes": "Mousse : ovipare ou vivipare. Matelot : tri avec animaux marins variés. Timonier : stades du développement dans l'ordre. Lieutenant : calcul de survie des œufs + justification. Second : vrai ou faux sur les stratégies + justification.",
         "mousse": {
           "type": "tri",
           "dialogue": "Un œuf ou un petit tout formé ? Dans mes bocaux, il y a de tout. Aidez-moi à ranger les étiquettes.",
           "consigne": "Range chaque animal : il pond des œufs (ovipare) ou son petit se développe dans le ventre de sa mère (vivipare) ?",
           "colonnes": [
-            { "id": "ovipare", "titre": "Ovipare (pond des œufs)", "icone": "🥚" },
-            { "id": "vivipare", "titre": "Vivipare (naît du ventre de sa mère)", "icone": "🍼" }
+            {
+              "id": "ovipare",
+              "titre": "Ovipare (pond des œufs)",
+              "icone": "🥚"
+            },
+            {
+              "id": "vivipare",
+              "titre": "Vivipare (naît du ventre de sa mère)",
+              "icone": "🍼"
+            }
           ],
           "cartes": [
-            { "txt": "le calmar", "col": "ovipare" },
-            { "txt": "la tortue de mer", "col": "ovipare" },
-            { "txt": "le manchot", "col": "ovipare" },
-            { "txt": "le dauphin", "col": "vivipare" },
-            { "txt": "la baleine", "col": "vivipare" },
-            { "txt": "le phoque", "col": "vivipare" }
+            {
+              "txt": "le calmar",
+              "col": "ovipare"
+            },
+            {
+              "txt": "la tortue de mer",
+              "col": "ovipare"
+            },
+            {
+              "txt": "le manchot",
+              "col": "ovipare"
+            },
+            {
+              "txt": "le dauphin",
+              "col": "vivipare"
+            },
+            {
+              "txt": "la baleine",
+              "col": "vivipare"
+            },
+            {
+              "txt": "le phoque",
+              "col": "vivipare"
+            }
           ],
-          "indices": ["Fiche « Naître et grandir ».", "Les mammifères, comme le dauphin, sont vivipares."]
+          "indices": [
+            "Fiche « Naître et grandir ».",
+            "Les mammifères, comme le dauphin, sont vivipares."
+          ]
         },
         "matelot": {
           "type": "tri",
           "dialogue": "Le capitaine m'a confié le registre du musée. Une colonne par façon de naître, et pas une erreur.",
           "consigne": "Range chaque animal : ovipare ou vivipare ?",
           "colonnes": [
-            { "id": "ovipare", "titre": "Ovipare", "icone": "🥚" },
-            { "id": "vivipare", "titre": "Vivipare", "icone": "🍼" }
+            {
+              "id": "ovipare",
+              "titre": "Ovipare",
+              "icone": "🥚"
+            },
+            {
+              "id": "vivipare",
+              "titre": "Vivipare",
+              "icone": "🍼"
+            }
           ],
           "cartes": [
-            { "txt": "le poulpe", "col": "ovipare" },
-            { "txt": "le saumon", "col": "ovipare" },
-            { "txt": "le crabe", "col": "ovipare" },
-            { "txt": "l'oiseau albatros", "col": "ovipare" },
-            { "txt": "le cachalot", "col": "vivipare" },
-            { "txt": "le lamantin", "col": "vivipare" },
-            { "txt": "l'être humain", "col": "vivipare" }
+            {
+              "txt": "le poulpe",
+              "col": "ovipare"
+            },
+            {
+              "txt": "le saumon",
+              "col": "ovipare"
+            },
+            {
+              "txt": "le crabe",
+              "col": "ovipare"
+            },
+            {
+              "txt": "l'oiseau albatros",
+              "col": "ovipare"
+            },
+            {
+              "txt": "le cachalot",
+              "col": "vivipare"
+            },
+            {
+              "txt": "le lamantin",
+              "col": "vivipare"
+            },
+            {
+              "txt": "l'être humain",
+              "col": "vivipare"
+            }
           ],
-          "indices": ["Fiche « Naître et grandir ».", "Tous les mammifères de ces bocaux sont vivipares."]
+          "indices": [
+            "Fiche « Naître et grandir ».",
+            "Tous les mammifères de ces bocaux sont vivipares."
+          ]
         },
         "timonier": {
           "type": "ordre",
           "dialogue": "Ce bocal contient un crabe à tous les âges. Rangez-les du plus jeune au plus vieux : cela s'appelle le développement.",
           "consigne": "Range les stades de développement du crabe dans l'ordre.",
           "items": [
-            { "txt": "L'œuf, accroché sous la femelle" },
-            { "txt": "La larve, minuscule, qui nage avec le plancton" },
-            { "txt": "Le jeune crabe, qui mue pour grandir" },
-            { "txt": "Le crabe adulte, qui peut se reproduire" }
+            {
+              "txt": "L'œuf, accroché sous la femelle"
+            },
+            {
+              "txt": "La larve, minuscule, qui nage avec le plancton"
+            },
+            {
+              "txt": "Le jeune crabe, qui mue pour grandir"
+            },
+            {
+              "txt": "Le crabe adulte, qui peut se reproduire"
+            }
           ],
-          "indices": ["Fiche « Naître et grandir », les stades.", "La larve ne ressemble pas encore à l'adulte."]
+          "indices": [
+            "Fiche « Naître et grandir », les stades.",
+            "La larve ne ressemble pas encore à l'adulte."
+          ]
         },
         "lieutenant": {
           "type": "code",
           "dialogue": "Combien de ces œufs deviendront des monstres adultes ? Le capitaine veut un chiffre pour décider. Calculez.",
           "consigne": "<div class='doc-carnet'><b>Note d'Aronnax</b> — Une femelle calmar pond environ 100 000 œufs. Environ 1 œuf sur 1 000 donne un adulte. Une femelle dauphin a 1 petit tous les 3 ans, qu'elle allaite et protège.</div>Calcule.",
           "champs": [
-            { "libelle": "Nombre d'adultes pour une ponte de calmar", "valeur": "100", "longueur": 4 },
-            { "libelle": "Petits de dauphin en 12 ans", "valeur": "4", "longueur": 2 }
+            {
+              "libelle": "Nombre d'adultes pour une ponte de calmar",
+              "valeur": "100",
+              "longueur": 4
+            },
+            {
+              "libelle": "Petits de dauphin en 12 ans",
+              "valeur": "4",
+              "longueur": 2
+            }
           ],
           "justification": {
             "question": "Pourquoi le calmar pond-il autant d'œufs ?",
@@ -296,18 +637,36 @@
             ],
             "bonne": 0
           },
-          "indices": ["100 000 ÷ 1 000.", "12 ÷ 3."]
+          "indices": [
+            "100 000 ÷ 1 000.",
+            "12 ÷ 3."
+          ]
         },
         "second": {
           "type": "vraifaux",
           "dialogue": "Le capitaine veut savoir s'il faut fuir. Vérifions chaque affirmation de mon carnet avant de lui répondre.",
           "consigne": "Vrai ou faux ? Puis justifie.",
           "affirmations": [
-            { "txt": "La femelle poulpe garde ses œufs jusqu'à leur éclosion, sans manger, puis meurt.", "vrai": true },
-            { "txt": "Le dauphin pond des œufs.", "vrai": false },
-            { "txt": "Un animal qui protège ses petits en a souvent peu.", "vrai": true },
-            { "txt": "Tous les œufs pondus deviennent des adultes.", "vrai": false },
-            { "txt": "Là où des calmars pondent, de nombreux jeunes calmars naîtront.", "vrai": true }
+            {
+              "txt": "La femelle poulpe garde ses œufs jusqu'à leur éclosion, sans manger, puis meurt.",
+              "vrai": true
+            },
+            {
+              "txt": "Le dauphin pond des œufs.",
+              "vrai": false
+            },
+            {
+              "txt": "Un animal qui protège ses petits en a souvent peu.",
+              "vrai": true
+            },
+            {
+              "txt": "Tous les œufs pondus deviennent des adultes.",
+              "vrai": false
+            },
+            {
+              "txt": "Là où des calmars pondent, de nombreux jeunes calmars naîtront.",
+              "vrai": true
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche justifie la réponse à l'affirmation 3 ?",
@@ -319,14 +678,22 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Naître et grandir », niveau expert.", "Peu de petits, mais protégés."]
+          "indices": [
+            "Fiche « Naître et grandir », niveau expert.",
+            "Peu de petits, mais protégés."
+          ]
         }
       }
     ]
   },
   "lecons": [
     {
-      "id": "cephalopodes", "rayon": "vivant", "fiche": 5, "icone": "🦑", "titre": "Les céphalopodes", "escale": 10,
+      "id": "cephalopodes",
+      "rayon": "vivant",
+      "fiche": 5,
+      "icone": "🦑",
+      "titre": "Les céphalopodes",
+      "escale": 10,
       "competence": "Classer les êtres vivants : mollusques et céphalopodes.",
       "essentiel": "<p>Le <b>poulpe</b>, le <b>calmar</b> et la <b>seiche</b> sont des <b>céphalopodes</b> : des animaux au corps mou dont les bras, garnis de <b>ventouses</b>, sont attachés à la tête. « Céphalopode » veut dire « pieds sur la tête ».</p>",
       "approfondi": "<p>Les céphalopodes sont des <b>mollusques</b> (corps mou, sans squelette), comme l'escargot, la moule ou l'huître. Le poulpe a 8 bras ; le calmar et la seiche ont 8 bras et 2 longs tentacules. Ils ont des yeux très perfectionnés. Le crabe et le homard sont des crustacés (carapace, pattes articulées) ; le thon et le requin sont des poissons (squelette, nageoires).</p>",
@@ -334,7 +701,12 @@
       "dans_le_roman": "Par la vitre du salon, Conseil et Aronnax observent et classent un calmar géant (Partie II, ch. XVIII)."
     },
     {
-      "id": "cerveau", "rayon": "vivant", "fiche": 6, "icone": "🧠", "titre": "Le cerveau commande les mouvements", "escale": 10,
+      "id": "cerveau",
+      "rayon": "vivant",
+      "fiche": 6,
+      "icone": "🧠",
+      "titre": "Le cerveau commande les mouvements",
+      "escale": 10,
       "competence": "Organes des sens, nerfs, cerveau, muscles : comment le corps réagit.",
       "essentiel": "<p>Pour réagir, le corps suit toujours le même chemin : les <b>organes des sens</b> perçoivent (voir, entendre, toucher…), le <b>cerveau</b> décide, les <b>muscles</b> agissent.</p>",
       "approfondi": "<p>Les organes des sens captent des informations ; les nerfs les transmettent au cerveau, qui décide ; d'autres nerfs portent l'ordre aux muscles. Schéma : œil → nerf → cerveau → nerf moteur → muscle. Le cœur pompe le sang : il ne commande pas les mouvements.</p>",
@@ -342,7 +714,12 @@
       "dans_le_roman": "Sur la plate-forme, Nemo frappe à la hache et Ned Land au harpon, sous l'orage (Partie II, ch. XVIII)."
     },
     {
-      "id": "reproduction", "rayon": "vivant", "fiche": 7, "icone": "🥚", "titre": "Naître et grandir", "escale": 10,
+      "id": "reproduction",
+      "rayon": "vivant",
+      "fiche": 7,
+      "icone": "🥚",
+      "titre": "Naître et grandir",
+      "escale": 10,
       "competence": "Reproduction et développement des animaux : ovipares, vivipares, stades, soins aux petits.",
       "essentiel": "<p>Les animaux <b>ovipares</b> pondent des œufs (calmar, poulpe, tortue, oiseaux, la plupart des poissons). Chez les <b>vivipares</b>, le petit se développe dans le ventre de sa mère (dauphin, baleine, phoque, être humain : les mammifères).</p>",
       "approfondi": "<p>En grandissant, un animal passe par des <b>stades de développement</b>. Le crabe : œuf → larve (minuscule, qui nage avec le plancton) → jeune crabe (qui mue pour grandir) → adulte. La larve ne ressemble pas encore à l'adulte.</p>",
@@ -354,20 +731,83 @@
     "plateforme-poulpe": {
       "titre": "La plate-forme, sous l'orage",
       "reference": null,
-      "ambiance": ["vent", "vagues"],
-      "kenBurns": { "echelle": 1.05, "duree": 30 },
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
       "effets": [
-        { "type": "lueur", "x": 82, "y": 28, "r": 8, "couleur": "#cfe3ff", "pulse": 0.8, "scintille": true },
-        { "type": "lueur", "x": 46, "y": 77, "r": 4, "couleur": "#ffcf7a", "pulse": 0.3 },
-        { "type": "poussiere", "x": 0, "y": 0, "w": 100, "h": 100, "nombre": 60 },
-        { "type": "vignette", "force": 0.6 }, { "type": "grain", "force": 0.05 }
+        {
+          "type": "lueur",
+          "x": 82,
+          "y": 28,
+          "r": 8,
+          "couleur": "#cfe3ff",
+          "pulse": 0.8,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 46,
+          "y": 77,
+          "r": 4,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 60
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
       ],
       "zones": [
-        { "id": "oeil", "libelle": "L'œil du monstre", "x": 47, "y": 37, "w": 10, "h": 13, "description": "Un œil énorme, glauque, qui fixe la plate-forme." },
-        { "id": "tentacules", "libelle": "Les bras", "x": 28, "y": 30, "w": 22, "h": 40, "description": "Des bras épais, couverts de ventouses, enroulés autour de la coque." },
-        { "id": "equipage", "libelle": "L'équipage", "x": 60, "y": 48, "w": 28, "h": 32, "description": "Les marins, hache à la main ; Ned Land lève son harpon." }
+        {
+          "id": "oeil",
+          "libelle": "L'œil du monstre",
+          "x": 47,
+          "y": 37,
+          "w": 10,
+          "h": 13,
+          "description": "Un œil énorme, glauque, qui fixe la plate-forme."
+        },
+        {
+          "id": "tentacules",
+          "libelle": "Les bras",
+          "x": 28,
+          "y": 30,
+          "w": 22,
+          "h": 40,
+          "description": "Des bras épais, couverts de ventouses, enroulés autour de la coque."
+        },
+        {
+          "id": "equipage",
+          "libelle": "L'équipage",
+          "x": 60,
+          "y": 48,
+          "w": 28,
+          "h": 32,
+          "description": "Les marins, hache à la main ; Ned Land lève son harpon."
+        }
       ],
-      "etats": { "normal": { "filtre": "none" } }
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
     }
   },
   "dialogues": {
@@ -375,19 +815,44 @@
       "transition-e10": {
         "titre": "Escale 10 — Les poulpes",
         "plans": [
-          { "decor": "salon", "etat": "normal", "duree": 7, "personnage": "conseil", "texte": "Monsieur, regardez la vitre ! Un œil, grand comme une assiette. Et des bras… je n'ose pas les compter.", "mouvement": "zoom" },
-          { "decor": "salon", "etat": "normal", "duree": 6, "personnage": "aronnax", "texte": "Un calmar géant, Conseil. Les marins en parlaient ; je n'y croyais pas.", "mouvement": "glisse" }
+          {
+            "decor": "salon",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "conseil",
+            "texte": "Monsieur, regardez la vitre ! Un œil, grand comme une assiette. Et des bras… je n'ose pas les compter.",
+            "mouvement": "zoom",
+            "video": "transition-e10"
+          },
+          {
+            "decor": "salon",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "aronnax",
+            "texte": "Un calmar géant, Conseil. Les marins en parlaient ; je n'y croyais pas.",
+            "mouvement": "glisse"
+          }
         ]
       },
       "fin-e10": {
         "titre": "Le compagnon perdu",
         "plans": [
-          { "decor": "plateforme-poulpe", "etat": "normal", "duree": 7, "personnage": "aronnax", "texte": "Les monstres ont fui. Mais l'un des nôtres a été emporté. Le capitaine, debout près du fanal, pleurait.", "mouvement": "zoom" }
+          {
+            "decor": "plateforme-poulpe",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "Les monstres ont fui. Mais l'un des nôtres a été emporté. Le capitaine, debout près du fanal, pleurait.",
+            "mouvement": "zoom"
+          }
         ]
       }
     },
     "fin_escale": {
-      "10": { "personnage": "conseil", "texte": "Notez le mot de cette escale : le nom que Jules Verne donne aux monstres qui nous ont attaqués." }
+      "10": {
+        "personnage": "conseil",
+        "texte": "Notez le mot de cette escale : le nom que Jules Verne donne aux monstres qui nous ont attaqués."
+      }
     }
   }
 }

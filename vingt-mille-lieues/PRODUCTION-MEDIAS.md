@@ -102,15 +102,15 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | video-intro | `assets/videos/intro.mp4` | 1280×720 | 60-90 s | 1 | à produire après l'escale 1 |
 | video-transition-e2 | `assets/videos/transition-e2.mp4` | 1280×720 | 8-10 s | 2 | cinématique en direct active |
 | video-transition-e1 | `assets/videos/transition-e1.mp4` | 1280×720 | 6-10 s | 1 | à produire avec l'escale 1 |
-| video-transition-e3 | `assets/videos/transition-e3.mp4` | 1280×720 | 6-10 s | 3 | à produire avec l'escale 3 |
-| video-transition-e4 | `assets/videos/transition-e4.mp4` | 1280×720 | 6-10 s | 4 | à produire avec l'escale 4 |
-| video-transition-e5 | `assets/videos/transition-e5.mp4` | 1280×720 | 6-10 s | 5 | à produire avec l'escale 5 |
-| video-transition-e6 | `assets/videos/transition-e6.mp4` | 1280×720 | 6-10 s | 6 | à produire avec l'escale 6 |
-| video-transition-e7 | `assets/videos/transition-e7.mp4` | 1280×720 | 6-10 s | 7 | à produire avec l'escale 7 |
-| video-transition-e8 | `assets/videos/transition-e8.mp4` | 1280×720 | 6-10 s | 8 | à produire avec l'escale 8 |
-| video-transition-e9 | `assets/videos/transition-e9.mp4` | 1280×720 | 6-10 s | 9 | à produire avec l'escale 9 |
-| video-transition-e10 | `assets/videos/transition-e10.mp4` | 1280×720 | 6-10 s | 10 | à produire avec l'escale 10 |
-| video-transition-e11 | `assets/videos/transition-e11.mp4` | 1280×720 | 6-10 s | 11 | à produire avec l'escale 11 |
+| video-transition-e3 | `assets/videos/transition-e3.mp4` | 1280×720 | 6-10 s | 3 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e4 | `assets/videos/transition-e4.mp4` | 1280×720 | 6-10 s | 4 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e5 | `assets/videos/transition-e5.mp4` | 1280×720 | 6-10 s | 5 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e6 | `assets/videos/transition-e6.mp4` | 1280×720 | 6-10 s | 6 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e7 | `assets/videos/transition-e7.mp4` | 1280×720 | 6-10 s | 7 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e8 | `assets/videos/transition-e8.mp4` | 1280×720 | 6-10 s | 8 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e9 | `assets/videos/transition-e9.mp4` | 1280×720 | 6-10 s | 9 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e10 | `assets/videos/transition-e10.mp4` | 1280×720 | 6-10 s | 10 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-transition-e11 | `assets/videos/transition-e11.mp4` | 1280×720 | 6-10 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin | `assets/videos/fin.mp4` | 1280×720 | 45 s | 11 | à produire en fin de campagne |
 | video-bande-annonce | `assets/videos/bande-annonce.mp4` | 1280×720 | 15-20 s | toutes | à monter en fin de campagne |
 
@@ -442,7 +442,7 @@ Image de départ : le grand salon validé. Lent travelling avant vers l'orgue ; 
 
 ### video-transition-e3 — `assets/videos/transition-e3.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 3 · statut : à produire avec l'escale 3
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 3 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e3.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -464,7 +464,7 @@ Le sas des scaphandres : lent travelling avant vers la porte ronde ; des bulles 
 
 ### video-transition-e4 — `assets/videos/transition-e4.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 4 · statut : à produire avec l'escale 4
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 4 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e4.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -486,7 +486,7 @@ L'épave de Vanikoro : lent travelling avant sur le canon et le sextant ; des pa
 
 ### video-transition-e5 — `assets/videos/transition-e5.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 5 · statut : à produire avec l'escale 5
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 5 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e5.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -508,7 +508,7 @@ Le banc de perles : lent travelling avant vers l'huître géante ; le faisceau d
 
 ### video-transition-e6 — `assets/videos/transition-e6.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 6 · statut : à produire avec l'escale 6
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 6 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e6.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -530,7 +530,7 @@ La cage du pilote dans le tunnel : léger travelling avant ; la roche défile de
 
 ### video-transition-e7 — `assets/videos/transition-e7.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 7 · statut : à produire avec l'escale 7
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 7 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e7.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -552,7 +552,7 @@ Le salon près de Santorin : lent travelling avant vers les hublots ; l'eau boui
 
 ### video-transition-e8 — `assets/videos/transition-e8.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 8 · statut : à produire avec l'escale 8
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 8 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e8.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -574,7 +574,7 @@ La mer des Sargasses : lent travelling avant sur la bouée ; les algues dorées 
 
 ### video-transition-e9 — `assets/videos/transition-e9.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 9 · statut : à produire avec l'escale 9
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 9 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e9.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -596,7 +596,7 @@ La banquise : lent travelling avant ; l'aurore australe ondule dans le ciel, des
 
 ### video-transition-e10 — `assets/videos/transition-e10.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 10 · statut : à produire avec l'escale 10
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 10 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e10.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -618,7 +618,7 @@ Le salon, derrière la vitre : lent travelling avant ; une ombre immense passe d
 
 ### video-transition-e11 — `assets/videos/transition-e11.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 11 · statut : à produire avec l'escale 11
+- Dimensions : 1280×720 · ratio 16:9 · durée 6-10 s · escale 11 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres dans le code
 - Référence / image de départ : assets/medias-depart/transition-e11.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.

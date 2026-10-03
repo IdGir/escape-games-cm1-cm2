@@ -16,67 +16,161 @@
     "etats_decor": [],
     "enigmes": [
       {
-        "id": "e11-1", "escale": 11, "ordre": 1, "titre": "L'or des galions",
-        "decor": "baie-vigo", "objet_principal": "galions", "objets_cliquables": ["galions", "tresor", "plongeurs"],
+        "id": "e11-1",
+        "escale": 11,
+        "ordre": 1,
+        "titre": "L'or des galions",
+        "decor": "baie-vigo",
+        "objet_principal": "galions",
+        "objets_cliquables": [
+          "galions",
+          "tresor",
+          "plongeurs"
+        ],
         "personnage_emetteur": "aronnax",
         "probleme_narratif": "Au fond de la baie de Vigo, en Espagne, les plongeurs du Nautilus ramassent des lingots et des pièces d'or dans les épaves de galions. Aronnax veut comprendre comment ce trésor est arrivé là : une guerre voulue par Louis XIV, un roi qui décidait de tout. Pour juger l'usage que Nemo fait de cet or, il faut d'abord connaître son histoire.",
         "enjeu": "Sans l'histoire de ces galions, Aronnax prend Nemo pour un pilleur d'épaves ; avec elle, il comprend d'où vient cet or et à qui il appartenait.",
         "episode_du_roman": "Partie II, ch. VIII « La baie de Vigo » : Nemo raconte la bataille de 1702 et montre ses plongeurs ramassant l'or des galions.",
         "competence_programme": "Histoire : Louis XIV, un monarque absolu ; la guerre de Succession d'Espagne ; se repérer sur une frise.",
         "pourquoi_ce_savoir_ici": "Ces galions ont coulé à cause d'une guerre décidée par Louis XIV pour placer son petit-fils sur le trône d'Espagne.",
-        "reaction_du_decor": { "effet": "eclat", "description": "Sous le fanal, l'or des coffres éventrés étincelle un instant." },
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "Sous le fanal, l'or des coffres éventrés étincelle un instant."
+        },
         "liberte_ou_anachronisme": "La bataille de Vigo (23 octobre 1702) est réelle ; le trésor a en grande partie été débarqué avant le combat, et la richesse des épaves reste discutée (A-VERIFIER.md). La phrase « L'État, c'est moi » est une légende.",
-        "lecon": "louis-xiv", "type": "ordre",
+        "lecon": "louis-xiv",
+        "type": "ordre",
         "niveau_variantes": "Mousse : QCM sur Louis XIV. Matelot : frise du règne. Timonier : fait ↔ explication. Lieutenant : tri des signes de la monarchie absolue + justification. Second : texte à trous sur Vigo + justification.",
         "mousse": {
           "type": "qcm",
           "dialogue": "Ces navires ont coulé il y a bien longtemps, du temps d'un roi de France très célèbre. Retrouvons lequel.",
           "consigne": "Réponds avec la fiche « Louis XIV, roi absolu ».",
           "questions": [
-            { "q": "Quel roi de France régnait en 1702 ?", "options": ["Louis XIV", "François Iᵉʳ", "Napoléon", "Louis XVI"], "bonne": 0 },
-            { "q": "Quel château a-t-il fait construire ?", "options": ["Versailles", "Chambord", "la Bastille", "le Louvre de verre"], "bonne": 0 }
+            {
+              "q": "Quel roi de France régnait en 1702 ?",
+              "options": [
+                "Louis XIV",
+                "François Iᵉʳ",
+                "Napoléon",
+                "Louis XVI"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quel château a-t-il fait construire ?",
+              "options": [
+                "Versailles",
+                "Chambord",
+                "la Bastille",
+                "le Louvre de verre"
+              ],
+              "bonne": 0
+            }
           ],
-          "indices": ["Fiche « Louis XIV, roi absolu ».", "On l'appelait le Roi-Soleil."]
+          "indices": [
+            "Fiche « Louis XIV, roi absolu ».",
+            "On l'appelait le Roi-Soleil."
+          ]
         },
         "matelot": {
           "type": "ordre",
           "dialogue": "Une frise, voilà ce qu'il faut pour ne pas se perdre dans ce long règne. Rangez les événements.",
           "consigne": "Range les événements du plus ancien au plus récent.",
           "items": [
-            { "txt": "Louis XIV devient roi, à 4 ans", "sous": "1643" },
-            { "txt": "Il décide de gouverner seul, sans Premier ministre", "sous": "1661" },
-            { "txt": "La cour s'installe à Versailles", "sous": "1682" },
-            { "txt": "Bataille de Vigo : les galions sont coulés", "sous": "1702" },
-            { "txt": "Mort de Louis XIV", "sous": "1715" }
+            {
+              "txt": "Louis XIV devient roi, à 4 ans",
+              "sous": "1643"
+            },
+            {
+              "txt": "Il décide de gouverner seul, sans Premier ministre",
+              "sous": "1661"
+            },
+            {
+              "txt": "La cour s'installe à Versailles",
+              "sous": "1682"
+            },
+            {
+              "txt": "Bataille de Vigo : les galions sont coulés",
+              "sous": "1702"
+            },
+            {
+              "txt": "Mort de Louis XIV",
+              "sous": "1715"
+            }
           ],
-          "indices": ["Fiche « Louis XIV, roi absolu », la frise.", "Regarde les dates."]
+          "indices": [
+            "Fiche « Louis XIV, roi absolu », la frise.",
+            "Regarde les dates."
+          ]
         },
         "timonier": {
           "type": "association",
           "dialogue": "Le capitaine m'a raconté la bataille. Mais pourquoi une guerre pour l'Espagne ? Relions chaque fait à son explication.",
           "consigne": "Relie chaque fait à son explication.",
           "paires": [
-            { "g": "Le petit-fils de Louis XIV devient roi d'Espagne (1700)", "icone": "👑", "d": "le roi d'Espagne, mort sans enfant, l'a choisi comme héritier" },
-            { "g": "L'Angleterre et la Hollande font la guerre à la France", "icone": "⚔️", "d": "elles refusent qu'une même famille règne sur la France et l'Espagne" },
-            { "g": "Des galions rapportent l'or d'Amérique", "icone": "⛵", "d": "l'Espagne a des colonies en Amérique" },
-            { "g": "Les galions sont coulés à Vigo (1702)", "icone": "🌊", "d": "la flotte anglaise et hollandaise attaque la baie" }
+            {
+              "g": "Le petit-fils de Louis XIV devient roi d'Espagne (1700)",
+              "icone": "👑",
+              "d": "le roi d'Espagne, mort sans enfant, l'a choisi comme héritier"
+            },
+            {
+              "g": "L'Angleterre et la Hollande font la guerre à la France",
+              "icone": "⚔️",
+              "d": "elles refusent qu'une même famille règne sur la France et l'Espagne"
+            },
+            {
+              "g": "Des galions rapportent l'or d'Amérique",
+              "icone": "⛵",
+              "d": "l'Espagne a des colonies en Amérique"
+            },
+            {
+              "g": "Les galions sont coulés à Vigo (1702)",
+              "icone": "🌊",
+              "d": "la flotte anglaise et hollandaise attaque la baie"
+            }
           ],
-          "indices": ["Fiche « Louis XIV, roi absolu », niveau approfondi.", "C'est la guerre de Succession d'Espagne."]
+          "indices": [
+            "Fiche « Louis XIV, roi absolu », niveau approfondi.",
+            "C'est la guerre de Succession d'Espagne."
+          ]
         },
         "lieutenant": {
           "type": "tri",
           "dialogue": "Le capitaine dit que ce roi décidait de tout. Montrez-moi à quoi on le reconnaît, et ce qui n'a rien à voir.",
           "consigne": "Range chaque élément : est-ce un signe de la monarchie absolue de Louis XIV ? Puis justifie.",
           "colonnes": [
-            { "id": "oui", "titre": "Signe de la monarchie absolue", "icone": "👑" },
-            { "id": "non", "titre": "Pas un signe de la monarchie absolue", "icone": "✖️" }
+            {
+              "id": "oui",
+              "titre": "Signe de la monarchie absolue",
+              "icone": "👑"
+            },
+            {
+              "id": "non",
+              "titre": "Pas un signe de la monarchie absolue",
+              "icone": "✖️"
+            }
           ],
           "cartes": [
-            { "txt": "le roi décide seul de la guerre et de la paix", "col": "oui" },
-            { "txt": "le roi dit tenir son pouvoir de Dieu", "col": "oui" },
-            { "txt": "les nobles vivent à la cour, sous les yeux du roi, à Versailles", "col": "oui" },
-            { "txt": "les citoyens élisent leurs députés", "col": "non" },
-            { "txt": "une Constitution limite le pouvoir du roi", "col": "non" }
+            {
+              "txt": "le roi décide seul de la guerre et de la paix",
+              "col": "oui"
+            },
+            {
+              "txt": "le roi dit tenir son pouvoir de Dieu",
+              "col": "oui"
+            },
+            {
+              "txt": "les nobles vivent à la cour, sous les yeux du roi, à Versailles",
+              "col": "oui"
+            },
+            {
+              "txt": "les citoyens élisent leurs députés",
+              "col": "non"
+            },
+            {
+              "txt": "une Constitution limite le pouvoir du roi",
+              "col": "non"
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche définit la monarchie absolue ?",
@@ -88,14 +182,26 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Louis XIV, roi absolu », encadré.", "Les élections viendront bien plus tard."]
+          "indices": [
+            "Fiche « Louis XIV, roi absolu », encadré.",
+            "Les élections viendront bien plus tard."
+          ]
         },
         "second": {
           "type": "trous",
           "dialogue": "Je dois résumer l'affaire pour mon livre, sans erreur. Complétez mon brouillon, et dites-moi d'où vient votre certitude.",
           "consigne": "Complète le résumé d'Aronnax. Certaines étiquettes ne servent pas. Puis justifie.",
           "texte": "En 1700, le petit-fils de [[Louis XIV]] devient roi d'[[Espagne]]. L'Angleterre et la Hollande lui déclarent la [[guerre]]. En [[1702]], des galions chargés de l'or des [[colonies]] d'Amérique se réfugient dans la baie de Vigo ; la flotte ennemie les attaque et beaucoup sont coulés.",
-          "etiquettes": ["Louis XIV", "Espagne", "guerre", "1702", "colonies", "Napoléon", "Italie", "1789"],
+          "etiquettes": [
+            "Louis XIV",
+            "Espagne",
+            "guerre",
+            "1702",
+            "colonies",
+            "Napoléon",
+            "Italie",
+            "1789"
+          ],
           "justification": {
             "question": "Pourquoi peut-on dire que cette guerre est « la guerre du roi » ?",
             "options": [
@@ -106,66 +212,157 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Louis XIV, roi absolu ».", "1789, c'est la Révolution : trop tard."]
+          "indices": [
+            "Fiche « Louis XIV, roi absolu ».",
+            "1789, c'est la Révolution : trop tard."
+          ]
         }
       },
       {
-        "id": "e11-2", "escale": 11, "ordre": 2, "titre": "Le dernier soir au salon",
-        "decor": "salle-orgue", "objet_principal": "toiles", "objets_cliquables": ["toiles", "orgue", "vitrines-orgue"],
+        "id": "e11-2",
+        "escale": 11,
+        "ordre": 2,
+        "titre": "Le dernier soir au salon",
+        "decor": "salle-orgue",
+        "objet_principal": "toiles",
+        "objets_cliquables": [
+          "toiles",
+          "orgue",
+          "vitrines-orgue"
+        ],
         "personnage_emetteur": "nemo",
         "probleme_narratif": "C'est la nuit de l'évasion. Pour gagner le canot, il faut traverser le salon, où Nemo joue de l'orgue, seul. Il ne se retourne pas ; il parle à mi-voix de ses toiles de maîtres, Léonard de Vinci, Raphaël, Titien, « ce que les hommes ont fait de plus beau ». Il confie aux mousses un dernier travail : ranger ces œuvres dans l'ordre de leur siècle, pour que leur mémoire au moins survive.",
         "enjeu": "Ce dernier service rendu, Nemo reste à son orgue et ne retient personne : le chemin du canot est libre.",
         "episode_du_roman": "Partie I, ch. XI (les toiles de maîtres du salon : Raphaël, Léonard de Vinci, Titien…) et Partie II, ch. XXII : la dernière nuit, Aronnax traverse le salon où Nemo joue de l'orgue.",
         "competence_programme": "Histoire : la Renaissance — un temps de découvertes, d'artistes et d'inventions ; François Iᵉʳ et Léonard de Vinci.",
         "pourquoi_ce_savoir_ici": "Le salon de Nemo est un musée de la Renaissance : ses toiles racontent ce temps d'artistes et d'inventeurs.",
-        "reaction_du_decor": { "effet": "lumiere", "description": "Le lustre s'éclaire doucement ; l'orgue joue un dernier accord." },
+        "reaction_du_decor": {
+          "effet": "lumiere",
+          "description": "Le lustre s'éclaire doucement ; l'orgue joue un dernier accord."
+        },
         "liberte_ou_anachronisme": "La tâche confiée par Nemo est inventée. Les dates sont celles des manuels ; Léonard a dessiné un appareil pour respirer sous l'eau, il n'a pas construit de sous-marin.",
-        "lecon": "renaissance", "type": "ordre",
+        "lecon": "renaissance",
+        "type": "ordre",
         "niveau_variantes": "Mousse : artiste ↔ œuvre. Matelot : QCM sur la Renaissance. Timonier : frise. Lieutenant : vrai ou faux + justification. Second : tri Moyen Âge ou Renaissance + justification.",
         "mousse": {
           "type": "association",
           "dialogue": "Ces toiles sont mes compagnes. Je ne les verrai plus longtemps. Dites-moi au moins qui les a faites.",
           "consigne": "Relie chaque artiste à son œuvre. Aide-toi de la fiche « La Renaissance ».",
           "paires": [
-            { "g": "Léonard de Vinci", "icone": "🖼️", "d": "La Joconde" },
-            { "g": "Michel-Ange", "icone": "🗿", "d": "les peintures du plafond de la chapelle Sixtine" },
-            { "g": "Gutenberg", "icone": "📖", "d": "l'imprimerie à caractères mobiles" }
+            {
+              "g": "Léonard de Vinci",
+              "icone": "🖼️",
+              "d": "La Joconde"
+            },
+            {
+              "g": "Michel-Ange",
+              "icone": "🗿",
+              "d": "les peintures du plafond de la chapelle Sixtine"
+            },
+            {
+              "g": "Gutenberg",
+              "icone": "📖",
+              "d": "l'imprimerie à caractères mobiles"
+            }
           ],
-          "indices": ["Fiche « La Renaissance ».", "Gutenberg n'est pas peintre : il imprime."]
+          "indices": [
+            "Fiche « La Renaissance ».",
+            "Gutenberg n'est pas peintre : il imprime."
+          ]
         },
         "matelot": {
           "type": "qcm",
           "dialogue": "On appelle ce temps la Renaissance. Renaissance de quoi ? Répondez, puis passez votre chemin.",
           "consigne": "Réponds avec la fiche « La Renaissance ».",
           "questions": [
-            { "q": "La Renaissance, c'est…", "options": ["les XVᵉ et XVIᵉ siècles, un temps d'artistes, de savants et de découvertes", "la naissance de Jules Verne", "le temps des dinosaures", "la Révolution de 1789"], "bonne": 0 },
-            { "q": "Quel roi de France invite Léonard de Vinci à Amboise en 1516 ?", "options": ["François Iᵉʳ", "Louis XIV", "Charlemagne", "Henri IV"], "bonne": 0 },
-            { "q": "Quelle invention permet de diffuser beaucoup plus de livres ?", "options": ["l'imprimerie", "le télégraphe", "la machine à vapeur", "la boussole"], "bonne": 0 }
+            {
+              "q": "La Renaissance, c'est…",
+              "options": [
+                "les XVᵉ et XVIᵉ siècles, un temps d'artistes, de savants et de découvertes",
+                "la naissance de Jules Verne",
+                "le temps des dinosaures",
+                "la Révolution de 1789"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quel roi de France invite Léonard de Vinci à Amboise en 1516 ?",
+              "options": [
+                "François Iᵉʳ",
+                "Louis XIV",
+                "Charlemagne",
+                "Henri IV"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quelle invention permet de diffuser beaucoup plus de livres ?",
+              "options": [
+                "l'imprimerie",
+                "le télégraphe",
+                "la machine à vapeur",
+                "la boussole"
+              ],
+              "bonne": 0
+            }
           ],
-          "indices": ["Fiche « La Renaissance ».", "Renaissance : on redécouvre les œuvres de l'Antiquité."]
+          "indices": [
+            "Fiche « La Renaissance ».",
+            "Renaissance : on redécouvre les œuvres de l'Antiquité."
+          ]
         },
         "timonier": {
           "type": "ordre",
           "dialogue": "Rangez-les dans l'ordre du temps. Le temps, voyez-vous, est la seule chose que je ne commande pas.",
           "consigne": "Range les événements du plus ancien au plus récent.",
           "items": [
-            { "txt": "Gutenberg met au point l'imprimerie", "sous": "vers 1450" },
-            { "txt": "Christophe Colomb atteint l'Amérique", "sous": "1492" },
-            { "txt": "Léonard de Vinci peint La Joconde", "sous": "vers 1503-1519" },
-            { "txt": "François Iᵉʳ remporte la bataille de Marignan", "sous": "1515" },
-            { "txt": "Léonard de Vinci meurt à Amboise, au Clos Lucé", "sous": "1519" }
+            {
+              "txt": "Gutenberg met au point l'imprimerie",
+              "sous": "vers 1450"
+            },
+            {
+              "txt": "Christophe Colomb atteint l'Amérique",
+              "sous": "1492"
+            },
+            {
+              "txt": "Léonard de Vinci peint La Joconde",
+              "sous": "vers 1503-1519"
+            },
+            {
+              "txt": "François Iᵉʳ remporte la bataille de Marignan",
+              "sous": "1515"
+            },
+            {
+              "txt": "Léonard de Vinci meurt à Amboise, au Clos Lucé",
+              "sous": "1519"
+            }
           ],
-          "indices": ["Fiche « La Renaissance », la frise.", "La Joconde a été commencée avant Marignan."]
+          "indices": [
+            "Fiche « La Renaissance », la frise.",
+            "La Joconde a été commencée avant Marignan."
+          ]
         },
         "lieutenant": {
           "type": "vraifaux",
           "dialogue": "Le professeur m'a souvent pris pour un sauvage. Je connais pourtant mes maîtres mieux que lui. Vérifiez ce qu'il en dit.",
           "consigne": "Vrai ou faux ? Puis justifie.",
           "affirmations": [
-            { "txt": "Léonard de Vinci était peintre, mais aussi ingénieur et inventeur.", "vrai": true },
-            { "txt": "Léonard de Vinci a dessiné un appareil pour respirer sous l'eau.", "vrai": true },
-            { "txt": "Léonard de Vinci a construit un vrai sous-marin.", "vrai": false },
-            { "txt": "François Iᵉʳ a protégé des artistes et fait construire des châteaux, comme Chambord.", "vrai": true }
+            {
+              "txt": "Léonard de Vinci était peintre, mais aussi ingénieur et inventeur.",
+              "vrai": true
+            },
+            {
+              "txt": "Léonard de Vinci a dessiné un appareil pour respirer sous l'eau.",
+              "vrai": true
+            },
+            {
+              "txt": "Léonard de Vinci a construit un vrai sous-marin.",
+              "vrai": false
+            },
+            {
+              "txt": "François Iᵉʳ a protégé des artistes et fait construire des châteaux, comme Chambord.",
+              "vrai": true
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche justifie ta réponse à l'affirmation 3 ?",
@@ -177,22 +374,48 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « La Renaissance », niveau expert.", "Dessiner n'est pas construire."]
+          "indices": [
+            "Fiche « La Renaissance », niveau expert.",
+            "Dessiner n'est pas construire."
+          ]
         },
         "second": {
           "type": "tri",
           "dialogue": "Ce qui distingue un siècle d'un autre, ce sont ses idées. Classez, et expliquez ce qui a changé.",
           "consigne": "Range chaque élément : plutôt Moyen Âge, ou plutôt Renaissance ? Puis justifie.",
           "colonnes": [
-            { "id": "moyen-age", "titre": "Moyen Âge", "icone": "🏰" },
-            { "id": "renaissance", "titre": "Renaissance", "icone": "🎨" }
+            {
+              "id": "moyen-age",
+              "titre": "Moyen Âge",
+              "icone": "🏰"
+            },
+            {
+              "id": "renaissance",
+              "titre": "Renaissance",
+              "icone": "🎨"
+            }
           ],
           "cartes": [
-            { "txt": "des livres copiés à la main par des moines", "col": "moyen-age" },
-            { "txt": "des châteaux forts pour se défendre", "col": "moyen-age" },
-            { "txt": "des livres imprimés en grand nombre", "col": "renaissance" },
-            { "txt": "des châteaux d'agrément, comme Chambord", "col": "renaissance" },
-            { "txt": "des peintres qui étudient la perspective et le corps humain", "col": "renaissance" }
+            {
+              "txt": "des livres copiés à la main par des moines",
+              "col": "moyen-age"
+            },
+            {
+              "txt": "des châteaux forts pour se défendre",
+              "col": "moyen-age"
+            },
+            {
+              "txt": "des livres imprimés en grand nombre",
+              "col": "renaissance"
+            },
+            {
+              "txt": "des châteaux d'agrément, comme Chambord",
+              "col": "renaissance"
+            },
+            {
+              "txt": "des peintres qui étudient la perspective et le corps humain",
+              "col": "renaissance"
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche explique le mot « Renaissance » ?",
@@ -204,64 +427,140 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « La Renaissance ».", "L'imprimerie change la façon de faire des livres."]
+          "indices": [
+            "Fiche « La Renaissance ».",
+            "L'imprimerie change la façon de faire des livres."
+          ]
         }
       },
       {
-        "id": "e11-3", "escale": 11, "ordre": 3, "titre": "Le programme de l'évasion",
-        "decor": "maelstrom", "objet_principal": "canot", "objets_cliquables": ["canot", "tourbillon", "fanal"],
+        "id": "e11-3",
+        "escale": 11,
+        "ordre": 3,
+        "titre": "Le programme de l'évasion",
+        "decor": "maelstrom",
+        "objet_principal": "canot",
+        "objets_cliquables": [
+          "canot",
+          "tourbillon",
+          "fanal"
+        ],
         "personnage_emetteur": "ned",
         "probleme_narratif": "Le canot est fixé sur le dos du Nautilus par des boulons. Dehors, la mer gronde : le Nautilus approche du Maelström. Ned Land a tout prévu, mais dans le noir, sans un mot, chacun doit exécuter les ordres dans l'ordre exact. Il faut écrire le plan comme un programme : des instructions précises, des répétitions, des conditions.",
         "enjeu": "Une instruction oubliée ou mal placée, et le canot reste boulonné au Nautilus, entraîné avec lui dans le tourbillon.",
         "episode_du_roman": "Partie II, ch. XXII : Ned, Aronnax et Conseil se glissent dans le canot ; ils dévissent les écrous quand le Nautilus est happé par le Maelström.",
         "competence_programme": "Technologie et mathématiques : programmer — écrire une suite d'instructions (algorithme), utiliser une boucle « répéter » et une condition « si… alors ».",
         "pourquoi_ce_savoir_ici": "Dans le noir et le vacarme, un plan exécuté pas à pas, sans ambiguïté, est le seul qui marche : c'est exactement ce qu'est un programme.",
-        "reaction_du_decor": { "effet": "secousse", "description": "Un craquement : le canot se détache et part en tournoyant sur les vagues." },
+        "reaction_du_decor": {
+          "effet": "secousse",
+          "description": "Un craquement : le canot se détache et part en tournoyant sur les vagues."
+        },
         "liberte_ou_anachronisme": "Écrire le plan comme un programme est un choix pédagogique ; le vocabulaire (boucle, condition) est celui d'aujourd'hui.",
-        "lecon": "programmer", "type": "ordre",
+        "lecon": "programmer",
+        "type": "ordre",
         "niveau_variantes": "Mousse : 3 instructions dans l'ordre. Matelot : 5 instructions. Timonier : QCM sur la boucle et la condition. Lieutenant : exécuter un programme (code) + justification. Second : compléter le programme avec des blocs + justification.",
         "mousse": {
           "type": "ordre",
           "dialogue": "Trois gestes, pas un de plus, et dans le bon ordre. Sinon, on reste collés à ce maudit navire.",
           "consigne": "Remets les instructions du plan de Ned dans l'ordre. Aide-toi de la fiche « Programmer ».",
           "items": [
-            { "txt": "Monter dans le canot." },
-            { "txt": "Refermer le panneau au-dessus de nous." },
-            { "txt": "Dévisser les boulons qui tiennent le canot." }
+            {
+              "txt": "Monter dans le canot."
+            },
+            {
+              "txt": "Refermer le panneau au-dessus de nous."
+            },
+            {
+              "txt": "Dévisser les boulons qui tiennent le canot."
+            }
           ],
-          "indices": ["Fiche « Programmer ».", "On ne dévisse pas avant d'être à bord du canot."]
+          "indices": [
+            "Fiche « Programmer ».",
+            "On ne dévisse pas avant d'être à bord du canot."
+          ]
         },
         "matelot": {
           "type": "ordre",
           "dialogue": "Cinq instructions, et chacun sait ce qu'il fait. Remettez-les dans l'ordre.",
           "consigne": "Remets le programme dans l'ordre.",
           "items": [
-            { "txt": "Attendre que le capitaine joue de l'orgue." },
-            { "txt": "Traverser le salon sans bruit." },
-            { "txt": "Monter dans le canot et refermer le panneau." },
-            { "txt": "Répéter 4 fois : dévisser un boulon." },
-            { "txt": "Si le canot est libre, alors ramer vers la côte." }
+            {
+              "txt": "Attendre que le capitaine joue de l'orgue."
+            },
+            {
+              "txt": "Traverser le salon sans bruit."
+            },
+            {
+              "txt": "Monter dans le canot et refermer le panneau."
+            },
+            {
+              "txt": "Répéter 4 fois : dévisser un boulon."
+            },
+            {
+              "txt": "Si le canot est libre, alors ramer vers la côte."
+            }
           ],
-          "indices": ["Fiche « Programmer ».", "La condition « si… alors » vient à la fin : on vérifie d'abord."]
+          "indices": [
+            "Fiche « Programmer ».",
+            "La condition « si… alors » vient à la fin : on vérifie d'abord."
+          ]
         },
         "timonier": {
           "type": "qcm",
           "dialogue": "Le professeur appelle ça une « boucle » et une « condition ». Moi, j'appelle ça du bon sens. Voyons si vous avez compris.",
           "consigne": "Réponds avec la fiche « Programmer ».",
           "questions": [
-            { "q": "« Répéter 4 fois : dévisser un boulon » remplace…", "options": ["4 fois l'instruction « dévisser un boulon »", "1 seule instruction", "8 instructions", "aucune instruction"], "bonne": 0 },
-            { "q": "« Si le canot est libre, alors ramer » veut dire…", "options": ["on ne rame que si le canot est libre", "on rame toujours", "on ne rame jamais", "on rame 4 fois"], "bonne": 0 },
-            { "q": "Un algorithme, c'est…", "options": ["une suite d'instructions précises pour résoudre un problème", "un instrument de navigation", "un poisson des profondeurs", "une langue étrangère"], "bonne": 0 }
+            {
+              "q": "« Répéter 4 fois : dévisser un boulon » remplace…",
+              "options": [
+                "4 fois l'instruction « dévisser un boulon »",
+                "1 seule instruction",
+                "8 instructions",
+                "aucune instruction"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "« Si le canot est libre, alors ramer » veut dire…",
+              "options": [
+                "on ne rame que si le canot est libre",
+                "on rame toujours",
+                "on ne rame jamais",
+                "on rame 4 fois"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Un algorithme, c'est…",
+              "options": [
+                "une suite d'instructions précises pour résoudre un problème",
+                "un instrument de navigation",
+                "un poisson des profondeurs",
+                "une langue étrangère"
+              ],
+              "bonne": 0
+            }
           ],
-          "indices": ["Fiche « Programmer ».", "Une boucle évite d'écrire plusieurs fois la même chose."]
+          "indices": [
+            "Fiche « Programmer ».",
+            "Une boucle évite d'écrire plusieurs fois la même chose."
+          ]
         },
         "lieutenant": {
           "type": "code",
           "dialogue": "Une fois libres, il faudra ramer. Mon programme est écrit ; exécutez-le de tête et dites-moi ce qu'il produit.",
           "consigne": "<div class='doc-carnet'><b>Programme de Ned</b><br>répéter 3 fois :<br>&nbsp;&nbsp;ramer 5 coups<br>&nbsp;&nbsp;tourner à gauche<br>puis : ramer 10 coups</div>Exécute le programme.",
           "champs": [
-            { "libelle": "Nombre total de coups de rame", "valeur": "25", "longueur": 3 },
-            { "libelle": "Nombre de fois où l'on tourne à gauche", "valeur": "3", "longueur": 2 }
+            {
+              "libelle": "Nombre total de coups de rame",
+              "valeur": "25",
+              "longueur": 3
+            },
+            {
+              "libelle": "Nombre de fois où l'on tourne à gauche",
+              "valeur": "3",
+              "longueur": 2
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche explique ton calcul ?",
@@ -273,7 +572,10 @@
             ],
             "bonne": 0
           },
-          "indices": ["3 × 5, puis + 10.", "« Tourner à gauche » est dans la boucle."]
+          "indices": [
+            "3 × 5, puis + 10.",
+            "« Tourner à gauche » est dans la boucle."
+          ]
         },
         "second": {
           "type": "plan",
@@ -282,12 +584,31 @@
           "titre": "Programme d'évasion",
           "colonnes": 1,
           "cases": [
-            { "libelle": "Ligne 1 : ___ que le capitaine joue de l'orgue", "reponse": "attendre" },
-            { "libelle": "Ligne 2 : ___ 4 fois : dévisser un boulon", "reponse": "répéter" },
-            { "libelle": "Ligne 3 : ___ le canot est libre, alors ramer vers la côte", "reponse": "si" },
-            { "libelle": "Ligne 4 : sinon, ___ le dernier boulon", "reponse": "dévisser" }
+            {
+              "libelle": "Ligne 1 : ___ que le capitaine joue de l'orgue",
+              "reponse": "attendre"
+            },
+            {
+              "libelle": "Ligne 2 : ___ 4 fois : dévisser un boulon",
+              "reponse": "répéter"
+            },
+            {
+              "libelle": "Ligne 3 : ___ le canot est libre, alors ramer vers la côte",
+              "reponse": "si"
+            },
+            {
+              "libelle": "Ligne 4 : sinon, ___ le dernier boulon",
+              "reponse": "dévisser"
+            }
           ],
-          "etiquettes": ["attendre", "répéter", "si", "dévisser", "harponner", "plonger"],
+          "etiquettes": [
+            "attendre",
+            "répéter",
+            "si",
+            "dévisser",
+            "harponner",
+            "plonger"
+          ],
           "justification": {
             "question": "Pourquoi utiliser une boucle plutôt qu'écrire 4 fois la même ligne ?",
             "options": [
@@ -298,78 +619,199 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « Programmer ».", "« Si… alors… sinon » : une condition."]
+          "indices": [
+            "Fiche « Programmer ».",
+            "« Si… alors… sinon » : une condition."
+          ]
         }
       },
       {
-        "id": "e11-4", "escale": 11, "ordre": 4, "titre": "Le réveil aux Lofoten",
-        "decor": "maelstrom", "objet_principal": "cote", "objets_cliquables": ["cote", "canot", "tourbillon"],
+        "id": "e11-4",
+        "escale": 11,
+        "ordre": 4,
+        "titre": "Le réveil aux Lofoten",
+        "decor": "maelstrom",
+        "objet_principal": "cote",
+        "objets_cliquables": [
+          "cote",
+          "canot",
+          "tourbillon"
+        ],
         "personnage_emetteur": "conseil",
         "probleme_narratif": "Rejetés par le Maelström, les trois compagnons se réveillent dans une cabane de pêcheurs des îles Lofoten, en Norvège. Conseil veut savoir comment rentrer en France, et l'équipe de secours du XXIᵉ siècle lui répond par un dossier sur l'Europe d'aujourd'hui : quels pays font partie de l'Union européenne, et la Norvège en est-elle ?",
         "enjeu": "Pour organiser le retour, il faut savoir quels pays on traverse et ce qui change d'un pays à l'autre (frontières, monnaie).",
         "episode_du_roman": "Partie II, ch. XXIII « Conclusion » : réveil dans une cabane de pêcheurs des îles Lofoten ; ils attendent un bateau pour regagner la France.",
         "competence_programme": "Géographie : la France dans l'Union européenne — pays membres, symboles, monnaie, libre circulation ; repérer la Norvège, pays européen non membre.",
         "pourquoi_ce_savoir_ici": "Les Lofoten sont en Norvège : un pays d'Europe qui n'a pas choisi d'entrer dans l'Union européenne.",
-        "reaction_du_decor": { "effet": "carte", "description": "Sur la mer apaisée, la route du retour se dessine, de la Norvège vers la France." },
+        "reaction_du_decor": {
+          "effet": "carte",
+          "description": "Sur la mer apaisée, la route du retour se dessine, de la Norvège vers la France."
+        },
         "liberte_ou_anachronisme": "L'Union européenne n'existe pas en 1868 : c'est le dossier de l'équipe de secours (XXIᵉ siècle). Le nombre de pays utilisant l'euro évolue ; on dit « une vingtaine » (A-VERIFIER.md).",
-        "lecon": "union-europeenne", "type": "tri",
+        "lecon": "union-europeenne",
+        "type": "tri",
         "niveau_variantes": "Mousse : tri pays membres ou non. Matelot : tri avec pays plus difficiles. Timonier : symboles de l'UE. Lieutenant : QCM sur l'UE + justification. Second : vrai ou faux sur la Norvège, Schengen et l'euro + justification.",
         "mousse": {
           "type": "tri",
           "dialogue": "Où sommes-nous ? En Norvège ! Est-ce dans cette « Union européenne » dont parle l'équipe de secours ? Rangeons les pays.",
           "consigne": "Range chaque pays : membre de l'Union européenne aujourd'hui, ou non ? Aide-toi de la fiche « L'Union européenne ».",
           "colonnes": [
-            { "id": "ue", "titre": "Membre de l'Union européenne", "icone": "🇪🇺" },
-            { "id": "non", "titre": "Pas membre", "icone": "✖️" }
+            {
+              "id": "ue",
+              "titre": "Membre de l'Union européenne",
+              "icone": "🇪🇺"
+            },
+            {
+              "id": "non",
+              "titre": "Pas membre",
+              "icone": "✖️"
+            }
           ],
           "cartes": [
-            { "txt": "la France", "col": "ue" },
-            { "txt": "l'Allemagne", "col": "ue" },
-            { "txt": "l'Espagne", "col": "ue" },
-            { "txt": "la Norvège", "col": "non" },
-            { "txt": "le Canada", "col": "non" }
+            {
+              "txt": "la France",
+              "col": "ue"
+            },
+            {
+              "txt": "l'Allemagne",
+              "col": "ue"
+            },
+            {
+              "txt": "l'Espagne",
+              "col": "ue"
+            },
+            {
+              "txt": "la Norvège",
+              "col": "non"
+            },
+            {
+              "txt": "le Canada",
+              "col": "non"
+            }
           ],
-          "indices": ["Fiche « L'Union européenne », la carte.", "Le Canada n'est pas en Europe."]
+          "indices": [
+            "Fiche « L'Union européenne », la carte.",
+            "Le Canada n'est pas en Europe."
+          ]
         },
         "matelot": {
           "type": "tri",
           "dialogue": "Pour rentrer, nous passerons peut-être par plusieurs pays. Rangeons-les avec soin : certains sont des pièges.",
           "consigne": "Range chaque pays européen : membre de l'Union européenne, ou non ?",
           "colonnes": [
-            { "id": "ue", "titre": "Membre de l'Union européenne", "icone": "🇪🇺" },
-            { "id": "non", "titre": "Pas membre", "icone": "✖️" }
+            {
+              "id": "ue",
+              "titre": "Membre de l'Union européenne",
+              "icone": "🇪🇺"
+            },
+            {
+              "id": "non",
+              "titre": "Pas membre",
+              "icone": "✖️"
+            }
           ],
           "cartes": [
-            { "txt": "la Suède", "col": "ue" },
-            { "txt": "le Danemark", "col": "ue" },
-            { "txt": "la Belgique", "col": "ue" },
-            { "txt": "la Norvège", "col": "non" },
-            { "txt": "la Suisse", "col": "non" },
-            { "txt": "le Royaume-Uni (sorti en 2020)", "col": "non" }
+            {
+              "txt": "la Suède",
+              "col": "ue"
+            },
+            {
+              "txt": "le Danemark",
+              "col": "ue"
+            },
+            {
+              "txt": "la Belgique",
+              "col": "ue"
+            },
+            {
+              "txt": "la Norvège",
+              "col": "non"
+            },
+            {
+              "txt": "la Suisse",
+              "col": "non"
+            },
+            {
+              "txt": "le Royaume-Uni (sorti en 2020)",
+              "col": "non"
+            }
           ],
-          "indices": ["Fiche « L'Union européenne ».", "Le Royaume-Uni a quitté l'Union en 2020."]
+          "indices": [
+            "Fiche « L'Union européenne ».",
+            "Le Royaume-Uni a quitté l'Union en 2020."
+          ]
         },
         "timonier": {
           "type": "association",
           "dialogue": "Le dossier parle de symboles, comme pour la République. Relions chacun à sa description.",
           "consigne": "Relie chaque symbole de l'Union européenne à sa description.",
           "paires": [
-            { "g": "Le drapeau", "icone": "🇪🇺", "d": "un cercle de 12 étoiles d'or sur fond bleu" },
-            { "g": "La devise", "icone": "📜", "d": "« Unie dans la diversité »" },
-            { "g": "L'hymne", "icone": "🎵", "d": "l'« Ode à la joie », musique de Beethoven" },
-            { "g": "La monnaie", "icone": "💶", "d": "l'euro, utilisé par une vingtaine de pays" },
-            { "g": "La journée de l'Europe", "icone": "📅", "d": "le 9 mai" }
+            {
+              "g": "Le drapeau",
+              "icone": "🇪🇺",
+              "d": "un cercle de 12 étoiles d'or sur fond bleu"
+            },
+            {
+              "g": "La devise",
+              "icone": "📜",
+              "d": "« Unie dans la diversité »"
+            },
+            {
+              "g": "L'hymne",
+              "icone": "🎵",
+              "d": "l'« Ode à la joie », musique de Beethoven"
+            },
+            {
+              "g": "La monnaie",
+              "icone": "💶",
+              "d": "l'euro, utilisé par une vingtaine de pays"
+            },
+            {
+              "g": "La journée de l'Europe",
+              "icone": "📅",
+              "d": "le 9 mai"
+            }
           ],
-          "indices": ["Fiche « L'Union européenne ».", "Le nombre d'étoiles ne change pas avec le nombre de pays."]
+          "indices": [
+            "Fiche « L'Union européenne ».",
+            "Le nombre d'étoiles ne change pas avec le nombre de pays."
+          ]
         },
         "lieutenant": {
           "type": "qcm",
           "dialogue": "Pourquoi des pays si différents se sont-ils unis, après tant de guerres ? Je voudrais comprendre, et pas seulement compter.",
           "consigne": "Réponds avec la fiche « L'Union européenne », puis justifie.",
           "questions": [
-            { "q": "Combien de pays font partie de l'Union européenne aujourd'hui ?", "options": ["27", "12", "50", "6"], "bonne": 0 },
-            { "q": "Pourquoi des pays d'Europe ont-ils commencé à s'unir après 1945 ?", "options": ["pour garantir la paix entre eux après les guerres mondiales", "pour explorer le pôle Sud", "pour construire le Nautilus", "pour interdire les voyages"], "bonne": 0 },
-            { "q": "Qui élit les députés du Parlement européen ?", "options": ["les citoyens des pays membres", "les rois d'Europe", "le capitaine Nemo", "personne, ils sont tirés au sort"], "bonne": 0 }
+            {
+              "q": "Combien de pays font partie de l'Union européenne aujourd'hui ?",
+              "options": [
+                "27",
+                "12",
+                "50",
+                "6"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi des pays d'Europe ont-ils commencé à s'unir après 1945 ?",
+              "options": [
+                "pour garantir la paix entre eux après les guerres mondiales",
+                "pour explorer le pôle Sud",
+                "pour construire le Nautilus",
+                "pour interdire les voyages"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Qui élit les députés du Parlement européen ?",
+              "options": [
+                "les citoyens des pays membres",
+                "les rois d'Europe",
+                "le capitaine Nemo",
+                "personne, ils sont tirés au sort"
+              ],
+              "bonne": 0
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche justifie ta réponse 2 ?",
@@ -381,17 +823,32 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « L'Union européenne », niveau approfondi.", "27 depuis le départ du Royaume-Uni."]
+          "indices": [
+            "Fiche « L'Union européenne », niveau approfondi.",
+            "27 depuis le départ du Royaume-Uni."
+          ]
         },
         "second": {
           "type": "vraifaux",
           "dialogue": "Le dossier dit des choses étranges : la Norvège n'est pas dans l'Union, mais on y entre sans montrer son passeport. Démêlez-moi cela.",
           "consigne": "Vrai ou faux ? Puis justifie.",
           "affirmations": [
-            { "txt": "La Norvège a refusé d'entrer dans l'Union européenne, par référendum.", "vrai": true },
-            { "txt": "On peut circuler entre la France et la Norvège sans contrôle habituel aux frontières (espace Schengen).", "vrai": true },
-            { "txt": "Tous les pays de l'Union européenne utilisent l'euro.", "vrai": false },
-            { "txt": "Être en Europe, c'est forcément être membre de l'Union européenne.", "vrai": false }
+            {
+              "txt": "La Norvège a refusé d'entrer dans l'Union européenne, par référendum.",
+              "vrai": true
+            },
+            {
+              "txt": "On peut circuler entre la France et la Norvège sans contrôle habituel aux frontières (espace Schengen).",
+              "vrai": true
+            },
+            {
+              "txt": "Tous les pays de l'Union européenne utilisent l'euro.",
+              "vrai": false
+            },
+            {
+              "txt": "Être en Europe, c'est forcément être membre de l'Union européenne.",
+              "vrai": false
+            }
           ],
           "justification": {
             "question": "Quelle phrase de la fiche montre que l'affirmation 4 est fausse ?",
@@ -403,14 +860,22 @@
             ],
             "bonne": 0
           },
-          "indices": ["Fiche « L'Union européenne », encadré.", "Le Danemark et la Suède n'utilisent pas l'euro."]
+          "indices": [
+            "Fiche « L'Union européenne », encadré.",
+            "Le Danemark et la Suède n'utilisent pas l'euro."
+          ]
         }
       }
     ]
   },
   "lecons": [
     {
-      "id": "louis-xiv", "rayon": "histoire", "fiche": 8, "icone": "👑", "titre": "Louis XIV, roi absolu", "escale": 11,
+      "id": "louis-xiv",
+      "rayon": "histoire",
+      "fiche": 8,
+      "icone": "👑",
+      "titre": "Louis XIV, roi absolu",
+      "escale": 11,
       "competence": "Louis XIV, un monarque absolu ; la guerre de Succession d'Espagne.",
       "essentiel": "<p><b>Louis XIV</b> devient roi en 1643, à 4 ans, et règne jusqu'à sa mort en 1715. On l'appelle le <b>Roi-Soleil</b>. Il fait construire le château de <b>Versailles</b>, où il installe la cour en 1682.</p>",
       "approfondi": "<p>Frise : 1643, Louis XIV roi ; 1661, il décide de gouverner seul ; 1682, la cour à Versailles ; 1702, bataille de Vigo ; 1715, mort du roi. En 1700, le roi d'Espagne, mort sans enfant, choisit pour héritier le petit-fils de Louis XIV. L'Angleterre et la Hollande refusent qu'une même famille règne sur la France et l'Espagne : c'est la <b>guerre de Succession d'Espagne</b>. En 1702, à Vigo, leur flotte attaque des galions espagnols chargés de l'or d'Amérique.</p>",
@@ -418,7 +883,12 @@
       "dans_le_roman": "Nemo raconte la bataille de Vigo et puise l'or des galions coulés (Partie II, ch. VIII)."
     },
     {
-      "id": "renaissance", "rayon": "histoire", "fiche": 9, "icone": "🎨", "titre": "La Renaissance", "escale": 11,
+      "id": "renaissance",
+      "rayon": "histoire",
+      "fiche": 9,
+      "icone": "🎨",
+      "titre": "La Renaissance",
+      "escale": 11,
       "competence": "La Renaissance : artistes, savants, découvertes ; François Iᵉʳ et Léonard de Vinci.",
       "essentiel": "<p>La <b>Renaissance</b> (XVᵉ et XVIᵉ siècles) est un temps d'artistes, de savants et de découvertes. <b>Léonard de Vinci</b> peint <b>La Joconde</b> ; <b>Michel-Ange</b> peint le plafond de la chapelle Sixtine ; <b>Gutenberg</b> met au point l'<b>imprimerie</b> à caractères mobiles.</p>",
       "approfondi": "<p>Frise : vers 1450, l'imprimerie ; 1492, Christophe Colomb atteint l'Amérique ; vers 1503-1519, La Joconde ; 1515, <b>François Iᵉʳ</b> gagne la bataille de Marignan ; en 1516, il invite Léonard de Vinci à Amboise, où celui-ci meurt en 1519, au Clos Lucé. François Iᵉʳ protège les artistes et fait construire des châteaux d'agrément, comme Chambord.</p>",
@@ -426,7 +896,12 @@
       "dans_le_roman": "Le salon du Nautilus abrite des toiles de Raphaël, Léonard de Vinci, Titien… (Partie I, ch. XI)."
     },
     {
-      "id": "programmer", "rayon": "technologie", "fiche": 2, "icone": "💻", "titre": "Programmer", "escale": 11,
+      "id": "programmer",
+      "rayon": "technologie",
+      "fiche": 2,
+      "icone": "💻",
+      "titre": "Programmer",
+      "escale": 11,
       "competence": "Écrire un algorithme ; utiliser une boucle et une condition.",
       "essentiel": "<p>Un <b>algorithme</b> est une suite d'instructions précises, dans un ordre précis, pour résoudre un problème. Un <b>programme</b> est un algorithme écrit pour être exécuté pas à pas, sans rien oublier.</p>",
       "approfondi": "<p>Une <b>boucle</b> « répéter 4 fois : dévisser un boulon » remplace 4 fois la même instruction. Une <b>condition</b> « si le canot est libre, alors ramer ; sinon, dévisser le dernier boulon » fait agir selon la situation.</p>",
@@ -434,7 +909,12 @@
       "dans_le_roman": "Ned, Aronnax et Conseil dévissent les écrous du canot au moment où le Nautilus est happé par le Maelström (Partie II, ch. XXII)."
     },
     {
-      "id": "union-europeenne", "rayon": "geographie", "fiche": 5, "icone": "🇪🇺", "titre": "L'Union européenne", "escale": 11,
+      "id": "union-europeenne",
+      "rayon": "geographie",
+      "fiche": 5,
+      "icone": "🇪🇺",
+      "titre": "L'Union européenne",
+      "escale": 11,
       "competence": "La France dans l'Union européenne : pays membres, symboles, monnaie, libre circulation.",
       "essentiel": "<p>L'<b>Union européenne</b> (UE) rassemble aujourd'hui <b>27 pays</b> d'Europe, dont la <b>France</b>, l'Allemagne, l'Espagne, l'Italie, la Belgique, la Suède, le Danemark… La <b>Norvège</b> et la <b>Suisse</b> n'en font pas partie ; le Royaume-Uni l'a quittée en 2020.</p>",
       "approfondi": "<p>Symboles : un drapeau bleu à 12 étoiles d'or (ce nombre ne change pas), la devise « Unie dans la diversité », l'hymne « Ode à la joie » (Beethoven), la journée de l'Europe le 9 mai, la monnaie <b>euro</b> (utilisée par une vingtaine de pays seulement). Après la Seconde Guerre mondiale, des pays européens décident de coopérer pour garantir la paix et développer les échanges : six pays fondent la Communauté européenne en 1957 (traité de Rome). Les citoyens élisent les députés du Parlement européen, qui siège à Strasbourg.</p>",
@@ -446,61 +926,282 @@
     "baie-vigo": {
       "titre": "Les galions de la baie de Vigo",
       "reference": null,
-      "ambiance": ["sousMarin"],
-      "kenBurns": { "echelle": 1.05, "duree": 36 },
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
       "effets": [
-        { "type": "rayons", "x": 35, "y": 0, "w": 30, "h": 45 },
-        { "type": "caustiques", "x": 0, "y": 0, "w": 100, "h": 40 },
-        { "type": "lueur", "x": 46, "y": 55, "r": 5, "couleur": "#ffe6a6", "pulse": 0.3, "scintille": true },
-        { "type": "lueur", "x": 10, "y": 76, "r": 7, "couleur": "#ffd24a", "pulse": 0.4, "scintille": true },
-        { "type": "poissons", "x": 0, "y": 20, "w": 100, "h": 40, "nombre": 6 },
-        { "type": "bulles", "x": 25, "y": 20, "w": 50, "h": 50, "nombre": 16 },
-        { "type": "vignette", "force": 0.5 }, { "type": "grain", "force": 0.04 }
+        {
+          "type": "rayons",
+          "x": 35,
+          "y": 0,
+          "w": 30,
+          "h": 45
+        },
+        {
+          "type": "caustiques",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 40
+        },
+        {
+          "type": "lueur",
+          "x": 46,
+          "y": 55,
+          "r": 5,
+          "couleur": "#ffe6a6",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 10,
+          "y": 76,
+          "r": 7,
+          "couleur": "#ffd24a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "poissons",
+          "x": 0,
+          "y": 20,
+          "w": 100,
+          "h": 40,
+          "nombre": 6
+        },
+        {
+          "type": "bulles",
+          "x": 25,
+          "y": 20,
+          "w": 50,
+          "h": 50,
+          "nombre": 16
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
       ],
       "zones": [
-        { "id": "galions", "libelle": "Les galions", "x": 5, "y": 15, "w": 22, "h": 45, "description": "La coque éventrée d'un galion espagnol, couchée dans la vase depuis 1702." },
-        { "id": "tresor", "libelle": "Le trésor", "x": 0, "y": 62, "w": 22, "h": 18, "description": "Des coffres ouverts, débordant de pièces et de lingots d'or." },
-        { "id": "plongeurs", "libelle": "Les plongeurs", "x": 41, "y": 28, "w": 16, "h": 45, "description": "Les marins du Nautilus, lampe à la main, ramassent l'or." }
+        {
+          "id": "galions",
+          "libelle": "Les galions",
+          "x": 5,
+          "y": 15,
+          "w": 22,
+          "h": 45,
+          "description": "La coque éventrée d'un galion espagnol, couchée dans la vase depuis 1702."
+        },
+        {
+          "id": "tresor",
+          "libelle": "Le trésor",
+          "x": 0,
+          "y": 62,
+          "w": 22,
+          "h": 18,
+          "description": "Des coffres ouverts, débordant de pièces et de lingots d'or."
+        },
+        {
+          "id": "plongeurs",
+          "libelle": "Les plongeurs",
+          "x": 41,
+          "y": 28,
+          "w": 16,
+          "h": 45,
+          "description": "Les marins du Nautilus, lampe à la main, ramassent l'or."
+        }
       ],
-      "etats": { "normal": { "filtre": "none" } }
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
     },
     "salle-orgue": {
       "titre": "Le salon, la dernière nuit",
       "reference": null,
-      "ambiance": ["salon"],
-      "kenBurns": { "echelle": 1.04, "duree": 40 },
+      "ambiance": [
+        "salon"
+      ],
+      "kenBurns": {
+        "echelle": 1.04,
+        "duree": 40
+      },
       "effets": [
-        { "type": "lueur", "x": 48, "y": 10, "r": 12, "couleur": "#ffe6a6", "pulse": 0.2, "scintille": true },
-        { "type": "lueur", "x": 16, "y": 25, "r": 6, "couleur": "#ffcf7a", "pulse": 0.2 },
-        { "type": "lueur", "x": 79, "y": 25, "r": 6, "couleur": "#ffcf7a", "pulse": 0.2 },
-        { "type": "poussiere", "x": 20, "y": 0, "w": 60, "h": 80, "nombre": 25 },
-        { "type": "vignette", "force": 0.6 }, { "type": "grain", "force": 0.04 }
+        {
+          "type": "lueur",
+          "x": 48,
+          "y": 10,
+          "r": 12,
+          "couleur": "#ffe6a6",
+          "pulse": 0.2,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 16,
+          "y": 25,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 79,
+          "y": 25,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.2
+        },
+        {
+          "type": "poussiere",
+          "x": 20,
+          "y": 0,
+          "w": 60,
+          "h": 80,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
       ],
       "zones": [
-        { "id": "orgue", "libelle": "Le grand orgue", "x": 43, "y": 30, "w": 11, "h": 25, "description": "Le capitaine joue, seul, sans se retourner." },
-        { "id": "toiles", "libelle": "Les toiles de maîtres", "x": 23, "y": 2, "w": 12, "h": 34, "description": "Entre les boiseries, des toiles de la Renaissance, Léonard, Raphaël, Titien." },
-        { "id": "vitrines-orgue", "libelle": "Les vitrines", "x": 82, "y": 35, "w": 18, "h": 38, "description": "Coquillages et coraux, la collection d'une vie." }
+        {
+          "id": "orgue",
+          "libelle": "Le grand orgue",
+          "x": 43,
+          "y": 30,
+          "w": 11,
+          "h": 25,
+          "description": "Le capitaine joue, seul, sans se retourner."
+        },
+        {
+          "id": "toiles",
+          "libelle": "Les toiles de maîtres",
+          "x": 23,
+          "y": 2,
+          "w": 12,
+          "h": 34,
+          "description": "Entre les boiseries, des toiles de la Renaissance, Léonard, Raphaël, Titien."
+        },
+        {
+          "id": "vitrines-orgue",
+          "libelle": "Les vitrines",
+          "x": 82,
+          "y": 35,
+          "w": 18,
+          "h": 38,
+          "description": "Coquillages et coraux, la collection d'une vie."
+        }
       ],
-      "etats": { "normal": { "filtre": "none" } }
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
     },
     "maelstrom": {
       "titre": "Le Maelström",
       "reference": null,
-      "ambiance": ["vent", "vagues"],
-      "kenBurns": { "echelle": 1.06, "duree": 28 },
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 28
+      },
       "effets": [
-        { "type": "lueur", "x": 49, "y": 24, "r": 6, "couleur": "#ffcf7a", "pulse": 0.4, "scintille": true },
-        { "type": "fumee", "x": 50, "y": 5, "w": 10, "h": 15 },
-        { "type": "poussiere", "x": 0, "y": 0, "w": 100, "h": 100, "nombre": 60 },
-        { "type": "vignette", "force": 0.6 }, { "type": "grain", "force": 0.05 }
+        {
+          "type": "lueur",
+          "x": 49,
+          "y": 24,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "fumee",
+          "x": 50,
+          "y": 5,
+          "w": 10,
+          "h": 15
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 60
+        },
+        {
+          "type": "vignette",
+          "force": 0.6
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
       ],
       "zones": [
-        { "id": "canot", "libelle": "Le canot", "x": 65, "y": 52, "w": 35, "h": 30, "description": "Le canot, qu'il faut détacher du Nautilus ; Ned s'y tient déjà." },
-        { "id": "tourbillon", "libelle": "Le tourbillon", "x": 0, "y": 40, "w": 25, "h": 35, "description": "Les vagues tournent de plus en plus vite : le Maelström aspire tout." },
-        { "id": "fanal", "libelle": "Le fanal", "x": 46, "y": 20, "w": 7, "h": 9, "description": "Le fanal du Nautilus, seule lumière dans la tempête." },
-        { "id": "cote", "libelle": "La côte de Norvège", "x": 60, "y": 8, "w": 40, "h": 32, "description": "Les falaises des îles Lofoten, toutes proches." }
+        {
+          "id": "canot",
+          "libelle": "Le canot",
+          "x": 65,
+          "y": 52,
+          "w": 35,
+          "h": 30,
+          "description": "Le canot, qu'il faut détacher du Nautilus ; Ned s'y tient déjà."
+        },
+        {
+          "id": "tourbillon",
+          "libelle": "Le tourbillon",
+          "x": 0,
+          "y": 40,
+          "w": 25,
+          "h": 35,
+          "description": "Les vagues tournent de plus en plus vite : le Maelström aspire tout."
+        },
+        {
+          "id": "fanal",
+          "libelle": "Le fanal",
+          "x": 46,
+          "y": 20,
+          "w": 7,
+          "h": 9,
+          "description": "Le fanal du Nautilus, seule lumière dans la tempête."
+        },
+        {
+          "id": "cote",
+          "libelle": "La côte de Norvège",
+          "x": 60,
+          "y": 8,
+          "w": 40,
+          "h": 32,
+          "description": "Les falaises des îles Lofoten, toutes proches."
+        }
       ],
-      "etats": { "normal": { "filtre": "none" } }
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
     }
   },
   "dialogues": {
@@ -508,20 +1209,52 @@
       "transition-e11": {
         "titre": "Escale 11 — Le trésor de Vigo et le Maelström",
         "plans": [
-          { "decor": "baie-vigo", "etat": "normal", "duree": 7, "personnage": "nemo", "texte": "Vous vous demandiez d'où vient ma fortune, professeur ? Regardez : la baie de Vigo. Je ne fais que ramasser ce que les hommes ont perdu.", "mouvement": "zoom" },
-          { "decor": "maelstrom", "etat": "normal", "duree": 6, "personnage": "ned", "texte": "Des mois plus tard, au large de la Norvège. C'est ce soir ou jamais, monsieur. Ce soir, nous partons.", "mouvement": "glisse" }
+          {
+            "decor": "baie-vigo",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "nemo",
+            "texte": "Vous vous demandiez d'où vient ma fortune, professeur ? Regardez : la baie de Vigo. Je ne fais que ramasser ce que les hommes ont perdu.",
+            "mouvement": "zoom",
+            "video": "transition-e11"
+          },
+          {
+            "decor": "maelstrom",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "ned",
+            "texte": "Des mois plus tard, au large de la Norvège. C'est ce soir ou jamais, monsieur. Ce soir, nous partons.",
+            "mouvement": "glisse"
+          }
         ]
       },
       "fin-e11": {
         "titre": "Conclusion",
         "plans": [
-          { "decor": "maelstrom", "etat": "normal", "duree": 7, "personnage": "aronnax", "texte": "Le canot a tournoyé, puis tout est devenu noir. Je me suis réveillé dans une cabane de pêcheurs des îles Lofoten. Du Nautilus, je ne sais plus rien.", "mouvement": "zoom" },
-          { "decor": "salle-orgue", "etat": "normal", "duree": 7, "personnage": "aronnax", "texte": "Ai-je rêvé ? Non : il me reste ce journal. Et le coffre du capitaine, qui ne s'ouvre qu'avec les mots de nos escales.", "mouvement": "glisse" }
+          {
+            "decor": "maelstrom",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "Le canot a tournoyé, puis tout est devenu noir. Je me suis réveillé dans une cabane de pêcheurs des îles Lofoten. Du Nautilus, je ne sais plus rien.",
+            "mouvement": "zoom"
+          },
+          {
+            "decor": "salle-orgue",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "Ai-je rêvé ? Non : il me reste ce journal. Et le coffre du capitaine, qui ne s'ouvre qu'avec les mots de nos escales.",
+            "mouvement": "glisse"
+          }
         ]
       }
     },
     "fin_escale": {
-      "11": { "personnage": "aronnax", "texte": "Notez le mot de cette dernière escale : le nom du tourbillon où le Nautilus a disparu. Puis rassemblez tous vos mots : le coffre du capitaine vous attend." }
+      "11": {
+        "personnage": "aronnax",
+        "texte": "Notez le mot de cette dernière escale : le nom du tourbillon où le Nautilus a disparu. Puis rassemblez tous vos mots : le coffre du capitaine vous attend."
+      }
     }
   }
 }
