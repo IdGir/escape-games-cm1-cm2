@@ -20,8 +20,8 @@ Le jeu doit :
 3. Pousser les élèves à **utiliser leurs leçons comme outil** (et non à cliquer à tâtons) ;
 4. Offrir un **environnement totalement immersif** (vidéos d'intro, de transitions et de fin ; décors et personnages
    animés ; sons), dans l'esprit de https://rakura.fr/escape/La-Grande-Eclipse-Astralys (essaie de l'ouvrir avec
-   WebFetch pour t'en inspirer : décors animés en couches, ambiance sonore, narration, interface « de l'univers » ;
-   **n'en copie ni le texte, ni les images, ni le code**) ;
+   WebFetch — le réseau le bloque probablement ; fie-toi alors à la description du § 7.1 ; **n'en copie ni le
+   texte, ni les images, ni le code**) ;
 5. Fournir les outils enseignant : chrono, points, réglages, **tableau de bord**, pause, indices, etc.
 
 **Ne repars pas de zéro.** Le dépôt contient déjà 12 jeux et un moteur v2 mature. Ton travail est d'ajouter un
@@ -166,26 +166,67 @@ Objectif : **la bonne réponse se trouve dans les leçons, pas au hasard.** Impl
 
 ## 7. Immersion audiovisuelle
 
-Cascade de médias déjà gérée par `commun/js/media.js` (vidéo → image → décor dessiné). Fournis **toujours** le
-niveau « décor dessiné » (qui marche sans fichier), puis les médias enrichis :
+### 7.1 Niveau visé et limites honnêtes
 
-- **Vidéo d'intro** (≈ 60-90 s : légende du monstre, rapport de l'*Abraham Lincoln*, capture, première image du
-  Nautilus), **transitions** entre escales (10 courtes, 6-10 s, avec carte animée du trajet du Nautilus et
-  sous-titres), **vidéo de fin** (≈ 45 s, selon réussite), bande-annonce 16 s (cf. `outils-medias/bande-annonce.py`).
-- **Décors animés en couches (parallaxe)** : rayons de lumière, bulles, poissons, algues, lueur de l'électricité,
-  hublot du grand salon, tableau de bord du Nautilus, boussole/profondimètre, carte du monde animée.
-  SVG/Canvas/CSS ; fluidité sur Chromebook ; respecte « animations réduites ».
-- **Personnages** (portraits animés, voix navigateur + sous-titres, `narration.js`/`personnages.css`) : Nemo, Aronnax,
-  Conseil, Ned Land, et un équipage fictif de secours si besoin. Ton bienveillant, humour léger, jamais condescendant.
-- **Sons** synthétisés (`audio.js`) : ambiance sous-marine, sonar, moteur, alarme de pression, orgue du salon
-  (Nemo joue de l'orgue chez Verne).
-- Fabrication des vidéos : essaie, dans cet ordre, ce qui existe dans l'environnement — rendu des décors animés par
-  Chromium/Playwright (déjà installé, ne lance pas `playwright install`) puis `ffmpeg` si présent ; sinon livre les
-  **cinématiques en HTML/Canvas lues en direct** (même qualité de narration), avec les `.mp4` attendus décrits dans
-  `assets/README.md` et un script de production pour la machine de l'enseignant (cf. `outils-medias/`). Poids
-  total des médias raisonnable (viser < 40 Mo hors vidéos facultatives), dépôt GitHub Pages compatible.
-- Aucun contenu généré par IA qui représente des personnes réelles ; illustrations d'archives libres uniquement
-  (gravures de Neuville/Riou, domaine public) avec crédits.
+Référence de qualité (capture fournie par l'enseignant, page Rakura « La Grande Éclipse d'Astralys ») :
+**grandes illustrations peintes très détaillées (une par salle, plein écran 16:9, éclairage dramatique, plan
+fixe) sur lesquelles sont posés des effets animés** : fumée et bulles, flammes/lueurs qui pulsent, particules,
+reflets, léger mouvement de caméra ; cadre d'interface « de l'univers » (ici une plaque de bois cloutée pour les
+dialogues), objets interactifs cliquables dans le décor, roue de réglages discrète.
+Équivalent attendu pour Verne : salle des machines, grand salon et sa bibliothèque, hublot sur les récifs,
+pont du Nautilus, scaphandres, etc. avec cadre en laiton/rivets, jauges et boiseries.
+
+**Tu ne peux pas générer ces illustrations ni vidéos IA depuis le cloud** (pas de modèle d'image/vidéo, pas
+de réseau libre). Ne prétends jamais le contraire et ne simule pas : c'est ton travail de code qui doit rendre
+ce niveau **atteignable dès qu'un humain dépose les images**.
+
+### 7.2 Architecture « image peinte + calques d'effets » (à construire)
+
+- Chaque décor = **1 image de fond** (`assets/images/decors/<id>.webp|jpg`, 1920×1080) + un fichier
+  `assets/data/decors-fx.json` décrivant ses **effets animés** et ses **zones interactives**, en coordonnées
+  relatives (%) pour être indépendants de l'image : émetteurs de bulles/fumée/étincelles, lueurs pulsantes
+  (masques radiaux), rayons de lumière, caustiques ondulantes, poissons/bancs traversant, légère parallaxe/zoom
+  lent (Ken Burns), vignette, grain, particules flottantes. Rendu Canvas/WebGL léger + CSS, 60 fps sur
+  Chromebook, respect de « animations réduites ».
+- Variante optionnelle **calques séparés** (`<id>-fond.webp`, `<id>-milieu.webp`, `<id>-avant.webp`, PNG
+  transparents) pour une vraie parallaxe quand l'enseignant les fournit.
+- **Si l'image est absente**, le moteur affiche le décor dessiné de secours (SVG/Canvas animé) : le jeu est toujours
+  jouable. Le décor de secours doit être soigné (dégradés, lumière volumétrique, silhouettes), mais il est
+  assumé comme un niveau inférieur.
+- **Vidéos** (intro, 10 transitions, fin, bande-annonce) : lecture d'un `.mp4`/`.webm` si présent, sinon
+  cinématique en direct (images fixes + Ken Burns + effets + sous-titres + voix + musique). Les fichiers attendus,
+  leurs noms, durées (6-10 s transitions, 60-90 s intro, 45 s fin), poids (≤ 6 Mo chacune, H.264, 1280×720)
+  sont listés dans `assets/README.md`. Tente un rendu par Chromium/Playwright (déjà installé, ne lance pas
+  `playwright install`) + `ffmpeg` s'il existe, pour fabriquer les `.mp4` de secours.
+- Personnages : portraits (cadre ovale, respiration, clignement, bouche animée pendant la voix, `narration.js`),
+  voix du navigateur + sous-titres. Sons synthétisés (`audio.js`) : ambiance sous-marine, sonar, moteur,
+  alarme de pression, orgue de Nemo.
+
+### 7.3 Dossier de production médias (livrable obligatoire, pour que l'humain génère les images/vidéos)
+
+Crée `vingt-mille-lieues/PRODUCTION-MEDIAS.md` (et un `medias.csv`) :
+1. **Charte graphique unique** : style (« peinture numérique semi-réaliste, gravure rétro-futuriste victorienne,
+   laiton, bois, verre, lumière bleu-vert et ambre »), palette hexadécimale, ratio, cadrage, éclairage, interdits
+   (pas de texte dans l'image, pas de personnes réelles, pas de logos), **fiche d'identité de chaque personnage**
+   (âge, tenue, traits, accessoires) à recopier à l'identique dans chaque prompt pour garder la cohérence.
+2. **Une ligne par média** (fond de chaque salle/escale ≈ 15-20 décors, portraits, objets cliquables, cadre
+   d'interface, 12 vidéos) : identifiant, nom de fichier exact, dimensions, durée, **prompt d'image/vidéo complet
+   prêt à coller** (en français et en anglais), prompt négatif, zones interactives prévues, effets animés à
+   ajouter par le moteur, statut (à produire / livré / secours actif).
+3. **Consignes outils** : pour les images, un générateur d'images quelconque ; pour les vidéos, un générateur
+   image→vidéo (partir de l'image du décor pour garder la cohérence) ; sinon gravures d'époque du roman
+   (Neuville, Riou, domaine public) retraitées. Crédits dans `assets/medias/CREDITS-medias.md`.
+4. **Contrôle qualité** : un outil `outils-medias/verifier-medias.py` (ou page `verifier.html`) qui liste les
+   médias présents/manquants, leurs dimensions, leur poids, et signale ceux qui ne respectent pas la charte
+   (ratio, taille, nom).
+
+### 7.4 Escale pilote (point de validation avant la suite)
+
+Réalise **d'abord l'escale 2 (« Dans le ventre du Nautilus ») de bout en bout** : intro, 3-4 énigmes aux
+5 niveaux, décor avec effets animés, personnages, sons, tableau de bord, tests, captures d'écran. Publie-la,
+fais un compte rendu avec les captures (1920×1080), puis **enchaîne les 9 autres escales sans attendre**
+(l'enseignant relira le pilote en parallèle et pourra demander des ajustements de charte avant la production
+finale des images).
 
 ## 8. Qualité, tests, intégration
 
