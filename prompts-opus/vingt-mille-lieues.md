@@ -1,6 +1,7 @@
 # Prompt Opus (cloud) — « Vingt mille lieues sous les mers » : escape game immersif
 
 > À coller tel quel dans une session Claude Code cloud (Opus), dépôt `idgir/escape-games-cm1-cm2`.
+> Les images de référence (`vingt-mille-lieues/references/`) et ce prompt sont sur la branche `claude/tender-shannon-aq897z` : démarre la session sur cette branche (ou après fusion de la PR).
 
 ---
 
@@ -61,12 +62,16 @@ libres de droits ou générés par le code (documente les crédits dans `assets/
 ## 3. Scénario et structure
 
 Dossier : `vingt-mille-lieues/` (id : `vingt-mille-lieues`). Titre : *Vingt mille lieues sous les mers — Le Journal
-du Nautilus*. Les élèves sont l'**équipage de secours** embarqué à bord du Nautilus à la place de Conseil, d'Aronnax
-et de Ned Land : le capitaine Nemo (vu à travers ses notes, jamais caricaturé), le professeur Aronnax, Conseil
-(le classificateur) et Ned Land (le harponneur) guident ou taquinent l'équipe. **Fil rouge** : le Nautilus a perdu
-ses cartes et son journal de bord à cause d'une avarie ; pour regagner la surface avant que la réserve d'air ne soit
-épuisée, l'équipage doit, escale après escale, reconstituer le journal en retrouvant des **fragments** (le mot de
-chaque escale) puis ouvrir le **coffre du capitaine** (final).
+du Nautilus*. Les élèves sont de **jeunes mousses fictifs de la frégate *Abraham Lincoln*** (licence narrative assumée, à
+noter dans `COHERENCE.md`) : recueillis sur le Nautilus avec le professeur Aronnax, Conseil et Ned Land après la
+chasse au « monstre » (escale 1), ils font partie de l'équipage de fortune qui aide à la manœuvre. Le capitaine Nemo (vu
+à travers ses notes et ses apparitions, jamais caricaturé), le professeur Aronnax, Conseil (le classificateur) et
+Ned Land (le harponneur) guident ou taquinent l'équipe.
+**Fil rouge (chronologique, dans l'ordre du roman)** : à l'escale 2, une avarie détruit les cartes et le journal de bord
+et limite la réserve d'air ; à chaque escale suivante, l'équipage retrouve un **fragment** (le mot de l'escale) qui
+reconstitue le journal et la route ; à la fin, l'évasion du Maelström (escale 11) ouvre le **coffre du capitaine**
+(final, dans la salle de l'orgue) et le Nautilus regagne la surface. La jauge d'air est un décor narratif, non un
+barème (cf. § 5.6).
 
 **Campagne en 11 escales** (≈ 25-30 min chacune, 3 à 4 énigmes par escale ; sauvegarde/reprise ; jouable en
 séances séparées ou en continu ; l'enseignant peut **choisir/ordonner les escales** par période P1→P5).
@@ -175,6 +180,8 @@ Nomme-les par des **grades du Nautilus** (ou des profondeurs), à l'écran et da
 
 (Les noms exacts sont à ta discrétion, mais restent maritimes, cohérents et sans correspondance scolaire visible.)
 
+Le palier « Découverte » des autres jeux (aide renforcée) est **intégré au niveau 🐚 Mousse** (premier indice offert, choix faux écarté, leçon mise en évidence). **Reste dans le programme** : les notions hors cycle 3 (par ex. fuseaux horaires, calcul d'heure locale) ne sont proposées qu'aux niveaux 🔭 Lieutenant et 🔱 Second ; aux niveaux 🧭 et en dessous, utilise des notions du programme de cycle 3.
+
 La différenciation doit être **réelle** (contenu, raisonnement et documents différents), pas seulement un nombre
 d'énigmes ou une durée différente : dans `enigmes.json`, chaque énigme porte ses **variantes par niveau**
 (données, consignes, leurres, type d'énigme possible), avec un tronc de compétences commun. Étends proprement
@@ -242,9 +249,11 @@ dialogues), objets interactifs cliquables dans le décor, roue de réglages disc
 Équivalent attendu pour Verne : salle des machines, grand salon et sa bibliothèque, hublot sur les récifs,
 pont du Nautilus, scaphandres, etc. avec cadre en laiton/rivets, jauges et boiseries.
 
-**Tu ne peux pas générer ces illustrations ni vidéos IA depuis le cloud** (pas de modèle d'image/vidéo, pas
-de réseau libre). Ne prétends jamais le contraire et ne simule pas : c'est ton travail de code qui doit rendre
-ce niveau **atteignable dès qu'un humain dépose les images**.
+**Tu ne génères pas toi-même d'images ni de vidéos** (tu n'as pas de modèle d'image/vidéo). Deux voies pour les
+obtenir : (a) l'API Agnes si elle est accessible et si la clé est disponible (§ 7.7), toujours avec **validation
+de l'enseignant** ; (b) l'enseignant les produit avec les prompts du § 7.6. Ne prétends jamais avoir produit un média
+que tu n'as pas obtenu et ne le simule pas : ton travail de code doit rendre ce niveau **atteignable dès qu'un
+fichier est déposé** (§ 7.5), avec le décor de secours en attendant.
 
 ### 7.2 Architecture « image peinte + calques d'effets » (à construire)
 
@@ -276,7 +285,7 @@ Crée `vingt-mille-lieues/PRODUCTION-MEDIAS.md` (et un `medias.csv`) :
    (pas de texte dans l'image, pas de personnes réelles, pas de logos), **fiche d'identité de chaque personnage**
    (âge, tenue, traits, accessoires) à recopier à l'identique dans chaque prompt pour garder la cohérence.
 2. **Une ligne par média** (fond de chaque salle/escale ≈ 15-20 décors, portraits, objets cliquables, cadre
-   d'interface, 12 vidéos) : identifiant, nom de fichier exact, dimensions, durée, **prompt d'image/vidéo complet
+   d'interface, 13 vidéos : intro, 11 transitions, fin ; + la bande-annonce) : identifiant, nom de fichier exact, dimensions, durée, **prompt d'image/vidéo complet
    prêt à coller** (en français et en anglais), prompt négatif, zones interactives prévues, effets animés à
    ajouter par le moteur, statut (à produire / livré / secours actif).
 3. **Consignes outils** : pour les images, un générateur d'images quelconque ; pour les vidéos, un générateur
@@ -286,13 +295,15 @@ Crée `vingt-mille-lieues/PRODUCTION-MEDIAS.md` (et un `medias.csv`) :
    médias présents/manquants, leurs dimensions, leur poids, et signale ceux qui ne respectent pas la charte
    (ratio, taille, nom).
 
-### 7.4 Escale pilote (point de validation avant la suite)
+### 7.4 Escale pilote (point de validation obligatoire)
 
-Réalise **d'abord l'escale 2 (« Dans le ventre du Nautilus ») de bout en bout** : intro, 3-4 énigmes aux
-5 niveaux, décor avec effets animés, personnages, sons, tableau de bord, tests, captures d'écran. Publie-la,
-fais un compte rendu avec les captures (1920×1080), puis **enchaîne les 9 autres escales sans attendre**
-(l'enseignant relira le pilote en parallèle et pourra demander des ajustements de charte avant la production
-finale des images).
+Réalise **d'abord l'escale 2 (« Dans le ventre du Nautilus ») de bout en bout** avec les décors de référence
+disponibles (grand salon, carré des officiers, cabine de Nemo, version électrique de la salle des machines) :
+scénarimage, 3-4 énigmes aux 5 niveaux ancrées dans les décors (§ 3 bis), `COHERENCE.md`, décor avec effets
+animés, personnages, sons, tableau de bord, tests, captures d'écran (1920×1080). Commite et pousse, puis
+**ARRÊTE-TOI** : fais un compte rendu court (captures, fiches d'ancrage des énigmes, verdict de la relecture
+sceptique, limites) et **attends la validation de l'enseignant** avant de produire les 10 autres escales. Si une
+énigme est jugée plaquée, corrige la règle (§ 3 bis) et pas seulement l'énigme.
 
 ### 7.5 Contrat de remplacement : déposer une image générée remplace celle de Claude, sans toucher au code
 
@@ -391,8 +402,9 @@ Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux sp�
 
 ### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
 
-Vingt-quatre images servent (vingt-trois sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
-fie-toi aux descriptions) :
+Les images de `vingt-mille-lieues/references/` (23 fichiers, création de l'enseignant) et la capture Rakura (absente
+du dépôt, décrite au point 1) servent d'étalon de qualité. **Regarde les fichiers** ; les descriptions ci-dessous
+sont là pour les prompts :
 1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
    forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
    (fioles, livres, gargouille, chaudron), profondeur nette (avant-plan sombre, plan moyen éclairé), cadre
@@ -538,7 +550,7 @@ distinctifs, ni leurs éléments d'interface.
 ## 9. Méthode de travail
 
 1. Commence par un **plan écrit court** (`vingt-mille-lieues/PLAN.md`) : matrice programme → escales → énigmes,
-   architecture des 5 niveaux, liste des extensions du moteur. Ne demande pas de validation : décide et avance.
+   architecture des 5 niveaux, liste des extensions du moteur. Décide seul pour tout sauf le point d'arrêt de l'escale pilote (§ 7.4), qui est obligatoire.
 2. Procède **escale par escale** : données → leçons → énigmes (5 niveaux) → décors/narration → tests → commit.
    Commits fréquents, messages clairs en français. Pousse régulièrement sur la branche désignée par la session.
 3. Étends le moteur dans `commun/` de façon rétro-compatible, avec tests, avant de t'en servir.
