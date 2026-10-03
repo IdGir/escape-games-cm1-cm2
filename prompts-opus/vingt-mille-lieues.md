@@ -228,6 +228,59 @@ fais un compte rendu avec les captures (1920×1080), puis **enchaîne les 9 autr
 (l'enseignant relira le pilote en parallèle et pourra demander des ajustements de charte avant la production
 finale des images).
 
+### 7.5 Contrat de remplacement : déposer une image générée remplace celle de Claude, sans toucher au code
+
+Exigence forte : **tout média produit par Claude (décor dessiné, image, cinématique) doit pouvoir être remplacé
+par un fichier généré par IA, sans modifier une ligne de code**, et **sans régression** si le fichier est mauvais
+ou retiré.
+- **Convention de noms stable et unique**, documentée dans `assets/README.md` et `medias.csv` :
+  `assets/images/decors/<id>.webp` (ou `.jpg`/`.png`, formats acceptés par l'ordre de priorité),
+  `assets/images/personnages/<id>.webp`, `assets/videos/<id>.mp4` (ou `.webm`), `assets/images/ui/cadre-dialogue.png`.
+  Un fichier déposé **prime toujours** sur le secours généré par Claude (cascade de `media.js`).
+- **Tolérance aux dimensions/ratios** : le moteur recadre (`object-fit: cover`) et calcule les effets et zones
+  cliquables en % de l'image, donc une image 16:9, 3:2 ou 4:3 fonctionne ; avertissement (pas d'erreur) dans
+  `verifier.html` si le ratio s'écarte de 16:9.
+- **Effets animés indépendants de l'image** : `decors-fx.json` référence des positions en % ; fournis un
+  **outil de calage** (`outils-medias/caler-effets.html`) où l'enseignant clique sur l'image pour replacer
+  l'émetteur de fumée, la lueur ou la zone cliquable, et exporte le JSON (pas besoin de coder).
+- **Remplacement partiel possible** : un seul décor, un seul portrait ou une seule vidéo peuvent être remplacés ;
+  le reste reste en secours. Un bouton « 🖼️ Médias » dans `prof.html`/`verifier.html` montre pour chaque média
+  s'il est « Claude (secours) » ou « Fichier déposé » avec aperçu côte à côte.
+- **Test automatique** : copie un faux PNG/MP4 sous le nom attendu, vérifie qu'il est servi à la place du secours,
+  puis le supprime et vérifie le retour au secours. `sw-fichiers.js` (hors-ligne) doit lister ces chemins.
+- Sous-titres, voix et textes restent **dans le code/JSON**, jamais incrustés dans les images ou vidéos, pour que
+  tout média remplacé reste compatible.
+
+### 7.6 Prompts prêts à coller, par outil
+
+Dans `PRODUCTION-MEDIAS.md`, pour **chaque média**, fournis une version adaptée à chacun de ces outils, avec ses
+spécificités (syntaxe, paramètres, limites) :
+- **Midjourney** : prompt anglais descriptif + `--ar 16:9 --style raw --v` (version courante), `--no text, watermark`,
+  références `--cref` / `--sref` pour garder personnages et style ; variantes `--ar 3:4` pour les portraits.
+- **Flux** (ex. Flux 1.1 Pro / Kontext) : prompt en phrases naturelles longues, ratio 16:9, image de référence
+  pour la cohérence ; **Imagen** et **Ideogram** : prompt naturel, ratio 16:9, rappel « sans texte dans l'image ».
+- **Vidéo image→vidéo (Runway, Kling, Veo, Luma)** : image de départ = le décor correspondant ; prompt de
+  mouvement court (caméra lente, bulles qui montent, lueur qui pulse), durée 5-10 s, boucle si possible, pas de
+  personnage qui parle ; liste des plans de transition et de leur image de départ.
+- **Ordre de génération conseillé** : 1) portraits de référence des personnages, 2) cadre d'interface, 3) décors
+  (en réutilisant style et références), 4) vidéos à partir des décors validés, 5) retouches. Chaque prompt rappelle
+  la charte et les fiches personnages à l'identique.
+- Pour chaque prompt : critères d'acceptation (« lisible en 1280×720 », « zone de dialogue en bas libre »,
+  « pas de texte », « mains correctes »), et **réserve visible pour l'interface** (bas de l'image dégagé).
+Ne cite aucun nom d'artiste vivant dans les prompts ; vérifie dans `PRODUCTION-MEDIAS.md` les rappels sur les
+conditions d'usage (usage scolaire, publication) à contrôler par l'enseignant.
+
+### 7.7 Option : génération automatisée via une API (clé fournie par l'enseignant)
+
+Écris un script **facultatif** `outils-medias/generer-medias.py` qui lit `medias.csv`, appelle une API d'images
+(fournisseur configurable par variable d'environnement : `MEDIA_API_URL`, `MEDIA_API_KEY`, modèle, ratio), enregistre
+les résultats dans un dossier **`assets/medias-proposes/`** (jamais directement dans `assets/images/`), avec
+reprise sur erreur, limite de coût (`--max-images`), journal. Une page `outils-medias/choisir-medias.html` permet à
+l'enseignant de comparer et **valider** chaque proposition (copie vers le bon nom) ; rien n'est publié sans
+validation. **Ne jamais écrire de clé dans le dépôt** (variable d'environnement ou secret de l'environnement
+uniquement) ; si la clé ou le réseau sont absents, le script s'arrête proprement avec un message. Ne le lance que
+si `MEDIA_API_KEY` est défini et si l'API est documentée et accessible ; sinon livre-le non testé en le disant.
+
 ## 8. Qualité, tests, intégration
 
 - Ajoute le jeu au **catalogue** (`commun/donnees/catalogue.js` : hors liste ou nouvelle entrée, `dossier`, couleurs,
