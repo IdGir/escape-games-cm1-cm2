@@ -1,0 +1,69 @@
+{
+  "_commentaire": "Bibliothèque du Nautilus : fiches de leçon courtes, rangées par rayons. Chaque fiche a trois parties : « essentiel » (tous les grades), « approfondi » (Timonier, Lieutenant, Second), « expert » (Lieutenant, Second). Les énigmes y renvoient par leur champ « lecon » ; la fiche ne donne jamais la réponse d'une énigme toute faite, mais tout ce qu'il faut pour la trouver.",
+  "rayons": [
+    {
+      "id": "electricite",
+      "titre": "Rayon Électricité",
+      "icone": "⚡"
+    },
+    {
+      "id": "navigation",
+      "titre": "Rayon Navigation",
+      "icone": "🧭"
+    }
+  ],
+  "lecons": [
+    {
+      "id": "conducteurs-isolants",
+      "rayon": "electricite",
+      "fiche": 1,
+      "icone": "🔌",
+      "titre": "Conducteurs et isolants",
+      "escale": 2,
+      "competence": "Électricité : distinguer conducteurs et isolants ; connaître les dangers de l'électricité.",
+      "essentiel": "<p>Un <b>conducteur</b> laisse passer le courant électrique. Un <b>isolant</b> ne le laisse pas passer.</p><table class='tab-lecon'><tr><th>⚡ Conducteurs</th><th>🛑 Isolants</th></tr><tr><td>les <b>métaux</b> : fer, acier, cuivre, laiton, argent, or, aluminium</td><td>le verre, la porcelaine, le caoutchouc, le plastique, le bois sec, le liège, le papier, les plumes, le cuir sec, le tissu sec, la ficelle sèche, l'air</td></tr></table><p><b>Pour savoir</b> si un objet conduit, on le place dans un circuit (une pile, une lampe, des fils) : si la lampe s'allume, il est conducteur.</p><div class='encadre attention'><b>⚠️ Attention</b> : la <b>mine de crayon</b> (le graphite) n'est pas un métal, mais elle conduit. L'<b>eau salée</b> (l'eau de mer) et le <b>corps humain</b> laissent passer le courant : on ne touche jamais un appareil électrique avec les mains mouillées.</div>",
+      "approfondi": "<h4>Le câble électrique</h4><p>Un câble a deux parties : l'<b>âme</b>, un fil de métal conducteur (souvent du cuivre), et la <b>gaine</b>, une enveloppe isolante (caoutchouc, plastique). Un isolant ne laisse pas passer le courant : une gaine isolante empêche le courant de s'échapper par ce qui touche le câble.</p>",
+      "expert": "<h4>Eau douce, eau salée</h4><p>L'eau très pure (distillée) laisse très mal passer le courant. C'est le <b>sel dissous</b> qui rend l'eau de mer conductrice. Un galvanomètre (appareil dont l'aiguille bouge quand le courant passe) permet de voir un courant trop faible pour allumer une lampe.</p><div class='encadre danger'><b>Court-circuit</b> : il y a court-circuit quand les deux bornes de la pile sont reliées par un conducteur sans passer par un appareil : le fil chauffe, il peut y avoir un incendie.</div>",
+      "dans_le_roman": "Dans le roman, Nemo explique que l'électricité éclaire, chauffe et fait marcher toutes les machines du Nautilus (Partie I, ch. XII)."
+    },
+    {
+      "id": "circuit",
+      "rayon": "electricite",
+      "fiche": 2,
+      "icone": "💡",
+      "titre": "Le circuit électrique",
+      "escale": 2,
+      "competence": "Électricité : circuit fermé, ouvert ; série et dérivation ; interrupteur ; court-circuit.",
+      "essentiel": "<p>Pour qu'une lampe s'allume, le courant doit faire une <b>boucle complète</b> : il sort par une borne de la pile, traverse la lampe et revient à l'autre borne. C'est un <b>circuit fermé</b>.</p><p>Si la boucle est coupée (fil débranché, interrupteur ouvert), le circuit est <b>ouvert</b> : la lampe reste éteinte.</p><p>L'<b>interrupteur</b> sert à ouvrir ou fermer le circuit : <b>fermé</b>, il laisse passer le courant ; <b>ouvert</b>, il l'arrête.</p><p>Quand plusieurs appareils sont branchés <b>l'un après l'autre sur une seule boucle</b>, on dit qu'ils sont <b>en série</b>.</p>",
+      "approfondi": "<h4>En série</h4><p>Tous les appareils sont sur <b>la même boucle</b>, les uns après les autres. Si une lampe grille, la boucle est coupée : <b>tout s'éteint</b>. En série, un seul interrupteur commande tous les appareils.</p><h4>En dérivation</h4><p>Chaque appareil a <b>sa propre boucle</b>, qui part de la pile et y revient. Si une lampe grille, les autres restent allumées. En dérivation, chaque appareil a sa propre boucle : si une lampe grille, les autres restent allumées, et un interrupteur placé dans une boucle ne commande que l'appareil de cette boucle.</p>",
+      "expert": "<div class='encadre danger'><b>Danger : le court-circuit</b>. Il y a court-circuit quand les deux bornes de la pile sont reliées par un conducteur sans passer par un appareil : le fil chauffe, il peut y avoir un incendie. Les appareils de cette boucle ne fonctionnent plus.</div><p>Méthode : avant de mettre sous tension, suivre du doigt chaque chemin possible de la borne + à la borne − ; chaque chemin doit traverser au moins un appareil.</p>",
+      "dans_le_roman": "Nemo tire son électricité de piles au sodium (Partie I, ch. XII). Les ampoules dessinées dans le jeu sont une simplification : les lampes à incandescence pratiques datent de 1879, dix ans après le roman."
+    },
+    {
+      "id": "instruments",
+      "rayon": "navigation",
+      "fiche": 1,
+      "icone": "⏲️",
+      "titre": "Les instruments du bord",
+      "escale": 2,
+      "competence": "Objets techniques : fonction d'usage ; instruments de mesure et lecture de graduations.",
+      "essentiel": "<p>Un instrument est un objet technique. Sa <b>fonction d'usage</b>, c'est ce à quoi il sert ; on la dit avec un verbe : « il sert à… ».</p><table class='tab-lecon'><tr><th>Instrument</th><th>À quoi il sert</th><th>Unité</th></tr><tr><td>🧭 boussole</td><td>indiquer le nord, donc garder la direction à suivre (le cap)</td><td>points cardinaux</td></tr><tr><td>🌡️ thermomètre</td><td>mesurer la température (de l'air à bord, de l'eau)</td><td>degrés Celsius (°C)</td></tr><tr><td>🕰️ horloge, chronomètre</td><td>donner l'heure, mesurer une durée</td><td>heures, minutes</td></tr><tr><td>⏲️ manomètre</td><td>mesurer la pression de l'eau, donc connaître la profondeur</td><td>atmosphères</td></tr><tr><td>🌀 baromètre</td><td>mesurer la pression de l'air pour prévoir le temps : beau temps ou tempête</td><td>millimètres de mercure (aujourd'hui : hectopascals)</td></tr><tr><td>🔭 lunette</td><td>voir loin</td><td>—</td></tr></table>",
+      "approfondi": "<h4>Points cardinaux</h4><p>Nord, est, sud, ouest. Entre deux, on dit : nord-est (entre le nord et l'est), sud-est, sud-ouest, nord-ouest.</p><h4>Le baromètre</h4><p>Quand le baromètre baisse vite, le mauvais temps arrive ; quand il monte, le beau temps revient.</p>",
+      "expert": "<div class='encadre'><b>La pression sous la mer</b>. La pression se mesure ici en atmosphères. À la surface, l'air appuie déjà avec une pression d'environ 1 atmosphère ; ensuite, la pression augmente d'environ 1 atmosphère tous les 10 m d'eau de mer. Exemple : à 20 m, environ 1 + 2 = 3 atmosphères. Plus on descend, plus l'aiguille du manomètre monte ; quand on remonte, elle redescend vers 1.</div>",
+      "dans_le_roman": "Dans sa chambre, Nemo montre à Aronnax les instruments « nécessaires à la navigation » ; le manomètre lui donne la profondeur par la pression de l'eau (Partie I, ch. XII)."
+    },
+    {
+      "id": "chaine-energie",
+      "rayon": "electricite",
+      "fiche": 3,
+      "icone": "⚙️",
+      "titre": "La chaîne d'énergie",
+      "escale": 2,
+      "competence": "Objets techniques et énergie : source d'énergie ; chaîne d'énergie ; formes d'énergie.",
+      "essentiel": "<p>Un objet a besoin d'<b>énergie</b> pour fonctionner. L'énergie part d'une <b>source</b> (une pile, une batterie, le vent, les muscles…) et arrive à la partie qui <b>agit</b> (la lampe qui éclaire, la roue ou l'hélice qui tourne).</p><p>Exemple d'une lampe de poche : la pile garde l'énergie → on appuie sur l'interrupteur → le courant circule dans les fils → l'ampoule s'allume.</p>",
+      "approfondi": "<h4>Les maillons de la chaîne</h4><ol><li><b>stocker</b> l'énergie (pile, batterie)</li><li><b>commander</b> : laisser passer ou non (interrupteur, manette)</li><li><b>distribuer</b> le courant (fils, câbles)</li><li><b>convertir</b> : changer l'énergie électrique en mouvement, en lumière ou en chaleur (moteur, lampe, radiateur)</li><li><b>transmettre</b> le mouvement (arbre, engrenages, chaîne, courroie)</li><li><b>agir</b> : l'effet utile (la roue tourne, l'hélice pousse l'eau)</li></ol><p class='note-fiche'>Au collège, on dira : alimenter (stocker), distribuer (l'interrupteur commande le passage), convertir, transmettre.</p>",
+      "expert": "<h4>Les formes d'énergie</h4><p>Une pile contient une énergie <b>chimique</b> qu'elle fournit sous forme <b>électrique</b>. Un moteur convertit l'énergie électrique en énergie de <b>mouvement</b> ; une lampe, en énergie <b>lumineuse</b> (et un peu de chaleur). Un objet ne crée pas d'énergie : il la reçoit d'une source et la transforme.</p><div class='encadre'><b>Dans le roman</b> : Nemo tire le sodium de ses piles du sel de l'eau de mer : la mer fournit la matière de sa réserve d'énergie. Mais extraire le sodium demande lui-même de l'énergie (dans le roman, du charbon tiré de mines sous-marines).</div>",
+      "dans_le_roman": "Dans le salon, Nemo montre à Aronnax l'épure du Nautilus et lui explique comment ses piles font tourner l'hélice (Partie I, ch. XIII)."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_commentaire": "Textes parlés (voix du navigateur + sous-titres) : cinématiques et accueil. Les textes restent ici, jamais incrustés dans les images ni les vidéos : une vidéo déposée (assets/videos/<id>.mp4) est sous-titrée avec ces lignes. Citations du roman : à vérifier sur le texte (voir A-VERIFIER.md).",
+  "accueil": {
+    "personnage": "aronnax",
+    "texte": "Novembre 1867. Le monstre que poursuivait la frégate Abraham Lincoln n'était pas un narval géant : c'est un navire sous-marin, le Nautilus, commandé par le mystérieux capitaine Nemo. Vous, les jeunes mousses de la frégate, avez été recueillis à son bord avec Conseil, Ned Land et moi-même. Nemo nous laisse libres d'aller dans son navire… à condition de ne jamais le quitter. Aidez l'équipage, et reconstituez le journal de bord du Nautilus."
+  },
+  "cinematiques": {
+    "transition-e2": {
+      "titre": "Escale 2 — Dans le ventre du Nautilus",
+      "video": "transition-e2",
+      "plans": [
+        { "decor": "salon", "etat": "normal", "duree": 7, "personnage": "nemo", "texte": "Voici le salon du Nautilus, professeur. Ici, tout se fait par l'électricité : elle m'éclaire, elle me chauffe, elle fait tourner mes machines.", "mouvement": "zoom" },
+        { "decor": "salon", "etat": "normal", "duree": 5, "personnage": "aronnax", "texte": "Mais d'où tirez-vous tant d'énergie, capitaine, au fond de la mer ?", "mouvement": "glisse" },
+        { "decor": "salon", "etat": "panne", "duree": 5, "personnage": null, "texte": "Un claquement sec. Une odeur de brûlé monte du carré des officiers. Les lampes s'éteignent.", "effet": "coupure", "mouvement": "secousse" },
+        { "decor": "carre", "etat": "panne", "duree": 6, "personnage": "nemo", "texte": "Un court-circuit. Le feu a dévoré mes cartes et le journal de bord… et une part de notre air. Vous êtes à bord : aidez mon équipage.", "mouvement": "zoom" }
+      ]
+    },
+    "fin-e2": {
+      "titre": "Le Nautilus fait surface",
+      "plans": [
+        { "decor": "salon", "etat": "victoire", "duree": 6, "personnage": "aronnax", "texte": "Les panneaux s'ouvrent… l'océan ! Le Nautilus remonte, l'air frais entre par les écoutilles.", "mouvement": "zoom" }
+      ]
+    }
+  },
+  "fin_escale": {
+    "2": {
+      "personnage": "nemo",
+      "texte": "Mon navire vous doit une fière chandelle. Sous le divan, ma boîte de bord a échappé au feu ; sur son couvercle est gravée la devise du Nautilus. Notez-la bien : c'est la première page de notre nouveau journal."
+    }
+  },
+  "sas": [
+    "La pression monte dans le sas : il se verrouille. Profitez-en pour relire la fiche.",
+    "Sas verrouillé. Un bon marin vérifie ses instruments avant d'agir : la Bibliothèque est ouverte.",
+    "Le sas se purge… Relisez la fiche de la Bibliothèque avant de réessayer."
+  ]
+}
