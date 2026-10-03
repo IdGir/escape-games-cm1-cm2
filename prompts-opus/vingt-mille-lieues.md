@@ -325,7 +325,7 @@ Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux sp�
 
 ### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
 
-Trois images servent d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
+Neuf images servent d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
 fie-toi aux descriptions) :
 1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
    forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
@@ -349,6 +349,27 @@ fie-toi aux descriptions) :
    décors intérieurs (salle des machines, bibliothèque, cabine, sas). Effets animés prévus : caustiques qui
    ondulent sur le parquet, poissons/bancs derrière les hublots, scintillement du lustre, bulles, poussière en
    suspension dans les rayons.
+
+4. **Cabine du capitaine Nemo (`references/style-cabine-capitaine-1.png`, `-2.png`)** : pièce intime en acajou sombre,
+   hublot rond à cadre de laiton riveté sur l'eau bleue avec méduses et poissons, lit-alcôve à rideaux de velours
+   vert, fauteuil Chesterfield capitonné vert, **bureau d'acajou couvert de plans, loupe, compas, rouleaux, lampe de
+   banquier à abat-jour vert** (zone parfaite d'énigmes à documents), carte du ciel et instruments (horloges, baromètre)
+   au mur, **clavier d'orgue/piano** à droite, tapis persan, appliques en forme de coquille Saint-Jacques, grande
+   verrière ronde au plafond avec lumière aquatique, globe terrestre, coffret de coquillages. Lumière : lampes
+   ambrées + bleu froid du hublot, grain cinéma, profondeur de champ.
+5. **Salle des officiers / carré (`references/style-salle-officiers-1.png`, `-2.png`, `-3.png`)** : intérieur de sous-marin
+   **métallique riveté vert-de-gris patiné avec lambris et cuivre** (tuyauteries de cuivre, tableau de manomètres et
+   cadrans, horloges murales, téléphone-phonographe ancien), grande table de travail en bois entourée de fauteuils
+   capitonnés verts, **lampe à pétrole à abat-jour vert**, cartes marines, règles, compas, rapporteur, encrier et plume,
+   carafe et verres en cristal, bibliothèque, poêle à feu visible, petit hublot rond sur l'eau, vitrine de coquillages.
+   Atmosphère chaleureuse, usée, « vécue ». Contraste voulu avec le grand salon (plus luxueux) : **le Nautilus a
+   deux ambiances — salons de bois et de laiton, coursives et salles de travail de métal patiné et de cuivre**.
+   Ces pièces servent de décors d'énigmes (cartes, instruments, cadrans, journal de bord).
+
+Cohérence : tous les décors partagent la même lumière (ambre chaud + bleu aquatique par les hublots), les mêmes
+motifs (appliques en coquille, hublots ronds rivetés, lampes à abat-jour vert, fauteuils capitonnés verts, tapis
+orientaux, laiton/cuivre) et le même rendu cinéma. **Ces motifs forment l'identité visuelle du jeu** : liste-les
+dans la charte et répète-les dans chaque prompt de génération.
 
 Traduction pour Verne (à inscrire telle quelle dans la charte de `PRODUCTION-MEDIAS.md`) : mêmes principes
 (contraste chaud/froid, matières nobles, détails narratifs, personnage « jouant » une action précise) transposés au
