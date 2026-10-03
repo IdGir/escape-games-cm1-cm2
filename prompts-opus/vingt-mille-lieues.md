@@ -288,6 +288,10 @@ Script **facultatif** `outils-medias/generer-medias.py` (Python standard + `requ
 - options `--seulement <id>`, `--variantes N` (2-4 propositions par décor), `--max-images` et `--max-videos`
   (**plafond de coût**), `--essai` (affiche les appels sans les faire), journal `generation.log` ;
 - ordre imposé : portraits de référence → cadre → décors → vidéos (image de départ = décor **validé**) ;
+- l'environnement peut injecter la clé lui-même (« identifiants API » : la session appelle `apihub.agnes-ai.com`
+  sans voir la clé) : le script doit donc fonctionner **sans** `AGNES_API_KEY` (pas d'en-tête `Authorization`
+  ajouté) et, si un appel renvoie 401/403, réessayer avec `AGNES_API_KEY` quand elle existe ; sinon s'arrêter
+  proprement ;
 - la clé n'est lue que dans la variable d'environnement `AGNES_API_KEY` : **jamais écrite** dans un fichier, un
   journal, un commit ou une page web ; `.gitignore` exclut `assets/medias-proposes/` ;
 - page `outils-medias/choisir-medias.html` : compare les propositions et le secours de Claude côte à côte ;
