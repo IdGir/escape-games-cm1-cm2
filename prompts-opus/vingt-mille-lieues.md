@@ -97,6 +97,70 @@ Atlantide, date du pôle Sud atteint en 1911 par Amundsen), pour ne jamais ensei
 sciences. Tous les faits, chiffres et dates sont vérifiés et sourcés ; ce que tu ne peux pas vérifier va dans
 `A-VERIFIER.md`.
 
+## 3 bis. Cohérence narrative : aucune énigme « cheveux sur la soupe » (exigence prioritaire)
+
+Principe : **l'élève ne résout jamais « un exercice », il résout un problème du Nautilus, dans un lieu précis, avec
+un objet de ce lieu.** La matière scolaire est le *moyen* de résoudre le problème, jamais le décor d'une question
+posée en l'air. Test de qualité : si l'on retire l'habillage, l'énigme doit encore avoir un sens dans l'histoire ;
+si on la déplace dans une autre escale, elle doit paraître déplacée.
+
+**Règles obligatoires pour chaque énigme :**
+1. **Un lieu** : elle se déroule dans un des décors de référence (§ 7.8) et **se joue en cliquant sur des objets de ce
+   décor** (carte sur la table, baromètre, hublot, vitrine de coraux, tableau de manomètres, journal de bord, orgue,
+   globe, horloge…) — pas dans une fenêtre abstraite ni un formulaire. Les zones cliquables de `decors-fx.json`
+   sont les supports de l'énigme ; le panneau de réponse s'ouvre *depuis* l'objet.
+2. **Un problème de l'histoire** (« la pression monte », « le cap est perdu », « il faut identifier cette créature
+   avant de la harponner », « quel est le dernier port ? ») avec **un enjeu** immédiat pour le Nautilus.
+3. **Un émetteur en personnage** qui pose le problème avec ses mots et sa personnalité (Aronnax le savant, Conseil
+   qui classe tout, Ned Land impatient, Nemo énigmatique), en 1 à 3 phrases, voix + sous-titres.
+4. **Un lien explicite au roman** : chaque énigme cite en une ligne l'épisode (chapitre, partie du roman) dont elle
+   est issue, ou à défaut la **vraisemblance** qui la justifie (« dans la bibliothèque de Nemo, on trouve… »). Pas
+   de pure invention contraire au roman.
+5. **Une raison pour laquelle ce savoir sert ici** (pourquoi calculer une durée, lire un fuseau, classer un animal
+   dans ce contexte) : la compétence du programme est l'outil, la phrase d'accroche explique l'usage.
+6. **Une conséquence visible** quand l'énigme est réussie : le décor réagit (la porte du sas s'ouvre, la lumière
+   revient, la carte se complète, le cap s'affiche, le Nautilus avance sur la carte du voyage) — jamais un simple
+   « Bravo » (cf. règle « aucun texte après la réussite » : la réaction est visuelle/sonore).
+7. **Anachronismes et libertés assumés** : si une énigme mêle des savoirs postérieurs à 1870 (ex. Amundsen 1911), elle
+   est présentée comme un *dossier de l'équipe de secours* (carnet du XXIᵉ siècle) et non comme parole de Nemo.
+8. **Pas de morale scolaire plaquée** : pas de « rappel de cours » hors de la Bibliothèque ; les leçons restent à
+   l'écart, consultables, et ne parlent pas dans la scène.
+
+**Fiche d'ancrage par énigme (livrable obligatoire, dans `assets/data/enigmes.json` ET `GUIDE-PEDAGOGIQUE.md`)** :
+`id`, `escale`, `decor`, `objets_cliquables`, `personnage_emetteur`, `probleme_narratif`, `enjeu`,
+`episode_du_roman` (chapitre/partie), `competence_programme`, `pourquoi_ce_savoir_ici`, `reaction_du_decor`,
+`liberte_ou_anachronisme` (si besoin), `niveau_variantes`.
+
+**Mécanismes de garantie à construire :**
+- **Test automatique** (`tests/test-coherence-narrative.js`) : échoue si une énigme n'a pas de décor existant, d'objet
+  cliquable défini dans `decors-fx.json`, de personnage émetteur, d'épisode du roman, de réaction du décor, ou si deux
+  énigmes d'une même escale n'utilisent pas des objets différents du décor.
+- **Relecture croisée par un second passage d'Opus** (sous-agent « relecteur sceptique » si disponible, sinon
+  relecture à froid) : pour chaque énigme, il répond à 4 questions — *Pourquoi ici ? Pourquoi maintenant ? Pourquoi
+  ce personnage ? Que se passe-t-il dans l'histoire si l'on échoue ?* ; toute énigme qui ne répond pas
+  correctement à ces 4 questions est réécrite. Résultat consigné dans `COHERENCE.md` (tableau énigme → verdict).
+- **Table de correspondance roman ↔ programme** dans `COHERENCE.md` (épisode, lieu, matière, compétence) avec les
+  libertés prises, pour que l'enseignant puisse juger en 5 minutes.
+- **Aucune énigme n'est écrite avant que son décor, son objet cliquable et son problème narratif soient fixés** :
+  commence chaque escale par un *scénarimage* (1 page : lieu, personnages, déroulé des 3-4 énigmes comme une
+  mini-intrigue avec un début, un obstacle, un rebondissement, une résolution), puis écris les énigmes.
+- **Validation par l'enseignant sur l'escale pilote** (§ 7.4) incluant le scénarimage et `COHERENCE.md` : la
+  cohérence narrative est un critère explicite d'acceptation avant de produire les 10 autres escales.
+
+**Exemples du niveau de cohérence attendu (à dépasser, pas à copier) :**
+- *Escale 2, salle des machines électrique* : « Les accumulateurs faiblissent. Conseil lit les cadrans sur le tableau :
+  trois valeurs en piles/volts — reconstituer le circuit (circuit en série/dérivation, cf. leçon *Circuit électrique*)
+  en reliant les bonnes bornes du tableau de laiton pour relancer la lumière du grand salon. » → l'énigme se joue sur
+  les cadrans et les bornes, la réaction est la lumière qui revient.
+- *Escale 5, carré des officiers, Ceylan* : « Ned Land veut savoir combien de temps dure la pêche aux perles ; la
+  carte des fuseaux sur la table et l'horloge du carré donnent l'heure à Ceylan — lire l'heure locale (fuseaux
+  horaires). » → on manipule la carte et l'horloge du décor.
+- *Escale 11, cabine de Nemo, Vigo* : « Nemo a laissé sur son bureau trois pièces d'or d'un galion ; la frise
+  chronologique accrochée au mur permet de dater l'épave (1702) et de la placer sous le règne de Louis XIV. » →
+  l'énigme se joue sur la frise et les pièces.
+Contre-exemples interdits : un QCM sur la Révolution présenté dans une salle sans rapport ; « Avant de continuer,
+réponds à cette question de cours » ; une énigme dont l'enjeu n'est pas l'histoire du Nautilus.
+
 ## 4. Les 5 niveaux de difficulté (jamais appelés CE2/CM1/CM2/6ᵉ/5ᵉ à l'écran)
 
 Nomme-les par des **grades du Nautilus** (ou des profondeurs), à l'écran et dans les réglages élèves :
@@ -159,6 +223,7 @@ Objectif : **la bonne réponse se trouve dans les leçons, pas au hasard.** Impl
 - **Guide pédagogique** (`GUIDE-PEDAGOGIQUE.md`) : place dans les programmes, **matrice de couverture complète**
   (chaque compétence CM1 + CM2 d'histoire, géographie, sciences → escale/énigme/niveaux ; liste honnête des points
   non couverts), déroulés par période, correspondance niveaux affichés ↔ niveaux scolaires, évaluation, prolongements.
+- `COHERENCE.md` (§ 3 bis), `PLAN.md`, scénarimages par escale.
 - `README.md` (solutions de **toutes** les énigmes, tous niveaux), `A-VERIFIER.md`, `CHANGELOG.md`,
   `lecons-imprimables.html`, `assets/README.md` (liste des médias attendus).
 - Variété des énigmes : mélange tous les types (code, qcm, tri, ordre, association, intrus, trous, lettres, plan,
