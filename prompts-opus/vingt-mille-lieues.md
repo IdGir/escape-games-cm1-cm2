@@ -281,6 +281,29 @@ format de réponse — certaines générations vidéo sont asynchrones : prévoi
 `apihub.agnes-ai.com` est bloqué par le réseau, ou si `AGNES_API_KEY` est absent, livre le script **non testé**
 en le disant clairement et continue sans lui.
 
+**Faits vérifiés dans la documentation Agnes (octobre 2026) — à reconfirmer sur `wiki.agnes-ai.com` avant de coder :**
+- **Images** : modèle `agnes-image-2.5-flash` (le plus récent ; repli `agnes-image-2.1-flash`). `POST
+  https://apihub.agnes-ai.com/v1/images/generations` avec `model`, `prompt`, `size` (`1K`/`2K`/`3K`/`4K`), `ratio`
+  (`16:9`, `3:2`, `4:3`, `3:4`, `2:3`, `1:1`, `9:16`, `21:9`), `image` (tableau d'URL publiques ou Data URI base64,
+  pour l'image→image et la composition multi-images : **sert à garder la cohérence des personnages et du style**),
+  `extra_body.response_format` = `url` ou `b64_json`. Les dimensions exactes (ex. 1920×1080) ne sont **pas natives** :
+  demander `size:"2K"`, `ratio:"16:9"`, puis recadrer/redimensionner côté script (Pillow) vers 1920×1080.
+  Écris le texte des prompts en tenant compte que le modèle est « haute densité d'information » (scènes riches).
+- **Vidéo** : modèles `agnes-video-2.5` (720P/1080P/1K/2K) et `agnes-video-2.5-flash` (720P uniquement, ≤ 5 images
+  de référence). `POST /v1/videos` avec `model`, `prompt`, `mode` (`text` | `keyframe` | `reference`), `seconds`
+  (`"4"` à `"12"`), `size`, `aspect_ratio`, `seed`, `n`=1 ; `keyframe` accepte `first_frame`/`last_frame` en **URL
+  publique** → **image→vidéo = mode `keyframe` avec le décor validé comme `first_frame`** (l'image du décor doit donc
+  être accessible par URL publique : utilise l'URL renvoyée par l'API d'images tant qu'elle est valable, sinon
+  signale qu'un hébergement public temporaire est nécessaire). Tâche **asynchrone** : récupérer `video_id`, puis
+  `GET https://apihub.agnes-ai.com/agnesapi?video_id=<ID>&model_name=<modèle>` toutes les 1-2 s jusqu'à
+  `status` = `completed` (champ `url` du `.mp4`) ou `failed`.
+- **Coûts** : au moment de la rédaction, images 2.5 Flash et vidéo 2.5 Flash sont affichées à 0 $ (promotion) ; la
+  vidéo `agnes-video-2.5` coûte environ 0,025 $/s en 720P. Garde néanmoins les plafonds `--max-*` et affiche un
+  coût estimé avant de lancer ; la promotion peut s'arrêter.
+- **Clé** : en-tête `Authorization: Bearer …` ; ne jamais exposer dans le code client ni le dépôt.
+- Les vidéos générées par l'API n'ont **pas** d'image ni de texte incrustés garantis : prompts « sans texte ». Les
+  textes de jeu restent dans le code.
+
 Script **facultatif** `outils-medias/generer-medias.py` (Python standard + `requests` si disponible) :
 - lit `medias.csv` (identifiant, type image/vidéo, prompt, ratio, image de départ pour les vidéos) ;
 - appelle l'API ; enregistre dans **`assets/medias-proposes/<id>-v1.webp|mp4`** (jamais directement dans
