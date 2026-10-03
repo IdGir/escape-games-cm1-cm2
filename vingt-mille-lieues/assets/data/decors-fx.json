@@ -146,6 +146,139 @@
           "filtre": "brightness(1.08) saturate(1.1)",
           "ocean": true
         }
+      },
+      "calages": {
+        "depose": {
+          "zones": [
+            {
+              "id": "epure",
+              "libelle": "L'épure du Nautilus, sur le divan",
+              "x": 41,
+              "y": 64,
+              "w": 17,
+              "h": 14,
+              "description": "Le plan, la coupe et l'élévation du Nautilus, à l'encre bleue. Le capitaine l'a laissée là."
+            },
+            {
+              "id": "hublots",
+              "libelle": "Les hublots du salon",
+              "x": 36,
+              "y": 45,
+              "w": 8,
+              "h": 15,
+              "description": "Derrière la vitre épaisse, l'eau sombre. Des poissons passent dans la lumière du salon."
+            },
+            {
+              "id": "orgue",
+              "libelle": "Le grand orgue",
+              "x": 44,
+              "y": 34,
+              "w": 10,
+              "h": 26,
+              "description": "L'orgue du capitaine. Ses tuyaux montent jusqu'au plafond ; le clavier est fermé à clé."
+            },
+            {
+              "id": "vitrines",
+              "libelle": "Les vitrines du musée",
+              "x": 0,
+              "y": 58,
+              "w": 18,
+              "h": 28,
+              "description": "Coraux, coquillages, étoiles de mer : Conseil les a déjà tous classés deux fois."
+            }
+          ],
+          "effets": [
+            {
+              "type": "caustiques",
+              "x": 28,
+              "y": 72,
+              "w": 44,
+              "h": 24,
+              "intensite": 0.55
+            },
+            {
+              "type": "lueur",
+              "x": 14,
+              "y": 39,
+              "r": 6,
+              "couleur": "#ffcf7a",
+              "pulse": 0.25
+            },
+            {
+              "type": "lueur",
+              "x": 83,
+              "y": 39,
+              "r": 6,
+              "couleur": "#ffcf7a",
+              "pulse": 0.25
+            },
+            {
+              "type": "lueur",
+              "x": 48,
+              "y": 10,
+              "r": 10,
+              "couleur": "#fff1c4",
+              "pulse": 0.35,
+              "scintille": true
+            },
+            {
+              "type": "lueur",
+              "x": 40,
+              "y": 52,
+              "r": 5,
+              "couleur": "#3fd2ff",
+              "pulse": 0.2
+            },
+            {
+              "type": "lueur",
+              "x": 57,
+              "y": 52,
+              "r": 5,
+              "couleur": "#3fd2ff",
+              "pulse": 0.2
+            },
+            {
+              "type": "poissons",
+              "x": 37,
+              "y": 46,
+              "w": 6,
+              "h": 13,
+              "nombre": 3
+            },
+            {
+              "type": "poissons",
+              "x": 54,
+              "y": 46,
+              "w": 6,
+              "h": 13,
+              "nombre": 3
+            },
+            {
+              "type": "poissons",
+              "x": 14,
+              "y": 34,
+              "w": 8,
+              "h": 28,
+              "nombre": 3
+            },
+            {
+              "type": "poussiere",
+              "x": 20,
+              "y": 10,
+              "w": 60,
+              "h": 60,
+              "nombre": 40
+            },
+            {
+              "type": "vignette",
+              "force": 0.5
+            },
+            {
+              "type": "grain",
+              "force": 0.04
+            }
+          ]
+        }
       }
     },
     "carre": {
@@ -253,6 +386,96 @@
         "normal": {
           "filtre": "none"
         }
+      },
+      "calages": {
+        "depose": {
+          "zones": [
+            {
+              "id": "table",
+              "libelle": "Les objets de la grande table",
+              "x": 18,
+              "y": 60,
+              "w": 34,
+              "h": 34,
+              "description": "Cartes roussies, compas, règles, un verre, des bouchons… Conseil a tout aligné."
+            },
+            {
+              "id": "journal",
+              "libelle": "Le journal de bord",
+              "x": 56,
+              "y": 78,
+              "w": 24,
+              "h": 18,
+              "description": "Il ne reste du journal de bord que la reliure et des pages noircies. Tout sera à reconstituer."
+            },
+            {
+              "id": "tableau-cadrans",
+              "libelle": "Le tableau des cadrans",
+              "x": 6.5,
+              "y": 14,
+              "w": 13,
+              "h": 21,
+              "description": "Les aiguilles des cadrans électriques sont tombées à zéro."
+            }
+          ],
+          "effets": [
+            {
+              "type": "lueur",
+              "x": 37,
+              "y": 36,
+              "r": 11,
+              "couleur": "#b8ffb0",
+              "pulse": 0.2
+            },
+            {
+              "type": "lueur",
+              "x": 66.5,
+              "y": 28,
+              "r": 8,
+              "couleur": "#38c8ff",
+              "pulse": 0.15
+            },
+            {
+              "type": "bulles",
+              "x": 62,
+              "y": 18,
+              "w": 9,
+              "h": 22,
+              "nombre": 10
+            },
+            {
+              "type": "fumee",
+              "x": 30,
+              "y": 70,
+              "w": 30,
+              "h": 40,
+              "nombre": 24,
+              "etat": "panne"
+            },
+            {
+              "type": "etincelles",
+              "x": 13,
+              "y": 28,
+              "etat": "panne"
+            },
+            {
+              "type": "poussiere",
+              "x": 15,
+              "y": 20,
+              "w": 60,
+              "h": 60,
+              "nombre": 30
+            },
+            {
+              "type": "vignette",
+              "force": 0.6
+            },
+            {
+              "type": "grain",
+              "force": 0.05
+            }
+          ]
+        }
       }
     },
     "machines": {
@@ -349,6 +572,100 @@
         },
         "normal": {
           "filtre": "none"
+        }
+      },
+      "calages": {
+        "depose": {
+          "zones": [
+            {
+              "id": "tableau-bornes",
+              "libelle": "Le grand tableau de laiton",
+              "x": 33,
+              "y": 14,
+              "w": 34,
+              "h": 58,
+              "description": "Des bornes de laiton, des fils débranchés, des ampoules éteintes."
+            },
+            {
+              "id": "accumulateurs",
+              "libelle": "Les piles du Nautilus",
+              "x": 0,
+              "y": 8,
+              "w": 28,
+              "h": 82,
+              "description": "Les grandes piles au sodium du Nautilus. Elles bourdonnent doucement : elles sont chargées."
+            },
+            {
+              "id": "cadrans",
+              "libelle": "Les cadrans de contrôle",
+              "x": 74,
+              "y": 1,
+              "w": 20,
+              "h": 35,
+              "description": "Les cadrans des circuits : salon, coursive, pompe à air. Tous à zéro."
+            }
+          ],
+          "effets": [
+            {
+              "type": "lueur",
+              "x": 50,
+              "y": 19,
+              "r": 9,
+              "couleur": "#cfe8ff",
+              "pulse": 0.3
+            },
+            {
+              "type": "lueur",
+              "x": 12,
+              "y": 50,
+              "r": 12,
+              "couleur": "#5ff0d0",
+              "pulse": 0.35
+            },
+            {
+              "type": "lueur",
+              "x": 83,
+              "y": 68,
+              "r": 9,
+              "couleur": "#ffb46a",
+              "pulse": 0.15
+            },
+            {
+              "type": "etincelles",
+              "x": 46,
+              "y": 45,
+              "etat": "panne"
+            },
+            {
+              "type": "etincelles",
+              "x": 58,
+              "y": 52,
+              "etat": "panne"
+            },
+            {
+              "type": "rayons",
+              "x": 50,
+              "y": 0,
+              "w": 26,
+              "h": 60
+            },
+            {
+              "type": "poussiere",
+              "x": 20,
+              "y": 5,
+              "w": 60,
+              "h": 70,
+              "nombre": 45
+            },
+            {
+              "type": "vignette",
+              "force": 0.5
+            },
+            {
+              "type": "grain",
+              "force": 0.04
+            }
+          ]
         }
       }
     },

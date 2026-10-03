@@ -30,8 +30,11 @@ JEU = os.path.dirname(ICI)
 SORTIE = os.path.join(JEU, "assets", "medias-proposes")
 JOURNAL = os.path.join(SORTIE, "generation.log")
 BASE = "https://apihub.agnes-ai.com"
-MODELE_IMAGE, MODELE_IMAGE_REPLI, MODELE_VIDEO = "agnes-image-2.5-flash", "agnes-image-2.1-flash", "agnes-video-2.5"
-COUT_VIDEO_PAR_S = 0.025      # $/s en 720P, d'après la page tarifs (octobre 2026) ; images 2.5 Flash : gratuites (promotion)
+MODELE_IMAGE, MODELE_IMAGE_REPLI = "agnes-image-2.5-flash", "agnes-image-2.1-flash"
+MODELE_VIDEO = "agnes-video-2.5-flash"     # gratuit (promotion, octobre 2026), 720P seulement ; repli payant : agnes-video-2.5
+# Références publiques (dépôt public) : l'API lit les images par URL, sans les renvoyer en base64
+REFS_URL = "https://raw.githubusercontent.com/IdGir/escape-games-cm1-cm2/claude/tender-shannon-aq897z/vingt-mille-lieues/"
+COUT_VIDEO_PAR_S = 0.0        # agnes-video-2.5-flash : 0 $/s (promotion) ; agnes-video-2.5 : 0,025 $/s en 720P
 ORDRE = ["portrait-", "cadre-", "decor-", "video-"]
 
 
@@ -73,33 +76,38 @@ def data_uri(chemin):
         return f"data:image/{'jpeg' if ext == 'jpg' else ext};base64," + base64.b64encode(f.read()).decode("ascii")
 
 
-def references(ligne):
+def references(ligne, base_url):
+    """Images de référence : URL publique pour les fichiers déjà publiés (references/), sinon data URI."""
     refs = []
-    for r in (ligne.get("reference_ou_depart") or "").split(","):
+    for r in (ligne.get("reference_ou_depart") or "").replace(";", ",").split(","):
         r = r.strip().split(" ")[0]
         p = os.path.join(JEU, r)
-        if r.startswith("references/") and os.path.isfile(p):
-            refs.append(p)
+        if os.path.isfile(p) and (r.startswith("references/") or r.startswith("assets/")):
+            refs.append(base_url + r if (base_url and r.startswith("references/")) else data_uri(p))
     return refs[:4]
 
 
 def recadrer(chemin, dims):
-    try:
-        from PIL import Image
-    except ImportError:
-        journal("  (Pillow absent : image gardée à sa taille d'origine ; pip install pillow pour recadrer)")
-        return
+    """Recadre au format exact (centre) puis redimensionne, en WebP : Pillow, sinon ImageMagick."""
     try:
         w, h = [int(x) for x in dims.split(" ")[0].replace("×", "x").split("x")]
     except ValueError:
-        return
-    im = Image.open(chemin).convert("RGB")
-    r = w / h
-    if im.width / im.height > r:
-        nw = int(im.height * r); im = im.crop(((im.width - nw) // 2, 0, (im.width - nw) // 2 + nw, im.height))
-    else:
-        nh = int(im.width / r); im = im.crop((0, (im.height - nh) // 2, im.width, (im.height - nh) // 2 + nh))
-    im.resize((w, h), Image.LANCZOS).save(chemin.rsplit(".", 1)[0] + ".webp", "WEBP", quality=88)
+        return chemin
+    sortie = chemin.rsplit(".", 1)[0] + ".webp"
+    try:
+        from PIL import Image
+        im = Image.open(chemin).convert("RGB")
+        r = w / h
+        if im.width / im.height > r:
+            nw = int(im.height * r); im = im.crop(((im.width - nw) // 2, 0, (im.width - nw) // 2 + nw, im.height))
+        else:
+            nh = int(im.width / r); im = im.crop((0, (im.height - nh) // 2, im.width, (im.height - nh) // 2 + nh))
+        im.resize((w, h), Image.LANCZOS).save(sortie, "WEBP", quality=86)
+    except ImportError:
+        import subprocess
+        subprocess.run(["convert", chemin, "-resize", f"{w}x{h}^", "-gravity", "center", "-extent", f"{w}x{h}", "-quality", "86", sortie], check=True)
+    os.remove(chemin)
+    return sortie
 
 
 def main():
@@ -111,6 +119,9 @@ def main():
     a.add_argument("--max-videos", type=int, default=0, help="plafond de vidéos générées (défaut 0 : aucune)")
     a.add_argument("--videos", action="store_true", help="traiter aussi les lignes vidéo")
     a.add_argument("--depart-url", help="URL PUBLIQUE de l'image de départ (vidéo keyframe)")
+    a.add_argument("--fin-url", help="URL PUBLIQUE de l'image de fin (vidéo keyframe, facultatif)")
+    a.add_argument("--refs-url", default=REFS_URL, help="adresse publique du dossier du jeu (références lues par URL)")
+    a.add_argument("--prompt-supplement", default="", help="texte ajouté au prompt (consigne de composition…)")
     o = a.parse_args()
     o.variantes = max(1, min(4, o.variantes))
     with open(os.path.join(JEU, "medias.csv"), encoding="utf-8") as f:
@@ -132,12 +143,12 @@ def main():
                 print(f"= {l['id']}-v{v} existe déjà : rien à refaire"); continue
             if l["type"] == "image":
                 if faites_i >= o.max_images: print("Plafond d'images atteint."); break
-                refs = references(l)
-                corps = {"model": MODELE_IMAGE, "prompt": l["prompt_fr"], "size": "2K",
+                refs = references(l, o.refs_url)
+                corps = {"model": MODELE_IMAGE, "prompt": (l["prompt_fr"] + " " + o.prompt_supplement).strip(), "size": "2K",
                          "ratio": l["ratio"] if l["ratio"] in ("1:1", "3:4", "4:3", "16:9", "9:16", "2:3", "3:2", "21:9") else "16:9",
-                         "extra_body": {"response_format": "url"}}
+                         "extra_body": {"response_format": "b64_json"}}
                 if refs:
-                    corps["extra_body"]["image"] = ["<data URI de " + os.path.relpath(r, JEU) + ">" for r in refs] if o.essai else [data_uri(r) for r in refs]
+                    corps["extra_body"]["image"] = [r if r.startswith("http") else "<data URI>" for r in refs] if o.essai else refs
                 if o.essai:
                     print(f"[essai] POST {BASE}/v1/images/generations → {os.path.relpath(cible, JEU)}\n        " + json.dumps(corps, ensure_ascii=False)[:400] + "…"); faites_i += 1; continue
                 try:
@@ -149,22 +160,30 @@ def main():
                     except RuntimeError as e2: journal(f"{l['id']} : échec ({e2}) — on passe"); continue
                 d = (r.get("data") or [{}])[0]
                 os.makedirs(SORTIE, exist_ok=True)
-                if d.get("url"): telecharger(d["url"], cible); journal(f"{l['id']}-v{v} : image reçue ({d['url'][:60]}…)")
-                elif d.get("b64_json"):
+                if d.get("b64_json"):
                     with open(cible, "wb") as f: f.write(base64.b64decode(d["b64_json"]))
-                    journal(f"{l['id']}-v{v} : image reçue (base64)")
+                elif d.get("url"):
+                    try: telecharger(d["url"], cible)
+                    except Exception as e: journal(f"{l['id']} : téléchargement impossible ({e})"); continue
                 else: journal(f"{l['id']} : réponse sans image"); continue
-                recadrer(cible, l["dimensions"]); faites_i += 1
+                final = recadrer(cible, l["dimensions"]); faites_i += 1
+                journal(f"{l['id']}-v{v} : image reçue → {os.path.relpath(final, JEU)}")
             else:
                 if faites_v >= o.max_videos: print("Plafond de vidéos atteint (0 par défaut : --max-videos N pour autoriser)."); break
                 if not o.depart_url:
                     print(f"! {l['id']} : il faut l'URL PUBLIQUE du décor validé (--depart-url). Hébergement public temporaire nécessaire."); break
-                corps = {"model": MODELE_VIDEO, "prompt": l["prompt_fr"], "mode": "keyframe", "first_frame": o.depart_url,
+                corps = {"model": MODELE_VIDEO, "prompt": (l["prompt_fr"] + " " + o.prompt_supplement).strip(), "mode": "keyframe", "first_frame": o.depart_url,
                          "seconds": "8", "size": "720P", "aspect_ratio": "16:9"}
+                if o.fin_url: corps["last_frame"] = o.fin_url
                 if o.essai:
                     print(f"[essai] POST {BASE}/v1/videos → {os.path.relpath(cible, JEU)}\n        " + json.dumps(corps, ensure_ascii=False)[:400]); faites_v += 1; continue
-                r = appel("POST", BASE + "/v1/videos", corps)
-                vid = r.get("video_id"); journal(f"{l['id']} : tâche vidéo {vid} créée")
+                r = {}
+                for essai_file in range(30):
+                    r = appel("POST", BASE + "/v1/videos", corps)
+                    if r.get("code") != "video_queue_full": break
+                    journal(f"{l['id']} : file d'attente pleine, nouvel essai dans 60 s"); time.sleep(60)
+                vid = r.get("video_id")
+                if not vid: journal(f"{l['id']} : création refusée ({json.dumps(r)[:200]})"); continue; journal(f"{l['id']} : tâche vidéo {vid} créée")
                 for _ in range(900):
                     time.sleep(2)
                     s = appel("GET", f"{BASE}/agnesapi?video_id={vid}&model_name={MODELE_VIDEO}")

@@ -61,9 +61,9 @@ def ajoute(**k): M.append(k)
 
 for pid, (fr, en) in PERSOS.items():
     ajoute(id="portrait-" + pid, type="image", fichier=f"assets/images/personnages/{pid}.webp", dim="1200×1600", duree="", ratio="3:4",
-           escale="toutes", ref=("references/personnage-nemo-1.png, references/personnage-nemo-2.png" if pid == "nemo" else "references/personnage-nemo-1.png (style), references/style-scene-cinema-victorienne.webp"),
+           escale="toutes", ref=("references/personnage-nemo-1.png, references/personnage-nemo-2.png" if pid == "nemo" else "references/style-cabine-capitaine-1.png, references/style-salle-officiers-2.png"),
            statut="secours actif (portrait dessiné)", zones="", effets="respiration, clignement, bouche animée (moteur)",
-           fr=f"Portrait de référence, plan taille, cadrage vertical, fond flou de boiseries et de hublot bleu. {fr} Photoréaliste de cinéma, lumière latérale bleue froide + ambre chaud.",
+           fr=f"Portrait de référence, plan taille, cadrage vertical, fond flou de boiseries et de hublot bleu. {fr} Photoréaliste de cinéma, lumière latérale bleue froide + ambre chaud." + ("" if pid == "nemo" else " Les images jointes ne servent que pour le décor et la lumière : aucune personne des images ne doit apparaître."),
            en=f"Reference portrait, waist-up, vertical framing, blurred background of dark wood paneling and a blue porthole. {en} Cinematic photorealism, cold blue side light plus warm amber light.")
 
 ajoute(id="cadre-dialogue", type="image", fichier="assets/images/ui/cadre-dialogue.png", dim="1600×360 (PNG transparent)", duree="", ratio="40:9", escale="toutes",
@@ -80,7 +80,7 @@ DECORS = [
      "fumée (panne), étincelles au tableau, bulles au hublot, lueur de la lampe verte",
      "Le carré des officiers du Nautilus : intérieur métallique riveté vert-de-gris patiné avec lambris et tuyauteries de cuivre, tableau de manomètres et cadrans en haut à gauche, grande table de bois au premier plan couverte de cartes roussies, compas, règles, un verre de cristal, un bouchon, une plume, un journal de bord noirci à droite, lampe à abat-jour vert, petit hublot rond sur l'eau, horloge murale.",
      "The Nautilus officers' wardroom: riveted verdigris metal interior with wood wainscoting and copper pipes, a panel of pressure gauges top left, a large wooden table in the foreground covered with scorched charts, compasses, rulers, a crystal glass, a cork, a quill, a blackened logbook on the right, green-shaded lamp, small round porthole onto water, wall clock."),
-    ("machines", 2, "(pas de référence électrique : partir de references/style-salle-machines-1.png pour le cadrage, SANS charbon ni flammes)", "tableau de bornes (centre), accumulateurs (gauche), cadrans (droite)",
+    ("machines", 2, "references/composition-machines-electriques.png (rendu du décor dessiné, pour garder la place des objets cliquables)", "tableau de bornes (centre), accumulateurs (gauche), cadrans (droite)",
      "lueurs bleutées des bobines, étincelles (panne), rayons de lumière, poussière",
      "La salle des machines ÉLECTRIQUE du Nautilus : rangées d'accumulateurs de verre et de laiton à gauche, grand tableau de laiton au centre avec bornes, câbles gainés débranchés et petites ampoules, cadrans de contrôle à droite, grosses bobines de cuivre, câbles gainés au plafond voûté riveté, passerelle en caillebotis, lumière électrique bleutée, aucun charbon, aucune flamme, aucune chaudière.",
      "The Nautilus ELECTRIC engine room: rows of glass-and-brass accumulator cells on the left, a large brass switchboard in the centre with terminals, unplugged sheathed cables and small bulbs, control dials on the right, big copper coils, sheathed cables under a riveted vaulted ceiling, metal grating catwalk, bluish electric light, no coal, no flames, no boilers."),
@@ -91,7 +91,9 @@ DECORS = [
 ]
 for did, esc, ref, zones, effets, fr, en in DECORS:
     ajoute(id="decor-" + did, type="image", fichier=f"assets/images/decors/{did}.webp", dim="1920×1080", duree="", ratio="16:9", escale=str(esc), ref=ref,
-           statut="référence active" if ref.startswith("references/") else "secours actif (décor dessiné)", zones=zones, effets=effets, fr=fr, en=en)
+           statut="référence active" if did != "machines" else "secours actif (décor dessiné)", zones=zones, effets=effets,
+           fr=fr + " Garder exactement la composition, la perspective et l'emplacement des objets de l'image de référence fournie.",
+           en=en + " Keep exactly the composition, perspective and object placement of the provided reference image.")
 
 A_VENIR = [("pont-lincoln", 1, "pont de la frégate Abraham Lincoln, 1867"), ("machines-vapeur", 1, "salle des machines à vapeur et charbon de la frégate (références salle-machines 1-4)"),
            ("pont-nautilus", 1, "pont du Nautilus en surface (références pont 1-3)"), ("sas", 3, "sas et vestiaire des scaphandres"), ("recif-crespo", 3, "forêt sous-marine de Crespo (références récif)"),
