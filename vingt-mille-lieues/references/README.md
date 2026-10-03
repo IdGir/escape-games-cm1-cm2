@@ -8,3 +8,5 @@
 - `style-cabine-capitaine-1.png`, `style-cabine-capitaine-2.png` : cabine du capitaine Nemo (§ 7.8, point 4).
 - `style-salle-officiers-1.png`, `-2.png`, `-3.png` : salle des officiers / carré (§ 7.8, point 5).
 - `style-salle-machines-1.png` à `-4.png` : séquence de **travelling avant** dans une salle des machines à vapeur (§ 7.8, point 6).
+- `style-atlantide-1.png`, `-2.png` : scaphandriers devant un temple grec englouti (§ 7.8, point 7).
+- `style-pont-1.png` à `-3.png` : pont du Nautilus en surface (§ 7.8, point 8).

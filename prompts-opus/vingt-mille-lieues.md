@@ -325,7 +325,7 @@ Les prompts du § 7.6 restent la source de vérité : adapte-les ensuite aux sp�
 
 ### 7.8 Références de style fournies par l'enseignant (à intégrer dans la charte graphique)
 
-Douze images servent (onze sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
+Dix-sept images servent (seize sont dans le dossier ci-dessous ; la capture Rakura n'y est pas) d'étalon de qualité (si un dossier `vingt-mille-lieues/references/` existe, regarde-les ; sinon
 fie-toi aux descriptions) :
 1. **Décor d'escape game (Rakura)** : peinture numérique très détaillée, plan large 16:9, éclairage dramatique à
    forte teinte dominante (violet/bleu froid + pointes chaudes orange/vert), objets narratifs nombreux et lisibles
@@ -380,6 +380,24 @@ fie-toi aux descriptions) :
    « énergie : vapeur contre électricité » ; pour la salle des machines du Nautilus, décline la même charte en
    **version électrique** (accumulateurs, bobines, tableaux de cadrans de laiton, câbles gainés, lumière bleutée,
    pas de charbon ni de flammes) et mets cette différence dans les énigmes de sciences et dans `A-VERIFIER.md`.
+
+7. **Atlantide / promenade sous-marine (`references/style-atlantide-1.png`, `-2.png`)** : trois scaphandriers en
+   scaphandre à casque de laiton à hublots, combinaison de toile épaisse, **bouteilles d'air sur le dos**, tuyaux de
+   liaison, lampe-torche à faisceau lumineux, bâton, bottes lestées (cohérent avec la promenade sous-marine de Verne
+   et ses appareils à réserve d'air) ; devant les **ruines d'un temple grec** immergé (fronton sculpté, colonnes
+   cannelées, deux grandes statues, marches, colonnes brisées couvertes de coraux), méduses, rayons de lumière
+   bleue venant de la surface, projecteur du Nautilus au loin. Palette bleu profond + turquoise + pierre blanche
+   patinée ; profondeur et échelle (petits personnages devant un grand monument). **Décor de l'escale 7
+   (Crète/Santorin/Atlantide)** et des scènes de sorties sous-marines ; adapte la couleur de la pierre et les
+   inscriptions selon l'énigme (jamais d'inscription lisible inventée sans la vérifier).
+8. **Pont du Nautilus en surface (`references/style-pont-1.png` à `-3.png`)** : coque fuselée en plaques de métal
+   rivetées gris argent patinées, **rambardes de laiton**, panneaux d'écoutille à fermoirs, **cage vitrée du pilote
+   en laiton (lanterne à facettes)**, **fanal/projecteur de laiton sur pied**, canot encastré sous bâche, compas de
+   route en laiton avec feux vert et rouge, volants de vannes, caillebotis ; mer calme, lumière dorée de fin de
+   journée, ciel nuageux, **ailerons de cétacés/requins** au loin (clin d'œil au « monstre »). Mouvements : houle,
+   écume, reflets, petits nuages ; travelling avant possible (plans 1 → 3). Sert pour l'escale 1 (la
+   rencontre avec le « monstre »), le **début et la fin du jeu** et les moments « lever de la tête hors de l'eau ».
+   Aucune cheminée ni voile : le Nautilus est électrique.
 
 Cohérence : tous les décors partagent la même lumière (ambre chaud + bleu aquatique par les hublots), les mêmes
 motifs (appliques en coquille, hublots ronds rivetés, lampes à abat-jour vert, fauteuils capitonnés verts, tapis
