@@ -99,7 +99,7 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | decor-baie-vigo | `assets/images/decors/baie-vigo.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
 | decor-maelstrom | `assets/images/decors/maelstrom.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
 | decor-salle-orgue | `assets/images/decors/salle-orgue.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
-| video-intro | `assets/videos/intro.mp4` | 1280×720 | 60-90 s | 1 | à produire après l'escale 1 |
+| video-intro | `assets/videos/intro.mp4` | 1280×720 | 8 s | 1 | à produire |
 | video-transition-e2 | `assets/videos/transition-e2.mp4` | 1280×720 | 8-10 s | 2 | cinématique en direct active |
 | video-transition-e1 | `assets/videos/transition-e1.mp4` | 1280×720 | 6-10 s | 1 | à produire avec l'escale 1 |
 | video-transition-e3 | `assets/videos/transition-e3.mp4` | 1280×720 | 6-10 s | 3 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
@@ -111,8 +111,8 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | video-transition-e9 | `assets/videos/transition-e9.mp4` | 1280×720 | 6-10 s | 9 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e10 | `assets/videos/transition-e10.mp4` | 1280×720 | 6-10 s | 10 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e11 | `assets/videos/transition-e11.mp4` | 1280×720 | 6-10 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
-| video-fin | `assets/videos/fin.mp4` | 1280×720 | 45 s | 11 | à produire en fin de campagne |
-| video-bande-annonce | `assets/videos/bande-annonce.mp4` | 1280×720 | 15-20 s | toutes | à monter en fin de campagne |
+| video-fin | `assets/videos/fin.mp4` | 1280×720 | 8 s | 11 | à produire |
+| video-bande-annonce | `assets/videos/bande-annonce.mp4` | 1280×720 | 15-20 s | toutes | à monter |
 
 ### portrait-nemo — `assets/images/personnages/nemo.webp`
 
@@ -396,6 +396,28 @@ La chambre du capitaine Nemo : pièce intime en acajou sombre, grand hublot rond
 Prompt négatif : `texte, lettres, logo, filigrane, mains déformées, doigts en trop, visage déformé, flou, cheminée, voiles, charbon (décors du Nautilus), style dessin animé` · *Negative:* `text, letters, logo, watermark, deformed hands, extra fingers, distorted face, blur, smokestack, sails, coal (Nautilus interiors), cartoon style`
 
 
+### video-intro — `assets/videos/intro.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 1 · statut : à produire
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
+- Référence / image de départ : assets/medias-depart/intro.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+Image de départ : le pont de la frégate la nuit. Lent travelling avant sur la mer sombre ; au loin, une longue lueur verdâtre file sous l'eau, puis s'éteint ; les vagues, les cordages et la lanterne bougent doucement. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/intro.jpg ; durée 8 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+Start frame: the frigate's deck at night. Slow push-in over the dark sea; far away a long greenish glow glides under the water, then fades; waves, ropes and the lantern move gently. No character speaking, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+Image de départ : le pont de la frégate la nuit. Lent travelling avant sur la mer sombre ; au loin, une longue lueur verdâtre file sous l'eau, puis s'éteint ; les vagues, les cordages et la lanterne bougent doucement. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
 ### video-transition-e2 — `assets/videos/transition-e2.mp4`
 
 - Dimensions : 1280×720 · ratio 16:9 · durée 8-10 s · escale 2 · statut : cinématique en direct active
@@ -635,4 +657,47 @@ Vigo bay: slow push-in toward the treasure; light rays ripple, the gold glints, 
 **Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
 ```
 La baie de Vigo : lent travelling avant vers le trésor ; des rayons ondulent, l'or étincelle, les plongeurs avancent d'un pas. Aucun personnage ne parle, aucun texte, aucune lettre.
+```
+
+
+### video-fin — `assets/videos/fin.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 11 · statut : à produire
+- Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
+- Référence / image de départ : assets/medias-depart/fin.jpg
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+Image de départ : le grand salon. Lent travelling avant vers l'orgue ; la lumière des hublots passe du bleu profond à un bleu clair et doré, comme si le Nautilus remontait vers le soleil ; les lampes se rallument doucement. Aucun personnage, aucun texte, aucune lettre.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : assets/medias-depart/fin.jpg ; durée 8 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+Start frame: the grand salon. Slow push-in toward the organ; the porthole light shifts from deep blue to bright golden blue, as if the Nautilus were rising toward the sun; the lamps glow back on. No characters, no text, no letters.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+Image de départ : le grand salon. Lent travelling avant vers l'orgue ; la lumière des hublots passe du bleu profond à un bleu clair et doré, comme si le Nautilus remontait vers le soleil ; les lampes se rallument doucement. Aucun personnage, aucun texte, aucune lettre.
+```
+
+
+### video-bande-annonce — `assets/videos/bande-annonce.mp4`
+
+- Dimensions : 1280×720 · ratio 16:9 · durée 15-20 s · escale toutes · statut : à monter
+- Référence / image de départ : décors validés
+- Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
+
+**Prompt (français)** :
+```
+Montage local (ffmpeg) des vidéos d'ouverture des escales, avec fondus enchaînés : outils/monter-bande-annonce.sh.
+```
+
+**Vidéo image→vidéo (Runway, Kling, Veo, Luma)** — image de départ : décors validés ; durée 15-20 s ; boucle si possible ; aucun personnage qui parle ; aucun texte :
+```
+Local ffmpeg montage of the escale opening videos, with cross-fades.
+```
+**Agnes** (`agnes-video-2.5`, `mode: "keyframe"`, `first_frame` = URL publique du décor validé, `seconds: "8"`, `size: "720P"`, `aspect_ratio: "16:9"` ; tâche asynchrone : `video_id` puis `GET /agnesapi?video_id=…&model_name=agnes-video-2.5`) :
+```
+Montage local (ffmpeg) des vidéos d'ouverture des escales, avec fondus enchaînés : outils/monter-bande-annonce.sh.
 ```

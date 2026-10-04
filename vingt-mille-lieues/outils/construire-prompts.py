@@ -109,8 +109,11 @@ for did, esc, desc in A_VENIR:
            statut="déposé (Agnes, à valider par l'enseignant)" if os.path.exists(os.path.join(JEU, "assets", "images", "decors", did + ".webp")) else f"à produire avec l'escale {esc}",
            zones="voir assets/data/decors-fx.json", effets="voir assets/data/decors-fx.json", fr=f"Escale {esc} : {desc}.", en="")
 
-ajoute(id="video-intro", type="vidéo", fichier="assets/videos/intro.mp4", dim="1280×720", duree="60-90 s", ratio="16:9", escale="1", ref="decor-pont-nautilus (validé)", statut="à produire après l'escale 1",
-       zones="", effets="sous-titres et voix dans le code", fr="À rédiger avec l'escale 1 (la chasse au « monstre »).", en="")
+ajoute(id="video-intro", type="vidéo", fichier="assets/videos/intro.mp4", dim="1280×720", duree="8 s", ratio="16:9", escale="1", ref="assets/medias-depart/intro.jpg",
+       statut="déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)" if os.path.exists(os.path.join(JEU, "assets", "videos", "intro.mp4")) else "à produire",
+       zones="", effets="sous-titres et voix dans le code",
+       fr="Image de départ : le pont de la frégate la nuit. Lent travelling avant sur la mer sombre ; au loin, une longue lueur verdâtre file sous l'eau, puis s'éteint ; les vagues, les cordages et la lanterne bougent doucement. Aucun personnage ne parle, aucun texte, aucune lettre.",
+       en="Start frame: the frigate's deck at night. Slow push-in over the dark sea; far away a long greenish glow glides under the water, then fades; waves, ropes and the lantern move gently. No character speaking, no text, no letters.")
 ajoute(id="video-transition-e2", type="vidéo", fichier="assets/videos/transition-e2.mp4", dim="1280×720", duree="8-10 s", ratio="16:9", escale="2", ref="assets/images/decors/salon.webp (validé) en première image",
        statut="cinématique en direct active", zones="", effets="sous-titres et voix dans le code (dialogues.json)",
        fr="Image de départ : le grand salon validé. Lent travelling avant vers l'orgue ; les lampes du salon vacillent deux fois puis s'éteignent ; il ne reste que la lumière bleue des hublots ; une lueur rouge d'alarme pulse doucement. Aucun personnage ne parle, aucun texte.",
@@ -141,8 +144,12 @@ for n in [1] + list(range(3, 12)):
     ajoute(id=f"video-transition-e{n}", type="vidéo", fichier=f"assets/videos/transition-e{n}.mp4", dim="1280×720", duree="6-10 s", ratio="16:9", escale=str(n), ref=dep or "décor validé de l'escale",
            statut=("déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)" if os.path.exists(os.path.join(JEU, "assets", "videos", f"transition-e{n}.mp4")) else f"à produire avec l'escale {n}"), zones="", effets="sous-titres dans le code",
            fr=fr_mouv + " Aucun personnage ne parle, aucun texte, aucune lettre.", en=en_mouv + " No character speaking, no text, no letters.")
-ajoute(id="video-fin", type="vidéo", fichier="assets/videos/fin.mp4", dim="1280×720", duree="45 s", ratio="16:9", escale="11", ref="decor-pont-nautilus", statut="à produire en fin de campagne", zones="", effets="", fr="À rédiger avec l'escale 11 (le Nautilus regagne la surface).", en="")
-ajoute(id="video-bande-annonce", type="vidéo", fichier="assets/videos/bande-annonce.mp4", dim="1280×720", duree="15-20 s", ratio="16:9", escale="toutes", ref="décors validés", statut="à monter en fin de campagne", zones="", effets="", fr="Montage des décors validés (outils-medias/bande-annonce.py du dépôt, après intégration).", en="")
+ajoute(id="video-fin", type="vidéo", fichier="assets/videos/fin.mp4", dim="1280×720", duree="8 s", ratio="16:9", escale="11", ref="assets/medias-depart/fin.jpg",
+       statut="déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)" if os.path.exists(os.path.join(JEU, "assets", "videos", "fin.mp4")) else "à produire",
+       zones="", effets="sous-titres et voix dans le code",
+       fr="Image de départ : le grand salon. Lent travelling avant vers l'orgue ; la lumière des hublots passe du bleu profond à un bleu clair et doré, comme si le Nautilus remontait vers le soleil ; les lampes se rallument doucement. Aucun personnage, aucun texte, aucune lettre.",
+       en="Start frame: the grand salon. Slow push-in toward the organ; the porthole light shifts from deep blue to bright golden blue, as if the Nautilus were rising toward the sun; the lamps glow back on. No characters, no text, no letters.")
+ajoute(id="video-bande-annonce", type="vidéo", fichier="assets/videos/bande-annonce.mp4", dim="1280×720", duree="15-20 s", ratio="16:9", escale="toutes", ref="décors validés", statut="monté (ffmpeg, à partir des vidéos déposées)" if os.path.exists(os.path.join(JEU, "assets", "videos", "bande-annonce.mp4")) else "à monter", zones="", effets="", fr="Montage local (ffmpeg) des vidéos d'ouverture des escales, avec fondus enchaînés : outils/monter-bande-annonce.sh.", en="Local ffmpeg montage of the escale opening videos, with cross-fades.")
 
 
 def prompt_image_en(m):
