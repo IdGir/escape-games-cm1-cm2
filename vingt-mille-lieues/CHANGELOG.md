@@ -1,5 +1,10 @@
 # Journal des versions — Le Journal du Nautilus
 
+## 2026-10-04 — fondus au noir et cinématiques de fin
+- Toutes les cinématiques se terminent par un fondu au noir (0,9 s ; 0,35 s si on les passe, 0,25 s avec « Animations réduites »),
+  l'écran suivant se met en place sous le voile, puis le voile se lève (`VML.fonduNoir` dans `js/app.js`).
+- Vidéos des fins d'escale et de l'ouverture de l'escale 2 (voir `assets/medias/CREDITS-medias.md`).
+
 ## 2026-10-03 — escales 7 à 11, campagne complète
 - Escales 7 (Santorin, Atlantide), 8 (Sargasses, Gulf Stream, traite, câble), 9 (pôle Sud, « Faute d'air »), 10 (poulpes),
   11 (Vigo, Renaissance, Maelström, Union européenne) : 17 énigmes × 5 grades ; nouveaux rayons Terre active, Communication,

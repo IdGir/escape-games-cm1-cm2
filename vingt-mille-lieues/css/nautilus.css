@@ -306,3 +306,6 @@ body.anim-reduites *, body.anim-reduites *::before, body.anim-reduites *::after{
 .reaction .givre{ position: absolute; inset: 0; background: radial-gradient(circle, rgba(220,245,255,.0) 30%, rgba(220,245,255,.65)); animation: givre 2.4s ease-out forwards; }
 @keyframes givre{ from{ opacity: .9; } to{ opacity: 0; } }
 .cine-plan-video{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Fondu au noir en sortie de cinématique (js/app.js : VML.fonduNoir) */
+#voile-noir{ position: fixed; inset: 0; background: #000; opacity: 0; pointer-events: none; z-index: 10000; }

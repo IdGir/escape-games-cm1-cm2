@@ -242,7 +242,28 @@ VML.CLE_PARTIE = "vml_partie";
     };
     await Promise.race([jouer(), fin]);
     appliquerEffetsCine(c);
+    /* Sortie en fondu au noir : le voile couvre l'écran, la cinématique est retirée, l'écran suivant se met en place
+       dessous, puis le voile se lève. « Passer » fait le même fondu, en plus court. */
+    await VML.fonduNoir(passe ? 350 : 900);
     ov.innerHTML = "";
+    VML.leverVoileNoir(700);
+  };
+  VML.fonduNoir = function(ms){
+    return new Promise(res => {
+      let v = document.getElementById("voile-noir");
+      if(!v){ v = document.createElement("div"); v.id = "voile-noir"; v.setAttribute("aria-hidden", "true"); document.body.appendChild(v); }
+      v.style.transition = "none"; v.style.opacity = "0"; void v.offsetWidth;
+      const d = (VML.animationsReduites && VML.animationsReduites()) ? 250 : ms;
+      v.style.transition = `opacity ${d}ms ease`; v.style.opacity = "1";
+      setTimeout(res, VML.d(d) + 30);
+    });
+  };
+  VML.leverVoileNoir = function(ms){
+    setTimeout(() => {
+      const v = document.getElementById("voile-noir"); if(!v) return;
+      v.style.transition = `opacity ${ms}ms ease`; v.style.opacity = "0";
+      setTimeout(() => { if(v.style.opacity === "0") v.remove(); }, VML.d(ms) + 60);
+    }, VML.d(80));
   };
   function sousTitre(p){
     const pe = p.personnage ? VML.perso(p.personnage) : null;
