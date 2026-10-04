@@ -68,7 +68,7 @@
     e.className = "etat " + (url ? "depose" : "secours"); e.textContent = url ? ETIQ.depose : ETIQ.secours;
     document.querySelector(`[data-perso-fichier="${id}"]`).innerHTML = url ? `<img src="${url}" alt=""><span class="lib">fichier</span>` : `${VML.svgPortrait(id)}<span class="lib">secours</span>`;
   }
-  const videos = ["intro", "transition-e2", "fin", "bande-annonce"];
+  const videos = ["intro", "transition-e2", "transition-e3", "transition-e4", "transition-e5", "transition-e6", "transition-e7", "transition-e8", "transition-e9", "transition-e10", "transition-e11", "fin", "bande-annonce", "travelling-machines-vapeur"];
   const vh = [];
   for(const v of videos){
     let url = null;

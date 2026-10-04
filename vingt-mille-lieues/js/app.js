@@ -144,6 +144,18 @@ VML.CLE_PARTIE = "vml_partie";
       sc.detruire();
       lancer(nouvelEtat(nom, choisi));
     };
+    /* Bande-annonce : le bouton n'apparaît que si assets/videos/bande-annonce.mp4 existe */
+    VML.sonderVideo("bande-annonce").then(url => {
+      if(!url) return;
+      const bb = $("#btn-bande-annonce"); bb.hidden = false;
+      bb.onclick = () => {
+        const ov = $("#cinematique"); VML.aller("ecran-cine");
+        ov.innerHTML = `<video class="cine-video" playsinline controls autoplay></video><button class="btn-laiton cine-passer">⏭ Fermer</button>`;
+        const v = ov.querySelector("video"), retour = () => { v.pause(); ov.innerHTML = ""; VML.aller("ecran-accueil"); };
+        v.src = url; v.onended = retour; ov.querySelector(".cine-passer").onclick = retour;
+        v.play().catch(() => {});
+      };
+    });
     const d = (VML.D.dialogues || {}).accueil;
     if(d){
       $("#accueil-portrait").innerHTML = VML.htmlPortrait(d.personnage, "accueil");

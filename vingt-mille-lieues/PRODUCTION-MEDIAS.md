@@ -99,7 +99,7 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | decor-baie-vigo | `assets/images/decors/baie-vigo.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
 | decor-maelstrom | `assets/images/decors/maelstrom.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
 | decor-salle-orgue | `assets/images/decors/salle-orgue.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
-| video-intro | `assets/videos/intro.mp4` | 1280×720 | 8 s | 1 | à produire |
+| video-intro | `assets/videos/intro.mp4` | 1280×720 | 8 s | 1 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e2 | `assets/videos/transition-e2.mp4` | 1280×720 | 8-10 s | 2 | cinématique en direct active |
 | video-transition-e1 | `assets/videos/transition-e1.mp4` | 1280×720 | 6-10 s | 1 | à produire avec l'escale 1 |
 | video-transition-e3 | `assets/videos/transition-e3.mp4` | 1280×720 | 6-10 s | 3 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
@@ -112,7 +112,7 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | video-transition-e10 | `assets/videos/transition-e10.mp4` | 1280×720 | 6-10 s | 10 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e11 | `assets/videos/transition-e11.mp4` | 1280×720 | 6-10 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin | `assets/videos/fin.mp4` | 1280×720 | 8 s | 11 | à produire |
-| video-bande-annonce | `assets/videos/bande-annonce.mp4` | 1280×720 | 15-20 s | toutes | à monter |
+| video-bande-annonce | `assets/videos/bande-annonce.mp4` | 1280×720 | 15-20 s | toutes | monté (ffmpeg, à partir des vidéos déposées) |
 
 ### portrait-nemo — `assets/images/personnages/nemo.webp`
 
@@ -398,7 +398,7 @@ Prompt négatif : `texte, lettres, logo, filigrane, mains déformées, doigts en
 
 ### video-intro — `assets/videos/intro.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 1 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 1 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/intro.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -684,7 +684,7 @@ Image de départ : le grand salon. Lent travelling avant vers l'orgue ; la lumi�
 
 ### video-bande-annonce — `assets/videos/bande-annonce.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 15-20 s · escale toutes · statut : à monter
+- Dimensions : 1280×720 · ratio 16:9 · durée 15-20 s · escale toutes · statut : monté (ffmpeg, à partir des vidéos déposées)
 - Référence / image de départ : décors validés
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
 
