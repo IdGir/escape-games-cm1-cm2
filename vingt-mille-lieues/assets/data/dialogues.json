@@ -7,7 +7,6 @@
   "cinematiques": {
     "transition-e2": {
       "titre": "Escale 2 — Dans le ventre du Nautilus",
-      "video": "transition-e2",
       "plans": [
         {
           "decor": "salon",
@@ -15,7 +14,8 @@
           "duree": 7,
           "personnage": "nemo",
           "texte": "Voici le salon du Nautilus, professeur. Ici, tout se fait par l'électricité : elle m'éclaire, elle me chauffe, elle fait tourner mes machines.",
-          "mouvement": "zoom"
+          "mouvement": "zoom",
+          "video": "transition-e2"
         },
         {
           "decor": "salon",
@@ -53,7 +53,8 @@
           "duree": 6,
           "personnage": "aronnax",
           "texte": "Les panneaux s'ouvrent… l'océan ! Le Nautilus remonte, l'air frais entre par les écoutilles.",
-          "mouvement": "zoom"
+          "mouvement": "zoom",
+          "video": "fin-e2"
         }
       ]
     },
@@ -112,7 +113,8 @@
           "personnage": "aronnax",
           "texte": "Un choc terrible. Je suis projeté à la mer… Quand je reprends mes esprits, je suis allongé sur le dos du « monstre » : sous mes mains, des plaques de tôle boulonnées !",
           "mouvement": "secousse",
-          "effet": "alarme"
+          "effet": "alarme",
+          "video": "fin-e1"
         }
       ]
     },

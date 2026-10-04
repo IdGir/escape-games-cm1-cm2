@@ -111,8 +111,8 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | video-transition-e9 | `assets/videos/transition-e9.mp4` | 1280×720 | 6-10 s | 9 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e10 | `assets/videos/transition-e10.mp4` | 1280×720 | 6-10 s | 10 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e11 | `assets/videos/transition-e11.mp4` | 1280×720 | 6-10 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
-| video-fin-e1 | `assets/videos/fin-e1.mp4` | 1280×720 | 8 s | 1 | à produire |
-| video-fin-e2 | `assets/videos/fin-e2.mp4` | 1280×720 | 8 s | 2 | à produire |
+| video-fin-e1 | `assets/videos/fin-e1.mp4` | 1280×720 | 8 s | 1 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e2 | `assets/videos/fin-e2.mp4` | 1280×720 | 8 s | 2 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin-e3 | `assets/videos/fin-e3.mp4` | 1280×720 | 8 s | 3 | à produire |
 | video-fin-e4 | `assets/videos/fin-e4.mp4` | 1280×720 | 8 s | 4 | à produire |
 | video-fin-e5 | `assets/videos/fin-e5.mp4` | 1280×720 | 8 s | 5 | à produire |
@@ -673,7 +673,7 @@ La baie de Vigo : lent travelling avant vers le trésor ; des rayons ondulent, l
 
 ### video-fin-e1 — `assets/videos/fin-e1.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 1 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 1 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e1.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -695,7 +695,7 @@ Le pont de la frégate la nuit : un grand remous écumant passe sous la lanterne
 
 ### video-fin-e2 — `assets/videos/fin-e2.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 2 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 2 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e2.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
