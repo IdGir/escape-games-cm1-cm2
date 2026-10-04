@@ -3,10 +3,10 @@
 ## 1. Récupérer et lancer le jeu (Windows)
 
 1. Sur GitHub, ouvrez la branche `claude/tender-shannon-aq897z` du dépôt, puis **Code → Download ZIP** (ou `git checkout claude/tender-shannon-aq897z` si vous avez le dépôt).
-2. Dézippez, puis double-cliquez sur **`lancer.bat`** à la racine (Python est requis). Une fenêtre noire reste ouverte : c'est le serveur local, ne la fermez pas.
-3. Ouvrez dans Chrome : **http://127.0.0.1:8000/vingt-mille-lieues/**
+2. Dézippez, puis ouvrez le dossier `vingt-mille-lieues` et double-cliquez sur **`lancer-nautilus.bat`** (Python est requis). Une fenêtre noire reste ouverte : c'est le serveur local, ne la fermez pas. Chrome s'ouvre sur le jeu ; sinon, ouvrez **http://127.0.0.1:8000/vingt-mille-lieues/**
+3. (Le `lancer.bat` de la racine fonctionne aussi, mais son accueil parle des autres jeux du dépôt.)
    (Il faut passer par ce serveur : en double-cliquant sur `index.html`, les vidéos et le chargement des données sont désactivés.)
-   Sur Mac : `lancer-mac.command`.
+   Sur Mac : `lancer-mac.command` (à la racine), puis l'adresse ci-dessus.
 
 ## 2. Parcours d'essai conseillé (15 minutes)
 
@@ -59,6 +59,6 @@ Un seul échec est attendu dans `tous.js`, et il date d'avant ce travail : `comm
 
 ## 7. Si quelque chose ne marche pas
 
-- **Pas de vidéo / décor dessiné à la place de l'image** : vous avez ouvert `index.html` directement (protocole `file:`) ou ajouté `&secours=1`. Passez par `lancer.bat`.
+- **Pas de vidéo / décor dessiné à la place de l'image** : vous avez ouvert `index.html` directement (protocole `file:`) ou ajouté `&secours=1`. Passez par `lancer-nautilus.bat`.
 - **Vieille version affichée** : l'application se met en cache. Rechargez avec Ctrl + Maj + R, ou videz les données du site dans Chrome.
 - **Pas de son** : cliquez une fois dans la page (Chrome bloque le son avant le premier clic) ; vérifiez le réglage du son dans ⚙️.
