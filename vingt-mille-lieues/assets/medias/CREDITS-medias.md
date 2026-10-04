@@ -15,3 +15,8 @@ Générées avec Agnes AI (modèle agnes-video-2.5-flash, mode keyframe, 720P, 8
 départ dans `assets/medias-depart/`), puis dépouillées de leur piste audio. Elles se posent au-dessus du premier plan de chaque
 cinématique d'ouverture (la voix et les sous-titres restent dans le code). À valider ou remplacer par l'enseignant : déposer un fichier
 `assets/videos/transition-eN.mp4` de même nom.
+
+## Vidéos d'intro et de fin, bande-annonce (4 octobre 2026)
+- `intro.mp4` (début de l'escale 1) et `fin.mp4` (après l'ouverture du coffre) : Agnes AI, modèle agnes-video-2.5-flash, keyframe, 720P, 8 s,
+  0 $, piste audio retirée. Images de départ : `assets/medias-depart/intro.jpg` et `fin.jpg`.
+- `bande-annonce.mp4` (21 s) : montage local de cinq vidéos d'escale avec fondus (`outils/monter-bande-annonce.sh`), sans appel réseau ni coût.
