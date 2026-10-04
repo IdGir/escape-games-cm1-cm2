@@ -5,7 +5,7 @@
    vérifie qu'il est affiché à la place de l'image de référence, puis le
    supprime et vérifie le retour à la référence ; idem pour un portrait
    (assets/images/personnages/conseil.png) et une vidéo de cinématique
-   (assets/videos/transition-e2.mp4). Les fichiers de test sont TOUJOURS
+   (assets/videos/zz-test-remplacement.mp4). Les fichiers de test sont TOUJOURS
    supprimés (même en cas d'échec) : rien n'est laissé dans le dépôt.
    Dans jsdom, une image « se charge » si le fichier existe sur le disque.
    ============================================================ */
@@ -15,7 +15,7 @@ const JEU = path.resolve(__dirname, "..");
 const { ok, fin, exception } = compteur("Médias remplaçables");
 const RACINE = path.resolve(JEU, "..");
 const PNG = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAAEklEQVR42mNk+M9Qz0AEYBxVSF8FAJ2fCAEsZXz/AAAAAElFTkSuQmCC", "base64");
-const FAUX = [path.join(JEU, "assets/images/decors/carre.png"), path.join(JEU, "assets/images/personnages/conseil.png"), path.join(JEU, "assets/videos/transition-e2.mp4")];
+const FAUX = [path.join(JEU, "assets/images/decors/carre.png"), path.join(JEU, "assets/images/personnages/conseil.png"), path.join(JEU, "assets/videos/zz-test-remplacement.mp4")];
 
 /* Image() simulée : succès si le fichier existe, avec un format 16:9 */
 const avant = w => {
@@ -48,7 +48,7 @@ const avant = w => {
     ok(/assets\/images\/decors\/carre\.png/.test(d.querySelector("#scene-jeu .sc-fond img").getAttribute("src")), "fichier déposé : c'est lui qui est affiché");
     const portraitOk = await attendreQue(() => d.querySelector('#plaque .portrait-ovale.fichier img[src*="personnages/conseil.png"]'));
     ok(portraitOk, "portrait déposé : il remplace le portrait dessiné");
-    ok(await r.w.VML.sonderVideo("transition-e2") === "assets/videos/transition-e2.mp4", "vidéo déposée : trouvée pour la cinématique");
+    ok(await r.w.VML.sonderVideo("zz-test-remplacement") === "assets/videos/zz-test-remplacement.mp4", "vidéo déposée : trouvée pour la cinématique");
     ok(d.querySelectorAll("#scene-jeu .zone").length === 3, "zones cliquables conservées sur l'image déposée");
     r.w.close();
 
@@ -57,7 +57,7 @@ const avant = w => {
     d = r.w.document;
     await attendreQue(() => d.querySelector("#scene-jeu[data-source]"));
     ok(d.querySelector("#scene-jeu").dataset.source === "reference", "fichier retiré : retour à la référence");
-    ok(await r.w.VML.sonderVideo("transition-e2") === null, "vidéo retirée : cinématique en direct");
+    ok(await r.w.VML.sonderVideo("zz-test-remplacement") === null, "vidéo retirée : cinématique en direct");
     r.w.close();
     r = await charger(JEU, "?verif=1&escale=2&niveau=matelot&enigme=1&reference=0", { avant });
     await attendreQue(() => r.w.document.querySelector("#scene-jeu[data-source]"));
@@ -68,7 +68,7 @@ const avant = w => {
     ok(r.w.document.querySelector("#scene-jeu").dataset.source === "secours", "salle des machines électrique (pas de référence) : décor dessiné");
     r.w.close();
     const csv = fs.readFileSync(path.join(JEU, "medias.csv"), "utf8");
-    ["assets/images/decors/carre.webp", "assets/images/decors/machines.webp", "assets/images/personnages/nemo.webp", "assets/videos/transition-e2.mp4"].forEach(n => ok(csv.includes(n), "medias.csv liste " + n));
+    ["assets/images/decors/carre.webp", "assets/images/decors/machines.webp", "assets/images/personnages/nemo.webp", "assets/videos/zz-test-remplacement.mp4"].forEach(n => ok(csv.includes(n), "medias.csv liste " + n));
   }catch(e){ exception(e); }
   finally{ FAUX.forEach(f => { try{ if(fs.existsSync(f) && fs.statSync(f).size < 200) fs.unlinkSync(f); }catch(e){} }); }
   await dodo(10);
