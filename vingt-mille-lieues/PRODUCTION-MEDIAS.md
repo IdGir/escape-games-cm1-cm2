@@ -113,14 +113,14 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | video-transition-e11 | `assets/videos/transition-e11.mp4` | 1280×720 | 6-10 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin-e1 | `assets/videos/fin-e1.mp4` | 1280×720 | 8 s | 1 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin-e2 | `assets/videos/fin-e2.mp4` | 1280×720 | 8 s | 2 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
-| video-fin-e3 | `assets/videos/fin-e3.mp4` | 1280×720 | 8 s | 3 | à produire |
-| video-fin-e4 | `assets/videos/fin-e4.mp4` | 1280×720 | 8 s | 4 | à produire |
-| video-fin-e5 | `assets/videos/fin-e5.mp4` | 1280×720 | 8 s | 5 | à produire |
-| video-fin-e6 | `assets/videos/fin-e6.mp4` | 1280×720 | 8 s | 6 | à produire |
-| video-fin-e7 | `assets/videos/fin-e7.mp4` | 1280×720 | 8 s | 7 | à produire |
-| video-fin-e8 | `assets/videos/fin-e8.mp4` | 1280×720 | 8 s | 8 | à produire |
-| video-fin-e9 | `assets/videos/fin-e9.mp4` | 1280×720 | 8 s | 9 | à produire |
-| video-fin-e10 | `assets/videos/fin-e10.mp4` | 1280×720 | 8 s | 10 | à produire |
+| video-fin-e3 | `assets/videos/fin-e3.mp4` | 1280×720 | 8 s | 3 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e4 | `assets/videos/fin-e4.mp4` | 1280×720 | 8 s | 4 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e5 | `assets/videos/fin-e5.mp4` | 1280×720 | 8 s | 5 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e6 | `assets/videos/fin-e6.mp4` | 1280×720 | 8 s | 6 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e7 | `assets/videos/fin-e7.mp4` | 1280×720 | 8 s | 7 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e8 | `assets/videos/fin-e8.mp4` | 1280×720 | 8 s | 8 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e9 | `assets/videos/fin-e9.mp4` | 1280×720 | 8 s | 9 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
+| video-fin-e10 | `assets/videos/fin-e10.mp4` | 1280×720 | 8 s | 10 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin-e11 | `assets/videos/fin-e11.mp4` | 1280×720 | 8 s | 11 | à produire |
 | video-fin | `assets/videos/fin.mp4` | 1280×720 | 8 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-bande-annonce | `assets/videos/bande-annonce.mp4` | 1280×720 | 15-20 s | toutes | monté (ffmpeg, à partir des vidéos déposées) |
@@ -717,7 +717,7 @@ Le grand salon : les lampes se rallument une à une, la lumière des hublots pas
 
 ### video-fin-e3 — `assets/videos/fin-e3.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 3 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 3 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e3.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -739,7 +739,7 @@ Forêt sous-marine : lent travelling arrière ; des bulles montent vers la surfa
 
 ### video-fin-e4 — `assets/videos/fin-e4.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 4 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 4 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e4.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -761,7 +761,7 @@ Vanikoro wreck: slow pull-back; sand settles, fish circle the cannon, the lamp g
 
 ### video-fin-e5 — `assets/videos/fin-e5.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 5 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 5 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e5.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -783,7 +783,7 @@ Banc de perles : lent travelling avant sur l'huître géante qui se referme douc
 
 ### video-fin-e6 — `assets/videos/fin-e6.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 6 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 6 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e6.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -805,7 +805,7 @@ Pont devant Port-Saïd la nuit : les lumières de la ville scintillent, les vagu
 
 ### video-fin-e7 — `assets/videos/fin-e7.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 7 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 7 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e7.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -827,7 +827,7 @@ Atlantide : lent travelling avant sur le temple englouti ; le volcan rougeoie au
 
 ### video-fin-e8 — `assets/videos/fin-e8.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 8 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 8 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e8.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -849,7 +849,7 @@ Câble sous-marin : une lueur court le long du câble comme un message qui passe
 
 ### video-fin-e9 — `assets/videos/fin-e9.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 9 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 9 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e9.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
@@ -871,7 +871,7 @@ Banquise : la glace craque et s'écarte, une eau libre s'ouvre devant le Nautilu
 
 ### video-fin-e10 — `assets/videos/fin-e10.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 10 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 10 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e10.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.
