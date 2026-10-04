@@ -68,7 +68,7 @@ const avant = w => {
     ok(r.w.document.querySelector("#scene-jeu").dataset.source === "secours", "salle des machines électrique (pas de référence) : décor dessiné");
     r.w.close();
     const csv = fs.readFileSync(path.join(JEU, "medias.csv"), "utf8");
-    ["assets/images/decors/carre.webp", "assets/images/decors/machines.webp", "assets/images/personnages/nemo.webp", "assets/videos/zz-test-remplacement.mp4"].forEach(n => ok(csv.includes(n), "medias.csv liste " + n));
+    ["assets/images/decors/carre.webp", "assets/images/decors/machines.webp", "assets/images/personnages/nemo.webp", "assets/videos/transition-e2.mp4"].forEach(n => ok(csv.includes(n), "medias.csv liste " + n));
   }catch(e){ exception(e); }
   finally{ FAUX.forEach(f => { try{ if(fs.existsSync(f) && fs.statSync(f).size < 200) fs.unlinkSync(f); }catch(e){} }); }
   await dodo(10);
