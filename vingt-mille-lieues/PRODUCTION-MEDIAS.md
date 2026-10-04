@@ -100,7 +100,7 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | decor-maelstrom | `assets/images/decors/maelstrom.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
 | decor-salle-orgue | `assets/images/decors/salle-orgue.webp` | 1920×1080 | — | 11 | déposé (Agnes, à valider par l'enseignant) |
 | video-intro | `assets/videos/intro.mp4` | 1280×720 | 8 s | 1 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
-| video-transition-e2 | `assets/videos/transition-e2.mp4` | 1280×720 | 8-10 s | 2 | cinématique en direct active |
+| video-transition-e2 | `assets/videos/transition-e2.mp4` | 1280×720 | 8-10 s | 2 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e1 | `assets/videos/transition-e1.mp4` | 1280×720 | 6-10 s | 1 | à produire avec l'escale 1 |
 | video-transition-e3 | `assets/videos/transition-e3.mp4` | 1280×720 | 6-10 s | 3 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-transition-e4 | `assets/videos/transition-e4.mp4` | 1280×720 | 6-10 s | 4 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
@@ -431,7 +431,7 @@ Image de départ : le pont de la frégate la nuit. Lent travelling avant sur la 
 
 ### video-transition-e2 — `assets/videos/transition-e2.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8-10 s · escale 2 · statut : cinématique en direct active
+- Dimensions : 1280×720 · ratio 16:9 · durée 8-10 s · escale 2 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code (dialogues.json)
 - Référence / image de départ : assets/medias-depart/transition-e2.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.

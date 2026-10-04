@@ -115,7 +115,7 @@ ajoute(id="video-intro", type="vidéo", fichier="assets/videos/intro.mp4", dim="
        fr="Image de départ : le pont de la frégate la nuit. Lent travelling avant sur la mer sombre ; au loin, une longue lueur verdâtre file sous l'eau, puis s'éteint ; les vagues, les cordages et la lanterne bougent doucement. Aucun personnage ne parle, aucun texte, aucune lettre.",
        en="Start frame: the frigate's deck at night. Slow push-in over the dark sea; far away a long greenish glow glides under the water, then fades; waves, ropes and the lantern move gently. No character speaking, no text, no letters.")
 ajoute(id="video-transition-e2", type="vidéo", fichier="assets/videos/transition-e2.mp4", dim="1280×720", duree="8-10 s", ratio="16:9", escale="2", ref="assets/medias-depart/transition-e2.jpg",
-       statut="cinématique en direct active", zones="", effets="sous-titres et voix dans le code (dialogues.json)",
+       statut=("déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)" if os.path.exists(os.path.join(JEU, "assets", "videos", "transition-e2.mp4")) else "cinématique en direct active"), zones="", effets="sous-titres et voix dans le code (dialogues.json)",
        fr="Image de départ : le grand salon validé. Lent travelling avant vers l'orgue ; les lampes du salon vacillent deux fois puis s'éteignent ; il ne reste que la lumière bleue des hublots ; une lueur rouge d'alarme pulse doucement. Aucun personnage ne parle, aucun texte.",
        en="Start frame: the approved grand salon. Slow push-in toward the organ; the salon lamps flicker twice then go out; only the blue light of the portholes remains; a soft red alarm glow pulses. No character speaking, no text.")
 MOUV = {

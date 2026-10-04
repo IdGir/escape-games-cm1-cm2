@@ -224,8 +224,10 @@ VML.CLE_PARTIE = "vml_partie";
         if(urlPlan){
           const v = document.createElement("video");
           v.className = "cine-plan-video"; v.muted = true; v.playsInline = true; v.src = urlPlan;
+          /* Si le fichier ne se lit pas (codec, fichier abîmé), la vidéo disparaît et le décor animé reste : la cinématique ne dépend jamais d'elle */
+          v.onerror = () => v.remove();
           ov.querySelector(".cine-scene").after(v);
-          try{ v.play(); }catch(e){}
+          try{ const pr = v.play(); if(pr && pr.catch) pr.catch(() => v.remove()); }catch(e){ v.remove(); }
         }
         hote.classList.remove("mvt-zoom", "mvt-glisse", "mvt-secousse"); void hote.offsetWidth;
         hote.classList.add("mvt-" + (p.mouvement || "zoom"));
