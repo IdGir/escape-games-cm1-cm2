@@ -121,7 +121,7 @@ style) ; 4) vidéos à partir des décors **validés** ; 5) retouches.
 | video-fin-e8 | `assets/videos/fin-e8.mp4` | 1280×720 | 8 s | 8 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin-e9 | `assets/videos/fin-e9.mp4` | 1280×720 | 8 s | 9 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin-e10 | `assets/videos/fin-e10.mp4` | 1280×720 | 8 s | 10 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
-| video-fin-e11 | `assets/videos/fin-e11.mp4` | 1280×720 | 8 s | 11 | à produire |
+| video-fin-e11 | `assets/videos/fin-e11.mp4` | 1280×720 | 8 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-fin | `assets/videos/fin.mp4` | 1280×720 | 8 s | 11 | déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant) |
 | video-bande-annonce | `assets/videos/bande-annonce.mp4` | 1280×720 | 15-20 s | toutes | monté (ffmpeg, à partir des vidéos déposées) |
 
@@ -893,7 +893,7 @@ Plate-forme sous l'orage : les vagues se calment, les éclairs s'éloignent, un 
 
 ### video-fin-e11 — `assets/videos/fin-e11.mp4`
 
-- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 11 · statut : à produire
+- Dimensions : 1280×720 · ratio 16:9 · durée 8 s · escale 11 · statut : déposé (Agnes flash, 8 s, sans piste audio ; à valider par l'enseignant)
 - Effets ajoutés par le moteur (ne pas peindre) : sous-titres et voix dans le code
 - Référence / image de départ : assets/medias-depart/fin-e11.jpg
 - Critères d'acceptation : lisible en 1280×720 ; aucun texte ; mains et visages corrects ; bas de l'image dégagé pour la plaque ; objets cliquables visibles et à leur place ; cohérence avec la charte et les fiches personnages.

@@ -20,3 +20,8 @@ cinématique d'ouverture (la voix et les sous-titres restent dans le code). À v
 - `intro.mp4` (début de l'escale 1) et `fin.mp4` (après l'ouverture du coffre) : Agnes AI, modèle agnes-video-2.5-flash, keyframe, 720P, 8 s,
   0 $, piste audio retirée. Images de départ : `assets/medias-depart/intro.jpg` et `fin.jpg`.
 - `bande-annonce.mp4` (21 s) : montage local de cinq vidéos d'escale avec fondus (`outils/monter-bande-annonce.sh`), sans appel réseau ni coût.
+
+## Vidéos de fin d'escale et d'ouverture de l'escale 2 (4 octobre 2026)
+`fin-e1.mp4` à `fin-e11.mp4` et `transition-e2.mp4` : Agnes AI, agnes-video-2.5-flash, keyframe, 720P, 8 s, 0 $, piste audio retirée
+(`outils/deposer-videos-cine.py`). Images de départ : `assets/medias-depart/`. Consignes : `outils/prompts-fins-escales.json`.
+Elles se posent sur le premier plan de chaque cinématique ; voix, sous-titres et fondu au noir restent dans le code.
