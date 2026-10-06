@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-titre-page="{journal}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
 <title>Le Journal du Nautilus</title>
 <link rel="stylesheet" href="css/nautilus.css?v1">
 <link rel="stylesheet" href="css/enigmes-nautilus.css?v1">
+<link rel="stylesheet" href="css/theme.css?v1">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b2230">
 <link rel="icon" href="assets/images/ui/icone.svg" type="image/svg+xml">
@@ -19,7 +20,7 @@
   <section class="ecran actif" id="ecran-accueil" aria-label="Accueil">
     <div class="scene-fond" id="scene-accueil" aria-hidden="true"></div>
     <div class="accueil-boite cadre-laiton">
-      <h1><span class="titre-petit">Jules Verne</span>Vingt mille lieues sous les mers<span class="titre-sous">Le Journal du Nautilus</span></h1>
+      <h1><span class="titre-petit" data-t="auteur">Jules Verne</span><span data-t="titre">Vingt mille lieues sous les mers</span><span class="titre-sous" data-t="sousTitre">Le Journal du Nautilus</span></h1>
       <div class="accueil-recit">
         <div id="accueil-portrait"></div>
         <div>
@@ -57,7 +58,7 @@
   <section class="ecran" id="ecran-jeu" aria-label="Escale">
     <div class="scene-jeu" id="scene-jeu"></div>
     <header class="hud cadre-laiton" id="hud">
-      <div class="hud-gauche"><span class="hud-titre">⚓ Le Journal du Nautilus</span> <span class="hud-lieu" id="lieu"></span></div>
+      <div class="hud-gauche"><span class="hud-titre" data-t="hud">⚓ Le Journal du Nautilus</span> <span class="hud-lieu" id="lieu"></span></div>
       <div class="hud-droite">
         <span class="stat" title="Équipe">👥 <b id="hud-equipe">—</b></span>
         <span class="stat" title="Grade">🎖️ <b id="hud-grade">—</b></span>
@@ -80,7 +81,7 @@
   <!-- ============ PAUSE ============ -->
   <section class="ecran" id="ecran-pause" aria-label="Pause">
     <div class="pause-boite cadre-laiton">
-      <h2>⏸ Le Nautilus est stoppé</h2>
+      <h2 data-t="pause">⏸ Le Nautilus est stoppé</h2>
       <p id="pause-par">Le temps est suspendu.</p>
       <p><i>Profitez-en pour relire une fiche de la Bibliothèque, ou pour reformuler le problème ensemble.</i></p>
       <button class="btn-laiton principal grand" id="btn-reprendre">▶️ Reprendre</button>
@@ -101,6 +102,7 @@
 <!-- Moteur commun (lecture seule, non modifié) : rendu et correction des 11 types d'énigmes -->
 <script src="../commun/js/enigmes.js?c1"></script>
 <!-- Propre au jeu -->
+<script src="js/jeu-config.js?v1"></script>
 <script src="js/donnees-embarquees.js?v1"></script>
 <script src="js/donnees.js?v1"></script>
 <script src="js/niveaux.js?v1"></script>

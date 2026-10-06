@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-titre-page="Tableau de bord — {journal}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tableau de bord — Le Journal du Nautilus</title>
 <link rel="stylesheet" href="css/nautilus.css?v1">
+<link rel="stylesheet" href="css/theme.css?v1">
 <style>
   body{ overflow: auto; background: radial-gradient(circle at 50% 0, #12384d, #050e15 70%); }
   .prof{ width: min(1500px, calc(100% - 32px)); margin: 16px auto 40px; }
@@ -26,7 +27,7 @@
 </head>
 <body>
 <div class="prof">
-  <h1>📊 Tableau de bord — Le Journal du Nautilus</h1>
+  <h1>📊 Tableau de bord — <span data-t="journal">Le Journal du Nautilus</span></h1>
   <p class="note">Fonctionne en mode local : lancez <code>lancer.bat</code> (ou <code>python serveur.py</code>) et faites jouer les équipes à l'adresse affichée, <code>…/vingt-mille-lieues/</code>. Les équivalences des grades sont visibles ici seulement.</p>
   <div class="barre">
     <span class="etat-serveur" id="etat-serveur">Recherche du serveur…</span>
@@ -42,6 +43,7 @@
   <div class="equipes" id="equipes"><p class="vide">Aucune équipe pour l'instant.</p></div>
   <div class="synthese cadre-laiton" id="synthese"></div>
 </div>
+<script src="js/jeu-config.js?v1"></script>
 <script src="js/donnees-embarquees.js?v1"></script>
 <script src="js/donnees.js?v1"></script>
 <script src="js/niveaux.js?v1"></script>
@@ -137,7 +139,7 @@
     const l = [["equipe", "grade", "equivalent", "escale", "enigme", "points", "temps_min", "erreurs_enigme", "indices", "fiches", "resolues", "premier_coup", "termine"].join(";")];
     equipes.forEach(q => { const e = q.enigme || {}, g = grades.find(x => x.id === q.niveau) || {}; const r = e.resolues || {};
       l.push([q.equipe, g.nom, g.equivalent, q.salle, e.titre || "", q.score || 0, Math.round((q.msEcoules || 0) / 600) / 100, e.erreurs || 0, q.indicesTotal || 0, (e.fichesConsultees || []).join(" "), Object.keys(r).length, Object.values(r).filter(x => x.premier).length, q.fini ? "oui" : "non"].map(x => '"' + String(x).replace(/"/g, '""') + '"').join(";")); });
-    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["﻿" + l.join("\n")], { type: "text/csv" })); a.download = "nautilus-equipes.csv"; a.click();
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["﻿" + l.join("\n")], { type: "text/csv" })); a.download = VML.T("fichierExport", "equipes") + "-equipes.csv"; a.click();
   };
   window.PROF = { rafraichir, dessiner, set equipes(v){ equipes = v; }, get equipes(){ return equipes; } };
   await rafraichir();

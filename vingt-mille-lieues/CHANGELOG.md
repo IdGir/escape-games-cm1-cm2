@@ -1,5 +1,15 @@
 # Journal des versions — Le Journal du Nautilus
 
+## 2026-10-06 — modèle immersif réutilisable, migrateur, sources de médias
+- **Migrateur** `outils/immersif/migrer-jeu.py` : transforme un jeu existant (9 migrables) en variante immersive dans `immersifs/<jeu>/`, sans toucher à l'original ; thème, grades et vocabulaire configurables ; `--maj-moteur` met à jour le moteur sans perdre le travail ; rapport des brouillons. Variante de démonstration : `immersifs/renaissance/`.
+- **Moteur** : configuration par jeu (`js/jeu-config.js`, `css/theme.css`), vocabulaire du thème (« salle » à la place d'« escale »), énigmes réservées à certains grades (`niveaux`), portraits génériques déduits de la fiche d'un personnage, type « instrument » pris en charge par les corrigés et les tests.
+- **Variantes immersives** : les 9 jeux migrables ont leur variante dans `immersifs/`. « Renaissance » est la première étoffée : 5 décors et 5 portraits produits avec Agnes (1 proposition chacune, 10 images), zones cliquables calées, effets ; décor d'accueil configurable (`decorAccueil`).
+- **Médias** : `outils/medias/` — sources décrites en JSON (Agnes, API compatible OpenAI, modèle à copier, adaptateur Python), clé par variable d'environnement ou `cles-api.local` (jamais publiée), plafonds, reprises (503, 429), vidéos avec point de départ ; `importer-image.py` dépose une image ou une vidéo faite ailleurs comme fond, portrait ou point de départ de vidéo (`--dossier` par noms de fichiers).
+- **Garde-fou** `outils-tests/verifier-isolation.sh` : `vingt-mille-lieues/` et `immersifs/` évolutifs, le reste protégé ; `--autoriser <jeu>` pour un remplacement voulu par l'enseignant.
+- **Skill** `produire-escape-game` : modes migrer / créer / médias (`outils/skill/produire-escape-game/SKILL.md`).
+- Guides : `GUIDE-IMMERSIF.md`, `GUIDE-MEDIAS.md`. Tests : `test-immersif.js`, `test-migration.js`, `test-medias-sources.js` (+ `test_medias_sources.py`).
+
+
 ## 2026-10-04 — fondus au noir et cinématiques de fin
 - Toutes les cinématiques se terminent par un fondu au noir (0,9 s ; 0,35 s si on les passe, 0,25 s avec « Animations réduites »),
   l'écran suivant se met en place sous le voile, puis le voile se lève (`VML.fonduNoir` dans `js/app.js`).

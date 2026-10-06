@@ -62,3 +62,8 @@ Un seul échec est attendu dans `tous.js`, et il date d'avant ce travail : `comm
 - **Pas de vidéo / décor dessiné à la place de l'image** : vous avez ouvert `index.html` directement (protocole `file:`) ou ajouté `&secours=1`. Passez par `lancer-nautilus.bat`.
 - **Vieille version affichée** : l'application se met en cache. Rechargez avec Ctrl + Maj + R, ou videz les données du site dans Chrome.
 - **Pas de son** : cliquez une fois dans la page (Chrome bloque le son avant le premier clic) ; vérifiez le réglage du son dans ⚙️.
+
+## 8. Essayer la version immersive d'un autre jeu (« Renaissance »)
+
+`immersifs/renaissance/` est la variante immersive du jeu « L'Atelier de Léonard à Amboise », produite automatiquement par le migrateur (non destructif : le jeu d'origine n'est pas modifié). Lancer `immersifs/renaissance/lancer.bat`, ou ouvrir `http://127.0.0.1:8000/immersifs/renaissance/`. Les décors sont encore génériques (aucune image) : c'est un squelette complet et jouable. Pour la transformer en vrai jeu immersif, ou migrer un autre jeu : `GUIDE-IMMERSIF.md` ; pour les images et les vidéos : `GUIDE-MEDIAS.md`.
+

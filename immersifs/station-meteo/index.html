@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr" data-titre-page="{journal}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="La Station météo disparue : escape game immersif de cycle 3, version immersive du jeu de la collection.">
+<title>Le carnet de mission</title>
+<link rel="stylesheet" href="css/nautilus.css?v1">
+<link rel="stylesheet" href="css/enigmes-nautilus.css?v1">
+<link rel="stylesheet" href="css/theme.css?v1">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b2230">
+<link rel="icon" href="assets/images/ui/icone.svg" type="image/svg+xml">
+</head>
+<body data-ecran="ecran-accueil">
+<a class="evitement" href="#principal">Aller au contenu</a>
+<div id="principal">
+
+  <!-- ============ ACCUEIL ============ -->
+  <section class="ecran actif" id="ecran-accueil" aria-label="Accueil">
+    <div class="scene-fond" id="scene-accueil" aria-hidden="true"></div>
+    <div class="accueil-boite cadre-laiton">
+      <h1><span class="titre-petit" data-t="auteur">Escape game · cycle 3</span><span data-t="titre">La Station météo disparue</span><span class="titre-sous" data-t="sousTitre">Carnet de mission</span></h1>
+      <div class="accueil-recit">
+        <div id="accueil-portrait"></div>
+        <div>
+          <p id="accueil-texte" class="accueil-texte"></p>
+          <button class="btn-laiton petit" id="btn-ecouter-accueil">🔊 Écouter</button>
+        </div>
+      </div>
+      <div id="reprise" class="reprise" hidden>
+        <p>📔 Une partie est en cours : <span id="reprise-texte"></span></p>
+        <button class="btn-laiton principal" id="btn-reprendre-partie">▶️ Reprendre la plongée</button>
+      </div>
+      <label class="champ-equipe" for="nom-equipe">Nom de votre équipe</label>
+      <input type="text" id="nom-equipe" maxlength="24" autocomplete="off" placeholder="ex. : Les Hublots">
+      <h2 class="titre-grades">Votre grade à bord</h2>
+      <div class="choix-grade" id="choix-grade" role="group" aria-label="Choix du grade"></div>
+      <div class="regles-courtes">
+        🎯 10 points tout juste du premier coup · 3 points après une erreur · −2 par indice ·
+        📚 +2 « Bien documenté » si vous avez lu la bonne fiche avant de réussir du premier coup.
+        La jauge d'air est un décor : elle ne retire aucun point.
+      </div>
+      <div class="boutons-accueil">
+        <button class="btn-laiton principal grand" id="btn-embarquer" disabled>Embarquer</button>
+        <button class="btn-laiton gris petit" id="btn-bande-annonce" hidden>🎬 Bande-annonce</button>
+        <button class="btn-laiton gris petit" id="btn-reglages-accueil" title="Réglages enseignant">⚙️ Enseignant</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CINÉMATIQUE ============ -->
+  <section class="ecran" id="ecran-cine" aria-label="Cinématique">
+    <div id="cinematique" class="cinematique"></div>
+  </section>
+
+  <!-- ============ JEU ============ -->
+  <section class="ecran" id="ecran-jeu" aria-label="Escale">
+    <div class="scene-jeu" id="scene-jeu"></div>
+    <header class="hud cadre-laiton" id="hud">
+      <div class="hud-gauche"><span class="hud-titre" data-t="hud">📜 La Station météo disparue</span> <span class="hud-lieu" id="lieu"></span></div>
+      <div class="hud-droite">
+        <span class="stat" title="Équipe">👥 <b id="hud-equipe">—</b></span>
+        <span class="stat" title="Grade">🎖️ <b id="hud-grade">—</b></span>
+        <span class="stat" title="Temps de l'escale">⏱️ <b id="hud-temps">00:00</b></span>
+        <span class="stat" title="Points">⭐ <b id="hud-score">0</b></span>
+        <span class="stat" title="Fragments du journal">📜 <b id="hud-fragments">0/11</b></span>
+        <span class="jauge-air" id="jauge-air" role="meter" aria-label="Réserve d'air (décor, sans effet sur les points)" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" title="Réserve d'air : un décor, elle ne retire aucun point">
+          <span class="jauge-cadran"><span class="jauge-aiguille"></span></span><span class="jauge-lib">Air <b id="jauge-air-val">100 %</b></span>
+        </span>
+        <button class="btn-laiton petit" id="btn-biblio" title="La Bibliothèque des leçons (fiches de leçon)">📚 Bibliothèque</button>
+        <button class="btn-laiton petit" id="btn-reglages" title="Réglages enseignant" aria-label="Réglages">⚙️</button>
+        <button class="btn-laiton petit" id="btn-pause" title="Pause" aria-label="Pause">⏸</button>
+      </div>
+    </header>
+    <div class="plaque" id="plaque"></div>
+    <div class="bulle-examen" id="bulle-examen" role="status"></div>
+    <div class="bandeau-verif">Mode vérification : rien n'est enregistré.</div>
+  </section>
+
+  <!-- ============ PAUSE ============ -->
+  <section class="ecran" id="ecran-pause" aria-label="Pause">
+    <div class="pause-boite cadre-laiton">
+      <h2 data-t="pause">⏸ Le jeu est en pause</h2>
+      <p id="pause-par">Le temps est suspendu.</p>
+      <p><i>Profitez-en pour relire une fiche de la Bibliothèque, ou pour reformuler le problème ensemble.</i></p>
+      <button class="btn-laiton principal grand" id="btn-reprendre">▶️ Reprendre</button>
+    </div>
+  </section>
+
+  <!-- ============ FIN D'ESCALE ============ -->
+  <section class="ecran" id="ecran-fin" aria-label="Fin d'escale">
+    <div class="scene-fond fin" aria-hidden="true"></div>
+    <div class="fin-boite cadre-laiton" id="fin-contenu"></div>
+  </section>
+</div>
+
+<div class="panneau-enigme" id="panneau-enigme" aria-hidden="true"></div>
+<div class="reglages" id="reglages"></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<!-- Moteur commun (lecture seule, non modifié) : rendu et correction des 11 types d'énigmes -->
+<script src="../../commun/js/enigmes.js?c1"></script>
+<!-- Propre au jeu -->
+<script src="js/jeu-config.js?v1"></script>
+<script src="js/donnees-embarquees.js?v1"></script>
+<script src="js/donnees.js?v1"></script>
+<script src="js/niveaux.js?v1"></script>
+<script src="js/sons.js?v1"></script>
+<script src="js/decors-secours.js?v1"></script>
+<script src="js/scene.js?v1"></script>
+<script src="js/personnages.js?v1"></script>
+<script src="js/voix.js?v1"></script>
+<script src="js/type-circuit.js?v1"></script>
+<script src="js/solutions.js?v1"></script>
+<script src="js/moteur.js?v1"></script>
+<script src="js/bibliotheque.js?v1"></script>
+<script src="js/journal.js?v1"></script>
+<script src="js/reglages.js?v1"></script>
+<script src="js/sync-nautilus.js?v1"></script>
+<script src="js/app.js?v1"></script>
+<script>
+  /* Service worker propre au jeu (portée vingt-mille-lieues/), hors double-clic */
+  if("serviceWorker" in navigator && location.protocol.startsWith("http") && !/[?&]verif=1/.test(location.search)){
+    navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => {});
+  }
+</script>
+</body>
+</html>

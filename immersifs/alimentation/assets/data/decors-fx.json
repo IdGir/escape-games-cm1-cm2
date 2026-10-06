@@ -1,0 +1,369 @@
+{
+  "decors": {
+    "potager": {
+      "titre": "La cour du restaurant, entre le potager et le poulailler",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Le carnet du poulailler",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le carnet du poulailler »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : D'où vient la matière ?",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « D'où vient la matière ? »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : La toise de la cuisine",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « La toise de la cuisine »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le mot de Nathan",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le mot de Nathan »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "menus": {
+      "titre": "La salle des menus, au premier étage du restaurant",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Peu ou beaucoup d'énergie ?",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Peu ou beaucoup d'énergie ? »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Le tableau des besoins",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le tableau des besoins »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : La raison qui n'a rien à voir",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « La raison qui n'a rien à voir »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le carnet de la docteure",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le carnet de la docteure »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "degustation": {
+      "titre": "La table de dégustation, près des cuisines",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Chaque outil à sa tâche",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Chaque outil à sa tâche »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Le moulage de la mâchoire",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le moulage de la mâchoire »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Le liquide de la bouche",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le liquide de la bouche »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le voyage d'une bouchée de pain",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le voyage d'une bouchée de pain »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "cabinet": {
+      "titre": "Le cabinet de la docteure Inès, à côté de la salle d'entraînement",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : La maquette du corps",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « La maquette du corps »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Chacun son travail",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Chacun son travail »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Les affirmations de la docteure",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Les affirmations de la docteure »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : L'organe qui ne voit pas passer la bouchée",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « L'organe qui ne voit pas passer la bouchée »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "entrainement": {
+      "titre": "La salle d'entraînement, au fond du restaurant",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Le compteur de pouls",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le compteur de pouls »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Le message du home-trainer",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le message du home-trainer »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Vite ou lentement ?",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Vite ou lentement ? »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : La livraison du sang",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « La livraison du sang »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    }
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "decors": {
+    "motte": {
+      "titre": "Le tertre de la vieille tour, au petit matin",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Pourquoi une butte ?",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Pourquoi une butte ? »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Du bois à la pierre",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Du bois à la pierre »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Les métiers du chantier",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Les métiers du chantier »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le carnet du maître maçon",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le carnet du maître maçon »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "remparts": {
+      "titre": "Le chemin de ronde, au-dessus de l'entrée",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Le plan du château",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le plan du château »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : À quoi ça sert ?",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « À quoi ça sert ? »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Vrai ou idée reçue ?",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Vrai ou idée reçue ? »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le cadenas du treuil",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le cadenas du treuil »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "grandesalle": {
+      "titre": "La grande salle du donjon, avant le repas",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Défendre ou vivre ?",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Défendre ou vivre ? »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Une journée du seigneur",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Une journée du seigneur »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Les gens du château",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Les gens du château »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : L'intrus de la grande salle",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « L'intrus de la grande salle »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "village": {
+      "titre": "Le village, au pied du château",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Le calendrier des travaux",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le calendrier des travaux »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Les outils de Mahaut",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Les outils de Mahaut »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Chez Mahaut",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Chez Mahaut »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le mot caché du village",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le mot caché du village »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "moulin": {
+      "titre": "Le moulin à eau, au bord de la rivière",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Qui reçoit quoi ?",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Qui reçoit quoi ? »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Le registre de Perrine",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le registre de Perrine »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Donnant, donnant ?",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Donnant, donnant ? »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Deux vies côte à côte",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Deux vies côte à côte »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    }
+  }
+}
