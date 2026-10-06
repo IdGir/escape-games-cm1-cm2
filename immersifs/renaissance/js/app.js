@@ -116,7 +116,7 @@ VML.CLE_PARTIE = ((window.VML_JEU || {}).prefixeStockage || "vml") + "_partie";
   function accueil(){
     VML.aller("ecran-accueil");
     const sc = new VML.Scene($("#scene-accueil"));
-    sc.afficher("salon", { etat: "normal", actives: [] });
+    sc.afficher(VML.JEU.decorAccueil || "salon", { etat: "normal", actives: [] });
     const grades = (VML.D.enigmes || {}).niveaux || [];
     const impose = VML.reglage("niveauImpose");
     $("#choix-grade").innerHTML = grades.map(g => `

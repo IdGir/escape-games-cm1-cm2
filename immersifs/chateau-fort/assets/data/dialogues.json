@@ -1,0 +1,178 @@
+{
+  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+  "accueil": {
+    "personnage": "colin",
+    "texte": "Vite, approchez ! Je suis Colin, page au château. Le seigneur est parti rejoindre le roi et il a confié les cinq clés de la seigneurie à cinq personnes du domaine. Or un messager du roi arrive avant la nuit : si la herse reste baissée, il repartira et le seigneur sera déshonoré. Cinq clés, cinq mots gravés dessus. Retrouvez-les, gravez-les dans l'inscription au-dessus de la porte, et la herse se relèvera. Suivez-moi."
+  },
+  "coffre": {
+    "personnage": "colin",
+    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+  },
+  "cinematiques": {
+    "transition-e1": {
+      "titre": "Salle 1 — La motte et la palissade",
+      "plans": [
+        {
+          "decor": "motte",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "josselin",
+          "texte": "Bonjour à vous. Je suis Josselin, maître maçon. Beaucoup croient qu'un château fort, c'est forcément de la pierre. C'est faux. Ici, le premier château était une butte de terre, une tour de bois et une palissade : on appelle cela une motte. Cela se construisait vite, et cela a suffi longtemps. La pierre est venue après. La première clé est à moi : je vous la donnerai quand vous saurez pourquoi et comment on bâtit un c",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e1": {
+      "titre": "Fin de la salle 1",
+      "plans": [
+        {
+          "decor": "motte",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "josselin",
+          "texte": "Voici la première clé. Le mot gravé dessus est PIERRE . Retenez bien : d'abord la terre et le bois, ensuite la pierre. Montez maintenant jusqu'aux remparts, Colin vous y attend. Lui, il connaît chaque ouverture de chaque mur.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e2": {
+      "titre": "Salle 2 — Les remparts",
+      "plans": [
+        {
+          "decor": "remparts",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "colin",
+          "texte": "Regardez d'ici. Rien n'est là pour faire joli. Le fossé empêche d'approcher les machines de siège. Le pont-levis coupe le passage. La herse le double. Les meurtrières laissent tirer sans se montrer. Les mâchicoulis permettent de lâcher des projectiles droit sur ceux qui se collent au mur. Et la tour maîtresse, au centre, c'est le donjon : le logis du seigneur, pas un cachot. La deuxième clé est accrochée au treuil de",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e2": {
+      "titre": "Fin de la salle 2",
+      "plans": [
+        {
+          "decor": "remparts",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "colin",
+          "texte": "Deuxième clé : REMPARTS . Vous savez maintenant nommer les défenses et dire à quoi chacune sert. Descendez dans la grande salle. Dame Aliénor gouverne le domaine pendant l'absence du seigneur. Tenez-vous droits : elle rend la justice ce matin.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e3": {
+      "titre": "Salle 3 — La grande salle",
+      "plans": [
+        {
+          "decor": "grandesalle",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "alienor",
+          "texte": "Entrez. Je suis Aliénor. Quand mon époux est absent, c'est moi qui gouverne le domaine : je compte les récoltes, je paie les hommes d'armes, je reçois les plaintes et je fais rendre la justice. Un château n'est pas seulement une forteresse. C'est une maison, un tribunal, une chapelle, une cuisine, et surtout une démonstration : qui entre ici doit comprendre, du premier coup d'œil, qui commande. La troisième clé est d",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e3": {
+      "titre": "Fin de la salle 3",
+      "plans": [
+        {
+          "decor": "grandesalle",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "alienor",
+          "texte": "Troisième clé : SEIGNEUR . Protection, habitation, puissance : vous avez compris les trois fonctions. Mais un château ne tient pas tout seul. Il mange ce que le village produit. Allez voir Mahaut, en bas, du côté des champs.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e4": {
+      "titre": "Salle 4 — Le village et les champs",
+      "plans": [
+        {
+          "decor": "village",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "mahaut",
+          "texte": "Bonjour. Moi, c'est Mahaut. Vous logez là-haut, nous logeons ici, et ce sont nos bras qui nourrissent tout le monde. Chez nous, l'année ne se compte pas en mois : elle se compte en travaux. Labourer, semer, faucher, moissonner, battre le grain, vendanger, mener les cochons au bois. Ma mère file la laine, garde la basse-cour, fait le pain et travaille aux champs comme mon père. La quatrième clé est dans le coffre à gr",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e4": {
+      "titre": "Fin de la salle 4",
+      "plans": [
+        {
+          "decor": "village",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "mahaut",
+          "texte": "Quatrième clé : VILLAGE . Vous savez ce qu'est une année de travail ici. Reste le plus important : ce que nous devons au seigneur, et ce que le seigneur nous doit. Perrine vous attend au moulin. Elle en parle mieux que personne : c'est elle qui compte la part du seigneur.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e5": {
+      "titre": "Salle 5 — Le moulin du seigneur",
+      "plans": [
+        {
+          "decor": "moulin",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "perrine",
+          "texte": "Entrez, et attention à la poussière. Je suis Perrine, la meunière. Ce moulin n'est pas à moi : il est au seigneur. Comme le four, comme le pressoir. Personne n'a le droit de moudre ailleurs, et chaque sac laisse ici sa part. On appelle cela les banalités. Il y a aussi le cens, versé chaque année pour la terre, et la corvée, les journées de travail dues sur les champs du seigneur. En échange, il doit nous protéger et ",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e5": {
+      "titre": "Fin de la salle 5",
+      "plans": [
+        {
+          "decor": "moulin",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "alienor",
+          "texte": "Cinq clés, cinq mots : l'inscription est complète au-dessus de la porte. Il reste à relever la herse. Le treuil ne tourne que pour ceux qui ont compris : répondez aux cinq questions, vite, le messager du roi approche. Vous avez appris ce qu'un château protège, qui l'habite, ce qu'il montre, et sur quel travail il repose. N'oubliez pas : derrière chaque muraille, il y a un village.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin": {
+      "titre": "Fin de « Le Secret du donjon »",
+      "plans": [
+        {
+          "decor": "moulin",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "perrine",
+          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+          "mouvement": "zoom"
+        }
+      ]
+    }
+  },
+  "fin_escale": {
+    "1": {
+      "personnage": "josselin",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "2": {
+      "personnage": "colin",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "3": {
+      "personnage": "alienor",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "4": {
+      "personnage": "mahaut",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "5": {
+      "personnage": "perrine",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    }
+  }
+}

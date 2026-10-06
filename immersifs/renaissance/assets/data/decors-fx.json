@@ -12,12 +12,20 @@
       },
       "effets": [
         {
+          "type": "lueur",
+          "x": 10,
+          "y": 14,
+          "r": 12,
+          "couleur": "#cfe3ff",
+          "pulse": 0.2
+        },
+        {
           "type": "poussiere",
           "x": 0,
           "y": 0,
           "w": 100,
-          "h": 100,
-          "nombre": 24
+          "h": 80,
+          "nombre": 26
         },
         {
           "type": "vignette",
@@ -31,47 +39,46 @@
       "zones": [
         {
           "id": "objet-1",
-          "libelle": "À examiner : La frise de Maître Jacquet",
-          "x": 6,
-          "y": 14,
-          "w": 26,
+          "libelle": "La gravure du temple romain",
+          "x": 71,
+          "y": 1,
+          "w": 24,
           "h": 34,
-          "description": "Un objet de la salle en rapport avec « La frise de Maître Jacquet »."
+          "description": "Sur le mur, un temple à colonnes : ce que les savants admirent et veulent faire renaître."
         },
         {
           "id": "objet-2",
-          "libelle": "À examiner : Les mots de la Renaissance",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Les mots de la Renaissance »."
+          "libelle": "La pile de livres",
+          "x": 5,
+          "y": 50,
+          "w": 22,
+          "h": 28,
+          "description": "Des livres imprimés, empilés : des mots nouveaux pour un temps nouveau."
         },
         {
           "id": "objet-3",
-          "libelle": "À examiner : Pourquoi « renaître » ?",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Pourquoi « renaître » ? »."
+          "libelle": "La presse à imprimer",
+          "x": 38,
+          "y": 8,
+          "w": 28,
+          "h": 48,
+          "description": "La grande presse de Maître Jacquet : grâce à elle, un livre se fabrique en centaines d'exemplaires."
         },
         {
           "id": "objet-4",
-          "libelle": "À examiner : La page de Maître Jacquet",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « La page de Maître Jacquet »."
+          "libelle": "La page sur le pupitre",
+          "x": 55,
+          "y": 46,
+          "w": 20,
+          "h": 28,
+          "description": "Une page fraîchement imprimée, avec des trous à compléter."
         }
       ],
       "etats": {
         "normal": {
           "filtre": "none"
         }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+      }
     },
     "salle": {
       "titre": "La grande salle du château royal d'Amboise",
@@ -85,12 +92,30 @@
       },
       "effets": [
         {
+          "type": "lueur",
+          "x": 38,
+          "y": 46,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 63,
+          "y": 45,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
           "type": "poussiere",
           "x": 0,
           "y": 0,
           "w": 100,
-          "h": 100,
-          "nombre": 24
+          "h": 80,
+          "nombre": 22
         },
         {
           "type": "vignette",
@@ -104,47 +129,46 @@
       "zones": [
         {
           "id": "objet-1",
-          "libelle": "À examiner : Vrai ou faux, Dame Hélène ?",
-          "x": 6,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Vrai ou faux, Dame Hélène ? »."
+          "libelle": "La lettre F couronnée",
+          "x": 15,
+          "y": 50,
+          "w": 15,
+          "h": 30,
+          "description": "Le F de François Ier, sous sa couronne : l'emblème du roi."
         },
         {
           "id": "objet-2",
-          "libelle": "À examiner : La vie du roi",
-          "x": 37,
+          "libelle": "La tapisserie",
+          "x": 16,
           "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « La vie du roi »."
+          "w": 12,
+          "h": 40,
+          "description": "Une grande tapisserie accrochée pour la fête : elle raconte la vie du roi."
         },
         {
           "id": "objet-3",
-          "libelle": "À examiner : Le roi protège…",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le roi protège… »."
+          "libelle": "Les salamandres du roi",
+          "x": 34,
+          "y": 28,
+          "w": 32,
+          "h": 26,
+          "description": "La salamandre, emblème de François Ier, sculptée sur le mur."
         },
         {
           "id": "objet-4",
-          "libelle": "À examiner : Le coffret de Dame Hélène",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « Le coffret de Dame Hélène »."
+          "libelle": "La table dressée",
+          "x": 70,
+          "y": 56,
+          "w": 28,
+          "h": 22,
+          "description": "Une table dressée pour la fête, avec un coffret fermé par un code."
         }
       ],
       "etats": {
         "normal": {
           "filtre": "none"
         }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+      }
     },
     "atelier": {
       "titre": "L'atelier de Léonard, au manoir du Cloux, près du château",
@@ -158,12 +182,21 @@
       },
       "effets": [
         {
+          "type": "lueur",
+          "x": 41,
+          "y": 50,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
           "type": "poussiere",
           "x": 0,
           "y": 0,
           "w": 100,
-          "h": 100,
-          "nombre": 24
+          "h": 80,
+          "nombre": 28
         },
         {
           "type": "vignette",
@@ -177,47 +210,46 @@
       "zones": [
         {
           "id": "objet-1",
-          "libelle": "À examiner : Une œuvre, un talent",
-          "x": 6,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Une œuvre, un talent »."
+          "libelle": "Le portrait sur le chevalet",
+          "x": 52,
+          "y": 9,
+          "w": 20,
+          "h": 60,
+          "description": "Un portrait de femme au sourire léger : une œuvre, et le talent de son auteur."
         },
         {
           "id": "objet-2",
-          "libelle": "À examiner : Le désordre des carnets",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le désordre des carnets »."
+          "libelle": "Les carnets de dessins",
+          "x": 0,
+          "y": 20,
+          "w": 36,
+          "h": 50,
+          "description": "Des feuilles couvertes de visages, de machines, d'oiseaux et de tourbillons : tout est mélangé."
         },
         {
           "id": "objet-3",
-          "libelle": "À examiner : L'intrus du Cloux",
-          "x": 68,
-          "y": 14,
-          "w": 26,
+          "libelle": "La table du fond",
+          "x": 76,
+          "y": 40,
+          "w": 23,
           "h": 34,
-          "description": "Un objet de la salle en rapport avec « L'intrus du Cloux »."
+          "description": "Des objets d'atelier posés sur une table : l'un d'eux n'est pas à sa place."
         },
         {
           "id": "objet-4",
-          "libelle": "À examiner : Le mot à l'envers",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « Le mot à l'envers »."
+          "libelle": "La chandelle et les notes",
+          "x": 36,
+          "y": 38,
+          "w": 14,
+          "h": 22,
+          "description": "Des notes écrites à l'envers : le maître écrit de droite à gauche."
         }
       ],
       "etats": {
         "normal": {
           "filtre": "none"
         }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+      }
     },
     "plans": {
       "titre": "Le cabinet des plans, au château d'Amboise",
@@ -231,11 +263,18 @@
       },
       "effets": [
         {
+          "type": "rayons",
+          "x": 30,
+          "y": 0,
+          "w": 50,
+          "h": 50
+        },
+        {
           "type": "poussiere",
           "x": 0,
           "y": 0,
           "w": 100,
-          "h": 100,
+          "h": 70,
           "nombre": 24
         },
         {
@@ -250,47 +289,46 @@
       "zones": [
         {
           "id": "objet-1",
-          "libelle": "À examiner : Le plan de Chambord",
-          "x": 6,
+          "libelle": "Le plan de Chambord",
+          "x": 53,
           "y": 14,
-          "w": 26,
+          "w": 42,
           "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le plan de Chambord »."
+          "description": "Le projet d'un château immense dans la forêt de Chambord."
         },
         {
           "id": "objet-2",
-          "libelle": "À examiner : Château fort ou château Renaissance ?",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Château fort ou château Renaissance ? »."
+          "libelle": "Le plan du vieux château",
+          "x": 2,
+          "y": 14,
+          "w": 28,
+          "h": 32,
+          "description": "Un plan de château fort : murs épais, peu de fenêtres."
         },
         {
           "id": "objet-3",
-          "libelle": "À examiner : Trois châteaux, trois secrets",
-          "x": 68,
+          "libelle": "Le plan de Blois",
+          "x": 30,
           "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Trois châteaux, trois secrets »."
+          "w": 23,
+          "h": 32,
+          "description": "Une aile nouvelle, avec de grandes fenêtres et un escalier."
         },
         {
           "id": "objet-4",
-          "libelle": "À examiner : La salamandre a-t-elle raison ?",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « La salamandre a-t-elle raison ? »."
+          "libelle": "Le bord de la table",
+          "x": 10,
+          "y": 52,
+          "w": 40,
+          "h": 22,
+          "description": "Au bord de la table, un petit mot au sujet de la salamandre du roi."
         }
       ],
       "etats": {
         "normal": {
           "filtre": "none"
         }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+      }
     },
     "galerie": {
       "titre": "La galerie des tableaux du château",
@@ -308,8 +346,8 @@
           "x": 0,
           "y": 0,
           "w": 100,
-          "h": 100,
-          "nombre": 24
+          "h": 80,
+          "nombre": 22
         },
         {
           "type": "vignette",
@@ -323,47 +361,46 @@
       "zones": [
         {
           "id": "objet-1",
-          "libelle": "À examiner : Lire un tableau en perspective",
-          "x": 6,
-          "y": 14,
+          "libelle": "Le tableau du palais",
+          "x": 52,
+          "y": 9,
           "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Lire un tableau en perspective »."
+          "h": 60,
+          "description": "Un palais peint si profond qu'on croirait pouvoir y entrer : la perspective."
         },
         {
           "id": "objet-2",
-          "libelle": "À examiner : Les secrets des peintres",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Les secrets des peintres »."
+          "libelle": "Le grand portrait",
+          "x": 20,
+          "y": 0,
+          "w": 29,
+          "h": 62,
+          "description": "Le portrait d'une femme : les peintres cachent des secrets dans leurs tableaux."
         },
         {
           "id": "objet-3",
-          "libelle": "À examiner : Le cadenas du carnet",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le cadenas du carnet »."
+          "libelle": "Le petit portrait",
+          "x": 0,
+          "y": 12,
+          "w": 17,
+          "h": 45,
+          "description": "Un portrait accroché au bord de la galerie, avec un carnet fermé par un cadenas."
         },
         {
           "id": "objet-4",
-          "libelle": "À examiner : La leçon de Bastien",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « La leçon de Bastien »."
+          "libelle": "Le portrait du jeune seigneur",
+          "x": 80,
+          "y": 4,
+          "w": 20,
+          "h": 58,
+          "description": "Le portrait que Bastien étudie, pour peindre comme les Italiens."
         }
       ],
       "etats": {
         "normal": {
           "filtre": "none"
         }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 /* Configuration du jeu — GÉNÉRÉ par outils/immersif/migrer-jeu.py ; modifiable à la main (titres, grades, vocabulaire). */
 window.VML_JEU = {
   "id": "renaissance",
+  "decorAccueil": "imprimerie",
   "prefixeStockage": "vml_renaissance",
   "grades": [
     "matelot",

@@ -323,6 +323,10 @@ def ecrire_manifeste(dest, titre, slug_jeu):
             if k in d:
                 d[k] = "./" if k != "id" else f"/immersifs/{slug_jeu}/"
         ecrire(p, d)
+    ecrire_meta(dest, titre)
+
+
+def ecrire_meta(dest, titre):
     p = os.path.join(dest, "index.html")
     s = open(p, encoding="utf-8").read()
     s = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{titre} : escape game immersif de cycle 3, version immersive du jeu de la collection.">', s, count=1)
@@ -416,6 +420,7 @@ def maj_moteur(dest):
         m = re.search(r"window\.VML_JEU = (\{[\s\S]*\});", open(cfg, encoding="utf-8").read())
         textes = json.loads(m.group(1))["textes"] if m else {}
         adapter_html(temp, {**{"journal": "", "bibliotheque": "La Bibliothèque", "pause": "⏸ Pause", "titre": "", "auteur": ""}, **textes}, textes.get("titre", slug_jeu))
+        ecrire_meta(temp, textes.get("titre", slug_jeu))
         for f in ("js/jeu-config.js", "js/donnees-embarquees.js", "js/decors-secours.js", "css/theme.css"):   # fichiers propres au jeu : nécessaires à la liste hors ligne
             if os.path.isfile(os.path.join(dest, f)):
                 shutil.copy2(os.path.join(dest, f), os.path.join(temp, f))
@@ -495,7 +500,7 @@ def main():
     for k in ("enigmes", "lecons", "dialogues", "personnages"):
         ecrire(os.path.join(dest, "assets/data", ("decors-fx" if k == "fx" else k) + ".json"), jeu[k])
     ecrire(os.path.join(dest, "assets/data/decors-fx.json"), jeu["fx"])
-    cfg = {"id": slug_jeu, "prefixeStockage": "vml_" + slug_jeu.replace("-", "_"), "grades": jeu["grades"], "textes": textes, "mots": theme["mots"]}
+    cfg = {"id": slug_jeu, "decorAccueil": jeu["enigmes"]["escales"][0]["enigmes"][0]["decor"], "prefixeStockage": "vml_" + slug_jeu.replace("-", "_"), "grades": jeu["grades"], "textes": textes, "mots": theme["mots"]}
     open(os.path.join(dest, "js/jeu-config.js"), "w", encoding="utf-8", newline="\n").write(
         "/* Configuration du jeu — GÉNÉRÉ par outils/immersif/migrer-jeu.py ; modifiable à la main (titres, grades, vocabulaire). */\nwindow.VML_JEU = "
         + json.dumps(cfg, ensure_ascii=False, indent=2) + ";\n")

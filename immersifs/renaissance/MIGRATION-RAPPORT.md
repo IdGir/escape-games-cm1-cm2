@@ -5,6 +5,14 @@ Jeu d'origine : `renaissance/` (**non modifié**). Variante immersive : `immersi
 - 5 salles, 20 énigmes ; grades : CM1 → matelot, CM2 → timonier.
 - Le moteur est une copie de celui de « Vingt mille lieues » ; seuls `js/jeu-config.js`, `css/theme.css` et `assets/data/*.json` sont propres à ce jeu.
 
+## Suivi (mis à jour le 6 octobre 2026)
+
+- ✅ **Images** : 5 décors et 5 portraits produits avec Agnes (agnes-image-2.5-flash, 1 proposition chacune, aucune vidéo), déposés avec crédits dans `assets/medias/CREDITS-medias.md` — **à valider par l'enseignant** (droits d'usage, ressemblance avec l'époque : les costumes de Maître Jacquet et de Bastien sont plutôt modernes).
+- ✅ **Zones cliquables** calées sur les 5 images (une par énigme, nommées d'après leur objet) ; effets : lueurs de bougies, rayons, poussière.
+- ⬜ Enjeu, réaction du décor, problème narratif de chaque énigme (champ `_brouillon`).
+- ⬜ Phrases des personnages pour les énigmes 2 à 4 de chaque salle ; textes des cinématiques.
+- ⬜ Vidéos d'ouverture et de fin (non produites : `python outils/medias/produire.py --types video --id video-transition-e1 --max-videos 1 --depart-decor imprimerie`).
+
 ## Ce qui est converti tel quel
 
 Énigmes (types, données, consignes, indices), leçons (Bibliothèque), personnages, mots-clés du coffre, dialogues d'introduction et de réussite.

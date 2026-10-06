@@ -1,0 +1,369 @@
+{
+  "decors": {
+    "abri": {
+      "titre": "🌡️ L'abri météo, dans la cour de l'école",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Lire le thermomètre",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Lire le thermomètre »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Où placer le thermomètre ?",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Où placer le thermomètre ? »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Du plus froid au plus chaud",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Du plus froid au plus chaud »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Mesure fiable ou mesure faussée ?",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Mesure fiable ou mesure faussée ? »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "mat": {
+      "titre": "🧭 Le mât de l'anémomètre et de la girouette",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : La rose des vents",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « La rose des vents »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Girouette et anémomètre",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Girouette et anémomètre »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : L'échelle de Beaufort",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « L'échelle de Beaufort »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le carnet du capitaine",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le carnet du capitaine »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "pluvio": {
+      "titre": "🌧️ Le pluviomètre, au fond du jardin",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Lire le pluviomètre",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Lire le pluviomètre »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Un millimètre de pluie",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Un millimètre de pluie »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Du plus sec au plus arrosé",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Du plus sec au plus arrosé »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le cadenas du cumul",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le cadenas du cumul »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "bureau": {
+      "titre": "📋 Le bureau des relevés",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Les cases effacées",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Les cases effacées »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : La valeur impossible",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « La valeur impossible »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Ce que dit le tableau",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Ce que dit le tableau »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : Le graphique de la pluie",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « Le graphique de la pluie »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    },
+    "studio": {
+      "titre": "📡 La salle de prévision",
+      "reference": null,
+      "ambiance": [
+        "vent"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 32
+      },
+      "effets": [
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 24
+        },
+        {
+          "type": "vignette",
+          "force": 0.5
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "objet-1",
+          "libelle": "À examiner : Météo ou climat ?",
+          "x": 6,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Météo ou climat ? »."
+        },
+        {
+          "id": "objet-2",
+          "libelle": "À examiner : Prévoir la sortie",
+          "x": 37,
+          "y": 10,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Prévoir la sortie »."
+        },
+        {
+          "id": "objet-3",
+          "libelle": "À examiner : Le mot caché du bulletin",
+          "x": 68,
+          "y": 14,
+          "w": 26,
+          "h": 34,
+          "description": "Un objet de la salle en rapport avec « Le mot caché du bulletin »."
+        },
+        {
+          "id": "objet-4",
+          "libelle": "À examiner : La valeur de vérité",
+          "x": 37,
+          "y": 48,
+          "w": 26,
+          "h": 26,
+          "description": "Un objet de la salle en rapport avec « La valeur de vérité »."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      },
+      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    }
+  }
+}

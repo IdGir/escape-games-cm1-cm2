@@ -7,6 +7,7 @@
    ============================================================ */
 window.VML_JEU = {
   id: "vingt-mille-lieues",
+  decorAccueil: "salon",                        // décor affiché derrière l'écran d'accueil
   prefixeStockage: "vml",                       // clés du navigateur : <prefixe>_partie, <prefixe>_reglages
   grades: ["mousse", "matelot", "timonier", "lieutenant", "second"],   // grades proposés (ordre croissant)
   textes: {
