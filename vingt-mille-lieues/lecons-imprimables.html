@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-titre-page="Leçons A4 — {journal}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +21,14 @@
 </head>
 <body>
 <div class="outils">
-  <b>📖 Leçons A4 — Bibliothèque du Nautilus</b>
+  <b>📖 Leçons A4 — <span data-t="bibliotheque">Bibliothèque du Nautilus</span></b>
   <label>Grade : <select id="grade"></select></label>
   <label>Fiche : <select id="fiche"><option value="toutes">toutes</option></select></label>
   <button id="imprimer">🖨️ Imprimer</button>
   <span style="font-size:.85rem;opacity:.8">Format A4 portrait, cocher « Graphiques d'arrière-plan ».</span>
 </div>
 <div id="pages"></div>
+<script src="js/jeu-config.js?v1"></script>
 <script src="js/donnees-embarquees.js?v1"></script>
 <script src="js/donnees.js?v1"></script>
 <script src="js/niveaux.js?v1"></script>
@@ -46,7 +47,7 @@
   const dessiner = () => {
     const g = sg.value, choix = sf.value === "toutes" ? L : L.filter(l => l.id === sf.value);
     document.getElementById("pages").innerHTML = choix.map(l => `<section class="page">
-      <div class="entete"><span>⚓ Vingt mille lieues sous les mers — Le Journal du Nautilus</span><span>${VML.referenceFiche(l.id)}</span></div>
+      <div class="entete"><span>${VML.T("hud") || "⚓"} — ${VML.T("titre")}</span><span>${VML.referenceFiche(l.id)}</span></div>
       <h1>${l.icone} ${l.titre}</h1>
       <div class="competence"><b>Compétence du programme</b> : ${l.competence}</div>
       ${VML.contenuFiche(l, g).replace(/class='fiche-roman'/g, "class='roman'").replace(/tab-lecon/g, "")}

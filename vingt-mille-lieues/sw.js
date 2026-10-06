@@ -11,8 +11,8 @@
 const VERSION = "vml-campagne-1";
 const FICHIERS = [
   "./", "index.html", "prof.html", "medias.html", "lecons-imprimables.html", "manifest.webmanifest",
-  "css/nautilus.css", "css/enigmes-nautilus.css",
-  "js/donnees-embarquees.js", "js/donnees.js", "js/niveaux.js", "js/sons.js", "js/decors-secours.js", "js/scene.js",
+  "css/nautilus.css", "css/enigmes-nautilus.css", "css/theme.css",
+  "js/jeu-config.js", "js/donnees-embarquees.js", "js/donnees.js", "js/niveaux.js", "js/sons.js", "js/decors-secours.js", "js/scene.js",
   "js/personnages.js", "js/voix.js", "js/type-circuit.js", "js/solutions.js", "js/moteur.js", "js/bibliotheque.js",
   "js/journal.js", "js/reglages.js", "js/sync-nautilus.js", "js/app.js",
   "assets/data/enigmes.json", "assets/data/lecons.json", "assets/data/decors-fx.json", "assets/data/dialogues.json", "assets/data/personnages.json",

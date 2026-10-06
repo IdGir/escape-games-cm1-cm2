@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-titre-page="Médias — {journal}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Médias — Le Journal du Nautilus</title>
 <link rel="stylesheet" href="css/nautilus.css?v1">
+<link rel="stylesheet" href="css/theme.css?v1">
 <style>
   body{ overflow: auto; background: #0b1820; }
   .page{ width: min(1500px, calc(100% - 32px)); margin: 16px auto 40px; }
@@ -25,6 +26,15 @@
 <body>
 <div class="page">
   <h1>🖼️ Médias du jeu — fichier déposé ou secours de Claude</h1>
+  <details class="m cadre-laiton" style="margin:10px 0"><summary><b>Ajouter une image (fond, portrait, départ de vidéo) ou une vidéo</b></summary>
+    <p>Toute image faite ailleurs (Agnes, Midjourney, ChatGPT, photo…) se dépose en une commande ; le moteur la prend aussitôt :</p>
+    <pre>python outils/medias/importer-image.py image.png --decor &lt;id-du-décor&gt; --source "Midjourney"
+python outils/medias/importer-image.py image.png --decor &lt;id&gt; --depart transition-e1     (fond ET départ d'une vidéo)
+python outils/medias/importer-image.py image.png --portrait &lt;id-personnage&gt;
+python outils/medias/importer-image.py clip.mp4 --video transition-e2
+python outils/medias/importer-image.py --dossier      (traite assets/medias-a-importer/ : decor-&lt;id&gt;.png, portrait-&lt;id&gt;.jpg, depart-&lt;nom&gt;.jpg, video-&lt;nom&gt;.mp4)</pre>
+    <p>Pour <b>produire</b> avec une source (Agnes, ou une source que vous ajoutez dans <code>outils/medias/sources-medias.json</code>) : <code>python outils/medias/produire.py --liste-sources</code>. Détails : <code>GUIDE-MEDIAS.md</code>. Supprimer un fichier déposé = retour au décor de secours.</p>
+  </details>
   <p class="note">Pour chaque emplacement : le nom exact attendu, ce qui est affiché aujourd'hui (<b>fichier déposé</b>, <b>image de référence</b> de l'enseignant, ou <b>secours</b> dessiné par Claude), et l'aperçu côte à côte. Un fichier déposé sous le bon nom remplace le secours sans toucher au code ; le retirer ramène le secours. Liste complète et prompts : <code>PRODUCTION-MEDIAS.md</code>, <code>medias.csv</code>. Contrôle des dimensions et des poids : <code>python outils/verifier-medias.py</code>.</p>
   <h2 class="titre-grades" style="text-align:left">Décors (1920 × 1080, 16:9)</h2>
   <div class="grille" id="decors"></div>
@@ -33,6 +43,7 @@
   <h2 class="titre-grades" style="text-align:left">Vidéos (1280 × 720, H.264, ≤ 6 Mo)</h2>
   <div class="grille" id="videos"></div>
 </div>
+<script src="js/jeu-config.js?v1"></script>
 <script src="js/donnees-embarquees.js?v1"></script>
 <script src="js/donnees.js?v1"></script>
 <script src="js/decors-secours.js?v1"></script>
