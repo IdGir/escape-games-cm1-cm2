@@ -32,3 +32,10 @@ node immersifs/renaissance/tests/test-immersif.js
 ```
 
 Le test joue toutes les énigmes de tous les grades. Ouvrir ensuite le jeu avec `lancer-nautilus.bat` (adresse : `/immersifs/renaissance/`).
+
+## Suivi (7 octobre 2026) : narration et images
+
+- ✅ **Images** : 5 décors et les portraits de tous les personnages produits avec Agnes (agnes-image-2.5-flash), déposés avec crédits ; **à valider par l'enseignant** (droits d'usage, fidélité à l'époque, cohérence des personnages).
+- ✅ **Narration** : enjeu, situation, réaction du décor, objets cliquables, phrases des personnages (énigmes 2 à 4) et ton rédigés (`vingt-mille-lieues/outils/immersif/narration/<jeu>.json`, appliqués par `appliquer-narration.py`). Brouillons à relire et enrichir.
+- ⬜ **Zones cliquables** : positions standard, à caler sur chaque image (`outils/caler-effets.html`).
+- ⬜ **Vidéos** d'ouverture et de fin : non produites.

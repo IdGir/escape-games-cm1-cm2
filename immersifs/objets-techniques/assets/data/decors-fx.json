@@ -1,369 +1,364 @@
 {
-  "decors": {
-    "atelier": {
-      "titre": "🚪 L'entrée de l'atelier",
-      "reference": null,
-      "ambiance": [
-        "vent"
-      ],
-      "kenBurns": {
-        "echelle": 1.05,
-        "duree": 32
-      },
-      "effets": [
-        {
-          "type": "poussiere",
-          "x": 0,
-          "y": 0,
-          "w": 100,
-          "h": 100,
-          "nombre": 24
-        },
-        {
-          "type": "vignette",
-          "force": 0.5
-        },
-        {
-          "type": "grain",
-          "force": 0.04
-        }
-      ],
-      "zones": [
-        {
-          "id": "objet-1",
-          "libelle": "À examiner : Chaque objet répond à un besoin",
-          "x": 6,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Chaque objet répond à un besoin »."
-        },
-        {
-          "id": "objet-2",
-          "libelle": "À examiner : Servir ou plaire ?",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Servir ou plaire ? »."
-        },
-        {
-          "id": "objet-3",
-          "libelle": "À examiner : Le tri de l'inventrice",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le tri de l'inventrice »."
-        },
-        {
-          "id": "objet-4",
-          "libelle": "À examiner : Le mot de la première serrure",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « Le mot de la première serrure »."
-        }
-      ],
-      "etats": {
-        "normal": {
-          "filtre": "none"
-        }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+ "decors": {
+  "atelier": {
+   "titre": "🚪 L'entrée de l'atelier",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
     },
-    "etabli": {
-      "titre": "🔧 L'établi de démontage",
-      "reference": null,
-      "ambiance": [
-        "vent"
-      ],
-      "kenBurns": {
-        "echelle": 1.05,
-        "duree": 32
-      },
-      "effets": [
-        {
-          "type": "poussiere",
-          "x": 0,
-          "y": 0,
-          "w": 100,
-          "h": 100,
-          "nombre": 24
-        },
-        {
-          "type": "vignette",
-          "force": 0.5
-        },
-        {
-          "type": "grain",
-          "force": 0.04
-        }
-      ],
-      "zones": [
-        {
-          "id": "objet-1",
-          "libelle": "À examiner : Le schéma de la lampe torche",
-          "x": 6,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le schéma de la lampe torche »."
-        },
-        {
-          "id": "objet-2",
-          "libelle": "À examiner : Chaque pièce a un rôle",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Chaque pièce a un rôle »."
-        },
-        {
-          "id": "objet-3",
-          "libelle": "À examiner : Le bon mot au bon endroit",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le bon mot au bon endroit »."
-        },
-        {
-          "id": "objet-4",
-          "libelle": "À examiner : Le carnet de l'inventrice",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « Le carnet de l'inventrice »."
-        }
-      ],
-      "etats": {
-        "normal": {
-          "filtre": "none"
-        }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    {
+     "type": "vignette",
+     "force": 0.5
     },
-    "materiaux": {
-      "titre": "🗄️ La matériauthèque",
-      "reference": null,
-      "ambiance": [
-        "vent"
-      ],
-      "kenBurns": {
-        "echelle": 1.05,
-        "duree": 32
-      },
-      "effets": [
-        {
-          "type": "poussiere",
-          "x": 0,
-          "y": 0,
-          "w": 100,
-          "h": 100,
-          "nombre": 24
-        },
-        {
-          "type": "vignette",
-          "force": 0.5
-        },
-        {
-          "type": "grain",
-          "force": 0.04
-        }
-      ],
-      "zones": [
-        {
-          "id": "objet-1",
-          "libelle": "À examiner : Les casiers de la matériauthèque",
-          "x": 6,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Les casiers de la matériauthèque »."
-        },
-        {
-          "id": "objet-2",
-          "libelle": "À examiner : Vrai ou faux dans l'atelier",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Vrai ou faux dans l'atelier »."
-        },
-        {
-          "id": "objet-3",
-          "libelle": "À examiner : L'échantillon égaré",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « L'échantillon égaré »."
-        },
-        {
-          "id": "objet-4",
-          "libelle": "À examiner : Le bon matériau pour le bon usage",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « Le bon matériau pour le bon usage »."
-        }
-      ],
-      "etats": {
-        "normal": {
-          "filtre": "none"
-        }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
-    },
-    "machines": {
-      "titre": "⚙️ La salle des machines",
-      "reference": null,
-      "ambiance": [
-        "vent"
-      ],
-      "kenBurns": {
-        "echelle": 1.05,
-        "duree": 32
-      },
-      "effets": [
-        {
-          "type": "poussiere",
-          "x": 0,
-          "y": 0,
-          "w": 100,
-          "h": 100,
-          "nombre": 24
-        },
-        {
-          "type": "vignette",
-          "force": 0.5
-        },
-        {
-          "type": "grain",
-          "force": 0.04
-        }
-      ],
-      "zones": [
-        {
-          "id": "objet-1",
-          "libelle": "À examiner : La chaîne d'énergie",
-          "x": 6,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « La chaîne d'énergie »."
-        },
-        {
-          "id": "objet-2",
-          "libelle": "À examiner : Chaque machine son énergie",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Chaque machine son énergie »."
-        },
-        {
-          "id": "objet-3",
-          "libelle": "À examiner : Transmettre le mouvement",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Transmettre le mouvement »."
-        },
-        {
-          "id": "objet-4",
-          "libelle": "À examiner : Le cadenas à mots de la salle des machines",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « Le cadenas à mots de la salle des machines »."
-        }
-      ],
-      "etats": {
-        "normal": {
-          "filtre": "none"
-        }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
-    },
-    "montage": {
-      "titre": "📋 Le coin montage",
-      "reference": null,
-      "ambiance": [
-        "vent"
-      ],
-      "kenBurns": {
-        "echelle": 1.05,
-        "duree": 32
-      },
-      "effets": [
-        {
-          "type": "poussiere",
-          "x": 0,
-          "y": 0,
-          "w": 100,
-          "h": 100,
-          "nombre": 24
-        },
-        {
-          "type": "vignette",
-          "force": 0.5
-        },
-        {
-          "type": "grain",
-          "force": 0.04
-        }
-      ],
-      "zones": [
-        {
-          "id": "objet-1",
-          "libelle": "À examiner : Le montage dans l'ordre",
-          "x": 6,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Le montage dans l'ordre »."
-        },
-        {
-          "id": "objet-2",
-          "libelle": "À examiner : Lire la notice",
-          "x": 37,
-          "y": 10,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Lire la notice »."
-        },
-        {
-          "id": "objet-3",
-          "libelle": "À examiner : Deux objets, un même besoin",
-          "x": 68,
-          "y": 14,
-          "w": 26,
-          "h": 34,
-          "description": "Un objet de la salle en rapport avec « Deux objets, un même besoin »."
-        },
-        {
-          "id": "objet-4",
-          "libelle": "À examiner : Le cycle de l'inventrice",
-          "x": 37,
-          "y": 48,
-          "w": 26,
-          "h": 26,
-          "description": "Un objet de la salle en rapport avec « Le cycle de l'inventrice »."
-        }
-      ],
-      "etats": {
-        "normal": {
-          "filtre": "none"
-        }
-      },
-      "_brouillon": "zones à caler sur l'image (outils/caler-effets.html)"
+    {
+     "type": "grain",
+     "force": 0.04
     }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le mur des objets",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des objets accrochés : chacun répond à un besoin."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La vitrine",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des objets pour servir ou pour plaire."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le tri de l'inventrice",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une caisse d'objets à trier."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La première serrure",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une serrure à mot."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "etabli": {
+   "titre": "🔧 L'établi de démontage",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le schéma de la lampe torche",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un schéma accroché à l'établi."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les pièces démontées",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Chaque pièce a son rôle."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'étiquette de l'établi",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le bon mot au bon endroit."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet de l'inventrice",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un carnet aux mots effacés."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "materiaux": {
+   "titre": "🗄️ La matériauthèque",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les casiers",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des casiers de matériaux à classer."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les étiquettes de la matériauthèque",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des affirmations sur les matériaux."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'échantillon égaré",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un échantillon qui n'est pas dans la bonne famille."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le tableau des usages",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Quel matériau pour quel usage ?"
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "machines": {
+   "titre": "⚙️ La salle des machines",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La chaîne d'énergie",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "D'où vient l'énergie, où va-t-elle ?"
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les machines alignées",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Chaque machine a sa source d'énergie."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les engrenages",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des engrenages transmettent le mouvement."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le cadenas à mots",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un cadenas à mots sur la porte."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "montage": {
+   "titre": "📋 Le coin montage",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La notice dépliée",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les étapes du montage."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le mode d'emploi",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des phrases sur la lecture de la notice."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les deux objets",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Deux objets pour un même besoin."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le cycle de l'inventrice",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le cycle de vie d'un objet."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
   }
+ }
 }
