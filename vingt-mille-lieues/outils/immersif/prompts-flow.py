@@ -59,7 +59,7 @@ def direction(jeu):
     """STYLE_VISUEL et EPOQUE du module grades/<jeu>_theme.py (direction artistique propre au jeu), sinon la charte commune."""
     try:
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "grades"))
-        m = __import__(jeu.replace("-", "_") + "_theme") if False else __import__(jeu + "_theme")
+        m = __import__(jeu.replace("-", "_") + "_theme")
         return getattr(m, "STYLE_VISUEL", STYLE), getattr(m, "EPOQUE", "")
     except Exception:
         return STYLE, ""

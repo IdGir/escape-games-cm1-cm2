@@ -1,20 +1,40 @@
 {
- "_commentaire": "Généré par outils/immersif/migrer-jeu.py depuis « chateau-fort ». À compléter : voir MIGRATION-RAPPORT.md.",
  "version": 1,
  "niveaux": [
   {
+   "id": "mousse",
+   "nom": "Manœuvre",
+   "icone": "🧱",
+   "equivalent": "≈ CE2",
+   "profil": "énigmes courtes, vocabulaire simple, aides renforcées (premier indice offert, fiche mise en évidence)"
+  },
+  {
    "id": "matelot",
-   "nom": "Compagnon",
-   "icone": "🔧",
+   "nom": "Apprenti",
+   "icone": "🔨",
    "equivalent": "≈ CM1",
    "profil": "cœur de programme CM1"
   },
   {
    "id": "timonier",
-   "nom": "Maître",
-   "icone": "🧭",
+   "nom": "Compagnon",
+   "icone": "📐",
    "equivalent": "≈ CM2",
-   "profil": "cœur de programme CM2"
+   "profil": "cœur de programme CM2, plus d'éléments, vocabulaire précis"
+  },
+  {
+   "id": "lieutenant",
+   "nom": "Artisan",
+   "icone": "🏗️",
+   "equivalent": "≈ 6ᵉ",
+   "profil": "raisonnement en deux étapes, documents à croiser, justification"
+  },
+  {
+   "id": "second",
+   "nom": "Maître d'œuvre",
+   "icone": "🧭",
+   "equivalent": "≈ 5ᵉ",
+   "profil": "synthèse, données chiffrées, pièges de logique, justification"
   }
  ],
  "escales": [
@@ -60,7 +80,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "construire-un-chateau",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (qcm) ; Apprenti (qcm) ; Compagnon (qcm) ; Artisan (vraifaux) ; Maître d'œuvre (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un château fort sert d'abord à protéger : le seigneur, sa famille, ses hommes et, en cas de danger, les habitants du domaine. On le bâtit en hauteur pour voir venir l'ennemi et être difficile à attaquer. Les premiers châteaux sont faits de terre et de bois.",
      "matelot": {
       "questions": [
@@ -146,6 +166,130 @@
        "Les premiers donjons de pierre apparaissent environ un siècle après les premières mottes."
       ],
       "dialogue": "Bonjour à vous. Je suis Josselin, maître maçon. Beaucoup croient qu'un château fort, c'est forcément de la pierre. C'est faux. Ici, le premier château était une butte de terre, une tour de bois et une palissade : on appelle cela une motte. Cela se construisait vite, et cela a suffi longtemps. La pierre est venue après. La première clé est à moi : je vous la donnerai quand vous saurez pourquoi et comment on bâtit un château."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Les premiers châteaux forts sont faits surtout de…",
+        "options": [
+         "terre et de bois",
+         "pierre et de marbre",
+         "verre et de métal"
+        ],
+        "bonne": 0,
+        "explication": "Une butte de terre, une tour de bois, une palissade."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Construire un château fort » dans la Bibliothèque.",
+       "Au début, on construit vite, avec ce que l'on trouve.",
+       "Le bois et la terre sont partout."
+      ],
+      "dialogue": "Bonjour à vous. Je suis Josselin, maître maçon. Beaucoup croient qu'un château fort, c'est forcément de la pierre. C'est faux. Ici, le premier château était une butte de terre, une tour de bois et une palissade : on appelle cela une motte. Cela se construisait vite, et cela a suffi longtemps. La pierre est venue après. La première clé est à moi : je vous la donnerai quand vous saurez pourquoi et comment on bâtit un château."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "À partir du Xe siècle, le pouvoir du roi est faible.",
+        "vrai": true,
+        "explication": "Le territoire est morcelé."
+       },
+       {
+        "txt": "Une motte est une butte de terre portant une tour de bois.",
+        "vrai": true,
+        "explication": "Entourée d'une palissade."
+       },
+       {
+        "txt": "Un château de pierre se construit en quelques semaines.",
+        "vrai": false,
+        "explication": "Il demande des années."
+       },
+       {
+        "txt": "La motte craint le feu.",
+        "vrai": true,
+        "explication": "Elle est en bois."
+       },
+       {
+        "txt": "Tous les seigneurs peuvent se payer un château de pierre.",
+        "vrai": false,
+        "explication": "Seuls les seigneurs puissants le peuvent."
+       }
+      ],
+      "consigne": "Maître Josselin vérifie cinq affirmations sur les débuts des châteaux. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui explique pourquoi les seigneurs construisent des châteaux.",
+      "indices": [
+       "Le bois craint le feu ; la pierre, non.",
+       "La pierre coûte cher et demande du temps.",
+       "Pour la justification : cherche la phrase qui parle des seigneuries."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique le pouvoir des seigneurs ?",
+       "options": [
+        "À partir du Xe siècle, le pouvoir du roi est faible.",
+        "Le territoire est morcelé en seigneuries, dirigées par des seigneurs qui protègent, commandent et jugent les habitants.",
+        "Rapide à bâtir, la motte craint le feu.",
+        "Un château de pierre coûte très cher et demande des années : seuls les seigneurs puissants peuvent se l'offrir."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour à vous. Je suis Josselin, maître maçon. Beaucoup croient qu'un château fort, c'est forcément de la pierre. C'est faux. Ici, le premier château était une butte de terre, une tour de bois et une palissade : on appelle cela une motte. Cela se construisait vite, et cela a suffi longtemps. La pierre est venue après. La première clé est à moi : je vous la donnerai quand vous saurez pourquoi et comment on bâtit un château."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de siècles séparent les premières mottes des enceintes de pierre du XIIIe siècle ?",
+        "options": [
+         "3 siècles",
+         "1 siècle",
+         "13 siècles",
+         "30 siècles"
+        ],
+        "bonne": 0,
+        "explication": "XIIIe moins Xe : 13 − 10 = 3."
+       },
+       {
+        "q": "Pourquoi les seigneurs passent-ils peu à peu du bois à la pierre ?",
+        "options": [
+         "La pierre résiste mieux, mais seuls les plus puissants peuvent la payer",
+         "Le roi leur interdit le bois",
+         "La pierre est moins chère",
+         "Le bois n'existe plus"
+        ],
+        "bonne": 0,
+        "explication": "La pierre coûte très cher et demande des années."
+       },
+       {
+        "q": "Pourquoi les artisans de Guédelon utilisent-ils les outils de l'époque ?",
+        "options": [
+         "Pour comprendre comment on bâtissait",
+         "Parce qu'ils n'ont pas d'autres outils",
+         "Pour aller plus vite",
+         "Parce que c'est interdit autrement"
+        ],
+        "bonne": 0,
+        "explication": "C'est un chantier expérimental."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Notes de Maître Josselin</b> (d'après la fiche). Xe siècle : mottes de terre et tours de bois. XIe siècle : premiers donjons de pierre. XIIe-XIIIe siècles : enceintes de pierre flanquées de tours. Depuis 1997 : le chantier de Guédelon.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Calcule la différence entre les siècles.",
+       "Pense au coût et à la durée du chantier.",
+       "Guédelon sert à comprendre, pas à aller vite."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Rapide à bâtir, la motte craint le feu.",
+        "Au XIe siècle apparaissent les premiers donjons de pierre ; aux XIIe et XIIIe siècles, les enceintes de pierre flanquées de tours se multiplient.",
+        "Un château de pierre coûte très cher et demande des années : seuls les seigneurs puissants peuvent se l'offrir.",
+        "On choisit un site élevé (colline, éperon rocheux) ou l'on crée la hauteur : on creuse un fossé et l'on entasse la terre au centre."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bonjour à vous. Je suis Josselin, maître maçon. Beaucoup croient qu'un château fort, c'est forcément de la pierre. C'est faux. Ici, le premier château était une butte de terre, une tour de bois et une palissade : on appelle cela une motte. Cela se construisait vite, et cela a suffi longtemps. La pierre est venue après. La première clé est à moi : je vous la donnerai quand vous saurez pourquoi et comment on bâtit un château."
      }
     },
     {
@@ -161,7 +305,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "alienor",
+     "personnage_emetteur": "josselin",
      "probleme_narratif": "Dame Aliénor veut savoir comment le bois a cédé la place à la pierre.",
      "enjeu": "Sans l'ordre des châteaux, impossible de lire le calendrier du chantier.",
      "episode_du_roman": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Chantier médiéval de Guédelon (Treigny, Yonne) ; Cité de l'architecture ",
@@ -174,7 +318,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "construire-un-chateau",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (ordre) ; Apprenti (ordre) ; Compagnon (ordre) ; Artisan (ordre) ; Maître d'œuvre (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "D'abord la motte de terre et de bois (Xe siècle), puis les donjons de pierre (XIe siècle), puis les enceintes de pierre qui entourent tout le château (XIIe siècle), enfin les enceintes à tours rondes du XIIIe siècle. Le château fort a changé pendant des siècles : il n'y a pas un seul modèle.",
      "matelot": {
       "items": [
@@ -242,6 +386,128 @@
        "Le donjon de pierre vient avant l'enceinte de pierre qui l'entoure."
       ],
       "dialogue": "Regardez ces charrettes : hier c'était du bois, demain ce sera de la pierre. Remettez les étapes dans l'ordre."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Une butte de terre et une tour de bois (Xe siècle)",
+        "rang": 1
+       },
+       {
+        "txt": "Les premiers donjons de pierre (XIe siècle)",
+        "rang": 2
+       },
+       {
+        "txt": "De grandes enceintes de pierre avec des tours (XIIe-XIIIe siècles)",
+        "rang": 3
+       }
+      ],
+      "consigne": "Remets les étapes dans l'ordre, de la plus ancienne (en haut) à la plus récente (en bas). Utilise les flèches ▲ et ▼.",
+      "indices": [
+       "Ouvre la fiche « Construire un château fort ».",
+       "Tout commence par la terre et le bois.",
+       "La pierre vient après."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "On choisit un site élevé, ou on crée la hauteur.",
+        "rang": 1
+       },
+       {
+        "txt": "On creuse un fossé et on entasse la terre au centre.",
+        "rang": 2
+       },
+       {
+        "txt": "On élève une tour de bois au sommet de la motte.",
+        "rang": 3
+       },
+       {
+        "txt": "On entoure la basse-cour d'une palissade.",
+        "rang": 4
+       },
+       {
+        "txt": "Plus tard, un seigneur riche remplace le bois par la pierre.",
+        "rang": 5
+       }
+      ],
+      "consigne": "Dame Aliénor décrit la construction d'un château de motte. Remets les cinq étapes dans l'ordre, puis choisis la phrase de la fiche qui décrit la motte.",
+      "indices": [
+       "On prépare le terrain avant de construire.",
+       "Le fossé donne la terre de la butte.",
+       "La pierre vient après le bois."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit la motte et la palissade ?",
+       "options": [
+        "La motte porte une tour de bois ; une palissade entoure la basse-cour, où se trouvent les écuries, les réserves et les logements.",
+        "On choisit un site élevé (colline, éperon rocheux) ou l'on crée la hauteur : on creuse un fossé et l'on entasse la terre au centre.",
+        "Rapide à bâtir, la motte craint le feu.",
+        "Au XIe siècle apparaissent les premiers donjons de pierre ; aux XIIe et XIIIe siècles, les enceintes de pierre flanquées de tours se multiplient."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "bois",
+        "titre": "Terre et bois (Xe siècle)"
+       },
+       {
+        "id": "pierre",
+        "titre": "Pierre (XIe-XIIIe siècles)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Une tour de bois sur une butte",
+        "col": "bois"
+       },
+       {
+        "txt": "Une palissade de pieux",
+        "col": "bois"
+       },
+       {
+        "txt": "Un château qui craint le feu",
+        "col": "bois"
+       },
+       {
+        "txt": "Un donjon de pierre",
+        "col": "pierre"
+       },
+       {
+        "txt": "Une enceinte flanquée de tours",
+        "col": "pierre"
+       },
+       {
+        "txt": "Un château qui coûte très cher et demande des années",
+        "col": "pierre"
+       }
+      ],
+      "consigne": "Josselin classe les châteaux selon leur matériau et leur époque. Range chaque carte dans la bonne colonne, puis choisis la phrase de la fiche qui date les premiers donjons de pierre.",
+      "indices": [
+       "Le bois craint le feu.",
+       "La pierre est chère et longue à travailler.",
+       "Les enceintes de pierre se multiplient aux XIIe et XIIIe siècles."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche date les premiers donjons de pierre ?",
+       "options": [
+        "Rapide à bâtir, la motte craint le feu.",
+        "Au XIe siècle apparaissent les premiers donjons de pierre ; aux XIIe et XIIIe siècles, les enceintes de pierre flanquées de tours se multiplient.",
+        "Un château de pierre coûte très cher et demande des années : seuls les seigneurs puissants peuvent se l'offrir.",
+        "Depuis 1997, à Guédelon (Treigny, dans l'Yonne), des artisans construisent un château sur le modèle de ceux du XIIIe siècle, avec les outils et les matériaux de l'époque, pour comprendre comment on bâtissait."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -257,7 +523,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "mahaut",
+     "personnage_emetteur": "josselin",
      "probleme_narratif": "Mahaut a vu passer tous les ouvriers du chantier et sait ce que chacun fait.",
      "enjeu": "Sans connaître les métiers, le chantier s'arrête faute de bras.",
      "episode_du_roman": "Chantier médiéval de Guédelon (Treigny, Yonne) ; Cité de l'architecture et du patrimoine",
@@ -270,7 +536,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "construire-un-chateau",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (association) ; Apprenti (association) ; Compagnon (association) ; Artisan (qcm) ; Maître d'œuvre (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un château de pierre demande beaucoup de métiers : le carrier extrait la pierre, le tailleur lui donne sa forme, le chaufournier fabrique la chaux du mortier, le maçon assemble, le charpentier fait les échafaudages et les toits, le forgeron fabrique et répare les outils.",
      "matelot": {
       "paires": [
@@ -325,6 +591,127 @@
        "Le forgeron répare les outils qui s'usent sur la pierre."
       ],
       "dialogue": "Moi, je les vois passer tous les jours. Qui fait quoi sur le chantier ? Associez chaque métier à sa tâche !"
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Le charpentier",
+        "d": "travailler le bois"
+       },
+       {
+        "g": "Le forgeron",
+        "d": "fabriquer des outils en fer"
+       },
+       {
+        "g": "Le maçon",
+        "d": "bâtir les murs"
+       }
+      ],
+      "consigne": "Relie chaque métier à son travail. Clique sur un métier, puis sur son travail.",
+      "indices": [
+       "Ouvre la fiche « Construire un château fort ».",
+       "Le charpentier travaille le bois.",
+       "Le forgeron travaille le fer au feu."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de métiers sont cités dans le document ?",
+        "options": [
+         "8",
+         "4",
+         "10",
+         "12"
+        ],
+        "bonne": 0,
+        "explication": "Carrier, tailleur de pierre, maçon, charpentier, forgeron, chaufournier, charretier, tuilier."
+       },
+       {
+        "q": "Quel métier transporte les pierres et les matériaux ?",
+        "options": [
+         "Le charretier",
+         "Le carrier",
+         "Le tuilier",
+         "Le forgeron"
+        ],
+        "bonne": 0,
+        "explication": "Il conduit la charrette."
+       },
+       {
+        "q": "Pourquoi le chantier de Guédelon existe-t-il ?",
+        "options": [
+         "Pour comprendre comment on construisait un château au XIIIe siècle",
+         "Pour loger des touristes",
+         "Pour défendre le pays",
+         "Pour remplacer un château détruit"
+        ],
+        "bonne": 0,
+        "explication": "C'est un chantier expérimental."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Chantier de Guédelon</b> (d'après la fiche). On y trouve des carriers, des tailleurs de pierre, des maçons, des charpentiers, des forgerons, des chaufourniers, des charretiers et des tuiliers.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Compte les métiers dans le document.",
+       "Cherche celui qui transporte.",
+       "Le chantier utilise les outils et les matériaux de l'époque."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Depuis 1997, à Guédelon (Treigny, dans l'Yonne), des artisans construisent un château sur le modèle de ceux du XIIIe siècle, avec les outils et les matériaux de l'époque, pour comprendre comment on bâtissait.",
+        "À Guédelon, une dizaine de métiers se côtoient : carriers, tailleurs de pierre, maçons, charpentiers, forgerons, chaufourniers, charretiers, tuiliers.",
+        "Un château de pierre coûte très cher et demande des années : seuls les seigneurs puissants peuvent se l'offrir.",
+        "Au XIe siècle apparaissent les premiers donjons de pierre ; aux XIIe et XIIIe siècles, les enceintes de pierre flanquées de tours se multiplient."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Le carrier",
+        "d": "sort les blocs de pierre de la carrière"
+       },
+       {
+        "g": "Le tailleur de pierre",
+        "d": "façonne chaque bloc"
+       },
+       {
+        "g": "Le chaufournier",
+        "d": "cuit le calcaire pour faire la chaux"
+       },
+       {
+        "g": "Le tuilier",
+        "d": "fabrique les tuiles du toit"
+       },
+       {
+        "g": "Le charretier",
+        "d": "transporte les matériaux"
+       }
+      ],
+      "consigne": "Josselin organise son chantier. Relie chaque artisan à sa tâche précise, puis choisis la phrase de la fiche qui énumère les métiers de Guédelon.",
+      "indices": [
+       "Chacun intervient à une étape différente.",
+       "Le chaufournier travaille avec un four à chaux.",
+       "Le tuilier fabrique la couverture du toit."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche énumère les métiers de Guédelon ?",
+       "options": [
+        "Depuis 1997, à Guédelon (Treigny, dans l'Yonne), des artisans construisent un château sur le modèle de ceux du XIIIe siècle, avec les outils et les matériaux de l'époque, pour comprendre comment on bâtissait.",
+        "Un château de pierre coûte très cher et demande des années : seuls les seigneurs puissants peuvent se l'offrir.",
+        "À Guédelon, une dizaine de métiers se côtoient : carriers, tailleurs de pierre, maçons, charpentiers, forgerons, chaufourniers, charretiers, tuiliers.",
+        "La motte porte une tour de bois ; une palissade entoure la basse-cour, où se trouvent les écuries, les réserves et les logements."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
      }
     },
     {
@@ -340,7 +727,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "perrine",
+     "personnage_emetteur": "josselin",
      "probleme_narratif": "Perrine a trouvé le carnet du maître maçon mais l'humidité a effacé des mots.",
      "enjeu": "Sans les mots manquants, la clé de Josselin reste verrouillée.",
      "episode_du_roman": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Chantier médiéval de Guédelon (Treigny, Yonne) ; Cité de l'architecture ",
@@ -353,10 +740,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "construire-un-chateau",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Compagnon (trous) ; Artisan (trous) ; Maître d'œuvre (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les premières mottes sont rapides à construire mais craignent le feu. Au XIe siècle apparaissent les donjons de pierre. À Guédelon, en Bourgogne, on reconstruit depuis 1997 un château du XIIIe siècle pour comprendre comment travaillaient les bâtisseurs.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "texte": "<p>Vers le Xe siècle, beaucoup de seigneurs font élever une [[motte]] : une butte de terre qui porte une tour de [[bois]] entourée d'une [[palissade]]. Ces châteaux se construisent vite, mais ils craignent le [[feu]]. À partir du [[XIe]] siècle, les seigneurs les plus riches font bâtir des donjons en [[pierre]]. Aujourd'hui, à [[Guédelon]], des artisans construisent un château comme au XIIIe siècle.</p>",
@@ -380,6 +769,70 @@
        "Le chantier d'aujourd'hui se trouve dans l'Yonne, en Bourgogne."
       ],
       "dialogue": "J'ai trouvé ce carnet près des charrettes, mais la pluie a mangé des mots. Aidez-moi à les retrouver !"
+     },
+     "lieutenant": {
+      "type": "trous",
+      "texte": "<p>À partir du Xe siècle, le pouvoir du [[roi]] est faible et le territoire est partagé en [[seigneuries]]. La motte porte une tour de [[bois]], entourée d'une [[palissade]]. Au XIe siècle apparaissent les premiers donjons de [[pierre]].</p>",
+      "etiquettes": [
+       "roi",
+       "seigneuries",
+       "bois",
+       "palissade",
+       "pierre",
+       "verre",
+       "marbre",
+       "brique",
+       "papier"
+      ],
+      "consigne": "Maître Josselin a dicté son carnet, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « pierre ».",
+      "indices": [
+       "Relis les deux premiers paragraphes de la fiche.",
+       "Le bois craint le feu.",
+       "Les châteaux de pierre sont chers."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « pierre » ?",
+       "options": [
+        "Rapide à bâtir, la motte craint le feu.",
+        "Au XIe siècle apparaissent les premiers donjons de pierre ; aux XIIe et XIIIe siècles, les enceintes de pierre flanquées de tours se multiplient.",
+        "On choisit un site élevé (colline, éperon rocheux) ou l'on crée la hauteur : on creuse un fossé et l'on entasse la terre au centre.",
+        "Depuis 1997, à Guédelon (Treigny, dans l'Yonne), des artisans construisent un château sur le modèle de ceux du XIIIe siècle, avec les outils et les matériaux de l'époque, pour comprendre comment on bâtissait."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>Les mottes du Xe siècle sont rapides à bâtir, mais elles craignent le [[feu]]. Un château de pierre coûte très [[cher]] et demande des [[années]] : seuls les seigneurs [[puissants]] peuvent se l'offrir. Aujourd'hui, à [[Guédelon]], on bâtit un château comme au XIIIe siècle.</p>",
+      "etiquettes": [
+       "feu",
+       "cher",
+       "années",
+       "puissants",
+       "Guédelon",
+       "gratuit",
+       "minutes",
+       "pauvres",
+       "Versailles"
+      ],
+      "consigne": "Josselin résume l'histoire du château fort, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « puissants ».",
+      "indices": [
+       "Les mots viennent de la partie « Du bois à la pierre ».",
+       "Un chantier de pierre prend du temps.",
+       "Guédelon est dans l'Yonne."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « puissants » ?",
+       "options": [
+        "Rapide à bâtir, la motte craint le feu.",
+        "Un château de pierre coûte très cher et demande des années : seuls les seigneurs puissants peuvent se l'offrir.",
+        "Au XIe siècle apparaissent les premiers donjons de pierre ; aux XIIe et XIIIe siècles, les enceintes de pierre flanquées de tours se multiplient.",
+        "Depuis 1997, à Guédelon (Treigny, dans l'Yonne), des artisans construisent un château sur le modèle de ceux du XIIIe siècle, avec les outils et les matériaux de l'époque, pour comprendre comment on bâtissait."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
      }
     }
    ]
@@ -426,7 +879,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "les-defenses",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (association) ; Apprenti (plan) ; Compagnon (plan) ; Artisan (qcm) ; Maître d'œuvre (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Au centre, le donjon (1). Tout autour, l'enceinte (4), renforcée de tours (6). Devant, les douves (2), franchies par le pont-levis (3) ; derrière lui, la herse (5) ferme l'entrée.",
      "matelot": {
       "titre": "Le plan du château",
@@ -502,6 +955,140 @@
        "Le repère 6 est une construction ronde, dans un angle du mur."
       ],
       "dialogue": "Regardez d'ici. Rien n'est là pour faire joli. Le fossé empêche d'approcher les machines de siège. Le pont-levis coupe le passage. La herse le double. Les meurtrières laissent tirer sans se montrer. Les mâchicoulis permettent de lâcher des projectiles droit sur ceux qui se collent au mur. Et la tour maîtresse, au centre, c'est le donjon : le logis du seigneur, pas un cachot. La deuxième clé est accrochée au treuil de la herse. Prouvez-moi que vous savez lire un château."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "le donjon",
+        "d": "la grande tour au centre"
+       },
+       {
+        "g": "les douves",
+        "d": "le fossé plein d'eau"
+       },
+       {
+        "g": "le pont-levis",
+        "d": "le pont devant l'entrée"
+       }
+      ],
+      "consigne": "Observe le plan du château vu de dessus, puis relie chaque élément à ce qu'il est. Clique sur un élément, puis sur sa description.\n<svg viewBox=\"0 0 320 230\" role=\"img\" aria-label=\"Plan d'un château fort vu de dessus, avec six repères numérotés\" style=\"display:block;max-width:420px;margin:10px auto;background:#f7efd9;border:2px solid #8a7a5a;border-radius:10px\">\n<rect x=\"14\" y=\"14\" width=\"292\" height=\"202\" rx=\"30\" fill=\"#9cc3d8\" stroke=\"#4d7489\" stroke-width=\"2\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"#d9ccb0\" stroke=\"#5e5446\" stroke-width=\"7\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"none\" stroke=\"#f7efd9\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/>\n<g fill=\"#b8a888\" stroke=\"#5e5446\" stroke-width=\"3\"><circle cx=\"48\" cy=\"40\" r=\"16\"/><circle cx=\"272\" cy=\"40\" r=\"16\"/><circle cx=\"48\" cy=\"190\" r=\"16\"/><circle cx=\"272\" cy=\"190\" r=\"16\"/></g>\n<rect x=\"138\" y=\"70\" width=\"46\" height=\"46\" fill=\"#8f806a\" stroke=\"#3d352b\" stroke-width=\"3\"/>\n<rect x=\"146\" y=\"190\" width=\"28\" height=\"30\" fill=\"#a07a4a\" stroke=\"#5e3f1f\" stroke-width=\"2\"/>\n<g stroke=\"#3d352b\" stroke-width=\"2\"><line x1=\"150\" y1=\"186\" x2=\"150\" y2=\"196\"/><line x1=\"156\" y1=\"186\" x2=\"156\" y2=\"196\"/><line x1=\"162\" y1=\"186\" x2=\"162\" y2=\"196\"/><line x1=\"168\" y1=\"186\" x2=\"168\" y2=\"196\"/></g>\n<g font-family=\"Georgia,serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">\n<circle cx=\"161\" cy=\"93\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"161\" y=\"98\">1</text>\n<circle cx=\"30\" cy=\"118\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"30\" y=\"123\">2</text>\n<circle cx=\"200\" cy=\"215\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"200\" y=\"220\">3</text>\n<circle cx=\"96\" cy=\"58\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"96\" y=\"63\">4</text>\n<circle cx=\"126\" cy=\"176\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"126\" y=\"181\">5</text>\n<circle cx=\"272\" cy=\"40\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"272\" y=\"45\">6</text>\n</g></svg>",
+      "indices": [
+       "Ouvre la fiche « Les défenses du château » dans la Bibliothèque.",
+       "Le donjon est la tour la plus importante.",
+       "Les douves sont pleines d'eau."
+      ],
+      "dialogue": "Regardez d'ici. Rien n'est là pour faire joli. Le fossé empêche d'approcher les machines de siège. Le pont-levis coupe le passage. La herse le double. Les meurtrières laissent tirer sans se montrer. Les mâchicoulis permettent de lâcher des projectiles droit sur ceux qui se collent au mur. Et la tour maîtresse, au centre, c'est le donjon : le logis du seigneur, pas un cachot. La deuxième clé est accrochée au treuil de la herse. Prouvez-moi que vous savez lire un château."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel repère montre l'ouvrage qui double le pont-levis, juste derrière le passage ?",
+        "options": [
+         "Le repère 5 : la herse",
+         "Le repère 2 : les douves",
+         "Le repère 4 : l'enceinte",
+         "Le repère 1 : le donjon"
+        ],
+        "bonne": 0,
+        "explication": "La herse est une grille."
+       },
+       {
+        "q": "Quel repère montre ce qui tient les hommes et les machines à distance du mur ?",
+        "options": [
+         "Le repère 2 : les douves",
+         "Le repère 6 : une tour",
+         "Le repère 3 : le pont-levis",
+         "Le repère 1 : le donjon"
+        ],
+        "bonne": 0,
+        "explication": "Le fossé tient à distance."
+       },
+       {
+        "q": "Pourquoi un château n'a-t-il pas un seul obstacle ?",
+        "options": [
+         "Pour ralentir l'assaillant obstacle après obstacle",
+         "Pour décorer le plan",
+         "Parce que le roi l'exige",
+         "Pour loger plus de monde"
+        ],
+        "bonne": 0,
+        "explication": "Défense en profondeur."
+       }
+      ],
+      "consigne": "Colin a dessiné le plan du château vu de dessus (repères 1 à 6). Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.<svg viewBox=\"0 0 320 230\" role=\"img\" aria-label=\"Plan d'un château fort vu de dessus, avec six repères numérotés\" style=\"display:block;max-width:420px;margin:10px auto;background:#f7efd9;border:2px solid #8a7a5a;border-radius:10px\">\n<rect x=\"14\" y=\"14\" width=\"292\" height=\"202\" rx=\"30\" fill=\"#9cc3d8\" stroke=\"#4d7489\" stroke-width=\"2\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"#d9ccb0\" stroke=\"#5e5446\" stroke-width=\"7\"/>\n<rect x=\"48\" y=\"40\" width=\"224\" height=\"150\" fill=\"none\" stroke=\"#f7efd9\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/>\n<g fill=\"#b8a888\" stroke=\"#5e5446\" stroke-width=\"3\"><circle cx=\"48\" cy=\"40\" r=\"16\"/><circle cx=\"272\" cy=\"40\" r=\"16\"/><circle cx=\"48\" cy=\"190\" r=\"16\"/><circle cx=\"272\" cy=\"190\" r=\"16\"/></g>\n<rect x=\"138\" y=\"70\" width=\"46\" height=\"46\" fill=\"#8f806a\" stroke=\"#3d352b\" stroke-width=\"3\"/>\n<rect x=\"146\" y=\"190\" width=\"28\" height=\"30\" fill=\"#a07a4a\" stroke=\"#5e3f1f\" stroke-width=\"2\"/>\n<g stroke=\"#3d352b\" stroke-width=\"2\"><line x1=\"150\" y1=\"186\" x2=\"150\" y2=\"196\"/><line x1=\"156\" y1=\"186\" x2=\"156\" y2=\"196\"/><line x1=\"162\" y1=\"186\" x2=\"162\" y2=\"196\"/><line x1=\"168\" y1=\"186\" x2=\"168\" y2=\"196\"/></g>\n<g font-family=\"Georgia,serif\" font-size=\"15\" font-weight=\"bold\" text-anchor=\"middle\">\n<circle cx=\"161\" cy=\"93\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"161\" y=\"98\">1</text>\n<circle cx=\"30\" cy=\"118\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"30\" y=\"123\">2</text>\n<circle cx=\"200\" cy=\"215\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"200\" y=\"220\">3</text>\n<circle cx=\"96\" cy=\"58\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"96\" y=\"63\">4</text>\n<circle cx=\"126\" cy=\"176\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"126\" y=\"181\">5</text>\n<circle cx=\"272\" cy=\"40\" r=\"11\" fill=\"#fff\" stroke=\"#3d352b\"/><text x=\"272\" y=\"45\">6</text>\n</g></svg>",
+      "indices": [
+       "La herse est derrière le pont-levis.",
+       "Les douves sont autour du mur.",
+       "Un seul obstacle ne suffit pas à arrêter un assaillant."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Un château fort est conçu pour ralentir et arrêter l'assaillant, obstacle après obstacle.",
+        "Herse : grille de bois et de fer qui coulisse de haut en bas et double le pont-levis.",
+        "Douves : fossé, sec ou en eau, qui tient à distance les hommes et les machines de siège.",
+        "Chemin de ronde : passage au sommet des murs, protégé par des créneaux et des merlons."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Regardez d'ici. Rien n'est là pour faire joli. Le fossé empêche d'approcher les machines de siège. Le pont-levis coupe le passage. La herse le double. Les meurtrières laissent tirer sans se montrer. Les mâchicoulis permettent de lâcher des projectiles droit sur ceux qui se collent au mur. Et la tour maîtresse, au centre, c'est le donjon : le logis du seigneur, pas un cachot. La deuxième clé est accrochée au treuil de la herse. Prouvez-moi que vous savez lire un château."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien d'obstacles l'assaillant doit-il franchir avant d'atteindre la cour ?",
+        "options": [
+         "4 : douves, pont-levis, herse, enceinte",
+         "1",
+         "2",
+         "7"
+        ],
+        "bonne": 0,
+        "explication": "Chaque ouvrage est un obstacle."
+       },
+       {
+        "q": "Pourquoi le pont-levis relevé arrête-t-il l'assaillant ?",
+        "options": [
+         "Le fossé reste entre lui et la porte",
+         "Il casse la porte",
+         "Il éteint les torches",
+         "Il appelle le roi"
+        ],
+        "bonne": 0,
+        "explication": "Relevé, il ferme l'accès."
+       },
+       {
+        "q": "Pourquoi le chemin de ronde est-il utile aux défenseurs ?",
+        "options": [
+         "Il permet de circuler au sommet des murs pour surveiller et défendre",
+         "Il sert à stocker du blé",
+         "Il relie le village au moulin",
+         "Il loge les paysans"
+        ],
+        "bonne": 0,
+        "explication": "Passage au sommet des murs."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Rapport de Colin</b> (inventé pour le jeu). Un assaillant arrive à l'entrée : devant lui, des douves, puis un pont-levis relevé. Derrière la porte, une herse. Autour du château, une enceinte flanquée de tours, au sommet de laquelle court un chemin de ronde.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Compte les ouvrages sur le trajet.",
+       "Le pont-levis fait partie des obstacles.",
+       "Le chemin de ronde se trouve au sommet des murs."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Pont-levis : pont mobile dont le tablier se relève pour fermer l'accès.",
+        "Chemin de ronde : passage au sommet des murs, protégé par des créneaux et des merlons.",
+        "Herse : grille de bois et de fer qui coulisse de haut en bas et double le pont-levis.",
+        "Meurtrières ou archères : ouvertures étroites pour observer et tirer à l'abri."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Regardez d'ici. Rien n'est là pour faire joli. Le fossé empêche d'approcher les machines de siège. Le pont-levis coupe le passage. La herse le double. Les meurtrières laissent tirer sans se montrer. Les mâchicoulis permettent de lâcher des projectiles droit sur ceux qui se collent au mur. Et la tour maîtresse, au centre, c'est le donjon : le logis du seigneur, pas un cachot. La deuxième clé est accrochée au treuil de la herse. Prouvez-moi que vous savez lire un château."
      }
     },
     {
@@ -517,7 +1104,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "josselin",
+     "personnage_emetteur": "colin",
      "probleme_narratif": "Josselin voit toute défense comme un outil : à quoi sert chacune ?",
      "enjeu": "Une défense mal comprise, et la porte reste ouverte à l'ennemi.",
      "episode_du_roman": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC)",
@@ -530,7 +1117,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "les-defenses",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (tri) ; Apprenti (association) ; Compagnon (association) ; Artisan (tri) ; Maître d'œuvre (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Chaque élément ralentit ou arrête l'ennemi : les douves l'empêchent d'approcher, la herse ferme l'entrée, les meurtrières permettent de tirer à l'abri, les mâchicoulis de viser ceux qui sont au pied du mur, le chemin de ronde de surveiller et de défendre le haut des murs.",
      "matelot": {
       "paires": [
@@ -585,6 +1172,146 @@
        "La meurtrière est étroite dehors et large dedans : on voit sans être vu."
       ],
       "dialogue": "Chaque élément a sa raison d'être. Dites-moi à quoi sert quoi, et je vous ouvre le passage."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "fermer",
+        "titre": "Elle ferme le passage"
+       },
+       {
+        "id": "tirer",
+        "titre": "Elle sert à tirer et à observer"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La herse",
+        "col": "fermer"
+       },
+       {
+        "txt": "Le pont-levis relevé",
+        "col": "fermer"
+       },
+       {
+        "txt": "La meurtrière",
+        "col": "tirer"
+       },
+       {
+        "txt": "Le chemin de ronde",
+        "col": "tirer"
+       }
+      ],
+      "consigne": "Josselin range les défenses. Range chaque défense : elle ferme le passage, ou elle sert à tirer et à observer. Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « Les défenses du château ».",
+       "La herse est une grille qui descend.",
+       "La meurtrière est une fente étroite dans le mur."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "loin",
+        "titre": "Tient l'ennemi à distance"
+       },
+       {
+        "id": "porte",
+        "titre": "Ferme l'entrée"
+       },
+       {
+        "id": "mur",
+        "titre": "Défend le mur"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Les douves",
+        "col": "loin"
+       },
+       {
+        "txt": "Les tours qui flanquent l'enceinte",
+        "col": "loin"
+       },
+       {
+        "txt": "Le pont-levis relevé",
+        "col": "porte"
+       },
+       {
+        "txt": "La herse",
+        "col": "porte"
+       },
+       {
+        "txt": "Les mâchicoulis",
+        "col": "mur"
+       },
+       {
+        "txt": "Les meurtrières",
+        "col": "mur"
+       }
+      ],
+      "consigne": "Josselin classe les défenses selon l'endroit où elles agissent. Range chaque carte dans la bonne colonne, puis choisis la phrase de la fiche qui définit les mâchicoulis.",
+      "indices": [
+       "Les douves sont autour du château.",
+       "Le pont-levis et la herse ferment l'entrée.",
+       "Les mâchicoulis et les meurtrières sont dans le mur."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit les mâchicoulis ?",
+       "options": [
+        "Mâchicoulis : galerie en surplomb dont le sol est percé, pour lâcher des projectiles à la verticale sur ceux qui sapent le pied du mur.",
+        "Meurtrières ou archères : ouvertures étroites pour observer et tirer à l'abri.",
+        "Chemin de ronde : passage au sommet des murs, protégé par des créneaux et des merlons.",
+        "Douves : fossé, sec ou en eau, qui tient à distance les hommes et les machines de siège."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Les douves",
+        "rang": 1
+       },
+       {
+        "txt": "Le pont-levis",
+        "rang": 2
+       },
+       {
+        "txt": "La herse",
+        "rang": 3
+       },
+       {
+        "txt": "L'enceinte et son chemin de ronde",
+        "rang": 4
+       },
+       {
+        "txt": "Le donjon",
+        "rang": 5
+       }
+      ],
+      "consigne": "Un assaillant essaie d'entrer. Remets dans l'ordre les obstacles qu'il rencontre, de l'extérieur vers l'intérieur, puis choisis la phrase de la fiche qui justifie cet ordre.",
+      "indices": [
+       "On commence par ce qui est le plus loin du mur.",
+       "La herse double le pont-levis.",
+       "Le donjon est l'ultime refuge."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie cet enchaînement d'obstacles ?",
+       "options": [
+        "Le mot vient du latin dominus, « le seigneur » : le donjon est la tour maîtresse, résidence du seigneur et ultime refuge.",
+        "Un château fort est conçu pour ralentir et arrêter l'assaillant, obstacle après obstacle.",
+        "Pont-levis : pont mobile dont le tablier se relève pour fermer l'accès.",
+        "Attention : il n'existe pas un seul modèle. Tous les châteaux n'ont pas toutes ces défenses, et elles apparaissent à des époques différentes."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -600,7 +1327,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "alienor",
+     "personnage_emetteur": "colin",
      "probleme_narratif": "Dame Aliénor a entendu bien des légendes sur les châteaux : lesquelles sont vraies ?",
      "enjeu": "Croire les idées reçues peut coûter cher à la défense.",
      "episode_du_roman": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC) ; Larousse, article « donjon »",
@@ -613,7 +1340,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "les-defenses",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (vraifaux) ; Apprenti (vraifaux) ; Compagnon (vraifaux) ; Artisan (vraifaux) ; Maître d'œuvre (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les châteaux forts n'étaient pas tous en pierre ni tous du XIIIe siècle. Le donjon est la tour maîtresse, le logis du seigneur : le mot vient du latin dominus, « le seigneur ». Le château protège aussi les habitants du domaine en cas de danger.",
      "matelot": {
       "affirmations": [
@@ -686,6 +1413,132 @@
        "Un château sert à se défendre, mais pas seulement : pense à la salle 3."
       ],
       "dialogue": "On raconte beaucoup d'histoires sur les remparts. À vous de séparer le vrai de l'idée reçue."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le pont-levis se relève pour fermer l'entrée.",
+        "vrai": true,
+        "explication": "Relevé, il bouche l'entrée."
+       },
+       {
+        "txt": "Le donjon est d'abord une prison.",
+        "vrai": false,
+        "explication": "C'est la tour du seigneur."
+       },
+       {
+        "txt": "Les douves sont un fossé.",
+        "vrai": true,
+        "explication": "Elles tiennent l'ennemi loin."
+       }
+      ],
+      "consigne": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Les défenses du château ».",
+       "Le donjon est la tour maîtresse.",
+       "Les douves sont creusées autour du château."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le mot donjon vient du latin dominus, « le seigneur ».",
+        "vrai": true,
+        "explication": "C'est la tour du seigneur."
+       },
+       {
+        "txt": "Le donjon est d'abord une prison.",
+        "vrai": false,
+        "explication": "C'est la résidence du seigneur."
+       },
+       {
+        "txt": "Tous les châteaux ont toutes les défenses.",
+        "vrai": false,
+        "explication": "Il n'existe pas un seul modèle."
+       },
+       {
+        "txt": "Le donjon est l'ultime refuge.",
+        "vrai": true,
+        "explication": "Après la défaite des murs."
+       },
+       {
+        "txt": "Des prisonniers ont parfois été enfermés dans des tours.",
+        "vrai": true,
+        "explication": "Mais ce n'est pas son rôle premier."
+       }
+      ],
+      "consigne": "Colin a noté cinq phrases. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui corrige l'idée « le donjon est une prison ».",
+      "indices": [
+       "Dominus signifie « seigneur ».",
+       "Chaque château a son plan.",
+       "Pour la justification : cherche la phrase qui nie la prison."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche corrige l'idée « le donjon est une prison » ?",
+       "options": [
+        "Le mot vient du latin dominus, « le seigneur » : le donjon est la tour maîtresse, résidence du seigneur et ultime refuge.",
+        "Attention : il n'existe pas un seul modèle. Tous les châteaux n'ont pas toutes ces défenses, et elles apparaissent à des époques différentes.",
+        "Il n'est pas d'abord une prison, même si l'on a parfois enfermé des prisonniers dans des tours.",
+        "Un château fort est conçu pour ralentir et arrêter l'assaillant, obstacle après obstacle."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les mâchicoulis servent à lâcher des projectiles à la verticale.",
+        "vrai": true,
+        "explication": "Sur ceux qui sapent le pied du mur."
+       },
+       {
+        "txt": "Une meurtrière sert à observer et à tirer à l'abri.",
+        "vrai": true,
+        "explication": "Ouverture étroite."
+       },
+       {
+        "txt": "La herse remplace le pont-levis.",
+        "vrai": false,
+        "explication": "Elle le double."
+       },
+       {
+        "txt": "Les douves existent toujours en eau.",
+        "vrai": false,
+        "explication": "Elles peuvent être sèches."
+       },
+       {
+        "txt": "Les défenses apparaissent toutes au même moment.",
+        "vrai": false,
+        "explication": "À des époques différentes."
+       },
+       {
+        "txt": "Tous les châteaux ont toutes ces défenses.",
+        "vrai": false,
+        "explication": "Il n'existe pas un seul modèle."
+       }
+      ],
+      "consigne": "Colin a noté six phrases sur la défense du château. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui corrige l'idée « tous les châteaux se ressemblent ».",
+      "indices": [
+       "La herse double le pont-levis.",
+       "Un fossé peut être sec ou en eau.",
+       "Les défenses évoluent avec les siècles."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche corrige l'idée « tous les châteaux se ressemblent » ?",
+       "options": [
+        "Attention : il n'existe pas un seul modèle. Tous les châteaux n'ont pas toutes ces défenses, et elles apparaissent à des époques différentes.",
+        "Un château fort est conçu pour ralentir et arrêter l'assaillant, obstacle après obstacle.",
+        "Mâchicoulis : galerie en surplomb dont le sol est percé, pour lâcher des projectiles à la verticale sur ceux qui sapent le pied du mur.",
+        "Herse : grille de bois et de fer qui coulisse de haut en bas et double le pont-levis."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -701,7 +1554,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "mahaut",
+     "personnage_emetteur": "colin",
      "probleme_narratif": "Mahaut a vu un garde noter le code du treuil : il faut le reconstituer à partir des indices.",
      "enjeu": "Sans le code, le pont-levis ne se lève pas.",
      "episode_du_roman": "Académie de Nice, « Le château fort » (fiche de vocabulaire, EAC)",
@@ -714,10 +1567,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "les-defenses",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Compagnon (code) ; Artisan (code) ; Maître d'œuvre (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La herse est la grille qui ferme l'entrée, les douves sont le fossé qui entoure le château, le donjon est la tour maîtresse. Ce vocabulaire sert à décrire n'importe quel château fort.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "champs": [
@@ -747,6 +1602,73 @@
        "La tour maîtresse commence aussi par D."
       ],
       "dialogue": "Le treuil est verrouillé par un cadenas. Les chiffres sont dans ce que vous avez appris !"
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Ouverture étroite dans le mur pour observer et tirer à l'abri (10 lettres)",
+        "valeur": "MEURTRIERE",
+        "longueur": 10,
+        "numerique": false
+       },
+       {
+        "libelle": "Muraille qui entoure le château (8 lettres)",
+        "valeur": "ENCEINTE",
+        "longueur": 8,
+        "numerique": false
+       }
+      ],
+      "consigne": "Le treuil de la herse est bloqué par un cadenas à mots. Écris les deux mots demandés (les accents ne comptent pas), puis ouvre.",
+      "indices": [
+       "Les deux mots sont dans la fiche « Les défenses du château ».",
+       "Le premier commence par M et finit par E.",
+       "Le second commence par E."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit le premier mot ?",
+       "options": [
+        "Mâchicoulis : galerie en surplomb dont le sol est percé, pour lâcher des projectiles à la verticale sur ceux qui sapent le pied du mur.",
+        "Meurtrières ou archères : ouvertures étroites pour observer et tirer à l'abri.",
+        "Chemin de ronde : passage au sommet des murs, protégé par des créneaux et des merlons.",
+        "Pont-levis : pont mobile dont le tablier se relève pour fermer l'accès."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Nombre d'obstacles",
+        "valeur": "4",
+        "longueur": 1
+       },
+       {
+        "libelle": "Galerie en surplomb dont le sol est percé",
+        "valeur": "MACHICOULIS",
+        "longueur": 11,
+        "numerique": false
+       }
+      ],
+      "consigne": "Le treuil de la herse est bloqué par un cadenas. Combien d'obstacles un assaillant franchit-il avant la cour (douves, pont-levis, herse, enceinte) ? Quel est le mot de 11 lettres pour la galerie en surplomb dont le sol est percé ? Écris-les pour ouvrir (les accents ne comptent pas).",
+      "indices": [
+       "Compte douves, pont-levis, herse, enceinte.",
+       "Le mot commence par M et finit par S.",
+       "Le mot est dans la fiche, avec la définition « galerie en surplomb »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne la définition du mot ?",
+       "options": [
+        "Meurtrières ou archères : ouvertures étroites pour observer et tirer à l'abri.",
+        "Chemin de ronde : passage au sommet des murs, protégé par des créneaux et des merlons.",
+        "Mâchicoulis : galerie en surplomb dont le sol est percé, pour lâcher des projectiles à la verticale sur ceux qui sapent le pied du mur.",
+        "Douves : fossé, sec ou en eau, qui tient à distance les hommes et les machines de siège."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
      }
     }
    ]
@@ -793,7 +1715,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-du-seigneur",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (tri) ; Apprenti (tri) ; Compagnon (tri) ; Artisan (qcm) ; Maître d'œuvre (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le château a trois fonctions. C'est un lieu de protection (herse, meurtrières, douves), un lieu de vie (grande salle, cuisines, chapelle, chambres) et un symbole de la puissance du seigneur (il y rend la justice, y reçoit, y affiche son blason, y organise des fêtes).",
      "matelot": {
       "colonnes": [
@@ -900,6 +1822,159 @@
        "La chambre et les cuisines servent à la vie de tous les jours."
       ],
       "dialogue": "Entrez. Je suis Aliénor. Quand mon époux est absent, c'est moi qui gouverne le domaine : je compte les récoltes, je paie les hommes d'armes, je reçois les plaintes et je fais rendre la justice. Un château n'est pas seulement une forteresse. C'est une maison, un tribunal, une chapelle, une cuisine, et surtout une démonstration : qui entre ici doit comprendre, du premier coup d'œil, qui commande. La troisième clé est dans le coffre, sous la fenêtre."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "def",
+        "titre": "Se défendre"
+       },
+       {
+        "id": "vie",
+        "titre": "Vivre au château"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La herse",
+        "col": "def"
+       },
+       {
+        "txt": "Les meurtrières",
+        "col": "def"
+       },
+       {
+        "txt": "Les cuisines",
+        "col": "vie"
+       },
+       {
+        "txt": "La chapelle",
+        "col": "vie"
+       }
+      ],
+      "consigne": "Dame Aliénor range ce qu'on trouve au château. Range chaque carte : elle sert à se défendre, ou à vivre. Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « La vie au château » dans la Bibliothèque.",
+       "Ce qui arrête l'ennemi sert à se défendre.",
+       "On mange et on prie dans la colonne « Vivre »."
+      ],
+      "dialogue": "Entrez. Je suis Aliénor. Quand mon époux est absent, c'est moi qui gouverne le domaine : je compte les récoltes, je paie les hommes d'armes, je reçois les plaintes et je fais rendre la justice. Un château n'est pas seulement une forteresse. C'est une maison, un tribunal, une chapelle, une cuisine, et surtout une démonstration : qui entre ici doit comprendre, du premier coup d'œil, qui commande. La troisième clé est dans le coffre, sous la fenêtre."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Où se passe un banquet comme celui-ci au château ?",
+        "options": [
+         "Dans la grande salle",
+         "Dans les douves",
+         "Sur le chemin de ronde",
+         "Au moulin"
+        ],
+        "bonne": 0,
+        "explication": "On y mange, on y reçoit, on y juge."
+       },
+       {
+        "q": "Pourquoi cette image est-elle faite ?",
+        "options": [
+         "Pour montrer la richesse du seigneur",
+         "Pour apprendre à cuisiner",
+         "Pour dater le château",
+         "Pour indiquer les prix"
+        ],
+        "bonne": 0,
+        "explication": "Le banquet affiche le rang."
+       },
+       {
+        "q": "Quelle fonction du château l'image illustre-t-elle surtout ?",
+        "options": [
+         "Le symbole de puissance",
+         "La protection",
+         "Le logement des paysans",
+         "Le marché"
+        ],
+        "bonne": 0,
+        "explication": "Fêtes et banquets affichent la richesse."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Les Très Riches Heures du duc de Berry</b> (vers 1411-1416). Le mois de janvier montre un banquet : le duc reçoit à sa table, entouré de ses invités et de ses serviteurs. Une image faite pour montrer sa richesse.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Le banquet se tient dans la pièce principale.",
+       "Le duc est entouré de ses invités et de ses serviteurs.",
+       "Les fêtes affichent la richesse et le rang."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "La grande salle (ou salle d'honneur) est le cœur de la vie : on y mange, on y reçoit, on y juge.",
+        "Le château est la marque visible de ce pouvoir : sa hauteur, ses tours, son blason peint au-dessus de la porte, ses fêtes, ses chasses et ses tournois affichent la richesse et le rang de la famille.",
+        "Retiens les trois fonctions du château fort : lieu de protection, lieu de vie du seigneur, symbole de sa puissance.",
+        "Le château loge le seigneur, sa famille et toute une maisonnée : pages et écuyers (jeunes nobles en formation), chevaliers et hommes d'armes, chapelain, cuisiniers, palefreniers, servantes."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Entrez. Je suis Aliénor. Quand mon époux est absent, c'est moi qui gouverne le domaine : je compte les récoltes, je paie les hommes d'armes, je reçois les plaintes et je fais rendre la justice. Un château n'est pas seulement une forteresse. C'est une maison, un tribunal, une chapelle, une cuisine, et surtout une démonstration : qui entre ici doit comprendre, du premier coup d'œil, qui commande. La troisième clé est dans le coffre, sous la fenêtre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "pro",
+        "titre": "Protection"
+       },
+       {
+        "id": "vie",
+        "titre": "Vie du seigneur"
+       },
+       {
+        "id": "pui",
+        "titre": "Symbole de puissance"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Le donjon, ultime refuge",
+        "col": "pro"
+       },
+       {
+        "txt": "L'enceinte et ses tours",
+        "col": "pro"
+       },
+       {
+        "txt": "La grande salle et ses repas",
+        "col": "vie"
+       },
+       {
+        "txt": "Les chambres et la chapelle",
+        "col": "vie"
+       },
+       {
+        "txt": "Le blason peint au-dessus de la porte",
+        "col": "pui"
+       },
+       {
+        "txt": "Les tournois et les fêtes",
+        "col": "pui"
+       }
+      ],
+      "consigne": "Dame Aliénor classe les éléments du château selon leur fonction. Range chaque carte dans la bonne colonne, puis choisis la phrase de la fiche qui énumère les trois fonctions.",
+      "indices": [
+       "Trois fonctions : protéger, vivre, montrer.",
+       "Le blason et les fêtes affichent le rang.",
+       "Le donjon protège en dernier recours."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche énumère les trois fonctions du château ?",
+       "options": [
+        "Le château est la marque visible de ce pouvoir : sa hauteur, ses tours, son blason peint au-dessus de la porte, ses fêtes, ses chasses et ses tournois affichent la richesse et le rang de la famille.",
+        "La grande salle (ou salle d'honneur) est le cœur de la vie : on y mange, on y reçoit, on y juge.",
+        "Retiens les trois fonctions du château fort : lieu de protection, lieu de vie du seigneur, symbole de sa puissance.",
+        "Le seigneur commande, protège et juge les habitants de sa seigneurie."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Entrez. Je suis Aliénor. Quand mon époux est absent, c'est moi qui gouverne le domaine : je compte les récoltes, je paie les hommes d'armes, je reçois les plaintes et je fais rendre la justice. Un château n'est pas seulement une forteresse. C'est une maison, un tribunal, une chapelle, une cuisine, et surtout une démonstration : qui entre ici doit comprendre, du premier coup d'œil, qui commande. La troisième clé est dans le coffre, sous la fenêtre."
      }
     },
     {
@@ -915,7 +1990,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "mahaut",
+     "personnage_emetteur": "alienor",
      "probleme_narratif": "Mahaut a servi à la grande salle et sait comment se déroule une journée du seigneur.",
      "enjeu": "Sans connaître sa journée, impossible de servir le seigneur.",
      "episode_du_roman": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org)",
@@ -928,7 +2003,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-du-seigneur",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (qcm) ; Apprenti (qcm) ; Compagnon (qcm) ; Artisan (tri) ; Maître d'œuvre (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le seigneur gouverne sa seigneurie : il reçoit dans la grande salle, rend la justice, fait la guerre quand il le faut, et se divertit par la chasse, les fêtes et les tournois. Son château montre à tous sa richesse et son pouvoir.",
      "matelot": {
       "questions": [
@@ -1014,6 +2089,139 @@
        "Un château bien visible se voit de tout le pays."
       ],
       "dialogue": "Je sers à la grande salle : suivez le seigneur de l'aube au coucher !"
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Où le seigneur reçoit-il ses invités et prend-il ses repas ?",
+        "options": [
+         "Dans la grande salle",
+         "Dans les douves",
+         "Dans le moulin"
+        ],
+        "bonne": 0,
+        "explication": "La grande salle est le cœur de la vie."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « La vie au château ».",
+       "C'est la plus grande pièce du donjon.",
+       "On y mange, on y reçoit."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "jeune",
+        "titre": "Jeune noble en formation"
+       },
+       {
+        "id": "maison",
+        "titre": "Personnel de la maison"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Un page",
+        "col": "jeune"
+       },
+       {
+        "txt": "Un écuyer",
+        "col": "jeune"
+       },
+       {
+        "txt": "Un cuisinier",
+        "col": "maison"
+       },
+       {
+        "txt": "Un palefrenier",
+        "col": "maison"
+       },
+       {
+        "txt": "Une servante",
+        "col": "maison"
+       },
+       {
+        "txt": "Un chapelain",
+        "col": "maison"
+       }
+      ],
+      "consigne": "Dame Aliénor classe les gens du château. Range chaque personne : jeune noble en formation ou personnel de la maison ? Puis choisis la phrase de la fiche qui énumère les habitants du château.",
+      "indices": [
+       "Les pages et les écuyers sont de jeunes nobles.",
+       "Le palefrenier s'occupe des chevaux.",
+       "Le chapelain assure les offices religieux."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche énumère les habitants du château ?",
+       "options": [
+        "Le château loge le seigneur, sa famille et toute une maisonnée : pages et écuyers (jeunes nobles en formation), chevaliers et hommes d'armes, chapelain, cuisiniers, palefreniers, servantes.",
+        "La grande salle (ou salle d'honneur) est le cœur de la vie : on y mange, on y reçoit, on y juge.",
+        "Le seigneur commande, protège et juge les habitants de sa seigneurie.",
+        "Retiens les trois fonctions du château fort : lieu de protection, lieu de vie du seigneur, symbole de sa puissance."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Qui gouverne le domaine pendant l'absence du seigneur ?",
+        "options": [
+         "La dame du château",
+         "Le meunier",
+         "Le roi",
+         "Les paysans"
+        ],
+        "bonne": 0,
+        "explication": "Elle gouverne le domaine."
+       },
+       {
+        "q": "Où Dame Aliénor rend-elle la justice ?",
+        "options": [
+         "Dans la grande salle",
+         "Au moulin",
+         "Dans la chapelle seulement",
+         "Au village"
+        ],
+        "bonne": 0,
+        "explication": "On y juge."
+       },
+       {
+        "q": "Une femme peut-elle posséder une seigneurie ?",
+        "options": [
+         "Oui : certaines en héritent",
+         "Non, jamais",
+         "Seulement une veuve du roi",
+         "Seulement si elle est chevalier"
+        ],
+        "bonne": 0,
+        "explication": "Comme Aliénor d'Aquitaine au XIIe siècle."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Journal de Colin</b> (inventé pour le jeu). « Aujourd'hui, le seigneur est parti auprès du roi. Dame Aliénor dirige la maison, les réserves et les comptes, et elle rend la justice dans la grande salle. »</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 1.",
+      "indices": [
+       "Le seigneur est absent : qui le remplace ?",
+       "La grande salle sert à juger.",
+       "Certaines femmes héritent elles-mêmes d'une seigneurie."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+       "options": [
+        "Certaines femmes héritent elles-mêmes d'une seigneurie, comme Aliénor d'Aquitaine au XIIe siècle.",
+        "Elle dirige la maison, les réserves et les comptes, surveille l'éducation des enfants et, en l'absence de son époux, parti à la guerre ou auprès du roi, elle gouverne le domaine.",
+        "La grande salle (ou salle d'honneur) est le cœur de la vie : on y mange, on y reçoit, on y juge.",
+        "Le seigneur commande, protège et juge les habitants de sa seigneurie."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -1029,7 +2237,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "perrine",
+     "personnage_emetteur": "alienor",
      "probleme_narratif": "Perrine connaît tout le monde au château, mais on lui a raconté de drôles de choses.",
      "enjeu": "Se tromper sur les gens du château, c'est gêner le service.",
      "episode_du_roman": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org) ; Encyclopædia Universalis, « Aliénor d'Aquitaine »",
@@ -1042,7 +2250,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-du-seigneur",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (vraifaux) ; Apprenti (vraifaux) ; Compagnon (vraifaux) ; Artisan (vraifaux) ; Maître d'œuvre (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Au château vivent le seigneur, la dame, leurs enfants, des pages et des écuyers, des hommes d'armes, un chapelain et de nombreux serviteurs. La dame n'est pas une figurante : elle dirige la maison et, en l'absence de son époux, elle gouverne le domaine.",
      "matelot": {
       "affirmations": [
@@ -1110,6 +2318,118 @@
        "Dans un château, beaucoup de personnes travaillent."
       ],
       "dialogue": "Beaucoup de monde vit ici ! Dites-moi ce qui est vrai ou faux sur eux."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un page est un jeune garçon noble au service du seigneur.",
+        "vrai": true,
+        "explication": "Il apprend le métier de chevalier."
+       },
+       {
+        "txt": "La dame du château ne s'occupe que de sa toilette.",
+        "vrai": false,
+        "explication": "Elle dirige la maison."
+       },
+       {
+        "txt": "Au château vivent aussi des cuisiniers.",
+        "vrai": true,
+        "explication": "C'est une grande maison."
+       }
+      ],
+      "consigne": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « La vie au château ».",
+       "Colin est un page.",
+       "Un château est une grande maison : qui cuisine ?"
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La dame dirige la maison, les réserves et les comptes.",
+        "vrai": true,
+        "explication": "C'est son rôle."
+       },
+       {
+        "txt": "En l'absence du seigneur, la dame gouverne le domaine.",
+        "vrai": true,
+        "explication": "Elle le remplace."
+       },
+       {
+        "txt": "La dame n'a aucun pouvoir.",
+        "vrai": false,
+        "explication": "Elle gouverne en l'absence de son époux."
+       },
+       {
+        "txt": "Aliénor d'Aquitaine a hérité d'une seigneurie au XIIe siècle.",
+        "vrai": true,
+        "explication": "Certaines femmes héritent."
+       },
+       {
+        "txt": "Le château n'abrite que le seigneur.",
+        "vrai": false,
+        "explication": "Une maisonnée entière y vit."
+       }
+      ],
+      "consigne": "Dame Aliénor affirme cinq choses sur la vie au château. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui dit ce que fait la dame en l'absence du seigneur.",
+      "indices": [
+       "La dame dirige la maison.",
+       "Certaines femmes héritent d'une seigneurie.",
+       "Pour la justification : cherche la phrase qui parle de l'absence de l'époux."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que fait la dame en l'absence du seigneur ?",
+       "options": [
+        "Certaines femmes héritent elles-mêmes d'une seigneurie, comme Aliénor d'Aquitaine au XIIe siècle.",
+        "Le château loge le seigneur, sa famille et toute une maisonnée : pages et écuyers (jeunes nobles en formation), chevaliers et hommes d'armes, chapelain, cuisiniers, palefreniers, servantes.",
+        "Elle dirige la maison, les réserves et les comptes, surveille l'éducation des enfants et, en l'absence de son époux, parti à la guerre ou auprès du roi, elle gouverne le domaine.",
+        "Le seigneur commande, protège et juge les habitants de sa seigneurie."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le jeune garçon noble entre au service d'un seigneur : il est page.",
+        "rang": 1
+       },
+       {
+        "txt": "Il apprend le métier de chevalier au château.",
+        "rang": 2
+       },
+       {
+        "txt": "Il devient écuyer.",
+        "rang": 3
+       },
+       {
+        "txt": "Il devient chevalier.",
+        "rang": 4
+       }
+      ],
+      "consigne": "Colin explique comment un jeune noble devient chevalier. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui définit le page.",
+      "indices": [
+       "Le page est le plus jeune.",
+       "L'écuyer est entre le page et le chevalier.",
+       "Le chevalier est l'aboutissement de la formation."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite le page et l'écuyer ?",
+       "options": [
+        "Elle dirige la maison, les réserves et les comptes, surveille l'éducation des enfants et, en l'absence de son époux, parti à la guerre ou auprès du roi, elle gouverne le domaine.",
+        "Le château loge le seigneur, sa famille et toute une maisonnée : pages et écuyers (jeunes nobles en formation), chevaliers et hommes d'armes, chapelain, cuisiniers, palefreniers, servantes.",
+        "Certaines femmes héritent elles-mêmes d'une seigneurie, comme Aliénor d'Aquitaine au XIIe siècle.",
+        "Le château est la marque visible de ce pouvoir : sa hauteur, ses tours, son blason peint au-dessus de la porte, ses fêtes, ses chasses et ses tournois affichent la richesse et le rang de la famille."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -1125,7 +2445,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "colin",
+     "personnage_emetteur": "alienor",
      "probleme_narratif": "Colin a rangé le coffre, mais un objet ne vient pas de l'époque du château.",
      "enjeu": "Un intrus laissé là embrouille tout le monde.",
      "episode_du_roman": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org)",
@@ -1138,10 +2458,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-du-seigneur",
      "type": "intrus",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Compagnon (intrus) ; Artisan (intrus) ; Maître d'œuvre (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le seigneur reçoit, juge, chasse, organise des fêtes et commande ses hommes d'armes. Il ne laboure pas lui-même la terre : ce sont les paysans qui cultivent, y compris ses propres champs, par la corvée.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "cartes": [
@@ -1178,6 +2500,100 @@
        "Le seigneur fait travailler les autres sur ses terres."
       ],
       "dialogue": "Quelque chose cloche dans ce coffre ! Trouvez l'intrus."
+     },
+     "lieutenant": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "Rendre la justice",
+        "intrus": false
+       },
+       {
+        "txt": "Organiser un tournoi",
+        "intrus": false
+       },
+       {
+        "txt": "Afficher son blason au-dessus de la porte",
+        "intrus": false
+       },
+       {
+        "txt": "Faire construire un grand château visible de loin",
+        "intrus": false
+       },
+       {
+        "txt": "Labourer lui-même ses champs",
+        "intrus": true
+       }
+      ],
+      "consigne": "Quatre de ces activités montrent la puissance du seigneur. Une seule n'en fait pas partie. Trouve l'intrus, puis choisis la phrase de la fiche qui justifie ton choix.",
+      "indices": [
+       "Le château est la marque visible du pouvoir du seigneur.",
+       "Le seigneur commande et juge.",
+       "Qui travaille la terre de la seigneurie ?"
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ton choix ?",
+       "options": [
+        "Le seigneur commande, protège et juge les habitants de sa seigneurie.",
+        "Le château est la marque visible de ce pouvoir : sa hauteur, ses tours, son blason peint au-dessus de la porte, ses fêtes, ses chasses et ses tournois affichent la richesse et le rang de la famille.",
+        "La grande salle (ou salle d'honneur) est le cœur de la vie : on y mange, on y reçoit, on y juge.",
+        "Retiens les trois fonctions du château fort : lieu de protection, lieu de vie du seigneur, symbole de sa puissance."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le château est un lieu de protection.",
+        "vrai": true,
+        "explication": "Enceinte, tours, herse, donjon."
+       },
+       {
+        "txt": "Le château est un lieu de vie du seigneur.",
+        "vrai": true,
+        "explication": "Grande salle, chambres, chapelle, cuisines."
+       },
+       {
+        "txt": "Le château est un symbole de puissance.",
+        "vrai": true,
+        "explication": "Blason, fêtes, tournois."
+       },
+       {
+        "txt": "Le château ne sert qu'à se défendre.",
+        "vrai": false,
+        "explication": "Il sert aussi à vivre et à montrer."
+       },
+       {
+        "txt": "Le seigneur commande, protège et juge les habitants.",
+        "vrai": true,
+        "explication": "Il exerce le pouvoir."
+       },
+       {
+        "txt": "Le seigneur est élu par les habitants.",
+        "vrai": false,
+        "explication": "Son pouvoir vient de sa terre."
+       }
+      ],
+      "consigne": "Dame Aliénor termine par six phrases. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui résume les fonctions du château.",
+      "indices": [
+       "Trois fonctions à retenir.",
+       "Le château ne sert pas qu'à la guerre.",
+       "Le seigneur n'est pas élu."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche résume les fonctions du château ?",
+       "options": [
+        "Retiens les trois fonctions du château fort : lieu de protection, lieu de vie du seigneur, symbole de sa puissance.",
+        "Le château est la marque visible de ce pouvoir : sa hauteur, ses tours, son blason peint au-dessus de la porte, ses fêtes, ses chasses et ses tournois affichent la richesse et le rang de la famille.",
+        "La grande salle (ou salle d'honneur) est le cœur de la vie : on y mange, on y reçoit, on y juge.",
+        "Le seigneur commande, protège et juge les habitants de sa seigneurie."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     }
    ]
@@ -1224,7 +2640,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-des-paysans",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (ordre) ; Apprenti (ordre) ; Compagnon (ordre) ; Artisan (ordre) ; Maître d'œuvre (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Dans le calendrier des Très Riches Heures : en mars, on laboure et on taille la vigne ; en juin, on fauche les foins ; en juillet, on moissonne et on tond les moutons ; en septembre, on vendange ; en octobre, on sème ; en novembre, on mène les cochons manger les glands dans la forêt.",
      "matelot": {
       "items": [
@@ -1302,6 +2718,127 @@
        "La glandée ferme l'année des travaux : les glands tombent en novembre."
       ],
       "dialogue": "Bonjour. Moi, c'est Mahaut. Vous logez là-haut, nous logeons ici, et ce sont nos bras qui nourrissent tout le monde. Chez nous, l'année ne se compte pas en mois : elle se compte en travaux. Labourer, semer, faucher, moissonner, battre le grain, vendanger, mener les cochons au bois. Ma mère file la laine, garde la basse-cour, fait le pain et travaille aux champs comme mon père. La quatrième clé est dans le coffre à grain. Montrez-moi que vous connaissez notre année."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Labourer et tailler la vigne (mars)",
+        "rang": 1
+       },
+       {
+        "txt": "Faucher les foins (juin)",
+        "rang": 2
+       },
+       {
+        "txt": "Moissonner le blé (juillet)",
+        "rang": 3
+       }
+      ],
+      "consigne": "Mahaut raconte son année. Remets ces travaux dans l'ordre de l'année, du début (en haut) à la fin (en bas). Utilise les flèches ▲ et ▼.",
+      "indices": [
+       "Ouvre la fiche « La vie des paysannes et des paysans » dans la Bibliothèque.",
+       "Mars vient avant juin.",
+       "Le blé se coupe après les foins."
+      ],
+      "dialogue": "Bonjour. Moi, c'est Mahaut. Vous logez là-haut, nous logeons ici, et ce sont nos bras qui nourrissent tout le monde. Chez nous, l'année ne se compte pas en mois : elle se compte en travaux. Labourer, semer, faucher, moissonner, battre le grain, vendanger, mener les cochons au bois. Ma mère file la laine, garde la basse-cour, fait le pain et travaille aux champs comme mon père. La quatrième clé est dans le coffre à grain. Montrez-moi que vous connaissez notre année."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Labourer et tailler la vigne (mars)",
+        "rang": 1
+       },
+       {
+        "txt": "Faire les foins (juin)",
+        "rang": 2
+       },
+       {
+        "txt": "Moissonner et tondre les moutons (juillet)",
+        "rang": 3
+       },
+       {
+        "txt": "Vendanger (septembre)",
+        "rang": 4
+       },
+       {
+        "txt": "Semer le blé d'hiver (octobre)",
+        "rang": 5
+       }
+      ],
+      "consigne": "Mahaut décrit l'année d'après le calendrier des Très Riches Heures. Remets ces cinq travaux dans l'ordre des mois, puis choisis la phrase de la fiche qui donne ce calendrier.",
+      "indices": [
+       "Mars, juin, juillet, septembre, octobre.",
+       "La moisson suit la fenaison.",
+       "Les semailles d'automne viennent après les vendanges."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne le calendrier des travaux ?",
+       "options": [
+        "Pour ne pas épuiser le sol, on laisse une partie des champs au repos : c'est la jachère.",
+        "Les outils : araire ou charrue pour préparer la terre, faucille pour moissonner, faux pour faucher, fléau pour battre le grain.",
+        "Le calendrier des Très Riches Heures du duc de Berry (vers 1411-1416) montre les travaux des mois : labour et taille de la vigne en mars, fenaison en juin, moisson et tonte des moutons en juillet, vendanges en septembre, semailles en octobre, glandée en novembre.",
+        "Les paysannes participent à presque tous les travaux des champs (fenaison, moisson, vendanges)."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bonjour. Moi, c'est Mahaut. Vous logez là-haut, nous logeons ici, et ce sont nos bras qui nourrissent tout le monde. Chez nous, l'année ne se compte pas en mois : elle se compte en travaux. Labourer, semer, faucher, moissonner, battre le grain, vendanger, mener les cochons au bois. Ma mère file la laine, garde la basse-cour, fait le pain et travaille aux champs comme mon père. La quatrième clé est dans le coffre à grain. Montrez-moi que vous connaissez notre année."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de mois s'écoulent entre la fenaison et les vendanges ?",
+        "options": [
+         "3 mois",
+         "1 mois",
+         "6 mois",
+         "9 mois"
+        ],
+        "bonne": 0,
+        "explication": "De juin à septembre : 3 mois."
+       },
+       {
+        "q": "Pourquoi les paysans laissent-ils une partie des champs au repos ?",
+        "options": [
+         "Pour ne pas épuiser le sol",
+         "Parce qu'ils sont fatigués",
+         "Parce que le seigneur l'interdit",
+         "Parce que le blé ne pousse pas l'été"
+        ],
+        "bonne": 0,
+        "explication": "C'est la jachère."
+       },
+       {
+        "q": "Quel travail vient juste après les semailles dans ce calendrier ?",
+        "options": [
+         "La glandée",
+         "Les vendanges",
+         "La moisson",
+         "Le labour"
+        ],
+        "bonne": 0,
+        "explication": "Novembre."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Calendrier de Mahaut</b> (d'après les Très Riches Heures, vers 1411-1416). Mars : labour et taille de la vigne. Juin : fenaison. Juillet : moisson et tonte des moutons. Septembre : vendanges. Octobre : semailles. Novembre : glandée.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Compte les mois entre juin et septembre.",
+       "On laisse une partie des champs en jachère.",
+       "Regarde l'ordre : octobre puis novembre."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Le calendrier des Très Riches Heures du duc de Berry (vers 1411-1416) montre les travaux des mois : labour et taille de la vigne en mars, fenaison en juin, moisson et tonte des moutons en juillet, vendanges en septembre, semailles en octobre, glandée en novembre.",
+        "Pour ne pas épuiser le sol, on laisse une partie des champs au repos : c'est la jachère.",
+        "Les outils : araire ou charrue pour préparer la terre, faucille pour moissonner, faux pour faucher, fléau pour battre le grain.",
+        "L'alimentation : le pain est la base, avec la bouillie, la soupe de légumes et de fèves ; la viande est rare."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour. Moi, c'est Mahaut. Vous logez là-haut, nous logeons ici, et ce sont nos bras qui nourrissent tout le monde. Chez nous, l'année ne se compte pas en mois : elle se compte en travaux. Labourer, semer, faucher, moissonner, battre le grain, vendanger, mener les cochons au bois. Ma mère file la laine, garde la basse-cour, fait le pain et travaille aux champs comme mon père. La quatrième clé est dans le coffre à grain. Montrez-moi que vous connaissez notre année."
      }
     },
     {
@@ -1317,7 +2854,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "perrine",
+     "personnage_emetteur": "mahaut",
      "probleme_narratif": "Perrine vérifie que chaque outil est bien rangé à sa place.",
      "enjeu": "Sans les bons outils, les champs restent en friche.",
      "episode_du_roman": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
@@ -1330,7 +2867,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-des-paysans",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (association) ; Apprenti (association) ; Compagnon (association) ; Artisan (qcm) ; Maître d'œuvre (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La faux coupe l'herbe pour le foin, la faucille coupe les épis de blé, le fléau bat les épis pour en faire sortir les grains. L'araire gratte la terre ; la charrue, plus lourde, la retourne grâce à son versoir.",
      "matelot": {
       "paires": [
@@ -1385,6 +2922,141 @@
        "La faucille sert à la moisson, la faux à la fenaison."
       ],
       "dialogue": "Mahaut se plaint que ses outils sont mêlés. Remettez chacun à sa place."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "La faux",
+        "d": "couper l'herbe"
+       },
+       {
+        "g": "La faucille",
+        "d": "couper le blé"
+       },
+       {
+        "g": "Le fléau",
+        "d": "battre le grain"
+       }
+      ],
+      "consigne": "Relie chaque outil au travail qu'il sert à faire. Clique sur un outil, puis sur son travail.",
+      "indices": [
+       "Ouvre la fiche « La vie des paysannes et des paysans ».",
+       "La faux a un long manche.",
+       "La faucille est petite et courbée."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel travail correspond à la faux ?",
+        "options": [
+         "La fenaison",
+         "La moisson",
+         "Le battage du grain",
+         "Les semailles"
+        ],
+        "bonne": 0,
+        "explication": "Faucher l'herbe pour faire le foin."
+       },
+       {
+        "q": "Quelle partie de la journée est liée à la maison ?",
+        "options": [
+         "Tenir le four",
+         "Faucher le pré",
+         "Aller à la moisson",
+         "Labourer"
+        ],
+        "bonne": 0,
+        "explication": "Elle tient la maison, le jardin et le four."
+       },
+       {
+        "q": "Les paysannes se limitent-elles aux tâches de la maison ?",
+        "options": [
+         "Non : elles participent à presque tous les travaux des champs",
+         "Oui, uniquement",
+         "Oui, car les hommes sont plus forts",
+         "On ne sait pas"
+        ],
+        "bonne": 0,
+        "explication": "Fenaison, moisson, vendanges."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>La journée de Mahaut</b> (inventée pour le jeu). À l'aube, Mahaut prend sa faux pour faucher l'herbe d'un pré. L'après-midi, elle tient le four, puis elle vend des œufs au marché.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "La faux sert à faucher l'herbe.",
+       "Le four fait partie de la maison.",
+       "Relis ce que font les paysannes aux champs."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Elles tiennent aussi la maison, la basse-cour, le jardin et le four, filent et tissent la laine, et vendent les produits au marché.",
+        "Les paysannes participent à presque tous les travaux des champs (fenaison, moisson, vendanges).",
+        "Les outils : araire ou charrue pour préparer la terre, faucille pour moissonner, faux pour faucher, fléau pour battre le grain.",
+        "Les paysans habitent des villages groupés autour de l'église, souvent au pied du château."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "champs",
+        "titre": "Aux champs"
+       },
+       {
+        "id": "maison",
+        "titre": "À la maison"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Faire les foins",
+        "col": "champs"
+       },
+       {
+        "txt": "Moissonner",
+        "col": "champs"
+       },
+       {
+        "txt": "Vendanger",
+        "col": "champs"
+       },
+       {
+        "txt": "Tenir la basse-cour",
+        "col": "maison"
+       },
+       {
+        "txt": "Soigner le jardin",
+        "col": "maison"
+       },
+       {
+        "txt": "Filer la laine",
+        "col": "maison"
+       }
+      ],
+      "consigne": "Mahaut classe les travaux des paysannes. Range chaque carte : travail des champs ou travail de la maison ? Puis choisis la phrase de la fiche qui décrit le travail dans la maison.",
+      "indices": [
+       "Les paysannes font presque tous les travaux des champs.",
+       "Elles tiennent la basse-cour, le jardin et le four.",
+       "Elles filent et tissent la laine."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit le travail à la maison ?",
+       "options": [
+        "Elles tiennent aussi la maison, la basse-cour, le jardin et le four, filent et tissent la laine, et vendent les produits au marché.",
+        "Les paysannes participent à presque tous les travaux des champs (fenaison, moisson, vendanges).",
+        "Les outils : araire ou charrue pour préparer la terre, faucille pour moissonner, faux pour faucher, fléau pour battre le grain.",
+        "Pour ne pas épuiser le sol, on laisse une partie des champs au repos : c'est la jachère."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -1400,7 +3072,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "colin",
+     "personnage_emetteur": "mahaut",
      "probleme_narratif": "Colin visite la maison de Mahaut et note ce qu'il voit.",
      "enjeu": "Sans connaître sa vie, on ne comprend pas ce qu'elle doit au seigneur.",
      "episode_du_roman": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
@@ -1413,7 +3085,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-des-paysans",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (trous) ; Apprenti (trous) ; Compagnon (trous) ; Artisan (tri) ; Maître d'œuvre (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La maison paysanne est souvent faite d'une seule pièce, aux murs de torchis et au toit de chaume. On mange surtout du pain et de la soupe. Les paysannes travaillent aux champs, s'occupent des bêtes, filent la laine et vendent au marché. La pomme de terre et le maïs viennent d'Amérique : ils n'arrivent en Europe qu'après 1492.",
      "matelot": {
       "texte": "<p>Ma maison n'a qu'une seule [[pièce]]. Les murs sont en [[torchis]], un mélange de terre et de paille, et le toit est en [[chaume]]. Nous mangeons surtout du [[pain]] et de la soupe de légumes. Ma mère travaille aux champs, garde les [[poules]] et file la laine.</p>",
@@ -1457,6 +3129,132 @@
        "Le dimanche, on ne travaille pas."
       ],
       "dialogue": "J'ai visité la maison de Mahaut. Complétez mes notes avec les mots qui manquent."
+     },
+     "mousse": {
+      "type": "trous",
+      "texte": "<p>Ma maison n'a qu'une seule [[pièce]]. Les murs sont en [[torchis]]. Le toit est en [[chaume]]. Nous mangeons surtout du [[pain]].</p>",
+      "etiquettes": [
+       "pièce",
+       "torchis",
+       "chaume",
+       "pain",
+       "béton"
+      ],
+      "consigne": "Mahaut décrit sa maison. Clique sur une étiquette, puis sur le trou où elle va. Une étiquette est en trop.",
+      "indices": [
+       "Ouvre la fiche « La vie des paysannes et des paysans ».",
+       "Le toit est fait de paille.",
+       "On mange surtout du pain."
+      ],
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "connu",
+        "titre": "Connu au Moyen Âge"
+       },
+       {
+        "id": "inconnu",
+        "titre": "Inconnu en Europe à cette époque"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Le pain",
+        "col": "connu"
+       },
+       {
+        "txt": "La soupe de légumes",
+        "col": "connu"
+       },
+       {
+        "txt": "Les fèves",
+        "col": "connu"
+       },
+       {
+        "txt": "La pomme de terre",
+        "col": "inconnu"
+       },
+       {
+        "txt": "Le maïs",
+        "col": "inconnu"
+       },
+       {
+        "txt": "La tomate",
+        "col": "inconnu"
+       }
+      ],
+      "consigne": "Mahaut fait la liste de ce qu'on mange au village. Range chaque aliment : connu au Moyen Âge, ou inconnu en Europe ? Puis choisis la phrase de la fiche qui date l'arrivée des aliments d'Amérique.",
+      "indices": [
+       "Ces trois aliments viennent d'Amérique.",
+       "Le pain est la base de l'alimentation.",
+       "L'Amérique est atteinte en 1492."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche date l'arrivée des aliments d'Amérique ?",
+       "options": [
+        "L'alimentation : le pain est la base, avec la bouillie, la soupe de légumes et de fèves ; la viande est rare.",
+        "L'habitat : une maison basse, souvent d'une seule pièce, en torchis sur une armature de bois, couverte de chaume ; un foyer au centre, peu de meubles.",
+        "Pomme de terre, maïs et tomate sont inconnus : ils viennent d'Amérique, après 1492.",
+        "Pour ne pas épuiser le sol, on laisse une partie des champs au repos : c'est la jachère."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les paysans habitent des villages groupés autour de l'église.",
+        "vrai": true,
+        "explication": "Souvent au pied du château."
+       },
+       {
+        "txt": "Les maisons sont souvent d'une seule pièce.",
+        "vrai": true,
+        "explication": "En torchis, couvertes de chaume."
+       },
+       {
+        "txt": "La viande est la base de l'alimentation.",
+        "vrai": false,
+        "explication": "C'est le pain."
+       },
+       {
+        "txt": "La pomme de terre fait partie du repas.",
+        "vrai": false,
+        "explication": "Elle vient d'Amérique, après 1492."
+       },
+       {
+        "txt": "L'immense majorité de la population vit à la campagne.",
+        "vrai": true,
+        "explication": "Au Moyen Âge."
+       },
+       {
+        "txt": "Les maisons ont beaucoup de meubles.",
+        "vrai": false,
+        "explication": "Peu de meubles."
+       }
+      ],
+      "consigne": "Mahaut a noté six phrases sur la vie au village. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui décrit l'habitat.",
+      "indices": [
+       "Le pain est la base.",
+       "L'habitat est simple.",
+       "La pomme de terre n'est pas encore en Europe."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit l'habitat ?",
+       "options": [
+        "L'alimentation : le pain est la base, avec la bouillie, la soupe de légumes et de fèves ; la viande est rare.",
+        "Les paysans habitent des villages groupés autour de l'église, souvent au pied du château.",
+        "L'habitat : une maison basse, souvent d'une seule pièce, en torchis sur une armature de bois, couverte de chaume ; un foyer au centre, peu de meubles.",
+        "Au Moyen Âge, l'immense majorité de la population vit à la campagne."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -1472,7 +3270,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "josselin",
+     "personnage_emetteur": "mahaut",
      "probleme_narratif": "Josselin cache le mot du village dans des lettres à remettre en ordre.",
      "enjeu": "Sans le mot caché, la clé de Josselin reste muette.",
      "episode_du_roman": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
@@ -1485,10 +3283,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "vie-des-paysans",
      "type": "lettres",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Compagnon (lettres) ; Artisan (lettres) ; Maître d'œuvre (lettres). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le village, c'est l'ensemble des maisons des paysans, serrées autour de l'église, avec les jardins, les champs, les prés et les bois qui les entourent.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "cible": [
@@ -1508,6 +3308,66 @@
        "C'est le lieu où vit Mahaut."
       ],
       "dialogue": "La cloche cache un mot. Remettez les lettres dans l'ordre pour l'entendre."
+     },
+     "lieutenant": {
+      "type": "lettres",
+      "cible": [
+       "J",
+       "A",
+       "C",
+       "H",
+       "E",
+       "R",
+       "E"
+      ],
+      "texte": "<p>Le soir, Mahaut raconte : « Chez nous, on laisse un champ en repos une année sur deux. <b data-l='J'>J</b>'aime ce champ sauvage : les fleurs y p<b data-l='O'>o</b>ussent, les oiseaux s'y <b data-l='C'>c</b>achent. Avec mon frère, nous y cueillons des <b data-l='H'>h</b>erbes. L'<b data-l='A'>a</b>utre jour, mon père a dit : à l'automne, on <b data-l='E'>e</b>n fera un <b data-l='P'>p</b>ré. Ma mère <b data-l='R'>r</b>it, car l'herbe y est haute ; au retour, <b data-l='E'>e</b>lle est ravie. »</p>",
+      "consigne": "Trouve le mot qui correspond à cette définition : « Champ laissé au repos pour que la terre redevienne fertile. » Ses lettres sont cachées en couleur dans le texte de Mahaut, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Trois lettres sont des pièges.",
+      "indices": [
+       "Le mot désigne un champ qu'on laisse se reposer.",
+       "Il commence par J.",
+       "Il finit par ERE."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit ce mot ?",
+       "options": [
+        "Les outils : araire ou charrue pour préparer la terre, faucille pour moissonner, faux pour faucher, fléau pour battre le grain.",
+        "Le calendrier des Très Riches Heures du duc de Berry (vers 1411-1416) montre les travaux des mois : labour et taille de la vigne en mars, fenaison en juin, moisson et tonte des moutons en juillet, vendanges en septembre, semailles en octobre, glandée en novembre.",
+        "Pour ne pas épuiser le sol, on laisse une partie des champs au repos : c'est la jachère.",
+        "Les paysannes participent à presque tous les travaux des champs (fenaison, moisson, vendanges)."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
+     },
+     "second": {
+      "type": "lettres",
+      "cible": [
+       "T",
+       "O",
+       "R",
+       "C",
+       "H",
+       "I",
+       "S"
+      ],
+      "texte": "<p>Mahaut décrit sa maison : « Le soir, on <b data-l='H'>h</b>abille les enfants près du foyer, au centre de la pièce, car il n'y a qu'une seule pièce. Mon père <b data-l='T'>t</b>ouche le mur de terre et de paille pour voir s'il tient. On <b data-l='I'>i</b>nstalle la paille, on <b data-l='C'>c</b>ouvre le feu, on <b data-l='S'>s</b>ouffle la chandelle. Ma mère <b data-l='R'>r</b>épète : « un seul <b data-l='O'>o</b>util ne suffit pas ». Le <b data-l='P'>p</b>ain est sur la table, <b data-l='M'>m</b>ais la soupe est chaude. »</p>",
+      "consigne": "Trouve le mot qui correspond à cette définition : « Mélange de terre et de paille qui forme les murs des maisons. » Ses lettres sont cachées en couleur dans le texte de Mahaut, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Trois lettres sont des pièges.",
+      "indices": [
+       "Le mot est dans la fiche, partie « L'habitat ».",
+       "Il commence par T.",
+       "Il finit par S."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit les murs de la maison ?",
+       "options": [
+        "L'habitat : une maison basse, souvent d'une seule pièce, en torchis sur une armature de bois, couverte de chaume ; un foyer au centre, peu de meubles.",
+        "L'alimentation : le pain est la base, avec la bouillie, la soupe de légumes et de fèves ; la viande est rare.",
+        "Pour ne pas épuiser le sol, on laisse une partie des champs au repos : c'est la jachère.",
+        "Les outils : araire ou charrue pour préparer la terre, faucille pour moissonner, faux pour faucher, fléau pour battre le grain."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
      }
     }
    ]
@@ -1554,7 +3414,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "seigneur-et-paysans",
      "type": "intrus",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (intrus) ; Apprenti (intrus) ; Compagnon (intrus) ; Artisan (intrus) ; Maître d'œuvre (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le cens, la corvée, le champart et les banalités sont dus au seigneur. La dîme, environ un dixième de la récolte, est versée à l'Église : elle sert à entretenir les prêtres et les églises, et à aider les pauvres.",
      "matelot": {
       "cartes": [
@@ -1622,6 +3482,131 @@
        "Le curé du village en profite."
       ],
       "dialogue": "Entrez, et attention à la poussière. Je suis Perrine, la meunière. Ce moulin n'est pas à moi : il est au seigneur. Comme le four, comme le pressoir. Personne n'a le droit de moudre ailleurs, et chaque sac laisse ici sa part. On appelle cela les banalités. Il y a aussi le cens, versé chaque année pour la terre, et la corvée, les journées de travail dues sur les champs du seigneur. En échange, il doit nous protéger et nous laisser entrer au château en cas de danger. Est-ce équitable ? Regardez de près. La cinquième clé est posée sur la meule."
+     },
+     "mousse": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "La corvée",
+        "intrus": false
+       },
+       {
+        "txt": "Le cens",
+        "intrus": false
+       },
+       {
+        "txt": "Le four banal",
+        "intrus": false
+       },
+       {
+        "txt": "La dîme",
+        "intrus": true
+       }
+      ],
+      "consigne": "Le paysan doit trois de ces charges au seigneur. Une autre est versée à l'Église. Trouve-la. Clique sur l'intrus, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Seigneurs et paysans » dans la Bibliothèque.",
+       "Le mot dîme fait penser au nombre dix.",
+       "Elle ne va pas au château mais à l'église."
+      ],
+      "dialogue": "Entrez, et attention à la poussière. Je suis Perrine, la meunière. Ce moulin n'est pas à moi : il est au seigneur. Comme le four, comme le pressoir. Personne n'a le droit de moudre ailleurs, et chaque sac laisse ici sa part. On appelle cela les banalités. Il y a aussi le cens, versé chaque année pour la terre, et la corvée, les journées de travail dues sur les champs du seigneur. En échange, il doit nous protéger et nous laisser entrer au château en cas de danger. Est-ce équitable ? Regardez de près. La cinquième clé est posée sur la meule."
+     },
+     "lieutenant": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "La corvée",
+        "intrus": false
+       },
+       {
+        "txt": "Le cens",
+        "intrus": false
+       },
+       {
+        "txt": "Le champart",
+        "intrus": false
+       },
+       {
+        "txt": "Les banalités",
+        "intrus": false
+       },
+       {
+        "txt": "La dîme",
+        "intrus": true
+       }
+      ],
+      "consigne": "Perrine a noté cinq charges. Quatre sont dues au seigneur. Une est due à l'Église. Trouve l'intrus, puis choisis la phrase de la fiche qui justifie ton choix.",
+      "indices": [
+       "Une charge ne va pas au château.",
+       "La dîme représente environ un dixième des récoltes.",
+       "Pour la justification : cherche la phrase qui nomme l'Église."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ton choix ?",
+       "options": [
+        "le champart : une part de la récolte ;",
+        "La dîme (environ un dixième des récoltes) n'est pas due au seigneur mais à l'Église.",
+        "les banalités : obligation d'utiliser, contre paiement, le moulin, le four et le pressoir du seigneur.",
+        "le cens : somme d'argent fixe versée chaque année pour la tenure ;"
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Entrez, et attention à la poussière. Je suis Perrine, la meunière. Ce moulin n'est pas à moi : il est au seigneur. Comme le four, comme le pressoir. Personne n'a le droit de moudre ailleurs, et chaque sac laisse ici sa part. On appelle cela les banalités. Il y a aussi le cens, versé chaque année pour la terre, et la corvée, les journées de travail dues sur les champs du seigneur. En échange, il doit nous protéger et nous laisser entrer au château en cas de danger. Est-ce équitable ? Regardez de près. La cinquième clé est posée sur la meule."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Comment s'appelle la journée de travail gratuit sur la réserve ?",
+        "options": [
+         "La corvée",
+         "Le cens",
+         "La dîme",
+         "La banalité"
+        ],
+        "bonne": 0,
+        "explication": "Travail gratuit sur la réserve."
+       },
+       {
+        "q": "Qui reçoit le dixième de la récolte ?",
+        "options": [
+         "L'Église",
+         "Le seigneur",
+         "Le roi",
+         "Le meunier"
+        ],
+        "bonne": 0,
+        "explication": "La dîme est due à l'Église."
+       },
+       {
+        "q": "Les 12 deniers par an pour la tenure sont…",
+        "options": [
+         "le cens",
+         "la dîme",
+         "la corvée",
+         "le champart"
+        ],
+        "bonne": 0,
+        "explication": "Somme d'argent fixe versée chaque année."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Registre de Perrine</b> (inventé pour le jeu). Mahaut doit une journée de travail gratuit par semaine sur la réserve, 12 deniers par an pour sa tenure, et une part de sa récolte. Elle verse aussi un dixième de sa récolte à l'église.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Une charge est un travail, une autre de l'argent, une autre une part de récolte.",
+       "Le dixième ne va pas au seigneur.",
+       "Le cens est une somme d'argent fixe."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "La dîme (environ un dixième des récoltes) n'est pas due au seigneur mais à l'Église.",
+        "la corvée : journées de travail gratuit sur la réserve (labours, fenaison, charrois…) ;",
+        "le champart : une part de la récolte ;",
+        "le cens : somme d'argent fixe versée chaque année pour la tenure ;"
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Entrez, et attention à la poussière. Je suis Perrine, la meunière. Ce moulin n'est pas à moi : il est au seigneur. Comme le four, comme le pressoir. Personne n'a le droit de moudre ailleurs, et chaque sac laisse ici sa part. On appelle cela les banalités. Il y a aussi le cens, versé chaque année pour la terre, et la corvée, les journées de travail dues sur les champs du seigneur. En échange, il doit nous protéger et nous laisser entrer au château en cas de danger. Est-ce équitable ? Regardez de près. La cinquième clé est posée sur la meule."
      }
     },
     {
@@ -1637,7 +3622,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "colin",
+     "personnage_emetteur": "perrine",
      "probleme_narratif": "Colin lit le registre de Perrine, mais des mots y manquent.",
      "enjeu": "Sans le registre, on ne sait plus ce que chacun doit.",
      "episode_du_roman": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
@@ -1650,7 +3635,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "seigneur-et-paysans",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (trous) ; Apprenti (trous) ; Compagnon (trous) ; Artisan (trous) ; Maître d'œuvre (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les paysans doivent au seigneur la corvée, le cens et les banalités (moulin, four, pressoir). Le seigneur rend la justice. En échange, il doit protéger les habitants de la seigneurie.",
      "matelot": {
       "texte": "<p>Chaque paysan doit travailler gratuitement quelques jours sur les terres du seigneur : c'est la [[corvée]]. Il doit moudre son grain au [[moulin]] du seigneur et cuire son pain à son [[four]], en laissant une part. En échange, le seigneur doit le [[protéger]].</p>",
@@ -1692,6 +3677,86 @@
        "Le seigneur juge : il rend la justice."
       ],
       "dialogue": "Perrine tient ce registre avec soin. Retrouvez les mots qui y manquent."
+     },
+     "mousse": {
+      "type": "trous",
+      "texte": "<p>Le paysan travaille gratuitement pour le seigneur : c'est la [[corvée]]. Il doit moudre son grain au [[moulin]] du seigneur. En échange, le seigneur doit le [[protéger]].</p>",
+      "etiquettes": [
+       "corvée",
+       "moulin",
+       "protéger",
+       "école"
+      ],
+      "consigne": "Complète le registre de Perrine. Clique sur une étiquette, puis sur le trou où elle va. Une étiquette est en trop.",
+      "indices": [
+       "Ouvre la fiche « Seigneurs et paysans ».",
+       "Le travail gratuit s'appelle la corvée.",
+       "Le seigneur doit aider les habitants en cas de danger."
+      ],
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "lieutenant": {
+      "type": "trous",
+      "texte": "<p>La seigneurie se divise en deux : la [[réserve]], que le seigneur fait cultiver pour lui, et les [[tenures]], confiées aux familles paysannes. Les paysans doivent utiliser, contre paiement, le moulin, le four et le pressoir du seigneur : ce sont les [[banalités]]. Ils versent aussi chaque année le [[cens]].</p>",
+      "etiquettes": [
+       "réserve",
+       "tenures",
+       "banalités",
+       "cens",
+       "dîme",
+       "école",
+       "marché",
+       "salaire"
+      ],
+      "consigne": "Perrine a écrit le registre de la seigneurie, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « banalités ».",
+      "indices": [
+       "La fiche commence par la définition de la seigneurie.",
+       "Moulin, four, pressoir : ce sont des obligations.",
+       "Le cens est une somme d'argent."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « banalités » ?",
+       "options": [
+        "le cens : somme d'argent fixe versée chaque année pour la tenure ;",
+        "les banalités : obligation d'utiliser, contre paiement, le moulin, le four et le pressoir du seigneur.",
+        "La dîme (environ un dixième des récoltes) n'est pas due au seigneur mais à l'Église.",
+        "la corvée : journées de travail gratuit sur la réserve (labours, fenaison, charrois…) ;"
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>Dans la seigneurie, les paysans n'ont pas le droit de [[moudre]] leur grain ailleurs qu'au moulin du seigneur. Le meunier garde une partie de la [[farine]] pour payer ce service. Cette obligation s'appelle une [[banalité]]. Le serf est attaché à la [[terre]] du seigneur, mais il n'est pas un [[esclave]].</p>",
+      "etiquettes": [
+       "moudre",
+       "farine",
+       "banalité",
+       "terre",
+       "esclave",
+       "dîme",
+       "château",
+       "marché",
+       "école"
+      ],
+      "consigne": "Perrine compare deux paysans. Complète son texte. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui explique ce que le meunier garde.",
+      "indices": [
+       "Le moulin est la banalité la plus connue.",
+       "Le serf n'est pas libre, mais il a une maison et une famille.",
+       "La farine sort du moulin."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique ce que le meunier garde ?",
+       "options": [
+        "les banalités : obligation d'utiliser, contre paiement, le moulin, le four et le pressoir du seigneur.",
+        "Un serf n'est pas un esclave : il a une maison, une famille, une terre à cultiver.",
+        "C'est un échange, mais c'est le seigneur qui fixe les règles et qui en profite le plus.",
+        "Le meunier garde une partie de la farine pour payer ce service."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
      }
     },
     {
@@ -1707,7 +3772,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "josselin",
+     "personnage_emetteur": "perrine",
      "probleme_narratif": "Josselin demande si c'est vraiment « donnant, donnant ».",
      "enjeu": "Sans équilibre entre le donné et le reçu, le domaine se divise.",
      "episode_du_roman": "Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des paysans au Moyen Âge",
@@ -1720,7 +3785,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "seigneur-et-paysans",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Manœuvre (tri) ; Apprenti (tri) ; Compagnon (tri) ; Artisan (tri) ; Maître d'œuvre (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le paysan doit beaucoup : travail, argent, part des récoltes, paiements au moulin et au four. Le seigneur doit la protection, le refuge et la justice. C'est un échange, mais un échange très inégal : c'est le seigneur qui fixe les règles.",
      "matelot": {
       "colonnes": [
@@ -1819,6 +3884,164 @@
        "La colonne du paysan est la plus longue."
       ],
       "dialogue": "Les paysans donnent beaucoup, mais ils reçoivent aussi. Triez ce qui va dans chaque sens."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "pay",
+        "titre": "Le paysan doit au seigneur"
+       },
+       {
+        "id": "sei",
+        "titre": "Le seigneur doit au paysan"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Travailler gratuitement sur ses terres",
+        "col": "pay"
+       },
+       {
+        "txt": "Payer le cens",
+        "col": "pay"
+       },
+       {
+        "txt": "Le protéger en cas de guerre",
+        "col": "sei"
+       },
+       {
+        "txt": "Rendre la justice",
+        "col": "sei"
+       }
+      ],
+      "consigne": "Range chaque étiquette : ce que le paysan doit au seigneur, ou ce que le seigneur doit au paysan. Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « Seigneurs et paysans ».",
+       "Qui travaille sur les terres de l'autre ?",
+       "Le seigneur doit protéger et juger."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "trav",
+        "titre": "Du travail"
+       },
+       {
+        "id": "arg",
+        "titre": "De l'argent"
+       },
+       {
+        "id": "part",
+        "titre": "Une part de produit"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La corvée",
+        "col": "trav"
+       },
+       {
+        "txt": "Les journées de labour sur la réserve",
+        "col": "trav"
+       },
+       {
+        "txt": "Le cens",
+        "col": "arg"
+       },
+       {
+        "txt": "La somme versée chaque année pour la tenure",
+        "col": "arg"
+       },
+       {
+        "txt": "Le champart",
+        "col": "part"
+       },
+       {
+        "txt": "Une part de la récolte",
+        "col": "part"
+       }
+      ],
+      "consigne": "Perrine range les redevances selon leur nature. Range chaque carte, puis choisis la phrase de la fiche qui définit le cens.",
+      "indices": [
+       "Corvée : on donne des journées. Cens : on donne de l'argent. Champart : on donne une part.",
+       "Le cens est une somme fixe.",
+       "Le champart est proportionnel à la récolte."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit le cens ?",
+       "options": [
+        "la corvée : journées de travail gratuit sur la réserve (labours, fenaison, charrois…) ;",
+        "le cens : somme d'argent fixe versée chaque année pour la tenure ;",
+        "le champart : une part de la récolte ;",
+        "les banalités : obligation d'utiliser, contre paiement, le moulin, le four et le pressoir du seigneur."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "serf",
+        "titre": "Serf seulement"
+       },
+       {
+        "id": "vilain",
+        "titre": "Vilain seulement"
+       },
+       {
+        "id": "deux",
+        "titre": "Serf et vilain"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Attaché à la terre du seigneur",
+        "col": "serf"
+       },
+       {
+        "txt": "Ne peut pas se marier hors de la seigneurie sans autorisation",
+        "col": "serf"
+       },
+       {
+        "txt": "Paysan libre",
+        "col": "vilain"
+       },
+       {
+        "txt": "Peut quitter la seigneurie",
+        "col": "vilain"
+       },
+       {
+        "txt": "Doit des redevances au seigneur",
+        "col": "deux"
+       },
+       {
+        "txt": "A une maison et une famille",
+        "col": "deux"
+       }
+      ],
+      "consigne": "Perrine classe des situations selon le statut du paysan. Range chaque carte : serf, vilain (paysan libre), ou les deux. Puis choisis la phrase de la fiche qui définit le serf.",
+      "indices": [
+       "Un serf n'est pas libre.",
+       "Un vilain est libre, mais il doit les redevances.",
+       "Les deux ont une maison et une famille."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit le serf ?",
+       "options": [
+        "À partir des XIIe et XIIIe siècles, beaucoup de serfs obtiennent leur liberté ; les paysans libres sont appelés vilains, mais ils doivent eux aussi les redevances.",
+        "Un serf n'est pas un esclave : il a une maison, une famille, une terre à cultiver.",
+        "Certains paysans sont des serfs : ils ne sont pas libres, car ils sont attachés à la terre du seigneur ; ils ne peuvent ni la quitter ni se marier hors de la seigneurie sans autorisation, et paient des taxes particulières.",
+        "C'est un échange, mais c'est le seigneur qui fixe les règles et qui en profite le plus."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -1834,7 +4057,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "alienor",
+     "personnage_emetteur": "perrine",
      "probleme_narratif": "Dame Aliénor veut que l'on place sur le plan les deux vies, celle du château et celle du village.",
      "enjeu": "Sans cette dernière réponse, la herse ne se lève pas.",
      "episode_du_roman": "Lumni, la vie au château fort ; L'Histoire par l'image (histoire-image.org) ; Vikidia, « Vie des paysans au Moyen Âge » ; Lumni, la vie des ",
@@ -1847,10 +4070,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "seigneur-et-paysans",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Compagnon (plan) ; Artisan (plan) ; Maître d'œuvre (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Seigneurs et paysans vivent côte à côte, mais leurs vies sont très différentes : château de pierre ou maison de torchis, viande et gibier ou pain et soupe, gouverner et combattre ou cultiver la terre.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "titre": "Le seigneur | Le paysan",
@@ -1898,6 +4123,116 @@
        "Le paysan cultive et élève les bêtes."
       ],
       "dialogue": "Dernière étape : placez sur le plan les deux vies côte à côte, et la herse se lèvera."
+     },
+     "lieutenant": {
+      "type": "plan",
+      "titre": "Libre ou serf ?",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Un serf est…",
+        "reponse": "attaché à la terre du seigneur"
+       },
+       {
+        "libelle": "Un serf n'est pas…",
+        "reponse": "un esclave"
+       },
+       {
+        "libelle": "Un vilain est…",
+        "reponse": "un paysan libre"
+       },
+       {
+        "libelle": "Un vilain doit…",
+        "reponse": "les redevances"
+       },
+       {
+        "libelle": "La dîme est due…",
+        "reponse": "à l'Église"
+       },
+       {
+        "libelle": "Le seigneur doit…",
+        "reponse": "protéger et rendre la justice"
+       }
+      ],
+      "etiquettes": [
+       "attaché à la terre du seigneur",
+       "un esclave",
+       "un paysan libre",
+       "les redevances",
+       "à l'Église",
+       "protéger et rendre la justice",
+       "au roi",
+       "des vacances"
+      ],
+      "consigne": "Perrine complète un tableau sur les statuts des paysans. Place chaque étiquette dans la bonne case. Deux étiquettes sont en trop. Puis choisis la phrase de la fiche qui explique ce qu'est un serf.",
+      "indices": [
+       "Le serf n'est pas libre, mais ce n'est pas un esclave.",
+       "Un vilain est un paysan libre, mais il doit tout de même les redevances.",
+       "La dîme n'est pas due au seigneur."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique ce qu'est un serf ?",
+       "options": [
+        "Un serf n'est pas un esclave : il a une maison, une famille, une terre à cultiver.",
+        "Certains paysans sont des serfs : ils ne sont pas libres, car ils sont attachés à la terre du seigneur ; ils ne peuvent ni la quitter ni se marier hors de la seigneurie sans autorisation, et paient des taxes particulières.",
+        "À partir des XIIe et XIIIe siècles, beaucoup de serfs obtiennent leur liberté ; les paysans libres sont appelés vilains, mais ils doivent eux aussi les redevances.",
+        "En échange, le seigneur doit protéger les habitants, leur ouvrir le château en cas de danger et rendre la justice."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "En échange des redevances, le seigneur doit protéger les habitants.",
+        "vrai": true,
+        "explication": "Et leur ouvrir le château en cas de danger."
+       },
+       {
+        "txt": "Le seigneur doit aussi rendre la justice.",
+        "vrai": true,
+        "explication": "C'est un de ses devoirs."
+       },
+       {
+        "txt": "Les règles de l'échange sont fixées à égalité entre le seigneur et le paysan.",
+        "vrai": false,
+        "explication": "C'est le seigneur qui fixe les règles."
+       },
+       {
+        "txt": "Le serf est un esclave.",
+        "vrai": false,
+        "explication": "Il a une maison, une famille, une terre à cultiver."
+       },
+       {
+        "txt": "Beaucoup de serfs obtiennent leur liberté aux XIIe et XIIIe siècles.",
+        "vrai": true,
+        "explication": "Les paysans libres sont appelés vilains."
+       },
+       {
+        "txt": "La dîme est due au seigneur.",
+        "vrai": false,
+        "explication": "Elle est due à l'Église."
+       }
+      ],
+      "consigne": "Perrine termine par six phrases sur l'échange entre le seigneur et les paysans. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui juge cet échange.",
+      "indices": [
+       "Le seigneur a des devoirs, mais il fixe les règles.",
+       "Un serf n'est pas un esclave.",
+       "La dîme va à l'Église."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche juge l'échange entre seigneur et paysans ?",
+       "options": [
+        "C'est un échange, mais c'est le seigneur qui fixe les règles et qui en profite le plus.",
+        "En échange, le seigneur doit protéger les habitants, leur ouvrir le château en cas de danger et rendre la justice.",
+        "La seigneurie est le domaine du seigneur. Elle se divise en deux : la réserve, que le seigneur fait cultiver pour lui, et les tenures, confiées aux familles paysannes.",
+        "À partir des XIIe et XIIIe siècles, beaucoup de serfs obtiennent leur liberté ; les paysans libres sont appelés vilains, mais ils doivent eux aussi les redevances."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     }
    ]

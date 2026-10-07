@@ -4,56 +4,103 @@
    "nom": "Colin",
    "court": "Colin",
    "voix": {
-    "rate": 0.95,
-    "pitch": 1.0
+    "edge": "fr-FR-RemyMultilingualNeural",
+    "nom": "Remy",
+    "rate": 1.1,
+    "pitch": 1.25
    },
    "ton": "Vif et bavard, un peu fier de sa mission de page",
    "fiche": "Jeune page au service du seigneur, 11 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "garçon",
+    "coiffure": "courte",
+    "cheveux": "#a8844a",
+    "peau": "#f0c9ad",
+    "habit": "#7a2e3a",
+    "barbe": false,
+    "lunettes": false
+   }
   },
   "josselin": {
    "nom": "Maître Josselin",
    "court": "Josselin",
    "voix": {
-    "rate": 1.0,
-    "pitch": 1.15
+    "edge": "fr-FR-HenriNeural",
+    "nom": "Henri",
+    "rate": 0.92,
+    "pitch": 0.9
    },
    "ton": "Franc et pratique, parle comme un homme de chantier",
    "fiche": "Maître maçon du chantier du château",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "courte",
+    "cheveux": "#5a3a22",
+    "peau": "#dba680",
+    "habit": "#6a4428",
+    "barbe": true,
+    "lunettes": false
+   }
   },
   "alienor": {
    "nom": "Dame Aliénor",
    "court": "Aliénor",
    "voix": {
-    "rate": 0.9,
-    "pitch": 0.9
+    "edge": "fr-FR-VivienneMultilingualNeural",
+    "nom": "Vivienne",
+    "rate": 0.92,
+    "pitch": 0.95
    },
    "ton": "Posée, autoritaire mais juste",
    "fiche": "Dame du château, elle gouverne le domaine",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "longue",
+    "cheveux": "#5a3a22",
+    "peau": "#e6c2a6",
+    "habit": "#3a3a52",
+    "lunettes": false
+   }
   },
   "mahaut": {
    "nom": "Mahaut",
    "court": "Mahaut",
    "voix": {
-    "rate": 1.05,
-    "pitch": 1.2
+    "edge": "fr-FR-EloiseNeural",
+    "nom": "Eloise",
+    "rate": 1.08,
+    "pitch": 1.05
    },
    "ton": "Directe, rieuse, connaît la terre",
    "fiche": "Jeune paysanne du village, 11 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "fille",
+    "coiffure": "longue",
+    "cheveux": "#2a1c14",
+    "peau": "#dba680",
+    "habit": "#4a5a2a",
+    "lunettes": false
+   }
   },
   "perrine": {
    "nom": "Perrine",
    "court": "Perrine",
    "voix": {
-    "rate": 0.92,
-    "pitch": 1.05
+    "edge": "fr-FR-DeniseNeural",
+    "nom": "Denise",
+    "rate": 1.05,
+    "pitch": 1.0
    },
    "ton": "Maligne, un brin moqueuse, compte tout",
    "fiche": "Meunière du moulin du seigneur",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "courte",
+    "cheveux": "#9c9c98",
+    "peau": "#e6c2a6",
+    "habit": "#5a3a62",
+    "lunettes": false
+   }
   }
  }
 }

@@ -45,7 +45,8 @@ def main(jeu):
     data = os.path.join(dest, "assets", "data")
     lire = lambda n: json.load(open(os.path.join(data, n), encoding="utf-8"))
     E, L, P, DL = lire("enigmes.json"), lire("lecons.json"), lire("personnages.json"), lire("dialogues.json")
-    theme = importlib.import_module(jeu + "_theme")
+    mod = jeu.replace("-", "_")
+    theme = importlib.import_module(mod + "_theme")
     fiches = {l["id"]: texte(" ".join(str(l.get(k, "")) for k in ("essentiel", "approfondi", "expert"))) for l in L["lecons"]}
     par_id = {e["id"]: e for s in E["escales"] for e in s["enigmes"]}
     svg = lambda qid, g: __import__("aide").svg_de(par_id[qid], g)
@@ -55,7 +56,7 @@ def main(jeu):
     n = 1
     while True:
         try:
-            m = importlib.import_module(f"{jeu}_s{n}")
+            m = importlib.import_module(f"{mod}_s{n}")
         except ModuleNotFoundError:
             break
         nouveaux.update(m.donnees(svg, bloc))
@@ -75,6 +76,18 @@ def main(jeu):
                 base = e.get(voisin) or e.get("timonier") or e.get("matelot")
                 b["dialogue"] = base["dialogue"] if e["ordre"] == 1 else DIALOGUES[b["type"]]
                 e[g] = b
+                if b["type"] == "lettres":
+                    marq = re.findall(r"data-l='(.)'", b["texte"])
+                    reste = list(marq)
+                    for c in b["cible"]:
+                        if c in reste:
+                            reste.remove(c)
+                        else:
+                            erreurs.append(f"{e['id']} {g} : la lettre {c} n'est pas cachée dans le texte")
+                    if len(reste) < 2:
+                        erreurs.append(f"{e['id']} {g} : au moins deux lettres pièges sont nécessaires (il y en a {len(reste)})")
+                    if "".join(marq[:len(b["cible"])]) == "".join(b["cible"]):
+                        erreurs.append(f"{e['id']} {g} : les lettres sont dans l'ordre du mot (elles doivent être dans le désordre)")
                 j = b.get("justification")
                 if j:
                     ok = j["options"][j["bonne"]]
@@ -82,13 +95,14 @@ def main(jeu):
                         erreurs.append(f"{e['id']} {g} : la phrase de justification n'est pas dans la fiche « {e['lecon']} » : {ok[:70]}")
                     if len(set(j["options"])) != len(j["options"]):
                         erreurs.append(f"{e['id']} {g} : options de justification en double")
-            if e["ordre"] == 4:
+            extra = e.get("niveaux") in (["timonier"], ["timonier", "lieutenant", "second"])      # énigme réservée au CM2 dans le jeu d'origine
+            if extra:
                 e["niveaux"] = ["timonier", "lieutenant", "second"]
                 for g in ("mousse", "matelot"):
                     e.pop(g, None)
             else:
                 e.pop("niveaux", None)
-            if e["id"] in nouveaux and e["ordre"] < 4:
+            if e["id"] in nouveaux and not extra:
                 missing = [g for g in GRADES if g not in e]
                 if missing:
                     erreurs.append(f"{e['id']} : grades manquants {missing}")
