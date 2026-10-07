@@ -1,0 +1,178 @@
+{
+  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+  "accueil": {
+    "personnage": "tommaso",
+    "texte": "Ah, vous voilà ! Je suis Tommaso, l'apprenti de maître Léonard de Vinci. Nous sommes à Amboise, au printemps 1518, et le roi François Ier prépare une grande fête au château. Ce matin, un coup de vent a fait s'envoler cinq pages du carnet de mon maître. Cinq personnes les ont ramassées, et chacune veut d'abord savoir si vous comprenez ce qu'il y a dessus. Le maître en a besoin avant la fête. Aidez-moi à retrouver les cinq pages, et notez bien le mot écrit sur chacune."
+  },
+  "coffre": {
+    "personnage": "tommaso",
+    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+  },
+  "cinematiques": {
+    "transition-e1": {
+      "titre": "Salle 1 — L'imprimerie de Maître Jacquet",
+      "plans": [
+        {
+          "decor": "imprimerie",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "jacquet",
+          "texte": "Bonjour, jeunes gens. Une page de carnet est tombée dans ma cour. Je l'ai gardée, car elle parle de mon métier. Grâce à l'imprimerie, un livre se fabrique en centaines d'exemplaires. On imprime les textes des anciens Grecs et Romains, que les savants redécouvrent. Tout le monde parle d'un temps nouveau, venu d'Italie. Dites-moi d'où il vient, et la page est à vous.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e1": {
+      "titre": "Fin de la salle 1",
+      "plans": [
+        {
+          "decor": "imprimerie",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "jacquet",
+          "texte": "Bien répondu. Le mot écrit sur la page est ANTIQUITÉ : c'est elle que la Renaissance fait renaître. Allez maintenant au château. Dame Hélène prépare la fête ; elle a ramassé une autre page.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e2": {
+      "titre": "Salle 2 — La grande salle d'Amboise",
+      "plans": [
+        {
+          "decor": "salle",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "helene",
+          "texte": "Bienvenue au château d'Amboise. Le roi a grandi ici, vous le saviez ? Depuis qu'il est roi, il fait venir d'Italie des peintres, des sculpteurs, des savants. Il aime aussi les livres et les langues. Mais attention, c'est aussi un roi qui fait la guerre. La page que j'ai ramassée parle de lui. Montrez-moi que vous le connaissez.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e2": {
+      "titre": "Fin de la salle 2",
+      "plans": [
+        {
+          "decor": "salle",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "helene",
+          "texte": "Parfait. Le mot de la page est MÉCÈNE : celui qui protège et aide les artistes et les savants. Descendez maintenant au manoir du Cloux, où travaille maître Léonard. Tommaso vous y attend.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e3": {
+      "titre": "Salle 3 — L'atelier du Cloux",
+      "plans": [
+        {
+          "decor": "atelier",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "tommaso",
+          "texte": "Voici l'atelier de mon maître. Le roi lui a donné ce manoir et un beau titre : premier peintre, ingénieur et architecte du roi. Le maître peint, dessine des machines, imagine des canaux, et il regarde tout : l'eau, les oiseaux, les plantes. Ses pages sont un vrai désordre ! La troisième page est ici, quelque part. Aidez-moi à la retrouver.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e3": {
+      "titre": "Fin de la salle 3",
+      "plans": [
+        {
+          "decor": "atelier",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "tommaso",
+          "texte": "La voilà ! Le mot est OBSERVER : le maître dit qu'il faut d'abord regarder la nature pour la comprendre et la peindre. Colombe, la fille du maître maçon, a la quatrième page. Elle est au cabinet des plans.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e4": {
+      "titre": "Salle 4 — Le cabinet des plans",
+      "plans": [
+        {
+          "decor": "plans",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "colombe",
+          "texte": "Bonjour ! Je m'appelle Colombe, mon père est maître maçon. Ici, on dessine les châteaux du roi. Ce ne sont plus des forteresses : on veut de grandes fenêtres, des escaliers magnifiques, tout bien symétrique, comme dans l'Antiquité. Le roi rêve d'un château encore plus grand, à Chambord. Lisez les plans avec moi, et je vous donne la page.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e4": {
+      "titre": "Fin de la salle 4",
+      "plans": [
+        {
+          "decor": "plans",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "colombe",
+          "texte": "Bravo ! Le mot de la page est SALAMANDRE : l'emblème du roi, sculpté sur ses châteaux. Dernière page : Bastien l'a emportée dans la galerie des tableaux.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e5": {
+      "titre": "Salle 5 — La galerie des tableaux",
+      "plans": [
+        {
+          "decor": "galerie",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "bastien",
+          "texte": "Ah, la dernière page ! Je l'étudiais, car je veux peindre comme les Italiens. Regardez ces tableaux : on dirait des fenêtres ouvertes sur le monde. Le secret, ce sont des règles de dessin. Les corps aussi ont leurs règles. Prouvez-moi que vous savez lire un tableau, et la page est à vous.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e5": {
+      "titre": "Fin de la salle 5",
+      "plans": [
+        {
+          "decor": "galerie",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "helene",
+          "texte": "Le mot de la dernière page est PERSPECTIVE . Vous avez les cinq mots ! Écrivez-les dans le coffre, dans l'ordre des salles, et le carnet de maître Léonard sera complet pour la fête.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin": {
+      "titre": "Fin de « L'Atelier de Léonard à Amboise »",
+      "plans": [
+        {
+          "decor": "galerie",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "bastien",
+          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+          "mouvement": "zoom"
+        }
+      ]
+    }
+  },
+  "fin_escale": {
+    "1": {
+      "personnage": "jacquet",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "2": {
+      "personnage": "helene",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "3": {
+      "personnage": "tommaso",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "4": {
+      "personnage": "colombe",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "5": {
+      "personnage": "bastien",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    }
+  }
+}

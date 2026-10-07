@@ -1,0 +1,178 @@
+{
+  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+  "accueil": {
+    "personnage": "zoe",
+    "texte": "Bonjour ! Je suis Zoé, l'apprentie d'Éléonore Marchand, l'inventrice. Elle est partie en voyage et elle m'a laissé un défi. Dans son atelier, cinq machines sont démontées, et son coffre-fort est fermé. Pour l'ouvrir, il faut une phrase de cinq mots. Chaque salle de l'atelier cache un mot. Pour le trouver, il faut comprendre les objets : à quoi ils servent, de quoi ils sont faits et comment ils fonctionnent. Vous m'aidez ?"
+  },
+  "coffre": {
+    "personnage": "zoe",
+    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+  },
+  "cinematiques": {
+    "transition-e1": {
+      "titre": "Salle 1 — L'entrée de l'atelier",
+      "plans": [
+        {
+          "decor": "atelier",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "zoe",
+          "texte": "Regardez cette table : une lampe torche, un ouvre-boîte, un taille-crayon, un vélo, un cartable. Éléonore dit toujours : « Avant de savoir comment marche un objet, il faut savoir à quoi il sert. » Chaque objet répond à un besoin. Trouvons lequel.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e1": {
+      "titre": "Fin de la salle 1",
+      "plans": [
+        {
+          "decor": "atelier",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "zoe",
+          "texte": "Premier mot : BESOIN . Tout objet commence par un besoin. Allons à l'établi : Awa est en train d'y démonter la lampe torche.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e2": {
+      "titre": "Salle 2 — L'établi",
+      "plans": [
+        {
+          "decor": "etabli",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "awa",
+          "texte": "Bienvenue à l'établi. Ici, on ouvre les objets pour voir ce qu'il y a dedans. Une lampe torche, ce n'est pas une seule chose : ce sont plusieurs pièces, et chacune a un rôle. Si une seule manque, la lampe ne marche plus. À vous de dire à quoi sert chaque pièce.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e2": {
+      "titre": "Fin de la salle 2",
+      "plans": [
+        {
+          "decor": "etabli",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "awa",
+          "texte": "Deuxième mot : FONCTION . Chaque pièce remplit une fonction technique. Suivez-moi dans la matériauthèque : on va voir de quoi ces pièces sont faites.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e3": {
+      "titre": "Salle 3 — La matériauthèque",
+      "plans": [
+        {
+          "decor": "materiaux",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "awa",
+          "texte": "Ici, Éléonore range tous ses matériaux, rangés par familles. Pour fabriquer un objet, on ne prend pas n'importe quoi : on choisit un matériau pour ses propriétés. Dur ou souple, léger ou lourd, transparent ou non. Quelqu'un a tout mélangé. Aidez-moi à ranger.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e3": {
+      "titre": "Fin de la salle 3",
+      "plans": [
+        {
+          "decor": "materiaux",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "awa",
+          "texte": "Troisième mot : MATÉRIAU . Chaque casier est à nouveau en ordre. Monsieur Marcel vous attend dans la salle des machines. Il sait tout sur ce qui fait bouger les objets.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e4": {
+      "titre": "Salle 4 — La salle des machines",
+      "plans": [
+        {
+          "decor": "machines",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "marcel",
+          "texte": "Ah, les voilà ! Moi, je répare des vélos depuis longtemps. Un objet ne bouge jamais tout seul : il lui faut de l'énergie. Celle de vos jambes, celle d'une pile, du vent ou du soleil. Ensuite, il faut transmettre le mouvement d'une pièce à l'autre. Regardez bien ces roues dentées.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e4": {
+      "titre": "Fin de la salle 4",
+      "plans": [
+        {
+          "decor": "machines",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "marcel",
+          "texte": "Quatrième mot : ÉNERGIE . Sans elle, rien ne tourne. Dernière salle : le coin montage. Et je crois que quelqu'un vient de rentrer de voyage.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e5": {
+      "titre": "Salle 5 — Le coin montage",
+      "plans": [
+        {
+          "decor": "montage",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "eleonore",
+          "texte": "Bonjour à tous ! Je suis Éléonore, l'inventrice. Zoé m'a raconté votre travail. Inventer un objet ne suffit pas : il faut expliquer comment le monter, dans quel ordre, avec quelles précautions. C'est le rôle de la notice. Le dernier mot du coffre-fort est ici.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e5": {
+      "titre": "Fin de la salle 5",
+      "plans": [
+        {
+          "decor": "montage",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "eleonore",
+          "texte": "Un besoin, une fonction, un matériau, une énergie, une notice. Le coffre s'ouvre. À l'intérieur, pas d'or : mon carnet d'inventrice. Il vous appartient maintenant. La prochaine invention, c'est à vous de la dessiner.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin": {
+      "titre": "Fin de « L'Atelier de l'inventeur »",
+      "plans": [
+        {
+          "decor": "montage",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "eleonore",
+          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+          "mouvement": "zoom"
+        }
+      ]
+    }
+  },
+  "fin_escale": {
+    "1": {
+      "personnage": "zoe",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "2": {
+      "personnage": "awa",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "3": {
+      "personnage": "awa",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "4": {
+      "personnage": "marcel",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "5": {
+      "personnage": "eleonore",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    }
+  }
+}

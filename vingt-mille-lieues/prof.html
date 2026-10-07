@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr" data-titre-page="Tableau de bord — {journal}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau de bord — Le Journal du Nautilus</title>
+<link rel="stylesheet" href="css/nautilus.css?v1">
+<link rel="stylesheet" href="css/theme.css?v1">
+<style>
+  body{ overflow: auto; background: radial-gradient(circle at 50% 0, #12384d, #050e15 70%); }
+  .prof{ width: min(1500px, calc(100% - 32px)); margin: 16px auto 40px; }
+  .prof h1{ font-size: 1.8rem; text-align: left; }
+  .barre{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 14px; }
+  .etat-serveur{ padding: 4px 10px; border-radius: 8px; background: #3a1a0c; } .etat-serveur.ok{ background: #1d5a36; }
+  .equipes{ display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; }
+  .eq{ padding: 12px 14px; } .eq h3{ margin: 0 0 4px; font-family: var(--police); color: var(--laiton-clair); font-weight: normal; display: flex; justify-content: space-between; }
+  .eq.alerte{ border-color: #ff7a5a; box-shadow: 0 0 0 3px rgba(255,90,60,.5), var(--ombre); }
+  .eq .ligne{ display: flex; justify-content: space-between; font-size: .92rem; border-bottom: 1px dotted rgba(201,162,74,.25); padding: 2px 0; }
+  .eq .alertes{ color: #ffb39a; font-size: .88rem; margin: 4px 0; }
+  .eq .cmds{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .eq select{ font-size: .85rem; }
+  .synthese{ margin-top: 20px; padding: 14px 18px; } .synthese table{ width: 100%; border-collapse: collapse; } .synthese td, .synthese th{ border-bottom: 1px solid rgba(201,162,74,.3); padding: 5px 8px; text-align: left; }
+  .vide{ opacity: .75; font-style: italic; }
+  .barre-prog{ height: 8px; background: #1a2a30; border-radius: 6px; overflow: hidden; margin-top: 4px; } .barre-prog span{ display: block; height: 100%; background: linear-gradient(90deg, var(--laiton), var(--laiton-clair)); }
+  .anonyme .nom-eq{ filter: blur(6px); }
+</style>
+</head>
+<body>
+<div class="prof">
+  <h1>📊 Tableau de bord — <span data-t="journal">Le Journal du Nautilus</span></h1>
+  <p class="note">Fonctionne en mode local : lancez <code>lancer.bat</code> (ou <code>python serveur.py</code>) et faites jouer les équipes à l'adresse affichée, <code>…/vingt-mille-lieues/</code>. Les équivalences des grades sont visibles ici seulement.</p>
+  <div class="barre">
+    <span class="etat-serveur" id="etat-serveur">Recherche du serveur…</span>
+    <button class="btn-laiton petit" id="tout-pause">⏸ Pause générale</button>
+    <button class="btn-laiton petit" id="tout-reprise">▶️ Reprise générale</button>
+    <button class="btn-laiton petit" id="tout-message">📣 Message à toutes</button>
+    <button class="btn-laiton petit" id="export-csv">⬇️ Export CSV</button>
+    <button class="btn-laiton petit" id="imprimer">🖨️ Imprimer / PDF</button>
+    <label class="btn-laiton petit"><input type="checkbox" id="anonymiser"> Anonymiser</label>
+    <a class="btn-laiton petit" href="medias.html" target="_blank" rel="noopener">🖼️ Médias</a>
+    <a class="btn-laiton petit" href="index.html?verif=1&escale=2&niveau=matelot&enigme=1" target="_blank" rel="noopener">🧪 Tester</a>
+  </div>
+  <div class="equipes" id="equipes"><p class="vide">Aucune équipe pour l'instant.</p></div>
+  <div class="synthese cadre-laiton" id="synthese"></div>
+</div>
+<script src="js/jeu-config.js?v1"></script>
+<script src="js/donnees-embarquees.js?v1"></script>
+<script src="js/donnees.js?v1"></script>
+<script src="js/niveaux.js?v1"></script>
+<script src="js/solutions.js?v1"></script>
+<script>
+(async function(){
+  await VML.chargerDonnees();
+  const $ = s => document.querySelector(s);
+  const es = VML.escale(2);
+  const grades = (VML.D.enigmes || {}).niveaux || [];
+  let equipes = [], serveur = false;
+  const ech = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const mmss = ms => { const s = Math.floor((ms || 0) / 1000); return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); };
+  const commande = (equipe, cmd) => fetch("/api/commande", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ equipe, commande: Object.assign({ t: Date.now() }, cmd) }) }).catch(() => {});
+
+  function alertes(q){
+    const e = q.enigme || {}, a = [];
+    if(e.sas) a.push("🔒 sas de sécurité verrouillé");
+    if((e.erreurs || 0) >= 4) a.push(`✗ ${e.erreurs} erreurs sur l'énigme en cours`);
+    if(!q.fini && (e.depuisMs || 0) > 6 * 60000) a.push(`⏳ bloquée depuis ${Math.round(e.depuisMs / 60000)} min`);
+    if(q.timestamp && Date.now() / 1000 - q.timestamp > 30) a.push("📡 plus de nouvelles depuis 30 s");
+    return a;
+  }
+  function carte(q){
+    const e = q.enigme || {}, g = grades.find(x => x.id === q.niveau) || { icone: "", nom: q.niveau, equivalent: "" };
+    const al = alertes(q);
+    const nbRes = Object.keys(e.resolues || {}).length, tot = e.total || (es ? es.enigmes.length : 4);
+    const fiches = (e.fichesConsultees || []).map(f => (VML.lecon(f) || {}).titre || f);
+    return `<div class="eq cadre-laiton ${al.length ? "alerte" : ""}" data-eq="${ech(q.equipe)}">
+      <h3><span class="nom-eq">👥 ${ech(q.equipe)}</span><span>${q.enPause ? "⏸" : q.fini ? "🏁" : "🌊"}</span></h3>
+      <div class="ligne"><span>Grade</span><b>${g.icone} ${ech(g.nom)} <small>(${ech(g.equivalent)})</small></b></div>
+      <div class="ligne"><span>Escale · énigme</span><b>${q.salle || "—"} · ${q.fini ? "terminée" : (e.ordre || "—") + "/" + tot + " " + ech(e.titre || "")}</b></div>
+      <div class="barre-prog"><span style="width:${Math.round(100 * nbRes / tot)}%"></span></div>
+      <div class="ligne"><span>Points</span><b>${q.score || 0}</b></div>
+      <div class="ligne"><span>Temps</span><b>${mmss(q.msEcoules)}${q.delaiMin ? " (+" + q.delaiMin + " min accordées)" : ""}</b></div>
+      <div class="ligne"><span>Erreurs (énigme) · indices (total)</span><b>${e.erreurs || 0} · ${q.indicesTotal || 0}</b></div>
+      <div class="ligne"><span>Fiches consultées</span><b>${fiches.length ? ech(fiches.join(", ")) : "aucune"}</b></div>
+      <div class="ligne"><span>Air (décor)</span><b>${e.air != null ? e.air + " %" : "—"}</b></div>
+      ${al.length ? `<div class="alertes">${al.join("<br>")}</div>` : ""}
+      <div class="cmds">
+        <button class="btn-laiton petit" data-c="pause">${q.enPause ? "▶️ Reprendre" : "⏸ Pause"}</button>
+        <button class="btn-laiton petit" data-c="t2">⏱️ +2 min</button>
+        <button class="btn-laiton petit" data-c="t5">⏱️ +5 min</button>
+        <button class="btn-laiton petit" data-c="msg">📣 Message</button>
+        <select data-c="niveau" aria-label="Changer le grade">${grades.map(x => `<option value="${x.id}" ${x.id === q.niveau ? "selected" : ""}>${x.icone} ${x.nom}</option>`).join("")}</select>
+      </div>
+    </div>`;
+  }
+  function synthese(){
+    if(!es) return "";
+    const lignes = es.enigmes.map(en => {
+      const faites = equipes.filter(q => ((q.enigme || {}).resolues || {})[en.id]);
+      const premier = faites.filter(q => q.enigme.resolues[en.id].premier).length;
+      const doc = faites.filter(q => q.enigme.resolues[en.id].bienDoc).length;
+      return `<tr><td>${ech(en.titre)}</td><td>${ech(en.competence_programme)}</td><td>${faites.length}/${equipes.length}</td><td>${premier}</td><td>${doc}</td></tr>`;
+    }).join("");
+    return `<h3>📈 Synthèse par notion — escale 2</h3><table><tr><th>Énigme</th><th>Compétence</th><th>Résolue</th><th>Du premier coup</th><th>Bien documentée</th></tr>${lignes}</table>`;
+  }
+  function dessiner(){
+    $("#equipes").innerHTML = equipes.length ? equipes.map(carte).join("") : `<p class="vide">${serveur ? "Aucune équipe connectée pour l'instant." : "Serveur local introuvable : ouvrez cette page avec lancer.bat (http://127.0.0.1:8000/vingt-mille-lieues/prof.html)."}</p>`;
+    $("#synthese").innerHTML = synthese();
+    document.querySelectorAll(".eq").forEach(c => {
+      const nom = c.dataset.eq, q = equipes.find(x => x.equipe === nom);
+      c.querySelectorAll("[data-c]").forEach(b => {
+        const act = b.dataset.c;
+        b.addEventListener(b.tagName === "SELECT" ? "change" : "click", () => {
+          if(act === "pause") commande(nom, { pause: !q.enPause });
+          if(act === "t2") commande(nom, { delaiMin: 2 });
+          if(act === "t5") commande(nom, { delaiMin: 5 });
+          if(act === "msg"){ const m = prompt("Message pour « " + nom + " » :"); if(m) commande(nom, { message: m }); }
+          if(act === "niveau") commande(nom, { niveau: b.value });
+        });
+      });
+    });
+  }
+  async function rafraichir(){
+    try{
+      const r = await fetch("/api/equipes", { cache: "no-store" });
+      const d = r.ok ? await r.json() : null;
+      serveur = !!d;
+      equipes = ((d && d.equipes) || []).filter(q => q.jeu === "vingt-mille-lieues");
+    }catch(e){ serveur = false; equipes = []; }
+    $("#etat-serveur").textContent = serveur ? `✅ Serveur local · ${equipes.length} équipe(s)` : "❌ Serveur local introuvable";
+    $("#etat-serveur").classList.toggle("ok", serveur);
+    dessiner();
+  }
+  $("#tout-pause").onclick = () => commande("*", { pause: true });
+  $("#tout-reprise").onclick = () => commande("*", { pause: false });
+  $("#tout-message").onclick = () => { const m = prompt("Message pour toutes les équipes :"); if(m) commande("*", { message: m }); };
+  $("#anonymiser").onchange = ev => document.body.classList.toggle("anonyme", ev.target.checked);
+  $("#imprimer").onclick = () => window.print();
+  $("#export-csv").onclick = () => {
+    const l = [["equipe", "grade", "equivalent", "escale", "enigme", "points", "temps_min", "erreurs_enigme", "indices", "fiches", "resolues", "premier_coup", "termine"].join(";")];
+    equipes.forEach(q => { const e = q.enigme || {}, g = grades.find(x => x.id === q.niveau) || {}; const r = e.resolues || {};
+      l.push([q.equipe, g.nom, g.equivalent, q.salle, e.titre || "", q.score || 0, Math.round((q.msEcoules || 0) / 600) / 100, e.erreurs || 0, q.indicesTotal || 0, (e.fichesConsultees || []).join(" "), Object.keys(r).length, Object.values(r).filter(x => x.premier).length, q.fini ? "oui" : "non"].map(x => '"' + String(x).replace(/"/g, '""') + '"').join(";")); });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["﻿" + l.join("\n")], { type: "text/csv" })); a.download = VML.T("fichierExport", "equipes") + "-equipes.csv"; a.click();
+  };
+  window.PROF = { rafraichir, dessiner, set equipes(v){ equipes = v; }, get equipes(){ return equipes; } };
+  await rafraichir();
+  setInterval(rafraichir, 3000);
+})();
+</script>
+</body>
+</html>

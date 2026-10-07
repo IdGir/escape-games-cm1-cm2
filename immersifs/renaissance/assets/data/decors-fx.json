@@ -1,0 +1,406 @@
+{
+ "decors": {
+  "imprimerie": {
+   "titre": "Une imprimerie de la ville d'Amboise, au printemps 1518",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "lueur",
+     "x": 10,
+     "y": 14,
+     "r": 12,
+     "couleur": "#cfe3ff",
+     "pulse": 0.2
+    },
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 80,
+     "nombre": 26
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La gravure du temple romain",
+     "x": 71,
+     "y": 1,
+     "w": 24,
+     "h": 34,
+     "description": "Sur le mur, un temple à colonnes : ce que les savants admirent."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La pile de livres",
+     "x": 5,
+     "y": 50,
+     "w": 22,
+     "h": 28,
+     "description": "Des livres imprimés, empilés : des mots nouveaux pour un temps nouveau."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La presse à imprimer",
+     "x": 38,
+     "y": 8,
+     "w": 28,
+     "h": 48,
+     "description": "Une grande presse en bois : pourquoi dit-on « renaître » ?"
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La page d'épreuve",
+     "x": 55,
+     "y": 46,
+     "w": 20,
+     "h": 28,
+     "description": "Une page d'épreuve où manquent des mots."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "salle": {
+   "titre": "La grande salle du château royal d'Amboise",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "lueur",
+     "x": 38,
+     "y": 46,
+     "r": 6,
+     "couleur": "#ffcf7a",
+     "pulse": 0.3,
+     "scintille": true
+    },
+    {
+     "type": "lueur",
+     "x": 63,
+     "y": 45,
+     "r": 6,
+     "couleur": "#ffcf7a",
+     "pulse": 0.3,
+     "scintille": true
+    },
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 80,
+     "nombre": 22
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le trône",
+     "x": 15,
+     "y": 50,
+     "w": 15,
+     "h": 30,
+     "description": "Le trône du roi François Ier."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les portraits du roi",
+     "x": 16,
+     "y": 10,
+     "w": 12,
+     "h": 40,
+     "description": "Des portraits à ranger dans l'ordre d'une vie."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La tapisserie",
+     "x": 34,
+     "y": 28,
+     "w": 32,
+     "h": 26,
+     "description": "Une tapisserie qui montre les protégés du roi."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le coffret de Dame Hélène",
+     "x": 70,
+     "y": 56,
+     "w": 28,
+     "h": 22,
+     "description": "Un coffret fermé par un cadenas à chiffres."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "atelier": {
+   "titre": "L'atelier de Léonard, au manoir du Cloux, près du château",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "lueur",
+     "x": 41,
+     "y": 50,
+     "r": 6,
+     "couleur": "#ffcf7a",
+     "pulse": 0.4,
+     "scintille": true
+    },
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 80,
+     "nombre": 28
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les œuvres de l'atelier",
+     "x": 52,
+     "y": 9,
+     "w": 20,
+     "h": 60,
+     "description": "Peinture, ingénieur, savant : plusieurs talents."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les carnets en désordre",
+     "x": 0,
+     "y": 20,
+     "w": 36,
+     "h": 50,
+     "description": "Les carnets de Léonard, tous mêlés."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La table de l'atelier",
+     "x": 76,
+     "y": 40,
+     "w": 23,
+     "h": 34,
+     "description": "Un objet qui n'appartient pas à l'atelier."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le miroir",
+     "x": 36,
+     "y": 38,
+     "w": 14,
+     "h": 22,
+     "description": "Léonard écrit à l'envers : un mot à lire dans le miroir."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "plans": {
+   "titre": "Le cabinet des plans, au château d'Amboise",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "rayons",
+     "x": 30,
+     "y": 0,
+     "w": 50,
+     "h": 50
+    },
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 70,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le plan de Chambord",
+     "x": 53,
+     "y": 14,
+     "w": 42,
+     "h": 34,
+     "description": "Le plan d'un grand château."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les deux maquettes",
+     "x": 2,
+     "y": 14,
+     "w": 28,
+     "h": 32,
+     "description": "Un château fort et un château Renaissance."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les trois châteaux",
+     "x": 30,
+     "y": 14,
+     "w": 23,
+     "h": 32,
+     "description": "Trois châteaux, trois secrets."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La salamandre sculptée",
+     "x": 10,
+     "y": 52,
+     "w": 40,
+     "h": 22,
+     "description": "L'emblème du roi sur la cheminée."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "galerie": {
+   "titre": "La galerie des tableaux du château",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 80,
+     "nombre": 22
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le tableau en perspective",
+     "x": 52,
+     "y": 9,
+     "w": 26,
+     "h": 60,
+     "description": "Un tableau en perspective à lire."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les secrets des peintres",
+     "x": 20,
+     "y": 0,
+     "w": 29,
+     "h": 62,
+     "description": "Les techniques des peintres."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le cadenas du carnet",
+     "x": 0,
+     "y": 12,
+     "w": 17,
+     "h": 45,
+     "description": "Un cadenas qui garde le carnet."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La leçon de Bastien",
+     "x": 80,
+     "y": 4,
+     "w": 20,
+     "h": 58,
+     "description": "Un texte à compléter sur la perspective."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

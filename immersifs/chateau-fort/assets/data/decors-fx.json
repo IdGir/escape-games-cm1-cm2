@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "motte": {
+   "titre": "Le tertre de la vieille tour, au petit matin",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La butte et ses souches",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une grosse butte de terre où se dressait une tour de bois : pourquoi bâtir si haut ?"
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les charrettes de pierres",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des charrettes chargées de blocs : la pierre arrive là où le bois brûlait."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'échafaudage des ouvriers",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Tailleurs de pierre, maçons, charpentiers : chaque métier a son outil."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet du maître maçon",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un carnet ouvert sur une pierre, aux phrases à moitié effacées."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "remparts": {
+   "titre": "Le chemin de ronde, au-dessus de l'entrée",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le plan sur la table de pierre",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un plan du château à légender : tours, fossé, pont-levis."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La herse et le pont-levis",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Les engins de l'entrée, chacun avec sa fonction."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les créneaux",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le haut du rempart, où l'on s'abrite pour tirer."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le treuil du pont-levis",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un lourd treuil de bois fermé par un cadenas à chiffres."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "grandesalle": {
+   "titre": "La grande salle du donjon, avant le repas",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La grande cheminée",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un feu où l'on cuit les viandes : le château, c'est aussi une maison."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La table du seigneur",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une longue table où le seigneur prend ses repas et rend justice."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le banc des serviteurs",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les gens qui vivent au château : cuisiniers, écuyers, gardes."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le coffre aux objets",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un coffre où traîne un objet qui n'a rien à faire là."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "village": {
+   "titre": "Le village, au pied du château",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le calendrier du village",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les travaux des champs au fil des saisons."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La remise aux outils",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Les outils d'un paysan : faux, herse, charrue."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La maison de Mahaut",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une chaumière au toit de paille : une journée dans une vie de paysanne."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La cloche du village",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "La cloche qui rythme le travail et cache un mot."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "moulin": {
+   "titre": "Le moulin à eau, au bord de la rivière",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les sacs de grain",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Ce que les paysans apportent au moulin : farine, blé, redevances."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le registre de la meunière",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un registre où Perrine note ce qui est dû au seigneur."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La roue du moulin",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "La roue tourne : ce que les paysans donnent, ce qu'ils reçoivent."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le plan du domaine",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un plan qui montre le château et le village côte à côte."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

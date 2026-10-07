@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "balances": {
+   "titre": "La salle des balances — rez-de-chaussée du laboratoire",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La balance à plateaux",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une balance à deux plateaux : on y compare des masses."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La balance électronique",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une balance à affichage : une autre façon de peser."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le flacon de liquide",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un flacon qu'il faut peser sans oublier le récipient."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les poids en laiton",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des masses marquées : g, kg, mg."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "cuisine": {
+   "titre": "La cuisine d'essai — là où l'on teste les mélanges du quotidien",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le verre d'eau sucrée",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le sucre a disparu dans l'eau : est-ce vrai ?"
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le cahier taché",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Le cahier de Marius, tâché de café."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La tasse de café",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un café sucré : combien pèse-t-il ?"
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le cadenas de la cuisine",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un cadenas qui garde le placard."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "fioles": {
+   "titre": "La salle des fioles — premier étage",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les fioles homogènes",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des fioles où l'on ne distingue rien, ou presque."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "L'étagère aux fioles",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une fiole qui n'a pas sa place là."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La loupe d'observation",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "On observe ce qu'on voit dans un mélange."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les idées de Lila",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des affirmations de Lila à vérifier."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "atelier": {
+   "titre": "L'atelier de tri — au sous-sol",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les bacs de tri",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Quatre bacs, quatre méthodes de tri."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tamis",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un tamis qui sépare des grains."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'aimant",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un aimant qui attire certains métaux."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "L'établi de Nadia",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un établi où Nadia sépare ses mélanges."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "saline": {
+   "titre": "La saline — la paillasse de filtration, face aux marais salants",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le filtre à café",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Filtrer, décanter, évaporer : trois méthodes."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le montage de filtration",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un entonnoir, un filtre, un bécher."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le tas de sel",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les cristaux de sel de la saline."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le testament de Madame Mélange",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un parchemin qui donne les étapes de la séparation."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

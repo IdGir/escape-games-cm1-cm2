@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "reims": {
+   "titre": "⛪ Reims, la ville du baptême — la première page du livre",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le parchemin du baptême",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "La première page du livre : Clovis et son baptême."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La frise de la première page",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une frise en bandes qui n'est pas dans l'ordre."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les enluminures",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des personnages à identifier : qui a fait quoi ?"
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La carte du royaume",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une carte à légender : le royaume des Francs."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "aix": {
+   "titre": "👑 Aix-la-Chapelle, le palais de Charlemagne — la deuxième page",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La galerie du palais",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "De Clovis à Charlemagne, une longue lignée."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La couronne sur le coussin",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "La couronne de l'an 800 sur un coussin de velours."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La carte de l'empire",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les frontières de l'empire de Charlemagne."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La page cachée",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un mot caché dans la deuxième page."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "scriptorium": {
+   "titre": "🕯️ Le scriptorium de l'abbaye — la troisième page",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le pupitre du moine",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une journée de moine rythmée par la prière et le travail."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le livre en fabrication",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Peaux, plumes, encres : comment naît un livre."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La classe de l'abbaye",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Où apprend-on à lire ? À l'abbaye et à l'école du palais."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le cadenas de la bibliothèque",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une serrure à chiffres pour les livres précieux."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "hoteldieu": {
+   "titre": "🕊️ L'hôtel-Dieu, près de l'abbaye — la quatrième page",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les registres de l'hôtel-Dieu",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les registres de l'aide aux pauvres et aux malades."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tronc de l'aumône",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Le tronc où l'on dépose l'aumône."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La porte de l'hôtel-Dieu",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les pauvres, les malades, les pèlerins : où les envoyer ?"
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le tableau des mots",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Les mots de la charité à associer."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "chantier": {
+   "titre": "⛏️ Le chantier, entre l'église de l'abbaye et la cathédrale neuve — la cinquième page",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les deux églises",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une église romane et une cathédrale gothique à légender."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tas de matériaux",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un objet qui n'a rien à faire sur le chantier."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les voûtes",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Arc en plein cintre ou arc brisé : roman ou gothique ?"
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le plan du maître d'œuvre",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le plan de la cathédrale et celui qui le dirige."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,1331 @@
+{
+  "_commentaire": "Escale 1 — La chasse au « monstre ». Source assemblée dans assets/data/ par outils/assembler-escales.py.",
+  "escale": {
+    "numero": 1,
+    "id": "chasse-au-monstre",
+    "titre": "La chasse au « monstre »",
+    "lieu": "À bord de la frégate Abraham Lincoln, Pacifique, 1867",
+    "matiere": "Histoire, sciences et technologie",
+    "periode_conseillee": "P5 Année B (âge industriel) ou P2 Année A (conservation des aliments)",
+    "episode": "Première partie, ch. I à VII (le « monstre », la frégate Abraham Lincoln, le harpon de Ned Land, la chute à la mer)",
+    "scenarimage": "scenarimages/escale-01.md",
+    "mot": "NARVAL",
+    "mot_origine": "Le professeur Aronnax croyait d'abord que le « monstre » était un narval géant (Partie I, ch. II).",
+    "air": null,
+    "cinematique_ouverture": "transition-e1",
+    "cinematique_fin": "fin-e1",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e1-1",
+        "escale": 1,
+        "ordre": 1,
+        "titre": "Le livre de quart",
+        "decor": "pont-lincoln",
+        "objet_principal": "livre-quart",
+        "objets_cliquables": [
+          "livre-quart",
+          "loch",
+          "longue-vue"
+        ],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "Une lueur bleuâtre file sous la surface, devant la frégate. Le commandant Farragut veut savoir s'il peut la rattraper avant l'aube. Aronnax ouvre le livre de quart, où l'officier note les heures et les distances relevées au loch : il faut en tirer des durées et des vitesses.",
+        "enjeu": "Si la lueur est plus rapide, la chasse est perdue d'avance ; sinon, il faut forcer la marche tout de suite.",
+        "episode_du_roman": "Partie I, ch. VI « À toute vapeur » : pendant des semaines, la frégate poursuit la lueur que l'on prend pour un animal ; elle ne parvient pas à la rattraper.",
+        "competence_programme": "Sciences : mesurer une distance et une durée lors du déplacement d'un objet ; différents types de mouvement.",
+        "pourquoi_ce_savoir_ici": "Pour savoir qui va le plus vite, il faut comparer les distances parcourues en une même durée : c'est exactement ce que note le livre de quart.",
+        "reaction_du_decor": {
+          "effet": "carte",
+          "description": "Un tracé lumineux se dessine sur la mer : la route de la frégate et celle de la lueur."
+        },
+        "liberte_ou_anachronisme": "Les relevés du livre de quart sont inventés pour le jeu (nombres simples). Le nœud (1 mille marin par heure) et le mille marin (1 852 m) sont les vraies unités de la marine.",
+        "lecon": "deplacement",
+        "type": "code",
+        "niveau_variantes": "Mousse : lire une durée en heures, reconnaître un mouvement circulaire. Matelot : durée en minutes et distance en une heure. Timonier : deux vitesses en nœuds à comparer. Lieutenant : écart de distance après 3 h + type de mouvement + justification. Second : temps de rattrapage avec avance, conversion en km/h + justification.",
+        "mousse": {
+          "type": "qcm",
+          "dialogue": "Regardez le livre de quart : l'officier y écrit l'heure de chaque observation. Aidez-moi à le lire avant que la lueur ne disparaisse.",
+          "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — quart de nuit : début 20 h, fin minuit. « La lueur tourne autour de la frégate en décrivant un grand cercle. »</div>Réponds aux deux questions.",
+          "questions": [
+            {
+              "q": "Combien de temps dure le quart de nuit ?",
+              "options": [
+                "4 heures",
+                "2 heures",
+                "12 heures",
+                "8 heures"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "La lueur tourne en cercle autour de la frégate. Son mouvement est…",
+              "options": [
+                "circulaire",
+                "rectiligne (en ligne droite)",
+                "immobile",
+                "de haut en bas"
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « Mesurer un déplacement » : pour une durée, on part de l'heure du début et on compte jusqu'à l'heure de la fin.",
+            "De 20 h à minuit (24 h), compte les heures une à une."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Le livre de quart dit tout, à qui sait compter. Combien de temps a duré la poursuite, et quelle distance la frégate parcourt-elle en une heure ?",
+          "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Lueur aperçue à 21 h 40. Lueur perdue de vue à 23 h 10. » — « Relevé au loch : 30 milles parcourus en 2 heures. »</div>Ouvre le cadenas du livre de quart avec les deux nombres.",
+          "champs": [
+            {
+              "libelle": "Durée de la poursuite (en minutes)",
+              "valeur": "90",
+              "longueur": 4
+            },
+            {
+              "libelle": "Milles parcourus en 1 heure",
+              "valeur": "15",
+              "longueur": 3
+            }
+          ],
+          "indices": [
+            "Fiche « Mesurer un déplacement » : de 21 h 40 à 22 h 40, il y a 1 heure ; continue jusqu'à 23 h 10.",
+            "30 milles en 2 heures : partage en deux parts égales."
+          ]
+        },
+        "timonier": {
+          "dialogue": "Le commandant ne veut pas d'impressions, il veut des vitesses. Calculez-les en nœuds : un nœud, c'est un mille marin parcouru en une heure.",
+          "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Frégate : 45 milles en 2 h 30. » — « Lueur, mesurée d'après les relèvements : 48 milles en 2 heures. »</div>Calcule les deux vitesses en nœuds.",
+          "champs": [
+            {
+              "libelle": "Vitesse de la frégate (nœuds)",
+              "valeur": "18",
+              "longueur": 3
+            },
+            {
+              "libelle": "Vitesse de la lueur (nœuds)",
+              "valeur": "24",
+              "longueur": 3
+            }
+          ],
+          "indices": [
+            "Fiche « Mesurer un déplacement » : la vitesse en nœuds, c'est le nombre de milles parcourus en une heure.",
+            "2 h 30, c'est 2 heures et demie : 45 milles en 2 h 30 font 9 milles par demi-heure."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Le commandant veut savoir de combien la lueur nous distance, et si sa trajectoire est prévisible. Deux calculs, une justification : comme un vrai rapport d'officier.",
+          "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Frégate : 18 nœuds. Lueur : 24 nœuds, en ligne droite vers l'ouest. Puis, à minuit, elle tourne autour de nous en grand cercle. »</div>",
+          "questions": [
+            {
+              "q": "Après 3 heures de poursuite en ligne droite, de combien de milles la lueur a-t-elle augmenté son avance ?",
+              "options": [
+                "18 milles",
+                "6 milles",
+                "42 milles",
+                "72 milles"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "À minuit, le mouvement de la lueur passe…",
+              "options": [
+                "de rectiligne à circulaire",
+                "de circulaire à rectiligne",
+                "de rectiligne à immobile",
+                "de circulaire à immobile"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche permet de répondre à la question 1 ?",
+            "options": [
+              "Quand deux objets vont dans le même sens, l'écart entre eux change chaque heure de la différence de leurs vitesses.",
+              "Un nœud, c'est une vitesse d'un mille marin par heure.",
+              "Un mouvement est circulaire quand l'objet tourne autour d'un point.",
+              "La durée, c'est l'heure de la fin moins l'heure du début."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Mesurer un déplacement », partie « Rattraper ou être distancé ».",
+            "Chaque heure, la lueur gagne 24 − 18 milles."
+          ]
+        },
+        "second": {
+          "type": "code",
+          "dialogue": "Ned Land parie que nous ne la rattraperons jamais. Moi, je crois qu'il suffit d'un peu d'arithmétique. Prouvez-le, et convertissez pour notre ami canadien, qui pense en kilomètres.",
+          "consigne": "<div class='doc-carnet'><b>Livre de quart</b> — « Ralentie, la lueur file maintenant à 15 nœuds avec 12 milles d'avance. La frégate force la marche à 18 nœuds. » — « 1 mille marin = 1 852 m. »</div>Calcule, puis ouvre le cadenas. Arrondis la vitesse en km/h à l'unité.",
+          "champs": [
+            {
+              "libelle": "Heures pour la rattraper",
+              "valeur": "4",
+              "longueur": 2
+            },
+            {
+              "libelle": "18 nœuds ≈ ? km/h",
+              "valeur": "33",
+              "longueur": 3
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ton premier calcul ?",
+            "options": [
+              "Quand deux objets vont dans le même sens, l'écart entre eux change chaque heure de la différence de leurs vitesses.",
+              "Un nœud, c'est une vitesse d'un mille marin par heure.",
+              "Un mille marin mesure environ 1 852 mètres.",
+              "Pour une durée, on calcule l'heure de la fin moins l'heure du début."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Chaque heure, la frégate reprend 18 − 15 = 3 milles. Combien d'heures pour reprendre 12 milles ?",
+            "18 × 1,852 km, puis arrondis."
+          ]
+        }
+      },
+      {
+        "id": "e1-2",
+        "escale": 1,
+        "ordre": 2,
+        "titre": "Forcer les feux",
+        "decor": "machines-vapeur",
+        "objet_principal": "chaudiere",
+        "objets_cliquables": [
+          "chaudiere",
+          "manometre-vapeur",
+          "chauffeur"
+        ],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Le commandant fait « forcer les feux » pour gagner de la vitesse. Dans la chaufferie, le mécanicien surveille le manomètre : trop de vapeur, et la chaudière peut exploser. Conseil, qui ne fait rien sans méthode, veut remettre dans l'ordre le trajet de l'énergie, du charbon jusqu'à l'hélice, pour savoir où agit chaque pelletée.",
+        "enjeu": "Sans vitesse, la lueur s'échappe ; sans méthode, on pousse la chaudière au-delà du raisonnable.",
+        "episode_du_roman": "Partie I, ch. VI « À toute vapeur » : le commandant Farragut fait pousser les feux au maximum pour atteindre l'animal.",
+        "competence_programme": "Histoire : l'âge industriel — énergies et machines ; la machine à vapeur, révolution industrielle et progrès technique.",
+        "pourquoi_ce_savoir_ici": "Comprendre la chaîne charbon → chaleur → vapeur → mouvement, c'est comprendre pourquoi « forcer les feux » fait avancer la frégate, et pourquoi cela a des limites.",
+        "reaction_du_decor": {
+          "effet": "vapeur",
+          "description": "Les foyers rougeoient plus fort, un jet de vapeur siffle, la machine accélère."
+        },
+        "liberte_ou_anachronisme": "La salle des machines est celle d'une frégate à vapeur (charbon), pas celle du Nautilus, électrique : le contraste est voulu (voir escale 2).",
+        "lecon": "machine-vapeur",
+        "type": "ordre",
+        "niveau_variantes": "Mousse : 4 étapes. Matelot : 5 étapes avec les pièces. Timonier : 6 étapes avec les transformations d'énergie. Lieutenant : texte à trous sur les formes d'énergie + justification. Second : QCM qui compare la frégate à vapeur et le Nautilus électrique + justification.",
+        "mousse": {
+          "dialogue": "Ranger avant d'agir, voilà ma devise. Du charbon jusqu'à l'hélice, dans quel ordre tout cela se passe-t-il ?",
+          "consigne": "Remets les étapes dans l'ordre, du charbon jusqu'à l'hélice.",
+          "items": [
+            {
+              "txt": "Le charbon brûle dans le foyer."
+            },
+            {
+              "txt": "L'eau de la chaudière chauffe et devient de la vapeur."
+            },
+            {
+              "txt": "La vapeur pousse le piston."
+            },
+            {
+              "txt": "L'hélice tourne et la frégate avance."
+            }
+          ],
+          "indices": [
+            "Fiche « La machine à vapeur » : tout commence par le feu.",
+            "L'hélice est à la fin : c'est elle qui fait avancer la frégate."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Le mécanicien a nommé chaque pièce, mais il n'a pas le temps de les ranger. Moi, je les classerais dans l'ordre où la force les traverse.",
+          "consigne": "Remets dans l'ordre le trajet de l'énergie dans la machine.",
+          "items": [
+            {
+              "txt": "Le foyer",
+              "sous": "le charbon y brûle"
+            },
+            {
+              "txt": "La chaudière",
+              "sous": "l'eau y bout et devient vapeur"
+            },
+            {
+              "txt": "Le cylindre",
+              "sous": "la vapeur y pousse le piston"
+            },
+            {
+              "txt": "La bielle et l'arbre",
+              "sous": "ils transforment le va-et-vient en rotation"
+            },
+            {
+              "txt": "L'hélice",
+              "sous": "elle pousse l'eau : la frégate avance"
+            }
+          ],
+          "indices": [
+            "Fiche « La machine à vapeur » : regarde le schéma, de gauche à droite.",
+            "Le piston fait un va-et-vient : il faut une pièce pour le transformer en rotation avant l'hélice."
+          ]
+        },
+        "timonier": {
+          "dialogue": "Monsieur dirait que l'énergie ne fait que changer de forme. Voyons si l'on peut suivre ces changements, maillon par maillon.",
+          "consigne": "Remets dans l'ordre les six maillons ; chacun dit ce que devient l'énergie.",
+          "items": [
+            {
+              "txt": "Le charbon",
+              "sous": "il contient l'énergie (source)"
+            },
+            {
+              "txt": "La combustion dans le foyer",
+              "sous": "l'énergie devient chaleur"
+            },
+            {
+              "txt": "La chaudière",
+              "sous": "la chaleur transforme l'eau en vapeur sous pression"
+            },
+            {
+              "txt": "Le piston dans le cylindre",
+              "sous": "la vapeur produit un mouvement de va-et-vient"
+            },
+            {
+              "txt": "La bielle et l'arbre",
+              "sous": "le va-et-vient devient rotation"
+            },
+            {
+              "txt": "L'hélice",
+              "sous": "la rotation pousse l'eau : la frégate avance"
+            }
+          ],
+          "indices": [
+            "Fiche « La machine à vapeur » : source → chaleur → vapeur → mouvement.",
+            "Le va-et-vient vient avant la rotation."
+          ]
+        },
+        "lieutenant": {
+          "type": "trous",
+          "dialogue": "Le commandant voudrait un rapport écrit sur la machine. Je vous propose de le compléter : chaque mot à sa place, et rien d'approximatif.",
+          "consigne": "Complète le rapport de Conseil. Certaines étiquettes ne servent pas. Puis justifie.",
+          "texte": "Le charbon contient une énergie [[chimique]]. En brûlant, il libère de la [[chaleur]] qui transforme l'eau de la chaudière en [[vapeur]]. Sous pression, la vapeur pousse le [[piston]] : l'énergie devient [[mouvement]]. Le [[manomètre]] permet de surveiller la pression pour éviter l'explosion.",
+          "etiquettes": [
+            "chimique",
+            "chaleur",
+            "vapeur",
+            "piston",
+            "mouvement",
+            "manomètre",
+            "électrique",
+            "glace",
+            "boussole"
+          ],
+          "justification": {
+            "question": "Pourquoi « forcer les feux » fait-il aller la frégate plus vite ?",
+            "options": [
+              "Plus de charbon brûlé donne plus de chaleur, donc plus de vapeur sous pression, donc un piston poussé plus fort.",
+              "La fumée noire pousse la frégate vers l'avant.",
+              "Le charbon rend l'eau plus légère.",
+              "La machine à vapeur a été perfectionnée au XVIIIᵉ siècle."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « La machine à vapeur », partie « L'énergie change de forme ».",
+            "Trois étiquettes sont des pièges : la frégate n'a pas de piles, et la glace n'a rien à faire dans une chaudière."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "On murmure que le monstre n'a ni cheminée ni fumée. Si c'est une machine, elle ne ressemble à aucune autre. Comparons notre frégate à ce qu'il faudrait pour égaler le « monstre ».",
+          "consigne": "<div class='doc-carnet'><b>Carnet du mécanicien</b> — « Consommation à toute vapeur : plusieurs tonnes de charbon par jour. Soutes presque vides au bout de quelques semaines. Fumée noire, escarbilles, chaleur insupportable dans la chaufferie. »</div>",
+          "questions": [
+            {
+              "q": "Pourquoi une frégate à vapeur doit-elle régulièrement faire escale ?",
+              "options": [
+                "Pour remplir ses soutes de charbon.",
+                "Pour vider sa vapeur.",
+                "Pour recharger ses piles électriques.",
+                "Pour refroidir son hélice."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Que montre la fumée noire qui sort de la cheminée ?",
+              "options": [
+                "Le charbon brûle dans le foyer : c'est une combustion.",
+                "L'eau de la chaudière s'évapore.",
+                "Le piston est usé.",
+                "La frégate va plus vite que le vent."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Une machine qui avance sans fumée ni cheminée doit…",
+              "options": [
+                "tirer son énergie d'une autre source que la combustion de charbon à bord.",
+                "être un animal.",
+                "être immobile.",
+                "brûler plus de charbon."
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique ta réponse à la question 3 ?",
+            "options": [
+              "Une machine ne crée pas d'énergie : il faut une source (charbon, vent, eau, piles…) et chaque source a ses traces : le charbon brûlé produit fumée et chaleur.",
+              "La machine à vapeur a été perfectionnée par James Watt au XVIIIᵉ siècle.",
+              "Le manomètre mesure la pression de la vapeur.",
+              "La bielle transforme un va-et-vient en rotation."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « La machine à vapeur », partie « D'où vient l'énergie ? ».",
+            "Pas de fumée, donc pas de combustion à bord : l'énergie vient d'ailleurs."
+          ]
+        }
+      },
+      {
+        "id": "e1-3",
+        "escale": 1,
+        "ordre": 3,
+        "titre": "La cambuse",
+        "decor": "cambuse",
+        "objet_principal": "etagere-vivres",
+        "objets_cliquables": [
+          "etagere-vivres",
+          "tonneaux",
+          "biscuits"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "La chasse peut durer des mois. Le cambusier doit savoir quels vivres consommer d'abord et lesquels garder pour la fin. Ned Land connaît la morue salée, mais les boîtes de fer-blanc et les bocaux, nouveautés du siècle, le laissent méfiant : il faut trier les vivres selon leur façon d'être conservés.",
+        "enjeu": "Des vivres gâtés au milieu du Pacifique, c'est la faim et la maladie pour tout l'équipage.",
+        "episode_du_roman": "Partie I, ch. IV-V : l'Abraham Lincoln part pour une campagne de plusieurs mois ; vraisemblance : une frégate de 1867 emporte salaisons, biscuit de mer et conserves.",
+        "competence_programme": "Sciences : production et conservation des aliments (salaison, séchage, fumage, conserve) ; produits agricoles et produits transformés.",
+        "pourquoi_ce_savoir_ici": "Savoir comment un aliment est conservé, c'est savoir combien de temps il tiendra en mer.",
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "La lanterne s'avive ; les rayons de la cambuse s'éclairent, rangés."
+        },
+        "liberte_ou_anachronisme": "La conserve en récipient fermé et chauffé (Nicolas Appert) date du début du XIXᵉ siècle ; la chèvre du bord est une vraisemblance.",
+        "lecon": "conservation",
+        "type": "association",
+        "niveau_variantes": "Mousse : 3 aliments et leur méthode. Matelot : 5 aliments et leur méthode. Timonier : 5 méthodes et ce qu'elles font aux microbes. Lieutenant : QCM (scorbut, ce qui n'existait pas en 1867) + justification. Second : tri en trois colonnes (on retire l'eau / on chauffe et on ferme / frais) + justification.",
+        "mousse": {
+          "dialogue": "La morue salée, je connais. Mais le reste… Dites-moi comment chaque vivre est conservé, que je sache ce qui va tenir.",
+          "consigne": "Relie chaque aliment à la façon dont il est conservé.",
+          "paires": [
+            {
+              "g": "La morue",
+              "icone": "🐟",
+              "d": "avec beaucoup de sel"
+            },
+            {
+              "g": "Le jambon",
+              "icone": "🍖",
+              "d": "à la fumée"
+            },
+            {
+              "g": "Les petits pois",
+              "icone": "🥫",
+              "d": "dans une boîte fermée, chauffée"
+            }
+          ],
+          "indices": [
+            "Fiche « Conserver les aliments » : chaque méthode a sa ligne.",
+            "Le jambon pend au-dessus d'un feu de bois : c'est le fumage."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Le cambusier m'a montré cinq sortes de vivres. Je veux savoir comment chacun a été préparé, que je ne mange pas d'abord ce qui peut attendre.",
+          "consigne": "Relie chaque vivre de la cambuse à sa méthode de conservation.",
+          "paires": [
+            {
+              "g": "La morue",
+              "icone": "🐟",
+              "d": "la salaison (le sel)"
+            },
+            {
+              "g": "Le jambon",
+              "icone": "🍖",
+              "d": "le fumage"
+            },
+            {
+              "g": "Le biscuit de mer",
+              "icone": "🍪",
+              "d": "le séchage (cuit et séché très dur)"
+            },
+            {
+              "g": "Les petits pois en boîte",
+              "icone": "🥫",
+              "d": "la conserve (chauffée dans une boîte fermée)"
+            },
+            {
+              "g": "La confiture",
+              "icone": "🍯",
+              "d": "le sucre"
+            }
+          ],
+          "indices": [
+            "Fiche « Conserver les aliments » : lis le tableau des méthodes.",
+            "Le biscuit de mer n'est ni salé ni sucré : on l'a rendu sec."
+          ]
+        },
+        "timonier": {
+          "dialogue": "Chaque méthode, c'est une ruse contre ce qui gâte la nourriture. Je veux savoir laquelle fait quoi : on ne fait confiance qu'à ce qu'on comprend.",
+          "consigne": "Relie chaque méthode de conservation à ce qu'elle fait aux microbes qui gâtent les aliments.",
+          "paires": [
+            {
+              "g": "Saler",
+              "icone": "🧂",
+              "d": "le sel retire l'eau dont les microbes ont besoin"
+            },
+            {
+              "g": "Sécher",
+              "icone": "☀️",
+              "d": "on enlève l'eau de l'aliment"
+            },
+            {
+              "g": "Mettre en conserve",
+              "icone": "🥫",
+              "d": "la chaleur tue les microbes et la boîte fermée empêche d'autres d'entrer"
+            },
+            {
+              "g": "Garder au froid",
+              "icone": "🧊",
+              "d": "le froid ralentit les microbes"
+            },
+            {
+              "g": "Sucrer fortement",
+              "icone": "🍯",
+              "d": "beaucoup de sucre retient l'eau, comme le sel"
+            }
+          ],
+          "indices": [
+            "Fiche « Conserver les aliments » : les microbes ont besoin d'eau et de chaleur pour se multiplier.",
+            "La conserve agit de deux façons à la fois."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Le cambusier a embarqué des citrons et de la choucroute, et il refuse qu'on y touche. J'aimerais comprendre avant de me fâcher.",
+          "consigne": "Réponds à partir de la fiche « Conserver les aliments ».",
+          "questions": [
+            {
+              "q": "Pourquoi embarque-t-on des citrons et de la choucroute pour une longue campagne ?",
+              "options": [
+                "Pour prévenir le scorbut, une maladie due au manque de vitamine C.",
+                "Pour remplacer le sel.",
+                "Parce qu'ils se conservent mieux que le biscuit.",
+                "Pour nourrir les chaudières."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Laquelle de ces méthodes n'existait pas à bord en 1867 ?",
+              "options": [
+                "le congélateur électrique",
+                "la conserve en boîte fermée et chauffée",
+                "la salaison",
+                "le fumage"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche permet de répondre à la question 1 ?",
+            "options": [
+              "Sans fruits ni légumes frais, les marins des longues traversées souffraient du scorbut, causé par un manque de vitamine C ; citrons et choucroute en apportent.",
+              "Le sel retire l'eau dont les microbes ont besoin.",
+              "La conserve date du début du XIXᵉ siècle.",
+              "Le froid ralentit les microbes."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Conserver les aliments », encadré « Le mal des marins ».",
+            "Électricité domestique et moteurs frigorifiques sont bien postérieurs au roman pour un navire."
+          ]
+        },
+        "second": {
+          "type": "tri",
+          "dialogue": "Le cambusier compte ses vivres et fait des grimaces. Avant de manger, je veux savoir ce qui tiendra jusqu'au bout, et pourquoi.",
+          "consigne": "Classe chaque vivre selon la façon dont il résiste aux microbes, puis justifie.",
+          "colonnes": [
+            {
+              "id": "eau",
+              "titre": "On lui a retiré l'eau (sel, séchage, sucre, fumée)",
+              "icone": "🧂"
+            },
+            {
+              "id": "chaleur",
+              "titre": "Chauffé puis fermé (conserve)",
+              "icone": "🥫"
+            },
+            {
+              "id": "frais",
+              "titre": "Frais : à consommer vite",
+              "icone": "⏳"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "morue salée",
+              "col": "eau"
+            },
+            {
+              "txt": "biscuit de mer",
+              "col": "eau"
+            },
+            {
+              "txt": "confiture",
+              "col": "eau"
+            },
+            {
+              "txt": "jambon fumé",
+              "col": "eau"
+            },
+            {
+              "txt": "petits pois en boîte de fer-blanc",
+              "col": "chaleur"
+            },
+            {
+              "txt": "viande en bocal stérilisé",
+              "col": "chaleur"
+            },
+            {
+              "txt": "poisson pêché ce matin",
+              "col": "frais"
+            },
+            {
+              "txt": "lait de la chèvre du bord",
+              "col": "frais"
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique pourquoi la confiture se classe avec le sel ?",
+            "options": [
+              "Beaucoup de sucre retient l'eau, comme le sel : les microbes ne peuvent plus s'en servir.",
+              "La chaleur tue les microbes.",
+              "Le froid ralentit les microbes.",
+              "Les fruits sont des produits agricoles."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Conserver les aliments » : trois façons de lutter contre les microbes.",
+            "Un bocal ou une boîte chauffés et fermés vont ensemble."
+          ]
+        }
+      },
+      {
+        "id": "e1-4",
+        "escale": 1,
+        "ordre": 4,
+        "titre": "Le harpon de Ned Land",
+        "decor": "pont-lincoln",
+        "objet_principal": "harpon",
+        "objets_cliquables": [
+          "harpon",
+          "lueur-mer",
+          "loch"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "La frégate est enfin à portée. Ned Land lance son harpon : il rebondit en sonnant comme sur du métal. Avant que le commandant ne fasse donner le canon, il faut décider : cette « bête » est-elle un être vivant ou une machine ?",
+        "enjeu": "Si c'est une machine, il y a des hommes à bord, et l'on tire peut-être sur un navire.",
+        "episode_du_roman": "Partie I, ch. VI-VII : Ned Land lance son harpon, qui frappe un corps dur ; Aronnax, tombé à la mer, découvre ensuite des plaques de tôle boulonnées.",
+        "competence_programme": "Sciences : caractéristiques du vivant (naître, grandir, se nourrir, respirer, se reproduire, mourir) ; distinguer un être vivant d'un objet technique.",
+        "pourquoi_ce_savoir_ici": "Les indices observés ne prouvent pas tous la même chose : seuls les caractères du vivant permettent de trancher.",
+        "reaction_du_decor": {
+          "effet": "secousse",
+          "description": "Un choc ébranle la frégate ; une gerbe d'eau balaie le pont."
+        },
+        "liberte_ou_anachronisme": "La bioluminescence (lumière produite par des êtres vivants) est citée pour montrer qu'une lumière seule ne prouve rien.",
+        "lecon": "vivant-ou-objet",
+        "type": "tri",
+        "niveau_variantes": "Mousse : êtres vivants ou objets fabriqués. Matelot : caractères du vivant ou de l'objet technique. Timonier et Lieutenant : indices sur le « monstre » en 3 colonnes, dont « ne permet pas de conclure » (+ justification pour Lieutenant). Second : QCM sur la preuve et le contre-exemple + justification.",
+        "mousse": {
+          "dialogue": "Tonnerre ! Mon harpon a rebondi en sonnant comme une marmite ! Rangeons d'abord ce qui vit et ce qui a été fabriqué, que je sache sur quoi je tire.",
+          "consigne": "Range chaque élément : être vivant ou objet fabriqué par les humains ?",
+          "colonnes": [
+            {
+              "id": "vivant",
+              "titre": "Être vivant",
+              "icone": "🐋"
+            },
+            {
+              "id": "objet",
+              "titre": "Objet fabriqué",
+              "icone": "⚙️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "une baleine",
+              "icone": "🐋",
+              "col": "vivant"
+            },
+            {
+              "txt": "un narval",
+              "icone": "🐳",
+              "col": "vivant"
+            },
+            {
+              "txt": "une mouette",
+              "icone": "🕊️",
+              "col": "vivant"
+            },
+            {
+              "txt": "une frégate",
+              "icone": "⛵",
+              "col": "objet"
+            },
+            {
+              "txt": "un harpon",
+              "icone": "🔱",
+              "col": "objet"
+            },
+            {
+              "txt": "une lanterne",
+              "icone": "🏮",
+              "col": "objet"
+            }
+          ],
+          "indices": [
+            "Fiche « Être vivant ou objet ? » : un être vivant naît, grandit, se nourrit et meurt.",
+            "Une frégate ne grandit pas : on la construit."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Vivant ou pas vivant, voilà la question. Le professeur dit qu'il y a des règles pour le savoir. Moi, je veux les voir écrites.",
+          "consigne": "Range chaque phrase : elle décrit un être vivant ou un objet technique ?",
+          "colonnes": [
+            {
+              "id": "vivant",
+              "titre": "Un être vivant…",
+              "icone": "🐋"
+            },
+            {
+              "id": "objet",
+              "titre": "Un objet technique…",
+              "icone": "⚙️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "naît et grandit",
+              "col": "vivant"
+            },
+            {
+              "txt": "se nourrit",
+              "col": "vivant"
+            },
+            {
+              "txt": "respire",
+              "col": "vivant"
+            },
+            {
+              "txt": "se reproduit",
+              "col": "vivant"
+            },
+            {
+              "txt": "est fabriqué par des humains",
+              "col": "objet"
+            },
+            {
+              "txt": "a besoin d'une source d'énergie fournie (charbon, piles…)",
+              "col": "objet"
+            },
+            {
+              "txt": "est fait de pièces assemblées (rivets, boulons)",
+              "col": "objet"
+            },
+            {
+              "txt": "répond à un besoin humain",
+              "col": "objet"
+            }
+          ],
+          "indices": [
+            "Fiche « Être vivant ou objet ? » : deux listes, une pour chaque colonne.",
+            "Un objet technique peut bouger et consommer de l'énergie, mais il ne grandit pas et ne se reproduit pas."
+          ]
+        },
+        "timonier": {
+          "dialogue": "On a vu des choses étranges cette nuit. Mais attention : toutes ne prouvent rien ! Triez-les, avant que le canon ne parle.",
+          "consigne": "Classe chaque observation sur le « monstre ».",
+          "colonnes": [
+            {
+              "id": "machine",
+              "titre": "Indique une machine",
+              "icone": "⚙️"
+            },
+            {
+              "id": "vivant",
+              "titre": "Indique un être vivant",
+              "icone": "🐋"
+            },
+            {
+              "id": "rien",
+              "titre": "Ne permet pas de conclure",
+              "icone": "❔"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "le harpon sonne comme sur du fer",
+              "col": "machine"
+            },
+            {
+              "txt": "on devine des plaques boulonnées",
+              "col": "machine"
+            },
+            {
+              "txt": "sa lumière s'éteint d'un coup, comme une lampe qu'on coupe",
+              "col": "machine"
+            },
+            {
+              "txt": "il brille dans la nuit",
+              "col": "rien"
+            },
+            {
+              "txt": "il souffle des jets d'eau",
+              "col": "rien"
+            },
+            {
+              "txt": "il nage plus vite que la frégate",
+              "col": "rien"
+            },
+            {
+              "txt": "des oiseaux de mer le suivent pour manger les poissons qu'il fait fuir",
+              "col": "rien"
+            }
+          ],
+          "indices": [
+            "Fiche « Être vivant ou objet ? », encadré « Un indice n'est pas une preuve ».",
+            "Une baleine aussi souffle de l'eau, et certains animaux produisent de la lumière."
+          ]
+        },
+        "lieutenant": {
+          "dialogue": "Le commandant veut un avis écrit et motivé. Chaque observation à sa place, et une phrase pour expliquer celle qui trompe tout le monde.",
+          "consigne": "Classe chaque observation, puis justifie.",
+          "colonnes": [
+            {
+              "id": "machine",
+              "titre": "Indique une machine",
+              "icone": "⚙️"
+            },
+            {
+              "id": "vivant",
+              "titre": "Indique un être vivant",
+              "icone": "🐋"
+            },
+            {
+              "id": "rien",
+              "titre": "Ne permet pas de conclure",
+              "icone": "❔"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "le harpon sonne comme sur du fer",
+              "col": "machine"
+            },
+            {
+              "txt": "on devine des rivets et des plaques de tôle",
+              "col": "machine"
+            },
+            {
+              "txt": "il n'a jamais été vu manger",
+              "col": "rien"
+            },
+            {
+              "txt": "il brille dans la nuit",
+              "col": "rien"
+            },
+            {
+              "txt": "il souffle des jets d'eau",
+              "col": "rien"
+            },
+            {
+              "txt": "il a des petits qui le suivent",
+              "col": "vivant"
+            },
+            {
+              "txt": "sa taille n'a pas changé depuis un an d'observations",
+              "col": "rien"
+            }
+          ],
+          "justification": {
+            "question": "Pourquoi « il brille dans la nuit » ne prouve-t-il rien ?",
+            "options": [
+              "Certains êtres vivants produisent leur propre lumière (bioluminescence) ; une machine peut aussi porter des lampes.",
+              "Toutes les machines brillent.",
+              "Aucun animal ne vit la nuit.",
+              "Un être vivant naît, grandit, se nourrit et meurt."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Être vivant ou objet ? », encadré « Un indice n'est pas une preuve ».",
+            "Avoir des petits, c'est se reproduire : un caractère du vivant."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Le professeur a écrit partout qu'il s'agissait d'un narval géant. Un savant doit savoir dire « je me suis trompé » : il ne faut qu'une preuve pour cela.",
+          "consigne": "Réponds en raisonnant comme un savant : une seule preuve suffit à réfuter une hypothèse ; aucun indice ne suffit à la prouver.",
+          "questions": [
+            {
+              "q": "Quelle observation suffit à réfuter l'hypothèse du « narval géant » ?",
+              "options": [
+                "Des plaques de tôle assemblées par des boulons.",
+                "Il nage très vite.",
+                "Il souffle des jets d'eau.",
+                "Il brille dans la nuit."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Quel ensemble de caractères définit un être vivant ?",
+              "options": [
+                "Il naît, grandit, se nourrit, se reproduit et meurt.",
+                "Il bouge et fait du bruit.",
+                "Il est grand et il nage.",
+                "Il brille et consomme de l'énergie."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Lequel de ces indices ne permet PAS de trancher ?",
+              "options": [
+                "Il souffle des jets d'eau.",
+                "Le harpon sonne comme sur du fer.",
+                "On voit des rivets.",
+                "Sa lumière s'éteint d'un coup comme une lampe coupée."
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+            "options": [
+              "Un objet technique est fait de pièces fabriquées et assemblées par des humains ; aucun être vivant n'est boulonné.",
+              "Certains êtres vivants produisent leur propre lumière.",
+              "Un être vivant respire.",
+              "Une baleine souffle de l'eau par son évent."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Être vivant ou objet ? » : cherche ce qu'aucun être vivant ne peut avoir.",
+            "Une baleine souffle aussi : cet indice convient aux deux hypothèses."
+          ]
+        }
+      }
+    ]
+  },
+  "rayons": [
+    {
+      "id": "histoire",
+      "titre": "Rayon Histoire",
+      "icone": "📜"
+    },
+    {
+      "id": "vivant",
+      "titre": "Rayon Vivant",
+      "icone": "🐚"
+    }
+  ],
+  "lecons": [
+    {
+      "id": "deplacement",
+      "rayon": "navigation",
+      "fiche": 2,
+      "icone": "⏱️",
+      "titre": "Mesurer un déplacement",
+      "escale": 1,
+      "competence": "Mesurer une distance et une durée lors d'un déplacement ; différents types de mouvement.",
+      "essentiel": "<p>Pour décrire un déplacement, on mesure une <b>distance</b> (en kilomètres, en milles…) et une <b>durée</b> (en heures, en minutes).</p><div class='encadre'><b>Calculer une durée</b> : on part de l'heure du début et on compte jusqu'à l'heure de la fin. Exemple : de 21 h 40 à 22 h 40, il y a 1 heure ; de 22 h 40 à 23 h 10, 30 minutes. 1 heure = 60 minutes.</div><h4>Types de mouvement</h4><p><b>Rectiligne</b> : l'objet avance en ligne droite. <b>Circulaire</b> : il tourne autour d'un point. <b>Curviligne</b> : il suit une courbe.</p>",
+      "approfondi": "<h4>La vitesse</h4><p>La <b>vitesse</b>, c'est la distance parcourue en une heure. Si un navire parcourt 30 milles en 2 heures, il parcourt 15 milles en 1 heure.</p><p>En mer, on mesure la vitesse en <b>nœuds</b> : un nœud, c'est une vitesse d'un mille marin par heure. Le mille marin mesure environ 1 852 mètres.</p><p>On mesurait la vitesse avec le <b>loch</b> : une planchette jetée à l'eau, attachée à une corde à nœuds que l'on laissait filer pendant un temps mesuré au sablier.</p>",
+      "expert": "<div class='encadre'><b>Rattraper ou être distancé</b>. Quand deux objets vont dans le même sens, l'écart entre eux change chaque heure de la différence de leurs vitesses. Exemple : à 20 nœuds contre 15, on reprend 5 milles par heure ; pour reprendre 10 milles d'avance, il faut 2 heures. Pour convertir des nœuds en km/h, on multiplie par 1,852.</div>",
+      "dans_le_roman": "Le « monstre » distance l'Abraham Lincoln pendant des semaines (Partie I, ch. VI)."
+    },
+    {
+      "id": "machine-vapeur",
+      "rayon": "histoire",
+      "fiche": 1,
+      "icone": "🚂",
+      "titre": "La machine à vapeur",
+      "escale": 1,
+      "competence": "L'âge industriel : énergies et machines ; révolution industrielle et progrès technique.",
+      "essentiel": "<p>Au XIXᵉ siècle, la <b>machine à vapeur</b> transforme le travail, les usines et les transports (trains, navires) : c'est la <b>révolution industrielle</b>.</p><p>Comment elle marche : le <b>charbon</b> brûle dans le <b>foyer</b> ; la chaleur fait bouillir l'eau de la <b>chaudière</b> ; la <b>vapeur</b> pousse un <b>piston</b> ; le mouvement fait tourner une roue ou une <b>hélice</b>.</p>",
+      "approfondi": "<h4>Les pièces de la machine</h4><p>Foyer → chaudière (eau et vapeur) → cylindre (la vapeur y pousse le piston, qui fait un va-et-vient) → bielle et arbre (le va-et-vient devient rotation) → hélice ou roues.</p><div class='encadre attention'>Le <b>manomètre</b> mesure la pression de la vapeur : trop de pression, et la chaudière peut exploser.</div>",
+      "expert": "<h4>L'énergie change de forme</h4><p>Le charbon contient une énergie <b>chimique</b> ; en brûlant (combustion), il libère de la <b>chaleur</b> ; la vapeur sous pression produit un <b>mouvement</b>. Plus de charbon brûlé donne plus de chaleur, donc plus de vapeur sous pression, donc un piston poussé plus fort.</p><div class='encadre'><b>D'où vient l'énergie ?</b> Une machine ne crée pas d'énergie : il faut une source (charbon, vent, eau, piles…) et chaque source a ses traces : le charbon brûlé produit fumée et chaleur. La machine à vapeur a été perfectionnée par James Watt au XVIIIᵉ siècle.</div>",
+      "dans_le_roman": "Le commandant Farragut fait pousser les feux de l'Abraham Lincoln pour atteindre l'« animal » (Partie I, ch. VI)."
+    },
+    {
+      "id": "conservation",
+      "rayon": "vivant",
+      "fiche": 1,
+      "icone": "🥫",
+      "titre": "Conserver les aliments",
+      "escale": 1,
+      "competence": "Production et conservation des aliments ; produits agricoles et produits transformés.",
+      "essentiel": "<p>Les aliments se gâtent à cause de <b>microbes</b> qui se multiplient. On les conserve en les empêchant de se développer.</p><table class='tab-lecon'><tr><th>Méthode</th><th>Exemple</th></tr><tr><td>🧂 la salaison (beaucoup de sel)</td><td>morue, viande salée</td></tr><tr><td>🔥 le fumage (à la fumée)</td><td>jambon, hareng</td></tr><tr><td>☀️ le séchage (on enlève l'eau)</td><td>biscuit de mer, fruits secs</td></tr><tr><td>🍯 le sucre</td><td>confiture</td></tr><tr><td>🥫 la conserve (chauffée dans une boîte ou un bocal fermés)</td><td>petits pois, viande en bocal</td></tr><tr><td>🧊 le froid</td><td>glacière, réfrigérateur</td></tr></table>",
+      "approfondi": "<h4>Ce que fait chaque méthode</h4><p>Les microbes ont besoin d'<b>eau</b> et de <b>chaleur</b> pour se multiplier. Le sel retire l'eau dont les microbes ont besoin ; on enlève l'eau en séchant ; beaucoup de sucre retient l'eau, comme le sel ; la chaleur tue les microbes et la boîte fermée empêche d'autres d'entrer ; le froid ralentit les microbes.</p><p>Un produit <b>agricole</b> sort de la ferme tel quel (citron, blé, lait) ; un produit <b>transformé</b> (ou dérivé) a été préparé (confiture, biscuit, jambon fumé).</p>",
+      "expert": "<div class='encadre'><b>Le mal des marins</b>. Sans fruits ni légumes frais, les marins des longues traversées souffraient du scorbut, causé par un manque de vitamine C ; citrons et choucroute en apportent.</div><p>La conserve en récipient fermé et chauffé a été mise au point par Nicolas Appert au début du XIXᵉ siècle. Le congélateur électrique est une invention du XXᵉ siècle.</p>",
+      "dans_le_roman": "L'Abraham Lincoln part pour une campagne de plusieurs mois (Partie I, ch. IV)."
+    },
+    {
+      "id": "vivant-ou-objet",
+      "rayon": "vivant",
+      "fiche": 2,
+      "icone": "🐋",
+      "titre": "Être vivant ou objet ?",
+      "escale": 1,
+      "competence": "Caractéristiques du vivant ; distinguer un être vivant d'un objet technique.",
+      "essentiel": "<p>Un <b>être vivant</b> naît, grandit, se nourrit, respire, se reproduit et meurt. Une baleine, un narval, une mouette sont des êtres vivants.</p><p>Un <b>objet technique</b> est fabriqué par des humains pour répondre à un besoin : une frégate, un harpon, une lanterne. Il ne grandit pas et ne se reproduit pas.</p>",
+      "approfondi": "<table class='tab-lecon'><tr><th>Un être vivant…</th><th>Un objet technique…</th></tr><tr><td>naît et grandit ; se nourrit ; respire ; se reproduit ; meurt</td><td>est fabriqué par des humains ; répond à un besoin humain ; est fait de pièces assemblées (rivets, boulons) ; a besoin d'une source d'énergie fournie (charbon, piles…)</td></tr></table><div class='encadre attention'><b>Un indice n'est pas une preuve</b>. Bouger vite, souffler de l'eau ou briller la nuit ne suffit pas : une baleine souffle de l'eau par son évent, une pompe aussi ; certains animaux produisent de la lumière, une machine peut porter des lampes.</div>",
+      "expert": "<p>Certains êtres vivants produisent leur propre lumière (<b>bioluminescence</b>) : méduses, poissons des profondeurs. Un savant cherche la preuve qui permet de trancher : un objet technique est fait de pièces fabriquées et assemblées par des humains ; aucun être vivant n'est boulonné. Une seule preuve contraire suffit à abandonner une hypothèse.</p>",
+      "dans_le_roman": "Aronnax croit d'abord à un narval géant, puis découvre des plaques de tôle boulonnées (Partie I, ch. II et VII)."
+    }
+  ],
+  "decors": {
+    "pont-lincoln": {
+      "titre": "Le pont de l'Abraham Lincoln",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 40,
+          "y": 41,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 51,
+          "y": 34,
+          "r": 6,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 92,
+          "y": 50,
+          "r": 9,
+          "couleur": "#3fa8ff",
+          "pulse": 0.6
+        },
+        {
+          "type": "poussiere",
+          "x": 5,
+          "y": 5,
+          "w": 90,
+          "h": 50,
+          "nombre": 25
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "livre-quart",
+          "libelle": "Le livre de quart, sur le pupitre",
+          "x": 20,
+          "y": 42,
+          "w": 27,
+          "h": 22,
+          "description": "L'officier de quart y note l'heure, le cap et les distances relevées au loch."
+        },
+        {
+          "id": "loch",
+          "libelle": "Le loch et son sablier",
+          "x": 9,
+          "y": 66,
+          "w": 29,
+          "h": 32,
+          "description": "La corde à nœuds du loch, enroulée sur son tambour : on la laisse filer pendant que coule le sablier."
+        },
+        {
+          "id": "longue-vue",
+          "libelle": "La longue-vue",
+          "x": 55,
+          "y": 40,
+          "w": 13,
+          "h": 44,
+          "description": "Dans la lunette, la lueur bleue glisse sous la surface, plus vite qu'aucun cétacé."
+        },
+        {
+          "id": "harpon",
+          "libelle": "Le harpon de Ned Land",
+          "x": 68,
+          "y": 8,
+          "w": 17,
+          "h": 84,
+          "description": "Le harpon du roi des harponneurs, sa corde lovée dans la baille."
+        },
+        {
+          "id": "lueur-mer",
+          "libelle": "La lueur sur la mer",
+          "x": 86,
+          "y": 32,
+          "w": 14,
+          "h": 28,
+          "description": "Une lumière électrique, bleue et intense, qui palpite sous l'eau."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "machines-vapeur": {
+      "titre": "La chaufferie de la frégate",
+      "reference": "references/style-salle-machines-3.png",
+      "ambiance": [
+        "machines",
+        "vapeur"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 26,
+          "y": 72,
+          "r": 10,
+          "couleur": "#ff8a2e",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 72,
+          "y": 74,
+          "r": 9,
+          "couleur": "#ff8a2e",
+          "pulse": 0.4,
+          "scintille": true
+        },
+        {
+          "type": "fumee",
+          "x": 40,
+          "y": 15,
+          "w": 20,
+          "h": 35,
+          "nombre": 14
+        },
+        {
+          "type": "rayons",
+          "x": 82,
+          "y": 0,
+          "w": 24,
+          "h": 60
+        },
+        {
+          "type": "poussiere",
+          "x": 20,
+          "y": 10,
+          "w": 60,
+          "h": 70,
+          "nombre": 40
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "chaudiere",
+          "libelle": "La chaudière et son foyer",
+          "x": 6,
+          "y": 38,
+          "w": 26,
+          "h": 50,
+          "description": "Une chaudière de cuivre rivetée ; dans le foyer, le charbon rougeoie."
+        },
+        {
+          "id": "manometre-vapeur",
+          "libelle": "Le manomètre de la chaudière",
+          "x": 71,
+          "y": 42,
+          "w": 8,
+          "h": 12,
+          "description": "L'aiguille approche de la zone rouge : la pression de la vapeur monte."
+        },
+        {
+          "id": "chauffeur",
+          "libelle": "Le chauffeur",
+          "x": 45,
+          "y": 40,
+          "w": 9,
+          "h": 26,
+          "description": "Un chauffeur pellette le charbon sans relâche, couvert de suie."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "cambuse": {
+      "titre": "La cambuse",
+      "reference": null,
+      "ambiance": [
+        "coque"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 53,
+          "y": 21,
+          "r": 12,
+          "couleur": "#ffc86a",
+          "pulse": 0.25,
+          "scintille": true
+        },
+        {
+          "type": "rayons",
+          "x": 40,
+          "y": 10,
+          "w": 30,
+          "h": 70
+        },
+        {
+          "type": "poussiere",
+          "x": 25,
+          "y": 10,
+          "w": 55,
+          "h": 70,
+          "nombre": 45
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.05
+        }
+      ],
+      "zones": [
+        {
+          "id": "etagere-vivres",
+          "libelle": "Les réserves de la cambuse",
+          "x": 60,
+          "y": 8,
+          "w": 40,
+          "h": 52,
+          "description": "Bocaux de confiture et de choucroute, jambons fumés, citrons, boîtes de fer-blanc."
+        },
+        {
+          "id": "tonneaux",
+          "libelle": "Les tonneaux",
+          "x": 0,
+          "y": 20,
+          "w": 29,
+          "h": 55,
+          "description": "Viande salée et morue, sous la saumure."
+        },
+        {
+          "id": "biscuits",
+          "libelle": "Les caisses de biscuit de mer",
+          "x": 50,
+          "y": 38,
+          "w": 24,
+          "h": 26,
+          "description": "Des biscuits si durs qu'on les trempe dans le café."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  },
+  "dialogues": {
+    "cinematiques": {
+      "transition-e1": {
+        "titre": "Escale 1 — La chasse au « monstre »",
+        "plans": [
+          {
+            "decor": "pont-lincoln",
+            "etat": "normal",
+            "duree": 8,
+            "personnage": "aronnax",
+            "texte": "1867. Sur toutes les mers, des navires ont aperçu une chose énorme, lumineuse, plus rapide qu'aucune baleine. Le gouvernement des États-Unis envoie la frégate Abraham Lincoln la chasser, et m'invite à bord.",
+            "mouvement": "zoom",
+            "video": "intro"
+          },
+          {
+            "decor": "machines-vapeur",
+            "etat": "normal",
+            "duree": 9,
+            "video": "travelling-machines-vapeur",
+            "personnage": "conseil",
+            "texte": "Monsieur, la frégate file à toute vapeur. Dans la chaufferie, on ne compte plus les pelletées de charbon.",
+            "mouvement": "zoom"
+          },
+          {
+            "decor": "pont-lincoln",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "ned",
+            "texte": "Moi, Ned Land, je l'aurai, votre monstre. Mais pour lancer un harpon, il faut d'abord le rattraper !",
+            "mouvement": "glisse"
+          }
+        ]
+      },
+      "fin-e1": {
+        "titre": "Par-dessus bord",
+        "plans": [
+          {
+            "decor": "pont-lincoln",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "Un choc terrible. Je suis projeté à la mer… Quand je reprends mes esprits, je suis allongé sur le dos du « monstre » : sous mes mains, des plaques de tôle boulonnées !",
+            "mouvement": "secousse",
+            "effet": "alarme",
+            "video": "fin-e1"
+          }
+        ]
+      }
+    },
+    "fin_escale": {
+      "1": {
+        "personnage": "aronnax",
+        "texte": "Ce n'était pas un narval, mais un navire sous-marin. Conseil, Ned Land et moi sommes maintenant prisonniers de son équipage. Notez bien ce premier mot du journal : c'est celui de notre erreur."
+      }
+    }
+  }
+}

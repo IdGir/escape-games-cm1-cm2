@@ -1,0 +1,2001 @@
+{
+ "_commentaire": "Généré par outils/immersif/migrer-jeu.py depuis « moyen-age-abbaye ». À compléter : voir MIGRATION-RAPPORT.md.",
+ "version": 1,
+ "niveaux": [
+  {
+   "id": "matelot",
+   "nom": "Compagnon",
+   "icone": "🔧",
+   "equivalent": "≈ CM1",
+   "profil": "cœur de programme CM1"
+  },
+  {
+   "id": "timonier",
+   "nom": "Maître",
+   "icone": "🧭",
+   "equivalent": "≈ CM2",
+   "profil": "cœur de programme CM2"
+  }
+ ],
+ "escales": [
+  {
+   "numero": 1,
+   "id": "le-bapteme-de-clovis-de-l-empire-romain-aux-royaumes-francs",
+   "titre": "Le baptême de Clovis",
+   "lieu": "⛪ Reims, la ville du baptême — la première page du livre",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "La page montre un roi agenouillé devant un évêque, près d'une cuve d'eau. Autour, des guerriers regardent. En haut de la page, une grande lettre attend ses couleurs. Sous le dessin, une ligne s'est effacée : celle qui raconte comment, après l'Empire romain, un roi a réuni une grande partie de la Gaule.",
+   "scenarimage": "",
+   "mot": "FRANCS",
+   "mot_origine": "Le mot-clé de la salle 1.",
+   "air": null,
+   "cinematique_ouverture": "transition-e1",
+   "cinematique_fin": "fin-e1",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e1-1",
+     "escale": 1,
+     "ordre": 1,
+     "titre": "Après l'Empire romain",
+     "decor": "reims",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "anselme",
+     "probleme_narratif": "Frère Anselme veut situer le début du Moyen Âge.",
+     "enjeu": "Sans repères, on mélange Antiquité et Moyen Âge.",
+     "episode_du_roman": "Leçon « Après l'Empire romain : Clovis, roi des Francs » ; Grégoire de Tours, Histoire des Francs",
+     "competence_programme": "Situer la fin de l'Empire romain d'Occident et le début du Moyen Âge",
+     "pourquoi_ce_savoir_ici": "La salle « Le baptême de Clovis — De l'Empire romain aux royaumes francs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Le parchemin s'enlumine d'or."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "clovis",
+     "type": "qcm",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "L'Empire romain disparaît en Occident en 476. Clovis, roi des Francs, est baptisé à Reims par l'évêque Remi, vers l'an 500 : la date exacte est discutée par les historiens.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Avant l'arrivée des Francs, la Gaule faisait partie…",
+        "options": [
+         "de l'Empire romain",
+         "de l'empire de Charlemagne",
+         "du royaume d'Angleterre"
+        ],
+        "bonne": 0,
+        "explication": "La Gaule a été romaine pendant plusieurs siècles."
+       },
+       {
+        "q": "Clovis est le roi…",
+        "options": [
+         "des Francs",
+         "des Romains",
+         "des Gaulois"
+        ],
+        "bonne": 0,
+        "explication": "Le nom des Francs donnera plus tard le mot « France »."
+       },
+       {
+        "q": "Dans quelle ville Clovis est-il baptisé ?",
+        "options": [
+         "À Reims",
+         "À Rome",
+         "À Aix-la-Chapelle"
+        ],
+        "bonne": 0,
+        "explication": "Il est baptisé à Reims par l'évêque Remi."
+       }
+      ],
+      "consigne": "Lis chaque question, puis clique sur la bonne réponse. Quand tu as répondu à tout, clique sur « Vérifier ».",
+      "indices": [
+       "Avant les Francs, la Gaule était gouvernée depuis Rome.",
+       "Le mot « France » vient du nom du peuple de Clovis.",
+       "Le baptême a lieu dans une ville de l'est de la France actuelle, célèbre pour sa cathédrale."
+      ],
+      "dialogue": "Voici la première page. Elle commence là où finit l'Empire romain. Quand l'empire s'effondre en Occident, des peuples s'installent en Gaule : parmi eux, les Francs. Leur roi s'appelle Clovis. Il gagne des batailles, et il se fait baptiser à Reims par l'évêque Remi. Attention : personne ne connaît la date exacte de ce baptême. Les historiens hésitent entre 496 et 508. Écrivez « vers l'an 500 », c'est plus honnête. Rendez-moi cette page."
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "En quelle année l'Empire romain d'Occident disparaît-il ?",
+        "options": [
+         "476",
+         "800",
+         "1492",
+         "52 avant J.-C."
+        ],
+        "bonne": 0,
+        "explication": "476 marque le début du Moyen Âge, qui s'achève en 1492."
+       },
+       {
+        "q": "Qui baptise Clovis ?",
+        "options": [
+         "L'évêque Remi",
+         "Le pape Léon III",
+         "L'abbé Suger",
+         "Alcuin"
+        ],
+        "bonne": 0,
+        "explication": "Remi est l'évêque de Reims."
+       },
+       {
+        "q": "Pourquoi écrit-on que Clovis est baptisé « vers l'an 500 » ?",
+        "options": [
+         "Parce que les historiens ne sont pas d'accord sur l'année exacte",
+         "Parce qu'il a été baptisé plusieurs fois",
+         "Parce que l'an 500 est gravé à Reims",
+         "Parce qu'aucun texte ne parle de ce baptême"
+        ],
+        "bonne": 0,
+        "explication": "Selon les historiens, ce peut être 496, 499 ou 508."
+       },
+       {
+        "q": "Que gagne Clovis en devenant chrétien ?",
+        "options": [
+         "L'appui des évêques et des Gallo-Romains, déjà chrétiens",
+         "Le titre d'empereur",
+         "La ville de Rome",
+         "Le droit de ne plus faire la guerre"
+        ],
+        "bonne": 0,
+        "explication": "Les évêques sont alors les personnages les plus influents des villes."
+       }
+      ],
+      "consigne": "Réponds aux quatre questions, puis vérifie. Une seule réponse est exacte par question.",
+      "indices": [
+       "476 est la date que l'on retient pour le début du Moyen Âge.",
+       "Le pape Léon III, c'est l'histoire de Charlemagne, pas celle de Clovis.",
+       "Les sources hésitent entre 496, 499 et 508 : voilà pourquoi on écrit « vers »."
+      ],
+      "dialogue": "Voici la première page. Elle commence là où finit l'Empire romain. Quand l'empire s'effondre en Occident, des peuples s'installent en Gaule : parmi eux, les Francs. Leur roi s'appelle Clovis. Il gagne des batailles, et il se fait baptiser à Reims par l'évêque Remi. Attention : personne ne connaît la date exacte de ce baptême. Les historiens hésitent entre 496 et 508. Écrivez « vers l'an 500 », c'est plus honnête. Rendez-moi cette page."
+     }
+    },
+    {
+     "id": "e1-2",
+     "escale": 1,
+     "ordre": 2,
+     "titre": "La frise de la première page",
+     "decor": "reims",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aude",
+     "probleme_narratif": "Aude range les événements de la frise.",
+     "enjeu": "Sans l'ordre, la page est illisible.",
+     "episode_du_roman": "Leçon « Après l'Empire romain : Clovis, roi des Francs »",
+     "competence_programme": "Situer la fin de l'Empire romain d'Occident et le début du Moyen Âge",
+     "pourquoi_ce_savoir_ici": "La salle « Le baptême de Clovis — De l'Empire romain aux royaumes francs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "La frise se redresse bande après bande."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "clovis",
+     "type": "ordre",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "476 : fin de l'Empire romain d'Occident. 481 : Clovis roi des Francs. 486 : victoire de Soissons. Vers 500 : baptême à Reims. 507 : victoire de Vouillé. 511 : mort de Clovis à Paris.",
+     "matelot": {
+      "items": [
+       {
+        "txt": "L'Empire romain disparaît en Occident",
+        "sous": "476",
+        "rang": 1
+       },
+       {
+        "txt": "Clovis devient roi des Francs",
+        "sous": "481",
+        "rang": 2
+       },
+       {
+        "txt": "Clovis gagne la bataille de Soissons",
+        "sous": "486",
+        "rang": 3
+       },
+       {
+        "txt": "Clovis est baptisé à Reims",
+        "sous": "vers l'an 500",
+        "rang": 4
+       }
+      ],
+      "consigne": "Remets les événements dans l'ordre, du plus ancien (en haut) au plus récent (en bas), avec les flèches ▲▼. Les dates t'aident.",
+      "indices": [
+       "Compare les nombres : le plus petit est le plus ancien.",
+       "« Vers 500 » se place entre 486 et 507.",
+       "La fin de l'Empire romain vient en premier : c'est elle qui permet aux Francs de s'installer."
+      ],
+      "dialogue": "La frise de la première page est en désordre. Remettez les événements dans l'ordre."
+     },
+     "timonier": {
+      "items": [
+       {
+        "txt": "Fin de l'Empire romain d'Occident",
+        "sous": "début du Moyen Âge",
+        "rang": 1
+       },
+       {
+        "txt": "Clovis devient roi des Francs",
+        "sous": "il a environ quinze ans",
+        "rang": 2
+       },
+       {
+        "txt": "Victoire de Soissons sur Syagrius",
+        "sous": "le dernier chef romain du nord de la Gaule",
+        "rang": 3
+       },
+       {
+        "txt": "Baptême de Clovis à Reims",
+        "sous": "date discutée par les historiens",
+        "rang": 4
+       },
+       {
+        "txt": "Victoire de Vouillé sur les Wisigoths",
+        "sous": "le royaume s'étend vers le sud-ouest",
+        "rang": 5
+       },
+       {
+        "txt": "Mort de Clovis à Paris",
+        "sous": "sa résidence principale depuis 508",
+        "rang": 6
+       }
+      ],
+      "consigne": "Remets les six événements dans l'ordre chronologique. Les dates ne sont pas écrites : sers-toi de ce que tu sais, et de la leçon.",
+      "indices": [
+       "Tout commence par la disparition de l'Empire romain d'Occident.",
+       "Clovis doit d'abord devenir roi, puis vaincre le dernier chef romain.",
+       "Le baptême se place entre Soissons (486) et Vouillé (507) ; la mort de Clovis vient en dernier."
+      ],
+      "dialogue": "La frise de la première page est en désordre. Remettez les événements dans l'ordre."
+     }
+    },
+    {
+     "id": "e1-3",
+     "escale": 1,
+     "ordre": 3,
+     "titre": "Qui a fait quoi ?",
+     "decor": "reims",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "alix",
+     "probleme_narratif": "Mère Alix veut associer chaque personnage à son action.",
+     "enjeu": "Sans les rôles, impossible de raconter.",
+     "episode_du_roman": "Leçon « Après l'Empire romain : Clovis, roi des Francs »",
+     "competence_programme": "Situer la fin de l'Empire romain d'Occident et le début du Moyen Âge",
+     "pourquoi_ce_savoir_ici": "La salle « Le baptême de Clovis — De l'Empire romain aux royaumes francs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Les enluminures brillent de mille couleurs."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "clovis",
+     "type": "association",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Clovis est le roi des Francs ; Remi, l'évêque de Reims qui le baptise ; Syagrius, le chef romain vaincu à Soissons en 486 ; Alaric II, le roi des Wisigoths vaincu à Vouillé en 507 ; Grégoire de Tours, l'évêque qui raconte cette histoire près d'un siècle plus tard.",
+     "matelot": {
+      "paires": [
+       {
+        "g": "Clovis",
+        "d": "Roi des Francs, baptisé à Reims"
+       },
+       {
+        "g": "Remi",
+        "d": "Évêque de Reims, il baptise le roi"
+       },
+       {
+        "g": "Syagrius",
+        "d": "Chef romain vaincu à Soissons"
+       }
+      ],
+      "consigne": "Relie chaque personnage à ce qu'il a fait : clique sur un nom à gauche, puis sur sa phrase à droite.",
+      "indices": [
+       "Un évêque est un chef religieux : c'est lui qui baptise.",
+       "Syagrius n'est pas un Franc : c'est un Romain.",
+       "Clovis est celui qui gagne les batailles et se fait baptiser."
+      ],
+      "dialogue": "Qui a fait quoi ? Associez chaque personnage à son rôle."
+     },
+     "timonier": {
+      "paires": [
+       {
+        "g": "Clovis",
+        "d": "Roi des Francs de 481 à 511"
+       },
+       {
+        "g": "Remi",
+        "d": "Évêque de Reims, il baptise le roi"
+       },
+       {
+        "g": "Syagrius",
+        "d": "Dernier chef romain du nord de la Gaule, vaincu à Soissons en 486"
+       },
+       {
+        "g": "Alaric II",
+        "d": "Roi des Wisigoths, vaincu à Vouillé en 507"
+       },
+       {
+        "g": "Grégoire de Tours",
+        "d": "Évêque qui raconte la vie de Clovis, près d'un siècle plus tard"
+       }
+      ],
+      "consigne": "Relie chaque personnage à son rôle dans l'histoire de Clovis. Attention : l'un d'eux n'a pas vécu au temps de Clovis.",
+      "indices": [
+       "Remi baptise ; Syagrius et Alaric II sont vaincus.",
+       "Syagrius est romain, Alaric II est wisigoth.",
+       "Grégoire de Tours écrit à la fin du VIe siècle : il n'a pas vu le baptême, il le raconte."
+      ],
+      "dialogue": "Qui a fait quoi ? Associez chaque personnage à son rôle."
+     }
+    },
+    {
+     "id": "e1-4",
+     "escale": 1,
+     "ordre": 4,
+     "titre": "La carte du royaume",
+     "decor": "reims",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "garin",
+     "probleme_narratif": "Garin dessine la carte du royaume et laisse des blancs.",
+     "enjeu": "Sans carte, on ne sait pas où l'on est.",
+     "episode_du_roman": "Leçon « Après l'Empire romain : Clovis, roi des Francs »",
+     "competence_programme": "Situer la fin de l'Empire romain d'Occident et le début du Moyen Âge",
+     "pourquoi_ce_savoir_ici": "La salle « Le baptême de Clovis — De l'Empire romain aux royaumes francs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "La carte se déroule sur la table."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "clovis",
+     "type": "plan",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Reims, ville du baptême ; Soissons, victoire de 486 ; Vouillé, près de Poitiers, victoire de 507 ; Paris, résidence de Clovis à partir de 508. Aix-la-Chapelle et Rome appartiennent à l'histoire de Charlemagne.",
+     "niveaux": [
+      "timonier"
+     ],
+     "timonier": {
+      "titre": "Le royaume des Francs vers 511",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Au nord-est : la ville du baptême",
+        "reponse": "Reims"
+       },
+       {
+        "libelle": "Au nord : la victoire de 486 sur Syagrius",
+        "reponse": "Soissons"
+       },
+       {
+        "libelle": "Au centre : la résidence de Clovis à partir de 508",
+        "reponse": "Paris"
+       },
+       {
+        "libelle": "Au sud-ouest : la victoire de 507 sur les Wisigoths",
+        "reponse": "Vouillé"
+       }
+      ],
+      "etiquettes": [
+       "Reims",
+       "Soissons",
+       "Paris",
+       "Vouillé",
+       "Aix-la-Chapelle",
+       "Rome"
+      ],
+      "consigne": "Sur la carte du royaume de Clovis, place chaque nom de ville sur la bonne case : clique sur une étiquette, puis sur la case. Deux étiquettes sont en trop.",
+      "indices": [
+       "L'évêque Remi est l'évêque de Reims.",
+       "Vouillé est au sud-ouest, près de Poitiers : c'est la bataille contre les Wisigoths.",
+       "Aix-la-Chapelle et Rome sont les deux villes de la page suivante."
+      ],
+      "dialogue": "Voici la carte du royaume des Francs. Placez les noms."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 2,
+   "id": "aix-la-chapelle-charlemagne-son-empire-et-les-ecoles",
+   "titre": "La cour de Charlemagne",
+   "lieu": "👑 Aix-la-Chapelle, le palais de Charlemagne — la deuxième page",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Sur la page, un homme couronné est assis. Devant lui, des enfants tiennent des tablettes de cire. Plus loin, une chapelle ronde coiffée d'une coupole. Une carte occupe le bas de la page : elle va de l'océan aux grands fleuves de l'est, mais ses noms ont été grattés.",
+   "scenarimage": "",
+   "mot": "EMPIRE",
+   "mot_origine": "Le mot-clé de la salle 2.",
+   "air": null,
+   "cinematique_ouverture": "transition-e2",
+   "cinematique_fin": "fin-e2",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e2-1",
+     "escale": 2,
+     "ordre": 1,
+     "titre": "De Clovis à Charlemagne",
+     "decor": "aix",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aude",
+     "probleme_narratif": "Aude range les rois de Clovis à Charlemagne.",
+     "enjeu": "Sans l'ordre, on confond les rois.",
+     "episode_du_roman": "Leçon « Charlemagne, son empire et les écoles »",
+     "competence_programme": "Situer Charlemagne et son couronnement de l'an 800",
+     "pourquoi_ce_savoir_ici": "La salle « Aix-la-Chapelle — Charlemagne, son empire et les écoles » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les portraits des rois s'alignent."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "charlemagne",
+     "type": "ordre",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Vers 500 : baptême de Clovis. 768 : Charlemagne roi des Francs. 789 : l'Admonitio generalis demande des écoles. 25 décembre 800 : couronnement impérial à Rome. 814 : mort de Charlemagne à Aix-la-Chapelle. Près de trois siècles séparent Clovis et Charlemagne.",
+     "matelot": {
+      "items": [
+       {
+        "txt": "Clovis est baptisé à Reims",
+        "sous": "vers l'an 500",
+        "rang": 1
+       },
+       {
+        "txt": "Charlemagne devient roi des Francs",
+        "sous": "768",
+        "rang": 2
+       },
+       {
+        "txt": "Charlemagne est couronné empereur à Rome",
+        "sous": "800",
+        "rang": 3
+       },
+       {
+        "txt": "Charlemagne meurt à Aix-la-Chapelle",
+        "sous": "814",
+        "rang": 4
+       }
+      ],
+      "consigne": "Remets les événements dans l'ordre, du plus ancien au plus récent, avec les flèches ▲▼.",
+      "indices": [
+       "Clovis a vécu bien avant Charlemagne.",
+       "On devient roi avant de devenir empereur.",
+       "La mort de Charlemagne vient en dernier : 814."
+      ],
+      "dialogue": "Bonjour ! J'apprends à lire et à écrire ici, au palais. Charlemagne est roi des Francs depuis 768. Le jour de Noël de l'an 800, à Rome, le pape Léon III l'a couronné empereur. Une chose encore : on raconte parfois que Charlemagne a inventé l'école. C'est faux. Des écoles existaient déjà dans les monastères et auprès des évêques. Lui a demandé qu'il y en ait davantage, et il a fait venir des savants comme Alcuin. Aidez-moi à refaire cette page."
+     },
+     "timonier": {
+      "items": [
+       {
+        "txt": "Baptême de Clovis à Reims",
+        "sous": "l'évêque Remi",
+        "rang": 1
+       },
+       {
+        "txt": "Charlemagne devient roi des Francs",
+        "sous": "il règne d'abord avec son frère",
+        "rang": 2
+       },
+       {
+        "txt": "L'Admonitio generalis demande des écoles",
+        "sous": "dans les monastères et les évêchés",
+        "rang": 3
+       },
+       {
+        "txt": "Couronnement impérial à Rome",
+        "sous": "le jour de Noël",
+        "rang": 4
+       },
+       {
+        "txt": "Mort de Charlemagne",
+        "sous": "à Aix-la-Chapelle",
+        "rang": 5
+       }
+      ],
+      "consigne": "Remets les cinq événements dans l'ordre chronologique. Les dates sont cachées : retrouve-les dans ta mémoire ou dans la leçon.",
+      "indices": [
+       "Le baptême de Clovis est le seul événement qui ne concerne pas Charlemagne.",
+       "L'ordre sur les écoles (789) est donné avant le couronnement.",
+       "768, 789, 800, 814."
+      ],
+      "dialogue": "Bonjour ! J'apprends à lire et à écrire ici, au palais. Charlemagne est roi des Francs depuis 768. Le jour de Noël de l'an 800, à Rome, le pape Léon III l'a couronné empereur. Une chose encore : on raconte parfois que Charlemagne a inventé l'école. C'est faux. Des écoles existaient déjà dans les monastères et auprès des évêques. Lui a demandé qu'il y en ait davantage, et il a fait venir des savants comme Alcuin. Aidez-moi à refaire cette page."
+     }
+    },
+    {
+     "id": "e2-2",
+     "escale": 2,
+     "ordre": 2,
+     "titre": "Le couronnement",
+     "decor": "aix",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "alix",
+     "probleme_narratif": "Mère Alix lit le récit du couronnement : il manque des mots.",
+     "enjeu": "Sans les mots du couronnement, l'histoire s'efface.",
+     "episode_du_roman": "Leçon « Charlemagne, son empire et les écoles » ; Admonitio generalis (789)",
+     "competence_programme": "Situer Charlemagne et son couronnement de l'an 800",
+     "pourquoi_ce_savoir_ici": "La salle « Aix-la-Chapelle — Charlemagne, son empire et les écoles » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "La couronne scintille."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "charlemagne",
+     "type": "trous",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Le 25 décembre 800, à Rome, le pape Léon III couronne Charlemagne empereur. Charlemagne gouverne avec des comtes, contrôlés par les missi dominici, et demande en 789 des écoles dans les monastères et les évêchés, où se répand la minuscule caroline.",
+     "matelot": {
+      "texte": "<p>Charlemagne est le roi des [[Francs]]. Le jour de [[Noël]] de l'an 800, à [[Rome]], le [[pape]] le couronne empereur. Il vit dans son palais d'[[Aix-la-Chapelle]].</p>",
+      "etiquettes": [
+       "Francs",
+       "Noël",
+       "Rome",
+       "pape",
+       "Aix-la-Chapelle",
+       "Pâques",
+       "Paris"
+      ],
+      "consigne": "Complète le texte : clique sur une étiquette, puis sur le trou où elle va. Deux étiquettes sont en trop.",
+      "indices": [
+       "Le couronnement a lieu le jour d'une grande fête chrétienne, en décembre.",
+       "C'est le chef de l'Église catholique qui pose la couronne.",
+       "Le palais de Charlemagne n'est pas à Paris."
+      ],
+      "dialogue": "En l'an 800, Charlemagne est couronné. Complétez le récit."
+     },
+     "timonier": {
+      "texte": "<p>Le 25 décembre [[800]], dans la basilique Saint-Pierre de Rome, le pape [[Léon III]] couronne Charlemagne empereur. Pour gouverner, il confie chaque région à un [[comte]] et envoie des [[missi dominici]] vérifier que ses ordres sont appliqués. En 789, il demande des [[écoles]] dans les monastères et les évêchés. Les copistes y utilisent une écriture claire : la [[minuscule caroline]].</p>",
+      "etiquettes": [
+       "800",
+       "Léon III",
+       "comte",
+       "missi dominici",
+       "écoles",
+       "minuscule caroline",
+       "814",
+       "Grégoire",
+       "universités"
+      ],
+      "consigne": "Complète le texte avec les bonnes étiquettes. Trois étiquettes sont en trop.",
+      "indices": [
+       "Le pape de l'an 800 n'est pas Grégoire : c'est Léon III.",
+       "Les missi dominici contrôlent les comtes, qui gouvernent les régions.",
+       "Les universités n'existent pas encore au temps de Charlemagne : elles apparaissent au XIIIe siècle."
+      ],
+      "dialogue": "En l'an 800, Charlemagne est couronné. Complétez le récit."
+     }
+    },
+    {
+     "id": "e2-3",
+     "escale": 2,
+     "ordre": 3,
+     "titre": "La carte de l'empire",
+     "decor": "aix",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "garin",
+     "probleme_narratif": "Garin trace les frontières de l'empire.",
+     "enjeu": "Sans les frontières, on ne comprend pas son pouvoir.",
+     "episode_du_roman": "Leçon « Charlemagne, son empire et les écoles »",
+     "competence_programme": "Situer Charlemagne et son couronnement de l'an 800",
+     "pourquoi_ce_savoir_ici": "La salle « Aix-la-Chapelle — Charlemagne, son empire et les écoles » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "L'empire s'étend en couleurs sur la carte."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "charlemagne",
+     "type": "plan",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "La capitale de Charlemagne est Aix-la-Chapelle. Il est couronné à Rome. Son empire va de l'océan Atlantique à l'ouest jusqu'aux fleuves de l'est (Elbe, Danube), de la mer du Nord au nord de l'Espagne et de l'Italie.",
+     "matelot": {
+      "titre": "L'empire de Charlemagne",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "La capitale, avec le palais et la chapelle",
+        "reponse": "Aix-la-Chapelle"
+       },
+       {
+        "libelle": "La ville du couronnement de l'an 800",
+        "reponse": "Rome"
+       },
+       {
+        "libelle": "À l'ouest, l'empire s'arrête à…",
+        "reponse": "l'océan Atlantique"
+       },
+       {
+        "libelle": "La ville du baptême de Clovis, dans l'empire",
+        "reponse": "Reims"
+       }
+      ],
+      "consigne": "Complète la carte de l'empire : clique sur une étiquette, puis sur la case qui lui correspond.",
+      "indices": [
+       "Le palais et la chapelle de Charlemagne donnent son nom à la ville.",
+       "Le pape habite à Rome.",
+       "À l'ouest, l'empire s'arrête là où commence la mer."
+      ],
+      "dialogue": "Voici l'empire de Charlemagne. Placez les noms sur la carte."
+     },
+     "timonier": {
+      "titre": "L'empire de Charlemagne en 814",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Capitale et résidence de l'empereur",
+        "reponse": "Aix-la-Chapelle"
+       },
+       {
+        "libelle": "Ville du couronnement, le 25 décembre 800",
+        "reponse": "Rome"
+       },
+       {
+        "libelle": "Limite à l'ouest",
+        "reponse": "l'océan Atlantique"
+       },
+       {
+        "libelle": "Limite au nord",
+        "reponse": "la mer du Nord"
+       },
+       {
+        "libelle": "Au sud-ouest, l'empire prend le nord de…",
+        "reponse": "l'Espagne"
+       },
+       {
+        "libelle": "Au sud, l'empire prend le nord de…",
+        "reponse": "l'Italie"
+       }
+      ],
+      "etiquettes": [
+       "Aix-la-Chapelle",
+       "Rome",
+       "l'océan Atlantique",
+       "la mer du Nord",
+       "l'Espagne",
+       "l'Italie",
+       "Constantinople",
+       "Londres"
+      ],
+      "consigne": "Complète la carte de l'empire de Charlemagne. Deux étiquettes sont en trop.",
+      "indices": [
+       "Constantinople est la capitale d'un autre empire, à l'est : l'Empire byzantin.",
+       "Au sud-ouest, l'empire ne prend qu'une bande du nord de ce pays.",
+       "Londres ne fait pas partie de l'empire de Charlemagne."
+      ],
+      "dialogue": "Voici l'empire de Charlemagne. Placez les noms sur la carte."
+     }
+    },
+    {
+     "id": "e2-4",
+     "escale": 2,
+     "ordre": 4,
+     "titre": "Le mot caché de la deuxième page",
+     "decor": "aix",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "anselme",
+     "probleme_narratif": "Frère Anselme a caché un mot dans les lettres.",
+     "enjeu": "Sans ce mot, la page ne se tourne pas.",
+     "episode_du_roman": "Leçon « Charlemagne, son empire et les écoles »",
+     "competence_programme": "Situer Charlemagne et son couronnement de l'an 800",
+     "pourquoi_ce_savoir_ici": "La salle « Aix-la-Chapelle — Charlemagne, son empire et les écoles » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les lettres se rangent en un mot."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "charlemagne",
+     "type": "lettres",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "EMPIRE. Charlemagne réunit de nombreux peuples sous son autorité et reçoit le titre d'empereur en l'an 800 : c'est l'Empire carolingien.",
+     "niveaux": [
+      "timonier"
+     ],
+     "timonier": {
+      "cible": [
+       "E",
+       "M",
+       "P",
+       "I",
+       "R",
+       "E"
+      ],
+      "texte": "<p>Charlemagne réunit des peuples nombreux : F<b data-l='R'>r</b>ancs, Saxons, Lombards. Le pap<b data-l='E'>e</b> le couronne à Rome, et Alcu<b data-l='I'>i</b>n enseigne au palais. Des envoyés, les missi d<b data-l='O'>o</b>minici, parcourent ses terres. Son <b data-l='P'>p</b>ouvoir s'étend de l'océan jusqu'aux fleuves de l'est, et il fait frapper <b data-l='M'>m</b>on<b data-l='N'>n</b>aie à son nom. Il meurt à Aix-la-Chapell<b data-l='E'>e</b> en 814.</p>",
+      "consigne": "Huit lettres ont été écrites à l'encre dorée, dans le désordre ; deux sont des pièges. Range les autres dans les cases : elles forment le nom du territoire immense que gouverne Charlemagne à partir de l'an 800. C'est le mot de la deuxième page.",
+      "indices": [
+       "Le mot a six lettres et commence par un E.",
+       "Il désigne un grand territoire qui réunit plusieurs peuples.",
+       "Charlemagne en porte le titre depuis l'an 800."
+      ],
+      "dialogue": "Un mot est caché dans cette page. Retrouvez-le."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 3,
+   "id": "le-scriptorium-les-moines-la-copie-des-livres-l-enseignement",
+   "titre": "Le scriptorium de l'abbaye",
+   "lieu": "🕯️ Le scriptorium de l'abbaye — la troisième page",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Des pupitres en bois alignés sous de hautes fenêtres. Ici, on travaille à la lumière du jour : le feu pourrait détruire les livres. Sur chaque pupitre, une peau tendue, une plume d'oie, un petit couteau, un encrier de corne. La page à refaire montre un moine penché sur son travail.",
+   "scenarimage": "",
+   "mot": "PLUME",
+   "mot_origine": "Le mot-clé de la salle 3.",
+   "air": null,
+   "cinematique_ouverture": "transition-e3",
+   "cinematique_fin": "fin-e3",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e3-1",
+     "escale": 3,
+     "ordre": 1,
+     "titre": "Une journée de moine",
+     "decor": "scriptorium",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "anselme",
+     "probleme_narratif": "Frère Anselme décrit sa journée.",
+     "enjeu": "Sans connaître les journées, on ne comprend pas l'abbaye.",
+     "episode_du_roman": "Leçon « Les moines : prier, copier, enseigner » ; règle de saint Benoît",
+     "competence_programme": "Décrire la vie et le travail des moines dans une abbaye",
+     "pourquoi_ce_savoir_ici": "La salle « Le scriptorium — Les moines, la copie des livres, l'enseignement » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Les cloches sonnent les heures."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "scriptorium",
+     "type": "tri",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "La journée d'un moine partage le temps entre la prière (les offices, de la nuit au soir), l'étude (copier, lire, enseigner) et le travail des mains (jardin, champs, cuisine, ateliers).",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "prier",
+        "titre": "Prier"
+       },
+       {
+        "id": "copier",
+        "titre": "Copier et enseigner"
+       },
+       {
+        "id": "travail",
+        "titre": "Travailler de ses mains"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Chanter les prières à l'église",
+        "col": "prier"
+       },
+       {
+        "txt": "Se lever la nuit pour le premier office",
+        "col": "prier"
+       },
+       {
+        "txt": "Recopier un livre au scriptorium",
+        "col": "copier"
+       },
+       {
+        "txt": "Apprendre à lire aux novices",
+        "col": "copier"
+       },
+       {
+        "txt": "Cultiver le potager",
+        "col": "travail"
+       },
+       {
+        "txt": "Faire le pain pour la communauté",
+        "col": "travail"
+       }
+      ],
+      "consigne": "Range chaque activité dans la bonne colonne : clique sur une carte, puis sur sa colonne.",
+      "indices": [
+       "Tout ce qui se passe à l'église va dans « Prier ».",
+       "Tout ce qui se fait avec une plume ou un livre va dans « Copier et enseigner ».",
+       "Le jardin et le pain vont dans « Travailler de ses mains »."
+      ],
+      "dialogue": "Ici, on copie. L'imprimerie n'existe pas : chaque livre est recopié à la main, page après page. Un grand livre peut demander une année de travail. Nous ne faisons pas que copier : nous enseignons aussi. L'école de l'abbaye reçoit les futurs moines, et quelques enfants. La troisième page raconte cela."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "prier",
+        "titre": "Prier"
+       },
+       {
+        "id": "copier",
+        "titre": "Copier et enseigner"
+       },
+       {
+        "id": "travail",
+        "titre": "Travailler de ses mains"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Chanter les offices, de la nuit au soir",
+        "col": "prier"
+       },
+       {
+        "txt": "Réciter les psaumes",
+        "col": "prier"
+       },
+       {
+        "txt": "Se rassembler à l'église avant l'aube",
+        "col": "prier"
+       },
+       {
+        "txt": "Recopier un manuscrit à la plume d'oie",
+        "col": "copier"
+       },
+       {
+        "txt": "Peindre une lettrine",
+        "col": "copier"
+       },
+       {
+        "txt": "Enseigner le latin aux novices",
+        "col": "copier"
+       },
+       {
+        "txt": "Cultiver les champs de l'abbaye",
+        "col": "travail"
+       },
+       {
+        "txt": "Travailler à la forge",
+        "col": "travail"
+       },
+       {
+        "txt": "Préparer le repas de la communauté",
+        "col": "travail"
+       }
+      ],
+      "consigne": "Range les neuf activités dans les trois colonnes. Réfléchis : à quoi sert chaque activité ?",
+      "indices": [
+       "Les offices et les psaumes, c'est la prière.",
+       "Peindre une lettrine est un travail du scriptorium.",
+       "La forge et les champs nourrissent et équipent l'abbaye."
+      ],
+      "dialogue": "Ici, on copie. L'imprimerie n'existe pas : chaque livre est recopié à la main, page après page. Un grand livre peut demander une année de travail. Nous ne faisons pas que copier : nous enseignons aussi. L'école de l'abbaye reçoit les futurs moines, et quelques enfants. La troisième page raconte cela."
+     }
+    },
+    {
+     "id": "e3-2",
+     "escale": 3,
+     "ordre": 2,
+     "titre": "Comment naît un livre",
+     "decor": "scriptorium",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aude",
+     "probleme_narratif": "Aude suit la fabrication d'un livre.",
+     "enjeu": "Sans les étapes, le livre n'existe pas.",
+     "episode_du_roman": "Leçon « Les moines : prier, copier, enseigner » ; BnF, Essentiels, « Scribes et copistes au Moyen Âge »",
+     "competence_programme": "Décrire la vie et le travail des moines dans une abbaye",
+     "pourquoi_ce_savoir_ici": "La salle « Le scriptorium — Les moines, la copie des livres, l'enseignement » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les pages se couvrent d'encre."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "scriptorium",
+     "type": "trous",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Un manuscrit passe entre plusieurs mains : le parcheminier prépare la peau, le copiste écrit à la plume d'oie, le rubricateur ajoute les titres en rouge, l'enlumineur peint les lettrines, le relieur assemble les cahiers.",
+     "matelot": {
+      "texte": "<p>Il n'y a pas d'imprimerie : les livres sont recopiés à la [[main]]. Le moine écrit sur du [[parchemin]], une peau d'animal préparée, avec une [[plume]] d'oie. Ensuite, l'[[enlumineur]] décore les grandes lettres, les [[lettrines]].</p>",
+      "etiquettes": [
+       "main",
+       "parchemin",
+       "plume",
+       "enlumineur",
+       "lettrines",
+       "stylo",
+       "machine"
+      ],
+      "consigne": "Complète le texte : clique sur une étiquette, puis sur le trou. Deux étiquettes sont en trop.",
+      "indices": [
+       "Il n'y a pas de machine pour imprimer : tout se fait à la main.",
+       "Le papier n'est presque pas utilisé : on écrit sur une peau d'animal.",
+       "Le stylo n'existe pas au Moyen Âge."
+      ],
+      "dialogue": "Comment naît un livre ? Complétez les étapes."
+     },
+     "timonier": {
+      "texte": "<p>Le [[parcheminier]] prépare les peaux de mouton ou de veau. Le [[copiste]] écrit à la plume d'oie et gratte ses erreurs avec un [[canif]]. Le [[rubricateur]] ajoute les titres en [[rouge]]. L'[[enlumineur]] peint les lettrines, parfois avec de l'or. Enfin, le [[relieur]] assemble les cahiers entre deux plats de bois.</p>",
+      "etiquettes": [
+       "parcheminier",
+       "copiste",
+       "canif",
+       "rubricateur",
+       "rouge",
+       "enlumineur",
+       "relieur",
+       "imprimeur",
+       "vert",
+       "crayon"
+      ],
+      "consigne": "Complète le texte sur la fabrication d'un manuscrit. Trois étiquettes sont en trop.",
+      "indices": [
+       "« Rubrique » vient d'un mot latin qui veut dire « rouge ».",
+       "Le canif sert à gratter les fautes et à tailler la plume.",
+       "L'imprimeur n'apparaît en Europe qu'au XVe siècle."
+      ],
+      "dialogue": "Comment naît un livre ? Complétez les étapes."
+     }
+    },
+    {
+     "id": "e3-3",
+     "escale": 3,
+     "ordre": 3,
+     "titre": "Où apprend-on ?",
+     "decor": "scriptorium",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "alix",
+     "probleme_narratif": "Mère Alix explique où l'on apprend.",
+     "enjeu": "Sans école, personne ne sait lire.",
+     "episode_du_roman": "Leçons « Les moines : prier, copier, enseigner » et « Charlemagne, son empire et les écoles »",
+     "competence_programme": "Décrire la vie et le travail des moines dans une abbaye",
+     "pourquoi_ce_savoir_ici": "La salle « Le scriptorium — Les moines, la copie des livres, l'enseignement » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les élèves s'installent sur les bancs."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "scriptorium",
+     "type": "association",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Au Moyen Âge, l'enseignement est assuré par l'Église : écoles des monastères, écoles auprès des évêques (écoles cathédrales), puis universités au XIIIe siècle. L'école du palais d'Aix réunit des savants autour de Charlemagne.",
+     "matelot": {
+      "paires": [
+       {
+        "g": "L'école de l'abbaye",
+        "d": "Les moines apprennent à lire aux futurs moines"
+       },
+       {
+        "g": "L'école de la cathédrale",
+        "d": "Auprès de l'évêque, on forme les futurs prêtres"
+       },
+       {
+        "g": "Le scriptorium",
+        "d": "On y recopie les livres"
+       }
+      ],
+      "consigne": "Relie chaque lieu à ce qu'on y fait : clique sur un lieu à gauche, puis sur sa phrase à droite.",
+      "indices": [
+       "Le scriptorium est la salle où l'on copie.",
+       "La cathédrale est l'église de l'évêque.",
+       "Les moines vivent à l'abbaye."
+      ],
+      "dialogue": "Où apprend-on à lire et à écrire ? Associez chaque lieu."
+     },
+     "timonier": {
+      "paires": [
+       {
+        "g": "L'école monastique",
+        "d": "Dans une abbaye, les moines instruisent les novices"
+       },
+       {
+        "g": "L'école cathédrale",
+        "d": "Auprès de l'évêque, on forme les futurs prêtres"
+       },
+       {
+        "g": "Le scriptorium",
+        "d": "On y recopie et on y décore les manuscrits"
+       },
+       {
+        "g": "L'école du palais",
+        "d": "À Aix-la-Chapelle, des savants comme Alcuin entourent Charlemagne"
+       },
+       {
+        "g": "L'université",
+        "d": "Apparue au XIIIe siècle, on y étudie en latin"
+       }
+      ],
+      "consigne": "Relie chaque lieu d'étude à sa description. Tous dépendent de l'Église, sauf un qui dépend aussi du souverain.",
+      "indices": [
+       "Alcuin enseigne au palais d'Aix-la-Chapelle.",
+       "Les universités naissent au XIIIe siècle, bien après Charlemagne.",
+       "L'école cathédrale forme surtout les futurs prêtres, autour de l'évêque."
+      ],
+      "dialogue": "Où apprend-on à lire et à écrire ? Associez chaque lieu."
+     }
+    },
+    {
+     "id": "e3-4",
+     "escale": 3,
+     "ordre": 4,
+     "titre": "Le cadenas de la bibliothèque",
+     "decor": "scriptorium",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "garin",
+     "probleme_narratif": "Garin garde la bibliothèque sous clé.",
+     "enjeu": "Sans le code, la bibliothèque reste fermée.",
+     "episode_du_roman": "Leçon « Les moines : prier, copier, enseigner » ; BnF, Passerelles, « Histoire de l'abbaye de Cluny »",
+     "competence_programme": "Décrire la vie et le travail des moines dans une abbaye",
+     "pourquoi_ce_savoir_ici": "La salle « Le scriptorium — Les moines, la copie des livres, l'enseignement » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "La bibliothèque s'ouvre sur ses rayons."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "scriptorium",
+     "type": "code",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "910 : fondation de l'abbaye de Cluny, en Bourgogne. 5 : cinq étapes pour fabriquer un manuscrit (parchemin, copie, rubriques, enluminure, reliure). 13 : les premières universités apparaissent au XIIIe siècle.",
+     "niveaux": [
+      "timonier"
+     ],
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Année de fondation de l'abbaye de Cluny",
+        "valeur": "910",
+        "longueur": 3
+       },
+       {
+        "libelle": "Nombre d'étapes pour fabriquer un manuscrit",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Siècle des premières universités (en chiffres)",
+        "valeur": "13",
+        "longueur": 2
+       }
+      ],
+      "consigne": "L'armoire aux livres est fermée par un cadenas à trois roues. Trouve les trois nombres et écris-les en chiffres (XIIIe siècle s'écrit 13).",
+      "indices": [
+       "Cluny est fondée au début du Xe siècle, en 9..",
+       "Compte les métiers du schéma de la leçon : du parcheminier au relieur.",
+       "XIII en chiffres romains : X = 10 et III = 3."
+      ],
+      "dialogue": "La bibliothèque est fermée à clé. Trouvez le code."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 4,
+   "id": "l-hotel-dieu-l-eglise-aupres-des-pauvres-et-des-malades",
+   "titre": "L'hôtel-Dieu et l'aumône",
+   "lieu": "🕊️ L'hôtel-Dieu, près de l'abbaye — la quatrième page",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Une très longue salle, des lits alignés le long des murs, une chapelle au fond pour que les malades puissent suivre la messe depuis leur lit. À la porte, des pauvres attendent la distribution du pain. La page à refaire montre cette file, et une main qui donne.",
+   "scenarimage": "",
+   "mot": "CHARITÉ",
+   "mot_origine": "Le mot-clé de la salle 4.",
+   "air": null,
+   "cinematique_ouverture": "transition-e4",
+   "cinematique_fin": "fin-e4",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e4-1",
+     "escale": 4,
+     "ordre": 1,
+     "titre": "Les documents de l'hôtel-Dieu",
+     "decor": "hoteldieu",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "alix",
+     "probleme_narratif": "Mère Alix lit les documents de l'hôtel-Dieu.",
+     "enjeu": "Sans lire les documents, on ne sait pas qui l'on aide.",
+     "episode_du_roman": "Acte de fondation de l'hôtel-Dieu de Beaune (1443), Hospices civils de Beaune ; leçon « L'Église auprès des pauvres et des malades »",
+     "competence_programme": "Décrire le rôle social de l'Église : aider les pauvres et les malades",
+     "pourquoi_ce_savoir_ici": "La salle « L'hôtel-Dieu — L'Église auprès des pauvres et des malades » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les lits de l'hôtel-Dieu se remplissent de lumière."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "hotel-dieu",
+     "type": "qcm",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Au Moyen Âge, c'est l'Église qui accueille les pauvres et les malades. L'hôtel-Dieu de Beaune est fondé en 1443 par Nicolas Rolin et Guigone de Salins « pour les pauvres malades ». Cette aide est payée par la dîme, les terres de l'Église et les dons.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "<div class='document-epoque'>« Je fonde en la ville de Beaune un hôpital pour les pauvres malades. »<br><small>Nicolas Rolin, 1443</small></div>Pour qui cet hôpital est-il construit ?",
+        "options": [
+         "Pour les pauvres malades",
+         "Pour les seigneurs",
+         "Pour les soldats du roi"
+        ],
+        "bonne": 0,
+        "explication": "L'hôtel-Dieu accueille gratuitement les malades pauvres."
+       },
+       {
+        "q": "Au Moyen Âge, qui accueille les malades pauvres ?",
+        "options": [
+         "L'Église",
+         "L'État",
+         "Des médecins payés par les malades"
+        ],
+        "bonne": 0,
+        "explication": "Il n'y a ni hôpital public ni Sécurité sociale : l'Église s'en charge."
+       },
+       {
+        "q": "Faire l'aumône, c'est…",
+        "options": [
+         "donner à manger ou de l'argent à un pauvre",
+         "payer un impôt au roi",
+         "partir en voyage vers un lieu saint"
+        ],
+        "bonne": 0,
+        "explication": "Les abbayes distribuent du pain à leur porte."
+       }
+      ],
+      "consigne": "Lis chaque document, puis choisis la bonne réponse. Vérifie quand tu as tout répondu.",
+      "indices": [
+       "Relis bien les derniers mots du document : pour qui est l'hôpital ?",
+       "Il n'y a pas d'hôpital public au Moyen Âge.",
+       "Faire l'aumône, c'est donner."
+      ],
+      "dialogue": "Bienvenue. Ici, personne ne paie. Nous accueillons les malades pauvres, les vieillards, les enfants abandonnés, et les pèlerins de passage. Cette maison s'appelle l'hôtel-Dieu, la maison de Dieu. D'où vient l'argent ? De la dîme, la part des récoltes que les paysans versent à l'Église, et des dons des seigneurs. Refaites cette page : elle dit ce que l'Église faisait pour ceux qui n'avaient rien."
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "<div class='document-epoque'>« Je fonde, et dote irrévocablement en la ville de Beaune, un hôpital pour les pauvres malades. »<br><small>Acte de fondation, 4 août 1443</small></div>Qui fonde cet hôpital, et quand ?",
+        "options": [
+         "Nicolas Rolin et son épouse Guigone de Salins, en 1443",
+         "Charlemagne, en 800",
+         "L'abbé Suger, en 1144",
+         "L'évêque Remi, vers l'an 500"
+        ],
+        "bonne": 0,
+        "explication": "Nicolas Rolin est le chancelier du duc de Bourgogne."
+       },
+       {
+        "q": "<div class='document-epoque'>« La grande salle s'ouvre sur une chapelle : les malades suivaient la messe depuis leur lit. »</div>Pourquoi la salle des malades s'ouvre-t-elle sur une chapelle ?",
+        "options": [
+         "Parce qu'on veut soigner le corps et l'âme : la prière fait partie des soins",
+         "Pour chauffer la salle",
+         "Pour cacher les malades aux visiteurs",
+         "Parce que la chapelle sert de cuisine"
+        ],
+        "bonne": 0,
+        "explication": "Pour les gens du Moyen Âge, la prière aide à guérir et à bien mourir."
+       },
+       {
+        "q": "D'où vient surtout l'argent de cette aide aux pauvres ?",
+        "options": [
+         "De la dîme, des terres de l'Église et des dons",
+         "D'un impôt payé au roi pour les hôpitaux",
+         "Des malades, qui paient leur séjour",
+         "De la Sécurité sociale"
+        ],
+        "bonne": 0,
+        "explication": "Les seigneurs et les marchands donnent en espérant le salut de leur âme."
+       },
+       {
+        "q": "Une léproserie, c'est…",
+        "options": [
+         "une maison à l'écart de la ville pour les malades de la lèpre",
+         "l'école de la cathédrale",
+         "un hospice pour les pèlerins",
+         "la salle où l'on copie les livres"
+        ],
+        "bonne": 0,
+        "explication": "On y isole les malades de la lèpre, que l'on sait contagieuse."
+       }
+      ],
+      "consigne": "Lis attentivement les documents avant de répondre aux quatre questions. Une seule réponse est exacte à chaque fois.",
+      "indices": [
+       "La date est écrite sous le document : c'est le XVe siècle.",
+       "Au Moyen Âge, prier pour les malades fait partie des soins.",
+       "La dîme représente environ le dixième des récoltes."
+      ],
+      "dialogue": "Bienvenue. Ici, personne ne paie. Nous accueillons les malades pauvres, les vieillards, les enfants abandonnés, et les pèlerins de passage. Cette maison s'appelle l'hôtel-Dieu, la maison de Dieu. D'où vient l'argent ? De la dîme, la part des récoltes que les paysans versent à l'Église, et des dons des seigneurs. Refaites cette page : elle dit ce que l'Église faisait pour ceux qui n'avaient rien."
+     }
+    },
+    {
+     "id": "e4-2",
+     "escale": 4,
+     "ordre": 2,
+     "titre": "Vrai ou faux : l'aide aux pauvres",
+     "decor": "hoteldieu",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "garin",
+     "probleme_narratif": "Garin vérifie ce qu'on dit de l'aide aux pauvres.",
+     "enjeu": "Croire de fausses idées nuit à l'entraide.",
+     "episode_du_roman": "Leçon « L'Église auprès des pauvres et des malades »",
+     "competence_programme": "Décrire le rôle social de l'Église : aider les pauvres et les malades",
+     "pourquoi_ce_savoir_ici": "La salle « L'hôtel-Dieu — L'Église auprès des pauvres et des malades » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les pièces tintent dans le tronc."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "hotel-dieu",
+     "type": "vraifaux",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "À l'hôtel-Dieu, les malades pauvres sont accueillis gratuitement. Les pèlerins dorment à l'hospice. La dîme vaut environ un dixième de la récolte. On y soigne peu : on nourrit, on réchauffe, on prie.",
+     "matelot": {
+      "affirmations": [
+       {
+        "txt": "À l'hôtel-Dieu, les malades pauvres doivent payer.",
+        "vrai": false,
+        "explication": "Ils sont accueillis gratuitement."
+       },
+       {
+        "txt": "La dîme est une part de la récolte donnée à l'Église.",
+        "vrai": true,
+        "explication": "Environ un dixième de la récolte."
+       },
+       {
+        "txt": "Les pèlerins peuvent dormir dans un hospice.",
+        "vrai": true,
+        "explication": "L'hospice accueille les pèlerins et les voyageurs."
+       },
+       {
+        "txt": "C'est le roi qui construit tous les hôpitaux.",
+        "vrai": false,
+        "explication": "C'est l'Église, grâce à la dîme et aux dons."
+       }
+      ],
+      "consigne": "Pour chaque phrase, clique sur VRAI ou sur FAUX, puis vérifie.",
+      "indices": [
+       "Deux phrases sont vraies, deux sont fausses.",
+       "À l'hôtel-Dieu, les malades pauvres ne paient pas.",
+       "Le roi ne construit pas les hôpitaux : c'est l'Église qui s'en occupe."
+      ],
+      "dialogue": "Vrai ou faux sur l'aide aux pauvres ? À vous de dire."
+     },
+     "timonier": {
+      "affirmations": [
+       {
+        "txt": "À l'hôtel-Dieu, les malades pauvres sont accueillis gratuitement.",
+        "vrai": true,
+        "explication": "C'est tout le sens de la charité."
+       },
+       {
+        "txt": "La dîme représente environ la moitié de la récolte.",
+        "vrai": false,
+        "explication": "Elle représente environ un dixième."
+       },
+       {
+        "txt": "Les seigneurs font des dons à l'Église en espérant le salut de leur âme.",
+        "vrai": true,
+        "explication": "Les dons financent hôpitaux, hospices et abbayes."
+       },
+       {
+        "txt": "À l'hôtel-Dieu, on guérit les malades avec des médicaments modernes.",
+        "vrai": false,
+        "explication": "On soigne peu : on nourrit, on réchauffe, on veille, on prie."
+       },
+       {
+        "txt": "Les pèlerins en route vers Saint-Jacques-de-Compostelle peuvent dormir dans les hospices.",
+        "vrai": true,
+        "explication": "Vézelay est l'un des points de départ de ce pèlerinage."
+       },
+       {
+        "txt": "Au Moyen Âge, c'est l'État qui organise l'aide aux pauvres.",
+        "vrai": false,
+        "explication": "C'est l'Église qui joue ce rôle social."
+       }
+      ],
+      "consigne": "Tranche chaque affirmation : VRAI ou FAUX. Méfie-toi des chiffres.",
+      "indices": [
+       "Trois phrases sont vraies, trois sont fausses.",
+       "La dîme, c'est « un dixième », pas « une moitié ».",
+       "Les médicaments d'aujourd'hui n'existent pas au Moyen Âge."
+      ],
+      "dialogue": "Vrai ou faux sur l'aide aux pauvres ? À vous de dire."
+     }
+    },
+    {
+     "id": "e4-3",
+     "escale": 4,
+     "ordre": 3,
+     "titre": "Où l'envoyer ?",
+     "decor": "hoteldieu",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "anselme",
+     "probleme_narratif": "Frère Anselme oriente les nécessiteux.",
+     "enjeu": "Mal orienter quelqu'un, c'est l'abandonner.",
+     "episode_du_roman": "Leçons « L'Église auprès des pauvres et des malades » et « Les moines : prier, copier, enseigner »",
+     "competence_programme": "Décrire le rôle social de l'Église : aider les pauvres et les malades",
+     "pourquoi_ce_savoir_ici": "La salle « L'hôtel-Dieu — L'Église auprès des pauvres et des malades » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "La porte s'ouvre sur une salle chaleureuse."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "hotel-dieu",
+     "type": "tri",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "L'Église accueille chacun selon son besoin : l'hôtel-Dieu pour les malades pauvres et les vieillards, l'hospice pour les pèlerins et les voyageurs, l'école pour ceux qui apprennent. C'est cela, son rôle social.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "soigner",
+        "titre": "Soigner : l'hôtel-Dieu"
+       },
+       {
+        "id": "heberger",
+        "titre": "Héberger : l'hospice"
+       },
+       {
+        "id": "instruire",
+        "titre": "Instruire : l'école"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Un malade pauvre qui a de la fièvre",
+        "col": "soigner"
+       },
+       {
+        "txt": "Un vieillard seul et très faible",
+        "col": "soigner"
+       },
+       {
+        "txt": "Un pèlerin en route vers Vézelay",
+        "col": "heberger"
+       },
+       {
+        "txt": "Un marchand surpris par la nuit",
+        "col": "heberger"
+       },
+       {
+        "txt": "Un garçon qui veut devenir moine",
+        "col": "instruire"
+       },
+       {
+        "txt": "Une fille qui apprend à lire chez les religieuses",
+        "col": "instruire"
+       }
+      ],
+      "consigne": "Des personnes frappent à la porte de l'abbaye. Range chacune dans le lieu où elle doit aller : clique sur une carte, puis sur la colonne.",
+      "indices": [
+       "Ceux qui ont de la fièvre ou sont très faibles vont à l'hôtel-Dieu.",
+       "Ceux qui voyagent et cherchent un lit vont à l'hospice.",
+       "Ceux qui veulent apprendre à lire vont à l'école."
+      ],
+      "dialogue": "Où envoyer chacun ? Triez les personnes selon l'aide dont elles ont besoin."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "soigner",
+        "titre": "Soigner : l'hôtel-Dieu"
+       },
+       {
+        "id": "heberger",
+        "titre": "Héberger : l'hospice"
+       },
+       {
+        "id": "instruire",
+        "titre": "Instruire : l'école"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Un malade pauvre qui a de la fièvre",
+        "col": "soigner"
+       },
+       {
+        "txt": "Un vieillard seul et très faible",
+        "col": "soigner"
+       },
+       {
+        "txt": "Un tailleur de pierre blessé sur un chantier",
+        "col": "soigner"
+       },
+       {
+        "txt": "Un pèlerin en route vers Vézelay",
+        "col": "heberger"
+       },
+       {
+        "txt": "Un marchand surpris par la nuit",
+        "col": "heberger"
+       },
+       {
+        "txt": "Une pèlerine qui revient de Saint-Jacques-de-Compostelle",
+        "col": "heberger"
+       },
+       {
+        "txt": "Un novice qui apprend les psaumes",
+        "col": "instruire"
+       },
+       {
+        "txt": "Une fille qui apprend à lire chez les religieuses",
+        "col": "instruire"
+       },
+       {
+        "txt": "Un futur prêtre qui étudie le latin à l'école de la cathédrale",
+        "col": "instruire"
+       }
+      ],
+      "consigne": "Range les neuf personnes dans le lieu qui les accueillera. Réfléchis à ce dont chacune a besoin.",
+      "indices": [
+       "Un blessé a besoin de soins : hôtel-Dieu.",
+       "Un pèlerin qui revient de Compostelle a surtout besoin d'un lit : hospice.",
+       "Le latin s'apprend à l'école de la cathédrale ou de l'abbaye."
+      ],
+      "dialogue": "Où envoyer chacun ? Triez les personnes selon l'aide dont elles ont besoin."
+     }
+    },
+    {
+     "id": "e4-4",
+     "escale": 4,
+     "ordre": 4,
+     "titre": "Les mots de la charité",
+     "decor": "hoteldieu",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aude",
+     "probleme_narratif": "Aude associe les mots de la charité à leur sens.",
+     "enjeu": "Sans les mots, on ne comprend pas l'esprit du lieu.",
+     "episode_du_roman": "Leçon « L'Église auprès des pauvres et des malades »",
+     "competence_programme": "Décrire le rôle social de l'Église : aider les pauvres et les malades",
+     "pourquoi_ce_savoir_ici": "La salle « L'hôtel-Dieu — L'Église auprès des pauvres et des malades » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les mots s'inscrivent sur le mur."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "hotel-dieu",
+     "type": "association",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Dîme, aumône, hôtel-Dieu, hospice, léproserie, pèlerinage : ces mots décrivent le rôle social de l'Église au Moyen Âge, qui secourt les pauvres, les malades et les voyageurs.",
+     "niveaux": [
+      "timonier"
+     ],
+     "timonier": {
+      "paires": [
+       {
+        "g": "La dîme",
+        "d": "Environ un dixième de la récolte, versé à l'Église"
+       },
+       {
+        "g": "L'aumône",
+        "d": "Un don de pain ou d'argent fait à un pauvre"
+       },
+       {
+        "g": "L'hôtel-Dieu",
+        "d": "La maison qui accueille gratuitement les malades pauvres"
+       },
+       {
+        "g": "L'hospice",
+        "d": "Le lieu qui héberge les pèlerins et les voyageurs"
+       },
+       {
+        "g": "La léproserie",
+        "d": "La maison à l'écart de la ville pour les malades de la lèpre"
+       },
+       {
+        "g": "Le pèlerinage",
+        "d": "Un voyage vers un lieu saint, comme Vézelay"
+       }
+      ],
+      "consigne": "Relie chaque mot à sa définition : clique sur un mot à gauche, puis sur sa définition à droite.",
+      "indices": [
+       "La dîme se paie ; l'aumône se donne.",
+       "L'hospice accueille ceux qui voyagent ; l'hôtel-Dieu, ceux qui sont malades.",
+       "Un pèlerinage est un voyage, pas un bâtiment."
+      ],
+      "dialogue": "Charité, aumône, hospitalité : associez chaque mot à son sens."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 5,
+   "id": "le-chantier-l-art-roman-et-l-art-gothique",
+   "titre": "L'église romane et la cathédrale gothique",
+   "lieu": "⛏️ Le chantier, entre l'église de l'abbaye et la cathédrale neuve — la cinquième page",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "À gauche, l'église de l'abbaye : trapue, des murs épais, de petites fenêtres, des arcs arrondis. À droite, le chantier de la cathédrale : des échafaudages, des arcs pointus, d'immenses fenêtres de verre coloré. La dernière page doit montrer les deux.",
+   "scenarimage": "",
+   "mot": "PIERRE",
+   "mot_origine": "Le mot-clé de la salle 5.",
+   "air": null,
+   "cinematique_ouverture": "transition-e5",
+   "cinematique_fin": "fin-e5",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e5-1",
+     "escale": 5,
+     "ordre": 1,
+     "titre": "Légende les deux églises",
+     "decor": "chantier",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "garin",
+     "probleme_narratif": "Garin dessine les deux églises.",
+     "enjeu": "Sans les noms, on les confond.",
+     "episode_du_roman": "Leçon « Différencier l'art roman et l'art gothique » ; Cité de l'architecture et du patrimoine",
+     "competence_programme": "Reconnaître les caractéristiques de l'art roman",
+     "pourquoi_ce_savoir_ici": "La salle « Le chantier — L'art roman et l'art gothique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les deux églises sortent de la brume."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "roman-gothique",
+     "type": "plan",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Art roman : voûte en berceau, arc en plein cintre, contreforts. Art gothique : croisée d'ogives, arc brisé, arcs-boutants. Le donjon et le créneau appartiennent au château fort, pas à l'église.",
+     "matelot": {
+      "titre": "L'église romane (à gauche) et la cathédrale gothique (à droite)",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Roman : la voûte en demi-tonneau",
+        "reponse": "voûte en berceau"
+       },
+       {
+        "libelle": "Gothique : l'arc pointu",
+        "reponse": "arc brisé"
+       },
+       {
+        "libelle": "Roman : l'arc arrondi",
+        "reponse": "arc en plein cintre"
+       },
+       {
+        "libelle": "Gothique : l'arc extérieur qui retient la voûte",
+        "reponse": "arc-boutant"
+       }
+      ],
+      "consigne": "Place chaque mot sur la bonne case : à gauche l'église romane, à droite la cathédrale gothique. Clique sur une étiquette, puis sur la case.",
+      "indices": [
+       "« Plein cintre » veut dire arrondi ; « brisé » veut dire pointu.",
+       "Le berceau a la forme d'un demi-tonneau.",
+       "L'arc-boutant est dehors : il retient la voûte comme un bras."
+      ],
+      "dialogue": "Regardez les deux bâtiments. L'église de l'abbaye est romane : sa voûte a la forme d'un demi-tonneau, on l'appelle voûte en berceau. Elle pèse sur les murs : alors on les fait épais, on les renforce avec des contreforts, et on perce de petites fenêtres. La cathédrale est gothique : la voûte repose sur des arcs croisés, les ogives, et des arcs-boutants la retiennent de l'extérieur. Les murs peuvent s'ouvrir : place aux vitraux. Dernière page, apprentis."
+     },
+     "timonier": {
+      "titre": "L'église romane (à gauche) et la cathédrale gothique (à droite)",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Roman : la voûte en demi-tonneau, qui pèse sur les murs",
+        "reponse": "voûte en berceau"
+       },
+       {
+        "libelle": "Gothique : deux arcs croisés sous la voûte",
+        "reponse": "croisée d'ogives"
+       },
+       {
+        "libelle": "Roman : l'arc en demi-cercle",
+        "reponse": "arc en plein cintre"
+       },
+       {
+        "libelle": "Gothique : l'arc pointu, qui permet de monter plus haut",
+        "reponse": "arc brisé"
+       },
+       {
+        "libelle": "Roman : le massif de pierre collé contre le mur",
+        "reponse": "contrefort"
+       },
+       {
+        "libelle": "Gothique : l'arc extérieur qui renvoie la poussée",
+        "reponse": "arc-boutant"
+       }
+      ],
+      "etiquettes": [
+       "voûte en berceau",
+       "croisée d'ogives",
+       "arc en plein cintre",
+       "arc brisé",
+       "contrefort",
+       "arc-boutant",
+       "donjon",
+       "créneau"
+      ],
+      "consigne": "Légende le schéma : colonne de gauche, l'église romane ; colonne de droite, la cathédrale gothique. Deux étiquettes sont en trop.",
+      "indices": [
+       "Le contrefort est collé au mur ; l'arc-boutant s'en écarte.",
+       "La croisée d'ogives, ce sont deux arcs qui se croisent sous la voûte.",
+       "Donjon et créneau : c'est le vocabulaire du château fort."
+      ],
+      "dialogue": "Regardez les deux bâtiments. L'église de l'abbaye est romane : sa voûte a la forme d'un demi-tonneau, on l'appelle voûte en berceau. Elle pèse sur les murs : alors on les fait épais, on les renforce avec des contreforts, et on perce de petites fenêtres. La cathédrale est gothique : la voûte repose sur des arcs croisés, les ogives, et des arcs-boutants la retiennent de l'extérieur. Les murs peuvent s'ouvrir : place aux vitraux. Dernière page, apprentis."
+     }
+    },
+    {
+     "id": "e5-2",
+     "escale": 5,
+     "ordre": 2,
+     "titre": "L'intrus du chantier",
+     "decor": "chantier",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "anselme",
+     "probleme_narratif": "Frère Anselme cherche l'intrus du chantier.",
+     "enjeu": "Un intrus embrouille les ouvriers.",
+     "episode_du_roman": "Leçon « Différencier l'art roman et l'art gothique »",
+     "competence_programme": "Reconnaître les caractéristiques de l'art roman",
+     "pourquoi_ce_savoir_ici": "La salle « Le chantier — L'art roman et l'art gothique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "L'intrus roule hors du chantier."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "roman-gothique",
+     "type": "intrus",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": {
+      "cm1": "La voûte en berceau est romane. La cathédrale gothique a une croisée d'ogives, des arcs brisés, des arcs-boutants et de grands vitraux.",
+      "cm2": "L'arc-boutant est gothique : il renvoie la poussée de la voûte vers l'extérieur. L'église romane, elle, compte sur ses murs épais et ses contreforts."
+     },
+     "matelot": {
+      "cartes": [
+       {
+        "txt": "Croisée d'ogives",
+        "sous": "deux arcs croisés sous la voûte",
+        "intrus": false
+       },
+       {
+        "txt": "Arc brisé",
+        "sous": "un arc pointu",
+        "intrus": false
+       },
+       {
+        "txt": "Arcs-boutants",
+        "sous": "des arcs à l'extérieur",
+        "intrus": false
+       },
+       {
+        "txt": "Grands vitraux",
+        "sous": "du verre coloré",
+        "intrus": false
+       },
+       {
+        "txt": "Voûte en berceau",
+        "sous": "en forme de demi-tonneau",
+        "intrus": true
+       }
+      ],
+      "consigne": "Garin a mélangé ses pierres. Quatre cartes décrivent la cathédrale gothique, une seule n'en fait pas partie. Clique sur l'intrus.",
+      "indices": [
+       "Pense à la forme des voûtes : pointue ou arrondie ?",
+       "Le berceau a la forme d'un demi-tonneau.",
+       "Le demi-tonneau appartient à l'église de l'abbaye, pas à la cathédrale."
+      ],
+      "dialogue": "Un objet n'a pas sa place sur ce chantier. Lequel ?"
+     },
+     "timonier": {
+      "cartes": [
+       {
+        "txt": "Murs épais",
+        "sous": "ils portent la voûte",
+        "intrus": false
+       },
+       {
+        "txt": "Contreforts",
+        "sous": "collés contre le mur",
+        "intrus": false
+       },
+       {
+        "txt": "Petites fenêtres",
+        "sous": "un intérieur sombre",
+        "intrus": false
+       },
+       {
+        "txt": "Arc en plein cintre",
+        "sous": "en demi-cercle",
+        "intrus": false
+       },
+       {
+        "txt": "Arc-boutant",
+        "sous": "il renvoie la poussée vers un pilier extérieur",
+        "intrus": true
+       }
+      ],
+      "consigne": "Quatre cartes décrivent l'église romane de l'abbaye. Une seule appartient à l'art gothique. Clique sur l'intrus.",
+      "indices": [
+       "Cherche l'élément qui permet d'ouvrir de grandes fenêtres.",
+       "Dans l'église romane, ce sont les murs qui portent tout.",
+       "Cet élément est à l'extérieur, et il n'est pas collé au mur."
+      ],
+      "dialogue": "Un objet n'a pas sa place sur ce chantier. Lequel ?"
+     }
+    },
+    {
+     "id": "e5-3",
+     "escale": 5,
+     "ordre": 3,
+     "titre": "Roman ou gothique ?",
+     "decor": "chantier",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aude",
+     "probleme_narratif": "Aude trie les caractéristiques roman et gothique.",
+     "enjeu": "Sans reconnaître les styles, on se trompe d'époque.",
+     "episode_du_roman": "Leçon « Différencier l'art roman et l'art gothique » ; Centre des monuments nationaux (Saint-Denis) ; basilique de Vézelay",
+     "competence_programme": "Reconnaître les caractéristiques de l'art roman",
+     "pourquoi_ce_savoir_ici": "La salle « Le chantier — L'art roman et l'art gothique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les voûtes montent vers le ciel."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "roman-gothique",
+     "type": "tri",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "Roman : murs épais, petites fenêtres, arc en plein cintre, voûte en berceau, nef de Vézelay. Gothique : arc brisé, arcs-boutants, grands vitraux, rosace, chœur de Saint-Denis (1144), chœur de Vézelay (fin du XIIe siècle).",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "roman",
+        "titre": "Art roman"
+       },
+       {
+        "id": "gothique",
+        "titre": "Art gothique"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><path d='M12 42 V22 A18 18 0 0 1 48 22 V42' fill='none' stroke='#4a3825' stroke-width='5'/></svg><br>Arc arrondi, en plein cintre",
+        "col": "roman"
+       },
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><rect x='4' y='6' width='52' height='36' fill='#c4b79e' stroke='#4a3825' stroke-width='2'/><rect x='26' y='14' width='8' height='14' rx='4' fill='#5d6b7a'/></svg><br>Mur épais et petite fenêtre",
+        "col": "roman"
+       },
+       {
+        "txt": "Voûte en berceau, en forme de demi-tonneau",
+        "col": "roman"
+       },
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><path d='M12 42 V24 Q14 8 30 2 Q46 8 48 24 V42' fill='none' stroke='#4a3825' stroke-width='5'/></svg><br>Arc pointu, brisé",
+        "col": "gothique"
+       },
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><rect x='18' y='2' width='24' height='40' rx='12' fill='#7fa8d6' stroke='#4a3825' stroke-width='2'/><path d='M30 2 V42 M18 22 H42' stroke='#4a3825' stroke-width='2'/></svg><br>Grand vitrail coloré",
+        "col": "gothique"
+       },
+       {
+        "txt": "Arcs-boutants à l'extérieur",
+        "col": "gothique"
+       }
+      ],
+      "consigne": "Regarde chaque dessin et lis sa légende. Range-le dans la bonne colonne : roman ou gothique.",
+      "indices": [
+       "Arrondi = roman ; pointu = gothique.",
+       "Beaucoup de verre et de lumière = gothique.",
+       "Des murs épais et peu d'ouvertures = roman."
+      ],
+      "dialogue": "Roman ou gothique ? Triez les caractéristiques."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "roman",
+        "titre": "Art roman"
+       },
+       {
+        "id": "gothique",
+        "titre": "Art gothique"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><path d='M12 42 V22 A18 18 0 0 1 48 22 V42' fill='none' stroke='#4a3825' stroke-width='5'/></svg><br>Arc en plein cintre",
+        "col": "roman"
+       },
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><rect x='4' y='6' width='52' height='36' fill='#c4b79e' stroke='#4a3825' stroke-width='2'/><rect x='26' y='14' width='8' height='14' rx='4' fill='#5d6b7a'/></svg><br>Mur épais, petite fenêtre",
+        "col": "roman"
+       },
+       {
+        "txt": "Nef de la basilique de Vézelay, vers 1120-1140",
+        "col": "roman"
+       },
+       {
+        "txt": "Intérieur sombre, piliers massifs",
+        "col": "roman"
+       },
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><circle cx='30' cy='22' r='19' fill='#7fa8d6' stroke='#4a3825' stroke-width='2'/><path d='M30 3 V41 M11 22 H49 M17 9 L43 35 M43 9 L17 35' stroke='#4a3825' stroke-width='1.5'/></svg><br>Rosace",
+        "col": "gothique"
+       },
+       {
+        "txt": "<svg viewBox='0 0 60 44' width='60' height='44' aria-hidden='true'><path d='M12 42 V24 Q14 8 30 2 Q46 8 48 24 V42' fill='none' stroke='#4a3825' stroke-width='5'/></svg><br>Arc brisé",
+        "col": "gothique"
+       },
+       {
+        "txt": "Chœur de l'abbatiale de Saint-Denis, consacré en 1144",
+        "col": "gothique"
+       },
+       {
+        "txt": "Chœur de la basilique de Vézelay, fin du XIIe siècle",
+        "col": "gothique"
+       }
+      ],
+      "consigne": "Range les dessins et les monuments dans la bonne colonne. Attention : à Vézelay, on trouve les deux arts.",
+      "indices": [
+       "La nef de Vézelay date d'environ 1120-1140 ; son chœur, de la fin du XIIe siècle.",
+       "Le chœur de Saint-Denis est le premier grand chantier gothique.",
+       "La rosace est une grande fenêtre ronde : elle n'existe que parce que le mur ne porte plus tout."
+      ],
+      "dialogue": "Roman ou gothique ? Triez les caractéristiques."
+     }
+    },
+    {
+     "id": "e5-4",
+     "escale": 5,
+     "ordre": 4,
+     "titre": "Vrai ou faux : le maître d'œuvre",
+     "decor": "chantier",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "alix",
+     "probleme_narratif": "Mère Alix demande si le maître d'œuvre est un simple ouvrier.",
+     "enjeu": "Sans cette dernière réponse, le livre ne se referme pas.",
+     "episode_du_roman": "Leçon « Différencier l'art roman et l'art gothique » ; Centre des monuments nationaux ; basilique de Vézelay",
+     "competence_programme": "Reconnaître les caractéristiques de l'art roman",
+     "pourquoi_ce_savoir_ici": "La salle « Le chantier — L'art roman et l'art gothique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Le livre se referme : la cathédrale est achevée."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "roman-gothique",
+     "type": "vraifaux",
+     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "correction_origine": "L'art roman (XIe-XIIe siècle) précède l'art gothique (à partir du milieu du XIIe siècle). L'arc brisé et les arcs-boutants, placés à l'extérieur, permettent de bâtir plus haut et d'ouvrir de grands vitraux. À Vézelay, le chœur gothique prolonge la nef romane.",
+     "niveaux": [
+      "timonier"
+     ],
+     "timonier": {
+      "affirmations": [
+       {
+        "txt": "L'arc brisé permet de construire plus haut.",
+        "vrai": true,
+        "explication": "Il pousse moins vers l'extérieur que l'arc en plein cintre."
+       },
+       {
+        "txt": "Dans une église romane, ce sont les murs épais qui portent le poids de la voûte.",
+        "vrai": true,
+        "explication": "D'où les contreforts et les petites fenêtres."
+       },
+       {
+        "txt": "L'art gothique apparaît avant l'art roman.",
+        "vrai": false,
+        "explication": "Le roman domine aux XIe et XIIe siècles ; le gothique naît au milieu du XIIe siècle."
+       },
+       {
+        "txt": "Les arcs-boutants sont placés à l'intérieur de l'église.",
+        "vrai": false,
+        "explication": "Ils sont à l'extérieur et renvoient la poussée vers des piliers."
+       },
+       {
+        "txt": "Le chœur de Saint-Denis, consacré en 1144, est l'un des premiers chantiers gothiques.",
+        "vrai": true,
+        "explication": "L'abbé Suger voulait plus de lumière dans l'église."
+       },
+       {
+        "txt": "À Vézelay, toute la basilique est romane.",
+        "vrai": false,
+        "explication": "Le chœur, rebâti à la fin du XIIe siècle, est gothique."
+       }
+      ],
+      "consigne": "Le maître d'œuvre de la cathédrale te fait passer un dernier examen. Pour chaque affirmation, choisis VRAI ou FAUX.",
+      "indices": [
+       "Trois affirmations sont vraies, trois sont fausses.",
+       "Un arc-boutant ne peut pas être dans la nef : il retient la voûte de l'extérieur.",
+       "Relis la carte de Vézelay dans l'énigme précédente."
+      ],
+      "dialogue": "Dernière étape : quel est le rôle du maître d'œuvre ? Vrai ou faux."
+     }
+    }
+   ]
+  }
+ ]
+}

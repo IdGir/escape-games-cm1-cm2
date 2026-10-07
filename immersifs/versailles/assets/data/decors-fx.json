@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "imprimerie": {
+   "titre": "Une imprimerie, dans une petite ville du royaume, en 1598",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La frise des troubles",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une frise des troubles religieux."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les deux enseignes",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Catholiques et protestants, deux voisins."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les livres imprimés",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des livres qui disent pourquoi tant de troubles."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La balance des différences",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Ce qui sépare, ce qui rapproche."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "rue": {
+   "titre": "Une rue de la même ville, au printemps 1598",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "L'affiche de l'édit",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le texte de l'édit de Nantes."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La balance des permissions",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Permis ou limité par l'édit."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La lettre de Mathurin",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une lettre aux mots manquants."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le cachet de l'édit",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le sceau du roi sur l'édit."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "jardins": {
+   "titre": "Les jardins du château de Versailles, en 1682",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le plan du domaine",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un plan de Versailles à légender."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les artistes du roi",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Le Nôtre, Le Brun, Mansart, Lully."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le bassin d'Apollon",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le dieu du Soleil dans son char."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La statue du dieu",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un dieu du bassin à retrouver."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "chambre": {
+   "titre": "L'antichambre et la chambre du roi, au château de Versailles",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La pendule du lever",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "La journée du roi, du lever au coucher."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "L'intrus de la journée",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un moment qui n'est pas dans la journée."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le lexique de la cour",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Les mots de la cour à associer."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet de Dame Isabeau",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un carnet aux mots manquants."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "conseil": {
+   "titre": "Le cabinet du Conseil, au château de Versailles",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La table du Conseil",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Henri IV ou Louis XIV ?"
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le fauteuil du roi",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Le roi décide de tout."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le cadenas du Conseil",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un cadenas à chiffres sur le coffre du Conseil."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La révocation",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "1685 : la fin de la tolérance."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

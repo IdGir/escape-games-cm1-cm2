@@ -1,0 +1,1033 @@
+{
+  "escale": {
+    "numero": 7,
+    "id": "archipel-en-feu",
+    "titre": "L'archipel en feu et l'Atlantide",
+    "lieu": "Santorin, puis le fond de l'Atlantique, février 1868",
+    "matiere": "Sciences et Histoire",
+    "periode_conseillee": "Sciences : la Terre active (volcans, séismes, risques) ; Histoire : sources, mythe et histoire",
+    "episode": "Deuxième partie, ch. VI « L'Archipel en feu » (le Nautilus traverse des eaux brûlantes près de Santorin, en pleine éruption) et ch. IX « Un continent disparu » (Nemo conduit Aronnax aux ruines de l'Atlantide et écrit ATLANTIS sur la roche).",
+    "scenarimage": "scenarimages/escale-07.md",
+    "mot": "ATLANTIS",
+    "mot_origine": "Le mot que le capitaine Nemo trace à la craie sur un rocher, au milieu des ruines (Partie II, ch. IX).",
+    "air": null,
+    "cinematique_ouverture": "transition-e7",
+    "cinematique_fin": "fin-e7",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e7-1",
+        "escale": 7,
+        "ordre": 1,
+        "titre": "La mer qui bout",
+        "decor": "volcan-santorin",
+        "objet_principal": "thermometre",
+        "objets_cliquables": [
+          "thermometre",
+          "hublot-gauche",
+          "carte-archipel"
+        ],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Près de Santorin, le thermomètre extérieur du salon monte sans arrêt ; derrière les hublots, l'eau bouillonne et se teinte de rouge. Conseil veut noter dans son carnet d'où vient cette chaleur, schéma à l'appui, avant que le capitaine ne décide de rester ou de s'éloigner.",
+        "enjeu": "Tant qu'on ignore que la chaleur monte du volcan sous la mer, on croit pouvoir rester : or plus le Nautilus s'en approche, plus l'eau devient brûlante.",
+        "episode_du_roman": "Partie II, ch. VI « L'Archipel en feu » : l'eau atteint une température telle que le capitaine fait virer de bord.",
+        "competence_programme": "Sciences : la Terre active — décrire un volcan (cratère, cheminée, magma, lave, cendres) ; relier l'éruption à la chaleur interne de la Terre.",
+        "pourquoi_ce_savoir_ici": "On ne comprend pourquoi la mer bout ici qu'en sachant ce qu'il y a sous l'île : un volcan en activité.",
+        "reaction_du_decor": {
+          "effet": "aiguilles",
+          "description": "L'aiguille du thermomètre redescend : le Nautilus s'écarte du volcan."
+        },
+        "liberte_ou_anachronisme": "L'éruption de Santorin (Néa Kaméni, 1866) est réelle ; les températures sont celles du roman (A-VERIFIER.md). Le schéma est simplifié pour le cycle 3.",
+        "lecon": "volcans",
+        "type": "plan",
+        "niveau_variantes": "Mousse : 3 cases du volcan. Matelot : 5 cases. Timonier : 5 cases et étiquettes pièges. Lieutenant : texte à trous sur l'éruption + justification. Second : QCM sur l'origine de la chaleur et des îles volcaniques + justification.",
+        "mousse": {
+          "type": "plan",
+          "dialogue": "Je dessine le volcan pour mon carnet, mais je ne sais plus où mettre les mots. Aidez-moi, je n'aime pas les cases vides.",
+          "consigne": "Place chaque mot sur le schéma du volcan. Aide-toi de la fiche « Les volcans ».",
+          "titre": "Le volcan de Santorin, en coupe",
+          "colonnes": 3,
+          "cases": [
+            {
+              "libelle": "En haut : l'ouverture d'où sort l'éruption",
+              "reponse": "cratère"
+            },
+            {
+              "libelle": "Sur les pentes : la roche fondue qui coule",
+              "reponse": "lave"
+            },
+            {
+              "libelle": "Tout en bas : la réserve de roche fondue",
+              "reponse": "magma"
+            }
+          ],
+          "indices": [
+            "Fiche « Les volcans », le schéma.",
+            "Sous terre, la roche fondue s'appelle magma ; dehors, on l'appelle lave."
+          ]
+        },
+        "matelot": {
+          "type": "plan",
+          "dialogue": "Mon schéma sera complet ou ne sera pas. Cinq cases, cinq mots, et pas un de travers.",
+          "consigne": "Place chaque mot sur le schéma du volcan.",
+          "titre": "Le volcan de Santorin, en coupe",
+          "colonnes": 3,
+          "cases": [
+            {
+              "libelle": "Le nuage gris qui monte dans le ciel",
+              "reponse": "cendres"
+            },
+            {
+              "libelle": "L'ouverture au sommet",
+              "reponse": "cratère"
+            },
+            {
+              "libelle": "La roche fondue qui coule dehors",
+              "reponse": "lave"
+            },
+            {
+              "libelle": "Le conduit qui monte vers le sommet",
+              "reponse": "cheminée"
+            },
+            {
+              "libelle": "La poche de roche fondue sous le volcan",
+              "reponse": "magma"
+            }
+          ],
+          "indices": [
+            "Fiche « Les volcans ».",
+            "La cheminée relie le magma au cratère."
+          ]
+        },
+        "timonier": {
+          "type": "plan",
+          "dialogue": "Le capitaine m'a prêté son propre schéma, mais il y a glissé des mots qui n'ont rien à y faire. Je les reconnaîtrai, avec vous.",
+          "consigne": "Place les bons mots sur le schéma. Certaines étiquettes ne servent pas.",
+          "titre": "Le volcan de Santorin, en coupe",
+          "colonnes": 3,
+          "cases": [
+            {
+              "libelle": "Le nuage de poussières de roche",
+              "reponse": "cendres"
+            },
+            {
+              "libelle": "L'ouverture au sommet",
+              "reponse": "cratère"
+            },
+            {
+              "libelle": "La roche fondue qui coule dehors",
+              "reponse": "lave"
+            },
+            {
+              "libelle": "Le conduit qui monte vers le sommet",
+              "reponse": "cheminée"
+            },
+            {
+              "libelle": "La poche de roche fondue en profondeur",
+              "reponse": "magma"
+            }
+          ],
+          "etiquettes": [
+            "cendres",
+            "cratère",
+            "lave",
+            "cheminée",
+            "magma",
+            "glacier",
+            "source",
+            "corail"
+          ],
+          "indices": [
+            "Fiche « Les volcans ».",
+            "Un glacier, c'est de la glace : rien à voir avec un volcan."
+          ]
+        },
+        "lieutenant": {
+          "type": "trous",
+          "dialogue": "Le capitaine me demande un rapport pour le journal de bord : ce que nous avons vu, et pourquoi l'eau chauffe. Je l'ai commencé ; terminez-le.",
+          "consigne": "Complète le rapport de Conseil. Certaines étiquettes ne servent pas. Puis justifie.",
+          "texte": "Sous l'île, une poche de [[magma]] remonte par la [[cheminée]]. Au sommet, le [[cratère]] rejette des [[cendres]] et des gaz ; la [[lave]] coule jusqu'à la mer. La roche brûlante [[chauffe]] l'eau tout autour : voilà pourquoi le thermomètre monte.",
+          "etiquettes": [
+            "magma",
+            "cheminée",
+            "cratère",
+            "cendres",
+            "lave",
+            "chauffe",
+            "glace",
+            "refroidit",
+            "sable"
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche explique pourquoi la mer est si chaude ici ?",
+            "options": [
+              "La chaleur vient de l'intérieur de la Terre : sous le volcan, le magma chauffe les roches et l'eau ; près d'une île volcanique en activité, la mer peut devenir brûlante.",
+              "Santorin est une île de la mer Égée.",
+              "Les cendres forment un nuage gris.",
+              "La lave refroidie devient une roche dure."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Les volcans ».",
+            "Ce qui monte du fond est chaud : l'eau chauffe, elle ne refroidit pas."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Le capitaine affirme que cette île est née du feu, et qu'elle grandit encore. Je voudrais pouvoir l'écrire sans craindre l'erreur.",
+          "consigne": "Réponds avec la fiche « Les volcans ».",
+          "questions": [
+            {
+              "q": "D'où vient la chaleur qui fait bouillir la mer près de Santorin ?",
+              "options": [
+                "de l'intérieur de la Terre, par le magma",
+                "du soleil, très fort en Grèce",
+                "des machines du Nautilus",
+                "des poissons qui s'agitent"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Comment une île volcanique peut-elle « grandir » ?",
+              "options": [
+                "la lave refroidie s'empile et forme de la roche nouvelle",
+                "le sable apporté par le vent",
+                "les coraux poussent sur la lave brûlante",
+                "elle ne peut pas grandir"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Que fait le capitaine, en homme prudent ?",
+              "options": [
+                "il s'éloigne : plus près du volcan, l'eau est plus chaude",
+                "il plonge dans le cratère",
+                "il éteint le volcan",
+                "il reste immobile"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse 2 ?",
+            "options": [
+              "En refroidissant, la lave devient une roche dure : couche après couche, les éruptions construisent le volcan, et parfois une île.",
+              "Le magma est une roche fondue.",
+              "L'éruption de Santorin de 1866 est réelle.",
+              "Les cendres montent dans le ciel."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Les volcans », niveau expert.",
+            "Lave refroidie = roche nouvelle."
+          ]
+        }
+      },
+      {
+        "id": "e7-2",
+        "escale": 7,
+        "ordre": 2,
+        "titre": "Ned veut débarquer",
+        "decor": "volcan-santorin",
+        "objet_principal": "hublot-droit",
+        "objets_cliquables": [
+          "hublot-droit",
+          "carte-archipel",
+          "manometre"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "Par le hublot, Ned Land voit la côte toute proche. Une île, des maisons : l'occasion de s'enfuir ! Mais l'île tremble et fume. Avant qu'il ne se jette à l'eau, il faut lui montrer ce qui est dangereux ici, et ce que font les habitants d'un pays de volcans et de séismes pour se protéger.",
+        "enjeu": "Débarquer sans connaître les dangers d'un volcan en éruption, c'est risquer les cendres, la lave et les secousses.",
+        "episode_du_roman": "Fil du roman : Ned Land guette chaque côte pour s'évader (Partie II, ch. VI-VIII) ; l'éruption de Santorin de 1866 s'accompagna de secousses.",
+        "competence_programme": "Sciences : la Terre active — identifier les risques liés aux volcans et aux séismes ; connaître des mesures de prévention et de protection.",
+        "pourquoi_ce_savoir_ici": "Devant une île en éruption, savoir reconnaître un danger et le bon réflexe décide d'un départ ou d'un drame.",
+        "reaction_du_decor": {
+          "effet": "calme",
+          "description": "Ned recule du hublot ; le Nautilus s'éloigne doucement de l'île."
+        },
+        "liberte_ou_anachronisme": "Les mesures de prévention (surveillance, alerte, évacuation) sont celles d'aujourd'hui : c'est le dossier de l'équipe de secours (XXIᵉ siècle).",
+        "lecon": "risques",
+        "type": "tri",
+        "niveau_variantes": "Mousse : bonne ou mauvaise idée. Matelot : volcan ou séisme. Timonier : avant, pendant, après. Lieutenant : prévention ou protection + justification. Second : ordre de l'alerte + justification.",
+        "mousse": {
+          "type": "tri",
+          "dialogue": "Une île, mille tonnerres ! J'y vais à la nage. Quoi ? Dangereux ? Dites-moi ce qui est une bonne idée, et ce qui n'en est pas une.",
+          "consigne": "Près d'un volcan en éruption, range chaque idée.",
+          "colonnes": [
+            {
+              "id": "bonne",
+              "titre": "Bonne idée",
+              "icone": "👍"
+            },
+            {
+              "id": "mauvaise",
+              "titre": "Mauvaise idée",
+              "icone": "👎"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "s'éloigner du volcan",
+              "col": "bonne"
+            },
+            {
+              "txt": "écouter les consignes des sauveteurs",
+              "col": "bonne"
+            },
+            {
+              "txt": "se protéger le nez et la bouche des cendres",
+              "col": "bonne"
+            },
+            {
+              "txt": "aller voir la lave de près",
+              "col": "mauvaise"
+            },
+            {
+              "txt": "nager dans l'eau brûlante",
+              "col": "mauvaise"
+            },
+            {
+              "txt": "grimper au sommet du volcan",
+              "col": "mauvaise"
+            }
+          ],
+          "indices": [
+            "Fiche « Volcans et séismes : les risques ».",
+            "Plus on est loin du volcan, moins c'est dangereux."
+          ]
+        },
+        "matelot": {
+          "type": "tri",
+          "dialogue": "Ça tremble ET ça fume. Deux dangers, alors ? Rangez-les, que je sache à quoi je m'expose.",
+          "consigne": "Range chaque danger : vient-il du volcan ou du séisme (tremblement de terre) ?",
+          "colonnes": [
+            {
+              "id": "volcan",
+              "titre": "Volcan",
+              "icone": "🌋"
+            },
+            {
+              "id": "seisme",
+              "titre": "Séisme",
+              "icone": "〰️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "une coulée de lave",
+              "col": "volcan"
+            },
+            {
+              "txt": "une pluie de cendres",
+              "col": "volcan"
+            },
+            {
+              "txt": "des gaz brûlants",
+              "col": "volcan"
+            },
+            {
+              "txt": "le sol qui tremble",
+              "col": "seisme"
+            },
+            {
+              "txt": "des maisons qui s'effondrent",
+              "col": "seisme"
+            },
+            {
+              "txt": "des fissures dans les routes",
+              "col": "seisme"
+            }
+          ],
+          "indices": [
+            "Fiche « Volcans et séismes : les risques ».",
+            "Un séisme fait trembler le sol ; un volcan rejette de la matière."
+          ]
+        },
+        "timonier": {
+          "type": "tri",
+          "dialogue": "Les gens d'ici vivent avec ce volcan. Ils doivent bien avoir des habitudes, avant, pendant et après. Rangez-les.",
+          "consigne": "Range chaque action : avant, pendant ou après une éruption ou un séisme ?",
+          "colonnes": [
+            {
+              "id": "avant",
+              "titre": "Avant",
+              "icone": "🔭"
+            },
+            {
+              "id": "pendant",
+              "titre": "Pendant",
+              "icone": "⚠️"
+            },
+            {
+              "id": "apres",
+              "titre": "Après",
+              "icone": "🧹"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "surveiller le volcan avec des appareils de mesure",
+              "col": "avant"
+            },
+            {
+              "txt": "préparer un plan d'évacuation",
+              "col": "avant"
+            },
+            {
+              "txt": "s'abriter sous une table solide quand le sol tremble",
+              "col": "pendant"
+            },
+            {
+              "txt": "suivre l'évacuation vers une zone sûre",
+              "col": "pendant"
+            },
+            {
+              "txt": "attendre l'autorisation pour rentrer chez soi",
+              "col": "apres"
+            },
+            {
+              "txt": "vérifier que la maison n'est pas fissurée",
+              "col": "apres"
+            }
+          ],
+          "indices": [
+            "Fiche « Volcans et séismes : les risques ».",
+            "Surveiller et préparer, c'est avant."
+          ]
+        },
+        "lieutenant": {
+          "type": "tri",
+          "dialogue": "L'équipe de secours parle de « prévention » et de « protection ». Pour moi, c'est la même chose. Prouvez-moi le contraire.",
+          "consigne": "Range chaque mesure, puis justifie.",
+          "colonnes": [
+            {
+              "id": "prevention",
+              "titre": "Prévention : on s'y prépare longtemps avant",
+              "icone": "📋"
+            },
+            {
+              "id": "protection",
+              "titre": "Protection : on se met à l'abri pendant la crise",
+              "icone": "🛡️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "construire des bâtiments qui résistent aux secousses",
+              "col": "prevention"
+            },
+            {
+              "txt": "interdire de construire au pied du volcan",
+              "col": "prevention"
+            },
+            {
+              "txt": "faire des exercices d'alerte à l'école",
+              "col": "prevention"
+            },
+            {
+              "txt": "évacuer la zone dangereuse",
+              "col": "protection"
+            },
+            {
+              "txt": "s'éloigner des fenêtres pendant le séisme",
+              "col": "protection"
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche montre que prévenir et se protéger, ce n'est pas pareil ?",
+            "options": [
+              "La prévention se fait longtemps avant (surveiller, construire solide, s'entraîner) ; la protection se fait pendant la crise (s'abriter, évacuer).",
+              "Un séisme fait trembler le sol.",
+              "Santorin est une île volcanique.",
+              "La lave est une roche fondue."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Volcans et séismes : les risques », encadré.",
+            "Un exercice d'alerte se fait quand tout est calme."
+          ]
+        },
+        "second": {
+          "type": "ordre",
+          "dialogue": "Votre équipe de secours dit qu'aujourd'hui on prévient les habitants avant l'éruption. Comment ? Dans quel ordre ? Si c'est clair, je reste à bord.",
+          "consigne": "Remets dans l'ordre les étapes d'une alerte au volcan aujourd'hui, puis justifie.",
+          "items": [
+            {
+              "txt": "Les appareils des scientifiques enregistrent des secousses et un gonflement du volcan."
+            },
+            {
+              "txt": "Les scientifiques préviennent les autorités : l'éruption approche."
+            },
+            {
+              "txt": "Les autorités déclenchent l'alerte et l'évacuation."
+            },
+            {
+              "txt": "Les habitants suivent les consignes et rejoignent une zone sûre."
+            },
+            {
+              "txt": "Après l'éruption, les habitants rentrent quand on les y autorise."
+            }
+          ],
+          "justification": {
+            "question": "Pourquoi la surveillance vient-elle en premier ?",
+            "options": [
+              "Un volcan surveillé donne souvent des signes avant l'éruption (secousses, gonflement, gaz) : on peut alors alerter et évacuer à temps.",
+              "Les scientifiques peuvent arrêter une éruption.",
+              "Les séismes se prévoient toujours au jour près.",
+              "La lave avance plus vite qu'une voiture."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Volcans et séismes : les risques ».",
+            "Mesurer, prévenir, alerter, évacuer, rentrer."
+          ]
+        }
+      },
+      {
+        "id": "e7-3",
+        "escale": 7,
+        "ordre": 3,
+        "titre": "Le mot sur la roche",
+        "decor": "atlantide",
+        "objet_principal": "temple",
+        "objets_cliquables": [
+          "temple",
+          "volcan-atlantide",
+          "statues"
+        ],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "Au fond de l'Atlantique, Nemo conduit Aronnax au milieu de ruines englouties par un volcan. Sur un rocher, il écrit un seul mot : ATLANTIS. Aronnax, savant, est bouleversé mais prudent : l'Atlantide est-elle une ville réelle ou un récit ? Il veut trier ce qu'on sait vraiment de ce qu'on raconte.",
+        "enjeu": "Un savant qui confond un récit et une preuve écrit des erreurs dans son livre : Aronnax doit pouvoir distinguer ce que racontent les textes de ce que prouvent les fouilles.",
+        "episode_du_roman": "Partie II, ch. IX « Un continent disparu » : Nemo écrit ATLANTIS à la craie sur un rocher, devant Aronnax stupéfait.",
+        "competence_programme": "Histoire : distinguer un mythe (récit) d'un fait prouvé par des traces (fouilles, documents) ; se repérer dans le temps (frise).",
+        "pourquoi_ce_savoir_ici": "Devant les ruines que montre Nemo, la question de l'historien se pose : comment sait-on qu'une chose a existé ?",
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "Les lettres ATLANTIS brillent un instant sur le rocher, sous la lueur du volcan."
+        },
+        "liberte_ou_anachronisme": "Les ruines de l'Atlantide sont une invention de Verne. L'Atlantide est un récit de Platon (vers 360 av. J.-C.). L'éruption de Santorin (vers 1600 av. J.-C.) et la ville d'Akrotiri, fouillée depuis 1967, sont réelles ; le lien avec le mythe est une hypothèse (A-VERIFIER.md).",
+        "lecon": "mythe-histoire",
+        "type": "vraifaux",
+        "niveau_variantes": "Mousse : vrai ou faux simple. Matelot : vrai ou faux sur récit, trace, fouille. Timonier : frise chronologique. Lieutenant : QCM fait, hypothèse, récit + justification. Second : tri fait prouvé, hypothèse, récit inventé + justification.",
+        "mousse": {
+          "type": "vraifaux",
+          "dialogue": "ATLANTIS… Le capitaine m'a écrit ce mot sans rien ajouter. Aidez-moi à démêler le vrai du faux.",
+          "consigne": "Vrai ou faux ? Aide-toi de la fiche « Mythe ou histoire ? ».",
+          "affirmations": [
+            {
+              "txt": "L'Atlantide est racontée dans un très vieux livre, écrit par Platon.",
+              "vrai": true
+            },
+            {
+              "txt": "Des archéologues ont retrouvé la ville de l'Atlantide au fond de l'océan.",
+              "vrai": false
+            },
+            {
+              "txt": "Jules Verne imagine les ruines de l'Atlantide dans son roman.",
+              "vrai": true
+            },
+            {
+              "txt": "Une éruption volcanique peut ensevelir une ville.",
+              "vrai": true
+            }
+          ],
+          "indices": [
+            "Fiche « Mythe ou histoire ? ».",
+            "Aucune fouille n'a jamais trouvé l'Atlantide."
+          ]
+        },
+        "matelot": {
+          "type": "vraifaux",
+          "dialogue": "Un historien ne croit que ce qu'il peut prouver. Moi aussi. Triez avec moi.",
+          "consigne": "Vrai ou faux ?",
+          "affirmations": [
+            {
+              "txt": "Un mythe est un récit ancien qui n'est pas prouvé par des traces.",
+              "vrai": true
+            },
+            {
+              "txt": "Une trace (objet, ruine, document) aide à prouver qu'un fait a eu lieu.",
+              "vrai": true
+            },
+            {
+              "txt": "Si un récit est très vieux, il est forcément vrai.",
+              "vrai": false
+            },
+            {
+              "txt": "À Santorin, des archéologues ont fouillé une vraie ville ensevelie par des cendres : Akrotiri.",
+              "vrai": true
+            },
+            {
+              "txt": "Le mot écrit par Nemo prouve que l'Atlantide a existé.",
+              "vrai": false
+            }
+          ],
+          "indices": [
+            "Fiche « Mythe ou histoire ? ».",
+            "Un mot écrit dans un roman n'est pas une preuve."
+          ]
+        },
+        "timonier": {
+          "type": "ordre",
+          "dialogue": "Les dates se bousculent dans ma tête : un volcan, un philosophe, un romancier, des fouilles. Remettons-les sur une frise.",
+          "consigne": "Range les événements du plus ancien au plus récent.",
+          "items": [
+            {
+              "txt": "Éruption géante de Santorin ; la ville d'Akrotiri est ensevelie",
+              "sous": "vers 1600 av. J.-C."
+            },
+            {
+              "txt": "Platon raconte l'histoire de l'Atlantide engloutie",
+              "sous": "vers 360 av. J.-C."
+            },
+            {
+              "txt": "Nouvelle éruption de Santorin (Néa Kaméni)",
+              "sous": "1866"
+            },
+            {
+              "txt": "Jules Verne publie Vingt mille lieues sous les mers",
+              "sous": "1869-1870"
+            },
+            {
+              "txt": "Début des fouilles d'Akrotiri",
+              "sous": "1967"
+            }
+          ],
+          "indices": [
+            "Fiche « Mythe ou histoire ? », la frise.",
+            "Avant Jésus-Christ, c'est avant l'an 1."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Certains savants disent que l'éruption de Santorin aurait inspiré le mythe. Est-ce un fait, une hypothèse ou un récit ? Je veux le savoir avant de l'écrire.",
+          "consigne": "Réponds avec la fiche « Mythe ou histoire ? », puis justifie.",
+          "questions": [
+            {
+              "q": "« Akrotiri a été ensevelie par l'éruption de Santorin. » C'est…",
+              "options": [
+                "un fait prouvé par les fouilles",
+                "un récit inventé",
+                "une hypothèse sans trace",
+                "une légende"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "« Cette éruption aurait inspiré le récit de l'Atlantide. » C'est…",
+              "options": [
+                "une hypothèse de savants",
+                "un fait prouvé",
+                "un récit de Platon",
+                "une erreur certaine"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "« Une cité puissante fut engloutie en un jour et une nuit. » C'est…",
+              "options": [
+                "le récit de Platon (un mythe)",
+                "un fait prouvé par les fouilles",
+                "une découverte de Verne",
+                "une mesure scientifique"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche distingue ces trois cas ?",
+            "options": [
+              "Un fait est prouvé par des traces ; une hypothèse est une explication possible, pas encore prouvée ; un mythe est un récit qu'aucune trace ne confirme.",
+              "Platon a vécu en Grèce.",
+              "L'Atlantide est au fond de l'Atlantique.",
+              "Jules Verne publie son roman en 1869-1870."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Mythe ou histoire ? », encadré.",
+            "« Aurait » : c'est une possibilité."
+          ]
+        },
+        "second": {
+          "type": "tri",
+          "dialogue": "Le capitaine m'a montré des ruines et un mot. Je dois écrire mon livre sans tromper mes lecteurs. Classez chaque affirmation, et justifiez.",
+          "consigne": "Range chaque affirmation, puis justifie.",
+          "colonnes": [
+            {
+              "id": "fait",
+              "titre": "Fait prouvé",
+              "icone": "🏺"
+            },
+            {
+              "id": "hypothese",
+              "titre": "Hypothèse",
+              "icone": "❓"
+            },
+            {
+              "id": "recit",
+              "titre": "Récit (mythe ou roman)",
+              "icone": "📖"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "Akrotiri a été ensevelie sous les cendres de Santorin.",
+              "col": "fait"
+            },
+            {
+              "txt": "Santorin est entrée en éruption en 1866.",
+              "col": "fait"
+            },
+            {
+              "txt": "L'éruption de Santorin aurait inspiré le mythe de l'Atlantide.",
+              "col": "hypothese"
+            },
+            {
+              "txt": "L'Atlantide était une île plus grande que l'Asie.",
+              "col": "recit"
+            },
+            {
+              "txt": "Le capitaine Nemo a marché dans les ruines de l'Atlantide.",
+              "col": "recit"
+            }
+          ],
+          "justification": {
+            "question": "Pourquoi « aurait inspiré » est-il une hypothèse et non un fait ?",
+            "options": [
+              "C'est une explication possible que des savants proposent, mais aucune trace ne la prouve : on ne peut pas savoir à quoi pensait Platon.",
+              "Parce que Platon a menti.",
+              "Parce que l'éruption n'a jamais eu lieu.",
+              "Parce que Verne l'a écrit."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Mythe ou histoire ? ».",
+            "Nemo est un personnage de roman."
+          ]
+        }
+      }
+    ]
+  },
+  "rayons": [
+    {
+      "id": "terre",
+      "titre": "Rayon Terre active",
+      "icone": "🌋"
+    }
+  ],
+  "lecons": [
+    {
+      "id": "volcans",
+      "rayon": "terre",
+      "fiche": 1,
+      "icone": "🌋",
+      "titre": "Les volcans",
+      "escale": 7,
+      "competence": "La Terre active : décrire un volcan et une éruption.",
+      "essentiel": "<p>Un <b>volcan</b> est une montagne d'où sort de la roche fondue venue de l'intérieur de la Terre. Sous terre, cette roche fondue s'appelle le <b>magma</b> ; quand elle sort et coule, on l'appelle la <b>lave</b>. Elle sort par le <b>cratère</b>, au sommet.</p>",
+      "approfondi": "<p>En coupe : la poche de <b>magma</b> en profondeur, la <b>cheminée</b> qui monte vers le sommet, le <b>cratère</b>. Pendant une <b>éruption</b>, le volcan rejette de la <b>lave</b>, des gaz et des <b>cendres</b> (poussières de roche) qui forment un nuage gris.</p><p>Santorin, en Grèce, est une île volcanique ; elle est entrée en éruption en 1866.</p>",
+      "expert": "<p>La chaleur vient de l'intérieur de la Terre : sous le volcan, le magma chauffe les roches et l'eau ; près d'une île volcanique en activité, la mer peut devenir brûlante. En refroidissant, la lave devient une roche dure : couche après couche, les éruptions construisent le volcan, et parfois une île.</p>",
+      "dans_le_roman": "Près de Santorin, l'eau devient si chaude que le capitaine Nemo fait virer de bord (Partie II, ch. VI)."
+    },
+    {
+      "id": "risques",
+      "rayon": "terre",
+      "fiche": 2,
+      "icone": "⚠️",
+      "titre": "Volcans et séismes : les risques",
+      "escale": 7,
+      "competence": "Identifier les risques liés aux volcans et aux séismes ; prévention et protection.",
+      "essentiel": "<p>Un <b>séisme</b> (tremblement de terre) fait trembler le sol : des maisons s'effondrent, des routes se fissurent. Un <b>volcan</b> en éruption rejette de la lave, des cendres et des gaz brûlants. Le bon réflexe : <b>s'éloigner</b> et <b>écouter les consignes</b>.</p>",
+      "approfondi": "<p><b>Avant</b> : surveiller le volcan avec des appareils de mesure, préparer un plan d'évacuation. <b>Pendant</b> : s'abriter sous une table solide si le sol tremble, s'éloigner des fenêtres, suivre l'évacuation. <b>Après</b> : attendre l'autorisation pour rentrer, vérifier les fissures.</p>",
+      "expert": "<div class='encadre'>La prévention se fait longtemps avant (surveiller, construire solide, s'entraîner) ; la protection se fait pendant la crise (s'abriter, évacuer). Un volcan surveillé donne souvent des signes avant l'éruption (secousses, gonflement, gaz) : on peut alors alerter et évacuer à temps. On ne sait pas arrêter une éruption, et l'on ne prévoit pas un séisme au jour près.</div>",
+      "dans_le_roman": "Ned Land rêve de débarquer à chaque côte ; à Santorin, la côte est en feu (Partie II, ch. VI)."
+    },
+    {
+      "id": "mythe-histoire",
+      "rayon": "histoire",
+      "fiche": 6,
+      "icone": "🏛️",
+      "titre": "Mythe ou histoire ?",
+      "escale": 7,
+      "competence": "Distinguer un mythe d'un fait prouvé par des traces ; se repérer sur une frise.",
+      "essentiel": "<p>Un <b>mythe</b> est un récit très ancien qu'aucune trace ne prouve. L'<b>Atlantide</b>, île engloutie, est racontée par le philosophe grec <b>Platon</b>, vers 360 av. J.-C. Aucune fouille ne l'a jamais retrouvée. Jules Verne imagine ses ruines dans son roman.</p>",
+      "approfondi": "<p>L'historien s'appuie sur des <b>traces</b> : objets, ruines, documents. À Santorin, des archéologues fouillent depuis 1967 une vraie ville, <b>Akrotiri</b>, ensevelie sous les cendres d'une éruption géante, vers 1600 av. J.-C. Un récit n'est pas vrai parce qu'il est vieux.</p><p><b>Frise</b> : vers 1600 av. J.-C., éruption de Santorin ; vers 360 av. J.-C., Platon ; 1866, nouvelle éruption ; 1869-1870, le roman de Verne ; 1967, fouilles d'Akrotiri.</p>",
+      "expert": "<div class='encadre'>Un fait est prouvé par des traces ; une hypothèse est une explication possible, pas encore prouvée ; un mythe est un récit qu'aucune trace ne confirme. Des savants pensent que l'éruption de Santorin aurait inspiré le mythe : c'est une hypothèse, car on ne peut pas savoir à quoi pensait Platon.</div>",
+      "dans_le_roman": "Nemo écrit ATLANTIS à la craie sur un rocher, au milieu des ruines (Partie II, ch. IX)."
+    }
+  ],
+  "decors": {
+    "volcan-santorin": {
+      "titre": "Le salon, près de Santorin",
+      "reference": null,
+      "ambiance": [
+        "sousMarin",
+        "vapeur"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 30
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 27,
+          "y": 32,
+          "r": 14,
+          "couleur": "#ff6a2a",
+          "pulse": 0.5,
+          "scintille": true
+        },
+        {
+          "type": "lueur",
+          "x": 74,
+          "y": 32,
+          "r": 14,
+          "couleur": "#ff6a2a",
+          "pulse": 0.5,
+          "scintille": true
+        },
+        {
+          "type": "bulles",
+          "x": 13,
+          "y": 10,
+          "w": 27,
+          "h": 45,
+          "nombre": 22
+        },
+        {
+          "type": "bulles",
+          "x": 61,
+          "y": 10,
+          "w": 26,
+          "h": 45,
+          "nombre": 22
+        },
+        {
+          "type": "lueur",
+          "x": 4,
+          "y": 11,
+          "r": 5,
+          "couleur": "#ffe6a6",
+          "pulse": 0.2
+        },
+        {
+          "type": "lueur",
+          "x": 96,
+          "y": 11,
+          "r": 5,
+          "couleur": "#ffe6a6",
+          "pulse": 0.2
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "thermometre",
+          "libelle": "Le thermomètre extérieur",
+          "x": 42,
+          "y": 6,
+          "w": 7,
+          "h": 36,
+          "description": "Le mercure monte sans arrêt : l'eau, dehors, devient brûlante."
+        },
+        {
+          "id": "manometre",
+          "libelle": "Le manomètre",
+          "x": 50,
+          "y": 10,
+          "w": 9,
+          "h": 16,
+          "description": "La pression de l'eau : le Nautilus est à faible profondeur."
+        },
+        {
+          "id": "hublot-gauche",
+          "libelle": "Le hublot de bâbord",
+          "x": 13,
+          "y": 7,
+          "w": 27,
+          "h": 51,
+          "description": "L'eau bouillonne, rougie par la lueur du volcan sous-marin."
+        },
+        {
+          "id": "hublot-droit",
+          "libelle": "Le hublot de tribord",
+          "x": 61,
+          "y": 7,
+          "w": 26,
+          "h": 51,
+          "description": "La côte de l'île, toute proche, fume et tremble."
+        },
+        {
+          "id": "carte-archipel",
+          "libelle": "La carte de l'archipel",
+          "x": 35,
+          "y": 50,
+          "w": 28,
+          "h": 15,
+          "description": "Santorin et ses îlots : Néa Kaméni est marquée d'une croix rouge."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "atlantide": {
+      "titre": "Les ruines de l'Atlantide",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.06,
+        "duree": 40
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 84,
+          "y": 25,
+          "r": 12,
+          "couleur": "#ff6a2a",
+          "pulse": 0.5,
+          "scintille": true
+        },
+        {
+          "type": "etincelles",
+          "x": 75,
+          "y": 13,
+          "w": 18,
+          "h": 20
+        },
+        {
+          "type": "poissons",
+          "x": 0,
+          "y": 10,
+          "w": 100,
+          "h": 50,
+          "nombre": 4,
+          "meduses": true
+        },
+        {
+          "type": "bulles",
+          "x": 36,
+          "y": 55,
+          "w": 30,
+          "h": 40,
+          "nombre": 14
+        },
+        {
+          "type": "poussiere",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 100,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "temple",
+          "libelle": "Le temple englouti",
+          "x": 36,
+          "y": 4,
+          "w": 24,
+          "h": 52,
+          "description": "Des colonnes brisées, à demi couvertes d'algues : une ville morte."
+        },
+        {
+          "id": "statues",
+          "libelle": "Les statues",
+          "x": 28,
+          "y": 25,
+          "w": 8,
+          "h": 45,
+          "description": "Une statue debout, rongée par la mer, garde l'entrée."
+        },
+        {
+          "id": "volcan-atlantide",
+          "libelle": "Le volcan",
+          "x": 75,
+          "y": 12,
+          "w": 19,
+          "h": 34,
+          "description": "Un volcan sous-marin rougeoie : c'est lui qui éclaire les ruines."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  },
+  "dialogues": {
+    "cinematiques": {
+      "transition-e7": {
+        "titre": "Escale 7 — L'archipel en feu",
+        "plans": [
+          {
+            "decor": "volcan-santorin",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "La Méditerranée, enfin. Mais près des îles grecques, la mer change de couleur, et le thermomètre s'affole.",
+            "mouvement": "zoom",
+            "video": "transition-e7"
+          },
+          {
+            "decor": "volcan-santorin",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "nemo",
+            "texte": "Santorin est en éruption, professeur. Le spectacle est rare. Ne restons pas trop longtemps.",
+            "mouvement": "glisse"
+          }
+        ]
+      },
+      "fin-e7": {
+        "titre": "Un continent disparu",
+        "plans": [
+          {
+            "decor": "atlantide",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "aronnax",
+            "texte": "Le capitaine a ramassé un morceau de craie et, sur un rocher, il a écrit un seul mot. Puis il m'a fait signe de remonter.",
+            "mouvement": "zoom",
+            "video": "fin-e7"
+          }
+        ]
+      }
+    },
+    "fin_escale": {
+      "7": {
+        "personnage": "aronnax",
+        "texte": "Notez le mot de cette escale : celui que le capitaine a écrit sur la roche, au milieu des ruines."
+      }
+    }
+  }
+}
