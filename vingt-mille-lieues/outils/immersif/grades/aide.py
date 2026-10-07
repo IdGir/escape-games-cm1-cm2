@@ -93,3 +93,24 @@ def morse(mots, lettres_table):
     return ('<div class="message-morse" style="font-size:1.45em;letter-spacing:3px;text-align:center;background:#0f1a2b;color:#ffd23f;'
             f'padding:10px;border-radius:10px;margin:8px 0">{msg}</div>'
             f'<table class="tableau-releves" style="margin:8px auto;border-collapse:collapse;text-align:left"><tr>{tab}</tr></table>')
+
+
+def tableau(titre, entetes, lignes):
+    """Document : titre en italique et tableau de relevés (classes du moteur)."""
+    th = "".join(f"<th>{h}</th>" for h in entetes)
+    tr = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in l) + "</tr>" for l in lignes)
+    return f'<div class="doc-titre"><i>{titre}</i></div><table class="tableau-releves"><tr>{th}</tr>{tr}</table>'
+
+
+def carnet(titre, corps):
+    """Encadré de document (carnet, registre, notice)."""
+    return f"<div class='doc-carnet'><b>{titre}</b> {corps}</div>"
+
+
+def question(texte):
+    return f'<p class="question-doc"><b>{texte}</b></p>'
+
+
+def marque(texte):
+    """Repère les lettres à retrouver d'une énigme « lettres » : « tra[j]et » devient tra<b data-l='J'>j</b>et (pas de lettre accentuée entre crochets)."""
+    return re.sub(r"\[(.)\]", lambda m: f"<b data-l='{m.group(1).upper()}'>{m.group(1)}</b>", texte)
