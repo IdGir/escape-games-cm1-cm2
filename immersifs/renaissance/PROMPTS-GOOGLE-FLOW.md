@@ -13,9 +13,9 @@ Ces prompts produisent les images du jeu `immersifs/renaissance/`. Les décors s
 
 ## Charte (à ajouter à chaque prompt)
 
-> Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Début du XVIe siècle, règne de François Ier : Amboise, l'imprimerie, l'atelier de Léonard, Chambord et la galerie de peinture. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
+> Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Début du XVIe siècle, règne de François Ier : Amboise, l'imprimerie, l'atelier de Léonard, Chambord et la galerie de peinture. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
 >
-> Éviter : texte, lettres, chiffres, logo, filigrane, signature, interface, cadre, mains déformées, doigts en trop, visage déformé, flou, personne réelle ou célébrité, style dessin animé, violence, sang.
+> Éviter : texte, lettres, chiffres, logo, filigrane, signature, interface, cadre, mains déformées, doigts en trop, visage déformé, flou, personne réelle ou célébrité, peinture, illustration, dessin, rendu 3D, aspect plastique, style dessin animé, violence, sang.
 
 Règles de composition communes aux décors : plan large 16:9 ; **aucun personnage au premier plan** ; les quatre objets d'énigme sont éclairés et bien lisibles, placés aux endroits indiqués (zones du moteur : repères en pourcentage de l'image) ; le **quart inférieur** reste sombre ou dégagé pour la plaque de dialogue ; pas de texte lisible (les livres, cartes et écrans montrent des motifs, pas de mots).
 
@@ -35,7 +35,7 @@ Règles de composition communes aux décors : plan large 16:9 ; **aucun personna
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : Une imprimerie de la ville d'Amboise, au printemps 1518. Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes. Quatre objets bien éclairés, nettement séparés et lisibles : La gravure du temple romain (en haut à droite); La pile de livres (en bas à gauche); La presse à imprimer (en haut au centre); La page d'épreuve (au milieu à droite). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
+Décor d'escape game pour enfants, plan large 16:9 : Une imprimerie de la ville d'Amboise, au printemps 1518. Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes. Quatre objets bien éclairés, nettement séparés et lisibles : La gravure du temple romain (en haut à droite); La pile de livres (en bas à gauche); La presse à imprimer (en haut au centre); La page d'épreuve (au milieu à droite). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
 ```
 
 ### 2. La grande salle d'Amboise — `salle`
@@ -52,7 +52,7 @@ Décor d'escape game pour enfants, plan large 16:9 : Une imprimerie de la ville 
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La grande salle du château royal d'Amboise. On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire. Quatre objets bien éclairés, nettement séparés et lisibles : Le trône (en bas à gauche); Les portraits du roi (en haut à gauche); La tapisserie (au centre); Le coffret de Dame Hélène (en bas à droite). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
+Décor d'escape game pour enfants, plan large 16:9 : La grande salle du château royal d'Amboise. On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire. Quatre objets bien éclairés, nettement séparés et lisibles : Le trône (en bas à gauche); Les portraits du roi (en haut à gauche); La tapisserie (au centre); Le coffret de Dame Hélène (en bas à droite). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
 ```
 
 ### 3. L'atelier du Cloux — `atelier`
@@ -69,7 +69,7 @@ Décor d'escape game pour enfants, plan large 16:9 : La grande salle du château
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : L'atelier de Léonard, au manoir du Cloux, près du château. Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger. Quatre objets bien éclairés, nettement séparés et lisibles : Les œuvres de l'atelier (en haut au centre); Les carnets en désordre (au milieu à gauche); La table de l'atelier (au milieu à droite); Le miroir (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
+Décor d'escape game pour enfants, plan large 16:9 : L'atelier de Léonard, au manoir du Cloux, près du château. Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger. Quatre objets bien éclairés, nettement séparés et lisibles : Les œuvres de l'atelier (en haut au centre); Les carnets en désordre (au milieu à gauche); La table de l'atelier (au milieu à droite); Le miroir (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
 ```
 
 ### 4. Le cabinet des plans — `plans`
@@ -86,7 +86,7 @@ Décor d'escape game pour enfants, plan large 16:9 : L'atelier de Léonard, au m
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : Le cabinet des plans, au château d'Amboise. Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord. Quatre objets bien éclairés, nettement séparés et lisibles : Le plan de Chambord (en haut à droite); Les deux maquettes (en haut à gauche); Les trois châteaux (en haut au centre); La salamandre sculptée (en bas à gauche). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
+Décor d'escape game pour enfants, plan large 16:9 : Le cabinet des plans, au château d'Amboise. Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord. Quatre objets bien éclairés, nettement séparés et lisibles : Le plan de Chambord (en haut à droite); Les deux maquettes (en haut à gauche); Les trois châteaux (en haut au centre); La salamandre sculptée (en bas à gauche). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
 ```
 
 ### 5. La galerie des tableaux — `galerie`
@@ -103,7 +103,7 @@ Décor d'escape game pour enfants, plan large 16:9 : Le cabinet des plans, au ch
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La galerie des tableaux du château. Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer. Quatre objets bien éclairés, nettement séparés et lisibles : Le tableau en perspective (en haut à droite); Les secrets des peintres (en haut à gauche); Le cadenas du carnet (en haut à gauche); La leçon de Bastien (en haut à droite). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
+Décor d'escape game pour enfants, plan large 16:9 : La galerie des tableaux du château. Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer. Quatre objets bien éclairés, nettement séparés et lisibles : Le tableau en perspective (en haut à droite); Les secrets des peintres (en haut à gauche); Le cadenas du carnet (en haut à gauche); La leçon de Bastien (en haut à droite). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #12130a et #26271a, lumières et accents #a8872c, #ffd27a, touches #b9d8c0.
 ```
 
 ## Portraits (3:4, 1200 × 1600)
@@ -113,31 +113,31 @@ Un portrait par personnage, **personnage inventé, jamais une personne réelle**
 ### Tommaso — `tommaso`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Apprenti de Léonard de Vinci, 12 ans, venu d'Italie, genre : garçon, cheveux courts, expression : apprenti curieux, émerveillé par léonard. Tenue en rapport avec son rôle (Apprenti de Léonard de Vinci, 12 ans, venu d'Italie). Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Apprenti de Léonard de Vinci, 12 ans, venu d'Italie, genre : garçon, cheveux courts, expression : apprenti curieux, émerveillé par léonard. Tenue en rapport avec son rôle (Apprenti de Léonard de Vinci, 12 ans, venu d'Italie). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
 ```
 
 ### Maître Jacquet — `jacquet`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Imprimeur à Amboise, genre : homme, cheveux courts, porte des lunettes, expression : imprimeur grave mais passionné. Tenue en rapport avec son rôle (Imprimeur à Amboise). Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Imprimeur à Amboise, genre : homme, cheveux courts, porte des lunettes, expression : imprimeur grave mais passionné. Tenue en rapport avec son rôle (Imprimeur à Amboise). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
 ```
 
 ### Dame Hélène — `helene`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Dame de la cour de François Ier, genre : femme, cheveux longs, expression : dame de la cour, fine et cultivée. Tenue en rapport avec son rôle (Dame de la cour de François Ier). Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Dame de la cour de François Ier, genre : femme, cheveux longs, expression : dame de la cour, fine et cultivée. Tenue en rapport avec son rôle (Dame de la cour de François Ier). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
 ```
 
 ### Colombe — `colombe`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Fille d'un maître maçon des chantiers du roi, 11 ans, genre : fille, cheveux longs, expression : fille de maçon, concrète et directe. Tenue en rapport avec son rôle (Fille d'un maître maçon des chantiers du roi, 11 ans). Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Fille d'un maître maçon des chantiers du roi, 11 ans, genre : fille, cheveux longs, expression : fille de maçon, concrète et directe. Tenue en rapport avec son rôle (Fille d'un maître maçon des chantiers du roi, 11 ans). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
 ```
 
 ### Bastien — `bastien`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Jeune peintre de la cour, élève des artistes italiens, genre : garçon, cheveux courts, expression : jeune peintre fier de son art. Tenue en rapport avec son rôle (Jeune peintre de la cour, élève des artistes italiens). Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Jeune peintre de la cour, élève des artistes italiens, genre : garçon, cheveux courts, expression : jeune peintre fier de son art. Tenue en rapport avec son rôle (Jeune peintre de la cour, élève des artistes italiens). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.
 ```
 
 ## Vidéos (Agnes, à partir des images)
@@ -152,3 +152,21 @@ Image de départ = le décor correspondant (importé avec `--depart`). Ordre : l
 - `fin-e<N>` : même départ que `transition-e<N>`, mouvement plus lumineux (« la lumière s'intensifie, tout s'apaise »).
 - `intro` et `fin` : plan d'ensemble du lieu principal ; « lent mouvement de caméra vers le lieu clé, lumière du début de l'histoire » ; pour `fin`, la lumière revient.
 - Portraits « parle » : départ = première image de la vidéo au repos ; « le personnage parle calmement, léger mouvement de tête, clignement des yeux ». Durée 5 s, 24 images/s.
+
+## Ambiances et musiques (fichiers libres de droits)
+
+Le moteur joue des fichiers mp3 s'ils existent, sinon l'ambiance synthétisée. Sources libres conseillées : Pixabay (sons et musiques), Freesound (CC0 ou CC BY), Free Music Archive, Incompetech (CC BY), YouTube Audio Library. Vérifier la licence, noter auteur + licence + URL dans `assets/audio/CREDITS-audio.md`. Boucles d'ambiance : 30 à 90 s, sans début ni fin marqués. Musiques : instrumentales, sans voix, 20 à 60 s (elles se coupent en fondu à la fin de la cinématique).
+
+| Fichier à déposer | Rôle | Mots-clés de recherche |
+|---|---|---|
+| `assets/audio/ambiances/imprimerie.mp3` | Ambiance de la salle 1 (boucle, discrète) | ambiance sonore « Une imprimerie de la ville d'Amboise, au printemps 1518 », sans voix ni musique |
+| `assets/audio/ambiances/salle.mp3` | Ambiance de la salle 2 (boucle, discrète) | ambiance sonore « La grande salle du château royal d'Amboise », sans voix ni musique |
+| `assets/audio/ambiances/atelier.mp3` | Ambiance de la salle 3 (boucle, discrète) | ambiance sonore « L'atelier de Léonard, au manoir du Cloux, près du château », sans voix ni musique |
+| `assets/audio/ambiances/plans.mp3` | Ambiance de la salle 4 (boucle, discrète) | ambiance sonore « Le cabinet des plans, au château d'Amboise », sans voix ni musique |
+| `assets/audio/ambiances/galerie.mp3` | Ambiance de la salle 5 (boucle, discrète) | ambiance sonore « La galerie des tableaux du château », sans voix ni musique |
+| `assets/audio/musiques/intro.mp3` | Cinématique d'ouverture | musique instrumentale de cinéma, mystérieuse, qui s'installe |
+| `assets/audio/musiques/transition.mp3` | Toutes les transitions entre salles (ou un fichier `transition-e<N>.mp3` par salle) | musique instrumentale douce, en avancée, curieuse |
+| `assets/audio/musiques/fin-salle.mp3` | Fins de salle (ou `fin-e<N>.mp3`) | courte musique de réussite, lumineuse et apaisée |
+| `assets/audio/musiques/fin.mp3` | Cinématique finale | musique instrumentale de conclusion, triomphante puis calme |
+
+Réglages des élèves : « Sons et ambiances » (déjà présent) ; volumes par défaut 0,35 (ambiance) et 0,5 (musique), modifiables avec `VML.reglage("volumeAmbiance")` et `VML.reglage("volumeMusique")`.

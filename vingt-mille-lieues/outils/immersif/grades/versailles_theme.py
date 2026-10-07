@@ -38,6 +38,6 @@ PORTRAITS = {
     "gabriel":  {"genre": "garçon", "coiffure": "courte", "cheveux": "#5a3a22", "peau": "#f0c9ad", "habit": "#2a4a6a", "barbe": False, "lunettes": False},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance du Grand Siècle, lumière dorée contre ombres prune, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance du Grand Siècle, lumière dorée contre ombres prune, "
                 "marbre, miroirs, boiseries dorées, jardins géométriques, détails d'époque lisibles (sans inscriptions), grain fin, profondeur de champ.")
 EPOQUE = "1598 puis 1682-1715 : une imprimerie et une rue de la fin des guerres de Religion, puis les jardins, la chambre et le cabinet du Conseil à Versailles."

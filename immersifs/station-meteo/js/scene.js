@@ -142,6 +142,7 @@ VML.Scene = class {
     this.hote.style.setProperty("--grain", gr ? gr.force : 0);
     if(!this.raf) this.raf = requestAnimationFrame(this._boucle);
     if(VML.ambianceDecor) VML.ambianceDecor(d.ambiance || []);
+    if(VML.ambianceFichier) VML.ambianceFichier(id);
     return src;
   }
 

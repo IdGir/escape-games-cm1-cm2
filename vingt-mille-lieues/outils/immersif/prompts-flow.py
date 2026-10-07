@@ -12,10 +12,10 @@ import json, os, re, sys
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 
-STYLE = ("Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, "
-         "nombreux détails narratifs lisibles, grain fin, profondeur de champ.")
+STYLE = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), "
+         "matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition.")
 NEGATIF = ("texte, lettres, chiffres, logo, filigrane, signature, interface, cadre, mains déformées, doigts en trop, visage déformé, flou, "
-           "personne réelle ou célébrité, style dessin animé, violence, sang")
+           "personne réelle ou célébrité, peinture, illustration, dessin, rendu 3D, aspect plastique, style dessin animé, violence, sang")
 
 
 def place(x, y, w, h):
@@ -135,6 +135,25 @@ def jeu_md(jeu):
     L += ["- `fin-e<N>` : même départ que `transition-e<N>`, mouvement plus lumineux (« la lumière s'intensifie, tout s'apaise »).",
           "- `intro` et `fin` : plan d'ensemble du lieu principal ; « lent mouvement de caméra vers le lieu clé, lumière du début de l'histoire » ; pour `fin`, la lumière revient.",
           "- Portraits « parle » : départ = première image de la vidéo au repos ; « le personnage parle calmement, léger mouvement de tête, clignement des yeux ». Durée 5 s, 24 images/s.", ""]
+    # ---- sons et musiques
+    L += ["## Ambiances et musiques (fichiers libres de droits)", "",
+          "Le moteur joue des fichiers mp3 s'ils existent, sinon l'ambiance synthétisée. Sources libres conseillées : Pixabay (sons et musiques), Freesound (CC0 ou CC BY), "
+          "Free Music Archive, Incompetech (CC BY), YouTube Audio Library. Vérifier la licence, noter auteur + licence + URL dans `assets/audio/CREDITS-audio.md`. "
+          "Boucles d'ambiance : 30 à 90 s, sans début ni fin marqués. Musiques : instrumentales, sans voix, 20 à 60 s (elles se coupent en fondu à la fin de la cinématique).", "",
+          "| Fichier à déposer | Rôle | Mots-clés de recherche |", "|---|---|---|"]
+    vus = set()
+    for s in E["escales"]:
+        decor = s["enigmes"][0]["decor"]
+        if decor in vus:
+            continue
+        vus.add(decor)
+        lieu = re.sub(r"\s+", " ", s.get("lieu", "")).strip()
+        L.append(f"| `assets/audio/ambiances/{decor}.mp3` | Ambiance de la salle {s['numero']} (boucle, discrète) | ambiance sonore « {lieu} », sans voix ni musique |")
+    L += ["| `assets/audio/musiques/intro.mp3` | Cinématique d'ouverture | musique instrumentale de cinéma, mystérieuse, qui s'installe |",
+          "| `assets/audio/musiques/transition.mp3` | Toutes les transitions entre salles (ou un fichier `transition-e<N>.mp3` par salle) | musique instrumentale douce, en avancée, curieuse |",
+          "| `assets/audio/musiques/fin-salle.mp3` | Fins de salle (ou `fin-e<N>.mp3`) | courte musique de réussite, lumineuse et apaisée |",
+          "| `assets/audio/musiques/fin.mp3` | Cinématique finale | musique instrumentale de conclusion, triomphante puis calme |", "",
+          "Réglages des élèves : « Sons et ambiances » (déjà présent) ; volumes par défaut 0,35 (ambiance) et 0,5 (musique), modifiables avec `VML.reglage(\"volumeAmbiance\")` et `VML.reglage(\"volumeMusique\")`.", ""]
     out = os.path.join(dest, "PROMPTS-GOOGLE-FLOW.md")
     open(out, "w", encoding="utf-8", newline="\n").write("\n".join(L))
     return out

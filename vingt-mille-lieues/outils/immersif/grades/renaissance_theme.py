@@ -37,6 +37,6 @@ PORTRAITS = {
     "bastien":  {"genre": "garçon", "coiffure": "courte", "cheveux": "#1a1a1a", "peau": "#dba680", "habit": "#2a4a6a", "barbe": False, "lunettes": False},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de la Renaissance, lumière dorée de fin de journée contre ombres brunes, "
                 "pierre claire, bois, papier et pigments, détails d'atelier lisibles (sans inscriptions), grain fin, profondeur de champ.")
 EPOQUE = "Début du XVIe siècle, règne de François Ier : Amboise, l'imprimerie, l'atelier de Léonard, Chambord et la galerie de peinture."

@@ -35,6 +35,6 @@ PORTRAITS = {
     "basile":  {"genre": "homme", "coiffure": "courte", "cheveux": "#a04a22", "peau": "#e6c2a6", "habit": "#b3361f", "barbe": False, "lunettes": False},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, "
                 "bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.")
 EPOQUE = "Univers contemporain, un restaurant de campagne, « Le Grand Couvert », et une équipe cycliste en préparation d'étape."

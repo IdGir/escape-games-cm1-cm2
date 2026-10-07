@@ -37,6 +37,6 @@ PORTRAITS = {
     "melange": {"genre": "femme", "coiffure": "longue", "cheveux": "#9c9c98", "peau": "#e6c2a6", "habit": "#5a3a62", "lunettes": True},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance de vieux laboratoire de chimie bien rangé et lumineux, verre, laiton et carrelage, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de vieux laboratoire de chimie bien rangé et lumineux, verre, laiton et carrelage, "
                 "reflets de fioles colorées, lumière douce turquoise contre ombres chaudes, détails scientifiques lisibles (sans inscriptions), grain fin.")
 EPOQUE = "Univers contemporain mais chaleureux : un laboratoire d'enfants avec balances, fioles, atelier de tri et marais salants."

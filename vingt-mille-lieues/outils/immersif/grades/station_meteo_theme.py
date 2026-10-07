@@ -35,6 +35,6 @@ PORTRAITS = {
     "keita":   {"genre": "homme", "coiffure": "chauve", "cheveux": "#1a1a1a", "peau": "#6e4630", "habit": "#1b2a4a", "barbe": True, "lunettes": False},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance de petite station météo d'école après un orage, ciel contrasté, lumière rasante contre ombres bleutées, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance de petite station météo d'école après un orage, ciel contrasté, lumière rasante contre ombres bleutées, "
                 "instruments de mesure lisibles (sans inscriptions), herbe, abri blanc, mât et pluviomètre, grain fin, profondeur de champ.")
 EPOQUE = "Univers contemporain : la station météo d'une école, après un orage qui a dérangé les instruments."

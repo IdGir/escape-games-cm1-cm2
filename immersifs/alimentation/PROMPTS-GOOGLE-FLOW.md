@@ -13,9 +13,9 @@ Ces prompts produisent les images du jeu `immersifs/alimentation/`. Les décors 
 
 ## Charte (à ajouter à chaque prompt)
 
-> Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Univers contemporain, un restaurant de campagne, « Le Grand Couvert », et une équipe cycliste en préparation d'étape. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
+> Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Univers contemporain, un restaurant de campagne, « Le Grand Couvert », et une équipe cycliste en préparation d'étape. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
 >
-> Éviter : texte, lettres, chiffres, logo, filigrane, signature, interface, cadre, mains déformées, doigts en trop, visage déformé, flou, personne réelle ou célébrité, style dessin animé, violence, sang.
+> Éviter : texte, lettres, chiffres, logo, filigrane, signature, interface, cadre, mains déformées, doigts en trop, visage déformé, flou, personne réelle ou célébrité, peinture, illustration, dessin, rendu 3D, aspect plastique, style dessin animé, violence, sang.
 
 Règles de composition communes aux décors : plan large 16:9 ; **aucun personnage au premier plan** ; les quatre objets d'énigme sont éclairés et bien lisibles, placés aux endroits indiqués (zones du moteur : repères en pourcentage de l'image) ; le **quart inférieur** reste sombre ou dégagé pour la plaque de dialogue ; pas de texte lisible (les livres, cartes et écrans montrent des motifs, pas de mots).
 
@@ -35,7 +35,7 @@ Règles de composition communes aux décors : plan large 16:9 ; **aucun personna
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La cour du restaurant, entre le potager et le poulailler. Des rangs de salades et de carottes, un poulailler en bois, des poules qui picorent. Dans un coin, sous une lampe, le petit Caramel trottine. Quatre objets bien éclairés, nettement séparés et lisibles : Le carnet du poulailler (en haut à gauche); Le panier du potager (en haut au centre); La toise de la cuisine (en haut à droite); Le mot de Nathan (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
+Décor d'escape game pour enfants, plan large 16:9 : La cour du restaurant, entre le potager et le poulailler. Des rangs de salades et de carottes, un poulailler en bois, des poules qui picorent. Dans un coin, sous une lampe, le petit Caramel trottine. Quatre objets bien éclairés, nettement séparés et lisibles : Le carnet du poulailler (en haut à gauche); Le panier du potager (en haut au centre); La toise de la cuisine (en haut à droite); Le mot de Nathan (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
 ```
 
 ### 2. La salle des menus — `menus`
@@ -52,7 +52,7 @@ Décor d'escape game pour enfants, plan large 16:9 : La cour du restaurant, entr
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La salle des menus, au premier étage du restaurant. Un grand tableau couvert de menus, des fiches épinglées, une balance de cuisine. Sur la table, le carnet de la docteure et le maillot de Basile. Quatre objets bien éclairés, nettement séparés et lisibles : Les assiettes de la salle des menus (en haut à gauche); Le tableau des besoins (en haut au centre); Le plat qui tombe (en haut à droite); Le carnet de la docteure (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
+Décor d'escape game pour enfants, plan large 16:9 : La salle des menus, au premier étage du restaurant. Un grand tableau couvert de menus, des fiches épinglées, une balance de cuisine. Sur la table, le carnet de la docteure et le maillot de Basile. Quatre objets bien éclairés, nettement séparés et lisibles : Les assiettes de la salle des menus (en haut à gauche); Le tableau des besoins (en haut au centre); Le plat qui tombe (en haut à droite); Le carnet de la docteure (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
 ```
 
 ### 3. La table de dégustation — `degustation`
@@ -69,7 +69,7 @@ Décor d'escape game pour enfants, plan large 16:9 : La salle des menus, au prem
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La table de dégustation, près des cuisines. Une longue table nappée de blanc : du pain de campagne, des pommes, des carottes croquantes. Sur une étagère, le moulage d'une mâchoire prêté par un dentiste. Quatre objets bien éclairés, nettement séparés et lisibles : Les outils de cuisine (en haut à gauche); Le moulage de la mâchoire (en haut au centre); Le verre d'eau et la bouchée (en haut à droite); La bouchée de pain (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
+Décor d'escape game pour enfants, plan large 16:9 : La table de dégustation, près des cuisines. Une longue table nappée de blanc : du pain de campagne, des pommes, des carottes croquantes. Sur une étagère, le moulage d'une mâchoire prêté par un dentiste. Quatre objets bien éclairés, nettement séparés et lisibles : Les outils de cuisine (en haut à gauche); Le moulage de la mâchoire (en haut au centre); Le verre d'eau et la bouchée (en haut à droite); La bouchée de pain (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
 ```
 
 ### 4. Le cabinet du Grand Tunnel — `cabinet`
@@ -86,7 +86,7 @@ Décor d'escape game pour enfants, plan large 16:9 : La table de dégustation, p
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : Le cabinet de la docteure Inès, à côté de la salle d'entraînement. Sur le bureau, une grande maquette du corps humain que l'on peut ouvrir. Au mur, des affiches sur la digestion. Une bouchée en pâte à modeler attend au départ du Grand Tunnel. Quatre objets bien éclairés, nettement séparés et lisibles : La maquette du corps (en haut à gauche); Les cartes des organes (en haut au centre); Les fiches de la docteure (en haut à droite); L'organe qui ne voit rien (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
+Décor d'escape game pour enfants, plan large 16:9 : Le cabinet de la docteure Inès, à côté de la salle d'entraînement. Sur le bureau, une grande maquette du corps humain que l'on peut ouvrir. Au mur, des affiches sur la digestion. Une bouchée en pâte à modeler attend au départ du Grand Tunnel. Quatre objets bien éclairés, nettement séparés et lisibles : La maquette du corps (en haut à gauche); Les cartes des organes (en haut au centre); Les fiches de la docteure (en haut à droite); L'organe qui ne voit rien (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
 ```
 
 ### 5. La salle d'entraînement — `entrainement`
@@ -103,7 +103,7 @@ Décor d'escape game pour enfants, plan large 16:9 : Le cabinet de la docteure I
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La salle d'entraînement, au fond du restaurant. Un vélo de course monté sur un home-trainer, un écran qui affiche la vitesse et le pouls, une gourde d'eau. Basile pédale, les joues rouges. Quatre objets bien éclairés, nettement séparés et lisibles : Le compteur de pouls (en haut à gauche); Le message du home-trainer (en haut au centre); Les chronos du coureur (en haut à droite); Le schéma de la livraison (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
+Décor d'escape game pour enfants, plan large 16:9 : La salle d'entraînement, au fond du restaurant. Un vélo de course monté sur un home-trainer, un écran qui affiche la vitesse et le pouls, une gourde d'eau. Basile pédale, les joues rouges. Quatre objets bien éclairés, nettement séparés et lisibles : Le compteur de pouls (en haut à gauche); Le message du home-trainer (en haut au centre); Les chronos du coureur (en haut à droite); Le schéma de la livraison (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #0e1a12 et #1f3326, lumières et accents #e8803a, #ffd08a, touches #bde6a8.
 ```
 
 ## Portraits (3:4, 1200 × 1600)
@@ -113,25 +113,25 @@ Un portrait par personnage, **personnage inventé, jamais une personne réelle**
 ### Rosalie — `rosalie`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Cheffe du restaurant Le Grand Couvert, genre : femme, cheveux courts, expression : cheffe exigeante, chaleureuse, parle cuisine. Tenue en rapport avec son rôle (Cheffe du restaurant Le Grand Couvert). Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Cheffe du restaurant Le Grand Couvert, genre : femme, cheveux courts, expression : cheffe exigeante, chaleureuse, parle cuisine. Tenue en rapport avec son rôle (Cheffe du restaurant Le Grand Couvert). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
 ```
 
 ### Nathan — `nathan`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Commis : il s'occupe du potager et du poulailler, genre : garçon, cheveux courts, expression : jeune commis enthousiaste, les mains dans la terre. Tenue en rapport avec son rôle (Commis : il s'occupe du potager et du poulailler). Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Commis : il s'occupe du potager et du poulailler, genre : garçon, cheveux courts, expression : jeune commis enthousiaste, les mains dans la terre. Tenue en rapport avec son rôle (Commis : il s'occupe du potager et du poulailler). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
 ```
 
 ### Docteure Inès — `ines`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Médecin de l'équipe cycliste, genre : femme, cheveux longs, porte des lunettes, expression : médecin calme et précise, pédagogue. Tenue en rapport avec son rôle (Médecin de l'équipe cycliste). Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Médecin de l'équipe cycliste, genre : femme, cheveux longs, porte des lunettes, expression : médecin calme et précise, pédagogue. Tenue en rapport avec son rôle (Médecin de l'équipe cycliste). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
 ```
 
 ### Basile — `basile`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Coureur cycliste, genre : homme, cheveux courts, expression : coureur essoufflé, plein d'humour et d'énergie. Tenue en rapport avec son rôle (Coureur cycliste). Peinture numérique semi-réaliste de cinéma, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Coureur cycliste, genre : homme, cheveux courts, expression : coureur essoufflé, plein d'humour et d'énergie. Tenue en rapport avec son rôle (Coureur cycliste). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance chaleureuse de restaurant et de potager, lumière dorée de fin d'après-midi contre ombres vertes, bois, cuivre et céramique, détails gourmands lisibles, grain fin, profondeur de champ.
 ```
 
 ## Vidéos (Agnes, à partir des images)
@@ -146,3 +146,21 @@ Image de départ = le décor correspondant (importé avec `--depart`). Ordre : l
 - `fin-e<N>` : même départ que `transition-e<N>`, mouvement plus lumineux (« la lumière s'intensifie, tout s'apaise »).
 - `intro` et `fin` : plan d'ensemble du lieu principal ; « lent mouvement de caméra vers le lieu clé, lumière du début de l'histoire » ; pour `fin`, la lumière revient.
 - Portraits « parle » : départ = première image de la vidéo au repos ; « le personnage parle calmement, léger mouvement de tête, clignement des yeux ». Durée 5 s, 24 images/s.
+
+## Ambiances et musiques (fichiers libres de droits)
+
+Le moteur joue des fichiers mp3 s'ils existent, sinon l'ambiance synthétisée. Sources libres conseillées : Pixabay (sons et musiques), Freesound (CC0 ou CC BY), Free Music Archive, Incompetech (CC BY), YouTube Audio Library. Vérifier la licence, noter auteur + licence + URL dans `assets/audio/CREDITS-audio.md`. Boucles d'ambiance : 30 à 90 s, sans début ni fin marqués. Musiques : instrumentales, sans voix, 20 à 60 s (elles se coupent en fondu à la fin de la cinématique).
+
+| Fichier à déposer | Rôle | Mots-clés de recherche |
+|---|---|---|
+| `assets/audio/ambiances/potager.mp3` | Ambiance de la salle 1 (boucle, discrète) | ambiance sonore « La cour du restaurant, entre le potager et le poulailler », sans voix ni musique |
+| `assets/audio/ambiances/menus.mp3` | Ambiance de la salle 2 (boucle, discrète) | ambiance sonore « La salle des menus, au premier étage du restaurant », sans voix ni musique |
+| `assets/audio/ambiances/degustation.mp3` | Ambiance de la salle 3 (boucle, discrète) | ambiance sonore « La table de dégustation, près des cuisines », sans voix ni musique |
+| `assets/audio/ambiances/cabinet.mp3` | Ambiance de la salle 4 (boucle, discrète) | ambiance sonore « Le cabinet de la docteure Inès, à côté de la salle d'entraînement », sans voix ni musique |
+| `assets/audio/ambiances/entrainement.mp3` | Ambiance de la salle 5 (boucle, discrète) | ambiance sonore « La salle d'entraînement, au fond du restaurant », sans voix ni musique |
+| `assets/audio/musiques/intro.mp3` | Cinématique d'ouverture | musique instrumentale de cinéma, mystérieuse, qui s'installe |
+| `assets/audio/musiques/transition.mp3` | Toutes les transitions entre salles (ou un fichier `transition-e<N>.mp3` par salle) | musique instrumentale douce, en avancée, curieuse |
+| `assets/audio/musiques/fin-salle.mp3` | Fins de salle (ou `fin-e<N>.mp3`) | courte musique de réussite, lumineuse et apaisée |
+| `assets/audio/musiques/fin.mp3` | Cinématique finale | musique instrumentale de conclusion, triomphante puis calme |
+
+Réglages des élèves : « Sons et ambiances » (déjà présent) ; volumes par défaut 0,35 (ambiance) et 0,5 (musique), modifiables avec `VML.reglage("volumeAmbiance")` et `VML.reglage("volumeMusique")`.

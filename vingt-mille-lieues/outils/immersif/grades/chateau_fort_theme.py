@@ -38,6 +38,6 @@ PORTRAITS = {
     "perrine":  {"genre": "femme", "coiffure": "courte", "cheveux": "#9c9c98", "peau": "#e6c2a6", "habit": "#5a3a62", "lunettes": False},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance médiévale sobre et crédible, lumière rasante du petit matin ou des torches contre ombres froides de pierre, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance médiévale sobre et crédible, lumière rasante du petit matin ou des torches contre ombres froides de pierre, "
                 "bois, fer, pierre et laine, détails artisanaux lisibles, grain fin, profondeur de champ.")
 EPOQUE = "Moyen Âge central (Xe-XIIIe siècles), un château en construction et le village à ses pieds."

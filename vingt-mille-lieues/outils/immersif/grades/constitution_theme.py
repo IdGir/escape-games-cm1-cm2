@@ -36,6 +36,6 @@ PORTRAITS = {
     "sylla":    {"genre": "homme", "coiffure": "courte", "cheveux": "#1a1a1a", "peau": "#6e4630", "habit": "#1d2a4a", "barbe": False, "lunettes": True},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance institutionnelle solennelle et lumineuse, pierre de taille, boiseries, drapeaux et dorures sobres, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance institutionnelle solennelle et lumineuse, pierre de taille, boiseries, drapeaux et dorures sobres, "
                 "lumière de fenêtre haute contre ombres bleutées, détails architecturaux lisibles (sans inscriptions), grain fin, profondeur de champ.")
 EPOQUE = "Univers contemporain : le Palais-Royal, la salle des textes, l'hémicycle, le Sénat et la salle des séances du Conseil constitutionnel."

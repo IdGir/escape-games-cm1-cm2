@@ -35,6 +35,6 @@ PORTRAITS = {
     "eleonore": {"genre": "femme", "coiffure": "longue", "cheveux": "#5a3a22", "peau": "#e6c2a6", "habit": "#2a4a3a", "lunettes": False},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance d'atelier de bricolage chaleureux et bien rangé, acier, cuivre, bois et verre, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance d'atelier de bricolage chaleureux et bien rangé, acier, cuivre, bois et verre, "
                 "lumière de lampe d'établi contre ombres bleutées, outils et pièces mécaniques lisibles (sans inscriptions), grain fin, profondeur de champ.")
 EPOQUE = "Univers contemporain : un atelier de réparation de vélos et de fabrication d'objets du quotidien."

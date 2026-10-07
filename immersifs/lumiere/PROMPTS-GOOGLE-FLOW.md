@@ -13,9 +13,9 @@ Ces prompts produisent les images du jeu `immersifs/lumiere/`. Les décors serve
 
 ## Charte (à ajouter à chaque prompt)
 
-> Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
+> Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
 >
-> Éviter : texte, lettres, chiffres, logo, filigrane, signature, interface, cadre, mains déformées, doigts en trop, visage déformé, flou, personne réelle ou célébrité, style dessin animé, violence, sang.
+> Éviter : texte, lettres, chiffres, logo, filigrane, signature, interface, cadre, mains déformées, doigts en trop, visage déformé, flou, personne réelle ou célébrité, peinture, illustration, dessin, rendu 3D, aspect plastique, style dessin animé, violence, sang.
 
 Règles de composition communes aux décors : plan large 16:9 ; **aucun personnage au premier plan** ; les quatre objets d'énigme sont éclairés et bien lisibles, placés aux endroits indiqués (zones du moteur : repères en pourcentage de l'image) ; le **quart inférieur** reste sombre ou dégagé pour la plaque de dialogue ; pas de texte lisible (les livres, cartes et écrans montrent des motifs, pas de mots).
 
@@ -35,7 +35,7 @@ Règles de composition communes aux décors : plan large 16:9 ; **aucun personna
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La lanterne, tout en haut du phare. Une petite pièce ronde entourée de vitres. Au centre, la grosse lampe du phare, éteinte, entourée de sa lentille en verre. Dehors, la mer devient sombre et un voilier approche. Quatre objets bien éclairés, nettement séparés et lisibles : La liste de Maëlle (en haut à gauche); Le schéma sur le mur (en haut au centre); Le coffre des signaux (en haut à droite); Le cahier de Maëlle (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
+Décor d'escape game pour enfants, plan large 16:9 : La lanterne, tout en haut du phare. Une petite pièce ronde entourée de vitres. Au centre, la grosse lampe du phare, éteinte, entourée de sa lentille en verre. Dehors, la mer devient sombre et un voilier approche. Quatre objets bien éclairés, nettement séparés et lisibles : La liste de Maëlle (en haut à gauche); Le schéma sur le mur (en haut au centre); Le coffre des signaux (en haut à droite); Le cahier de Maëlle (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
 ```
 
 ### 2. L'atelier des vitres — `atelier`
@@ -52,7 +52,7 @@ Décor d'escape game pour enfants, plan large 16:9 : La lanterne, tout en haut d
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : L'atelier, au pied de l'escalier du phare. Un établi couvert de plaques de verre, de papier calque, de planches et de feuilles d'aluminium. Une lampe de bureau éclaire un banc d'essai. Quatre objets bien éclairés, nettement séparés et lisibles : L'établi des mots (en haut à gauche); Le banc d'essai (en haut au centre); Le carnet d'essais (en haut à droite); Le registre de l'ingénieure (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
+Décor d'escape game pour enfants, plan large 16:9 : L'atelier, au pied de l'escalier du phare. Un établi couvert de plaques de verre, de papier calque, de planches et de feuilles d'aluminium. Une lampe de bureau éclaire un banc d'essai. Quatre objets bien éclairés, nettement séparés et lisibles : L'établi des mots (en haut à gauche); Le banc d'essai (en haut au centre); Le carnet d'essais (en haut à droite); Le registre de l'ingénieure (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
 ```
 
 ### 3. La chambre aux ombres — `chambre`
@@ -69,7 +69,7 @@ Décor d'escape game pour enfants, plan large 16:9 : L'atelier, au pied de l'esc
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La chambre du gardien, au deuxième étage. Un lit sous la fenêtre ronde, un drap tendu en guise d'écran, une lampe de poche et des figurines découpées dans du carton : un bateau, une mouette, un phare. Quatre objets bien éclairés, nettement séparés et lisibles : L'écran blanc de Nils (en haut à gauche); Le carnet d'observations (en haut au centre); Le théâtre d'ombres (en haut à droite); La boîte à ombres (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
+Décor d'escape game pour enfants, plan large 16:9 : La chambre du gardien, au deuxième étage. Un lit sous la fenêtre ronde, un drap tendu en guise d'écran, une lampe de poche et des figurines découpées dans du carton : un bateau, une mouette, un phare. Quatre objets bien éclairés, nettement séparés et lisibles : L'écran blanc de Nils (en haut à gauche); Le carnet d'observations (en haut au centre); Le théâtre d'ombres (en haut à droite); La boîte à ombres (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
 ```
 
 ### 4. La cour du cadran solaire — `cour`
@@ -86,7 +86,7 @@ Décor d'escape game pour enfants, plan large 16:9 : La chambre du gardien, au d
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La cour du phare, autour du cadran solaire. Une cour pavée entourée d'un muret. Au centre, un bâton planté dans le sol ; autour, des traits peints et des heures. Sur un banc, l'appareil photo et le carnet d'Achille. Quatre objets bien éclairés, nettement séparés et lisibles : Les photos d'Achille (en haut à gauche); Le cadran de pierre (en haut au centre); Le plan de la cour (en haut à droite); Le carnet de l'été (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
+Décor d'escape game pour enfants, plan large 16:9 : La cour du phare, autour du cadran solaire. Une cour pavée entourée d'un muret. Au centre, un bâton planté dans le sol ; autour, des traits peints et des heures. Sur un banc, l'appareil photo et le carnet d'Achille. Quatre objets bien éclairés, nettement séparés et lisibles : Les photos d'Achille (en haut à gauche); Le cadran de pierre (en haut au centre); Le plan de la cour (en haut à droite); Le carnet de l'été (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
 ```
 
 ### 5. La galerie du phare — `galerie`
@@ -103,7 +103,7 @@ Décor d'escape game pour enfants, plan large 16:9 : La cour du phare, autour du
 **Prompt**
 
 ```
-Décor d'escape game pour enfants, plan large 16:9 : La galerie extérieure, autour de la lanterne, face à la mer. Un balcon étroit avec une rambarde, tout en haut du phare. Le vent souffle fort. Entre deux nuages, un disque pâle éclaire la mer ; au loin, une petite lumière clignote : c'est La Mouette. Quatre objets bien éclairés, nettement séparés et lisibles : Le carnet de la Lune (en haut à gauche); La rose des phases (en haut au centre); La lampe à signaux (en haut à droite); Le journal de bord (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
+Décor d'escape game pour enfants, plan large 16:9 : La galerie extérieure, autour de la lanterne, face à la mer. Un balcon étroit avec une rambarde, tout en haut du phare. Le vent souffle fort. Entre deux nuages, un disque pâle éclaire la mer ; au loin, une petite lumière clignote : c'est La Mouette. Quatre objets bien éclairés, nettement séparés et lisibles : Le carnet de la Lune (en haut à gauche); La rose des phases (en haut au centre); La lampe à signaux (en haut à droite); Le journal de bord (au centre). Aucun personnage au premier plan. Le tiers inférieur de l'image est sombre et dégagé. Aucun texte lisible. Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition. Dominantes de couleur du jeu (à respecter pour que les images aillent avec l'interface) : fond #070c1a et #101a33, lumières et accents #f2b84b, #ffd27a, touches #8fd3ff.
 ```
 
 ## Portraits (3:4, 1200 × 1600)
@@ -113,31 +113,31 @@ Un portrait par personnage, **personnage inventé, jamais une personne réelle**
 ### Maëlle — `maelle`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Gardienne du phare de l'île Lumière, genre : femme, cheveux longs, expression : gardienne du phare, posée, attentive aux signaux. Tenue en rapport avec son rôle (Gardienne du phare de l'île Lumière). Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Gardienne du phare de l'île Lumière, genre : femme, cheveux longs, expression : gardienne du phare, posée, attentive aux signaux. Tenue en rapport avec son rôle (Gardienne du phare de l'île Lumière). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition.
 ```
 
 ### Salomé — `salome`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Ingénieure en signalisation maritime, genre : femme, cheveux courts, porte des lunettes, expression : ingénieure précise, aime tester et comparer. Tenue en rapport avec son rôle (Ingénieure en signalisation maritime). Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Ingénieure en signalisation maritime, genre : femme, cheveux courts, porte des lunettes, expression : ingénieure précise, aime tester et comparer. Tenue en rapport avec son rôle (Ingénieure en signalisation maritime). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition.
 ```
 
 ### Nils — `nils`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Neveu de Maëlle, 9 ans, passionné d'ombres, genre : garçon, cheveux courts, expression : jeune gardien curieux, joue avec les ombres. Tenue en rapport avec son rôle (Neveu de Maëlle, 9 ans, passionné d'ombres). Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Neveu de Maëlle, 9 ans, passionné d'ombres, genre : garçon, cheveux courts, expression : jeune gardien curieux, joue avec les ombres. Tenue en rapport avec son rôle (Neveu de Maëlle, 9 ans, passionné d'ombres). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition.
 ```
 
 ### Achille — `achille`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Horloger du port, constructeur de cadrans solaires, genre : homme, cheveux courts, porte des lunettes, expression : horloger méticuleux, patient, aime l'ordre. Tenue en rapport avec son rôle (Horloger du port, constructeur de cadrans solaires). Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Horloger du port, constructeur de cadrans solaires, genre : homme, cheveux courts, porte des lunettes, expression : horloger méticuleux, patient, aime l'ordre. Tenue en rapport avec son rôle (Horloger du port, constructeur de cadrans solaires). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition.
 ```
 
 ### Capitaine Yasmine — `yasmine`
 
 ```
-Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Capitaine du voilier La Mouette, genre : femme, cheveux longs, expression : capitaine bavarde et rieuse, parle de la mer et du ciel. Tenue en rapport avec son rôle (Capitaine du voilier La Mouette). Peinture numérique semi-réaliste de cinéma, éclairage dramatique (lumière chaude contre ombres froides), matières crédibles, nombreux détails narratifs lisibles, grain fin, profondeur de champ.
+Portrait en buste d'un personnage de fiction, format 3:4, fond sobre légèrement flou, éclairage doux et chaleureux, regard vers l'objectif, expression bienveillante : Capitaine du voilier La Mouette, genre : femme, cheveux longs, expression : capitaine bavarde et rieuse, parle de la mer et du ciel. Tenue en rapport avec son rôle (Capitaine du voilier La Mouette). Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, éclairage naturel crédible (lumière chaude contre ombres froides), matières et textures réalistes, nombreux détails narratifs lisibles, grain photographique fin, profondeur de champ, haute définition.
 ```
 
 ## Vidéos (Agnes, à partir des images)
@@ -152,3 +152,21 @@ Image de départ = le décor correspondant (importé avec `--depart`). Ordre : l
 - `fin-e<N>` : même départ que `transition-e<N>`, mouvement plus lumineux (« la lumière s'intensifie, tout s'apaise »).
 - `intro` et `fin` : plan d'ensemble du lieu principal ; « lent mouvement de caméra vers le lieu clé, lumière du début de l'histoire » ; pour `fin`, la lumière revient.
 - Portraits « parle » : départ = première image de la vidéo au repos ; « le personnage parle calmement, léger mouvement de tête, clignement des yeux ». Durée 5 s, 24 images/s.
+
+## Ambiances et musiques (fichiers libres de droits)
+
+Le moteur joue des fichiers mp3 s'ils existent, sinon l'ambiance synthétisée. Sources libres conseillées : Pixabay (sons et musiques), Freesound (CC0 ou CC BY), Free Music Archive, Incompetech (CC BY), YouTube Audio Library. Vérifier la licence, noter auteur + licence + URL dans `assets/audio/CREDITS-audio.md`. Boucles d'ambiance : 30 à 90 s, sans début ni fin marqués. Musiques : instrumentales, sans voix, 20 à 60 s (elles se coupent en fondu à la fin de la cinématique).
+
+| Fichier à déposer | Rôle | Mots-clés de recherche |
+|---|---|---|
+| `assets/audio/ambiances/lanterne.mp3` | Ambiance de la salle 1 (boucle, discrète) | ambiance sonore « La lanterne, tout en haut du phare », sans voix ni musique |
+| `assets/audio/ambiances/atelier.mp3` | Ambiance de la salle 2 (boucle, discrète) | ambiance sonore « L'atelier, au pied de l'escalier du phare », sans voix ni musique |
+| `assets/audio/ambiances/chambre.mp3` | Ambiance de la salle 3 (boucle, discrète) | ambiance sonore « La chambre du gardien, au deuxième étage », sans voix ni musique |
+| `assets/audio/ambiances/cour.mp3` | Ambiance de la salle 4 (boucle, discrète) | ambiance sonore « La cour du phare, autour du cadran solaire », sans voix ni musique |
+| `assets/audio/ambiances/galerie.mp3` | Ambiance de la salle 5 (boucle, discrète) | ambiance sonore « La galerie extérieure, autour de la lanterne, face à la mer », sans voix ni musique |
+| `assets/audio/musiques/intro.mp3` | Cinématique d'ouverture | musique instrumentale de cinéma, mystérieuse, qui s'installe |
+| `assets/audio/musiques/transition.mp3` | Toutes les transitions entre salles (ou un fichier `transition-e<N>.mp3` par salle) | musique instrumentale douce, en avancée, curieuse |
+| `assets/audio/musiques/fin-salle.mp3` | Fins de salle (ou `fin-e<N>.mp3`) | courte musique de réussite, lumineuse et apaisée |
+| `assets/audio/musiques/fin.mp3` | Cinématique finale | musique instrumentale de conclusion, triomphante puis calme |
+
+Réglages des élèves : « Sons et ambiances » (déjà présent) ; volumes par défaut 0,35 (ambiance) et 0,5 (musique), modifiables avec `VML.reglage("volumeAmbiance")` et `VML.reglage("volumeMusique")`.

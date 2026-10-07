@@ -36,6 +36,6 @@ PORTRAITS = {
     "garin":   {"genre": "garçon", "coiffure": "courte", "cheveux": "#2a1c14", "peau": "#dba680", "habit": "#6a4428", "barbe": False, "lunettes": False},
 }
 
-STYLE_VISUEL = ("Peinture numérique semi-réaliste de cinéma, ambiance médiévale chaleureuse et crédible, lumière de bougie et de fenêtre étroite contre ombres brunes, "
+STYLE_VISUEL = ("Photographie photoréaliste de cinéma, appareil plein format, objectif 35 mm, lumière naturelle crédible, ambiance médiévale chaleureuse et crédible, lumière de bougie et de fenêtre étroite contre ombres brunes, "
                 "parchemin, bois, pierre et vitraux, détails d'artisanat lisibles (sans inscriptions), grain fin, profondeur de champ.")
 EPOQUE = "Haut et central Moyen Âge (Ve-XIIIe siècles) : Reims, le palais d'Aix, l'abbaye et son scriptorium, un hôtel-Dieu, un chantier d'église."
