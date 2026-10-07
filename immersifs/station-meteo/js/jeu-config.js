@@ -4,8 +4,11 @@ window.VML_JEU = {
   "decorAccueil": "abri",
   "prefixeStockage": "vml_station_meteo",
   "grades": [
+    "mousse",
     "matelot",
-    "timonier"
+    "timonier",
+    "lieutenant",
+    "second"
   ],
   "textes": {
     "auteur": "Escape game · cycle 3",

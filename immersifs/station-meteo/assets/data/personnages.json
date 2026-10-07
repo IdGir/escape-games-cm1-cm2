@@ -4,45 +4,83 @@
    "nom": "Madame Vasseur",
    "court": "Madame",
    "voix": {
+    "edge": "fr-FR-VivienneMultilingualNeural",
+    "nom": "Vivienne",
     "rate": 0.95,
     "pitch": 1.0
    },
    "ton": "Prévisionniste rassurante, rigoureuse",
    "fiche": "Prévisionniste, marraine de la station de l'école",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "courte",
+    "cheveux": "#9c9c98",
+    "peau": "#e6c2a6",
+    "habit": "#3a3a52",
+    "lunettes": true
+   }
   },
   "tiago": {
    "nom": "Tiago",
    "court": "Tiago",
    "voix": {
+    "edge": "fr-FR-HenriNeural",
+    "nom": "Henri",
     "rate": 1.0,
-    "pitch": 1.15
+    "pitch": 1.0
    },
    "ton": "Technicien pragmatique, toujours une clé à molette",
    "fiche": "Technicien de station météo",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "courte",
+    "cheveux": "#2a1c14",
+    "peau": "#c08a64",
+    "habit": "#2a5a8a",
+    "barbe": false,
+    "lunettes": false
+   }
   },
   "lina": {
    "nom": "Lina",
    "court": "Lina",
    "voix": {
-    "rate": 0.9,
-    "pitch": 0.9
+    "edge": "fr-FR-EloiseNeural",
+    "nom": "Eloise",
+    "rate": 1.05,
+    "pitch": 1.05
    },
    "ton": "Élève sérieuse, fière de sa station",
    "fiche": "Élève de CM2, responsable de la station de l'école",
-   "portrait": {}
+   "portrait": {
+    "genre": "fille",
+    "coiffure": "longue",
+    "cheveux": "#1a1a1a",
+    "peau": "#b8805e",
+    "habit": "#c0502a",
+    "lunettes": false
+   }
   },
   "keita": {
    "nom": "Capitaine Keïta",
    "court": "Capitaine",
    "voix": {
-    "rate": 1.05,
-    "pitch": 1.2
+    "edge": "fr-FR-RemyMultilingualNeural",
+    "nom": "Remy",
+    "rate": 0.92,
+    "pitch": 0.9
    },
    "ton": "Capitaine du vent, parle comme un marin",
    "fiche": "Marin, dépend du vent pour sortir en mer",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "chauve",
+    "cheveux": "#1a1a1a",
+    "peau": "#6e4630",
+    "habit": "#1b2a4a",
+    "barbe": true,
+    "lunettes": false
+   }
   }
  }
 }
