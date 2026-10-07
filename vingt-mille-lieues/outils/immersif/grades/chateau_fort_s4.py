@@ -77,13 +77,13 @@ def donnees(svg, bloc=None):
     }
     d["e4-4"] = {
         "lieutenant": lettres(
-            "Trouve le mot qui correspond à cette définition : « Champ laissé au repos pour que la terre redevienne fertile. » Ses lettres sont cachées en couleur dans le texte de Mahaut, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Trois lettres sont des pièges.",
+            "Trouve le mot qui correspond à cette définition : « Champ laissé au repos pour que la terre redevienne fertile. » Ses lettres sont cachées en couleur dans le texte de Mahaut, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Deux lettres sont des pièges.",
             ["J", "A", "C", "H", "E", "R", "E"],
             marque("Le soir, Mahaut raconte : « Chez nous, on laisse un champ en repos une année sur deux. [J]'aime ce champ sauvage : les fleurs y p[o]ussent, les oiseaux s'y [c]achent. Avec mon frère, nous y cueillons des [h]erbes. L'[a]utre jour, mon père a dit : à l'automne, on [e]n fera un [p]ré. Ma mère [r]it, car l'herbe y est haute ; au retour, [e]lle est ravie. »"),
             ["Le mot désigne un champ qu'on laisse se reposer.", "Il commence par J.", "Il finit par ERE."],
             J("Quelle phrase de la fiche définit ce mot ?", P8, [P6, P7, P9], pos=2)),
         "second": lettres(
-            "Trouve le mot qui correspond à cette définition : « Mélange de terre et de paille qui forme les murs des maisons. » Ses lettres sont cachées en couleur dans le texte de Mahaut, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Trois lettres sont des pièges.",
+            "Trouve le mot qui correspond à cette définition : « Mélange de terre et de paille qui forme les murs des maisons. » Ses lettres sont cachées en couleur dans le texte de Mahaut, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Deux lettres sont des pièges.",
             ["T", "O", "R", "C", "H", "I", "S"],
             marque("Mahaut décrit sa maison : « Le soir, on [h]abille les enfants près du foyer, au centre de la pièce, car il n'y a qu'une seule pièce. Mon père [t]ouche le mur de terre et de paille pour voir s'il tient. On [i]nstalle la paille, on [c]ouvre le feu, on [s]ouffle la chandelle. Ma mère [r]épète : « un seul [o]util ne suffit pas ». Le [p]ain est sur la table, [m]ais la soupe est chaude. »"),
             ["Le mot est dans la fiche, partie « L'habitat ».", "Il commence par T.", "Il finit par S."],

@@ -4,45 +4,83 @@
    "nom": "Monsieur Berthier",
    "court": "Monsieur",
    "voix": {
-    "rate": 0.95,
-    "pitch": 1.0
+    "edge": "fr-FR-HenriNeural",
+    "nom": "Henri",
+    "rate": 0.88,
+    "pitch": 0.88
    },
    "ton": "Gardien solennel et attentif aux détails",
    "fiche": "Gardien-archiviste du Palais-Royal",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "chauve",
+    "cheveux": "#9c9c98",
+    "peau": "#e6c2a6",
+    "habit": "#3a3a52",
+    "barbe": true,
+    "lunettes": true
+   }
   },
   "nour": {
    "nom": "Nour",
    "court": "Nour",
    "voix": {
-    "rate": 1.0,
-    "pitch": 1.15
+    "edge": "fr-FR-EloiseNeural",
+    "nom": "Eloise",
+    "rate": 1.1,
+    "pitch": 1.1
    },
    "ton": "Déléguée de classe vive et sérieuse",
    "fiche": "Déléguée de classe, 10 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "fille",
+    "coiffure": "longue",
+    "cheveux": "#1a1a1a",
+    "peau": "#b8805e",
+    "habit": "#1d3f8f",
+    "lunettes": false
+   }
   },
   "ferrand": {
    "nom": "Madame Ferrand",
    "court": "Madame",
    "voix": {
-    "rate": 0.9,
-    "pitch": 0.9
+    "edge": "fr-FR-DeniseNeural",
+    "nom": "Denise",
+    "rate": 1.05,
+    "pitch": 1.0
    },
    "ton": "Députée claire, passionnée de débat",
    "fiche": "Députée à l'Assemblée nationale",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "courte",
+    "cheveux": "#5a3a22",
+    "peau": "#dba680",
+    "habit": "#c9302c",
+    "lunettes": false
+   }
   },
   "sylla": {
    "nom": "Maître Sylla",
    "court": "Sylla",
    "voix": {
-    "rate": 1.05,
-    "pitch": 1.2
+    "edge": "fr-FR-RemyMultilingualNeural",
+    "nom": "Remy",
+    "rate": 0.95,
+    "pitch": 0.95
    },
    "ton": "Juriste précis, mesure chaque mot",
    "fiche": "Juriste au Conseil constitutionnel",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "courte",
+    "cheveux": "#1a1a1a",
+    "peau": "#6e4630",
+    "habit": "#1d2a4a",
+    "barbe": false,
+    "lunettes": true
+   }
   }
  }
 }

@@ -79,7 +79,7 @@ def donnees(svg, bloc=None):
             ["Le mot a cinq lettres.", "Il commence par C et finit par L.", "Le Grand … est en forme de croix."],
             J("Quelle phrase de la fiche cite ce mot ?", V6, [V7, V4, V3], pos=2)),
         "second": lettres(
-            "Trouve le mot qui correspond à cette définition : « Les 357 objets qui reflètent les jardins dans la galerie des Glaces. » Ses lettres sont cachées en couleur dans le texte de Margot, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Deux lettres sont des pièges.",
+            "Trouve le mot qui correspond à cette définition : « Les 357 objets qui reflètent les jardins dans la galerie des Glaces. » Ses lettres sont cachées en couleur dans le texte de Margot, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Trois lettres sont des pièges.",
             ["M", "I", "R", "O", "I", "R", "S"],
             marque("Margot raconte : « Dans la galerie, [s]ur un côté, il y a des fenêtres, [r]épétées dix-sept fois. En face, [i]l y a des centaines de reflets. Le roi [o]bserve le jardin. Je [m]arche sans bruit ; [r]ien ne bouge. Je me regarde, [o]ui, j'ai l'[i]nsouciance de mes onze ans. Qu'[a]ffreux ! [p]as un mot. »"),
             ["Le mot a sept lettres.", "Il commence par M et finit par S.", "Ils reflètent les jardins."],

@@ -80,7 +80,7 @@ def donnees(svg, bloc=None):
             ["Deux instruments : l'un pour la direction, l'autre pour la vitesse.", "1,50 m est la hauteur du thermomètre.", "Un coup de vent bref s'appelle une rafale."],
             J("Quelle phrase de la fiche justifie le mot « 10 m » ?", V5, [V1, V6, V2], pos=1)),
         "second": trous(
-            "Keïta résume l'échelle de Beaufort, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « ouragan ».",
+            "Keïta résume l'échelle de Beaufort, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Cinq étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « ouragan ».",
             "L'échelle de Beaufort classe le vent de la force [[0]] (calme) à la force [[12]] (ouragan, 118 km/h et plus). À la force 4, la [[poussière]] se soulève ; à la force 6, les grosses [[branches]] s'agitent.",
             ["0", "12", "poussière", "branches", "ouragan", "9", "pluie", "feuilles", "neige"],
             ["Les deux extrémités de l'échelle : 0 et 12.", "Force 4 : la poussière.", "Force 6 : les grosses branches."],

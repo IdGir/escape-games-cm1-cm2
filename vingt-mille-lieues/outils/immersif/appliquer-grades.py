@@ -61,7 +61,7 @@ def main(jeu):
             break
         nouveaux.update(m.donnees(svg, bloc))
         n += 1
-    erreurs = []
+    erreurs, avert = [], []
     # --- 1. blocs de grade
     for s in E["escales"]:
         guide = theme.GUIDES[s["numero"]]
@@ -91,8 +91,9 @@ def main(jeu):
                 j = b.get("justification")
                 if j:
                     ok = j["options"][j["bonne"]]
-                    if texte(ok) not in fiches[e["lecon"]]:
-                        erreurs.append(f"{e['id']} {g} : la phrase de justification n'est pas dans la fiche « {e['lecon']} » : {ok[:70]}")
+                    source = fiches[e["lecon"]] or texte(b["consigne"])         # leçon sans texte (PDF officiel) : le document cité dans la consigne
+                    if texte(ok) not in source:
+                        erreurs.append(f"{e['id']} {g} : la phrase de justification n'est pas dans la fiche « {e['lecon']} » (ni dans le document de la consigne) : {ok[:70]}")
                     if len(set(j["options"])) != len(j["options"]):
                         erreurs.append(f"{e['id']} {g} : options de justification en double")
             extra = e.get("niveaux") in (["timonier"], ["timonier", "lieutenant", "second"])      # énigme réservée au CM2 dans le jeu d'origine
@@ -112,10 +113,11 @@ def main(jeu):
         for g in GRADES:
             es = [e for e in s["enigmes"] if g in e and (not e.get("niveaux") or g in e["niveaux"])]
             types = [e[g].get("type") or e["type"] for e in es]
+            cible = erreurs if g in ("mousse", "lieutenant", "second") else avert     # matelot et timonier : jeu d'origine, avertissement seulement
             if any(a == b for a, b in zip(types, types[1:])):
-                erreurs.append(f"salle {s['numero']} {g} : deux types identiques de suite {types}")
+                cible.append(f"salle {s['numero']} {g} : deux types identiques de suite {types}")
             if not MANIP & set(types):
-                erreurs.append(f"salle {s['numero']} {g} : aucune manipulation (ordre, plan, tri) {types}")
+                cible.append(f"salle {s['numero']} {g} : aucune manipulation (ordre, plan, tri) {types}")
             if len(es) < 3:
                 erreurs.append(f"salle {s['numero']} {g} : moins de 3 énigmes")
     # --- 2. grades, noms
@@ -143,6 +145,8 @@ def main(jeu):
                     p["personnage"] = theme.GUIDES[num]
     for k, f in DL["fin_escale"].items():
         f["personnage"] = theme.GUIDES[int(k)]
+    if avert:
+        print("\n".join("⚠ jeu d'origine : " + x for x in avert))
     if erreurs:
         print("\n".join("✖ " + x for x in erreurs))
         sys.exit(1)

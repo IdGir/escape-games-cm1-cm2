@@ -78,7 +78,7 @@ def donnees(svg, bloc=None):
             ["Relis la fiche : les mots sont dans la partie « La perspective ».", "Au premier plan, tout est grand.", "La Joconde est à Paris."],
             J("Quelle phrase de la fiche justifie le mot « Louvre » ?", A7, [A5, A1, A3], pos=1)),
         "second": trous(
-            "Bastien résume l'art de la Renaissance, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « science ».",
+            "Bastien résume l'art de la Renaissance, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Cinq étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « science ».",
             "Les artistes mesurent, comparent, dessinent des modèles vivants : l'art devient aussi une [[science]]. Vers 1490, Léonard dessine l'Homme de [[Vitruve]], un corps humain inscrit dans un [[cercle]] et un carré. Dans la Joconde, il utilise le [[sfumato]], un léger flou qui adoucit les contours.",
             ["science", "Vitruve", "cercle", "sfumato", "triangle", "salamandre", "château", "imprimerie", "dépôt"],
             ["Les mots viennent de trois paragraphes de la fiche.", "Vitruve est un architecte romain.", "Le sfumato est un léger flou."],

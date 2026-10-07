@@ -1,20 +1,40 @@
 {
- "_commentaire": "Généré par outils/immersif/migrer-jeu.py depuis « constitution ». À compléter : voir MIGRATION-RAPPORT.md.",
  "version": 1,
  "niveaux": [
   {
+   "id": "mousse",
+   "nom": "Électeur",
+   "icone": "🗳️",
+   "equivalent": "≈ CE2",
+   "profil": "énigmes courtes, vocabulaire simple, aides renforcées (premier indice offert, fiche mise en évidence)"
+  },
+  {
    "id": "matelot",
-   "nom": "Compagnon",
-   "icone": "🔧",
+   "nom": "Délégué",
+   "icone": "📋",
    "equivalent": "≈ CM1",
    "profil": "cœur de programme CM1"
   },
   {
    "id": "timonier",
-   "nom": "Maître",
-   "icone": "🧭",
+   "nom": "Rapporteur",
+   "icone": "📝",
    "equivalent": "≈ CM2",
-   "profil": "cœur de programme CM2"
+   "profil": "cœur de programme CM2, plus d'éléments, vocabulaire précis"
+  },
+  {
+   "id": "lieutenant",
+   "nom": "Juriste",
+   "icone": "⚖️",
+   "equivalent": "≈ 6ᵉ",
+   "profil": "raisonnement en deux étapes, documents à croiser, justification"
+  },
+  {
+   "id": "second",
+   "nom": "Constituant",
+   "icone": "📜",
+   "equivalent": "≈ 5ᵉ",
+   "profil": "synthèse, données chiffrées, pièges de logique, justification"
   }
  ],
  "escales": [
@@ -60,7 +80,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "constitution-francaise",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (qcm) ; Délégué (qcm) ; Rapporteur (qcm) ; Juriste (qcm) ; Constituant (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Une Constitution est l'ensemble des règles qui organisent la vie de tous les citoyens d'un pays. C'est le texte le plus important : il est au-dessus de toutes les lois.",
      "matelot": {
       "questions": [
@@ -146,6 +166,134 @@
        "Elle est au sommet : aucune loi ne peut lui être contraire."
       ],
       "dialogue": "Vous voilà. Regardez bien cette cour : en 1789, des apprentis y ont cherché un article volé de la Déclaration des droits de l'homme et du citoyen. Aujourd'hui, c'est ici que siège le Conseil constitutionnel. Et ce coffre, scellé le 4 octobre 1958, porte cinq serrures. La première s'ouvre avec un mot très simple. Commençons par le commencement : savez-vous seulement ce qu'est une Constitution ?"
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Une Constitution, c'est…",
+        "options": [
+         "l'ensemble des règles qui organisent la vie d'un pays",
+         "le règlement intérieur d'une école",
+         "la liste des habitants d'une ville"
+        ],
+        "bonne": 0,
+        "explication": "C'est la règle du jeu d'un pays."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « La Constitution française » dans la Bibliothèque.",
+       "Pense à la règle d'un jeu de société.",
+       "Elle concerne tous les habitants."
+      ],
+      "dialogue": "Vous voilà. Regardez bien cette cour : en 1789, des apprentis y ont cherché un article volé de la Déclaration des droits de l'homme et du citoyen. Aujourd'hui, c'est ici que siège le Conseil constitutionnel. Et ce coffre, scellé le 4 octobre 1958, porte cinq serrures. La première s'ouvre avec un mot très simple. Commençons par le commencement : savez-vous seulement ce qu'est une Constitution ?"
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Selon l'article 16, que faut-il pour qu'une société ait une Constitution ?",
+        "options": [
+         "Garantir les droits et séparer les pouvoirs",
+         "Avoir un roi",
+         "Avoir une seule armée",
+         "Voter chaque jour"
+        ],
+        "bonne": 0,
+        "explication": "La garantie des droits et la séparation des pouvoirs."
+       },
+       {
+        "q": "Selon l'article 1, les hommes naissent…",
+        "options": [
+         "libres et égaux en droits",
+         "inégaux en droits",
+         "soumis à un roi",
+         "sans droits"
+        ],
+        "bonne": 0,
+        "explication": "Libres et égaux en droits."
+       },
+       {
+        "q": "Pourquoi la séparation des pouvoirs est-elle essentielle ?",
+        "options": [
+         "Si une seule personne détenait tous les pouvoirs, elle gouvernerait sans contrôle",
+         "Pour avoir plus de ministres",
+         "Pour changer de capitale",
+         "Pour supprimer les lois"
+        ],
+        "bonne": 0,
+        "explication": "Elle évite l'abus de pouvoir."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Déclaration des droits de l'homme et du citoyen, 1789</b> « Toute société dans laquelle la garantie des droits n'est pas assurée, ni la séparation des pouvoirs déterminée, n'a point de Constitution. » « Les hommes naissent et demeurent libres et égaux en droits. » « La loi est l'expression de la volonté générale. »</div> Réponds aux trois questions, puis choisis la phrase du document qui définit ce qu'est une Constitution.",
+      "indices": [
+       "Relis l'article 16.",
+       "L'article 1 parle de liberté et d'égalité.",
+       "Séparer les pouvoirs évite qu'un seul décide de tout."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document définit ce qu'est une Constitution ?",
+       "options": [
+        "Les hommes naissent et demeurent libres et égaux en droits.",
+        "Toute société dans laquelle la garantie des droits n'est pas assurée, ni la séparation des pouvoirs déterminée, n'a point de Constitution.",
+        "La loi est l'expression de la volonté générale."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Vous voilà. Regardez bien cette cour : en 1789, des apprentis y ont cherché un article volé de la Déclaration des droits de l'homme et du citoyen. Aujourd'hui, c'est ici que siège le Conseil constitutionnel. Et ce coffre, scellé le 4 octobre 1958, porte cinq serrures. La première s'ouvre avec un mot très simple. Commençons par le commencement : savez-vous seulement ce qu'est une Constitution ?"
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le Président de la République est élu au suffrage universel direct.",
+        "vrai": true,
+        "explication": "Pour cinq ans."
+       },
+       {
+        "txt": "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "vrai": true,
+        "explication": "Article 20."
+       },
+       {
+        "txt": "La souveraineté nationale appartient au Président.",
+        "vrai": false,
+        "explication": "Au peuple."
+       },
+       {
+        "txt": "Le Président veille au respect de la Constitution.",
+        "vrai": true,
+        "explication": "Article 5."
+       },
+       {
+        "txt": "Le peuple n'exerce sa souveraineté que par référendum.",
+        "vrai": false,
+        "explication": "Par ses représentants et par référendum."
+       },
+       {
+        "txt": "Le mandat présidentiel dure sept ans.",
+        "vrai": false,
+        "explication": "Cinq ans."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. » « Le Président de la République veille au respect de la Constitution. » « Le Président de la République est élu pour cinq ans au suffrage universel direct. » « Le Gouvernement détermine et conduit la politique de la Nation. »</div> Maître Sylla affirme six choses. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui dit qui exerce la souveraineté.",
+      "indices": [
+       "La souveraineté appartient au peuple.",
+       "Le peuple l'exerce par ses représentants et par référendum.",
+       "Le mandat dure cinq ans."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit qui exerce la souveraineté nationale ?",
+       "options": [
+        "Le Président de la République veille au respect de la Constitution.",
+        "Le Président de la République est élu pour cinq ans au suffrage universel direct.",
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum.",
+        "Le Gouvernement détermine et conduit la politique de la Nation."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Vous voilà. Regardez bien cette cour : en 1789, des apprentis y ont cherché un article volé de la Déclaration des droits de l'homme et du citoyen. Aujourd'hui, c'est ici que siège le Conseil constitutionnel. Et ce coffre, scellé le 4 octobre 1958, porte cinq serrures. La première s'ouvre avec un mot très simple. Commençons par le commencement : savez-vous seulement ce qu'est une Constitution ?"
      }
     },
     {
@@ -161,7 +309,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nour",
+     "personnage_emetteur": "berthier",
      "probleme_narratif": "Nour trie ce qu'on dit de la Constitution : vrai ou faux ?",
      "enjeu": "Croire une idée fausse fausse tout le reste.",
      "episode_du_roman": "Fiche-jeu « Sais-tu ce qu'est une Constitution ? » (8-10 ans)",
@@ -174,7 +322,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "jeu-sais-tu",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (vraifaux) ; Délégué (vraifaux) ; Rapporteur (vraifaux) ; Juriste (vraifaux) ; Constituant (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La Constitution est écrite en France, elle est au-dessus des lois, les trois pouvoirs y sont séparés, et le Conseil constitutionnel peut contrôler une loi avant comme après sa promulgation.",
      "matelot": {
       "affirmations": [
@@ -247,6 +395,133 @@
        "Depuis 2010, une personne jugée par un tribunal peut faire contrôler une loi <b>déjà</b> en vigueur."
       ],
       "dialogue": "Sur ces affiches, certaines idées sont fausses. Dites lesquelles."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La France est le seul pays du monde à avoir une Constitution.",
+        "vrai": false,
+        "explication": "Presque tous les pays en ont une."
+       },
+       {
+        "txt": "La Constitution est au-dessus de toutes les autres lois.",
+        "vrai": true,
+        "explication": "C'est le texte le plus important."
+       },
+       {
+        "txt": "En France, la Constitution est un texte écrit.",
+        "vrai": true,
+        "explication": "On peut la lire."
+       }
+      ],
+      "consigne": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « La Constitution française ».",
+       "Presque tous les pays ont une Constitution.",
+       "Elle est au sommet des lois."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui.",
+        "vrai": true,
+        "explication": "Article 4."
+       },
+       {
+        "txt": "La loi est l'expression de la volonté générale.",
+        "vrai": true,
+        "explication": "Article 6."
+       },
+       {
+        "txt": "La libre communication des pensées est un droit précieux.",
+        "vrai": true,
+        "explication": "Article 11."
+       },
+       {
+        "txt": "La liberté permet de nuire aux autres.",
+        "vrai": false,
+        "explication": "Elle s'arrête là où elle nuit à autrui."
+       },
+       {
+        "txt": "La loi exprime la volonté d'un seul.",
+        "vrai": false,
+        "explication": "De la volonté générale."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Déclaration des droits de l'homme et du citoyen, 1789</b> « La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui. » « La loi est l'expression de la volonté générale. » « La libre communication des pensées et des opinions est un des droits les plus précieux de l'homme. »</div> Nour a noté cinq affirmations. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui définit la liberté.",
+      "indices": [
+       "La liberté s'arrête où commence celle des autres.",
+       "La loi exprime la volonté générale.",
+       "Article 4 : la liberté."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document définit la liberté ?",
+       "options": [
+        "La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui.",
+        "La loi est l'expression de la volonté générale.",
+        "La libre communication des pensées et des opinions est un des droits les plus précieux de l'homme."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien d'adjectifs qualifient la République à l'article 1 ?",
+        "options": [
+         "4 : indivisible, laïque, démocratique et sociale",
+         "2",
+         "3",
+         "5"
+        ],
+        "bonne": 0,
+        "explication": "Quatre adjectifs."
+       },
+       {
+        "q": "Selon l'article 1, devant la loi, tous les citoyens sont…",
+        "options": [
+         "égaux, sans distinction d'origine, de race ou de religion",
+         "différents selon leur origine",
+         "classés selon leur religion",
+         "libres seulement s'ils votent"
+        ],
+        "bonne": 0,
+        "explication": "Égalité devant la loi."
+       },
+       {
+        "q": "Quelle est la devise de la République ?",
+        "options": [
+         "Liberté, Égalité, Fraternité",
+         "Travail, Famille, Patrie",
+         "Un pour tous, tous pour un",
+         "Dieu et mon droit"
+        ],
+        "bonne": 0,
+        "explication": "Article 2."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La France est une République indivisible, laïque, démocratique et sociale. » « Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion. » « La devise de la République est « Liberté, Égalité, Fraternité ». »</div> Réponds aux trois questions, puis choisis la phrase du document qui définit la République.",
+      "indices": [
+       "Compte les adjectifs.",
+       "L'égalité devant la loi est inscrite à l'article 1.",
+       "La devise est à l'article 2."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document définit la République ?",
+       "options": [
+        "La France est une République indivisible, laïque, démocratique et sociale.",
+        "Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion.",
+        "La devise de la République est « Liberté, Égalité, Fraternité »."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -262,7 +537,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ferrand",
+     "personnage_emetteur": "berthier",
      "probleme_narratif": "Madame Ferrand demande de trier les actions selon les trois pouvoirs.",
      "enjeu": "Sans séparer les pouvoirs, personne ne contrôle personne.",
      "episode_du_roman": "Fiche « La Constitution française », cycle 3",
@@ -275,7 +550,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "constitution-francaise",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (tri) ; Délégué (tri) ; Rapporteur (tri) ; Juriste (tri) ; Constituant (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le pouvoir législatif fait et vote les lois (le Parlement). Le pouvoir exécutif les fait appliquer (le président de la République et le Gouvernement). L'autorité judiciaire sanctionne ceux qui ne les respectent pas (les tribunaux et les juges).",
      "matelot": {
       "colonnes": [
@@ -392,6 +667,158 @@
        "L'indépendance des juges est une garantie de la démocratie : autorité judiciaire."
       ],
       "dialogue": "Faire la loi, l'appliquer, juger : trois pouvoirs séparés. Triez les actions."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "leg",
+        "titre": "Écrire et voter les lois"
+       },
+       {
+        "id": "exe",
+        "titre": "Faire appliquer les lois"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Le Parlement",
+        "col": "leg"
+       },
+       {
+        "txt": "Voter les lois",
+        "col": "leg"
+       },
+       {
+        "txt": "Le Gouvernement",
+        "col": "exe"
+       },
+       {
+        "txt": "Faire appliquer les lois",
+        "col": "exe"
+       }
+      ],
+      "consigne": "Range chaque carte dans la bonne colonne : clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « La Constitution française ».",
+       "« Législatif » vient de « loi ».",
+       "« Exécutif » vient de « exécuter »."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "leg",
+        "titre": "Pouvoir législatif"
+       },
+       {
+        "id": "exe",
+        "titre": "Pouvoir exécutif"
+       },
+       {
+        "id": "jud",
+        "titre": "Autorité judiciaire"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Voter la loi",
+        "col": "leg"
+       },
+       {
+        "txt": "Contrôler l'action du Gouvernement",
+        "col": "leg"
+       },
+       {
+        "txt": "Déterminer et conduire la politique de la Nation",
+        "col": "exe"
+       },
+       {
+        "txt": "Appliquer les lois",
+        "col": "exe"
+       },
+       {
+        "txt": "Rendre la justice",
+        "col": "jud"
+       },
+       {
+        "txt": "Être indépendante du pouvoir politique",
+        "col": "jud"
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Gouvernement détermine et conduit la politique de la Nation. » « Le Parlement vote la loi. Il contrôle l'action du Gouvernement. » « Le Président de la République est garant de l'indépendance de l'autorité judiciaire. »</div> Nour range des tâches. Range chaque tâche dans la bonne colonne, puis choisis la phrase du document qui dit ce que fait le Parlement.",
+      "indices": [
+       "Le Parlement vote et contrôle.",
+       "Le Gouvernement conduit la politique.",
+       "L'autorité judiciaire est indépendante."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit ce que fait le Parlement ?",
+       "options": [
+        "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "Le Président de la République est garant de l'indépendance de l'autorité judiciaire.",
+        "Le Parlement vote la loi. Il contrôle l'action du Gouvernement."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "oui",
+        "titre": "Le document l'affirme"
+       },
+       {
+        "id": "non",
+        "titre": "Le document ne l'affirme pas"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La loi est l'expression de la volonté générale.",
+        "col": "oui"
+       },
+       {
+        "txt": "Une société sans séparation des pouvoirs n'a pas de Constitution.",
+        "col": "oui"
+       },
+       {
+        "txt": "La garantie des droits doit être assurée.",
+        "col": "oui"
+       },
+       {
+        "txt": "Le roi fait la loi seul.",
+        "col": "non"
+       },
+       {
+        "txt": "La séparation des pouvoirs est facultative.",
+        "col": "non"
+       },
+       {
+        "txt": "La loi exprime la volonté du plus fort.",
+        "col": "non"
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Déclaration des droits de l'homme et du citoyen, 1789</b> « Toute société dans laquelle la garantie des droits n'est pas assurée, ni la séparation des pouvoirs déterminée, n'a point de Constitution. » « La loi est l'expression de la volonté générale. » « Les hommes naissent et demeurent libres et égaux en droits. »</div> Nour classe des affirmations. Range chaque affirmation : le document l'affirme, ou il ne l'affirme pas. Puis choisis la phrase du document qui parle de séparation des pouvoirs.",
+      "indices": [
+       "Relis les deux articles.",
+       "Article 16 : droits et séparation des pouvoirs.",
+       "Article 6 : volonté générale."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle de séparation des pouvoirs ?",
+       "options": [
+        "La loi est l'expression de la volonté générale.",
+        "Toute société dans laquelle la garantie des droits n'est pas assurée, ni la séparation des pouvoirs déterminée, n'a point de Constitution.",
+        "Les hommes naissent et demeurent libres et égaux en droits."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -407,7 +834,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "sylla",
+     "personnage_emetteur": "berthier",
      "probleme_narratif": "Sylla a verrouillé la première porte avec un mot à reconstituer.",
      "enjeu": "Sans le mot, la première porte reste fermée.",
      "episode_du_roman": "Fiches « La Constitution française » et « Qu'est-ce qu'une Constitution ? » (thème 1), cycle 3",
@@ -420,10 +847,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "theme1-constitution",
      "type": "lettres",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Rapporteur (lettres) ; Juriste (lettres) ; Constituant (lettres). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "RÈGLES. Une Constitution, ce sont d'abord des règles : celles qui organisent la vie de tout un pays.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "cible": [
@@ -442,6 +871,64 @@
        "Monsieur Berthier l'a dit : « la règle du jeu de tout un pays »."
       ],
       "dialogue": "Cette serrure se règle avec un mot. Remettez les lettres dans l'ordre."
+     },
+     "lieutenant": {
+      "type": "lettres",
+      "cible": [
+       "D",
+       "R",
+       "O",
+       "I",
+       "T",
+       "S"
+      ],
+      "texte": "<p>Maître Sylla écrit : « Une Constitution protège chacun. Le plus important est de <b data-l='T'>t</b>oujours respecter les <b data-l='R'>r</b>ègles que nous partageons. Je <b data-l='D'>d</b>is aux élèves : lisez, <b data-l='O'>o</b>bservez, <b data-l='I'>i</b>maginez, puis demandez-vous ce qui est <b data-l='S'>s</b>uffisant pour vivre ensemble. Et surtout, <b data-l='P'>p</b>osez des questions, même <b data-l='M'>m</b>aladroites. »</p>",
+      "consigne": "<div class='doc-carnet'><b>Déclaration des droits de l'homme et du citoyen, 1789</b> « Les hommes naissent et demeurent libres et égaux en droits. » « La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui. » « La loi est l'expression de la volonté générale. »</div> Trouve le mot qui correspond à cette définition : « Ce que garantit une Constitution à chacun : liberté, égalité… » Ses lettres sont cachées en couleur dans le texte de Maître Sylla, dans le désordre. Clique-les dans l'ordre qui forme le mot (6 lettres). Deux lettres sont des pièges.",
+      "indices": [
+       "Le mot a six lettres.",
+       "Il commence par D.",
+       "Liberté et égalité en sont deux exemples."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit que les hommes naissent égaux en… ce mot ?",
+       "options": [
+        "Les hommes naissent et demeurent libres et égaux en droits.",
+        "La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui.",
+        "La loi est l'expression de la volonté générale."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
+     },
+     "second": {
+      "type": "lettres",
+      "cible": [
+       "P",
+       "O",
+       "U",
+       "V",
+       "O",
+       "I",
+       "R",
+       "S"
+      ],
+      "texte": "<p>Maître Sylla écrit : « Dans notre République, la loi doit <b data-l='V'>v</b>aloir pour tous. Le <b data-l='R'>r</b>espect de la règle, c'est <b data-l='O'>o</b>béir à ce que nous avons voté. Que<b data-l='L'>l</b>le leçon ! <b data-l='U'>u</b>n principe : on <b data-l='P'>p</b>artage le pouvoir. Chaque <b data-l='O'>o</b>rgane, chaque <b data-l='I'>i</b>nstitution, a son rôle ; personne ne peut tout <b data-l='S'>s</b>eul décider. Voilà ! <b data-l='M'>m</b>erci à vous. »</p>",
+      "consigne": "<div class='doc-carnet'><b>Déclaration des droits de l'homme et du citoyen, 1789</b> « Toute société dans laquelle la garantie des droits n'est pas assurée, ni la séparation des pouvoirs déterminée, n'a point de Constitution. » « La loi est l'expression de la volonté générale. » « Les hommes naissent et demeurent libres et égaux en droits. »</div> Trouve le mot qui correspond à cette définition : « Ce que la séparation garantit : exécutif, législatif, judiciaire. » Ses lettres sont cachées en couleur dans le texte de Maître Sylla, dans le désordre. Clique-les dans l'ordre qui forme le mot (8 lettres). Deux lettres sont des pièges.",
+      "indices": [
+       "Le mot a huit lettres.",
+       "Il commence par P et finit par S.",
+       "On les sépare pour éviter l'abus."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle de la séparation de ces… ?",
+       "options": [
+        "Toute société dans laquelle la garantie des droits n'est pas assurée, ni la séparation des pouvoirs déterminée, n'a point de Constitution.",
+        "La loi est l'expression de la volonté générale.",
+        "Les hommes naissent et demeurent libres et égaux en droits."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
      }
     }
    ]
@@ -488,7 +975,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "textes-constitution",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (ordre) ; Délégué (ordre) ; Rapporteur (ordre) ; Juriste (ordre) ; Constituant (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Déclaration des droits de l'homme et du citoyen (1789) → Préambule de la Constitution de 1946 → Constitution du 4 octobre 1958 → Charte de l'environnement (2004, intégrée à la Constitution en 2005).",
      "matelot": {
       "items": [
@@ -551,6 +1038,116 @@
        "La Charte de l'environnement est le seul texte du XXIe siècle."
       ],
       "dialogue": "Bienvenue. Beaucoup croient que la Constitution, c'est un seul texte. C'est faux. Quand nous vérifions une loi, nous nous appuyons sur quatre documents : la Constitution du 4 octobre 1958, la Déclaration des droits de l'homme et du citoyen de 1789, le Préambule de la Constitution de 1946 et la Charte de l'environnement. Ensemble, ils forment le bloc de constitutionnalité. La deuxième serrure les connaît. Pas vous ? Alors regardez bien la vitrine."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La Déclaration des droits de l'homme et du citoyen",
+        "rang": 1,
+        "sous": "1789"
+       },
+       {
+        "txt": "Le Préambule de la Constitution de 1946",
+        "rang": 2,
+        "sous": "1946"
+       },
+       {
+        "txt": "La Constitution de la Ve République",
+        "rang": 3,
+        "sous": "1958"
+       }
+      ],
+      "consigne": "Remets les textes dans l'ordre, du plus ancien (en haut) au plus récent (en bas) avec les flèches ▲▼, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Les textes de notre Constitution » dans la Bibliothèque.",
+       "Le plus ancien date de la Révolution.",
+       "1958 est le plus récent des trois."
+      ],
+      "dialogue": "Bienvenue. Beaucoup croient que la Constitution, c'est un seul texte. C'est faux. Quand nous vérifions une loi, nous nous appuyons sur quatre documents : la Constitution du 4 octobre 1958, la Déclaration des droits de l'homme et du citoyen de 1789, le Préambule de la Constitution de 1946 et la Charte de l'environnement. Ensemble, ils forment le bloc de constitutionnalité. La deuxième serrure les connaît. Pas vous ? Alors regardez bien la vitrine."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Déclaration des droits de l'homme et du citoyen",
+        "rang": 1,
+        "sous": "26 août 1789"
+       },
+       {
+        "txt": "Préambule de la Constitution de 1946",
+        "rang": 2,
+        "sous": "27 octobre 1946"
+       },
+       {
+        "txt": "Constitution de la Ve République",
+        "rang": 3,
+        "sous": "4 octobre 1958"
+       },
+       {
+        "txt": "Référendum sur le quinquennat",
+        "rang": 4,
+        "sous": "2000"
+       },
+       {
+        "txt": "Charte de l'environnement",
+        "rang": 5,
+        "sous": "2004"
+       }
+      ],
+      "consigne": "Maître Sylla range cinq dates de l'histoire des textes. Remets-les dans l'ordre chronologique, du plus ancien au plus récent.",
+      "indices": [
+       "Compare les années.",
+       "Le Préambule est écrit après la guerre.",
+       "La Charte de l'environnement est la plus récente."
+      ],
+      "dialogue": "Bienvenue. Beaucoup croient que la Constitution, c'est un seul texte. C'est faux. Quand nous vérifions une loi, nous nous appuyons sur quatre documents : la Constitution du 4 octobre 1958, la Déclaration des droits de l'homme et du citoyen de 1789, le Préambule de la Constitution de 1946 et la Charte de l'environnement. Ensemble, ils forment le bloc de constitutionnalité. La deuxième serrure les connaît. Pas vous ? Alors regardez bien la vitrine."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "t1789",
+        "titre": "1789"
+       },
+       {
+        "id": "t1946",
+        "titre": "1946"
+       },
+       {
+        "id": "t1958",
+        "titre": "1958"
+       },
+       {
+        "id": "t2004",
+        "titre": "2004"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Les hommes naissent libres et égaux en droits",
+        "col": "t1789"
+       },
+       {
+        "txt": "L'égalité entre les femmes et les hommes",
+        "col": "t1946"
+       },
+       {
+        "txt": "L'organisation des pouvoirs publics",
+        "col": "t1958"
+       },
+       {
+        "txt": "Le droit de vivre dans un environnement équilibré",
+        "col": "t2004"
+       }
+      ],
+      "consigne": "Maître Sylla classe les textes. Range chaque élément dans la bonne colonne : texte de 1789, de 1946, de 1958 ou de 2004.",
+      "indices": [
+       "Chaque texte a son apport.",
+       "Les droits civils sont de 1789.",
+       "L'environnement est le plus récent."
+      ],
+      "dialogue": "Bienvenue. Beaucoup croient que la Constitution, c'est un seul texte. C'est faux. Quand nous vérifions une loi, nous nous appuyons sur quatre documents : la Constitution du 4 octobre 1958, la Déclaration des droits de l'homme et du citoyen de 1789, le Préambule de la Constitution de 1946 et la Charte de l'environnement. Ensemble, ils forment le bloc de constitutionnalité. La deuxième serrure les connaît. Pas vous ? Alors regardez bien la vitrine."
      }
     },
     {
@@ -566,7 +1163,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "berthier",
+     "personnage_emetteur": "sylla",
      "probleme_narratif": "Berthier demande ce que chaque texte a apporté.",
      "enjeu": "Sans leurs apports, on ne comprend pas leur rôle.",
      "episode_du_roman": "Fiche « Les textes de notre Constitution », cycle 3",
@@ -579,7 +1176,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "textes-constitution",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (association) ; Délégué (association) ; Rapporteur (association) ; Juriste (qcm) ; Constituant (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Ces quatre textes forment le bloc de constitutionnalité : c'est sur eux que le Conseil constitutionnel s'appuie pour vérifier qu'une loi est conforme.",
      "matelot": {
       "paires": [
@@ -637,6 +1234,139 @@
        "C'est la Constitution de 1958 qui répartit les rôles entre les institutions."
       ],
       "dialogue": "Chaque texte, son apport. Associez-les."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "La Déclaration de 1789",
+        "d": "l'égalité devant la loi"
+       },
+       {
+        "g": "Le Préambule de 1946",
+        "d": "le droit à l'instruction"
+       },
+       {
+        "g": "La Charte de l'environnement",
+        "d": "le droit à un environnement équilibré"
+       }
+      ],
+      "consigne": "Clique sur un texte dans la colonne de gauche, puis sur ce qu'il apporte, dans la colonne de droite.",
+      "indices": [
+       "Ouvre la fiche « Les textes de notre Constitution ».",
+       "1946 : l'école pour tous.",
+       "La Charte parle de la nature."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Que garantit la loi à la femme, selon le Préambule ?",
+        "options": [
+         "Des droits égaux à ceux de l'homme",
+         "Aucun droit",
+         "Moins de droits",
+         "Seulement le droit de vote"
+        ],
+        "bonne": 0,
+        "explication": "Dans tous les domaines."
+       },
+       {
+        "q": "Quel devoir de l'État concerne l'école publique ?",
+        "options": [
+         "Organiser un enseignement public gratuit et laïque",
+         "Faire payer l'école",
+         "Choisir la religion des élèves",
+         "Supprimer l'école"
+        ],
+        "bonne": 0,
+        "explication": "À tous les degrés."
+       },
+       {
+        "q": "Qui a droit d'asile sur les territoires de la République ?",
+        "options": [
+         "Tout homme persécuté en raison de son action en faveur de la liberté",
+         "Tous les voyageurs",
+         "Seulement les citoyens français",
+         "Personne"
+        ],
+        "bonne": 0,
+        "explication": "Droit d'asile."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Préambule de la Constitution de 1946</b> « La loi garantit à la femme, dans tous les domaines, des droits égaux à ceux de l'homme. » « La Nation garantit l'égal accès de l'enfant et de l'adulte à l'instruction, à la formation professionnelle et à la culture. » « L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État. » « Tout homme persécuté en raison de son action en faveur de la liberté a droit d'asile sur les territoires de la République. »</div> Réponds aux trois questions, puis choisis la phrase du document qui parle de l'enseignement public.",
+      "indices": [
+       "Relis la première phrase du Préambule.",
+       "Un enseignement gratuit et laïque.",
+       "Le droit d'asile protège les personnes persécutées."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle de l'enseignement public ?",
+       "options": [
+        "La loi garantit à la femme, dans tous les domaines, des droits égaux à ceux de l'homme.",
+        "L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État.",
+        "Tout homme persécuté en raison de son action en faveur de la liberté a droit d'asile sur les territoires de la République."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Selon l'article 3, à qui appartient la souveraineté nationale ?",
+        "options": [
+         "Au peuple",
+         "Au Président",
+         "Au Gouvernement",
+         "Au Conseil constitutionnel"
+        ],
+        "bonne": 0,
+        "explication": "Au peuple, par ses représentants et par référendum."
+       },
+       {
+        "q": "Pour combien de temps le Président est-il élu ?",
+        "options": [
+         "Cinq ans",
+         "Sept ans",
+         "Dix ans",
+         "Trois ans"
+        ],
+        "bonne": 0,
+        "explication": "Article 6."
+       },
+       {
+        "q": "Selon l'article 1, la République est…",
+        "options": [
+         "indivisible, laïque, démocratique et sociale",
+         "royale et héréditaire",
+         "fédérale et religieuse",
+         "militaire"
+        ],
+        "bonne": 0,
+        "explication": "Quatre adjectifs."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La France est une République indivisible, laïque, démocratique et sociale. » « Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion. » « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. » « Le Président de la République est élu pour cinq ans au suffrage universel direct. »</div> Maître Sylla pose trois questions. Réponds, puis choisis la phrase du document qui dit comment est élu le Président.",
+      "indices": [
+       "Le peuple exerce la souveraineté.",
+       "Cinq ans : le quinquennat.",
+       "Article 1 : quatre adjectifs."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit comment est élu le Président ?",
+       "options": [
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum.",
+        "Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion.",
+        "Le Président de la République est élu pour cinq ans au suffrage universel direct.",
+        "La France est une République indivisible, laïque, démocratique et sociale."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -652,7 +1382,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nour",
+     "personnage_emetteur": "sylla",
      "probleme_narratif": "Nour remplit la fiche d'identité de la Constitution.",
      "enjeu": "Sans carte d'identité, le texte reste anonyme.",
      "episode_du_roman": "Fiche « Le texte de la Constitution de la Ve République » (thème 2), cycle 3",
@@ -665,7 +1395,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "theme2-texte",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (trous) ; Délégué (trous) ; Rapporteur (trous) ; Juriste (vraifaux) ; Constituant (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Adoptée par référendum en septembre 1958, la Constitution a été promulguée le 4 octobre 1958. Elle comporte un préambule et 108 articles, et institue la Ve République.",
      "matelot": {
       "texte": "<p>En 1958, la France change de Constitution. Le texte est adopté par les Français lors d'un [[référendum]], puis promulgué le 4 [[octobre]] 1958. Il commence par une introduction appelée le [[préambule]]. Cette Constitution est celle de la [[Ve République]].</p>",
@@ -705,6 +1435,111 @@
        "Le nombre d'articles est un nombre à trois chiffres qui commence par 1."
       ],
       "dialogue": "La Constitution a sa fiche d'identité. Complétez-la."
+     },
+     "mousse": {
+      "type": "trous",
+      "texte": "<p>En 1958, la France change de Constitution. Le texte est adopté par les Français lors d'un [[référendum]]. Il commence par une introduction appelée le [[préambule]]. C'est la Constitution de la [[Ve République]].</p>",
+      "etiquettes": [
+       "référendum",
+       "préambule",
+       "Ve République",
+       "élection"
+      ],
+      "consigne": "Clique sur une étiquette, puis sur le trou où elle doit aller. Une étiquette est en trop.",
+      "indices": [
+       "Ouvre la fiche « Le texte de la Constitution de la Ve République ».",
+       "Les Français ont voté directement.",
+       "Le texte d'introduction d'une Constitution est un préambule."
+      ],
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La devise de la République est « Liberté, Égalité, Fraternité ».",
+        "vrai": true,
+        "explication": "Article 2."
+       },
+       {
+        "txt": "La France est une République indivisible, laïque, démocratique et sociale.",
+        "vrai": true,
+        "explication": "Article 1."
+       },
+       {
+        "txt": "La souveraineté nationale appartient au peuple.",
+        "vrai": true,
+        "explication": "Article 3."
+       },
+       {
+        "txt": "Le Gouvernement détermine la politique de la Nation.",
+        "vrai": true,
+        "explication": "Article 20."
+       },
+       {
+        "txt": "La devise de la République est « Liberté, Égalité, Autorité ».",
+        "vrai": false,
+        "explication": "Fraternité."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La France est une République indivisible, laïque, démocratique et sociale. » « La devise de la République est « Liberté, Égalité, Fraternité ». » « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. » « Le Gouvernement détermine et conduit la politique de la Nation. »</div> Maître Sylla affirme cinq choses. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui cite la devise.",
+      "indices": [
+       "La devise a trois mots.",
+       "Le dernier est « Fraternité ».",
+       "Article 2."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document cite la devise ?",
+       "options": [
+        "La France est une République indivisible, laïque, démocratique et sociale.",
+        "La devise de la République est « Liberté, Égalité, Fraternité ».",
+        "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Dans les années 1950, les gouvernements se succèdent trop vite.",
+        "rang": 1
+       },
+       {
+        "txt": "Le général de Gaulle, chef du Gouvernement, lance la rédaction d'une nouvelle Constitution.",
+        "rang": 2
+       },
+       {
+        "txt": "Le texte est adopté par référendum (septembre 1958).",
+        "rang": 3
+       },
+       {
+        "txt": "La Constitution est promulguée le 4 octobre 1958.",
+        "rang": 4
+       },
+       {
+        "txt": "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "rang": 5
+       }
+      ],
+      "consigne": "Maître Sylla retrace l'adoption de la Constitution. Remets ces cinq étapes dans l'ordre, puis choisis la phrase du document qui dit qui détermine la politique de la Nation. <div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Gouvernement détermine et conduit la politique de la Nation. » « Le Président de la République veille au respect de la Constitution. » « La France est une République indivisible, laïque, démocratique et sociale. »</div>",
+      "indices": [
+       "Avant la rédaction, il y a l'instabilité.",
+       "On promulgue après le référendum.",
+       "Le fonctionnement vient après la promulgation."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit qui détermine la politique de la Nation ?",
+       "options": [
+        "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "Le Président de la République veille au respect de la Constitution.",
+        "La France est une République indivisible, laïque, démocratique et sociale."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -720,7 +1555,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ferrand",
+     "personnage_emetteur": "sylla",
      "probleme_narratif": "Madame Ferrand a fermé le coffre des textes à clé.",
      "enjeu": "Sans le code, les textes restent enfermés.",
      "episode_du_roman": "Fiches « Le texte de la Constitution de la Ve République » (thème 2) et « Les textes de notre Constitution », cycle 3",
@@ -733,10 +1568,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "theme2-texte",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Rapporteur (code) ; Juriste (code) ; Constituant (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "1958 : la Constitution de la Ve République. 1789 : la Déclaration des droits de l'homme et du citoyen. 4 : le nombre de textes du bloc de constitutionnalité.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "champs": [
@@ -763,6 +1600,73 @@
        "Compte les documents exposés dans la vitrine de la salle."
       ],
       "dialogue": "Ce coffre se règle avec des dates et des numéros. Trouvez le code."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Année de la Constitution actuelle",
+        "valeur": "1958",
+        "longueur": 4
+       },
+       {
+        "libelle": "Année du Préambule de la IVe République",
+        "valeur": "1946",
+        "longueur": 4
+       }
+      ],
+      "consigne": "Le cadenas à chiffres demande deux années. Quelle est l'année de la Constitution actuelle ? Quelle est l'année du Préambule de la IVe République (27 octobre) ? Puis choisis la phrase du document qui date le Préambule.<div class='doc-carnet'><b>Frise</b> 26 août 1789 : Déclaration des droits de l'homme et du citoyen. 27 octobre 1946 : Préambule de la Constitution de la IVe République. 4 octobre 1958 : Constitution de la Ve République.</div>",
+      "indices": [
+       "La Constitution actuelle est de 1958.",
+       "Le Préambule est de 1946.",
+       "Lis la frise."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document date le Préambule ?",
+       "options": [
+        "26 août 1789 : Déclaration des droits de l'homme et du citoyen.",
+        "27 octobre 1946 : Préambule de la Constitution de la IVe République.",
+        "4 octobre 1958 : Constitution de la Ve République."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Années entre 1789 et 1958",
+        "valeur": "169",
+        "longueur": 3
+       },
+       {
+        "libelle": "Années entre 1946 et 1958",
+        "valeur": "12",
+        "longueur": 2
+       },
+       {
+        "libelle": "Années entre 1958 et 2004",
+        "valeur": "46",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Le cadenas à chiffres demande trois nombres. Combien d'années séparent la Déclaration (1789) de la Constitution actuelle (1958) ? Combien d'années séparent le Préambule (1946) de la Constitution actuelle ? Combien d'années séparent la Constitution actuelle (1958) de la Charte de l'environnement (2004) ?<div class='doc-carnet'><b>Frise</b> 1789 : Déclaration. 1946 : Préambule. 1958 : Constitution de la Ve République. 2004 : Charte de l'environnement.</div>",
+      "indices": [
+       "1958 − 1789.",
+       "1958 − 1946.",
+       "2004 − 1958."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document donne la date de la Charte ?",
+       "options": [
+        "1789 : Déclaration.",
+        "1946 : Préambule.",
+        "2004 : Charte de l'environnement."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
      }
     }
    ]
@@ -809,7 +1713,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "theme4-democratie",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (plan) ; Délégué (plan) ; Rapporteur (plan) ; Juriste (qcm) ; Constituant (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le président de la République et le Gouvernement forment le pouvoir exécutif. L'Assemblée nationale et le Sénat forment le Parlement, qui détient le pouvoir législatif.",
      "matelot": {
       "titre": "Complète le schéma de la République",
@@ -876,6 +1780,145 @@
        "Les députés sont 577 ; les sénateurs, 348."
       ],
       "dialogue": "Entrez, entrez ! Je suis députée : j'ai été élue par les habitants de ma circonscription. Regardez ces bancs : chacun représente des milliers de personnes. En démocratie, le pouvoir n'appartient ni au roi ni aux juges : il appartient au peuple, qui l'exerce par ses représentants et par le référendum. Troisième serrure. Prouvez-moi que vous savez qui fait quoi dans notre République."
+     },
+     "mousse": {
+      "type": "plan",
+      "titre": "Complète le schéma de la République",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Chef de l'État, élu par tous les Français",
+        "reponse": "Le président de la République"
+       },
+       {
+        "libelle": "Il dirige le Gouvernement",
+        "reponse": "Le Premier ministre"
+       },
+       {
+        "libelle": "Les députés y siègent",
+        "reponse": "L'Assemblée nationale"
+       }
+      ],
+      "etiquettes": [
+       "Le président de la République",
+       "Le Premier ministre",
+       "L'Assemblée nationale",
+       "Le juge"
+      ],
+      "consigne": "Madame Ferrand te montre le schéma de la République. Clique sur une étiquette, puis sur la case où elle doit aller. Une étiquette est en trop.",
+      "indices": [
+       "Ouvre la fiche « Comment la Constitution organise la vie démocratique ».",
+       "Le chef de l'État est élu par tous les Français.",
+       "Les députés siègent à l'Assemblée nationale."
+      ],
+      "dialogue": "Entrez, entrez ! Je suis députée : j'ai été élue par les habitants de ma circonscription. Regardez ces bancs : chacun représente des milliers de personnes. En démocratie, le pouvoir n'appartient ni au roi ni aux juges : il appartient au peuple, qui l'exerce par ses représentants et par le référendum. Troisième serrure. Prouvez-moi que vous savez qui fait quoi dans notre République."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Qui détermine et conduit la politique de la Nation ?",
+        "options": [
+         "Le Gouvernement",
+         "Le Président seul",
+         "Le Sénat",
+         "Les juges"
+        ],
+        "bonne": 0,
+        "explication": "Article 20."
+       },
+       {
+        "q": "Qui vote la loi ?",
+        "options": [
+         "Le Parlement",
+         "Le Gouvernement",
+         "Le Président",
+         "Le Conseil constitutionnel"
+        ],
+        "bonne": 0,
+        "explication": "Article 24."
+       },
+       {
+        "q": "Pour combien de temps le Président est-il élu ?",
+        "options": [
+         "Cinq ans",
+         "Sept ans",
+         "Dix ans",
+         "Un an"
+        ],
+        "bonne": 0,
+        "explication": "Article 6."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Président de la République veille au respect de la Constitution. » « Le Président de la République est élu pour cinq ans au suffrage universel direct. » « Le Gouvernement détermine et conduit la politique de la Nation. » « Le Parlement vote la loi. Il contrôle l'action du Gouvernement. »</div> Réponds aux trois questions, puis choisis la phrase du document qui dit comment est élu le Président.",
+      "indices": [
+       "Le Gouvernement conduit la politique.",
+       "Le Parlement vote la loi.",
+       "Cinq ans : le quinquennat."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit comment est élu le Président ?",
+       "options": [
+        "Le Président de la République veille au respect de la Constitution.",
+        "Le Président de la République est élu pour cinq ans au suffrage universel direct.",
+        "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "Le Parlement vote la loi. Il contrôle l'action du Gouvernement."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Entrez, entrez ! Je suis députée : j'ai été élue par les habitants de ma circonscription. Regardez ces bancs : chacun représente des milliers de personnes. En démocratie, le pouvoir n'appartient ni au roi ni aux juges : il appartient au peuple, qui l'exerce par ses représentants et par le référendum. Troisième serrure. Prouvez-moi que vous savez qui fait quoi dans notre République."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le peuple exerce la souveraineté par ses représentants et par référendum.",
+        "vrai": true,
+        "explication": "Article 3."
+       },
+       {
+        "txt": "Le Président est élu par le Parlement.",
+        "vrai": false,
+        "explication": "Au suffrage universel direct."
+       },
+       {
+        "txt": "Le Parlement contrôle l'action du Gouvernement.",
+        "vrai": true,
+        "explication": "Article 24."
+       },
+       {
+        "txt": "Le Président est garant de l'indépendance de l'autorité judiciaire.",
+        "vrai": true,
+        "explication": "Article 64."
+       },
+       {
+        "txt": "Le Gouvernement vote la loi à la place du Parlement.",
+        "vrai": false,
+        "explication": "Le Parlement vote la loi."
+       },
+       {
+        "txt": "Le mandat du Président dure cinq ans.",
+        "vrai": true,
+        "explication": "Article 6."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. » « Le Président de la République est élu pour cinq ans au suffrage universel direct. » « Le Gouvernement détermine et conduit la politique de la Nation. » « Le Parlement vote la loi. Il contrôle l'action du Gouvernement. » « Le Président de la République est garant de l'indépendance de l'autorité judiciaire. »</div> Madame Ferrand affirme six choses. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui parle de l'indépendance des juges.",
+      "indices": [
+       "Le Président est élu au suffrage universel direct.",
+       "Le Parlement vote la loi.",
+       "Article 64 : les juges."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle de l'indépendance des juges ?",
+       "options": [
+        "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "Le Parlement vote la loi. Il contrôle l'action du Gouvernement.",
+        "Le Président de la République est garant de l'indépendance de l'autorité judiciaire.",
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Entrez, entrez ! Je suis députée : j'ai été élue par les habitants de ma circonscription. Regardez ces bancs : chacun représente des milliers de personnes. En démocratie, le pouvoir n'appartient ni au roi ni aux juges : il appartient au peuple, qui l'exerce par ses représentants et par le référendum. Troisième serrure. Prouvez-moi que vous savez qui fait quoi dans notre République."
      }
     },
     {
@@ -891,7 +1934,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "sylla",
+     "personnage_emetteur": "ferrand",
      "probleme_narratif": "Sylla pose une question sur le président de la République.",
      "enjeu": "Sans connaître son rôle, on se trompe sur ses pouvoirs.",
      "episode_du_roman": "Fiche « Le président de la République », cycle 3",
@@ -904,7 +1947,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "president",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (qcm) ; Délégué (qcm) ; Rapporteur (qcm) ; Juriste (tri) ; Constituant (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le président est élu au suffrage universel direct pour cinq ans, renouvelable une fois. Pour être candidat, il faut être français, avoir 18 ans au moins, jouir de ses droits civiques et réunir 500 parrainages d'élus.",
      "matelot": {
       "questions": [
@@ -1001,6 +2044,141 @@
        "Le président peut dissoudre l'Assemblée nationale, mais pas le Sénat."
       ],
       "dialogue": "Le président de la République : que fait-il vraiment ? Répondez."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Comment le président de la République est-il élu ?",
+        "options": [
+         "Par tous les citoyens, qui votent directement",
+         "Par les députés seulement",
+         "Par les juges"
+        ],
+        "bonne": 0,
+        "explication": "C'est le suffrage universel direct."
+       }
+      ],
+      "consigne": "Réponds à la question, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Le président de la République ».",
+       "Tous les citoyens votent.",
+       "Le mandat dure cinq ans."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "gouv",
+        "titre": "Le Gouvernement"
+       },
+       {
+        "id": "parl",
+        "titre": "Le Parlement"
+       },
+       {
+        "id": "just",
+        "titre": "L'autorité judiciaire"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Déterminer la politique de la Nation",
+        "col": "gouv"
+       },
+       {
+        "txt": "Conduire la politique de la Nation",
+        "col": "gouv"
+       },
+       {
+        "txt": "Voter la loi",
+        "col": "parl"
+       },
+       {
+        "txt": "Contrôler l'action du Gouvernement",
+        "col": "parl"
+       },
+       {
+        "txt": "Rendre la justice",
+        "col": "just"
+       },
+       {
+        "txt": "Être indépendante",
+        "col": "just"
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Gouvernement détermine et conduit la politique de la Nation. » « Le Parlement vote la loi. Il contrôle l'action du Gouvernement. » « Le Président de la République est garant de l'indépendance de l'autorité judiciaire. »</div> Maître Sylla range des pouvoirs. Range chaque pouvoir dans la bonne colonne, puis choisis la phrase du document qui parle du Gouvernement.",
+      "indices": [
+       "Le Gouvernement détermine et conduit.",
+       "Le Parlement vote et contrôle.",
+       "Les juges sont indépendants."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle du Gouvernement ?",
+       "options": [
+        "Le Parlement vote la loi. Il contrôle l'action du Gouvernement.",
+        "Le Gouvernement détermine et conduit la politique de la Nation.",
+        "Le Président de la République est garant de l'indépendance de l'autorité judiciaire."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Selon l'article 3, la souveraineté appartient…",
+        "options": [
+         "au peuple",
+         "au Président",
+         "au Sénat",
+         "au Gouvernement"
+        ],
+        "bonne": 0,
+        "explication": "Au peuple."
+       },
+       {
+        "q": "Comment le Président est-il élu ?",
+        "options": [
+         "Au suffrage universel direct",
+         "Au suffrage indirect",
+         "Par tirage au sort",
+         "Par le Sénat"
+        ],
+        "bonne": 0,
+        "explication": "Article 6."
+       },
+       {
+        "q": "Que fait le Parlement ?",
+        "options": [
+         "Il vote la loi et contrôle le Gouvernement",
+         "Il juge les procès",
+         "Il élit le Président",
+         "Il nomme les ministres"
+        ],
+        "bonne": 0,
+        "explication": "Article 24."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. » « Le Président de la République est élu pour cinq ans au suffrage universel direct. » « Le Parlement vote la loi. Il contrôle l'action du Gouvernement. »</div> Réponds aux trois questions, puis choisis la phrase du document qui dit ce que fait le Parlement.",
+      "indices": [
+       "Souveraineté : le peuple.",
+       "Suffrage universel direct.",
+       "Voter et contrôler."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit ce que fait le Parlement ?",
+       "options": [
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum.",
+        "Le Parlement vote la loi. Il contrôle l'action du Gouvernement.",
+        "Le Président de la République est élu pour cinq ans au suffrage universel direct."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -1016,7 +2194,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "berthier",
+     "personnage_emetteur": "ferrand",
      "probleme_narratif": "Berthier trouve un objet qui n'a pas sa place dans un bureau de vote.",
      "enjeu": "Un intrus dans le bureau de vote fausse le scrutin.",
      "episode_du_roman": "Fiches « Comment la Constitution organise la vie démocratique en France » et « Le président de la République », cycle 3",
@@ -1029,7 +2207,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "theme4-democratie",
      "type": "intrus",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (intrus) ; Délégué (intrus) ; Rapporteur (intrus) ; Juriste (vraifaux) ; Constituant (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les sénateurs sont élus au suffrage universel indirect : ce sont de grands électeurs — maires, conseillers municipaux, départementaux et régionaux, députés — qui votent pour eux.",
      "matelot": {
       "cartes": [
@@ -1112,6 +2290,135 @@
        "Cette chambre siège au palais du Luxembourg."
       ],
       "dialogue": "Dans le bureau de vote, un objet n'a rien à faire là. Lequel ?"
+     },
+     "mousse": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "Le président de la République",
+        "intrus": false
+       },
+       {
+        "txt": "Les députés",
+        "intrus": false
+       },
+       {
+        "txt": "Les conseillers municipaux",
+        "intrus": false
+       },
+       {
+        "txt": "Les sénateurs",
+        "intrus": true
+       }
+      ],
+      "consigne": "Toutes ces élections se font au suffrage universel direct, sauf une. Clique sur l'intrus, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Comment la Constitution organise la vie démocratique ».",
+       "Pour trois élections, les citoyens votent eux-mêmes.",
+       "Les sénateurs sont élus par de grands électeurs."
+      ],
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le peuple exerce la souveraineté par ses représentants.",
+        "vrai": true,
+        "explication": "Et par référendum."
+       },
+       {
+        "txt": "Le Président est élu au suffrage universel direct.",
+        "vrai": true,
+        "explication": "Pour cinq ans."
+       },
+       {
+        "txt": "Les sénateurs sont élus au suffrage universel direct.",
+        "vrai": false,
+        "explication": "Par de grands électeurs."
+       },
+       {
+        "txt": "Le Parlement contrôle l'action du Gouvernement.",
+        "vrai": true,
+        "explication": "Article 24."
+       },
+       {
+        "txt": "Le référendum n'existe pas en France.",
+        "vrai": false,
+        "explication": "Il existe : article 3."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. » « Le Président de la République est élu pour cinq ans au suffrage universel direct. » « Le Parlement vote la loi. Il contrôle l'action du Gouvernement. »</div> Madame Ferrand affirme cinq choses sur les élections. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui parle des représentants du peuple.",
+      "indices": [
+       "Le peuple vote ses représentants.",
+       "Les sénateurs sont élus par de grands électeurs.",
+       "Le référendum est dans l'article 3."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle des représentants du peuple ?",
+       "options": [
+        "Le Président de la République est élu pour cinq ans au suffrage universel direct.",
+        "Le Parlement vote la loi. Il contrôle l'action du Gouvernement.",
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "direct",
+        "titre": "Suffrage universel direct"
+       },
+       {
+        "id": "indirect",
+        "titre": "Suffrage indirect"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Le président de la République",
+        "col": "direct"
+       },
+       {
+        "txt": "Les députés",
+        "col": "direct"
+       },
+       {
+        "txt": "Les conseillers municipaux",
+        "col": "direct"
+       },
+       {
+        "txt": "Les représentants au Parlement européen",
+        "col": "direct"
+       },
+       {
+        "txt": "Les sénateurs",
+        "col": "indirect"
+       },
+       {
+        "txt": "Les grands électeurs votent pour eux",
+        "col": "indirect"
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. » « Le Président de la République est élu pour cinq ans au suffrage universel direct. » « Le Parlement vote la loi. Il contrôle l'action du Gouvernement. »</div> Madame Ferrand classe des élections. Range chaque élection dans la bonne colonne : suffrage direct ou indirect. Puis choisis la phrase du document qui parle du suffrage universel direct.",
+      "indices": [
+       "Le citoyen glisse lui-même son bulletin : direct.",
+       "Les sénateurs sont élus par de grands électeurs.",
+       "Article 6 : suffrage universel direct."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle du suffrage universel direct ?",
+       "options": [
+        "Le Président de la République est élu pour cinq ans au suffrage universel direct.",
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum.",
+        "Le Parlement vote la loi. Il contrôle l'action du Gouvernement."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -1127,7 +2434,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nour",
+     "personnage_emetteur": "ferrand",
      "probleme_narratif": "Nour range les présidents par ordre de mandat.",
      "enjeu": "Sans l'ordre, on confond les mandats.",
      "episode_du_roman": "Chronologie des présidents de la Ve République (complément historique) ; règles du mandat : fiche « Le président de la République », cycle 3",
@@ -1140,10 +2447,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "president",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Rapporteur (ordre) ; Juriste (ordre) ; Constituant (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Charles de Gaulle (1959-1969), Georges Pompidou (1969-1974), Valéry Giscard d'Estaing (1974-1981), François Mitterrand (1981-1995), Jacques Chirac (1995-2007), Nicolas Sarkozy (2007-2012), François Hollande (2012-2017), Emmanuel Macron (depuis 2017).",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "items": [
@@ -1195,6 +2504,79 @@
        "Le plus récent est aussi le plus jeune à avoir été élu."
       ],
       "dialogue": "La Ve République a eu plusieurs présidents. Rangez-les dans l'ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Déclaration des droits de l'homme et du citoyen",
+        "rang": 1,
+        "sous": "1789"
+       },
+       {
+        "txt": "Préambule de la IVe République",
+        "rang": 2,
+        "sous": "1946"
+       },
+       {
+        "txt": "Constitution de la Ve République",
+        "rang": 3,
+        "sous": "1958"
+       },
+       {
+        "txt": "Le septennat devient un quinquennat par référendum",
+        "rang": 4,
+        "sous": "2000"
+       },
+       {
+        "txt": "Charte de l'environnement",
+        "rang": 5,
+        "sous": "2004"
+       }
+      ],
+      "consigne": "Madame Ferrand retrace l'histoire des textes et du mandat. Remets ces cinq repères dans l'ordre chronologique.",
+      "indices": [
+       "Compare les années.",
+       "Le quinquennat est de 2000.",
+       "La Charte est la plus récente."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Durée du mandat (ans)",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Nombre de mandats consécutifs maximum",
+        "valeur": "2",
+        "longueur": 1
+       },
+       {
+        "libelle": "Années entre 1958 et 2000",
+        "valeur": "42",
+        "longueur": 2
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Président de la République est élu pour cinq ans au suffrage universel direct. » « Nul ne peut exercer plus de deux mandats consécutifs. » « Le Président de la République veille au respect de la Constitution. »</div> Madame Ferrand te demande trois nombres. Combien d'années dure le mandat du Président ? Combien de mandats consécutifs maximum le Président peut-il exercer ? Combien d'années séparent 2000 (quinquennat) de la Constitution de 1958 ?",
+      "indices": [
+       "Article 6 : cinq ans.",
+       "Le mandat est renouvelable une fois : deux mandats.",
+       "2000 − 1958."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document donne la durée du mandat ?",
+       "options": [
+        "Le Président de la République est élu pour cinq ans au suffrage universel direct.",
+        "Le Président de la République veille au respect de la Constitution.",
+        "Nul ne peut exercer plus de deux mandats consécutifs."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
      }
     }
    ]
@@ -1241,7 +2623,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "parcours-loi",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (association) ; Délégué (association) ; Rapporteur (association) ; Juriste (tri) ; Constituant (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Projet de loi (Gouvernement) et proposition de loi (Parlement) n'ont pas la même origine. Un amendement modifie le texte, la promulgation le rend officiel, et la publication au Journal officiel précède l'entrée en vigueur.",
      "matelot": {
       "paires": [
@@ -1314,6 +2696,143 @@
        "La navette, c'est l'aller-retour du texte entre les deux assemblées."
       ],
       "dialogue": "Une loi ne tombe pas du ciel. Elle part soit du Gouvernement — on parle alors d'un projet de loi —, soit d'un parlementaire — c'est une proposition de loi. Ensuite, elle est étudiée, amendée, discutée, votée, et elle fait la navette entre nos deux assemblées jusqu'à ce que nous tombions d'accord. Quatrième serrure : remettez ce parcours dans l'ordre, sans en oublier une étape."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Un projet de loi",
+        "d": "un texte proposé par le Gouvernement"
+       },
+       {
+        "g": "Une proposition de loi",
+        "d": "un texte proposé par un député ou un sénateur"
+       },
+       {
+        "g": "Promulguer",
+        "d": "rendre la loi officielle"
+       }
+      ],
+      "consigne": "Relie chaque mot à sa définition : clique à gauche, puis à droite.",
+      "indices": [
+       "Ouvre la fiche « Le parcours d'une loi » dans la Bibliothèque.",
+       "PROjet = Gouvernement.",
+       "PROposition = parlementaires."
+      ],
+      "dialogue": "Une loi ne tombe pas du ciel. Elle part soit du Gouvernement — on parle alors d'un projet de loi —, soit d'un parlementaire — c'est une proposition de loi. Ensuite, elle est étudiée, amendée, discutée, votée, et elle fait la navette entre nos deux assemblées jusqu'à ce que nous tombions d'accord. Quatrième serrure : remettez ce parcours dans l'ordre, sans en oublier une étape."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "initiative",
+        "titre": "Proposer un texte de loi"
+       },
+       {
+        "id": "amender",
+        "titre": "Modifier le texte"
+       },
+       {
+        "id": "promulguer",
+        "titre": "Rendre la loi officielle"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Le Premier ministre dépose un projet de loi",
+        "col": "initiative"
+       },
+       {
+        "txt": "Un député dépose une proposition de loi",
+        "col": "initiative"
+       },
+       {
+        "txt": "Les parlementaires votent un amendement",
+        "col": "amender"
+       },
+       {
+        "txt": "Le Gouvernement propose un amendement",
+        "col": "amender"
+       },
+       {
+        "txt": "Le Président promulgue la loi dans les quinze jours",
+        "col": "promulguer"
+       },
+       {
+        "txt": "La loi devient officielle",
+        "col": "promulguer"
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « L'initiative des lois appartient concurremment au Premier ministre et aux membres du Parlement. » « Les membres du Parlement et le Gouvernement ont le droit d'amendement. » « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. »</div> Madame Ferrand range des actions. Range chaque action dans la bonne colonne, puis choisis la phrase du document qui dit qui a l'initiative des lois.",
+      "indices": [
+       "L'initiative appartient au Premier ministre et aux parlementaires.",
+       "Le droit d'amendement : modifier le texte.",
+       "Quinze jours pour promulguer."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit qui a l'initiative des lois ?",
+       "options": [
+        "Les membres du Parlement et le Gouvernement ont le droit d'amendement.",
+        "L'initiative des lois appartient concurremment au Premier ministre et aux membres du Parlement.",
+        "Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Une loi ne tombe pas du ciel. Elle part soit du Gouvernement — on parle alors d'un projet de loi —, soit d'un parlementaire — c'est une proposition de loi. Ensuite, elle est étudiée, amendée, discutée, votée, et elle fait la navette entre nos deux assemblées jusqu'à ce que nous tombions d'accord. Quatrième serrure : remettez ce parcours dans l'ordre, sans en oublier une étape."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Dans combien d'assemblées le texte est-il examiné successivement ?",
+        "options": [
+         "Deux",
+         "Une",
+         "Trois",
+         "Quatre"
+        ],
+        "bonne": 0,
+        "explication": "Assemblée nationale et Sénat."
+       },
+       {
+        "q": "Qui a le droit d'amendement ?",
+        "options": [
+         "Les membres du Parlement et le Gouvernement",
+         "Les juges",
+         "Les citoyens directement",
+         "Le Conseil constitutionnel"
+        ],
+        "bonne": 0,
+        "explication": "Article 44."
+       },
+       {
+        "q": "Combien de jours le Président a-t-il pour promulguer la loi ?",
+        "options": [
+         "Quinze",
+         "Trente",
+         "Sept",
+         "Un"
+        ],
+        "bonne": 0,
+        "explication": "Article 10."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique. » « Les membres du Parlement et le Gouvernement ont le droit d'amendement. » « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. »</div> Réponds aux trois questions, puis choisis la phrase du document qui décrit la navette.",
+      "indices": [
+       "Deux assemblées.",
+       "Article 44 : droit d'amendement.",
+       "Quinze jours."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document décrit la navette ?",
+       "options": [
+        "Les membres du Parlement et le Gouvernement ont le droit d'amendement.",
+        "Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique.",
+        "Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Une loi ne tombe pas du ciel. Elle part soit du Gouvernement — on parle alors d'un projet de loi —, soit d'un parlementaire — c'est une proposition de loi. Ensuite, elle est étudiée, amendée, discutée, votée, et elle fait la navette entre nos deux assemblées jusqu'à ce que nous tombions d'accord. Quatrième serrure : remettez ce parcours dans l'ordre, sans en oublier une étape."
      }
     },
     {
@@ -1329,7 +2848,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "sylla",
+     "personnage_emetteur": "ferrand",
      "probleme_narratif": "Sylla veut que l'on remette le parcours d'une loi en ordre.",
      "enjeu": "Sans l'ordre, la loi n'est jamais votée.",
      "episode_du_roman": "Fiche « Le parcours d'une loi » (8-10 ans)",
@@ -1342,7 +2861,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "parcours-loi",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (ordre) ; Délégué (ordre) ; Rapporteur (ordre) ; Juriste (ordre) ; Constituant (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Dépôt du texte → étude en commission → amendements → vote et navette entre les deux assemblées → dernier mot possible à l'Assemblée nationale → promulgation par le président sous quinze jours (avec saisine possible du Conseil constitutionnel) → publication au Journal officiel → entrée en vigueur et application par le Gouvernement.",
      "matelot": {
       "items": [
@@ -1435,6 +2954,116 @@
        "La publication au Journal officiel précède l'entrée en vigueur."
       ],
       "dialogue": "Le parcours d'une loi a ses étapes. Remettez-les dans l'ordre."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Un texte de loi est déposé.",
+        "rang": 1
+       },
+       {
+        "txt": "Le texte est étudié et modifié.",
+        "rang": 2
+       },
+       {
+        "txt": "L'Assemblée nationale et le Sénat votent.",
+        "rang": 3
+       },
+       {
+        "txt": "Le président promulgue la loi.",
+        "rang": 4
+       }
+      ],
+      "consigne": "Remets les étapes du parcours d'une loi dans l'ordre, avec les flèches ▲▼.",
+      "indices": [
+       "Ouvre la fiche « Le parcours d'une loi ».",
+       "Tout commence par un texte déposé.",
+       "On promulgue à la fin."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Dépôt d'un projet ou d'une proposition de loi.",
+        "rang": 1
+       },
+       {
+        "txt": "Étude en commission et dépôt d'amendements.",
+        "rang": 2
+       },
+       {
+        "txt": "Examen successif dans les deux assemblées.",
+        "rang": 3
+       },
+       {
+        "txt": "Promulgation par le Président dans les quinze jours.",
+        "rang": 4
+       },
+       {
+        "txt": "Publication au Journal officiel.",
+        "rang": 5
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique. » « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. »</div> Madame Ferrand décrit le parcours d'une loi. Remets les cinq étapes dans l'ordre, puis choisis la phrase du document qui date la promulgation.",
+      "indices": [
+       "Le dépôt vient d'abord.",
+       "L'étude en commission précède le vote.",
+       "La promulgation vient après le vote."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document donne le délai de promulgation ?",
+       "options": [
+        "Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée.",
+        "Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique.",
+        "L'initiative des lois appartient concurremment au Premier ministre et aux membres du Parlement."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le Parlement adopte définitivement la loi.",
+        "rang": 1
+       },
+       {
+        "txt": "Le Conseil constitutionnel est saisi avant la promulgation.",
+        "rang": 2
+       },
+       {
+        "txt": "Le Conseil examine si la loi respecte la Constitution.",
+        "rang": 3
+       },
+       {
+        "txt": "Une disposition inconstitutionnelle ne peut pas être promulguée.",
+        "rang": 4
+       },
+       {
+        "txt": "Le Président promulgue le reste de la loi dans les quinze jours.",
+        "rang": 5
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique. » « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. » « Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs. » « Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application. »</div> Madame Ferrand décrit le contrôle du Conseil constitutionnel. Remets ces cinq étapes dans l'ordre, puis choisis la phrase du document qui dit ce que devient une loi déclarée inconstitutionnelle.",
+      "indices": [
+       "La saisine a lieu avant la promulgation.",
+       "Le Conseil vérifie le respect de la Constitution.",
+       "Une disposition inconstitutionnelle est écartée."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit ce que devient une loi déclarée inconstitutionnelle ?",
+       "options": [
+        "Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application.",
+        "Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs.",
+        "Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -1450,7 +3079,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "berthier",
+     "personnage_emetteur": "ferrand",
      "probleme_narratif": "Berthier a classé des phrases sur la fabrique de la loi.",
      "enjeu": "Une fausse idée sur la loi nuit à la compréhension.",
      "episode_du_roman": "Fiche-jeu « Que sais-tu sur la procédure d'élaboration des lois ? » (8-10 ans)",
@@ -1463,7 +3092,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "jeu-lois",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (vraifaux) ; Délégué (vraifaux) ; Rapporteur (vraifaux) ; Juriste (qcm) ; Constituant (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Une loi s'applique à tous. L'initiative vient du Gouvernement (projet) ou du Parlement (proposition). En cas de désaccord, l'Assemblée nationale peut avoir le dernier mot. Le président dispose de quinze jours pour promulguer. La publication précède l'application.",
      "matelot": {
       "affirmations": [
@@ -1536,6 +3165,140 @@
        "Un amendement modifie le texte : il ne l'annule pas."
       ],
       "dialogue": "Vrai ou faux sur la fabrique de la loi : à vous de classer."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un projet de loi vient du Gouvernement.",
+        "vrai": true,
+        "explication": "Une proposition vient d'un parlementaire."
+       },
+       {
+        "txt": "La loi s'applique avant d'être publiée.",
+        "vrai": false,
+        "explication": "Elle est publiée d'abord."
+       },
+       {
+        "txt": "Le président promulgue la loi.",
+        "vrai": true,
+        "explication": "Il rend la loi officielle."
+       }
+      ],
+      "consigne": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Le parcours d'une loi ».",
+       "PROjet = Gouvernement.",
+       "On publie avant d'appliquer."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Qui a l'initiative des lois ?",
+        "options": [
+         "Le Premier ministre et les membres du Parlement",
+         "Les juges",
+         "Les maires",
+         "Le Conseil constitutionnel"
+        ],
+        "bonne": 0,
+        "explication": "Article 39."
+       },
+       {
+        "q": "Que permet le droit d'amendement ?",
+        "options": [
+         "Modifier le texte de la loi",
+         "Annuler la Constitution",
+         "Élire le Président",
+         "Juger les procès"
+        ],
+        "bonne": 0,
+        "explication": "Article 44."
+       },
+       {
+        "q": "Pourquoi la loi passe-t-elle par les deux assemblées ?",
+        "options": [
+         "Pour adopter un texte identique",
+         "Pour doubler les impôts",
+         "Pour changer de président",
+         "Pour réduire le nombre de députés"
+        ],
+        "bonne": 0,
+        "explication": "Article 45."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. » « L'initiative des lois appartient concurremment au Premier ministre et aux membres du Parlement. » « Les membres du Parlement et le Gouvernement ont le droit d'amendement. » « Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique. »</div> Réponds aux trois questions, puis choisis la phrase du document qui justifie la question 3.",
+      "indices": [
+       "Premier ministre et parlementaires.",
+       "Un amendement modifie le texte.",
+       "Un texte identique dans les deux assemblées."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document justifie ta réponse à la question 3 ?",
+       "options": [
+        "Les membres du Parlement et le Gouvernement ont le droit d'amendement.",
+        "Tout projet ou proposition de loi est examiné successivement dans les deux assemblées du Parlement en vue de l'adoption d'un texte identique.",
+        "L'initiative des lois appartient concurremment au Premier ministre et aux membres du Parlement.",
+        "Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le Président promulgue la loi dans les quinze jours.",
+        "vrai": true,
+        "explication": "Article 10."
+       },
+       {
+        "txt": "L'initiative des lois appartient aux juges.",
+        "vrai": false,
+        "explication": "Au Premier ministre et aux parlementaires."
+       },
+       {
+        "txt": "Soixante députés peuvent saisir le Conseil constitutionnel.",
+        "vrai": true,
+        "explication": "Article 61."
+       },
+       {
+        "txt": "Une disposition inconstitutionnelle peut être promulguée.",
+        "vrai": false,
+        "explication": "Elle ne peut être ni promulguée ni appliquée."
+       },
+       {
+        "txt": "Le Gouvernement a le droit d'amendement.",
+        "vrai": true,
+        "explication": "Comme les parlementaires."
+       },
+       {
+        "txt": "Seul le Président peut saisir le Conseil.",
+        "vrai": false,
+        "explication": "Plusieurs autorités le peuvent."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. » « L'initiative des lois appartient concurremment au Premier ministre et aux membres du Parlement. » « Les membres du Parlement et le Gouvernement ont le droit d'amendement. » « Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs. » « Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application. »</div> Madame Ferrand a noté six phrases. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui dit qui peut saisir le Conseil constitutionnel.",
+      "indices": [
+       "Quinze jours pour promulguer.",
+       "Soixante députés ou soixante sénateurs.",
+       "Une disposition inconstitutionnelle est écartée."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit qui peut saisir le Conseil constitutionnel ?",
+       "options": [
+        "Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application.",
+        "Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée.",
+        "Les membres du Parlement et le Gouvernement ont le droit d'amendement.",
+        "Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -1551,7 +3314,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nour",
+     "personnage_emetteur": "ferrand",
      "probleme_narratif": "Nour cherche le code du cadenas du Parlement.",
      "enjeu": "Sans le code, la porte reste fermée.",
      "episode_du_roman": "Fiches « Le parcours d'une loi » (8-10 ans) et « Comment la Constitution organise la procédure d'élaboration des lois ? », cycle 3",
@@ -1564,10 +3327,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "theme5-lois",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Rapporteur (code) ; Juriste (code) ; Constituant (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "15 jours pour promulguer une loi · 577 députés à l'Assemblée nationale · 348 sénateurs au Sénat.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "champs": [
@@ -1594,6 +3359,78 @@
        "Il y a moins de sénateurs que de députés."
       ],
       "dialogue": "La porte de l'assemblée est verrouillée. Trouvez le code."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Jours pour promulguer",
+        "valeur": "15",
+        "longueur": 2
+       },
+       {
+        "libelle": "Députés qui peuvent saisir le Conseil",
+        "valeur": "60",
+        "longueur": 2
+       },
+       {
+        "libelle": "Sénateurs qui peuvent saisir le Conseil",
+        "valeur": "60",
+        "longueur": 2
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. » « Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs. »</div> Le cadenas du Parlement demande trois nombres. Combien de jours le président a-t-il pour promulguer une loi ? Combien de députés au minimum peuvent saisir le Conseil constitutionnel ? Combien de sénateurs au minimum ?",
+      "indices": [
+       "Quinze jours.",
+       "Soixante députés.",
+       "Soixante sénateurs."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document donne le délai de promulgation ?",
+       "options": [
+        "Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée.",
+        "Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs.",
+        "Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Délai de promulgation (jours)",
+        "valeur": "15",
+        "longueur": 2
+       },
+       {
+        "libelle": "Députés qui peuvent saisir le Conseil",
+        "valeur": "60",
+        "longueur": 2
+       },
+       {
+        "libelle": "Parlementaires pour deux saisines (une par assemblée)",
+        "valeur": "120",
+        "longueur": 3
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée. » « Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs. »</div> Le cadenas du Parlement demande trois nombres. Combien de jours dure le délai de promulgation ? Combien de députés au moins peuvent saisir le Conseil constitutionnel ? Combien de parlementaires au total (60 députés ou 60 sénateurs) faut-il compter pour deux saisines distinctes (une de chaque assemblée) ?",
+      "indices": [
+       "Quinze jours.",
+       "Soixante députés.",
+       "60 + 60."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document donne le nombre de parlementaires nécessaire ?",
+       "options": [
+        "Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission au Gouvernement de la loi définitivement adoptée.",
+        "Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs.",
+        "Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
      }
     }
    ]
@@ -1640,7 +3477,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "valeurs-principes",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (trous) ; Délégué (trous) ; Rapporteur (trous) ; Juriste (qcm) ; Constituant (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Article 1er : « La France est une République indivisible, laïque, démocratique et sociale. » Article 2 : la devise est « Liberté, Égalité, Fraternité » et le principe est « gouvernement du peuple, par le peuple et pour le peuple ».",
      "matelot": {
       "texte": "<p><b>Article 1er.</b> La France est une République [[indivisible]], [[laïque]], [[démocratique]] et sociale.</p><p><b>Article 2.</b> La devise de la République est « Liberté, [[Égalité]], Fraternité ».</p>",
@@ -1680,6 +3517,129 @@
        "Le principe de la République se termine par « pour le peuple »."
       ],
       "dialogue": "Neuf sièges. Neuf membres, nommés pour neuf ans : trois par le président de la République, trois par le président de l'Assemblée nationale, trois par le président du Sénat. On nous appelle parfois « les Sages ». Notre travail tient en une phrase : aucune loi ne doit être contraire à la Constitution. Dernière serrure. Elle ne s'ouvrira que si vous savez ce que la Constitution change dans votre vie de tous les jours."
+     },
+     "mousse": {
+      "type": "trous",
+      "texte": "<p><b>Article 1er.</b> La France est une République [[indivisible]], [[laïque]], démocratique et sociale. <b>Article 2.</b> La devise de la République est « Liberté, [[Égalité]], Fraternité ».</p>",
+      "etiquettes": [
+       "indivisible",
+       "laïque",
+       "Égalité",
+       "royale"
+      ],
+      "consigne": "Complète les articles 1 et 2 de la Constitution. Clique sur une étiquette, puis sur le trou où elle va. Une étiquette est en trop.",
+      "indices": [
+       "Ouvre la fiche « Les valeurs et principes de la République française ».",
+       "Indivisible : on ne peut pas la couper en morceaux.",
+       "Laïque : l'État ne préfère aucune religion."
+      ],
+      "dialogue": "Neuf sièges. Neuf membres, nommés pour neuf ans : trois par le président de la République, trois par le président de l'Assemblée nationale, trois par le président du Sénat. On nous appelle parfois « les Sages ». Notre travail tient en une phrase : aucune loi ne doit être contraire à la Constitution. Dernière serrure. Elle ne s'ouvrira que si vous savez ce que la Constitution change dans votre vie de tous les jours."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien d'adjectifs qualifient la République ?",
+        "options": [
+         "Quatre",
+         "Deux",
+         "Trois",
+         "Cinq"
+        ],
+        "bonne": 0,
+        "explication": "Indivisible, laïque, démocratique, sociale."
+       },
+       {
+        "q": "Que garantit la République devant la loi ?",
+        "options": [
+         "L'égalité de tous les citoyens, sans distinction d'origine, de race ou de religion",
+         "Les mêmes revenus pour tous",
+         "Un seul métier pour tous",
+         "L'interdiction de voter"
+        ],
+        "bonne": 0,
+        "explication": "Article 1."
+       },
+       {
+        "q": "Quelle est la devise de la République ?",
+        "options": [
+         "Liberté, Égalité, Fraternité",
+         "Dieu et mon droit",
+         "Travail, Famille, Patrie",
+         "Un pour tous"
+        ],
+        "bonne": 0,
+        "explication": "Article 2."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La France est une République indivisible, laïque, démocratique et sociale. » « Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion. » « La devise de la République est « Liberté, Égalité, Fraternité ». »</div> Réponds aux trois questions, puis choisis la phrase du document qui cite la devise.",
+      "indices": [
+       "Compte les adjectifs de l'article 1.",
+       "Égalité devant la loi.",
+       "La devise est à l'article 2."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document cite la devise ?",
+       "options": [
+        "La France est une République indivisible, laïque, démocratique et sociale.",
+        "Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion.",
+        "La devise de la République est « Liberté, Égalité, Fraternité »."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Neuf sièges. Neuf membres, nommés pour neuf ans : trois par le président de la République, trois par le président de l'Assemblée nationale, trois par le président du Sénat. On nous appelle parfois « les Sages ». Notre travail tient en une phrase : aucune loi ne doit être contraire à la Constitution. Dernière serrure. Elle ne s'ouvrira que si vous savez ce que la Constitution change dans votre vie de tous les jours."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La France est une République indivisible, laïque, démocratique et sociale.",
+        "vrai": true,
+        "explication": "Article 1."
+       },
+       {
+        "txt": "La République assure l'égalité devant la loi sans distinction de religion.",
+        "vrai": true,
+        "explication": "Article 1."
+       },
+       {
+        "txt": "La devise de la République est « Liberté, Égalité, Fraternité ».",
+        "vrai": true,
+        "explication": "Article 2."
+       },
+       {
+        "txt": "La souveraineté nationale appartient au Président.",
+        "vrai": false,
+        "explication": "Au peuple."
+       },
+       {
+        "txt": "La République favorise une religion.",
+        "vrai": false,
+        "explication": "Elle est laïque."
+       },
+       {
+        "txt": "La République est une monarchie.",
+        "vrai": false,
+        "explication": "Démocratique."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « La France est une République indivisible, laïque, démocratique et sociale. » « Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion. » « La devise de la République est « Liberté, Égalité, Fraternité ». » « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum. »</div> Maître Sylla affirme six choses. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui dit que la République est laïque.",
+      "indices": [
+       "Laïque : l'État est neutre.",
+       "La souveraineté appartient au peuple.",
+       "Article 1 : quatre adjectifs."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit que la République est laïque ?",
+       "options": [
+        "La France est une République indivisible, laïque, démocratique et sociale.",
+        "La devise de la République est « Liberté, Égalité, Fraternité ».",
+        "La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum.",
+        "Elle assure l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Neuf sièges. Neuf membres, nommés pour neuf ans : trois par le président de la République, trois par le président de l'Assemblée nationale, trois par le président du Sénat. On nous appelle parfois « les Sages ». Notre travail tient en une phrase : aucune loi ne doit être contraire à la Constitution. Dernière serrure. Elle ne s'ouvrira que si vous savez ce que la Constitution change dans votre vie de tous les jours."
      }
     },
     {
@@ -1695,7 +3655,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "berthier",
+     "personnage_emetteur": "sylla",
      "probleme_narratif": "Berthier veut associer valeurs et principes.",
      "enjeu": "Sans valeurs, la République n'est qu'un mot.",
      "episode_du_roman": "Fiche « Les valeurs et principes de la République française » (8-10 ans)",
@@ -1708,7 +3668,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "valeurs-principes",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (tri) ; Délégué (association) ; Rapporteur (association) ; Juriste (tri) ; Constituant (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Indivisibilité, laïcité, démocratie, caractère social, égalité et liberté : six principes inscrits dans la Constitution, que le Conseil constitutionnel fait respecter.",
      "matelot": {
       "paires": [
@@ -1781,6 +3741,164 @@
        "La liberté de chacun s'arrête là où elle nuirait à autrui."
       ],
       "dialogue": "Valeurs et principes : associez-les correctement."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "lib",
+        "titre": "Liberté"
+       },
+       {
+        "id": "egal",
+        "titre": "Égalité"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Parler et écrire librement",
+        "col": "lib"
+       },
+       {
+        "txt": "Croire ou ne pas croire",
+        "col": "lib"
+       },
+       {
+        "txt": "La loi est la même pour tous",
+        "col": "egal"
+       },
+       {
+        "txt": "Les femmes et les hommes ont les mêmes droits",
+        "col": "egal"
+       }
+      ],
+      "consigne": "Range chaque principe dans la bonne colonne : clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « Les valeurs et principes de la République française ».",
+       "La liberté, c'est pouvoir faire ce qui ne nuit pas aux autres.",
+       "L'égalité : les mêmes droits pour tous."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "lib",
+        "titre": "Liberté"
+       },
+       {
+        "id": "egal",
+        "titre": "Égalité"
+       },
+       {
+        "id": "droit",
+        "titre": "Droits sociaux"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Parler, écrire, imprimer librement",
+        "col": "lib"
+       },
+       {
+        "txt": "Faire tout ce qui ne nuit pas à autrui",
+        "col": "lib"
+       },
+       {
+        "txt": "Naître libres et égaux en droits",
+        "col": "egal"
+       },
+       {
+        "txt": "Droits égaux des femmes et des hommes",
+        "col": "egal"
+       },
+       {
+        "txt": "L'enseignement public gratuit et laïque",
+        "col": "droit"
+       },
+       {
+        "txt": "L'égal accès à l'instruction",
+        "col": "droit"
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Déclaration des droits de l'homme et du citoyen, 1789</b> « Les hommes naissent et demeurent libres et égaux en droits. » « La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui. » « La libre communication des pensées et des opinions est un des droits les plus précieux de l'homme. »</div> <div class='doc-carnet'><b>Préambule de la Constitution de 1946</b> « La loi garantit à la femme, dans tous les domaines, des droits égaux à ceux de l'homme. » « L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État. »</div> Maître Sylla range des droits. Range chaque droit dans la bonne colonne, puis choisis la phrase du document qui définit la liberté.",
+      "indices": [
+       "La liberté s'arrête où commence celle des autres.",
+       "L'égalité : les mêmes droits.",
+       "L'école gratuite est un droit social."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document définit la liberté ?",
+       "options": [
+        "Les hommes naissent et demeurent libres et égaux en droits.",
+        "La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui.",
+        "La libre communication des pensées et des opinions est un des droits les plus précieux de l'homme.",
+        "L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "egalite",
+        "titre": "Égalité et instruction"
+       },
+       {
+        "id": "travail",
+        "titre": "Travail"
+       },
+       {
+        "id": "sante",
+        "titre": "Santé et protection"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Des droits égaux pour la femme et pour l'homme",
+        "col": "egalite"
+       },
+       {
+        "txt": "L'égal accès à l'instruction et à la culture",
+        "col": "egalite"
+       },
+       {
+        "txt": "Un enseignement public gratuit et laïque",
+        "col": "egalite"
+       },
+       {
+        "txt": "Le devoir de travailler et le droit d'obtenir un emploi",
+        "col": "travail"
+       },
+       {
+        "txt": "La protection de la santé",
+        "col": "sante"
+       },
+       {
+        "txt": "Le repos et les loisirs",
+        "col": "sante"
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Préambule de la Constitution de 1946</b> « La loi garantit à la femme, dans tous les domaines, des droits égaux à ceux de l'homme. » « La Nation garantit l'égal accès de l'enfant et de l'adulte à l'instruction, à la formation professionnelle et à la culture. » « L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État. » « La Nation garantit à tous, notamment à l'enfant, à la mère et aux vieux travailleurs, la protection de la santé, la sécurité matérielle, le repos et les loisirs. » « Chacun a le devoir de travailler et le droit d'obtenir un emploi. »</div> Maître Sylla classe les droits du Préambule de 1946. Range chaque droit dans la bonne colonne, puis choisis la phrase du document qui garantit la protection de la santé.",
+      "indices": [
+       "L'égalité et l'instruction : les trois premières phrases.",
+       "Le travail : emploi.",
+       "Santé, repos, loisirs : protection."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document garantit la protection de la santé ?",
+       "options": [
+        "Chacun a le devoir de travailler et le droit d'obtenir un emploi.",
+        "La Nation garantit l'égal accès de l'enfant et de l'adulte à l'instruction, à la formation professionnelle et à la culture.",
+        "La Nation garantit à tous, notamment à l'enfant, à la mère et aux vieux travailleurs, la protection de la santé, la sécurité matérielle, le repos et les loisirs.",
+        "La loi garantit à la femme, dans tous les domaines, des droits égaux à ceux de l'homme."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -1796,7 +3914,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nour",
+     "personnage_emetteur": "sylla",
      "probleme_narratif": "Nour cherche la Constitution dans sa journée.",
      "enjeu": "Sans lien avec le quotidien, la Constitution reste lointaine.",
      "episode_du_roman": "Fiches « La Constitution au quotidien » (8-10 ans) et « La Constitution dans ta vie quotidienne » (thème 8), cycle 3",
@@ -1809,7 +3927,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "quotidien",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Électeur (qcm) ; Délégué (qcm) ; Rapporteur (qcm) ; Juriste (vraifaux) ; Constituant (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "École gratuite et laïque, protection de la santé, environnement, droit d'obtenir un emploi, accès à Internet et vie privée : la Constitution agit dans la vie de tous les jours.",
      "matelot": {
       "questions": [
@@ -1906,6 +4024,130 @@
        "La Sécurité sociale finance les dépenses de santé avec de l'argent public."
       ],
       "dialogue": "La Constitution est présente dans ton quotidien. Où ? Répondez."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "L'école publique gratuite et laïque est…",
+        "options": [
+         "un devoir de l'État",
+         "un choix des communes",
+         "une tradition sans valeur"
+        ],
+        "bonne": 0,
+        "explication": "Le Préambule de 1946 l'affirme."
+       }
+      ],
+      "consigne": "Tu vas à l'école publique sans rien payer. Quel devoir de l'État cela illustre-t-il ?",
+      "indices": [
+       "Ouvre la fiche « La Constitution au quotidien ».",
+       "L'école est gratuite pour tous.",
+       "C'est écrit dans le Préambule."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "L'école publique est un devoir de l'État.",
+        "vrai": true,
+        "explication": "Gratuite et laïque."
+       },
+       {
+        "txt": "La Nation garantit la protection de la santé.",
+        "vrai": true,
+        "explication": "Notamment à l'enfant."
+       },
+       {
+        "txt": "Chacun a le droit d'obtenir un emploi.",
+        "vrai": true,
+        "explication": "Et le devoir de travailler."
+       },
+       {
+        "txt": "La protection de l'environnement n'intéresse pas la Constitution.",
+        "vrai": false,
+        "explication": "Charte de 2004."
+       },
+       {
+        "txt": "Seul l'État doit préserver l'environnement.",
+        "vrai": false,
+        "explication": "Toute personne a ce devoir."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Préambule de la Constitution de 1946</b> « La Nation garantit l'égal accès de l'enfant et de l'adulte à l'instruction, à la formation professionnelle et à la culture. » « L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État. » « La Nation garantit à tous, notamment à l'enfant, à la mère et aux vieux travailleurs, la protection de la santé, la sécurité matérielle, le repos et les loisirs. » « Chacun a le devoir de travailler et le droit d'obtenir un emploi. »</div> <div class='doc-carnet'><b>Charte de l'environnement, 2004</b> « Chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé. » « Toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement. »</div> Nour a noté cinq situations. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase du document qui parle de l'environnement.",
+      "indices": [
+       "L'école est un devoir de l'État.",
+       "La santé est protégée.",
+       "La Charte parle de l'environnement."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document parle du droit à un environnement équilibré ?",
+       "options": [
+        "Toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement.",
+        "Chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé.",
+        "La Nation garantit à tous, notamment à l'enfant, à la mère et aux vieux travailleurs, la protection de la santé, la sécurité matérielle, le repos et les loisirs.",
+        "L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pourquoi les vaccins obligatoires sont-ils conformes à la Constitution ?",
+        "options": [
+         "Parce que la Nation garantit à tous la protection de la santé",
+         "Parce que les médecins le demandent",
+         "Parce que c'est écrit dans le règlement de l'école",
+         "Parce qu'ils sont gratuits"
+        ],
+        "bonne": 0,
+        "explication": "Préambule de 1946."
+       },
+       {
+        "q": "Ta classe plante des arbres. Quel texte est concerné ?",
+        "options": [
+         "La Charte de l'environnement",
+         "La Déclaration de 1789",
+         "Le Préambule de 1946",
+         "Aucun texte"
+        ],
+        "bonne": 0,
+        "explication": "Charte de 2004."
+       },
+       {
+        "q": "Une personne a-t-elle le devoir de préserver l'environnement ?",
+        "options": [
+         "Oui : toute personne a ce devoir",
+         "Non : seulement l'État",
+         "Non : seulement les entreprises",
+         "On ne sait pas"
+        ],
+        "bonne": 0,
+        "explication": "Article 2 de la Charte."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Préambule de la Constitution de 1946</b> « L'organisation de l'enseignement public gratuit et laïque à tous les degrés est un devoir de l'État. » « La Nation garantit à tous, notamment à l'enfant, à la mère et aux vieux travailleurs, la protection de la santé, la sécurité matérielle, le repos et les loisirs. » « Chacun a le devoir de travailler et le droit d'obtenir un emploi. »</div> <div class='doc-carnet'><b>Charte de l'environnement, 2004</b> « Chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé. » « Toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement. »</div> Réponds aux trois questions de la vie quotidienne, puis choisis la phrase du document qui justifie la question 3.",
+      "indices": [
+       "La santé est protégée.",
+       "Les arbres : l'environnement.",
+       "Toute personne a un devoir."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document justifie ta réponse à la question 3 ?",
+       "options": [
+        "Chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé.",
+        "La Nation garantit à tous, notamment à l'enfant, à la mère et aux vieux travailleurs, la protection de la santé, la sécurité matérielle, le repos et les loisirs.",
+        "Toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement.",
+        "Chacun a le devoir de travailler et le droit d'obtenir un emploi."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -1921,7 +4163,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ferrand",
+     "personnage_emetteur": "sylla",
      "probleme_narratif": "Madame Ferrand demande de situer le Conseil constitutionnel.",
      "enjeu": "Sans la dernière fiche, la dernière porte ne s'ouvre pas.",
      "episode_du_roman": "Fiche « Comment la Constitution organise la procédure d'élaboration des lois ? », cycle 3 (2025), et page « Le Conseil constitutionnel, gard",
@@ -1934,10 +4176,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "theme5-lois",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Rapporteur (plan) ; Juriste (plan) ; Constituant (plan). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Neuf membres, nommés pour neuf ans : trois par le président de la République, trois par le président de l'Assemblée nationale, trois par le président du Sénat. Il siège au Palais-Royal et veille au respect de la Constitution.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "titre": "Conseil constitutionnel — fiche d'identité",
@@ -1995,6 +4239,112 @@
        "Le Conseil siège dans le bâtiment où se déroule ce jeu."
       ],
       "dialogue": "Dernière étape : à quoi sert le Conseil constitutionnel ? Placez les éléments."
+     },
+     "lieutenant": {
+      "type": "plan",
+      "titre": "Fiche d'identité du Conseil constitutionnel",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Nombre de membres",
+        "reponse": "9"
+       },
+       {
+        "libelle": "Durée de leur mandat",
+        "reponse": "9 ans"
+       },
+       {
+        "libelle": "Son surnom",
+        "reponse": "Les Sages"
+       },
+       {
+        "libelle": "Nombre de députés qui peuvent le saisir",
+        "reponse": "60"
+       },
+       {
+        "libelle": "Il examine les lois avant leur",
+        "reponse": "promulgation"
+       }
+      ],
+      "etiquettes": [
+       "9",
+       "9 ans",
+       "Les Sages",
+       "60",
+       "promulgation",
+       "12",
+       "5 ans",
+       "577"
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs. » « Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application. » « Le Président de la République veille au respect de la Constitution. »</div> Complète la fiche d'identité du Conseil constitutionnel en plaçant les étiquettes. Trois étiquettes sont en trop. Puis choisis la phrase du document qui dit qui peut le saisir.",
+      "indices": [
+       "Le nombre de membres est le même que la durée du mandat en années.",
+       "Soixante députés peuvent le saisir.",
+       "Il examine les lois avant leur promulgation."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit qui peut saisir le Conseil constitutionnel ?",
+       "options": [
+        "Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs.",
+        "Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application.",
+        "Le Président de la République veille au respect de la Constitution."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
+     },
+     "second": {
+      "type": "plan",
+      "titre": "Le rôle du Conseil constitutionnel",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Il vérifie que les lois respectent",
+        "reponse": "la Constitution"
+       },
+       {
+        "libelle": "Une disposition déclarée inconstitutionnelle ne peut être",
+        "reponse": "promulguée"
+       },
+       {
+        "libelle": "Peut le saisir avant la promulgation",
+        "reponse": "le président de la République"
+       },
+       {
+        "libelle": "Nombre de sénateurs qui peuvent le saisir",
+        "reponse": "60"
+       },
+       {
+        "libelle": "Année de sa création",
+        "reponse": "1958"
+       }
+      ],
+      "etiquettes": [
+       "la Constitution",
+       "promulguée",
+       "le président de la République",
+       "60",
+       "1958",
+       "le Parlement européen",
+       "577",
+       "1789"
+      ],
+      "consigne": "<div class='doc-carnet'><b>Constitution du 4 octobre 1958</b> « Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs. » « Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application. » « Le Président de la République est garant de l'indépendance de l'autorité judiciaire. »</div> Complète le tableau en plaçant les étiquettes. Trois étiquettes sont en trop. Puis choisis la phrase du document qui dit ce que devient une disposition inconstitutionnelle.",
+      "indices": [
+       "Le Conseil vérifie le respect de la Constitution.",
+       "Une disposition inconstitutionnelle ne peut être ni promulguée ni appliquée.",
+       "Le Conseil est créé en 1958."
+      ],
+      "justification": {
+       "question": "Quelle phrase du document dit ce que devient une disposition inconstitutionnelle ?",
+       "options": [
+        "Les lois peuvent être déférées au Conseil constitutionnel, avant leur promulgation, par le Président de la République, le Premier ministre, le président de l'Assemblée nationale, le président du Sénat, soixante députés ou soixante sénateurs.",
+        "Une disposition déclarée inconstitutionnelle sur le fondement de l'article 61 ne peut être promulguée ni mise en application.",
+        "Le Président de la République est garant de l'indépendance de l'autorité judiciaire."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
      }
     }
    ]

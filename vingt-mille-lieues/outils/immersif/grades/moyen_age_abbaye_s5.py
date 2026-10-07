@@ -18,7 +18,7 @@ def donnees(svg, bloc=None):
     d["e5-1"] = {
         "mousse": assoc(
             "Garin montre deux églises. Relie chaque élément à l'art auquel il appartient. Clique sur un élément, puis sur son art.",
-            [("la voûte en berceau", "art roman"), ("l'arc en plein cintre", "art roman"), ("l'arc brisé", "art gothique")],
+            [("la voûte en berceau", "art roman : un demi-tonneau"), ("l'arc en plein cintre", "art roman : un demi-cercle"), ("l'arc brisé", "art gothique : un arc pointu")],
             ["Ouvre la fiche " + F + " dans la Bibliothèque.", "« Plein cintre » veut dire arrondi.", "« Brisé » veut dire pointu."]),
         "lieutenant": {
             "type": "plan", "titre": "Légende les deux églises", "colonnes": 2,

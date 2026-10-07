@@ -4,8 +4,11 @@ window.VML_JEU = {
   "decorAccueil": "cour",
   "prefixeStockage": "vml_constitution",
   "grades": [
+    "mousse",
     "matelot",
-    "timonier"
+    "timonier",
+    "lieutenant",
+    "second"
   ],
   "textes": {
     "auteur": "Escape game · cycle 3",
