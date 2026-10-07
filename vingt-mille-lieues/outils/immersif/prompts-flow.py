@@ -141,6 +141,6 @@ def jeu_md(jeu):
 
 
 if __name__ == "__main__":
-    jeux = sorted(d for d in os.listdir(os.path.join(RACINE, "immersifs"))) if sys.argv[1] == "--tous" else [sys.argv[1]]
+    jeux = sorted(d for d in os.listdir(os.path.join(RACINE, "immersifs")) if os.path.isfile(os.path.join(RACINE, "immersifs", d, "assets", "data", "enigmes.json"))) if sys.argv[1] == "--tous" else [sys.argv[1]]
     for j in jeux:
         print(os.path.relpath(jeu_md(j), RACINE))
