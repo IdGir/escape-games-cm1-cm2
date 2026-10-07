@@ -1,178 +1,178 @@
 {
-  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
-  "accueil": {
-    "personnage": "lila",
-    "texte": "Bonjour ! Je m'appelle Lila, je suis l'apprentie de Madame Mélange. Ce matin, j'ai trébuché et toutes les fioles du laboratoire se sont renversées. Tout est mélangé ! Madame Mélange part à la retraite et m'a confié son testament de chimiste : un protocole en cinq opérations pour retrouver ses échantillons. Mais la page est effacée. Chaque salle du laboratoire cache une opération. Aidez-moi à les retrouver. Et rappelez-vous la règle numéro un : ici, on ne goûte jamais et on ne sent jamais un produit !"
-  },
-  "coffre": {
-    "personnage": "lila",
-    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
-  },
-  "cinematiques": {
-    "transition-e1": {
-      "titre": "Salle 1 — La salle des balances",
-      "plans": [
-        {
-          "decor": "balances",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "lila",
-          "texte": "Voici la salle des balances. Madame Mélange disait toujours : « Avant de séparer, on pèse. » Moi, je confonds encore la balance à plateaux et la balance électronique, et je ne sais jamais à quoi sert la touche « tare ». Si vous m'aidez à ranger ces fioles et à peser ces liquides, la première opération du testament apparaîtra.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e1": {
-      "titre": "Fin de la salle 1",
-      "plans": [
-        {
-          "decor": "balances",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "lila",
-          "texte": "Un mot vient d'apparaître sur la page : PESER ! On pèse avant tout, pour savoir ce que l'on a au départ. Suivez-moi dans la cuisine d'essai : Marius, le cuisinier, dit que son sucre a disparu dans son café. Je n'y crois pas une seconde.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e2": {
-      "titre": "Salle 2 — La cuisine d'essai",
-      "plans": [
-        {
-          "decor": "cuisine",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "marius",
-          "texte": "Ah, les apprentis ! J'ai mis un sucre dans mon café, j'ai remué… et plus de sucre ! Il a disparu, non ? Madame Mélange m'a laissé une balance et m'a interdit de goûter quoi que ce soit dans cette cuisine d'essai. Alors prouvez-moi, avec la balance, ce que devient mon sucre.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e2": {
-      "titre": "Fin de la salle 2",
-      "plans": [
-        {
-          "decor": "cuisine",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "marius",
-          "texte": "Deuxième mot : COMPARER . On compare la masse d'avant et la masse d'après : elles sont égales ! Mon sucre ne s'est pas envolé, il s'est dissous. Allez voir la salle des fioles : Lila y a fait tomber tout un rayon de mélanges.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e3": {
-      "titre": "Salle 3 — La salle des fioles",
-      "plans": [
-        {
-          "decor": "fioles",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "lila",
-          "texte": "C'est ici que j'ai tout renversé. Madame Mélange avait rangé ses fioles en deux familles, mais les étiquettes sont tombées. Dans certaines, on voit plusieurs choses ; dans d'autres, on ne voit qu'un seul liquide… mais ce sont quand même des mélanges ! Même l'air de cette pièce en est un. Aidez-moi à les reclasser.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e3": {
-      "titre": "Fin de la salle 3",
-      "plans": [
-        {
-          "decor": "fioles",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "lila",
-          "texte": "Troisième mot : OBSERVER . Avant de séparer un mélange, on le regarde bien : homogène ou hétérogène ? C'est ce qui permet de choisir la bonne méthode. Descendons à l'atelier de tri : Nadia a besoin de nous pour un bac de sable plein de limaille de fer.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e4": {
-      "titre": "Salle 4 — L'atelier de tri",
-      "plans": [
-        {
-          "decor": "atelier",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "nadia",
-          "texte": "Bienvenue à l'atelier ! Ici, on sépare des mélanges de solides. Chaque méthode utilise une différence : la taille des grains, le fer que l'aimant attire, ce qui flotte ou ce qui coule. Mettez vos lunettes : on va tamiser, aimanter et faire flotter.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e4": {
-      "titre": "Fin de la salle 4",
-      "plans": [
-        {
-          "decor": "atelier",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "nadia",
-          "texte": "Quatrième mot : AIMANTER . L'aimant attire le fer, et seulement certains métaux : c'est lui qui sortira la limaille du dernier bocal de Madame Mélange. Il reste une opération. Pour la trouver, il faut aller voir Yann, à la saline.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e5": {
-      "titre": "Salle 5 — La saline",
-      "plans": [
-        {
-          "decor": "saline",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "yann",
-          "texte": "Je suis paludier : je récolte le sel de mer. Et le sel, on ne peut pas l'attraper avec un filtre : il est dissous, il passe à travers ! Ici, vous allez décanter, filtrer, et découvrir ce que le soleil et le vent font dans mes marais. Le dernier mot du testament se cache dans mon métier.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e5": {
-      "titre": "Fin de la salle 5",
-      "plans": [
-        {
-          "decor": "saline",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "melange",
-          "texte": "Bravo, mes apprentis. PESER, OBSERVER, AIMANTER, ÉVAPORER, COMPARER : voilà mon protocole. Vous avez retrouvé les 20 grammes de fer et les 30 grammes de sel de mon dernier bocal. Rien ne s'est perdu : la matière ne disparaît pas, elle change seulement de place. Le laboratoire est à vous, Lila. Et n'oubliez jamais : on observe, on mesure, mais on ne goûte pas !",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "fin": {
-      "titre": "Fin de « Le Laboratoire de Madame Mélange »",
-      "plans": [
-        {
-          "decor": "saline",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "yann",
-          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
-          "mouvement": "zoom"
-        }
-      ]
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "lila",
+  "texte": "Bonjour ! Je m'appelle Lila, je suis l'apprentie de Madame Mélange. Ce matin, j'ai trébuché et toutes les fioles du laboratoire se sont renversées. Tout est mélangé ! Madame Mélange part à la retraite et m'a confié son testament de chimiste : un protocole en cinq opérations pour retrouver ses échantillons. Mais la page est effacée. Chaque salle du laboratoire cache une opération. Aidez-moi à les retrouver. Et rappelez-vous la règle numéro un : ici, on ne goûte jamais et on ne sent jamais un produit !"
+ },
+ "coffre": {
+  "personnage": "lila",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — La salle des balances",
+   "plans": [
+    {
+     "decor": "balances",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "lila",
+     "texte": "Voici la salle des balances. Madame Mélange disait toujours : « Avant de séparer, on pèse. » Moi, je confonds encore la balance à plateaux et la balance électronique, et je ne sais jamais à quoi sert la touche « tare ». Si vous m'aidez à ranger ces fioles et à peser ces liquides, la première opération du testament apparaîtra.",
+     "mouvement": "zoom"
     }
+   ]
   },
-  "fin_escale": {
-    "1": {
-      "personnage": "lila",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "2": {
-      "personnage": "marius",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "3": {
-      "personnage": "lila",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "4": {
-      "personnage": "nadia",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "5": {
-      "personnage": "yann",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "balances",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "lila",
+     "texte": "Un mot vient d'apparaître sur la page : PESER ! On pèse avant tout, pour savoir ce que l'on a au départ. Suivez-moi dans la cuisine d'essai : Marius, le cuisinier, dit que son sucre a disparu dans son café. Je n'y crois pas une seconde.",
+     "mouvement": "glisse"
     }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — La cuisine d'essai",
+   "plans": [
+    {
+     "decor": "cuisine",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "marius",
+     "texte": "Ah, les apprentis ! J'ai mis un sucre dans mon café, j'ai remué… et plus de sucre ! Il a disparu, non ? Madame Mélange m'a laissé une balance et m'a interdit de goûter quoi que ce soit dans cette cuisine d'essai. Alors prouvez-moi, avec la balance, ce que devient mon sucre.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "cuisine",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "marius",
+     "texte": "Deuxième mot : COMPARER . On compare la masse d'avant et la masse d'après : elles sont égales ! Mon sucre ne s'est pas envolé, il s'est dissous. Allez voir la salle des fioles : Lila y a fait tomber tout un rayon de mélanges.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — La salle des fioles",
+   "plans": [
+    {
+     "decor": "fioles",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "lila",
+     "texte": "C'est ici que j'ai tout renversé. Madame Mélange avait rangé ses fioles en deux familles, mais les étiquettes sont tombées. Dans certaines, on voit plusieurs choses ; dans d'autres, on ne voit qu'un seul liquide… mais ce sont quand même des mélanges ! Même l'air de cette pièce en est un. Aidez-moi à les reclasser.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "fioles",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "lila",
+     "texte": "Troisième mot : OBSERVER . Avant de séparer un mélange, on le regarde bien : homogène ou hétérogène ? C'est ce qui permet de choisir la bonne méthode. Descendons à l'atelier de tri : Nadia a besoin de nous pour un bac de sable plein de limaille de fer.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — L'atelier de tri",
+   "plans": [
+    {
+     "decor": "atelier",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "nadia",
+     "texte": "Bienvenue à l'atelier ! Ici, on sépare des mélanges de solides. Chaque méthode utilise une différence : la taille des grains, le fer que l'aimant attire, ce qui flotte ou ce qui coule. Mettez vos lunettes : on va tamiser, aimanter et faire flotter.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "atelier",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "nadia",
+     "texte": "Quatrième mot : AIMANTER . L'aimant attire le fer, et seulement certains métaux : c'est lui qui sortira la limaille du dernier bocal de Madame Mélange. Il reste une opération. Pour la trouver, il faut aller voir Yann, à la saline.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — La saline",
+   "plans": [
+    {
+     "decor": "saline",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "yann",
+     "texte": "Je suis paludier : je récolte le sel de mer. Et le sel, on ne peut pas l'attraper avec un filtre : il est dissous, il passe à travers ! Ici, vous allez décanter, filtrer, et découvrir ce que le soleil et le vent font dans mes marais. Le dernier mot du testament se cache dans mon métier.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "saline",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "yann",
+     "texte": "Bravo, mes apprentis. PESER, OBSERVER, AIMANTER, ÉVAPORER, COMPARER : voilà mon protocole. Vous avez retrouvé les 20 grammes de fer et les 30 grammes de sel de mon dernier bocal. Rien ne s'est perdu : la matière ne disparaît pas, elle change seulement de place. Le laboratoire est à vous, Lila. Et n'oubliez jamais : on observe, on mesure, mais on ne goûte pas !",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Le Laboratoire de Madame Mélange »",
+   "plans": [
+    {
+     "decor": "saline",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "yann",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
   }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "lila",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "marius",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "lila",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "nadia",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "yann",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
 }
