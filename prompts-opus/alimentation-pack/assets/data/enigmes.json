@@ -1,0 +1,1012 @@
+{
+ "jeu": "alimentation",
+ "titre": "Le Grand Repas du chef",
+ "programme": "Sciences et technologie, cycle 3 — Alimentation humaine (programme 2026)",
+ "format_note": "Format de travail : à aligner champ par champ sur renaissance/assets/data/enigmes.json lors de l'intégration.",
+ "personnages": {
+  "rosalie": "Rosalie Bompard, cheffe du restaurant Le Grand Couvert",
+  "nathan": "Nathan, commis (potager, poulailler)",
+  "ines": "Docteure Inès Morel, médecin de l'équipe cycliste",
+  "basile": "Basile Ndiaye, coureur cycliste"
+ },
+ "salles": [
+  {
+   "numero": 1,
+   "titre": "La cour du potager et du poulailler",
+   "personnage": "nathan",
+   "mot_cle": "GRANDIR",
+   "lecon": "croissance",
+   "competence": "Exploiter des données mettant en évidence le besoin de matière pour la croissance et le développement des êtres vivants.",
+   "dialogue_intro": [
+    "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie.",
+    "Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines.",
+    "La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…"
+   ],
+   "enigmes": [
+    {
+     "id": "1-1",
+     "type": "code",
+     "titre": "Le carnet du poulailler",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "document": {
+       "type": "tableau",
+       "titre": "Carnet de Nathan — le poussin Caramel (relevé fictif)",
+       "colonnes": [
+        "Semaine",
+        "Masse de Caramel",
+        "Nourriture mangée pendant la semaine"
+       ],
+       "lignes": [
+        [
+         "0 (naissance)",
+         "40 g",
+         "—"
+        ],
+        [
+         "1",
+         "95 g",
+         "70 g"
+        ],
+        [
+         "2",
+         "180 g",
+         "140 g"
+        ],
+        [
+         "3",
+         "300 g",
+         "210 g"
+        ],
+        [
+         "4",
+         "450 g",
+         "280 g"
+        ]
+       ]
+      }
+     },
+     "cm1": {
+      "question": "De combien de grammes Caramel a-t-il grossi entre sa naissance et la semaine 4 ?",
+      "reponse": "410",
+      "chiffres": 3,
+      "indice": "Calcule 450 − 40."
+     },
+     "cm2": {
+      "question": "Combien de grammes de nourriture Caramel a-t-il mangés en tout pendant ces 4 semaines ?",
+      "reponse": "700",
+      "chiffres": 3,
+      "indice": "Additionne la dernière colonne : 70 + 140 + 210 + 280."
+     },
+     "correction": "Caramel a mangé 700 g de nourriture et a grossi de 410 g. Une partie de la nourriture a servi à construire son corps ; le reste lui a donné l'énergie pour vivre et bouger, ou a été rejeté.",
+     "lecon": "croissance",
+     "competence": "Exploiter des données mettant en évidence le besoin de matière pour la croissance et le développement des êtres vivants."
+    },
+    {
+     "id": "1-2",
+     "type": "qcm",
+     "titre": "D'où vient la matière ?",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "question": "Caramel pèse maintenant plus de dix fois plus qu'à sa naissance. D'où vient la matière qui a construit son corps ?",
+      "choix": [
+       "Des aliments qu'il a mangés",
+       "De l'air qu'il respire, seulement",
+       "De la chaleur de la lampe du poulailler",
+       "Elle était déjà toute dans l'œuf"
+      ],
+      "reponse": 0,
+      "indice": "Regarde la dernière colonne du carnet."
+     },
+     "correction": "Pour grandir, un animal a besoin de matière. Il la trouve dans sa nourriture : son corps fabrique ses os, ses muscles et ses plumes à partir des aliments.",
+     "lecon": "croissance",
+     "competence": "Exploiter des données mettant en évidence le besoin de matière pour la croissance et le développement des êtres vivants."
+    },
+    {
+     "id": "1-3",
+     "type": "vraifaux",
+     "titre": "La toise de la cuisine",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "document": {
+       "type": "tableau",
+       "titre": "Les marques de Lou, la fille de la cheffe, sur la porte de la cuisine (relevé fictif)",
+       "colonnes": [
+        "Âge",
+        "Taille"
+       ],
+       "lignes": [
+        [
+         "6 ans",
+         "115 cm"
+        ],
+        [
+         "7 ans",
+         "121 cm"
+        ],
+        [
+         "8 ans",
+         "126 cm"
+        ],
+        [
+         "9 ans",
+         "132 cm"
+        ],
+        [
+         "10 ans",
+         "137 cm"
+        ]
+       ]
+      }
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "texte": "Lou a grandi chaque année.",
+        "vrai": true
+       },
+       {
+        "texte": "Entre 6 et 10 ans, Lou a grandi de 22 cm.",
+        "vrai": true
+       },
+       {
+        "texte": "Lou a grandi de 20 cm en une seule année.",
+        "vrai": false
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "texte": "Lou a grandi chaque année.",
+        "vrai": true
+       },
+       {
+        "texte": "Entre 6 et 10 ans, Lou a grandi de 22 cm.",
+        "vrai": true
+       },
+       {
+        "texte": "Lou grandit d'environ 5 à 6 cm par an.",
+        "vrai": true
+       },
+       {
+        "texte": "Lou a grandi de 20 cm en une seule année.",
+        "vrai": false
+       },
+       {
+        "texte": "Pour fabriquer ces centimètres, son corps n'a eu besoin de rien.",
+        "vrai": false
+       }
+      ]
+     },
+     "indice": "Calcule la différence entre deux marques qui se suivent.",
+     "correction": "Lou a grandi de 22 cm en 4 ans, soit 5 à 6 cm par an. Comme Caramel, elle fabrique son corps avec la matière apportée par ses aliments.",
+     "lecon": "croissance",
+     "competence": "Exploiter des données mettant en évidence le besoin de matière pour la croissance et le développement des êtres vivants."
+    },
+    {
+     "id": "1-4",
+     "type": "trous",
+     "titre": "Le mot de Nathan",
+     "niveaux": [
+      "cm2"
+     ],
+     "commun": {
+      "texte": "Tous les êtres vivants ont besoin de {matière} pour grandir. Un poussin ou un enfant fabrique son corps à partir des {aliments} qu'il mange. Chez l'être humain, la croissance est très rapide pendant les premières années de la vie, puis de nouveau à la {puberté}.",
+      "leurres": [
+       "lumière",
+       "chaleur",
+       "musique"
+      ],
+      "indice": "Un des mots désigne le moment où le corps d'un enfant se transforme en corps d'adulte."
+     },
+     "correction": "Matière, aliments, puberté : la croissance demande de la matière, et donc des aliments.",
+     "lecon": "croissance",
+     "competence": "Exploiter des données mettant en évidence le besoin de matière pour la croissance et le développement des êtres vivants."
+    }
+   ]
+  },
+  {
+   "numero": 2,
+   "titre": "La salle des menus",
+   "personnage": "ines",
+   "mot_cle": "BOUGER",
+   "lecon": "besoins",
+   "competence": "Exploiter des données pour expliquer la variation des besoins alimentaires au cours de la croissance et selon l'activité physique.",
+   "dialogue_intro": [
+    "Je suis la docteure Inès Morel, médecin de l'équipe cycliste.",
+    "Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins.",
+    "Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi."
+   ],
+   "enigmes": [
+    {
+     "id": "2-1",
+     "type": "tri",
+     "titre": "Peu ou beaucoup d'énergie ?",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Range chaque activité selon l'énergie que le corps dépense.",
+      "categories": [
+       "Le corps dépense peu d'énergie",
+       "Le corps dépense beaucoup d'énergie"
+      ]
+     },
+     "cm1": {
+      "elements": [
+       {
+        "texte": "Dormir",
+        "categorie": 0
+       },
+       {
+        "texte": "Lire un livre",
+        "categorie": 0
+       },
+       {
+        "texte": "Regarder un film assis",
+        "categorie": 0
+       },
+       {
+        "texte": "Grimper un col à vélo",
+        "categorie": 1
+       },
+       {
+        "texte": "Nager",
+        "categorie": 1
+       },
+       {
+        "texte": "Jouer un match de football",
+        "categorie": 1
+       }
+      ]
+     },
+     "cm2": {
+      "elements": [
+       {
+        "texte": "Dormir",
+        "categorie": 0
+       },
+       {
+        "texte": "Lire un livre",
+        "categorie": 0
+       },
+       {
+        "texte": "Regarder un film assis",
+        "categorie": 0
+       },
+       {
+        "texte": "Écouter une histoire",
+        "categorie": 0
+       },
+       {
+        "texte": "Grimper un col à vélo",
+        "categorie": 1
+       },
+       {
+        "texte": "Nager",
+        "categorie": 1
+       },
+       {
+        "texte": "Jouer un match de football",
+        "categorie": 1
+       },
+       {
+        "texte": "Courir un cross",
+        "categorie": 1
+       }
+      ]
+     },
+     "indice": "Quand les muscles travaillent fort et longtemps, le corps dépense beaucoup.",
+     "correction": "Plus les muscles travaillent, plus le corps dépense d'énergie : les besoins alimentaires augmentent avec l'activité physique.",
+     "lecon": "besoins",
+     "competence": "Exploiter des données pour expliquer la variation des besoins alimentaires au cours de la croissance et selon l'activité physique."
+    },
+    {
+     "id": "2-2",
+     "type": "ordre",
+     "titre": "Le tableau des besoins",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Range ces personnes, de celle qui a le plus petit besoin d'énergie par jour à celle qui a le plus grand."
+     },
+     "cm1": {
+      "elements": [
+       "Un bébé d'un an",
+       "Un enfant de 5 ans",
+       "Un adolescent sportif de 16 ans",
+       "Un coureur cycliste un jour d'étape de montagne"
+      ]
+     },
+     "cm2": {
+      "elements": [
+       "Un bébé d'un an",
+       "Un enfant de 5 ans",
+       "Un enfant de 10 ans",
+       "Un adolescent sportif de 16 ans",
+       "Un coureur cycliste un jour d'étape de montagne"
+      ]
+     },
+     "indice": "Les besoins grandissent avec le corps et avec l'effort.",
+     "correction": "Les besoins augmentent pendant la croissance (le corps grandit) et avec l'activité physique : le coureur en course a les plus grands besoins de tous.",
+     "lecon": "besoins",
+     "competence": "Exploiter des données pour expliquer la variation des besoins alimentaires au cours de la croissance et selon l'activité physique."
+    },
+    {
+     "id": "2-3",
+     "type": "intrus",
+     "titre": "La raison qui n'a rien à voir",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Trois de ces raisons font changer la quantité d'aliments dont une personne a besoin. Trouve celle qui n'a rien à voir.",
+      "elements": [
+       "L'âge",
+       "L'activité physique",
+       "La croissance",
+       "La couleur des yeux"
+      ],
+      "intrus": 3,
+      "indice": "Laquelle ne change rien au travail du corps ?"
+     },
+     "correction": "L'âge, la croissance et l'activité physique font varier les besoins. La couleur des yeux, non.",
+     "lecon": "besoins",
+     "competence": "Exploiter des données pour expliquer la variation des besoins alimentaires au cours de la croissance et selon l'activité physique."
+    },
+    {
+     "id": "2-4",
+     "type": "qcm",
+     "titre": "Le carnet de la docteure",
+     "niveaux": [
+      "cm2"
+     ],
+     "commun": {
+      "document": {
+       "type": "tableau",
+       "titre": "Besoins en énergie de Basile (ordres de grandeur)",
+       "colonnes": [
+        "Journée",
+        "Besoin en énergie"
+       ],
+       "lignes": [
+        [
+         "Jour de repos",
+         "environ 2 800 kcal"
+        ],
+        [
+         "Jour d'étape de montagne",
+         "environ 6 000 kcal"
+        ]
+       ],
+       "note": "kcal : kilocalorie, l'unité qui mesure l'énergie apportée par les aliments."
+      },
+      "question": "Le jour de l'étape, les besoins de Basile sont environ :",
+      "choix": [
+       "deux fois plus grands",
+       "identiques",
+       "dix fois plus grands",
+       "deux fois plus petits"
+      ],
+      "reponse": 0,
+      "indice": "2 800 × 2 = 5 600 : c'est proche de 6 000."
+     },
+     "correction": "Pendant une étape de plusieurs heures, ses muscles travaillent sans arrêt : ses besoins sont environ deux fois plus grands qu'un jour de repos.",
+     "lecon": "besoins",
+     "competence": "Exploiter des données pour expliquer la variation des besoins alimentaires au cours de la croissance et selon l'activité physique."
+    }
+   ]
+  },
+  {
+   "numero": 3,
+   "titre": "La table de dégustation",
+   "personnage": "rosalie",
+   "mot_cle": "MÂCHER",
+   "lecon": "mastication",
+   "competence": "Identifier et localiser la transformation des aliments dans l'appareil digestif (mastication par les dents, changements de texture lors du trajet).",
+   "dialogue_intro": [
+    "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert.",
+    "Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche.",
+    "Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !"
+   ],
+   "enigmes": [
+    {
+     "id": "3-1",
+     "type": "association",
+     "titre": "Chaque outil à sa tâche",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Relie chaque élément de la bouche à son rôle."
+     },
+     "cm1": {
+      "paires": [
+       [
+        "Les incisives",
+        "couper, croquer"
+       ],
+       [
+        "Les canines",
+        "déchirer"
+       ],
+       [
+        "Les molaires",
+        "broyer, écraser"
+       ]
+      ]
+     },
+     "cm2": {
+      "paires": [
+       [
+        "Les incisives",
+        "couper, croquer"
+       ],
+       [
+        "Les canines",
+        "déchirer"
+       ],
+       [
+        "Les molaires",
+        "broyer, écraser"
+       ],
+       [
+        "La salive",
+        "mouiller et ramollir les aliments"
+       ],
+       [
+        "La langue",
+        "mélanger et pousser la bouchée"
+       ]
+      ]
+     },
+     "indice": "Pense à la pomme que tu croques avec les dents de devant.",
+     "correction": "Les dents découpent et écrasent les aliments : c'est la mastication. La salive et la langue préparent une bouchée molle, facile à avaler.",
+     "lecon": "mastication",
+     "competence": "Identifier et localiser la transformation des aliments dans l'appareil digestif (mastication par les dents, changements de texture lors du trajet)."
+    },
+    {
+     "id": "3-2",
+     "type": "plan",
+     "titre": "Le moulage de la mâchoire",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "image": "schema-machoire",
+      "consigne": "Place chaque étiquette sur la bonne dent du moulage (mâchoire du bas d'un adulte, vue de dessus).",
+      "indice": "Les incisives sont tout devant ; les molaires, tout au fond."
+     },
+     "cm1": {
+      "etiquettes": [
+       "incisive",
+       "canine",
+       "molaire"
+      ]
+     },
+     "cm2": {
+      "etiquettes": [
+       "incisive",
+       "canine",
+       "prémolaire",
+       "molaire"
+      ]
+     },
+     "correction": "De l'avant vers le fond : incisives, canines, prémolaires, molaires. Un adulte a 32 dents ; un enfant a 20 dents de lait, sans prémolaires.",
+     "lecon": "mastication",
+     "competence": "Identifier et localiser la transformation des aliments dans l'appareil digestif (mastication par les dents, changements de texture lors du trajet)."
+    },
+    {
+     "id": "3-3",
+     "type": "lettres",
+     "titre": "Le liquide de la bouche",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "definition": "Liquide fabriqué dans la bouche : il mouille et ramollit les aliments.",
+      "mot": "SALIVE",
+      "indice": "On en a « l'eau à la bouche »."
+     },
+     "cm1": {
+      "leurres": [
+       "R",
+       "O"
+      ]
+     },
+     "cm2": {
+      "leurres": [
+       "R",
+       "O",
+       "T",
+       "U"
+      ]
+     },
+     "correction": "La salive mouille les aliments mâchés : la bouchée devient une boule molle, le bol alimentaire.",
+     "lecon": "mastication",
+     "competence": "Identifier et localiser la transformation des aliments dans l'appareil digestif (mastication par les dents, changements de texture lors du trajet)."
+    },
+    {
+     "id": "3-4",
+     "type": "ordre",
+     "titre": "Le voyage d'une bouchée de pain",
+     "niveaux": [
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Range les états de la bouchée de pain, du début à la fin de son voyage.",
+      "elements": [
+       "Un morceau de pain croustillant",
+       "Une bouchée écrasée par les dents",
+       "Une boule molle mouillée de salive",
+       "Une bouillie brassée dans l'estomac",
+       "Un liquide dont les nutriments passent dans le sang"
+      ],
+      "indice": "La bouchée devient de plus en plus liquide."
+     },
+     "correction": "Au fil du trajet, la texture change : du solide dur à la bouillie, puis à un liquide. Les aliments sont transformés en nutriments utilisables par les organes.",
+     "lecon": "mastication",
+     "competence": "Identifier et localiser la transformation des aliments dans l'appareil digestif (mastication par les dents, changements de texture lors du trajet)."
+    }
+   ]
+  },
+  {
+   "numero": 4,
+   "titre": "Le cabinet du Grand Tunnel",
+   "personnage": "ines",
+   "mot_cle": "DIGÉRER",
+   "lecon": "digestion",
+   "competence": "Nommer et localiser les différents organes du système digestif, en les associant à leur fonction ; nutriments utilisables par les organes.",
+   "dialogue_intro": [
+    "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel.",
+    "Une bouchée y fait un long voyage, et chaque organe a son travail.",
+    "Si vous retrouvez le chemin, le quatrième cadenas sautera."
+   ],
+   "enigmes": [
+    {
+     "id": "4-1",
+     "type": "plan",
+     "titre": "La maquette du corps",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "image": "schema-appareil-digestif",
+      "consigne": "Place chaque organe au bon endroit sur la maquette.",
+      "indice": "Commence par la bouche, puis suis le tube vers le bas."
+     },
+     "cm1": {
+      "etiquettes": [
+       "bouche",
+       "œsophage",
+       "estomac",
+       "intestin grêle",
+       "gros intestin"
+      ]
+     },
+     "cm2": {
+      "etiquettes": [
+       "bouche",
+       "œsophage",
+       "estomac",
+       "foie",
+       "intestin grêle",
+       "gros intestin"
+      ]
+     },
+     "correction": "Bouche, œsophage, estomac, intestin grêle, gros intestin : c'est le tube digestif. Le foie, à droite sous les côtes, aide la digestion sans que les aliments le traversent.",
+     "lecon": "digestion",
+     "competence": "Nommer et localiser les différents organes du système digestif, en les associant à leur fonction ; nutriments utilisables par les organes."
+    },
+    {
+     "id": "4-2",
+     "type": "association",
+     "titre": "Chacun son travail",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Relie chaque organe à son travail."
+     },
+     "cm1": {
+      "paires": [
+       [
+        "La bouche",
+        "mâcher et mouiller les aliments"
+       ],
+       [
+        "L'œsophage",
+        "conduire la bouchée jusqu'à l'estomac"
+       ],
+       [
+        "L'estomac",
+        "brasser les aliments en bouillie"
+       ],
+       [
+        "L'intestin grêle",
+        "faire passer les nutriments dans le sang"
+       ]
+      ]
+     },
+     "cm2": {
+      "paires": [
+       [
+        "La bouche",
+        "mâcher et mouiller les aliments"
+       ],
+       [
+        "L'œsophage",
+        "conduire la bouchée jusqu'à l'estomac"
+       ],
+       [
+        "L'estomac",
+        "brasser les aliments en bouillie"
+       ],
+       [
+        "L'intestin grêle",
+        "faire passer les nutriments dans le sang"
+       ],
+       [
+        "Le gros intestin",
+        "récupérer l'eau et former les excréments"
+       ]
+      ]
+     },
+     "indice": "L'œsophage est un tuyau.",
+     "correction": "Chaque organe transforme un peu plus les aliments. Dans l'intestin grêle, les nutriments passent dans le sang ; ce qui n'est pas utilisé est rejeté.",
+     "lecon": "digestion",
+     "competence": "Nommer et localiser les différents organes du système digestif, en les associant à leur fonction ; nutriments utilisables par les organes."
+    },
+    {
+     "id": "4-3",
+     "type": "vraifaux",
+     "titre": "Les affirmations de la docteure",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "cm1": {
+      "affirmations": [
+       {
+        "texte": "L'œsophage relie la bouche à l'estomac.",
+        "vrai": true
+       },
+       {
+        "texte": "Les aliments passent par le cœur.",
+        "vrai": false
+       },
+       {
+        "texte": "C'est dans l'intestin grêle que les nutriments passent dans le sang.",
+        "vrai": true
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "texte": "L'œsophage relie la bouche à l'estomac.",
+        "vrai": true
+       },
+       {
+        "texte": "Les aliments passent par le cœur.",
+        "vrai": false
+       },
+       {
+        "texte": "C'est dans l'intestin grêle que les nutriments passent dans le sang.",
+        "vrai": true
+       },
+       {
+        "texte": "L'intestin grêle est plus long que le gros intestin.",
+        "vrai": true
+       },
+       {
+        "texte": "Les aliments restent dans la bouche jusqu'à ce qu'ils soient digérés.",
+        "vrai": false
+       }
+      ]
+     },
+     "indice": "Le cœur fait partie de la circulation, pas du tube digestif.",
+     "correction": "Le tube digestif ne passe pas par le cœur. L'intestin grêle, malgré son nom, est le plus long (environ 6 m) : c'est là que les nutriments passent dans le sang.",
+     "lecon": "digestion",
+     "competence": "Nommer et localiser les différents organes du système digestif, en les associant à leur fonction ; nutriments utilisables par les organes."
+    },
+    {
+     "id": "4-4",
+     "type": "intrus",
+     "titre": "L'organe qui ne voit pas passer la bouchée",
+     "niveaux": [
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Les aliments passent dans tous ces organes, sauf un. Lequel ?",
+      "elements": [
+       "L'œsophage",
+       "L'estomac",
+       "Le foie",
+       "L'intestin grêle"
+      ],
+      "intrus": 2,
+      "indice": "Il aide la digestion, mais il n'est pas sur le trajet."
+     },
+     "correction": "Le foie appartient à l'appareil digestif : il fabrique un liquide qui aide la digestion. Mais les aliments ne le traversent pas.",
+     "lecon": "digestion",
+     "competence": "Nommer et localiser les différents organes du système digestif, en les associant à leur fonction ; nutriments utilisables par les organes."
+    }
+   ]
+  },
+  {
+   "numero": 5,
+   "titre": "La salle d'entraînement",
+   "personnage": "basile",
+   "mot_cle": "SANG",
+   "lecon": "circulation",
+   "competence": "Identifier le rôle de la circulation sanguine dans l'approvisionnement des organes en nutriments ; associer l'augmentation de l'activité cardiaque lors d'un effort aux besoins accrus des muscles.",
+   "dialogue_intro": [
+    "Salut ! Moi, c'est Basile. Demain, je grimpe le col !",
+    "Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère.",
+    "Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous."
+   ],
+   "enigmes": [
+    {
+     "id": "5-1",
+     "type": "code",
+     "titre": "Le compteur de pouls",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "document": {
+       "type": "texte",
+       "contenu": "Pour mesurer son pouls, on pose deux doigts sur le poignet ou le cou, on compte les battements pendant 15 secondes, puis on multiplie par 4."
+      }
+     },
+     "cm1": {
+      "question": "Au repos, Lou compte 22 battements en 15 secondes. Combien de battements en 1 minute ?",
+      "reponse": "88",
+      "chiffres": 2,
+      "indice": "Calcule 22 × 4."
+     },
+     "cm2": {
+      "question": "Après avoir monté l'escalier en courant, Lou compte 40 battements en 15 secondes. Combien de battements en 1 minute ?",
+      "reponse": "160",
+      "chiffres": 3,
+      "indice": "Calcule 40 × 4."
+     },
+     "correction": "Au repos, le cœur d'un enfant bat environ 90 fois par minute. Après un effort, il bat beaucoup plus vite.",
+     "lecon": "circulation",
+     "competence": "Identifier le rôle de la circulation sanguine dans l'approvisionnement des organes en nutriments ; associer l'augmentation de l'activité cardiaque lors d'un effort aux besoins accrus des muscles."
+    },
+    {
+     "id": "5-2",
+     "type": "trous",
+     "titre": "Le message du home-trainer",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "texte": "Le {cœur} est un muscle qui fonctionne comme une pompe. Il envoie le {sang} dans tout le corps. Le sang transporte les {nutriments} jusqu'aux organes, par exemple jusqu'aux {muscles}."
+     },
+     "cm1": {
+      "leurres": [
+       "os",
+       "salive"
+      ]
+     },
+     "cm2": {
+      "leurres": [
+       "os",
+       "salive",
+       "poumon",
+       "air"
+      ]
+     },
+     "indice": "Le mot qui manque à la fin désigne ce qui fait bouger les jambes.",
+     "correction": "Le cœur pompe le sang ; le sang livre les nutriments aux organes, dont les muscles.",
+     "lecon": "circulation",
+     "competence": "Identifier le rôle de la circulation sanguine dans l'approvisionnement des organes en nutriments ; associer l'augmentation de l'activité cardiaque lors d'un effort aux besoins accrus des muscles."
+    },
+    {
+     "id": "5-3",
+     "type": "tri",
+     "titre": "Vite ou lentement ?",
+     "niveaux": [
+      "cm1",
+      "cm2"
+     ],
+     "commun": {
+      "consigne": "Range chaque situation.",
+      "categories": [
+       "Le cœur bat vite",
+       "Le cœur bat lentement"
+      ]
+     },
+     "cm1": {
+      "elements": [
+       {
+        "texte": "Monter un col à vélo",
+        "categorie": 0
+       },
+       {
+        "texte": "Sauter à la corde",
+        "categorie": 0
+       },
+       {
+        "texte": "Courir après le ballon",
+        "categorie": 0
+       },
+       {
+        "texte": "Dormir",
+        "categorie": 1
+       },
+       {
+        "texte": "Lire allongé",
+        "categorie": 1
+       },
+       {
+        "texte": "Écouter une histoire",
+        "categorie": 1
+       }
+      ]
+     },
+     "cm2": {
+      "elements": [
+       {
+        "texte": "Monter un col à vélo",
+        "categorie": 0
+       },
+       {
+        "texte": "Sauter à la corde",
+        "categorie": 0
+       },
+       {
+        "texte": "Courir après le ballon",
+        "categorie": 0
+       },
+       {
+        "texte": "Nager vite",
+        "categorie": 0
+       },
+       {
+        "texte": "Dormir",
+        "categorie": 1
+       },
+       {
+        "texte": "Lire allongé",
+        "categorie": 1
+       },
+       {
+        "texte": "Écouter une histoire",
+        "categorie": 1
+       },
+       {
+        "texte": "Dessiner assis",
+        "categorie": 1
+       }
+      ]
+     },
+     "indice": "Quand les muscles travaillent fort, le cœur s'accélère.",
+     "correction": "Pendant un effort, les muscles ont besoin de plus de nutriments : le cœur bat plus vite pour leur envoyer plus de sang.",
+     "lecon": "circulation",
+     "competence": "Identifier le rôle de la circulation sanguine dans l'approvisionnement des organes en nutriments ; associer l'augmentation de l'activité cardiaque lors d'un effort aux besoins accrus des muscles."
+    },
+    {
+     "id": "5-4",
+     "type": "lettres",
+     "titre": "La livraison du sang",
+     "niveaux": [
+      "cm2"
+     ],
+     "commun": {
+      "definition": "Ce que le sang apporte aux muscles et aux autres organes, après la digestion des aliments.",
+      "mot": "NUTRIMENTS",
+      "leurres": [
+       "P",
+       "O",
+       "L"
+      ],
+      "indice": "Le mot commence comme « nutrition »."
+     },
+     "correction": "Les nutriments viennent des aliments digérés ; le sang les apporte à tous les organes.",
+     "lecon": "circulation",
+     "competence": "Identifier le rôle de la circulation sanguine dans l'approvisionnement des organes en nutriments ; associer l'augmentation de l'activité cardiaque lors d'un effort aux besoins accrus des muscles."
+    }
+   ]
+  }
+ ],
+ "final": {
+  "coffre": {
+   "mots": [
+    "GRANDIR",
+    "BOUGER",
+    "MÂCHER",
+    "DIGÉRER",
+    "SANG"
+   ],
+   "consigne": "Retapez les cinq mots notés pendant la mission."
+  },
+  "revelation": {
+   "titre": "Le Livre des cinq services",
+   "phrase": "Pour GRANDIR et BOUGER, il faut MÂCHER et DIGÉRER : le SANG livre le reste.",
+   "menu": [
+    "Entrée : carottes râpées",
+    "Plat : pâtes, poulet et haricots verts",
+    "Fromage",
+    "Dessert : une pomme",
+    "Boisson : de l'eau"
+   ],
+   "dialogue": [
+    "Rosalie : Mon carnet ! Le repas de Basile est sauvé.",
+    "Inès : Et vous savez maintenant pourquoi chacun a ses propres besoins.",
+    "Basile : Demain, au sommet du col, je penserai à vous !"
+   ]
+  },
+  "quizz": [
+   {
+    "question": "D'où vient la matière qui permet à un enfant de grandir ?",
+    "choix": [
+     "Des aliments",
+     "De l'air",
+     "Du soleil"
+    ],
+    "reponse": 0
+   },
+   {
+    "question": "Qui a les plus grands besoins en énergie ?",
+    "choix": [
+     "Un coureur un jour d'étape",
+     "Un enfant qui lit",
+     "Un bébé qui dort"
+    ],
+    "reponse": 0
+   },
+   {
+    "question": "Quelles dents broient les aliments ?",
+    "choix": [
+     "Les molaires",
+     "Les incisives",
+     "Les canines"
+    ],
+    "reponse": 0
+   },
+   {
+    "question": "Où les nutriments passent-ils dans le sang ?",
+    "choix": [
+     "Dans l'intestin grêle",
+     "Dans l'œsophage",
+     "Dans la bouche"
+    ],
+    "reponse": 0
+   },
+   {
+    "question": "Pourquoi le cœur bat-il plus vite pendant un effort ?",
+    "choix": [
+     "Les muscles ont besoin de plus de nutriments",
+     "Les aliments passent par le cœur",
+     "Le cœur a froid"
+    ],
+    "reponse": 0
+   }
+  ]
+ }
+}

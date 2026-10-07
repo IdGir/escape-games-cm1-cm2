@@ -1,0 +1,5 @@
+16:27:12 env present: False egal fichier: False
+faux jeton /v1/models -> ERR Le serveur distant a retourné une erreur : (401) Non autorisé. {"error":{"code":"","message":"Invalid token (request id: 20260927142706350325409SGEzHu2B)","type":"AgnesAI_error"}}
+cle /v1/models -> 200 {"data":[{"id":"agnes-2.0-flash","object":"model","created":1626777600,"owned_by":"custom","supported_endpoint_types":["openai"]},{"id":"agnes-2.5-flash","object":"model","created":1626777600,"owned_b
+cle image -> 200 {"data":[{"url":"https://platform-outputs.agnes-ai.space/images/t2i/task_RPmDIFmjGrOp5Czr12vPaQWSvH58Kr2O/output_9d6bd5987f1e4f2bbc418ab7f77e3d2c.png","b64_json":"","revised_prompt":""}],"created":179
+cle solde -> 200 {"object":"billing_subscription","has_payment_method":true,"soft_limit_usd":100000000,"hard_limit_usd":100000000,"system_hard_limit_usd":100000000,"access_until":0}

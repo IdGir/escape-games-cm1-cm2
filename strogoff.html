@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Courrier du Tsar - Escape Game Michel Strogoff</title>
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --bg-dark: #1a1510;
+            --paper: #d4c5a3;
+            --ink: #2b1d0e;
+            --copper: #b87333;
+            --gold: #c5a028;
+            --danger: #8b0000;
+            --snow: rgba(255, 255, 255, 0.8);
+            --font-main: 'Georgia', serif;
+            --font-title: 'Courier New', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--ink);
+            font-family: var(--font-main);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- IMMERSIVE BACKGROUND & SNOW --- */
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #2c241b 0%, #0f0c09 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .snow-layer {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iMSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNSIvPjwvc3ZnPg==');
+            animation: snowfall 10s linear infinite;
+        }
+
+        @keyframes snowfall {
+            from { background-position: 0 0; }
+            to { background-position: 100px 500px; }
+        }
+
+        /* --- HUD ELEVE --- */
+        .hud {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(43, 29, 14, 0.95), rgba(43, 29, 14, 0.8));
+            border-bottom: 3px solid var(--copper);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            z-index: 20;
+            color: var(--paper);
+            font-family: var(--font-title);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        }
+
+        .hud-item { display: flex; flex-direction: column; align-items: center; }
+        .hud-label { font-size: 0.8rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; }
+        .hud-value { font-size: 1.8rem; font-weight: bold; color: var(--gold); text-shadow: 0 0 10px rgba(197, 160, 40, 0.5); }
+        
+        .timer.urgent { color: var(--danger); animation: pulse 1s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        .btn-hint {
+            background: var(--copper);
+            border: 2px solid var(--gold);
+            color: var(--bg-dark);
+            padding: 8px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: var(--font-title);
+            transition: all 0.3s;
+        }
+        .btn-hint:hover { background: var(--gold); transform: scale(1.05); }
+
+        /* --- MAIN GAME AREA --- */
+        .scene {
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            background-color: var(--paper);
+            border: 10px solid #3e2b18;
+            border-radius: 5px;
+            position: relative;
+            z-index: 15;
+            padding: 40px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.9), inset 0 0 100px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Texture papier simulée */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--ink); border-bottom: 2px solid var(--copper); padding-bottom: 10px; }
+        p.narrative { font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px; max-width: 800px; font-style: italic; }
+
+        .enigma-zone {
+            width: 100%;
+            min-height: 200px;
+            border: 2px dashed var(--ink);
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.3);
+            position: relative;
+        }
+
+        .input-answer {
+            font-size: 2rem;
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid var(--ink);
+            font-family: var(--font-title);
+            text-align: center;
+            color: var(--ink);
+            outline: none;
+            width: 300px;
+        }
+
+        .btn-validate {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            background: var(--ink);
+            color: var(--paper);
+            border: 2px solid var(--copper);
+            cursor: pointer;
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: 0.3s;
+        }
+        .btn-validate:hover { background: var(--copper); color: var(--bg-dark); }
+
+        /* --- BLIZZARD PENALTY OVERLAY --- */
+        .blizzard-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: white;
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .blizzard-overlay.active { display: flex; opacity: 0.95; }
+        .blizzard-text { font-size: 3rem; color: var(--danger); font-weight: bold; text-transform: uppercase; animation: shake 0.5s infinite; }
+        @keyframes shake { 0% { transform: translate(1px, 1px) rotate(0deg); } 10% { transform: translate(-1px, -2px) rotate(-1deg); } 20% { transform: translate(-3px, 0px) rotate(1deg); } 30% { transform: translate(3px, 2px) rotate(0deg); } 40% { transform: translate(1px, -1px) rotate(1deg); } 50% { transform: translate(-1px, 2px) rotate(-1deg); } 60% { transform: translate(-3px, 1px) rotate(0deg); } 70% { transform: translate(3px, 1px) rotate(-1deg); } 80% { transform: translate(-1px, -1px) rotate(1deg); } 90% { transform: translate(1px, 2px) rotate(0deg); } 100% { transform: translate(1px, -2px) rotate(-1deg); } }
+
+        /* --- TEACHER DASHBOARD (HIDDEN) --- */
+        .teacher-dashboard {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: #111;
+            border: 2px solid var(--gold);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            padding: 30px;
+            color: white;
+            font-family: sans-serif;
+            box-shadow: 0 0 100px rgba(0,0,0,1);
+        }
+        .teacher-dashboard.visible { display: flex; }
+        .td-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .td-controls { display: flex; gap: 15px; margin-bottom: 20px; }
+        .td-btn { padding: 10px 20px; background: #333; color: white; border: 1px solid #555; cursor: pointer; }
+        .td-btn:hover { background: #444; }
+        .td-btn.pause-active { background: var(--danger); border-color: red; }
+        .td-stats { flex-grow: 1; overflow-y: auto; border: 1px solid #333; padding: 15px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; }
+        th { color: var(--gold); }
+
+        /* Login Modal for Teacher */
+        .teacher-login {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #000; border: 1px solid var(--gold); padding: 30px; z-index: 1999; display: none;
+        }
+        .teacher-login input { background: #222; border: 1px solid #444; color: white; padding: 10px; font-size: 1.2rem; }
+
+    </style>
+</head>
+<body>
+
+    <!-- SNOW EFFECT -->
+    <div class="snow-layer"></div>
+
+    <!-- BLIZZARD PENALTY -->
+    <div id="blizzard" class="blizzard-overlay">
+        <div class="blizzard-text">⚠️ TEMPÊTE DE NEIGE ⚠️</div>
+        <p style="margin-top:20px; font-size:1.5rem; color:#333;">Erreur critique. Consultez vos leçons.</p>
+        <p id="blizzard-timer" style="margin-top:10px; font-size:2rem; font-weight:bold;">30</p>
+    </div>
+
+    <!-- HUD -->
+    <div class="hud">
+        <div class="hud-item">
+            <span class="hud-label">Temps Restant</span>
+            <span id="timer" class="hud-value">45:00</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">Progression</span>
+            <span id="level-name" class="hud-value" style="font-size: 1.2rem;">Messager Impérial</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">Score</span>
+            <span id="score" class="hud-value">0</span>
+        </div>
+        <button class="btn-hint" onclick="game.useHint()">💡 Indice (-50 pts)</button>
+    </div>
+
+    <!-- GAME SCENE -->
+    <div class="game-container">
+        <div class="scene" id="scene-content">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+
+    <!-- TEACHER LOGIN MODAL -->
+    <div id="teacher-login" class="teacher-login">
+        <h3 style="color:var(--gold); margin-bottom:15px;">ACCÈS ENSEIGNANT</h3>
+        <input type="password" id="teacher-pass" placeholder="Mot de passe..." onkeydown="if(event.key==='Enter') teacher.checkLogin()">
+        <button class="td-btn" style="margin-top:10px; width:100%;" onclick="teacher.checkLogin()">Valider</button>
+    </div>
+
+    <!-- TEACHER DASHBOARD -->
+    <div id="teacher-dashboard" class="teacher-dashboard">
+        <div class="td-header">
+            <h2>DASHBOARD ENSEIGNANT - LE COURRIER DU TSAR</h2>
+            <button class="td-btn" onclick="teacher.toggleDashboard()">Fermer</button>
+        </div>
+        <div class="td-controls">
+            <button id="btn-pause" class="td-btn" onclick="teacher.togglePause()">⏸ PAUSE GLOBALE</button>
+            <select id="difficulty-select" class="td-btn" onchange="teacher.setDifficulty(this.value)">
+                <option value="0">Novice de la Steppe (CE2)</option>
+                <option value="1" selected>Messager Impérial (CM1)</option>
+                <option value="2">Courrier du Tsar (CM2)</option>
+                <option value="3">Éclaireur de l'Oural (6ème)</option>
+                <option value="4">Héros de la Sibérie (5ème)</option>
+            </select>
+            <label class="td-btn" style="display:flex; align-items:center;">
+                Temps (min): <input type="number" id="time-setting" value="45" min="10" max="120" style="width:60px; margin-left:10px; background:#222; color:white; border:1px solid #555;" onchange="teacher.setTime(this.value)">
+            </label>
+        </div>
+        <div class="td-stats">
+            <table>
+                <thead>
+                    <tr><th>Groupe / Élève</th><th>Niveau</th><th>Score</th><th>Erreurs</th><th>Statut</th></tr>
+                </thead>
+                <tbody id="stats-body">
+                    <tr><td>Poste 1</td><td>Messager</td><td>0</td><td>0</td><td>En cours</td></tr>
+                    <tr><td>Poste 2</td><td>Courrier</td><td>0</td><td>0</td><td>En cours</td></tr>
+                    <!-- Simulé pour la démo -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script>
+/**
+ * ARCHITECTURE JAVASCRIPT
+ * 1. GameState : Gestion centralisée de l'état (score, temps, niveau, pause)
+ * 2. EnigmaEngine : Moteur de rendu des énigmes et vérification anti-tâtonnement
+ * 3. TeacherController : Gestion du dashboard caché
+ * 4. UIManager : Mise à jour du DOM et animations
+ */
+
+// --- DONNÉES DES ÉNIGMES PAR NIVEAU ---
+const ENIGMAS_DATA = [
+    {
+        id: 'geo_oural',
+        title: 'Le Col de l\'Oural',
+        narrative: 'La carte est déployée devant vous. Les troupes d\'Ogareff contrôlent les routes principales. Consultez votre carnet de géographie pour trouver le passage sûr à travers les monts Oural.',
+        // Pour la démo, on simplifie avec une réponse texte, mais en prod ce serait une carte interactive SVG
+        questions: [
+            { level: 0, text: 'Pour aller de Moscou à Irkoutsk, dans quelle direction générale devez-vous avancer ? (NORD / SUD / EST / OUEST)', answer: 'EST' },
+            { level: 1, text: 'Suivez les instructions du Tsar : Avancez vers le NORD-EST jusqu\'à Ekaterinbourg, puis quel point cardinal pour Irkoutsk ?', answer: 'EST' },
+            { level: 2, text: 'Le passage sûr se trouve aux coordonnées indiquées dans votre leçon p.42. Quelle est la lettre associée au col sécurisé sur le quadrillage ?', answer: 'C' },
+            { level: 3, text: 'Analysez les courbes de niveau. Quel col présente une pente inférieure à 15% permettant le passage des chevaux ?', answer: 'KRESTA' },
+            { level: 4, text: 'L\'échelle est 1/5 000 000. La route mesure 12cm sur la carte. À 50km/h, combien d\'heures faut-il ? (Réponse entière)', answer: '120' }
+        ]
+    },
+    {
+        id: 'sci_train',
+        title: 'La Locomotive des Glaces',
+        narrative: 'Le Transsibérien est immobilisé. La chaudière est éteinte. Votre manuel de sciences contient les secrets de la vapeur et de l\'énergie.',
+        questions: [
+            { level: 0, text: 'Pour faire de la vapeur, dans quel état doit être l\'eau dans la chaudière ? (SOLIDE / LIQUIDE / GAZ)', answer: 'LIQUIDE' },
+            { level: 1, text: 'À quelle température l\'eau bout-elle sous pression normale pour créer la vapeur ? (en °C)', answer: '100' },
+            { level: 2, text: 'Quelle source d\'énergie primaire alimente cette locomotive du 19e siècle ? (SOLEIL / CHARBON / ELECTRICITE)', answer: 'CHARBON' },
+            { level: 3, text: 'Complétez la chaîne : Énergie Chimique -> Énergie ... -> Énergie Cinétique', answer: 'THERMIQUE' },
+            { level: 4, text: 'On fait fondre 50kg de glace. Quelle masse d\'eau liquide obtient-on ? (en kg)', answer: '50' }
+        ]
+    },
+    {
+        id: 'hist_telegram',
+        title: 'Le Message Intercepté',
+        narrative: 'À Omsk, un journaliste français vous tend un télégramme codé. Seule votre connaissance de la Révolution Industrielle peut briser le chiffre tartare.',
+        questions: [
+            { level: 0, text: 'Remettez dans l\'ordre : AUTOMOBILE - CHEVAL - TRAIN A VAPEUR. Quel est le dernier ?', answer: 'AUTOMOBILE' },
+            { level: 1, text: 'Quelle invention majeure du 19e siècle a révolutionné les transports ferroviaires ? (MACHINE A VAPEUR / ROUE / INTERNET)', answer: 'MACHINE A VAPEUR' },
+            { level: 2, text: 'Quel phénomène démographique accompagne l\'industrialisation au 19e siècle ? (EXODE RURAL / URBANISATION / LES DEUX)', answer: 'LES DEUX' },
+            { level: 3, text: 'Dans un article de 1880, on parle d\'un "ordinateur". Est-ce possible ? (OUI / NON)', answer: 'NON' },
+            { level: 4, text: 'En quelle année a été créée la première Internationale ouvrière ? (Indice : Second Empire)', answer: '1864' }
+        ]
+    }
+];
+
+const LEVEL_NAMES = ["Novice de la Steppe", "Messager Impérial", "Courrier du Tsar", "Éclaireur de l'Oural", "Héros de la Sibérie"];
+
+// --- GAME STATE MANAGER ---
+class GameState {
+    constructor() {
+        this.score = 0;
+        this.totalTimeSeconds = 45 * 60;
+        this.currentTimeSeconds = this.totalTimeSeconds;
+        this.currentLevelIndex = 1; // Default CM1
+        this.currentEnigmaIndex = 0;
+        this.isPaused = false;
+        this.isBlizzardActive = false;
+        this.firstTry = true;
+        this.timerInterval = null;
+        this.errorsCount = 0;
+    }
+
+    start() {
+        this.startTimer();
+        ui.renderEnigma();
+    }
+
+    startTimer() {
+        if (this.timerInterval) clearInterval(this.timerInterval);
+        this.timerInterval = setInterval(() => {
+            if (!this.isPaused && !this.isBlizzardActive && this.currentTimeSeconds > 0) {
+                this.currentTimeSeconds--;
+                ui.updateTimer();
+            } else if (this.currentTimeSeconds <= 0) {
+                this.gameOver();
+            }
+        }, 1000);
+    }
+
+    addScore(points) {
+        this.score += points;
+        ui.updateScore();
+    }
+
+    triggerBlizzard() {
+        this.isBlizzardActive = true;
+        this.addScore(-50);
+        this.currentTimeSeconds = Math.max(0, this.currentTimeSeconds - 180); // -3 min
+        this.errorsCount++;
+        this.firstTry = false;
+        ui.updateTimer();
+        ui.showBlizzard(30); // 30 seconds lockout
+        
+        setTimeout(() => {
+            this.isBlizzardActive = false;
+            ui.hideBlizzard();
+        }, 30000);
+    }
+
+    validateAnswer(input) {
+        if (this.isPaused || this.isBlizzardActive) return;
+
+        const currentEnigma = ENIGMAS_DATA[this.currentEnigmaIndex];
+        const question = currentEnigma.questions.find(q => q.level === this.currentLevelIndex);
+        
+        // Normalization for comparison
+        const cleanInput = input.trim().toUpperCase();
+        const cleanAnswer = question.answer.trim().toUpperCase();
+
+        if (cleanInput === cleanAnswer) {
+            // Success
+            const bonus = this.firstTry ? 100 : 0;
+            this.addScore(200 + bonus);
+            this.firstTry = true; // Reset for next enigma
+            
+            if (this.currentEnigmaIndex < ENIGMAS_DATA.length - 1) {
+                this.currentEnigmaIndex++;
+                ui.renderEnigma(true); // Transition effect
+            } else {
+                this.victory();
+            }
+        } else {
+            // Failure -> ANTI-TATONNEMENT
+            this.triggerBlizzard();
+        }
+    }
+
+    useHint() {
+        if (this.isPaused || this.isBlizzardActive) return;
+        this.addScore(-50);
+        this.firstTry = false;
+        const currentEnigma = ENIGMAS_DATA[this.currentEnigmaIndex];
+        const question = currentEnigma.questions.find(q => q.level === this.currentLevelIndex);
+        alert(`INDICE DU TSAR : La réponse commence par "${question.answer.charAt(0)}..."`);
+    }
+
+    victory() {
+        clearInterval(this.timerInterval);
+        document.getElementById('scene-content').innerHTML = `
+            <h1 style="color:var(--gold)">VICTOIRE ! IRKOUTSK EST SAUVÉE !</h1>
+            <p class="narrative">Le Grand-Duc vous accueille en héros. L'Empire est sauf.</p>
+            <div style="font-size:3rem; margin:30px;">Score Final : ${this.score}</div>
+            <p>Erreurs commises : ${this.errorsCount}</p>
+        `;
+    }
+
+    gameOver() {
+        clearInterval(this.timerInterval);
+        document.getElementById('scene-content').innerHTML = `
+            <h1 style="color:var(--danger)">MISSION ÉCHOUÉE</h1>
+            <p class="narrative">Le temps est écoulé. Les Tartares ont pris Irkoutsk...</p>
+            <button class="btn-validate" onclick="location.reload()">Recommencer</button>
+        `;
+    }
+}
+
+// --- UI MANAGER ---
+const ui = {
+    renderEnigma: (transition = false) => {
+        const scene = document.getElementById('scene-content');
+        const enigma = ENIGMAS_DATA[game.currentEnigmaIndex];
+        const question = enigma.questions.find(q => q.level === game.currentLevelIndex);
+        
+        if (transition) {
+            scene.style.opacity = 0;
+            setTimeout(() => {
+                updateDOM();
+                scene.style.opacity = 1;
+            }, 500);
+        } else {
+            updateDOM();
+        }
+
+        function updateDOM() {
+            scene.innerHTML = `
+                <h1>${enigma.title}</h1>
+                <p class="narrative">${enigma.narrative}</p>
+                <div class="enigma-zone">
+                    <p style="font-size:1.3rem; font-weight:bold;">${question.text}</p>
+                </div>
+                <input type="text" class="input-answer" id="answer-input" placeholder="Votre réponse..." autocomplete="off" autofocus>
+                <button class="btn-validate" onclick="submitAnswer()">VALIDER LE MESSAGE</button>
+            `;
+            
+            // Allow Enter key
+            document.getElementById('answer-input').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') submitAnswer();
+            });
+            scene.style.transition = 'opacity 0.5s';
+        }
+    },
+
+    updateTimer: () => {
+        const mins = Math.floor(game.currentTimeSeconds / 60);
+        const secs = game.currentTimeSeconds % 60;
+        const el = document.getElementById('timer');
+        el.textContent = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+        
+        if (game.currentTimeSeconds < 300) el.classList.add('urgent');
+        else el.classList.remove('urgent');
+    },
+
+    updateScore: () => {
+        document.getElementById('score').textContent = game.score;
+    },
+
+    showBlizzard: (duration) => {
+        const overlay = document.getElementById('blizzard');
+        const timerEl = document.getElementById('blizzard-timer');
+        overlay.classList.add('active');
+        
+        let remaining = duration;
+        timerEl.textContent = remaining;
+        
+        const interval = setInterval(() => {
+            remaining--;
+            timerEl.textContent = remaining;
+            if (remaining <= 0) clearInterval(interval);
+        }, 1000);
+    },
+
+    hideBlizzard: () => {
+        document.getElementById('blizzard').classList.remove('active');
+        // Refocus input
+        const input = document.getElementById('answer-input');
+        if(input) { input.value = ''; input.focus(); }
+    }
+};
+
+// --- TEACHER CONTROLLER ---
+const teacher = {
+    loginOpen: false,
+    
+    initListener: () => {
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const dash = document.getElementById('teacher-dashboard');
+                if (dash.classList.contains('visible')) {
+                    teacher.toggleDashboard();
+                } else {
+                    teacher.toggleLogin();
+                }
+            }
+        });
+    },
+
+    toggleLogin: () => {
+        const modal = document.getElementById('teacher-login');
+        teacher.loginOpen = !teacher.loginOpen;
+        modal.style.display = teacher.loginOpen ? 'block' : 'none';
+        if (teacher.loginOpen) document.getElementById('teacher-pass').focus();
+    },
+
+    checkLogin: () => {
+        const pass = document.getElementById('teacher-pass').value;
+        if (pass === 'tsar1876') {
+            teacher.toggleLogin();
+            teacher.toggleDashboard();
+            document.getElementById('teacher-pass').value = '';
+        } else {
+            alert('Code invalide. Accès refusé.');
+        }
+    },
+
+    toggleDashboard: () => {
+        const dash = document.getElementById('teacher-dashboard');
+        dash.classList.toggle('visible');
+        // Pause game when dashboard opens
+        if (dash.classList.contains('visible')) {
+            game.isPaused = true;
+            document.getElementById('btn-pause').classList.add('pause-active');
+            document.getElementById('btn-pause').textContent = '▶ REPRENDRE';
+        }
+    },
+
+    togglePause: () => {
+        game.isPaused = !game.isPaused;
+        const btn = document.getElementById('btn-pause');
+        if (game.isPaused) {
+            btn.classList.add('pause-active');
+            btn.textContent = '▶ REPRENDRE';
+        } else {
+            btn.classList.remove('pause-active');
+            btn.textContent = '⏸ PAUSE GLOBALE';
+            // If we close dashboard, we might want to unpause automatically? 
+            // For now manual control is safer.
+        }
+    },
+
+    setDifficulty: (val) => {
+        game.currentLevelIndex = parseInt(val);
+        document.getElementById('level-name').textContent = LEVEL_NAMES[val];
+        // Re-render current enigma with new difficulty
+        ui.renderEnigma();
+    },
+
+    setTime: (mins) => {
+        game.totalTimeSeconds = mins * 60;
+        game.currentTimeSeconds = game.totalTimeSeconds;
+        ui.updateTimer();
+    }
+};
+
+// --- GLOBAL FUNCTIONS FOR HTML ONCLICK ---
+function submitAnswer() {
+    const input = document.getElementById('answer-input');
+    if (input) game.validateAnswer(input.value);
+}
+
+// --- INITIALIZATION ---
+const game = new GameState();
+teacher.initListener();
+
+// Start game on load
+window.onload = () => {
+    game.start();
+};
+
+</script>
+</body>
+</html>

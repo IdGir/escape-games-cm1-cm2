@@ -1,0 +1,229 @@
+{
+ "_commentaire": "Manifeste des medias du jeu Le Grand Repas du chef. Personnages, decors et videos : API Agnes AI (decors et personnages fictifs). Les schemas anatomiques (machoire, appareil digestif) et les graphiques ne sont jamais generes par IA : ils sont dessines dans le jeu.",
+ "jeu": "alimentation",
+ "titre": "Le Grand Repas du chef",
+ "api": {
+  "nom": "Agnes AI",
+  "base": "https://apihub.agnes-ai.com",
+  "modele_image": "agnes-image-2.1-flash",
+  "modele_video": "agnes-video-v2.0"
+ },
+ "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, weapons pointed, celebrity likeness",
+ "photos": [],
+ "images": [
+  {
+   "cle": "salle1",
+   "nom": "Salle 1, la cour du potager et du poulailler",
+   "cible": "assets/images/decors/salle1.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no labels, no watermark. Scene: the sunny courtyard behind a restaurant kitchen: raised vegetable beds with carrots, lettuces and green beans, a small wooden hen house with a few brown hens and one fluffy yellow chick, a watering can, an old brick wall, morning light.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle2",
+   "nom": "Salle 2, la salle des menus",
+   "cible": "assets/images/decors/salle2.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no labels, no watermark. Scene: a bright dining room of a country restaurant before service: a long wooden table with plates of grated carrots, pasta, roast chicken with green beans, a piece of cheese, an apple and a jug of water, a kitchen scale, a cyclist's helmet and bottle on a chair, no menu board.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle3",
+   "nom": "Salle 3, la table de degustation",
+   "cible": "assets/images/decors/salle3.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no labels, no watermark. Scene: a long tasting table with a white cloth: small plates with raw carrot sticks, a crusty baguette, a slice of cheese, an apple cut in pieces, a bowl of cooked pasta, spoons and napkins, glasses of water, warm lamps, wooden restaurant interior.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle4",
+   "nom": "Salle 4, le cabinet du Grand Tunnel",
+   "cible": "assets/images/decors/salle4.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no labels, no watermark. Scene: a doctor's consulting room: wooden desk, an examination couch, a stethoscope on the desk, a simple plain unlabeled anatomical torso mannequin standing softly out of focus in the background, a window with daylight, calm and reassuring.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle5",
+   "nom": "Salle 5, la salle d'entrainement",
+   "cible": "assets/images/decors/salle5.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no labels, no watermark. Scene: a bright training room of a cycling team: a road bicycle mounted on an indoor home trainer, towels, water bottles on a bench, a yellow cycling jersey hung on the wall, large windows, morning light.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "cine-intro",
+   "nom": "Cinematique d'ouverture (image de depart)",
+   "cible": "assets/images/decors/intro.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no labels, no watermark. Scene: the closed double wooden doors of a country restaurant kitchen at dawn, a brass handle, a small lantern, a basket of vegetables on the step, no sign, no text.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "cine-final",
+   "nom": "Cinematique de fin (image de depart)",
+   "cible": "assets/images/decors/final.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational game, 16:9 composition, natural light, rich detail, calm atmosphere, no people in the foreground, faces if any are generic and fictional. No text, no lettering, no signage, no labels, no watermark. Scene: an old leather-bound recipe book lying on a wooden chef's table, closed with five brass padlocks in a row, warm light, copper pans softly blurred behind.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "rosalie",
+   "nom": "Rosalie, la cheffe",
+   "cible": "assets/images/personnages/rosalie.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a woman head chef in her forties, white chef's jacket, tall white toque, hair tucked in, warm confident smile, a wooden spoon in her hand.",
+   "taille": "768x1024"
+  },
+  {
+   "cle": "nathan",
+   "nom": "Nathan, le commis",
+   "cible": "assets/images/personnages/nathan.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a young man in his early twenties, a kitchen commis, flat cap, green apron over a white shirt, holding a small basket of eggs, cheerful and a little shy.",
+   "taille": "768x1024"
+  },
+  {
+   "cle": "ines",
+   "nom": "La docteure Ines Morel",
+   "cible": "assets/images/personnages/ines.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a woman doctor in her late thirties, white coat, stethoscope around her neck, hair in a neat bun, calm and attentive expression.",
+   "taille": "768x1024"
+  },
+  {
+   "cle": "basile",
+   "nom": "Basile Ndiaye, le coureur cycliste",
+   "cible": "assets/images/personnages/basile.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, friendly expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a professional male road cyclist in his late twenties, yellow cycling jersey, cycling cap, a water bottle in his hand, energetic friendly smile.",
+   "taille": "768x1024"
+  }
+ ],
+ "videos": [
+  {
+   "cle": "salle1-video",
+   "nom": "Salle 1, la cour du potager et du poulailler (video)",
+   "cible": "assets/videos/salle1.mp4",
+   "depuis": "salle1",
+   "prompt": "Slow cinematic camera move through the courtyard, hens pecking softly, leaves moving in the breeze, nothing new appears, photorealistic, calm and loopable. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle2-video",
+   "nom": "Salle 2, la salle des menus (video)",
+   "cible": "assets/videos/salle2.mp4",
+   "depuis": "salle2",
+   "prompt": "Slow cinematic camera move over the table, gentle steam rising from the dishes, soft light, nothing new appears, photorealistic, calm and loopable. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle3-video",
+   "nom": "Salle 3, la table de degustation (video)",
+   "cible": "assets/videos/salle3.mp4",
+   "depuis": "salle3",
+   "prompt": "Slow cinematic camera move along the tasting table, subtle steam and warm light flicker, nothing new appears, photorealistic, calm and loopable. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle4-video",
+   "nom": "Salle 4, le cabinet du Grand Tunnel (video)",
+   "cible": "assets/videos/salle4.mp4",
+   "depuis": "salle4",
+   "prompt": "Slow cinematic camera move through the consulting room, subtle daylight and dust in the air, nothing new appears, photorealistic, calm and loopable. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle5-video",
+   "nom": "Salle 5, la salle d'entrainement (video)",
+   "cible": "assets/videos/salle5.mp4",
+   "depuis": "salle5",
+   "prompt": "Slow cinematic camera move through the training room, the bicycle wheel turns slowly on the trainer, subtle light, nothing new appears, photorealistic, calm and loopable. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "intro",
+   "nom": "Cinematique d'ouverture",
+   "cible": "assets/videos/intro.mp4",
+   "depuis": "cine-intro",
+   "prompt": "The kitchen doors slowly swing open revealing warm light and the smell of cooking in the air, dawn light. Photorealistic, cinematic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "final",
+   "nom": "Cinematique de fin",
+   "cible": "assets/videos/final.mp4",
+   "depuis": "cine-final",
+   "prompt": "The five brass padlocks open one after another and the book slowly opens, warm golden light spills out, static camera. Photorealistic, cinematic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "rosalie-repos",
+   "nom": "Rosalie, la cheffe (au repos)",
+   "cible": "assets/videos/personnages/rosalie.mp4",
+   "depuis": "rosalie",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "rosalie-parle",
+   "nom": "Rosalie, la cheffe (parle)",
+   "cible": "assets/videos/personnages/rosalie-parle.mp4",
+   "depuis": "rosalie",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "nathan-repos",
+   "nom": "Nathan, le commis (au repos)",
+   "cible": "assets/videos/personnages/nathan.mp4",
+   "depuis": "nathan",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "nathan-parle",
+   "nom": "Nathan, le commis (parle)",
+   "cible": "assets/videos/personnages/nathan-parle.mp4",
+   "depuis": "nathan",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "ines-repos",
+   "nom": "La docteure Ines Morel (au repos)",
+   "cible": "assets/videos/personnages/ines.mp4",
+   "depuis": "ines",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "ines-parle",
+   "nom": "La docteure Ines Morel (parle)",
+   "cible": "assets/videos/personnages/ines-parle.mp4",
+   "depuis": "ines",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "basile-repos",
+   "nom": "Basile Ndiaye, le coureur cycliste (au repos)",
+   "cible": "assets/videos/personnages/basile.mp4",
+   "depuis": "basile",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "basile-parle",
+   "nom": "Basile Ndiaye, le coureur cycliste (parle)",
+   "cible": "assets/videos/personnages/basile-parle.mp4",
+   "depuis": "basile",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, lively but gentle expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  }
+ ]
+}

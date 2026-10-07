@@ -1,0 +1,74 @@
+{
+  "_aide": "Une entrée par personnage : voice (voix edge-tts), rate (vitesse, ex -10%), pitch (hauteur, ex +20Hz), fx (filtre ffmpeg optionnel). Modifier librement puis relancer generer_voix.py.",
+  "_defaut": {"voice": "fr-FR-DeniseNeural", "rate": "-5%", "pitch": "+0Hz"},
+  "alimentation": {
+    "rosalie":   {"voice": "fr-FR-VivienneMultilingualNeural", "rate": "+5%",  "pitch": "+0Hz"},
+    "nathan":    {"voice": "fr-CA-AntoineNeural",              "rate": "+0%",  "pitch": "+8Hz"},
+    "ines":      {"voice": "fr-FR-DeniseNeural",               "rate": "-5%",  "pitch": "+0Hz"},
+    "basile":    {"voice": "fr-CA-JeanNeural",                 "rate": "+8%",  "pitch": "+6Hz"}
+  },
+  "chateau-fort": {
+    "colin":     {"voice": "fr-CA-AntoineNeural",              "rate": "+8%",  "pitch": "+22Hz"},
+    "josselin":  {"voice": "fr-FR-HenriNeural",                "rate": "-12%", "pitch": "-8Hz"},
+    "alienor":   {"voice": "fr-FR-VivienneMultilingualNeural", "rate": "-10%", "pitch": "-2Hz"},
+    "mahaut":    {"voice": "fr-FR-EloiseNeural",               "rate": "+0%",  "pitch": "+0Hz"},
+    "perrine":   {"voice": "fr-CA-SylvieNeural",               "rate": "+5%",  "pitch": "-2Hz"}
+  },
+  "constitution": {
+    "berthier":  {"voice": "fr-FR-HenriNeural",                "rate": "-15%", "pitch": "-6Hz"},
+    "nour":      {"voice": "fr-FR-EloiseNeural",               "rate": "+5%",  "pitch": "+2Hz"},
+    "ferrand":   {"voice": "fr-FR-DeniseNeural",               "rate": "+0%",  "pitch": "-3Hz"},
+    "sylla":     {"voice": "fr-FR-RemyMultilingualNeural",     "rate": "-5%",  "pitch": "+0Hz"}
+  },
+  "declaration": {
+    "louise":     {"voice": "fr-FR-EloiseNeural",              "rate": "+0%",  "pitch": "+4Hz"},
+    "gutenberg":  {"voice": "fr-FR-HenriNeural",               "rate": "-12%", "pitch": "-8Hz"},
+    "marquis":    {"voice": "fr-CH-FabriceNeural",             "rate": "-10%", "pitch": "-3Hz"},
+    "maximilien": {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "+0%",  "pitch": "+3Hz"}
+  },
+  "melanges": {
+    "lila":    {"voice": "fr-FR-EloiseNeural",                 "rate": "+8%",  "pitch": "+4Hz"},
+    "marius":  {"voice": "fr-CA-ThierryNeural",                "rate": "+3%",  "pitch": "+0Hz"},
+    "nadia":   {"voice": "fr-BE-CharlineNeural",               "rate": "+0%",  "pitch": "+0Hz"},
+    "yann":    {"voice": "fr-BE-GerardNeural",                 "rate": "-8%",  "pitch": "-4Hz"},
+    "melange": {"voice": "fr-FR-VivienneMultilingualNeural",   "rate": "+3%",  "pitch": "+0Hz"}
+  },
+  "moyen-age-abbaye": {
+    "anselme": {"voice": "fr-FR-HenriNeural",                  "rate": "-15%", "pitch": "-6Hz"},
+    "aude":    {"voice": "fr-FR-EloiseNeural",                 "rate": "+0%",  "pitch": "+0Hz"},
+    "alix":    {"voice": "fr-CA-SylvieNeural",                 "rate": "-10%", "pitch": "-4Hz"},
+    "garin":   {"voice": "fr-CA-AntoineNeural",                "rate": "+5%",  "pitch": "+12Hz"}
+  },
+  "objets-techniques": {
+    "zoe":      {"voice": "fr-FR-EloiseNeural",                "rate": "+10%", "pitch": "+4Hz"},
+    "awa":      {"voice": "fr-BE-CharlineNeural",              "rate": "+0%",  "pitch": "-2Hz"},
+    "marcel":   {"voice": "fr-CA-ThierryNeural",               "rate": "-8%",  "pitch": "-6Hz"},
+    "eleonore": {"voice": "fr-FR-VivienneMultilingualNeural",  "rate": "+0%",  "pitch": "+0Hz"}
+  },
+  "renaissance": {
+    "tommaso": {"voice": "fr-CA-AntoineNeural",                "rate": "+5%",  "pitch": "+14Hz"},
+    "jacquet": {"voice": "fr-FR-HenriNeural",                  "rate": "-8%",  "pitch": "-4Hz"},
+    "helene":  {"voice": "fr-FR-VivienneMultilingualNeural",   "rate": "-8%",  "pitch": "-2Hz"},
+    "colombe": {"voice": "fr-FR-EloiseNeural",                 "rate": "+3%",  "pitch": "+2Hz"},
+    "bastien": {"voice": "fr-FR-RemyMultilingualNeural",       "rate": "+3%",  "pitch": "+6Hz"}
+  },
+  "station-meteo": {
+    "vasseur": {"voice": "fr-FR-DeniseNeural",                 "rate": "+0%",  "pitch": "-2Hz"},
+    "tiago":   {"voice": "fr-CA-JeanNeural",                   "rate": "+3%",  "pitch": "+0Hz"},
+    "lina":    {"voice": "fr-FR-EloiseNeural",                 "rate": "+5%",  "pitch": "+0Hz"},
+    "keita":   {"voice": "fr-FR-HenriNeural",                  "rate": "-5%",  "pitch": "-8Hz", "fx": "aecho=0.8:0.6:40:0.2"}
+  },
+  "tour-du-monde": {
+    "fogg":         {"voice": "fr-CH-FabriceNeural",           "rate": "-12%", "pitch": "-4Hz"},
+    "passepartout": {"voice": "fr-FR-RemyMultilingualNeural",  "rate": "+10%", "pitch": "+6Hz"},
+    "aouda":        {"voice": "fr-CA-SylvieNeural",            "rate": "-5%",  "pitch": "+0Hz"},
+    "fix":          {"voice": "fr-BE-GerardNeural",            "rate": "-3%",  "pitch": "-2Hz"}
+  },
+  "versailles": {
+    "gabriel":  {"voice": "fr-CA-AntoineNeural",               "rate": "+5%",  "pitch": "+14Hz"},
+    "suzanne":  {"voice": "fr-CA-SylvieNeural",                "rate": "+0%",  "pitch": "+0Hz"},
+    "mathurin": {"voice": "fr-CA-ThierryNeural",               "rate": "-5%",  "pitch": "-4Hz"},
+    "margot":   {"voice": "fr-FR-EloiseNeural",                "rate": "+8%",  "pitch": "+4Hz"},
+    "isabeau":  {"voice": "fr-FR-VivienneMultilingualNeural",  "rate": "-8%",  "pitch": "-2Hz"}
+  }
+}
