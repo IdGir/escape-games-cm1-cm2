@@ -1,0 +1,2106 @@
+{
+  "_commentaire": "Généré par outils/immersif/migrer-jeu.py depuis « renaissance ». À compléter : voir MIGRATION-RAPPORT.md.",
+  "version": 1,
+  "niveaux": [
+    {
+      "id": "matelot",
+      "nom": "Compagnon",
+      "icone": "🔧",
+      "equivalent": "≈ CM1",
+      "profil": "cœur de programme CM1"
+    },
+    {
+      "id": "timonier",
+      "nom": "Maître",
+      "icone": "🧭",
+      "equivalent": "≈ CM2",
+      "profil": "cœur de programme CM2"
+    }
+  ],
+  "escales": [
+    {
+      "numero": 1,
+      "id": "l-imprimerie-de-maitre-jacquet-la-renaissance-et-l-humanisme",
+      "titre": "L'imprimerie de Maître Jacquet",
+      "lieu": "Une imprimerie de la ville d'Amboise, au printemps 1518",
+      "matiere": "",
+      "periode_conseillee": "",
+      "episode": "Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes.",
+      "scenarimage": "",
+      "mot": "ANTIQUITÉ",
+      "mot_origine": "Le mot-clé de la salle 1.",
+      "air": null,
+      "cinematique_ouverture": "transition-e1",
+      "cinematique_fin": "fin-e1",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e1-1",
+          "escale": 1,
+          "ordre": 1,
+          "titre": "La frise de Maître Jacquet",
+          "decor": "imprimerie",
+          "objet_principal": "objet-1",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "jacquet",
+          "probleme_narratif": "Une imprimerie de la ville d'Amboise, au printemps 1518. Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Château royal d'Amboise (notice de visite) ; Encyclopédie Larousse, « Renaissance » et « Gutenberg » ; Vikidia, « François Ier de France »",
+          "competence_programme": "Expliquer le mot Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « L'imprimerie de Maître Jacquet — La Renaissance et l'humanisme » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "calme",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "renaissance-humanisme",
+          "type": "ordre",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "L'Antiquité (les Grecs et les Romains) vient d'abord, puis le Moyen Âge. Vers 1450, Gutenberg met au point l'imprimerie. En 1496, Charles VIII revient d'Italie avec des artistes italiens. En 1515, François Ier devient roi ; en 1516, Léonard de Vinci s'installe à Amboise. La Renaissance redécouvre l'Antiquité, après le Moyen Âge.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "items": [
+              {
+                "txt": "Les Grecs et les Romains bâtissent des temples et sculptent des statues",
+                "sous": "l'Antiquité",
+                "rang": 1
+              },
+              {
+                "txt": "On construit des châteaux forts et des cathédrales",
+                "sous": "le Moyen Âge",
+                "rang": 2
+              },
+              {
+                "txt": "Gutenberg met au point l'imprimerie",
+                "sous": "vers 1450",
+                "rang": 3
+              },
+              {
+                "txt": "François Ier devient roi de France",
+                "sous": "1515",
+                "rang": 4
+              }
+            ],
+            "consigne": "Remets ces moments dans l'ordre, du plus ancien (en haut) au plus récent (en bas). Utilise les flèches ▲ et ▼, puis vérifie.",
+            "indices": [
+              "Les Grecs et les Romains vivaient il y a plus de 2 000 ans.",
+              "Les châteaux forts viennent avant l'imprimerie.",
+              "François Ier est le plus récent."
+            ],
+            "dialogue": "Bonjour, jeunes gens. Une page de carnet est tombée dans ma cour. Je l'ai gardée, car elle parle de mon métier. Grâce à l'imprimerie, un livre se fabrique en centaines d'exemplaires. On imprime les textes des anciens Grecs et Romains, que les savants redécouvrent. Tout le monde parle d'un temps nouveau, venu d'Italie. Dites-moi d'où il vient, et la page est à vous."
+          },
+          "timonier": {
+            "items": [
+              {
+                "txt": "Les Grecs et les Romains bâtissent des temples à colonnes",
+                "sous": "l'Antiquité",
+                "rang": 1
+              },
+              {
+                "txt": "On construit des châteaux forts et des cathédrales gothiques",
+                "sous": "le Moyen Âge",
+                "rang": 2
+              },
+              {
+                "txt": "Gutenberg met au point l'imprimerie à caractères mobiles, à Mayence",
+                "sous": "vers 1450",
+                "rang": 3
+              },
+              {
+                "txt": "Charles VIII revient d'Italie avec des artistes italiens",
+                "sous": "1496",
+                "rang": 4
+              },
+              {
+                "txt": "François Ier devient roi de France",
+                "sous": "1515",
+                "rang": 5
+              },
+              {
+                "txt": "Léonard de Vinci s'installe à Amboise",
+                "sous": "1516",
+                "rang": 6
+              }
+            ],
+            "consigne": "Classe ces six moments du plus ancien au plus récent. Lis bien les dates.",
+            "indices": [
+              "L'Antiquité et le Moyen Âge n'ont pas de date ici : ce sont les plus anciens.",
+              "1450 vient avant 1496.",
+              "Le roi d'abord, puis l'artiste qu'il invite."
+            ],
+            "dialogue": "Bonjour, jeunes gens. Une page de carnet est tombée dans ma cour. Je l'ai gardée, car elle parle de mon métier. Grâce à l'imprimerie, un livre se fabrique en centaines d'exemplaires. On imprime les textes des anciens Grecs et Romains, que les savants redécouvrent. Tout le monde parle d'un temps nouveau, venu d'Italie. Dites-moi d'où il vient, et la page est à vous."
+          }
+        },
+        {
+          "id": "e1-2",
+          "escale": 1,
+          "ordre": 2,
+          "titre": "Les mots de la Renaissance",
+          "decor": "imprimerie",
+          "objet_principal": "objet-2",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "helene",
+          "probleme_narratif": "Une imprimerie de la ville d'Amboise, au printemps 1518. Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Encyclopédie Larousse, « Renaissance », « humanisme » et « Gutenberg » ; Lumni",
+          "competence_programme": "Expliquer le mot Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « L'imprimerie de Maître Jacquet — La Renaissance et l'humanisme » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "renaissance-humanisme",
+          "type": "association",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "La Renaissance, aux XVe et XVIe siècles, est l'époque où l'on redécouvre l'art et les savoirs de l'Antiquité. Elle commence en Italie, à Florence. Les humanistes étudient les textes anciens et pensent que l'homme peut progresser par le savoir. L'imprimerie de Gutenberg permet de multiplier les livres.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "paires": [
+              {
+                "g": "La Renaissance",
+                "d": "époque où l'on redécouvre l'art de l'Antiquité"
+              },
+              {
+                "g": "L'Antiquité",
+                "d": "époque des Grecs et des Romains"
+              },
+              {
+                "g": "L'imprimerie",
+                "d": "technique pour fabriquer beaucoup de livres"
+              }
+            ],
+            "consigne": "Relie chaque mot à sa définition : clique sur un mot, puis sur la bonne définition.",
+            "indices": [
+              "« Re-naissance » : quelque chose renaît.",
+              "Les Grecs et les Romains vivaient pendant l'Antiquité.",
+              "Une machine pour faire des livres."
+            ],
+            "dialogue": "Voici la suite : Les mots de la Renaissance. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "paires": [
+              {
+                "g": "La Renaissance",
+                "d": "aux XVe et XVIe siècles, redécouverte de l'art et des savoirs antiques"
+              },
+              {
+                "g": "Un humaniste",
+                "d": "savant qui étudie les textes anciens et croit au progrès par le savoir"
+              },
+              {
+                "g": "Gutenberg",
+                "d": "met au point l'imprimerie à caractères mobiles"
+              },
+              {
+                "g": "Florence",
+                "d": "ville d'Italie où la Renaissance commence"
+              },
+              {
+                "g": "L'Antiquité",
+                "d": "époque des Grecs et des Romains, prise pour modèle"
+              }
+            ],
+            "consigne": "Relie chaque mot ou nom à sa définition. Lis toute la phrase avant de choisir.",
+            "indices": [
+              "Humaniste vient du latin humanus, « humain ».",
+              "Florence est une ville d'Italie.",
+              "Gutenberg travaillait à Mayence, en Allemagne."
+            ],
+            "dialogue": "Voici la suite : Les mots de la Renaissance. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e1-3",
+          "escale": 1,
+          "ordre": 3,
+          "titre": "Pourquoi « renaître » ?",
+          "decor": "imprimerie",
+          "objet_principal": "objet-3",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "colombe",
+          "probleme_narratif": "Une imprimerie de la ville d'Amboise, au printemps 1518. Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Encyclopédie Larousse, « Renaissance » et « humanisme » ; Collège de France, « Cinq siècles d'histoire »",
+          "competence_programme": "Expliquer le mot Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « L'imprimerie de Maître Jacquet — La Renaissance et l'humanisme » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "ouverture",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "renaissance-humanisme",
+          "type": "qcm",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "La Renaissance commence en Italie, au XVe siècle : artistes et savants admirent l'Antiquité et veulent la faire « renaître ». L'imprimerie diffuse vite les livres et les idées. Les humanistes apprennent le latin, le grec et l'hébreu pour lire les textes anciens.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "questions": [
+              {
+                "q": "Que veut dire le mot « Renaissance » ?",
+                "options": [
+                  "on fait renaître l'art et les savoirs de l'Antiquité",
+                  "le roi est né une deuxième fois",
+                  "on reconstruit les châteaux forts"
+                ],
+                "bonne": 0,
+                "explication": "Les artistes et les savants prennent les Grecs et les Romains pour modèles."
+              },
+              {
+                "q": "Dans quel pays la Renaissance commence-t-elle ?",
+                "options": [
+                  "en Italie",
+                  "en Angleterre",
+                  "en Égypte"
+                ],
+                "bonne": 0,
+                "explication": "À Florence, au XVe siècle."
+              },
+              {
+                "q": "À quoi sert l'imprimerie ?",
+                "options": [
+                  "à fabriquer beaucoup de livres plus vite",
+                  "à peindre des tableaux",
+                  "à construire des ponts"
+                ],
+                "bonne": 0,
+                "explication": "Avant, les livres étaient copiés à la main, un par un."
+              }
+            ],
+            "consigne": "Lis chaque question, puis clique sur la bonne réponse. Quand tu as tout répondu, clique sur « Vérifier ».",
+            "indices": [
+              "Re-naissance : naître à nouveau.",
+              "Léonard de Vinci vient de ce pays.",
+              "Avant l'imprimerie, on recopiait les livres à la main."
+            ],
+            "dialogue": "Voici la suite : Pourquoi « renaître » ?. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "questions": [
+              {
+                "q": "Qu'est-ce qu'un humaniste ?",
+                "options": [
+                  "un savant qui étudie les textes anciens et croit au progrès par le savoir",
+                  "un soldat du roi",
+                  "un moine qui recopie les livres",
+                  "un marchand d'épices"
+                ],
+                "bonne": 0,
+                "explication": "Guillaume Budé, conseiller de François Ier, est un grand humaniste."
+              },
+              {
+                "q": "Quelles langues anciennes les humanistes apprennent-ils ?",
+                "options": [
+                  "le latin, le grec et l'hébreu",
+                  "l'anglais et l'allemand",
+                  "le chinois",
+                  "le breton et le basque"
+                ],
+                "bonne": 0,
+                "explication": "En 1530, les premiers lecteurs royaux enseignent le grec, l'hébreu et les mathématiques."
+              },
+              {
+                "q": "Qu'imitent les architectes de la Renaissance ?",
+                "options": [
+                  "les colonnes et les formes régulières des monuments antiques",
+                  "les huttes des Gaulois",
+                  "les donjons de bois",
+                  "les pyramides"
+                ],
+                "bonne": 0,
+                "explication": "Symétrie, colonnes, frontons : l'Antiquité sert de modèle."
+              },
+              {
+                "q": "Pourquoi l'imprimerie aide-t-elle les idées de la Renaissance à se répandre ?",
+                "options": [
+                  "un même livre est fabriqué en beaucoup d'exemplaires",
+                  "les livres deviennent interdits",
+                  "on n'écrit plus de livres",
+                  "seul le roi peut lire"
+                ],
+                "bonne": 0,
+                "explication": "Les livres circulent dans toute l'Europe."
+              }
+            ],
+            "consigne": "Réponds aux quatre questions, puis vérifie. Une seule réponse est exacte à chaque fois.",
+            "indices": [
+              "Les humanistes veulent lire les textes anciens dans leur langue d'origine.",
+              "Pense aux colonnes des temples grecs.",
+              "Un livre imprimé se fait en beaucoup d'exemplaires."
+            ],
+            "dialogue": "Voici la suite : Pourquoi « renaître » ?. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e1-4",
+          "escale": 1,
+          "ordre": 4,
+          "titre": "La page de Maître Jacquet",
+          "decor": "imprimerie",
+          "objet_principal": "objet-4",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "bastien",
+          "probleme_narratif": "Une imprimerie de la ville d'Amboise, au printemps 1518. Des livres frais sortent de la presse : des textes latins et grecs, des traductions, des almanachs. Sur le mur, la gravure d'un temple romain à colonnes. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Encyclopédie Larousse, « Renaissance » et « humanisme » ; Collège de France, « Cinq siècles d'histoire »",
+          "competence_programme": "Expliquer le mot Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « L'imprimerie de Maître Jacquet — La Renaissance et l'humanisme » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "lumiere",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "renaissance-humanisme",
+          "type": "trous",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Née en Italie au XVe siècle, la Renaissance gagne la France au XVIe siècle. Les humanistes étudient les textes de l'Antiquité ; l'imprimerie diffuse leurs livres. François Ier crée en 1530 les lecteurs royaux, qui enseignent gratuitement le grec, l'hébreu et les mathématiques.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "niveaux": [
+            "timonier"
+          ],
+          "timonier": {
+            "texte": "<p>La Renaissance commence en [[Italie]] au XVe siècle. Les artistes admirent les monuments de l'[[Antiquité]]. Les [[humanistes]] lisent les textes anciens en latin, en [[grec]] et en hébreu. Grâce à l'[[imprimerie]], leurs livres circulent dans toute l'Europe. En 1530, François Ier crée les lecteurs [[royaux]], qui enseignent gratuitement.</p>",
+            "etiquettes": [
+              "Italie",
+              "Antiquité",
+              "humanistes",
+              "grec",
+              "imprimerie",
+              "royaux",
+              "Égypte",
+              "Moyen Âge",
+              "chevaliers",
+              "télévision"
+            ],
+            "consigne": "Complète la page imprimée par Maître Jacquet. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop.",
+            "indices": [
+              "Le pays où tout commence est au sud des Alpes.",
+              "Les savants qui étudient les textes anciens sont les…",
+              "En 1530, le roi crée les lecteurs…"
+            ],
+            "dialogue": "Voici la suite : La page de Maître Jacquet. Observez bien l'objet qui brille dans la salle."
+          }
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "id": "la-grande-salle-d-amboise-francois-ier-roi-mecene",
+      "titre": "La grande salle d'Amboise",
+      "lieu": "La grande salle du château royal d'Amboise",
+      "matiere": "",
+      "periode_conseillee": "",
+      "episode": "On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire.",
+      "scenarimage": "",
+      "mot": "MÉCÈNE",
+      "mot_origine": "Le mot-clé de la salle 2.",
+      "air": null,
+      "cinematique_ouverture": "transition-e2",
+      "cinematique_fin": "fin-e2",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e2-1",
+          "escale": 2,
+          "ordre": 1,
+          "titre": "Vrai ou faux, Dame Hélène ?",
+          "decor": "salle",
+          "objet_principal": "objet-1",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "helene",
+          "probleme_narratif": "La grande salle du château royal d'Amboise. On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Vikidia, « François Ier de France » et « Ordonnance de Villers-Cotterêts » ; Château royal d'Amboise ; Collège de France",
+          "competence_programme": "Situer le règne de François Ier",
+          "pourquoi_ce_savoir_ici": "La salle « La grande salle d'Amboise — François Ier, roi mécène » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "francois-mecene",
+          "type": "vraifaux",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "François Ier devient roi le 1er janvier 1515 et gagne la bataille de Marignan la même année, en Italie. Il invite Léonard de Vinci en France. Il protège les arts et les lettres : c'est un mécène. En 1539, l'ordonnance de Villers-Cotterêts impose le français dans les actes de justice et d'administration, sans interdire les langues régionales.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "affirmations": [
+              {
+                "txt": "François Ier devient roi de France en 1515.",
+                "vrai": true,
+                "explication": "Le 1er janvier 1515."
+              },
+              {
+                "txt": "Léonard de Vinci est un roi d'Italie.",
+                "vrai": false,
+                "explication": "C'est un artiste et un ingénieur italien, invité par le roi."
+              },
+              {
+                "txt": "François Ier aide et protège les artistes : c'est un mécène.",
+                "vrai": true,
+                "explication": "Il les invite, les loge et les paie."
+              },
+              {
+                "txt": "François Ier a gagné la bataille de Marignan.",
+                "vrai": true,
+                "explication": "En 1515, en Italie."
+              }
+            ],
+            "consigne": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+            "indices": [
+              "François Ier devient roi en 1515.",
+              "Léonard est un artiste, pas un roi.",
+              "Un mécène aide et paie les artistes."
+            ],
+            "dialogue": "Bienvenue au château d'Amboise. Le roi a grandi ici, vous le saviez ? Depuis qu'il est roi, il fait venir d'Italie des peintres, des sculpteurs, des savants. Il aime aussi les livres et les langues. Mais attention, c'est aussi un roi qui fait la guerre. La page que j'ai ramassée parle de lui. Montrez-moi que vous le connaissez."
+          },
+          "timonier": {
+            "affirmations": [
+              {
+                "txt": "François Ier remporte la bataille de Marignan, en Italie, en septembre 1515.",
+                "vrai": true,
+                "explication": "Les 13 et 14 septembre 1515, près de Milan."
+              },
+              {
+                "txt": "Léonard de Vinci est un roi d'Italie.",
+                "vrai": false,
+                "explication": "C'est un artiste invité, logé et pensionné par le roi."
+              },
+              {
+                "txt": "François Ier invite des artistes italiens en France.",
+                "vrai": true,
+                "explication": "Léonard de Vinci, Benvenuto Cellini, le Primatice…"
+              },
+              {
+                "txt": "En 1539, l'ordonnance de Villers-Cotterêts impose le français dans les actes de justice et d'administration.",
+                "vrai": true,
+                "explication": "Le latin y est remplacé par le français."
+              },
+              {
+                "txt": "L'ordonnance de Villers-Cotterêts interdit de parler breton ou occitan chez soi.",
+                "vrai": false,
+                "explication": "Elle ne concerne que les actes officiels."
+              },
+              {
+                "txt": "Les lecteurs royaux, créés en 1530, enseignent gratuitement.",
+                "vrai": true,
+                "explication": "C'est l'origine de l'actuel Collège de France."
+              }
+            ],
+            "consigne": "Pour chaque affirmation, réponds « Vrai » ou « Faux », puis vérifie. Attention aux idées reçues.",
+            "indices": [
+              "Marignan est en Italie, près de Milan.",
+              "L'ordonnance concerne les actes officiels, pas la langue parlée chez soi.",
+              "Les lecteurs royaux enseignent gratuitement."
+            ],
+            "dialogue": "Bienvenue au château d'Amboise. Le roi a grandi ici, vous le saviez ? Depuis qu'il est roi, il fait venir d'Italie des peintres, des sculpteurs, des savants. Il aime aussi les livres et les langues. Mais attention, c'est aussi un roi qui fait la guerre. La page que j'ai ramassée parle de lui. Montrez-moi que vous le connaissez."
+          }
+        },
+        {
+          "id": "e2-2",
+          "escale": 2,
+          "ordre": 2,
+          "titre": "La vie du roi",
+          "decor": "salle",
+          "objet_principal": "objet-2",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "colombe",
+          "probleme_narratif": "La grande salle du château royal d'Amboise. On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Vikidia, « François Ier de France » ; Château royal d'Amboise ; Collège de France",
+          "competence_programme": "Situer le règne de François Ier",
+          "pourquoi_ce_savoir_ici": "La salle « La grande salle d'Amboise — François Ier, roi mécène » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "ouverture",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "francois-mecene",
+          "type": "ordre",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "François Ier naît à Cognac en 1494 et passe son enfance au château d'Amboise. Il devient roi le 1er janvier 1515 et gagne à Marignan en septembre 1515. Léonard de Vinci s'installe à Amboise en 1516. En 1530, le roi crée les lecteurs royaux ; en 1539, l'ordonnance de Villers-Cotterêts impose le français dans les actes officiels.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "items": [
+              {
+                "txt": "François naît à Cognac",
+                "sous": "1494",
+                "rang": 1
+              },
+              {
+                "txt": "Enfant, il grandit au château d'Amboise",
+                "sous": "son enfance",
+                "rang": 2
+              },
+              {
+                "txt": "Il devient roi et gagne la bataille de Marignan",
+                "sous": "1515",
+                "rang": 3
+              },
+              {
+                "txt": "Il invite Léonard de Vinci à Amboise",
+                "sous": "1516",
+                "rang": 4
+              }
+            ],
+            "consigne": "Remets la vie de François Ier dans l'ordre, du plus ancien (en haut) au plus récent (en bas).",
+            "indices": [
+              "On naît avant de grandir.",
+              "Il devient roi avant d'inviter Léonard.",
+              "Regarde les années sous chaque carte."
+            ],
+            "dialogue": "Voici la suite : La vie du roi. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "items": [
+              {
+                "txt": "Naissance de François, le 12 septembre 1494, à Cognac",
+                "rang": 1
+              },
+              {
+                "txt": "François devient roi, le 1er janvier 1515",
+                "rang": 2
+              },
+              {
+                "txt": "Victoire de Marignan, les 13 et 14 septembre 1515",
+                "rang": 3
+              },
+              {
+                "txt": "Léonard de Vinci s'installe au manoir du Cloux, en 1516",
+                "rang": 4
+              },
+              {
+                "txt": "Création des lecteurs royaux, en 1530",
+                "rang": 5
+              },
+              {
+                "txt": "Ordonnance de Villers-Cotterêts, en août 1539",
+                "rang": 6
+              }
+            ],
+            "consigne": "Classe ces six événements du règne de François Ier, du plus ancien au plus récent. Aucune date n'est rappelée : appuie-toi sur le texte.",
+            "indices": [
+              "Naissance, enfance, puis le règne.",
+              "Le 1er janvier vient avant septembre.",
+              "Les lecteurs royaux (1530) viennent avant Villers-Cotterêts (1539)."
+            ],
+            "dialogue": "Voici la suite : La vie du roi. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e2-3",
+          "escale": 2,
+          "ordre": 3,
+          "titre": "Le roi protège…",
+          "decor": "salle",
+          "objet_principal": "objet-3",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "bastien",
+          "probleme_narratif": "La grande salle du château royal d'Amboise. On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Vikidia, « François Ier de France » ; Collège de France ; Château de Chambord",
+          "competence_programme": "Situer le règne de François Ier",
+          "pourquoi_ce_savoir_ici": "La salle « La grande salle d'Amboise — François Ier, roi mécène » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "lumiere",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "francois-mecene",
+          "type": "tri",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "François Ier est un mécène des arts : il invite Léonard de Vinci, fait bâtir Chambord, collectionne des tableaux italiens. Il protège aussi les lettres : lecteurs royaux (1530), dépôt légal des livres (1537), français dans les actes officiels (1539). C'est aussi un roi guerrier, qui combat en Italie (Marignan, 1515).",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "colonnes": [
+              {
+                "id": "arts",
+                "titre": "Les arts"
+              },
+              {
+                "id": "lettres",
+                "titre": "Les lettres"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Il invite Léonard de Vinci",
+                "col": "arts"
+              },
+              {
+                "txt": "Il fait construire Chambord",
+                "col": "arts"
+              },
+              {
+                "txt": "Il achète des tableaux italiens",
+                "col": "arts"
+              },
+              {
+                "txt": "Il crée les lecteurs royaux",
+                "col": "lettres"
+              },
+              {
+                "txt": "Il rassemble des livres dans sa bibliothèque",
+                "col": "lettres"
+              },
+              {
+                "txt": "Il impose le français dans les actes officiels",
+                "col": "lettres"
+              }
+            ],
+            "consigne": "Range chaque carte : est-ce pour les arts (peinture, architecture) ou pour les lettres (livres, langues) ? Clique sur une carte, puis sur une colonne.",
+            "indices": [
+              "Les lettres, ce sont les livres et les langues.",
+              "Chambord est une œuvre d'architecture.",
+              "Trois cartes par colonne."
+            ],
+            "dialogue": "Voici la suite : Le roi protège…. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "colonnes": [
+              {
+                "id": "arts",
+                "titre": "Les arts"
+              },
+              {
+                "id": "lettres",
+                "titre": "Les lettres"
+              },
+              {
+                "id": "guerre",
+                "titre": "La guerre"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Il invite Léonard de Vinci, puis le Primatice",
+                "col": "arts"
+              },
+              {
+                "txt": "Il fait commencer Chambord en 1519",
+                "col": "arts"
+              },
+              {
+                "txt": "Il collectionne des tableaux italiens",
+                "col": "arts"
+              },
+              {
+                "txt": "Il crée les lecteurs royaux (1530)",
+                "col": "lettres"
+              },
+              {
+                "txt": "Il crée le dépôt légal des livres imprimés (1537)",
+                "col": "lettres"
+              },
+              {
+                "txt": "Il impose le français dans les actes officiels (1539)",
+                "col": "lettres"
+              },
+              {
+                "txt": "Il remporte la bataille de Marignan (1515)",
+                "col": "guerre"
+              },
+              {
+                "txt": "Il mène des guerres en Italie pour le duché de Milan",
+                "col": "guerre"
+              }
+            ],
+            "consigne": "Range chaque action du roi dans la bonne colonne : les arts, les lettres, ou la guerre.",
+            "indices": [
+              "Marignan va dans la colonne de la guerre.",
+              "Le dépôt légal concerne les livres imprimés.",
+              "Les tableaux italiens vont avec les arts."
+            ],
+            "dialogue": "Voici la suite : Le roi protège…. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e2-4",
+          "escale": 2,
+          "ordre": 4,
+          "titre": "Le coffret de Dame Hélène",
+          "decor": "salle",
+          "objet_principal": "objet-4",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "tommaso",
+          "probleme_narratif": "La grande salle du château royal d'Amboise. On accroche des tapisseries, on dresse les tables. Sur les murs, la lettre F couronnée et des salamandres. Par les fenêtres, on voit la Loire. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Collège de France, « Cinq siècles d'histoire » ; Vikidia, « Ordonnance de Villers-Cotterêts » ; Château royal d'Amboise",
+          "competence_programme": "Situer le règne de François Ier",
+          "pourquoi_ce_savoir_ici": "La salle « La grande salle d'Amboise — François Ier, roi mécène » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "francois-mecene",
+          "type": "code",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Les lecteurs royaux sont créés en 1530 ; l'ordonnance de Villers-Cotterêts date de 1539. Le château royal d'Amboise, où François Ier a grandi, est le lieu où il invite Léonard de Vinci.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "niveaux": [
+            "timonier"
+          ],
+          "timonier": {
+            "champs": [
+              {
+                "libelle": "Année de la création des lecteurs royaux",
+                "valeur": "1530",
+                "longueur": 4
+              },
+              {
+                "libelle": "Année de l'ordonnance de Villers-Cotterêts",
+                "valeur": "1539",
+                "longueur": 4
+              },
+              {
+                "libelle": "Le château royal où le roi a grandi (7 lettres)",
+                "valeur": "AMBOISE",
+                "longueur": 7,
+                "numerique": false
+              }
+            ],
+            "consigne": "Le coffret de Dame Hélène est fermé par un cadenas. Écris les deux années et le nom demandés (les accents ne comptent pas), puis ouvre.",
+            "indices": [
+              "Les lecteurs royaux : une année qui finit par 30.",
+              "Villers-Cotterêts : neuf ans plus tard.",
+              "Le château où tu te trouves : A… (7 lettres)."
+            ],
+            "dialogue": "Voici la suite : Le coffret de Dame Hélène. Observez bien l'objet qui brille dans la salle."
+          }
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "id": "l-atelier-du-cloux-leonard-de-vinci",
+      "titre": "L'atelier du Cloux",
+      "lieu": "L'atelier de Léonard, au manoir du Cloux, près du château",
+      "matiere": "",
+      "periode_conseillee": "",
+      "episode": "Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger.",
+      "scenarimage": "",
+      "mot": "OBSERVER",
+      "mot_origine": "Le mot-clé de la salle 3.",
+      "air": null,
+      "cinematique_ouverture": "transition-e3",
+      "cinematique_fin": "fin-e3",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e3-1",
+          "escale": 3,
+          "ordre": 1,
+          "titre": "Une œuvre, un talent",
+          "decor": "atelier",
+          "objet_principal": "objet-1",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "tommaso",
+          "probleme_narratif": "L'atelier de Léonard, au manoir du Cloux, près du château. Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Château royal d'Amboise (notice de visite 2026) ; Château du Clos Lucé ; Musée du Louvre (La Joconde) ; Vikidia, « Homme de Vitruve » ; Ency",
+          "competence_programme": "Présenter Léonard de Vinci",
+          "pourquoi_ce_savoir_ici": "La salle « L'atelier du Cloux — Léonard de Vinci » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "ouverture",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "leonard-de-vinci",
+          "type": "association",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Léonard est à la fois peintre (la Joconde, un portrait commencé vers 1503), dessinateur et savant (l'Homme de Vitruve, vers 1490, sur les proportions du corps), observateur de la nature (le vol des oiseaux, l'anatomie) et ingénieur (projets de machines, de canaux, de palais). Beaucoup de ses machines sont restées sur le papier.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "paires": [
+              {
+                "g": "La Joconde",
+                "d": "peinture : un portrait"
+              },
+              {
+                "g": "La machine volante de ses carnets",
+                "d": "invention dessinée, jamais construite"
+              },
+              {
+                "g": "Le vol des oiseaux",
+                "d": "observation de la nature"
+              }
+            ],
+            "consigne": "Relie chaque œuvre de Léonard au talent qu'elle montre : clique sur une œuvre, puis sur la bonne étiquette.",
+            "indices": [
+              "La Joconde est un tableau.",
+              "Une machine dessinée, c'est une invention.",
+              "Regarder voler les oiseaux, c'est observer la nature."
+            ],
+            "dialogue": "Voici l'atelier de mon maître. Le roi lui a donné ce manoir et un beau titre : premier peintre, ingénieur et architecte du roi. Le maître peint, dessine des machines, imagine des canaux, et il regarde tout : l'eau, les oiseaux, les plantes. Ses pages sont un vrai désordre ! La troisième page est ici, quelque part. Aidez-moi à la retrouver."
+          },
+          "timonier": {
+            "paires": [
+              {
+                "g": "La Joconde",
+                "d": "portrait peint à l'huile, commencé vers 1503"
+              },
+              {
+                "g": "L'Homme de Vitruve",
+                "d": "dessin sur les proportions du corps humain"
+              },
+              {
+                "g": "La machine volante",
+                "d": "projet d'invention resté sur le papier"
+              },
+              {
+                "g": "Les études d'anatomie",
+                "d": "observation du corps humain"
+              },
+              {
+                "g": "Les projets de canaux et de palais",
+                "d": "travail d'ingénieur et d'architecte pour le roi"
+              }
+            ],
+            "consigne": "Relie chaque œuvre ou projet de Léonard à ce qu'il montre de lui.",
+            "indices": [
+              "L'Homme de Vitruve est dans un cercle et un carré.",
+              "La machine volante n'a jamais volé.",
+              "Pour le roi, il imagine des canaux et un palais."
+            ],
+            "dialogue": "Voici l'atelier de mon maître. Le roi lui a donné ce manoir et un beau titre : premier peintre, ingénieur et architecte du roi. Le maître peint, dessine des machines, imagine des canaux, et il regarde tout : l'eau, les oiseaux, les plantes. Ses pages sont un vrai désordre ! La troisième page est ici, quelque part. Aidez-moi à la retrouver."
+          }
+        },
+        {
+          "id": "e3-2",
+          "escale": 3,
+          "ordre": 2,
+          "titre": "Le désordre des carnets",
+          "decor": "atelier",
+          "objet_principal": "objet-2",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "jacquet",
+          "probleme_narratif": "L'atelier de Léonard, au manoir du Cloux, près du château. Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Château royal d'Amboise (notice de visite 2026) ; Château du Clos Lucé ; Musée du Louvre (La Joconde) ; Vikidia, « Homme de Vitruve » ; Ency",
+          "competence_programme": "Présenter Léonard de Vinci",
+          "pourquoi_ce_savoir_ici": "La salle « L'atelier du Cloux — Léonard de Vinci » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "lumiere",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "leonard-de-vinci",
+          "type": "tri",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Les carnets de Léonard mêlent tout : esquisses de tableaux, machines, plans, mais aussi des plantes, des animaux, l'eau, le corps humain. Pour lui, peindre exige d'observer et de comprendre la nature.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "colonnes": [
+              {
+                "id": "peintre",
+                "titre": "Le peintre"
+              },
+              {
+                "id": "inventeur",
+                "titre": "L'inventeur"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Un visage de femme qui sourit",
+                "col": "peintre"
+              },
+              {
+                "txt": "Une esquisse de tableau",
+                "col": "peintre"
+              },
+              {
+                "txt": "Les plis d'une robe, au crayon",
+                "col": "peintre"
+              },
+              {
+                "txt": "Une machine à ailes",
+                "col": "inventeur"
+              },
+              {
+                "txt": "Un pont qu'on peut démonter",
+                "col": "inventeur"
+              },
+              {
+                "txt": "Des engrenages et des roues dentées",
+                "col": "inventeur"
+              }
+            ],
+            "consigne": "Les pages de Léonard sont mélangées. Range chaque page : peintre ou inventeur ? Clique sur une page, puis sur une colonne.",
+            "indices": [
+              "Un portrait, c'est le travail du peintre.",
+              "Un pont, une machine : le travail de l'inventeur.",
+              "Trois pages par colonne."
+            ],
+            "dialogue": "Voici la suite : Le désordre des carnets. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "colonnes": [
+              {
+                "id": "peintre",
+                "titre": "Le peintre"
+              },
+              {
+                "id": "inventeur",
+                "titre": "L'ingénieur-inventeur"
+              },
+              {
+                "id": "observateur",
+                "titre": "L'observateur de la nature"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Une esquisse de portrait",
+                "col": "peintre"
+              },
+              {
+                "txt": "Les plis d'un drapé",
+                "col": "peintre"
+              },
+              {
+                "txt": "Une machine à ailes battantes",
+                "col": "inventeur"
+              },
+              {
+                "txt": "Le projet d'un canal pour le roi",
+                "col": "inventeur"
+              },
+              {
+                "txt": "Des engrenages",
+                "col": "inventeur"
+              },
+              {
+                "txt": "Le vol d'un oiseau, aile par aile",
+                "col": "observateur"
+              },
+              {
+                "txt": "Les tourbillons de l'eau",
+                "col": "observateur"
+              },
+              {
+                "txt": "Une plante dessinée avec ses racines",
+                "col": "observateur"
+              }
+            ],
+            "consigne": "Range chaque page des carnets : le peintre, l'ingénieur-inventeur, ou l'observateur de la nature.",
+            "indices": [
+              "Les plantes, les oiseaux, l'eau qui tourbillonne : l'observateur.",
+              "Les machines et les canaux : l'ingénieur.",
+              "Les visages et les drapés : le peintre."
+            ],
+            "dialogue": "Voici la suite : Le désordre des carnets. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e3-3",
+          "escale": 3,
+          "ordre": 3,
+          "titre": "L'intrus du Cloux",
+          "decor": "atelier",
+          "objet_principal": "objet-3",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "helene",
+          "probleme_narratif": "L'atelier de Léonard, au manoir du Cloux, près du château. Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Château royal d'Amboise (notice de visite 2026) ; Château du Clos Lucé ; Musée du Louvre (La Joconde) ; Vikidia, « Homme de Vitruve » ; Ency",
+          "competence_programme": "Présenter Léonard de Vinci",
+          "pourquoi_ce_savoir_ici": "La salle « L'atelier du Cloux — Léonard de Vinci » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "leonard-de-vinci",
+          "type": "intrus",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Léonard naît en 1452 à Vinci, en Italie. Invité par François Ier, il s'installe en 1516 au manoir du Cloux (aujourd'hui le Clos Lucé), à Amboise, avec le titre de premier peintre, ingénieur et architecte du roi. Il y meurt le 2 mai 1519. Ses machines volantes sont restées des dessins : aucune n'a volé.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "cartes": [
+              {
+                "txt": "Il naît en Italie, à Vinci",
+                "sous": "en 1452",
+                "intrus": false
+              },
+              {
+                "txt": "Il peint la Joconde",
+                "sous": "un portrait célèbre",
+                "intrus": false
+              },
+              {
+                "txt": "Il vit ses dernières années à Amboise",
+                "sous": "au manoir du Cloux",
+                "intrus": false
+              },
+              {
+                "txt": "Il remplit des carnets de dessins",
+                "sous": "des milliers de pages",
+                "intrus": false
+              },
+              {
+                "txt": "Il devient roi de France",
+                "sous": "en 1515",
+                "intrus": true
+              }
+            ],
+            "consigne": "Une seule carte est fausse à propos de Léonard. Clique sur l'intrus, puis vérifie.",
+            "indices": [
+              "Léonard est un artiste, pas un roi.",
+              "Il a vécu ses dernières années en France.",
+              "Quatre cartes sont vraies."
+            ],
+            "dialogue": "Voici la suite : L'intrus du Cloux. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "cartes": [
+              {
+                "txt": "Il s'installe au manoir du Cloux",
+                "sous": "en 1516",
+                "intrus": false
+              },
+              {
+                "txt": "Il devient premier peintre, ingénieur et architecte du roi",
+                "sous": "titre donné par François Ier",
+                "intrus": false
+              },
+              {
+                "txt": "Il apporte la Joconde en France",
+                "sous": "le roi l'acquiert ensuite",
+                "intrus": false
+              },
+              {
+                "txt": "Il meurt à Amboise",
+                "sous": "le 2 mai 1519",
+                "intrus": false
+              },
+              {
+                "txt": "Il fait voler sa machine volante devant le roi",
+                "sous": "dans les jardins du Cloux",
+                "intrus": true
+              }
+            ],
+            "consigne": "Une seule carte est fausse à propos de Léonard. Attention aux légendes ! Trouve l'intrus, puis vérifie.",
+            "indices": [
+              "Ses machines volantes sont restées dans les carnets.",
+              "Il meurt à Amboise en 1519.",
+              "Le roi lui donne un titre : premier peintre, ingénieur et architecte."
+            ],
+            "dialogue": "Voici la suite : L'intrus du Cloux. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e3-4",
+          "escale": 3,
+          "ordre": 4,
+          "titre": "Le mot à l'envers",
+          "decor": "atelier",
+          "objet_principal": "objet-4",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "colombe",
+          "probleme_narratif": "L'atelier de Léonard, au manoir du Cloux, près du château. Des feuilles couvertes de dessins : des visages, des machines, des oiseaux, des tourbillons d'eau. Sur un chevalet, un portrait de femme au sourire léger. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Château royal d'Amboise (notice de visite 2026) ; Château du Clos Lucé ; Musée du Louvre (La Joconde) ; Vikidia, « Homme de Vitruve » ; Ency",
+          "competence_programme": "Présenter Léonard de Vinci",
+          "pourquoi_ce_savoir_ici": "La salle « L'atelier du Cloux — Léonard de Vinci » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "calme",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "leonard-de-vinci",
+          "type": "lettres",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Léonard remplit des carnets de notes et de dessins toute sa vie, souvent en écriture inversée (de droite à gauche). Beaucoup de ces pages sont aujourd'hui conservées dans des bibliothèques et des musées d'Europe.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "niveaux": [
+            "timonier"
+          ],
+          "timonier": {
+            "cible": [
+              "C",
+              "A",
+              "R",
+              "N",
+              "E",
+              "T",
+              "S"
+            ],
+            "texte": "<p>Au manoir, le maî<b data-l='T'>t</b>re dessine sans cesse. Sur sa table s'empilent des feuilles couvertes de machines, de vi<b data-l='S'>s</b>ages et de plantes. Il obse<b data-l='R'>r</b>ve les oiseaux, puis il note tout, de droite à gauche, comme dans un <b data-l='M'>m</b>iroir. Ses p<b data-l='A'>a</b>ges sont reliées en petits cahiers. Le soir, Tommaso range l'<b data-l='E'>e</b>ncre, les plumes et les <b data-l='C'>c</b>rayons, et il souffle la bougie. Le matin, tout recommence, sans jamais finir : Léonard ne cesse d'appre<b data-l='N'>n</b>dre, et de <b data-l='D'>d</b>essiner.</p>",
+            "consigne": "Léonard écrivait souvent de droite à gauche, comme dans un miroir. Trouve l'objet où il notait tout : clique les lettres en couleur pour les ranger dans les cases, dans l'ordre qui forme le mot (7 lettres). Attention aux lettres pièges.",
+            "indices": [
+              "Un petit cahier qu'on garde dans sa poche.",
+              "Le mot commence par C.",
+              "Il finit par S : il y en a plusieurs."
+            ],
+            "dialogue": "Voici la suite : Le mot à l'envers. Observez bien l'objet qui brille dans la salle."
+          }
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "id": "le-cabinet-des-plans-les-chateaux-de-la-renaissance",
+      "titre": "Le cabinet des plans",
+      "lieu": "Le cabinet des plans, au château d'Amboise",
+      "matiere": "",
+      "periode_conseillee": "",
+      "episode": "Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord.",
+      "scenarimage": "",
+      "mot": "SALAMANDRE",
+      "mot_origine": "Le mot-clé de la salle 4.",
+      "air": null,
+      "cinematique_ouverture": "transition-e4",
+      "cinematique_fin": "fin-e4",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e4-1",
+          "escale": 4,
+          "ordre": 1,
+          "titre": "Le plan de Chambord",
+          "decor": "plans",
+          "objet_principal": "objet-1",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "colombe",
+          "probleme_narratif": "Le cabinet des plans, au château d'Amboise. Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Académie de Nice, fiche « Le château de Chambord » (EAC) ; Vikidia, « Château de Chambord » ; plan schématique simplifié",
+          "competence_programme": "Comparer château fort et château de la Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « Le cabinet des plans — Les châteaux de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "lumiere",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "chateaux-renaissance",
+          "type": "plan",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Au centre de Chambord se dresse le donjon carré (1), avec ses quatre tours. Au cœur du donjon, l'escalier à double révolution (2) dessert des salles disposées en croix (3). Une enceinte relie de grandes tours d'angle (4) ; dans les ailes se trouvent les appartements du roi (5) et la chapelle (6). Tout est symétrique.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "titre": "Le plan de Chambord",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Repère 1 — le grand carré au centre",
+                "reponse": "Le donjon"
+              },
+              {
+                "libelle": "Repère 2 — l'escalier tout au centre",
+                "reponse": "L'escalier à double révolution"
+              },
+              {
+                "libelle": "Repère 4 — en bas à gauche",
+                "reponse": "Une tour d'angle"
+              },
+              {
+                "libelle": "Repère 6 — en haut à gauche",
+                "reponse": "La chapelle"
+              }
+            ],
+            "consigne": "Colombe déplie le plan de Chambord, vu de dessus. Clique sur une étiquette, puis sur la case du bon repère.<svg viewBox=\"0 0 340 240\" role=\"img\" aria-label=\"Plan schématique du château de Chambord vu de dessus, avec des repères numérotés\" style=\"display:block;max-width:440px;margin:10px auto;background:#eef2df;border:2px solid #8a7a5a;border-radius:10px\">\n<rect x=\"14\" y=\"20\" width=\"312\" height=\"208\" rx=\"18\" fill=\"#9cc3d8\" stroke=\"#4d7489\"/>\n<rect x=\"40\" y=\"48\" width=\"260\" height=\"154\" fill=\"#e6dcc4\" stroke=\"#6e6452\" stroke-width=\"5\"/>\n<g fill=\"#cfc2a3\" stroke=\"#6e6452\" stroke-width=\"3\"><circle cx=\"40\" cy=\"48\" r=\"20\"/><circle cx=\"300\" cy=\"48\" r=\"20\"/><circle cx=\"40\" cy=\"202\" r=\"16\"/><circle cx=\"300\" cy=\"202\" r=\"16\"/></g>\n<rect x=\"118\" y=\"28\" width=\"104\" height=\"104\" fill=\"#d9ccb0\" stroke=\"#3d352b\" stroke-width=\"3\"/>\n<g fill=\"#cfc2a3\" stroke=\"#3d352b\" stroke-width=\"2.5\"><circle cx=\"118\" cy=\"28\" r=\"14\"/><circle cx=\"222\" cy=\"28\" r=\"14\"/><circle cx=\"118\" cy=\"132\" r=\"14\"/><circle cx=\"222\" cy=\"132\" r=\"14\"/></g>\n<g fill=\"#f3ead6\" stroke=\"#8a7a5a\"><rect x=\"161\" y=\"34\" width=\"18\" height=\"92\"/><rect x=\"124\" y=\"71\" width=\"92\" height=\"18\"/></g>\n<circle cx=\"170\" cy=\"80\" r=\"9\" fill=\"#b98a3e\" stroke=\"#5e3f1f\" stroke-width=\"1.5\"/><path d=\"M170 72 A8 8 0 0 1 178 80 M170 88 A8 8 0 0 1 162 80\" stroke=\"#5e3f1f\" fill=\"none\"/>\n<text x=\"170\" y=\"222\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Georgia,serif\" fill=\"#2b1d10\">schéma simplifié, sans échelle</text>\n<g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"150\" cy=\"50\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"150\" y=\"55\">1</text><circle cx=\"170\" cy=\"92\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"170\" y=\"97\">2</text><circle cx=\"46\" cy=\"198\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"46\" y=\"203\">4</text><circle cx=\"46\" cy=\"54\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"46\" y=\"59\">6</text></g>\n</svg>",
+            "indices": [
+              "Le repère 1 est le grand carré au milieu.",
+              "Le repère 2 est tout au centre : un escalier en rond.",
+              "Les repères 4 et 6 sont des tours rondes aux angles."
+            ],
+            "dialogue": "Bonjour ! Je m'appelle Colombe, mon père est maître maçon. Ici, on dessine les châteaux du roi. Ce ne sont plus des forteresses : on veut de grandes fenêtres, des escaliers magnifiques, tout bien symétrique, comme dans l'Antiquité. Le roi rêve d'un château encore plus grand, à Chambord. Lisez les plans avec moi, et je vous donne la page."
+          },
+          "timonier": {
+            "titre": "Le plan de Chambord",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "Le donjon"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "L'escalier à double révolution"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "Les salles en croix"
+              },
+              {
+                "libelle": "Repère 4",
+                "reponse": "Une tour d'angle"
+              },
+              {
+                "libelle": "Repère 5",
+                "reponse": "L'aile du roi"
+              },
+              {
+                "libelle": "Repère 6",
+                "reponse": "La chapelle"
+              }
+            ],
+            "etiquettes": [
+              "Le donjon",
+              "L'escalier à double révolution",
+              "Les salles en croix",
+              "Une tour d'angle",
+              "L'aile du roi",
+              "La chapelle",
+              "La herse"
+            ],
+            "consigne": "Observe le plan de Chambord vu de dessus. Place chaque étiquette dans la case du bon repère (1 à 6). Une étiquette est en trop.<svg viewBox=\"0 0 340 240\" role=\"img\" aria-label=\"Plan schématique du château de Chambord vu de dessus, avec des repères numérotés\" style=\"display:block;max-width:440px;margin:10px auto;background:#eef2df;border:2px solid #8a7a5a;border-radius:10px\">\n<rect x=\"14\" y=\"20\" width=\"312\" height=\"208\" rx=\"18\" fill=\"#9cc3d8\" stroke=\"#4d7489\"/>\n<rect x=\"40\" y=\"48\" width=\"260\" height=\"154\" fill=\"#e6dcc4\" stroke=\"#6e6452\" stroke-width=\"5\"/>\n<g fill=\"#cfc2a3\" stroke=\"#6e6452\" stroke-width=\"3\"><circle cx=\"40\" cy=\"48\" r=\"20\"/><circle cx=\"300\" cy=\"48\" r=\"20\"/><circle cx=\"40\" cy=\"202\" r=\"16\"/><circle cx=\"300\" cy=\"202\" r=\"16\"/></g>\n<rect x=\"118\" y=\"28\" width=\"104\" height=\"104\" fill=\"#d9ccb0\" stroke=\"#3d352b\" stroke-width=\"3\"/>\n<g fill=\"#cfc2a3\" stroke=\"#3d352b\" stroke-width=\"2.5\"><circle cx=\"118\" cy=\"28\" r=\"14\"/><circle cx=\"222\" cy=\"28\" r=\"14\"/><circle cx=\"118\" cy=\"132\" r=\"14\"/><circle cx=\"222\" cy=\"132\" r=\"14\"/></g>\n<g fill=\"#f3ead6\" stroke=\"#8a7a5a\"><rect x=\"161\" y=\"34\" width=\"18\" height=\"92\"/><rect x=\"124\" y=\"71\" width=\"92\" height=\"18\"/></g>\n<circle cx=\"170\" cy=\"80\" r=\"9\" fill=\"#b98a3e\" stroke=\"#5e3f1f\" stroke-width=\"1.5\"/><path d=\"M170 72 A8 8 0 0 1 178 80 M170 88 A8 8 0 0 1 162 80\" stroke=\"#5e3f1f\" fill=\"none\"/>\n<text x=\"170\" y=\"222\" font-size=\"9\" text-anchor=\"middle\" font-family=\"Georgia,serif\" fill=\"#2b1d10\">schéma simplifié, sans échelle</text>\n<g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"150\" cy=\"50\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"150\" y=\"55\">1</text><circle cx=\"170\" cy=\"92\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"170\" y=\"97\">2</text><circle cx=\"205\" cy=\"70\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"205\" y=\"75\">3</text><circle cx=\"46\" cy=\"198\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"46\" y=\"203\">4</text><circle cx=\"292\" cy=\"54\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"292\" y=\"59\">5</text><circle cx=\"46\" cy=\"54\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"46\" y=\"59\">6</text></g>\n</svg>",
+            "indices": [
+              "Les salles en croix partent de l'escalier.",
+              "Le donjon de Chambord n'a pas de herse : c'est un palais.",
+              "Les appartements du roi sont dans l'aile opposée à la chapelle."
+            ],
+            "dialogue": "Bonjour ! Je m'appelle Colombe, mon père est maître maçon. Ici, on dessine les châteaux du roi. Ce ne sont plus des forteresses : on veut de grandes fenêtres, des escaliers magnifiques, tout bien symétrique, comme dans l'Antiquité. Le roi rêve d'un château encore plus grand, à Chambord. Lisez les plans avec moi, et je vous donne la page."
+          }
+        },
+        {
+          "id": "e4-2",
+          "escale": 4,
+          "ordre": 2,
+          "titre": "Château fort ou château Renaissance ?",
+          "decor": "plans",
+          "objet_principal": "objet-2",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "bastien",
+          "probleme_narratif": "Le cabinet des plans, au château d'Amboise. Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Académie de Nice, fiches « Le château fort » et « Le château de Chambord » (EAC) ; Château royal de Blois",
+          "competence_programme": "Comparer château fort et château de la Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « Le cabinet des plans — Les châteaux de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "chateaux-renaissance",
+          "type": "tri",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Le château fort est d'abord fait pour se défendre : murs épais, meurtrières, pont-levis, herse. Le château de la Renaissance est fait pour vivre et pour montrer la puissance du roi : grandes fenêtres, symétrie, décor sculpté, escaliers monumentaux, jardins. Il garde parfois des tours et un donjon, mais ils servent surtout de décor et de logement.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "colonnes": [
+              {
+                "id": "fort",
+                "titre": "Château fort"
+              },
+              {
+                "id": "renaissance",
+                "titre": "Château de la Renaissance"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Des meurtrières pour tirer",
+                "col": "fort"
+              },
+              {
+                "txt": "Un pont-levis et une herse",
+                "col": "fort"
+              },
+              {
+                "txt": "Des murs très épais",
+                "col": "fort"
+              },
+              {
+                "txt": "De grandes fenêtres",
+                "col": "renaissance"
+              },
+              {
+                "txt": "Des jardins pour se promener",
+                "col": "renaissance"
+              },
+              {
+                "txt": "Des salamandres sculptées",
+                "col": "renaissance"
+              }
+            ],
+            "consigne": "Range chaque élément : château fort du Moyen Âge, ou château de la Renaissance ? Clique sur une carte, puis sur une colonne.",
+            "indices": [
+              "Les grandes fenêtres laissent entrer la lumière : on ne se défend plus.",
+              "Les meurtrières servent à tirer.",
+              "Trois cartes par colonne."
+            ],
+            "dialogue": "Voici la suite : Château fort ou château Renaissance ?. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "colonnes": [
+              {
+                "id": "fort",
+                "titre": "Château fort"
+              },
+              {
+                "id": "renaissance",
+                "titre": "Château de la Renaissance"
+              },
+              {
+                "id": "deux",
+                "titre": "Les deux"
+              }
+            ],
+            "cartes": [
+              {
+                "txt": "Des meurtrières pour tirer",
+                "col": "fort"
+              },
+              {
+                "txt": "Un pont-levis et une herse",
+                "col": "fort"
+              },
+              {
+                "txt": "Des murs faits pour résister aux assauts",
+                "col": "fort"
+              },
+              {
+                "txt": "Une façade symétrique",
+                "col": "renaissance"
+              },
+              {
+                "txt": "Un escalier monumental décoré",
+                "col": "renaissance"
+              },
+              {
+                "txt": "De grandes fenêtres et des lucarnes sculptées",
+                "col": "renaissance"
+              },
+              {
+                "txt": "Des tours rondes",
+                "col": "deux"
+              },
+              {
+                "txt": "Un donjon",
+                "col": "deux"
+              }
+            ],
+            "consigne": "Range chaque élément : château fort, château de la Renaissance, ou les deux. Attention aux pièges.",
+            "indices": [
+              "Chambord a un donjon et des tours, comme un château fort.",
+              "La symétrie vient de l'Antiquité.",
+              "La herse et le pont-levis : pour se défendre."
+            ],
+            "dialogue": "Voici la suite : Château fort ou château Renaissance ?. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e4-3",
+          "escale": 4,
+          "ordre": 3,
+          "titre": "Trois châteaux, trois secrets",
+          "decor": "plans",
+          "objet_principal": "objet-3",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "tommaso",
+          "probleme_narratif": "Le cabinet des plans, au château d'Amboise. Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Château royal d'Amboise (notice de visite 2026) ; Château royal de Blois ; Académie de Nice, fiche « Le château de Chambord » ; Vikidia, « F",
+          "competence_programme": "Comparer château fort et château de la Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « Le cabinet des plans — Les châteaux de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "calme",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "chateaux-renaissance",
+          "type": "association",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Amboise : François Ier y passe son enfance et Léonard y repose (chapelle Saint-Hubert). Blois : l'aile François Ier et son grand escalier à vis sculpté. Chambord : commencé en 1519, célèbre pour son escalier à double révolution. Le Clos Lucé (le manoir du Cloux) : la maison où Léonard vécut ses dernières années. Fontainebleau : des artistes italiens y décorent le château du roi.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "paires": [
+              {
+                "g": "Amboise",
+                "d": "le roi y a passé son enfance"
+              },
+              {
+                "g": "Blois",
+                "d": "un grand escalier à vis sur la façade"
+              },
+              {
+                "g": "Chambord",
+                "d": "un escalier à double révolution"
+              }
+            ],
+            "consigne": "Relie chaque château à ce qui le rend célèbre : clique sur un château, puis sur la bonne étiquette.",
+            "indices": [
+              "Tu es à Amboise : c'est là que le roi a grandi.",
+              "L'escalier à double révolution est à Chambord.",
+              "Blois a un grand escalier à vis sur sa façade."
+            ],
+            "dialogue": "Voici la suite : Trois châteaux, trois secrets. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "paires": [
+              {
+                "g": "Amboise",
+                "d": "Léonard repose dans la chapelle Saint-Hubert"
+              },
+              {
+                "g": "Blois",
+                "d": "l'aile François Ier et son escalier à vis sculpté"
+              },
+              {
+                "g": "Chambord",
+                "d": "commencé en 1519, escalier à double révolution"
+              },
+              {
+                "g": "Le Clos Lucé",
+                "d": "le manoir où Léonard vécut ses dernières années"
+              },
+              {
+                "g": "Fontainebleau",
+                "d": "des artistes italiens y décorent le château"
+              }
+            ],
+            "consigne": "Relie chaque lieu à ce qui le rend célèbre.",
+            "indices": [
+              "Le Clos Lucé est l'ancien manoir du Cloux.",
+              "Le Primatice travaille à Fontainebleau.",
+              "Léonard repose dans la chapelle Saint-Hubert."
+            ],
+            "dialogue": "Voici la suite : Trois châteaux, trois secrets. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e4-4",
+          "escale": 4,
+          "ordre": 4,
+          "titre": "La salamandre a-t-elle raison ?",
+          "decor": "plans",
+          "objet_principal": "objet-4",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "jacquet",
+          "probleme_narratif": "Le cabinet des plans, au château d'Amboise. Sur une grande table, des plans de châteaux : Amboise, Blois où l'on construit une aile nouvelle, et le projet d'un château immense dans la forêt de Chambord. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Académie de Nice, fiche « Le château de Chambord » (EAC) ; Vikidia, « Château de Chambord » ; Château royal d'Amboise",
+          "competence_programme": "Comparer château fort et château de la Renaissance",
+          "pourquoi_ce_savoir_ici": "La salle « Le cabinet des plans — Les châteaux de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "chateaux-renaissance",
+          "type": "vraifaux",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "La salamandre est l'emblème de François Ier ; on la voit partout à Chambord, avec la lettre F et la couronne. Sa devise latine est « Nutrisco et extinguo ». Chambord est commencé en 1519, l'année de la mort de Léonard : il n'a donc pas vu le château. On pense que l'escalier à double révolution s'inspire de ses idées, mais personne n'en est sûr. Le château compte plus de 400 pièces.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "niveaux": [
+            "timonier"
+          ],
+          "timonier": {
+            "affirmations": [
+              {
+                "txt": "La salamandre est l'emblème de François Ier.",
+                "vrai": true,
+                "explication": "On la voit sculptée partout à Chambord, à Blois, à Fontainebleau."
+              },
+              {
+                "txt": "La devise du roi, en latin, est « Nutrisco et extinguo ».",
+                "vrai": true,
+                "explication": "« Je m'en nourris et je l'éteins » : la salamandre résisterait au feu."
+              },
+              {
+                "txt": "Léonard de Vinci a vu Chambord terminé.",
+                "vrai": false,
+                "explication": "Le chantier commence en 1519, l'année de sa mort, et dure des dizaines d'années."
+              },
+              {
+                "txt": "On est certain que Léonard a dessiné l'escalier à double révolution.",
+                "vrai": false,
+                "explication": "C'est possible, mais aucun document ne le prouve."
+              },
+              {
+                "txt": "Chambord compte plus de 400 pièces.",
+                "vrai": true,
+                "explication": "Et environ 80 escaliers et 300 cheminées."
+              },
+              {
+                "txt": "La façade de Chambord est construite selon les règles de la symétrie.",
+                "vrai": true,
+                "explication": "La symétrie est une idée héritée de l'Antiquité."
+              }
+            ],
+            "consigne": "Colombe a noté six phrases sur Chambord et la salamandre. Pour chacune, réponds « Vrai » ou « Faux », puis vérifie.",
+            "indices": [
+              "Léonard meurt le 2 mai 1519 ; le chantier commence la même année.",
+              "Pour l'escalier, les historiens disent « probablement ».",
+              "Compte : plus de 400 pièces, environ 80 escaliers."
+            ],
+            "dialogue": "Voici la suite : La salamandre a-t-elle raison ?. Observez bien l'objet qui brille dans la salle."
+          }
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "id": "la-galerie-des-tableaux-l-art-de-la-renaissance",
+      "titre": "La galerie des tableaux",
+      "lieu": "La galerie des tableaux du château",
+      "matiere": "",
+      "periode_conseillee": "",
+      "episode": "Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer.",
+      "scenarimage": "",
+      "mot": "PERSPECTIVE",
+      "mot_origine": "Le mot-clé de la salle 5.",
+      "air": null,
+      "cinematique_ouverture": "transition-e5",
+      "cinematique_fin": "fin-e5",
+      "etats_decor": [],
+      "enigmes": [
+        {
+          "id": "e5-1",
+          "escale": 5,
+          "ordre": 1,
+          "titre": "Lire un tableau en perspective",
+          "decor": "galerie",
+          "objet_principal": "objet-1",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "bastien",
+          "probleme_narratif": "La galerie des tableaux du château. Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Encyclopédie Larousse, « perspective » ; Musée du Louvre, ressources pédagogiques ; tableau schématique dessiné pour le jeu",
+          "competence_programme": "Expliquer la perspective",
+          "pourquoi_ce_savoir_ici": "La salle « La galerie des tableaux — L'art de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "eclat",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "art-renaissance",
+          "type": "plan",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Dans un tableau en perspective, toutes les lignes qui s'enfoncent (lignes de fuite) se rejoignent en un point, le point de fuite, placé sur la ligne d'horizon. Ce qui est proche (au premier plan) est grand ; ce qui est loin (à l'arrière-plan) est petit. Les peintres de la Renaissance utilisent ces règles pour donner l'illusion de la profondeur.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "titre": "Le tableau de Bastien",
+            "colonnes": 2,
+            "cases": [
+              {
+                "libelle": "Repère 1 — là où toutes les lignes se rejoignent",
+                "reponse": "Le point de fuite"
+              },
+              {
+                "libelle": "Repère 2 — la ligne en pointillés",
+                "reponse": "La ligne d'horizon"
+              },
+              {
+                "libelle": "Repère 3 — tout près, en bas",
+                "reponse": "Le premier plan"
+              },
+              {
+                "libelle": "Repère 4 — tout au fond",
+                "reponse": "L'arrière-plan"
+              }
+            ],
+            "consigne": "Bastien a peint un tableau en perspective. Clique sur une étiquette, puis sur la case du bon repère.<svg viewBox=\"0 0 340 220\" role=\"img\" aria-label=\"Un tableau construit en perspective, avec des repères numérotés\" style=\"display:block;max-width:440px;margin:10px auto;background:#fbf3dd;border:6px solid #b8860b;border-radius:4px\">\n<rect width=\"340\" height=\"92\" fill=\"#cfe2ef\"/><rect y=\"92\" width=\"340\" height=\"128\" fill=\"#e8d9b6\"/>\n<line x1=\"10\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"50\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"90\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"130\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"170\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"210\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"250\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"290\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"330\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><g stroke=\"#7a6a4a\" stroke-width=\"1\"><line x1=\"158\" y1=\"100\" x2=\"181\" y2=\"100\"/><line x1=\"141\" y1=\"112\" x2=\"198\" y2=\"112\"/><line x1=\"115\" y1=\"130\" x2=\"224\" y2=\"130\"/><line x1=\"72\" y1=\"160\" x2=\"267\" y2=\"160\"/><line x1=\"14\" y1=\"200\" x2=\"325\" y2=\"200\"/></g>\n<g fill=\"#d9cdb2\" stroke=\"#6e6452\"><path d=\"M0 20 L120 76 L120 140 L0 210 Z\"/><path d=\"M340 20 L220 76 L220 140 L340 210 Z\"/></g>\n<g fill=\"#efe6cf\" stroke=\"#6e6452\"><rect x=\"14\" y=\"30\" width=\"6\" height=\"175\"/><rect x=\"54\" y=\"48\" width=\"6\" height=\"133\"/><rect x=\"92\" y=\"66\" width=\"6\" height=\"93\"/></g>\n<line x1=\"0\" y1=\"92\" x2=\"340\" y2=\"92\" stroke=\"#8a2626\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/>\n<circle cx=\"170\" cy=\"92\" r=\"3\" fill=\"#8a2626\"/>\n<g fill=\"#3d5266\"><rect x=\"100\" y=\"150\" width=\"30\" height=\"58\" rx=\"8\"/><circle cx=\"115\" cy=\"140\" r=\"11\" fill=\"#e9c49e\"/></g>\n<g fill=\"#7a2a3a\"><rect x=\"190\" y=\"104\" width=\"8\" height=\"15\" rx=\"2\"/><circle cx=\"194\" cy=\"101\" r=\"3\" fill=\"#e9c49e\"/></g>\n<g fill=\"#9cb7cc\"><path d=\"M150 40 l20 -14 l20 14 Z\" fill=\"#8a7a5a\"/><rect x=\"152\" y=\"40\" width=\"36\" height=\"30\" fill=\"#efe3c8\" stroke=\"#8a7a5a\"/></g>\n<g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"170\" cy=\"92\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"170\" y=\"97\">1</text><circle cx=\"24\" cy=\"92\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"24\" y=\"97\">2</text><circle cx=\"60\" cy=\"196\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"60\" y=\"201\">3</text><circle cx=\"208\" cy=\"46\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"208\" y=\"51\">4</text></g>\n</svg>",
+            "indices": [
+              "Toutes les lignes du dallage vont vers le repère 1.",
+              "La ligne pointillée rouge, c'est l'horizon.",
+              "Le premier plan est tout près de nous, en bas."
+            ],
+            "dialogue": "Ah, la dernière page ! Je l'étudiais, car je veux peindre comme les Italiens. Regardez ces tableaux : on dirait des fenêtres ouvertes sur le monde. Le secret, ce sont des règles de dessin. Les corps aussi ont leurs règles. Prouvez-moi que vous savez lire un tableau, et la page est à vous."
+          },
+          "timonier": {
+            "titre": "Le tableau de Bastien",
+            "colonnes": 3,
+            "cases": [
+              {
+                "libelle": "Repère 1",
+                "reponse": "Le point de fuite"
+              },
+              {
+                "libelle": "Repère 2",
+                "reponse": "La ligne d'horizon"
+              },
+              {
+                "libelle": "Repère 3",
+                "reponse": "Le premier plan"
+              },
+              {
+                "libelle": "Repère 4",
+                "reponse": "L'arrière-plan"
+              },
+              {
+                "libelle": "Repère 5",
+                "reponse": "Une ligne de fuite"
+              },
+              {
+                "libelle": "Repère 6",
+                "reponse": "Un personnage au loin"
+              }
+            ],
+            "etiquettes": [
+              "Le point de fuite",
+              "La ligne d'horizon",
+              "Le premier plan",
+              "L'arrière-plan",
+              "Une ligne de fuite",
+              "Un personnage au loin",
+              "Le cadre doré"
+            ],
+            "consigne": "Observe ce tableau construit en perspective. Place chaque étiquette dans la case du bon repère (1 à 6). Une étiquette est en trop.<svg viewBox=\"0 0 340 220\" role=\"img\" aria-label=\"Un tableau construit en perspective, avec des repères numérotés\" style=\"display:block;max-width:440px;margin:10px auto;background:#fbf3dd;border:6px solid #b8860b;border-radius:4px\">\n<rect width=\"340\" height=\"92\" fill=\"#cfe2ef\"/><rect y=\"92\" width=\"340\" height=\"128\" fill=\"#e8d9b6\"/>\n<line x1=\"10\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"50\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"90\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"130\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"170\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"210\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"250\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"290\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><line x1=\"330\" y1=\"210\" x2=\"170\" y2=\"92\" stroke=\"#7a6a4a\" stroke-width=\"1\"/><g stroke=\"#7a6a4a\" stroke-width=\"1\"><line x1=\"158\" y1=\"100\" x2=\"181\" y2=\"100\"/><line x1=\"141\" y1=\"112\" x2=\"198\" y2=\"112\"/><line x1=\"115\" y1=\"130\" x2=\"224\" y2=\"130\"/><line x1=\"72\" y1=\"160\" x2=\"267\" y2=\"160\"/><line x1=\"14\" y1=\"200\" x2=\"325\" y2=\"200\"/></g>\n<g fill=\"#d9cdb2\" stroke=\"#6e6452\"><path d=\"M0 20 L120 76 L120 140 L0 210 Z\"/><path d=\"M340 20 L220 76 L220 140 L340 210 Z\"/></g>\n<g fill=\"#efe6cf\" stroke=\"#6e6452\"><rect x=\"14\" y=\"30\" width=\"6\" height=\"175\"/><rect x=\"54\" y=\"48\" width=\"6\" height=\"133\"/><rect x=\"92\" y=\"66\" width=\"6\" height=\"93\"/></g>\n<line x1=\"0\" y1=\"92\" x2=\"340\" y2=\"92\" stroke=\"#8a2626\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/>\n<circle cx=\"170\" cy=\"92\" r=\"3\" fill=\"#8a2626\"/>\n<g fill=\"#3d5266\"><rect x=\"100\" y=\"150\" width=\"30\" height=\"58\" rx=\"8\"/><circle cx=\"115\" cy=\"140\" r=\"11\" fill=\"#e9c49e\"/></g>\n<g fill=\"#7a2a3a\"><rect x=\"190\" y=\"104\" width=\"8\" height=\"15\" rx=\"2\"/><circle cx=\"194\" cy=\"101\" r=\"3\" fill=\"#e9c49e\"/></g>\n<g fill=\"#9cb7cc\"><path d=\"M150 40 l20 -14 l20 14 Z\" fill=\"#8a7a5a\"/><rect x=\"152\" y=\"40\" width=\"36\" height=\"30\" fill=\"#efe3c8\" stroke=\"#8a7a5a\"/></g>\n<g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"170\" cy=\"92\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"170\" y=\"97\">1</text><circle cx=\"24\" cy=\"92\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"24\" y=\"97\">2</text><circle cx=\"60\" cy=\"196\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"60\" y=\"201\">3</text><circle cx=\"208\" cy=\"46\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"208\" y=\"51\">4</text><circle cx=\"262\" cy=\"180\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"262\" y=\"185\">5</text><circle cx=\"216\" cy=\"114\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"216\" y=\"119\">6</text></g>\n</svg>",
+            "indices": [
+              "Les lignes du dallage sont des lignes de fuite.",
+              "Plus un personnage est loin, plus il est petit.",
+              "Le cadre n'a pas de numéro."
+            ],
+            "dialogue": "Ah, la dernière page ! Je l'étudiais, car je veux peindre comme les Italiens. Regardez ces tableaux : on dirait des fenêtres ouvertes sur le monde. Le secret, ce sont des règles de dessin. Les corps aussi ont leurs règles. Prouvez-moi que vous savez lire un tableau, et la page est à vous."
+          }
+        },
+        {
+          "id": "e5-2",
+          "escale": 5,
+          "ordre": 2,
+          "titre": "Les secrets des peintres",
+          "decor": "galerie",
+          "objet_principal": "objet-2",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "tommaso",
+          "probleme_narratif": "La galerie des tableaux du château. Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Vikidia, « Homme de Vitruve » ; Encyclopædia Universalis, « La Joconde » ; Musée du Louvre",
+          "competence_programme": "Expliquer la perspective",
+          "pourquoi_ce_savoir_ici": "La salle « La galerie des tableaux — L'art de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "calme",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "art-renaissance",
+          "type": "qcm",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Les peintres de la Renaissance représentent le monde comme on le voit : perspective, proportions du corps, portraits ressemblants. L'Homme de Vitruve (vers 1490) inscrit un corps humain dans un cercle et un carré. La Joconde, portrait de Lisa Gherardini, est peinte avec le sfumato, un léger flou qui adoucit les contours ; elle est au musée du Louvre.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "questions": [
+              {
+                "q": "Pourquoi les personnages au fond d'un tableau sont-ils plus petits ?",
+                "options": [
+                  "pour montrer qu'ils sont loin : c'est la perspective",
+                  "parce que ce sont des enfants",
+                  "parce que le peintre manquait de place"
+                ],
+                "bonne": 0,
+                "explication": "La perspective donne l'illusion de la profondeur."
+              },
+              {
+                "q": "Que montre l'Homme de Vitruve de Léonard ?",
+                "options": [
+                  "les proportions du corps, dans un cercle et un carré",
+                  "un roi sur son cheval",
+                  "une machine volante"
+                ],
+                "bonne": 0,
+                "explication": "Un dessin fait vers 1490."
+              },
+              {
+                "q": "La Joconde est…",
+                "options": [
+                  "un portrait",
+                  "un paysage sans personne",
+                  "une statue"
+                ],
+                "bonne": 0,
+                "explication": "Le portrait d'une Florentine, Lisa Gherardini."
+              }
+            ],
+            "consigne": "Réponds aux trois questions, puis clique sur « Vérifier ».",
+            "indices": [
+              "Ce qui est loin paraît plus petit.",
+              "L'Homme de Vitruve tient dans deux figures géométriques.",
+              "Un portrait représente une personne."
+            ],
+            "dialogue": "Voici la suite : Les secrets des peintres. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "questions": [
+              {
+                "q": "Qu'est-ce que le sfumato ?",
+                "options": [
+                  "un léger flou qui adoucit les contours",
+                  "une couleur bleue très chère",
+                  "un cadre doré",
+                  "une sculpture en marbre"
+                ],
+                "bonne": 0,
+                "explication": "Léonard l'utilise dans la Joconde."
+              },
+              {
+                "q": "D'après qui Léonard dessine-t-il l'Homme de Vitruve ?",
+                "options": [
+                  "Vitruve, un architecte romain de l'Antiquité",
+                  "François Ier",
+                  "Gutenberg",
+                  "Michel-Ange"
+                ],
+                "bonne": 0,
+                "explication": "Encore l'Antiquité comme modèle."
+              },
+              {
+                "q": "Où peut-on voir la Joconde aujourd'hui ?",
+                "options": [
+                  "au musée du Louvre, à Paris",
+                  "au château d'Amboise",
+                  "à Florence",
+                  "à Chambord"
+                ],
+                "bonne": 0,
+                "explication": "Elle est entrée dans les collections du roi, puis au Louvre."
+              },
+              {
+                "q": "Quel est le point commun des artistes de la Renaissance ?",
+                "options": [
+                  "représenter le monde et le corps humain de façon réaliste, avec des règles",
+                  "peindre seulement des fonds dorés",
+                  "refuser l'Antiquité",
+                  "ne jamais signer"
+                ],
+                "bonne": 0,
+                "explication": "Perspective, proportions, observation."
+              }
+            ],
+            "consigne": "Réponds aux quatre questions, puis vérifie. Une seule réponse est exacte à chaque fois.",
+            "indices": [
+              "Sfumato vient d'un mot italien qui évoque la fumée.",
+              "Vitruve était un architecte romain.",
+              "La Joconde est à Paris."
+            ],
+            "dialogue": "Voici la suite : Les secrets des peintres. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e5-3",
+          "escale": 5,
+          "ordre": 3,
+          "titre": "Le cadenas du carnet",
+          "decor": "galerie",
+          "objet_principal": "objet-3",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "jacquet",
+          "probleme_narratif": "La galerie des tableaux du château. Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Château royal d'Amboise ; Encyclopædia Universalis, « La Joconde » ; Académie de Nice, fiche « Le château de Chambord »",
+          "competence_programme": "Expliquer la perspective",
+          "pourquoi_ce_savoir_ici": "La salle « La galerie des tableaux — L'art de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "carte",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "art-renaissance",
+          "type": "code",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "François Ier devient roi en 1515 et invite Léonard de Vinci. Son emblème est la salamandre. Léonard meurt à Amboise en 1519 ; la Joconde est aujourd'hui au Louvre. La devise du roi commence par « Nutrisco ».",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "matelot": {
+            "champs": [
+              {
+                "libelle": "Année où François Ier devient roi",
+                "valeur": "1515",
+                "longueur": 4
+              },
+              {
+                "libelle": "Le prénom de l'artiste invité (7 lettres)",
+                "valeur": "LEONARD",
+                "longueur": 7,
+                "numerique": false
+              },
+              {
+                "libelle": "L'emblème du roi (10 lettres)",
+                "valeur": "SALAMANDRE",
+                "longueur": 10,
+                "numerique": false
+              }
+            ],
+            "consigne": "La dernière page du carnet est fermée par un cadenas. Écris l'année, le prénom et l'emblème demandés (les accents ne comptent pas), puis ouvre.",
+            "indices": [
+              "L'année de Marignan.",
+              "Le prénom de l'artiste invité : L… (7 lettres).",
+              "L'animal sculpté partout à Chambord."
+            ],
+            "dialogue": "Voici la suite : Le cadenas du carnet. Observez bien l'objet qui brille dans la salle."
+          },
+          "timonier": {
+            "champs": [
+              {
+                "libelle": "Année de la mort de Léonard",
+                "valeur": "1519",
+                "longueur": 4
+              },
+              {
+                "libelle": "Le musée où se trouve la Joconde (6 lettres)",
+                "valeur": "LOUVRE",
+                "longueur": 6,
+                "numerique": false
+              },
+              {
+                "libelle": "Premier mot de la devise latine du roi (8 lettres)",
+                "valeur": "NUTRISCO",
+                "longueur": 8,
+                "numerique": false
+              }
+            ],
+            "consigne": "La dernière page du carnet est fermée par un cadenas à trois cases. Écris l'année, le musée et le premier mot de la devise du roi, puis ouvre.",
+            "indices": [
+              "Léonard meurt le 2 mai de cette année.",
+              "Le grand musée de Paris.",
+              "« … et extinguo »."
+            ],
+            "dialogue": "Voici la suite : Le cadenas du carnet. Observez bien l'objet qui brille dans la salle."
+          }
+        },
+        {
+          "id": "e5-4",
+          "escale": 5,
+          "ordre": 4,
+          "titre": "La leçon de Bastien",
+          "decor": "galerie",
+          "objet_principal": "objet-4",
+          "objets_cliquables": [
+            "objet-1",
+            "objet-2",
+            "objet-3",
+            "objet-4"
+          ],
+          "personnage_emetteur": "helene",
+          "probleme_narratif": "La galerie des tableaux du château. Des tableaux venus d'Italie : des portraits, des paysages, des palais peints si profonds qu'on croirait pouvoir y entrer. À reformuler pour cette énigme.",
+          "enjeu": "À préciser : ce qui se passe si l'énigme n'est pas résolue.",
+          "episode_du_roman": "Encyclopédie Larousse, « perspective » ; Vikidia, « Homme de Vitruve » ; Encyclopædia Universalis, « La Joconde »",
+          "competence_programme": "Expliquer la perspective",
+          "pourquoi_ce_savoir_ici": "La salle « La galerie des tableaux — L'art de la Renaissance » repose sur cette notion.",
+          "reaction_du_decor": {
+            "effet": "ouverture",
+            "description": "À décrire : ce que le décor montre quand l'énigme est résolue."
+          },
+          "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+          "lecon": "art-renaissance",
+          "type": "trous",
+          "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+          "correction_origine": "Les artistes de la Renaissance cherchent à représenter le monde de façon réaliste : la perspective crée la profondeur, l'étude des proportions donne des corps justes, le portrait montre une personne ressemblante. Ils prennent l'Antiquité pour modèle.",
+          "_brouillon": [
+            "enjeu",
+            "reaction_du_decor",
+            "dialogues",
+            "probleme_narratif"
+          ],
+          "niveaux": [
+            "timonier"
+          ],
+          "timonier": {
+            "texte": "<p>Pour donner de la profondeur, le peintre trace des lignes qui se rejoignent au point de [[fuite]], sur la ligne d'[[horizon]]. Ce qui est loin est dessiné plus [[petit]]. Léonard étudie les [[proportions]] du corps humain. Dans la Joconde, un [[portrait]], il adoucit les contours grâce au [[sfumato]].</p>",
+            "etiquettes": [
+              "fuite",
+              "horizon",
+              "petit",
+              "proportions",
+              "portrait",
+              "sfumato",
+              "grand",
+              "salamandre",
+              "vitrail",
+              "paysan"
+            ],
+            "consigne": "Complète la leçon de Bastien. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop.",
+            "indices": [
+              "Les lignes se rejoignent au point de…",
+              "L'Homme de Vitruve étudie les… du corps.",
+              "La Joconde est un…"
+            ],
+            "dialogue": "Voici la suite : La leçon de Bastien. Observez bien l'objet qui brille dans la salle."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr" data-titre-page="Médias — {journal}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Médias — Le Journal du Nautilus</title>
+<link rel="stylesheet" href="css/nautilus.css?v1">
+<link rel="stylesheet" href="css/theme.css?v1">
+<style>
+  body{ overflow: auto; background: #0b1820; }
+  .page{ width: min(1500px, calc(100% - 32px)); margin: 16px auto 40px; }
+  .page h1{ text-align: left; font-size: 1.7rem; }
+  .grille{ display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 14px; }
+  .m{ padding: 12px; } .m h3{ margin: 0 0 6px; font-family: var(--police); font-weight: normal; color: var(--laiton-clair); }
+  .etat{ display: inline-block; padding: 2px 8px; border-radius: 8px; font-size: .85rem; }
+  .etat.depose{ background: #1d5a36; } .etat.reference{ background: #2a5d7a; } .etat.secours{ background: #6b4a12; } .etat.absent{ background: #5a1e12; }
+  .cote{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+  .apercu{ position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--laiton-fonce); overflow: hidden; }
+  .apercu img, .apercu video, .apercu svg{ width: 100%; height: 100%; object-fit: cover; display: block; }
+  .apercu .lib{ position: absolute; left: 4px; top: 4px; font-size: .72rem; background: rgba(0,0,0,.7); padding: 1px 6px; border-radius: 6px; }
+  .portrait-bloc{ aspect-ratio: 3 / 4; max-width: 160px; }
+  code{ background: rgba(255,255,255,.08); padding: 1px 5px; border-radius: 4px; }
+  .avert{ color: #ffcf7a; font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>🖼️ Médias du jeu — fichier déposé ou secours de Claude</h1>
+  <details class="m cadre-laiton" style="margin:10px 0"><summary><b>Ajouter une image (fond, portrait, départ de vidéo) ou une vidéo</b></summary>
+    <p>Toute image faite ailleurs (Agnes, Midjourney, ChatGPT, photo…) se dépose en une commande ; le moteur la prend aussitôt :</p>
+    <pre>python outils/medias/importer-image.py image.png --decor &lt;id-du-décor&gt; --source "Midjourney"
+python outils/medias/importer-image.py image.png --decor &lt;id&gt; --depart transition-e1     (fond ET départ d'une vidéo)
+python outils/medias/importer-image.py image.png --portrait &lt;id-personnage&gt;
+python outils/medias/importer-image.py clip.mp4 --video transition-e2
+python outils/medias/importer-image.py --dossier      (traite assets/medias-a-importer/ : decor-&lt;id&gt;.png, portrait-&lt;id&gt;.jpg, depart-&lt;nom&gt;.jpg, video-&lt;nom&gt;.mp4)</pre>
+    <p>Pour <b>produire</b> avec une source (Agnes, ou une source que vous ajoutez dans <code>outils/medias/sources-medias.json</code>) : <code>python outils/medias/produire.py --liste-sources</code>. Détails : <code>GUIDE-MEDIAS.md</code>. Supprimer un fichier déposé = retour au décor de secours.</p>
+  </details>
+  <p class="note">Pour chaque emplacement : le nom exact attendu, ce qui est affiché aujourd'hui (<b>fichier déposé</b>, <b>image de référence</b> de l'enseignant, ou <b>secours</b> dessiné par Claude), et l'aperçu côte à côte. Un fichier déposé sous le bon nom remplace le secours sans toucher au code ; le retirer ramène le secours. Liste complète et prompts : <code>PRODUCTION-MEDIAS.md</code>, <code>medias.csv</code>. Contrôle des dimensions et des poids : <code>python outils/verifier-medias.py</code>.</p>
+  <h2 class="titre-grades" style="text-align:left">Décors (1920 × 1080, 16:9)</h2>
+  <div class="grille" id="decors"></div>
+  <h2 class="titre-grades" style="text-align:left">Personnages (portraits 3:4)</h2>
+  <div class="grille" id="persos"></div>
+  <h2 class="titre-grades" style="text-align:left">Vidéos (1280 × 720, H.264, ≤ 6 Mo)</h2>
+  <div class="grille" id="videos"></div>
+</div>
+<script src="js/jeu-config.js?v1"></script>
+<script src="js/donnees-embarquees.js?v1"></script>
+<script src="js/donnees.js?v1"></script>
+<script src="js/decors-secours.js?v1"></script>
+<script src="js/scene.js?v1"></script>
+<script src="js/personnages.js?v1"></script>
+<script>
+(async function(){
+  await VML.chargerDonnees();
+  const $ = s => document.querySelector(s);
+  const ETIQ = { depose: "Fichier déposé", reference: "Image de référence (basse définition)", secours: "Claude (secours dessiné)", absent: "Absent (cinématique en direct)" };
+  const decors = (VML.D["decors-fx"] || {}).decors || {};
+  const html = [];
+  for(const [id, d] of Object.entries(decors)){
+    const src = await VML.resoudreDecor(id);
+    let avert = "";
+    if(src.type === "depose" && Math.abs(src.ratio - 16 / 9) > 0.05) avert = `<p class="avert">⚠️ Format ${src.ratio.toFixed(2)} : le jeu recadre (16:9 conseillé). Recaler les zones avec outils/caler-effets.html.</p>`;
+    html.push(`<div class="m cadre-laiton"><h3>${d.titre}</h3>
+      <div>Nom attendu : <code>assets/images/decors/${id}.webp</code> (ou .jpg / .png) · <span class="etat ${src.type}">${ETIQ[src.type]}</span></div>${avert}
+      <div class="cote">
+        <div class="apercu">${src.type !== "secours" ? `<img src="${src.url}" alt="">` : VML.SVG_DECORS[id]}<span class="lib">affiché dans le jeu</span></div>
+        <div class="apercu">${VML.SVG_DECORS[id] || ""}<span class="lib">secours de Claude</span></div>
+      </div></div>`);
+  }
+  $("#decors").innerHTML = html.join("");
+  const persos = (VML.D.personnages || {}).personnages || {};
+  $("#persos").innerHTML = Object.entries(persos).map(([id, p]) => `<div class="m cadre-laiton"><h3>${p.nom}</h3>
+    <div>Nom attendu : <code>assets/images/personnages/${id}.webp</code> (ou .png / .jpg) · <span class="etat" data-etat-perso="${id}">…</span></div>
+    <div class="cote"><div class="apercu portrait-bloc" data-perso-fichier="${id}"></div><div class="apercu portrait-bloc">${VML.svgPortrait(id)}<span class="lib">secours</span></div></div></div>`).join("");
+  for(const id of Object.keys(persos)){
+    let url = null;
+    for(const ext of [".webp", ".png", ".jpg"]){ const r = await VML.sonderImage("assets/images/personnages/" + id + ext, 2500); if(r){ url = r.url; break; } }
+    const e = document.querySelector(`[data-etat-perso="${id}"]`);
+    e.className = "etat " + (url ? "depose" : "secours"); e.textContent = url ? ETIQ.depose : ETIQ.secours;
+    document.querySelector(`[data-perso-fichier="${id}"]`).innerHTML = url ? `<img src="${url}" alt=""><span class="lib">fichier</span>` : `${VML.svgPortrait(id)}<span class="lib">secours</span>`;
+  }
+  const videos = ["intro", "transition-e2", "transition-e3", "transition-e4", "transition-e5", "transition-e6", "transition-e7", "transition-e8", "transition-e9", "transition-e10", "transition-e11", "fin", "bande-annonce", "travelling-machines-vapeur"];
+  const vh = [];
+  for(const v of videos){
+    let url = null;
+    for(const ext of [".mp4", ".webm"]){ try{ const r = await fetch("assets/videos/" + v + ext, { method: "HEAD" }); if(r.ok){ url = "assets/videos/" + v + ext; break; } }catch(e){} }
+    vh.push(`<div class="m cadre-laiton"><h3>${v}</h3><div>Nom attendu : <code>assets/videos/${v}.mp4</code> · <span class="etat ${url ? "depose" : "absent"}">${url ? ETIQ.depose : ETIQ.absent}</span></div>
+      ${url ? `<div class="apercu"><video src="${url}" controls muted></video></div>` : ""}</div>`);
+  }
+  $("#videos").innerHTML = vh.join("");
+})();
+</script>
+</body>
+</html>

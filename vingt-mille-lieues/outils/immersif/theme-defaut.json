@@ -1,0 +1,29 @@
+{
+  "_commentaire": "Thème par défaut du migrateur (outils/immersif/migrer-jeu.py). Copiez ce fichier, modifiez-le, puis : python migrer-jeu.py <jeu> --theme mon-theme.json. Les clés non renseignées gardent ces valeurs.",
+  "mots": { "escale": "salle", "escales": "salles" },
+  "textes": {
+    "auteur": "{auteur}",
+    "titre": "{titre}",
+    "sousTitre": "Carnet de mission",
+    "journal": "Le carnet de mission",
+    "hud": "📜 {titre}",
+    "bibliotheque": "La Bibliothèque des leçons",
+    "coffre": "🔐 Le coffre final",
+    "pause": "⏸ Le jeu est en pause",
+    "mission": "✍️ Fiche de mission",
+    "lecons": "Leçons A4 — La Bibliothèque des leçons"
+  },
+  "grades": { "cm1": ["matelot"], "cm2": ["timonier"] },
+  "noms_grades": {
+    "mousse":     { "nom": "Apprenti",  "icone": "🌱", "equivalent": "≈ CE2", "profil": "énigmes courtes, aides renforcées" },
+    "matelot":    { "nom": "Compagnon", "icone": "🔧", "equivalent": "≈ CM1", "profil": "cœur de programme CM1" },
+    "timonier":   { "nom": "Maître",    "icone": "🧭", "equivalent": "≈ CM2", "profil": "cœur de programme CM2" },
+    "lieutenant": { "nom": "Expert",    "icone": "🔭", "equivalent": "≈ 6ᵉ",  "profil": "raisonnement en deux étapes, justification" },
+    "second":     { "nom": "Savant",    "icone": "🔱", "equivalent": "≈ 5ᵉ",  "profil": "synthèse, pièges, justification" }
+  },
+  "ambiances": ["vent"],
+  "palette": {},
+  "style_visuel": "peinture numérique semi-réaliste, ambiance de cinéma, lumière chaude contre ombres bleutées, matières nobles, détails narratifs, grain léger, profondeur de champ",
+  "negatif": "texte, lettres, logo, filigrane, mains déformées, doigts en trop, visage déformé, flou, personne réelle, style dessin animé",
+  "effets_reaction": ["lumiere", "eclat", "calme", "carte", "ouverture"]
+}

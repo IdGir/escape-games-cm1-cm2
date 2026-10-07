@@ -1,0 +1,33 @@
+{
+  "_commentaire": "Fiches d'identité des personnages (reprises à l'identique dans PRODUCTION-MEDIAS.md) et réglages de voix. Portrait : fichier déposé assets/images/personnages/<id>.webp|.png|.jpg, sinon portrait dessiné (js/personnages.js).",
+  "personnages": {
+    "nemo": {
+      "nom": "Le capitaine Nemo",
+      "court": "Nemo",
+      "voix": { "rate": 0.88, "pitch": 0.82 },
+      "ton": "énigmatique, cultivé, grave, jamais méchant ni caricatural",
+      "fiche": "Homme d'une cinquantaine d'années, cheveux gris plaqués en arrière, barbe poivre et sel taillée, regard grave, intense et mélancolique ; long manteau (redingote) bleu marine à double rang de boutons dorés, gilet et col blancs sobres, chaîne de montre ; posture droite, mains dans le dos."
+    },
+    "aronnax": {
+      "nom": "Le professeur Aronnax",
+      "court": "Aronnax",
+      "voix": { "rate": 0.98, "pitch": 1.0 },
+      "ton": "savant enthousiaste, curieux, précis",
+      "fiche": "Savant français d'environ 40 ans, professeur au Muséum de Paris ; cheveux bruns légèrement grisonnants aux tempes, moustache et favoris soignés, regard curieux ; redingote brune, gilet, cravate nouée, carnet de notes et crayon à la main."
+    },
+    "conseil": {
+      "nom": "Conseil",
+      "court": "Conseil",
+      "voix": { "rate": 0.96, "pitch": 1.08 },
+      "ton": "flegmatique, poli, classe tout, vouvoie toujours",
+      "fiche": "Domestique flamand du professeur, environ 30 ans, flegmatique ; cheveux châtain clair bien peignés, rasé de près, petites lunettes rondes cerclées de métal ; tenue de serviteur soignée : veste sombre ajustée, gilet, col blanc, nœud discret."
+    },
+    "ned": {
+      "nom": "Ned Land",
+      "court": "Ned Land",
+      "voix": { "rate": 1.08, "pitch": 0.9 },
+      "ton": "harponneur canadien, impatient, franc, jure « Tonnerre ! », veut s'évader",
+      "fiche": "Harponneur canadien d'environ 40 ans, grand et large d'épaules, visage hâlé, barbe courte rousse, sourcils épais ; bonnet de laine, chemise de marin à col ouvert, gilet de cuir, harpon à la main ou sur l'épaule."
+    }
+  }
+}

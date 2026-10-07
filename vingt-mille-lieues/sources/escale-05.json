@@ -1,0 +1,1003 @@
+{
+  "escale": {
+    "numero": 5,
+    "id": "perles-de-ceylan",
+    "titre": "Les perles de Ceylan",
+    "lieu": "Banc de Manaar, au large de Ceylan (aujourd'hui Sri Lanka), janvier 1868",
+    "matiere": "Sciences, histoire, géographie",
+    "periode_conseillee": "P1 Année B (masses), P3 Année A (colonies), P2 Année B (inégalités)",
+    "episode": "Deuxième partie, ch. II « Une nouvelle proposition du capitaine Nemo » et ch. III « Une perle de dix millions »",
+    "scenarimage": "scenarimages/escale-05.md",
+    "mot": "PERLE",
+    "mot_origine": "La perle géante que Nemo laisse grandir dans son huître, au fond d'une grotte (Partie II, ch. III).",
+    "air": null,
+    "cinematique_ouverture": "transition-e5",
+    "cinematique_fin": "fin-e5",
+    "etats_decor": [],
+    "enigmes": [
+      {
+        "id": "e5-1",
+        "escale": 5,
+        "ordre": 1,
+        "titre": "La perle géante",
+        "decor": "banc-perles",
+        "objet_principal": "huitre-geante",
+        "objets_cliquables": [
+          "huitre-geante",
+          "banc",
+          "requin"
+        ],
+        "personnage_emetteur": "conseil",
+        "probleme_narratif": "Dans une grotte, le capitaine montre une huître géante qui cache une perle énorme. Conseil a pesé, à bord, les perles ramassées sur le banc ; le capitaine affirme que la sienne pèse plus que toutes réunies. Avant de remonter, il faut comparer les masses notées dans le carnet de Conseil.",
+        "enjeu": "Le capitaine laisse sa perle grandir ; il ne la confiera qu'à qui sait mesurer avec rigueur.",
+        "episode_du_roman": "Partie II, ch. III « Une perle de dix millions » : dans une grotte, Nemo montre à Aronnax une huître gigantesque contenant une perle énorme, qu'il laisse grossir.",
+        "competence_programme": "Sciences : comparer et mesurer des masses (balance, unités g et kg) ; propriétés de la matière.",
+        "pourquoi_ce_savoir_ici": "« Plus lourd », « plus léger » : seule une mesure dans la même unité permet de comparer des perles si différentes.",
+        "reaction_du_decor": {
+          "effet": "eclat",
+          "description": "La valve de l'huître s'entrouvre : la perle luit sous le fanal."
+        },
+        "liberte_ou_anachronisme": "Les masses du carnet de Conseil sont inventées pour le jeu.",
+        "lecon": "masses",
+        "type": "code",
+        "niveau_variantes": "Mousse : lire une balance, choisir l'instrument. Matelot : ranger 5 masses (g et kg). Timonier : additionner et convertir (code). Lieutenant : équilibre d'une balance de Roberval + justification. Second : masse par différence (code) + justification.",
+        "mousse": {
+          "type": "qcm",
+          "dialogue": "J'ai posé une perle et un coquillage sur les plateaux de la balance. Lequel est le plus lourd ? Je voudrais que vous le disiez sans hésiter.",
+          "consigne": "<div class='doc-carnet'>Sur la balance à deux plateaux, le plateau de la perle descend ; le plateau du coquillage monte.</div>",
+          "questions": [
+            {
+              "q": "Lequel est le plus lourd ?",
+              "options": [
+                "la perle",
+                "le coquillage",
+                "ils ont la même masse",
+                "on ne peut pas savoir"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pour comparer des masses, on utilise…",
+              "options": [
+                "une balance",
+                "une règle",
+                "un thermomètre",
+                "une boussole"
+              ],
+              "bonne": 0
+            }
+          ],
+          "indices": [
+            "Fiche « Mesurer des masses » : sur une balance à deux plateaux, le plus lourd descend.",
+            "Une règle mesure des longueurs."
+          ]
+        },
+        "matelot": {
+          "type": "ordre",
+          "dialogue": "Mon carnet est bien tenu, mais les unités se mélangent : des grammes, des kilogrammes. Rangez ces masses, de la plus légère à la plus lourde.",
+          "consigne": "Range les objets du carnet de Conseil, du plus léger au plus lourd. Attention aux unités : 1 kg = 1 000 g.",
+          "items": [
+            {
+              "txt": "une petite perle",
+              "sous": "2 g"
+            },
+            {
+              "txt": "un coquillage",
+              "sous": "80 g"
+            },
+            {
+              "txt": "le poignard du capitaine",
+              "sous": "250 g"
+            },
+            {
+              "txt": "une huître ordinaire",
+              "sous": "0,5 kg"
+            },
+            {
+              "txt": "la perle géante (estimée)",
+              "sous": "1 kg 500 g"
+            }
+          ],
+          "indices": [
+            "Fiche « Mesurer des masses » : convertis tout en grammes.",
+            "0,5 kg = 500 g."
+          ]
+        },
+        "timonier": {
+          "dialogue": "Le capitaine prétend que sa perle pèse plus que toutes nos perles réunies. Additionnons, et nous verrons.",
+          "consigne": "<div class='doc-carnet'><b>Carnet de Conseil</b> — 40 perles de 5 g ; 60 perles de 10 g ; 1 grosse perle de 150 g. Perle du capitaine, estimée : 1 kg 500 g.</div>Calcule, puis ouvre le cadenas.",
+          "champs": [
+            {
+              "libelle": "Masse de toutes nos perles (g)",
+              "valeur": "950",
+              "longueur": 4
+            },
+            {
+              "libelle": "La perle du capitaine pèse de plus (g)",
+              "valeur": "550",
+              "longueur": 4
+            }
+          ],
+          "indices": [
+            "40 × 5 g + 60 × 10 g + 150 g.",
+            "1 kg 500 g = 1 500 g."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Sur la balance de Roberval du bord, une perle d'un côté, des masses marquées de l'autre. L'équilibre ne ment pas : déduisez.",
+          "consigne": "<div class='doc-carnet'>Plateau gauche : la perle + une masse de 5 g. Plateau droit : une masse de 20 g + une masse de 2 g. La balance est en équilibre.</div>",
+          "questions": [
+            {
+              "q": "Quelle est la masse de la perle ?",
+              "options": [
+                "17 g",
+                "27 g",
+                "22 g",
+                "5 g"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Si l'on retire la masse de 5 g du plateau gauche, la balance…",
+              "options": [
+                "penche du côté droit",
+                "penche du côté gauche",
+                "reste en équilibre",
+                "se casse"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche permet de répondre à la question 1 ?",
+            "options": [
+              "À l'équilibre, la masse totale d'un plateau est égale à la masse totale de l'autre.",
+              "1 kg = 1 000 g.",
+              "On utilise une balance pour mesurer une masse.",
+              "Le plateau le plus lourd descend."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Mesurer des masses », encadré « L'équilibre ».",
+            "perle + 5 = 22."
+          ]
+        },
+        "second": {
+          "type": "code",
+          "dialogue": "On ne pèse pas une perle restée dans son huître. Mais le capitaine a pesé l'huître pleine et une coquille vide de même taille. À vous de faire parler ces nombres.",
+          "consigne": "<div class='doc-carnet'>Huître géante pleine (coquille + chair + perle) : 312 kg 400 g. Coquille vide de même taille : 300 kg. Chair seule, estimée : 10 kg 900 g.</div>Calcule la masse de la perle, en grammes puis en kilogrammes (avec virgule).",
+          "champs": [
+            {
+              "libelle": "Masse de la perle (g)",
+              "valeur": "1500",
+              "longueur": 5
+            },
+            {
+              "libelle": "en kg",
+              "valeur": "1,5",
+              "longueur": 4
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ton calcul ?",
+            "options": [
+              "La masse d'un ensemble est la somme des masses de ses parties : on retrouve une partie en soustrayant les autres.",
+              "À l'équilibre, les deux plateaux ont la même masse.",
+              "La perle est plus lourde que l'huître.",
+              "1 g = 1 000 kg."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "312 kg 400 g − 300 kg − 10 kg 900 g.",
+            "1 500 g = 1,5 kg."
+          ]
+        }
+      },
+      {
+        "id": "e5-2",
+        "escale": 5,
+        "ordre": 2,
+        "titre": "Le pêcheur de perles",
+        "decor": "banc-perles",
+        "objet_principal": "pecheur",
+        "objets_cliquables": [
+          "pecheur",
+          "banc",
+          "requin"
+        ],
+        "personnage_emetteur": "ned",
+        "probleme_narratif": "Un pêcheur indien plonge sans scaphandre, une pierre au pied, pour quelques huîtres. Un requin l'attaque ; le capitaine et Ned Land le sauvent, et Nemo lui donne un sac de perles. Ned, révolté, veut comprendre : pourquoi cet homme risque-t-il sa vie pour si peu, quand d'autres s'enrichissent de son travail ? Avant de repartir, il faut mesurer ces inégalités.",
+        "enjeu": "Ned refuse de repartir sans comprendre ; Nemo, lui, se dit « de ce pays-là », celui des opprimés.",
+        "episode_du_roman": "Partie II, ch. III : Nemo et Ned Land sauvent un pêcheur de perles attaqué par un requin ; Nemo lui donne un sachet de perles et se dit du « pays des opprimés ».",
+        "competence_programme": "Géographie : les inégalités dans le monde — identifier les manifestations des inégalités de niveau de vie ; localiser les grandes aires géographiques.",
+        "pourquoi_ce_savoir_ici": "Mesurer la pauvreté ou la richesse d'un pays demande des indicateurs : on ne peut pas juger à l'œil.",
+        "reaction_du_decor": {
+          "effet": "calme",
+          "description": "Le requin s'éloigne ; le pêcheur remonte vers la lumière."
+        },
+        "liberte_ou_anachronisme": "Les indicateurs d'aujourd'hui (espérance de vie, école, eau potable) sont un dossier de l'équipe de secours (XXIᵉ siècle) ; les pays A et B du tableau sont fictifs.",
+        "lecon": "inegalites",
+        "type": "tri",
+        "niveau_variantes": "Mousse : signes de vie difficile ou aisée. Matelot : indicateurs de niveau de vie. Timonier : tableau de deux pays fictifs. Lieutenant : aires géographiques et indicateurs + justification. Second : QCM sur les indicateurs et leurs pièges + justification.",
+        "mousse": {
+          "dialogue": "Ce brave homme plonge sans rien, pour quelques huîtres ! Ce n'est pas juste. Aidez-moi à voir ce qui rend une vie difficile.",
+          "consigne": "Range chaque situation : vie aisée ou vie difficile ?",
+          "colonnes": [
+            {
+              "id": "aisee",
+              "titre": "Vie aisée",
+              "icone": "🏠"
+            },
+            {
+              "id": "difficile",
+              "titre": "Vie difficile",
+              "icone": "⚠️"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "aller à l'école chaque jour",
+              "col": "aisee"
+            },
+            {
+              "txt": "avoir de l'eau potable au robinet",
+              "col": "aisee"
+            },
+            {
+              "txt": "être soigné quand on est malade",
+              "col": "aisee"
+            },
+            {
+              "txt": "travailler enfant pour nourrir sa famille",
+              "col": "difficile"
+            },
+            {
+              "txt": "risquer sa vie pour quelques pièces",
+              "col": "difficile"
+            },
+            {
+              "txt": "aller chercher l'eau loin de chez soi",
+              "col": "difficile"
+            }
+          ],
+          "indices": [
+            "Fiche « Les inégalités dans le monde ».",
+            "L'école, l'eau, les soins : ce sont des signes de niveau de vie."
+          ]
+        },
+        "matelot": {
+          "dialogue": "Le capitaine dit qu'on peut mesurer la richesse d'un pays avec des « indicateurs ». Moi, je ne connais que la pêche. Rangez-les pour moi.",
+          "consigne": "Range chaque indicateur : il montre un niveau de vie élevé ou faible ?",
+          "colonnes": [
+            {
+              "id": "eleve",
+              "titre": "Niveau de vie élevé",
+              "icone": "📈"
+            },
+            {
+              "id": "faible",
+              "titre": "Niveau de vie faible",
+              "icone": "📉"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "on vit en moyenne plus de 80 ans",
+              "col": "eleve"
+            },
+            {
+              "txt": "presque tous les enfants vont à l'école",
+              "col": "eleve"
+            },
+            {
+              "txt": "presque tous les logements ont l'eau potable",
+              "col": "eleve"
+            },
+            {
+              "txt": "beaucoup d'enfants meurent avant 5 ans",
+              "col": "faible"
+            },
+            {
+              "txt": "beaucoup d'adultes ne savent pas lire",
+              "col": "faible"
+            },
+            {
+              "txt": "une grande partie des habitants vit avec très peu d'argent",
+              "col": "faible"
+            }
+          ],
+          "indices": [
+            "Fiche « Les inégalités dans le monde », liste des indicateurs.",
+            "L'espérance de vie est la durée de vie moyenne."
+          ]
+        },
+        "timonier": {
+          "dialogue": "Le capitaine a sorti un tableau de sa bibliothèque : deux pays, sans nom. Lequel est le plus riche ? Avec quoi le prouver ? Je veux des chiffres, moi.",
+          "consigne": "<div class='doc-carnet'><b>Tableau (pays fictifs)</b><table><tr><th></th><th>Pays A</th><th>Pays B</th></tr><tr><td>Espérance de vie</td><td>82 ans</td><td>63 ans</td></tr><tr><td>Enfants scolarisés</td><td>99 sur 100</td><td>65 sur 100</td></tr><tr><td>Accès à l'eau potable</td><td>100 sur 100</td><td>55 sur 100</td></tr><tr><td>Médecins pour 10 000 habitants</td><td>35</td><td>2</td></tr></table></div>Range chaque affirmation.",
+          "colonnes": [
+            {
+              "id": "vrai",
+              "titre": "Le tableau le prouve",
+              "icone": "✅"
+            },
+            {
+              "id": "faux",
+              "titre": "Le tableau dit le contraire",
+              "icone": "❌"
+            },
+            {
+              "id": "rien",
+              "titre": "Le tableau ne le dit pas",
+              "icone": "❔"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "On vit plus longtemps dans le pays A.",
+              "col": "vrai"
+            },
+            {
+              "txt": "Dans le pays B, environ 45 personnes sur 100 n'ont pas l'eau potable.",
+              "col": "vrai"
+            },
+            {
+              "txt": "Le pays B a plus de médecins que le pays A.",
+              "col": "faux"
+            },
+            {
+              "txt": "Tous les enfants du pays B vont à l'école.",
+              "col": "faux"
+            },
+            {
+              "txt": "Le pays A est plus grand que le pays B.",
+              "col": "rien"
+            },
+            {
+              "txt": "Les habitants du pays B pêchent des perles.",
+              "col": "rien"
+            }
+          ],
+          "indices": [
+            "Fiche « Les inégalités dans le monde » : lire un tableau ligne par ligne.",
+            "100 − 55 = 45."
+          ]
+        },
+        "lieutenant": {
+          "dialogue": "Où vivent ceux qui, comme ce pêcheur, n'ont presque rien ? Le capitaine a un planisphère. Je veux savoir, et je veux une preuve.",
+          "consigne": "Range chaque affirmation sur les inégalités dans le monde, puis justifie.",
+          "colonnes": [
+            {
+              "id": "vrai",
+              "titre": "Exact",
+              "icone": "✅"
+            },
+            {
+              "id": "faux",
+              "titre": "Faux",
+              "icone": "❌"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "Les pays au niveau de vie le plus faible se trouvent surtout en Afrique subsaharienne et en Asie du Sud.",
+              "col": "vrai"
+            },
+            {
+              "txt": "On mesure le niveau de vie avec plusieurs indicateurs : espérance de vie, école, revenu.",
+              "col": "vrai"
+            },
+            {
+              "txt": "Dans un même pays, il peut y avoir des riches et des pauvres.",
+              "col": "vrai"
+            },
+            {
+              "txt": "Un seul indicateur suffit toujours pour comparer deux pays.",
+              "col": "faux"
+            },
+            {
+              "txt": "Les inégalités n'existent qu'entre pays, jamais dans un pays.",
+              "col": "faux"
+            },
+            {
+              "txt": "Tous les pays d'Asie ont le même niveau de vie.",
+              "col": "faux"
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche prouve qu'il y a des inégalités à l'intérieur d'un pays ?",
+            "options": [
+              "Dans un même pays, certains vivent dans l'aisance et d'autres dans la pauvreté : ici, le pêcheur risque sa vie quand le marchand de perles s'enrichit.",
+              "L'espérance de vie est la durée moyenne de la vie.",
+              "L'Afrique subsaharienne est au sud du Sahara.",
+              "Ceylan s'appelle aujourd'hui le Sri Lanka."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Les inégalités dans le monde ».",
+            "Pense au pêcheur et au marchand."
+          ]
+        },
+        "second": {
+          "type": "qcm",
+          "dialogue": "Le capitaine me prête son dossier. Il prétend qu'un chiffre seul peut mentir. Montrez-moi comment ne pas se laisser tromper.",
+          "consigne": "<div class='doc-carnet'><b>Dossier (pays fictifs)</b> — Pays C : revenu moyen élevé, mais 1 habitant sur 4 sans eau potable. Pays D : revenu moyen plus faible, espérance de vie 79 ans, presque tous les enfants scolarisés.</div>",
+          "questions": [
+            {
+              "q": "Que montre le pays C ?",
+              "options": [
+                "Un revenu moyen élevé peut cacher de fortes inégalités entre habitants.",
+                "Tous ses habitants sont riches.",
+                "Il n'a aucun problème.",
+                "L'eau potable ne compte pas."
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pour comparer le niveau de vie de C et de D, il vaut mieux…",
+              "options": [
+                "croiser plusieurs indicateurs (revenu, santé, école, eau)",
+                "ne regarder que le revenu",
+                "ne regarder que la taille du pays",
+                "compter les perles"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Ceylan, au temps du roman, était…",
+              "options": [
+                "une colonie britannique",
+                "un pays indépendant",
+                "une région française",
+                "une île déserte"
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie ta réponse 2 ?",
+            "options": [
+              "Un indicateur seul peut tromper : une moyenne cache les écarts ; on croise plusieurs indicateurs.",
+              "L'espérance de vie est la durée moyenne de la vie.",
+              "Ceylan s'appelle aujourd'hui le Sri Lanka.",
+              "Les pays riches se trouvent tous au nord."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Les inégalités dans le monde », encadré « Une moyenne peut tromper ».",
+            "Fiche « Colonies et échanges » pour la question 3."
+          ]
+        }
+      },
+      {
+        "id": "e5-3",
+        "escale": 5,
+        "ordre": 3,
+        "titre": "Les voiles de Ceylan",
+        "decor": "pont-ceylan",
+        "objet_principal": "barques",
+        "objets_cliquables": [
+          "barques",
+          "cage-pilote",
+          "fanal"
+        ],
+        "personnage_emetteur": "aronnax",
+        "probleme_narratif": "Le Nautilus fait surface au large de Ceylan. Des voiles partout : barques de pêcheurs et navires de commerce de la colonie britannique. Le capitaine ne veut croiser aucun navire de commerce. Aronnax, à la longue-vue, classe les cargaisons pour savoir quels bateaux partent vers l'Europe et lesquels en reviennent.",
+        "enjeu": "Se faire voir d'un navire de la colonie, c'est révéler le Nautilus au monde.",
+        "episode_du_roman": "Partie II, ch. II-III : le Nautilus croise au large de Ceylan, colonie britannique, près des bancs de perles de Manaar ; Nemo évite les navires.",
+        "competence_programme": "Histoire : les échanges commerciaux avec les colonies (produits des colonies vers l'Europe, produits manufacturés vers les colonies).",
+        "pourquoi_ce_savoir_ici": "Savoir ce que transportent les navires, c'est savoir d'où ils viennent et où ils vont, donc lesquels éviter.",
+        "reaction_du_decor": {
+          "effet": "carte",
+          "description": "Une route se dessine sur la mer : des navires vers l'Europe, d'autres vers Ceylan."
+        },
+        "liberte_ou_anachronisme": "Ceylan exportait surtout du café, de la cannelle et des perles vers 1868 ; le thé ne l'emportera qu'après 1880 (A-VERIFIER.md).",
+        "lecon": "colonies",
+        "type": "tri",
+        "niveau_variantes": "Mousse : produit et lieu d'origine. Matelot : marchandises qui partent ou arrivent. Timonier : association produit ↔ origine et destination. Lieutenant : QCM sur la colonie et l'échange inégal + justification. Second : tri en trois colonnes + justification.",
+        "mousse": {
+          "type": "association",
+          "dialogue": "Ces navires sont chargés. D'où vient chaque marchandise ? Un naturaliste ne range bien que ce qu'il comprend.",
+          "consigne": "Relie chaque marchandise au lieu où elle a été produite.",
+          "paires": [
+            {
+              "g": "le café",
+              "icone": "☕",
+              "d": "les plantations de Ceylan"
+            },
+            {
+              "g": "la cannelle",
+              "icone": "🌿",
+              "d": "les arbres de Ceylan"
+            },
+            {
+              "g": "les tissus de coton",
+              "icone": "🧵",
+              "d": "les usines d'Angleterre"
+            }
+          ],
+          "indices": [
+            "Fiche « Colonies et échanges ».",
+            "Les usines sont en Europe."
+          ]
+        },
+        "matelot": {
+          "type": "qcm",
+          "dialogue": "Deux sortes de navires : ceux qui partent vers l'Europe, et ceux qui arrivent à Ceylan. Leurs cargaisons les trahissent.",
+          "consigne": "Pour chaque cargaison, dis si elle part de la colonie vers l'Europe, ou si elle arrive d'Europe dans la colonie.",
+          "questions": [
+            {
+              "q": "Des sacs de café : …",
+              "options": [
+                "elle part de Ceylan vers l'Europe",
+                "elle arrive d'Europe à Ceylan"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Des bottes de cannelle : …",
+              "options": [
+                "elle part de Ceylan vers l'Europe",
+                "elle arrive d'Europe à Ceylan"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Des perles : …",
+              "options": [
+                "elle part de Ceylan vers l'Europe",
+                "elle arrive d'Europe à Ceylan"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Des tissus de coton tissés en usine : …",
+              "options": [
+                "elle part de Ceylan vers l'Europe",
+                "elle arrive d'Europe à Ceylan"
+              ],
+              "bonne": 1
+            },
+            {
+              "q": "Des outils et des machines : …",
+              "options": [
+                "elle part de Ceylan vers l'Europe",
+                "elle arrive d'Europe à Ceylan"
+              ],
+              "bonne": 1
+            },
+            {
+              "q": "Des fusils pour les soldats : …",
+              "options": [
+                "elle part de Ceylan vers l'Europe",
+                "elle arrive d'Europe à Ceylan"
+              ],
+              "bonne": 1
+            }
+          ],
+          "indices": [
+            "Fiche « Colonies et échanges » : matières premières et produits agricoles d'un côté, produits fabriqués de l'autre.",
+            "Les usines sont en Europe."
+          ]
+        },
+        "timonier": {
+          "type": "association",
+          "dialogue": "Je voudrais une étiquette pour chaque cargaison : d'où elle vient et où elle va. Le capitaine appelle cela « l'échange colonial ».",
+          "consigne": "Relie chaque cargaison à son trajet.",
+          "paires": [
+            {
+              "g": "le café de Ceylan",
+              "icone": "☕",
+              "d": "des plantations de la colonie vers Londres"
+            },
+            {
+              "g": "les perles de Manaar",
+              "icone": "🦪",
+              "d": "du banc de perles vers les marchands d'Europe"
+            },
+            {
+              "g": "les tissus de coton",
+              "icone": "🧵",
+              "d": "des usines anglaises vers les marchés de la colonie"
+            },
+            {
+              "g": "les rails de chemin de fer",
+              "icone": "🛤️",
+              "d": "des forges anglaises vers les routes des plantations"
+            },
+            {
+              "g": "les soldats et fonctionnaires",
+              "icone": "💂",
+              "d": "de Grande-Bretagne vers la colonie, pour la gouverner"
+            }
+          ],
+          "indices": [
+            "Fiche « Colonies et échanges », schéma de l'échange colonial.",
+            "La colonie est gouvernée depuis l'Europe."
+          ]
+        },
+        "lieutenant": {
+          "type": "qcm",
+          "dialogue": "Le capitaine dit que cet échange n'est pas égal. Je veux comprendre pourquoi, avant de le croire.",
+          "consigne": "Réponds avec la fiche « Colonies et échanges ».",
+          "questions": [
+            {
+              "q": "Qu'est-ce qu'une colonie ?",
+              "options": [
+                "un territoire dominé et gouverné par un pays étranger",
+                "un pays allié et indépendant",
+                "une île déserte",
+                "une association de pêcheurs"
+              ],
+              "bonne": 0
+            },
+            {
+              "q": "Pourquoi l'échange est-il inégal ?",
+              "options": [
+                "La colonie fournit des produits bruts bon marché et achète cher des produits fabriqués, au profit de la métropole.",
+                "La colonie vend tout plus cher que l'Europe.",
+                "Les navires ne transportent rien.",
+                "La colonie fabrique toutes les machines."
+              ],
+              "bonne": 0
+            }
+          ],
+          "justification": {
+            "question": "Quelle phrase de la fiche justifie la réponse 2 ?",
+            "options": [
+              "La métropole achète à bas prix les produits agricoles de la colonie et lui vend ses produits fabriqués : les profits reviennent surtout à la métropole et à ses marchands.",
+              "Ceylan exporte du café et de la cannelle.",
+              "Ceylan s'appelle aujourd'hui le Sri Lanka.",
+              "Les perles sont pêchées à Manaar."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Colonies et échanges ».",
+            "Pense au pêcheur payé quelques pièces."
+          ]
+        },
+        "second": {
+          "dialogue": "Trois sortes de voiles, trois rôles. Le capitaine veut savoir lesquelles éviter. Classez, et justifiez.",
+          "consigne": "Range chaque élément dans le rôle qu'il joue dans le système colonial, puis justifie.",
+          "colonnes": [
+            {
+              "id": "brut",
+              "titre": "Produit de la colonie (agricole ou brut)",
+              "icone": "🌿"
+            },
+            {
+              "id": "fabrique",
+              "titre": "Produit fabriqué en métropole",
+              "icone": "🏭"
+            },
+            {
+              "id": "pouvoir",
+              "titre": "Contrôle de la colonie",
+              "icone": "⚓"
+            }
+          ],
+          "cartes": [
+            {
+              "txt": "le café",
+              "col": "brut"
+            },
+            {
+              "txt": "la cannelle",
+              "col": "brut"
+            },
+            {
+              "txt": "les perles",
+              "col": "brut"
+            },
+            {
+              "txt": "les tissus de coton",
+              "col": "fabrique"
+            },
+            {
+              "txt": "les machines à vapeur",
+              "col": "fabrique"
+            },
+            {
+              "txt": "le gouverneur britannique",
+              "col": "pouvoir"
+            },
+            {
+              "txt": "les navires de guerre de la Royal Navy",
+              "col": "pouvoir"
+            }
+          ],
+          "justification": {
+            "question": "Pourquoi le capitaine évite-t-il les navires de guerre de la colonie ?",
+            "options": [
+              "Ils assurent le contrôle de la colonie par la métropole : le Nautilus, navire d'un homme qui se dit du « pays des opprimés », y serait un ennemi.",
+              "Ils transportent du café.",
+              "Ils sont plus lents que le Nautilus.",
+              "Ils pêchent des perles."
+            ],
+            "bonne": 0
+          },
+          "indices": [
+            "Fiche « Colonies et échanges ».",
+            "Une colonie se gouverne et se défend depuis la métropole."
+          ]
+        }
+      }
+    ]
+  },
+  "rayons": [
+    {
+      "id": "geographie",
+      "titre": "Rayon Géographie",
+      "icone": "🌍"
+    }
+  ],
+  "lecons": [
+    {
+      "id": "masses",
+      "rayon": "matiere",
+      "fiche": 3,
+      "icone": "⚖️",
+      "titre": "Mesurer des masses",
+      "escale": 5,
+      "competence": "Comparer et mesurer des masses ; unités (g, kg) ; balance.",
+      "essentiel": "<p>La <b>masse</b> d'un objet se mesure avec une <b>balance</b>, en grammes (g) ou en kilogrammes (kg). <b>1 kg = 1 000 g</b>.</p><p>Sur une balance à deux plateaux, le plateau le plus lourd descend ; le plus léger monte.</p><p>Pour comparer des masses, on les écrit dans la même unité : 0,5 kg = 500 g ; 1 kg 500 g = 1 500 g.</p>",
+      "approfondi": "<p>On peut additionner des masses : 40 perles de 5 g pèsent 40 × 5 g = 200 g.</p>",
+      "expert": "<div class='encadre'><b>L'équilibre</b>. À l'équilibre, la masse totale d'un plateau est égale à la masse totale de l'autre. La masse d'un ensemble est la somme des masses de ses parties : on retrouve une partie en soustrayant les autres. 1,5 kg = 1 500 g.</div>",
+      "dans_le_roman": "Nemo montre une huître géante qui renferme une perle énorme (Partie II, ch. III)."
+    },
+    {
+      "id": "inegalites",
+      "rayon": "geographie",
+      "fiche": 1,
+      "icone": "🌍",
+      "titre": "Les inégalités dans le monde",
+      "escale": 5,
+      "competence": "Identifier les manifestations des inégalités de niveau de vie dans le monde ; localiser les grandes aires.",
+      "essentiel": "<p>Dans le monde, tout le monde ne vit pas de la même façon : c'est l'<b>inégalité</b> de niveau de vie. Une vie difficile, c'est par exemple ne pas avoir d'eau potable, ne pas aller à l'école, ne pas être soigné, devoir travailler enfant.</p>",
+      "approfondi": "<h4>Les indicateurs</h4><p>Pour comparer, on utilise des <b>indicateurs</b> : l'<b>espérance de vie</b> (durée moyenne de la vie), la part des enfants scolarisés, l'accès à l'eau potable, le nombre de médecins, le revenu des habitants, la part des enfants qui meurent avant 5 ans. Pour lire un tableau, on compare ligne par ligne, et on ne lui fait pas dire ce qu'il ne dit pas.</p><p>Les pays au niveau de vie le plus faible se trouvent surtout en Afrique subsaharienne et en Asie du Sud ; mais tous les pays d'un continent n'ont pas le même niveau de vie.</p>",
+      "expert": "<div class='encadre attention'><b>Une moyenne peut tromper</b>. Un indicateur seul peut tromper : une moyenne cache les écarts ; on croise plusieurs indicateurs. Dans un même pays, certains vivent dans l'aisance et d'autres dans la pauvreté : ici, le pêcheur risque sa vie quand le marchand de perles s'enrichit.</div>",
+      "dans_le_roman": "Nemo sauve un pêcheur de perles et se dit « de ce pays-là », celui des opprimés (Partie II, ch. III)."
+    },
+    {
+      "id": "colonies",
+      "rayon": "histoire",
+      "fiche": 5,
+      "icone": "⛵",
+      "titre": "Colonies et échanges",
+      "escale": 5,
+      "competence": "Les échanges commerciaux avec les colonies.",
+      "essentiel": "<p>Une <b>colonie</b> est un territoire dominé et gouverné par un pays étranger, la <b>métropole</b>. Au temps du roman, Ceylan (aujourd'hui le Sri Lanka) est une colonie britannique.</p><p>Les colonies envoient vers l'Europe des <b>produits agricoles et bruts</b> (café, cannelle, perles). L'Europe y envoie des <b>produits fabriqués</b> dans ses usines (tissus de coton, outils, machines).</p>",
+      "approfondi": "<h4>L'échange colonial</h4><p>Café des plantations vers Londres ; perles vers les marchands d'Europe ; tissus de coton des usines anglaises vers les marchés de la colonie ; rails et machines des forges anglaises vers les plantations ; soldats et fonctionnaires de Grande-Bretagne vers la colonie, pour la gouverner et la défendre (navires de guerre de la Royal Navy, gouverneur).</p>",
+      "expert": "<p>La métropole achète à bas prix les produits agricoles de la colonie et lui vend ses produits fabriqués : les profits reviennent surtout à la métropole et à ses marchands. Vers 1868, Ceylan exporte surtout du café, de la cannelle et des perles ; le thé ne dominera qu'à la fin du siècle.</p>",
+      "dans_le_roman": "Le Nautilus croise au large de Ceylan et de ses bancs de perles (Partie II, ch. II-III)."
+    }
+  ],
+  "decors": {
+    "banc-perles": {
+      "titre": "Le banc de perles de Manaar",
+      "reference": null,
+      "ambiance": [
+        "sousMarin"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 34
+      },
+      "effets": [
+        {
+          "type": "rayons",
+          "x": 78,
+          "y": 0,
+          "w": 30,
+          "h": 60
+        },
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 38,
+          "r": 8,
+          "couleur": "#fff6e0",
+          "pulse": 0.35
+        },
+        {
+          "type": "lueur",
+          "x": 17,
+          "y": 56,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "bulles",
+          "x": 8,
+          "y": 10,
+          "w": 25,
+          "h": 50,
+          "nombre": 14
+        },
+        {
+          "type": "poussiere",
+          "x": 10,
+          "y": 10,
+          "w": 80,
+          "h": 70,
+          "nombre": 30
+        },
+        {
+          "type": "vignette",
+          "force": 0.55
+        },
+        {
+          "type": "grain",
+          "force": 0.04
+        }
+      ],
+      "zones": [
+        {
+          "id": "huitre-geante",
+          "libelle": "L'huître géante",
+          "x": 41,
+          "y": 21,
+          "w": 23,
+          "h": 32,
+          "description": "Une huître de la taille d'un fauteuil ; entre ses valves, une perle laiteuse énorme."
+        },
+        {
+          "id": "pecheur",
+          "libelle": "Le pêcheur de perles",
+          "x": 73,
+          "y": 11,
+          "w": 15,
+          "h": 47,
+          "description": "Un pêcheur indien, une pierre au pied pour descendre plus vite, un filet à la main, sans aucun scaphandre."
+        },
+        {
+          "id": "requin",
+          "libelle": "Le requin",
+          "x": 86,
+          "y": 18,
+          "w": 14,
+          "h": 14,
+          "description": "Un grand requin rôde au loin."
+        },
+        {
+          "id": "banc",
+          "libelle": "Le banc d'huîtres",
+          "x": 30,
+          "y": 60,
+          "w": 40,
+          "h": 38,
+          "description": "Des milliers d'huîtres perlières sur le fond rocheux."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    },
+    "pont-ceylan": {
+      "titre": "Au large de Ceylan",
+      "reference": null,
+      "ambiance": [
+        "vent",
+        "vagues"
+      ],
+      "kenBurns": {
+        "echelle": 1.05,
+        "duree": 36
+      },
+      "effets": [
+        {
+          "type": "lueur",
+          "x": 34,
+          "y": 25,
+          "r": 14,
+          "couleur": "#ffd9a0",
+          "pulse": 0.15
+        },
+        {
+          "type": "lueur",
+          "x": 52,
+          "y": 40,
+          "r": 5,
+          "couleur": "#ffcf7a",
+          "pulse": 0.3
+        },
+        {
+          "type": "vignette",
+          "force": 0.45
+        },
+        {
+          "type": "grain",
+          "force": 0.03
+        }
+      ],
+      "zones": [
+        {
+          "id": "barques",
+          "libelle": "Les voiles au large",
+          "x": 9,
+          "y": 33,
+          "w": 48,
+          "h": 13,
+          "description": "Barques de pêcheurs et navires marchands, sur une mer d'or."
+        },
+        {
+          "id": "cage-pilote",
+          "libelle": "La cage du pilote",
+          "x": 60,
+          "y": 24,
+          "w": 13,
+          "h": 32,
+          "description": "La cage vitrée de laiton d'où le Nautilus est gouverné."
+        },
+        {
+          "id": "fanal",
+          "libelle": "Le fanal",
+          "x": 50,
+          "y": 36,
+          "w": 6,
+          "h": 12,
+          "description": "Le fanal électrique, éteint en surface pour ne pas être vu."
+        }
+      ],
+      "etats": {
+        "normal": {
+          "filtre": "none"
+        }
+      }
+    }
+  },
+  "dialogues": {
+    "cinematiques": {
+      "transition-e5": {
+        "titre": "Escale 5 — Les perles de Ceylan",
+        "plans": [
+          {
+            "decor": "banc-perles",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "nemo",
+            "texte": "L'île de Ceylan, professeur. Demain, je vous emmène sur le banc de Manaar, là où l'on pêche les perles.",
+            "mouvement": "zoom",
+            "video": "transition-e5"
+          },
+          {
+            "decor": "banc-perles",
+            "etat": "normal",
+            "duree": 6,
+            "personnage": "ned",
+            "texte": "Des perles ? Pourvu qu'il n'y ait pas de requins, au moins.",
+            "mouvement": "glisse"
+          }
+        ]
+      },
+      "fin-e5": {
+        "titre": "Du pays des opprimés",
+        "plans": [
+          {
+            "decor": "banc-perles",
+            "etat": "normal",
+            "duree": 7,
+            "personnage": "nemo",
+            "texte": "Cet homme est du pays des opprimés. J'en suis encore, et j'en serai jusqu'à mon dernier souffle.",
+            "mouvement": "zoom",
+            "video": "fin-e5"
+          }
+        ]
+      }
+    },
+    "fin_escale": {
+      "5": {
+        "personnage": "conseil",
+        "texte": "Le pêcheur est sauf, Monsieur, et notre carnet bien tenu. Le capitaine nous laisse inscrire un mot : celui de ce qu'il cache au fond de sa grotte."
+      }
+    }
+  }
+}

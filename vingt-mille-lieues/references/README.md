@@ -1,0 +1,15 @@
+# Références de style
+
+- `style-scene-cinema-victorienne.webp` : création de l'enseignant. Niveau visé pour les scènes à personnages
+  (rendu cinéma photoréaliste, lumière chaude/froide, matières nobles). Voir `prompts-opus/vingt-mille-lieues.md` § 7.8.
+  À utiliser comme **image de référence de style** (par exemple dans le paramètre `image` de l'API d'images Agnes),
+  sans reproduire son personnage ni ses objets.
+- `style-salon-nautilus.png` : référence de l'enseignant pour le **grand salon du Nautilus** (voir § 7.8, point 3).
+- `style-cabine-capitaine-1.png`, `style-cabine-capitaine-2.png` : cabine du capitaine Nemo (§ 7.8, point 4).
+- `style-salle-officiers-1.png`, `-2.png`, `-3.png` : salle des officiers / carré (§ 7.8, point 5).
+- `style-salle-machines-1.png` à `-4.png` : séquence de **travelling avant** dans une salle des machines à vapeur (§ 7.8, point 6).
+- `style-atlantide-1.png`, `-2.png` : scaphandriers devant un temple grec englouti (§ 7.8, point 7).
+- `style-pont-1.png` à `-3.png` : pont du Nautilus en surface (§ 7.8, point 8).
+- `personnage-nemo-1.png`, `-2.png` : **portrait de référence du capitaine Nemo** (§ 7.8, point 9). À passer en `image` de référence à chaque génération où Nemo apparaît.
+- `style-recif-1.webp`, `-2.webp` : récif corallien / forêt sous-marine (§ 7.8, point 10).
+- `style-nautilus-banquise.png`, `-maelstrom.png`, `-poulpe.png` : le Nautilus vu de l'extérieur (glace, tourbillon, calmar géant) (§ 7.8, point 11).
