@@ -1,178 +1,178 @@
 {
-  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
-  "accueil": {
-    "personnage": "anselme",
-    "texte": "Entrez vite, et refermez la porte. Je suis frère Anselme, copiste de cette abbaye. Ce matin, j'ai ouvert le grand livre que nous copions depuis trois ans : cinq pages ont disparu. L'évêque arrive demain pour le voir. Vous êtes apprentis copistes : vous allez refaire ces cinq pages. Chacune raconte un moment de notre histoire, et chacune porte un mot. Les cinq mots ensemble redonneront la première ligne du livre. Prenez une plume. Au travail."
-  },
-  "coffre": {
-    "personnage": "anselme",
-    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
-  },
-  "cinematiques": {
-    "transition-e1": {
-      "titre": "Salle 1 — Le baptême de Clovis",
-      "plans": [
-        {
-          "decor": "reims",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "anselme",
-          "texte": "Voici la première page. Elle commence là où finit l'Empire romain. Quand l'empire s'effondre en Occident, des peuples s'installent en Gaule : parmi eux, les Francs. Leur roi s'appelle Clovis. Il gagne des batailles, et il se fait baptiser à Reims par l'évêque Remi. Attention : personne ne connaît la date exacte de ce baptême. Les historiens hésitent entre 496 et 508. Écrivez « vers l'an 500 », c'est plus honnête. Ren",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e1": {
-      "titre": "Fin de la salle 1",
-      "plans": [
-        {
-          "decor": "reims",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "anselme",
-          "texte": "Première page refaite. Le mot de cette page est FRANCS : c'est leur nom qui a donné, bien plus tard, celui de la France. Passez à la deuxième page. Elle vous emmène à Aix-la-Chapelle, chez un roi franc devenu empereur. Une élève de son école vous y attend.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e2": {
-      "titre": "Salle 2 — La cour de Charlemagne",
-      "plans": [
-        {
-          "decor": "aix",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "aude",
-          "texte": "Bonjour ! J'apprends à lire et à écrire ici, au palais. Charlemagne est roi des Francs depuis 768. Le jour de Noël de l'an 800, à Rome, le pape Léon III l'a couronné empereur. Une chose encore : on raconte parfois que Charlemagne a inventé l'école. C'est faux. Des écoles existaient déjà dans les monastères et auprès des évêques. Lui a demandé qu'il y en ait davantage, et il a fait venir des savants comme Alcuin. Aide",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e2": {
-      "titre": "Fin de la salle 2",
-      "plans": [
-        {
-          "decor": "aix",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "aude",
-          "texte": "Deuxième page refaite, et le mot est EMPIRE . Regardez mon écriture : ronde, claire, avec des espaces entre les mots. On l'appelle la minuscule caroline, et c'est grâce à elle que les livres se lisent mieux. Retournez à l'abbaye : la troisième page se fait au scriptorium, la salle où l'on copie.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e3": {
-      "titre": "Salle 3 — Le scriptorium de l'abbaye",
-      "plans": [
-        {
-          "decor": "scriptorium",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "anselme",
-          "texte": "Ici, on copie. L'imprimerie n'existe pas : chaque livre est recopié à la main, page après page. Un grand livre peut demander une année de travail. Nous ne faisons pas que copier : nous enseignons aussi. L'école de l'abbaye reçoit les futurs moines, et quelques enfants. La troisième page raconte cela.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e3": {
-      "titre": "Fin de la salle 3",
-      "plans": [
-        {
-          "decor": "scriptorium",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "anselme",
-          "texte": "Troisième page refaite. Le mot est PLUME : sans elle, beaucoup de textes anciens ne seraient pas arrivés jusqu'à vous. Maintenant, traversez le cloître. Mère Alix vous attend à l'hôtel-Dieu.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e4": {
-      "titre": "Salle 4 — L'hôtel-Dieu et l'aumône",
-      "plans": [
-        {
-          "decor": "hoteldieu",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "alix",
-          "texte": "Bienvenue. Ici, personne ne paie. Nous accueillons les malades pauvres, les vieillards, les enfants abandonnés, et les pèlerins de passage. Cette maison s'appelle l'hôtel-Dieu, la maison de Dieu. D'où vient l'argent ? De la dîme, la part des récoltes que les paysans versent à l'Église, et des dons des seigneurs. Refaites cette page : elle dit ce que l'Église faisait pour ceux qui n'avaient rien.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e4": {
-      "titre": "Fin de la salle 4",
-      "plans": [
-        {
-          "decor": "hoteldieu",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "alix",
-          "texte": "Quatrième page refaite. Le mot est CHARITÉ : au Moyen Âge, c'est le nom que l'on donne au secours porté aux pauvres et aux malades. Il vous reste une page. Sortez par le portail : Garin taille des pierres sur le chantier. Il vous montrera deux façons de bâtir une église.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e5": {
-      "titre": "Salle 5 — L'église romane et la cathédrale gothique",
-      "plans": [
-        {
-          "decor": "chantier",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "garin",
-          "texte": "Regardez les deux bâtiments. L'église de l'abbaye est romane : sa voûte a la forme d'un demi-tonneau, on l'appelle voûte en berceau. Elle pèse sur les murs : alors on les fait épais, on les renforce avec des contreforts, et on perce de petites fenêtres. La cathédrale est gothique : la voûte repose sur des arcs croisés, les ogives, et des arcs-boutants la retiennent de l'extérieur. Les murs peuvent s'ouvrir : place au",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e5": {
-      "titre": "Fin de la salle 5",
-      "plans": [
-        {
-          "decor": "chantier",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "anselme",
-          "texte": "Cinq pages, cinq mots. Le livre est complet, et sa première ligne se lit de nouveau. Voilà le travail d'un copiste : il n'invente pas le passé, il l'empêche de disparaître. L'évêque peut venir. Bravo, apprentis.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "fin": {
-      "titre": "Fin de « Le Manuscrit de l'abbaye »",
-      "plans": [
-        {
-          "decor": "chantier",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "garin",
-          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
-          "mouvement": "zoom"
-        }
-      ]
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "anselme",
+  "texte": "Entrez vite, et refermez la porte. Je suis frère Anselme, copiste de cette abbaye. Ce matin, j'ai ouvert le grand livre que nous copions depuis trois ans : cinq pages ont disparu. L'évêque arrive demain pour le voir. Vous êtes apprentis copistes : vous allez refaire ces cinq pages. Chacune raconte un moment de notre histoire, et chacune porte un mot. Les cinq mots ensemble redonneront la première ligne du livre. Prenez une plume. Au travail."
+ },
+ "coffre": {
+  "personnage": "anselme",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — Le baptême de Clovis",
+   "plans": [
+    {
+     "decor": "reims",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "anselme",
+     "texte": "Voici la première page. Elle commence là où finit l'Empire romain. Quand l'empire s'effondre en Occident, des peuples s'installent en Gaule : parmi eux, les Francs. Leur roi s'appelle Clovis. Il gagne des batailles, et il se fait baptiser à Reims par l'évêque Remi. Attention : personne ne connaît la date exacte de ce baptême. Les historiens hésitent entre 496 et 508. Écrivez « vers l'an 500 », c'est plus honnête. Ren",
+     "mouvement": "zoom"
     }
+   ]
   },
-  "fin_escale": {
-    "1": {
-      "personnage": "anselme",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "2": {
-      "personnage": "aude",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "3": {
-      "personnage": "anselme",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "4": {
-      "personnage": "alix",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "5": {
-      "personnage": "garin",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "reims",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "anselme",
+     "texte": "Première page refaite. Le mot de cette page est FRANCS : c'est leur nom qui a donné, bien plus tard, celui de la France. Passez à la deuxième page. Elle vous emmène à Aix-la-Chapelle, chez un roi franc devenu empereur. Une élève de son école vous y attend.",
+     "mouvement": "glisse"
     }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — La cour de Charlemagne",
+   "plans": [
+    {
+     "decor": "aix",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "aude",
+     "texte": "Bonjour ! J'apprends à lire et à écrire ici, au palais. Charlemagne est roi des Francs depuis 768. Le jour de Noël de l'an 800, à Rome, le pape Léon III l'a couronné empereur. Une chose encore : on raconte parfois que Charlemagne a inventé l'école. C'est faux. Des écoles existaient déjà dans les monastères et auprès des évêques. Lui a demandé qu'il y en ait davantage, et il a fait venir des savants comme Alcuin. Aide",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "aix",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "aude",
+     "texte": "Deuxième page refaite, et le mot est EMPIRE . Regardez mon écriture : ronde, claire, avec des espaces entre les mots. On l'appelle la minuscule caroline, et c'est grâce à elle que les livres se lisent mieux. Retournez à l'abbaye : la troisième page se fait au scriptorium, la salle où l'on copie.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — Le scriptorium de l'abbaye",
+   "plans": [
+    {
+     "decor": "scriptorium",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "anselme",
+     "texte": "Ici, on copie. L'imprimerie n'existe pas : chaque livre est recopié à la main, page après page. Un grand livre peut demander une année de travail. Nous ne faisons pas que copier : nous enseignons aussi. L'école de l'abbaye reçoit les futurs moines, et quelques enfants. La troisième page raconte cela.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "scriptorium",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "anselme",
+     "texte": "Troisième page refaite. Le mot est PLUME : sans elle, beaucoup de textes anciens ne seraient pas arrivés jusqu'à vous. Maintenant, traversez le cloître. Mère Alix vous attend à l'hôtel-Dieu.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — L'hôtel-Dieu et l'aumône",
+   "plans": [
+    {
+     "decor": "hoteldieu",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "alix",
+     "texte": "Bienvenue. Ici, personne ne paie. Nous accueillons les malades pauvres, les vieillards, les enfants abandonnés, et les pèlerins de passage. Cette maison s'appelle l'hôtel-Dieu, la maison de Dieu. D'où vient l'argent ? De la dîme, la part des récoltes que les paysans versent à l'Église, et des dons des seigneurs. Refaites cette page : elle dit ce que l'Église faisait pour ceux qui n'avaient rien.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "hoteldieu",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "alix",
+     "texte": "Quatrième page refaite. Le mot est CHARITÉ : au Moyen Âge, c'est le nom que l'on donne au secours porté aux pauvres et aux malades. Il vous reste une page. Sortez par le portail : Garin taille des pierres sur le chantier. Il vous montrera deux façons de bâtir une église.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — L'église romane et la cathédrale gothique",
+   "plans": [
+    {
+     "decor": "chantier",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "garin",
+     "texte": "Regardez les deux bâtiments. L'église de l'abbaye est romane : sa voûte a la forme d'un demi-tonneau, on l'appelle voûte en berceau. Elle pèse sur les murs : alors on les fait épais, on les renforce avec des contreforts, et on perce de petites fenêtres. La cathédrale est gothique : la voûte repose sur des arcs croisés, les ogives, et des arcs-boutants la retiennent de l'extérieur. Les murs peuvent s'ouvrir : place au",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "chantier",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "garin",
+     "texte": "Cinq pages, cinq mots. Le livre est complet, et sa première ligne se lit de nouveau. Voilà le travail d'un copiste : il n'invente pas le passé, il l'empêche de disparaître. L'évêque peut venir. Bravo, apprentis.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Le Manuscrit de l'abbaye »",
+   "plans": [
+    {
+     "decor": "chantier",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "garin",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
   }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "anselme",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "aude",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "anselme",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "alix",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "garin",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
 }

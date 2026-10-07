@@ -4,45 +4,84 @@
    "nom": "Frère Anselme",
    "court": "Frère",
    "voix": {
-    "rate": 0.95,
-    "pitch": 1.0
+    "edge": "fr-FR-HenriNeural",
+    "nom": "Henri",
+    "rate": 0.9,
+    "pitch": 0.92
    },
    "ton": "Moine copiste, doux et érudit",
    "fiche": "Moine copiste de l'abbaye",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "chauve",
+    "cheveux": "#9c9c98",
+    "peau": "#e6c2a6",
+    "habit": "#5a3a22",
+    "barbe": false,
+    "lunettes": false
+   }
   },
   "aude": {
    "nom": "Aude",
    "court": "Aude",
    "voix": {
-    "rate": 1.0,
-    "pitch": 1.15
+    "edge": "fr-FR-EloiseNeural",
+    "nom": "Eloise",
+    "rate": 1.1,
+    "pitch": 1.05
    },
    "ton": "Élève curieuse, parle vite",
    "fiche": "Élève de l'école du palais d'Aix, 11 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "fille",
+    "coiffure": "longue",
+    "cheveux": "#5a3a22",
+    "peau": "#e6c2a6",
+    "habit": "#2c4a8a",
+    "lunettes": false
+   }
   },
   "alix": {
    "nom": "Mère Alix",
    "court": "Mère",
    "voix": {
-    "rate": 0.9,
-    "pitch": 0.9
+    "edge": "fr-FR-DeniseNeural",
+    "nom": "Denise",
+    "rate": 0.95,
+    "pitch": 0.97
    },
    "ton": "Abbesse ferme et bienveillante",
    "fiche": "Abbesse, responsable de l'hôtel-Dieu",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "courte",
+    "cheveux": "#9c9c98",
+    "peau": "#e6c2a6",
+    "habit": "#e8e4da",
+    "coiffe": "#f4f1ea",
+    "lunettes": false
+   }
   },
   "garin": {
    "nom": "Garin",
    "court": "Garin",
    "voix": {
+    "edge": "fr-FR-RemyMultilingualNeural",
+    "nom": "Remy",
     "rate": 1.05,
-    "pitch": 1.2
+    "pitch": 1.15
    },
    "ton": "Apprenti tailleur de pierre, franc et fier de son métier",
    "fiche": "Apprenti tailleur de pierre, 12 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "garçon",
+    "coiffure": "courte",
+    "cheveux": "#2a1c14",
+    "peau": "#dba680",
+    "habit": "#6a4428",
+    "barbe": false,
+    "lunettes": false
+   }
   }
  }
 }
