@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "lanterne": {
+   "titre": "La lanterne, tout en haut du phare",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La liste de Maëlle",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une liste où les sources de lumière et les objets éclairés se mélangent."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le schéma sur le mur",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un schéma peint qui suit la lumière du phare jusqu'au bateau."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le coffre des signaux",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un coffre où l'on range les objets qui envoient des messages."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le cahier de Maëlle",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le cahier où la gardienne note tout ce qu'elle sait de la lumière."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "atelier": {
+   "titre": "L'atelier, au pied de l'escalier du phare",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "L'établi des mots",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un établi où trois mots sont gravés dans le bois."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le banc d'essai",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un banc avec une lampe devant lequel on place chaque matériau."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le carnet d'essais",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet taché d'huile où des mots ont disparu."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le registre de l'ingénieure",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le registre des vitres fabriquées dans l'atelier."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "chambre": {
+   "titre": "La chambre du gardien, au deuxième étage",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "L'écran blanc de Nils",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un écran blanc où une balle projette son ombre."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le carnet d'observations",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Les affirmations de Nils sur les ombres, écrites une par une."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le théâtre d'ombres",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une petite scène avec une figurine de bateau et une lampe mobile."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La boîte à ombres",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une boîte où un mot est caché derrière des lettres."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "cour": {
+   "titre": "La cour du phare, autour du cadran solaire",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les photos d'Achille",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une série de photos de l'ombre d'un bâton dans la cour."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le cadran de pierre",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Le cadran solaire gravé au milieu de la cour."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le plan de la cour",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un plan de la cour vu de dessus avec trois ombres tracées."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet de l'été",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un carnet où Achille relève la longueur des ombres tout l'été."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "galerie": {
+   "titre": "La galerie extérieure, autour de la lanterne, face à la mer",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le carnet de la Lune",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet où la capitaine dessine la Lune chaque soir."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La rose des phases",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un tableau où chaque phase de la Lune attend sa description."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La lampe à signaux",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "La lampe de La Mouette qui répond au phare par éclats courts et longs."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le journal de bord",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le journal où Yasmine note ses observations du ciel et de la mer."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

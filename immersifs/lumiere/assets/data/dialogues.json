@@ -1,0 +1,178 @@
+{
+  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+  "accueil": {
+    "personnage": "maelle",
+    "texte": "Bonsoir, et bienvenue sur l'île Lumière ! Je suis Maëlle, la gardienne du phare. La nuit tombe, et mon phare ne s'allume plus : son tableau de commande est verrouillé par un code de cinq mots. Au large, La Mouette, le voilier de la capitaine Yasmine, approche des rochers. Chaque mot du code est caché dans une pièce du phare, et chacun parle de la lumière. Vous êtes mes apprentis gardiens : retrouvez les cinq mots, notez-les bien, et nous rallumerons le phare ensemble."
+  },
+  "coffre": {
+    "personnage": "maelle",
+    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+  },
+  "cinematiques": {
+    "transition-e1": {
+      "titre": "Salle 1 — La lanterne du phare",
+      "plans": [
+        {
+          "decor": "lanterne",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "maelle",
+          "texte": "Voici la lanterne, le cœur du phare. Ma lampe est éteinte, et sans elle les marins ne voient pas les rochers. Pour trouver le premier mot du code, il faut d'abord savoir d'où vient la lumière et comment elle voyage jusqu'à nos yeux.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e1": {
+      "titre": "Fin de la salle 1",
+      "plans": [
+        {
+          "decor": "lanterne",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "maelle",
+          "texte": "Bravo ! Le premier mot est SOURCE : une source produit sa lumière, qui voyage en ligne droite. Descendez à l'atelier des vitres : Salomé, l'ingénieure, vous y attend.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e2": {
+      "titre": "Salle 2 — L'atelier des vitres",
+      "plans": [
+        {
+          "decor": "atelier",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "salome",
+          "texte": "Bonsoir ! Je suis Salomé, ingénieure en signalisation maritime. Je teste les vitres de la lanterne : la lumière du phare doit passer à travers sans être arrêtée. Aidez-moi à classer mes matériaux, et le deuxième mot sera à vous.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e2": {
+      "titre": "Fin de la salle 2",
+      "plans": [
+        {
+          "decor": "atelier",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "salome",
+          "texte": "Parfait ! Le deuxième mot est OPAQUE : un objet opaque arrête la lumière, et c'est derrière lui que naît l'ombre. Montez voir Nils : il passe ses soirées à jouer avec les ombres.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e3": {
+      "titre": "Salle 3 — La chambre aux ombres",
+      "plans": [
+        {
+          "decor": "chambre",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "nils",
+          "texte": "Salut ! Moi, c'est Nils, le neveu de Maëlle. Regardez mon théâtre d'ombres : quand j'approche la lampe, le bateau devient géant ! Ma tante a caché le troisième mot dans mon cahier d'expériences. Il faut comprendre comment naît une ombre.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e3": {
+      "titre": "Fin de la salle 3",
+      "plans": [
+        {
+          "decor": "chambre",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "nils",
+          "texte": "Génial ! Le troisième mot est OMBRE . Dans la cour, Achille, l'horloger, a planté un bâton : il dit que son ombre lui donne l'heure. Allez voir ça !",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e4": {
+      "titre": "Salle 4 — La cour du cadran solaire",
+      "plans": [
+        {
+          "decor": "cour",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "achille",
+          "texte": "Bonsoir, jeunes gens. Je suis Achille, horloger du port. Toute la journée, j'ai photographié l'ombre de ce bâton. Elle n'est jamais au même endroit ni de la même longueur. Rangez mes photos et lisez mon carnet : le quatrième mot est caché dedans. Et retenez bien ceci : on ne regarde jamais le Soleil en face.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e4": {
+      "titre": "Fin de la salle 4",
+      "plans": [
+        {
+          "decor": "cour",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "achille",
+          "texte": "Excellent ! Le quatrième mot est SOLEIL : l'ombre tourne avec lui, toujours à l'opposé. Vite, montez à la galerie du phare : la capitaine Yasmine appelle à la radio.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "transition-e5": {
+      "titre": "Salle 5 — La galerie du phare",
+      "plans": [
+        {
+          "decor": "galerie",
+          "etat": "normal",
+          "duree": 8,
+          "personnage": "yasmine",
+          "texte": "Ici la capitaine Yasmine, à bord de La Mouette ! Je vois la côte, mais pas votre phare. Je dessine la Lune chaque soir dans mon carnet de bord : aidez-moi à remettre mes pages en ordre, puis lisez le message de ma lampe à signaux. Le dernier mot est dans le ciel.",
+          "mouvement": "zoom"
+        }
+      ]
+    },
+    "fin-e5": {
+      "titre": "Fin de la salle 5",
+      "plans": [
+        {
+          "decor": "galerie",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "maelle",
+          "texte": "Le dernier mot est LUNE : elle ne brille que parce que le Soleil l'éclaire. Vous avez les cinq mots ! Tapez-les sur le tableau de commande, dans l'ordre des salles, et mon phare se rallumera.",
+          "mouvement": "glisse"
+        }
+      ]
+    },
+    "fin": {
+      "titre": "Fin de « Le Phare de l'île Lumière »",
+      "plans": [
+        {
+          "decor": "galerie",
+          "etat": "normal",
+          "duree": 7,
+          "personnage": "yasmine",
+          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+          "mouvement": "zoom"
+        }
+      ]
+    }
+  },
+  "fin_escale": {
+    "1": {
+      "personnage": "maelle",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "2": {
+      "personnage": "salome",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "3": {
+      "personnage": "nils",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "4": {
+      "personnage": "achille",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    },
+    "5": {
+      "personnage": "yasmine",
+      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+    }
+  }
+}
