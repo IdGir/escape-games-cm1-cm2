@@ -32,3 +32,13 @@ Le test joue toutes les énigmes de tous les grades. Ouvrir ensuite le jeu avec 
 - ⬜ **Images** (5 décors, portraits) : non produites, en attente de l'accord de l'enseignant (source et budget).
 - ⬜ **Zones cliquables** : positions standard, à caler sur chaque image (`outils/caler-effets.html`).
 - ⬜ **Vidéos** d'ouverture et de fin : non produites.
+
+## Suivi (7 octobre 2026) : 5 grades, identité du jeu, voix
+
+- ✅ **5 grades** : Allumeur (mousse), Veilleur (matelot), Gardien (timonier), Opticien (lieutenant), Expert du phare (second) ; noms neutres, liés à la lumière. Mousse et matelot jouent 15 énigmes, les trois autres 20 (la 4e énigme de chaque salle). Blocs écrits par `vingt-mille-lieues/outils/immersif/grades/lumiere_s1.py` à `_s5.py`, appliqués par `appliquer-grades.py lumiere`. Justification (lieutenant, second) contrôlée mot pour mot dans les fiches. Test immersif : 555 vérifications réussies.
+- ✅ **Un guide par salle** (Maëlle, Salomé, Nils, Achille, Yasmine) au lieu d'un émetteur différent à chaque énigme.
+- ✅ **Charte graphique propre** : nuit bleu marine et jaune de phare, fenêtre d'énigme claire à accents bleus (`css/theme.css`).
+- ✅ **Voix Edge, une par personnage** : Denise, Vivienne, Remy (voix plus aiguë et rapide), Henri (grave, lent), Eloise ; 57 répliques en mp3 dans `assets/audio/voix/` (1,7 Mo environ). Ré-écouter quelques répliques avant de livrer ; régénérer avec `python outils/voix/generer-voix.py` après tout changement de dialogue.
+- ✅ **Portraits dessinés** aux traits des personnages (en attendant les images).
+- ⬜ À vérifier (faits dérivés ou valeurs inventées) : lumière du Soleil à la Terre en environ 8 minutes (150 millions de km à 300 000 km/s) ; premier quartier vers le 7e jour, dernier quartier vers le 22e jour d'une lunaison ; relevés d'ombres « fictifs » de la salle 4 ; durée de la lumière sur 30 km (0,0001 s).
+- ⬜ **Images** (décors, portraits) à fournir par l'enseignant (ou à produire) ; vidéos Agnes à partir de ces images ; zones cliquables à caler sur les images.

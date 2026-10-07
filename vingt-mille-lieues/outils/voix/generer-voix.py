@@ -128,8 +128,22 @@ def main():
     for voix, qui in prises.items():
         if len(qui) > 1:
             print("⚠ la voix", voix, "est partagée par", ", ".join(sorted(qui)), ": une voix par personnage")
+    valides = {perso + "/" + cle_replique(t) for perso, t in repliques()}
+    orphelins = [k for k in index if k not in valides]
+    if orphelins and not o.perso:                              # répliques modifiées ou supprimées : on retire les anciens mp3
+        for k in orphelins:
+            f = os.path.join(SORTIE, k.split("/")[0], k.split("/")[1] + ".mp3")
+            if not o.essai and os.path.isfile(f):
+                os.remove(f)
+            if not o.essai:
+                del index[k]
+        print(f"{len(orphelins)} ancien(s) mp3 {'à retirer' if o.essai else 'retiré(s)'}.")
     print(f"{len(repliques())} répliques ; {len(travaux)} à générer.")
-    if o.essai or not travaux:
+    if o.essai:
+        return
+    if not travaux:
+        os.makedirs(SORTIE, exist_ok=True)
+        json.dump(index, open(idx_chemin, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         return
     asyncio.run(generer(travaux, index))
     os.makedirs(SORTIE, exist_ok=True)
