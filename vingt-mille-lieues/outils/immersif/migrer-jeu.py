@@ -263,8 +263,11 @@ def copier_moteur(dest, slug_jeu):
     if os.path.isdir(os.path.join(MODELE, "outils", "medias")):
         shutil.copytree(os.path.join(MODELE, "outils", "medias"), os.path.join(dest, "outils", "medias"), dirs_exist_ok=True,
                         ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    if os.path.isdir(os.path.join(MODELE, "outils", "voix")):
+        shutil.copytree(os.path.join(MODELE, "outils", "voix"), os.path.join(dest, "outils", "voix"), dirs_exist_ok=True,
+                        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     os.makedirs(os.path.join(dest, "tests"), exist_ok=True)
-    for f in ("test-immersif.js", "solveurs.js"):
+    for f in ("test-immersif.js", "solveurs.js", "test-voix.js"):
         if os.path.isfile(os.path.join(MODELE, "tests", f)):
             s = open(os.path.join(MODELE, "tests", f), encoding="utf-8").read()
             s = s.replace('path.resolve(__dirname, "../../outils-tests")', 'path.resolve(__dirname, "' + "../" * (prof + 1) + 'outils-tests")').replace('"../../outils-tests/charge"', '"' + "../" * (prof + 1) + 'outils-tests/charge"')

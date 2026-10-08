@@ -4,8 +4,11 @@ window.VML_JEU = {
   "decorAccueil": "reims",
   "prefixeStockage": "vml_moyen_age_abbaye",
   "grades": [
+    "mousse",
     "matelot",
-    "timonier"
+    "timonier",
+    "lieutenant",
+    "second"
   ],
   "textes": {
     "auteur": "Escape game · cycle 3",

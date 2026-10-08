@@ -195,6 +195,7 @@ VML.CLE_PARTIE = ((window.VML_JEU || {}).prefixeStockage || "vml") + "_partie";
     const ov = $("#cinematique");
     if(!c || VML.modeVerif){ if(c) appliquerEffetsCine(c); return; }
     VML.aller("ecran-cine");
+    if(VML.musique) VML.musique(id);
     ov.innerHTML = `<div class="cine-scene"></div><video class="cine-video" playsinline hidden></video>
       <div class="cine-titre">${c.titre || ""}</div>
       <div class="cine-soustitre" aria-live="polite"></div>
@@ -246,6 +247,7 @@ VML.CLE_PARTIE = ((window.VML_JEU || {}).prefixeStockage || "vml") + "_partie";
     appliquerEffetsCine(c);
     /* Sortie en fondu au noir : le voile couvre l'écran, la cinématique est retirée, l'écran suivant se met en place
        dessous, puis le voile se lève. « Passer » fait le même fondu, en plus court. */
+    if(VML.arreterMusique) VML.arreterMusique(passe ? 350 : 900);
     await VML.fonduNoir(passe ? 350 : 900);
     ov.innerHTML = "";
     VML.leverVoileNoir(700);

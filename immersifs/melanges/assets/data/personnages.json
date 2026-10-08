@@ -4,56 +4,104 @@
    "nom": "Lila",
    "court": "Lila",
    "voix": {
-    "rate": 0.95,
-    "pitch": 1.0
+    "edge": "fr-FR-EloiseNeural",
+    "nom": "Eloise",
+    "rate": 1.08,
+    "pitch": 1.05
    },
    "ton": "Curieuse et enthousiaste, adore expérimenter",
    "fiche": "Apprentie chimiste, 11 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "fille",
+    "coiffure": "longue",
+    "cheveux": "#5a3a22",
+    "peau": "#e6c2a6",
+    "habit": "#e8e4da",
+    "lunettes": true
+   }
   },
   "marius": {
    "nom": "Marius",
    "court": "Marius",
    "voix": {
-    "rate": 1.0,
-    "pitch": 1.15
+    "edge": "fr-FR-HenriNeural",
+    "nom": "Henri",
+    "rate": 1.02,
+    "pitch": 1.05
    },
    "ton": "Cuisinier gourmand et blagueur",
    "fiche": "Cuisinier de la cuisine d'essai",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "courte",
+    "cheveux": "#2a1c14",
+    "peau": "#dba680",
+    "habit": "#e8e4da",
+    "coiffe": "#f4f1ea",
+    "barbe": false,
+    "lunettes": false
+   }
   },
   "nadia": {
    "nom": "Nadia",
    "court": "Nadia",
    "voix": {
-    "rate": 0.9,
-    "pitch": 0.9
+    "edge": "fr-FR-DeniseNeural",
+    "nom": "Denise",
+    "rate": 1.0,
+    "pitch": 1.0
    },
    "ton": "Précise et méthodique",
    "fiche": "Laborantine de l'atelier de tri",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "longue",
+    "cheveux": "#1a1a1a",
+    "peau": "#b8805e",
+    "habit": "#e8e4da",
+    "lunettes": false
+   }
   },
   "yann": {
    "nom": "Yann",
    "court": "Yann",
    "voix": {
-    "rate": 1.05,
-    "pitch": 1.2
+    "edge": "fr-FR-RemyMultilingualNeural",
+    "nom": "Remy",
+    "rate": 0.92,
+    "pitch": 0.9
    },
    "ton": "Paludier posé, parle de la mer",
    "fiche": "Paludier, ramasseur de sel de mer",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "courte",
+    "cheveux": "#9c9c98",
+    "peau": "#c08a64",
+    "habit": "#2a4a6a",
+    "barbe": true,
+    "lunettes": false
+   }
   },
   "melange": {
    "nom": "Madame Mélange",
    "court": "Madame",
    "voix": {
-    "rate": 0.92,
-    "pitch": 1.05
+    "edge": "fr-FR-VivienneMultilingualNeural",
+    "nom": "Vivienne",
+    "rate": 0.9,
+    "pitch": 0.92
    },
    "ton": "Directrice mystérieuse, solennelle",
    "fiche": "Chimiste, directrice du laboratoire",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "longue",
+    "cheveux": "#9c9c98",
+    "peau": "#e6c2a6",
+    "habit": "#5a3a62",
+    "lunettes": true
+   }
   }
  }
 }

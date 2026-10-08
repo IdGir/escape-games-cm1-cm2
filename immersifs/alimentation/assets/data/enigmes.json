@@ -1,20 +1,40 @@
 {
- "_commentaire": "Généré par outils/immersif/migrer-jeu.py depuis « alimentation ». À compléter : voir MIGRATION-RAPPORT.md.",
  "version": 1,
  "niveaux": [
   {
+   "id": "mousse",
+   "nom": "Marmiton",
+   "icone": "🥄",
+   "equivalent": "≈ CE2",
+   "profil": "énigmes courtes, vocabulaire simple, aides renforcées (premier indice offert, fiche mise en évidence)"
+  },
+  {
    "id": "matelot",
-   "nom": "Compagnon",
-   "icone": "🔧",
+   "nom": "Commis",
+   "icone": "🥕",
    "equivalent": "≈ CM1",
    "profil": "cœur de programme CM1"
   },
   {
    "id": "timonier",
-   "nom": "Maître",
-   "icone": "🧭",
+   "nom": "Cuisinier",
+   "icone": "🍳",
    "equivalent": "≈ CM2",
-   "profil": "cœur de programme CM2"
+   "profil": "cœur de programme CM2, plus d'éléments, vocabulaire précis"
+  },
+  {
+   "id": "lieutenant",
+   "nom": "Sous-chef",
+   "icone": "🍲",
+   "equivalent": "≈ 6ᵉ",
+   "profil": "raisonnement en deux étapes, documents à croiser, justification"
+  },
+  {
+   "id": "second",
+   "nom": "Chef",
+   "icone": "👨‍🍳",
+   "equivalent": "≈ 5ᵉ",
+   "profil": "synthèse, données chiffrées, pièges de logique, justification"
   }
  ],
  "escales": [
@@ -60,7 +80,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "croissance",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (code) ; Commis (code) ; Cuisinier (code) ; Sous-chef (qcm) ; Chef (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Caramel a mangé 700 g de nourriture et a grossi de 410 g. Une partie de la nourriture a servi à construire son corps ; le reste lui a donné l'énergie pour vivre et bouger, ou a été rejeté.",
      "matelot": {
       "champs": [
@@ -93,6 +113,110 @@
        "Additionne la dernière colonne : 70 + 140 + 210 + 280."
       ],
       "dialogue": "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie. Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines. La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…"
+     },
+     "mousse": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Caramel a grossi de (en grammes)",
+        "valeur": "55",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Nathan a noté la masse du poussin Caramel. Lis le tableau, calcule, puis écris ta réponse dans le cadenas.<div class=\"doc-titre\"><i>Carnet de Nathan (relevé fictif)</i></div><table class=\"tableau-releves\"><tr><th>Semaine</th><th>Masse de Caramel</th></tr><tr><td>0 (naissance)</td><td>40 g</td></tr><tr><td>1</td><td>95 g</td></tr></table><p class=\"question-doc\"><b>De combien de grammes Caramel a-t-il grossi pendant la semaine 1 ?</b></p>",
+      "indices": [
+       "Ouvre la fiche « Grandir, c'est fabriquer de la matière » dans la Bibliothèque.",
+       "Pour savoir de combien il a grossi, on fait une soustraction.",
+       "Calcule 95 − 40."
+      ],
+      "dialogue": "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie. Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines. La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…"
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "De combien de grammes Pâquerette a-t-elle grossi en 3 semaines ?",
+        "options": [
+         "205 g",
+         "240 g",
+         "360 g",
+         "175 g"
+        ],
+        "bonne": 0,
+        "explication": "240 − 35 = 205."
+       },
+       {
+        "q": "Combien de grammes de nourriture a-t-elle mangés en tout ?",
+        "options": [
+         "360 g",
+         "205 g",
+         "180 g",
+         "240 g"
+        ],
+        "bonne": 0,
+        "explication": "60 + 120 + 180 = 360."
+       },
+       {
+        "q": "Pourquoi Pâquerette a-t-elle moins grossi que ce qu'elle a mangé ?",
+        "options": [
+         "Une partie des aliments sert à construire le corps, une autre fournit l'énergie, le reste est rejeté",
+         "Elle a mangé des aliments sans matière",
+         "Sa masse a diminué à cause de la chaleur",
+         "Elle n'a pas assez mangé pour grandir"
+        ],
+        "bonne": 0,
+        "explication": "Tout ne sert pas à construire le corps."
+       }
+      ],
+      "consigne": "Nathan suit aussi la poussine Pâquerette. Lis son carnet, réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.<div class=\"doc-titre\"><i>Carnet de Nathan : la poussine Pâquerette (relevé fictif)</i></div><table class=\"tableau-releves\"><tr><th>Semaine</th><th>Masse de Pâquerette</th><th>Nourriture mangée pendant la semaine</th></tr><tr><td>0 (naissance)</td><td>35 g</td><td>—</td></tr><tr><td>1</td><td>80 g</td><td>60 g</td></tr><tr><td>2</td><td>150 g</td><td>120 g</td></tr><tr><td>3</td><td>240 g</td><td>180 g</td></tr></table>",
+      "indices": [
+       "Gain de masse : masse finale moins masse de naissance.",
+       "Additionne la dernière colonne.",
+       "Compare 360 g mangés et 205 g gagnés : où est passé le reste ?"
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Les animaux, et donc les êtres humains, trouvent cette matière dans leur nourriture, qui vient elle-même d'autres êtres vivants.",
+        "Une partie des aliments sert à construire le corps ; une autre fournit l'énergie pour vivre et bouger ; le reste est rejeté.",
+        "Tous les êtres vivants ont besoin de matière pour grandir et se développer.",
+        "Pour le vérifier, on mesure la masse (en grammes, sur une balance) et la taille (en centimètres, avec une toise) à intervalles réguliers, puis on compare les valeurs dans un tableau ou sur un graphique."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie. Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines. La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…"
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Grammes mangés en 4 semaines qui n'ont pas servi à grossir",
+        "valeur": "290",
+        "longueur": 3
+       },
+       {
+        "libelle": "Masse de Caramel en semaine 5 (g)",
+        "valeur": "625",
+        "longueur": 3
+       }
+      ],
+      "consigne": "Nathan reprend les mesures de Caramel : en 4 semaines, il a mangé 700 g de nourriture et sa masse est passée de 40 g à 450 g. En semaine 5, il mange 350 g et grossit de 175 g. Calcule, puis ouvre le cadenas. Choisis aussi la phrase de la fiche qui explique pourquoi on ne retrouve pas dans la masse tout ce qui a été mangé.",
+      "indices": [
+       "700 − 410 : combien de grammes ne se retrouvent pas dans la masse ?",
+       "Le gain de masse en 4 semaines est 450 − 40.",
+       "Masse en semaine 5 : 450 + 175."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique l'écart entre ce qui est mangé et ce qui est gagné ?",
+       "options": [
+        "Tous les êtres vivants ont besoin de matière pour grandir et se développer.",
+        "Les animaux, et donc les êtres humains, trouvent cette matière dans leur nourriture, qui vient elle-même d'autres êtres vivants.",
+        "C'est pourquoi un poussin qui a mangé 700 g de nourriture n'a grossi que de 410 g.",
+        "Pour le vérifier, on mesure la masse (en grammes, sur une balance) et la taille (en centimètres, avec une toise) à intervalles réguliers, puis on compare les valeurs dans un tableau ou sur un graphique."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie. Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines. La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…"
      }
     },
     {
@@ -108,7 +232,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ines",
+     "personnage_emetteur": "nathan",
      "probleme_narratif": "Inès demande d'où vient la matière dont un corps a besoin pour grandir.",
      "enjeu": "Sans comprendre d'où vient la matière, le repas des coureurs est incomplet.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; La main à la pâte, « Alimentation et crois",
@@ -121,7 +245,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "croissance",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (qcm) ; Commis (qcm) ; Cuisinier (qcm) ; Sous-chef (vraifaux) ; Chef (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Pour grandir, un animal a besoin de matière. Il la trouve dans sa nourriture : son corps fabrique ses os, ses muscles et ses plumes à partir des aliments.",
      "matelot": {
       "questions": [
@@ -166,6 +290,131 @@
        "L'œuf contenait de quoi former un poussin de 40 g, pas de 450 g."
       ],
       "dialogue": "Un corps qui grandit a besoin de matière. D'où vient-elle ? Répondez aux questions de la docteure."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Caramel grossit. Avec quoi son corps fabrique-t-il de la matière ?",
+        "options": [
+         "Avec ce qu'il mange",
+         "Avec la lumière du soleil",
+         "Avec le bruit du poulailler",
+         "Avec rien du tout"
+        ],
+        "bonne": 0,
+        "explication": "La matière vient de la nourriture."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Grandir, c'est fabriquer de la matière ».",
+       "Un poussin ne grandit pas sans manger.",
+       "Cherche ce que Caramel avale tous les jours."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les animaux trouvent la matière de leur corps dans leur nourriture.",
+        "vrai": true,
+        "explication": "C'est le point de départ de la fiche."
+       },
+       {
+        "txt": "La nourriture des animaux vient elle-même d'autres êtres vivants.",
+        "vrai": true,
+        "explication": "Plantes et animaux."
+       },
+       {
+        "txt": "Tout ce qu'un poussin mange sert à construire son corps.",
+        "vrai": false,
+        "explication": "Une partie fournit l'énergie, le reste est rejeté."
+       },
+       {
+        "txt": "Le poussin construit son corps avec la chaleur de la lampe.",
+        "vrai": false,
+        "explication": "La chaleur ne fournit pas de matière."
+       },
+       {
+        "txt": "La masse se mesure avec une balance, la taille avec une toise.",
+        "vrai": true,
+        "explication": "Deux instruments, deux grandeurs."
+       }
+      ],
+      "consigne": "Nathan a noté cinq affirmations sur l'origine de la matière. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui montre d'où vient la nourriture des animaux.",
+      "indices": [
+       "La matière du corps vient des aliments.",
+       "Une partie des aliments sert à autre chose qu'à grossir.",
+       "Pour la justification : cherche la phrase qui dit d'où vient la nourriture."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche montre d'où vient la nourriture des animaux ?",
+       "options": [
+        "Les animaux, et donc les êtres humains, trouvent cette matière dans leur nourriture, qui vient elle-même d'autres êtres vivants.",
+        "Tous les êtres vivants ont besoin de matière pour grandir et se développer.",
+        "Une partie des aliments sert à construire le corps ; une autre fournit l'énergie pour vivre et bouger ; le reste est rejeté.",
+        "Pour le vérifier, on mesure la masse (en grammes, sur une balance) et la taille (en centimètres, avec une toise) à intervalles réguliers, puis on compare les valeurs dans un tableau ou sur un graphique."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pour grandir de 6 cm, l'enfant a-t-il eu besoin de matière ?",
+        "options": [
+         "Oui : il a fabriqué de la matière à partir de ses aliments",
+         "Non : sa taille augmente toute seule",
+         "Non : l'air suffit",
+         "Seulement s'il fait du sport"
+        ],
+        "bonne": 0,
+        "explication": "Grandir, c'est fabriquer de la matière."
+       },
+       {
+        "q": "Quelle période de la vie correspond à une croissance très rapide ?",
+        "options": [
+         "Les premières années et la puberté",
+         "Entre 8 et 10 ans uniquement",
+         "L'âge adulte",
+         "Aucune : on grandit toujours au même rythme"
+        ],
+        "bonne": 0,
+        "explication": "Rapide, puis plus lente, puis rapide à la puberté."
+       },
+       {
+        "q": "Pourquoi le bébé a-t-il grandi plus vite que l'enfant de 9 ans ?",
+        "options": [
+         "Parce que la croissance est plus rapide les premières années de la vie",
+         "Parce qu'il mange moins",
+         "Parce qu'il dort moins",
+         "Parce qu'il est plus lourd"
+        ],
+        "bonne": 0,
+        "explication": "La croissance ralentit après les premières années."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Questions de la docteure Inès</b> (inventées pour le jeu). Un enfant de 9 ans a grandi de 6 cm en un an. Un bébé de 6 mois a grandi de 10 cm en six mois.</div>Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Grandir demande de la matière, donc des aliments.",
+       "La croissance n'a pas le même rythme à tous les âges.",
+       "Compare les âges des deux enfants."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Tous les êtres vivants ont besoin de matière pour grandir et se développer.",
+        "Une partie des aliments sert à construire le corps ; une autre fournit l'énergie pour vivre et bouger ; le reste est rejeté.",
+        "Pour le vérifier, on mesure la masse (en grammes, sur une balance) et la taille (en centimètres, avec une toise) à intervalles réguliers, puis on compare les valeurs dans un tableau ou sur un graphique.",
+        "Chez l'être humain, la croissance est très rapide les premières années, plus lente ensuite (5 à 6 cm par an vers 8-10 ans), puis de nouveau rapide à la puberté."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -181,7 +430,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "basile",
+     "personnage_emetteur": "nathan",
      "probleme_narratif": "Basile veut savoir qui a le plus grandi, en triant les mesures.",
      "enjeu": "Sans la toise, impossible de comparer la croissance de chacun.",
      "episode_du_roman": "Relevé fictif (toise de Lou), vraisemblable (voir A-VERIFIER.md) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO ",
@@ -194,7 +443,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "croissance",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (tri) ; Commis (tri) ; Cuisinier (tri) ; Sous-chef (tri) ; Chef (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Lou a grandi de 22 cm en 4 ans, soit 5 à 6 cm par an. Comme Caramel, elle fabrique son corps avec la matière apportée par ses aliments.",
      "matelot": {
       "colonnes": [
@@ -269,6 +518,156 @@
        "Grandir, c'est fabriquer de la matière : elle vient des aliments."
       ],
       "dialogue": "On se mesure sur la toise à chaque saison ! Triez les mesures dans la bonne catégorie."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "vrai",
+        "titre": "Vrai"
+       },
+       {
+        "id": "faux",
+        "titre": "Faux"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Lou mesure plus à 7 ans qu'à 6 ans.",
+        "col": "vrai"
+       },
+       {
+        "txt": "Lou a grandi de 6 cm.",
+        "col": "vrai"
+       },
+       {
+        "txt": "Lou a perdu des centimètres.",
+        "col": "faux"
+       },
+       {
+        "txt": "Lou a grandi de 20 cm.",
+        "col": "faux"
+       }
+      ],
+      "consigne": "Lou est mesurée chaque année contre la porte de la cuisine. Lis le tableau, puis range chaque phrase : est-elle vraie ou fausse ? Clique sur une carte, puis sur une colonne.<div class=\"doc-titre\"><i>Les marques de Lou (relevé fictif)</i></div><table class=\"tableau-releves\"><tr><th>Âge</th><th>Taille</th></tr><tr><td>6 ans</td><td>115 cm</td></tr><tr><td>7 ans</td><td>121 cm</td></tr></table>",
+      "indices": [
+       "Ouvre la fiche « Grandir, c'est fabriquer de la matière ».",
+       "Calcule la différence : 121 − 115.",
+       "Deux phrases sont vraies, deux sont fausses."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "rapide",
+        "titre": "Croissance rapide"
+       },
+       {
+        "id": "lente",
+        "titre": "Croissance plus lente"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Les premières années de la vie",
+        "col": "rapide"
+       },
+       {
+        "txt": "La puberté",
+        "col": "rapide"
+       },
+       {
+        "txt": "Le premier anniversaire d'un bébé",
+        "col": "rapide"
+       },
+       {
+        "txt": "Vers 8-10 ans",
+        "col": "lente"
+       },
+       {
+        "txt": "L'année qui suit les premières années",
+        "col": "lente"
+       },
+       {
+        "txt": "Entre la petite enfance et la puberté",
+        "col": "lente"
+       }
+      ],
+      "consigne": "Nathan classe les périodes de la vie. Range chaque période : la croissance y est-elle rapide ou plus lente ? Puis choisis la phrase de la fiche qui donne l'ordre de grandeur de la croissance vers 8-10 ans.",
+      "indices": [
+       "La croissance est rapide, puis plus lente, puis de nouveau rapide.",
+       "La puberté est un moment de croissance rapide.",
+       "Vers 8-10 ans, on grandit de 5 à 6 cm par an."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne l'ordre de grandeur de la croissance vers 8-10 ans ?",
+       "options": [
+        "Une partie des aliments sert à construire le corps ; une autre fournit l'énergie pour vivre et bouger ; le reste est rejeté.",
+        "Tous les êtres vivants ont besoin de matière pour grandir et se développer.",
+        "Chez l'être humain, la croissance est très rapide les premières années, plus lente ensuite (5 à 6 cm par an vers 8-10 ans), puis de nouveau rapide à la puberté.",
+        "C'est pourquoi un poussin qui a mangé 700 g de nourriture n'a grossi que de 410 g."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "oui",
+        "titre": "Le tableau le montre"
+       },
+       {
+        "id": "non",
+        "titre": "Le tableau ne le montre pas"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Lou a grandi chaque année.",
+        "col": "oui"
+       },
+       {
+        "txt": "Lou a grandi d'environ 5 à 6 cm par an.",
+        "col": "oui"
+       },
+       {
+        "txt": "Entre 6 et 10 ans, Lou a grandi de 22 cm.",
+        "col": "oui"
+       },
+       {
+        "txt": "Lou grandira de 5 cm par an toute sa vie.",
+        "col": "non"
+       },
+       {
+        "txt": "Lou grandit grâce à ce qu'elle mange.",
+        "col": "non"
+       },
+       {
+        "txt": "Lou grandira plus vite que ses camarades.",
+        "col": "non"
+       }
+      ],
+      "consigne": "Nathan lit le carnet de croissance de Lou. Range chaque phrase : le tableau permet-il de la conclure, ou non ? Puis choisis la phrase de la fiche qui explique comment on vérifie une croissance.<div class=\"doc-titre\"><i>Les marques de Lou (relevé fictif)</i></div><table class=\"tableau-releves\"><tr><th>Âge</th><th>Taille</th></tr><tr><td>6 ans</td><td>115 cm</td></tr><tr><td>7 ans</td><td>121 cm</td></tr><tr><td>8 ans</td><td>126 cm</td></tr><tr><td>9 ans</td><td>132 cm</td></tr><tr><td>10 ans</td><td>137 cm</td></tr></table>",
+      "indices": [
+       "Un tableau donne des mesures, pas des explications ni l'avenir.",
+       "Calcule 137 − 115.",
+       "« Toute sa vie » : le tableau s'arrête à 10 ans."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique comment on vérifie une croissance ?",
+       "options": [
+        "Chez l'être humain, la croissance est très rapide les premières années, plus lente ensuite (5 à 6 cm par an vers 8-10 ans), puis de nouveau rapide à la puberté.",
+        "Pour le vérifier, on mesure la masse (en grammes, sur une balance) et la taille (en centimètres, avec une toise) à intervalles réguliers, puis on compare les valeurs dans un tableau ou sur un graphique.",
+        "Les animaux, et donc les êtres humains, trouvent cette matière dans leur nourriture, qui vient elle-même d'autres êtres vivants.",
+        "C'est pourquoi un poussin qui a mangé 700 g de nourriture n'a grossi que de 410 g."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -284,7 +683,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "rosalie",
+     "personnage_emetteur": "nathan",
      "probleme_narratif": "Rosalie a retrouvé le message de Nathan, tâché de terre.",
      "enjeu": "Sans les mots manquants, la première clé reste enfermée.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -297,10 +696,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "croissance",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Cuisinier (trous) ; Sous-chef (code) ; Chef (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Matière, aliments, puberté : la croissance demande de la matière, et donc des aliments.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "texte": "<p>Tous les êtres vivants ont besoin de [[matière]] pour grandir. Un poussin ou un enfant fabrique son corps à partir des [[aliments]] qu'il mange. Chez l'être humain, la croissance est très rapide pendant les premières années de la vie, puis de nouveau à la [[puberté]].</p>",
@@ -319,6 +720,69 @@
        "Un des mots désigne le moment où le corps d'un enfant se transforme en corps d'adulte."
       ],
       "dialogue": "Nathan m'a laissé ce mot avant de partir. Complétez-le avec les mots que vous avez appris."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Croissance totale (cm)",
+        "valeur": "22",
+        "longueur": 2
+       },
+       {
+        "libelle": "Plus grande croissance en un an (cm)",
+        "valeur": "6",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Nathan a mesuré Sam chaque année. Lis le tableau, calcule, puis ouvre le cadenas.<div class=\"doc-titre\"><i>Les marques de Sam (relevé fictif)</i></div><table class=\"tableau-releves\"><tr><th>Âge</th><th>Taille</th></tr><tr><td>6 ans</td><td>112 cm</td></tr><tr><td>7 ans</td><td>118 cm</td></tr><tr><td>8 ans</td><td>123 cm</td></tr><tr><td>9 ans</td><td>129 cm</td></tr><tr><td>10 ans</td><td>134 cm</td></tr></table><p class=\"question-doc\"><b>Combien de centimètres Sam a-t-il grandi entre 6 et 10 ans ? Quelle est sa plus grande croissance en une seule année ?</b></p>",
+      "indices": [
+       "Taille à 10 ans moins taille à 6 ans.",
+       "Calcule aussi chaque écart d'une année à la suivante : 6, 5, 6, 5.",
+       "Le plus grand écart est 6 cm."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique comment on compare des mesures ?",
+       "options": [
+        "Chez l'être humain, la croissance est très rapide les premières années, plus lente ensuite (5 à 6 cm par an vers 8-10 ans), puis de nouveau rapide à la puberté.",
+        "Pour le vérifier, on mesure la masse (en grammes, sur une balance) et la taille (en centimètres, avec une toise) à intervalles réguliers, puis on compare les valeurs dans un tableau ou sur un graphique.",
+        "Une partie des aliments sert à construire le corps ; une autre fournit l'énergie pour vivre et bouger ; le reste est rejeté.",
+        "Tous les êtres vivants ont besoin de matière pour grandir et se développer."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>Tous les êtres vivants ont besoin de [[matière]] pour grandir. Les animaux la trouvent dans leur [[nourriture]]. Une partie des aliments sert à construire le [[corps]], une autre fournit l'[[énergie]] pour vivre et bouger, et le reste est [[rejeté]].</p>",
+      "etiquettes": [
+       "matière",
+       "nourriture",
+       "corps",
+       "énergie",
+       "rejeté",
+       "lumière",
+       "bruit",
+       "silence"
+      ],
+      "consigne": "Nathan a rédigé son bilan de la semaine, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Trois étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « nourriture ».",
+      "indices": [
+       "Relis la fiche : les mots sont dans le premier paragraphe.",
+       "Le reste de ce qu'on mange ne reste pas dans le corps.",
+       "Trois étiquettes n'ont aucun rapport avec les aliments."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « nourriture » ?",
+       "options": [
+        "Les animaux, et donc les êtres humains, trouvent cette matière dans leur nourriture, qui vient elle-même d'autres êtres vivants.",
+        "Tous les êtres vivants ont besoin de matière pour grandir et se développer.",
+        "C'est pourquoi un poussin qui a mangé 700 g de nourriture n'a grossi que de 410 g.",
+        "Pour le vérifier, on mesure la masse (en grammes, sur une balance) et la taille (en centimètres, avec une toise) à intervalles réguliers, puis on compare les valeurs dans un tableau ou sur un graphique."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
      }
     }
    ]
@@ -365,7 +829,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoins",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (tri) ; Commis (tri) ; Cuisinier (tri) ; Sous-chef (vraifaux) ; Chef (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Plus les muscles travaillent, plus le corps dépense d'énergie : les besoins alimentaires augmentent avec l'activité physique.",
      "matelot": {
       "colonnes": [
@@ -464,6 +928,146 @@
        "Quatre cartes dans chaque colonne."
       ],
       "dialogue": "Je suis la docteure Inès Morel, médecin de l'équipe cycliste. Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins. Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "peu",
+        "titre": "Le corps dépense peu d'énergie"
+       },
+       {
+        "id": "beaucoup",
+        "titre": "Le corps dépense beaucoup d'énergie"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Faire la sieste",
+        "col": "peu"
+       },
+       {
+        "txt": "Regarder la télévision",
+        "col": "peu"
+       },
+       {
+        "txt": "Courir très vite",
+        "col": "beaucoup"
+       },
+       {
+        "txt": "Faire du vélo en montagne",
+        "col": "beaucoup"
+       }
+      ],
+      "consigne": "Range chaque activité selon l'énergie que le corps dépense. Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « Des besoins qui changent » dans la Bibliothèque.",
+       "Quand on est allongé, les muscles se reposent.",
+       "Quand on court, les muscles travaillent fort."
+      ],
+      "dialogue": "Je suis la docteure Inès Morel, médecin de l'équipe cycliste. Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins. Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le corps dépense de l'énergie même pendant le sommeil.",
+        "vrai": true,
+        "explication": "Respirer, faire battre le cœur, garder sa température."
+       },
+       {
+        "txt": "Un enfant n'a besoin d'énergie que pour bouger.",
+        "vrai": false,
+        "explication": "Il en a aussi besoin pour grandir."
+       },
+       {
+        "txt": "Les besoins en énergie sont les mêmes pour tout le monde.",
+        "vrai": false,
+        "explication": "Ils varient selon l'âge, la croissance et l'activité."
+       },
+       {
+        "txt": "Quand les muscles travaillent fort et longtemps, la dépense augmente beaucoup.",
+        "vrai": true,
+        "explication": "Comme pendant une étape de montagne."
+       },
+       {
+        "txt": "L'énergie des aliments se mesure en kilocalories.",
+        "vrai": true,
+        "explication": "Abréviation : kcal."
+       }
+      ],
+      "consigne": "La docteure Inès affiche cinq affirmations dans la salle des menus. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui montre que le corps dépense de l'énergie même au repos.",
+      "indices": [
+       "Le corps travaille même quand on dort.",
+       "Un enfant dépense de l'énergie pour vivre, bouger et grandir.",
+       "Pour la justification : cherche la phrase qui parle du sommeil."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche montre que le corps dépense de l'énergie même au repos ?",
+       "options": [
+        "L'énergie apportée par les aliments se mesure en kilocalories (kcal).",
+        "Le corps dépense de l'énergie en permanence, même pendant le sommeil : pour respirer, faire battre le cœur, garder sa température.",
+        "Quand les muscles travaillent fort et longtemps, comme pendant une étape de montagne, la dépense augmente beaucoup.",
+        "Les besoins varient selon l'âge, la croissance et l'activité physique."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Je suis la docteure Inès Morel, médecin de l'équipe cycliste. Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins. Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Ce garçon dort 9 heures : dépense-t-il de l'énergie pendant ce temps ?",
+        "options": [
+         "Oui : le corps travaille en permanence",
+         "Non : l'énergie ne se dépense qu'en bougeant",
+         "Seulement s'il rêve",
+         "Seulement l'été"
+        ],
+        "bonne": 0,
+        "explication": "Respirer et faire battre le cœur coûte de l'énergie."
+       },
+       {
+        "q": "Pourquoi le coureur a-t-il besoin de beaucoup plus d'énergie que l'enfant ?",
+        "options": [
+         "Ses muscles travaillent fort et longtemps",
+         "Il est plus âgé",
+         "Il dort plus longtemps",
+         "Il mange plus lentement"
+        ],
+        "bonne": 0,
+        "explication": "Effort long et fort."
+       },
+       {
+        "q": "Pour l'enfant, qu'est-ce qui s'ajoute aux besoins de l'adulte ?",
+        "options": [
+         "La croissance",
+         "La couleur des yeux",
+         "Le poids du sac",
+         "La vitesse du vent"
+        ],
+        "bonne": 0,
+        "explication": "Un enfant a besoin d'énergie en plus pour grandir."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Menu du jour de Rosalie</b> (inventé pour le jeu). Un enfant de 10 ans dort 9 heures, passe 6 heures assis à l'école, joue 1 heure dans la cour. Un coureur passe 5 heures à pédaler en montagne.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 1.",
+      "indices": [
+       "Le corps dépense de l'énergie en permanence.",
+       "Plus l'effort est long et intense, plus la dépense augmente.",
+       "Un enfant grandit : que lui faut-il en plus ?"
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+       "options": [
+        "Quand les muscles travaillent fort et longtemps, comme pendant une étape de montagne, la dépense augmente beaucoup.",
+        "Un enfant en a besoin en plus pour grandir.",
+        "Le corps dépense de l'énergie en permanence, même pendant le sommeil : pour respirer, faire battre le cœur, garder sa température.",
+        "Les besoins varient selon l'âge, la croissance et l'activité physique."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Je suis la docteure Inès Morel, médecin de l'équipe cycliste. Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins. Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi."
      }
     },
     {
@@ -479,7 +1083,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "basile",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Basile doit ranger les besoins selon l'activité.",
      "enjeu": "Sans l'ordre, on sert de mauvaises portions.",
      "episode_du_roman": "Ordres de grandeur (voir A-VERIFIER.md) ; La Revue du praticien, « Besoins énergétiques moyens de l'enfant et de l'adolescent » ; Programme ",
@@ -492,7 +1096,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoins",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (ordre) ; Commis (ordre) ; Cuisinier (ordre) ; Sous-chef (ordre) ; Chef (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les besoins augmentent pendant la croissance (le corps grandit) et avec l'activité physique : le coureur en course a les plus grands besoins de tous.",
      "matelot": {
       "items": [
@@ -551,6 +1155,106 @@
        "L'adolescent sportif vient juste avant le coureur."
       ],
       "dialogue": "Plus on bouge, plus il faut d'énergie. Rangez les besoins du plus petit au plus grand."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Un bébé d'un an",
+        "rang": 1
+       },
+       {
+        "txt": "Un enfant de 10 ans",
+        "rang": 2
+       },
+       {
+        "txt": "Un coureur cycliste un jour d'étape de montagne",
+        "rang": 3
+       }
+      ],
+      "consigne": "Range ces personnes, de celle qui a le plus petit besoin d'énergie par jour à celle qui a le plus grand. Le plus petit besoin en haut. Utilise les flèches ▲ et ▼, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Des besoins qui changent ».",
+       "Les besoins grandissent avec le corps et avec l'effort.",
+       "Le coureur en course est tout en bas."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Un enfant de 10 ans (environ 1 800 à 2 200 kcal)",
+        "rang": 1
+       },
+       {
+        "txt": "Un adulte (2 000 à 2 700 kcal)",
+        "rang": 2
+       },
+       {
+        "txt": "Basile un jour de repos (environ 2 800 kcal)",
+        "rang": 3
+       },
+       {
+        "txt": "Basile un jour d'étape de montagne (environ 6 000 kcal)",
+        "rang": 4
+       }
+      ],
+      "consigne": "Inès range ces besoins par jour, du plus petit au plus grand (le plus petit en haut). Utilise les flèches ▲ et ▼, puis choisis la phrase de la fiche qui donne ces ordres de grandeur.",
+      "indices": [
+       "Compare les nombres de kcal.",
+       "Un adulte a besoin de plus qu'un enfant de 10 ans.",
+       "L'étape de montagne est la plus grande dépense."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne ces ordres de grandeur ?",
+       "options": [
+        "Ordres de grandeur : un enfant de 10 ans a besoin d'environ 1 800 à 2 200 kcal par jour ; un adulte, de 2 000 à 2 700 kcal ; un coureur cycliste un jour d'étape de montagne, environ 6 000 kcal, soit à peu près deux fois plus qu'un jour de repos.",
+        "L'énergie apportée par les aliments se mesure en kilocalories (kcal).",
+        "Les besoins varient selon l'âge, la croissance et l'activité physique.",
+        "Quand les muscles travaillent fort et longtemps, comme pendant une étape de montagne, la dépense augmente beaucoup."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Il pédale longtemps dans la montagne.",
+        "rang": 1
+       },
+       {
+        "txt": "Ses muscles travaillent fort et longtemps.",
+        "rang": 2
+       },
+       {
+        "txt": "Son corps dépense beaucoup d'énergie.",
+        "rang": 3
+       },
+       {
+        "txt": "Il doit manger un grand repas la veille et pendant la course.",
+        "rang": 4
+       }
+      ],
+      "consigne": "Basile prépare son étape de montagne. Remets dans l'ordre ce qui explique pourquoi il doit manger beaucoup, puis choisis la phrase de la fiche qui justifie le dernier maillon.",
+      "indices": [
+       "Commence par l'effort, termine par ce qu'il faut manger.",
+       "Les muscles travaillent avant que le corps ne dépense beaucoup.",
+       "Un seul maillon parle de ce qu'on mange."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie l'enchaînement « effort, puis dépense » ?",
+       "options": [
+        "Ordres de grandeur : un enfant de 10 ans a besoin d'environ 1 800 à 2 200 kcal par jour ; un adulte, de 2 000 à 2 700 kcal ; un coureur cycliste un jour d'étape de montagne, environ 6 000 kcal, soit à peu près deux fois plus qu'un jour de repos.",
+        "Manger équilibré, c'est varier les aliments et adapter les quantités à ses besoins ; il n'y a pas d'aliment interdit.",
+        "Quand les muscles travaillent fort et longtemps, comme pendant une étape de montagne, la dépense augmente beaucoup.",
+        "Un enfant en a besoin en plus pour grandir."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -566,7 +1270,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "rosalie",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Rosalie liste les raisons qui font varier les besoins : l'une n'a rien à voir.",
      "enjeu": "Une mauvaise raison dans le menu fausse tout le raisonnement.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -579,7 +1283,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoins",
      "type": "intrus",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (intrus) ; Commis (intrus) ; Cuisinier (intrus) ; Sous-chef (tri) ; Chef (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "L'âge, la croissance et l'activité physique font varier les besoins. La couleur des yeux, non.",
      "matelot": {
       "cartes": [
@@ -634,6 +1338,138 @@
        "Une seule carte ne change ni la croissance ni l'effort."
       ],
       "dialogue": "Plusieurs raisons font varier les besoins. Une seule n'a rien à y faire : repérez-la."
+     },
+     "mousse": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "L'âge",
+        "intrus": false
+       },
+       {
+        "txt": "L'effort physique",
+        "intrus": false
+       },
+       {
+        "txt": "Le prénom",
+        "intrus": true
+       }
+      ],
+      "consigne": "Trois de ces raisons font changer la quantité d'aliments dont une personne a besoin. Trouve celle qui n'a rien à voir. Clique sur l'intrus, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Des besoins qui changent ».",
+       "Un bébé et un adulte n'ont pas les mêmes besoins.",
+       "Un prénom ne change pas le travail du corps."
+      ],
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "aug",
+        "titre": "Fait augmenter les besoins"
+       },
+       {
+        "id": "non",
+        "titre": "Ne change pas les besoins"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Grandir vite",
+        "col": "aug"
+       },
+       {
+        "txt": "Pédaler une journée entière en montagne",
+        "col": "aug"
+       },
+       {
+        "txt": "Faire un effort long et intense",
+        "col": "aug"
+       },
+       {
+        "txt": "La couleur du vélo",
+        "col": "non"
+       },
+       {
+        "txt": "Le nom du coureur",
+        "col": "non"
+       },
+       {
+        "txt": "Le jour de la semaine",
+        "col": "non"
+       }
+      ],
+      "consigne": "Inès classe des situations selon leur effet sur les besoins en énergie. Range chaque carte, puis choisis la phrase de la fiche qui cite les trois facteurs.",
+      "indices": [
+       "Les besoins varient selon trois choses.",
+       "Grandir et bouger demandent de l'énergie.",
+       "Une couleur ou un nom ne font pas travailler le corps."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les facteurs qui font varier les besoins ?",
+       "options": [
+        "L'énergie apportée par les aliments se mesure en kilocalories (kcal).",
+        "Les besoins varient selon l'âge, la croissance et l'activité physique.",
+        "Le corps dépense de l'énergie en permanence, même pendant le sommeil : pour respirer, faire battre le cœur, garder sa température.",
+        "Manger équilibré, c'est varier les aliments et adapter les quantités à ses besoins ; il n'y a pas d'aliment interdit."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Manger équilibré, c'est varier les aliments.",
+        "vrai": true,
+        "explication": "Et adapter les quantités à ses besoins."
+       },
+       {
+        "txt": "Il existe des aliments interdits à tous les enfants.",
+        "vrai": false,
+        "explication": "Il n'y a pas d'aliment interdit."
+       },
+       {
+        "txt": "Un enfant de 10 ans a besoin d'environ 1 800 à 2 200 kcal par jour.",
+        "vrai": true,
+        "explication": "C'est un ordre de grandeur."
+       },
+       {
+        "txt": "Un adulte a besoin de 6 000 kcal par jour.",
+        "vrai": false,
+        "explication": "Seulement un coureur en étape de montagne."
+       },
+       {
+        "txt": "Les nombres de kcal sont des ordres de grandeur : chacun a ses propres besoins.",
+        "vrai": true,
+        "explication": "On ne calcule pas les calories de ses repas."
+       },
+       {
+        "txt": "Tous les adultes ont exactement les mêmes besoins.",
+        "vrai": false,
+        "explication": "Ils varient d'une personne à l'autre."
+       }
+      ],
+      "consigne": "Rosalie a noté six phrases sur l'alimentation. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui contredit l'idée « il existe des aliments interdits ».",
+      "indices": [
+       "Les kcal donnent des ordres de grandeur, pas des règles exactes.",
+       "Les besoins sont personnels.",
+       "Pour la justification : cherche la phrase qui parle d'aliments interdits."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche contredit l'idée « il existe des aliments interdits » ?",
+       "options": [
+        "Manger équilibré, c'est varier les aliments et adapter les quantités à ses besoins ; il n'y a pas d'aliment interdit.",
+        "Les besoins varient selon l'âge, la croissance et l'activité physique.",
+        "Ordres de grandeur : un enfant de 10 ans a besoin d'environ 1 800 à 2 200 kcal par jour ; un adulte, de 2 000 à 2 700 kcal ; un coureur cycliste un jour d'étape de montagne, environ 6 000 kcal, soit à peu près deux fois plus qu'un jour de repos.",
+        "L'énergie apportée par les aliments se mesure en kilocalories (kcal)."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -649,7 +1485,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nathan",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Nathan consulte les notes d'Inès pour répondre à des questions précises.",
      "enjeu": "Sans les notes de la docteure, le menu est mal adapté.",
      "episode_du_roman": "Ordres de grandeur couramment cités pour un coureur cycliste, sans source officielle (voir A-VERIFIER.md)",
@@ -662,10 +1498,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoins",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Cuisinier (qcm) ; Sous-chef (qcm) ; Chef (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Pendant une étape de plusieurs heures, ses muscles travaillent sans arrêt : ses besoins sont environ deux fois plus grands qu'un jour de repos.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "questions": [
@@ -688,6 +1526,116 @@
        "2 800 × 2 = 5 600 : c'est proche de 6 000."
       ],
       "dialogue": "Voici le carnet de la docteure. Lisez-le bien pour répondre."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quelle journée demande le plus d'énergie ?",
+        "options": [
+         "L'étape de montagne",
+         "Le jour de repos",
+         "L'étape plate",
+         "Elles sont égales"
+        ],
+        "bonne": 0,
+        "explication": "6 000 est le plus grand nombre."
+       },
+       {
+        "q": "De combien de kcal l'étape de montagne dépasse-t-elle le jour de repos ?",
+        "options": [
+         "3 200 kcal",
+         "1 500 kcal",
+         "8 800 kcal",
+         "6 000 kcal"
+        ],
+        "bonne": 0,
+        "explication": "6 000 − 2 800 = 3 200."
+       },
+       {
+        "q": "Pourquoi l'étape de montagne demande-t-elle plus que l'étape plate ?",
+        "options": [
+         "Les muscles travaillent plus fort et plus longtemps",
+         "Basile est plus âgé ce jour-là",
+         "Il dort moins",
+         "Il pèse plus"
+        ],
+        "bonne": 0,
+        "explication": "L'effort est plus grand."
+       }
+      ],
+      "consigne": "La docteure Inès a noté les besoins de Basile pour trois journées. Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.<div class=\"doc-titre\"><i>Besoins en énergie de Basile (ordres de grandeur, journée plate fictive)</i></div><table class=\"tableau-releves\"><tr><th>Journée</th><th>Besoin en énergie</th></tr><tr><td>Jour de repos</td><td>environ 2 800 kcal</td></tr><tr><td>Étape plate</td><td>environ 4 500 kcal</td></tr><tr><td>Étape de montagne</td><td>environ 6 000 kcal</td></tr></table>",
+      "indices": [
+       "Compare les trois nombres.",
+       "Soustrais : grand nombre moins petit nombre.",
+       "Pense à l'effort fourni."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Ordres de grandeur : un enfant de 10 ans a besoin d'environ 1 800 à 2 200 kcal par jour ; un adulte, de 2 000 à 2 700 kcal ; un coureur cycliste un jour d'étape de montagne, environ 6 000 kcal, soit à peu près deux fois plus qu'un jour de repos.",
+        "Quand les muscles travaillent fort et longtemps, comme pendant une étape de montagne, la dépense augmente beaucoup.",
+        "Un enfant en a besoin en plus pour grandir.",
+        "Manger équilibré, c'est varier les aliments et adapter les quantités à ses besoins ; il n'y a pas d'aliment interdit."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de repas de 1 500 kcal faut-il pour couvrir l'étape de montagne ?",
+        "options": [
+         "4",
+         "2",
+         "6",
+         "3"
+        ],
+        "bonne": 0,
+        "explication": "6 000 ÷ 1 500 = 4."
+       },
+       {
+        "q": "Combien de repas de 1 500 kcal pour un jour de repos (environ 2 800 kcal) ?",
+        "options": [
+         "environ 2",
+         "environ 4",
+         "environ 6",
+         "environ 1"
+        ],
+        "bonne": 0,
+        "explication": "2 800 ÷ 1 500 est proche de 2."
+       },
+       {
+        "q": "Ce calcul donne-t-il le besoin exact de Basile ?",
+        "options": [
+         "Non : ce sont des ordres de grandeur",
+         "Oui : au gramme près",
+         "Oui : c'est une loi",
+         "Non : Basile ne mange pas"
+        ],
+        "bonne": 0,
+        "explication": "Chacun a ses propres besoins."
+       }
+      ],
+      "consigne": "Rosalie organise les repas de Basile pour l'étape de montagne (environ 6 000 kcal). Elle prépare des repas de 1 500 kcal chacun. Réponds aux trois questions, puis choisis la phrase de la fiche qui donne l'ordre de grandeur utilisé.<div class=\"doc-titre\"><i>Besoins de Basile (ordres de grandeur)</i></div><table class=\"tableau-releves\"><tr><th>Journée</th><th>Besoin en énergie</th></tr><tr><td>Jour de repos</td><td>environ 2 800 kcal</td></tr><tr><td>Jour d'étape de montagne</td><td>environ 6 000 kcal</td></tr></table>",
+      "indices": [
+       "Divise le besoin par l'énergie d'un repas.",
+       "2 800 est proche de 3 000 ÷ 1 500.",
+       "Relis la fin de la fiche : que dit-elle des nombres ?"
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne l'ordre de grandeur de l'étape de montagne ?",
+       "options": [
+        "Les besoins varient selon l'âge, la croissance et l'activité physique.",
+        "Ordres de grandeur : un enfant de 10 ans a besoin d'environ 1 800 à 2 200 kcal par jour ; un adulte, de 2 000 à 2 700 kcal ; un coureur cycliste un jour d'étape de montagne, environ 6 000 kcal, soit à peu près deux fois plus qu'un jour de repos.",
+        "Le corps dépense de l'énergie en permanence, même pendant le sommeil : pour respirer, faire battre le cœur, garder sa température.",
+        "Quand les muscles travaillent fort et longtemps, comme pendant une étape de montagne, la dépense augmente beaucoup."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     }
    ]
@@ -734,7 +1682,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "mastication",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (tri) ; Commis (association) ; Cuisinier (association) ; Sous-chef (vraifaux) ; Chef (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les dents découpent et écrasent les aliments : c'est la mastication. La salive et la langue préparent une bouchée molle, facile à avaler.",
      "matelot": {
       "paires": [
@@ -789,6 +1737,146 @@
        "La salive est un liquide ; la langue est un muscle qui bouge."
       ],
       "dialogue": "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert. Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche. Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !"
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "couper",
+        "titre": "Elle coupe ou déchire"
+       },
+       {
+        "id": "ecraser",
+        "titre": "Elle écrase"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Les incisives",
+        "col": "couper"
+       },
+       {
+        "txt": "Les canines",
+        "col": "couper"
+       },
+       {
+        "txt": "Les molaires",
+        "col": "ecraser"
+       },
+       {
+        "txt": "Les prémolaires",
+        "col": "ecraser"
+       }
+      ],
+      "consigne": "Rosalie montre à quoi servent les dents. Range chaque dent : elle coupe ou déchire, ou elle écrase. Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « Dans la bouche : mâcher » dans la Bibliothèque.",
+       "Les dents de devant coupent.",
+       "Les dents du fond sont larges : elles écrasent."
+      ],
+      "dialogue": "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert. Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche. Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !"
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un enfant a 20 dents de lait.",
+        "vrai": true,
+        "explication": "Les dents de lait sont moins nombreuses."
+       },
+       {
+        "txt": "Un adulte a 32 dents.",
+        "vrai": true,
+        "explication": "Les dents définitives sont plus nombreuses."
+       },
+       {
+        "txt": "Les canines servent à écraser.",
+        "vrai": false,
+        "explication": "Elles déchirent."
+       },
+       {
+        "txt": "L'enfant a des prémolaires comme l'adulte.",
+        "vrai": false,
+        "explication": "Il n'en a pas : elles viennent avec les dents définitives."
+       },
+       {
+        "txt": "Les incisives sont plates et coupantes.",
+        "vrai": true,
+        "explication": "Ce sont les dents de devant."
+       }
+      ],
+      "consigne": "Rosalie affiche cinq affirmations sur les dents. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui donne le nombre de dents d'un enfant et d'un adulte.",
+      "indices": [
+       "Compte : 20 dents de lait, 32 dents définitives.",
+       "Les canines sont pointues.",
+       "Les prémolaires apparaissent avec les dents définitives."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne le nombre de dents d'un enfant et d'un adulte ?",
+       "options": [
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer).",
+        "Un enfant a 20 dents de lait ; un adulte a 32 dents.",
+        "Vers 6 ans, les dents de lait commencent à tomber et les dents définitives les remplacent, plus nombreuses : c'est pourquoi l'adulte a des prémolaires et l'enfant n'en a pas.",
+        "Avec un miroir, on repère de l'avant vers le fond : les incisives, plates et coupantes ; les canines, pointues ; puis les prémolaires et les molaires, larges, avec des bosses qui écrasent."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert. Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche. Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !"
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pourquoi Léo perd-il des dents de lait vers 6 ans ?",
+        "options": [
+         "Elles sont remplacées par les dents définitives",
+         "Il mâche trop longtemps",
+         "Il ne mange pas assez",
+         "Elles fondent avec la salive"
+        ],
+        "bonne": 0,
+        "explication": "Les dents définitives les remplacent."
+       },
+       {
+        "q": "Combien de dents aura Léo une fois adulte ?",
+        "options": [
+         "32",
+         "20",
+         "28",
+         "40"
+        ],
+        "bonne": 0,
+        "explication": "32 dents définitives."
+       },
+       {
+        "q": "Léo a-t-il déjà des prémolaires ?",
+        "options": [
+         "Non : elles viennent avec les dents définitives",
+         "Oui : dès la naissance",
+         "Oui : ce sont ses incisives",
+         "On ne peut pas savoir"
+        ],
+        "bonne": 0,
+        "explication": "L'enfant n'a pas de prémolaires."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Fiche dentaire de Léo, 7 ans</b> (inventée pour le jeu). Léo vient de perdre une incisive de lait. Sa dentiste lui dit : « Tu as encore 20 dents de lait, et les dents définitives vont prendre leur place. »</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Les dents de lait tombent et sont remplacées.",
+       "Compare 20 dents de lait et dents définitives.",
+       "Les prémolaires n'existent pas chez l'enfant."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Un enfant a 20 dents de lait ; un adulte a 32 dents.",
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer).",
+        "Avec un miroir, on repère de l'avant vers le fond : les incisives, plates et coupantes ; les canines, pointues ; puis les prémolaires et les molaires, larges, avec des bosses qui écrasent.",
+        "La salive, fabriquée par les glandes salivaires, mouille les aliments."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert. Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche. Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !"
      }
     },
     {
@@ -804,7 +1892,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nathan",
+     "personnage_emetteur": "rosalie",
      "probleme_narratif": "Nathan a trouvé un moulage de mâchoire à légender.",
      "enjeu": "Sans nommer les dents, on ne connaît pas leur rôle.",
      "episode_du_roman": "Vikidia, « Dent » (20 dents de lait, 32 dents chez l'adulte) ; schéma dessiné pour le jeu, simplifié, sans échelle",
@@ -817,7 +1905,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "mastication",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (association) ; Commis (plan) ; Cuisinier (plan) ; Sous-chef (qcm) ; Chef (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "De l'avant vers le fond : incisives, canines, prémolaires, molaires. Un adulte a 32 dents ; un enfant a 20 dents de lait, sans prémolaires.",
      "matelot": {
       "titre": "Le moulage de la mâchoire",
@@ -883,6 +1971,145 @@
        "Le repère 3 est entre la canine et les grosses molaires."
       ],
       "dialogue": "Voici la mâchoire que j'ai moulée. Placez le nom de chaque dent."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "une incisive",
+        "d": "couper"
+       },
+       {
+        "g": "une canine",
+        "d": "déchirer"
+       },
+       {
+        "g": "une molaire",
+        "d": "écraser"
+       }
+      ],
+      "consigne": "Rosalie montre le moulage d'une mâchoire. Regarde le moulage, puis relie chaque dent à son rôle. Clique sur une dent, puis sur son rôle.\n<svg viewBox=\"0 0 340 236\" role=\"img\" aria-label=\"Moulage de la mâchoire du bas d'un adulte, vu de dessus : seize dents en fer à cheval, avec des repères numérotés\" style=\"display:block;max-width:440px;width:100%;margin:10px auto;background:#fdf6ec;border:2px solid #b58b6a;border-radius:10px\"><path d=\"M56.4 167.5 L56.7 165.2 L57.1 162.9 L57.5 160.7 L57.9 158.4 L58.3 156.2 L58.8 153.9 L59.3 151.7 L59.7 149.5 L60.2 147.3 L60.8 145.1 L61.3 142.9 L61.9 140.7 L62.4 138.5 L63 136.4 L63.6 134.2 L64.2 132.1 L64.9 130 L65.5 127.9 L66.2 125.8 L66.9 123.7 L67.6 121.6 L68.3 119.6 L69.1 117.5 L69.9 115.5 L70.6 113.5 L71.4 111.5 L72.2 109.5 L73.1 107.5 L73.9 105.6 L74.8 103.6 L75.6 101.7 L76.5 99.8 L77.4 97.9 L78.4 96.1 L79.3 94.2 L80.3 92.4 L81.2 90.6 L82.2 88.8 L83.2 87 L84.2 85.3 L85.3 83.5 L86.3 81.8 L87.4 80.1 L88.5 78.4 L89.6 76.8 L90.7 75.2 L91.8 73.6 L92.9 72 L94.1 70.4 L95.3 68.9 L96.4 67.3 L97.7 65.8 L98.9 64.4 L100.1 62.9 L101.3 61.5 L102.6 60.1 L103.9 58.7 L105.2 57.3 L106.5 56 L107.8 54.7 L109.1 53.4 L110.5 52.1 L111.8 50.9 L113.2 49.7 L114.6 48.5 L116 47.4 L117.4 46.3 L118.8 45.2 L120.3 44.1 L121.7 43.1 L123.2 42 L124.6 41.1 L126.1 40.1 L127.6 39.2 L129.2 38.3 L130.7 37.4 L132.2 36.6 L133.8 35.8 L135.3 35.1 L136.9 34.3 L138.5 33.6 L140.1 33 L141.7 32.3 L143.3 31.7 L144.9 31.2 L146.6 30.6 L148.2 30.1 L149.8 29.7 L151.5 29.3 L153.2 28.9 L154.8 28.5 L156.5 28.2 L158.2 27.9 L159.9 27.7 L161.5 27.5 L163.2 27.3 L164.9 27.2 L166.6 27.1 L168.3 27 L170 27 L170 27 L171.7 27 L173.4 27.1 L175.1 27.2 L176.8 27.3 L178.5 27.5 L180.1 27.7 L181.8 27.9 L183.5 28.2 L185.2 28.5 L186.8 28.9 L188.5 29.3 L190.2 29.7 L191.8 30.1 L193.4 30.6 L195.1 31.2 L196.7 31.7 L198.3 32.3 L199.9 33 L201.5 33.6 L203.1 34.3 L204.7 35.1 L206.2 35.8 L207.8 36.6 L209.3 37.4 L210.8 38.3 L212.4 39.2 L213.9 40.1 L215.4 41.1 L216.8 42 L218.3 43.1 L219.7 44.1 L221.2 45.2 L222.6 46.3 L224 47.4 L225.4 48.5 L226.8 49.7 L228.2 50.9 L229.5 52.1 L230.9 53.4 L232.2 54.7 L233.5 56 L234.8 57.3 L236.1 58.7 L237.4 60.1 L238.7 61.5 L239.9 62.9 L241.1 64.4 L242.3 65.8 L243.6 67.3 L244.7 68.9 L245.9 70.4 L247.1 72 L248.2 73.6 L249.3 75.2 L250.4 76.8 L251.5 78.4 L252.6 80.1 L253.7 81.8 L254.7 83.5 L255.8 85.3 L256.8 87 L257.8 88.8 L258.8 90.6 L259.7 92.4 L260.7 94.2 L261.6 96.1 L262.6 97.9 L263.5 99.8 L264.4 101.7 L265.2 103.6 L266.1 105.6 L266.9 107.5 L267.8 109.5 L268.6 111.5 L269.4 113.5 L270.1 115.5 L270.9 117.5 L271.7 119.6 L272.4 121.6 L273.1 123.7 L273.8 125.8 L274.5 127.9 L275.1 130 L275.8 132.1 L276.4 134.2 L277 136.4 L277.6 138.5 L278.1 140.7 L278.7 142.9 L279.2 145.1 L279.8 147.3 L280.3 149.5 L280.7 151.7 L281.2 153.9 L281.7 156.2 L282.1 158.4 L282.5 160.7 L282.9 162.9 L283.3 165.2 L283.6 167.5 L250 172.6 L249.7 170.6 L249.4 168.6 L249 166.7 L248.7 164.7 L248.3 162.7 L247.9 160.8 L247.5 158.8 L247.1 156.9 L246.6 154.9 L246.2 153 L245.7 151.1 L245.2 149.2 L244.7 147.3 L244.2 145.5 L243.7 143.6 L243.2 141.8 L242.6 139.9 L242 138.1 L241.5 136.3 L240.9 134.6 L240.3 132.8 L239.6 131 L239 129.3 L238.4 127.6 L237.7 125.9 L237 124.2 L236.4 122.5 L235.7 120.9 L235 119.2 L234.2 117.6 L233.5 116 L232.8 114.4 L232 112.9 L231.3 111.3 L230.5 109.8 L229.7 108.3 L228.9 106.8 L228.1 105.4 L227.3 103.9 L226.5 102.5 L225.6 101.1 L224.8 99.7 L223.9 98.4 L223.1 97.1 L222.2 95.8 L221.3 94.5 L220.5 93.2 L219.6 92 L218.7 90.8 L217.8 89.6 L216.9 88.4 L215.9 87.3 L215 86.1 L214.1 85 L213.2 84 L212.2 82.9 L211.3 81.9 L210.3 80.9 L209.4 79.9 L208.4 79 L207.5 78.1 L206.5 77.2 L205.6 76.3 L204.6 75.4 L203.6 74.6 L202.7 73.8 L201.7 73.1 L200.7 72.3 L199.7 71.6 L198.8 70.9 L197.8 70.2 L196.8 69.6 L195.8 69 L194.9 68.4 L193.9 67.8 L192.9 67.2 L192 66.7 L191 66.2 L190 65.7 L189 65.3 L188.1 64.9 L187.1 64.5 L186.1 64.1 L185.2 63.7 L184.2 63.4 L183.3 63.1 L182.3 62.8 L181.4 62.5 L180.4 62.3 L179.5 62.1 L178.5 61.9 L177.6 61.7 L176.6 61.5 L175.7 61.4 L174.7 61.3 L173.8 61.2 L172.8 61.1 L171.9 61 L170.9 61 L170 61 L170 61 L169.1 61 L168.1 61 L167.2 61.1 L166.2 61.2 L165.3 61.3 L164.3 61.4 L163.4 61.5 L162.4 61.7 L161.5 61.9 L160.5 62.1 L159.6 62.3 L158.6 62.5 L157.7 62.8 L156.7 63.1 L155.8 63.4 L154.8 63.7 L153.9 64.1 L152.9 64.5 L151.9 64.9 L151 65.3 L150 65.7 L149 66.2 L148 66.7 L147.1 67.2 L146.1 67.8 L145.1 68.4 L144.2 69 L143.2 69.6 L142.2 70.2 L141.2 70.9 L140.3 71.6 L139.3 72.3 L138.3 73.1 L137.3 73.8 L136.4 74.6 L135.4 75.4 L134.4 76.3 L133.5 77.2 L132.5 78.1 L131.6 79 L130.6 79.9 L129.7 80.9 L128.7 81.9 L127.8 82.9 L126.8 84 L125.9 85 L125 86.1 L124.1 87.3 L123.1 88.4 L122.2 89.6 L121.3 90.8 L120.4 92 L119.5 93.2 L118.7 94.5 L117.8 95.8 L116.9 97.1 L116.1 98.4 L115.2 99.7 L114.4 101.1 L113.5 102.5 L112.7 103.9 L111.9 105.4 L111.1 106.8 L110.3 108.3 L109.5 109.8 L108.7 111.3 L108 112.9 L107.2 114.4 L106.5 116 L105.8 117.6 L105 119.2 L104.3 120.9 L103.6 122.5 L103 124.2 L102.3 125.9 L101.6 127.6 L101 129.3 L100.4 131 L99.7 132.8 L99.1 134.6 L98.5 136.3 L98 138.1 L97.4 139.9 L96.8 141.8 L96.3 143.6 L95.8 145.5 L95.3 147.3 L94.8 149.2 L94.3 151.1 L93.8 153 L93.4 154.9 L92.9 156.9 L92.5 158.8 L92.1 160.8 L91.7 162.7 L91.3 164.7 L91 166.7 L90.6 168.6 L90.3 170.6 L90 172.6 Z\" fill=\"#e9a3a0\" stroke=\"#b86f6c\" stroke-width=\"2\"/><text x=\"170\" y=\"128\" text-anchor=\"middle\" font-size=\"11\" font-family=\"Georgia,serif\" fill=\"#8a5b4a\">langue</text><ellipse cx=\"170\" cy=\"150\" rx=\"50\" ry=\"46\" fill=\"#f0b9b3\" opacity=\".55\"/><g transform=\"translate(178,44.5) rotate(-172.3)\"><rect x=\"-6.5\" y=\"-5\" width=\"13\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"-3\" x2=\"4.5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(162,44.5) rotate(352.3)\"><rect x=\"-6.5\" y=\"-5\" width=\"13\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"-3\" x2=\"4.5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(192.6,48.3) rotate(-158.7)\"><rect x=\"-7\" y=\"-5\" width=\"14\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-5\" y1=\"-3\" x2=\"5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(147.4,48.3) rotate(338.7)\"><rect x=\"-7\" y=\"-5\" width=\"14\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-5\" y1=\"-3\" x2=\"5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(206.8,55.8) rotate(-146.4)\"><path d=\"M-7.5 0 Q0 -10 7.5 0 Q0 9 -7.5 0 Z\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><circle cx=\"0\" cy=\"-1\" r=\"1.6\" fill=\"#a89e8a\"/></g><g transform=\"translate(133.2,55.8) rotate(326.4)\"><path d=\"M-7.5 0 Q0 -10 7.5 0 Q0 9 -7.5 0 Z\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><circle cx=\"0\" cy=\"-1\" r=\"1.6\" fill=\"#a89e8a\"/></g><g transform=\"translate(220.5,66.9) rotate(-135.5)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(119.5,66.9) rotate(315.5)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(232.6,81) rotate(-126.6)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(107.4,81) rotate(306.6)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(244.1,99.3) rotate(-118.3)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(95.9,99.3) rotate(298.3)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(254.3,121.6) rotate(-110.8)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(85.7,121.6) rotate(290.8)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(261.5,144.1) rotate(-104.7)\"><rect x=\"-10.5\" y=\"-11\" width=\"21\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-6.5 0 H6.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(78.5,144.1) rotate(284.7)\"><rect x=\"-10.5\" y=\"-11\" width=\"21\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-6.5 0 H6.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><text x=\"170\" y=\"228\" text-anchor=\"middle\" font-size=\"9\" font-family=\"Georgia,serif\" fill=\"#5a4636\">schéma simplifié, sans échelle · l’avant de la bouche est en haut</text><line x1=\"306\" y1=\"176\" x2=\"254.3\" y2=\"121.6\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><circle cx=\"254.3\" cy=\"121.6\" r=\"2.6\" fill=\"#3d2b14\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"306\" cy=\"176\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"306\" y=\"180.5\">1</text></g><line x1=\"122\" y1=\"22\" x2=\"162\" y2=\"44.5\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><circle cx=\"162\" cy=\"44.5\" r=\"2.6\" fill=\"#3d2b14\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"122\" cy=\"22\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"122\" y=\"26.5\">2</text></g><line x1=\"262\" y1=\"40\" x2=\"206.8\" y2=\"55.8\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><circle cx=\"206.8\" cy=\"55.8\" r=\"2.6\" fill=\"#3d2b14\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"262\" cy=\"40\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"262\" y=\"44.5\">3</text></g></svg>",
+      "indices": [
+       "Ouvre la fiche « Dans la bouche : mâcher ».",
+       "Les incisives sont tout devant.",
+       "Les molaires, tout au fond, sont larges."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel repère montre la dent qui déchire ?",
+        "options": [
+         "Le repère 4 : la canine",
+         "Le repère 2 : l'incisive",
+         "Le repère 1 : la molaire",
+         "Le repère 3 : la prémolaire"
+        ],
+        "bonne": 0,
+        "explication": "La canine est pointue."
+       },
+       {
+        "q": "Quel repère montre une dent qui sert à broyer, tout au fond ?",
+        "options": [
+         "Le repère 1",
+         "Le repère 2",
+         "Le repère 4",
+         "Aucun"
+        ],
+        "bonne": 0,
+        "explication": "Les molaires sont au fond."
+       },
+       {
+        "q": "Quelles dents manquent sur la mâchoire d'un enfant de 5 ans ?",
+        "options": [
+         "Les prémolaires",
+         "Les incisives",
+         "Les canines",
+         "Toutes les dents"
+        ],
+        "bonne": 0,
+        "explication": "Il n'en a pas avant les dents définitives."
+       }
+      ],
+      "consigne": "Rosalie montre le moulage d'une mâchoire d'adulte, vue de dessus (repères 1 à 4). Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.<svg viewBox=\"0 0 340 236\" role=\"img\" aria-label=\"Moulage de la mâchoire du bas d'un adulte, vu de dessus : seize dents en fer à cheval, avec des repères numérotés\" style=\"display:block;max-width:440px;width:100%;margin:10px auto;background:#fdf6ec;border:2px solid #b58b6a;border-radius:10px\"><path d=\"M56.4 167.5 L56.7 165.2 L57.1 162.9 L57.5 160.7 L57.9 158.4 L58.3 156.2 L58.8 153.9 L59.3 151.7 L59.7 149.5 L60.2 147.3 L60.8 145.1 L61.3 142.9 L61.9 140.7 L62.4 138.5 L63 136.4 L63.6 134.2 L64.2 132.1 L64.9 130 L65.5 127.9 L66.2 125.8 L66.9 123.7 L67.6 121.6 L68.3 119.6 L69.1 117.5 L69.9 115.5 L70.6 113.5 L71.4 111.5 L72.2 109.5 L73.1 107.5 L73.9 105.6 L74.8 103.6 L75.6 101.7 L76.5 99.8 L77.4 97.9 L78.4 96.1 L79.3 94.2 L80.3 92.4 L81.2 90.6 L82.2 88.8 L83.2 87 L84.2 85.3 L85.3 83.5 L86.3 81.8 L87.4 80.1 L88.5 78.4 L89.6 76.8 L90.7 75.2 L91.8 73.6 L92.9 72 L94.1 70.4 L95.3 68.9 L96.4 67.3 L97.7 65.8 L98.9 64.4 L100.1 62.9 L101.3 61.5 L102.6 60.1 L103.9 58.7 L105.2 57.3 L106.5 56 L107.8 54.7 L109.1 53.4 L110.5 52.1 L111.8 50.9 L113.2 49.7 L114.6 48.5 L116 47.4 L117.4 46.3 L118.8 45.2 L120.3 44.1 L121.7 43.1 L123.2 42 L124.6 41.1 L126.1 40.1 L127.6 39.2 L129.2 38.3 L130.7 37.4 L132.2 36.6 L133.8 35.8 L135.3 35.1 L136.9 34.3 L138.5 33.6 L140.1 33 L141.7 32.3 L143.3 31.7 L144.9 31.2 L146.6 30.6 L148.2 30.1 L149.8 29.7 L151.5 29.3 L153.2 28.9 L154.8 28.5 L156.5 28.2 L158.2 27.9 L159.9 27.7 L161.5 27.5 L163.2 27.3 L164.9 27.2 L166.6 27.1 L168.3 27 L170 27 L170 27 L171.7 27 L173.4 27.1 L175.1 27.2 L176.8 27.3 L178.5 27.5 L180.1 27.7 L181.8 27.9 L183.5 28.2 L185.2 28.5 L186.8 28.9 L188.5 29.3 L190.2 29.7 L191.8 30.1 L193.4 30.6 L195.1 31.2 L196.7 31.7 L198.3 32.3 L199.9 33 L201.5 33.6 L203.1 34.3 L204.7 35.1 L206.2 35.8 L207.8 36.6 L209.3 37.4 L210.8 38.3 L212.4 39.2 L213.9 40.1 L215.4 41.1 L216.8 42 L218.3 43.1 L219.7 44.1 L221.2 45.2 L222.6 46.3 L224 47.4 L225.4 48.5 L226.8 49.7 L228.2 50.9 L229.5 52.1 L230.9 53.4 L232.2 54.7 L233.5 56 L234.8 57.3 L236.1 58.7 L237.4 60.1 L238.7 61.5 L239.9 62.9 L241.1 64.4 L242.3 65.8 L243.6 67.3 L244.7 68.9 L245.9 70.4 L247.1 72 L248.2 73.6 L249.3 75.2 L250.4 76.8 L251.5 78.4 L252.6 80.1 L253.7 81.8 L254.7 83.5 L255.8 85.3 L256.8 87 L257.8 88.8 L258.8 90.6 L259.7 92.4 L260.7 94.2 L261.6 96.1 L262.6 97.9 L263.5 99.8 L264.4 101.7 L265.2 103.6 L266.1 105.6 L266.9 107.5 L267.8 109.5 L268.6 111.5 L269.4 113.5 L270.1 115.5 L270.9 117.5 L271.7 119.6 L272.4 121.6 L273.1 123.7 L273.8 125.8 L274.5 127.9 L275.1 130 L275.8 132.1 L276.4 134.2 L277 136.4 L277.6 138.5 L278.1 140.7 L278.7 142.9 L279.2 145.1 L279.8 147.3 L280.3 149.5 L280.7 151.7 L281.2 153.9 L281.7 156.2 L282.1 158.4 L282.5 160.7 L282.9 162.9 L283.3 165.2 L283.6 167.5 L250 172.6 L249.7 170.6 L249.4 168.6 L249 166.7 L248.7 164.7 L248.3 162.7 L247.9 160.8 L247.5 158.8 L247.1 156.9 L246.6 154.9 L246.2 153 L245.7 151.1 L245.2 149.2 L244.7 147.3 L244.2 145.5 L243.7 143.6 L243.2 141.8 L242.6 139.9 L242 138.1 L241.5 136.3 L240.9 134.6 L240.3 132.8 L239.6 131 L239 129.3 L238.4 127.6 L237.7 125.9 L237 124.2 L236.4 122.5 L235.7 120.9 L235 119.2 L234.2 117.6 L233.5 116 L232.8 114.4 L232 112.9 L231.3 111.3 L230.5 109.8 L229.7 108.3 L228.9 106.8 L228.1 105.4 L227.3 103.9 L226.5 102.5 L225.6 101.1 L224.8 99.7 L223.9 98.4 L223.1 97.1 L222.2 95.8 L221.3 94.5 L220.5 93.2 L219.6 92 L218.7 90.8 L217.8 89.6 L216.9 88.4 L215.9 87.3 L215 86.1 L214.1 85 L213.2 84 L212.2 82.9 L211.3 81.9 L210.3 80.9 L209.4 79.9 L208.4 79 L207.5 78.1 L206.5 77.2 L205.6 76.3 L204.6 75.4 L203.6 74.6 L202.7 73.8 L201.7 73.1 L200.7 72.3 L199.7 71.6 L198.8 70.9 L197.8 70.2 L196.8 69.6 L195.8 69 L194.9 68.4 L193.9 67.8 L192.9 67.2 L192 66.7 L191 66.2 L190 65.7 L189 65.3 L188.1 64.9 L187.1 64.5 L186.1 64.1 L185.2 63.7 L184.2 63.4 L183.3 63.1 L182.3 62.8 L181.4 62.5 L180.4 62.3 L179.5 62.1 L178.5 61.9 L177.6 61.7 L176.6 61.5 L175.7 61.4 L174.7 61.3 L173.8 61.2 L172.8 61.1 L171.9 61 L170.9 61 L170 61 L170 61 L169.1 61 L168.1 61 L167.2 61.1 L166.2 61.2 L165.3 61.3 L164.3 61.4 L163.4 61.5 L162.4 61.7 L161.5 61.9 L160.5 62.1 L159.6 62.3 L158.6 62.5 L157.7 62.8 L156.7 63.1 L155.8 63.4 L154.8 63.7 L153.9 64.1 L152.9 64.5 L151.9 64.9 L151 65.3 L150 65.7 L149 66.2 L148 66.7 L147.1 67.2 L146.1 67.8 L145.1 68.4 L144.2 69 L143.2 69.6 L142.2 70.2 L141.2 70.9 L140.3 71.6 L139.3 72.3 L138.3 73.1 L137.3 73.8 L136.4 74.6 L135.4 75.4 L134.4 76.3 L133.5 77.2 L132.5 78.1 L131.6 79 L130.6 79.9 L129.7 80.9 L128.7 81.9 L127.8 82.9 L126.8 84 L125.9 85 L125 86.1 L124.1 87.3 L123.1 88.4 L122.2 89.6 L121.3 90.8 L120.4 92 L119.5 93.2 L118.7 94.5 L117.8 95.8 L116.9 97.1 L116.1 98.4 L115.2 99.7 L114.4 101.1 L113.5 102.5 L112.7 103.9 L111.9 105.4 L111.1 106.8 L110.3 108.3 L109.5 109.8 L108.7 111.3 L108 112.9 L107.2 114.4 L106.5 116 L105.8 117.6 L105 119.2 L104.3 120.9 L103.6 122.5 L103 124.2 L102.3 125.9 L101.6 127.6 L101 129.3 L100.4 131 L99.7 132.8 L99.1 134.6 L98.5 136.3 L98 138.1 L97.4 139.9 L96.8 141.8 L96.3 143.6 L95.8 145.5 L95.3 147.3 L94.8 149.2 L94.3 151.1 L93.8 153 L93.4 154.9 L92.9 156.9 L92.5 158.8 L92.1 160.8 L91.7 162.7 L91.3 164.7 L91 166.7 L90.6 168.6 L90.3 170.6 L90 172.6 Z\" fill=\"#e9a3a0\" stroke=\"#b86f6c\" stroke-width=\"2\"/><text x=\"170\" y=\"128\" text-anchor=\"middle\" font-size=\"11\" font-family=\"Georgia,serif\" fill=\"#8a5b4a\">langue</text><ellipse cx=\"170\" cy=\"150\" rx=\"50\" ry=\"46\" fill=\"#f0b9b3\" opacity=\".55\"/><g transform=\"translate(178,44.5) rotate(-172.3)\"><rect x=\"-6.5\" y=\"-5\" width=\"13\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"-3\" x2=\"4.5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(162,44.5) rotate(352.3)\"><rect x=\"-6.5\" y=\"-5\" width=\"13\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"-3\" x2=\"4.5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(192.6,48.3) rotate(-158.7)\"><rect x=\"-7\" y=\"-5\" width=\"14\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-5\" y1=\"-3\" x2=\"5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(147.4,48.3) rotate(338.7)\"><rect x=\"-7\" y=\"-5\" width=\"14\" height=\"10\" rx=\"3\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-5\" y1=\"-3\" x2=\"5\" y2=\"-3\" stroke=\"#c9c0ad\" stroke-width=\"1\"/></g><g transform=\"translate(206.8,55.8) rotate(-146.4)\"><path d=\"M-7.5 0 Q0 -10 7.5 0 Q0 9 -7.5 0 Z\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><circle cx=\"0\" cy=\"-1\" r=\"1.6\" fill=\"#a89e8a\"/></g><g transform=\"translate(133.2,55.8) rotate(326.4)\"><path d=\"M-7.5 0 Q0 -10 7.5 0 Q0 9 -7.5 0 Z\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><circle cx=\"0\" cy=\"-1\" r=\"1.6\" fill=\"#a89e8a\"/></g><g transform=\"translate(220.5,66.9) rotate(-135.5)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(119.5,66.9) rotate(315.5)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(232.6,81) rotate(-126.6)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(107.4,81) rotate(306.6)\"><ellipse rx=\"8.5\" ry=\"9\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><line x1=\"-4.5\" y1=\"0\" x2=\"4.5\" y2=\"0\" stroke=\"#b3a993\" stroke-width=\"1.2\"/></g><g transform=\"translate(244.1,99.3) rotate(-118.3)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(95.9,99.3) rotate(298.3)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(254.3,121.6) rotate(-110.8)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(85.7,121.6) rotate(290.8)\"><rect x=\"-11.5\" y=\"-11\" width=\"23\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-7.5 0 H7.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(261.5,144.1) rotate(-104.7)\"><rect x=\"-10.5\" y=\"-11\" width=\"21\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-6.5 0 H6.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><g transform=\"translate(78.5,144.1) rotate(284.7)\"><rect x=\"-10.5\" y=\"-11\" width=\"21\" height=\"22\" rx=\"7\" fill=\"#fbf8ef\" stroke=\"#7d7466\" stroke-width=\"1.4\"/><path d=\"M-6.5 0 H6.5 M0 -7 V7\" stroke=\"#b3a993\" stroke-width=\"1.2\" fill=\"none\"/></g><text x=\"170\" y=\"228\" text-anchor=\"middle\" font-size=\"9\" font-family=\"Georgia,serif\" fill=\"#5a4636\">schéma simplifié, sans échelle · l’avant de la bouche est en haut</text><line x1=\"306\" y1=\"176\" x2=\"254.3\" y2=\"121.6\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><circle cx=\"254.3\" cy=\"121.6\" r=\"2.6\" fill=\"#3d2b14\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"306\" cy=\"176\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"306\" y=\"180.5\">1</text></g><line x1=\"122\" y1=\"22\" x2=\"162\" y2=\"44.5\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><circle cx=\"162\" cy=\"44.5\" r=\"2.6\" fill=\"#3d2b14\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"122\" cy=\"22\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"122\" y=\"26.5\">2</text></g><line x1=\"40\" y1=\"92\" x2=\"119.5\" y2=\"66.9\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><circle cx=\"119.5\" cy=\"66.9\" r=\"2.6\" fill=\"#3d2b14\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"40\" cy=\"92\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"40\" y=\"96.5\">3</text></g><line x1=\"262\" y1=\"40\" x2=\"206.8\" y2=\"55.8\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><circle cx=\"206.8\" cy=\"55.8\" r=\"2.6\" fill=\"#3d2b14\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2b1d10\"><circle cx=\"262\" cy=\"40\" r=\"10\" fill=\"#fff\" stroke=\"#3d2b14\" stroke-width=\"1.5\"/><text x=\"262\" y=\"44.5\">4</text></g></svg>",
+      "indices": [
+       "Les canines sont pointues.",
+       "Les molaires sont tout au fond.",
+       "Les prémolaires viennent avec les dents définitives."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Un enfant a 20 dents de lait ; un adulte a 32 dents.",
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer).",
+        "Vers 6 ans, les dents de lait commencent à tomber et les dents définitives les remplacent, plus nombreuses : c'est pourquoi l'adulte a des prémolaires et l'enfant n'en a pas.",
+        "Avec un miroir, on repère de l'avant vers le fond : les incisives, plates et coupantes ; les canines, pointues ; puis les prémolaires et les molaires, larges, avec des bosses qui écrasent."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "inc",
+        "titre": "Incisives"
+       },
+       {
+        "id": "can",
+        "titre": "Canines"
+       },
+       {
+        "id": "mol",
+        "titre": "Prémolaires et molaires"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Couper une tranche de pain",
+        "col": "inc"
+       },
+       {
+        "txt": "Croquer le bord d'une pomme",
+        "col": "inc"
+       },
+       {
+        "txt": "Déchirer un morceau de viande",
+        "col": "can"
+       },
+       {
+        "txt": "Arracher un bout de baguette dure",
+        "col": "can"
+       },
+       {
+        "txt": "Écraser des noix",
+        "col": "mol"
+       },
+       {
+        "txt": "Broyer des céréales",
+        "col": "mol"
+       }
+      ],
+      "consigne": "Rosalie teste ses dents sur différents aliments. Range chaque action avec la dent qui s'en charge, puis choisis la phrase de la fiche qui donne le rôle de chaque famille de dents.",
+      "indices": [
+       "Devant : couper. Pointues : déchirer. Au fond : broyer.",
+       "Les prémolaires et les molaires ont des bosses qui écrasent.",
+       "Les canines sont pointues."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne le rôle de chaque famille de dents ?",
+       "options": [
+        "Un enfant a 20 dents de lait ; un adulte a 32 dents.",
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer).",
+        "Avec un miroir, on repère de l'avant vers le fond : les incisives, plates et coupantes ; les canines, pointues ; puis les prémolaires et les molaires, larges, avec des bosses qui écrasent.",
+        "Mâcher longtemps aide l'estomac."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -898,7 +2125,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ines",
+     "personnage_emetteur": "rosalie",
      "probleme_narratif": "Inès veut que l'on retrouve le mot du liquide de la bouche.",
      "enjeu": "Sans la salive, la bouchée ne passe pas.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -911,7 +2138,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "mastication",
      "type": "lettres",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (lettres) ; Commis (lettres) ; Cuisinier (lettres) ; Sous-chef (tri) ; Chef (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La salive mouille les aliments mâchés : la bouchée devient une boule molle, le bol alimentaire.",
      "matelot": {
       "cible": [
@@ -948,6 +2175,131 @@
        "Il finit par -IVE."
       ],
       "dialogue": "Avez-vous déjà gardé du pain longtemps en bouche ? Retrouvez le mot du liquide."
+     },
+     "mousse": {
+      "type": "lettres",
+      "cible": [
+       "D",
+       "E",
+       "N",
+       "T"
+      ],
+      "texte": "<p>Avant de manger, Rosalie lav<b data-l='E'>e</b> la pomme, la coupe, puis la croque : le bruit mon<b data-l='T'>t</b>e jusqu'à ses oreilles. Elle mâche lentement, sans <b data-l='N'>n</b>ul souci, en regardant <b data-l='D'>d</b>ehors, et <b data-l='S'>s</b>ourit. <b data-l='M'>M</b>iam !</p>",
+      "consigne": "Trouve le mot qui correspond à cette définition : « Elle sert à mâcher et sort de la gencive. » Ses lettres sont cachées en couleur dans le texte de Rosalie, dans le désordre. Clique-les dans l'ordre qui forme le mot (4 lettres). Deux lettres sont des pièges.",
+      "indices": [
+       "Ouvre la fiche « Dans la bouche : mâcher ».",
+       "Le mot commence par D.",
+       "On en a 20 quand on est petit, 32 quand on est grand."
+      ],
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "bouche",
+        "titre": "Dans la bouche"
+       },
+       {
+        "id": "loin",
+        "titre": "Plus loin dans le tube digestif"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Couper avec les incisives",
+        "col": "bouche"
+       },
+       {
+        "txt": "Mouiller avec la salive",
+        "col": "bouche"
+       },
+       {
+        "txt": "Écraser avec les molaires",
+        "col": "bouche"
+       },
+       {
+        "txt": "Brasser en bouillie dans l'estomac",
+        "col": "loin"
+       },
+       {
+        "txt": "Faire passer les nutriments dans le sang",
+        "col": "loin"
+       },
+       {
+        "txt": "Récupérer l'eau dans le gros intestin",
+        "col": "loin"
+       }
+      ],
+      "consigne": "Rosalie classe ce qui se passe dans la bouche et ce qui se passe plus loin. Range chaque carte, puis choisis la phrase de la fiche qui explique le rôle de la salive.",
+      "indices": [
+       "La salive est fabriquée dans la bouche.",
+       "L'estomac et l'intestin sont plus loin.",
+       "Trois cartes dans chaque colonne."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique le rôle de la salive ?",
+       "options": [
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer).",
+        "Tout au long du trajet, la texture change : du morceau dur au bol alimentaire, puis à la bouillie de l'estomac et au liquide de l'intestin.",
+        "La salive, fabriquée par les glandes salivaires, mouille les aliments.",
+        "Mâcher longtemps aide l'estomac."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La salive est fabriquée par les glandes salivaires.",
+        "vrai": true,
+        "explication": "Elle mouille les aliments."
+       },
+       {
+        "txt": "La salive fait grossir les dents.",
+        "vrai": false,
+        "explication": "Elle mouille les aliments."
+       },
+       {
+        "txt": "La bouchée devient un bol alimentaire dans la bouche.",
+        "vrai": true,
+        "explication": "Mâchée et mouillée."
+       },
+       {
+        "txt": "La bouchée devient une bouillie dans l'estomac.",
+        "vrai": true,
+        "explication": "Elle est brassée."
+       },
+       {
+        "txt": "La texture de la bouchée reste la même pendant tout le voyage.",
+        "vrai": false,
+        "explication": "Elle change du dur au liquide."
+       },
+       {
+        "txt": "Mâcher longtemps n'a aucun effet sur la digestion.",
+        "vrai": false,
+        "explication": "Mâcher longtemps aide l'estomac."
+       }
+      ],
+      "consigne": "Rosalie a noté six phrases dans son carnet de dégustation. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui décrit le changement de texture de la bouchée.",
+      "indices": [
+       "La texture change : dur, mou, bouillie, liquide.",
+       "Les glandes salivaires fabriquent la salive.",
+       "Mâcher longtemps aide l'estomac."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit le changement de texture de la bouchée ?",
+       "options": [
+        "Tout au long du trajet, la texture change : du morceau dur au bol alimentaire, puis à la bouillie de l'estomac et au liquide de l'intestin.",
+        "La salive, fabriquée par les glandes salivaires, mouille les aliments.",
+        "Mâcher longtemps aide l'estomac.",
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer)."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -963,7 +2315,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "basile",
+     "personnage_emetteur": "rosalie",
      "probleme_narratif": "Basile suit une bouchée de pain, de l'assiette à la gorge.",
      "enjeu": "Sans l'ordre des étapes, la bouchée ne voyage pas.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -976,10 +2328,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "mastication",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Cuisinier (ordre) ; Sous-chef (lettres) ; Chef (lettres). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Au fil du trajet, la texture change : du solide dur à la bouillie, puis à un liquide. Les aliments sont transformés en nutriments utilisables par les organes.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "items": [
@@ -1011,6 +2365,66 @@
        "Les dents agissent avant la salive ; l'estomac vient après la bouche."
       ],
       "dialogue": "Suivons une bouchée de pain ! Dans quel ordre fait-elle son voyage ?"
+     },
+     "lieutenant": {
+      "type": "lettres",
+      "cible": [
+       "T",
+       "E",
+       "X",
+       "T",
+       "U",
+       "R",
+       "E"
+      ],
+      "texte": "<p>Au dessert, Rosalie sert une pomme : on la cro<b data-l='Q'>q</b>ue, c'est dur ; on la mâche, c'e<b data-l='S'>s</b>t mou ; pu<b data-l='I'>i</b>s la bouchée avance dans le <b data-l='T'>t</b>ube. Rosalie not<b data-l='E'>e</b> e<b data-l='X'>x</b>actement ce qu'elle sent : plus rien n'est pa<b data-l='R'>r</b>eil d'une étape à l'autre, le <b data-l='T'>t</b>out change. Elle sourit, un peu s<b data-l='U'>u</b>rprise, mais ravie. Et r<b data-l='E'>e</b>vient la salive.</p>",
+      "consigne": "Trouve le mot qui correspond à cette définition : « Ce qui change tout au long du trajet de la bouchée : dur, mou, liquide. » Ses lettres sont cachées en couleur dans le texte de Rosalie, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Trois lettres sont des pièges.",
+      "indices": [
+       "Le mot désigne la façon dont l'aliment est : dure, molle, liquide.",
+       "Il commence par T et finit par E.",
+       "Deux lettres se répètent : le T et le E."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite ce mot ?",
+       "options": [
+        "La salive, fabriquée par les glandes salivaires, mouille les aliments.",
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer).",
+        "Tout au long du trajet, la texture change : du morceau dur au bol alimentaire, puis à la bouillie de l'estomac et au liquide de l'intestin.",
+        "Mâcher longtemps aide l'estomac."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
+     },
+     "second": {
+      "type": "lettres",
+      "cible": [
+       "G",
+       "L",
+       "A",
+       "N",
+       "D",
+       "E",
+       "S"
+      ],
+      "texte": "<p>Au <b data-l='D'>d</b>épart du repas, Rosalie <b data-l='L'>l</b>ève le nez : l'o<b data-l='D'>d</b>eur du pain frais lui fait venir l'eau à la bouche. Il y a des <b data-l='G'>g</b>ens qui disent que c'est magique ; Rosalie explique : « c'est un <b data-l='E'>e</b>ffet des gla<b data-l='N'>n</b>des, qui fabriquent la salive. » Pui<b data-l='S'>s</b> elle croque, <b data-l='A'>a</b>vec bonheur, un <b data-l='P'>p</b>etit morceau de <b data-l='Z'>z</b>este.</p>",
+      "consigne": "Trouve le mot qui correspond à cette définition : « Organes qui fabriquent la salive. » Ses lettres sont cachées en couleur dans le texte de Rosalie, dans le désordre. Clique-les dans l'ordre qui forme le mot (7 lettres). Trois lettres sont des pièges.",
+      "indices": [
+       "Le mot est un pluriel : il finit par S.",
+       "Ce sont des organes, comme les glandes salivaires.",
+       "Il commence par G et se termine par DES."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite ces organes ?",
+       "options": [
+        "Les dents assurent la mastication : incisives (couper), canines (déchirer), prémolaires et molaires (broyer).",
+        "La salive, fabriquée par les glandes salivaires, mouille les aliments.",
+        "Tout au long du trajet, la texture change : du morceau dur au bol alimentaire, puis à la bouillie de l'estomac et au liquide de l'intestin.",
+        "Mâcher longtemps aide l'estomac."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
      }
     }
    ]
@@ -1057,7 +2471,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "digestion",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (ordre) ; Commis (plan) ; Cuisinier (plan) ; Sous-chef (qcm) ; Chef (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Bouche, œsophage, estomac, intestin grêle, gros intestin : c'est le tube digestif. Le foie, à droite sous les côtes, aide la digestion sans que les aliments le traversent.",
      "matelot": {
       "titre": "La maquette du corps",
@@ -1143,6 +2557,153 @@
        "Le foie est le gros organe brun, à droite de la personne, sous les côtes."
       ],
       "dialogue": "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel. Une bouchée y fait un long voyage, et chaque organe a son travail. Si vous retrouvez le chemin, le quatrième cadenas sautera."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La bouche",
+        "rang": 1
+       },
+       {
+        "txt": "L'œsophage",
+        "rang": 2
+       },
+       {
+        "txt": "L'estomac",
+        "rang": 3
+       },
+       {
+        "txt": "L'intestin grêle",
+        "rang": 4
+       }
+      ],
+      "consigne": "La docteure Inès montre le voyage d'une bouchée. Remets les étapes dans l'ordre : le début en haut. Utilise les flèches ▲ et ▼, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Le trajet des aliments » dans la Bibliothèque.",
+       "Tout commence par la bouche.",
+       "L'intestin grêle vient après l'estomac."
+      ],
+      "dialogue": "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel. Une bouchée y fait un long voyage, et chaque organe a son travail. Si vous retrouvez le chemin, le quatrième cadenas sautera."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel repère montre l'organe où les nutriments passent dans le sang ?",
+        "options": [
+         "Le repère 5 : l'intestin grêle",
+         "Le repère 1 : l'estomac",
+         "Le repère 3 : le gros intestin",
+         "Le repère 6 : le foie"
+        ],
+        "bonne": 0,
+        "explication": "Ils traversent la paroi de l'intestin grêle."
+       },
+       {
+        "q": "Quel repère montre un organe que les aliments ne traversent pas ?",
+        "options": [
+         "Le repère 6 : le foie",
+         "Le repère 4 : l'œsophage",
+         "Le repère 1 : l'estomac",
+         "Le repère 5 : l'intestin grêle"
+        ],
+        "bonne": 0,
+        "explication": "Le foie aide la digestion sans être traversé."
+       },
+       {
+        "q": "Quel repère montre l'organe qui récupère l'eau et forme les excréments ?",
+        "options": [
+         "Le repère 3",
+         "Le repère 5",
+         "Le repère 1",
+         "Le repère 2"
+        ],
+        "bonne": 0,
+        "explication": "C'est le gros intestin."
+       }
+      ],
+      "consigne": "La docteure Inès montre sa maquette du corps, vue de face (repères 1 à 6). Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.<svg viewBox=\"0 0 300 340\" role=\"img\" aria-label=\"Maquette du corps humain vue de face : le tube digestif et le foie, avec des repères numérotés\" style=\"display:block;max-width:420px;width:100%;margin:10px auto;background:#eef4f6;border:2px solid #6f8f9a;border-radius:10px\"><ellipse cx=\"150\" cy=\"54\" rx=\"34\" ry=\"40\" fill=\"#f3dcc4\" stroke=\"#b98e6a\" stroke-width=\"2\"/><path d=\"M134 88 L134 104 Q96 108 82 126 L74 300 Q150 318 226 300 L218 126 Q204 108 166 104 L166 88 Z\" fill=\"#f3dcc4\" stroke=\"#b98e6a\" stroke-width=\"2\"/><g fill=\"#6b5240\"><circle cx=\"138\" cy=\"46\" r=\"2.6\"/><circle cx=\"162\" cy=\"46\" r=\"2.6\"/></g><path d=\"M150 50 L147 58 L152 59\" stroke=\"#b98e6a\" stroke-width=\"1.6\" fill=\"none\"/><g stroke=\"#d8c3ab\" stroke-width=\"2\" fill=\"none\" opacity=\".9\"><path d=\"M92 140 Q150 128 208 140\"/><path d=\"M88 154 Q150 142 212 154\"/><path d=\"M86 168 Q150 158 214 168\"/></g><path d=\"M138 66 Q150 76 162 66 Q150 70 138 66 Z\" fill=\"#a8434a\" stroke=\"#7d2f35\" stroke-width=\"1.2\"/><path d=\"M84 168 Q86 150 116 150 Q146 152 156 162 Q150 182 130 190 Q100 198 86 186 Z\" fill=\"#8f3b2e\" stroke=\"#5e2219\" stroke-width=\"1.6\"/><path d=\"M150 74 L150 96 Q150 140 158 166\" stroke=\"#d98b6a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M150 74 L150 96 Q150 140 158 166\" stroke=\"#c0704f\" stroke-width=\"1.2\" fill=\"none\"/><path d=\"M154 164 Q172 152 196 162 Q214 174 206 198 Q196 220 170 214 Q160 210 164 200 Q178 200 184 190 Q186 176 168 176 Q160 176 156 170 Z\" fill=\"#e48a72\" stroke=\"#a5513c\" stroke-width=\"1.8\"/><path d=\"M110 280 L110 214 Q110 204 120 204 L190 206 Q200 206 200 216 L200 286 Q200 300 172 300 L156 300 L156 314\" stroke=\"#c88a3a\" stroke-width=\"15\" fill=\"none\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M110 280 L110 214 Q110 204 120 204 L190 206 Q200 206 200 216 L200 286 Q200 300 172 300 L156 300 L156 314\" stroke=\"#8a5a1e\" stroke-width=\"1.2\" fill=\"none\" stroke-dasharray=\"4 5\"/><path d=\"M168 246 Q182 190 184 204 Q196 208 184 214 Q148 202 124 216 Q112 220 124 226 Q160 214 184 228 Q196 232 184 238 Q148 226 124 240 Q112 244 124 250 Q160 238 184 252 Q196 256 184 262 Q148 250 124 264 Q150 286 166 284\" stroke=\"#f2b6a0\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M168 246 Q182 190 184 204 Q196 208 184 214 Q148 202 124 216 Q112 220 124 226 Q160 214 184 228 Q196 232 184 238 Q148 226 124 240 Q112 244 124 250 Q160 238 184 252 Q196 256 184 262 Q148 250 124 264 Q150 286 166 284\" stroke=\"#b56f5a\" stroke-width=\"1.1\" fill=\"none\"/><path d=\"M172 212 Q174 230 168 246\" stroke=\"#f2b6a0\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><text x=\"150\" y=\"330\" text-anchor=\"middle\" font-size=\"9\" font-family=\"Georgia,serif\" fill=\"#33464d\">schéma simplifié, sans échelle · vu de face</text><line x1=\"262\" y1=\"178\" x2=\"176\" y2=\"186\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><circle cx=\"176\" cy=\"186\" r=\"2.6\" fill=\"#1f2e33\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#1f2e33\"><circle cx=\"262\" cy=\"178\" r=\"10\" fill=\"#fff\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><text x=\"262\" y=\"182.5\">1</text></g><line x1=\"58\" y1=\"62\" x2=\"150\" y2=\"62\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><circle cx=\"150\" cy=\"62\" r=\"2.6\" fill=\"#1f2e33\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#1f2e33\"><circle cx=\"58\" cy=\"62\" r=\"10\" fill=\"#fff\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><text x=\"58\" y=\"66.5\">2</text></g><line x1=\"36\" y1=\"232\" x2=\"102\" y2=\"240\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><circle cx=\"102\" cy=\"240\" r=\"2.6\" fill=\"#1f2e33\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#1f2e33\"><circle cx=\"36\" cy=\"232\" r=\"10\" fill=\"#fff\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><text x=\"36\" y=\"236.5\">3</text></g><line x1=\"250\" y1=\"120\" x2=\"150\" y2=\"128\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><circle cx=\"150\" cy=\"128\" r=\"2.6\" fill=\"#1f2e33\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#1f2e33\"><circle cx=\"250\" cy=\"120\" r=\"10\" fill=\"#fff\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><text x=\"250\" y=\"124.5\">4</text></g><line x1=\"262\" y1=\"252\" x2=\"150\" y2=\"238\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><circle cx=\"150\" cy=\"238\" r=\"2.6\" fill=\"#1f2e33\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#1f2e33\"><circle cx=\"262\" cy=\"252\" r=\"10\" fill=\"#fff\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><text x=\"262\" y=\"256.5\">5</text></g><line x1=\"36\" y1=\"162\" x2=\"112\" y2=\"178\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><circle cx=\"112\" cy=\"178\" r=\"2.6\" fill=\"#1f2e33\"/><g font-family=\"Georgia,serif\" font-size=\"13\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#1f2e33\"><circle cx=\"36\" cy=\"162\" r=\"10\" fill=\"#fff\" stroke=\"#1f2e33\" stroke-width=\"1.5\"/><text x=\"36\" y=\"166.5\">6</text></g></svg>",
+      "indices": [
+       "Suis le tube de la bouche vers le bas.",
+       "Le foie n'est pas sur le tube digestif.",
+       "Le gros intestin forme un cadre autour de l'intestin grêle."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Le tube digestif comprend la bouche, l'œsophage, l'estomac, l'intestin grêle et le gros intestin.",
+        "Des organes annexes, comme le foie et le pancréas, fabriquent des liquides qui aident la digestion, sans que les aliments les traversent.",
+        "Le gros intestin récupère de l'eau et forme les excréments.",
+        "La digestion d'un repas dure plusieurs heures."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel. Une bouchée y fait un long voyage, et chaque organe a son travail. Si vous retrouvez le chemin, le quatrième cadenas sautera."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "tube",
+        "titre": "Tube digestif"
+       },
+       {
+        "id": "annexe",
+        "titre": "Organe annexe (aide la digestion)"
+       },
+       {
+        "id": "autre",
+        "titre": "Hors du trajet des aliments (circulation, respiration)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La bouche",
+        "col": "tube"
+       },
+       {
+        "txt": "L'estomac",
+        "col": "tube"
+       },
+       {
+        "txt": "L'intestin grêle",
+        "col": "tube"
+       },
+       {
+        "txt": "Le foie",
+        "col": "annexe"
+       },
+       {
+        "txt": "Le pancréas",
+        "col": "annexe"
+       },
+       {
+        "txt": "Le cœur",
+        "col": "autre"
+       },
+       {
+        "txt": "Les poumons",
+        "col": "autre"
+       }
+      ],
+      "consigne": "Inès classe les organes de sa maquette. Range chaque organe dans la bonne colonne, puis choisis la phrase de la fiche qui définit les organes annexes.",
+      "indices": [
+       "Les aliments traversent le tube digestif.",
+       "Le foie et le pancréas fabriquent des liquides.",
+       "Le cœur et les poumons ne sont pas sur le trajet."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit les organes annexes ?",
+       "options": [
+        "Des organes annexes, comme le foie et le pancréas, fabriquent des liquides qui aident la digestion, sans que les aliments les traversent.",
+        "Le tube digestif comprend la bouche, l'œsophage, l'estomac, l'intestin grêle et le gros intestin.",
+        "Les aliments ne passent jamais par le cœur ni par les poumons, ni dans le foie : celui-ci aide la digestion sans être traversé.",
+        "Les aliments sont transformés en nutriments, assez petits pour passer dans le sang à travers la paroi de l'intestin grêle, long d'environ 6 m."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel. Une bouchée y fait un long voyage, et chaque organe a son travail. Si vous retrouvez le chemin, le quatrième cadenas sautera."
      }
     },
     {
@@ -1158,7 +2719,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "basile",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Basile joue aux cartes : chaque organe a son travail.",
      "enjeu": "Sans leur rôle, impossible de suivre la digestion.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -1171,7 +2732,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "digestion",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (association) ; Commis (association) ; Cuisinier (association) ; Sous-chef (ordre) ; Chef (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Chaque organe transforme un peu plus les aliments. Dans l'intestin grêle, les nutriments passent dans le sang ; ce qui n'est pas utilisé est rejeté.",
      "matelot": {
       "paires": [
@@ -1230,6 +2791,127 @@
        "Le gros intestin est le dernier : il récupère l'eau."
       ],
       "dialogue": "Chacun son travail dans le tube digestif ! Associez chaque organe à ce qu'il fait."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "La bouche",
+        "d": "mâcher les aliments"
+       },
+       {
+        "g": "L'estomac",
+        "d": "brasser les aliments en bouillie"
+       },
+       {
+        "g": "L'intestin grêle",
+        "d": "faire passer les nutriments dans le sang"
+       }
+      ],
+      "consigne": "Relie chaque organe à son travail. Clique sur un organe, puis sur son travail.",
+      "indices": [
+       "Ouvre la fiche « Le trajet des aliments ».",
+       "L'estomac est une poche qui brasse.",
+       "Les nutriments passent dans le sang dans l'intestin grêle."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Les aliments sont mâchés et mouillés dans la bouche.",
+        "rang": 1
+       },
+       {
+        "txt": "Ils descendent par l'œsophage jusqu'à l'estomac.",
+        "rang": 2
+       },
+       {
+        "txt": "L'estomac les brasse en bouillie.",
+        "rang": 3
+       },
+       {
+        "txt": "Dans l'intestin grêle, les nutriments passent dans le sang.",
+        "rang": 4
+       },
+       {
+        "txt": "Le gros intestin récupère l'eau et forme les excréments.",
+        "rang": 5
+       }
+      ],
+      "consigne": "Inès décrit la transformation d'un repas. Remets dans l'ordre ces cinq étapes, puis choisis la phrase de la fiche qui donne la longueur de l'intestin grêle.",
+      "indices": [
+       "Suis le trajet de la bouche à la fin du tube.",
+       "Les nutriments passent dans le sang avant le gros intestin.",
+       "Le gros intestin est le dernier organe du tube."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne la longueur de l'intestin grêle ?",
+       "options": [
+        "Les aliments sont transformés en nutriments, assez petits pour passer dans le sang à travers la paroi de l'intestin grêle, long d'environ 6 m.",
+        "Le gros intestin récupère de l'eau et forme les excréments.",
+        "Des organes annexes, comme le foie et le pancréas, fabriquent des liquides qui aident la digestion, sans que les aliments les traversent.",
+        "La digestion d'un repas dure plusieurs heures."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "L'intestin grêle déplié mesure environ 6 m. Environ combien de fois la taille d'un enfant de 1,40 m ?",
+        "options": [
+         "4 fois",
+         "2 fois",
+         "10 fois",
+         "1 fois"
+        ],
+        "bonne": 0,
+        "explication": "6 ÷ 1,4 est proche de 4."
+       },
+       {
+        "q": "Pourquoi une paroi de l'intestin grêle est-elle importante ?",
+        "options": [
+         "Les nutriments la traversent pour passer dans le sang",
+         "Elle fabrique la salive",
+         "Elle pompe le sang",
+         "Elle broie les aliments"
+        ],
+        "bonne": 0,
+        "explication": "Les nutriments passent dans le sang à travers la paroi."
+       },
+       {
+        "q": "La digestion d'un repas dure…",
+        "options": [
+         "plusieurs heures",
+         "quelques secondes",
+         "exactement une minute",
+         "plusieurs semaines"
+        ],
+        "bonne": 0,
+        "explication": "Elle dure plusieurs heures."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Notes d'Inès sur la maquette</b> (d'après la fiche). L'intestin grêle déplié mesure environ 6 m chez un adulte. Un enfant de 10 ans mesure 1,40 m. Un repas met plusieurs heures à être digéré.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 1.",
+      "indices": [
+       "Divise 6 m par 1,4 m.",
+       "Les nutriments sont petits pour traverser la paroi.",
+       "Pense au temps entre un repas et le suivant."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+       "options": [
+        "Le gros intestin récupère de l'eau et forme les excréments.",
+        "Les aliments sont transformés en nutriments, assez petits pour passer dans le sang à travers la paroi de l'intestin grêle, long d'environ 6 m.",
+        "Le tube digestif comprend la bouche, l'œsophage, l'estomac, l'intestin grêle et le gros intestin.",
+        "La digestion d'un repas dure plusieurs heures."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -1245,7 +2927,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "rosalie",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Rosalie lit les affirmations de la docteure.",
      "enjeu": "Croire une idée fausse peut gêner la santé.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Vikidia, « Intestin grêle » (longueur moye",
@@ -1258,7 +2940,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "digestion",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (vraifaux) ; Commis (vraifaux) ; Cuisinier (vraifaux) ; Sous-chef (vraifaux) ; Chef (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le tube digestif ne passe pas par le cœur. L'intestin grêle, malgré son nom, est le plus long (environ 6 m) : c'est là que les nutriments passent dans le sang.",
      "matelot": {
       "affirmations": [
@@ -1321,6 +3003,132 @@
        "La bouche n'est que le début du voyage."
       ],
       "dialogue": "La docteure a écrit des affirmations. Lesquelles sont vraies ?"
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les aliments passent dans l'estomac.",
+        "vrai": true,
+        "explication": "Après l'œsophage."
+       },
+       {
+        "txt": "Les aliments passent dans le cœur.",
+        "vrai": false,
+        "explication": "Le cœur pompe le sang."
+       },
+       {
+        "txt": "Le gros intestin est le dernier organe du tube.",
+        "vrai": true,
+        "explication": "Il forme les excréments."
+       }
+      ],
+      "consigne": "La docteure Inès fait trois affirmations. Pour chacune, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Le trajet des aliments ».",
+       "Le cœur n'est pas sur le tube digestif.",
+       "Le tube se termine par le gros intestin."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les aliments passent par le foie.",
+        "vrai": false,
+        "explication": "Le foie aide la digestion sans être traversé."
+       },
+       {
+        "txt": "Le foie et le pancréas fabriquent des liquides qui aident la digestion.",
+        "vrai": true,
+        "explication": "Ce sont des organes annexes."
+       },
+       {
+        "txt": "L'intestin grêle mesure environ 6 m.",
+        "vrai": true,
+        "explication": "Il est long et replié."
+       },
+       {
+        "txt": "Les nutriments traversent la paroi du gros intestin pour passer dans le sang.",
+        "vrai": false,
+        "explication": "C'est la paroi de l'intestin grêle."
+       },
+       {
+        "txt": "Le gros intestin récupère de l'eau.",
+        "vrai": true,
+        "explication": "Et forme les excréments."
+       }
+      ],
+      "consigne": "Inès fait cinq affirmations sur le trajet des aliments. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui montre que les aliments ne passent pas dans le foie.",
+      "indices": [
+       "Un organe annexe n'est pas traversé par les aliments.",
+       "Les nutriments passent dans l'intestin grêle.",
+       "Pour la justification : cherche la phrase qui parle de cœur, de poumons et de foie."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche montre que les aliments ne passent pas dans le foie ?",
+       "options": [
+        "Des organes annexes, comme le foie et le pancréas, fabriquent des liquides qui aident la digestion, sans que les aliments les traversent.",
+        "Les aliments sont transformés en nutriments, assez petits pour passer dans le sang à travers la paroi de l'intestin grêle, long d'environ 6 m.",
+        "Les aliments ne passent jamais par le cœur ni par les poumons, ni dans le foie : celui-ci aide la digestion sans être traversé.",
+        "Le gros intestin récupère de l'eau et forme les excréments."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les aliments sont transformés en nutriments pendant la digestion.",
+        "vrai": true,
+        "explication": "Ils deviennent assez petits pour passer dans le sang."
+       },
+       {
+        "txt": "Les nutriments passent dans le sang dans l'estomac.",
+        "vrai": false,
+        "explication": "C'est dans l'intestin grêle."
+       },
+       {
+        "txt": "Ce qui n'a pas été utilisé continue sa route dans le gros intestin.",
+        "vrai": true,
+        "explication": "Puis il est rejeté."
+       },
+       {
+        "txt": "Le sang emporte les nutriments vers tous les organes.",
+        "vrai": true,
+        "explication": "C'est la circulation."
+       },
+       {
+        "txt": "Les aliments passent par le cœur et par les poumons.",
+        "vrai": false,
+        "explication": "Jamais."
+       },
+       {
+        "txt": "La digestion d'un repas dure quelques secondes.",
+        "vrai": false,
+        "explication": "Elle dure plusieurs heures."
+       }
+      ],
+      "consigne": "Inès a noté six phrases dans son carnet. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui dit ce que devient ce qui n'a pas été utilisé.",
+      "indices": [
+       "Le sang emporte les nutriments vers les organes.",
+       "Ce qui n'est pas utilisé continue sa route.",
+       "Une digestion complète prend du temps."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que devient ce qui n'a pas été utilisé ?",
+       "options": [
+        "Le sang les emporte ensuite vers tous les organes.",
+        "Le gros intestin récupère de l'eau et forme les excréments.",
+        "Ce qui n'a pas été utilisé continue sa route dans le gros intestin, puis est rejeté.",
+        "La digestion d'un repas dure plusieurs heures."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -1336,7 +3144,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nathan",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Nathan cherche l'organe que la bouchée ne rencontre jamais.",
      "enjeu": "Un organe mal rangé fausse le trajet de la bouchée.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -1349,10 +3157,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "digestion",
      "type": "intrus",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Cuisinier (intrus) ; Sous-chef (intrus) ; Chef (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le foie appartient à l'appareil digestif : il fabrique un liquide qui aide la digestion. Mais les aliments ne le traversent pas.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "cartes": [
@@ -1380,6 +3190,90 @@
        "Cet organe est brun, à droite de la personne, sous les côtes."
       ],
       "dialogue": "Un de ces organes ne voit jamais passer la bouchée. Trouvez-le !"
+     },
+     "lieutenant": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "La bouche",
+        "intrus": false
+       },
+       {
+        "txt": "L'œsophage",
+        "intrus": false
+       },
+       {
+        "txt": "L'estomac",
+        "intrus": false
+       },
+       {
+        "txt": "Le pancréas",
+        "intrus": true
+       },
+       {
+        "txt": "L'intestin grêle",
+        "intrus": false
+       }
+      ],
+      "consigne": "Les aliments passent dans quatre de ces organes, mais pas dans le cinquième. Trouve l'intrus, puis choisis la phrase de la fiche qui le justifie.",
+      "indices": [
+       "Un organe annexe fabrique un liquide, mais ne laisse rien passer.",
+       "Le tube digestif commence à la bouche.",
+       "Le foie et le pancréas sont des organes annexes."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ton choix ?",
+       "options": [
+        "Le tube digestif comprend la bouche, l'œsophage, l'estomac, l'intestin grêle et le gros intestin.",
+        "Des organes annexes, comme le foie et le pancréas, fabriquent des liquides qui aident la digestion, sans que les aliments les traversent.",
+        "Les aliments sont transformés en nutriments, assez petits pour passer dans le sang à travers la paroi de l'intestin grêle, long d'environ 6 m.",
+        "La digestion d'un repas dure plusieurs heures."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Le pancréas",
+        "d": "fabrique un liquide qui aide la digestion, sans être traversé"
+       },
+       {
+        "g": "Le foie",
+        "d": "aide la digestion sans que les aliments le traversent"
+       },
+       {
+        "g": "L'intestin grêle",
+        "d": "d'environ 6 m, les nutriments y passent dans le sang"
+       },
+       {
+        "g": "Le gros intestin",
+        "d": "récupère de l'eau et forme les excréments"
+       },
+       {
+        "g": "L'œsophage",
+        "d": "conduit la bouchée de la bouche à l'estomac"
+       }
+      ],
+      "consigne": "Inès termine par un dernier tableau. Relie chaque organe à son rôle précis, puis choisis la phrase de la fiche qui énumère le tube digestif.",
+      "indices": [
+       "Deux organes annexes : un liquide, mais pas de passage des aliments.",
+       "L'intestin grêle est long et replié.",
+       "Le gros intestin est le dernier organe du tube."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche énumère le tube digestif ?",
+       "options": [
+        "Le tube digestif comprend la bouche, l'œsophage, l'estomac, l'intestin grêle et le gros intestin.",
+        "Des organes annexes, comme le foie et le pancréas, fabriquent des liquides qui aident la digestion, sans que les aliments les traversent.",
+        "Le gros intestin récupère de l'eau et forme les excréments.",
+        "Les aliments ne passent jamais par le cœur ni par les poumons, ni dans le foie : celui-ci aide la digestion sans être traversé."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
      }
     }
    ]
@@ -1426,7 +3320,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "circulation",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (code) ; Commis (code) ; Cuisinier (code) ; Sous-chef (qcm) ; Chef (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Au repos, le cœur d'un enfant bat environ 90 fois par minute. Après un effort, il bat beaucoup plus vite.",
      "matelot": {
       "champs": [
@@ -1459,6 +3353,110 @@
        "Calcule 40 × 4."
       ],
       "dialogue": "Salut ! Moi, c'est Basile. Demain, je grimpe le col ! Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère. Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous."
+     },
+     "mousse": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Battements en 1 minute",
+        "valeur": "80",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Basile apprend à Lou à mesurer son pouls. On compte les battements pendant 15 secondes, puis on multiplie par 4. Au repos, Lou compte 20 battements en 15 secondes.<p class=\"question-doc\"><b>Combien de battements en 1 minute ?</b></p>",
+      "indices": [
+       "Ouvre la fiche « Le sang livre les nutriments » dans la Bibliothèque.",
+       "Une minute, c'est 4 fois 15 secondes.",
+       "Calcule 20 × 4."
+      ],
+      "dialogue": "Salut ! Moi, c'est Basile. Demain, je grimpe le col ! Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère. Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de battements par minute juste après la course ?",
+        "options": [
+         "152",
+         "38",
+         "95",
+         "22"
+        ],
+        "bonne": 0,
+        "explication": "38 × 4 = 152."
+       },
+       {
+        "q": "De combien de battements par minute le pouls a-t-il augmenté, entre le repos (22 en 15 s) et la course ?",
+        "options": [
+         "64",
+         "16",
+         "152",
+         "88"
+        ],
+        "bonne": 0,
+        "explication": "152 − 88 = 64."
+       },
+       {
+        "q": "Pourquoi le cœur accélère-t-il pendant la course ?",
+        "options": [
+         "Les muscles ont besoin de plus de nutriments",
+         "Le cœur a froid",
+         "Le sang devient plus lourd",
+         "Les poumons se vident"
+        ],
+        "bonne": 0,
+        "explication": "Les muscles travaillent davantage."
+       }
+      ],
+      "consigne": "Basile a noté trois relevés de pouls de Lou. Lis le tableau, réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.<div class=\"doc-titre\"><i>Relevés de Lou (fictifs)</i></div><table class=\"tableau-releves\"><tr><th>Situation</th><th>Battements en 15 secondes</th></tr><tr><td>Assise depuis 5 minutes</td><td>22</td></tr><tr><td>Juste après une minute de course sur place</td><td>38</td></tr><tr><td>5 minutes plus tard, au repos</td><td>23</td></tr></table>",
+      "indices": [
+       "Multiplie par 4.",
+       "Compare les pouls par minute.",
+       "Quels organes réclament plus quand on court ?"
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Le sang leur apporte les nutriments venus de l'intestin grêle (et le dioxygène venu des poumons).",
+        "Pendant un effort, les muscles travaillent davantage et ont besoin de plus de nutriments : le cœur accélère.",
+        "Le cœur pompe le sang dans des vaisseaux qui atteignent tous les organes.",
+        "Le cœur s'adapte aux besoins des muscles."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Salut ! Moi, c'est Basile. Demain, je grimpe le col ! Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère. Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Pouls au repos (par minute)",
+        "valeur": "62",
+        "longueur": 2
+       },
+       {
+        "libelle": "Pouls après le col (par minute)",
+        "valeur": "156",
+        "longueur": 3
+       }
+      ],
+      "consigne": "Basile mesure son pouls autrement : il compte pendant 30 secondes au lieu de 15. Au repos, il compte 31 battements en 30 secondes. Après sa montée du col, il compte 78 battements en 30 secondes. Calcule les deux pouls par minute, puis ouvre le cadenas.",
+      "indices": [
+       "30 secondes, c'est une demi-minute : multiplie par 2.",
+       "31 × 2, puis 78 × 2.",
+       "Compare avec la méthode de la fiche (15 secondes × 4)."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne la méthode de mesure du pouls ?",
+       "options": [
+        "Au repos, le cœur d'un enfant bat environ 90 fois par minute ; après un effort intense, il peut dépasser 160.",
+        "Le cœur s'adapte aux besoins des muscles.",
+        "Pour mesurer son pouls : compter les battements pendant 15 secondes et multiplier par 4.",
+        "Pendant un effort, les muscles travaillent davantage et ont besoin de plus de nutriments : le cœur accélère."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Salut ! Moi, c'est Basile. Demain, je grimpe le col ! Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère. Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous."
      }
     },
     {
@@ -1474,7 +3472,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "rosalie",
+     "personnage_emetteur": "basile",
      "probleme_narratif": "Rosalie lit un message dont des mots manquent.",
      "enjeu": "Sans les mots, le message reste incomplet.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -1487,7 +3485,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "circulation",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (qcm) ; Commis (trous) ; Cuisinier (trous) ; Sous-chef (vraifaux) ; Chef (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le cœur pompe le sang ; le sang livre les nutriments aux organes, dont les muscles.",
      "matelot": {
       "texte": "<p>Le [[cœur]] est un muscle qui fonctionne comme une pompe. Il envoie le [[sang]] dans tout le corps. Le sang transporte les [[nutriments]] jusqu'aux organes, par exemple jusqu'aux [[muscles]].</p>",
@@ -1526,6 +3524,131 @@
        "Le mot qui manque à la fin désigne ce qui fait bouger les jambes."
       ],
       "dialogue": "Le home-trainer a affiché un message. Complétez-le pour continuer."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Qui envoie le sang dans tout le corps ?",
+        "options": [
+         "Le cœur",
+         "L'estomac",
+         "Les dents",
+         "Les poumons"
+        ],
+        "bonne": 0,
+        "explication": "Le cœur pompe le sang."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Le sang livre les nutriments ».",
+       "Le cœur bat dans la poitrine.",
+       "Le cœur est comme une pompe."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le cœur pompe le sang dans des vaisseaux qui atteignent tous les organes.",
+        "vrai": true,
+        "explication": "Il est au centre de la circulation."
+       },
+       {
+        "txt": "Le sang apporte aux organes les nutriments venus de l'intestin grêle.",
+        "vrai": true,
+        "explication": "Et le dioxygène venu des poumons."
+       },
+       {
+        "txt": "Le cœur bat moins vite pendant un effort.",
+        "vrai": false,
+        "explication": "Il accélère."
+       },
+       {
+        "txt": "Les nutriments passent dans le sang à travers la paroi de l'intestin grêle.",
+        "vrai": true,
+        "explication": "C'est la fin de la digestion."
+       },
+       {
+        "txt": "Les aliments passent par le cœur.",
+        "vrai": false,
+        "explication": "Jamais : le cœur pompe le sang."
+       }
+      ],
+      "consigne": "Basile a noté cinq phrases sur le sang. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui dit ce que le sang apporte aux organes.",
+      "indices": [
+       "Le cœur est une pompe pour le sang.",
+       "Pendant un effort, le cœur s'adapte.",
+       "Pour la justification : cherche la phrase qui parle de l'intestin grêle et des organes."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que le sang apporte aux organes ?",
+       "options": [
+        "Le cœur pompe le sang dans des vaisseaux qui atteignent tous les organes.",
+        "Pendant un effort, les muscles travaillent davantage et ont besoin de plus de nutriments : le cœur accélère.",
+        "Le sang leur apporte les nutriments venus de l'intestin grêle (et le dioxygène venu des poumons).",
+        "Le cœur s'adapte aux besoins des muscles."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Où les nutriments entrent-ils dans le sang ?",
+        "options": [
+         "Dans l'intestin grêle",
+         "Dans l'estomac",
+         "Dans la bouche",
+         "Dans le cœur"
+        ],
+        "bonne": 0,
+        "explication": "Ils traversent sa paroi."
+       },
+       {
+        "q": "Pourquoi le cœur est-il indispensable à la livraison ?",
+        "options": [
+         "Il pompe le sang vers tous les organes",
+         "Il digère les aliments",
+         "Il fabrique les nutriments",
+         "Il mâche les aliments"
+        ],
+        "bonne": 0,
+        "explication": "Le cœur pompe le sang."
+       },
+       {
+        "q": "Que se passe-t-il quand les muscles travaillent davantage ?",
+        "options": [
+         "Ils ont besoin de plus de nutriments et le cœur accélère",
+         "Le cœur ralentit",
+         "Le sang s'arrête",
+         "Les muscles n'ont plus besoin de rien"
+        ],
+        "bonne": 0,
+        "explication": "C'est la fin de la chaîne."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Schéma de Basile</b> (chaîne de livraison). Aliments, puis digestion, puis nutriments dans le sang, puis cœur, puis organes et muscles.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Suis la chaîne dans l'ordre.",
+       "Le cœur est une pompe.",
+       "Plus d'effort, plus de besoins."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Le sang leur apporte les nutriments venus de l'intestin grêle (et le dioxygène venu des poumons).",
+        "Pour mesurer son pouls : compter les battements pendant 15 secondes et multiplier par 4.",
+        "Au repos, le cœur d'un enfant bat environ 90 fois par minute ; après un effort intense, il peut dépasser 160.",
+        "Le cœur pompe le sang dans des vaisseaux qui atteignent tous les organes."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -1541,7 +3664,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "nathan",
+     "personnage_emetteur": "basile",
      "probleme_narratif": "Nathan trie des relevés : au repos ou à l'effort ?",
      "enjeu": "Sans bien trier, impossible de comprendre l'effort.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Wikipédia, « Fréquence cardiaque »",
@@ -1554,7 +3677,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "circulation",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Marmiton (tri) ; Commis (tri) ; Cuisinier (tri) ; Sous-chef (tri) ; Chef (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Pendant un effort, les muscles ont besoin de plus de nutriments : le cœur bat plus vite pour leur envoyer plus de sang.",
      "matelot": {
       "colonnes": [
@@ -1653,6 +3776,142 @@
        "Quatre cartes dans chaque colonne."
       ],
       "dialogue": "Au repos ou à l'effort ? Triez les relevés."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "vite",
+        "titre": "Le cœur bat vite"
+       },
+       {
+        "id": "lent",
+        "titre": "Le cœur bat lentement"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Faire un sprint",
+        "col": "vite"
+       },
+       {
+        "txt": "Monter l'escalier en courant",
+        "col": "vite"
+       },
+       {
+        "txt": "Dormir",
+        "col": "lent"
+       },
+       {
+        "txt": "Écouter une histoire",
+        "col": "lent"
+       }
+      ],
+      "consigne": "Range chaque situation. Le cœur bat-il vite ou lentement ? Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « Le sang livre les nutriments ».",
+       "Quand on court, le cœur s'accélère.",
+       "Quand on dort, le corps se repose."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "repos",
+        "titre": "Pouls au repos (environ 90 par minute ou moins)"
+       },
+       {
+        "id": "effort",
+        "titre": "Pouls après un effort intense"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "22 battements en 15 secondes, assis",
+        "col": "repos"
+       },
+       {
+        "txt": "23 battements en 15 secondes, après 5 minutes de repos",
+        "col": "repos"
+       },
+       {
+        "txt": "15 battements en 15 secondes pour un coureur au repos",
+        "col": "repos"
+       },
+       {
+        "txt": "40 battements en 15 secondes après la course",
+        "col": "effort"
+       },
+       {
+        "txt": "45 battements en 15 secondes dans un sprint",
+        "col": "effort"
+       },
+       {
+        "txt": "41 battements en 15 secondes après l'escalier en courant",
+        "col": "effort"
+       }
+      ],
+      "consigne": "Basile compare des pouls. Range chaque relevé : pouls bas (au repos) ou pouls élevé (après effort) ? Puis choisis la phrase de la fiche qui donne la valeur au repos d'un enfant.",
+      "indices": [
+       "Multiplie par 4 pour comparer avec 90 et 160.",
+       "Plus de 40 battements en 15 secondes : plus de 160 par minute.",
+       "Moins de 25 en 15 secondes : moins de 100 par minute."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne la valeur du pouls au repos d'un enfant ?",
+       "options": [
+        "Pendant un effort, les muscles travaillent davantage et ont besoin de plus de nutriments : le cœur accélère.",
+        "Au repos, le cœur d'un enfant bat environ 90 fois par minute ; après un effort intense, il peut dépasser 160.",
+        "Pour mesurer son pouls : compter les battements pendant 15 secondes et multiplier par 4.",
+        "Le cœur pompe le sang dans des vaisseaux qui atteignent tous les organes."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Basile mange un repas.",
+        "rang": 1
+       },
+       {
+        "txt": "La digestion transforme les aliments en nutriments.",
+        "rang": 2
+       },
+       {
+        "txt": "Les nutriments passent dans le sang à travers la paroi de l'intestin grêle.",
+        "rang": 3
+       },
+       {
+        "txt": "Le cœur pompe le sang dans les vaisseaux.",
+        "rang": 4
+       },
+       {
+        "txt": "Le sang apporte les nutriments aux muscles.",
+        "rang": 5
+       }
+      ],
+      "consigne": "Remets dans l'ordre la livraison des nutriments, de l'aliment au muscle, puis choisis la phrase de la fiche qui justifie le passage « dans le sang ».",
+      "indices": [
+       "Commence par l'aliment et termine par le muscle.",
+       "Les nutriments passent dans le sang avant d'être pompés.",
+       "Le cœur est une étape vers les organes."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le passage « dans le sang » ?",
+       "options": [
+        "Le sang leur apporte les nutriments venus de l'intestin grêle (et le dioxygène venu des poumons).",
+        "Le cœur pompe le sang dans des vaisseaux qui atteignent tous les organes.",
+        "Au repos, le cœur d'un enfant bat environ 90 fois par minute ; après un effort intense, il peut dépasser 160.",
+        "Pendant un effort, les muscles travaillent davantage et ont besoin de plus de nutriments : le cœur accélère."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -1668,7 +3927,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ines",
+     "personnage_emetteur": "basile",
      "probleme_narratif": "Inès veut retrouver le mot qui résume la livraison du sang.",
      "enjeu": "Sans la livraison, la dernière clé ne s'ouvre pas.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
@@ -1681,10 +3940,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "circulation",
      "type": "lettres",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Cuisinier (lettres) ; Sous-chef (code) ; Chef (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les nutriments viennent des aliments digérés ; le sang les apporte à tous les organes.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "cible": [
@@ -1707,6 +3968,90 @@
        "N, U, T, R, I… : c'est le mot de la leçon sur la digestion."
       ],
       "dialogue": "Dernière étape : comment le sang livre-t-il ce dont les muscles ont besoin ? Retrouvez le mot."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Battements par minute dans le sprint",
+        "valeur": "180",
+        "longueur": 3
+       },
+       {
+        "libelle": "Différence avec le repos (battements par minute)",
+        "valeur": "120",
+        "longueur": 3
+       }
+      ],
+      "consigne": "Basile compare deux pouls. Au repos, il compte 15 battements en 15 secondes. Dans un sprint, il en compte 45 en 15 secondes. Calcule, puis ouvre le cadenas.",
+      "indices": [
+       "Multiplie chaque relevé par 4.",
+       "Repos : 60 par minute ; sprint : 180 par minute.",
+       "180 − 60."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne la méthode de calcul ?",
+       "options": [
+        "Au repos, le cœur d'un enfant bat environ 90 fois par minute ; après un effort intense, il peut dépasser 160.",
+        "Pendant un effort, les muscles travaillent davantage et ont besoin de plus de nutriments : le cœur accélère.",
+        "Pour mesurer son pouls : compter les battements pendant 15 secondes et multiplier par 4.",
+        "Le cœur s'adapte aux besoins des muscles."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Au repos, le cœur d'un enfant bat environ 90 fois par minute.",
+        "vrai": true,
+        "explication": "Ordre de grandeur."
+       },
+       {
+        "txt": "Après un effort intense, le cœur peut dépasser 160 battements par minute.",
+        "vrai": true,
+        "explication": "Il accélère."
+       },
+       {
+        "txt": "Le cœur garde le même rythme quel que soit l'effort.",
+        "vrai": false,
+        "explication": "Il s'adapte."
+       },
+       {
+        "txt": "Le sang transporte les aliments tels qu'ils ont été mangés.",
+        "vrai": false,
+        "explication": "Il transporte les nutriments."
+       },
+       {
+        "txt": "Le pouls se prend au poignet ou au cou.",
+        "vrai": true,
+        "explication": "On y sent le battement du sang."
+       },
+       {
+        "txt": "Le cœur s'adapte aux besoins des muscles.",
+        "vrai": true,
+        "explication": "C'est la fin de la chaîne."
+       }
+      ],
+      "consigne": "Basile a noté six phrases dans son carnet. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui dit que le cœur s'adapte aux muscles.",
+      "indices": [
+       "Le cœur accélère pendant un effort.",
+       "Le sang transporte des nutriments, pas des aliments entiers.",
+       "Pour la justification : cherche la phrase la plus courte."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit que le cœur s'adapte aux muscles ?",
+       "options": [
+        "Le cœur pompe le sang dans des vaisseaux qui atteignent tous les organes.",
+        "Pendant un effort, les muscles travaillent davantage et ont besoin de plus de nutriments : le cœur accélère.",
+        "Pour mesurer son pouls : compter les battements pendant 15 secondes et multiplier par 4.",
+        "Le cœur s'adapte aux besoins des muscles."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     }
    ]

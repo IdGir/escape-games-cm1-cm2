@@ -15,6 +15,11 @@
   --papier: #f3e9d2; --encre: #1f1a14; --rouge: #a3261b; --vert: #2e7d4f;
   --police: Georgia, "Times New Roman", serif; --police-texte: "Segoe UI", system-ui, sans-serif;
   --ombre: 0 10px 40px rgba(0,0,0,.55);
+  /* Charte de la fenêtre d'énigme et des cadres : surchargée par css/theme.css de chaque jeu (valeurs d'origine = Nautilus) */
+  --panneau-haut: #f6edd6; --panneau-bas: #e9dcbb; --accent: #2a5d7a; --accent-clair: #e3f2fa;
+  --fond-carte: #fffaf0; --fond-colonne: #efe2c2; --bord-doux: #b39a6a; --bord-clair: #c9b48a; --rivet: #e3b54a;
+  --plaque-haut: rgba(58,26,12,.96); --plaque-bas: rgba(28,12,6,.97); --cadre-haut: rgba(38,20,10,.94); --cadre-bas: rgba(20,10,5,.96);
+  --laiton-profond: #8f6a22; --ombre-bouton: #3d2a08; --encre-bouton: #2a1a05; --bareme-fond: #2a140a;
 }
 *{ box-sizing: border-box; }
 html, body{ margin: 0; height: 100%; }
@@ -34,7 +39,7 @@ button{ font-family: inherit; }
 /* ---------- Cadres de laiton ---------- */
 .cadre-laiton{
   position: relative; border-radius: 14px;
-  background: linear-gradient(180deg, rgba(38,20,10,.94), rgba(20,10,5,.96));
+  background: linear-gradient(180deg, var(--cadre-haut), var(--cadre-bas));
   border: 3px solid var(--laiton);
   box-shadow: inset 0 0 0 2px var(--laiton-fonce), inset 0 0 24px rgba(0,0,0,.7), var(--ombre);
 }
@@ -46,19 +51,19 @@ button{ font-family: inherit; }
   background-position: 6px 4px, 6px calc(100% - 4px); background-size: 34px 10px; opacity: .8;
 }
 .btn-laiton{
-  font: 600 1rem var(--police-texte); color: #2a1a05; cursor: pointer;
-  background: linear-gradient(180deg, var(--laiton-clair), var(--laiton) 55%, #8f6a22);
+  font: 600 1rem var(--police-texte); color: var(--encre-bouton); cursor: pointer;
+  background: linear-gradient(180deg, var(--laiton-clair), var(--laiton) 55%, var(--laiton-profond));
   border: 2px solid var(--laiton-fonce); border-radius: 10px; padding: .55em 1.1em;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 3px 0 #3d2a08, 0 6px 14px rgba(0,0,0,.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 3px 0 var(--ombre-bouton), 0 6px 14px rgba(0,0,0,.4);
   transition: transform .1s, filter .15s;
 }
 .btn-laiton:hover:not(:disabled){ filter: brightness(1.08); }
-.btn-laiton:active:not(:disabled){ transform: translateY(2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 1px 0 #3d2a08; }
+.btn-laiton:active:not(:disabled){ transform: translateY(2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 1px 0 var(--ombre-bouton); }
 .btn-laiton:disabled{ opacity: .45; cursor: not-allowed; }
 .btn-laiton.petit{ font-size: .88rem; padding: .4em .8em; }
 .btn-laiton.grand{ font-size: 1.2rem; padding: .7em 1.6em; }
 .btn-laiton.gris{ background: linear-gradient(180deg, #d9d4c8, #a9a291); }
-.btn-laiton.principal{ background: linear-gradient(180deg, #ffe6a6, #e3b54a 55%, #a87a28); }
+.btn-laiton.principal{ background: linear-gradient(180deg, #ffe6a6, var(--rivet) 55%, #a87a28); }
 .btn-laiton.mise-en-evidence{ animation: lueur-btn 1.6s ease-in-out infinite; }
 @keyframes lueur-btn{ 50%{ box-shadow: 0 0 0 4px rgba(95,208,255,.55), 0 0 22px rgba(95,208,255,.8); } }
 
@@ -168,7 +173,7 @@ h1 .titre-sous{ display: block; font-size: .55em; font-style: italic; color: var
 .plaque.visible{ display: block; animation: monte .45s ease-out; }
 @keyframes monte{ from{ transform: translate(-50%, 30px); opacity: 0; } }
 .plaque-dialogue{ display: flex; gap: 16px; align-items: center; padding: 14px 18px; border-radius: 16px;
-  background: linear-gradient(180deg, rgba(58,26,12,.96), rgba(28,12,6,.97)); border: 3px solid var(--laiton);
+  background: linear-gradient(180deg, var(--plaque-haut), var(--plaque-bas)); border: 3px solid var(--laiton);
   box-shadow: inset 0 0 0 2px var(--laiton-fonce), inset 0 0 30px rgba(0,0,0,.6), 0 12px 40px rgba(0,0,0,.6); }
 .plaque-nom{ font-family: var(--police); color: var(--laiton-clair); font-size: 1.1rem; }
 .plaque-phrase{ font-size: 1.05rem; min-height: 2.6em; }
@@ -215,10 +220,10 @@ h1 .titre-sous{ display: block; font-size: .55em; font-style: italic; color: var
 .fiche-lien.lue::after{ content: " ✓"; color: var(--laiton-clair); }
 .fiche-lien.active{ outline: 2px solid var(--laiton-clair); }
 .biblio-fiche{ overflow-y: auto; padding: 18px 24px; background: var(--papier); color: var(--encre); font-size: 1.02rem; }
-.biblio-fiche h4{ font-family: var(--police); font-size: 1.4rem; margin: 4px 0 10px; color: #3a1a0c; }
-.fiche-ref{ font-size: .82rem; color: #6b4a12; text-transform: uppercase; letter-spacing: .08em; }
-.fiche-roman{ font-style: italic; color: #5a3a1c; border-top: 1px dashed #b39a6a; padding-top: 8px; }
-.tab-lecon{ border-collapse: collapse; width: 100%; margin: 8px 0; } .tab-lecon th, .tab-lecon td{ border: 1px solid #b39a6a; padding: 6px 8px; vertical-align: top; } .tab-lecon th{ background: #e6d6b0; }
+.biblio-fiche h4{ font-family: var(--police); font-size: 1.4rem; margin: 4px 0 10px; color: var(--acajou); }
+.fiche-ref{ font-size: .82rem; color: var(--laiton-fonce); text-transform: uppercase; letter-spacing: .08em; }
+.fiche-roman{ font-style: italic; color: #5a3a1c; border-top: 1px dashed var(--bord-doux); padding-top: 8px; }
+.tab-lecon{ border-collapse: collapse; width: 100%; margin: 8px 0; } .tab-lecon th, .tab-lecon td{ border: 1px solid var(--bord-doux); padding: 6px 8px; vertical-align: top; } .tab-lecon th{ background: #e6d6b0; }
 .encadre{ background: #fff8e6; border-left: 5px solid var(--laiton); padding: 8px 12px; margin: 10px 0; border-radius: 6px; }
 .encadre.attention{ border-color: #c26a1a; } .encadre.danger{ border-color: var(--rouge); background: #fdecea; }
 .reglages-corps{ overflow-y: auto; padding: 12px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px 24px; }
@@ -241,7 +246,7 @@ h1 .titre-sous{ display: block; font-size: .55em; font-style: italic; color: var
 .bilan-score{ text-align: center; font-size: 1.3rem; }
 .journal{ background: var(--papier); color: var(--encre); border-radius: 10px; padding: 12px 16px; margin: 12px 0; }
 .journal h3{ font-family: var(--police); margin: 0 0 6px; }
-.tab-journal{ width: 100%; border-collapse: collapse; font-size: .9rem; } .tab-journal th, .tab-journal td{ border: 1px solid #b39a6a; padding: 5px 7px; vertical-align: top; } .tab-journal th{ background: #e6d6b0; }
+.tab-journal{ width: 100%; border-collapse: collapse; font-size: .9rem; } .tab-journal th, .tab-journal td{ border: 1px solid var(--bord-doux); padding: 5px 7px; vertical-align: top; } .tab-journal th{ background: #e6d6b0; }
 .boutons-fin{ display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .pause-boite{ padding: 28px 36px; text-align: center; max-width: calc(100% - 32px); }
 .pause-boite h2{ font-family: var(--police); color: var(--laiton-clair); font-weight: normal; }
@@ -301,7 +306,7 @@ body.anim-reduites *, body.anim-reduites *::before, body.anim-reduites *::after{
 @keyframes volet{ from{ transform: translateX(0); } to{ transform: translateX(-102%); } }
 @keyframes volet-d{ from{ transform: translateX(0); } to{ transform: translateX(102%); } }
 .reaction svg{ width: 100%; height: 100%; }
-.reaction .trace{ fill: none; stroke: #ffcf7a; stroke-width: 1.4; stroke-dasharray: 3 2; filter: drop-shadow(0 0 2px #ffb84d); stroke-dashoffset: 200; animation: trace 2.2s ease-out forwards; vector-effect: non-scaling-stroke; }
+.reaction .trace{ fill: none; stroke: var(--ambre); stroke-width: 1.4; stroke-dasharray: 3 2; filter: drop-shadow(0 0 2px #ffb84d); stroke-dashoffset: 200; animation: trace 2.2s ease-out forwards; vector-effect: non-scaling-stroke; }
 @keyframes trace{ from{ stroke-dashoffset: 200; } to{ stroke-dashoffset: 0; } }
 .reaction .givre{ position: absolute; inset: 0; background: radial-gradient(circle, rgba(220,245,255,.0) 30%, rgba(220,245,255,.65)); animation: givre 2.4s ease-out forwards; }
 @keyframes givre{ from{ opacity: .9; } to{ opacity: 0; } }

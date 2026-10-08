@@ -1,20 +1,40 @@
 {
- "_commentaire": "Généré par outils/immersif/migrer-jeu.py depuis « objets-techniques ». À compléter : voir MIGRATION-RAPPORT.md.",
  "version": 1,
  "niveaux": [
   {
-   "id": "matelot",
-   "nom": "Compagnon",
+   "id": "mousse",
+   "nom": "Bricoleur",
    "icone": "🔧",
+   "equivalent": "≈ CE2",
+   "profil": "énigmes courtes, vocabulaire simple, aides renforcées (premier indice offert, fiche mise en évidence)"
+  },
+  {
+   "id": "matelot",
+   "nom": "Monteur",
+   "icone": "🔩",
    "equivalent": "≈ CM1",
    "profil": "cœur de programme CM1"
   },
   {
    "id": "timonier",
-   "nom": "Maître",
-   "icone": "🧭",
+   "nom": "Mécanicien",
+   "icone": "⚙️",
    "equivalent": "≈ CM2",
-   "profil": "cœur de programme CM2"
+   "profil": "cœur de programme CM2, plus d'éléments, vocabulaire précis"
+  },
+  {
+   "id": "lieutenant",
+   "nom": "Ingénieur",
+   "icone": "📐",
+   "equivalent": "≈ 6ᵉ",
+   "profil": "raisonnement en deux étapes, documents à croiser, justification"
+  },
+  {
+   "id": "second",
+   "nom": "Inventeur",
+   "icone": "💡",
+   "equivalent": "≈ 5ᵉ",
+   "profil": "synthèse, données chiffrées, pièges de logique, justification"
   }
  ],
  "escales": [
@@ -60,7 +80,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoin-fonction",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (association) ; Monteur (association) ; Mécanicien (association) ; Ingénieur (vraifaux) ; Inventeur (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un objet technique est fabriqué par l'homme pour répondre à un besoin. Ce que l'objet permet de faire s'appelle sa fonction d'usage.",
      "matelot": {
       "paires": [
@@ -138,6 +158,132 @@
        "Le taille-crayon enlève de la matière pour faire une pointe : il <b>taille</b>."
       ],
       "dialogue": "Regardez cette table : une lampe torche, un ouvre-boîte, un taille-crayon, un vélo, un cartable. Éléonore dit toujours : « Avant de savoir comment marche un objet, il faut savoir à quoi il sert. » Chaque objet répond à un besoin. Trouvons lequel."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Une lampe torche",
+        "d": "éclairer quand il fait sombre"
+       },
+       {
+        "g": "Un ouvre-boîte",
+        "d": "ouvrir une conserve"
+       },
+       {
+        "g": "Un cartable",
+        "d": "transporter ses affaires"
+       }
+      ],
+      "consigne": "Zoé range ses objets. Relie chaque objet au besoin auquel il répond. Clique sur un objet, puis sur son besoin.",
+      "indices": [
+       "Ouvre la fiche « À quoi sert un objet ? » dans la Bibliothèque.",
+       "Demande-toi : « à quoi ça sert ? »",
+       "Le cartable sert à transporter."
+      ],
+      "dialogue": "Regardez cette table : une lampe torche, un ouvre-boîte, un taille-crayon, un vélo, un cartable. Éléonore dit toujours : « Avant de savoir comment marche un objet, il faut savoir à quoi il sert. » Chaque objet répond à un besoin. Trouvons lequel."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un objet technique est fabriqué par l'être humain pour répondre à un besoin.",
+        "vrai": true,
+        "explication": "C'est la définition."
+       },
+       {
+        "txt": "Un galet ramassé dans la rivière est un objet technique.",
+        "vrai": false,
+        "explication": "Il n'est pas fabriqué."
+       },
+       {
+        "txt": "Un parapluie est un objet technique.",
+        "vrai": true,
+        "explication": "Il répond au besoin de se protéger de la pluie."
+       },
+       {
+        "txt": "Quand les besoins changent, les objets restent identiques.",
+        "vrai": false,
+        "explication": "Les objets évoluent."
+       },
+       {
+        "txt": "La fonction d'usage se dit avec un verbe d'action.",
+        "vrai": true,
+        "explication": "Par exemple : éclairer."
+       }
+      ],
+      "consigne": "Awa vérifie cinq affirmations sur les objets techniques. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui définit un objet technique.",
+      "indices": [
+       "Un objet technique est conçu et fabriqué.",
+       "Un galet est naturel.",
+       "Pour la justification : cherche la phrase qui parle de besoin."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit un objet technique ?",
+       "options": [
+        "Un galet ramassé dans la rivière n'est pas un objet technique ; un parapluie en est un.",
+        "La fonction d'usage décrit ce que l'objet permet de faire, avec un verbe d'action : la lampe torche permet d'éclairer loin d'une prise.",
+        "Un objet technique est conçu et fabriqué par l'être humain pour répondre à un besoin.",
+        "Quand les besoins changent, les objets changent."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Regardez cette table : une lampe torche, un ouvre-boîte, un taille-crayon, un vélo, un cartable. Éléonore dit toujours : « Avant de savoir comment marche un objet, il faut savoir à quoi il sert. » Chaque objet répond à un besoin. Trouvons lequel."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Lequel n'est pas un objet technique ?",
+        "options": [
+         "Le galet",
+         "La lampe torche",
+         "La bougie",
+         "Les trois"
+        ],
+        "bonne": 0,
+        "explication": "Le galet n'est pas fabriqué."
+       },
+       {
+        "q": "Quelle est la fonction d'usage de la lampe torche ?",
+        "options": [
+         "Éclairer, loin d'une prise",
+         "Être jolie",
+         "Être achetée",
+         "Faire du bruit"
+        ],
+        "bonne": 0,
+        "explication": "Elle permet d'éclairer."
+       },
+       {
+        "q": "La bougie et la lampe torche ont-elles la même fonction d'usage ?",
+        "options": [
+         "Oui : elles répondent au même besoin, éclairer",
+         "Non : l'une est en cire",
+         "Non : l'une est plus chère",
+         "On ne peut pas savoir"
+        ],
+        "bonne": 0,
+        "explication": "Même besoin, solutions différentes."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Atelier d'Éléonore</b> (inventé pour le jeu). Trois objets : un galet poli par la rivière, une lampe torche, une bougie. Éléonore se demande lesquels sont des objets techniques et lesquels répondent au même besoin.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Un objet technique est fabriqué.",
+       "La fonction d'usage se dit avec un verbe.",
+       "Même besoin, solutions différentes."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "La fonction d'estime explique pourquoi on préfère un modèle à un autre : couleur, forme, marque, décoration.",
+        "Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage.",
+        "Un objet technique est conçu et fabriqué par l'être humain pour répondre à un besoin.",
+        "Quand les besoins changent, les objets changent."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Regardez cette table : une lampe torche, un ouvre-boîte, un taille-crayon, un vélo, un cartable. Éléonore dit toujours : « Avant de savoir comment marche un objet, il faut savoir à quoi il sert. » Chaque objet répond à un besoin. Trouvons lequel."
      }
     },
     {
@@ -153,7 +299,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "awa",
+     "personnage_emetteur": "zoe",
      "probleme_narratif": "Awa se demande si un objet sert ou plaît.",
      "enjeu": "Sans distinction, on confond utilité et décoration.",
      "episode_du_roman": "Programme de cycle 3, « Besoin, fonction d'usage et d'estime »",
@@ -166,7 +312,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoin-fonction",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (qcm) ; Monteur (qcm) ; Mécanicien (qcm) ; Ingénieur (tri) ; Inventeur (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La fonction d'usage dit à quoi sert l'objet. La fonction d'estime dit pourquoi il plaît : sa couleur, sa forme, sa marque. Les deux existent en même temps dans presque tous les objets.",
      "matelot": {
       "questions": [
@@ -249,6 +395,140 @@
        "Deux objets très différents peuvent avoir la même fonction d'usage."
       ],
       "dialogue": "Un objet sert-il, ou plaît-il seulement ? Répondez."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "La fonction d'usage d'un objet, c'est…",
+        "options": [
+         "ce à quoi il sert",
+         "sa couleur préférée",
+         "son prix"
+        ],
+        "bonne": 0,
+        "explication": "Elle dit à quoi l'objet sert."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « À quoi sert un objet ? ».",
+       "« Usage » : l'usage qu'on en fait.",
+       "La couleur ne dit pas à quoi l'objet sert."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "usage",
+        "titre": "Fonction d'usage"
+       },
+       {
+        "id": "estime",
+        "titre": "Fonction d'estime"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La trousse range les crayons",
+        "col": "usage"
+       },
+       {
+        "txt": "Le vélo permet de se déplacer",
+        "col": "usage"
+       },
+       {
+        "txt": "La lampe éclaire à dix mètres",
+        "col": "usage"
+       },
+       {
+        "txt": "La trousse est de ma couleur préférée",
+        "col": "estime"
+       },
+       {
+        "txt": "Le vélo porte une marque connue",
+        "col": "estime"
+       },
+       {
+        "txt": "La lampe a un boîtier brillant",
+        "col": "estime"
+       }
+      ],
+      "consigne": "Zoé trie des phrases sur une trousse, un vélo et une lampe. Range chaque phrase : fonction d'usage ou fonction d'estime ? Puis choisis la phrase de la fiche qui définit la fonction d'estime.",
+      "indices": [
+       "L'usage décrit ce que l'objet fait.",
+       "L'estime parle de couleur, de forme, de marque.",
+       "Un verbe d'action : usage."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit la fonction d'estime ?",
+       "options": [
+        "La fonction d'usage décrit ce que l'objet permet de faire, avec un verbe d'action : la lampe torche permet d'éclairer loin d'une prise.",
+        "Un objet technique est conçu et fabriqué par l'être humain pour répondre à un besoin.",
+        "La fonction d'estime explique pourquoi on préfère un modèle à un autre : couleur, forme, marque, décoration.",
+        "Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "technique",
+        "titre": "Objet technique"
+       },
+       {
+        "id": "naturel",
+        "titre": "Pas un objet technique"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Un parapluie",
+        "col": "technique"
+       },
+       {
+        "txt": "Une lampe torche",
+        "col": "technique"
+       },
+       {
+        "txt": "Un cartable",
+        "col": "technique"
+       },
+       {
+        "txt": "Un galet de rivière",
+        "col": "naturel"
+       },
+       {
+        "txt": "Une branche tombée",
+        "col": "naturel"
+       },
+       {
+        "txt": "Un caillou ramassé",
+        "col": "naturel"
+       }
+      ],
+      "consigne": "Zoé classe des objets. Range chaque carte dans la bonne colonne, puis choisis la phrase de la fiche qui explique pourquoi une bougie et une lampe torche ont la même fonction d'usage.",
+      "indices": [
+       "Un objet technique est fabriqué.",
+       "Un galet n'est pas fabriqué.",
+       "Une branche tombée est naturelle."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique pourquoi une bougie et une lampe torche ont la même fonction d'usage ?",
+       "options": [
+        "Un galet ramassé dans la rivière n'est pas un objet technique ; un parapluie en est un.",
+        "Quand les besoins changent, les objets changent.",
+        "Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage.",
+        "La fonction d'usage décrit ce que l'objet permet de faire, avec un verbe d'action : la lampe torche permet d'éclairer loin d'une prise."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -264,7 +544,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "marcel",
+     "personnage_emetteur": "zoe",
      "probleme_narratif": "Marcel trie les objets selon leur famille.",
      "enjeu": "Sans tri, l'atelier est encombré.",
      "episode_du_roman": "Programme de cycle 3, « Besoin, fonction d'usage et d'estime »",
@@ -277,7 +557,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoin-fonction",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (tri) ; Monteur (tri) ; Mécanicien (tri) ; Ingénieur (qcm) ; Inventeur (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La fonction d'usage se mesure : l'objet fait le travail, ou il ne le fait pas. La fonction d'estime dépend des goûts de chacun : elle explique pourquoi on préfère un modèle à un autre.",
      "matelot": {
       "colonnes": [
@@ -380,6 +660,151 @@
        "Tout le monde n'aime pas la même couleur : c'est l'estime."
       ],
       "dialogue": "L'inventrice a fait des caisses. Triez les objets."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "usage",
+        "titre": "Fonction d'usage"
+       },
+       {
+        "id": "estime",
+        "titre": "Fonction d'estime"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La lampe éclaire le chemin",
+        "col": "usage"
+       },
+       {
+        "txt": "Le cartable porte les cahiers",
+        "col": "usage"
+       },
+       {
+        "txt": "La lampe est de ma couleur préférée",
+        "col": "estime"
+       },
+       {
+        "txt": "Le cartable est à la mode",
+        "col": "estime"
+       }
+      ],
+      "consigne": "Range chaque phrase dans la bonne colonne : ce que l'objet fait, ou ce qui le rend joli. Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « À quoi sert un objet ? ».",
+       "Ce que l'objet fait : usage.",
+       "Ce qui plaît : estime."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel est le besoin de Zoé ?",
+        "options": [
+         "Éclairer dans la cave sans prise",
+         "Décorer la cave",
+         "Acheter une lampe",
+         "Faire du feu"
+        ],
+        "bonne": 0,
+        "explication": "Un besoin se dit avec un verbe."
+       },
+       {
+        "q": "Pourquoi la lampe répond-elle à ce besoin ?",
+        "options": [
+         "Elle permet d'éclairer loin d'une prise",
+         "Elle est jaune",
+         "Elle est chère",
+         "Elle est lourde"
+        ],
+        "bonne": 0,
+        "explication": "C'est sa fonction d'usage."
+       },
+       {
+        "q": "Pourquoi Zoé préfère-t-elle la lampe pour la couleur ?",
+        "options": [
+         "C'est la fonction d'estime",
+         "C'est la fonction d'usage",
+         "C'est un besoin",
+         "C'est une panne"
+        ],
+        "bonne": 0,
+        "explication": "Couleur, forme, marque, décoration."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Besoin de Zoé</b> (inventé pour le jeu). Zoé veut un objet qui permette de se repérer dans la cave, sans prise de courant. Elle hésite entre une bougie et une lampe torche, puis choisit la lampe, qu'elle trouve plus jolie.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Le besoin dit ce qui manque.",
+       "La fonction d'usage dit à quoi sert l'objet.",
+       "La couleur relève de l'estime."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "La fonction d'estime explique pourquoi on préfère un modèle à un autre : couleur, forme, marque, décoration.",
+        "La fonction d'usage décrit ce que l'objet permet de faire, avec un verbe d'action : la lampe torche permet d'éclairer loin d'une prise.",
+        "Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage.",
+        "Un objet technique est conçu et fabriqué par l'être humain pour répondre à un besoin."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les objets évoluent quand les besoins changent.",
+        "vrai": true,
+        "explication": "Les objets changent."
+       },
+       {
+        "txt": "Un objet peut répondre à un besoin sans être fabriqué.",
+        "vrai": false,
+        "explication": "Un objet technique est fabriqué."
+       },
+       {
+        "txt": "La bougie et la lampe torche ont la même fonction d'usage.",
+        "vrai": true,
+        "explication": "Elles servent à éclairer."
+       },
+       {
+        "txt": "La couleur d'un objet est sa fonction d'usage.",
+        "vrai": false,
+        "explication": "C'est la fonction d'estime."
+       },
+       {
+        "txt": "Un besoin dit ce qui manque.",
+        "vrai": true,
+        "explication": "On voudrait pouvoir faire quelque chose."
+       },
+       {
+        "txt": "La lampe torche permet d'éclairer seulement près d'une prise.",
+        "vrai": false,
+        "explication": "Elle éclaire loin d'une prise."
+       }
+      ],
+      "consigne": "Zoé a noté six phrases sur les besoins et les objets. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui parle de l'évolution des objets.",
+      "indices": [
+       "La fonction d'usage dit ce que l'objet permet de faire.",
+       "Les objets évoluent.",
+       "La lampe torche n'a pas besoin de prise."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de l'évolution des objets ?",
+       "options": [
+        "Un objet technique est conçu et fabriqué par l'être humain pour répondre à un besoin.",
+        "La fonction d'estime explique pourquoi on préfère un modèle à un autre : couleur, forme, marque, décoration.",
+        "Quand les besoins changent, les objets changent.",
+        "Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -395,7 +820,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "eleonore",
+     "personnage_emetteur": "zoe",
      "probleme_narratif": "Éléonore a caché un mot à la porte.",
      "enjeu": "Sans le mot, l'atelier reste fermé.",
      "episode_du_roman": "Programme de cycle 3, « Identifier les principales évolutions du besoin et des objets »",
@@ -408,10 +833,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "besoin-fonction",
      "type": "lettres",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Mécanicien (lettres) ; Ingénieur (lettres) ; Inventeur (lettres). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Tout commence par un besoin. Quand le besoin change, l'objet change : c'est pour cela que les objets techniques évoluent au fil du temps.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "cible": [
@@ -430,6 +857,63 @@
        "Le mot commence par un B."
       ],
       "dialogue": "Cette serrure se règle avec un mot. Remettez les lettres dans l'ordre."
+     },
+     "lieutenant": {
+      "type": "lettres",
+      "cible": [
+       "U",
+       "S",
+       "A",
+       "G",
+       "E"
+      ],
+      "texte": "<p>Zoé écrit dans son carnet : « Mon cartable ran<b data-l='G'>g</b>e mes cahiers. <b data-l='E'>E</b>t ma lampe, elle éclaire la cave. Ma <b data-l='S'>s</b>alopette a des poches pour mes outils. Papa dit qu'il faut savoir à quoi sert chaque chose avant de l'utiliser. <b data-l='U'>U</b>ne règle. <b data-l='A'>A</b>ppliquer. Le <b data-l='P'>p</b>lus important : <b data-l='T'>t</b>outes les questions ! »</p>",
+      "consigne": "Trouve le mot qui correspond à cette définition : « Fonction qui dit à quoi sert l'objet. » Ses lettres sont cachées en couleur dans le carnet de Zoé, dans le désordre. Clique-les dans l'ordre qui forme le mot (5 lettres). Deux lettres sont des pièges.",
+      "indices": [
+       "Le mot a cinq lettres.",
+       "Il commence par U.",
+       "Il se termine par E : fonction d'..."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite ce mot ?",
+       "options": [
+        "La fonction d'estime explique pourquoi on préfère un modèle à un autre : couleur, forme, marque, décoration.",
+        "La fonction d'usage décrit ce que l'objet permet de faire, avec un verbe d'action : la lampe torche permet d'éclairer loin d'une prise.",
+        "Un objet technique est conçu et fabriqué par l'être humain pour répondre à un besoin.",
+        "Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
+     },
+     "second": {
+      "type": "lettres",
+      "cible": [
+       "E",
+       "S",
+       "T",
+       "I",
+       "M",
+       "E"
+      ],
+      "texte": "<p>Dans mon carnet, je note : « J'aime ce vélo, il est <b data-l='E'>e</b>xcellent. Ce modèle a une <b data-l='M'>m</b>arque connue. Ma cousine <b data-l='I'>i</b>nsiste : elle veut le même, en bleu. <b data-l='S'>s</b>a couleur, c'est le plus important pour elle. <b data-l='E'>E</b>n revanche, moi, je regarde aussi ce qu'il permet de faire. Ça <b data-l='T'>t</b>ient la route ! <b data-l='P'>p</b>uis je le garde. <b data-l='A'>a</b>llez, on y va. »</p>",
+      "consigne": "Trouve le mot qui correspond à cette définition : « Fonction qui explique pourquoi on préfère un modèle à un autre : couleur, forme, marque. » Ses lettres sont cachées en couleur dans le carnet de Zoé, dans le désordre. Clique-les dans l'ordre qui forme le mot (6 lettres). Deux lettres sont des pièges.",
+      "indices": [
+       "Le mot a six lettres.",
+       "Il commence par E et finit par E.",
+       "Fonction d'..."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit ce mot ?",
+       "options": [
+        "La fonction d'usage décrit ce que l'objet permet de faire, avec un verbe d'action : la lampe torche permet d'éclairer loin d'une prise.",
+        "Une bougie et une lampe torche répondent au même besoin, éclairer, avec des solutions très différentes. On dit qu'elles ont la même fonction d'usage.",
+        "La fonction d'estime explique pourquoi on préfère un modèle à un autre : couleur, forme, marque, décoration.",
+        "Un objet technique est conçu et fabriqué par l'être humain pour répondre à un besoin."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
      }
     }
    ]
@@ -476,7 +960,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "constituants",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (plan) ; Monteur (plan) ; Mécanicien (plan) ; Ingénieur (vraifaux) ; Inventeur (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un objet technique est fait de plusieurs pièces. Chaque pièce a un rôle précis dans le fonctionnement de l'objet : on appelle ce rôle une fonction technique.",
      "matelot": {
       "titre": "Complète le schéma de la lampe torche",
@@ -543,6 +1027,140 @@
        "La lentille est la partie transparente, devant : elle protège et laisse passer la lumière."
       ],
       "dialogue": "Bienvenue à l'établi. Ici, on ouvre les objets pour voir ce qu'il y a dedans. Une lampe torche, ce n'est pas une seule chose : ce sont plusieurs pièces, et chacune a un rôle. Si une seule manque, la lampe ne marche plus. À vous de dire à quoi sert chaque pièce."
+     },
+     "mousse": {
+      "type": "plan",
+      "titre": "Complète le schéma de la lampe torche",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Elle fournit l'énergie",
+        "reponse": "La pile"
+       },
+       {
+        "libelle": "Elle produit la lumière",
+        "reponse": "L'ampoule"
+       },
+       {
+        "libelle": "Il ouvre et ferme le circuit",
+        "reponse": "L'interrupteur"
+       }
+      ],
+      "etiquettes": [
+       "La pile",
+       "L'ampoule",
+       "L'interrupteur",
+       "Le moteur"
+      ],
+      "consigne": "Awa démonte une lampe torche. Clique sur une étiquette, puis sur la case où elle doit se placer. Une étiquette est en trop.",
+      "indices": [
+       "Ouvre la fiche « De quoi l'objet est-il fait ? » dans la Bibliothèque.",
+       "La pile donne l'énergie.",
+       "L'interrupteur sert à allumer."
+      ],
+      "dialogue": "Bienvenue à l'établi. Ici, on ouvre les objets pour voir ce qu'il y a dedans. Une lampe torche, ce n'est pas une seule chose : ce sont plusieurs pièces, et chacune a un rôle. Si une seule manque, la lampe ne marche plus. À vous de dire à quoi sert chaque pièce."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un objet technique est un assemblage de constituants.",
+        "vrai": true,
+        "explication": "Chaque pièce a un rôle."
+       },
+       {
+        "txt": "La fonction technique décrit à quoi sert l'objet entier.",
+        "vrai": false,
+        "explication": "Elle décrit le rôle d'une pièce."
+       },
+       {
+        "txt": "Le réflecteur renvoie la lumière vers l'avant.",
+        "vrai": true,
+        "explication": "C'est une fonction technique."
+       },
+       {
+        "txt": "Une pile est la solution technique choisie pour fournir l'énergie.",
+        "vrai": true,
+        "explication": "Elle remplit la fonction."
+       },
+       {
+        "txt": "Éclairer est la fonction technique du réflecteur.",
+        "vrai": false,
+        "explication": "Éclairer est la fonction d'usage de la lampe."
+       }
+      ],
+      "consigne": "Awa a noté cinq phrases sur la lampe torche. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui définit la fonction technique.",
+      "indices": [
+       "La fonction technique concerne une pièce.",
+       "La fonction d'usage concerne l'objet entier.",
+       "Une solution est la pièce choisie."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit la fonction technique ?",
+       "options": [
+        "Fonction d'usage : à quoi sert l'objet entier (éclairer).",
+        "Solution technique : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).",
+        "Pour le décrire, on nomme chaque pièce et on dit son rôle dans le fonctionnement de l'objet : c'est sa fonction technique.",
+        "Un objet technique est un assemblage de constituants."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bienvenue à l'établi. Ici, on ouvre les objets pour voir ce qu'il y a dedans. Une lampe torche, ce n'est pas une seule chose : ce sont plusieurs pièces, et chacune a un rôle. Si une seule manque, la lampe ne marche plus. À vous de dire à quoi sert chaque pièce."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de constituants cite le schéma ?",
+        "options": [
+         "5",
+         "3",
+         "4",
+         "6"
+        ],
+        "bonne": 0,
+        "explication": "Pile, interrupteur, ampoule, réflecteur, boîtier."
+       },
+       {
+        "q": "Quelle est la fonction technique du réflecteur ?",
+        "options": [
+         "Renvoyer la lumière vers l'avant",
+         "Fournir l'énergie",
+         "Ouvrir le circuit",
+         "Protéger les pièces"
+        ],
+        "bonne": 0,
+        "explication": "C'est son rôle."
+       },
+       {
+        "q": "Pourquoi représente-t-on l'objet par un schéma légendé ?",
+        "options": [
+         "Pour montrer les pièces, leur rôle et leur place",
+         "Pour décorer",
+         "Pour le vendre",
+         "Pour le cacher"
+        ],
+        "bonne": 0,
+        "explication": "On représente ces choix par un schéma légendé."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Schéma légendé d'Awa</b> (inventé pour le jeu). Lampe torche : pile (fournit l'énergie), interrupteur (ouvre et ferme le circuit), ampoule (produit la lumière), réflecteur (renvoie la lumière vers l'avant), boîtier (protège et tient les pièces).</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Compte les pièces citées.",
+       "Relis la légende du réflecteur.",
+       "Un schéma montre les pièces et leur place."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Fonction technique : à quoi sert une pièce (fournir l'énergie, renvoyer la lumière vers l'avant).",
+        "On représente ces choix par un schéma légendé.",
+        "Solution technique : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).",
+        "Un objet technique est un assemblage de constituants."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bienvenue à l'établi. Ici, on ouvre les objets pour voir ce qu'il y a dedans. Une lampe torche, ce n'est pas une seule chose : ce sont plusieurs pièces, et chacune a un rôle. Si une seule manque, la lampe ne marche plus. À vous de dire à quoi sert chaque pièce."
      }
     },
     {
@@ -558,7 +1176,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "marcel",
+     "personnage_emetteur": "awa",
      "probleme_narratif": "Marcel associe chaque pièce à son rôle.",
      "enjeu": "Une pièce mal comprise peut casser l'objet.",
      "episode_du_roman": "Programme de cycle 3, « Fonction technique, solutions techniques »",
@@ -571,7 +1189,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "constituants",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (association) ; Monteur (association) ; Mécanicien (association) ; Ingénieur (plan) ; Inventeur (plan). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le rôle d'une pièce à l'intérieur de l'objet s'appelle une fonction technique. La pièce choisie pour remplir ce rôle s'appelle une solution technique.",
      "matelot": {
       "paires": [
@@ -644,6 +1262,142 @@
        "La selle porte le poids du cycliste."
       ],
       "dialogue": "Chaque pièce a un rôle. Associez-les."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Le guidon",
+        "d": "diriger le vélo"
+       },
+       {
+        "g": "Les freins",
+        "d": "ralentir et arrêter le vélo"
+       },
+       {
+        "g": "La chaîne",
+        "d": "transmettre le mouvement à la roue"
+       }
+      ],
+      "consigne": "Monsieur Marcel démonte un vélo. Relie chaque pièce à son rôle. Clique sur une pièce, puis sur son rôle.",
+      "indices": [
+       "Ouvre la fiche « De quoi l'objet est-il fait ? ».",
+       "Le guidon sert à choisir la direction.",
+       "Les freins servent à ralentir."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "plan",
+      "titre": "Fonctions et solutions",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Fonction d'usage de la lampe torche",
+        "reponse": "éclairer"
+       },
+       {
+        "libelle": "Fonction technique de la pile",
+        "reponse": "fournir l'énergie"
+       },
+       {
+        "libelle": "Fonction technique du réflecteur",
+        "reponse": "renvoyer la lumière vers l'avant"
+       },
+       {
+        "libelle": "Solution technique pour ouvrir et fermer le circuit",
+        "reponse": "un bouton-poussoir"
+       },
+       {
+        "libelle": "Solution technique pour freiner un vélo",
+        "reponse": "des patins sur la jante"
+       },
+       {
+        "libelle": "Autre solution pour freiner un vélo",
+        "reponse": "un frein à disque"
+       }
+      ],
+      "etiquettes": [
+       "éclairer",
+       "fournir l'énergie",
+       "renvoyer la lumière vers l'avant",
+       "un bouton-poussoir",
+       "des patins sur la jante",
+       "un frein à disque",
+       "une couleur",
+       "un prix"
+      ],
+      "consigne": "Monsieur Marcel complète sa fiche. Place chaque étiquette dans la bonne case. Deux étiquettes sont en trop. Puis choisis la phrase de la fiche qui donne plusieurs solutions pour freiner.",
+      "indices": [
+       "Fonction d'usage : l'objet entier.",
+       "Une fonction technique concerne une pièce.",
+       "Une même fonction peut avoir plusieurs solutions."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne plusieurs solutions pour une même fonction ?",
+       "options": [
+        "Fonction technique : à quoi sert une pièce (fournir l'énergie, renvoyer la lumière vers l'avant).",
+        "Pour « ouvrir et fermer le circuit », on peut choisir un bouton-poussoir ou un interrupteur à glissière. Pour « freiner » un vélo, des patins sur la jante ou un frein à disque.",
+        "Solution technique : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).",
+        "On représente ces choix par un schéma légendé."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
+     },
+     "second": {
+      "type": "plan",
+      "titre": "Le vocabulaire de l'objet technique",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Décrit à quoi sert l'objet entier",
+        "reponse": "fonction d'usage"
+       },
+       {
+        "libelle": "Décrit le rôle d'une pièce",
+        "reponse": "fonction technique"
+       },
+       {
+        "libelle": "La pièce choisie pour remplir la fonction",
+        "reponse": "solution technique"
+       },
+       {
+        "libelle": "Pièce d'une lampe qui renvoie la lumière",
+        "reponse": "réflecteur"
+       },
+       {
+        "libelle": "Dessin simplifié qui montre les pièces et leur place",
+        "reponse": "schéma"
+       }
+      ],
+      "etiquettes": [
+       "fonction d'usage",
+       "fonction technique",
+       "solution technique",
+       "réflecteur",
+       "schéma",
+       "fonction d'estime",
+       "matériau",
+       "notice"
+      ],
+      "consigne": "Awa fait réviser le vocabulaire. Place chaque étiquette dans la bonne case. Trois étiquettes sont en trop. Puis choisis la phrase de la fiche qui définit la solution technique.",
+      "indices": [
+       "Usage : l'objet entier. Technique : une pièce.",
+       "Une solution est une pièce choisie.",
+       "Le schéma est un dessin."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit la solution technique ?",
+       "options": [
+        "Fonction d'usage : à quoi sert l'objet entier (éclairer).",
+        "Fonction technique : à quoi sert une pièce (fournir l'énergie, renvoyer la lumière vers l'avant).",
+        "Solution technique : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).",
+        "On représente ces choix par un schéma légendé."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
      }
     },
     {
@@ -659,7 +1413,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "eleonore",
+     "personnage_emetteur": "awa",
      "probleme_narratif": "Éléonore teste le vocabulaire.",
      "enjeu": "Un mot faux brouille la compréhension.",
      "episode_du_roman": "Programme de cycle 3, « Besoin, fonction d'usage, fonction technique, solution technique »",
@@ -672,7 +1426,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "constituants",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (qcm) ; Monteur (qcm) ; Mécanicien (qcm) ; Ingénieur (qcm) ; Inventeur (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Fonction d'usage : à quoi sert l'objet entier. Fonction technique : à quoi sert une pièce à l'intérieur de l'objet. Solution technique : la pièce choisie pour remplir cette fonction.",
      "matelot": {
       "questions": [
@@ -755,6 +1509,135 @@
        "Un bouton-poussoir et un interrupteur à glissière remplissent la même fonction technique."
       ],
       "dialogue": "Le bon mot au bon endroit ! Répondez aux questions."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "« Fournir l'énergie », pour la pile d'une lampe, c'est…",
+        "options": [
+         "le rôle d'une pièce",
+         "à quoi sert l'objet entier",
+         "une couleur"
+        ],
+        "bonne": 0,
+        "explication": "C'est une fonction technique."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « De quoi l'objet est-il fait ? ».",
+       "La pile est une seule pièce.",
+       "On parle du rôle d'une pièce."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quelle est la fonction d'usage de l'ouvre-boîte ?",
+        "options": [
+         "Ouvrir une boîte de conserve",
+         "Couper le couvercle",
+         "Tourner la manivelle",
+         "Brancher le fil"
+        ],
+        "bonne": 0,
+        "explication": "Elle concerne l'objet entier."
+       },
+       {
+        "q": "Quelle est la fonction technique à remplir ?",
+        "options": [
+         "Couper le couvercle",
+         "Ouvrir une boîte de conserve",
+         "Être joli",
+         "Se brancher"
+        ],
+        "bonne": 0,
+        "explication": "Elle concerne une pièce."
+       },
+       {
+        "q": "Les deux modèles remplissent-ils cette fonction de la même façon ?",
+        "options": [
+         "Non : les solutions techniques sont différentes",
+         "Oui : ce sont les mêmes pièces",
+         "Oui : ils ont la même énergie",
+         "On ne peut pas savoir"
+        ],
+        "bonne": 0,
+        "explication": "Une même fonction, plusieurs solutions."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Commande d'Éléonore</b> (inventée pour le jeu). Éléonore veut un ouvre-boîte. Elle hésite entre un modèle à manivelle et un modèle électrique. Les deux doivent remplir la même fonction technique : couper le couvercle.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Usage : l'objet entier. Technique : une pièce.",
+       "Une pièce coupe le couvercle.",
+       "Même fonction, solutions différentes."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Fonction technique : à quoi sert une pièce (fournir l'énergie, renvoyer la lumière vers l'avant).",
+        "Pour « ouvrir et fermer le circuit », on peut choisir un bouton-poussoir ou un interrupteur à glissière. Pour « freiner » un vélo, des patins sur la jante ou un frein à disque.",
+        "Solution technique : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).",
+        "Pour le décrire, on nomme chaque pièce et on dit son rôle dans le fonctionnement de l'objet : c'est sa fonction technique."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Fonction d'usage : à quoi sert l'objet entier.",
+        "vrai": true,
+        "explication": "Par exemple, éclairer."
+       },
+       {
+        "txt": "Fonction technique : à quoi sert une pièce.",
+        "vrai": true,
+        "explication": "Par exemple, fournir l'énergie."
+       },
+       {
+        "txt": "Solution technique : la pièce choisie pour remplir une fonction.",
+        "vrai": true,
+        "explication": "Une pile, un réflecteur."
+       },
+       {
+        "txt": "Une fonction technique n'a qu'une seule solution possible.",
+        "vrai": false,
+        "explication": "Plusieurs solutions sont souvent possibles."
+       },
+       {
+        "txt": "La fonction d'usage et la fonction technique désignent la même chose.",
+        "vrai": false,
+        "explication": "L'une parle de l'objet, l'autre d'une pièce."
+       },
+       {
+        "txt": "Un schéma légendé sert à décorer l'atelier.",
+        "vrai": false,
+        "explication": "Il montre les pièces et leur place."
+       }
+      ],
+      "consigne": "Awa a noté six phrases de vocabulaire. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui distingue fonction d'usage et fonction technique.",
+      "indices": [
+       "Usage : l'objet entier.",
+       "Technique : une pièce.",
+       "Solution : la pièce choisie."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche distingue fonction d'usage et fonction technique ?",
+       "options": [
+        "Fonction d'usage : à quoi sert l'objet entier (éclairer).",
+        "Fonction technique : à quoi sert une pièce (fournir l'énergie, renvoyer la lumière vers l'avant).",
+        "Solution technique : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).",
+        "Un objet technique est un assemblage de constituants."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -770,7 +1653,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "zoe",
+     "personnage_emetteur": "awa",
      "probleme_narratif": "Zoé lit le carnet d'Éléonore.",
      "enjeu": "Sans le carnet, l'invention est oubliée.",
      "episode_du_roman": "Programme de cycle 3, vocabulaire de la démarche technologique",
@@ -783,10 +1666,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "constituants",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Mécanicien (trous) ; Ingénieur (trous) ; Inventeur (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Besoin, fonction d'usage, fonction technique, solution technique : ces quatre mots se suivent toujours dans le même ordre quand on décrit un objet technique.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "texte": "<p>Tout part d'un [[besoin]] : je ne vois rien dans la cave. L'objet que je vais construire aura donc pour [[fonction d'usage]] d'éclairer. À l'intérieur, une pièce devra produire la lumière : c'est une [[fonction technique]]. Pour la remplir, je choisis une ampoule : c'est ma [[solution technique]].</p>",
@@ -805,6 +1690,68 @@
        "Le dernier trou désigne la pièce que l'on peut tenir dans la main."
       ],
       "dialogue": "Voici le carnet de l'inventrice. Complétez-le."
+     },
+     "lieutenant": {
+      "type": "trous",
+      "texte": "<p>Je veux éclairer : c'est la [[fonction d'usage]]. Une pièce doit renvoyer la lumière vers l'avant : c'est une [[fonction technique]]. Pour la remplir, je choisis un réflecteur : c'est la [[solution technique]]. Je fais un [[schéma]] légendé pour montrer mes choix.</p>",
+      "etiquettes": [
+       "fonction d'usage",
+       "fonction technique",
+       "solution technique",
+       "schéma",
+       "fonction d'estime",
+       "matériau",
+       "notice"
+      ],
+      "consigne": "Zoé a rédigé le carnet de l'inventrice, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Trois étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « solution technique ».",
+      "indices": [
+       "Relis les définitions de la fiche.",
+       "Un réflecteur est une pièce.",
+       "Un schéma est un dessin."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « solution technique » ?",
+       "options": [
+        "Fonction d'usage : à quoi sert l'objet entier (éclairer).",
+        "Solution technique : la pièce choisie pour remplir cette fonction (une pile, un réflecteur).",
+        "Fonction technique : à quoi sert une pièce (fournir l'énergie, renvoyer la lumière vers l'avant).",
+        "Pour le décrire, on nomme chaque pièce et on dit son rôle dans le fonctionnement de l'objet : c'est sa fonction technique."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>Un objet technique est un [[assemblage]] de constituants. On nomme chaque [[pièce]] et on dit son rôle : c'est sa [[fonction technique]]. Pour « freiner » un vélo, on peut choisir des [[patins]] sur la jante ou un frein à [[disque]].</p>",
+      "etiquettes": [
+       "assemblage",
+       "pièce",
+       "fonction technique",
+       "patins",
+       "disque",
+       "décoration",
+       "marque",
+       "notice",
+       "énergie"
+      ],
+      "consigne": "Awa a rédigé son rapport de démontage, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « assemblage ».",
+      "indices": [
+       "Les mots viennent de la partie « Décrire un objet technique ».",
+       "Un vélo a deux solutions pour freiner.",
+       "Une pièce a un rôle."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « assemblage » ?",
+       "options": [
+        "Un objet technique est un assemblage de constituants.",
+        "Pour le décrire, on nomme chaque pièce et on dit son rôle dans le fonctionnement de l'objet : c'est sa fonction technique.",
+        "Pour « ouvrir et fermer le circuit », on peut choisir un bouton-poussoir ou un interrupteur à glissière. Pour « freiner » un vélo, des patins sur la jante ou un frein à disque.",
+        "On représente ces choix par un schéma légendé."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
      }
     }
    ]
@@ -851,7 +1798,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "materiaux",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (tri) ; Monteur (tri) ; Mécanicien (tri) ; Ingénieur (tri) ; Inventeur (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "On classe les matériaux en grandes familles : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques. Chaque famille a ses propriétés.",
      "matelot": {
       "colonnes": [
@@ -998,6 +1945,159 @@
        "La porcelaine et la faïence sont des céramiques, cuites au four."
       ],
       "dialogue": "Ici, Éléonore range tous ses matériaux, rangés par familles. Pour fabriquer un objet, on ne prend pas n'importe quoi : on choisit un matériau pour ses propriétés. Dur ou souple, léger ou lourd, transparent ou non. Quelqu'un a tout mélangé. Aidez-moi à ranger."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "metal",
+        "titre": "Métaux"
+       },
+       {
+        "id": "plast",
+        "titre": "Matières plastiques"
+       },
+       {
+        "id": "vegan",
+        "titre": "Origine végétale ou animale"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Une cuillère en acier",
+        "col": "metal"
+       },
+       {
+        "txt": "Une bouteille en plastique",
+        "col": "plast"
+       },
+       {
+        "txt": "Une planche de bois",
+        "col": "vegan"
+       },
+       {
+        "txt": "Un pull en laine",
+        "col": "vegan"
+       }
+      ],
+      "consigne": "Awa range les échantillons. Range chaque objet dans la bonne famille : clique sur une carte, puis sur un casier.",
+      "indices": [
+       "Ouvre la fiche « Les matériaux » dans la Bibliothèque.",
+       "Le bois vient d'un arbre.",
+       "La laine vient du mouton."
+      ],
+      "dialogue": "Ici, Éléonore range tous ses matériaux, rangés par familles. Pour fabriquer un objet, on ne prend pas n'importe quoi : on choisit un matériau pour ses propriétés. Dur ou souple, léger ou lourd, transparent ou non. Quelqu'un a tout mélangé. Aidez-moi à ranger."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "cond",
+        "titre": "Conducteur"
+       },
+       {
+        "id": "isol",
+        "titre": "Isolant"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Un fil de cuivre",
+        "col": "cond"
+       },
+       {
+        "txt": "Un clou en acier",
+        "col": "cond"
+       },
+       {
+        "txt": "Une casserole en aluminium",
+        "col": "cond"
+       },
+       {
+        "txt": "La gaine en plastique d'un câble",
+        "col": "isol"
+       },
+       {
+        "txt": "Un manche en bois",
+        "col": "isol"
+       },
+       {
+        "txt": "Une vitre en verre",
+        "col": "isol"
+       }
+      ],
+      "consigne": "Awa teste des matériaux. Range chaque objet selon qu'il laisse passer le courant ou non, puis choisis la phrase de la fiche qui définit le conducteur et l'isolant.",
+      "indices": [
+       "Les métaux laissent passer le courant.",
+       "Le plastique, le bois et le verre l'arrêtent.",
+       "Conducteur : laisse passer. Isolant : arrête."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit conducteur et isolant ?",
+       "options": [
+        "La matière est ce dont une chose est faite. Un matériau est une matière choisie et préparée pour fabriquer un objet.",
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "La poignée d'une casserole est en bois ou en plastique parce que ces matériaux conduisent mal la chaleur.",
+        "On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ici, Éléonore range tous ses matériaux, rangés par familles. Pour fabriquer un objet, on ne prend pas n'importe quoi : on choisit un matériau pour ses propriétés. Dur ou souple, léger ou lourd, transparent ou non. Quelqu'un a tout mélangé. Aidez-moi à ranger."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pourquoi la poignée de la casserole est-elle en plastique ?",
+        "options": [
+         "Le plastique conduit mal la chaleur",
+         "Il est plus lourd",
+         "Il est brillant",
+         "Il est conducteur"
+        ],
+        "bonne": 0,
+        "explication": "C'est un isolant."
+       },
+       {
+        "q": "Pourquoi une vitre est-elle en verre ?",
+        "options": [
+         "Le verre est transparent",
+         "Le verre est souple",
+         "Le verre est léger",
+         "Le verre est opaque"
+        ],
+        "bonne": 0,
+        "explication": "Il laisse passer la lumière."
+       },
+       {
+        "q": "Que permet de recycler une canette en aluminium ?",
+        "options": [
+         "Fabriquer de nouveaux objets",
+         "La rendre transparente",
+         "La transformer en bois",
+         "La rendre plus lourde"
+        ],
+        "bonne": 0,
+        "explication": "Les métaux peuvent être recyclés."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Notes d'Awa</b> (inventées pour le jeu). Une casserole : corps en aluminium, poignée en plastique. Une fenêtre : vitre en verre. Une canette : aluminium, recyclable.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 1.",
+      "indices": [
+       "Une poignée ne doit pas transmettre la chaleur.",
+       "Le verre laisse passer la lumière.",
+       "Le recyclage fabrique de nouveaux objets."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+       "options": [
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets.",
+        "La poignée d'une casserole est en bois ou en plastique parce que ces matériaux conduisent mal la chaleur.",
+        "On classe les matériaux en familles : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ici, Éléonore range tous ses matériaux, rangés par familles. Pour fabriquer un objet, on ne prend pas n'importe quoi : on choisit un matériau pour ses propriétés. Dur ou souple, léger ou lourd, transparent ou non. Quelqu'un a tout mélangé. Aidez-moi à ranger."
      }
     },
     {
@@ -1013,7 +2113,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "marcel",
+     "personnage_emetteur": "awa",
      "probleme_narratif": "Marcel lit des idées sur les matériaux.",
      "enjeu": "Une idée fausse peut faire choisir un mauvais matériau.",
      "episode_du_roman": "Programme de cycle 3, « Caractéristiques et propriétés des matériaux »",
@@ -1026,7 +2126,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "materiaux",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (vraifaux) ; Monteur (vraifaux) ; Mécanicien (vraifaux) ; Ingénieur (qcm) ; Inventeur (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "On choisit un matériau pour ses propriétés : dur ou souple, léger ou lourd, transparent ou opaque, conducteur ou isolant. C'est l'usage prévu qui décide.",
      "matelot": {
       "affirmations": [
@@ -1099,6 +2199,148 @@
        "Le verre se casse net : il est dur mais fragile."
       ],
       "dialogue": "Vrai ou faux dans l'atelier ? À vous de dire."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les métaux laissent passer le courant électrique.",
+        "vrai": true,
+        "explication": "Ils sont conducteurs."
+       },
+       {
+        "txt": "Le verre est transparent.",
+        "vrai": true,
+        "explication": "Il laisse passer la lumière."
+       },
+       {
+        "txt": "Le bois est plus lourd que l'acier.",
+        "vrai": false,
+        "explication": "Il est beaucoup plus léger."
+       }
+      ],
+      "consigne": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Les matériaux ».",
+       "Les fils électriques sont en cuivre.",
+       "Le bois flotte sur l'eau."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel matériau pour la poignée de casserole ?",
+        "options": [
+         "Le bois, qui conduit mal la chaleur",
+         "L'acier, qui la conduit bien",
+         "Le verre",
+         "Le cuivre"
+        ],
+        "bonne": 0,
+        "explication": "Un isolant thermique."
+       },
+       {
+        "q": "Quel matériau pour la vitre ?",
+        "options": [
+         "Le verre, transparent",
+         "Le bois, léger",
+         "L'acier, dur",
+         "Le cuir"
+        ],
+        "bonne": 0,
+        "explication": "Il faut laisser passer la lumière."
+       },
+       {
+        "q": "Quel matériau pour la boîte de conserve, qu'on peut recycler ?",
+        "options": [
+         "L'acier",
+         "Le bois",
+         "Le cuir",
+         "La laine"
+        ],
+        "bonne": 0,
+        "explication": "Les métaux peuvent être recyclés."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Choix de matériaux</b> (inventé pour le jeu). Marcel veut fabriquer une poignée de casserole, une vitre et une boîte de conserve. Il hésite entre bois, verre, acier.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 1.",
+      "indices": [
+       "Une poignée doit rester froide.",
+       "Une vitre laisse passer la lumière.",
+       "Les métaux se recyclent."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+       "options": [
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "La poignée d'une casserole est en bois ou en plastique parce que ces matériaux conduisent mal la chaleur.",
+        "On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets.",
+        "La matière est ce dont une chose est faite. Un matériau est une matière choisie et préparée pour fabriquer un objet."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "verre",
+        "titre": "Verre"
+       },
+       {
+        "id": "metal",
+        "titre": "Métal"
+       },
+       {
+        "id": "plast",
+        "titre": "Plastique"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Une fenêtre",
+        "col": "verre"
+       },
+       {
+        "txt": "Un bocal transparent",
+        "col": "verre"
+       },
+       {
+        "txt": "Un fil électrique (âme)",
+        "col": "metal"
+       },
+       {
+        "txt": "Une casserole",
+        "col": "metal"
+       },
+       {
+        "txt": "La gaine d'un câble",
+        "col": "plast"
+       },
+       {
+        "txt": "La poignée d'une casserole",
+        "col": "plast"
+       }
+      ],
+      "consigne": "Marcel choisit des matériaux pour des usages. Range chaque usage dans la colonne du matériau qui convient, puis choisis la phrase de la fiche qui explique le choix d'un matériau.",
+      "indices": [
+       "Transparent : verre.",
+       "Conducteur : métal.",
+       "Isolant : plastique."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique le choix d'un matériau ?",
+       "options": [
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "La matière est ce dont une chose est faite. Un matériau est une matière choisie et préparée pour fabriquer un objet.",
+        "On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets.",
+        "On classe les matériaux en familles : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -1114,7 +2356,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "eleonore",
+     "personnage_emetteur": "awa",
      "probleme_narratif": "Éléonore a égaré un échantillon.",
      "enjeu": "Un intrus fausse le classement.",
      "episode_du_roman": "Programme de cycle 3, « Familles de matériaux »",
@@ -1127,7 +2369,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "materiaux",
      "type": "intrus",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (intrus) ; Monteur (intrus) ; Mécanicien (intrus) ; Ingénieur (vraifaux) ; Inventeur (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un matériau appartient à une famille selon son origine et sa fabrication, pas selon sa couleur ni sa forme.",
      "matelot": {
       "cartes": [
@@ -1200,6 +2442,133 @@
        "Le nylon n'existe pas dans la nature : il est fabriqué en usine, à partir du pétrole."
       ],
       "dialogue": "Un échantillon est égaré. Trouvez l'intrus."
+     },
+     "mousse": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "Une cuillère en acier",
+        "intrus": false
+       },
+       {
+        "txt": "Un fil de cuivre",
+        "intrus": false
+       },
+       {
+        "txt": "Une vis en acier",
+        "intrus": false
+       },
+       {
+        "txt": "Un bocal en verre",
+        "intrus": true
+       }
+      ],
+      "consigne": "Trois de ces échantillons sont des métaux. Un seul n'en est pas un. Clique sur l'intrus, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Les matériaux ».",
+       "Le verre n'est pas un métal.",
+       "L'acier et le cuivre sont des métaux."
+      ],
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "L'acier et le cuivre sont des métaux.",
+        "vrai": true,
+        "explication": "Ils conduisent le courant."
+       },
+       {
+        "txt": "Le bois est un matériau d'origine végétale.",
+        "vrai": true,
+        "explication": "Il vient d'un arbre."
+       },
+       {
+        "txt": "La laine est un métal.",
+        "vrai": false,
+        "explication": "Elle vient d'un animal."
+       },
+       {
+        "txt": "Le verre et la porcelaine sont des matériaux d'origine animale.",
+        "vrai": false,
+        "explication": "Verre et céramiques."
+       },
+       {
+        "txt": "Le plastique est un matériau d'origine végétale.",
+        "vrai": false,
+        "explication": "C'est une matière plastique."
+       }
+      ],
+      "consigne": "Éléonore classe des échantillons. Pour chacune de ces affirmations, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui énumère les familles de matériaux.",
+      "indices": [
+       "Quatre familles : métaux, plastiques, végétal ou animal, verre et céramiques.",
+       "La laine vient du mouton.",
+       "Le plastique forme une famille à part."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche énumère les familles de matériaux ?",
+       "options": [
+        "La matière est ce dont une chose est faite. Un matériau est une matière choisie et préparée pour fabriquer un objet.",
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "On classe les matériaux en familles : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques.",
+        "On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Une matière est ce dont une chose est faite.",
+        "vrai": true,
+        "explication": "Un matériau est une matière choisie et préparée."
+       },
+       {
+        "txt": "Un matériau est une matière choisie et préparée pour fabriquer un objet.",
+        "vrai": true,
+        "explication": "C'est la définition."
+       },
+       {
+        "txt": "Matière et matériau veulent dire exactement la même chose.",
+        "vrai": false,
+        "explication": "Un matériau est choisi et préparé."
+       },
+       {
+        "txt": "Le verre peut être recyclé.",
+        "vrai": true,
+        "explication": "Les métaux aussi."
+       },
+       {
+        "txt": "Un isolant laisse passer le courant.",
+        "vrai": false,
+        "explication": "Il l'arrête."
+       },
+       {
+        "txt": "Un matériau cassant résiste aux chocs.",
+        "vrai": false,
+        "explication": "Il casse."
+       }
+      ],
+      "consigne": "Éléonore a noté six affirmations. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui distingue matière et matériau.",
+      "indices": [
+       "Un matériau est choisi et préparé.",
+       "Un isolant arrête le courant.",
+       "Cassant : casse facilement."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche distingue matière et matériau ?",
+       "options": [
+        "On classe les matériaux en familles : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques.",
+        "La matière est ce dont une chose est faite. Un matériau est une matière choisie et préparée pour fabriquer un objet.",
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "La poignée d'une casserole est en bois ou en plastique parce que ces matériaux conduisent mal la chaleur."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -1215,7 +2584,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "zoe",
+     "personnage_emetteur": "awa",
      "probleme_narratif": "Zoé choisit le matériau d'un objet.",
      "enjeu": "Un mauvais matériau, et l'objet casse.",
      "episode_du_roman": "Programme de cycle 3, « Choix des matériaux », « Impact environnemental »",
@@ -1228,10 +2597,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "materiaux",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Mécanicien (qcm) ; Ingénieur (intrus) ; Inventeur (intrus). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Choisir un matériau, c'est comparer ses propriétés avec l'usage prévu, mais aussi penser à son poids, à son prix et à ce qu'il deviendra une fois l'objet usé.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "questions": [
@@ -1273,6 +2644,90 @@
        "Un matériau recyclé demande moins de matière première qu'un matériau neuf."
       ],
       "dialogue": "Quel est le bon matériau pour le bon usage ?"
+     },
+     "lieutenant": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "Le bois d'une poignée",
+        "intrus": false
+       },
+       {
+        "txt": "Le plastique d'une poignée",
+        "intrus": false
+       },
+       {
+        "txt": "La laine d'un pull",
+        "intrus": false
+       },
+       {
+        "txt": "Le cuir d'une semelle",
+        "intrus": false
+       },
+       {
+        "txt": "L'aluminium d'une casserole",
+        "intrus": true
+       }
+      ],
+      "consigne": "Quatre de ces matériaux conduisent mal la chaleur. Un seul la conduit bien. Trouve l'intrus, puis choisis la phrase de la fiche qui justifie ton choix.",
+      "indices": [
+       "Un métal conduit la chaleur.",
+       "Une poignée ne doit pas la conduire.",
+       "Cherche le matériau d'un récipient qui chauffe."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ton choix ?",
+       "options": [
+        "La poignée d'une casserole est en bois ou en plastique parce que ces matériaux conduisent mal la chaleur.",
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets.",
+        "On classe les matériaux en familles : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "second": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "Le verre d'un bocal",
+        "intrus": false
+       },
+       {
+        "txt": "L'aluminium d'une canette",
+        "intrus": false
+       },
+       {
+        "txt": "L'acier d'une boîte de conserve",
+        "intrus": false
+       },
+       {
+        "txt": "Le cuivre d'un fil",
+        "intrus": false
+       },
+       {
+        "txt": "Le papier peint collé au mur",
+        "intrus": true
+       }
+      ],
+      "consigne": "Quatre de ces matériaux peuvent être recyclés pour fabriquer de nouveaux objets. Un seul n'est pas cité dans la fiche. Trouve l'intrus, puis choisis la phrase de la fiche qui justifie ton choix.",
+      "indices": [
+       "La fiche parle du verre et des métaux.",
+       "Le papier peint n'est pas dans la liste.",
+       "Cherche la phrase qui parle de recyclage."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ton choix ?",
+       "options": [
+        "On classe les matériaux en familles : les métaux, les matières plastiques, les matériaux d'origine végétale ou animale, le verre et les céramiques.",
+        "Propriétés utiles : dur ou souple, léger ou lourd, transparent ou opaque, conducteur (laisse passer le courant ou la chaleur) ou isolant (les arrête), cassant ou résistant aux chocs.",
+        "La poignée d'une casserole est en bois ou en plastique parce que ces matériaux conduisent mal la chaleur.",
+        "On pense aussi au poids, au prix et à l'environnement : le verre et les métaux peuvent être recyclés pour fabriquer de nouveaux objets."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
      }
     }
    ]
@@ -1319,7 +2774,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "energie-mouvement",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (ordre) ; Monteur (ordre) ; Mécanicien (ordre) ; Ingénieur (ordre) ; Inventeur (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Dans un objet, l'énergie part d'une source, passe par une commande, circule, puis est transformée : c'est la chaîne d'énergie.",
      "matelot": {
       "items": [
@@ -1387,6 +2842,135 @@
        "La transformation en lumière est la dernière étape."
       ],
       "dialogue": "Ah, les voilà ! Moi, je répare des vélos depuis longtemps. Un objet ne bouge jamais tout seul : il lui faut de l'énergie. Celle de vos jambes, celle d'une pile, du vent ou du soleil. Ensuite, il faut transmettre le mouvement d'une pièce à l'autre. Regardez bien ces roues dentées."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La pile contient l'énergie",
+        "rang": 1,
+        "sous": "source"
+       },
+       {
+        "txt": "On appuie sur l'interrupteur",
+        "rang": 2,
+        "sous": "commande"
+       },
+       {
+        "txt": "L'ampoule s'allume",
+        "rang": 3,
+        "sous": "effet"
+       }
+      ],
+      "consigne": "Remets les étapes dans l'ordre avec ▲ et ▼, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Énergie et mouvement » dans la Bibliothèque.",
+       "Tout commence par ce qui contient l'énergie.",
+       "La lumière est la dernière étape."
+      ],
+      "dialogue": "Ah, les voilà ! Moi, je répare des vélos depuis longtemps. Un objet ne bouge jamais tout seul : il lui faut de l'énergie. Celle de vos jambes, celle d'une pile, du vent ou du soleil. Ensuite, il faut transmettre le mouvement d'une pièce à l'autre. Regardez bien ces roues dentées."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La batterie contient l'énergie",
+        "rang": 1,
+        "sous": "source"
+       },
+       {
+        "txt": "On appuie sur la gâchette",
+        "rang": 2,
+        "sous": "commande"
+       },
+       {
+        "txt": "Le courant circule jusqu'au moteur",
+        "rang": 3,
+        "sous": "transmission"
+       },
+       {
+        "txt": "Le moteur électrique fournit un mouvement de rotation",
+        "rang": 4,
+        "sous": "transformation"
+       },
+       {
+        "txt": "Le foret tourne et perce le mur",
+        "rang": 5,
+        "sous": "effet utile"
+       }
+      ],
+      "consigne": "Monsieur Marcel explique le fonctionnement d'une perceuse à batterie. Remets les cinq étapes dans l'ordre, puis choisis la phrase de la fiche qui donne le schéma général de la chaîne d'énergie.",
+      "indices": [
+       "Source, commande, transmission, effet.",
+       "La gâchette commande.",
+       "Le moteur donne la rotation."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne le schéma général de la chaîne d'énergie ?",
+       "options": [
+        "Tout objet qui fonctionne utilise une source d'énergie : les muscles, une pile ou une batterie, le courant du secteur, le vent, l'eau ou le soleil.",
+        "Le moteur électrique fournit un mouvement de rotation.",
+        "L'énergie passe par une commande, est transmise, puis transformée en effet utile : lumière, mouvement, chaleur.",
+        "Vélo : les muscles des jambes font tourner le pédalier ; la chaîne transmet le mouvement au pignon ; le pignon entraîne la roue arrière ; le vélo avance."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ah, les voilà ! Moi, je répare des vélos depuis longtemps. Un objet ne bouge jamais tout seul : il lui faut de l'énergie. Celle de vos jambes, celle d'une pile, du vent ou du soleil. Ensuite, il faut transmettre le mouvement d'une pièce à l'autre. Regardez bien ces roues dentées."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quelle est la source d'énergie du vélo ?",
+        "options": [
+         "Les muscles des jambes",
+         "La chaîne",
+         "La roue",
+         "Le pignon"
+        ],
+        "bonne": 0,
+        "explication": "Ils font tourner le pédalier."
+       },
+       {
+        "q": "Quel élément transmet le mouvement vers l'arrière ?",
+        "options": [
+         "La chaîne",
+         "Le guidon",
+         "La selle",
+         "Les freins"
+        ],
+        "bonne": 0,
+        "explication": "Elle relie deux roues dentées éloignées."
+       },
+       {
+        "q": "Combien d'étapes compte le trajet de l'énergie, des muscles à l'avancée ?",
+        "options": [
+         "4",
+         "2",
+         "3",
+         "6"
+        ],
+        "bonne": 0,
+        "explication": "Pédalier, chaîne, pignon, vélo qui avance."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Chaîne d'énergie du vélo</b> (d'après la fiche). Les muscles des jambes font tourner le pédalier ; la chaîne transmet le mouvement au pignon ; le pignon entraîne la roue arrière ; le vélo avance.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Les muscles fournissent l'énergie.",
+       "Une chaîne relie deux roues dentées éloignées.",
+       "Compte les verbes de la phrase."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Vélo : les muscles des jambes font tourner le pédalier ; la chaîne transmet le mouvement au pignon ; le pignon entraîne la roue arrière ; le vélo avance.",
+        "Chaîne : relie deux roues dentées éloignées.",
+        "Tout objet qui fonctionne utilise une source d'énergie : les muscles, une pile ou une batterie, le courant du secteur, le vent, l'eau ou le soleil.",
+        "Engrenage : deux roues dentées en contact, qui tournent en sens contraire."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ah, les voilà ! Moi, je répare des vélos depuis longtemps. Un objet ne bouge jamais tout seul : il lui faut de l'énergie. Celle de vos jambes, celle d'une pile, du vent ou du soleil. Ensuite, il faut transmettre le mouvement d'une pièce à l'autre. Regardez bien ces roues dentées."
      }
     },
     {
@@ -1402,7 +2986,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "eleonore",
+     "personnage_emetteur": "marcel",
      "probleme_narratif": "Éléonore associe machine et énergie.",
      "enjeu": "Se tromper de source, c'est tout arrêter.",
      "episode_du_roman": "Programme de cycle 3, sources d'énergie des objets techniques",
@@ -1415,7 +2999,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "energie-mouvement",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (association) ; Monteur (association) ; Mécanicien (association) ; Ingénieur (qcm) ; Inventeur (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un objet technique a toujours besoin d'énergie : les muscles, une pile, le courant de la prise, le vent, l'eau ou le soleil.",
      "matelot": {
       "paires": [
@@ -1488,6 +3072,145 @@
        "Un moulin à eau utilise le courant de la rivière."
       ],
       "dialogue": "Chaque machine son énergie. Associez-les."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Une trottinette",
+        "d": "les muscles"
+       },
+       {
+        "g": "Une télécommande",
+        "d": "une pile"
+       },
+       {
+        "g": "Une éolienne",
+        "d": "le vent"
+       }
+      ],
+      "consigne": "Relie chaque machine à l'énergie qui la fait fonctionner. Clique sur une machine, puis sur son énergie.",
+      "indices": [
+       "Ouvre la fiche « Énergie et mouvement ».",
+       "La trottinette n'a ni pile ni prise.",
+       "L'éolienne a besoin d'air en mouvement."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quelle machine utilise le courant du secteur ?",
+        "options": [
+         "Le ventilateur",
+         "La lampe frontale",
+         "Le moulin",
+         "La calculatrice"
+        ],
+        "bonne": 0,
+        "explication": "Il se branche à une prise."
+       },
+       {
+        "q": "Quelle machine s'arrête dans le noir ?",
+        "options": [
+         "La calculatrice solaire",
+         "Le ventilateur",
+         "Le moulin",
+         "La lampe frontale"
+        ],
+        "bonne": 0,
+        "explication": "Elle utilise la lumière du soleil."
+       },
+       {
+        "q": "Quelles sources d'énergie la fiche énumère-t-elle ?",
+        "options": [
+         "Les muscles, une pile ou une batterie, le courant du secteur, le vent, l'eau, le soleil",
+         "Seulement la pile",
+         "Seulement le courant de la prise",
+         "Seulement les muscles"
+        ],
+        "bonne": 0,
+        "explication": "Tout objet utilise une source d'énergie."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Machines de l'atelier</b> (inventées pour le jeu). Une lampe frontale (pile), un ventilateur (prise), un moulin (eau de la rivière), une calculatrice (soleil).</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "La prise fournit le courant du secteur.",
+       "Solaire : lumière du soleil.",
+       "La fiche donne une liste de sources."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "L'énergie passe par une commande, est transmise, puis transformée en effet utile : lumière, mouvement, chaleur.",
+        "Tout objet qui fonctionne utilise une source d'énergie : les muscles, une pile ou une batterie, le courant du secteur, le vent, l'eau ou le soleil.",
+        "Vélo : les muscles des jambes font tourner le pédalier ; la chaîne transmet le mouvement au pignon ; le pignon entraîne la roue arrière ; le vélo avance.",
+        "Le moteur électrique fournit un mouvement de rotation."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "humaine",
+        "titre": "Les muscles"
+       },
+       {
+        "id": "elec",
+        "titre": "Pile ou prise"
+       },
+       {
+        "id": "nature",
+        "titre": "Vent, eau ou soleil"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Une trottinette classique",
+        "col": "humaine"
+       },
+       {
+        "txt": "Un ouvre-boîte à manivelle",
+        "col": "humaine"
+       },
+       {
+        "txt": "Une télécommande",
+        "col": "elec"
+       },
+       {
+        "txt": "Un réfrigérateur",
+        "col": "elec"
+       },
+       {
+        "txt": "Un moulin à eau",
+        "col": "nature"
+       },
+       {
+        "txt": "Une calculatrice solaire",
+        "col": "nature"
+       }
+      ],
+      "consigne": "Éléonore classe des objets selon leur source d'énergie. Range chaque objet dans la bonne colonne, puis choisis la phrase de la fiche qui énumère les sources.",
+      "indices": [
+       "Une pile et une prise : électrique.",
+       "L'eau, le vent, le soleil : la nature.",
+       "Les muscles : la force humaine."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche énumère les sources d'énergie ?",
+       "options": [
+        "L'énergie passe par une commande, est transmise, puis transformée en effet utile : lumière, mouvement, chaleur.",
+        "Vélo : les muscles des jambes font tourner le pédalier ; la chaîne transmet le mouvement au pignon ; le pignon entraîne la roue arrière ; le vélo avance.",
+        "Tout objet qui fonctionne utilise une source d'énergie : les muscles, une pile ou une batterie, le courant du secteur, le vent, l'eau ou le soleil.",
+        "Le moteur électrique fournit un mouvement de rotation."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -1503,7 +3226,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "zoe",
+     "personnage_emetteur": "marcel",
      "probleme_narratif": "Zoé place les pièces d'une transmission.",
      "enjeu": "Sans transmission, rien ne bouge.",
      "episode_du_roman": "Programme de cycle 3, « Représentation du fonctionnement d'un objet technique »",
@@ -1516,7 +3239,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "energie-mouvement",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (qcm) ; Monteur (plan) ; Mécanicien (plan) ; Ingénieur (plan) ; Inventeur (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le mouvement se transmet d'une pièce à l'autre : la roue dentée entraîne sa voisine, la courroie relie deux poulies éloignées, le levier fait tourner autour d'un point d'appui.",
      "matelot": {
       "titre": "Le tableau des transmissions",
@@ -1583,6 +3306,138 @@
        "La manivelle change un mouvement de va-et-vient en rotation."
       ],
       "dialogue": "Comment le mouvement se transmet-il ? Placez les pièces."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Deux roues dentées en contact forment…",
+        "options": [
+         "un engrenage",
+         "un levier",
+         "une poulie"
+        ],
+        "bonne": 0,
+        "explication": "Elles tournent en sens contraire."
+       }
+      ],
+      "consigne": "Lis la question, clique sur la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « Énergie et mouvement ».",
+       "Les dents s'entraînent.",
+       "Elles tournent en sens contraire."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "plan",
+      "titre": "Les organes de transmission",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Relie le pédalier au pignon d'un vélo",
+        "reponse": "une chaîne"
+       },
+       {
+        "libelle": "Deux roues dentées en contact",
+        "reponse": "un engrenage"
+       },
+       {
+        "libelle": "Barre qui pivote autour d'un point d'appui",
+        "reponse": "un levier"
+       },
+       {
+        "libelle": "Transforme un va-et-vient en rotation",
+        "reponse": "une manivelle"
+       },
+       {
+        "libelle": "Deux roues à gorge reliées par une courroie",
+        "reponse": "des poulies"
+       },
+       {
+        "libelle": "Fournit un mouvement de rotation à partir de l'électricité",
+        "reponse": "un moteur électrique"
+       }
+      ],
+      "etiquettes": [
+       "une chaîne",
+       "un engrenage",
+       "un levier",
+       "une manivelle",
+       "des poulies",
+       "un moteur électrique",
+       "un ressort",
+       "une vis"
+      ],
+      "consigne": "Monsieur Marcel complète le tableau. Place chaque étiquette dans la bonne case. Deux étiquettes sont en trop. Puis choisis la phrase de la fiche qui définit la manivelle.",
+      "indices": [
+       "Le levier a un point d'appui.",
+       "La manivelle change un va-et-vient en rotation.",
+       "Le moteur électrique donne une rotation."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit la manivelle ?",
+       "options": [
+        "Levier : barre qui pivote autour d'un point d'appui.",
+        "Manivelle : transforme un va-et-vient en rotation.",
+        "Engrenage : deux roues dentées en contact, qui tournent en sens contraire.",
+        "Poulies et courroie : deux roues à gorge éloignées, reliées par une courroie."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Deux roues dentées en contact tournent dans le même sens.",
+        "vrai": false,
+        "explication": "Elles tournent en sens contraire."
+       },
+       {
+        "txt": "Une chaîne relie deux roues dentées éloignées.",
+        "vrai": true,
+        "explication": "Comme sur un vélo."
+       },
+       {
+        "txt": "Un levier est une barre qui pivote autour d'un point d'appui.",
+        "vrai": true,
+        "explication": "C'est la définition."
+       },
+       {
+        "txt": "Une manivelle transforme une rotation en va-et-vient.",
+        "vrai": false,
+        "explication": "Elle fait l'inverse."
+       },
+       {
+        "txt": "Deux poulies éloignées sont reliées par une courroie.",
+        "vrai": true,
+        "explication": "Roues à gorge."
+       },
+       {
+        "txt": "Le moteur électrique fournit un mouvement de rotation.",
+        "vrai": true,
+        "explication": "À partir de l'électricité."
+       }
+      ],
+      "consigne": "Marcel a noté six phrases sur les transmissions. Pour chacune, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui décrit l'engrenage.",
+      "indices": [
+       "Les engrenages s'entraînent en sens contraire.",
+       "La manivelle part du va-et-vient.",
+       "Une courroie relie deux poulies."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit l'engrenage ?",
+       "options": [
+        "Poulies et courroie : deux roues à gorge éloignées, reliées par une courroie.",
+        "Chaîne : relie deux roues dentées éloignées.",
+        "Engrenage : deux roues dentées en contact, qui tournent en sens contraire.",
+        "Manivelle : transforme un va-et-vient en rotation."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -1598,7 +3453,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "awa",
+     "personnage_emetteur": "marcel",
      "probleme_narratif": "Awa a verrouillé la salle des machines.",
      "enjeu": "Sans le code, la salle reste fermée.",
      "episode_du_roman": "Programme de cycle 3, vocabulaire de la transmission du mouvement",
@@ -1611,10 +3466,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "energie-mouvement",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Mécanicien (code) ; Ingénieur (code) ; Inventeur (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Moteur, engrenage, poulie : trois mots du vocabulaire de la mécanique. Le moteur fournit le mouvement, l'engrenage et la poulie le transmettent.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "champs": [
@@ -1644,6 +3501,77 @@
        "Le deuxième mot a neuf lettres et parle de dents."
       ],
       "dialogue": "Le cadenas se règle avec des mots. Trouvez-les."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Barre rigide qui pivote autour d'un point d'appui (6 lettres)",
+        "valeur": "levier",
+        "longueur": 6,
+        "numerique": false
+       },
+       {
+        "libelle": "Elle transforme un va-et-vient en rotation (9 lettres)",
+        "valeur": "manivelle",
+        "longueur": 9,
+        "numerique": false
+       }
+      ],
+      "consigne": "Le cadenas de la salle des machines demande deux mots (les accents et les majuscules n'ont pas d'importance).",
+      "indices": [
+       "Les deux mots sont dans la fiche « Énergie et mouvement ».",
+       "Le premier commence par L.",
+       "Le second commence par M."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit le levier ?",
+       "options": [
+        "Engrenage : deux roues dentées en contact, qui tournent en sens contraire.",
+        "Manivelle : transforme un va-et-vient en rotation.",
+        "Levier : barre qui pivote autour d'un point d'appui.",
+        "Chaîne : relie deux roues dentées éloignées."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Étapes de la chaîne du vélo",
+        "valeur": "4",
+        "longueur": 1
+       },
+       {
+        "libelle": "Roues dentées d'un engrenage",
+        "valeur": "2",
+        "longueur": 1
+       },
+       {
+        "libelle": "Sources d'énergie citées",
+        "valeur": "6",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Le cadenas de la salle des machines demande trois nombres. Combien d'étapes la fiche donne-t-elle pour la chaîne du vélo (muscles, pédalier, chaîne, pignon, roue arrière, avance) ? Combien de roues dentées un engrenage compte-t-il au minimum ? Combien de sources d'énergie la fiche cite-t-elle (muscles, pile ou batterie, secteur, vent, eau, soleil) ?",
+      "indices": [
+       "Relis le texte du vélo.",
+       "Un engrenage est fait de deux roues dentées en contact.",
+       "Compte : muscles, pile, secteur, vent, eau, soleil."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les sources d'énergie ?",
+       "options": [
+        "L'énergie passe par une commande, est transmise, puis transformée en effet utile : lumière, mouvement, chaleur.",
+        "Tout objet qui fonctionne utilise une source d'énergie : les muscles, une pile ou une batterie, le courant du secteur, le vent, l'eau ou le soleil.",
+        "Vélo : les muscles des jambes font tourner le pédalier ; la chaîne transmet le mouvement au pignon ; le pignon entraîne la roue arrière ; le vélo avance.",
+        "Le moteur électrique fournit un mouvement de rotation."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
      }
     }
    ]
@@ -1690,7 +3618,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "notice-montage",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (ordre) ; Monteur (ordre) ; Mécanicien (ordre) ; Ingénieur (ordre) ; Inventeur (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Une notice de montage donne les étapes dans l'ordre. On commence toujours par vérifier les pièces, et on essaie l'objet à la fin.",
      "matelot": {
       "items": [
@@ -1768,6 +3696,136 @@
        "L'essai de l'interrupteur clôt le montage."
       ],
       "dialogue": "Bonjour à tous ! Je suis Éléonore, l'inventrice. Zoé m'a raconté votre travail. Inventer un objet ne suffit pas : il faut expliquer comment le monter, dans quel ordre, avec quelles précautions. C'est le rôle de la notice. Le dernier mot du coffre-fort est ici."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Vérifier les pièces avec la liste de la notice",
+        "rang": 1,
+        "sous": "étape 1"
+       },
+       {
+        "txt": "Placer les piles dans le bon sens",
+        "rang": 2,
+        "sous": "étape 2"
+       },
+       {
+        "txt": "Essayer l'interrupteur",
+        "rang": 3,
+        "sous": "étape 3"
+       }
+      ],
+      "consigne": "Remets les étapes du montage dans l'ordre avec ▲ et ▼, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « La notice et le montage » dans la Bibliothèque.",
+       "On vérifie d'abord les pièces.",
+       "L'essai vient à la fin."
+      ],
+      "dialogue": "Bonjour à tous ! Je suis Éléonore, l'inventrice. Zoé m'a raconté votre travail. Inventer un objet ne suffit pas : il faut expliquer comment le monter, dans quel ordre, avec quelles précautions. C'est le rôle de la notice. Le dernier mot du coffre-fort est ici."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Lire les pictogrammes de sécurité",
+        "rang": 1,
+        "sous": "étape 1"
+       },
+       {
+        "txt": "Vérifier la liste des pièces et des outils",
+        "rang": 2,
+        "sous": "étape 2"
+       },
+       {
+        "txt": "Assembler les pièces en suivant les schémas",
+        "rang": 3,
+        "sous": "étape 3"
+       },
+       {
+        "txt": "Serrer la manivelle",
+        "rang": 4,
+        "sous": "étape 4"
+       },
+       {
+        "txt": "Essayer l'objet sur une boîte vide",
+        "rang": 5,
+        "sous": "étape 5"
+       }
+      ],
+      "consigne": "Éléonore monte un ouvre-boîte à manivelle. Remets les cinq étapes de sa notice dans l'ordre, puis choisis la phrase de la fiche qui explique pourquoi l'ordre compte.",
+      "indices": [
+       "La sécurité d'abord, puis la liste des pièces.",
+       "On assemble avant de serrer.",
+       "L'essai termine le montage."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique pourquoi l'ordre compte ?",
+       "options": [
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet.",
+        "Elle peut aussi expliquer l'entretien et la réparation.",
+        "Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour à tous ! Je suis Éléonore, l'inventrice. Zoé m'a raconté votre travail. Inventer un objet ne suffit pas : il faut expliquer comment le monter, dans quel ordre, avec quelles précautions. C'est le rôle de la notice. Le dernier mot du coffre-fort est ici."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "oui",
+        "titre": "La notice le contient"
+       },
+       {
+        "id": "non",
+        "titre": "La notice ne le contient pas"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La liste des pièces et des outils",
+        "col": "oui"
+       },
+       {
+        "txt": "Des étapes numérotées",
+        "col": "oui"
+       },
+       {
+        "txt": "Des pictogrammes de sécurité",
+        "col": "oui"
+       },
+       {
+        "txt": "L'histoire de l'inventeur",
+        "col": "non"
+       },
+       {
+        "txt": "La publicité de la marque",
+        "col": "non"
+       },
+       {
+        "txt": "Le prix de chaque pièce",
+        "col": "non"
+       }
+      ],
+      "consigne": "Éléonore classe le contenu d'une notice. Range chaque élément : ce que la notice contient, ou ce qu'elle ne contient pas. Puis choisis la phrase de la fiche qui énumère le contenu d'une notice.",
+      "indices": [
+       "Une notice sert à monter et à utiliser l'objet.",
+       "Elle contient des schémas et des pictogrammes.",
+       "Elle ne raconte pas l'histoire de l'inventeur."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche énumère le contenu d'une notice ?",
+       "options": [
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet.",
+        "Elle peut aussi expliquer l'entretien et la réparation.",
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bonjour à tous ! Je suis Éléonore, l'inventrice. Zoé m'a raconté votre travail. Inventer un objet ne suffit pas : il faut expliquer comment le monter, dans quel ordre, avec quelles précautions. C'est le rôle de la notice. Le dernier mot du coffre-fort est ici."
      }
     },
     {
@@ -1783,7 +3841,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "zoe",
+     "personnage_emetteur": "eleonore",
      "probleme_narratif": "Zoé vérifie sa lecture de la notice.",
      "enjeu": "Mal lue, la notice induit en erreur.",
      "episode_du_roman": "Programme de cycle 3, lecture de documents techniques",
@@ -1796,7 +3854,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "notice-montage",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (vraifaux) ; Monteur (vraifaux) ; Mécanicien (vraifaux) ; Ingénieur (qcm) ; Inventeur (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Une notice contient la liste des pièces, les étapes numérotées, des schémas et des consignes de sécurité. Elle se lit avant de commencer, pas après.",
      "matelot": {
       "affirmations": [
@@ -1869,6 +3927,143 @@
        "Les étapes sont numérotées parce que leur ordre compte."
       ],
       "dialogue": "Lire la notice, ce n'est pas si simple. Vrai ou faux ?"
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "On lit la notice avant de commencer le montage.",
+        "vrai": true,
+        "explication": "Cela évite de tout démonter."
+       },
+       {
+        "txt": "Les étapes peuvent se faire dans n'importe quel ordre.",
+        "vrai": false,
+        "explication": "L'ordre compte."
+       },
+       {
+        "txt": "La notice donne la liste des pièces.",
+        "vrai": true,
+        "explication": "On les vérifie avant de commencer."
+       }
+      ],
+      "consigne": "Pour chaque phrase, clique sur « Vrai » ou sur « Faux », puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « La notice et le montage ».",
+       "Une notice se lit d'abord.",
+       "Les étapes sont numérotées."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de pièces la notice liste-t-elle ?",
+        "options": [
+         "3",
+         "4",
+         "1",
+         "5"
+        ],
+        "bonne": 0,
+        "explication": "Manivelle, lame, boîtier."
+       },
+       {
+        "q": "Quel outil est nécessaire ?",
+        "options": [
+         "Un tournevis",
+         "Un marteau",
+         "Une scie",
+         "Une pince"
+        ],
+        "bonne": 0,
+        "explication": "C'est écrit dans l'extrait."
+       },
+       {
+        "q": "Pourquoi la lame se fixe-t-elle avant la manivelle ?",
+        "options": [
+         "Parce que l'ordre compte : on ne peut pas sauter ni inverser une étape",
+         "Parce que la lame est plus lourde",
+         "Parce que la manivelle est fragile",
+         "Parce que la notice est courte"
+        ],
+        "bonne": 0,
+        "explication": "Certaines étapes deviennent impossibles."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Extrait de notice</b> (inventé pour le jeu). Pièces : 1 manivelle, 1 lame, 1 boîtier. Outil : 1 tournevis. Attention ! Ne pas toucher la lame. Étape 1 : poser le boîtier. Étape 2 : fixer la lame. Étape 3 : visser la manivelle. Étape 4 : essayer.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 3.",
+      "indices": [
+       "Compte les pièces listées.",
+       "Cherche l'outil.",
+       "L'ordre est numéroté."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien.",
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet.",
+        "Elle peut aussi expliquer l'entretien et la réparation."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Les deux objets répondent-ils au même besoin ?",
+        "options": [
+         "Oui : ouvrir une boîte",
+         "Non",
+         "Seulement le modèle électrique",
+         "On ne peut pas savoir"
+        ],
+        "bonne": 0,
+        "explication": "Même besoin."
+       },
+       {
+        "q": "Quel avantage a le modèle à manivelle ?",
+        "options": [
+         "Il fonctionne sans pile ni prise",
+         "Il demande moins d'effort",
+         "Il est plus rapide",
+         "Il est plus joli"
+        ],
+        "bonne": 0,
+        "explication": "Il n'a pas besoin d'énergie extérieure."
+       },
+       {
+        "q": "Quel avantage a le modèle électrique ?",
+        "options": [
+         "Il demande moins d'effort",
+         "Il fonctionne sans pile",
+         "Il est toujours moins cher",
+         "Il se règle tout seul"
+        ],
+        "bonne": 0,
+        "explication": "Moins d'effort."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Comparaison d'Éléonore</b> (d'après la fiche). Un ouvre-boîte à manivelle fonctionne sans pile ni prise ; un ouvre-boîte électrique demande moins d'effort. Les deux répondent au même besoin : ouvrir une boîte.</div> Réponds aux trois questions, puis choisis la phrase de la fiche qui justifie la question 2.",
+      "indices": [
+       "Même besoin, solutions différentes.",
+       "Pense à l'énergie nécessaire.",
+       "Compare efforts et sources d'énergie."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 2 ?",
+       "options": [
+        "Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien.",
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "Un ouvre-boîte à manivelle fonctionne sans pile ni prise ; un ouvre-boîte électrique demande moins d'effort.",
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -1884,7 +4079,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "awa",
+     "personnage_emetteur": "eleonore",
      "probleme_narratif": "Awa compare deux objets.",
      "enjeu": "Sans comparer, on choisit mal.",
      "episode_du_roman": "Programme de cycle 3, « Comparaison de solutions techniques »",
@@ -1897,7 +4092,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "notice-montage",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Bricoleur (qcm) ; Monteur (qcm) ; Mécanicien (qcm) ; Ingénieur (vraifaux) ; Inventeur (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Deux objets peuvent répondre au même besoin avec des solutions techniques différentes. On les compare sur ce qu'ils savent faire, sur leur énergie et sur leurs matériaux, pas sur leur apparence.",
      "matelot": {
       "questions": [
@@ -1980,6 +4175,117 @@
        "La comparaison porte sur l'énergie, les matériaux et la facilité d'usage."
       ],
       "dialogue": "Deux objets, un même besoin. Répondez aux questions."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Une bougie et une lampe torche…",
+        "options": [
+         "répondent au même besoin : éclairer",
+         "n'ont rien en commun",
+         "marchent avec une pile"
+        ],
+        "bonne": 0,
+        "explication": "Même fonction d'usage."
+       }
+      ],
+      "consigne": "Compare les deux objets et choisis la bonne réponse, puis vérifie.",
+      "indices": [
+       "Ouvre la fiche « La notice et le montage ».",
+       "À quoi servent les deux objets ?",
+       "Les deux éclairent."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Deux objets qui répondent au même besoin se comparent sur leurs avantages et inconvénients.",
+        "vrai": true,
+        "explication": "Énergie, matériaux, usage, prix, entretien."
+       },
+       {
+        "txt": "On compare deux objets seulement sur leur couleur.",
+        "vrai": false,
+        "explication": "Plusieurs critères."
+       },
+       {
+        "txt": "Un ouvre-boîte à manivelle fonctionne sans pile ni prise.",
+        "vrai": true,
+        "explication": "Pas d'énergie extérieure."
+       },
+       {
+        "txt": "Un ouvre-boîte électrique demande plus d'effort.",
+        "vrai": false,
+        "explication": "Moins d'effort."
+       },
+       {
+        "txt": "Le prix est un critère de comparaison.",
+        "vrai": true,
+        "explication": "Comme l'entretien."
+       }
+      ],
+      "consigne": "Éléonore compare des objets. Pour chaque affirmation, réponds « Vrai » ou « Faux », puis choisis la phrase de la fiche qui dit sur quoi on compare deux objets.",
+      "indices": [
+       "Plusieurs critères : énergie, matériaux, prix...",
+       "Le modèle électrique demande moins d'effort.",
+       "Pour la justification : cherche la phrase qui énumère les critères."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit sur quoi on compare deux objets ?",
+       "options": [
+        "Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien.",
+        "Un ouvre-boîte à manivelle fonctionne sans pile ni prise ; un ouvre-boîte électrique demande moins d'effort.",
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Identifier le besoin : ouvrir une boîte de conserve.",
+        "rang": 1
+       },
+       {
+        "txt": "Lister les solutions : manivelle ou électrique.",
+        "rang": 2
+       },
+       {
+        "txt": "Comparer l'énergie, les matériaux, la facilité d'usage, le prix, l'entretien.",
+        "rang": 3
+       },
+       {
+        "txt": "Choisir selon l'usage prévu.",
+        "rang": 4
+       },
+       {
+        "txt": "Rédiger la notice.",
+        "rang": 5
+       }
+      ],
+      "consigne": "Éléonore compare deux ouvre-boîtes. Remets les étapes de sa démarche dans l'ordre, puis choisis la phrase de la fiche qui justifie le dernier maillon.",
+      "indices": [
+       "On commence par le besoin.",
+       "On compare avant de choisir.",
+       "La notice vient à la fin."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie l'étape de comparaison ?",
+       "options": [
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien.",
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet.",
+        "Elle peut aussi expliquer l'entretien et la réparation."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -1995,7 +4301,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "marcel",
+     "personnage_emetteur": "eleonore",
      "probleme_narratif": "Marcel complète le cycle de l'inventrice.",
      "enjeu": "Sans cette dernière réponse, l'atelier reste fermé.",
      "episode_du_roman": "Programme de cycle 3, synthèse de la démarche technologique",
@@ -2008,10 +4314,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "notice-montage",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Mécanicien (trous) ; Ingénieur (trous) ; Inventeur (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Besoin, fonction, matériau, énergie, notice : c'est l'ordre du travail de l'inventeur, et c'est aussi la phrase qui ouvre le coffre-fort.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "texte": "<p>Je pars toujours d'un [[besoin]]. J'écris ensuite la [[fonction]] que l'objet devra remplir. Je choisis un [[matériau]] dont les propriétés conviennent. Je décide quelle [[énergie]] fera fonctionner l'objet. Et je termine en écrivant la [[notice]], pour que n'importe qui puisse le monter après moi.</p>",
@@ -2031,6 +4339,69 @@
        "Le dernier mot est ce qu'on laisse à celui qui montera l'objet après nous."
       ],
       "dialogue": "Dernière étape : complétez le cycle de l'inventrice."
+     },
+     "lieutenant": {
+      "type": "trous",
+      "texte": "<p>Une notice donne la liste des [[pièces]] et des [[outils]], des étapes [[numérotées]], des [[schémas]] et des pictogrammes de sécurité. On termine toujours par un [[essai]] de l'objet.</p>",
+      "etiquettes": [
+       "pièces",
+       "outils",
+       "numérotées",
+       "schémas",
+       "essai",
+       "décorations",
+       "marques",
+       "prix"
+      ],
+      "consigne": "Éléonore a rédigé le cycle de l'inventrice, mais il manque des mots. Clique sur une étiquette, puis sur le trou où elle va. Trois étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « essai ».",
+      "indices": [
+       "Relis le premier paragraphe de la fiche.",
+       "Les étapes ont un numéro.",
+       "La dernière étape est un essai."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « essai » ?",
+       "options": [
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet.",
+        "Deux objets qui répondent au même besoin se comparent sur leurs avantages et leurs inconvénients : énergie utilisée, matériaux, facilité d'usage, prix, entretien.",
+        "Elle peut aussi expliquer l'entretien et la réparation."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>Une notice est un document [[technique]]. Elle peut aussi expliquer l'[[entretien]] et la [[réparation]]. Un ouvre-boîte à manivelle fonctionne sans [[pile]] ni [[prise]].</p>",
+      "etiquettes": [
+       "technique",
+       "entretien",
+       "réparation",
+       "pile",
+       "prise",
+       "couleur",
+       "marque",
+       "histoire",
+       "décoration"
+      ],
+      "consigne": "Éléonore résume ce qu'elle sait de la notice. Clique sur une étiquette, puis sur le trou où elle va. Quatre étiquettes sont en trop. Puis choisis la phrase de la fiche qui justifie le mot « entretien ».",
+      "indices": [
+       "Une notice peut expliquer plus que le montage.",
+       "Un modèle sans pile ni prise.",
+       "Un document technique."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le mot « entretien » ?",
+       "options": [
+        "Elle peut aussi expliquer l'entretien et la réparation.",
+        "Une notice est un document technique. Elle donne la liste des pièces et des outils, les étapes numérotées dans l'ordre du montage, des schémas qui montrent comment les pièces s'assemblent, et des pictogrammes de sécurité.",
+        "L'ordre compte : certaines étapes deviennent impossibles si on en saute une. On termine toujours par un essai de l'objet.",
+        "Un ouvre-boîte à manivelle fonctionne sans pile ni prise ; un ouvre-boîte électrique demande moins d'effort."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
      }
     }
    ]

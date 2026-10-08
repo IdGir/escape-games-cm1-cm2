@@ -4,56 +4,104 @@
    "nom": "Tommaso",
    "court": "Tommaso",
    "voix": {
-    "rate": 0.95,
-    "pitch": 1.0
+    "edge": "fr-FR-RemyMultilingualNeural",
+    "nom": "Remy",
+    "rate": 1.08,
+    "pitch": 1.2
    },
    "ton": "Apprenti curieux, émerveillé par Léonard",
    "fiche": "Apprenti de Léonard de Vinci, 12 ans, venu d'Italie",
-   "portrait": {}
+   "portrait": {
+    "genre": "garçon",
+    "coiffure": "courte",
+    "cheveux": "#2a1c14",
+    "peau": "#dba680",
+    "habit": "#7a2e3a",
+    "barbe": false,
+    "lunettes": false
+   }
   },
   "jacquet": {
    "nom": "Maître Jacquet",
    "court": "Jacquet",
    "voix": {
-    "rate": 1.0,
-    "pitch": 1.15
+    "edge": "fr-FR-HenriNeural",
+    "nom": "Henri",
+    "rate": 0.88,
+    "pitch": 0.9
    },
    "ton": "Imprimeur grave mais passionné",
    "fiche": "Imprimeur à Amboise",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "courte",
+    "cheveux": "#9c9c98",
+    "peau": "#e6c2a6",
+    "habit": "#3a3a52",
+    "barbe": true,
+    "lunettes": true
+   }
   },
   "helene": {
    "nom": "Dame Hélène",
    "court": "Hélène",
    "voix": {
-    "rate": 0.9,
-    "pitch": 0.9
+    "edge": "fr-FR-VivienneMultilingualNeural",
+    "nom": "Vivienne",
+    "rate": 0.95,
+    "pitch": 1.0
    },
    "ton": "Dame de la cour, fine et cultivée",
    "fiche": "Dame de la cour de François Ier",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "longue",
+    "cheveux": "#5a3a22",
+    "peau": "#e6c2a6",
+    "habit": "#5a3a62",
+    "lunettes": false
+   }
   },
   "colombe": {
    "nom": "Colombe",
    "court": "Colombe",
    "voix": {
+    "edge": "fr-FR-EloiseNeural",
+    "nom": "Eloise",
     "rate": 1.05,
-    "pitch": 1.2
+    "pitch": 1.05
    },
    "ton": "Fille de maçon, concrète et directe",
    "fiche": "Fille d'un maître maçon des chantiers du roi, 11 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "fille",
+    "coiffure": "longue",
+    "cheveux": "#a04a22",
+    "peau": "#f0c9ad",
+    "habit": "#4a5a2a",
+    "lunettes": false
+   }
   },
   "bastien": {
    "nom": "Bastien",
    "court": "Bastien",
    "voix": {
-    "rate": 0.92,
-    "pitch": 1.05
+    "edge": "fr-BE-GerardNeural",
+    "nom": "Gerard",
+    "rate": 1.0,
+    "pitch": 1.0
    },
    "ton": "Jeune peintre fier de son art",
    "fiche": "Jeune peintre de la cour, élève des artistes italiens",
-   "portrait": {}
+   "portrait": {
+    "genre": "garçon",
+    "coiffure": "courte",
+    "cheveux": "#1a1a1a",
+    "peau": "#dba680",
+    "habit": "#2a4a6a",
+    "barbe": false,
+    "lunettes": false
+   }
   }
  }
 }

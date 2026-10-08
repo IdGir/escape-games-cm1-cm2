@@ -4,56 +4,103 @@
    "nom": "Gabriel",
    "court": "Gabriel",
    "voix": {
-    "rate": 0.95,
-    "pitch": 1.0
+    "edge": "fr-FR-RemyMultilingualNeural",
+    "nom": "Remy",
+    "rate": 1.05,
+    "pitch": 1.2
    },
    "ton": "Jeune secrétaire zélé, un peu intimidé",
    "fiche": "Apprenti secrétaire au cabinet du roi, à Versailles, 12 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "garçon",
+    "coiffure": "courte",
+    "cheveux": "#5a3a22",
+    "peau": "#f0c9ad",
+    "habit": "#2a4a6a",
+    "barbe": false,
+    "lunettes": false
+   }
   },
   "suzanne": {
    "nom": "Suzanne",
    "court": "Suzanne",
    "voix": {
-    "rate": 1.0,
-    "pitch": 1.15
+    "edge": "fr-FR-DeniseNeural",
+    "nom": "Denise",
+    "rate": 0.95,
+    "pitch": 0.97
    },
    "ton": "Imprimeuse courageuse, voix calme",
    "fiche": "Imprimeuse protestante (huguenote), en 1598",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "longue",
+    "cheveux": "#5a3a22",
+    "peau": "#e6c2a6",
+    "habit": "#3a3a52",
+    "lunettes": false
+   }
   },
   "mathurin": {
    "nom": "Mathurin",
    "court": "Mathurin",
    "voix": {
-    "rate": 0.9,
-    "pitch": 0.9
+    "edge": "fr-FR-HenriNeural",
+    "nom": "Henri",
+    "rate": 1.0,
+    "pitch": 0.95
    },
    "ton": "Boulanger chaleureux, voisin fidèle",
    "fiche": "Boulanger catholique, voisin de Suzanne, en 1598",
-   "portrait": {}
+   "portrait": {
+    "genre": "homme",
+    "coiffure": "courte",
+    "cheveux": "#2a1c14",
+    "peau": "#dba680",
+    "habit": "#e8e4da",
+    "barbe": true,
+    "lunettes": false
+   }
   },
   "margot": {
    "nom": "Margot",
    "court": "Margot",
    "voix": {
-    "rate": 1.05,
-    "pitch": 1.2
+    "edge": "fr-FR-EloiseNeural",
+    "nom": "Eloise",
+    "rate": 1.08,
+    "pitch": 1.05
    },
    "ton": "Aide-jardinière malicieuse",
    "fiche": "Aide-jardinière dans l'équipe d'André Le Nôtre, 11 ans",
-   "portrait": {}
+   "portrait": {
+    "genre": "fille",
+    "coiffure": "longue",
+    "cheveux": "#a04a22",
+    "peau": "#f0c9ad",
+    "habit": "#4a5a2a",
+    "lunettes": false
+   }
   },
   "isabeau": {
    "nom": "Dame Isabeau",
    "court": "Isabeau",
    "voix": {
-    "rate": 0.92,
-    "pitch": 1.05
+    "edge": "fr-FR-VivienneMultilingualNeural",
+    "nom": "Vivienne",
+    "rate": 0.95,
+    "pitch": 1.0
    },
    "ton": "Dame de la cour, élégante et ironique",
    "fiche": "Dame de la cour de Louis XIV",
-   "portrait": {}
+   "portrait": {
+    "genre": "femme",
+    "coiffure": "longue",
+    "cheveux": "#1a1a1a",
+    "peau": "#e6c2a6",
+    "habit": "#7b3f8c",
+    "lunettes": false
+   }
   }
  }
 }

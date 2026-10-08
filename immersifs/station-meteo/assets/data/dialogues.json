@@ -1,178 +1,178 @@
 {
-  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
-  "accueil": {
-    "personnage": "vasseur",
-    "texte": "Bonjour. Je suis Madame Vasseur, prévisionniste. L'orage de cette nuit a déréglé votre station météo : plus aucune mesure n'est fiable. Cinq modules sont hors service. Vous allez les remettre en route, dans l'ordre."
-  },
-  "coffre": {
-    "personnage": "vasseur",
-    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
-  },
-  "cinematiques": {
-    "transition-e1": {
-      "titre": "Salle 1 — L'abri météo",
-      "plans": [
-        {
-          "decor": "abri",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "vasseur",
-          "texte": "Regardez ce thermomètre, posé en plein soleil sur le muret : il ne mesure plus l'air, il mesure le soleil ! Un thermomètre se lit à l'ombre, dans son abri, et toujours à la même hauteur. Premier module : apprenez à lire la température, puis remettez l'instrument à sa place.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e1": {
-      "titre": "Fin de la salle 1",
-      "plans": [
-        {
-          "decor": "abri",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "vasseur",
-          "texte": "Premier module en service : MESURER . Mercredi, le jour de l'orage, l'air est monté à 21 °C au plus chaud. Retenez ce nombre. Maintenant, montez voir le mât du vent : le capitaine Keïta attend une direction et une vitesse.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e2": {
-      "titre": "Salle 2 — Le mât du vent",
-      "plans": [
-        {
-          "decor": "mat",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "keita",
-          "texte": "Bonjour, matelots. Sur mon bateau, deux questions décident de tout : d'où vient le vent, et à quelle vitesse il souffle. La girouette répond à la première, l'anémomètre à la seconde. Mais sans les points cardinaux, une girouette ne sert à rien. Remettez la rose des vents dans le bon sens.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e2": {
-      "titre": "Fin de la salle 2",
-      "plans": [
-        {
-          "decor": "mat",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "keita",
-          "texte": "Deuxième module en service : ORIENTER . Mercredi, l'anémomètre marquait 24 km/h de vent moyen, venant de l'ouest : une jolie brise, force 4. Parfait pour naviguer. Descendez au jardin : Tiago s'occupe du pluviomètre.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e3": {
-      "titre": "Salle 3 — Le pluviomètre",
-      "plans": [
-        {
-          "decor": "pluvio",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "tiago",
-          "texte": "Salut ! Le pluviomètre recueille la pluie qui tombe sur son ouverture. On ne compte pas des litres : on lit une hauteur d'eau, en millimètres. Chaque matin, on lit, on note, on vide. Et en additionnant les jours, on obtient le cumul. À toi de lire le tube.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e3": {
-      "titre": "Fin de la salle 3",
-      "plans": [
-        {
-          "decor": "pluvio",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "tiago",
-          "texte": "Troisième module en service : CUMULER . Mercredi, le tube indiquait 7 mm : sept litres d'eau sur chaque mètre carré de la cour. Lina t'attend au bureau des relevés : son tableau est dans un triste état.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e4": {
-      "titre": "Salle 4 — Le tableau des relevés",
-      "plans": [
-        {
-          "decor": "bureau",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "lina",
-          "texte": "Coucou ! C'est moi qui tiens le cahier de la station. Mesurer chaque jour, c'est bien, mais si les nombres sont mélangés, on ne peut rien en tirer. Un tableau bien rangé, ça permet de comparer : quel jour était le plus froid ? le plus arrosé ? Tu m'aides à tout remettre en ordre ?",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e4": {
-      "titre": "Fin de la salle 4",
-      "plans": [
-        {
-          "decor": "bureau",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "lina",
-          "texte": "Quatrième module en service : ORGANISER . Mon tableau est propre, et on voit tout d'un coup d'œil. Il reste le plus important : transformer ces mesures en bulletin pour la sortie. Madame Vasseur t'attend dans la salle de prévision.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e5": {
-      "titre": "Salle 5 — Le bulletin du jour",
-      "plans": [
-        {
-          "decor": "studio",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "vasseur",
-          "texte": "Dernier module. Mesurer, c'est bien ; prévoir, c'est mieux. La météo, c'est le temps qu'il fait aujourd'hui et dans les jours qui viennent. Le climat, c'est autre chose : une moyenne sur trente ans. Montrez-moi que vous ne les confondez pas, puis entrez la valeur de vérité de mercredi : la température maximale, la vitesse du vent et la hauteur de pluie.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e5": {
-      "titre": "Fin de la salle 5",
-      "plans": [
-        {
-          "decor": "studio",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "lina",
-          "texte": "Le bulletin est à l'antenne ! Mesurer, orienter, cumuler, organiser, pour prévoir : c'est tout le travail d'une station. Demain matin, on recommence les relevés dans la cour. Tu viens avec moi ?",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "fin": {
-      "titre": "Fin de « La Station météo disparue »",
-      "plans": [
-        {
-          "decor": "studio",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "vasseur",
-          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
-          "mouvement": "zoom"
-        }
-      ]
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "vasseur",
+  "texte": "Bonjour. Je suis Madame Vasseur, prévisionniste. L'orage de cette nuit a déréglé votre station météo : plus aucune mesure n'est fiable. Cinq modules sont hors service. Vous allez les remettre en route, dans l'ordre."
+ },
+ "coffre": {
+  "personnage": "vasseur",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — L'abri météo",
+   "plans": [
+    {
+     "decor": "abri",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "vasseur",
+     "texte": "Regardez ce thermomètre, posé en plein soleil sur le muret : il ne mesure plus l'air, il mesure le soleil ! Un thermomètre se lit à l'ombre, dans son abri, et toujours à la même hauteur. Premier module : apprenez à lire la température, puis remettez l'instrument à sa place.",
+     "mouvement": "zoom"
     }
+   ]
   },
-  "fin_escale": {
-    "1": {
-      "personnage": "vasseur",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "2": {
-      "personnage": "keita",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "3": {
-      "personnage": "tiago",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "4": {
-      "personnage": "lina",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "5": {
-      "personnage": "vasseur",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "abri",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "vasseur",
+     "texte": "Premier module en service : MESURER . Mercredi, le jour de l'orage, l'air est monté à 21 °C au plus chaud. Retenez ce nombre. Maintenant, montez voir le mât du vent : le capitaine Keïta attend une direction et une vitesse.",
+     "mouvement": "glisse"
     }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — Le mât du vent",
+   "plans": [
+    {
+     "decor": "mat",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "keita",
+     "texte": "Bonjour, matelots. Sur mon bateau, deux questions décident de tout : d'où vient le vent, et à quelle vitesse il souffle. La girouette répond à la première, l'anémomètre à la seconde. Mais sans les points cardinaux, une girouette ne sert à rien. Remettez la rose des vents dans le bon sens.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "mat",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "keita",
+     "texte": "Deuxième module en service : ORIENTER . Mercredi, l'anémomètre marquait 24 km/h de vent moyen, venant de l'ouest : une jolie brise, force 4. Parfait pour naviguer. Descendez au jardin : Tiago s'occupe du pluviomètre.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — Le pluviomètre",
+   "plans": [
+    {
+     "decor": "pluvio",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "tiago",
+     "texte": "Salut ! Le pluviomètre recueille la pluie qui tombe sur son ouverture. On ne compte pas des litres : on lit une hauteur d'eau, en millimètres. Chaque matin, on lit, on note, on vide. Et en additionnant les jours, on obtient le cumul. À toi de lire le tube.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "pluvio",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "tiago",
+     "texte": "Troisième module en service : CUMULER . Mercredi, le tube indiquait 7 mm : sept litres d'eau sur chaque mètre carré de la cour. Lina t'attend au bureau des relevés : son tableau est dans un triste état.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — Le tableau des relevés",
+   "plans": [
+    {
+     "decor": "bureau",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "lina",
+     "texte": "Coucou ! C'est moi qui tiens le cahier de la station. Mesurer chaque jour, c'est bien, mais si les nombres sont mélangés, on ne peut rien en tirer. Un tableau bien rangé, ça permet de comparer : quel jour était le plus froid ? le plus arrosé ? Tu m'aides à tout remettre en ordre ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "bureau",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "lina",
+     "texte": "Quatrième module en service : ORGANISER . Mon tableau est propre, et on voit tout d'un coup d'œil. Il reste le plus important : transformer ces mesures en bulletin pour la sortie. Madame Vasseur t'attend dans la salle de prévision.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — Le bulletin du jour",
+   "plans": [
+    {
+     "decor": "studio",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "vasseur",
+     "texte": "Dernier module. Mesurer, c'est bien ; prévoir, c'est mieux. La météo, c'est le temps qu'il fait aujourd'hui et dans les jours qui viennent. Le climat, c'est autre chose : une moyenne sur trente ans. Montrez-moi que vous ne les confondez pas, puis entrez la valeur de vérité de mercredi : la température maximale, la vitesse du vent et la hauteur de pluie.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "studio",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "vasseur",
+     "texte": "Le bulletin est à l'antenne ! Mesurer, orienter, cumuler, organiser, pour prévoir : c'est tout le travail d'une station. Demain matin, on recommence les relevés dans la cour. Tu viens avec moi ?",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « La Station météo disparue »",
+   "plans": [
+    {
+     "decor": "studio",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "vasseur",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
   }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "vasseur",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "keita",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "tiago",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "lina",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "vasseur",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
 }

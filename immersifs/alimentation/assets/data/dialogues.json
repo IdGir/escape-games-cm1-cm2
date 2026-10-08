@@ -1,178 +1,178 @@
 {
-  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
-  "accueil": {
-    "personnage": "rosalie",
-    "texte": "Bonsoir, et bienvenue au Grand Couvert ! Je suis Rosalie, la cheffe. Demain, Basile, un coureur cycliste, grimpe une étape de montagne, et je dois lui préparer le repas de ce soir. Mais mon carnet de recettes, le Livre des cinq services, est enfermé dans un coffre à cinq cadenas. Chaque mot du code est caché dans une pièce du restaurant, et chacun parle de ce que deviennent nos aliments dans le corps. Vous êtes mes commis : retrouvez les cinq mots, notez-les bien, et nous ouvrirons le coffre ensemble."
-  },
-  "coffre": {
-    "personnage": "rosalie",
-    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
-  },
-  "cinematiques": {
-    "transition-e1": {
-      "titre": "Salle 1 — La cour du potager et du poulailler",
-      "plans": [
-        {
-          "decor": "potager",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "nathan",
-          "texte": "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie. Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines. La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e1": {
-      "titre": "Fin de la salle 1",
-      "plans": [
-        {
-          "decor": "potager",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "nathan",
-          "texte": "Bravo ! Le premier mot est GRANDIR : pour grandir, Caramel comme Lou fabriquent de la matière avec leurs aliments. Montez à la salle des menus : la docteure Inès vous y attend.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e2": {
-      "titre": "Salle 2 — La salle des menus",
-      "plans": [
-        {
-          "decor": "menus",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "ines",
-          "texte": "Je suis la docteure Inès Morel, médecin de l'équipe cycliste. Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins. Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e2": {
-      "titre": "Fin de la salle 2",
-      "plans": [
-        {
-          "decor": "menus",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "ines",
-          "texte": "Exactement. Le deuxième mot est BOUGER : plus on bouge, plus le corps dépense d'énergie. Descendez à la table de dégustation : la cheffe vous attend.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e3": {
-      "titre": "Salle 3 — La table de dégustation",
-      "plans": [
-        {
-          "decor": "degustation",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "rosalie",
-          "texte": "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert. Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche. Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e3": {
-      "titre": "Fin de la salle 3",
-      "plans": [
-        {
-          "decor": "degustation",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "rosalie",
-          "texte": "Parfait ! Le troisième mot est MÂCHER : les dents et la salive préparent une bouchée molle. Suivez-la maintenant : la docteure Inès vous montre son Grand Tunnel.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e4": {
-      "titre": "Salle 4 — Le cabinet du Grand Tunnel",
-      "plans": [
-        {
-          "decor": "cabinet",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "ines",
-          "texte": "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel. Une bouchée y fait un long voyage, et chaque organe a son travail. Si vous retrouvez le chemin, le quatrième cadenas sautera.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e4": {
-      "titre": "Fin de la salle 4",
-      "plans": [
-        {
-          "decor": "cabinet",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "ines",
-          "texte": "Bien joué ! Le quatrième mot est DIGÉRER : transformer les aliments en nutriments. Basile s'entraîne à côté : allez voir où ces nutriments s'en vont.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e5": {
-      "titre": "Salle 5 — La salle d'entraînement",
-      "plans": [
-        {
-          "decor": "entrainement",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "basile",
-          "texte": "Salut ! Moi, c'est Basile. Demain, je grimpe le col ! Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère. Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e5": {
-      "titre": "Fin de la salle 5",
-      "plans": [
-        {
-          "decor": "entrainement",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "rosalie",
-          "texte": "Le dernier mot est SANG : c'est lui qui livre les nutriments aux muscles. Vous avez les cinq mots ! Écrivez-les dans le coffre, dans l'ordre des salles, et le Livre des cinq services sera à nous.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "fin": {
-      "titre": "Fin de « Le Grand Repas du chef »",
-      "plans": [
-        {
-          "decor": "entrainement",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "basile",
-          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
-          "mouvement": "zoom"
-        }
-      ]
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "rosalie",
+  "texte": "Bonsoir, et bienvenue au Grand Couvert ! Je suis Rosalie, la cheffe. Demain, Basile, un coureur cycliste, grimpe une étape de montagne, et je dois lui préparer le repas de ce soir. Mais mon carnet de recettes, le Livre des cinq services, est enfermé dans un coffre à cinq cadenas. Chaque mot du code est caché dans une pièce du restaurant, et chacun parle de ce que deviennent nos aliments dans le corps. Vous êtes mes commis : retrouvez les cinq mots, notez-les bien, et nous ouvrirons le coffre ensemble."
+ },
+ "coffre": {
+  "personnage": "rosalie",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — La cour du potager et du poulailler",
+   "plans": [
+    {
+     "decor": "potager",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "nathan",
+     "texte": "Bonjour ! Moi, c'est Nathan, le commis de la cheffe Rosalie. Ici, je soigne les poules et le petit Caramel, un poussin né il y a quatre semaines. La cheffe a caché le premier mot du coffre dans mon carnet du poulailler. Il parle de ce qui fait grandir les êtres vivants…",
+     "mouvement": "zoom"
     }
+   ]
   },
-  "fin_escale": {
-    "1": {
-      "personnage": "nathan",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "2": {
-      "personnage": "ines",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "3": {
-      "personnage": "rosalie",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "4": {
-      "personnage": "ines",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "5": {
-      "personnage": "basile",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "potager",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "nathan",
+     "texte": "Bravo ! Le premier mot est GRANDIR : pour grandir, Caramel comme Lou fabriquent de la matière avec leurs aliments. Montez à la salle des menus : la docteure Inès vous y attend.",
+     "mouvement": "glisse"
     }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — La salle des menus",
+   "plans": [
+    {
+     "decor": "menus",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "Je suis la docteure Inès Morel, médecin de l'équipe cycliste. Demain, Basile court une étape de montagne. La cheffe et moi devons préparer un repas adapté à ses besoins. Mais les besoins ne sont pas les mêmes pour tout le monde… Aidez-moi à comprendre pourquoi.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "menus",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Exactement. Le deuxième mot est BOUGER : plus on bouge, plus le corps dépense d'énergie. Descendez à la table de dégustation : la cheffe vous attend.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — La table de dégustation",
+   "plans": [
+    {
+     "decor": "degustation",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "rosalie",
+     "texte": "Bienvenue à ma table ! Je suis Rosalie, la cheffe du Grand Couvert. Avant de goûter un plat, on le regarde, on le sent… et surtout, on le mâche. Mon troisième cadenas s'ouvre avec le mot de la bouche. Au travail !",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "degustation",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "rosalie",
+     "texte": "Parfait ! Le troisième mot est MÂCHER : les dents et la salive préparent une bouchée molle. Suivez-la maintenant : la docteure Inès vous montre son Grand Tunnel.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — Le cabinet du Grand Tunnel",
+   "plans": [
+    {
+     "decor": "cabinet",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "Voici ma maquette du corps humain : je l'appelle le Grand Tunnel. Une bouchée y fait un long voyage, et chaque organe a son travail. Si vous retrouvez le chemin, le quatrième cadenas sautera.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "cabinet",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Bien joué ! Le quatrième mot est DIGÉRER : transformer les aliments en nutriments. Basile s'entraîne à côté : allez voir où ces nutriments s'en vont.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — La salle d'entraînement",
+   "plans": [
+    {
+     "decor": "entrainement",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "basile",
+     "texte": "Salut ! Moi, c'est Basile. Demain, je grimpe le col ! Ce soir, je fais un petit tour de home-trainer. Sentez mon cœur : il accélère. Mais pourquoi ? Trouvez-le, et le dernier cadenas est à vous.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "entrainement",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "basile",
+     "texte": "Le dernier mot est SANG : c'est lui qui livre les nutriments aux muscles. Vous avez les cinq mots ! Écrivez-les dans le coffre, dans l'ordre des salles, et le Livre des cinq services sera à nous.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Le Grand Repas du chef »",
+   "plans": [
+    {
+     "decor": "entrainement",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "basile",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
   }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "nathan",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "rosalie",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "basile",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
 }

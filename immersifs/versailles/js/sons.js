@@ -6,7 +6,12 @@
    électrique), carre / cabine (craquements de coque).
    Effets : succes, erreur, etincelle, alarme, sas, indice, page,
    orgue (accord), reaction-* (réactions du décor).
-   Réglages : VML.reglage("sons") (oui/non), volume.
+   Fichiers audio facultatifs (libres de droits, déposés par l'enseignant) :
+     assets/audio/ambiances/<décor>.mp3   boucle d'ambiance d'un décor (remplace l'ambiance synthétisée) ;
+     assets/audio/musiques/<cinématique>.mp3   musique d'une cinématique : intro, fin, transition-e<N>, fin-e<N>,
+       sinon musiques/transition.mp3, musiques/fin-salle.mp3, musiques/intro.mp3, musiques/fin.mp3 (repli par famille).
+   Sans fichier, les ambiances synthétisées restent. Réglages : VML.reglage("sons") (oui/non), volume,
+   VML.reglage("volumeMusique") et ("volumeAmbiance") (0 à 1).
    ============================================================ */
 var VML = window.VML || (window.VML = {});
 
@@ -140,4 +145,54 @@ var VML = window.VML || (window.VML = {});
   };
   VML.couperAmbiances = function(){ Object.keys(ambiances).forEach(n => { ambiances[n].stop(); delete ambiances[n]; }); };
   VML.volumeSons = function(v){ if(init()) maitre.gain.value = Math.max(0, Math.min(1, v)); };
+
+  /* ---------- Fichiers audio : ambiances de décor et musiques de cinématique ---------- */
+  const absents = {};
+  let ambFichier = null, musiqueEnCours = null;
+  const vol = (nom, defaut) => { const v = VML.reglage ? VML.reglage(nom) : null; return typeof v === "number" ? Math.max(0, Math.min(1, v)) : defaut; };
+  const rapide = () => !!window.VML_RAPIDE || typeof Audio === "undefined";
+  function fondu(a, vers, ms, fin){
+    const depart = a.volume, t0 = Date.now();
+    clearInterval(a._f);
+    a._f = setInterval(() => {
+      const k = Math.min(1, (Date.now() - t0) / Math.max(1, ms));
+      a.volume = Math.max(0, Math.min(1, depart + (vers - depart) * k));
+      if(k >= 1){ clearInterval(a._f); if(fin) fin(); }
+    }, 40);
+  }
+  /** Joue le premier fichier existant de la liste ; rend l'élément audio, ou null si aucun. */
+  function essayer(urls, boucle, volume, quand){
+    const url = urls.find(u => !absents[u]);
+    if(!url){ if(quand) quand(null); return null; }
+    const a = new Audio(url);
+    a.loop = boucle; a.volume = 0; a.preload = "auto";
+    a.onerror = () => { absents[url] = true; a._mort = true; const suite = essayer(urls, boucle, volume, quand); if(a._relais) a._relais(suite); };
+    const lancement = a.play();
+    if(lancement && lancement.then) lancement.then(() => { if(!a._mort){ fondu(a, volume, 1200); if(quand) quand(a); } }).catch(() => { if(!a._mort && quand) quand(null); });
+    return a;
+  }
+  VML.urlsMusique = id => {
+    const fam = /^transition/.test(id) ? "transition" : /^fin-e/.test(id) ? "fin-salle" : id;
+    return ["assets/audio/musiques/" + id + ".mp3"].concat(fam !== id ? ["assets/audio/musiques/" + fam + ".mp3"] : []);
+  };
+  VML.urlAmbiance = decor => "assets/audio/ambiances/" + decor + ".mp3";
+  VML.ambianceFichier = function(decor){
+    if(rapide() || !actif() || !decor) return;
+    if(ambFichier && ambFichier.decor === decor) return;
+    if(ambFichier){ const vieux = ambFichier.a; fondu(vieux, 0, 800, () => vieux.pause()); ambFichier = null; }
+    const a = essayer([VML.urlAmbiance(decor)], true, vol("volumeAmbiance", 0.35), ok => { if(ok && VML.couperAmbiances) VML.couperAmbiances(); });
+    if(a) ambFichier = { decor, a };
+  };
+  VML.musique = function(id){
+    if(rapide() || !actif() || !id) return;
+    VML.arreterMusique(300);
+    if(ambFichier) fondu(ambFichier.a, vol("volumeAmbiance", 0.35) * 0.3, 600);
+    const m = { id, a: essayer(VML.urlsMusique(id), false, vol("volumeMusique", 0.5)) };
+    musiqueEnCours = m;
+  };
+  VML.arreterMusique = function(ms){
+    const m = musiqueEnCours; musiqueEnCours = null;
+    if(m && m.a){ const a = m.a; a._mort = true; fondu(a, 0, ms || 800, () => a.pause()); }
+    if(ambFichier) fondu(ambFichier.a, vol("volumeAmbiance", 0.35), ms || 800);
+  };
 })();

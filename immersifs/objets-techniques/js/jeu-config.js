@@ -4,8 +4,11 @@ window.VML_JEU = {
   "decorAccueil": "atelier",
   "prefixeStockage": "vml_objets_techniques",
   "grades": [
+    "mousse",
     "matelot",
-    "timonier"
+    "timonier",
+    "lieutenant",
+    "second"
   ],
   "textes": {
     "auteur": "Escape game · cycle 3",
