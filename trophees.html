@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trophées — Escape games CM1 · CM2</title>
+<!--
+  VITRINE DES TROPHÉES INTER-JEUX (amélioration N1)
+  Les trophées se cumulent d'un escape game à l'autre pour un même nom d'équipe ou d'élève.
+  Ils sont calculés sur l'historique des parties terminées de CET appareil (navigateur) —
+  le même que resultats.html — avec les règles de commun/donnees/trophees.js.
+-->
+<style>
+  :root{--fond:#f6f1e4;--papier:#fffdf7;--encre:#2b1d10;--doux:#6b5a45;--ligne:#e0cfa6;--or:#c9a227}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.5 Georgia,'Times New Roman',serif;background:var(--fond);color:var(--encre)}
+  header,main{max-width:1000px;margin:0 auto;padding:0 16px}
+  header{padding-top:20px} h1{margin:6px 0 0;font-size:1.7rem} header p{margin:4px 0 0;color:var(--doux)}
+  a{color:#1d3a8a}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:14px;padding:14px 18px;margin:14px 0}
+  .ligne{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+  select,button{font:inherit;padding:6px 12px;border-radius:10px;border:1px solid var(--ligne);background:#fff;cursor:pointer}
+  .vitrine{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:12px}
+  .tr{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding:14px 10px;border-radius:14px;border:2px solid var(--ligne);background:#fff}
+  .tr .icone{font-size:2.4rem;line-height:1.1}
+  .tr small{color:var(--doux);font-size:.82rem}
+  .tr.gagne{border-color:var(--or);background:#fff8e1}
+  .tr.verrou .icone{filter:grayscale(1);opacity:.35}
+  .tr.verrou b{color:var(--doux)}
+  .compteur{font-size:1.1rem}
+  .aide{color:var(--doux);font-size:.9rem}
+  .vide{padding:20px;text-align:center;color:var(--doux)}
+  .impression{display:none}
+  @media print{
+    body{background:#fff} header,main{display:none} .impression{display:block}
+    .diplome{border:3mm double var(--or);padding:12mm;margin:6mm;text-align:center;page-break-after:always}
+    .diplome h1{font-size:24pt;margin:0} .diplome .nom{font-size:20pt;margin:6mm 0}
+    .diplome .vitrine{grid-template-columns:repeat(4,1fr)} .diplome .tr{break-inside:avoid}
+    @page{size:A4 portrait;margin:8mm}
+  }
+</style>
+</head>
+<body>
+<header>
+  <p><a href="index.html">← Accueil des jeux</a> · <a href="resultats.html">📊 Résultats</a> · <a href="passeport.html">🎓 Passeport</a></p>
+  <h1>🏅 Les trophées</h1>
+  <p>Les trophées se gagnent en jouant à plusieurs escape games sous le même nom d'équipe (ou le même prénom en mode individuel).</p>
+</header>
+<main>
+  <section class="bloc">
+    <div class="ligne">
+      <label>Équipe ou élève <select id="choix-nom"></select></label>
+      <span class="compteur" id="compteur"></span>
+      <button id="btn-imprimer">🖨️ Imprimer le diplôme</button>
+    </div>
+    <div id="vitrine"></div>
+    <p class="aide">Calculé sur les parties terminées de cet appareil (les mêmes que dans 📊 Résultats). Pour retrouver ses trophées d'un jeu à l'autre, une équipe garde exactement le même nom (majuscules et accents ne comptent pas).</p>
+  </section>
+</main>
+<div class="impression" id="impression"></div>
+
+<script src="commun/donnees/catalogue.js?c3"></script>
+<script src="commun/donnees/trophees.js?c1"></script>
+<script>
+"use strict";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let hist = []; try { hist = JSON.parse(localStorage.getItem("escape_resultats") || "[]"); } catch (e) {}
+const cat = typeof CATALOGUE !== "undefined" ? CATALOGUE : null;
+const choix = document.getElementById("choix-nom");
+const noms = TROPHEES.noms(hist);
+const demande = new URLSearchParams(location.search).get("nom");
+choix.innerHTML = noms.map(n => `<option>${esc(n)}</option>`).join("");
+if (demande) { const n = noms.find(x => TROPHEES.norm(x) === TROPHEES.norm(demande)); if (n) choix.value = n; }
+
+function grille(nom){
+  const ok = TROPHEES.obtenus(nom, hist, cat).map(t => t.id);
+  return `<div class="vitrine">${TROPHEES.LISTE.map(t => `<div class="tr ${ok.includes(t.id) ? "gagne" : "verrou"}" data-id="${t.id}">
+    <span class="icone">${t.icone}</span><b>${esc(t.titre)}</b><small>${esc(t.regle)}</small>${ok.includes(t.id) ? "" : "<small>🔒 à gagner</small>"}</div>`).join("")}</div>`;
+}
+function afficher(){
+  const v = document.getElementById("vitrine"), c = document.getElementById("compteur");
+  if (!noms.length) { v.innerHTML = `<p class="vide">Aucune partie terminée sur cet appareil pour l'instant. Jouez un escape game jusqu'au coffre final !</p>`; c.textContent = ""; return; }
+  const nom = choix.value;
+  const n = TROPHEES.obtenus(nom, hist, cat).length;
+  const jeux = new Set(TROPHEES.partiesDe(nom, hist).filter(p => p.termine).map(p => p.jeu)).size;
+  c.innerHTML = `<b>${n}</b> trophée${n > 1 ? "s" : ""} sur ${TROPHEES.LISTE.length} · ${jeux} jeu${jeux > 1 ? "x" : ""} terminé${jeux > 1 ? "s" : ""}`;
+  v.innerHTML = grille(nom);
+}
+choix.addEventListener("change", afficher);
+document.getElementById("btn-imprimer").addEventListener("click", () => {
+  if (!noms.length) return;
+  const nom = choix.value;
+  document.getElementById("impression").innerHTML = `<section class="diplome"><h1>🏅 Diplôme des escape games</h1>
+    <p class="nom">${esc(nom)}</p><p>${TROPHEES.obtenus(nom, hist, cat).length} trophée(s) gagné(s) · ${new Date().toLocaleDateString("fr-FR")}</p>${grille(nom)}</section>`;
+  window.print();
+});
+afficher();
+</script>
+</body>
+</html>

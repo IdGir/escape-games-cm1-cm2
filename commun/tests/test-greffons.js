@@ -422,6 +422,30 @@ SECTIONS.N6 = async () => {
   }
 };
 
+/* ---- N1 : trophées inter-jeux à l'écran de fin ---- */
+SECTIONS.N1 = async () => {
+  console.log("\n== N1 : trophées inter-jeux à l'écran de fin ==");
+  const p = (jeu, j) => ({ jeu, eleve: "Les Lynx", termine: true, total: 20, premierCoup: 10, indices: 4, quiz: 3, score: 120, mode: "equipe", date: `2026-10-0${j}T10:00`, partie: `2026-10-0${j}T09:00` });
+  const stockage = { escape_resultats: JSON.stringify([p("declaration", 1), p("chateau-fort", 2)]) };
+  const { w, erreurs } = await charger(J("constitution"), "", { attente: 600, stockage });
+  const d = w.document;
+  w.ETAT.reglages.cinematiques = false;
+  const inp = d.getElementById("input-equipe"); inp.value = "les lynx"; inp.dispatchEvent(new w.Event("input"));
+  d.querySelector('.opt-niveau[data-niveau="CM2"]').click();
+  d.getElementById("btn-demarrer").click(); await dodo(300);
+  w.ETAT.score = 140; w.ETAT.fini = true; w.ETAT.indicesTotal = 2; w.ETAT.enigmesReussies = 20;
+  w.finDuJeu(); await dodo(150);
+  const b = d.getElementById("trophees-fin");
+  const nouveaux = b ? [...b.querySelectorAll(".tr.nouveau b")].map(x => x.textContent).sort() : [];
+  ok(JSON.stringify(nouveaux) === JSON.stringify(["Citoyen", "La suite de l'histoire", "Trois coffres"]), `nouveaux trophées annoncés : ${nouveaux.join(", ")}`);
+  ok(b && /sur 13/.test(b.textContent) && b.querySelector('a[href="../trophees.html?nom=les%20lynx"]'), "total et lien vers la vitrine");
+  const ae = d.getElementById("auto-evaluation");
+  ok(ae && (b.compareDocumentPosition(ae) & 4), "trophées placés avant l'auto-évaluation");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+  const v = await charger(J("melanges"), "?salle=6&niveau=CM2", { attente: 600 });
+  ok(!v.w.document.getElementById("trophees-fin"), "mode vérification : pas de trophées");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

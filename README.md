@@ -99,6 +99,15 @@ publié) : *Non acquis / En cours / Acquis*, avec une jauge par matière, une vu
 d'un passeport par élève et un export CSV (tableur, Schooly). Les données restent dans le navigateur de
 l'appareil : exportez-les régulièrement (💾).
 
+### Les trophées : trophees.html
+
+Les badges de chaque jeu restent propres au jeu ; les **trophées** se cumulent d'un jeu à l'autre pour un même
+nom d'équipe (ou un même prénom en mode individuel) : premier coffre, trois puis six jeux terminés, sans faute,
+sans indice, quizz parfait, historien, scientifique, géographe, citoyen, touche-à-tout, persévérant… (règles :
+`commun/donnees/trophees.js`). Ils sont annoncés à l'écran de fin et rassemblés dans
+**[trophees.html](https://idgir.github.io/escape-games-cm1-cm2/trophees.html)** (vitrine, diplôme à imprimer),
+calculés sur les parties terminées de l'appareil — garder exactement le même nom d'équipe d'un jeu à l'autre.
+
 ## 2. Tout vérifier : la page de vérification
 
 **[verifier.html](https://idgir.github.io/escape-games-cm1-cm2/verifier.html)** —

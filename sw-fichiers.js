@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "5a1d1b13c6";
+self.VERSION_HORS_LIGNE = "183856708f";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -51,6 +51,7 @@ self.FICHIERS_CODE = [
 "commun/css/personnages.css",
 "commun/css/video.css",
 "commun/donnees/catalogue.js",
+"commun/donnees/trophees.js",
 "commun/icones/icone-192.png",
 "commun/icones/icone-512.png",
 "commun/icones/icone-apple-180.png",
@@ -79,6 +80,7 @@ self.FICHIERS_CODE = [
 "commun/js/pwa.js",
 "commun/js/sync.js",
 "commun/js/transitions.js",
+"commun/js/trophees.js",
 "commun/js/variantes.js",
 "commun/polices/atkinson-hyperlegible-latin-400-normal.woff2",
 "commun/polices/atkinson-hyperlegible-latin-700-normal.woff2",
@@ -627,6 +629,7 @@ self.FICHIERS_CODE = [
 "tour-du-monde/js/v2.js",
 "tour-du-monde/lecons-imprimables.html",
 "tour-du-monde/prof.html",
+"trophees.html",
 "verifier.html",
 "versailles/assets/data/dialogues.json",
 "versailles/assets/data/enigmes.json",

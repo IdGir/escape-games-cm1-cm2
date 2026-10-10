@@ -272,6 +272,32 @@ SECTIONS.B2 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+/* ---- N1 : vitrine des trophées (trophees.html) ---- */
+SECTIONS.N1 = async () => {
+  console.log("\n== N1 : trophées inter-jeux (trophees.html) ==");
+  const p = (jeu, eleve, o) => Object.assign({ jeu, eleve, termine: true, total: 20, premierCoup: 12, indices: 3, quiz: 3, score: 150, mode: "equipe", date: "2026-10-0" + (o && o.j || 1) + "T10:00", partie: "2026-10-0" + (o && o.j || 1) + "T09:00" }, o || {});
+  const hist = [
+    p("declaration", "Les Lynx", { j: 1 }), p("constitution", "les lynx ", { j: 2, indices: 0 }), p("melanges", "Les Lynx", { j: 3, premierCoup: 19, quiz: 5 }),
+    p("melanges", "Les Lynx", { j: 4, score: 170 }), p("chateau-fort", "LES LYNX", { j: 5, termine: false }),
+    p("melanges", "Les Hiboux", { j: 1 }), p("melanges", "Vérification", { j: 1 })
+  ];
+  const { w, erreurs } = await charger(RACINE, "?nom=les%20lynx", { page: "trophees.html", attente: 300, stockage: { escape_resultats: JSON.stringify(hist) } });
+  const d = w.document;
+  const noms = [...d.querySelectorAll("#choix-nom option")].map(o => o.textContent);
+  ok(noms.length === 2 && !noms.some(n => /rification/.test(n)), `noms de l'historique, sans « Vérification » (${noms.join(", ")})`);
+  ok(/lynx/i.test(d.getElementById("choix-nom").value), "?nom= choisit l'équipe (majuscules et espaces ignorés)");
+  const gagnes = [...d.querySelectorAll(".tr.gagne")].map(x => x.dataset.id).sort();
+  const attendus = ["citoyen", "touche-a-tout", "perseverant", "premier-coffre", "quizz-parfait", "sans-coup-de-pouce", "sans-faute", "suite-de-l-histoire", "trois-coffres"].sort();
+  ok(JSON.stringify(gagnes) === JSON.stringify(attendus), `trophées des Lynx : ${gagnes.join(", ")}`);
+  ok(!d.querySelector('.tr.gagne[data-id="grand-explorateur"]') && d.querySelector('.tr.verrou[data-id="historien"]'), "trophées non gagnés grisés (château fort non terminé : pas « Historien »)");
+  ok(/9<\/b> trophées sur 13 · 3 jeux terminés/.test(d.getElementById("compteur").innerHTML), "compteur : " + d.getElementById("compteur").textContent);
+  w.__imprime = 0; d.getElementById("btn-imprimer").click();
+  ok(w.__imprime === 1 && /Diplôme/.test(d.getElementById("impression").textContent), "diplôme imprimable");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+  const vide = await charger(RACINE, "", { page: "trophees.html", attente: 200 });
+  ok(/Aucune partie terminée/.test(vide.w.document.getElementById("vitrine").textContent), "sans historique : message");
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

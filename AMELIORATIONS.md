@@ -275,7 +275,7 @@ au moment de leur production (octobre 2026).
 Les badges actuels n'existent que dans un jeu. Des trophées calculés sur l'historique des parties
 de l'appareil (même nom d'équipe ou d'élève d'un jeu à l'autre) : jeux terminés, sans faute, sans
 indice, matières différentes… Annoncés en fin de partie, vitrine sur une page dédiée.
-**Jeux concernés :** les 12 jeux « salles » + nouvelle page · **Effort :** M · **Statut :** En cours
+**Jeux concernés :** les 12 jeux « salles » + nouvelle page · **Effort :** M · **Statut :** Fait
 
 ### N2 — Kit « adopter ce projet » pour collègues
 Une page qui explique à un collègue, en une lecture, comment utiliser les jeux dans sa classe
