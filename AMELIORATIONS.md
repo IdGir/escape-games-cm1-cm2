@@ -286,7 +286,7 @@ récupérer le projet pour le modifier.
 ### N4 — Mode « duel » : deux équipes face à face sur un même écran
 Deux équipes jouent à tour de rôle sur le même écran (TBI) : une énigme chacune, scores séparés,
 vainqueur annoncé à la fin.
-**Jeux concernés :** les 12 jeux « salles » · **Effort :** M · **Statut :** En cours
+**Jeux concernés :** les 12 jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ### N5 — Indices à coût dégressif selon le nombre demandé
 Option enseignant : le premier indice d'une énigme coûte 2 points, les suivants 1 point — pour

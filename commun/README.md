@@ -40,6 +40,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/auto-evaluation.js` | N6 — écran de fin : « 🪞 On s'évalue » (« Je m'évalue » en mode individuel), 5 affirmations rattachées au socle commun (D1, D2 ×2, D3, et D4 sciences / D5 histoire-géographie / D3 EMC), 3 réponses ; gardées avec le compte-rendu (historique, `resultats.html`, CSV) ; grille vierge imprimable, une par élève | les 12 jeux « salles » |
 | `js/mode-solo.js` | D2 — « 🏠 Je joue seul » (`?solo=1`) : prénom, pas de synchronisation, compte-rendu à copier, télécharger ou imprimer pour l'enseignant | les 12 jeux « salles » |
 | `js/export-partie.js` | A5 — écran Pause : « 💾 Enregistrer la partie dans un fichier » (`<jeu>-<équipe>-<date>.json`) ; accueil : « 📂 Reprendre une partie depuis un fichier » (contrôle du jeu, de la version et de la partie, puis reprise habituelle) | les 12 jeux « salles » |
+| `js/mode-duel.js` | N4 — « ⚔️ Duel » (`?duel=1`) : deux équipes sur un même écran, à tour de rôle (une énigme chacune ; une salle chacune dans Déclaration et Tour du monde), points de chaque tour à l'équipe qui joue, bandeau des scores, rideau à chaque changement, vainqueur à la fin ; gardé pour la reprise | les 12 jeux « salles » |
 | `js/pwa.js` | A4 — enregistre le service worker `sw.js` (application installable, hors connexion ; voir `outils-pwa/README.md`) | les 13 jeux et l'accueil |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation, lumiere.

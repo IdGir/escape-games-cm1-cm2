@@ -446,6 +446,49 @@ SECTIONS.N1 = async () => {
   ok(!v.w.document.getElementById("trophees-fin"), "mode vérification : pas de trophées");
 };
 
+/* ---- N4 : mode duel ---- */
+SECTIONS.N4 = async () => {
+  console.log("\n== N4 : mode duel (deux équipes, un écran) ==");
+  for (const j of ["melanges", "tour-du-monde"]) {
+    const { w, erreurs } = await charger(J(j), "?duel=1", { attente: 600 });
+    const d = w.document;
+    ok(d.getElementById("mode-duel").checked && d.querySelector(".bascule-duel.actif #input-equipe-2"), `${j} : ?duel=1 coche « Duel » et demande l'équipe adverse`);
+    w.ETAT.reglages.cinematiques = false;
+    const inp = d.getElementById("input-equipe"); inp.value = "Les Lynx"; inp.dispatchEvent(new w.Event("input"));
+    d.querySelector('.opt-niveau[data-niveau="CM2"]').click();
+    d.getElementById("btn-demarrer").click(); await dodo(200);
+    ok(!w.ETAT.debut, `${j} : sans équipe adverse, la partie ne démarre pas`);
+    d.getElementById("input-equipe-2").value = "Les Aigles";
+    d.getElementById("btn-demarrer").click(); await dodo(400);
+    ok(w.ETAT.debut && w.ETAT.duel && w.ETAT.equipe === "Les Lynx contre Les Aigles", `${j} : duel lancé (« ${w.ETAT.equipe} »)`);
+    ok(d.body.classList.contains("duel-actif") && /▶ Les Lynx/.test(d.getElementById("duel-hud").textContent), `${j} : bandeau des scores, Les Lynx commencent`);
+    const resoudre = async (pts) => {
+      w.ETAT.score += pts;
+      if (typeof w.ETAT.enigmesReussies === "number") w.ETAT.enigmesReussies++; else w.ETAT.tempsParSalle[Object.keys(w.ETAT.tempsParSalle).length + 1] = 60000;
+      await dodo(350);
+    };
+    await resoudre(10);
+    ok(JSON.stringify(w.ETAT.duel.scores) === "[10,0]" && w.ETAT.duel.tour === 1 && d.querySelector(".rideau-duel"), `${j} : énigme des Lynx → 10 pts, au tour des Aigles (rideau)`);
+    w.ETAT.score -= 2; await dodo(300);
+    await resoudre(3);
+    ok(JSON.stringify(w.ETAT.duel.scores) === "[10,1]" && w.ETAT.duel.tour === 0 && JSON.stringify(w.ETAT.duel.enigmes) === "[1,1]", `${j} : indice (−2) puis +3 pour les Aigles → ${JSON.stringify(w.ETAT.duel.scores)}`);
+    // reprise sur le même appareil
+    w.sauvegarder && w.sauvegarder();
+    const stock = {}; for (let i = 0; i < w.localStorage.length; i++) { const k = w.localStorage.key(i); stock[k] = w.localStorage.getItem(k); }
+    const r = await charger(J(j), "", { attente: 900, stockage: stock });
+    await dodo(400);
+    ok(r.w.ETAT.duel && JSON.stringify(r.w.ETAT.duel.scores) === "[10,1]" && r.w.document.body.classList.contains("duel-actif"), `${j} : duel retrouvé à la reprise`);
+    // fin de partie
+    w.ETAT.fini = true; w.finDuJeu(); await dodo(700);
+    const res = d.getElementById("resultat-duel");
+    ok(res && /Victoire de l'équipe « Les Lynx »/.test(res.textContent) && !d.body.classList.contains("duel-actif"), `${j} : vainqueur annoncé à la fin`);
+    ok(erreurs.length === 0 && r.erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.concat(r.erreurs).join(" | "));
+  }
+  const s = await charger(J("constitution"), "?solo=1", { attente: 400 });
+  s.w.document.getElementById("mode-duel").click();
+  ok(!s.w.document.getElementById("mode-solo").checked, "« Duel » et « Je joue seul » ne se cumulent pas");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
