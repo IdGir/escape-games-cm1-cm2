@@ -35,6 +35,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/variantes.js` | D3 — banque d'énigmes : une énigme peut avoir des `variantes` dans `enigmes.json` ; la série jouée change à chaque année scolaire (ou se choisit dans ⚙️) | les 10 jeux à moteur commun |
 | `js/compte-rendu.js` | compte-rendu d'une partie (score, énigmes, erreurs, indices, temps, code de contrôle) ; historique des parties de l'appareil (pour `resultats.html`) | les 12 jeux « salles » |
 | `js/mode-solo.js` | D2 — « 🏠 Je joue seul » (`?solo=1`) : prénom, pas de synchronisation, compte-rendu à copier, télécharger ou imprimer pour l'enseignant | les 12 jeux « salles » |
+| `js/export-partie.js` | A5 — écran Pause : « 💾 Enregistrer la partie dans un fichier » (`<jeu>-<équipe>-<date>.json`) ; accueil : « 📂 Reprendre une partie depuis un fichier » (contrôle du jeu, de la version et de la partie, puis reprise habituelle) | les 12 jeux « salles » |
 | `js/pwa.js` | A4 — enregistre le service worker `sw.js` (application installable, hors connexion ; voir `outils-pwa/README.md`) | les 13 jeux et l'accueil |
 
 \* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation, lumiere.

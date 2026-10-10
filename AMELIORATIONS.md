@@ -54,7 +54,7 @@ Seul `mission-geo` a un export/import de progression en JSON. Les 8 jeux
 « salles » n'ont qu'une reprise implicite sur le même poste/navigateur — ce
 que confirme déjà le guide de `constitution` pour son déroulé en 5 séances de
 25 minutes, mais sans portabilité d'un poste à l'autre.
-**Jeux concernés :** constitution, declaration, tour-du-monde, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** constitution, declaration, tour-du-monde, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort · **Effort :** M · **Statut :** Fait
 
 ### A6 — Étendre verifier.html à un onglet « cohérence du moteur »
 En plus des 4 onglets déjà présents (énigmes, médias, fichiers mal nommés,

@@ -192,6 +192,8 @@ Puis **💾 Enregistrer les réglages** : ils restent sur le poste.
 Une salle par séance, avec à chaque fois : rappel de 5 min → jeu 15 min → trace écrite 5 min.
 À la fin de chaque séance, cliquez sur **⏸** et notez le nom de l'équipe : le jeu propose de
 **reprendre la partie en cours** à la séance suivante, sur le même poste et le même navigateur.
+Si l'équipe change de poste : sur l'écran Pause, **💾 Enregistrer la partie dans un fichier**, puis, sur
+le nouveau poste, accueil du jeu → **📂 Reprendre une partie depuis un fichier**.
 
 | Séance | Salle | Trace écrite attendue |
 |---|---|---|

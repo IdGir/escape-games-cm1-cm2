@@ -258,6 +258,41 @@ SECTIONS.C2 = async () => {
   for (const j of JEUX8.concat(["mission-geo"])) ok(/Référence officielle du programme/.test(fs.readFileSync(J(j) + "/README.md", "utf8")), `${j} : référence dans le README`);
 };
 
+/* ---- A5 : export / reprise de partie par fichier ---- */
+SECTIONS.A5 = async () => {
+  console.log("\n== A5 : export / reprise de partie par fichier ==");
+  for (const j of ["constitution", "declaration", "tour-du-monde", "chateau-fort", "lumiere"]) {
+    const a = await charger(J(j), "", { attente: 400 });
+    const d = a.w.document;
+    ok(!!d.getElementById("import-partie") && !!d.getElementById("btn-export-partie"), `${j} : boutons « Reprendre depuis un fichier » (accueil) et « Enregistrer » (pause)`);
+    ok(a.w.EXPORT_PARTIE.exporter() === null, `${j} : rien à exporter avant le début`);
+    a.w.HTMLAnchorElement.prototype.click = function(){ a.w.__telecharge = this.download; };
+    a.w.eval(`Object.assign(ETAT, {equipe:"Les Lynx", niveau:"CM1", salle:3, enigme:1, score:42, debut:Date.now()-600000, msEcoules:600000, motsCles:["A","B"]}); sauvegarder();`);
+    const r = a.w.EXPORT_PARTIE.exporter();
+    ok(r && /^[a-z-]+-les-lynx-\d{4}-\d\d-\d\d\.json$/.test(a.w.__telecharge || ""), `${j} : fichier téléchargé (${a.w.__telecharge})`);
+    ok(r && r.contenu.jeu === j && r.contenu.etat.salle === 3 && r.contenu.versionJeu, `${j} : contenu (jeu, salle, version ${r && r.contenu.versionJeu})`);
+    // Autre appareil : rien en mémoire
+    const b = await charger(J(j), "", { attente: 300 });
+    const ko = b.w.EXPORT_PARTIE.importerTexte(JSON.stringify(Object.assign({}, r.contenu, { jeu: "melanges", titre: "Mélanges" })));
+    ok(!ko.ok && /Mélanges/.test(ko.message), `${j} : fichier d'un autre jeu refusé`);
+    const fini = b.w.EXPORT_PARTIE.importerTexte(JSON.stringify(Object.assign({}, r.contenu, { etat: Object.assign({}, r.contenu.etat, { fini: true }) })));
+    ok(!fini.ok, `${j} : partie terminée refusée`);
+    const vieux = b.w.EXPORT_PARTIE.importerTexte(JSON.stringify(Object.assign({}, r.contenu, { versionJeu: "v0" })));
+    ok(!vieux.ok && /ancienne version/.test(vieux.message), `${j} : ancienne version refusée`);
+    ok(!b.w.EXPORT_PARTIE.importerTexte("pas du json").ok, `${j} : fichier illisible refusé`);
+    let recharge = 0; b.w.EXPORT_PARTIE.recharger = () => recharge++;
+    const im = b.w.EXPORT_PARTIE.importerTexte(JSON.stringify(r.contenu));
+    ok(im.ok && JSON.parse(b.w.localStorage.getItem(b.w.eval("CLE_SAUVEGARDE"))).equipe === "Les Lynx", `${j} : partie recopiée dans la sauvegarde de l'appareil`);
+    // Rechargement : la reprise habituelle s'applique
+    const stock = {}; for (let i = 0; i < b.w.localStorage.length; i++) { const k = b.w.localStorage.key(i); stock[k] = b.w.localStorage.getItem(k); }
+    const c = await charger(J(j), "", { attente: 600, stockage: stock });
+    const e = c.w.eval("({equipe:ETAT.equipe, salle:ETAT.salle, score:ETAT.score, niveau:ETAT.niveau})");
+    ok(e.equipe === "Les Lynx" && e.salle === 3 && e.score === 42 && e.niveau === "CM1", `${j} : partie reprise après rechargement (${JSON.stringify(e)})`);
+    ok(c.w.document.getElementById("ecran-salle").classList.contains("actif"), `${j} : l'équipe est dans la salle`);
+    for (const x of [a, b, c]) ok(x.erreurs.length === 0, `${j} : erreurs JS : ` + x.erreurs.join(" | "));
+  }
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
