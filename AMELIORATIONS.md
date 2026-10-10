@@ -68,7 +68,7 @@ Un script qui vérifie, avant un `git push`, la cohérence de chaque
 `enigmes.json` (clés attendues par type d'énigme, nombre CM1 ≤ CM2, pas de
 mot de passe de serrure dupliqué) — pour rattraper une erreur de saisie avant
 qu'une classe ne tombe dessus.
-**Jeux concernés :** tous · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** S · **Statut :** Fait
 
 ---
 

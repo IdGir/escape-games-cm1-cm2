@@ -1,0 +1,19 @@
+#!/bin/sh
+# Crochet git « pre-push » (amélioration A7) : avant chaque `git push`,
+# contrôle des enigmes.json de tous les jeux (outils-tests/verifier-enigmes.js).
+# Une erreur bloquante (✗) arrête la publication ; les alertes (⚠) non.
+#
+# Installation, une seule fois par ordinateur (depuis la racine du dépôt) :
+#     git config core.hooksPath outils-tests/hooks
+# Publier malgré tout, exceptionnellement :  git push --no-verify
+RACINE="$(git rev-parse --show-toplevel)"
+if ! command -v node >/dev/null 2>&1; then
+  echo "⚠ Node.js absent : contrôle des énigmes sauté (installer Node LTS pour l'activer)."
+  exit 0
+fi
+node "$RACINE/outils-tests/verifier-enigmes.js" || {
+  echo
+  echo "✗ Publication arrêtée : corrigez les erreurs ✗ ci-dessus, puis relancez git push."
+  echo "  (exceptionnellement : git push --no-verify)"
+  exit 1
+}

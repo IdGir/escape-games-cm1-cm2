@@ -55,3 +55,36 @@ require("../../outils-tests/moteur-commun").lancer(__dirname + "/..", {
 
 Rien d'autre n'est nécessaire : le nombre d'énigmes, les types, les mots-clés et le barème sont lus
 dans les données du jeu. `tous.js` le trouve tout seul.
+
+## Contrôle des énigmes avant publication (A7)
+
+`verifier-enigmes.js` relit en une seconde les `enigmes.json` (et les mots des serrures de
+`dialogues.json`) de tous les jeux, **sans navigateur ni jsdom** :
+
+```
+node outils-tests\verifier-enigmes.js            (tous les jeux)
+node outils-tests\verifier-enigmes.js melanges   (un seul jeu)
+```
+
+| Contrôle | Exemple d'erreur attrapée |
+|---|---|
+| JSON lisible, **aucune clé en double** | deux `"titre"` dans une énigme : le navigateur garderait le second sans prévenir |
+| salles numérotées 1, 2, 3… ; identifiants uniques | deux énigmes « 2-3 » |
+| titre, type connu, consigne (CM1 **et** CM2 si différenciée), indices, correction, leçon existante | `"lecon": "evaporation"` absente de `lecons.json` |
+| clés attendues par type, pour chaque niveau joué et chaque variante (D3) | QCM dont `bonne` dépasse les options ; rangs d'un « ordre » qui ne vont pas de 1 à n ; deux intrus ; réponse d'un texte à trous absente des étiquettes ; lettre du mot non cachée dans le texte |
+| **CM1 ≤ CM2** | une salle avec plus d'énigmes en CM1 qu'en CM2 |
+| **serrures** : un mot-clé par salle, jamais deux fois le même (accents et majuscules ignorés) | « PESER » en salle 1 et « Peser » en salle 5 |
+
+✗ = bloquant (code de sortie 1), ⚠ = à regarder. Déclaration et Tour du monde écrivent leurs
+énigmes dans `js/` : seules leurs serrures sont contrôlées. `vingt-mille-lieues/` et `immersifs/`
+ont leur propre format et ne sont pas concernés.
+
+**Avant chaque `git push`, automatiquement** : le crochet `hooks/pre-push` lance ce contrôle et
+arrête la publication en cas d'erreur ✗. Il s'active une seule fois par ordinateur :
+
+```
+git config core.hooksPath outils-tests/hooks
+```
+
+(publier malgré tout, exceptionnellement : `git push --no-verify`). Le test du contrôleur lui-même :
+`node commun/tests/test-enigmes-json.js`.
