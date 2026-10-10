@@ -31,6 +31,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/lecture-consignes.js` | E5 — « 🔊 Écouter la consigne » sur chaque consigne (titre + consigne, tableaux lus, dessins ignorés, texte surligné ; second clic = arrêt) ; ⚙️ → Accessibilité : lecture automatique de chaque nouvelle consigne et vitesse (gardé sur l'appareil, pour tous les jeux) | les 12 jeux « salles » |
 | `js/palier-decouverte.js` | E2 — troisième palier « Découverte » (énigmes CM1 + aide renforcée) | les 12 jeux « salles » |
 | `js/indices-adaptatifs.js` | E3 — un indice est proposé (jamais imposé) après un temps sans action ou 2 essais faux ; réglable dans ⚙️ | les 12 jeux « salles » |
+| `js/indices-degressifs.js` | N5 — option ⚙️ → 💡 Indices « Coût des indices » : fixe (−2 chacun, par défaut) ou dégressif (−2, puis −1, puis −1 par énigme) ; coût du prochain indice écrit sur le bouton | les 12 jeux « salles » |
 | `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 12 jeux « salles » |
 | `js/jeu-suivant.js` | C4 — « Et ensuite ? » à l'écran de fin : suite directe (Déclaration → Constitution) ou jeu précédent/suivant de la progression | les 12 jeux « salles » |
 | `js/variantes.js` | D3 — banque d'énigmes : une énigme peut avoir des `variantes` dans `enigmes.json` ; la série jouée change à chaque année scolaire (ou se choisit dans ⚙️) | les 10 jeux à moteur commun |

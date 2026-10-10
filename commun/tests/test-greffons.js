@@ -364,6 +364,32 @@ SECTIONS.E5 = async () => {
   ok(!s.w.document.querySelector(".btn-lire-consigne") && s.erreurs.length === 0, "versailles sans synthèse vocale : pas de bouton, pas d'erreur");
 };
 
+/* ---- N5 : indices à coût dégressif ---- */
+SECTIONS.N5 = async () => {
+  console.log("\n== N5 : indices à coût dégressif ==");
+  const essai = async (j, q, modeCout, attendu) => {
+    const st = modeCout ? { escape_indices_cout: JSON.stringify({ mode: modeCout }) } : {};
+    const { w, erreurs } = await charger(J(j), q, { stockage: st });
+    const b = await attendreQue(() => w.document.querySelector("#ecran-salle button[id^='indice-'], #btn-indice"), 3000);
+    w.ETAT.score = 20;
+    const scores = [];
+    for (let i = 0; i < 3; i++) { b.click(); await dodo(20); scores.push(w.ETAT.score); }
+    ok(JSON.stringify(scores) === JSON.stringify(attendu), `${j} (${modeCout || "par défaut"}) : 20 → ${scores.join(" → ")}`);
+    if (modeCout === "degressif") ok(/\(−1 pt\)|Plus d'indices/.test(b.textContent), `${j} : coût affiché sur le bouton (« ${b.textContent} »)`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+    return w;
+  };
+  await essai("melanges", "?salle=1&niveau=CM2", null, [18, 16, 14]);
+  const w = await essai("melanges", "?salle=1&niveau=CM2", "degressif", [18, 17, 16]);
+  await essai("tour-du-monde", "?salle=1&niveau=CM1", "degressif", [18, 17, 16]);
+  await essai("declaration", "?salle=2&niveau=CM2", "fixe", [18, 16, 14]);
+  w.ouvrirReglages();
+  const s = await attendreQue(() => w.document.getElementById("reg-cout-indices"), 3000);
+  ok(!!s && s.value === "degressif" && s.closest("#reglages-indices-adaptatifs"), "réglage « Coût des indices » dans le groupe 💡 Indices");
+  if (s) { s.value = "fixe"; s.dispatchEvent(new w.Event("change", { bubbles: true })); }
+  ok(w.INDICES_DEGRESSIFS.mode() === "fixe", "choix gardé sur l'appareil");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

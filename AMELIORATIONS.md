@@ -263,3 +263,42 @@ Un mode qui enchaîne automatiquement de courts extraits de chaque jeu, sans
 manipulation — utile en salle des professeurs, portes ouvertes, ou réunion
 avec les familles.
 **Jeux concernés :** page d'accueil · **Effort :** M · **Statut :** Fait
+
+---
+
+## Axe N — Nouvelles pistes (bilans hebdomadaires automatiques)
+
+Pistes proposées par le bilan hebdomadaire du tableau de bord, puis précisées en tâches
+au moment de leur production (octobre 2026).
+
+### N1 — Badges/trophées cumulables inter-jeux
+Les badges actuels n'existent que dans un jeu. Des trophées calculés sur l'historique des parties
+de l'appareil (même nom d'équipe ou d'élève d'un jeu à l'autre) : jeux terminés, sans faute, sans
+indice, matières différentes… Annoncés en fin de partie, vitrine sur une page dédiée.
+**Jeux concernés :** les 12 jeux « salles » + nouvelle page · **Effort :** M · **Statut :** En cours
+
+### N2 — Kit « adopter ce projet » pour collègues
+Une page qui explique à un collègue, en une lecture, comment utiliser les jeux dans sa classe
+(en ligne, tablette, archive hors ligne), préparer la première séance, adapter une énigme, et
+récupérer le projet pour le modifier.
+**Jeux concernés :** page d'accueil / nouvelle page · **Effort :** S · **Statut :** En cours
+
+### N4 — Mode « duel » : deux équipes face à face sur un même écran
+Deux équipes jouent à tour de rôle sur le même écran (TBI) : une énigme chacune, scores séparés,
+vainqueur annoncé à la fin.
+**Jeux concernés :** les 12 jeux « salles » · **Effort :** M · **Statut :** En cours
+
+### N5 — Indices à coût dégressif selon le nombre demandé
+Option enseignant : le premier indice d'une énigme coûte 2 points, les suivants 1 point — pour
+encourager à demander le deuxième indice quand le premier n'a pas suffi.
+**Jeux concernés :** les 12 jeux « salles » · **Effort :** S · **Statut :** Fait
+
+### N6 — Grille d'auto-évaluation élève en fin de partie (socle commun)
+En fin de partie, l'équipe s'évalue sur cinq affirmations rattachées aux domaines du socle commun ;
+les réponses sont gardées avec le compte-rendu de la partie.
+**Jeux concernés :** les 12 jeux « salles » · **Effort :** S · **Statut :** En cours
+
+### N9 — Archive zip auto-générée par jeu pour usage hors-ligne total sans serveur
+Une archive par jeu, à décompresser puis ouvrir d'un double-clic, sans serveur ni internet, avec
+toutes les énigmes (données embarquées, sans le repli réduit du mode fichier).
+**Jeux concernés :** tous · **Effort :** M · **Statut :** En cours
