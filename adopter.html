@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adopter les escape games — kit pour collègues</title>
+<meta name="description" content="Tout ce qu'il faut pour utiliser les escape games CM1-CM2 dans sa classe : jouer, préparer la première séance, suivre les élèves, adapter une énigme, récupérer le projet.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1d3a8a">
+<!--
+  KIT « ADOPTER CE PROJET » POUR LES COLLÈGUES (amélioration N2)
+  Une page, une lecture : comment jouer (4 façons), préparer la première séance,
+  pendant et après la partie, adapter, récupérer le projet. Imprimable (2 pages A4).
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--bleu:#1d3a8a;--or:#c9a227}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main,footer{max-width:920px;margin:0 auto;padding:0 18px}
+  header{padding-top:22px} h1{margin:4px 0 0;font-size:1.8rem} header .chapo{color:var(--doux);margin:6px 0 0;font-size:1.05rem}
+  a{color:var(--bleu)}
+  h2{font-size:1.2rem;margin:26px 0 8px}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:14px;padding:14px 18px;margin:10px 0}
+  .cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .carte{background:var(--papier);border:1px solid var(--ligne);border-radius:14px;padding:12px 14px}
+  .carte h3{margin:0 0 4px;font-size:1rem}
+  .carte p{margin:4px 0;font-size:.93rem}
+  .pour{font-size:.8rem;color:var(--doux)}
+  ol.etapes{counter-reset:e;list-style:none;padding:0;margin:0}
+  ol.etapes li{counter-increment:e;position:relative;padding:8px 0 8px 42px;border-bottom:1px dashed var(--ligne)}
+  ol.etapes li:last-child{border-bottom:none}
+  ol.etapes li::before{content:counter(e);position:absolute;left:0;top:8px;width:28px;height:28px;border-radius:50%;background:var(--bleu);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.9rem}
+  code{background:#f0eee9;padding:1px 5px;border-radius:5px}
+  .note{color:var(--doux);font-size:.9rem}
+  .imprimer{float:right;font:inherit;padding:6px 12px;border-radius:10px;border:1px solid var(--ligne);background:#fff;cursor:pointer}
+  footer{padding:20px 18px 40px;color:var(--doux);font-size:.9rem}
+  @media print{
+    body{background:#fff;font-size:10pt} .imprimer,header nav{display:none}
+    .bloc,.carte{break-inside:avoid;border-color:#bbb} h2{margin-top:12px} a{color:inherit;text-decoration:none}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
+    @page{size:A4 portrait;margin:12mm}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav><a href="index.html">← Accueil des jeux</a> · <a href="faq.html">❓ Aide</a></nav>
+  <button class="imprimer" id="btn-imprimer" type="button">🖨️ Imprimer ce kit</button>
+  <h1>🤝 Adopter les escape games dans sa classe</h1>
+  <p class="chapo">Le kit pour un ou une collègue : des escape games de cycle 3 (CM1-CM2) en histoire, géographie,
+    sciences et EMC, gratuits, sans compte, sans publicité, jouables sur TBI, ordinateur ou tablette.
+    Une lecture de dix minutes suffit pour lancer la première partie.</p>
+</header>
+<main>
+  <h2>1. Ce que c'est, en bref</h2>
+  <div class="bloc">
+    <ul>
+      <li><b>Un jeu = une notion du programme</b>, en général 5 salles : 15 énigmes en CM1, 20 en CM2 (<i>Mission géographique</i> se joue, elle, en 16 séances sur l'année) (palier <b>🌱 Découverte</b> pour les élèves en difficulté), chacune reliée à une compétence du programme et à une leçon consultable pendant la partie.</li>
+      <li><b>Par équipes de 3 ou 4</b>, environ 60 minutes, ou en plusieurs séances de 25 minutes. Un mot à noter à chaque salle ouvre le coffre final ; un quizz conclut la partie.</li>
+      <li><b>Le barème récompense la réflexion</b> : 10 points du premier coup, 3 après une erreur ; l'ordinateur dit combien de réponses sont justes, jamais lesquelles.</li>
+      <li><b>Les données des élèves restent sur l'appareil</b> (navigateur) ; rien n'est envoyé sur internet.</li>
+    </ul>
+    <p class="note">Liste des jeux et place dans l'année : <a href="annee.html">📅 L'année en escape games</a>.</p>
+  </div>
+
+  <h2>2. Choisir sa façon de jouer</h2>
+  <div class="cartes">
+    <div class="carte"><h3>🌐 En ligne</h3><p>Ouvrir <a href="https://idgir.github.io/escape-games-cm1-cm2/">idgir.github.io/escape-games-cm1-cm2</a> et choisir un jeu.</p><p class="pour">Le plus simple. Une connexion par poste.</p></div>
+    <div class="carte"><h3>📲 Tablettes sans internet</h3><p>Ouvrir l'accueil une fois en ligne (Chrome ou Edge), attendre « ✅ Prêt hors connexion », puis <b>Installer l'application</b>.</p><p class="pour">Flotte de tablettes ou Chromebooks.</p></div>
+    <div class="carte"><h3>📦 Archive, sans serveur</h3><p>Télécharger l'<a href="https://github.com/IdGir/escape-games-cm1-cm2/releases/tag/hors-ligne">archive du jeu</a>, la décompresser, double-cliquer sur <code>JOUER.html</code>.</p><p class="pour">Ordinateurs sans réseau, clé USB. Vidéos comprises.</p></div>
+    <div class="carte"><h3>🏫 Mode classe</h3><p>Sur l'ordinateur de l'enseignant : le dépôt complet et <code>lancer.bat</code> (Python). Les élèves se connectent à son adresse.</p><p class="pour">Pour le tableau de bord en direct (<code>prof.html</code>) et l'écran de classement.</p></div>
+  </div>
+
+  <h2>3. Préparer la première séance</h2>
+  <div class="bloc">
+    <ol class="etapes">
+      <li><b>Choisir le jeu</b> qui correspond à la séquence en cours (<a href="annee.html">vue de l'année</a>) et lire son <b>guide pédagogique</b> (lien « 📘 Guide du jeu » sur l'accueil) : objectifs, déroulé, corrigés.</li>
+      <li><b>Le tester soi-même</b> en 10 minutes : <a href="verifier.html">🔍 page de vérification</a>, qui ouvre chaque énigme directement (rien n'est enregistré).</li>
+      <li><b>Imprimer</b> depuis ⚙️ Réglages du jeu : une fiche de mission par équipe, les leçons A4 (CM1 ou CM2), éventuellement les fiches préparatoires et les corrigés.</li>
+      <li><b>Former les équipes</b> de 3 ou 4 et choisir pour chacune CM1, CM2 ou 🌱 Découverte. Règle d'or à annoncer : <i>on relit la leçon avant de valider</i>.</li>
+      <li><b>Prévoir le temps</b> : une séance d'une heure, ou une salle par séance de 25 minutes. Si une équipe change d'appareil entre deux séances : ⏸ Pause → <b>💾 Enregistrer la partie</b>, puis 📂 Reprendre depuis le fichier.</li>
+    </ol>
+  </div>
+
+  <h2>4. Pendant la partie</h2>
+  <div class="bloc">
+    <ul>
+      <li><b>Indices</b> : 3 par énigme, proposés par le jeu quand une équipe bloque ; option « coût dégressif » dans ⚙️ → 💡 Indices.</li>
+      <li><b>Lecteurs fragiles</b> : bouton 🔊 sur chaque consigne, police adaptée et lecture automatique dans ⚙️ → Accessibilité.</li>
+      <li><b>Au TBI, deux équipes</b> : mode ⚔️ Duel sur l'écran d'accueil du jeu.</li>
+      <li><b>À la maison</b> : donner l'adresse du jeu suivie de <code>?solo=1</code> ; l'élève renvoie un compte-rendu.</li>
+    </ul>
+  </div>
+
+  <h2>5. Après la partie</h2>
+  <div class="bloc">
+    <ul>
+      <li><b>Bilan</b> à imprimer, quizz final, <b>🪞 auto-évaluation</b> de l'équipe (socle commun), et les <a href="trophees.html">🏅 trophées</a> qui se cumulent d'un jeu à l'autre.</li>
+      <li><b>Suivi</b> : <a href="resultats.html">📊 résultats de la classe</a> (export tableur, Schooly) et <a href="passeport.html">🎓 passeport de compétences</a> de chaque élève.</li>
+      <li><b>Communication</b> : <a href="periode.html">fiche de période</a> pour les familles ou la direction.</li>
+    </ul>
+  </div>
+
+  <h2>6. Adapter un jeu à sa classe</h2>
+  <div class="bloc">
+    <ul>
+      <li><b>Modifier une énigme sans code</b> : <a href="editeur.html">✏️ éditeur des énigmes</a> (il produit le fichier <code>enigmes.json</code> du jeu).</li>
+      <li><b>Avant de partager une modification</b> : <code>node outils-tests/verifier-enigmes.js</code> contrôle les énigmes (clés, CM1 ≤ CM2, mots des serrures) ; <code>CHARTE-GRAPHIQUE.md</code> garde le style commun.</li>
+      <li><b>Ajouter ses images ou vidéos</b> : les déposer au nom attendu dans <code>assets/</code> du jeu ; le jeu les affiche à la place du dessin.</li>
+    </ul>
+  </div>
+
+  <h2>7. Récupérer tout le projet</h2>
+  <div class="bloc">
+    <ul>
+      <li><b>Télécharger</b> le dépôt complet : <a href="https://github.com/IdGir/escape-games-cm1-cm2/archive/refs/heads/escape-games.zip">archive du dépôt (branche escape-games)</a>, ou le cloner depuis <a href="https://github.com/IdGir/escape-games-cm1-cm2">github.com/IdGir/escape-games-cm1-cm2</a>.</li>
+      <li><b>Le faire tourner</b> : double-clic sur <code>lancer.bat</code> (Windows) ou <code>lancer-mac.command</code> ; mode d'emploi complet dans le <code>README.md</code>.</li>
+      <li><b>Les médias</b> (photos, vidéos) ont chacun leur crédit (auteur, licence, source) dans <code>assets/medias/CREDITS-medias.md</code> du jeu : les conserver en cas de réutilisation.</li>
+    </ul>
+  </div>
+</main>
+<footer>Une question, un problème ? <a href="faq.html">❓ Aide et dépannage</a>.</footer>
+<script>document.getElementById("btn-imprimer").addEventListener("click", () => window.print());</script>
+</body>
+</html>

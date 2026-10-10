@@ -298,6 +298,23 @@ SECTIONS.N1 = async () => {
   ok(/Aucune partie terminée/.test(vide.w.document.getElementById("vitrine").textContent), "sans historique : message");
 };
 
+/* ---- N2 : kit « adopter ce projet » (adopter.html) ---- */
+SECTIONS.N2 = async () => {
+  console.log("\n== N2 : kit pour les collègues (adopter.html) ==");
+  const fs = require("fs"), path = require("path");
+  const { w, erreurs } = await charger(RACINE, "", { page: "adopter.html", attente: 200 });
+  const d = w.document;
+  ok(d.querySelectorAll("main h2").length >= 7, "7 rubriques (jouer, préparer, pendant, après, adapter, récupérer…)");
+  const internes = [...d.querySelectorAll("a[href]")].map(a => a.getAttribute("href")).filter(h => !/^(https?:|#|mailto:)/.test(h));
+  const absents = internes.filter(h => !fs.existsSync(path.join(RACINE, h.split(/[?#]/)[0])));
+  ok(internes.length >= 10 && absents.length === 0, `${internes.length} liens internes, tous valides` + (absents.length ? " — absents : " + absents.join(", ") : ""));
+  ok(/releases\/tag\/hors-ligne/.test(d.body.innerHTML) && /\?solo=1/.test(d.body.textContent), "archive hors ligne et mode individuel mentionnés");
+  w.__imprime = 0; d.getElementById("btn-imprimer").click(); ok(w.__imprime === 1, "imprimable");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+  const accueil = fs.readFileSync(path.join(RACINE, "index.html"), "utf8");
+  ok(/href="adopter.html"/.test(accueil), "lien depuis l'accueil");
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

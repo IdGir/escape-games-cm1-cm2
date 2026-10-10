@@ -445,6 +445,12 @@ Avant de publier : **Invite de commandes** → `E:` → `cd "\IDRISS\PROJET ESCA
 `python outils-docs\maj-journaux.py` (ajoute les nouveaux commits en tête de chaque journal) → `git add */CHANGELOG.md`.
 On peut compléter un journal à la main : le texte existant n'est jamais réécrit.
 
+### Kit pour les collègues
+
+**[adopter.html](https://idgir.github.io/escape-games-cm1-cm2/adopter.html)** (N2) : en une lecture, comment jouer
+(en ligne, tablettes, archive hors ligne, mode classe), préparer la première séance, suivre les élèves, adapter
+une énigme et récupérer le projet. Imprimable (bouton 🖨️). Lien depuis l'accueil.
+
 ### Charte graphique et contrôle des énigmes
 
 - **`CHARTE-GRAPHIQUE.md`** : palette commune et couleurs propres à chaque jeu, épaisseurs de trait et

@@ -281,7 +281,7 @@ indice, matières différentes… Annoncés en fin de partie, vitrine sur une pa
 Une page qui explique à un collègue, en une lecture, comment utiliser les jeux dans sa classe
 (en ligne, tablette, archive hors ligne), préparer la première séance, adapter une énigme, et
 récupérer le projet pour le modifier.
-**Jeux concernés :** page d'accueil / nouvelle page · **Effort :** S · **Statut :** En cours
+**Jeux concernés :** page d'accueil / nouvelle page · **Effort :** S · **Statut :** Fait
 
 ### N4 — Mode « duel » : deux équipes face à face sur un même écran
 Deux équipes jouent à tour de rôle sur le même écran (TBI) : une énigme chacune, scores séparés,
