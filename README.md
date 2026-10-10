@@ -245,7 +245,11 @@ le `README.md` du dossier `assets/` de chaque jeu.
 - Noms **en minuscules, sans espace ni accent** : `salle1.jpg`, pas `Salle 1.JPG`.
 - Vidéo et image du même nom : la vidéo s'affiche, l'image lui sert d'affiche.
 - Les vidéos de décor sont jouées **muettes** (un bouton 🔇 permet d'activer le son).
-- Sous-titres : un fichier `.vtt` du même nom que la vidéo est chargé automatiquement.
+- Sous-titres : un fichier `.vtt` du même nom que la vidéo est chargé automatiquement (cinématiques ;
+  décors filmés quand leur son est activé ; Mission géographique : bouton CC du lecteur). **Après avoir déposé
+  une vidéo**, lancez `python outils-medias\sous-titres.py` : il écrit le `.vtt` (lieu de la salle, ou texte de
+  `outils-medias/sous-titres-cinematiques.json`, ou `<nom>.txt` à côté de la vidéo si elle a des paroles).
+  `python outils-medias\sous-titres.py --verifier` liste les vidéos encore sans sous-titres.
 - Sans fichier, le jeu affiche son dessin : ce n'est jamais une erreur.
 - Supprimer un fichier ramène le dessin par défaut.
 

@@ -293,6 +293,33 @@ SECTIONS.A5 = async () => {
   }
 };
 
+/* ---- B5 : sous-titres des vidéos ---- */
+SECTIONS.B5 = async () => {
+  console.log("\n== B5 : sous-titres des vidéos ==");
+  const fs = require("fs");
+  for (const j of JEUX8.concat(["mission-geo"])) {
+    const dos = J(j) + "/assets/videos";
+    if (!fs.existsSync(dos)) continue;
+    const videos = fs.readdirSync(dos).filter(f => /\.(mp4|webm)$/i.test(f) && !/^bande-annonce/.test(f));
+    const sans = videos.filter(f => !fs.existsSync(dos + "/" + f.replace(/\.\w+$/, ".vtt")));
+    ok(sans.length === 0, `${j} : ${videos.length} vidéo(s), toutes sous-titrées` + (sans.length ? " — manquent : " + sans.join(", ") : ""));
+    for (const f of fs.readdirSync(dos).filter(f => f.endsWith(".vtt"))) {
+      const v = fs.readFileSync(dos + "/" + f, "utf8");
+      if (!/^WEBVTT\s/.test(v) || !/\d\d:\d\d:\d\d\.\d{3} --> \d\d:\d\d:\d\d\.\d{3}/.test(v)) ok(false, `${j}/${f} : fichier WebVTT valide`);
+    }
+  }
+  // Décor filmé : une piste de sous-titres, visible seulement avec le son des décors
+  const { w, erreurs } = await charger(J("melanges"), "?salle=1&niveau=CM2");
+  const d = w.document;
+  const scene = d.createElement("div"); scene.className = "scene"; scene.innerHTML = '<div class="decor-fallback"></div>'; d.body.appendChild(scene);
+  w.eval(`MEDIA.cache["essai"] = {type:"video", src:"assets/videos/salle2.mp4", poster:null}`);
+  await w.installerDecor(scene, "essai");
+  const piste = scene.querySelector("video.decor-video track");
+  ok(!!piste && piste.getAttribute("kind") === "captions" && /assets\/videos\/salle2\.vtt$/.test(piste.getAttribute("src")), `melanges : piste de sous-titres sur le décor filmé (${piste && piste.getAttribute("src")})`);
+  w.setSonVideo(true); w.setSonVideo(false);
+  ok(erreurs.length === 0, "melanges : erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

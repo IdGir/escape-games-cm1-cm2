@@ -105,7 +105,7 @@ hors du site (ENT, messages aux familles).
 Le moteur charge déjà automatiquement un fichier `.vtt` du même nom qu'une
 vidéo, si présent (fonctionnalité existante, sous-utilisée). Généraliser la
 production de sous-titres à toutes les vidéos de décor déposées.
-**Jeux concernés :** tous · **Effort :** S · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** S · **Statut :** Fait
 
 ### B6 — Transitions animées entre salles
 Actuellement une coupure nette d'une salle à l'autre. Ajouter une transition

@@ -94,6 +94,11 @@ const MEDIAS = (function(){
     v.muted = !options.sonVideo && !spec.sonForce;
     if(spec.boucle) { v.loop = true; v.autoplay = true; v.controls = false; }
     v.preload = "metadata";
+    // Sous-titres (B5) : <base>.vtt à côté de la vidéo (bouton CC du lecteur)
+    const piste = document.createElement("track");
+    piste.kind = "captions"; piste.srclang = "fr"; piste.label = "Français";
+    piste.src = String(url).replace(/\.(mp4|webm|m4v)(\?.*)?$/i, ".vtt");
+    v.appendChild(piste);
     return v;
   }
 

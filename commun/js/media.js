@@ -377,6 +377,13 @@ async function installerDecor(sceneEl, base){
   v.setAttribute("aria-hidden", "true");
   v.preload = "auto";
   v.disablePictureInPicture = true;
+  // Sous-titres (B5) : <nom>.vtt à côté de la vidéo. Affichés quand le son
+  // des décors est activé (ils disent ce que montre la vidéo et ses bruits).
+  const piste = document.createElement("track");
+  piste.kind = "captions"; piste.srclang = "fr"; piste.label = "Français";
+  piste.src = String(media.src).replace(/\.(mp4|webm)(\?.*)?$/i, ".vtt");
+  v.appendChild(piste);
+  regleSousTitres(v);
 
   v.addEventListener("loadeddata", ()=>{
     v.dataset.pret = "oui";
@@ -585,9 +592,16 @@ function setFigerVideos(figees){
     else v.play().catch(()=>{});
   });
 }
+/* Sous-titres d'un décor filmé : visibles seulement si son son est activé */
+function regleSousTitres(v){
+  try{
+    const t = v.textTracks && v.textTracks[0];
+    if(t) t.mode = MEDIA.sonVideo ? "showing" : "hidden";
+  }catch(e){}
+}
 function setSonVideo(actif){
   MEDIA.sonVideo = !!actif;
-  MEDIA.videosActives.forEach(v=>{ if(v.isConnected) v.muted = !actif; });
+  MEDIA.videosActives.forEach(v=>{ if(v.isConnected){ v.muted = !actif; regleSousTitres(v); } });
 }
 function stopperVideos(){
   MEDIA.videosActives.forEach(v=>{ try{ v.pause(); v.remove(); }catch(e){} });
