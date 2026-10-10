@@ -42,7 +42,7 @@ async function onglet(){
   w.fetch = async (url, o) => {
     const r = await fetchVrai(url, o);
     if (/melanges\/index\.html/.test(String(url))) {
-      const t = (await r.text()).replace("../commun/js/media.js?c1", "js/media.js?v1");
+      const t = (await r.text()).replace(/\.\.\/commun\/js\/media\.js\?c\d+/, "js/media.js?v1");
       return { ok: true, status: 200, text: async () => t, json: async () => ({}), headers: { get: () => null } };
     }
     return r;
