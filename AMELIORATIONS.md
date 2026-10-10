@@ -301,4 +301,4 @@ les réponses sont gardées avec le compte-rendu de la partie.
 ### N9 — Archive zip auto-générée par jeu pour usage hors-ligne total sans serveur
 Une archive par jeu, à décompresser puis ouvrir d'un double-clic, sans serveur ni internet, avec
 toutes les énigmes (données embarquées, sans le repli réduit du mode fichier).
-**Jeux concernés :** tous · **Effort :** M · **Statut :** En cours
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait

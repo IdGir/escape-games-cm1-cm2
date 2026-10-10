@@ -1,0 +1,39 @@
+# Archives zip par jeu, jouables sans serveur ni internet (amélioration N9).
+# À chaque publication sur escape-games (ou à la demande : onglet Actions → Run workflow),
+# outils-pwa/archives-hors-ligne.py fabrique <jeu>-hors-ligne.zip pour chaque jeu, puis les
+# dépose dans la release « hors-ligne » du dépôt (adresse stable, liée depuis l'accueil) :
+# https://github.com/IdGir/escape-games-cm1-cm2/releases/tag/hors-ligne
+name: Archives hors ligne (N9)
+on:
+  workflow_dispatch:
+  push:
+    branches: [escape-games]
+    paths:
+      - "*/index.html"
+      - "*/lecons-imprimables.html"
+      - "*/js/**"
+      - "*/css/**"
+      - "*/assets/**"
+      - "commun/**"
+      - "outils-pwa/archives-hors-ligne.py"
+permissions:
+  contents: write
+concurrency:
+  group: archives-hors-ligne
+  cancel-in-progress: true
+jobs:
+  archives:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fabriquer les archives
+        run: python3 outils-pwa/archives-hors-ligne.py
+      - name: Publier dans la release « hors-ligne »
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view hors-ligne >/dev/null 2>&1; then
+            gh release create hors-ligne --target "$GITHUB_SHA" --title "Escape games hors ligne (une archive par jeu)" \
+              --notes "Une archive zip par jeu, régénérée automatiquement à chaque mise à jour. Décompresser, puis double-cliquer sur JOUER.html : sans serveur, sans internet. Mode d'emploi : LISEZ-MOI.txt dans chaque archive."
+          fi
+          gh release upload hors-ligne archives-hors-ligne/*.zip --clobber

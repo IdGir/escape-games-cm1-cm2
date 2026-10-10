@@ -12,6 +12,16 @@ fonctionnent **sans internet et sans lancer `serveur.py`**.
 | `maj-hors-ligne.py` | régénère `sw-fichiers.js` |
 | `icones.py` | redessine les icônes `commun/icones/*.png` (Pillow) |
 
+## Sans serveur ni internet : une archive zip par jeu (N9)
+
+`archives-hors-ligne.py` fabrique `archives-hors-ligne/<jeu>-hors-ligne.zip` (tous les jeux, ou ceux nommés) :
+le jeu, le tronc commun, `JOUER.html` (double-clic) et `LISEZ-MOI.txt`. Ouverte d'un double-clic, une page
+ne peut pas lire de fichier `.json` : les données (`assets/data/*.json`, `medias.json`) sont donc embarquées
+dans `<jeu>/js/donnees-embarquees.js`, chargé en premier par `index.html` et `lecons-imprimables.html` dans
+l'archive. Seuls les fichiers suivis par git sont copiés ; le dépôt n'est pas modifié. Publication
+automatique dans la release « hors-ligne » : `.github/workflows/archives-hors-ligne.yml`.
+Test : `node commun/tests/test-archives.js`.
+
 ## Sur la tablette (une seule fois, avec internet)
 
 1. Ouvrir **https://idgir.github.io/escape-games-cm1-cm2/** dans Chrome ou Edge.

@@ -49,6 +49,15 @@ indique « ✅ Prêt hors connexion », les 13 jeux fonctionnent **sans réseau 
 **📲 Installer l'application** les place sur l'écran d'accueil de la tablette. Hors connexion, les vidéos sont
 remplacées par les images ou les décors dessinés. Détails et mise à jour : [outils-pwa/README.md](outils-pwa/README.md).
 
+### 📦 Sans serveur ni internet — une archive par jeu
+
+**[Release « hors-ligne »](https://github.com/IdGir/escape-games-cm1-cm2/releases/tag/hors-ligne)** : un fichier
+`<jeu>-hors-ligne.zip` par jeu (vidéos comprises). Décompresser, puis double-cliquer sur `JOUER.html` : toutes les
+énigmes, leçons et impressions fonctionnent, sans serveur ni connexion (données embarquées dans
+`js/donnees-embarquees.js`). Les archives sont refaites automatiquement à chaque publication
+(`.github/workflows/archives-hors-ligne.yml`) ; sur l'ordinateur : `python outils-pwa\archives-hors-ligne.py [jeu]`
+→ dossier `archives-hors-ligne/` (non publié).
+
 ### 🏠 À la maison — mode individuel (devoirs)
 
 Donnez aux élèves l'adresse d'un jeu suivie de `?solo=1`, par exemple
