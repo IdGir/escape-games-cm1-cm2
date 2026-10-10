@@ -212,9 +212,10 @@ function telecharger(nom, contenu, type){
 const aujourdhui = () => new Date().toISOString().slice(0, 10);
 const nombre = n => String(n).replace(".", ",");
 document.getElementById("exp-tableur").addEventListener("click", () => {
-  const l = [["Date", "Élève / équipe", "Mode", "Jeu", "Matière", "Niveau", "Palier", "Score", "Score max", "Pourcentage", "Énigmes réussies", "Énigmes", "Du premier coup", "Erreurs", "Indices", "Quizz /5", "Durée (min)", "Temps accordé (min)", "Contrôle"]];
+  const l = [["Date", "Élève / équipe", "Mode", "Jeu", "Matière", "Niveau", "Palier", "Score", "Score max", "Pourcentage", "Énigmes réussies", "Énigmes", "Du premier coup", "Erreurs", "Indices", "Quizz /5", "Durée (min)", "Temps accordé (min)", "Auto-éval. 1 vocabulaire (D1)", "Auto-éval. 2 chercher (D2)", "Auto-éval. 3 écouter (D3)", "Auto-éval. 4 discipline (D3/D4/D5)", "Auto-éval. 5 persévérer (D2)", "Contrôle"]];
   visibles().forEach(r => l.push([dateFr(r.date), r.eleve, r.mode === "solo" ? "individuel" : "équipe", r.titre || r.jeu, infoJeu(r.jeu).matiere || "", r.niveau, r.palier === "decouverte" ? "Découverte" : "",
     r.score, r.scoreMax || "", pct(r), r.enigmes, r.total, r.premierCoup, r.erreurs, r.indices, r.quiz == null ? "" : r.quiz, nombre(r.dureeMin), r.delaiAccordeMin || 0,
+    ...["e1", "e2", "e3", "e4", "e5"].map(k => (r.autoEval && r.autoEval[k]) || ""),   // N6 : 1 pas encore, 2 un peu, 3 oui
     r._valide === true ? "vérifié" : r._valide === false ? "MODIFIÉ ?" : "non vérifiable"]));
   telecharger(`resultats-escape-games-${aujourdhui()}.csv`, csv(l), "text/csv;charset=utf-8");
 });

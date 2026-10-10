@@ -390,6 +390,38 @@ SECTIONS.N5 = async () => {
   ok(w.INDICES_DEGRESSIFS.mode() === "fixe", "choix gardé sur l'appareil");
 };
 
+/* ---- N6 : auto-évaluation (socle commun) en fin de partie ---- */
+SECTIONS.N6 = async () => {
+  console.log("\n== N6 : auto-évaluation en fin de partie ==");
+  for (const [j, dom] of [["objets-techniques", "D4"], ["constitution", "D3"], ["tour-du-monde", "D5"], ["chateau-fort", "D5"]]) {
+    const { w, erreurs } = await charger(J(j), "", { attente: 600 });
+    const d = w.document;
+    w.ETAT.reglages.cinematiques = false;
+    const inp = d.getElementById("input-equipe"); inp.value = "Les Hiboux"; inp.dispatchEvent(new w.Event("input"));
+    d.querySelector('.opt-niveau[data-niveau="CM2"]').click();
+    d.getElementById("btn-demarrer").click(); await dodo(300);
+    w.ETAT.score = 120; w.ETAT.msEcoules = 1800000; w.ETAT.fini = true;
+    w.finDuJeu(); await dodo(100);
+    const g = d.getElementById("auto-evaluation");
+    const rej = d.getElementById("btn-rejouer");
+    ok(!!g && rej && (g.compareDocumentPosition(rej) & 4), `${j} : grille d'auto-évaluation avant « Rejouer »`);
+    if (!g) continue;
+    const lignes = [...g.querySelectorAll("tr[data-item]")];
+    ok(lignes.length === 5 && lignes[3].querySelector(".ae-domaine").textContent === "Socle " + dom, `${j} : 5 affirmations, la 4e rattachée au domaine ${dom} (${lignes[3] && lignes[3].querySelector(".ae-domaine").textContent})`);
+    lignes.forEach((l, k) => l.querySelectorAll(".ae-choix")[k % 3].click());
+    ok(Object.keys(w.ETAT.autoEval).length === 5 && w.ETAT.autoEval.e1 === 1 && w.ETAT.autoEval.e2 === 2 && w.ETAT.autoEval.e3 === 3, `${j} : réponses gardées (${JSON.stringify(w.ETAT.autoEval)})`);
+    ok(lignes[2].querySelectorAll(".ae-choix")[2].getAttribute("aria-pressed") === "true" && /Merci/.test(g.querySelector(".ae-merci").textContent), `${j} : choix visibles, remerciement`);
+    const cr = w.COMPTE_RENDU.construire();
+    ok(cr.autoEval && cr.autoEval.e3 === 3 && w.COMPTE_RENDU.verifier(cr), `${j} : réponses dans le compte-rendu, code de contrôle valide`);
+    ok(/Auto-évaluation \(socle commun\)[\s\S]*D1 —[\s\S]*: pas encore/.test(w.COMPTE_RENDU.texte(cr)), `${j} : réponses dans le texte du compte-rendu`);
+    const h = w.COMPTE_RENDU.historique().filter(x => x.eleve === "Les Hiboux");
+    ok(h.length && h[h.length - 1].autoEval && h[h.length - 1].autoEval.e5 === 2, `${j} : historique de l'appareil mis à jour`);
+    w.__imprime = 0; d.getElementById("btn-imprimer-auto-eval").click();
+    ok(w.__imprime === 1 && /Je m'évalue/.test(d.querySelector(".zone-impression").textContent) && d.querySelectorAll(".zone-impression tr").length === 6, `${j} : grille vierge imprimable`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

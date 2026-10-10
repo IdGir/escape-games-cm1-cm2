@@ -296,7 +296,7 @@ encourager à demander le deuxième indice quand le premier n'a pas suffi.
 ### N6 — Grille d'auto-évaluation élève en fin de partie (socle commun)
 En fin de partie, l'équipe s'évalue sur cinq affirmations rattachées aux domaines du socle commun ;
 les réponses sont gardées avec le compte-rendu de la partie.
-**Jeux concernés :** les 12 jeux « salles » · **Effort :** S · **Statut :** En cours
+**Jeux concernés :** les 12 jeux « salles » · **Effort :** S · **Statut :** Fait
 
 ### N9 — Archive zip auto-générée par jeu pour usage hors-ligne total sans serveur
 Une archive par jeu, à décompresser puis ouvrir d'un double-clic, sans serveur ni internet, avec
