@@ -4,8 +4,26 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 10 octobre 2026
+
+- N4 : mode duel, deux équipes face à face sur un même écran
+- N1 : trophées cumulables d'un jeu à l'autre
+- N6 : grille d'auto-évaluation élève en fin de partie (socle commun)
+- N5 : indices à coût dégressif (option enseignant)
+- E5 : lecture à voix haute des consignes d'énigmes
+- B5 : sous-titres systématiques des vidéos (87 fichiers .vtt)
+- A5 : export / reprise de partie par fichier pour les 12 jeux « salles »
+
+## 3 octobre 2026
+
+- Ajoute l'escape game n°09 Le Phare de l'île Lumière (sciences, la lumière)
+- Ajoute l'escape game n°08 Le Grand Repas du chef (sciences, l'alimentation humaine)
+
 ## 2 octobre 2026
 
+- Ajoute l'escape game n°07 L'Atelier de Léonard à Amboise (histoire, la Renaissance)
+- Ajoute l'escape game n°06 De l'édit de Nantes à Versailles (histoire, la monarchie en France)
+- F2 : journaux des versions à jour (B2, B4, C2) ; une seule rubrique par jour
 - B2 : bande-annonce de 16 s pour chaque jeu
 
 ## 1 octobre 2026
@@ -48,4 +66,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Ajoute l'escape game n°01 Le Manuscrit de l'abbaye (histoire, le Moyen Âge)
 
-<!-- dernier-commit: a3167f8 -->
+<!-- dernier-commit: 0d72252 -->

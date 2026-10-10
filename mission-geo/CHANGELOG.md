@@ -4,8 +4,13 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 10 octobre 2026
+
+- B5 : sous-titres systématiques des vidéos (87 fichiers .vtt)
+
 ## 2 octobre 2026
 
+- F2 : journaux des versions à jour (B2, B4, C2) ; une seule rubrique par jour
 - B2 : bande-annonce de 16 s pour chaque jeu
 
 ## 1 octobre 2026
@@ -54,4 +59,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Mission géographique Année A : escape game filé sur toute l'année
 
-<!-- dernier-commit: a3167f8 -->
+<!-- dernier-commit: 0d72252 -->
