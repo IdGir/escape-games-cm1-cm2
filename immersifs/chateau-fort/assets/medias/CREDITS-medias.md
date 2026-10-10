@@ -12,3 +12,8 @@ Chaque média déposé avec importer-image.py ajoute une ligne : fichier · sour
 - `assets/images/personnages/josselin.webp` · Agnes agnes-image-2.5-flash · à préciser (droits d’usage) · 2026-10-06
 - `assets/images/personnages/mahaut.webp` · Agnes agnes-image-2.5-flash · à préciser (droits d’usage) · 2026-10-06
 - `assets/images/personnages/perrine.webp` · Agnes agnes-image-2.5-flash · à préciser (droits d’usage) · 2026-10-06
+- `assets/images/decors/motte.webp` · Google Flow (Nano Banana Pro) · Image générée par IA · 2026-10-09
+- `assets/images/decors/moulin.webp` · Google Flow (Nano Banana Pro) · Image générée par IA · 2026-10-09
+- `assets/images/decors/remparts.webp` · Google Flow (Nano Banana Pro) · Image générée par IA · 2026-10-09
+- `assets/images/decors/village.webp` · Google Flow (Nano Banana Pro) · Image générée par IA · 2026-10-09
+- `assets/images/decors/grandesalle.webp` · Google Flow (Nano Banana Pro) · Image générée par IA · 2026-10-10
