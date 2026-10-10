@@ -228,7 +228,7 @@ OpenDyslexic) et un interlignage augmenté.
 La synthèse vocale existe déjà pour les dialogues des personnages ; l'étendre
 aux consignes des énigmes elles-mêmes profiterait aux lecteurs fragiles,
 au-delà de l'immersion narrative.
-**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous les jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ### E6 — Minuteur adaptatif par équipe, depuis le tableau de bord
 Aujourd'hui, le seuil de bonus par salle est fixe (8 à 10 min). Permettre à

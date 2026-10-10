@@ -28,6 +28,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 |---|---|---|
 | `js/transitions.js` | B6 — fondu entre écrans, « rideau » à l'entrée d'une salle (désactivé par « animations réduites ») | les 12 jeux « salles » + Mission géographique |
 | `js/accessibilite.js` + `polices/` | E4 — lecture facilitée : police très lisible ou OpenDyslexic, interlignage, espacement (⚙️ Réglages → Accessibilité ; gardé sur l'appareil pour tous les jeux) | les 13 |
+| `js/lecture-consignes.js` | E5 — « 🔊 Écouter la consigne » sur chaque consigne (titre + consigne, tableaux lus, dessins ignorés, texte surligné ; second clic = arrêt) ; ⚙️ → Accessibilité : lecture automatique de chaque nouvelle consigne et vitesse (gardé sur l'appareil, pour tous les jeux) | les 12 jeux « salles » |
 | `js/palier-decouverte.js` | E2 — troisième palier « Découverte » (énigmes CM1 + aide renforcée) | les 12 jeux « salles » |
 | `js/indices-adaptatifs.js` | E3 — un indice est proposé (jamais imposé) après un temps sans action ou 2 essais faux ; réglable dans ⚙️ | les 12 jeux « salles » |
 | `js/minuteur-equipe.js` | E6 — depuis `prof.html` (bouton ⏱️ +), quelques minutes accordées à une équipe : le chrono de la salle est décalé, le bonus de rapidité préservé | les 12 jeux « salles » |

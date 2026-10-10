@@ -320,6 +320,50 @@ SECTIONS.B5 = async () => {
   ok(erreurs.length === 0, "melanges : erreurs JS : " + erreurs.join(" | "));
 };
 
+/* ---- E5 : lecture à voix haute des consignes ---- */
+SECTIONS.E5 = async () => {
+  console.log("\n== E5 : consignes lues à voix haute ==");
+  const voixFactice = w => {
+    w.__dits = [];
+    w.speechSynthesis = { speaking: false, cancel(){ w.__annule = (w.__annule || 0) + 1; }, speak(u){ w.__dits.push(u); },
+      getVoices(){ return [{ name: "Amélie", lang: "fr-FR" }]; }, onvoiceschanged: null };
+    w.SpeechSynthesisUtterance = class { constructor(t){ this.text = t; } };
+  };
+  for (const [j, q] of [["constitution", "?salle=1&niveau=CM1"], ["alimentation", "?salle=3&niveau=CM2&enigme=2"], ["declaration", "?salle=2&niveau=CM2"], ["tour-du-monde", "?salle=1&niveau=CM1"]]) {
+    const { w, erreurs } = await charger(J(j), q, { avant: voixFactice });
+    const d = w.document;
+    const c = await attendreQue(() => d.querySelector("#ecran-salle .consigne .btn-lire-consigne") && d.querySelector("#ecran-salle .consigne"), 3000);
+    ok(!!c, `${j} : bouton « Écouter la consigne »`);
+    if (!c) continue;
+    c.querySelector(".btn-lire-consigne").click();
+    const u = w.__dits[w.__dits.length - 1];
+    const titre = c.closest(".enigme-carte") && c.closest(".enigme-carte").querySelector("h3");
+    ok(u && u.lang === "fr-FR" && u.text.length > 20 && !/🔊|🎯|Écouter la consigne/.test(u.text) && (!titre || u.text.startsWith(titre.textContent)), `${j} : texte lu (« ${u && u.text.slice(0, 70)}… »)`);
+    if (j === "alimentation") ok(!/M\d|viewBox|Moulage de la mâchoire du bas/.test(u.text), `${j} : le dessin SVG de la consigne n'est pas lu`);
+    ok(c.classList.contains("lecture-en-cours"), `${j} : consigne surlignée pendant la lecture`);
+    u.onend();
+    ok(!c.classList.contains("lecture-en-cours"), `${j} : surlignage retiré à la fin`);
+    c.querySelector(".btn-lire-consigne").click(); c.querySelector(".btn-lire-consigne").click();
+    ok(!c.classList.contains("lecture-en-cours") && w.__annule > 0, `${j} : un second clic arrête la lecture`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // Lecture automatique (réglage gardé sur l'appareil)
+  const a = await charger(J("melanges"), "?salle=1&niveau=CM2", { avant: voixFactice, stockage: { escape_lecture_consignes: JSON.stringify({ auto: true, vitesse: 0.75 }) } });
+  const lu = await attendreQue(() => { const el = a.w.document.querySelector("#ecran-salle .consigne.lecture-en-cours");
+    return el && a.w.__dits.find(u => u.text === a.w.LECTURE_CONSIGNES.texteDe(el)); }, 4000);
+  ok(!!lu && lu.rate === 0.75, `melanges : consigne lue automatiquement, vitesse lente (${lu && lu.rate})`);
+  a.w.ouvrirReglages();
+  const r = await attendreQue(() => a.w.document.getElementById("lecture-consignes-reglages"), 3000);
+  ok(!!r && r.querySelector("#lc-auto").checked, "melanges : réglage « Lire automatiquement » dans ⚙️, coché");
+  if (r) { r.querySelector("#lc-auto").checked = false; r.dispatchEvent(new a.w.Event("change", { bubbles: true })); }
+  ok(JSON.parse(a.w.localStorage.getItem("escape_lecture_consignes")).auto === false, "melanges : choix gardé (escape_lecture_consignes)");
+  ok(a.erreurs.length === 0, "melanges : erreurs JS : " + a.erreurs.join(" | "));
+  // Sans synthèse vocale : aucun bouton
+  const s = await charger(J("versailles"), "?salle=1&niveau=CM1");
+  await dodo(400);
+  ok(!s.w.document.querySelector(".btn-lire-consigne") && s.erreurs.length === 0, "versailles sans synthèse vocale : pas de bouton, pas d'erreur");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
