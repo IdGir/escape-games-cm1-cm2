@@ -290,6 +290,7 @@ PROJET ESCAPE GAMES/
 ├── lancer-mac.command      Serveur local, Mac
 ├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
 ├── outils-tests/          Tests automatiques des 13 jeux (Node + jsdom) : node outils-tests/tous.js
+├── CHARTE-GRAPHIQUE.md    Charte graphique commune : palette, traits, décors, personnages, médias
 ├── commun/                ★ Tronc commun du moteur (médias, sons, voix, énigmes, impressions…) : un seul
 │                           exemplaire pour tous les jeux — voir commun/README.md
 │
@@ -421,6 +422,15 @@ Chaque jeu a son **`CHANGELOG.md`** (journal durable et publié des évolutions,
 Avant de publier : **Invite de commandes** → `E:` → `cd "\IDRISS\PROJET ESCAPE GAMES"` →
 `python outils-docs\maj-journaux.py` (ajoute les nouveaux commits en tête de chaque journal) → `git add */CHANGELOG.md`.
 On peut compléter un journal à la main : le texte existant n'est jamais réécrit.
+
+### Charte graphique et contrôle des énigmes
+
+- **`CHARTE-GRAPHIQUE.md`** : palette commune et couleurs propres à chaque jeu, épaisseurs de trait et
+  composition des décors dessinés, style des personnages, règles des photos et vidéos.
+  Contrôle : `node outils-tests\verifier-charte.js`.
+- **Avant un `git push`** : `node outils-tests\verifier-enigmes.js` contrôle tous les `enigmes.json`
+  (clés attendues, CM1 ≤ CM2, serrures en double…) ; activé automatiquement à chaque push après
+  `git config core.hooksPath outils-tests/hooks` (voir `outils-tests/README.md`).
 
 ### Les liens cités répondent-ils encore ?
 

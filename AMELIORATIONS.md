@@ -79,7 +79,7 @@ Chaque jeu a ses propres couleurs (déjà choisies sur l'accueil) et son propre
 style de décor SVG, dessiné indépendamment dans `decors.js`. Écrire une
 charte courte (palette, épaisseurs de trait, style des personnages) pour que
 l'identité visuelle reste cohérente malgré la production jeu par jeu.
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ### B2 — Bande-annonce courte par jeu (15-20 s)
 `outils-medias/produire-medias.ps1` sait déjà générer des vidéos animées via
