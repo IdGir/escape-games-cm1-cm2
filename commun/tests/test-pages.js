@@ -315,6 +315,75 @@ SECTIONS.N2 = async () => {
   ok(/href="adopter.html"/.test(accueil), "lien depuis l'accueil");
 };
 
+/* ---- N12 : bilan de classe dans resultats.html ---- */
+SECTIONS.N12 = async () => {
+  console.log("\n== N12 : bilan de classe (resultats.html) ==");
+  // 4 parties de melanges (CM2) : l'énigme 1-1 échoue souvent, 1-2 est réussie ; 1 partie sans détail ; 1 partie de Déclaration
+  const base = { type: "escape-game-compte-rendu", version: 1, jeu: "melanges", titre: "Le Laboratoire de Madame Mélange", mode: "equipe", niveau: "CM2", termine: true, score: 100, scoreMax: 235, enigmes: 20, total: 20, premierCoup: 10, erreurs: 4, indices: 2, dureeMin: 40 };
+  const e = (id, s, l, pc, err, ind, extra) => Object.assign({ id, s, l, ok: 1, pc, e: err, i: ind, p: 0, c: 0 }, extra || {});
+  const parties = [
+    { eleve: "Les Lynx", date: "2026-10-12T10:00", detail: [e("1-1", 1, "masses", 0, 2, 1), e("1-2", 1, "masses", 1, 0, 0), e("2-1", 2, "melanges", 0, 1, 0, { c: 1 })] },
+    { eleve: "Les Hiboux", date: "2026-10-12T10:05", detail: [e("1-1", 1, "masses", 0, 1, 0), e("1-2", 1, "masses", 1, 0, 0), e("2-1", 2, "melanges", 1, 0, 0)] },
+    { eleve: "Les Renards", date: "2026-10-13T10:00", detail: [e("1-1", 1, "masses", 0, 0, 0, { ok: 0, p: 1 }), e("1-2", 1, "masses", 0, 1, 0), e("2-1", 2, "melanges", 1, 0, 0)] },
+    { eleve: "Les Aigles", date: "2026-10-13T10:10", detail: [e("1-1", 1, "masses", 1, 0, 0), e("1-2", 1, "masses", 1, 0, 0), e("2-1", 2, "melanges", 1, 0, 0)] },
+    { eleve: "Sans détail", date: "2026-10-14T10:00" }
+  ].map(p => Object.assign({}, base, p));
+  const decl = { type: "escape-game-compte-rendu", version: 1, jeu: "declaration", titre: "Le Secret de la Déclaration", eleve: "Les Lynx", mode: "equipe", niveau: "CM1", date: "2026-10-14T11:00", termine: true, score: 80, scoreMax: 185, enigmes: 5, total: 5, premierCoup: 2, erreurs: 3, indices: 1, dureeMin: 30,
+    detail: [{ id: "s1", s: 1, l: "", ok: 1, pc: 0, e: 1, i: 0, p: 0, c: 0 }, { id: "s2", s: 2, l: "", ok: 1, pc: 1, e: 0, i: 0, p: 0, c: 0 }] };
+  const toutes = parties.concat([decl]);
+  const { w, erreurs } = await charger(RACINE, "", { page: "resultats.html", attente: 400, stockage: { escape_resultats: JSON.stringify(toutes) } });
+  const d = w.document;
+  d.getElementById("btn-appareil").click();
+  await attendreQue(() => w.RESULTATS_PAGE.bilan && w.RESULTATS_PAGE.bilan.parties.length === 5, 4000);
+  await dodo(200);
+  const B = w.RESULTATS_PAGE.bilan;
+  ok(B && B.parties.length === 5, `5 parties avec détail prises en compte (la partie sans détail est ignorée) : ${B && B.parties.length}`);
+  const en = (jeu, id) => B.enigmes.find(x => x.jeu === jeu && x.id === id);
+  ok(en("melanges", "1-1").n === 4 && en("melanges", "1-1").pc === 1, "énigme 1-1 : 1 réussite du premier coup sur 4 (25 %)");
+  ok(en("melanges", "1-2").pc === 3 && en("melanges", "1-2").n === 4, "énigme 1-2 : 3 sur 4 (75 %)");
+  ok(en("melanges", "1-1").pass === 1 && en("melanges", "1-1").err === 3 && en("melanges", "1-1").ind === 1, "totaux d'erreurs, d'indices et de jokers (3 · 1 · 1)");
+  ok(en("melanges", "2-1").pouce === 1, "coups de pouce de l'enseignant comptés");
+  ok(B.enigmes.filter(x => x.jeu === "melanges")[0].id === "1-1" && B.enigmes[0].pc === 0 && B.enigmes[B.enigmes.length - 1].pc >= B.enigmes[0].pc, "énigmes triées de la plus difficile à la plus facile");
+  const comp = B.comps.find(c => c.jeu === "melanges" && c.lecon === "masses");
+  ok(comp && comp.n === 8 && comp.pc === 4 && !!comp.texte, `compétence « masses » : 4 sur 8 (50 %), texte du programme : « ${comp && comp.texte.slice(0, 50)} »`);
+  ok(en("declaration", "s1") && /Salle 1/.test(en("declaration", "s1").titre) && en("declaration", "s1").lecon === "causes", `Déclaration (une énigme par salle) : « ${en("declaration", "s1").titre} », leçon ${en("declaration", "s1").lecon}`);
+  // liste « à retravailler »
+  const txt = d.getElementById("bilan-contenu").textContent;
+  ok(/À retravailler en classe entière/.test(txt) && d.querySelectorAll("#bilan-contenu .a-retravailler li").length >= 1, `liste « à retravailler » : ${d.querySelectorAll("#bilan-contenu .a-retravailler li").length} entrée(s)`);
+  const items = [...d.querySelectorAll("#bilan-contenu .a-retravailler li")].map(li => li.textContent);
+  ok(items.some(t => /1-1/.test(t) && /25 %/.test(t)) && !items.some(t => /1-2/.test(t)), "1-1 (25 %) à retravailler, 1-2 (75 %) non");
+  const liens = [...d.querySelectorAll("#bilan-contenu a.lien-lecon")].map(a => a.getAttribute("href"));
+  ok(liens.length >= 1 && liens.every(h => /^[a-z-]+\/lecons-imprimables\.html\?niveau=CM[12]&lecon=/.test(h)) && liens.some(h => /^melanges\/.*lecon=masses/.test(h)), `liens vers la leçon A4 à imprimer : ${liens.join(" ; ")}`);
+  const cibles = [...new Set(liens.map(h => h.split("?")[0]))];
+  const fs = require("fs");
+  ok(cibles.every(c => fs.existsSync(require('path').join(RACINE, c))), "les pages de leçons liées existent");
+  // seuil modifiable
+  const seuil = d.getElementById("seuil-bilan"); seuil.value = "80"; seuil.dispatchEvent(new w.Event("input")); await dodo(250);
+  ok([...d.querySelectorAll("#bilan-contenu .a-retravailler li")].some(li => /1-2/.test(li.textContent)), "seuil à 80 % : 1-2 (75 %) devient « à retravailler »");
+  seuil.value = "50";
+  // filtres : un seul jeu
+  const fj = d.getElementById("filtre-jeu"); fj.value = "declaration"; fj.dispatchEvent(new w.Event("input")); await dodo(250);
+  ok(w.RESULTATS_PAGE.bilan.parties.length === 1 && /1 partie avec détail/.test(d.getElementById("compte-bilan").textContent), "le bilan suit les filtres (jeu)");
+  fj.value = ""; fj.dispatchEvent(new w.Event("input")); await dodo(250);
+  // export tableur du bilan
+  d.getElementById("exp-bilan").click(); await dodo(300);
+  const x = w.__dernierExport;
+  ok(x && /^bilan-de-classe-\d{4}-\d\d-\d\d\.csv$/.test(x.nom) && x.contenu.startsWith("﻿Type;Jeu;Identifiant;"), `export du bilan : ${x && x.nom}`);
+  const lignes = x.contenu.split("\r\n");
+  ok(lignes.some(l => /^Énigme;Le Laboratoire de Madame Mélange;1-1;Du plus léger au plus lourd;4;1;25;3;1;1;0;oui;/.test(l)), "export : ligne de l'énigme 1-1 (25 %, à retravailler)");
+  ok(lignes.some(l => /^Compétence;.*;masses;.*;8;4;50;/.test(l)), "export : ligne de la compétence « masses » (50 %)");
+  // version imprimable
+  w.__imprime = 0; d.getElementById("imp-bilan").click();
+  ok(w.__imprime === 1 && /@media print/.test(d.head.innerHTML) && /\.imprimer-seulement/.test(d.head.innerHTML) && /\d+ partie\(s\)/.test(d.getElementById("titre-impr-bilan").textContent), "version imprimable : bouton et mise en page d'impression");
+  // export tableur des parties : colonnes jokers et coups de pouce
+  d.getElementById("exp-tableur").click();
+  ok(/Énigmes passées \(joker\);Coups de pouce \(enseignant\);Contrôle/.test(w.__dernierExport.contenu), "export des parties : colonnes « passées » et « coups de pouce »");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+  // compte-rendu texte : « 2 passées » se retrouve en collant le texte
+  const j = await charger(require('path').join(RACINE, 'melanges'), "", { attente: 500 });
+  ok(typeof j.w.COMPTE_RENDU.construire === "function", "compte-rendu de partie prêt (champ detail)");
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

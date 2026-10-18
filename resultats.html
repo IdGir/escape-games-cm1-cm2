@@ -39,6 +39,18 @@
   .pastille{display:inline-block;padding:2px 8px;border-radius:999px;background:#f0eee9;font-size:.8rem}
   .table-defile{overflow-x:auto;max-height:60vh}
   #message{min-height:1.4em}
+  .barre-taux{display:inline-block;width:90px;height:9px;border-radius:5px;background:#eee;vertical-align:middle;overflow:hidden;margin-right:6px}
+  .barre-taux i{display:block;height:100%;background:var(--vert)} .barre-taux.faible i{background:var(--rouge)} .barre-taux.moyen i{background:var(--ambre)}
+  .a-retravailler li{margin:4px 0}
+  .sous-titre-bilan{margin:14px 0 4px;font-size:.95rem}
+  .imprimer-seulement{display:none}
+  @media print{
+    body{background:#fff}
+    header,main>section:not(#bilan),#bilan .ligne,#bilan .aide.ecran{display:none!important}
+    #bilan{border:0;padding:0} .table-defile{max-height:none;overflow:visible}
+    #bilan .imprimer-seulement{display:block!important}
+    a{color:inherit;text-decoration:none}
+  }
 </style>
 </head>
 <body>
@@ -74,6 +86,22 @@
         <th class="num">Énigmes</th><th class="num">1er coup</th><th class="num">Erreurs</th><th class="num">Indices</th><th class="num">Durée</th><th>Contrôle</th></tr></thead>
       <tbody id="corps"></tbody>
     </table></div>
+  </section>
+
+  <section class="bloc" id="bilan">
+    <h2>📚 Bilan de classe : quelles compétences retravailler ensemble ?</h2>
+    <p class="aide ecran">Calculé sur les parties affichées ci-dessus (utilisez les filtres : jeu, élève, mode), <b>toutes équipes et toutes séances confondues</b>.
+      Pour chaque énigme : la part des équipes qui l'ont réussie <b>du premier coup</b> (sans erreur, sans joker). Seules les parties qui contiennent le détail énigme par énigme comptent
+      (parties jouées avec la dernière version des jeux).</p>
+    <div class="ligne">
+      <label>À retravailler sous <input type="number" id="seuil-bilan" value="50" min="10" max="95" step="5" style="width:4.5em;font:inherit;padding:5px;border-radius:8px;border:1px solid var(--ligne)"> % de réussite du premier coup</label>
+      <label>au moins <input type="number" id="min-bilan" value="2" min="1" max="50" style="width:3.5em;font:inherit;padding:5px;border-radius:8px;border:1px solid var(--ligne)"> parties</label>
+      <button id="exp-bilan">📊 Bilan (CSV)</button>
+      <button id="imp-bilan">🖨️ Imprimer le bilan</button>
+      <span class="pastille" id="compte-bilan">0 partie avec détail</span>
+    </div>
+    <div class="imprimer-seulement"><b>Bilan de classe</b> — <span id="titre-impr-bilan"></span></div>
+    <div id="bilan-contenu"><p class="aide">Aucune partie avec le détail des énigmes pour l'instant.</p></div>
   </section>
 
   <section class="bloc">
@@ -195,8 +223,90 @@ function rendre(){
     <td class="num">${r.dureeMin} min</td>
     <td>${r._valide === true ? '<span class="ok">✔ vérifié</span>' : r._valide === false ? '<span class="ko">✗ modifié ?</span>' : '<span class="aide">texte collé</span>'}</td></tr>`).join("")
     || `<tr><td colspan="12" class="aide">Aucune partie pour l'instant : utilisez les boutons ci-dessus.</td></tr>`;
+  if(typeof rendreBilan === "function") rendreBilan();
 }
 ["filtre-eleve", "filtre-jeu", "filtre-mode"].forEach(id => document.getElementById(id).addEventListener("input", rendre));
+
+/* ---- Bilan de classe (N12) : réussite du premier coup par énigme et par compétence ---- */
+const META = {};   // jeu → { titres:{id:titre}, comp:{leconId:texte}, leconDeSalle:{n:leconId}, salles:{n:titre}, leconTitre:{id:titre} }
+async function lireJson(url){ try{ const r = await fetch(url, { cache: "no-store" }); return r.ok ? await r.json() : null; }catch(e){ return null; } }
+async function meta(jeu){
+  if(META[jeu]) return META[jeu];
+  const m = META[jeu] = { titres: {}, comp: {}, leconDeSalle: {}, salles: {}, leconTitre: {} };
+  const [en, a4, lc] = await Promise.all([lireJson(`${jeu}/assets/data/enigmes.json`), lireJson(`${jeu}/assets/data/lecons-a4.json`), lireJson(`${jeu}/assets/data/lecons.json`)]);
+  if(en) (en.salles || []).forEach(s => { m.salles[s.num] = s.titre; (s.enigmes || []).forEach(e => { m.titres[e.id] = e.titre; }); });
+  if(a4 && a4.lecons) Object.entries(a4.lecons).forEach(([id, l]) => { if(l && l.competence) m.comp[id] = l.competence; });
+  if(lc) (lc.lecons || []).forEach(l => { if(l.salle != null && !m.leconDeSalle[l.salle]) m.leconDeSalle[l.salle] = l.id; if(l.titre) m.leconTitre[l.id] = l.titre; });
+  return m;
+}
+const pc100 = (n, t) => t ? Math.round(100 * n / t) : 0;
+const classeTaux = p => p < 40 ? "faible" : p < 70 ? "moyen" : "";
+const barre = p => `<span class="barre-taux ${classeTaux(p)}"><i style="width:${p}%"></i></span>${p} %`;
+/** Agrège les notes « detail » des parties visibles : par énigme (jeu + id) et par compétence. */
+async function agreger(){
+  const parties = visibles().filter(r => Array.isArray(r.detail) && r.detail.length);
+  const enigmes = new Map(), comps = new Map();
+  for(const r of parties){
+    const m = await meta(r.jeu);
+    for(const n of r.detail){
+      if(n.id === "coffre") continue;
+      const lecon = n.l || m.leconDeSalle[n.s] || "";
+      const k = r.jeu + "|" + n.id;
+      const titre = m.titres[n.id] || (/^s\d+$/.test(String(n.id)) ? "Salle " + n.s + (m.salles[n.s] ? " — " + m.salles[n.s] : (m.leconTitre[lecon] ? " — " + m.leconTitre[lecon] : "")) : "");
+      const e = enigmes.get(k) || { jeu: r.jeu, id: n.id, s: n.s, lecon, titre, n: 0, pc: 0, err: 0, ind: 0, pass: 0, pouce: 0, niveaux: {} };
+      e.n++; e.pc += n.pc ? 1 : 0; e.err += n.e || 0; e.ind += n.i || 0; e.pass += n.p ? 1 : 0; e.pouce += n.c || 0; e.niveaux[r.niveau] = (e.niveaux[r.niveau] || 0) + 1;
+      enigmes.set(k, e);
+      const kc = r.jeu + "|" + (lecon || n.id);
+      const c = comps.get(kc) || { jeu: r.jeu, lecon, texte: m.comp[lecon] || m.leconTitre[lecon] || "", n: 0, pc: 0, err: 0, ind: 0, pass: 0, pouce: 0, niveaux: {} };
+      c.n++; c.pc += n.pc ? 1 : 0; c.err += n.e || 0; c.ind += n.i || 0; c.pass += n.p ? 1 : 0; c.pouce += n.c || 0; c.niveaux[r.niveau] = (c.niveaux[r.niveau] || 0) + 1;
+      comps.set(kc, c);
+    }
+  }
+  const tri = (a, b) => pc100(a.pc, a.n) - pc100(b.pc, b.n) || b.n - a.n;
+  return { parties, enigmes: [...enigmes.values()].sort(tri), comps: [...comps.values()].sort(tri) };
+}
+const niveauDominant = e => Object.entries(e.niveaux || {}).sort((a, b) => b[1] - a[1]).map(x => x[0])[0] || "CM2";
+const lienLecon = e => e.lecon ? `${e.jeu}/lecons-imprimables.html?niveau=${niveauDominant(e)}&lecon=${encodeURIComponent(e.lecon)}` : "";
+let BILAN = null, bilanEnCours = 0;
+async function rendreBilan(){
+  const mien = ++bilanEnCours;
+  const B = await agreger();
+  if(mien !== bilanEnCours) return;           // un affichage plus récent a pris le relais
+  BILAN = B;
+  const seuil = +document.getElementById("seuil-bilan").value || 50, mini = +document.getElementById("min-bilan").value || 1;
+  document.getElementById("compte-bilan").textContent = `${B.parties.length} partie${B.parties.length > 1 ? "s" : ""} avec détail`;
+  const f = filtres();
+  document.getElementById("titre-impr-bilan").textContent = `${B.parties.length} partie(s)${f.jeu ? " · " + (infoJeu(f.jeu).titre || f.jeu) : ""}${f.eleve ? " · « " + f.eleve + " »" : ""} · ${new Date().toLocaleDateString("fr-FR")}`;
+  const zone = document.getElementById("bilan-contenu");
+  if(!B.parties.length){ zone.innerHTML = `<p class="aide">Aucune partie avec le détail des énigmes pour l'instant : jouez (ou déposez) des parties terminées avec la dernière version des jeux.</p>`; return; }
+  const aRevoir = B.enigmes.filter(e => e.n >= mini && pc100(e.pc, e.n) < seuil), compsRevoir = B.comps.filter(c => c.n >= mini && pc100(c.pc, c.n) < seuil);
+  const nomEnigme = e => `${esc(infoJeu(e.jeu).icone || "")} <b>${esc(e.id)}</b> ${esc(e.titre)}`;
+  zone.innerHTML = `
+    <h3 class="sous-titre-bilan">🔁 À retravailler en classe entière (moins de ${seuil} % de réussite du premier coup)</h3>
+    ${aRevoir.length || compsRevoir.length ? `<ul class="a-retravailler">
+      ${compsRevoir.map(c => `<li>📌 <b>Compétence</b> ${esc(c.texte || c.lecon || "—")} <span class="aide">(${esc(infoJeu(c.jeu).titre || c.jeu)} · ${pc100(c.pc, c.n)} % sur ${c.n} énigme(s) jouée(s))</span>
+        ${lienLecon(c) ? ` <a class="lien-lecon" href="${esc(lienLecon(c))}" target="_blank" rel="noopener">📖 Leçon à imprimer</a>` : ""}</li>`).join("")}
+      ${aRevoir.map(e => `<li>🧩 ${nomEnigme(e)} <span class="aide">(${pc100(e.pc, e.n)} % sur ${e.n} partie(s))</span>
+        ${lienLecon(e) ? ` <a class="lien-lecon" href="${esc(lienLecon(e))}" target="_blank" rel="noopener">📖 Leçon à imprimer</a>` : ""}</li>`).join("")}</ul>`
+      : `<p class="aide">Rien sous ${seuil} % (avec au moins ${mini} partie(s) par énigme) : la classe a bien réussi ces énigmes.</p>`}
+    <h3 class="sous-titre-bilan">Par compétence</h3>
+    <div class="table-defile"><table id="table-bilan-comp"><thead><tr><th>Jeu</th><th>Compétence du programme</th><th>Réussite du 1er coup</th><th class="num">Énigmes jouées</th><th class="num">Erreurs</th><th class="num">Indices</th><th class="num">Passées 🃏</th><th class="num">Coups de pouce 🤝</th></tr></thead><tbody>
+      ${B.comps.map(c => `<tr><td>${esc(infoJeu(c.jeu).icone || "")} ${esc(infoJeu(c.jeu).titre || c.jeu)}</td><td>${esc(c.texte || c.lecon || "—")}</td><td>${barre(pc100(c.pc, c.n))}</td><td class="num">${c.n}</td><td class="num">${c.err}</td><td class="num">${c.ind}</td><td class="num">${c.pass}</td><td class="num">${c.pouce}</td></tr>`).join("")}</tbody></table></div>
+    <h3 class="sous-titre-bilan">Par énigme</h3>
+    <div class="table-defile"><table id="table-bilan-enigmes"><thead><tr><th>Jeu</th><th>Énigme</th><th>Réussite du 1er coup</th><th class="num">Parties</th><th class="num">Erreurs</th><th class="num">Indices</th><th class="num">Passées 🃏</th><th class="num">Coups de pouce 🤝</th></tr></thead><tbody>
+      ${B.enigmes.map(e => `<tr><td>${esc(infoJeu(e.jeu).icone || "")} ${esc(infoJeu(e.jeu).titre || e.jeu)}</td><td><b>${esc(e.id)}</b> ${esc(e.titre)}</td><td>${barre(pc100(e.pc, e.n))}</td><td class="num">${e.n}</td><td class="num">${e.err}</td><td class="num">${e.ind}</td><td class="num">${e.pass}</td><td class="num">${e.pouce}</td></tr>`).join("")}</tbody></table></div>`;
+}
+["seuil-bilan", "min-bilan"].forEach(id => document.getElementById(id).addEventListener("input", rendreBilan));
+document.getElementById("imp-bilan").addEventListener("click", () => window.print());
+document.getElementById("exp-bilan").addEventListener("click", async () => {
+  await rendreBilan();
+  const seuil = +document.getElementById("seuil-bilan").value || 50, mini = +document.getElementById("min-bilan").value || 1;
+  const l = [["Type", "Jeu", "Identifiant", "Énigme ou compétence", "Parties / énigmes jouées", "Réussies du premier coup", "% premier coup", "Erreurs", "Indices", "Passées (joker)", "Coups de pouce", "À retravailler", "Leçon à imprimer"]];
+  const url = p => p ? new URL(p, location.href).href : "";
+  (BILAN ? BILAN.comps : []).forEach(c => l.push(["Compétence", infoJeu(c.jeu).titre || c.jeu, c.lecon, c.texte, c.n, c.pc, pc100(c.pc, c.n), c.err, c.ind, c.pass, c.pouce, c.n >= mini && pc100(c.pc, c.n) < seuil ? "oui" : "", url(lienLecon(c))]));
+  (BILAN ? BILAN.enigmes : []).forEach(e => l.push(["Énigme", infoJeu(e.jeu).titre || e.jeu, e.id, e.titre, e.n, e.pc, pc100(e.pc, e.n), e.err, e.ind, e.pass, e.pouce, e.n >= mini && pc100(e.pc, e.n) < seuil ? "oui" : "", url(lienLecon(e))]));
+  telecharger(`bilan-de-classe-${aujourdhui()}.csv`, csv(l), "text/csv;charset=utf-8");
+});
 
 /* ---- Exports ---- */
 const cellule = v => { const s = String(v == null ? "" : v); return /[;"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
@@ -212,10 +322,11 @@ function telecharger(nom, contenu, type){
 const aujourdhui = () => new Date().toISOString().slice(0, 10);
 const nombre = n => String(n).replace(".", ",");
 document.getElementById("exp-tableur").addEventListener("click", () => {
-  const l = [["Date", "Élève / équipe", "Mode", "Jeu", "Matière", "Niveau", "Palier", "Score", "Score max", "Pourcentage", "Énigmes réussies", "Énigmes", "Du premier coup", "Erreurs", "Indices", "Quizz /5", "Durée (min)", "Temps accordé (min)", "Auto-éval. 1 vocabulaire (D1)", "Auto-éval. 2 chercher (D2)", "Auto-éval. 3 écouter (D3)", "Auto-éval. 4 discipline (D3/D4/D5)", "Auto-éval. 5 persévérer (D2)", "Contrôle"]];
+  const l = [["Date", "Élève / équipe", "Mode", "Jeu", "Matière", "Niveau", "Palier", "Score", "Score max", "Pourcentage", "Énigmes réussies", "Énigmes", "Du premier coup", "Erreurs", "Indices", "Quizz /5", "Durée (min)", "Temps accordé (min)", "Auto-éval. 1 vocabulaire (D1)", "Auto-éval. 2 chercher (D2)", "Auto-éval. 3 écouter (D3)", "Auto-éval. 4 discipline (D3/D4/D5)", "Auto-éval. 5 persévérer (D2)", "Énigmes passées (joker)", "Coups de pouce (enseignant)", "Contrôle"]];
   visibles().forEach(r => l.push([dateFr(r.date), r.eleve, r.mode === "solo" ? "individuel" : "équipe", r.titre || r.jeu, infoJeu(r.jeu).matiere || "", r.niveau, r.palier === "decouverte" ? "Découverte" : "",
     r.score, r.scoreMax || "", pct(r), r.enigmes, r.total, r.premierCoup, r.erreurs, r.indices, r.quiz == null ? "" : r.quiz, nombre(r.dureeMin), r.delaiAccordeMin || 0,
     ...["e1", "e2", "e3", "e4", "e5"].map(k => (r.autoEval && r.autoEval[k]) || ""),   // N6 : 1 pas encore, 2 un peu, 3 oui
+    r.passees || 0, r.pouces || 0,
     r._valide === true ? "vérifié" : r._valide === false ? "MODIFIÉ ?" : "non vérifiable"]));
   telecharger(`resultats-escape-games-${aujourdhui()}.csv`, csv(l), "text/csv;charset=utf-8");
 });
@@ -232,7 +343,7 @@ document.getElementById("btn-vider").addEventListener("click", () => {
   RESULTATS = RESULTATS.filter(r => r._source !== "appareil"); rendre(); message("Historique de cet appareil effacé.");
 });
 rendre();
-window.RESULTATS_PAGE = { ajouter, lireTexte, valide, get liste(){ return RESULTATS; } };
+window.RESULTATS_PAGE = { ajouter, lireTexte, valide, rendreBilan, get bilan(){ return BILAN; }, get liste(){ return RESULTATS; } };
 </script>
 </body>
 </html>

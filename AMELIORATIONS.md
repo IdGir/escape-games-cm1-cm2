@@ -320,7 +320,7 @@ désactivable dans ⚙️ Réglages ; aucun effet sur le score.
 Compte-rendu enrichi énigme par énigme (identifiant, compétence, réussite au premier coup, erreurs,
 indices) ; `resultats.html` : taux de réussite du premier coup par énigme et par compétence, liste
 « à retravailler » avec lien vers la leçon A4, export tableur et version imprimable.
-**Jeux concernés :** 12 jeux « salles » + resultats.html · **Effort :** M · **Statut :** En cours
+**Jeux concernés :** 12 jeux « salles » + resultats.html · **Effort :** M · **Statut :** Fait
 
 ### N13 — « Coup de pouce enseignant » à distance
 Depuis `prof.html`, un geste intermédiaire entre l'indice et la réponse : retirer un obstacle sans
