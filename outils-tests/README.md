@@ -88,3 +88,20 @@ git config core.hooksPath outils-tests/hooks
 
 (publier malgré tout, exceptionnellement : `git push --no-verify`). Le test du contrôleur lui-même :
 `node commun/tests/test-enigmes-json.js`.
+
+## Contrôle des liens internes (N10)
+
+`verifier-liens-internes.js` parcourt l'accueil, les pages communes de la racine et les pages de chaque
+jeu (index, prof, leçons imprimables…), **sans navigateur**, et vérifie que chaque lien relatif mène à un
+fichier existant (un dossier doit contenir `index.html`) :
+
+```
+node outils-tests\verifier-liens-internes.js            (tout le dépôt)
+node outils-tests\verifier-liens-internes.js melanges   (un jeu + les pages communes)
+```
+
+Il contrôle aussi les liens **fabriqués par le code** : dossiers, `suite` et `precedent` du catalogue
+(« Et ensuite ? », C4), identifiant de `js/jeu.js` reconnu par le catalogue, lien de la vitrine des
+trophées, pages communes attendues. Rapport lisible : page, lien, motif. ✗ = lien cassé (bloquant),
+⚠ = ancre ou média absent (à regarder). Il est branché, avec A7, sur le crochet `pre-push`
+(`git config core.hooksPath outils-tests/hooks`).

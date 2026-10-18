@@ -193,7 +193,7 @@ salle et le bon niveau sur les tablettes, sans taper l'URL.
 Après la partie, un mode qui rejoue les bonnes réponses salle par salle,
 pour l'institutionnalisation en grand groupe (sans rouvrir chaque énigme une
 par une).
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Proposé
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Sélectionné
 
 ---
 
@@ -302,3 +302,70 @@ les réponses sont gardées avec le compte-rendu de la partie.
 Une archive par jeu, à décompresser puis ouvrir d'un double-clic, sans serveur ni internet, avec
 toutes les énigmes (données embarquées, sans le repli réduit du mode fichier).
 **Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
+
+### N10 — Contrôle automatique des liens internes de navigation
+Le contrôle F3 vérifie les liens externes, le test du kit (N2) les liens d'une page. Les liens internes
+sont nombreux et en partie fabriqués par le code (« Et ensuite ? », vitrine des trophées, retour à
+l'accueil, leçons imprimables, guides) : `outils-tests/verifier-liens-internes.js` les parcourt tous,
+rapporte « page, lien, cible manquante » et bloque le `git push` (crochet, comme A7).
+**Jeux concernés :** tous + pages communes · **Effort :** S · **Statut :** Fait
+
+### N11 — Mascotte commune animée guidant les élèves dans les jeux
+Une mascotte originale (charte B1, 200 × 320) qui accueille la classe sur l'accueil, explique les règles
+communes au premier lancement et annonce les trophées (N1). Elle ne parle jamais pendant les énigmes ;
+désactivable dans ⚙️ Réglages ; aucun effet sur le score.
+**Jeux concernés :** accueil + 12 jeux « salles » · **Effort :** M · **Statut :** Sélectionné
+
+### N12 — Bilan de classe agrégé multi-séances
+Compte-rendu enrichi énigme par énigme (identifiant, compétence, réussite au premier coup, erreurs,
+indices) ; `resultats.html` : taux de réussite du premier coup par énigme et par compétence, liste
+« à retravailler » avec lien vers la leçon A4, export tableur et version imprimable.
+**Jeux concernés :** 12 jeux « salles » + resultats.html · **Effort :** M · **Statut :** Sélectionné
+
+### N13 — « Coup de pouce enseignant » à distance
+Depuis `prof.html`, un geste intermédiaire entre l'indice et la réponse : retirer un obstacle sans
+révéler la solution (choix faux écarté, étiquette placée, lettre révélée, élément fixé), en réutilisant
+le code du palier Découverte (E2). Tracé dans le bilan ; coût en points réglable (aucun par défaut).
+**Jeux concernés :** 12 jeux « salles » + prof.html · **Effort :** M · **Statut :** Sélectionné
+
+### N14 — Référencement sur les plateformes nationales de ressources libres
+Éduthèque, Apps.education.fr, La Digitale : licence du dépôt (décision de l'auteur), vérification des
+crédits des médias, fiche de présentation, vérification des conditions de dépôt de chaque plateforme.
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Sélectionné
+
+### N15 — Joker d'équipe
+Un bouton « 🃏 Joker » passe une énigme bloquante (0 point, marquée « passée »), donne ce qu'il faut pour
+continuer vers le mot de la serrure ; réglage enseignant (activé ou non, 1 par partie ou 1 par salle) ;
+un joker par équipe en mode duel (N4).
+**Jeux concernés :** 12 jeux « salles » · **Effort :** M · **Statut :** Sélectionné
+
+### N16 — Export/import du passeport de compétences entre appareils
+Export (fichier .json ou code court) et import fusionnant sans écraser ce qui est plus récent, sur le
+format de l'export de partie (A5), sans serveur ni compte.
+**Jeux concernés :** commun/ (passeport) + 12 jeux « salles » · **Effort :** M · **Statut :** Sélectionné
+
+### N17 — Contrôle automatique de l'affichage sur tablette et smartphone
+`outils-tests/verifier-responsive.js` : chaque jeu à 3 largeurs types (tablette 10", tablette 7",
+smartphone), contrôle qu'aucun bouton essentiel ne sort de l'écran, capture ; branché sur le crochet
+avant `git push`.
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Sélectionné
+
+### N18 — Fiche de séquence « avant / après » autour de chaque jeu
+Modèle (objectif, activité avant 15-20 min, le jeu, activité après 15-20 min, lien avec C5), deux
+premières fiches, dossier `sequences/` lié depuis les jeux et la vue d'ensemble de l'année (C1).
+**Jeux concernés :** 12 jeux « salles » + C1 · **Effort :** M · **Statut :** Sélectionné
+
+### N19 — Alerte de fin de séance commune à toutes les équipes
+Bouton « 🔔 Prévenir : fin dans 5 min » dans `prof.html` : bandeau discret et signal sonore court sur
+toutes les équipes, sans interrompre l'énigme en cours ni toucher aux chronos.
+**Jeux concernés :** 12 jeux « salles » + prof.html · **Effort :** S · **Statut :** Sélectionné
+
+### N20 — Réglage de la difficulté énigme par énigme
+Champ optionnel de surcharge dans `enigmes.json` (contrôlé par A7), écran de réglage +/- par énigme dans
+`prof.html`, surcharges ajoutées au palier (E2), documentées dans le kit collègues (N2).
+**Jeux concernés :** 12 jeux « salles » + enigmes.json + prof.html · **Effort :** M · **Statut :** Sélectionné
+
+### N21 — Kit de présentation pour une animation pédagogique ou un conseil de cycle
+Diaporama de 10-15 minutes, déroulé minuté de 30 à 45 minutes, captures et chiffres à jour avec C1,
+regroupés dans `presentation/` et liés depuis `adopter.html`.
+**Jeux concernés :** page d'accueil / adopter.html · **Effort :** M · **Statut :** Sélectionné
