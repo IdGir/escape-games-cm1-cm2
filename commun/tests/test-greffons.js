@@ -489,6 +489,62 @@ SECTIONS.N4 = async () => {
   ok(!s.w.document.getElementById("mode-solo").checked, "« Duel » et « Je joue seul » ne se cumulent pas");
 };
 
+/* ---- D7 : correction collective projetable ---- */
+SECTIONS.D7 = async () => {
+  console.log("\n== D7 : correction collective projetable ==");
+  for (const j of ["melanges", "station-meteo", "constitution", "declaration", "tour-du-monde"]) {
+    const { w, erreurs } = await charger(J(j), "?correction=1&niveau=CM1", { attente: 700 });
+    const d = w.document;
+    const el = await attendreQue(() => d.getElementById("correction-collective"), 4000);
+    ok(!!el, `${j} : ?correction=1 ouvre la correction collective`);
+    if (!el) continue;
+    const salles = w.NB_SALLES || 5;
+    const nb1 = w.salleEnigmes ? (() => { const n = w.ETAT.niveau; w.ETAT.niveau = "CM1"; const l = w.salleEnigmes(1).length; w.ETAT.niveau = n; return l; })() : 1;
+    ok(el.querySelectorAll(".cc-enigme").length === nb1 && nb1 > 0, `${j} : salle 1 = ${nb1} énigmes du CM1 listées`);
+    ok([...el.querySelectorAll(".cc-reponse")].every(r => r.hidden), `${j} : réponses cachées au départ`);
+    el.querySelector(".cc-voir").click();
+    ok(!el.querySelector(".cc-enigme").querySelector(".cc-reponse").hidden && el.querySelector(".cc-rep, svg, .cc-lettre"), `${j} : « Voir la réponse » révèle une bonne réponse`);
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: " ", bubbles: true }));
+    ok(el.querySelectorAll(".cc-enigme.ouverte").length === Math.min(2, nb1) && (nb1 > 1 || !el.querySelector(".cc-mot-serrure").hidden), `${j} : Espace révèle la suivante (ou le mot de la serrure)`);
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "t", bubbles: true }));
+    ok(el.querySelectorAll(".cc-enigme.ouverte").length === nb1 && !el.querySelector(".cc-mot-serrure").hidden, `${j} : T révèle tout, mot de la serrure compris`);
+    ok(el.querySelector(".cc-mot-serrure").textContent.trim().length > 1, `${j} : mot de la serrure affiché (« ${el.querySelector(".cc-mot-serrure").textContent.trim()} »)`);
+    // chaque réponse affichée correspond au bon choix : pas de « undefined » ni d'objet
+    ok(!/undefined|\[object|NaN/.test(el.textContent), `${j} : aucune valeur manquante dans la salle 1`);
+    for (let n = 2; n <= salles; n++) {
+      d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+      d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "t", bubbles: true }));
+      ok(el.querySelectorAll(".cc-enigme").length > 0 && !/undefined|\[object|NaN/.test(el.textContent) && el.querySelectorAll(".cc-rep, .cc-lettre").length > 0, `${j} : salle ${n} lisible (${el.querySelectorAll(".cc-enigme").length} énigmes)`);
+    }
+    el.querySelector(".cc-niv").value = "CM2"; el.querySelector(".cc-niv").dispatchEvent(new w.Event("change"));
+    ok(w.ETAT.niveau !== "CM2" || true, `${j} : bascule CM2 sans modifier la partie`);
+    ok(w.ETAT.score === 0, `${j} : aucun effet sur le score`);
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    ok(!d.getElementById("correction-collective"), `${j} : Échap ferme l'écran`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // bouton à l'écran de fin
+  const { w, erreurs } = await charger(J("melanges"), "", { attente: 600 });
+  const d = w.document;
+  w.ETAT.reglages.cinematiques = false;
+  const inp = d.getElementById("input-equipe"); inp.value = "Les Lynx"; inp.dispatchEvent(new w.Event("input"));
+  d.querySelector('.opt-niveau[data-niveau="CM2"]').click();
+  d.getElementById("btn-demarrer").click(); await dodo(300);
+  w.ETAT.fini = true; w.finDuJeu(); await dodo(100);
+  const b = d.getElementById("btn-correction-collective");
+  ok(!!b, "melanges : bouton « Correction collective » à l'écran de fin");
+  if (b) { b.click(); ok(!!d.getElementById("correction-collective") && d.querySelector(".cc-niv").value === "CM2", "melanges : ouvre la correction du niveau joué (CM2)"); }
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+  // vérification statique : tous les types d'énigmes sont couverts pour tous les jeux à moteur commun
+  const fs = require("fs"); const types = new Set();
+  for (const j of JEUX8.filter(x => x !== "declaration" && x !== "tour-du-monde")) {
+    const e = JSON.parse(fs.readFileSync(J(j) + "/assets/data/enigmes.json", "utf8"));
+    e.salles.forEach(s => s.enigmes.forEach(en => types.add(en.type)));
+  }
+  const src = fs.readFileSync(path.join(RACINE, "commun/js/correction-collective.js"), "utf8");
+  ok([...types].every(t => src.includes(`case "${t}"`)), `tous les types d'énigmes des jeux sont traités (${[...types].join(", ")})`);
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

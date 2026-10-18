@@ -193,7 +193,7 @@ salle et le bon niveau sur les tablettes, sans taper l'URL.
 Après la partie, un mode qui rejoue les bonnes réponses salle par salle,
 pour l'institutionnalisation en grand groupe (sans rouvrir chaque énigme une
 par une).
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ---
 
