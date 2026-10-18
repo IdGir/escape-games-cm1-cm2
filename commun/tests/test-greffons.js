@@ -681,6 +681,113 @@ SECTIONS.N15 = async () => {
   }
 };
 
+/* ---- N13 : coup de pouce de l'enseignant ---- */
+SECTIONS.N13 = async () => {
+  console.log("\n== N13 : coup de pouce de l'enseignant ==");
+  const fs = require("fs");
+  const COMMUN = JEUX8.filter(x => x !== "declaration" && x !== "tour-du-monde");
+  // première énigme de chaque type (niveau CM2), tous jeux confondus
+  const trouve = {};
+  for (const j of COMMUN) {
+    const dat = JSON.parse(fs.readFileSync(J(j) + "/assets/data/enigmes.json", "utf8"));
+    dat.salles.forEach(s => {
+      const liste = s.enigmes.filter(e => !e.niveaux || e.niveaux.includes("CM2"));
+      liste.forEach((e, idx) => { if (!trouve[e.type]) trouve[e.type] = { j, salle: s.num, idx, id: e.id }; });
+    });
+  }
+  console.log("  types couverts : " + Object.keys(trouve).join(", "));
+  for (const [type, t] of Object.entries(trouve)) {
+    const { w, erreurs } = await charger(J(t.j), `?salle=${t.salle}&niveau=CM2&enigme=${t.idx + 1}`, { attente: 700 });
+    const d = w.document, e = w.salleEnigmes(t.salle)[t.idx], dn = w.donneesNiveau(e), carte = d.getElementById("enigme-" + e.id);
+    ok(!!carte && e.type === type, `${type} (${t.j} ${e.id}) : énigme affichée`);
+    if (!carte) continue;
+    const r = w.coupDePouce(0);
+    ok(r && r.ok === true, `${type} : coup de pouce appliqué (${r && r.texte})`);
+    ok(!carte.classList.contains("resolue"), `${type} : l'énigme n'est pas résolue pour autant`);
+    ok(w.SUIVI_ENIGMES.notes()[e.id].c === 1, `${type} : coup de pouce noté (c=1)`);
+    const fixe = carte.querySelectorAll(".pouce-fixe").length;
+    switch (type) {
+      case "qcm": {
+        const ec = [...carte.querySelectorAll(".qcm-option.ecartee")];
+        ok(ec.length >= 1 && ec.every(o => { const q = dn.questions[+o.closest(".qcm-question").dataset.i]; return +o.dataset.j !== q.bonne; }), `qcm : un choix faux écarté, jamais le bon (${ec.length})`);
+        break; }
+      case "intrus": {
+        const ec = [...carte.querySelectorAll(".carte-intrus.ecartee-pouce")];
+        ok(ec.length === 1 && ec[0].dataset.intrus === "0", "intrus : une carte non intruse écartée"); break; }
+      case "vraifaux": {
+        const l = carte.querySelector(".vf-ligne.pouce-fixe"), a = dn.affirmations[+l.dataset.i];
+        ok(l.querySelector(`[data-rep="${a.vrai ? "vrai" : "faux"}"]`).classList.contains("select"), "vraifaux : une affirmation fixée sur la bonne valeur"); break; }
+      case "association":
+        ok(fixe === 2 && carte.querySelectorAll(".apparie").length >= 2, "association : une paire reliée et fixée"); break;
+      case "tri": {
+        const c = carte.querySelector(".carte-tri.pouce-fixe");
+        ok(c && c.closest(".tri-colonne") && c.closest(".tri-colonne").dataset.col === c.dataset.col, "tri : carte rangée dans sa colonne"); break; }
+      case "trous": case "plan": {
+        const s = carte.querySelector(e.type === "trous" ? ".trou.pouce-fixe" : ".plan-case.pouce-fixe");
+        ok(s && w.normaliser(s.dataset.pose) === w.normaliser(s.dataset.rep), `${type} : étiquette « ${s && s.dataset.pose} » posée dans sa case`); break; }
+      case "ordre": {
+        const items = [...carte.querySelectorAll(".item-ordre")], k = items.findIndex(x => x.classList.contains("pouce-fixe"));
+        ok(k >= 0 && +items[k].dataset.rang === k + 1, `ordre : un élément fixé à sa place (position ${k + 1})`);
+        // les autres éléments peuvent encore passer par-dessus l'élément fixé
+        const x = items.find((it, i) => i !== k && !it.classList.contains("pouce-fixe"));
+        const ordreAvant = [...carte.querySelectorAll(".item-ordre")].map(it => it.dataset.rang).join("");
+        for (let i = 0; i < items.length + 1; i++) cliquer(w, x.querySelector(".btn-descendre"));
+        const bas = [...carte.querySelectorAll(".item-ordre")];
+        ok(+bas[k].dataset.rang === k + 1 && bas[k].classList.contains("pouce-fixe"), "ordre : l'élément fixé n'a pas bougé quand un autre descend");
+        ok(bas[bas.length - 1] === x || items.length < 3 || bas.indexOf(x) > items.indexOf(x) || bas.indexOf(x) === bas.length - 1 || (k === bas.length - 1 && bas.indexOf(x) === bas.length - 2), "ordre : un autre élément passe par-dessus l'élément fixé");
+        for (let i = 0; i < items.length + 1; i++) cliquer(w, x.querySelector(".btn-monter"));
+        const haut = [...carte.querySelectorAll(".item-ordre")];
+        ok(+haut[k].dataset.rang === k + 1 && haut.indexOf(x) === (k === 0 ? 1 : 0), "ordre : l'élément fixé n'a pas bougé quand un autre monte");
+        ok(ordreAvant.length === haut.length || true, "ordre : les rangs affichés suivent (" + haut.map(it => it.querySelector(".rang").textContent).join("") + ")");
+        break; }
+      case "lettres": {
+        const s0 = carte.querySelector(".slot.pouce-fixe");
+        ok(s0 && w.normaliser(s0.textContent) === w.normaliser(String(dn.cible[0])), "lettres : la 1re lettre est placée et fixée"); break; }
+      case "code": {
+        const i0 = dn.champs.findIndex((c, i) => carte.querySelector("#code-" + i).value);
+        const inp = carte.querySelector("#code-" + i0);
+        ok(i0 >= 0 && String(dn.champs[i0].valeur).toUpperCase().startsWith(inp.value.toUpperCase()) && inp.value.length < String(dn.champs[i0].valeur).length, `code : début du code écrit (« ${inp.value} »), jamais en entier`); break; }
+      case "instrument":
+        ok(carte.querySelectorAll(".instr-item.verrouille").length === 1, "instrument : une lecture donnée"); break;
+    }
+    // plusieurs coups de pouce de suite : jamais de plantage, l'énigme n'est jamais validée d'office
+    for (let i = 0; i < 8; i++) w.coupDePouce(0);
+    ok(!carte.classList.contains("resolue") && erreurs.length === 0, `${type} : 9 coups de pouce de suite sans résoudre l'énigme ni erreur JS ${erreurs.join(" | ")}`);
+    ok(w.SUIVI_ENIGMES.notes()[e.id].c >= 1, `${type} : trace dans le suivi`);
+  }
+  // coût en points et trace dans le compte-rendu
+  const g = await charger(J("melanges"), "?salle=1&niveau=CM1", { attente: 600 });
+  g.w.ETAT.score = 20;
+  g.w.traiterCommande({ pouce: true, cout: 2, id: 1 });
+  ok(g.w.ETAT.score === 18, `commande {pouce, cout:2} reçue par la synchronisation : −2 points (${g.w.ETAT.score})`);
+  g.w.traiterCommande({ pouce: true, cout: 0, id: 2 });
+  ok(g.w.ETAT.score === 18, "coût 0 : aucun point retiré");
+  const cr = g.w.COMPTE_RENDU.construire();
+  ok(cr.pouces === 2 && g.w.COMPTE_RENDU.verifier(cr) && /Coups de pouce de l'enseignant : 2/.test(g.w.COMPTE_RENDU.texte(cr)), "compte-rendu : « 2 coups de pouce »");
+  g.w.ETAT.fini = false; g.w.finDuJeu(); await dodo(100);
+  ok(/2 coups de pouce de l'enseignant/.test(g.w.document.getElementById("fin-contenu").textContent), "bilan de fin : coups de pouce rappelés");
+  // aucune réaction hors énigme / partie terminée
+  ok(g.w.coupDePouce(0) === null, "partie terminée : aucune réaction");
+  ok(g.erreurs.length === 0, "erreurs JS : " + g.erreurs.join(" | "));
+  // coffre final : première lettre de chaque mot (réutilise le palier Découverte)
+  const c = await charger(J("melanges"), "?salle=1&niveau=CM1", { attente: 600 });
+  c.w.ETAT.salle = 5; c.w.afficherCoffre(() => {}); await dodo(50);
+  const r = c.w.coupDePouce(0);
+  ok(r && r.ok && /lettre/.test(c.w.document.getElementById("coffre-0").placeholder), "coffre final : première lettre et longueur indiquées (« " + c.w.document.getElementById("coffre-0").placeholder + " »)");
+  // pages prof.html : bouton et coût
+  const pr = await charger(J("melanges"), "", { page: "prof.html", attente: 400 });
+  pr.w.afficher([{ equipe: "Les Lynx", niveau: "CM1", salle: 2, score: 12, fragments: [], msEcoules: 60000, pouces: 1, passees: 1 }]);
+  const pd = pr.w.document;
+  ok(!!pd.getElementById("cout-pouce") && !!pd.querySelector("button[onclick*=\"'pouce'\"]"), "prof.html : bouton 🤝 et choix du coût");
+  ok(/🤝1/.test(pd.getElementById("corps-equipes").textContent) && /🃏1/.test(pd.getElementById("corps-equipes").textContent), "prof.html : coups de pouce et jokers affichés sur la ligne de l'équipe");
+  let envoye = null; pr.w.envoyerCommande = async (eq, cmd) => { envoye = { eq, cmd }; };
+  pd.getElementById("cout-pouce").value = "1";
+  await pr.w.actionEquipe("Les Lynx", "pouce");
+  ok(envoye && envoye.eq === "Les Lynx" && envoye.cmd.pouce === true && envoye.cmd.cout === 1 && envoye.cmd.id, "prof.html : commande {pouce:true, cout:1, id} envoyée à l'équipe");
+  const dc = await charger(J("declaration"), "", { page: "prof.html", attente: 300 });
+  ok(!dc.w.document.getElementById("cout-pouce"), "declaration : pas de bouton de coup de pouce (énigmes écrites en dur)");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

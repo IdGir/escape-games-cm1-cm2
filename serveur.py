@@ -225,6 +225,8 @@ class Handler(BaseHTTPRequestHandler):
                     "delaiMin": data.get("delaiMin", 0),
                     "enigmesReussies": data.get("enigmesReussies"),
                     "indicesTotal": data.get("indicesTotal"),
+                    "pouces": data.get("pouces", 0),      # N13 : coups de pouce de l'enseignant reçus
+                    "passees": data.get("passees", 0),    # N15 : énigmes passées avec le joker
                     "timestamp": time.time()
                 }
                 # Récupérer d'éventuelles commandes prof en attente

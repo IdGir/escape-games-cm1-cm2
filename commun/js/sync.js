@@ -39,6 +39,7 @@ function demarrerSync(){
 
 function envoyerEtat(){
   if(!SYNC.actif || !ETAT.equipe) return;
+  const suivi = (typeof window !== "undefined" && window.SUIVI_ENIGMES) ? window.SUIVI_ENIGMES.liste() : [];
   const payload = {
     // Identifie le jeu : le tableau de bord n'affiche que ses propres équipes
     jeu: ((typeof JEU !== "undefined" && JEU.id) || ""),
@@ -55,7 +56,9 @@ function envoyerEtat(){
     enPause: ETAT.enPause,
     fini: ETAT.fini,
     palier: ETAT.palier || null,            // E2 : palier « decouverte »
-    delaiMin: ETAT.delaiAccordeMin || 0     // E6 : minutes accordées par l'enseignant
+    delaiMin: ETAT.delaiAccordeMin || 0,    // E6 : minutes accordées par l'enseignant
+    pouces: suivi.reduce((t, n) => t + (n.c || 0), 0),   // N13 : coups de pouce reçus
+    passees: suivi.filter(n => n.p).length               // N15 : énigmes passées avec le joker
   };
   fetch("/api/etat", {
     method:"POST",
@@ -92,6 +95,9 @@ function traiterCommande(cmd){
   }
   if(cmd.delaiMin && typeof accorderDelai === "function"){
     accorderDelai(cmd.delaiMin);   // E6 : délai accordé à cette équipe (bonus préservé)
+  }
+  if(cmd.pouce && typeof window.coupDePouce === "function"){
+    window.coupDePouce(cmd.cout);  // N13 : coup de pouce de l'enseignant (sans révéler la réponse)
   }
 }
 

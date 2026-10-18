@@ -163,7 +163,7 @@ function afficher(equipes){
       <td>${e.niveau||"—"}${e.palier==="decouverte"?' <span title="Palier Découverte">🌱</span>':""}</td>
       <td><b>${e.salle||0}</b> / 5</td>
       <td><div class="points-escales">${escalesHTML}</div></td>
-      <td><b>⭐ ${e.score||0}</b></td>
+      <td><b>⭐ ${e.score||0}</b>${e.pouces?` <span title="Coups de pouce de l'enseignant" style="font-size:.8rem">🤝${e.pouces}</span>`:""}${e.passees?` <span title="Énigmes passées avec le joker" style="font-size:.8rem">🃏${e.passees}</span>`:""}</td>
       <td class="fragments">🛂 ${(e.fragments||[]).length}/4<br><span style="font-size:.75rem;opacity:.7">${fragments}</span></td>
       <td>${min}min ${String(sec).padStart(2,"0")}s${e.delaiMin?`<br><span style="font-size:.75rem;color:#7c3aed">+${e.delaiMin} min accordées</span>`:""}</td>
       <td>

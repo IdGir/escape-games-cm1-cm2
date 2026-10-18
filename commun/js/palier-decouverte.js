@@ -68,8 +68,36 @@
     }catch(e){}
   }
 
+  /* Un choix faux écarté (grisé, impossible à sélectionner) dans chaque QCM d'au moins trois choix.
+     « rang » décale le choix écarté : le coup de pouce de l'enseignant (N13) en retire un de plus,
+     tant qu'il reste au moins deux choix. Renvoie le nombre de choix écartés. */
+  function ecarterChoixFaux(carte, e, rang){
+    if(!carte || e.type !== "qcm" || typeof donneesNiveau !== "function") return 0;
+    let n = 0;
+    (donneesNiveau(e).questions || []).forEach((q, i) => {
+      if(!q.options || q.options.length < 3) return;
+      const bloc = carte.querySelector(`.qcm-question[data-i="${i}"]`); if(!bloc) return;
+      const faux = q.options.map((_, j) => j).filter(j => j !== q.bonne && !bloc.querySelector(`.qcm-option[data-j="${j}"].ecartee`));
+      if(faux.length < 2) return;
+      const o = bloc.querySelector(`.qcm-option[data-j="${faux[(i + e.id.length + (rang || 0)) % faux.length]}"]`);
+      if(o){ o.classList.add("ecartee"); o.classList.remove("select"); o.setAttribute("aria-disabled", "true"); o.title = "Choix écarté"; n++; }
+    });
+    return n;
+  }
+
+  /* Au coffre final : première lettre et nombre de lettres de chaque mot, en indication */
+  function aideCoffre(){
+    if(typeof DONNEES === "undefined" || !DONNEES.salles) return false;
+    let fait = false;
+    DONNEES.salles.filter(s => s.motCle || s.fragment).map(s => s.motCle || s.fragment).forEach((m, i) => {
+      const c = document.getElementById("coffre-" + i);
+      if(c && !c.disabled){ const n = [...String(m).replace(/\s/g, "")].length; c.placeholder = String(m)[0] + " " + "_ ".repeat(Math.max(0, n - 1)).trim() + ` (${n} lettres)`; fait = true; }
+    });
+    return fait;
+  }
+
   /* Indice offert : on « clique » le bouton puis on rend les points retirés */
-  function indiceOffert(btn){
+  function indiceOffert(btn, origine){
     if(!btn || btn.disabled) return;
     const avant = { score: ETAT.score, s: ETAT.indicesSalle, t: ETAT.indicesTotal, u: ETAT.indicesUtilises };
     const deja = new Set(document.querySelectorAll(".feedback.indice"));
@@ -80,7 +108,7 @@
     if(avant.u !== undefined) ETAT.indicesUtilises = avant.u;
     if(typeof majHUD === "function") majHUD();
     const bulle = [...document.querySelectorAll(".feedback.indice")].find(b => !deja.has(b));
-    if(bulle && !/offert/.test(bulle.innerHTML)) bulle.insertAdjacentHTML("beforeend", ` <small>(indice offert : palier Découverte)</small>`);
+    if(bulle && !/offert/.test(bulle.innerHTML)) bulle.insertAdjacentHTML("beforeend", ` <small>(indice offert : ${origine || "palier Découverte"})</small>`);
   }
 
   /* ---- 2. Énigmes du moteur commun ---- */
@@ -92,16 +120,7 @@
         const carte = document.getElementById("enigme-" + e.id);
         if(carte){
           indiceOffert(carte.querySelector("#indice-" + e.id));
-          if(e.type === "qcm" && typeof donneesNiveau === "function"){
-            const d = donneesNiveau(e);
-            (d.questions || []).forEach((q, i) => {
-              if(!q.options || q.options.length < 3) return;
-              const faux = q.options.map((_, j) => j).filter(j => j !== q.bonne);
-              const j = faux[(i + e.id.length) % faux.length];
-              const o = carte.querySelector(`.qcm-question[data-i="${i}"] .qcm-option[data-j="${j}"]`);
-              if(o){ o.classList.add("ecartee"); o.setAttribute("aria-disabled", "true"); o.title = "Choix écarté (palier Découverte)"; }
-            });
-          }
+          if(e.type === "qcm") ecarterChoixFaux(carte, e, 0);
           const lecon = carte.querySelector("[data-fiche]");
           if(lecon) lecon.classList.add("palier-conseil");
         }
@@ -125,13 +144,7 @@
     const origine = window.afficherCoffre;
     window.afficherCoffre = function(){
       const r = origine.apply(this, arguments);
-      if(actif() && typeof DONNEES !== "undefined" && DONNEES.salles){
-        const mots = DONNEES.salles.filter(s => s.motCle || s.fragment).map(s => s.motCle || s.fragment);
-        mots.forEach((m, i) => {
-          const c = document.getElementById("coffre-" + i);
-          if(c){ const n = [...String(m).replace(/\s/g, "")].length; c.placeholder = String(m)[0] + " " + "_ ".repeat(Math.max(0, n - 1)).trim() + ` (${n} lettres)`; }
-        });
-      }
+      if(actif()) aideCoffre();
       return r;
     };
   }
@@ -147,5 +160,5 @@
       return r;
     };
   }
-  window.PALIER = { actif, DEC };
+  window.PALIER = { actif, DEC, ecarterChoixFaux, aideCoffre, indiceOffert };
 })();

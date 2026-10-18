@@ -68,6 +68,8 @@
     <button class="or" onclick="window.open('../classement.html?jeu=melanges','_blank')" title="Écran séparé, à projeter au TBI pendant la partie">📺 Écran de classement</button>
     <button class="vert" onclick="window.open('index.html','_blank')">🎮 Ouvrir un poste élève</button>
     <button class="bleu" onclick="window.open('lecons-imprimables.html','_blank')">📖 Leçons à imprimer (A4)</button>
+    <label class="cout-pouce" style="color:#fff;font-size:.9rem;align-self:center" title="Points retirés à l'équipe à chaque coup de pouce">🤝 Coup de pouce — coût :
+      <select id="cout-pouce" style="padding:6px;border-radius:8px"><option value="0" selected>aucun point</option><option value="1">1 point</option><option value="2">2 points</option><option value="3">3 points</option></select></label>
     <button class="or" onclick="window.open('index.html?correction=1','_blank')" title="Après la partie : les bonnes réponses, salle par salle, à projeter pour la mise en commun">🖥️ Correction collective</button>
   </div>
 
@@ -163,7 +165,7 @@ function afficher(equipes){
       <td>${e.niveau||"—"}${e.palier==="decouverte"?' <span title="Palier Découverte">🌱</span>':""}</td>
       <td><b>${e.salle||0}</b> / 5${e.enigme!==undefined?` <span style="opacity:.6;font-size:.8rem">(énigme ${(e.enigme||0)+1})</span>`:""}</td>
       <td><div class="points-salles">${sallesHTML}</div></td>
-      <td><b>⭐ ${e.score||0}</b></td>
+      <td><b>⭐ ${e.score||0}</b>${e.pouces?` <span title="Coups de pouce de l'enseignant" style="font-size:.8rem">🤝${e.pouces}</span>`:""}${e.passees?` <span title="Énigmes passées avec le joker" style="font-size:.8rem">🃏${e.passees}</span>`:""}</td>
       <td class="fragments">🧪 ${(e.fragments||[]).length}/5<br><span style="font-size:.75rem;opacity:.7">${fragments}</span></td>
       <td>${min}min ${String(sec).padStart(2,"0")}s${e.delaiMin?`<br><span style="font-size:.75rem;color:#7c3aed">+${e.delaiMin} min accordées</span>`:""}</td>
       <td>
@@ -171,6 +173,7 @@ function afficher(equipes){
         <button onclick="actionEquipe('${escapeAttr(e.equipe)}','reprendre')" style="background:#3a9d40;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">▶</button>
         <button onclick="actionEquipe('${escapeAttr(e.equipe)}','indice')" style="background:#1d3a8a;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">💡</button>
         <button onclick="actionEquipe('${escapeAttr(e.equipe)}','delai')" title="Accorder du temps à cette équipe sans lui faire perdre son bonus de rapidité" style="background:#7c3aed;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">⏱️ +</button>
+        <button onclick="actionEquipe('${escapeAttr(e.equipe)}','pouce')" title="Coup de pouce : retire un obstacle sur l'énigme affichée sans révéler la réponse" style="background:#2e7d32;color:#fff;border:none;padding:5px 10px;border-radius:14px;cursor:pointer;font-size:.8rem">🤝</button>
       </td>
     </tr>`;
   }).join("");
@@ -201,6 +204,10 @@ async function actionEquipe(equipe, type){
   else if(type==="delai"){
     const n = parseInt(prompt("Minutes supplémentaires pour l'équipe « "+equipe+" » (bonus de rapidité préservé) :", "2"), 10);
     if(n > 0) await envoyerCommande(equipe, {delaiMin: Math.min(30, n), id: Date.now()});
+  }
+  else if(type==="pouce"){
+    const cout = parseInt(document.getElementById("cout-pouce").value, 10) || 0;
+    if(confirm("Donner un coup de pouce à l'équipe « "+equipe+" » ?\nUn obstacle est retiré sur l'énigme affichée, sans révéler la réponse"+(cout?" (coût : "+cout+" point"+(cout>1?"s":"")+").":" (sans coût en points)."))) await envoyerCommande(equipe, {pouce:true, cout, id:Date.now()});
   }
   else if(type==="indice"){
     const msg = prompt("Indice pour l'équipe « "+equipe+"\" :");

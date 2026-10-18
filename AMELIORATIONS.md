@@ -326,7 +326,7 @@ indices) ; `resultats.html` : taux de réussite du premier coup par énigme et p
 Depuis `prof.html`, un geste intermédiaire entre l'indice et la réponse : retirer un obstacle sans
 révéler la solution (choix faux écarté, étiquette placée, lettre révélée, élément fixé), en réutilisant
 le code du palier Découverte (E2). Tracé dans le bilan ; coût en points réglable (aucun par défaut).
-**Jeux concernés :** 12 jeux « salles » + prof.html · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** 12 jeux « salles » + prof.html · **Effort :** M · **Statut :** Fait
 
 ### N14 — Référencement sur les plateformes nationales de ressources libres
 Éduthèque, Apps.education.fr, La Digitale : licence du dépôt (décision de l'auteur), vérification des
