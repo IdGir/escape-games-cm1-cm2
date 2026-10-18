@@ -342,7 +342,7 @@ un joker par équipe en mode duel (N4).
 ### N16 — Export/import du passeport de compétences entre appareils
 Export (fichier .json ou code court) et import fusionnant sans écraser ce qui est plus récent, sur le
 format de l'export de partie (A5), sans serveur ni compte.
-**Jeux concernés :** commun/ (passeport) + 12 jeux « salles » · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** commun/ (passeport) + 12 jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ### N17 — Contrôle automatique de l'affichage sur tablette et smartphone
 `outils-tests/verifier-responsive.js` : chaque jeu à 3 largeurs types (tablette 10", tablette 7",

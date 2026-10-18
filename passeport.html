@@ -66,16 +66,31 @@
       <label>Élève <select id="choix-eleve"></select></label>
       <label>Afficher <select id="choix-vue"><option value="eleve">le passeport de l'élève</option><option value="classe">la vue de la classe</option></select></label>
       <button id="btn-imprimer">🖨️ Imprimer les passeports</button>
-      <button id="btn-export">💾 Exporter (JSON)</button>
-      <label class="aide" style="cursor:pointer;text-decoration:underline">📂 Importer<input type="file" id="fichier" accept=".json" hidden></label>
       <button id="btn-csv">📄 CSV (tableur, Schooly)</button>
     </div>
     <div id="vue"></div>
+  </section>
+
+  <section class="bloc" id="transfert">
+    <h2 style="margin:0 0 6px;font-size:1.05rem">2. Changer d'appareil : maison ↔ classe</h2>
+    <p class="aide">Pour qu'un élève continue chez lui ce qu'il a commencé en classe (ou l'inverse), sans serveur ni compte : il emporte sa progression (compétences du passeport <b>et</b> parties jouées, pour ses trophées)
+      dans un <b>fichier</b> ou un <b>code court</b>, puis l'importe sur l'autre appareil. L'import <b>fusionne</b> avec ce qui est déjà là : la note la plus récente de chaque compétence est gardée, rien n'est écrasé.
+      Sur l'écran d'accueil de chaque jeu, le bouton « 🎓 Ma progression » fait la même chose.</p>
+    <div class="ligne">
+      <button class="principal" id="btn-export">📤 Exporter ma progression</button>
+      <button id="btn-code">🔤 Obtenir un code court</button>
+      <label class="aide" style="cursor:pointer;text-decoration:underline">📥 Importer un fichier<input type="file" id="fichier" accept=".json,application/json" hidden></label>
+    </div>
+    <p class="aide" id="portee-export"></p>
+    <textarea id="code-progression" readonly style="display:none;min-height:60px;font:.8rem monospace"></textarea>
+    <div class="ligne" style="margin-top:8px"><textarea id="coller-code" placeholder="… ou collez ici un code « EGP1… » reçu d'un autre appareil" style="min-height:50px"></textarea><button id="btn-code-importer">📥 Importer le code</button></div>
+    <p class="aide" id="msg-transfert" role="status"></p>
   </section>
 </main>
 <div class="impression" id="impression"></div>
 
 <script src="commun/donnees/catalogue.js?c3"></script>
+<script src="commun/js/progression.js?c1"></script>
 <script>
 "use strict";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
@@ -147,13 +162,14 @@ function rendre(){
   document.getElementById("liste-eleves").value = D.eleves.join("\n");
   const vue = document.getElementById("choix-vue").value;
   document.getElementById("vue").innerHTML = vue === "classe" ? vueClasse() : vueEleve(sel.value);
+  if(typeof majPortee === "function" && document.getElementById("portee-export")) majPortee();
 }
 document.getElementById("vue").addEventListener("click", e => {
   const b = e.target.closest(".etats button"); if(!b) return;
   const eleve = document.getElementById("choix-eleve").value, cle = b.parentNode.dataset.cle;
   D.notes[eleve] = D.notes[eleve] || {};
   if(D.notes[eleve][cle] && D.notes[eleve][cle].v === b.dataset.v) delete D.notes[eleve][cle];      // second clic : on efface
-  else D.notes[eleve][cle] = { v: b.dataset.v, date: new Date().toISOString().slice(0, 10) };
+  else D.notes[eleve][cle] = { v: b.dataset.v, date: new Date().toISOString().slice(0, 10), t: new Date().toISOString() };
   sauver(); rendre();
 });
 document.getElementById("btn-eleves").addEventListener("click", () => {
@@ -168,12 +184,30 @@ function telecharger(nom, contenu, type){
   window.__dernierExport = { nom, contenu };
   try{ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([contenu], { type })); a.download = nom; document.body.appendChild(a); a.click(); a.remove(); }catch(e){}
 }
-document.getElementById("btn-export").addEventListener("click", () => telecharger(`passeport-competences-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(D, null, 1), "application/json"));
-document.getElementById("fichier").addEventListener("change", async e => {
-  try{ const o = JSON.parse(await e.target.files[0].text()); if(!Array.isArray(o.eleves) || typeof o.notes !== "object") throw 0;
-    if(!confirm("Remplacer le passeport de cet appareil par celui du fichier ?")) return; D = o; sauver(); rendre(); msg("Passeport importé."); }
-  catch(x){ msg("Fichier illisible : choisissez un export du passeport (.json)."); }
+/* ---- Changer d'appareil (N16) : export, code court, import avec fusion ---- */
+const msgT = t => { document.getElementById("msg-transfert").textContent = t; };
+const eleveExporte = () => document.getElementById("choix-vue").value === "classe" ? "" : document.getElementById("choix-eleve").value;
+function majPortee(){
+  const e = eleveExporte();
+  document.getElementById("portee-export").textContent = e ? `L'export contient la progression de « ${e} » (passeport et parties). Pour toute la classe, choisissez « la vue de la classe ».` : "L'export contient la progression de toute la classe (passeport et parties).";
+}
+function rechargerDepuisAppareil(){ const a = PROGRESSION.lire(); D = { eleves: a.eleves, notes: a.notes }; rendre(); }
+document.getElementById("btn-export").addEventListener("click", async () => {
+  sauver();
+  const r = await PROGRESSION.exporterFichier({ eleve: eleveExporte() });
+  msgT(`📤 ${r.nom} enregistré : ${r.contenu.parties.length} partie(s), ${Object.keys(r.contenu.notes).length} élève(s) avec des compétences. Importez-le sur l'autre appareil.`);
 });
+document.getElementById("btn-code").addEventListener("click", async () => {
+  sauver();
+  const code = await PROGRESSION.codeCourt(PROGRESSION.contenu({ eleve: eleveExporte() }));
+  const ta = document.getElementById("code-progression"); ta.style.display = "block"; ta.value = code;
+  let copie = false; try{ await navigator.clipboard.writeText(code); copie = true; }catch(e){ ta.select(); }
+  msgT(`🔤 Code de ${code.length} caractères ${copie ? "copié" : "à copier"} : à coller sur l'autre appareil (le détail des énigmes n'est pas dans le code, mais dans le fichier).`);
+});
+async function importer(texte){ const r = await PROGRESSION.importerTexte(texte); msgT(r.message); if(r.ok) rechargerDepuisAppareil(); return r; }
+document.getElementById("fichier").addEventListener("change", async e => { const f = e.target.files[0]; if(f) await importer(await f.text()); e.target.value = ""; });
+document.getElementById("btn-code-importer").addEventListener("click", () => importer(document.getElementById("coller-code").value));
+["choix-eleve", "choix-vue"].forEach(id => document.getElementById(id).addEventListener("change", majPortee));
 document.getElementById("btn-csv").addEventListener("click", () => {
   const c = v => /[;"\n]/.test(String(v)) ? '"' + String(v).replace(/"/g, '""') + '"' : String(v);
   const l = [["eleve", "matiere", "jeu", "competence", "etat", "date"]];
@@ -186,9 +220,9 @@ document.getElementById("btn-imprimer").addEventListener("click", () => {
       <table><tr><th>Jeu</th><th>Compétence du programme</th><th>État</th></tr>${COMPETENCES.map(c => `<tr><td>${esc(c.titre)}</td><td>${esc(c.texte)}</td><td>${n[c.cle] ? LIB[n[c.cle].v] : ""}</td></tr>`).join("")}</table></section>`; }).join("");
   window.print();
 });
-rendre();
+rendre(); majPortee();
 chargerCompetences().then(rendre);
-window.PASSEPORT = { get D(){ return D; }, get COMPETENCES(){ return COMPETENCES; }, rendre };
+window.PASSEPORT = { get D(){ return D; }, get COMPETENCES(){ return COMPETENCES; }, rendre, importer, majPortee };
 </script>
 </body>
 </html>

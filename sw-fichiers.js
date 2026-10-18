@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "8c42341d82";
+self.VERSION_HORS_LIGNE = "e3003bbe1d";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -58,11 +58,15 @@ self.FICHIERS_CODE = [
 "commun/icones/icone-apple-180.png",
 "commun/icones/icone-masquable-512.png",
 "commun/js/accessibilite.js",
+"commun/js/alerte-seance.js",
 "commun/js/api.js",
 "commun/js/audio.js",
 "commun/js/auto-evaluation.js",
 "commun/js/bandeau-bo.js",
 "commun/js/compte-rendu.js",
+"commun/js/correction-collective.js",
+"commun/js/coup-de-pouce.js",
+"commun/js/difficulte-enigme.js",
 "commun/js/enigmes.js",
 "commun/js/export-partie.js",
 "commun/js/fiche-mission.js",
@@ -71,6 +75,7 @@ self.FICHIERS_CODE = [
 "commun/js/indices-adaptatifs.js",
 "commun/js/indices-degressifs.js",
 "commun/js/jeu-suivant.js",
+"commun/js/joker.js",
 "commun/js/lecons-a4.js",
 "commun/js/lecture-consignes.js",
 "commun/js/media.js",
@@ -79,7 +84,9 @@ self.FICHIERS_CODE = [
 "commun/js/mode-solo.js",
 "commun/js/narration.js",
 "commun/js/palier-decouverte.js",
+"commun/js/prof-difficulte.js",
 "commun/js/pwa.js",
+"commun/js/suivi-enigmes.js",
 "commun/js/sync.js",
 "commun/js/transitions.js",
 "commun/js/trophees.js",
@@ -118,6 +125,7 @@ self.FICHIERS_CODE = [
 "declaration/css/v2.css",
 "declaration/index.html",
 "declaration/js/app.js",
+"declaration/js/correction.js",
 "declaration/js/decors.js",
 "declaration/js/enigmes.js",
 "declaration/js/impression.js",
@@ -621,6 +629,7 @@ self.FICHIERS_CODE = [
 "tour-du-monde/css/v2.css",
 "tour-du-monde/index.html",
 "tour-du-monde/js/app.js",
+"tour-du-monde/js/correction.js",
 "tour-du-monde/js/decors.js",
 "tour-du-monde/js/enigmes.js",
 "tour-du-monde/js/impression.js",

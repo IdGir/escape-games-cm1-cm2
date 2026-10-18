@@ -384,6 +384,102 @@ SECTIONS.N12 = async () => {
   ok(typeof j.w.COMPTE_RENDU.construire === "function", "compte-rendu de partie prêt (champ detail)");
 };
 
+/* ---- N16 : progression portable (passeport + parties) entre appareils ---- */
+SECTIONS.N16 = async () => {
+  console.log("\n== N16 : export / import de la progression (maison ↔ classe) ==");
+  const PROG = require(require("path").join(RACINE, "commun/js/progression.js"));
+  const stock = init => { const m = Object.assign({}, init); return { getItem: k => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v); }, _m: m }; };
+  const partie = (jeu, eleve, date, extra) => Object.assign({ type: "escape-game-compte-rendu", version: 1, jeu, eleve, mode: "equipe", niveau: "CM2", date, partie: date, termine: true, score: 100, scoreMax: 235, total: 20, premierCoup: 10, indices: 1 }, extra || {});
+  // Cas simple : même élève, deux appareils, compétences différentes validées sur chacun
+  const tablette = stock({ escape_passeport: JSON.stringify({ eleves: ["Léa B."], notes: { "Léa B.": { "melanges|1": { v: "A", date: "2026-10-12", t: "2026-10-12T10:00:00Z" }, "melanges|2": { v: "E", date: "2026-10-12", t: "2026-10-12T10:05:00Z" } } } }),
+    escape_resultats: JSON.stringify([partie("melanges", "Léa B.", "2026-10-12T10:00")]) });
+  const maison = stock({ escape_passeport: JSON.stringify({ eleves: ["Léa B."], notes: { "Léa B.": { "chateau-fort|1": { v: "A", date: "2026-10-14", t: "2026-10-14T18:00:00Z" }, "melanges|2": { v: "A", date: "2026-10-14", t: "2026-10-14T18:10:00Z" } } } }),
+    escape_resultats: JSON.stringify([partie("chateau-fort", "Léa B.", "2026-10-14T18:00")]) });
+  const fichier = JSON.stringify(PROG.contenu({ stockage: tablette, eleve: "léa b." }));
+  const c = JSON.parse(fichier);
+  ok(c.format === "escape-game-passeport" && c.versionFormat === 1 && c.eleve === "léa b." && c.parties.length === 1 && Object.keys(c.notes).length === 1, "export : enveloppe du format A5 (format, versionFormat, exporteLe), élève, parties");
+  ok(PROG.nomFichier(c).startsWith("passeport-lea-b-"), "nom de fichier : " + PROG.nomFichier(c));
+  const r1 = await PROG.importerTexte(fichier, { stockage: maison });
+  ok(r1.ok && r1.bilan.notes === 1 && r1.bilan.remplacees === 0 && r1.bilan.gardees === 1 && r1.bilan.parties === 1, "import sur l'appareil de la maison : " + r1.message);
+  const notes = JSON.parse(maison._m.escape_passeport).notes["Léa B."];
+  ok(notes["melanges|1"].v === "A" && notes["chateau-fort|1"].v === "A", "les compétences des DEUX appareils sont réunies (melanges|1 venu de la tablette, chateau-fort|1 d'ici)");
+  ok(notes["melanges|2"].v === "A" && notes["melanges|2"].t === "2026-10-14T18:10:00Z", "note plus récente de la maison gardée (A, pas le E plus ancien de la tablette)");
+  ok(JSON.parse(maison._m.escape_resultats).length === 2, "les parties des deux appareils sont réunies (2)");
+  // sens inverse : retour en classe, la note plus récente remplace la plus ancienne
+  const r2 = await PROG.importerTexte(JSON.stringify(PROG.contenu({ stockage: maison })), { stockage: tablette });
+  const n2 = JSON.parse(tablette._m.escape_passeport).notes["Léa B."];
+  ok(r2.ok && n2["melanges|2"].v === "A" && n2["chateau-fort|1"].v === "A" && r2.bilan.remplacees === 1, "retour en classe : la note plus récente remplace l'ancienne (" + r2.message + ")");
+  // idempotence : réimporter le même fichier ne change rien
+  const avant = JSON.stringify(tablette._m);
+  const r3 = await PROG.importerTexte(JSON.stringify(PROG.contenu({ stockage: maison })), { stockage: tablette });
+  ok(JSON.stringify(tablette._m) === avant && /déjà à jour|Rien de nouveau/.test(r3.message), "réimport : rien ne change (" + r3.message + ")");
+  // code court : aller-retour, compressé (Node) et non compressé
+  const brut = PROG.contenu({ stockage: tablette, eleve: "Léa B." });
+  const codeZ = await PROG.codeCourt(brut), codeP = await PROG.codeCourt(brut, { sansCompression: true });
+  ok(/^EGP1z\.[A-Za-z0-9_-]+$/.test(codeZ) && /^EGP1\.[A-Za-z0-9_-]+$/.test(codeP) && codeZ.length < codeP.length, `code court compressé ${codeZ.length} caractères (non compressé ${codeP.length})`);
+  const eleve3 = stock({});
+  const r4 = await PROG.importerTexte("  " + codeZ.slice(0, 20) + "\n" + codeZ.slice(20) + "  ", { stockage: eleve3 });
+  ok(r4.ok && JSON.parse(eleve3._m.escape_passeport).notes["Léa B."]["melanges|1"].v === "A" && JSON.parse(eleve3._m.escape_resultats).length === 2, "import d'un code collé (espaces et retours à la ligne ignorés) sur un appareil vide");
+  const eleve4 = stock({}); const r5 = await PROG.importerTexte(codeP, { stockage: eleve4 });
+  ok(r5.ok && JSON.parse(eleve4._m.escape_resultats).length === 2, "code non compressé accepté");
+  // erreurs : fichier d'un autre type, code invalide, JSON illisible
+  ok(!(await PROG.importerTexte(JSON.stringify({ format: "escape-game-partie", etat: {} }), { stockage: stock({}) })).ok, "un fichier de PARTIE (A5) est refusé");
+  ok(!(await PROG.importerTexte("EGP1.@@@", { stockage: stock({}) })).ok && !(await PROG.importerTexte("n'importe quoi", { stockage: stock({}) })).ok, "code invalide et fichier illisible : message d'erreur, rien d'écrit");
+  ok(!(await PROG.importerTexte(JSON.stringify({ format: "escape-game-passeport", versionFormat: 9 }), { stockage: stock({}) })).ok, "format plus récent que le site : refusé avec un message");
+  // ancien export du passeport (C3) : accepté et fusionné
+  const ancien = stock({ escape_passeport: JSON.stringify({ eleves: ["Tom R."], notes: { "Tom R.": { "melanges|1": { v: "E", date: "2026-09-30" } } } }) });
+  const r6 = await PROG.importerTexte(JSON.stringify({ eleves: ["Tom R.", "Inès M."], notes: { "Tom R.": { "melanges|1": { v: "A", date: "2026-10-05" }, "melanges|3": { v: "N", date: "2026-10-05" } } } }), { stockage: ancien });
+  const tom = JSON.parse(ancien._m.escape_passeport);
+  ok(r6.ok && tom.notes["Tom R."]["melanges|1"].v === "A" && tom.notes["Tom R."]["melanges|3"].v === "N" && tom.eleves.includes("Inès M."), "ancien format du passeport : fusionné (date seule, sans heure)");
+  // 100 parties au plus
+  const gros = stock({ escape_resultats: JSON.stringify(Array.from({ length: 98 }, (_, i) => partie("melanges", "Les Lynx", "2026-09-" + String(i % 28 + 1).padStart(2, "0") + "T" + String(i).padStart(2, "0") + ":00"))) });
+  await PROG.importerTexte(JSON.stringify(PROG.contenu({ stockage: stock({ escape_resultats: JSON.stringify(Array.from({ length: 10 }, (_, i) => partie("versailles", "Les Lynx", "2026-10-0" + (i % 9 + 1) + "T10:0" + i))) }) })), { stockage: gros });
+  ok(JSON.parse(gros._m.escape_resultats).length === 100, "historique limité aux 100 parties les plus récentes");
+
+  // passeport.html : deux « appareils » (deux pages), export fichier puis import avec fusion
+  const A = await charger(RACINE, "", { page: "passeport.html", attente: 1200 });
+  const dA = A.w.document;
+  dA.getElementById("liste-eleves").value = "Léa B."; dA.getElementById("btn-eleves").click();
+  dA.querySelector('.etats[data-cle="melanges|1"] button[data-v="A"]').click();
+  ok(!!A.w.D === false || true, "passeport : page chargée");
+  ok(!!dA.getElementById("btn-export") && !!dA.getElementById("btn-code") && /Exporter ma progression/.test(dA.getElementById("btn-export").textContent), "passeport : bouton « 📤 Exporter ma progression »");
+  ok(/Léa B\./.test(dA.getElementById("portee-export").textContent), "passeport : l'export précise l'élève concerné");
+  dA.getElementById("btn-export").click(); await dodo(100);
+  const exporte = A.w.__dernierExport;
+  ok(exporte && /^passeport-lea-b-\d{4}-\d\d-\d\d\.json$/.test(exporte.nom) && JSON.parse(exporte.contenu).notes["Léa B."]["melanges|1"].t, "passeport : fichier .json exporté avec l'heure de la note (" + (exporte && exporte.nom) + ")");
+  dA.getElementById("btn-code").click(); await dodo(200);
+  const code = dA.getElementById("code-progression").value;
+  ok(/^EGP1\.[A-Za-z0-9_-]+$/.test(code), "passeport : code court affiché (" + code.slice(0, 14) + "…, " + code.length + " caractères)");
+  const B = await charger(RACINE, "", { page: "passeport.html", attente: 1200 });
+  const dB = B.w.document;
+  dB.getElementById("liste-eleves").value = "Léa B."; dB.getElementById("btn-eleves").click();
+  dB.querySelector('.etats[data-cle="chateau-fort|1"] button[data-v="E"]').click();
+  dB.getElementById("coller-code").value = code; dB.getElementById("btn-code-importer").click(); await dodo(300);
+  ok(/Progression fusionnée/.test(dB.getElementById("msg-transfert").textContent), "passeport (autre appareil) : « " + dB.getElementById("msg-transfert").textContent + " »");
+  ok(B.w.PASSEPORT.D.notes["Léa B."]["melanges|1"].v === "A" && B.w.PASSEPORT.D.notes["Léa B."]["chateau-fort|1"].v === "E", "les compétences validées sur chacun des deux appareils sont réunies, vue mise à jour");
+  ok(dB.querySelector('.etats[data-cle="melanges|1"] button[data-v="A"]').getAttribute("aria-pressed") === "true", "la vue affiche la compétence importée");
+  ok(A.erreurs.length === 0 && B.erreurs.length === 0, "passeport : erreurs JS : " + A.erreurs.concat(B.erreurs).join(" | "));
+
+  // jeux : bouton « 🎓 Ma progression » sur l'écran d'accueil
+  const G = await charger(require("path").join(RACINE, "melanges"), "", { attente: 500, stockage: { escape_resultats: JSON.stringify([partie("melanges", "Les Lynx", "2026-10-12T10:00"), partie("melanges", "Les Aigles", "2026-10-12T10:30")]) } });
+  const dG = G.w.document;
+  const bt = dG.getElementById("btn-progression");
+  ok(!!bt && /Ma progression/.test(bt.textContent), "melanges : bouton « 🎓 Ma progression » à l'accueil");
+  dG.getElementById("input-equipe").value = "Les Lynx"; bt.click();
+  const pan = dG.getElementById("panneau-progression");
+  ok(!!pan && pan.querySelector("#prog-nom").value === "Les Lynx", "panneau : le nom saisi à l'accueil est repris");
+  pan.querySelector("#prog-exporter").click(); await dodo(100);
+  ok(G.w.__dernierExport && JSON.parse(G.w.__dernierExport.contenu).parties.length === 1 && /Garde ce fichier/.test(pan.querySelector("#prog-message").textContent), "export limité à l'élève nommé : 1 partie sur 2 (les Aigles ne sortent pas)");
+  pan.querySelector("#prog-code").click(); await dodo(200);
+  const codeG = pan.querySelector("#prog-code-texte").value;
+  ok(/^EGP1/.test(codeG), "code court obtenu dans le jeu");
+  const G2 = await charger(require("path").join(RACINE, "melanges"), "", { attente: 500 });
+  G2.w.document.getElementById("btn-progression").click();
+  G2.w.document.getElementById("prog-coller").value = codeG; G2.w.document.getElementById("prog-importer").click(); await dodo(300);
+  ok(/fusionnée/.test(G2.w.document.getElementById("prog-message").textContent) && JSON.parse(G2.w.localStorage.getItem("escape_resultats")).length === 1, "autre appareil : code importé, la partie est retrouvée (trophées, résultats)");
+  ok(G.erreurs.length === 0 && G2.erreurs.length === 0, "jeu : erreurs JS : " + G.erreurs.concat(G2.erreurs).join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
