@@ -96,6 +96,9 @@ function traiterCommande(cmd){
   if(cmd.delaiMin && typeof accorderDelai === "function"){
     accorderDelai(cmd.delaiMin);   // E6 : délai accordé à cette équipe (bonus préservé)
   }
+  if(cmd.finSeance && typeof window.alerteFinSeance === "function"){
+    window.alerteFinSeance(cmd.finSeance.min);   // N19 : fin de séance annoncée à toutes les équipes
+  }
   if(cmd.pouce && typeof window.coupDePouce === "function"){
     window.coupDePouce(cmd.cout);  // N13 : coup de pouce de l'enseignant (sans révéler la réponse)
   }

@@ -788,6 +788,57 @@ SECTIONS.N13 = async () => {
   ok(!dc.w.document.getElementById("cout-pouce"), "declaration : pas de bouton de coup de pouce (énigmes écrites en dur)");
 };
 
+/* ---- N19 : alerte de fin de séance ---- */
+SECTIONS.N19 = async () => {
+  console.log("\n== N19 : alerte de fin de séance ==");
+  for (const j of ["melanges", "tour-du-monde"]) {
+    const { w, erreurs } = await lancerPartie(j);
+    const d = w.document;
+    let sons = 0; const sonOrigine = w.son; w.son = n => { if (n === "page") sons++; return sonOrigine && sonOrigine(n); };
+    const avant = { score: w.ETAT.score, salleDebut: w.ETAT.salleDebut, enigme: w.ETAT.enigme, dureeMin: w.ETAT.reglages.dureeMin };
+    ok(!d.getElementById("alerte-seance") || !d.getElementById("alerte-seance").classList.contains("visible"), `${j} : pas de bandeau au départ`);
+    await dodo(w.ALERTE_SEANCE.CALME_MS + 200);     // la partie vient de démarrer : on attend le calme
+    w.traiterCommande({ finSeance: { min: 5, id: 1 } }); await dodo(30);
+    const b = d.getElementById("alerte-seance");
+    ok(b && b.classList.contains("visible") && /Fin de la séance dans 5 min/.test(b.textContent), `${j} : bandeau « Fin de la séance dans 5 min » (${b && b.textContent.trim()})`);
+    ok(w.ETAT.score === avant.score && w.ETAT.salleDebut === avant.salleDebut && w.ETAT.enigme === avant.enigme && w.ETAT.reglages.dureeMin === avant.dureeMin, `${j} : chrono, score et énigme inchangés`);
+    ok(!w.ETAT.enPause && d.querySelector(".ecran.actif").id === "ecran-salle", `${j} : l'énigme en cours n'est pas interrompue (écran de jeu toujours affiché)`);
+    ok(w.getComputedStyle(b).pointerEvents === "none", `${j} : le bandeau laisse passer les clics`);
+    await dodo(100);
+    ok(sons === 1, `${j} : un court signal sonore (${sons})`);
+    // l'équipe est en train de valider : le signal attend
+    w.ALERTE_SEANCE.masquer(); sons = 0;
+    d.body.dispatchEvent(new w.Event("pointerdown", { bubbles: true }));
+    w.alerteFinSeance(3); await dodo(300);
+    ok(sons === 0 && /dans 3 min/.test(d.getElementById("alerte-seance").textContent), `${j} : équipe en action : bandeau seul, signal sonore retardé (${sons})`);
+    await dodo(w.ALERTE_SEANCE.CALME_MS + 800);
+    ok(sons === 1, `${j} : signal sonore émis quand l'équipe a fini d'agir (${sons})`);
+    // le message se met à jour : moins d'une minute, puis heure de terminer
+    w.ALERTE_SEANCE.masquer();
+    w.alerteFinSeance(1); await dodo(30);
+    ok(/moins d'une minute/.test(d.getElementById("alerte-seance").textContent) && d.getElementById("alerte-seance").classList.contains("urgent"), `${j} : « moins d'une minute » en urgence`);
+    // le bandeau se ferme
+    d.querySelector("#alerte-seance button").click();
+    ok(!d.getElementById("alerte-seance").classList.contains("visible"), `${j} : bouton ✕ pour masquer`);
+    // fin de partie : l'alerte disparaît
+    w.alerteFinSeance(5); w.ETAT.fini = false; w.finDuJeu(); await dodo(50);
+    ok(!d.getElementById("alerte-seance").classList.contains("visible"), `${j} : alerte masquée à l'écran de fin`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // prof.html : bouton, délai réglable, commande diffusée à toutes les équipes
+  const pr = await charger(J("melanges"), "", { page: "prof.html", attente: 400 });
+  const pd = pr.w.document; let env = null;
+  pr.w.envoyerCommande = async (eq, cmd) => { env = { eq, cmd }; };
+  ok(!!pd.querySelector("button[onclick='prevenirFinSeance()']") && /fin dans 5 min/.test(pd.querySelector(".fin-seance").textContent), "prof.html : « 🔔 Prévenir : fin dans 5 min »");
+  await pr.w.prevenirFinSeance();
+  ok(env && env.eq === "*" && env.cmd.finSeance.min === 5, "prof.html : commande envoyée à toutes les équipes (*), 5 min par défaut");
+  const sel = pd.getElementById("delai-fin"); sel.value = "10"; sel.dispatchEvent(new pr.w.Event("change"));
+  ok(/fin dans 10 min/.test(pd.querySelector(".fin-seance").textContent), "prof.html : délai modifiable (10 min)");
+  await pr.w.prevenirFinSeance();
+  ok(env.cmd.finSeance.min === 10, "prof.html : délai de 10 min transmis");
+  ok(pr.erreurs.length === 0, "prof.html : erreurs JS : " + pr.erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

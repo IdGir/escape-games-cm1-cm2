@@ -358,7 +358,7 @@ premières fiches, dossier `sequences/` lié depuis les jeux et la vue d'ensembl
 ### N19 — Alerte de fin de séance commune à toutes les équipes
 Bouton « 🔔 Prévenir : fin dans 5 min » dans `prof.html` : bandeau discret et signal sonore court sur
 toutes les équipes, sans interrompre l'énigme en cours ni toucher aux chronos.
-**Jeux concernés :** 12 jeux « salles » + prof.html · **Effort :** S · **Statut :** Sélectionné
+**Jeux concernés :** 12 jeux « salles » + prof.html · **Effort :** S · **Statut :** Fait
 
 ### N20 — Réglage de la difficulté énigme par énigme
 Champ optionnel de surcharge dans `enigmes.json` (contrôlé par A7), écran de réglage +/- par énigme dans
