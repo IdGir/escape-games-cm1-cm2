@@ -320,7 +320,7 @@ désactivable dans ⚙️ Réglages ; aucun effet sur le score.
 Compte-rendu enrichi énigme par énigme (identifiant, compétence, réussite au premier coup, erreurs,
 indices) ; `resultats.html` : taux de réussite du premier coup par énigme et par compétence, liste
 « à retravailler » avec lien vers la leçon A4, export tableur et version imprimable.
-**Jeux concernés :** 12 jeux « salles » + resultats.html · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** 12 jeux « salles » + resultats.html · **Effort :** M · **Statut :** En cours
 
 ### N13 — « Coup de pouce enseignant » à distance
 Depuis `prof.html`, un geste intermédiaire entre l'indice et la réponse : retirer un obstacle sans
@@ -337,7 +337,7 @@ crédits des médias, fiche de présentation, vérification des conditions de d�
 Un bouton « 🃏 Joker » passe une énigme bloquante (0 point, marquée « passée »), donne ce qu'il faut pour
 continuer vers le mot de la serrure ; réglage enseignant (activé ou non, 1 par partie ou 1 par salle) ;
 un joker par équipe en mode duel (N4).
-**Jeux concernés :** 12 jeux « salles » · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** 12 jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ### N16 — Export/import du passeport de compétences entre appareils
 Export (fichier .json ou code court) et import fusionnant sans écraser ce qui est plus récent, sur le

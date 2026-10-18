@@ -545,6 +545,142 @@ SECTIONS.D7 = async () => {
   ok([...types].every(t => src.includes(`case "${t}"`)), `tous les types d'énigmes des jeux sont traités (${[...types].join(", ")})`);
 };
 
+/* ---- Aides de test : résoudre une énigme « ordre » (1re énigme de melanges) ---- */
+async function ordreJuste(w, carte){
+  const liste = carte.querySelector(".liste-ordre"), n = liste.children.length;
+  for (let r = 1; r <= n; r++) {
+    let garde = 0;
+    while (garde++ < 20) {
+      const items = [...liste.querySelectorAll(".item-ordre")];
+      const idx = items.findIndex(x => +x.dataset.rang === r);
+      if (idx <= r - 1) break;
+      items[idx].querySelector(".btn-monter").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    }
+  }
+}
+const cliquer = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+async function lancerPartie(j, query, stockage){
+  const r = await charger(J(j), query || "", { attente: 600, stockage });
+  const d = r.w.document;
+  r.w.ETAT.reglages.cinematiques = false;
+  const inp = d.getElementById("input-equipe"); inp.value = "Les Lynx"; inp.dispatchEvent(new r.w.Event("input"));
+  d.querySelector('.opt-niveau[data-niveau="CM1"]').click();
+  d.getElementById("btn-demarrer").click(); await dodo(400);
+  return r;
+}
+
+/* ---- N12 (suivi énigme par énigme) : notes gardées dans le compte-rendu ---- */
+SECTIONS.N12a = async () => {
+  console.log("\n== N12 : suivi énigme par énigme (compte-rendu) ==");
+  const { w, erreurs } = await lancerPartie("melanges");
+  const d = w.document;
+  ok(typeof w.SUIVI_ENIGMES === "object", "greffon chargé");
+  const e1 = w.salleEnigmes(1)[0], carte = d.getElementById("enigme-" + e1.id);
+  ok(e1.type === "ordre" && !!carte, `1re énigme « ${e1.id} » de type ordre affichée`);
+  // une erreur volontaire (descendre le premier élément), puis la bonne réponse
+  await ordreJuste(w, carte);
+  cliquer(w, carte.querySelector(".liste-ordre .item-ordre .btn-descendre"));
+  cliquer(w, carte.querySelector("[data-valider]")); await dodo(30);
+  ok(!carte.classList.contains("resolue") && w.SUIVI_ENIGMES.notes()[e1.id].e === 1, "erreur notée (1)");
+  const btnIndice = d.getElementById("indice-" + e1.id); cliquer(w, btnIndice); await dodo(30);
+  ok(w.SUIVI_ENIGMES.notes()[e1.id].i === 1, "indice noté (1)");
+  await ordreJuste(w, carte);
+  cliquer(w, carte.querySelector("[data-valider]")); await dodo(900);
+  const n1 = w.SUIVI_ENIGMES.notes()[e1.id];
+  ok(n1.ok === 1 && n1.pc === 0 && n1.e === 1 && n1.i === 1 && n1.l === e1.lecon && n1.s === 1, "énigme résolue après erreur : " + JSON.stringify(n1));
+  // énigme suivante
+  cliquer(w, d.getElementById("btn-enigme-suivante")); await dodo(100);
+  const e2 = w.salleEnigmes(1)[1], c2 = d.getElementById("enigme-" + e2.id);
+  ok(!!c2, `2e énigme « ${e2.id} » (${e2.type}) affichée`);
+  const cr = w.COMPTE_RENDU.construire();
+  ok(Array.isArray(cr.detail) && cr.detail.length >= 1 && cr.detail[0].id === e1.id, "compte-rendu : champ « detail » (" + (cr.detail || []).length + " énigme(s))");
+  ok(cr.passees === 0, "aucune énigme passée");
+  ok(w.COMPTE_RENDU.verifier(cr) && !/undefined/.test(w.COMPTE_RENDU.texte(cr)), "code de contrôle valide, texte lisible");
+  // reprise de partie : les notes sont retrouvées dans la sauvegarde
+  w.sauvegarder();
+  const stock = {}; for (let i = 0; i < w.localStorage.length; i++) { const k = w.localStorage.key(i); stock[k] = w.localStorage.getItem(k); }
+  const r2 = await charger(J("melanges"), "", { attente: 900, stockage: stock });
+  await dodo(400);
+  const reprise = r2.w.SUIVI_ENIGMES && r2.w.SUIVI_ENIGMES.notes();
+  ok(r2.w.ETAT.equipe === "Les Lynx" && reprise && reprise[e1.id] && reprise[e1.id].e === 1, "reprise : notes retrouvées (" + JSON.stringify(reprise && reprise[e1.id]) + ")");
+  ok(erreurs.length === 0 && r2.erreurs.length === 0, "erreurs JS : " + erreurs.concat(r2.erreurs).join(" | "));
+  // Déclaration : une énigme par salle
+  const dc = await charger(J("declaration"), "?salle=3&niveau=CM1", { attente: 700 });
+  ok(typeof dc.w.SUIVI_ENIGMES === "object" && dc.w.SUIVI_ENIGMES.courante() && dc.w.SUIVI_ENIGMES.courante().id === "s3", "declaration : énigme de la salle 3 suivie (s3)");
+  ok(dc.erreurs.length === 0, "declaration : erreurs JS : " + dc.erreurs.join(" | "));
+};
+
+/* ---- N15 : joker d'équipe ---- */
+SECTIONS.N15 = async () => {
+  console.log("\n== N15 : joker d'équipe ==");
+  for (const j of ["melanges", "constitution", "versailles"]) {
+    const { w, erreurs } = await lancerPartie(j);
+    const d = w.document;
+    const b = d.querySelector(".btn-joker");
+    ok(b && /1 restant/.test(b.textContent), `${j} : bouton « 🃏 Joker (1 restant) » (${b && b.textContent})`);
+    const liste = w.salleEnigmes(1), e1 = liste[0];
+    const score0 = w.ETAT.score;
+    cliquer(w, b); await dodo(60);
+    const carte = d.getElementById("enigme-" + e1.id);
+    ok(carte.classList.contains("resolue") && /Joker utilisé/.test(d.getElementById("fb-" + e1.id).textContent), `${j} : énigme passée, message affiché`);
+    ok(w.ETAT.score === score0 && w.ETAT.enigme === 1, `${j} : 0 point (score ${w.ETAT.score}), énigme suivante`);
+    ok(!!d.getElementById("btn-enigme-suivante"), `${j} : « Énigme suivante » proposé`);
+    const n = w.SUIVI_ENIGMES.notes()[e1.id];
+    ok(n && n.p === 1 && n.ok === 0 && n.pc === 0, `${j} : notée « passée » (${JSON.stringify(n)})`);
+    ok(w.ETAT.enigmesPremierCoup === 0 && !w.ETAT.erreursTotal, `${j} : ni premier coup ni erreur comptés`);
+    cliquer(w, d.getElementById("btn-enigme-suivante")); await dodo(100);
+    const b2 = d.querySelector(".btn-joker");
+    ok(b2 && b2.disabled && /utilisé/.test(b2.textContent), `${j} : plus de joker pour la suite de la partie (${b2 && b2.textContent})`);
+    const cr = w.COMPTE_RENDU.construire();
+    ok(cr.passees === 1 && cr.detail.some(x => x.p === 1) && w.COMPTE_RENDU.verifier(cr) && /joker : 1/.test(w.COMPTE_RENDU.texte(cr)), `${j} : compte-rendu « 1 passée » (code de contrôle valide)`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // 1 joker par salle : un nouveau joker dans la salle suivante
+  const s = await lancerPartie("melanges", "", { escape_joker: JSON.stringify({ mode: "salle" }) });
+  cliquer(s.w, s.w.document.querySelector(".btn-joker")); await dodo(60);
+  s.w.ETAT.salle = 2; s.w.ETAT.enigme = 0; s.w.afficherSalle(2); await dodo(100);
+  const bs = s.w.document.querySelector(".btn-joker");
+  ok(bs && !bs.disabled && /1 restant/.test(bs.textContent), "mode « 1 par salle » : joker de nouveau disponible en salle 2");
+  // la salle où un joker a servi ne donne pas le bonus de rapidité
+  s.w.ETAT.salle = 1; s.w.ETAT.enigme = 99; const avant = s.w.ETAT.score; s.w.ETAT.salleDebut = Date.now();
+  s.w.validerSalle(1); await dodo(100);
+  ok(s.w.ETAT.score === avant, `salle avec joker : pas de bonus de rapidité (score ${s.w.ETAT.score})`);
+  // désactivé
+  const off = await lancerPartie("melanges", "?joker=0");
+  ok(!off.w.document.querySelector(".btn-joker") || off.w.document.querySelector(".btn-joker").hidden, "?joker=0 : aucun bouton");
+  // réglage dans ⚙️
+  const g = await lancerPartie("melanges"); g.w.ouvrirReglages(); await dodo(100);
+  const sel = g.w.document.getElementById("reg-joker");
+  ok(!!sel, "réglage « Joker » dans ⚙️");
+  if (sel) { sel.value = "off"; sel.dispatchEvent(new g.w.Event("change")); ok(JSON.parse(g.w.localStorage.getItem("escape_joker")).mode === "off" && g.w.JOKER.restants() === 0, "réglage gardé, plus de joker"); }
+  // mode duel : un joker par équipe
+  const du = await charger(J("melanges"), "?duel=1", { attente: 600 });
+  const dd = du.w.document; du.w.ETAT.reglages.cinematiques = false;
+  const i1 = dd.getElementById("input-equipe"); i1.value = "Les Lynx"; i1.dispatchEvent(new du.w.Event("input"));
+  dd.getElementById("input-equipe-2").value = "Les Aigles";
+  dd.querySelector('.opt-niveau[data-niveau="CM1"]').click(); dd.getElementById("btn-demarrer").click(); await dodo(500);
+  cliquer(du.w, dd.querySelector(".btn-joker")); await dodo(500);
+  ok(du.w.ETAT.duel.tour === 1, "duel : le joker passe la main à l'autre équipe");
+  await dodo(1900);
+  cliquer(du.w, dd.getElementById("btn-enigme-suivante")); await dodo(150);
+  const bd = dd.querySelector(".btn-joker");
+  ok(bd && !bd.disabled && /1 restant/.test(bd.textContent), "duel : l'équipe adverse a encore son joker (" + (bd && bd.textContent) + ")");
+  ok(du.erreurs.length === 0, "duel : erreurs JS : " + du.erreurs.join(" | "));
+  // moteur propre : la salle est validée sans point, le fragment est donné
+  for (const j of ["declaration", "tour-du-monde"]) {
+    const o = await charger(J(j), "", { attente: 600 }); const od = o.w.document; o.w.ETAT.reglages.cinematiques = false;
+    const inp = od.getElementById("input-equipe"); inp.value = "Les Lynx"; inp.dispatchEvent(new o.w.Event("input"));
+    od.querySelector('.opt-niveau[data-niveau="CM1"]').click(); od.getElementById("btn-demarrer").click(); await dodo(500);
+    const bj = od.querySelector(".btn-joker");
+    ok(bj && /1 restant/.test(bj.textContent), `${j} : bouton joker (${bj && bj.textContent})`);
+    cliquer(o.w, bj); await dodo(1500);
+    const frag = (o.w.ETAT.fragments || o.w.ETAT.motsCles || []).length;
+    ok(o.w.ETAT.score === 0 && frag === 1 && !!od.getElementById("btn-salle-suivante"), `${j} : salle 1 validée sans point (${o.w.ETAT.score}), fragment donné (${frag}), « Salle suivante » proposé`);
+    ok(o.w.SUIVI_ENIGMES.notes().s1 && o.w.SUIVI_ENIGMES.notes().s1.p === 1, `${j} : énigme notée « passée »`);
+    ok(o.erreurs.length === 0, `${j} : erreurs JS : ` + o.erreurs.join(" | "));
+  }
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

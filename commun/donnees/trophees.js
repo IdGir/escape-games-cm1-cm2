@@ -19,7 +19,7 @@ var TROPHEES = (function(){
     { id: "trois-coffres", icone: "🗝️", titre: "Trois coffres", regle: "Terminer trois escape games différents.", test: l => jeuxDiff(l).size >= 3 },
     { id: "grand-explorateur", icone: "🏰", titre: "Grand explorateur", regle: "Terminer six escape games différents.", test: l => jeuxDiff(l).size >= 6 },
     { id: "sans-faute", icone: "🎯", titre: "Sans faute", regle: "Réussir au moins 90 % des énigmes d'un jeu du premier coup.", test: l => finies(l).some(p => p.total && p.premierCoup / p.total >= .9) },
-    { id: "sans-coup-de-pouce", icone: "🧠", titre: "Sans coup de pouce", regle: "Terminer un jeu sans demander un seul indice.", test: l => finies(l).some(p => +p.indices === 0) },
+    { id: "sans-coup-de-pouce", icone: "🧠", titre: "Sans coup de pouce", regle: "Terminer un jeu sans demander un seul indice, sans coup de pouce de l'enseignant ni joker.", test: l => finies(l).some(p => +p.indices === 0 && !p.pouces && !p.passees) },
     { id: "quizz-parfait", icone: "📝", titre: "Quizz parfait", regle: "Obtenir 5/5 au quizz final d'un jeu.", test: l => l.some(p => +p.quiz === 5) },
     { id: "historien", icone: "📜", titre: "Historien", regle: "Terminer deux jeux d'histoire.", test: (l, c) => parMatiere(l, c, "Histoire") >= 2 },
     { id: "scientifique", icone: "🔬", titre: "Scientifique", regle: "Terminer deux jeux de sciences.", test: (l, c) => parMatiere(l, c, "Sciences") >= 2 },

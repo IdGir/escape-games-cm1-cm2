@@ -6,7 +6,10 @@
      { type:"escape-game-compte-rendu", version:1, jeu, titre, eleve
        (ou équipe), mode:"equipe"|"solo", niveau, palier, date, dureeMin,
        score, scoreMax, enigmes, total, premierCoup, erreurs, indices,
-       salles:{n:minutes}, delaiAccordeMin, quiz, code }
+       salles:{n:minutes}, delaiAccordeMin, quiz, detail, passees, pouces, code }
+   « detail » (N12) : une ligne par énigme jouée {id, s (salle), l (leçon liée), ok, pc
+   (premier coup), e (erreurs), i (indices), p (passée avec le joker, N15), c (coups de
+   pouce de l'enseignant, N13)} ; « passees » et « pouces » en donnent les totaux.
    « code » est un code de contrôle (empreinte du contenu) : la page
    resultats.html le recalcule pour repérer un compte-rendu modifié à
    la main. Ce n'est pas une signature infalsifiable, juste un garde-fou.
@@ -49,6 +52,12 @@
       quiz: ETAT.quiz && ETAT.quiz.repondu ? ETAT.quiz.score : null,
       salles, delaiAccordeMin: ETAT.delaiAccordeMin || 0
     };
+    const detail = (typeof window !== "undefined" && window.SUIVI_ENIGMES) ? window.SUIVI_ENIGMES.liste() : [];
+    if(detail.length){
+      cr.detail = detail;
+      cr.passees = detail.filter(n => n.p).length;
+      cr.pouces = detail.reduce((t, n) => t + (n.c || 0), 0);
+    }
     return signer(cr);
   }
 
@@ -64,6 +73,8 @@
       cr.quiz != null ? `Quizz final : ${cr.quiz}/5` : "",
       salles ? `Salles : ${salles}` : "",
       cr.delaiAccordeMin ? `Temps accordé par l'enseignant : ${cr.delaiAccordeMin} min` : "",
+      cr.passees ? `Énigmes passées avec le joker : ${cr.passees} (0 point)` : "",
+      cr.pouces ? `Coups de pouce de l'enseignant : ${cr.pouces}` : "",
       `Code de contrôle : ${cr.code}`
     ].filter(Boolean).join("\n");
   }
