@@ -87,6 +87,8 @@
   <div class="bloc">
     <ul>
       <li><b>Indices</b> : 3 par énigme, proposés par le jeu quand une équipe bloque ; option « coût dégressif » dans ⚙️ → 💡 Indices.</li>
+      <li><b>Une équipe bloquée</b> : depuis <code>prof.html</code>, <b>🤝 coup de pouce</b> (un obstacle retiré sans révéler la réponse, coût en points au choix) ou 💡 un indice ; l'équipe peut aussi utiliser son <b>🃏 joker</b> (une énigme passée sans point, à reprendre avec vous ; réglable dans ⚙️).</li>
+      <li><b>Fin de séance</b> : <b>🔔 Prévenir : fin dans 5 min</b> dans <code>prof.html</code> affiche un bandeau discret chez toutes les équipes, sans toucher à leur chrono.</li>
       <li><b>Lecteurs fragiles</b> : bouton 🔊 sur chaque consigne, police adaptée et lecture automatique dans ⚙️ → Accessibilité.</li>
       <li><b>Au TBI, deux équipes</b> : mode ⚔️ Duel sur l'écran d'accueil du jeu.</li>
       <li><b>À la maison</b> : donner l'adresse du jeu suivie de <code>?solo=1</code> ; l'élève renvoie un compte-rendu.</li>
@@ -96,6 +98,7 @@
   <h2>5. Après la partie</h2>
   <div class="bloc">
     <ul>
+      <li><b>🖥️ Correction collective</b> : à l'écran de fin (ou « Correction collective » dans <code>prof.html</code>), les bonnes réponses salle par salle, à projeter pour la mise en commun.</li>
       <li><b>Bilan</b> à imprimer, quizz final, <b>🪞 auto-évaluation</b> de l'équipe (socle commun), et les <a href="trophees.html">🏅 trophées</a> qui se cumulent d'un jeu à l'autre.</li>
       <li><b>Suivi</b> : <a href="resultats.html">📊 résultats de la classe</a> (export tableur, Schooly) et <a href="passeport.html">🎓 passeport de compétences</a> de chaque élève.</li>
       <li><b>Communication</b> : <a href="periode.html">fiche de période</a> pour les familles ou la direction.</li>
@@ -106,6 +109,7 @@
   <div class="bloc">
     <ul>
       <li><b>Modifier une énigme sans code</b> : <a href="editeur.html">✏️ éditeur des énigmes</a> (il produit le fichier <code>enigmes.json</code> du jeu).</li>
+      <li><b>Classe hétérogène : 🎚️ difficulté énigme par énigme</b> (<code>prof.html</code> → « Difficulté par énigme », avant la partie) : un bouton − / + par énigme s'ajoute au palier choisi (−1 : aide renforcée ou données du CM1 ; +1 : données du CM2 ; +2 : défi). Un élève de CM1 peut ainsi tenter une énigme du CM2, une équipe fragile garder le CM2 en l'allégeant sur une énigme précise. Sans serveur, « Copier le lien élèves » donne l'adresse du jeu avec les réglages (<code>?dif=…</code>) ; un auteur peut aussi fixer un réglage par défaut avec le champ <code>"difficulte"</code> (−2 à 2) d'une énigme.</li>
       <li><b>Avant de partager une modification</b> : <code>node outils-tests/verifier-enigmes.js</code> contrôle les énigmes (clés, CM1 ≤ CM2, mots des serrures) ; <code>CHARTE-GRAPHIQUE.md</code> garde le style commun.</li>
       <li><b>Ajouter ses images ou vidéos</b> : les déposer au nom attendu dans <code>assets/</code> du jeu ; le jeu les affiche à la place du dessin.</li>
     </ul>

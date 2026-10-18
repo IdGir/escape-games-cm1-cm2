@@ -839,6 +839,112 @@ SECTIONS.N19 = async () => {
   ok(pr.erreurs.length === 0, "prof.html : erreurs JS : " + pr.erreurs.join(" | "));
 };
 
+/* ---- N20 : difficulté énigme par énigme ---- */
+SECTIONS.N20 = async () => {
+  console.log("\n== N20 : difficulté énigme par énigme ==");
+  const fs = require("fs");
+  const dat = JSON.parse(fs.readFileSync(J("melanges") + "/assets/data/enigmes.json", "utf8"));
+  const e11 = dat.salles[0].enigmes[0];            // 1-1 : types ordre, données cm1 ≠ cm2
+  ok(e11.id === "1-1" && e11.cm1 && e11.cm2, "énigme de test 1-1 : données CM1 et CM2 différentes");
+  const nbItems = niv => (e11[niv].items || []).length;
+  const ouvrir = async (query, stockage) => { const r = await charger(J("melanges"), query, { attente: 700, stockage }); return r; };
+  const nbAffiches = r => r.w.document.querySelectorAll("#enigme-1-1 .item-ordre").length;
+
+  // sans réglage : rien ne change
+  let r = await ouvrir("?salle=1&niveau=CM2&enigme=1");
+  ok(typeof r.w.DIFFICULTE === "object" && r.w.DIFFICULTE.position(e11) === 2 && nbAffiches(r) === nbItems("cm2"), `sans réglage, CM2 : position 2, données du CM2 (${nbAffiches(r)} éléments)`);
+  ok(!r.w.document.querySelector("#enigme-1-1 .badge-difficulte") && r.w.document.getElementById("enigme-1-1").dataset.difficulte === "0", "sans réglage : aucune pastille");
+  r = await ouvrir("?salle=1&niveau=CM1&enigme=1");
+  ok(r.w.DIFFICULTE.position(e11) === 1 && nbAffiches(r) === nbItems("cm1"), "sans réglage, CM1 : position 1, données du CM1");
+
+  // CM2 réglé -1 : données du CM1 pour cette énigme seulement (le niveau de la partie reste CM2)
+  r = await ouvrir("?salle=1&niveau=CM2&enigme=1&dif=1-1:-1");
+  ok(r.w.DIFFICULTE.position(e11) === 1 && nbAffiches(r) === nbItems("cm1") && r.w.ETAT.niveau === "CM2", `CM2 + (−1) : données du CM1 (${nbAffiches(r)} éléments), niveau de la partie toujours CM2`);
+  const badge = r.w.document.querySelector("#enigme-1-1 .badge-difficulte");
+  ok(badge && /plus facile/.test(badge.textContent), `pastille « ${badge && badge.textContent} »`);
+  ok(/CM1/.test(r.w.document.querySelector("#enigme-1-1 .consigne").textContent) || r.w.document.querySelector("#enigme-1-1 .consigne").textContent.length > 20, "consigne du niveau de l'énigme affichée");
+  const consigneCm1 = r.w.document.querySelector("#enigme-1-1 .consigne").textContent.trim();
+  ok(consigneCm1 === String(e11.consigne.cm1).replace(/<[^>]*>/g, "").trim() || consigneCm1.startsWith(String(e11.consigne.cm1).slice(0, 30)), "consigne CM1 affichée");
+  ok(r.w.donneesNiveau(e11).items.length === nbItems("cm1"), "donneesNiveau() renvoie les données jouées (coup de pouce, correction)");
+  ok(r.w.ETAT.niveau === "CM2" && r.w.donneesNiveau(e11 === undefined ? {} : { id: "x", cm2: { a: 1 }, cm1: { a: 2 } }).a === 1, "les autres énigmes gardent le niveau de la partie");
+  // validation : l'énigme se réussit avec les données affichées (CM1)
+  const carte = r.w.document.getElementById("enigme-1-1");
+  await ordreJuste(r.w, carte); cliquer(r.w, carte.querySelector("[data-valider]")); await dodo(40);
+  ok(carte.classList.contains("resolue"), "énigme réglée plus facile : résolue avec ses données CM1");
+
+  // CM1 réglé +1 : données du CM2 ; +2 : défi
+  r = await ouvrir("?salle=1&niveau=CM1&enigme=1&dif=1-1:+1");
+  ok(r.w.DIFFICULTE.position(e11) === 2 && nbAffiches(r) === nbItems("cm2"), `CM1 + (+1) : données du CM2 (${nbAffiches(r)} éléments)`);
+  r = await ouvrir("?salle=1&niveau=CM1&enigme=1&dif=1-1:+2");
+  ok(r.w.DIFFICULTE.position(e11) === 3 && nbAffiches(r) === nbItems("cm2") && /Défi/.test(r.w.document.querySelector("#enigme-1-1 .badge-difficulte").textContent), "CM1 + (+2) : défi (données du CM2, pastille « Défi »)");
+  const s0 = r.w.ETAT.score = 10; const bi = r.w.document.getElementById("indice-1-1"); cliquer(r.w, bi); await dodo(30);
+  ok(r.w.ETAT.score === 10 - 2 - r.w.DIFFICULTE.SURCOUT_DEFI && r.w.ETAT.indicesTotal === 1, `défi : l'indice coûte 2 + 2 points (score ${r.w.ETAT.score})`);
+
+  // position 0 : aide renforcée (indice offert), sans palier Découverte
+  r = await ouvrir("?salle=1&niveau=CM1&enigme=1&dif=1-1:-1");
+  ok(r.w.DIFFICULTE.position(e11) === 0 && !!r.w.document.querySelector("#enigme-1-1 .feedback.indice") && r.w.ETAT.indicesTotal === 0 && r.w.ETAT.score === 0, "CM1 + (−1) : aide renforcée, premier indice offert sans retirer de point");
+  ok(/Aide renforcée/.test(r.w.document.querySelector("#enigme-1-1 .badge-difficulte").textContent), "pastille « Aide renforcée »");
+  // QCM : un choix faux écarté
+  const qcmId = (() => { for (const j of ["constitution", "versailles", "melanges", "chateau-fort"]) { const d = JSON.parse(fs.readFileSync(J(j) + "/assets/data/enigmes.json", "utf8")); for (const s of d.salles) { const k = s.enigmes.filter(e => !e.niveaux || e.niveaux.includes("CM1")); const i = k.findIndex(e => e.type === "qcm" && (k[i0(e)] || e)); if (i >= 0) return { j, s: s.num, i, id: k[i].id }; } } return null; function i0(e) { return 0; } })();
+  if (qcmId) {
+    const q = await charger(J(qcmId.j), `?salle=${qcmId.s}&niveau=CM1&enigme=${qcmId.i + 1}&dif=${qcmId.id}:-1`, { attente: 700 });
+    const trois = q.w.donneesNiveau(q.w.salleEnigmes(qcmId.s)[qcmId.i]).questions.some(x => x.options.length >= 3);
+    ok(!trois || q.w.document.querySelectorAll(`#enigme-${qcmId.id} .qcm-option.ecartee`).length >= 1, `${qcmId.j} ${qcmId.id} : QCM réglé au plus facile, un choix faux écarté`);
+  }
+
+  // Découverte : le palier est le départ ; +1 → l'énigme repasse sans aide renforcée
+  r = await ouvrir("?salle=1&niveau=CM1&palier=decouverte&enigme=1");
+  ok(r.w.DIFFICULTE.position(e11) === 0 && !!r.w.document.querySelector("#enigme-1-1 .feedback.indice"), "palier Découverte : position 0, indice offert");
+  r = await ouvrir("?salle=1&niveau=CM1&palier=decouverte&enigme=1&dif=1-1:+1");
+  ok(r.w.DIFFICULTE.position(e11) === 1 && !r.w.document.querySelector("#enigme-1-1 .feedback.indice") && /plus difficile/.test(r.w.document.querySelector("#enigme-1-1 .badge-difficulte").textContent), "Découverte + (+1) : l'énigme est jouée sans aide renforcée (le réglage s'ajoute au palier)");
+  // bornes
+  r = await ouvrir("?salle=1&niveau=CM2&enigme=1&dif=1-1:+2");
+  ok(r.w.DIFFICULTE.position(e11) === 3, "CM2 + 2 : plafonné à la position 3");
+  r = await ouvrir("?salle=1&niveau=CM1&enigme=1&dif=1-1:-2");
+  ok(r.w.DIFFICULTE.position(e11) === 0, "CM1 − 2 : plancher à la position 0");
+
+  // champ « difficulte » de enigmes.json (valeur par défaut du jeu), sans surcharge de l'enseignant
+  r = await ouvrir("?salle=1&niveau=CM2&enigme=1", {});
+  const e = { id: "z-1", difficulte: 1 };
+  ok(r.w.DIFFICULTE.reglage(e) === 1 && r.w.DIFFICULTE.reglage({ id: "z-2" }) === 0, "champ difficulte de l'énigme : valeur par défaut du jeu");
+  // réglages de la classe posés par l'enseignant (même appareil) : priment sur le champ du jeu
+  r = await ouvrir("?salle=1&niveau=CM2&enigme=1", { escape_difficulte_melanges: JSON.stringify({ "1-1": -1 }) });
+  ok(r.w.DIFFICULTE.reglage(e11) === -1 && nbAffiches(r) === nbItems("cm1"), "réglage de l'enseignant (appareil) : pris en compte");
+  ok(r.erreurs.length === 0, "erreurs JS : " + r.erreurs.join(" | "));
+
+  // partie normale : un joueur CM2 voit les données CM2, sauf énigme réglée
+  const p = await lancerPartie("melanges", "?dif=1-1:-1,1-2:+1");
+  ok(p.w.DIFFICULTE.position(p.w.salleEnigmes(1)[0]) === 0 && p.erreurs.length === 0, "partie complète démarrée avec des réglages : position 0 pour 1-1 (CM1 : −1)");
+
+  // prof.html : écran de réglage
+  const pr = await charger(J("melanges"), "", { page: "prof.html", attente: 500 });
+  const pd = pr.w.document;
+  const bt = pd.querySelector(".btn-prof-difficulte");
+  ok(!!bt, "prof.html : bouton « 🎚️ Difficulté par énigme »");
+  await pr.w.PROF_DIFFICULTE.ouvrir();
+  const lignes = pd.querySelectorAll("#prof-difficulte tr[data-id]");
+  const attendu = dat.salles.reduce((t, s) => t + s.enigmes.length, 0);
+  ok(lignes.length === attendu, `prof.html : ${lignes.length} énigmes listées (attendu ${attendu})`);
+  const l11 = pd.querySelector('#prof-difficulte tr[data-id="1-1"]');
+  cliquer(pr.w, l11.querySelector(".pd-plus")); cliquer(pr.w, l11.querySelector(".pd-plus"));
+  cliquer(pr.w, l11.querySelector(".pd-plus")); // plafonné à +2
+  ok(pr.w.PROF_DIFFICULTE.valeurs["1-1"] === 2 && /\+2/.test(l11.querySelector(".pd-val").textContent), "prof.html : bouton + (plafonné à +2)");
+  const l12 = pd.querySelector('#prof-difficulte tr[data-id="1-2"]'); cliquer(pr.w, l12.querySelector(".pd-moins"));
+  ok(pr.w.PROF_DIFFICULTE.propres()["1-2"] === -1, "prof.html : bouton − (−1)");
+  ok(/\?dif=/.test(pr.w.PROF_DIFFICULTE.lien()) && /1-1:\+2/.test(pr.w.PROF_DIFFICULTE.lien()) && /1-2:-1/.test(pr.w.PROF_DIFFICULTE.lien()), "prof.html : lien élèves avec les réglages (" + pr.w.PROF_DIFFICULTE.lien() + ")");
+  const posts = []; const f0 = pr.w.fetch; pr.w.fetch = async (u, o) => { if (o && o.method === "POST") { posts.push({ u, b: JSON.parse(o.body) }); return { ok: true, json: async () => ({ ok: true }) }; } return f0(u, o); };
+  cliquer(pr.w, pd.querySelector(".pd-ok")); await dodo(80);
+  ok(posts.length === 1 && posts[0].u === "/api/difficulte" && posts[0].b.jeu === "melanges" && posts[0].b.valeurs["1-1"] === 2, "prof.html : réglages envoyés au serveur (POST /api/difficulte)");
+  ok(JSON.parse(pr.w.localStorage.getItem("escape_difficulte_melanges"))["1-1"] === 2, "prof.html : réglages gardés sur l'ordinateur");
+  cliquer(pr.w, pd.querySelector(".pd-zero"));
+  ok(Object.keys(pr.w.PROF_DIFFICULTE.propres()).length === 0, "prof.html : « Tout remettre à 0 »");
+  ok(pr.erreurs.length === 0, "prof.html : erreurs JS : " + pr.erreurs.join(" | "));
+  // côté serveur : le jeu lit les réglages de la classe (GET /api/difficulte?jeu=…), qui priment sur l'appareil
+  const sv = await charger(J("melanges"), "?salle=1&niveau=CM2", { attente: 500, stockage: { escape_difficulte_melanges: JSON.stringify({ "1-1": 1 }) },
+    avant: w => { const f = w.fetch; w.fetch = async (u, o) => /api\/difficulte/.test(String(u)) ? { ok: true, json: async () => ({ valeurs: { "1-1": -2 } }) } : f(u, o); } });
+  ok(sv.w.DIFFICULTE.reglage(e11) === -2 && sv.w.DIFFICULTE.position(e11) === 0, "serveur local : réglage de la classe reçu (−2), prioritaire sur celui de l'appareil");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

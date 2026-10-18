@@ -16,6 +16,8 @@
        (et pour chaque variante D3) : clés attendues et cohérence
        (bonne réponse dans la liste, rangs 1…n, un seul intrus,
        étiquettes des trous présentes, lettres cachées présentes…) ;
+     • « difficulte » (facultatif, N20) : entier de -2 à 2, réglage de difficulté
+       de l'énigme ajouté au palier choisi (voir commun/js/difficulte-enigme.js) ;
      • CM1 ≤ CM2 : pas plus d'énigmes en CM1 qu'en CM2, par salle ;
      • serrures : un mot-clé par salle, jamais deux fois le même
        (accents et majuscules ignorés, comme au coffre).
@@ -154,6 +156,8 @@ function controlerEnigme(e, ou, R, lecons){
     else if (l.length < 3) R.warn(`${ou} [${n}] : ${l.length} indice(s) seulement (3 prévus)`);
   }
   if (vide(e.correction) || (typeof e.correction === "object" && !Object.values(e.correction).some(v => !vide(v)))) R.err(`${ou} : correction manquante (corrigé enseignant)`);
+  if (e.difficulte !== undefined && !(Number.isInteger(e.difficulte) && e.difficulte >= -2 && e.difficulte <= 2))
+    R.err(`${ou} : « difficulte » vaut ${JSON.stringify(e.difficulte)} (attendu : un entier de -2 à 2, ajouté au palier choisi — N20)`);
   if (vide(e.lecon)) R.warn(`${ou} : aucune leçon associée`);
   else if (lecons && !lecons.has(e.lecon)) R.err(`${ou} : leçon « ${e.lecon} » introuvable dans lecons.json`);
   const tailles = {};

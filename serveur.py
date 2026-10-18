@@ -34,6 +34,7 @@ LOCK = threading.Lock()
 # Résultats des parties terminées, gardés toute l'année sur CET ordinateur (amélioration D5).
 # Fichier jamais publié (.gitignore) : il contient les prénoms des élèves.
 FICHIER_RESULTATS = "resultats-classe.jsonl"
+FICHIER_DIFFICULTE = "difficulte-classe.json"   # N20 : réglages de difficulté énigme par énigme
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 
 def get_ip_locale():
@@ -201,6 +202,14 @@ class Handler(BaseHTTPRequestHandler):
         except Exception:
             pass
 
+    def lire_difficulte(self):
+        try:
+            with open(FICHIER_DIFFICULTE, encoding="utf-8") as f:
+                d = json.load(f)
+            return d if isinstance(d, dict) else {}
+        except (OSError, ValueError):
+            return {}
+
     # ---- API REST ----
     def router_api(self, methode, path, data):
         if path == "/api/etat" and methode == "POST":
@@ -239,6 +248,38 @@ class Handler(BaseHTTPRequestHandler):
                     with open(FICHIER_RESULTATS, "a", encoding="utf-8") as f:
                         f.write(json.dumps(data, ensure_ascii=False) + "\n")
             self.json_reponse({"ok": True})
+        elif path == "/api/difficulte" and methode == "GET":
+            # N20 : réglages de difficulté énigme par énigme, posés depuis prof.html : {"jeu": {"1-2": 1, ...}}
+            jeu = (parse_qs(urlparse(self.path).query).get("jeu") or [""])[0]
+            with LOCK:
+                tout = self.lire_difficulte()
+            self.json_reponse({"jeu": jeu, "valeurs": tout.get(jeu, {}) if jeu else tout})
+        elif path == "/api/difficulte" and methode == "POST":
+            # Réservé à l'ordinateur de l'enseignant (comme l'éditeur d'énigmes)
+            jeu = str(data.get("jeu", ""))
+            valeurs = data.get("valeurs", {})
+            if self.client_address[0] not in ("127.0.0.1", "::1"):
+                self.json_reponse({"ok": False, "erreur": "réglage réservé à l'ordinateur qui a lancé le serveur"})
+            elif not jeu or not isinstance(valeurs, dict):
+                self.json_reponse({"ok": False, "erreur": "demande incomplète"})
+            else:
+                propres = {}
+                for cle, v in valeurs.items():
+                    try:
+                        n = int(v)
+                    except (TypeError, ValueError):
+                        continue
+                    if n != 0 and -2 <= n <= 2:
+                        propres[str(cle)] = n
+                with LOCK:
+                    tout = self.lire_difficulte()
+                    if propres:
+                        tout[jeu] = propres
+                    else:
+                        tout.pop(jeu, None)
+                    with open(FICHIER_DIFFICULTE, "w", encoding="utf-8") as f:
+                        json.dump(tout, f, ensure_ascii=False, indent=1)
+                self.json_reponse({"ok": True, "valeurs": propres})
         elif path == "/api/enigmes" and methode == "POST":
             # Éditeur d'énigmes (editeur.html, D4) : écrit <jeu>/assets/data/enigmes.json.
             # Réservé à l'ordinateur de l'enseignant (127.0.0.1) : les postes élèves ne peuvent rien écrire.

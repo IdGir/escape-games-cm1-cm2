@@ -116,7 +116,7 @@
     const origine = window.activerEnigme;
     window.activerEnigme = function(e, onReussite){
       const r = origine.apply(this, arguments);
-      if(actif()){
+      if(actif() && (!window.DIFFICULTE || window.DIFFICULTE.aideRenforcee(e))){   // N20 : sauf énigme réglée plus difficile
         const carte = document.getElementById("enigme-" + e.id);
         if(carte){
           indiceOffert(carte.querySelector("#indice-" + e.id));

@@ -47,6 +47,9 @@ cas("trous : réponse absente des étiquettes", "enigmes.json", d => { const x =
 cas("tri : colonne inconnue", "enigmes.json", d => { niv(parType(d, "tri")).cartes[0].col = "zzz"; }, /colonne « zzz » inconnue/);
 cas("association : clé « paires » manquante", "enigmes.json", d => { const e = parType(d, "association"); delete niv(e).paires; }, /« paires » manquant/);
 cas("code : valeur attendue vide", "enigmes.json", d => { niv(parType(d, "code")).champs[0].valeur = ""; }, /sans « valeur »/);
+cas("difficulté hors de -2…2 (N20)", "enigmes.json", d => { E(d, 0, 0).difficulte = 5; }, /« difficulte » vaut 5/);
+cas("difficulté non entière (N20)", "enigmes.json", d => { E(d, 0, 0).difficulte = "difficile"; }, /« difficulte » vaut "difficile"/);
+copier(); { const d = lire("enigmes.json"); E(d, 0, 0).difficulte = -1; E(d, 1, 0).difficulte = 2; ecrire("enigmes.json", d); verif(erreurs() === "", "difficulté valide (-1, +2) : acceptée (N20)"); }
 cas("indices vides", "enigmes.json", d => { E(d, 2, 1).indices = []; }, /indices manquants/);
 /* Clé en double dans le texte du fichier (JSON.parse l'aurait avalée) */
 copier();

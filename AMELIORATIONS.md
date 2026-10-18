@@ -363,7 +363,7 @@ toutes les équipes, sans interrompre l'énigme en cours ni toucher aux chronos.
 ### N20 — Réglage de la difficulté énigme par énigme
 Champ optionnel de surcharge dans `enigmes.json` (contrôlé par A7), écran de réglage +/- par énigme dans
 `prof.html`, surcharges ajoutées au palier (E2), documentées dans le kit collègues (N2).
-**Jeux concernés :** 12 jeux « salles » + enigmes.json + prof.html · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** 12 jeux « salles » + enigmes.json + prof.html · **Effort :** M · **Statut :** Fait
 
 ### N21 — Kit de présentation pour une animation pédagogique ou un conseil de cycle
 Diaporama de 10-15 minutes, déroulé minuté de 30 à 45 minutes, captures et chiffres à jour avec C1,
