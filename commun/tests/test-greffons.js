@@ -433,7 +433,7 @@ SECTIONS.N1 = async () => {
   const inp = d.getElementById("input-equipe"); inp.value = "les lynx"; inp.dispatchEvent(new w.Event("input"));
   d.querySelector('.opt-niveau[data-niveau="CM2"]').click();
   d.getElementById("btn-demarrer").click(); await dodo(300);
-  w.ETAT.score = 140; w.ETAT.fini = true; w.ETAT.indicesTotal = 2; w.ETAT.enigmesReussies = 20;
+  w.ETAT.score = 140; w.ETAT.fini = true; w.ETAT.coffreOuvert = true; w.ETAT.indicesTotal = 2; w.ETAT.enigmesReussies = 20;
   w.finDuJeu(); await dodo(150);
   const b = d.getElementById("trophees-fin");
   const nouveaux = b ? [...b.querySelectorAll(".tr.nouveau b")].map(x => x.textContent).sort() : [];
@@ -1030,7 +1030,7 @@ SECTIONS.N11 = async () => {
   const dF = F.w.document; F.w.ETAT.reglages.cinematiques = false;
   const i1 = dF.getElementById("input-equipe"); i1.value = "les lynx"; i1.dispatchEvent(new F.w.Event("input"));
   dF.querySelector('.opt-niveau[data-niveau="CM2"]').click(); dF.getElementById("btn-demarrer").click(); await dodo(300);
-  F.w.ETAT.score = 140; F.w.ETAT.fini = true; F.w.ETAT.indicesTotal = 2; F.w.ETAT.enigmesReussies = 20;
+  F.w.ETAT.score = 140; F.w.ETAT.fini = true; F.w.ETAT.coffreOuvert = true; F.w.ETAT.indicesTotal = 2; F.w.ETAT.enigmesReussies = 20;
   F.w.finDuJeu(); await dodo(200);
   const mt = dF.querySelector("#trophees-fin .mascotte-trophee");
   ok(!!mt && /Bravo ! Vous avez gagné 3 nouveaux trophées : /.test(mt.textContent) && /Citoyen/.test(mt.textContent) && /Trois coffres/.test(mt.textContent), "écran de fin : Noa annonce les 3 nouveaux trophées (« " + (mt && mt.textContent.trim().slice(0, 80)) + "… »)");

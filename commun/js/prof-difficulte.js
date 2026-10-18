@@ -21,7 +21,8 @@
    ============================================================ */
 (function(){
   const sc = document.currentScript;
-  const JEU_ID = (sc && sc.dataset.jeu) || location.pathname.split("/").filter(Boolean).slice(-2, -1)[0] || "jeu";
+  const dossierJeu = location.pathname.split("/").filter(Boolean).slice(-2, -1)[0] || "jeu";
+  const JEU_ID = (sc && sc.dataset && sc.dataset.jeu) || (/\/immersifs\//.test(location.pathname) ? "immersif-" : "") + dossierJeu;
   const CLE = "escape_difficulte_" + JEU_ID;
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const borne = n => Math.max(-2, Math.min(2, n));
@@ -61,14 +62,17 @@
 
   function ligne(e){
     const v = +valeurs[e.id] || 0, defaut = +e.difficulte || 0;
-    const niveaux = (e.niveaux || ["CM1", "CM2"]).join(" + ");
+    const niveaux = (e.niveaux || (enigmes && enigmes.escales ? ["tous les grades"] : ["CM1", "CM2"])).join(" + ");
     return `<tr data-id="${esc(e.id)}"><td><b>${esc(e.id)}</b></td><td>${esc(e.titre)}<br><small style="opacity:.65">${esc(e.type)} · ${niveaux}${defaut ? ` · réglage du jeu : ${defaut > 0 ? "+" : ""}${defaut}` : ""}</small></td>
       <td class="pd-ctl"><button type="button" class="pd-moins" aria-label="Plus facile">−</button><span class="pd-val ${v ? (v < 0 ? "neg" : "pos") : ""}">${LIBELLES[v]}</span><button type="button" class="pd-plus" aria-label="Plus difficile">+</button></td></tr>`;
   }
   function contenu(){
-    return `<p style="margin:0 0 8px;font-size:.9rem">Le réglage <b>s'ajoute</b> au palier choisi par l'équipe. Départ CM1 : −1 aide renforcée · +1 données du CM2 · +2 défi (indices −2 pts de plus).
-      Départ CM2 : −2 aide renforcée · −1 données du CM1 · +1 défi. Découverte : +1 données du CM1 · +2 données du CM2.</p>
-      ${(enigmes && enigmes.salles || []).map(s => `<h4 style="margin:12px 0 4px">${esc((s.titre ? "Salle " + s.num + " — " + s.titre : "Salle " + s.num))}</h4>
+    const immersif = !!(enigmes && enigmes.escales);
+    const salles = enigmes ? (enigmes.salles || enigmes.escales || []) : [];
+    return `<p style="margin:0 0 8px;font-size:.9rem">${immersif
+      ? "Le réglage <b>s'ajoute</b> au grade de l'équipe : +1 décale l'énigme d'un grade vers le haut (données et consigne du grade au-dessus), −1 vers le bas ; le grade le plus bas donne l'aide renforcée (premier indice offert, un choix faux écarté). Les extrémités sont plafonnées."
+      : "Le réglage <b>s'ajoute</b> au palier choisi par l'équipe. Départ CM1 : −1 aide renforcée · +1 données du CM2 · +2 défi (indices −2 pts de plus). Départ CM2 : −2 aide renforcée · −1 données du CM1 · +1 défi. Découverte : +1 données du CM1 · +2 données du CM2."}</p>
+      ${salles.map(s => `<h4 style="margin:12px 0 4px">${esc((s.titre ? (immersif ? "Étape " : "Salle ") + (s.num != null ? s.num : s.numero) + " — " + s.titre : "Salle " + (s.num != null ? s.num : s.numero)))}</h4>
         <table class="pd-table">${(s.enigmes || []).map(ligne).join("")}</table>`).join("") || "<p>Les énigmes du jeu n'ont pas pu être chargées.</p>"}`;
   }
 
@@ -125,7 +129,7 @@
   function fermer(){ const el = document.getElementById("prof-difficulte"); if(el) el.remove(); }
 
   function bouton(){
-    const zone = document.querySelector(".actions");
+    const zone = document.querySelector(".actions, .barre");
     if(!zone || zone.querySelector(".btn-prof-difficulte")) return;
     const b = document.createElement("button");
     b.type = "button"; b.className = "bleu btn-prof-difficulte";

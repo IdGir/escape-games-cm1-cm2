@@ -190,7 +190,12 @@
   /* ---------------- Panneau « 🎓 Ma progression » (écran d'accueil des jeux) ---------------- */
   function panneau(){
     if(document.getElementById("panneau-progression")) return;
-    const nomAccueil = (document.getElementById("input-equipe") || {}).value || "";
+    if(!document.getElementById("style-progression")){
+      const st = document.createElement("style"); st.id = "style-progression";
+      st.textContent = "#panneau-progression .btn{font:inherit;font-size:.92rem;padding:6px 14px;border-radius:999px;border:2px solid #c9a227;background:#fff8e1;color:#2b1d10;cursor:pointer;display:inline-block}";
+      document.head.appendChild(st);
+    }
+    const nomAccueil = (document.getElementById("input-equipe") || document.getElementById("nom-equipe") || {}).value || "";
     const el = document.createElement("div");
     el.id = "panneau-progression"; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", "Ma progression");
     el.style.cssText = "position:fixed;inset:0;z-index:9300;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:12px";
@@ -233,12 +238,12 @@
     });
   }
   function bouton(){
-    const go = document.getElementById("btn-demarrer");
-    const zone = go && (go.closest(".boutons") || go.parentNode);
+    const go = document.getElementById("btn-demarrer") || document.getElementById("btn-embarquer");
+    const zone = go && (go.closest(".boutons") || go.closest(".boutons-accueil") || go.parentNode);
     if(!zone || document.getElementById("btn-progression")) return;
     const p = document.createElement("p");
     p.className = "progression-portable"; p.style.cssText = "text-align:center;margin:.4rem 0 0";
-    p.innerHTML = `<button type="button" class="btn gris petit" id="btn-progression" title="Continuer chez soi, ou en classe, ce qu'on a commencé ailleurs">🎓 Ma progression (maison ↔ classe)</button>`;
+    p.innerHTML = `<button type="button" class="${document.getElementById("btn-embarquer") ? "btn-laiton gris petit" : "btn gris petit"}" id="btn-progression" title="Continuer chez soi, ou en classe, ce qu'on a commencé ailleurs">🎓 Ma progression (maison ↔ classe)</button>`;
     p.querySelector("button").addEventListener("click", panneau);
     const apres = document.querySelector(".import-partie") || zone;
     apres.after(p);

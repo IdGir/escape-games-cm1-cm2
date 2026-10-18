@@ -10,7 +10,7 @@
 var TROPHEES = (function(){
   const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
   const matiereDe = (id, cat) => { const j = cat && cat.jeux ? cat.jeux.find(x => x.dossier === id || x.id === id) : null; return j ? j.matiere : ""; };
-  const finies = l => l.filter(p => p.termine);
+  const finies = l => l.filter(p => p.termine && p.coffre !== false);   // « terminée » = coffre ouvert (une escale finie d'une variante immersive ne suffit pas)
   const jeuxDiff = l => new Set(finies(l).map(p => p.jeu));
   const parMatiere = (l, cat, m) => new Set(finies(l).filter(p => matiereDe(p.jeu, cat) === m).map(p => p.jeu)).size;
 

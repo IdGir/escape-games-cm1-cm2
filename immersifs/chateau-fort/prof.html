@@ -34,6 +34,14 @@
     <button class="btn-laiton petit" id="tout-pause">⏸ Pause générale</button>
     <button class="btn-laiton petit" id="tout-reprise">▶️ Reprise générale</button>
     <button class="btn-laiton petit" id="tout-message">📣 Message à toutes</button>
+    <span class="fin-seance" style="display:inline-flex;gap:6px;align-items:center">
+      <button class="btn-laiton petit" id="tout-fin" title="Bandeau discret et court signal sonore chez toutes les équipes, sans interrompre l'énigme en cours ni toucher aux chronos">🔔 Prévenir : fin dans <span id="delai-fin-txt">5</span> min</button>
+      <select id="delai-fin" aria-label="Délai avant la fin de la séance" onchange="document.getElementById('delai-fin-txt').textContent=this.value"><option>1</option><option>2</option><option>3</option><option selected>5</option><option>10</option><option>15</option></select>
+    </span>
+    <label class="cout-pouce" title="Points retirés à l'équipe à chaque coup de pouce">🤝 Coup de pouce — coût :
+      <select id="cout-pouce"><option value="0" selected>aucun point</option><option value="1">1 point</option><option value="2">2 points</option><option value="3">3 points</option></select></label>
+    <a class="btn-laiton petit" href="index.html?correction=1" target="_blank" rel="noopener" title="Après la partie : les bonnes réponses, étape par étape, à projeter pour la mise en commun">🖥️ Correction collective</a>
+    <a class="btn-laiton petit" id="lien-sequence" href="../../sequences/fiche.html?jeu=chateau-fort" target="_blank" rel="noopener" title="Une activité avant (15-20 min), le jeu, une activité après (15-20 min) : fiche imprimable">📘 Fiche de séquence (avant / après)</a>
     <button class="btn-laiton petit" id="export-csv">⬇️ Export CSV</button>
     <button class="btn-laiton petit" id="imprimer">🖨️ Imprimer / PDF</button>
     <label class="btn-laiton petit"><input type="checkbox" id="anonymiser"> Anonymiser</label>
@@ -80,6 +88,7 @@
       <div class="ligne"><span>Points</span><b>${q.score || 0}</b></div>
       <div class="ligne"><span>Temps</span><b>${mmss(q.msEcoules)}${q.delaiMin ? " (+" + q.delaiMin + " min accordées)" : ""}</b></div>
       <div class="ligne"><span>Erreurs (énigme) · indices (total)</span><b>${e.erreurs || 0} · ${q.indicesTotal || 0}</b></div>
+      <div class="ligne"><span>Jokers 🃏 · coups de pouce 🤝</span><b>${q.passees || 0} · ${q.pouces || 0}</b></div>
       <div class="ligne"><span>Fiches consultées</span><b>${fiches.length ? ech(fiches.join(", ")) : "aucune"}</b></div>
       <div class="ligne"><span>Air (décor)</span><b>${e.air != null ? e.air + " %" : "—"}</b></div>
       ${al.length ? `<div class="alertes">${al.join("<br>")}</div>` : ""}
@@ -88,6 +97,7 @@
         <button class="btn-laiton petit" data-c="t2">⏱️ +2 min</button>
         <button class="btn-laiton petit" data-c="t5">⏱️ +5 min</button>
         <button class="btn-laiton petit" data-c="msg">📣 Message</button>
+        <button class="btn-laiton petit" data-c="pouce" title="Coup de pouce : retire un obstacle sur l'énigme ouverte sans révéler la réponse">🤝 Coup de pouce</button>
         <select data-c="niveau" aria-label="Changer le grade">${grades.map(x => `<option value="${x.id}" ${x.id === q.niveau ? "selected" : ""}>${x.icone} ${x.nom}</option>`).join("")}</select>
       </div>
     </div>`;
@@ -115,6 +125,10 @@
           if(act === "t5") commande(nom, { delaiMin: 5 });
           if(act === "msg"){ const m = prompt("Message pour « " + nom + " » :"); if(m) commande(nom, { message: m }); }
           if(act === "niveau") commande(nom, { niveau: b.value });
+          if(act === "pouce"){
+            const cout = parseInt($("#cout-pouce").value, 10) || 0;
+            if(confirm("Donner un coup de pouce à l'équipe « " + nom + " » ?\nUn obstacle est retiré sur l'énigme ouverte, sans révéler la réponse" + (cout ? " (coût : " + cout + " point" + (cout > 1 ? "s" : "") + ")." : " (sans coût en points)."))) commande(nom, { pouce: true, cout, id: Date.now() });
+          }
         });
       });
     });
@@ -124,7 +138,7 @@
       const r = await fetch("/api/equipes", { cache: "no-store" });
       const d = r.ok ? await r.json() : null;
       serveur = !!d;
-      equipes = ((d && d.equipes) || []).filter(q => q.jeu === "vingt-mille-lieues");
+      equipes = ((d && d.equipes) || []).filter(q => q.jeu === VML.JEU.id);
     }catch(e){ serveur = false; equipes = []; }
     $("#etat-serveur").textContent = serveur ? `✅ Serveur local · ${equipes.length} équipe(s)` : "❌ Serveur local introuvable";
     $("#etat-serveur").classList.toggle("ok", serveur);
@@ -135,6 +149,10 @@
   $("#tout-message").onclick = () => { const m = prompt("Message pour toutes les équipes :"); if(m) commande("*", { message: m }); };
   $("#anonymiser").onchange = ev => document.body.classList.toggle("anonyme", ev.target.checked);
   $("#imprimer").onclick = () => window.print();
+  $("#tout-fin").onclick = () => {
+    const min = parseInt($("#delai-fin").value, 10) || 5;
+    if(confirm("Prévenir TOUTES les équipes que la séance se termine dans " + min + " min ?\nUn bandeau discret et un court signal sonore apparaissent chez les élèves ; leurs chronos ne sont pas modifiés.")) commande("*", { finSeance: { min, id: Date.now() } });
+  };
   $("#export-csv").onclick = () => {
     const l = [["equipe", "grade", "equivalent", "escale", "enigme", "points", "temps_min", "erreurs_enigme", "indices", "fiches", "resolues", "premier_coup", "termine"].join(";")];
     equipes.forEach(q => { const e = q.enigme || {}, g = grades.find(x => x.id === q.niveau) || {}; const r = e.resolues || {};
@@ -146,5 +164,6 @@
   setInterval(rafraichir, 3000);
 })();
 </script>
+<script src="../../commun/js/prof-difficulte.js?c2" data-jeu="immersif-chateau-fort"></script>
 </body>
 </html>

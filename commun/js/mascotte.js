@@ -28,8 +28,11 @@
   const CLE = "escape_mascotte";
   const MODES = { voix: "Activée, avec la voix", muette: "Activée, sans la voix", off: "Désactivée" };
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const estJeu = typeof ETAT !== "undefined" && !!document.getElementById("input-equipe");
-  const verification = () => !!new URLSearchParams(location.search).get("salle");
+  /* jeu classique (ETAT, #input-equipe) ou variante immersive (VML, #nom-equipe) */
+  const immersif = !!window.VML && !!document.getElementById("nom-equipe");
+  const champEquipe = () => document.getElementById("input-equipe") || document.getElementById("nom-equipe");
+  const estJeu = (typeof ETAT !== "undefined" || immersif) && !!champEquipe();
+  const verification = () => { const q = new URLSearchParams(location.search); return !!(q.get("salle") || q.get("verif")); };
 
   /* ---------------- Réglage (gardé sur l'appareil) ---------------- */
   const lire = () => { try{ const r = JSON.parse(localStorage.getItem(CLE) || "{}") || {}; return { mode: MODES[r.mode] ? r.mode : "voix", vu: !!r.vu }; }catch(e){ return { mode: "voix", vu: false }; } };
@@ -37,7 +40,7 @@
   const mode = () => lire().mode;
   const regler = m => { const r = lire(); r.mode = MODES[m] ? m : "voix"; ecrire(r); rafraichir(); };
   const marquerVu = () => { const r = lire(); if(!r.vu){ r.vu = true; ecrire(r); } };
-  const voixPossible = () => mode() === "voix" && "speechSynthesis" in window && !(estJeu && window.NARRATION && window.NARRATION.parlerActif === false);
+  const voixPossible = () => mode() === "voix" && "speechSynthesis" in window && !(estJeu && window.NARRATION && window.NARRATION.parlerActif === false) && !(immersif && window.VML.reglage && window.VML.reglage("voix") === false);
   function bareme(){
     const b = Object.assign({}, T.bareme);
     try{
@@ -45,6 +48,7 @@
       if(typeof PTS_APRES_ERREUR !== "undefined") b.apres = PTS_APRES_ERREUR;
       if(typeof MALUS_INDICE !== "undefined") b.indice = MALUS_INDICE;
       if(typeof PTS_COFFRE_PREMIER !== "undefined") b.coffre = PTS_COFFRE_PREMIER;
+      if(window.VML && window.VML.BAREME){ const B = window.VML.BAREME; b.premier = B.premierCoup; b.apres = B.apresErreur; b.indice = B.indice; b.coffre = B.coffre.premierCoup; }
     }catch(e){}
     return b;
   }
@@ -190,7 +194,7 @@
       @keyframes mascotte-cligne{0%,41%,100%{transform:scaleY(0)}43%,44%{transform:scaleY(1)}46%,88%{transform:scaleY(0)}90%,91%{transform:scaleY(1)}93%{transform:scaleY(0)}}
       @keyframes mascotte-tete{0%,100%{transform:rotate(0)}30%{transform:rotate(1.6deg)}65%{transform:rotate(-1.2deg)}}
       @keyframes mascotte-salue{0%,100%{transform:rotate(0)}25%{transform:rotate(-34deg)}50%{transform:rotate(-20deg)}75%{transform:rotate(-34deg)}}
-      body.calme .mascotte-svg *,body.calme .mascotte-portrait *{animation:none!important}
+      body.calme .mascotte-svg *,body.calme .mascotte-portrait *,body.anim-reduites .mascotte-svg *,body.anim-reduites .mascotte-portrait *{animation:none!important}
       @media (max-width:520px){.mascotte-bloc{flex-direction:column;align-items:center}.mascotte-bulle::before{display:none}.mascotte-portrait{width:84px;height:134px}}`;
     document.head.appendChild(s);
   }
@@ -246,8 +250,8 @@
     let point = null, texte = "", ouvrir = false;
     const m = mode(), vu = lire().vu;
     if(estJeu){
-      const inp = document.getElementById("input-equipe");
-      const h = inp && inp.previousElementSibling && /^H[1-6]$/.test(inp.previousElementSibling.tagName) ? inp.previousElementSibling : inp;
+      const inp = champEquipe();
+      const h = inp && inp.previousElementSibling && /^(H[1-6]|LABEL)$/.test(inp.previousElementSibling.tagName) ? inp.previousElementSibling : inp;
       point = h; texte = vu ? T.retour : T.accueilJeu; ouvrir = !vu;
     }else{
       point = document.getElementById("mascotte-accueil");
@@ -295,7 +299,7 @@
   }
   /* Elle se tait dès que la partie démarre ou qu'une salle s'affiche : jamais pendant les énigmes */
   if(estJeu){
-    const go = document.getElementById("btn-demarrer");
+    const go = document.getElementById("btn-demarrer") || document.getElementById("btn-embarquer");
     if(go) go.addEventListener("click", () => { silence(); marquerVu(); document.querySelectorAll("#mascotte-bloc").forEach(x => x.remove()); }, true);
     if(typeof window.afficherSalle === "function"){
       const o = window.afficherSalle;
@@ -314,10 +318,23 @@
     g.querySelector("select").addEventListener("change", ev => regler(ev.target.value));
     return g;
   }
+  function sectionImmersive(){
+    const sec = document.createElement("section");
+    sec.id = "reglages-mascotte";
+    sec.innerHTML = `<h4>🧑‍🎓 Mascotte</h4>
+      <label class="reg-ligne" for="reg-mascotte"><span>Noa, le guide de la collection</span><select id="reg-mascotte">${Object.entries(MODES).map(([k, v]) => `<option value="${k}" ${k === mode() ? "selected" : ""}>${v}</option>`).join("")}</select></label>
+      <p class="note">Elle accueille la classe, explique les règles communes et annonce les trophées ; elle ne parle jamais pendant les énigmes et n'a aucun effet sur le score.</p>`;
+    sec.querySelector("select").addEventListener("change", ev => regler(ev.target.value));
+    return sec;
+  }
   if(estJeu){
     new MutationObserver(() => {
+      if(!window.document || !window.document.getElementById) return;
+      if(document.getElementById("reglages-mascotte")) return;
       const calme = document.getElementById("reg-calme");
-      if(calme && !document.getElementById("reglages-mascotte")){ const grp = calme.closest(".reglages-group"); if(grp) grp.parentNode.appendChild(groupeReglage()); }
+      if(calme){ const grp = calme.closest(".reglages-group"); if(grp) grp.parentNode.appendChild(groupeReglage()); return; }
+      const corps = document.querySelector("#reglages .reglages-corps");
+      if(corps) corps.appendChild(sectionImmersive());
     }).observe(document.body, { childList: true, subtree: true });
   }
 

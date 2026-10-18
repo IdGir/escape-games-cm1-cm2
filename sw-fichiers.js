@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "afe08f6f4e";
+self.VERSION_HORS_LIGNE = "e5f1fdd4b1";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -59,6 +59,7 @@ self.FICHIERS_CODE = [
 "commun/icones/icone-apple-180.png",
 "commun/icones/icone-masquable-512.png",
 "commun/js/accessibilite.js",
+"commun/js/aides-enigmes.js",
 "commun/js/alerte-seance.js",
 "commun/js/api.js",
 "commun/js/audio.js",
@@ -72,6 +73,12 @@ self.FICHIERS_CODE = [
 "commun/js/export-partie.js",
 "commun/js/fiche-mission.js",
 "commun/js/frise.js",
+"commun/js/immersif/vml-correction.js",
+"commun/js/immersif/vml-difficulte.js",
+"commun/js/immersif/vml-joker.js",
+"commun/js/immersif/vml-pouce.js",
+"commun/js/immersif/vml-suivi.js",
+"commun/js/immersif/vml-trophees.js",
 "commun/js/impression.js",
 "commun/js/indices-adaptatifs.js",
 "commun/js/indices-degressifs.js",

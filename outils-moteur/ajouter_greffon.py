@@ -11,6 +11,7 @@ augmenter son numéro de version (?c2…) avec --version et --remplacer.
 import argparse, pathlib, re, sys
 JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges",
         "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere"]
+IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"]
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 
 def main():
@@ -19,20 +20,24 @@ def main():
     ap.add_argument("--apres", default="export-partie.js", help="nom du script après lequel insérer")
     ap.add_argument("--version", default="c1")
     ap.add_argument("--fichier", default="index.html")
-    ap.add_argument("--jeux", nargs="*", default=JEUX)
+    ap.add_argument("--jeux", nargs="*", default=None)
+    ap.add_argument("--base", default="", help="sous-dossier des jeux (ex. immersifs : les pages sont alors à ../../commun/)")
     ap.add_argument("--remplacer", action="store_true", help="met à jour le numéro de version si déjà présent")
     ap.add_argument("--dossier", default="js", help="js, donnees ou css (css : balise <link>)")
     a = ap.parse_args()
+    if a.jeux is None:
+        a.jeux = IMMERSIFS if a.base else JEUX
     n = 0
     for jeu in a.jeux:
-        f = RACINE / jeu / a.fichier
+        f = RACINE / a.base / jeu / a.fichier
         if not f.exists():
             continue
         t = f.read_text(encoding="utf-8")
         crlf = "\r\n" in t
-        balise = f'<script src="../commun/{a.dossier}/{a.greffon}?{a.version}"></script>'
+        pre = "../../" if a.base else "../"
+        balise = f'<script src="{pre}commun/{a.dossier}/{a.greffon}?{a.version}"></script>'
         if a.dossier == "css":
-            balise = f'<link rel="stylesheet" href="../commun/css/{a.greffon}?{a.version}">'
+            balise = f'<link rel="stylesheet" href="{pre}commun/css/{a.greffon}?{a.version}">'
         deja = re.search(re.escape(f"commun/{a.dossier}/{a.greffon}") + r"\?\w+", t)
         if deja:
             if a.remplacer:

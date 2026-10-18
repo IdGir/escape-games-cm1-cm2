@@ -18,7 +18,9 @@
    La commande arrive par sync.js ({finSeance:{min, id}}) ; chargé après app.js.
    ============================================================ */
 (function(){
-  if(typeof ETAT === "undefined") return;
+  /* L'état du jeu : ETAT (jeux classiques) ou VML.ETAT (variantes immersives) */
+  const etat = () => (typeof ETAT !== "undefined" && ETAT) || (window.VML && window.VML.ETAT) || null;
+  if(typeof ETAT === "undefined" && !window.VML) return;
   const CLE = "escape_fin_seance";
   const CALME_MS = 2500;          // silence d'action demandé avant le signal sonore
   const ATTENTE_MAX_MS = 15000;   // on ne retarde jamais le signal plus longtemps
@@ -54,7 +56,8 @@
                     : { t: `🔔 Fin de la séance dans ${min} min.`, urgent: false };
   }
   function afficher(){
-    if(!fin || ETAT.fini){ masquer(); return; }
+    const E = etat();
+    if(!fin || (E && (E.fini || E.coffreOuvert))){ masquer(); return; }
     const b = barre(), x = texte();
     b.querySelector(".texte").textContent = x.t;
     b.classList.toggle("urgent", x.urgent);
@@ -73,13 +76,13 @@
     if(moi !== jeton) return;
     const occupe = Date.now() - derniereAction < CALME_MS;
     if(occupe && Date.now() - depuis < ATTENTE_MAX_MS){ setTimeout(() => signalSonore(depuis, moi), 500); return; }
-    if(typeof son === "function" && !(ETAT.reglages && ETAT.reglages.sonsActifs === false)) son("page");
+    if(typeof son === "function" && !(etat() && etat().reglages && etat().reglages.sonsActifs === false) || (window.VML && window.VML.reglage && window.VML.reglage("sons") === false)) son("page");
   }
 
   /** Prévenir l'équipe : fin de la séance dans « min » minutes (appelé par la commande de prof.html). */
   function alerteFinSeance(min){
     min = Math.max(1, Math.min(60, Math.round(+min || 5)));
-    if(ETAT.fini) return false;
+    if(etat() && etat().fini) return false;
     fin = Date.now() + min * 60000;
     try{ sessionStorage.setItem(CLE, String(fin)); }catch(e){}
     afficher();
@@ -95,7 +98,7 @@
     const f = +sessionStorage.getItem(CLE);
     if(f && f > Date.now() - 600000 && !new URLSearchParams(location.search).get("salle")){
       fin = f; minuteur = setInterval(afficher, 15000);
-      const attendre = setInterval(() => { if(ETAT.debut){ clearInterval(attendre); afficher(); } }, 500);
+      const attendre = setInterval(() => { if(etat() && etat().debut){ clearInterval(attendre); afficher(); } }, 500);
       setTimeout(() => clearInterval(attendre), 60000);
     }
   }catch(e){}

@@ -21,18 +21,21 @@
    (objet CORRECTION_JEU) ; à tenir à jour si une énigme change.
    ============================================================ */
 (function(){
-  if(typeof ETAT === "undefined") return;
+  if(typeof ETAT === "undefined" && !window.CORRECTION_ADAPTATEUR) return;
   const esc = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const donnees = () => (typeof window.DONNEES === "function" ? window.DONNEES() : window.DONNEES) || null;
   const enigmesJson = () => (typeof window.ENIGMES === "function" ? window.ENIGMES() : window.ENIGMES) || null;
-  const nbSalles = () => window.NB_SALLES || ((donnees() && donnees().salles) || []).length || 5;
+  const nbSalles = () => (AD() && AD().nbSalles()) || window.NB_SALLES || ((donnees() && donnees().salles) || []).length || 5;
+  /* Adaptateur (variantes immersives, commun/js/immersif/vml-correction.js) :
+     { niveaux:[{id,nom}], defaut(), nbSalles(), titreSalle(n), mot(n), motSalle, enigmes(niveau, n) → [{id,titre,consigne,reponse,correction}] } */
+  const AD = () => window.CORRECTION_ADAPTATEUR || null;
   const ID = "correction-collective";
-  const disponible = () => typeof CORRECTION_JEU !== "undefined" || (typeof window.salleEnigmes === "function" && !!enigmesJson());
+  const disponible = () => !!AD() || typeof CORRECTION_JEU !== "undefined" || (typeof window.salleEnigmes === "function" && !!enigmesJson());
   let niveau = null, salle = 1, taille = 1, revele = new Set(), ordre = [];
 
   /* ---------------- La bonne réponse, selon le type d'énigme ---------------- */
-  function reponseHTML(e){
-    const d = (typeof donneesNiveau === "function") ? donneesNiveau(e) : (e.commun || e.cm2 || e.cm1 || {});
+  function reponseHTML(e, donnees){
+    const d = donnees || ((typeof donneesNiveau === "function") ? donneesNiveau(e) : (e.commun || e.cm2 || e.cm1 || {}));
     const liste = l => `<ul class="cc-liste">${l.map(x => `<li>${x}</li>`).join("")}</ul>`;
     switch(e.type){
       case "qcm":
@@ -71,6 +74,7 @@
   const propre = () => (typeof CORRECTION_JEU !== "undefined" ? CORRECTION_JEU : null);
   /** Énigmes de la salle n, sous une forme unique : { id, titre, consigne, reponse, correction }. */
   function listeSalle(n){
+    if(AD()) return AD().enigmes(niveau, n);
     if(propre()) return propre().enigmes(niveau, n);
     const ancien = ETAT.niveau; ETAT.niveau = niveau;
     try{
@@ -84,7 +88,7 @@
     } finally { ETAT.niveau = ancien; }
   }
   function salleHTML(n){
-    const D = donnees(), s = D && D.salles ? D.salles[n - 1] : null;
+    const D = donnees(), s = AD() ? { titre: AD().titreSalle(n), motCle: AD().mot(n) } : (D && D.salles ? D.salles[n - 1] : null);
     const liste = listeSalle(n);
     ordre = [];
     const cartes = liste.map((e, i) => {
@@ -101,7 +105,7 @@
       </section>`;
     }).join("");
     const mot = s && (s.motCle || s.fragment);
-    return `<h2 class="cc-salle-titre">${esc((window.JEU && JEU.motSalle) || "Salle")} ${n}${s ? " — " + esc(s.titre) : ""}</h2>
+    return `<h2 class="cc-salle-titre">${esc((AD() && AD().motSalle) || (window.JEU && JEU.motSalle) || "Salle")} ${n}${s ? " — " + esc(s.titre) : ""}</h2>
       ${cartes || '<p class="cc-vide">Aucune énigme dans cette salle.</p>'}
       ${mot ? `<section class="cc-serrure"><span>🔑 Mot de la serrure de cette salle :</span> <button type="button" class="cc-voir cc-voir-mot" data-cle="${n}|mot" aria-expanded="${revele.has(n + "|mot")}">👁️ Voir le mot</button>
         <b class="cc-mot-serrure" ${revele.has(n + "|mot") ? "" : "hidden"}>${esc(mot)}</b></section>` : ""}`;
@@ -183,14 +187,14 @@
     options = options || {};
     if(!disponible()) return false;
     styles();
-    niveau = options.niveau || niveau || ETAT.niveau || "CM2";
+    niveau = options.niveau || niveau || (AD() ? AD().defaut() : ((typeof ETAT !== "undefined" && ETAT && ETAT.niveau) || "CM2"));
     salle = options.salle || 1; revele = new Set(); taille = 1;
     fermer();
     const el = document.createElement("div");
     el.id = ID; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", "Correction collective");
     el.innerHTML = `<div class="cc-barre">
-        <b>🖥️ Correction collective — ${esc((window.JEU && JEU.titre) || document.title)}</b>
-        <select class="cc-niv" aria-label="Niveau"><option value="CM1">CM1</option><option value="CM2">CM2</option></select>
+        <b>🖥️ Correction collective — ${esc((AD() && AD().titre) || (window.JEU && JEU.titre) || document.title)}</b>
+        <select class="cc-niv" aria-label="Niveau">${(AD() ? AD().niveaux : [{ id: "CM1", nom: "CM1" }, { id: "CM2", nom: "CM2" }]).map(x => `<option value="${esc(x.id)}">${esc(x.nom)}</option>`).join("")}</select>
         <button type="button" class="cc-prec">◀ Salle précédente</button><span class="cc-pos"></span><button type="button" class="cc-suiv">Salle suivante ▶</button>
         <button type="button" class="cc-tout" title="Révéler toutes les réponses de la salle (touche T)">👁️ Tout voir</button>
         <button type="button" class="cc-moins" aria-label="Texte plus petit">A−</button><button type="button" class="cc-plus" aria-label="Texte plus grand">A+</button>
@@ -250,11 +254,12 @@
   const p = new URLSearchParams(location.search);
   if(p.get("correction")){
     window.CORRECTION_DEPUIS_URL = true;
-    const niv = /^CM[12]$/.test(p.get("niveau") || "") ? p.get("niveau") : "CM2";
+    const niveauxOk = AD() ? AD().niveaux.map(x => x.id) : ["CM1", "CM2"];
+    const niv = niveauxOk.includes(p.get("niveau") || "") ? p.get("niveau") : (AD() ? AD().defaut() : "CM2");
     let essais = 0;
     const attendre = setInterval(() => {
       essais++;
-      if(disponible() && donnees()){
+      if(disponible() && (AD() ? AD().pret() : donnees())){
         clearInterval(attendre); ouvrir({ niveau: niv, salle: +p.get("salle") || 1 });
       } else if(essais > 100){ clearInterval(attendre); }
     }, 100);
