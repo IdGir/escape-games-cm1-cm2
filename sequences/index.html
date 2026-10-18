@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séquences avant / après — Escape games CM1 · CM2</title>
+<!--
+  SÉQUENCES « AVANT / APRÈS » (amélioration N18)
+  Liste des jeux et de leur fiche de séquence : objectif, activité avant (15-20 min), le jeu,
+  activité après (15-20 min), lien avec la fiche de compétences (C5). Les fiches se généralisent
+  progressivement : un jeu sans fiche reste jouable, la page affiche alors le modèle vierge.
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--accent:#1d3a8a;--ok:#15803d}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main,footer{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{padding-top:20px} h1{margin:6px 0 2px;font-size:1.6rem} .sous{color:var(--doux);margin:0}
+  a{color:var(--accent)}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .bloc h2{margin:0 0 6px;font-size:1.08rem}
+  .schema{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0}
+  .schema div{border:1px solid var(--ligne);border-top-width:6px;border-radius:10px;padding:8px 12px;background:#fff}
+  .schema .a{border-top-color:#b45309}.schema .j{border-top-color:#15803d}.schema .p{border-top-color:#6d28d9}
+  .liste{display:grid;gap:10px}
+  .jeu{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:var(--papier);border:1px solid var(--ligne);border-radius:12px;padding:10px 16px}
+  .jeu .titre{flex:1 1 280px;font-weight:600} .jeu small{display:block;font-weight:400;color:var(--doux)}
+  .etat{padding:2px 10px;border-radius:999px;font-size:.8rem;font-weight:600;background:#f0eee9;color:var(--doux)}
+  .etat.fait{background:#e5f5ea;color:var(--ok)}
+  .jeu a.bouton{padding:4px 12px;border:1px solid var(--ligne);border-radius:999px;text-decoration:none;background:#fff;font-size:.9rem}
+  @media (max-width:720px){.schema{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <p><a href="../index.html">← Accueil des jeux</a> · <a href="../annee.html">📅 L'année en escape games</a> · <a href="../adopter.html">🤝 Collègues : adopter ces jeux</a></p>
+  <h1>📘 Séquences « avant / après » autour d'un jeu</h1>
+  <p class="sous">Pour intégrer un jeu dans une progression plutôt que de le jouer isolément.</p>
+</header>
+<main>
+  <section class="bloc">
+    <h2>Le principe : une séquence en trois temps</h2>
+    <div class="schema">
+      <div class="a"><b>🔎 Avant</b> · 15-20 min<br>Une mise en situation : une manipulation, une question, une observation qui donne envie de chercher.</div>
+      <div class="j"><b>🎮 Le jeu</b> · 45-75 min<br>En une séance ou en plusieurs, avec la formule, les rôles et les réglages conseillés.</div>
+      <div class="p"><b>🧩 Après</b> · 15-20 min<br>Un réinvestissement et une trace écrite, appuyés sur le bilan de classe.</div>
+    </div>
+    <p>Chaque fiche (imprimable) rappelle l'objectif, le déroulé et le matériel de chaque temps, comment évaluer, et renvoie à la <b>fiche de compétences</b> de la période (C5) et au <b>passeport</b> (C3).</p>
+  </section>
+
+  <section class="bloc">
+    <h2>Les jeux</h2>
+    <div class="liste" id="liste"></div>
+    <p class="sous" style="margin-top:10px">Les autres fiches s'ajoutent progressivement ; en attendant, la page d'un jeu sans fiche propose le <b>modèle vierge</b>.
+      Pour en rédiger une : <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/sequences/README.md" target="_blank" rel="noopener">sequences/README.md</a>.</p>
+  </section>
+</main>
+<script src="../commun/donnees/catalogue.js?c3"></script>
+<script src="donnees.js?c1"></script>
+<script>
+"use strict";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const rang = j => ((j.periodes && j.periodes[0]) || "P9") + String(j.num || "99").padStart(3, "0");
+const publies = CATALOGUE.jeux.filter(j => j.dossier).sort((a, b) => rang(a).localeCompare(rang(b)));
+document.getElementById("liste").innerHTML = publies.map(j => {
+  const a = !!SEQUENCES[j.dossier];
+  return `<div class="jeu"><span class="titre">${esc(j.icone || "")} ${esc(j.titre)}<small>${esc(j.matiere)}${j.annee && /^[AB]$/.test(j.annee) ? " · année " + j.annee : ""}${j.periodes && j.periodes.length ? " · " + esc(j.periodes.join(", ")) : ""}</small></span>
+    <span class="etat ${a ? "fait" : ""}">${a ? "✅ fiche disponible" : "⏳ à rédiger"}</span>
+    <a class="bouton" href="fiche.html?jeu=${encodeURIComponent(j.dossier)}">${a ? "📘 Voir la séquence" : "📄 Modèle vierge"}</a></div>`;
+}).join("");
+window.SEQUENCES_PAGE = { publies };
+</script>
+</body>
+</html>

@@ -109,6 +109,7 @@ function carte(j, p){
         <span class="etiquette">${esc(j.matiere)}</span>${j.annee.length === 1 ? `<span class="etiquette">Année ${esc(j.annee)}</span>` : ""}</div>
       <ul class="competences">${comp.map(c => `<li>${esc(c)}</li>`).join("")}</ul>
       ${dispo ? `<div class="liens"><a href="${esc(j.dossier)}/">▶ Jouer</a><a href="${esc(j.dossier)}/lecons-imprimables.html">📖 Leçons A4</a>
+        <a href="sequences/fiche.html?jeu=${esc(j.dossier)}">📘 Séquence avant / après</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/${esc(j.dossier)}#readme" target="_blank" rel="noopener">📘 Guide</a></div>` : ""}
     </div></div>`;
 }

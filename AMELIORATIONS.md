@@ -353,7 +353,7 @@ avant `git push`.
 ### N18 — Fiche de séquence « avant / après » autour de chaque jeu
 Modèle (objectif, activité avant 15-20 min, le jeu, activité après 15-20 min, lien avec C5), deux
 premières fiches, dossier `sequences/` lié depuis les jeux et la vue d'ensemble de l'année (C1).
-**Jeux concernés :** 12 jeux « salles » + C1 · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** 12 jeux « salles » + C1 · **Effort :** M · **Statut :** Fait
 
 ### N19 — Alerte de fin de séance commune à toutes les équipes
 Bouton « 🔔 Prévenir : fin dans 5 min » dans `prof.html` : bandeau discret et signal sonore court sur

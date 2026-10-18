@@ -480,6 +480,70 @@ SECTIONS.N16 = async () => {
   ok(G.erreurs.length === 0 && G2.erreurs.length === 0, "jeu : erreurs JS : " + G.erreurs.concat(G2.erreurs).join(" | "));
 };
 
+/* ---- N18 : fiches de séquence « avant / après » ---- */
+SECTIONS.N18 = async () => {
+  console.log("\n== N18 : séquences avant / après (sequences/) ==");
+  const fs = require("fs"), path = require("path");
+  const I = await charger(RACINE, "", { page: "sequences/index.html", attente: 300 });
+  const d = I.w.document;
+  const publies = I.w.SEQUENCES_PAGE.publies;
+  ok(d.querySelectorAll("#liste .jeu").length === publies.length && publies.length >= 12, `liste : les ${publies.length} jeux publiés du catalogue`);
+  ok(d.querySelectorAll("#liste .etat.fait").length === 2 && /melanges/.test(d.querySelector('#liste a[href*="melanges"]').getAttribute("href")), "2 fiches disponibles (✅), les autres « à rédiger » avec le modèle vierge");
+  ok([...d.querySelectorAll("#liste a.bouton")].every(a => /^fiche\.html\?jeu=/.test(a.getAttribute("href"))), "chaque jeu renvoie vers sa fiche (ou le modèle)");
+  ok(I.erreurs.length === 0, "liste : erreurs JS : " + I.erreurs.join(" | "));
+
+  // intégrité des fiches rédigées
+  const SEQ = I.w.SEQUENCES;
+  for (const [jeu, s] of Object.entries(SEQ)) {
+    const cat = I.w.CATALOGUE.jeux.find(j => j.dossier === jeu);
+    ok(!!cat && fs.existsSync(path.join(RACINE, jeu, "index.html")), `${jeu} : jeu publié du catalogue`);
+    ok(s.objectif && s.objectif.length > 40 && s.niveaux, `${jeu} : objectif et niveaux`);
+    for (const k of ["avant", "apres"]) {
+      const t = s[k];
+      ok(t && /15-20 min/.test(t.duree) && t.titre && t.deroule.length >= 3 && t.materiel.length >= 1 && t.trace, `${jeu} : activité « ${k} » complète (15-20 min, ${t && t.deroule.length} étapes, matériel, trace)`);
+    }
+    ok(s.jeu && s.jeu.duree && s.jeu.formules.length >= 1 && s.jeu.roles.length >= 2 && s.jeu.conseils.length >= 1, `${jeu} : le jeu (durée, formule, rôles, conseils)`);
+    ok(s.evaluer.length >= 2 && /passeport/i.test(s.evaluer.join(" ")), `${jeu} : évaluation reliée au passeport`);
+    const guide = fs.readFileSync(path.join(RACINE, jeu, "GUIDE-PEDAGOGIQUE.md"), "utf8");
+    ok(/60 à 75 min/.test(s.jeu.duree) && /60 à 75 minutes/.test(guide), `${jeu} : la durée du jeu est celle de son guide pédagogique`);
+  }
+
+  // la fiche d'un jeu
+  const F = await charger(RACINE, "?jeu=melanges", { page: "sequences/fiche.html", attente: 300 });
+  const f = F.w.document;
+  ok(/Séquence — .*Laboratoire de Madame Mélange/.test(f.getElementById("titre").textContent), "fiche : titre « " + f.getElementById("titre").textContent + " »");
+  ok(/Sciences/.test(f.getElementById("sous-titre").textContent) && /P1/.test(f.getElementById("sous-titre").textContent), "fiche : matière et période (" + f.getElementById("sous-titre").textContent + ")");
+  ok(f.querySelectorAll(".temps.avant, .temps.jeu, .temps.apres").length === 3 && /15-20 min/.test(f.querySelector(".temps.avant .duree").textContent) && /15-20 min/.test(f.querySelector(".temps.apres .duree").textContent), "fiche : trois temps (avant 15-20 min · jeu · après 15-20 min)");
+  ok(f.querySelectorAll(".temps.avant ol li").length >= 3 && f.querySelector(".temps.avant .trace"), "fiche : déroulé et trace de l'activité avant");
+  const liens = [...f.querySelectorAll("a[href]")].map(a => a.getAttribute("href")).filter(h => !/^https?:/.test(h));
+  ok(liens.some(h => /periode\.html\?p=P1&annee=B/.test(h)), "fiche : lien vers la fiche de compétences de la période (C5)");
+  ok(liens.some(h => /passeport\.html/.test(h)) && liens.some(h => /resultats\.html/.test(h)), "fiche : liens vers le passeport (C3) et le bilan de classe");
+  const morts = liens.filter(h => !fs.existsSync(path.join(RACINE, "sequences", h.split("?")[0])));
+  ok(morts.length === 0, "fiche : tous les liens internes existent " + morts.join(", "));
+  F.w.__imprime = 0; f.getElementById("btn-imprimer").click();
+  ok(F.w.__imprime === 1 && /@media print/.test(f.head.innerHTML), "fiche : imprimable");
+  ok(F.erreurs.length === 0, "fiche : erreurs JS : " + F.erreurs.join(" | "));
+
+  // un jeu sans fiche : modèle vierge, jeu non bloqué ; jeu inconnu : pas de plantage
+  const V = await charger(RACINE, "?jeu=declaration", { page: "sequences/fiche.html", attente: 300 });
+  const v = V.w.document;
+  ok(/Pas encore de fiche de séquence/.test(v.getElementById("fiche").textContent) && v.querySelectorAll(".temps").length === 3 && v.querySelector('a[href="../declaration/"]'), "jeu sans fiche : modèle vierge (avant · jeu · après) et lien pour jouer, rien n'est bloqué");
+  ok(V.erreurs.length === 0, "modèle vierge : erreurs JS : " + V.erreurs.join(" | "));
+  const X = await charger(RACINE, "?jeu=inconnu", { page: "sequences/fiche.html", attente: 300 });
+  ok(/Modèle vierge/.test(X.w.document.getElementById("sous-titre").textContent) && X.erreurs.length === 0, "jeu inconnu : modèle vierge, sans erreur");
+
+  // liens depuis chaque jeu et depuis la vue d'ensemble de l'année
+  const jeux = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere"];
+  const sans = jeux.filter(j => !fs.readFileSync(path.join(RACINE, j, "prof.html"), "utf8").includes(`../sequences/fiche.html?jeu=${j}`));
+  ok(sans.length === 0, "prof.html des 12 jeux : bouton « 📘 Fiche de séquence » " + sans.join(", "));
+  const A = await charger(RACINE, "", { page: "annee.html", attente: 600 });
+  const liensAnnee = [...A.w.document.querySelectorAll('a[href^="sequences/fiche.html?jeu="]')].map(a => a.getAttribute("href"));
+  ok(liensAnnee.length >= 12 && liensAnnee.includes("sequences/fiche.html?jeu=melanges"), `vue d'ensemble de l'année : lien « Séquence » sur chaque jeu disponible (${liensAnnee.length})`);
+  ok(A.erreurs.length === 0, "annee.html : erreurs JS : " + A.erreurs.join(" | "));
+  const acc = fs.readFileSync(path.join(RACINE, "index.html"), "utf8"), ad = fs.readFileSync(path.join(RACINE, "adopter.html"), "utf8");
+  ok(/href="sequences\/"/.test(acc) && /href="sequences\/"/.test(ad), "liens depuis l'accueil et le kit « adopter ce projet »");
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
