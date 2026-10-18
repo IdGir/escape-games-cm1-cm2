@@ -314,7 +314,7 @@ rapporte « page, lien, cible manquante » et bloque le `git push` (crochet, com
 Une mascotte originale (charte B1, 200 × 320) qui accueille la classe sur l'accueil, explique les règles
 communes au premier lancement et annonce les trophées (N1). Elle ne parle jamais pendant les énigmes ;
 désactivable dans ⚙️ Réglages ; aucun effet sur le score.
-**Jeux concernés :** accueil + 12 jeux « salles » · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** accueil + 12 jeux « salles » · **Effort :** M · **Statut :** Fait
 
 ### N12 — Bilan de classe agrégé multi-séances
 Compte-rendu enrichi énigme par énigme (identifiant, compétence, réussite au premier coup, erreurs,

@@ -85,6 +85,16 @@ gardent pour l'instant la palette par défaut), vérifier le contraste, l'écrir
 - **Jamais une personne réelle** reconnaissable, même historique : on invente un témoin plausible
   (un apprenti, une meunière) ; les personnages historiques sont évoqués, pas dessinés en héros.
 
+### La mascotte commune (Noa)
+
+Un seul personnage est commun à toute la collection : **Noa**, le guide (`commun/js/mascotte.js`,
+textes dans `commun/donnees/mascotte.js`). Elle suit la charte des personnages ci-dessus : plein corps
+`viewBox="0 0 200 320"`, **même squelette** animé, carnation « hâlée » de la palette, vêtements dans des tons
+naturels (gilet bleu-vert, pantalon sable, casquette bleu nuit), clé dorée à la main — **un personnage
+original**, jamais inspiré d'un personnage existant ni d'une personne réelle. Elle n'a que trois rôles
+(accueil, règles communes au premier lancement, annonce des trophées), jamais pendant une énigme, et se
+désactive dans ⚙️ Réglages ; `node outils-tests/verifier-charte.js` contrôle son format, sa carnation et son squelette.
+
 ## 5. Photos, images et vidéos
 
 - **Lieux réels** : photographies libres (Wikimedia Commons, Gallica…), crédit (auteur, licence, URL)

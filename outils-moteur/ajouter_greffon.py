@@ -21,7 +21,7 @@ def main():
     ap.add_argument("--fichier", default="index.html")
     ap.add_argument("--jeux", nargs="*", default=JEUX)
     ap.add_argument("--remplacer", action="store_true", help="met à jour le numéro de version si déjà présent")
-    ap.add_argument("--dossier", default="js", help="js ou css (css : balise <link>)")
+    ap.add_argument("--dossier", default="js", help="js, donnees ou css (css : balise <link>)")
     a = ap.parse_args()
     n = 0
     for jeu in a.jeux:
@@ -30,7 +30,7 @@ def main():
             continue
         t = f.read_text(encoding="utf-8")
         crlf = "\r\n" in t
-        balise = f'<script src="../commun/js/{a.greffon}?{a.version}"></script>'
+        balise = f'<script src="../commun/{a.dossier}/{a.greffon}?{a.version}"></script>'
         if a.dossier == "css":
             balise = f'<link rel="stylesheet" href="../commun/css/{a.greffon}?{a.version}">'
         deja = re.search(re.escape(f"commun/{a.dossier}/{a.greffon}") + r"\?\w+", t)

@@ -945,6 +945,116 @@ SECTIONS.N20 = async () => {
   ok(sv.w.DIFFICULTE.reglage(e11) === -2 && sv.w.DIFFICULTE.position(e11) === 0, "serveur local : réglage de la classe reçu (−2), prioritaire sur celui de l'appareil");
 };
 
+/* ---- N11 : mascotte commune Noa ---- */
+SECTIONS.N11 = async () => {
+  console.log("\n== N11 : mascotte commune ==");
+  const fs = require("fs");
+  const parole = w => { w.__dit = []; w.__annule = 0; w.speechSynthesis = { speak(u){ w.__dit.push(u.text); w.__u = u; }, cancel(){ w.__annule++; }, getVoices(){ return []; }, onvoiceschanged: null }; w.SpeechSynthesisUtterance = function(t){ this.text = t; }; };
+  // accueil de la collection
+  const A = await charger(RACINE, "", { page: "index.html", attente: 500, avant: parole });
+  const dA = A.w.document;
+  const b = dA.getElementById("mascotte-bloc");
+  ok(!!b && /Noa/.test(b.textContent) && /Choisissez un jeu/.test(b.textContent), "accueil : Noa accueille la classe");
+  ok(/vous avez \d+ escape games/.test(b.textContent) && +b.textContent.match(/vous avez (\d+) escape games/)[1] === A.w.CATALOGUE.jeux.filter(j => j.dossier).length, "accueil : le nombre de jeux vient du catalogue (" + (b.textContent.match(/vous avez (\d+)/) || [])[1] + ")");
+  ok(b.querySelector(".mascotte-regles") && !b.querySelector(".mascotte-regles").hidden, "premier lancement : « Comment jouer ? » ouvert d'office");
+  const regles = [...b.querySelectorAll(".mascotte-regles li")].map(l => l.textContent);
+  ok(regles.length === 5 && /10 points/.test(regles[0]) && /3 points/.test(regles[0]) && /2 points/.test(regles[0]) && /coffre/i.test(regles[1]) && /indice/i.test(regles[2]), "règles communes : barème (10 · 3 · −2), coffre, indices, équipe, trophées");
+  // portrait
+  const svg = b.querySelector("svg");
+  ok(svg.getAttribute("viewBox") === "0 0 200 320", "portrait : viewBox 200 × 320 (charte B1)");
+  const rig = [".tete", ".yeux", ".paupiere", ".bouche", ".sourcils", ".buste", ".bras-g", ".bras-d", ".avant-g", ".avant-d", ".main-g", ".main-d", ".jambes"].filter(s => !svg.querySelector(s));
+  ok(rig.length === 0, "portrait : squelette commun complet (" + (rig.join(", ") || "13 classes") + ")");
+  ok(/#e2b183/.test(b.innerHTML) && /#c48f5e/.test(b.innerHTML), "portrait : carnation « hâlée » de la palette");
+  ok(!/<text|<image|href=/.test(svg.outerHTML), "portrait : aucun texte ni image externe");
+  // voix
+  const ec = b.querySelector(".mascotte-ecouter");
+  ok(!!ec, "bouton « 🔊 Écouter » (synthèse vocale disponible)");
+  ec.click();
+  ok(A.w.__dit.length === 1 && /Bonjour la classe/.test(A.w.__dit[0]), "la voix lit le texte d'accueil (sous-titre = le texte affiché)");
+  A.w.__u.onstart(); ok(b.querySelector(".mascotte-portrait").classList.contains("parle"), "le portrait « parle » pendant la lecture");
+  A.w.__u.onend(); ok(!b.querySelector(".mascotte-portrait").classList.contains("parle"), "…et s'arrête à la fin");
+  b.querySelector(".mascotte-lire-regles").click();
+  ok(A.w.__dit.length === 2 && /Les points\./.test(A.w.__dit[1]) && /Le coffre final\./.test(A.w.__dit[1]), "« Lire les règles » : lecture des cinq règles");
+  // masquer, rappel
+  b.querySelector(".mascotte-masquer").click();
+  ok(!dA.getElementById("mascotte-bloc") && !!dA.getElementById("mascotte-rappel") && JSON.parse(A.w.localStorage.getItem("escape_mascotte")).mode === "off", "✕ : Noa masquée, bouton « Réafficher Noa », réglage gardé");
+  dA.getElementById("mascotte-rappel").click();
+  ok(!!dA.getElementById("mascotte-bloc"), "« Réafficher Noa » : elle revient");
+  ok(A.erreurs.length === 0, "accueil : erreurs JS : " + A.erreurs.join(" | "));
+  // désactivée d'emblée : seulement le rappel ; sans voix : pas de bouton écouter
+  const O = await charger(RACINE, "", { page: "index.html", attente: 300, stockage: { escape_mascotte: JSON.stringify({ mode: "off", vu: true }) }, avant: parole });
+  ok(!O.w.document.getElementById("mascotte-bloc") && !!O.w.document.getElementById("mascotte-rappel"), "réglage « désactivée » : aucune mascotte, seulement le rappel");
+  const M = await charger(RACINE, "", { page: "index.html", attente: 300, stockage: { escape_mascotte: JSON.stringify({ mode: "muette", vu: true }) }, avant: parole });
+  ok(!!M.w.document.getElementById("mascotte-bloc") && !M.w.document.querySelector(".mascotte-ecouter") && M.w.document.querySelector(".mascotte-regles").hidden, "« sans voix » : texte seul ; règles repliées après le premier lancement");
+
+  // un jeu : accueil, premier lancement, démarrage
+  for (const j of ["melanges", "tour-du-monde"]) {
+    const G = await charger(J(j), "", { attente: 600, avant: parole });
+    const d = G.w.document;
+    const bl = d.getElementById("mascotte-bloc");
+    ok(!!bl && /Bonjour l'équipe/.test(bl.textContent), `${j} : Noa sur l'écran d'accueil`);
+    ok(bl.compareDocumentPosition(d.getElementById("input-equipe")) & 4, `${j} : placée avant le choix du nom d'équipe`);
+    ok(!bl.querySelector(".mascotte-regles").hidden && /10 points/.test(bl.querySelector(".mascotte-regles").textContent), `${j} : règles ouvertes au premier lancement, barème du jeu (10 points)`);
+    bl.querySelector(".mascotte-ecouter").click();
+    ok(G.w.__dit.length === 1, `${j} : elle parle sur l'accueil`);
+    G.w.ETAT.reglages.cinematiques = false;
+    const inp = d.getElementById("input-equipe"); inp.value = "Les Lynx"; inp.dispatchEvent(new G.w.Event("input"));
+    d.querySelector('.opt-niveau[data-niveau="CM1"]').click();
+    const annulations = G.w.__annule;
+    d.getElementById("btn-demarrer").click(); await dodo(500);
+    ok(!d.getElementById("mascotte-bloc") && G.w.__annule > annulations, `${j} : au démarrage, Noa disparaît et sa voix est coupée`);
+    ok(JSON.parse(G.w.localStorage.getItem("escape_mascotte")).vu === true, `${j} : « premier lancement » noté (elle ne rouvrira plus les règles d'office)`);
+    const dits = G.w.__dit.length;
+    G.w.afficherSalle(2); await dodo(100);
+    ok(G.w.__dit.length === dits && !d.getElementById("mascotte-bloc") && !d.querySelector("#ecran-salle .mascotte-bloc, #ecran-salle .mascotte-trophee"), `${j} : jamais de mascotte ni de voix de Noa pendant les énigmes`);
+    ok(G.erreurs.length === 0, `${j} : erreurs JS : ` + G.erreurs.join(" | "));
+  }
+  // deuxième visite : texte « retour », règles repliées
+  const R2 = await charger(J("melanges"), "", { attente: 500, stockage: { escape_mascotte: JSON.stringify({ mode: "voix", vu: true }) }, avant: parole });
+  ok(/Content de vous revoir/.test(R2.w.document.getElementById("mascotte-bloc").textContent) && R2.w.document.querySelector(".mascotte-regles").hidden, "deuxième visite : « Content de vous revoir », règles repliées");
+  R2.w.document.querySelector(".mascotte-regles-btn").click();
+  ok(!R2.w.document.querySelector(".mascotte-regles").hidden, "« ❓ Comment jouer ? » rouvre les règles");
+  // réglage dans ⚙️
+  R2.w.ouvrirReglages(); await dodo(100);
+  const sel = R2.w.document.getElementById("reg-mascotte");
+  ok(!!sel && sel.value === "voix", "réglage « 🧑‍🎓 Mascotte » dans ⚙️");
+  sel.value = "off"; sel.dispatchEvent(new R2.w.Event("change"));
+  ok(!R2.w.document.getElementById("mascotte-bloc") && JSON.parse(R2.w.localStorage.getItem("escape_mascotte")).mode === "off", "⚙️ : désactivée tout de suite, réglage gardé");
+  // aucun effet sur le score
+  const S = await lancerPartie("melanges", "", { escape_mascotte: JSON.stringify({ mode: "voix", vu: false }) });
+  ok(S.w.ETAT.score === 0, "aucun effet sur le score");
+
+  // écran de fin : annonce des trophées (mêmes données que le test N1)
+  const p = (jeu, k) => ({ jeu, eleve: "Les Lynx", termine: true, total: 20, premierCoup: 10, indices: 4, quiz: 3, score: 120, mode: "equipe", date: `2026-10-0${k}T10:00`, partie: `2026-10-0${k}T09:00` });
+  const F = await charger(J("constitution"), "", { attente: 600, stockage: { escape_resultats: JSON.stringify([p("declaration", 1), p("chateau-fort", 2)]) }, avant: parole });
+  const dF = F.w.document; F.w.ETAT.reglages.cinematiques = false;
+  const i1 = dF.getElementById("input-equipe"); i1.value = "les lynx"; i1.dispatchEvent(new F.w.Event("input"));
+  dF.querySelector('.opt-niveau[data-niveau="CM2"]').click(); dF.getElementById("btn-demarrer").click(); await dodo(300);
+  F.w.ETAT.score = 140; F.w.ETAT.fini = true; F.w.ETAT.indicesTotal = 2; F.w.ETAT.enigmesReussies = 20;
+  F.w.finDuJeu(); await dodo(200);
+  const mt = dF.querySelector("#trophees-fin .mascotte-trophee");
+  ok(!!mt && /Bravo ! Vous avez gagné 3 nouveaux trophées : /.test(mt.textContent) && /Citoyen/.test(mt.textContent) && /Trois coffres/.test(mt.textContent), "écran de fin : Noa annonce les 3 nouveaux trophées (« " + (mt && mt.textContent.trim().slice(0, 80)) + "… »)");
+  ok(mt.querySelector("svg").getAttribute("viewBox") === "0 0 200 320", "annonce : même portrait");
+  const ecoute = mt.querySelector(".mascotte-ecouter"); ecoute.click();
+  ok(/nouveaux trophées/.test(F.w.__dit[F.w.__dit.length - 1]), "annonce : lue à voix haute (bouton 🔊)");
+  ok(F.w.ETAT.score === 140, "aucun effet sur le score à l'écran de fin");
+  ok(F.erreurs.length === 0, "fin de partie : erreurs JS : " + F.erreurs.join(" | "));
+  // pas de nouveau trophée : pas de mascotte à l'écran de fin
+  const N = await charger(J("melanges"), "", { attente: 600, stockage: { escape_resultats: "[]" }, avant: parole });
+  const dN = N.w.document; N.w.ETAT.reglages.cinematiques = false;
+  const i2 = dN.getElementById("input-equipe"); i2.value = "Solo"; i2.dispatchEvent(new N.w.Event("input"));
+  dN.querySelector('.opt-niveau[data-niveau="CM2"]').click(); dN.getElementById("btn-demarrer").click(); await dodo(300);
+  N.w.ETAT.fini = true; N.w.ETAT.enigmesReussies = 20; N.w.finDuJeu(); await dodo(150);
+  const nouveaux = dN.querySelectorAll("#trophees-fin .tr.nouveau").length;
+  ok((nouveaux > 0) === !!dN.querySelector("#trophees-fin .mascotte-trophee"), `fin de partie : mascotte seulement s'il y a un nouveau trophée (${nouveaux})`);
+  // mode vérification : rien
+  const V = await charger(J("melanges"), "?salle=6&niveau=CM2", { attente: 600, avant: parole });
+  ok(!V.w.document.querySelector(".mascotte-trophee"), "mode vérification : pas d'annonce");
+  // textes : fichier unique dans commun/
+  ok(fs.existsSync(require("path").join(RACINE, "commun/donnees/mascotte.js")) && fs.existsSync(require("path").join(RACINE, "commun/js/mascotte.js")), "greffon et textes dans commun/");
+  ok(JEUX8.every(j => /commun\/js\/mascotte\.js/.test(fs.readFileSync(J(j) + "/index.html", "utf8")) && fs.readFileSync(J(j) + "/index.html", "utf8").indexOf("js/mascotte.js") > fs.readFileSync(J(j) + "/index.html", "utf8").indexOf("js/trophees.js")), "les 12 jeux la chargent, après les trophées");
+};
+
 module.exports = { SECTIONS, charger, ok, dodo, attendreQue, J, JEUX8 };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

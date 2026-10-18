@@ -54,10 +54,32 @@ function controler(j){
   return { j, err, warn, accents: [v.bleu, v.rouge] };
 }
 
+/** La mascotte commune (N11, commun/js/mascotte.js) suit la même charte que les personnages des jeux. */
+function controlerMascotte(){
+  const err = [], warn = [];
+  const f = path.join(RACINE, "commun/js/mascotte.js");
+  if (!fs.existsSync(f)) return { err, warn, absent: true };
+  const src = fs.readFileSync(f, "utf8");
+  const viewBoxes = [...new Set([...src.matchAll(/viewBox="([^"]+)"/g)].map(m => m[1]))];
+  viewBoxes.filter(x => x !== "0 0 200 320").forEach(x => err.push(`mascotte en viewBox « ${x} » (attendu 0 0 200 320)`));
+  if (!viewBoxes.length) err.push("mascotte : aucun viewBox");
+  const peau = (src.match(/PEAU_HALE\s*=\s*\[([^\]]*)\]/) || [])[1];
+  if (!peau) err.push("mascotte : carnation (PEAU_HALE) introuvable");
+  else [...peau.matchAll(/#[0-9a-fA-F]{6}/g)].map(m => m[0].toLowerCase()).filter(c => !PEAUX.includes(c)).forEach(c => err.push(`mascotte : carnation ${c} hors de la palette PEAU`));
+  ["tete", "yeux", "paupiere", "bouche", "sourcils", "buste", "bras-g", "bras-d", "avant-g", "avant-d", "main-g", "main-d", "jambes"].forEach(cl => { if (!new RegExp(`class="[^"]*\\b${cl}\\b`).test(src)) err.push(`mascotte : classe .${cl} absente (squelette commun)`); });
+  const dessin = src.slice(src.indexOf("function svgNoa"), src.indexOf("/* ---------------- Voix"));
+  if (/<text\b|<image\b/.test(dessin)) err.push("mascotte : le portrait contient du texte ou une image externe");
+  return { err, warn };
+}
+
 function lancer(choix){
   const liste = choix.length ? choix : jeux();
   let nErr = 0; const couples = {};
   console.log("Contrôle de la charte graphique (B1)\n");
+  if (!choix.length) {
+    const m = controlerMascotte();
+    if (!m.absent) { console.log(`${m.err.length ? "✗" : "✓"} ${"mascotte (Noa)".padEnd(20)} 200 × 320, carnation de la palette, squelette commun`); m.err.forEach(x => console.log("    ✗ " + x)); nErr += m.err.length; }
+  }
   for (const j of liste) {
     const r = controler(j);
     console.log(`${r.err.length ? "✗" : r.warn.length ? "⚠" : "✓"} ${j.padEnd(20)} accents ${r.accents.join(" / ")}`);
@@ -69,5 +91,5 @@ function lancer(choix){
   console.log(`\n${liste.length} jeu(x), ${nErr} écart(s) à corriger.`);
   return nErr;
 }
-module.exports = { controler, jeux, contraste, lancer };
+module.exports = { controler, controlerMascotte, jeux, contraste, lancer };
 if (require.main === module) process.exitCode = lancer(process.argv.slice(2)) ? 1 : 0;
