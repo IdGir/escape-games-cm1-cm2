@@ -331,7 +331,7 @@ le code du palier Découverte (E2). Tracé dans le bilan ; coût en points régl
 ### N14 — Référencement sur les plateformes nationales de ressources libres
 Éduthèque, Apps.education.fr, La Digitale : licence du dépôt (décision de l'auteur), vérification des
 crédits des médias, fiche de présentation, vérification des conditions de dépôt de chaque plateforme.
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** tous · **Effort :** M · **Statut :** En cours (licence : décision de l'auteur)
 
 ### N15 — Joker d'équipe
 Un bouton « 🃏 Joker » passe une énigme bloquante (0 point, marquée « passée »), donne ce qu'il faut pour
