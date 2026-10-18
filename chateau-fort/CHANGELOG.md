@@ -4,8 +4,21 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 18 octobre 2026
+
+- N21 : kit de présentation pour une animation pédagogique ou un conseil de cycle
+- N18 : fiches de séquence « avant / après » autour des jeux (sequences/)
+- N11 : mascotte commune Noa, guide de la collection
+- N16 : export/import de la progression entre appareils (maison <-> classe)
+- N20 : réglage de la difficulté énigme par énigme
+- N19 : alerte de fin de séance commune à toutes les équipes
+- N13 : coup de pouce de l'enseignant pour débloquer une énigme sans révéler la réponse
+- N15 : joker d'équipe pour passer une énigme bloquante (+ suivi énigme par énigme, base de N12)
+- D7 : mode correction collective projetable
+
 ## 10 octobre 2026
 
+- F2 : journaux des versions à jour (A5, B5, E5, N1, N4, N5, N6)
 - N4 : mode duel, deux équipes face à face sur un même écran
 - N1 : trophées cumulables d'un jeu à l'autre
 - N6 : grille d'auto-évaluation élève en fin de partie (socle commun)
@@ -64,4 +77,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Ajoute l'escape game n°02 Le Secret du donjon (histoire, le château fort et les paysans)
 
-<!-- dernier-commit: 0d72252 -->
+<!-- dernier-commit: d8ba72a -->

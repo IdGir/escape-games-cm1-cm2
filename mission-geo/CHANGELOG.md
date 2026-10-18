@@ -6,6 +6,7 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 ## 10 octobre 2026
 
+- F2 : journaux des versions à jour (A5, B5, E5, N1, N4, N5, N6)
 - B5 : sous-titres systématiques des vidéos (87 fichiers .vtt)
 
 ## 2 octobre 2026
@@ -59,4 +60,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Mission géographique Année A : escape game filé sur toute l'année
 
-<!-- dernier-commit: 0d72252 -->
+<!-- dernier-commit: d8ba72a -->
