@@ -65,7 +65,7 @@
     <button class="bleu" onclick="diffuserIndice()">💡 Donner un indice à une équipe</button>
     <span class="fin-seance" style="display:inline-flex;gap:6px;align-items:center">
       <button class="or" onclick="prevenirFinSeance()" title="Bandeau discret et court signal sonore chez toutes les équipes, sans interrompre l'énigme en cours ni toucher aux chronos">🔔 Prévenir : fin dans <span id="delai-fin-txt">5</span> min</button>
-      <select id="delai-fin" aria-label="Délai avant la fin de la séance" onchange="document.getElementById('delai-fin-txt').textContent=this.value" style="padding:6px;border-radius:8px"><option>1</option><option>2</option><option>3</option><option selected>5</option><option>10</option><option>15</option></select>
+      <select id="delai-fin" aria-label="Délai avant la fin de la séance" onchange="document.getElementById('delai-fin-txt').textContent=this.value" style="padding:6px;border-radius:8px;width:auto;max-width:150px"><option>1</option><option>2</option><option>3</option><option selected>5</option><option>10</option><option>15</option></select>
     </span>
     <button onclick="exportCSV()">📊 Exporter les scores (CSV)</button>
     <button class="bleu" onclick="window.open('../resultats.html','_blank')" title="Toutes les parties de l'année, export tableur et Schooly">📚 Résultats de l'année</button>

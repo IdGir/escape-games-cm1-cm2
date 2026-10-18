@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diaporama — Escape games CM1 · CM2 (10-15 min)</title>
+<!--
+  DIAPORAMA DE PRÉSENTATION (amélioration N21) — 10 à 15 minutes
+  Pour une animation pédagogique, un conseil de cycle, une formation : le constat de départ, le principe du
+  moteur commun, une démonstration, ce qu'il faut pour se lancer (kit « adopter ce projet », N2).
+  Touches : ← → (ou espace) pour avancer, N pour les notes de l'intervenant, F plein écran, Début / Fin.
+  Impression : une diapositive par page (A4 paysage), notes comprises. Les chiffres viennent du catalogue (C1).
+-->
+<style>
+  :root{--fond:#0f1b3d;--papier:#fffdf6;--encre:#1f2430;--doux:#5d6472;--accent:#1d3a8a;--or:#c9a227}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font:20px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre);overflow:hidden}
+  .scene{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2vh 2vw}
+  .diapo{display:none;width:min(1280px,100%);height:min(720px,100%);background:var(--papier);border-radius:18px;padding:3vh 4vw;overflow:auto;box-shadow:0 10px 40px rgba(0,0,0,.45);flex-direction:column}
+  .diapo.actuelle{display:flex}
+  .diapo h1{font-size:2.3em;margin:.1em 0;color:var(--accent)} .diapo h2{font-size:1.65em;margin:0 0 .4em;color:var(--accent)}
+  .diapo .sous{color:var(--doux);font-size:1.05em;margin:.2em 0 .8em}
+  .diapo ul{margin:.3em 0;padding-left:1.2em} .diapo li{margin:.28em 0}
+  .deux{display:grid;grid-template-columns:1.1fr 1fr;gap:2vw;align-items:start;flex:1;min-height:0}
+  .deux img,.diapo img{max-width:100%;max-height:100%;border-radius:10px;border:1px solid #ddd;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:12px 0}
+  .chiffre{background:#fff;border:2px solid var(--or);border-radius:14px;padding:12px;text-align:center}
+  .chiffre b{display:block;font-size:2.4em;color:var(--accent);line-height:1.1}
+  .moteur{display:flex;gap:12px;align-items:stretch;margin:10px 0}
+  .moteur div{flex:1;border-radius:12px;padding:10px 14px;font-size:.92em}
+  .moteur .commun{background:#e5ecff;border:2px solid var(--accent)} .moteur .propre{background:#fff6d8;border:2px dashed var(--or)}
+  .tag{display:inline-block;padding:1px 12px;border-radius:999px;background:#f0eee9;font-size:.7em;font-weight:600;color:var(--doux);vertical-align:middle}
+  .notes{display:none;margin-top:auto;padding:8px 14px;border-left:6px solid var(--or);background:#fff8e1;font-size:.72em;line-height:1.4}
+  body.avec-notes .notes{display:block}
+  .barre{position:fixed;left:0;right:0;bottom:0;display:flex;gap:10px;align-items:center;padding:6px 14px;background:rgba(0,0,0,.55);color:#fff;font-size:.62em;z-index:5}
+  .barre .prog{flex:1;height:5px;background:rgba(255,255,255,.25);border-radius:3px;overflow:hidden}.barre .prog i{display:block;height:100%;background:var(--or);width:0}
+  .barre button{font:inherit;border:0;border-radius:6px;padding:3px 10px;cursor:pointer;background:#fff;color:#1f2430}
+  .barre a{color:#fff}
+  a{color:var(--accent)}
+  .liens{display:flex;flex-wrap:wrap;gap:8px 12px;margin:.5em 0}
+  .liens a{padding:3px 14px;border:2px solid var(--accent);border-radius:999px;text-decoration:none;font-size:.85em;background:#fff}
+  @media (max-width:900px){body{font-size:16px}.deux{grid-template-columns:1fr}.chiffres{grid-template-columns:repeat(2,1fr)}.moteur{flex-direction:column}}
+  @media print{
+    @page{size:A4 landscape;margin:8mm}
+    body{overflow:visible;background:#fff;font-size:12pt}.scene{position:static;display:block;padding:0}
+    .diapo{display:flex!important;width:100%;height:auto;min-height:170mm;box-shadow:none;border:1px solid #bbb;border-radius:6px;margin:0 0 4mm;break-after:page;overflow:visible}
+    .notes{display:block!important}.barre{display:none}.liens a{border-color:#999}
+  }
+</style>
+</head>
+<body>
+<div class="scene" id="scene">
+
+<section class="diapo" data-min="0.5" data-titre="Titre">
+  <div style="margin:auto 0">
+    <span class="tag">Animation pédagogique · conseil de cycle</span>
+    <h1>🎓 Des escape games pour apprendre en équipe</h1>
+    <p class="sous" style="font-size:1.3em">CM1 · CM2 — histoire, géographie, EMC et sciences, sur tablette, ordinateur ou tableau interactif.</p>
+    <p class="sous">Une collection de <b data-chiffre="jeux">…</b> jeux, un seul moteur, des outils pour l'enseignant — et rien à installer.</p>
+  </div>
+  <div class="notes">⏱ 30 s — Se présenter. Annoncer le plan : le constat, le principe, une démonstration, comment se lancer. Prévenir qu'on manipulera ensuite.</div>
+</section>
+
+<section class="diapo" data-min="1" data-titre="Le constat de départ">
+  <h2>Le constat de départ</h2>
+  <ul>
+    <li><b>L'envie :</b> une situation-problème en équipe mobilise les élèves, y compris ceux qui décrochent en séance « classique ».</li>
+    <li><b>Le frein :</b> créer un escape game soi-même demande des dizaines d'heures, et il n'existe qu'une fois.</li>
+    <li><b>Le manque :</b> peu de jeux alignés sur le programme du cycle 3, avec <b>deux niveaux</b> (CM1 / CM2) pour les classes à double niveau.</li>
+    <li><b>L'évaluation :</b> après la partie, que sait-on de ce que chaque équipe a réussi, et de ce qu'il faut reprendre ensemble ?</li>
+  </ul>
+  <div class="notes">⏱ 1 min — Laisser les collègues réagir : qui a déjà fait un escape game en classe ? Qu'est-ce qui a manqué (temps, programme, traces) ? Ces quatre points sont les quatre réponses du projet.</div>
+</section>
+
+<section class="diapo" data-min="1.5" data-titre="Le principe : un moteur commun">
+  <h2>Le principe : un moteur commun, des jeux différents</h2>
+  <div class="moteur">
+    <div class="commun"><b>Le moteur (commun, écrit une fois)</b><br>énigmes (11 types) · barème et coffre final · indices · deux niveaux + palier Découverte · tableau de bord · bilans · accessibilité · hors ligne</div>
+    <div class="propre"><b>Chaque jeu apporte</b><br>son histoire et ses personnages · ses décors · ses énigmes (un fichier <code>enigmes.json</code>) · ses leçons à imprimer</div>
+  </div>
+  <p>Conséquences : une amélioration profite aux <b data-chiffre="jeux">…</b> jeux d'un coup, et une énigme se modifie <b>sans écrire de code</b> (éditeur intégré).</p>
+  <ul>
+    <li>Règles identiques d'un jeu à l'autre : <b>10 points</b> du premier coup, <b>3</b> après une erreur, jamais la correction affichée.</li>
+    <li>Une charte graphique commune, et un guide pédagogique par jeu (compétences, déroulés, grille d'observation).</li>
+  </ul>
+  <div class="notes">⏱ 1 min 30 — Insister sur la lisibilité pour les élèves : une fois les règles comprises, elles valent pour tous les jeux (c'est le rôle de Noa, la mascotte, au premier lancement). Pour l'enseignant : un seul outil à apprendre.</div>
+</section>
+
+<section class="diapo" data-min="1" data-titre="La collection en chiffres">
+  <h2>La collection en chiffres</h2>
+  <div class="chiffres">
+    <div class="chiffre"><b data-chiffre="jeux">…</b>jeux jouables</div>
+    <div class="chiffre"><b data-chiffre="prevus">…</b>jeux dans la progression</div>
+    <div class="chiffre"><b data-chiffre="matieres">…</b>matières<br><small data-chiffre="listematieres"></small></div>
+    <div class="chiffre"><b data-chiffre="competences">…</b>compétences du programme travaillées</div>
+  </div>
+  <ul>
+    <li>Trois niveaux de difficulté : <b>CM1</b>, <b>CM2</b> et un palier <b>Découverte</b> à aide renforcée.</li>
+    <li>Une progression sur l'année (périodes P1 à P5, années A et B) : voir <a href="../annee.html">« L'année en escape games »</a>.</li>
+  </ul>
+  <div class="notes">⏱ 1 min — Ces chiffres se mettent à jour tout seuls quand un jeu est publié (catalogue de la vue d'ensemble de l'année). Montrer la frise sur l'accueil si le temps le permet.</div>
+</section>
+
+<section class="diapo" data-min="3" data-titre="Démonstration">
+  <h2>Démonstration : une salle d'un jeu <span class="tag">3 min</span></h2>
+  <div class="deux">
+    <ul>
+      <li>Ouvrir un jeu (ici <i>Le Laboratoire de Madame Mélange</i>) : <b>nom d'équipe</b>, <b>niveau</b>, c'est parti.</li>
+      <li>Une salle, des énigmes variées : ordre, tri, association, QCM, texte à trous, cadenas…</li>
+      <li>Une erreur ? Le jeu dit <b>combien</b> de réponses sont justes, jamais lesquelles : on retourne à la <b>leçon</b> 📚.</li>
+      <li>À la fin de la salle : un <b>mot</b>, à noter. Au coffre final, on les recopie tous.</li>
+    </ul>
+    <div><img src="captures/jeu-enigme.jpg" alt="Capture : une énigme du Laboratoire de Madame Mélange"></div>
+  </div>
+  <div class="liens"><a href="../melanges/?salle=2&niveau=CM2" target="_blank" rel="noopener">▶ Ouvrir la salle 2 (mode démonstration)</a><a href="../index.html" target="_blank" rel="noopener">▶ Accueil des jeux</a></div>
+  <div class="notes">⏱ 3 min — Démonstration en direct : ouvrir « ?salle=2&niveau=CM2 » (mode vérification : rien n'est enregistré). Se tromper volontairement une fois pour montrer le retour « 2 réponses justes sur 4 ». Ouvrir la leçon 📚.</div>
+</section>
+
+<section class="diapo" data-min="1.5" data-titre="Ce que vivent les élèves">
+  <h2>Ce que vivent les élèves</h2>
+  <div class="deux">
+    <ul>
+      <li>🧑‍🎓 <b>Noa</b>, la mascotte, explique les règles au premier lancement — et se tait pendant les énigmes.</li>
+      <li>💡 Des <b>indices</b> proposés quand l'équipe bloque (jamais imposés) ; 🔊 consignes lues à voix haute ; police adaptée à la dyslexie.</li>
+      <li>🏅 Des <b>trophées</b> qui se cumulent d'un jeu à l'autre ; une <b>auto-évaluation</b> en fin de partie.</li>
+      <li>⚔️ Mode <b>duel</b> sur un même écran, 🏠 mode <b>individuel</b> pour la maison.</li>
+    </ul>
+    <div><img src="captures/accueil.jpg" alt="Capture : l'accueil de la collection avec la mascotte Noa"></div>
+  </div>
+  <div class="notes">⏱ 1 min 30 — Ce qui se passe côté élève. La pédagogie est dans les règles : premier coup récompensé, indice payant mais proposé, retour au cours plutôt que correction.</div>
+</section>
+
+<section class="diapo" data-min="2" data-titre="Ce que fait l'enseignant">
+  <h2>Ce que fait l'enseignant pendant la séance</h2>
+  <div class="deux">
+    <ul>
+      <li>👨‍🏫 Un <b>tableau de bord</b> en direct : où en est chaque équipe, pause générale, message, 💡 indice.</li>
+      <li>🤝 Un <b>coup de pouce</b> sans donner la réponse ; 🃏 le <b>joker</b> d'équipe pour ne pas rester bloqué.</li>
+      <li>🔔 « <b>Fin dans 5 min</b> » : un bandeau discret chez toutes les équipes.</li>
+      <li>🎚️ La <b>difficulté énigme par énigme</b> pour une classe hétérogène.</li>
+    </ul>
+    <div><img src="captures/tableau-de-bord.jpg" alt="Capture : le tableau de bord enseignant avec quatre équipes de démonstration"></div>
+  </div>
+  <div class="notes">⏱ 2 min — Les boutons du tableau de bord correspondent à des gestes de classe réels : l'équipe qui bloque, la fin de séance qu'on ne veut pas crier à voix haute. Les équipes de la capture sont fictives.</div>
+</section>
+
+<section class="diapo" data-min="1.5" data-titre="Après la partie">
+  <h2>Après la partie : institutionnaliser</h2>
+  <div class="deux">
+    <ul>
+      <li>🖥️ <b>Correction collective</b> à projeter : les bonnes réponses, salle par salle, révélées au clic.</li>
+      <li>📚 <b>Bilan de classe</b> : réussite du premier coup par énigme et par compétence, liste « à retravailler » avec la leçon à imprimer.</li>
+      <li>🎓 <b>Passeport de compétences</b> de chaque élève, cumulé sur l'année ; 📄 fiche de période pour les familles.</li>
+    </ul>
+    <div><img src="captures/bilan-de-classe.jpg" alt="Capture : le bilan de classe avec les compétences à retravailler"></div>
+  </div>
+  <div class="notes">⏱ 1 min 30 — La boucle complète : jouer, corriger ensemble, repérer ce qui est fragile pour toute la classe, et le retravailler. Données fictives sur la capture.</div>
+</section>
+
+<section class="diapo" data-min="1" data-titre="Une séquence autour du jeu">
+  <h2>Une séquence autour du jeu</h2>
+  <div class="moteur">
+    <div class="propre" style="border-color:#b45309"><b>🔎 Avant</b> · 15-20 min<br>une manipulation ou une question qui donne envie de chercher</div>
+    <div class="commun" style="border-color:#15803d;background:#e5f5ea"><b>🎮 Le jeu</b> · 45-75 min<br>en une séance ou en plusieurs</div>
+    <div class="propre" style="border-color:#6d28d9;background:#f1ebff"><b>🧩 Après</b> · 15-20 min<br>réinvestissement et trace écrite</div>
+  </div>
+  <p>Des fiches prêtes à imprimer, déjà rédigées pour deux jeux et reliées à la fiche de compétences.</p>
+  <div class="liens"><a href="../sequences/" target="_blank" rel="noopener">📘 Voir les fiches de séquence</a></div>
+  <div class="notes">⏱ 1 min — Le jeu n'est pas une fin en soi : il s'intègre à une séquence. Montrer la fiche du Laboratoire de Madame Mélange (le sucre dans l'eau sur une balance, avant ; récupérer le sel, après).</div>
+</section>
+
+<section class="diapo" data-min="1" data-titre="Pour se lancer">
+  <h2>Pour se lancer <span class="tag">kit « adopter ce projet »</span></h2>
+  <ul>
+    <li>🌐 <b>En ligne</b> : un navigateur suffit, rien à installer.</li>
+    <li>📲 <b>Tablettes sans internet</b> : « Installer l'application » une fois en ligne, puis tout fonctionne hors connexion.</li>
+    <li>📦 <b>Archive</b> par jeu, à décompresser (ordinateurs sans réseau) ; 🏫 <b>mode classe</b> pour le tableau de bord en direct.</li>
+    <li>✏️ <b>Adapter</b> une énigme à sa classe sans coder ; la <b>charte graphique</b> garde le style commun.</li>
+  </ul>
+  <div class="liens"><a href="../adopter.html" target="_blank" rel="noopener">🤝 Le kit « adopter ce projet »</a><a href="../faq.html" target="_blank" rel="noopener">❓ Aide et dépannage</a></div>
+  <div class="notes">⏱ 1 min — Rassurer : on peut commencer par un seul jeu, une seule salle, en ligne. Le kit tient en une page et s'imprime.</div>
+</section>
+
+<section class="diapo" data-min="0.5" data-titre="À vous !">
+  <div style="margin:auto 0;text-align:center">
+    <h1>À vous de jouer !</h1>
+    <p class="sous" style="font-size:1.3em">Par équipes de 3 ou 4 : choisissez un jeu et lancez-vous (temps de manipulation).</p>
+    <div class="liens" style="justify-content:center"><a href="../index.html" target="_blank" rel="noopener">▶ Accueil des jeux</a><a href="deroule.html" target="_blank" rel="noopener">⏱ Déroulé de la séance</a></div>
+  </div>
+  <div class="notes">⏱ 30 s — Passer à la manipulation (voir le déroulé minuté : 15 minutes en équipes). Chaque équipe choisit un jeu et une salle ; l'intervenant passe aider.</div>
+</section>
+
+</div>
+<div class="barre"><button id="prec" type="button">◀</button><span id="compteur"></span><div class="prog"><i id="prog"></i></div><span id="duree"></span><button id="btn-notes" type="button" title="Notes de l'intervenant (N)">📝 Notes</button><button id="btn-plein" type="button" title="Plein écran (F)">⛶</button><button id="btn-imprimer" type="button">🖨️</button><button id="suiv" type="button">▶</button><a href="index.html">↩ Kit</a></div>
+
+<script src="../commun/donnees/catalogue.js?c3"></script>
+<script src="chiffres.js?c1"></script>
+<script>
+"use strict";
+const diapos = [...document.querySelectorAll(".diapo")];
+let k = 0;
+const duree = diapos.reduce((t, d) => t + (+d.dataset.min || 0), 0);
+function aller(n){
+  k = Math.max(0, Math.min(diapos.length - 1, n));
+  diapos.forEach((d, i) => d.classList.toggle("actuelle", i === k));
+  document.getElementById("compteur").textContent = `${k + 1} / ${diapos.length} · ${diapos[k].dataset.titre}`;
+  document.getElementById("prog").style.width = (100 * (k + 1) / diapos.length) + "%";
+  try{ history.replaceState(null, "", "#" + (k + 1)); }catch(e){}
+}
+document.getElementById("duree").textContent = `≈ ${Math.round(duree)} min`;
+document.getElementById("prec").addEventListener("click", () => aller(k - 1));
+document.getElementById("suiv").addEventListener("click", () => aller(k + 1));
+document.getElementById("btn-notes").addEventListener("click", () => document.body.classList.toggle("avec-notes"));
+document.getElementById("btn-plein").addEventListener("click", () => { if(document.fullscreenElement) document.exitFullscreen(); else if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen(); });
+document.getElementById("btn-imprimer").addEventListener("click", () => window.print());
+document.addEventListener("keydown", e => {
+  if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+  if(e.key === "ArrowRight" || e.key === " " || e.key === "PageDown"){ aller(k + 1); e.preventDefault(); }
+  else if(e.key === "ArrowLeft" || e.key === "PageUp"){ aller(k - 1); e.preventDefault(); }
+  else if(e.key === "Home") aller(0); else if(e.key === "End") aller(diapos.length - 1);
+  else if(e.key === "n" || e.key === "N") document.body.classList.toggle("avec-notes");
+  else if(e.key === "f" || e.key === "F") document.getElementById("btn-plein").click();
+});
+aller((parseInt(location.hash.slice(1), 10) || 1) - 1);
+CHIFFRES.afficher("../");
+window.PRESENTATION = { diapos, duree, aller, get courante(){ return k; } };
+</script>
+</body>
+</html>

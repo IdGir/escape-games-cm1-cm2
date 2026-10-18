@@ -544,6 +544,71 @@ SECTIONS.N18 = async () => {
   ok(/href="sequences\/"/.test(acc) && /href="sequences\/"/.test(ad), "liens depuis l'accueil et le kit « adopter ce projet »");
 };
 
+/* ---- N21 : kit de présentation (presentation/) ---- */
+SECTIONS.N21 = async () => {
+  console.log("\n== N21 : kit de présentation pour une animation pédagogique ==");
+  const fs = require("fs"), path = require("path");
+  const P = path.join(RACINE, "presentation");
+  // diaporama
+  const D = await charger(RACINE, "", { page: "presentation/diaporama.html", attente: 800 });
+  const d = D.w.document, PR = D.w.PRESENTATION;
+  ok(PR.diapos.length >= 10 && PR.diapos.length <= 15, `diaporama : ${PR.diapos.length} diapositives`);
+  ok(PR.duree >= 10 && PR.duree <= 15, `diaporama : durée prévue ${PR.duree} min (10 à 15)`);
+  ok(PR.diapos.every(s => s.querySelector(".notes") && /⏱/.test(s.querySelector(".notes").textContent)), "chaque diapositive a ses notes de l'intervenant, avec le temps prévu");
+  const titres = PR.diapos.map(s => s.dataset.titre).join(" | ");
+  ok(/constat/i.test(titres) && /moteur/i.test(titres) && /Démonstration/i.test(titres) && /lancer/i.test(titres), "contenu demandé : constat de départ, principe du moteur commun, démonstration, pour se lancer (" + titres + ")");
+  ok(d.querySelectorAll(".diapo.actuelle").length === 1, "une seule diapositive affichée à la fois");
+  d.dispatchEvent(new D.w.KeyboardEvent("keydown", { key: "ArrowRight" })); ok(PR.courante === 1, "→ : diapositive suivante");
+  d.dispatchEvent(new D.w.KeyboardEvent("keydown", { key: "End" })); ok(PR.courante === PR.diapos.length - 1, "Fin : dernière diapositive");
+  d.dispatchEvent(new D.w.KeyboardEvent("keydown", { key: "ArrowLeft" })); ok(PR.courante === PR.diapos.length - 2, "← : retour");
+  d.dispatchEvent(new D.w.KeyboardEvent("keydown", { key: "n" })); ok(d.body.classList.contains("avec-notes"), "touche N : notes de l'intervenant");
+  D.w.__imprime = 0; d.getElementById("btn-imprimer").click(); ok(D.w.__imprime === 1 && /@media print/.test(d.head.innerHTML) && /break-after:page/.test(d.head.innerHTML), "imprimable (une diapositive par page)");
+  // chiffres à jour avec le catalogue (C1)
+  const cat = D.w.CATALOGUE.jeux, publies = cat.filter(j => j.dossier).length;
+  await attendreQue(() => D.w.CHIFFRES_VALEURS, 4000);
+  const lu = nom => [...d.querySelectorAll(`[data-chiffre="${nom}"]`)].map(e => e.textContent);
+  ok(lu("jeux").every(t => +t === publies) && publies >= 13, `chiffres : ${publies} jeux jouables, comme le catalogue`);
+  ok(lu("prevus").every(t => +t === cat.length), `chiffres : ${cat.length} jeux dans la progression`);
+  const matieres = [...new Set(cat.filter(j => j.dossier).map(j => j.matiere))];
+  ok(lu("matieres").every(t => +t === matieres.length) && lu("listematieres")[0] === matieres.join(", "), `chiffres : ${matieres.length} matières (${matieres.join(", ")})`);
+  const attendu = 5 * 10 + 8 + 6 + 16;       // même décompte que le passeport (C3) : une compétence par leçon
+  ok(lu("competences").every(t => +t === attendu), `chiffres : ${lu("competences")[0]} compétences, comme le passeport (${attendu})`);
+  ok(!/[0-9]{2,} jeux|\b13 jeux\b/.test(fs.readFileSync(path.join(P, "diaporama.html"), "utf8").replace(/<script[\s\S]*?<\/script>/g, "")), "aucun nombre de jeux écrit en dur dans le diaporama");
+  ok(D.erreurs.length === 0, "diaporama : erreurs JS : " + D.erreurs.join(" | "));
+  // déroulé minuté
+  const R = await charger(RACINE, "", { page: "presentation/deroule.html", attente: 300 });
+  const r = R.w.document, F = R.w.DEROULE.FORMATS;
+  const total = f => F[f].etapes.reduce((t, e) => t + e[0], 0), manip = f => F[f].etapes.filter(e => e[4]).reduce((t, e) => t + e[0], 0);
+  ok(total("court") === 30 && total("complet") === 45, `déroulé : 30 min (court) et 45 min (complet) : ${total("court")} / ${total("complet")}`);
+  ok(manip("court") >= 8 && manip("complet") >= 15, `un temps de manipulation par les collègues : ${manip("court")} min (court), ${manip("complet")} min (complet)`);
+  ok(r.querySelectorAll("#tableau tbody tr").length === F.complet.etapes.length && /dont 15 minutes de manipulation/.test(r.getElementById("total").textContent) && r.querySelector("tr.manip"), "déroulé complet affiché : horaires, étape de manipulation en évidence, total");
+  r.querySelector('button[data-format="court"]').click();
+  ok(r.querySelectorAll("#tableau tbody tr").length === F.court.etapes.length && /Total : 30 minutes/.test(r.getElementById("total").textContent), "bouton 30 minutes : déroulé court");
+  const horaires = [...r.querySelectorAll("#tableau td.h")].map(td => td.textContent);
+  ok(horaires[0] === "0-3 min" && horaires[horaires.length - 1] === "26-30 min", "horaires cumulés (" + horaires.join(", ") + ")");
+  ok(/Avant la séance/.test(r.body.textContent) && /Mon plan pour la première séance/.test(r.body.textContent), "préparation et plan de première séance");
+  ok(R.erreurs.length === 0, "déroulé : erreurs JS : " + R.erreurs.join(" | "));
+  // page d'entrée, captures, liens
+  const H = await charger(RACINE, "", { page: "presentation/index.html", attente: 600 });
+  const h = H.w.document;
+  ok(!!h.querySelector('a[href="diaporama.html"]') && !!h.querySelector('a[href="deroule.html"]'), "page d'entrée : liens vers le diaporama et le déroulé");
+  const imgs = [...h.querySelectorAll("#captures img")].map(i => i.getAttribute("src"));
+  ok(imgs.length >= 5 && imgs.every(s => fs.existsSync(path.join(P, s)) && fs.statSync(path.join(P, s)).size > 20000), `${imgs.length} captures d'écran présentes et non vides`);
+  const dia = [...D.w.document.querySelectorAll("img")].map(i => i.getAttribute("src"));
+  ok(dia.every(s => fs.existsSync(path.join(P, s))), "les captures du diaporama existent");
+  const liens = [...h.querySelectorAll("a[href]")].map(a => a.getAttribute("href")).filter(x => !/^https?:/.test(x));
+  const morts = liens.filter(x => !fs.existsSync(path.join(P, x.split("?")[0].split("#")[0]).replace(/\/$/, "")) && !fs.existsSync(path.join(P, x.split("?")[0], "index.html")));
+  ok(morts.length === 0, "page d'entrée : liens internes valides " + morts.join(", "));
+  ok(lu("jeux")[0] !== undefined && h.querySelector('[data-chiffre="jeux"]').textContent == publies, "page d'entrée : chiffres calculés");
+  ok(H.erreurs.length === 0, "page d'entrée : erreurs JS : " + H.erreurs.join(" | "));
+  // liens depuis adopter.html, README, captures de démonstration fictives
+  const ad = fs.readFileSync(path.join(RACINE, "adopter.html"), "utf8");
+  ok(/href="presentation\/"/.test(ad), "liée depuis adopter.html");
+  const cap = fs.readFileSync(path.join(P, "capturer.js"), "utf8");
+  ok(/FICTIFS/.test(cap) && !/Inès|Léa B\.|Tom R\./.test(cap), "captures : données fictives (aucun élève réel)");
+  ok(fs.existsSync(path.join(P, "README.md")), "README du dossier");
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

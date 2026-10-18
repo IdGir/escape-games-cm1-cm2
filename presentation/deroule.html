@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Déroulé minuté d'une présentation (30 à 45 min) — Escape games CM1 · CM2</title>
+<!--
+  DÉROULÉ MINUTÉ (amélioration N21) — présentation de 30 à 45 minutes, avec un temps de manipulation par les
+  collègues (animation pédagogique, conseil de cycle, formation). Deux formats : 30 min (court) et 45 min (complet).
+  Les durées sont dans le tableau JS ci-dessous ; la page calcule les horaires et le total. Imprimable.
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--accent:#1d3a8a}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main,footer{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{padding-top:18px} h1{margin:6px 0 2px;font-size:1.55rem} .sous{color:var(--doux);margin:0}
+  a{color:var(--accent)}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .bloc h2{margin:0 0 6px;font-size:1.08rem}
+  .choix{display:flex;gap:8px;margin:8px 0}
+  .choix button{font:inherit;padding:6px 16px;border-radius:999px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer;font-weight:600}
+  .choix button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  th,td{border-bottom:1px solid var(--ligne);padding:7px 8px;text-align:left;vertical-align:top}
+  th{background:#f0eee9;font-size:.85rem}
+  td.h{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600} td.d{white-space:nowrap}
+  tr.manip td{background:#e5f5ea} tr.manip td.h{color:#15803d}
+  .total{margin-top:6px;font-weight:600}
+  ul{margin:4px 0 4px 1.2em;padding:0} li{margin:3px 0}
+  button.imp{font:inherit;padding:6px 14px;border-radius:9px;border:1px solid var(--ligne);background:#fff;cursor:pointer}
+  .plan{border:2px dashed var(--ligne);border-radius:10px;padding:8px 14px}
+  .plan .ligne{border-bottom:1px solid var(--ligne);height:1.8em}
+  @media print{body{background:#fff;font-size:10.5pt}.noprint{display:none!important}.bloc{break-inside:avoid;border-color:#bbb}header,main,footer{max-width:none;padding:0}@page{size:A4 portrait;margin:10mm}}
+</style>
+</head>
+<body>
+<header class="noprint"><p><a href="../index.html">← Accueil des jeux</a> · <a href="index.html">🎓 Kit de présentation</a> · <a href="diaporama.html">▶ Diaporama</a> · <a href="../adopter.html">🤝 Adopter ce projet</a></p></header>
+<header>
+  <h1>⏱ Déroulé minuté d'une présentation</h1>
+  <p class="sous">Animation pédagogique, conseil de cycle, formation — avec un vrai temps de manipulation par les collègues.</p>
+  <div class="choix noprint" role="group" aria-label="Durée de la séance">
+    <button type="button" data-format="court" aria-pressed="false">30 minutes (court)</button>
+    <button type="button" data-format="complet" aria-pressed="true">45 minutes (complet)</button>
+  </div>
+</header>
+<main>
+  <section class="bloc"><h2 id="titre-deroule">Déroulé</h2>
+    <table id="tableau"><thead><tr><th>Horaire</th><th>Durée</th><th>Étape</th><th>Ce qui se passe</th><th>Support</th></tr></thead><tbody></tbody></table>
+    <p class="total" id="total"></p>
+  </section>
+
+  <section class="bloc"><h2>🎒 Avant la séance (15 minutes de préparation)</h2>
+    <ul>
+      <li>Ouvrir le <a href="diaporama.html">diaporama</a> et vérifier le vidéoprojecteur ; tester <b>un jeu</b> en ligne sur l'ordinateur de démonstration (ou son <a href="../adopter.html">archive hors ligne</a> si le réseau est incertain).</li>
+      <li>Prévoir <b>un poste ou une tablette pour 2 ou 3 collègues</b> ; sans réseau : installer l'application ou décompresser l'archive du jeu choisi à l'avance.</li>
+      <li>Imprimer le <a href="../adopter.html">kit « adopter ce projet »</a> (une page) et, si possible, une fiche de mission par équipe (⚙️ Réglages → Impression).</li>
+      <li>Choisir deux jeux à proposer, de matières différentes (par exemple un jeu d'histoire et un jeu de sciences), et noter leur dossier pour les écrire au tableau.</li>
+    </ul>
+  </section>
+
+  <section class="bloc"><h2>🧪 Ateliers de manipulation (au choix des équipes)</h2>
+    <ul>
+      <li><b>Jouer une salle</b> d'un jeu, en équipe, comme des élèves (<code>?salle=1&niveau=CM2</code> pour aller directement à une salle) ; se tromper une fois pour voir le retour.</li>
+      <li><b>Piloter</b> : ouvrir <code>prof.html</code> du jeu (en mode classe avec <code>lancer.bat</code>) et regarder une équipe jouer ; essayer 🤝, 🃏 et 🔔.</li>
+      <li><b>Adapter</b> : ouvrir l'<a href="../editeur.html">éditeur d'énigmes</a>, modifier une énigme, la tester ; ou régler la <b>difficulté d'une énigme</b>.</li>
+      <li><b>Prolonger</b> : parcourir une <a href="../sequences/">fiche de séquence</a> (avant / après) et la comparer à ses pratiques.</li>
+    </ul>
+  </section>
+
+  <section class="bloc"><h2>🗺️ Mon plan pour la première séance <span class="sous">(à remplir à la fin)</span></h2>
+    <div class="plan"><p style="margin:2px 0">Le jeu choisi : <span class="ligne" style="display:inline-block;width:60%"></span></p>
+      <p style="margin:2px 0">Ma classe, ma date : <span class="ligne" style="display:inline-block;width:60%"></span></p>
+      <p style="margin:2px 0">Ce que je prépare avant (matériel, réseau, fiches) : </p><div class="ligne"></div><div class="ligne"></div>
+      <p style="margin:2px 0">Une question pour la prochaine rencontre : </p><div class="ligne"></div></div>
+  </section>
+</main>
+<footer class="noprint"><p><button class="imp" id="btn-imprimer" type="button">🖨️ Imprimer le déroulé</button></p></footer>
+
+<script>
+"use strict";
+/* Les étapes : [durée en min, titre, ce qui se passe, support, manipulation ?] — une version par format */
+const FORMATS = {
+  complet: { titre: "Déroulé complet — 45 minutes", etapes: [
+    [5,  "Accueil et constat de départ", "Se présenter ; échange rapide : qui a déjà fait un escape game en classe ? Qu'est-ce qui a manqué ?", "Diaporama, diapos 1-2", false],
+    [10, "Le projet et la démonstration", "Principe du moteur commun, la collection en chiffres, une salle jouée en direct (se tromper une fois), le tableau de bord.", "Diaporama, diapos 3-7", false],
+    [15, "Manipulation par les collègues", "En équipes de 3 ou 4, sur postes ou tablettes : jouer une salle, piloter, ou adapter une énigme. L'intervenant circule.", "Ateliers (ci-dessous), jeux au choix", true],
+    [5,  "Après la partie et la séquence", "Correction collective projetée, bilan de classe, fiche de séquence avant / après.", "Diaporama, diapos 8-9", false],
+    [5,  "Retours et questions", "Ce qui a surpris, ce qui manque, les freins pour sa classe (réseau, matériel, temps).", "Tour de table", false],
+    [5,  "Pour se lancer", "Les quatre façons de jouer, le kit « adopter ce projet » ; chacun remplit son plan de première séance.", "Diaporama, diapos 10-11 ; kit imprimé", false]
+  ] },
+  court: { titre: "Déroulé court — 30 minutes", etapes: [
+    [3,  "Accueil et constat de départ", "Se présenter ; le constat en deux minutes (l'envie, le frein, le manque, l'évaluation).", "Diaporama, diapos 1-2", false],
+    [8,  "Le projet et la démonstration", "Le moteur commun, une salle jouée en direct, le tableau de bord, la correction collective.", "Diaporama, diapos 3-8", false],
+    [10, "Manipulation par les collègues", "En équipes de 3 ou 4 : jouer une salle d'un jeu au choix. L'intervenant circule et répond aux questions.", "Un jeu au choix, sur postes ou tablettes", true],
+    [5,  "Retours et questions", "Ce qui a surpris, ce qui pose question pour sa classe.", "Tour de table", false],
+    [4,  "Pour se lancer", "Les quatre façons de jouer, le kit « adopter ce projet », la fiche de séquence ; chacun note son plan de première séance.", "Diaporama, diapos 9-11 ; kit imprimé", false]
+  ] }
+};
+const hm = min => `${Math.floor(min / 60)}h${String(min % 60).padStart(2, "0")}`.replace(/^0h/, "");
+let format = "complet";
+function rendre(){
+  const F = FORMATS[format];
+  let t = 0, manip = 0;
+  document.getElementById("titre-deroule").textContent = F.titre;
+  document.querySelector("#tableau tbody").innerHTML = F.etapes.map(([d, titre, quoi, support, m]) => {
+    const h = `${t}-${t + d} min`; t += d; if(m) manip += d;
+    return `<tr class="${m ? "manip" : ""}"><td class="h">${h}</td><td class="d">${d} min</td><td><b>${titre}</b>${m ? " 🧪" : ""}</td><td>${quoi}</td><td>${support}</td></tr>`;
+  }).join("");
+  document.getElementById("total").textContent = `Total : ${t} minutes, dont ${manip} minutes de manipulation par les collègues (${Math.round(100 * manip / t)} % du temps).`;
+  document.querySelectorAll(".choix button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.format === format)));
+  try{ history.replaceState(null, "", "#" + format); }catch(e){}
+}
+document.querySelectorAll(".choix button").forEach(b => b.addEventListener("click", () => { format = b.dataset.format; rendre(); }));
+document.getElementById("btn-imprimer").addEventListener("click", () => window.print());
+if(/^#(court|complet)$/.test(location.hash)) format = location.hash.slice(1);
+rendre();
+window.DEROULE = { FORMATS, rendre, get format(){ return format; }, set format(f){ format = f; rendre(); } };
+</script>
+</body>
+</html>

@@ -65,7 +65,7 @@
     <button class="bleu" onclick="diffuserIndice()">💡 Donner un indice à une équipe</button>
     <span class="fin-seance" style="display:inline-flex;gap:6px;align-items:center">
       <button class="or" onclick="prevenirFinSeance()" title="Bandeau discret et court signal sonore chez toutes les équipes, sans interrompre l'énigme en cours ni toucher aux chronos">🔔 Prévenir : fin dans <span id="delai-fin-txt">5</span> min</button>
-      <select id="delai-fin" aria-label="Délai avant la fin de la séance" onchange="document.getElementById('delai-fin-txt').textContent=this.value" style="padding:6px;border-radius:8px"><option>1</option><option>2</option><option>3</option><option selected>5</option><option>10</option><option>15</option></select>
+      <select id="delai-fin" aria-label="Délai avant la fin de la séance" onchange="document.getElementById('delai-fin-txt').textContent=this.value" style="padding:6px;border-radius:8px;width:auto;max-width:150px"><option>1</option><option>2</option><option>3</option><option selected>5</option><option>10</option><option>15</option></select>
     </span>
     <button onclick="exportCSV()">📊 Exporter les scores (CSV)</button>
     <button class="bleu" onclick="window.open('../resultats.html','_blank')" title="Toutes les parties de l'année, export tableur et Schooly">📚 Résultats de l'année</button>
@@ -74,7 +74,7 @@
     <button class="bleu" onclick="window.open('lecons-imprimables.html','_blank')">📖 Leçons à imprimer (A4)</button>
     <button class="bleu" onclick="window.open('../sequences/fiche.html?jeu=lumiere','_blank')" title="Une activité avant (15-20 min), le jeu, une activité après (15-20 min) : fiche imprimable">📘 Fiche de séquence (avant / après)</button>
     <label class="cout-pouce" style="color:#fff;font-size:.9rem;align-self:center" title="Points retirés à l'équipe à chaque coup de pouce">🤝 Coup de pouce — coût :
-      <select id="cout-pouce" style="padding:6px;border-radius:8px"><option value="0" selected>aucun point</option><option value="1">1 point</option><option value="2">2 points</option><option value="3">3 points</option></select></label>
+      <select id="cout-pouce" style="padding:6px;border-radius:8px;width:auto;max-width:150px"><option value="0" selected>aucun point</option><option value="1">1 point</option><option value="2">2 points</option><option value="3">3 points</option></select></label>
     <button class="or" onclick="window.open('index.html?correction=1','_blank')" title="Après la partie : les bonnes réponses, salle par salle, à projeter pour la mise en commun">🖥️ Correction collective</button>
   </div>
 

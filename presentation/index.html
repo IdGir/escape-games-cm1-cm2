@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit de présentation — Escape games CM1 · CM2</title>
+<!--
+  KIT DE PRÉSENTATION (amélioration N21) — pour une animation pédagogique, un conseil de cycle ou une formation.
+  Regroupe : le diaporama (10-15 min), le déroulé minuté (30 à 45 min, avec manipulation), les captures d'écran
+  et les chiffres simples (à jour avec le catalogue de la vue d'ensemble de l'année, C1).
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--accent:#1d3a8a;--or:#c9a227}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main,footer{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{padding-top:20px} h1{margin:6px 0 2px;font-size:1.6rem} .sous{color:var(--doux);margin:0}
+  a{color:var(--accent)}
+  .bloc{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .bloc h2{margin:0 0 6px;font-size:1.08rem}
+  .cartes{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .carte{display:block;text-decoration:none;color:inherit;background:var(--papier);border:2px solid var(--ligne);border-radius:14px;padding:14px 18px}
+  .carte:hover{border-color:var(--accent)}
+  .carte b{font-size:1.1rem;color:var(--accent)} .carte span{display:block;color:var(--doux);font-size:.9rem;margin-top:3px}
+  .chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .chiffre{background:#fff;border:2px solid var(--or);border-radius:12px;padding:8px;text-align:center;font-size:.85rem}
+  .chiffre b{display:block;font-size:1.9rem;color:var(--accent);line-height:1.1}
+  .captures{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+  .captures figure{margin:0;background:#fff;border:1px solid var(--ligne);border-radius:10px;padding:6px}
+  .captures img{width:100%;display:block;border-radius:6px}
+  .captures figcaption{font-size:.82rem;color:var(--doux);margin-top:4px}
+  @media (max-width:720px){.cartes{grid-template-columns:1fr}.chiffres{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <p><a href="../index.html">← Accueil des jeux</a> · <a href="../adopter.html">🤝 Collègues : adopter ces jeux</a> · <a href="../sequences/">📘 Séquences</a></p>
+  <h1>🎓 Kit de présentation</h1>
+  <p class="sous">Présenter ces escape games à plusieurs collègues à la fois : animation pédagogique, conseil de cycle, formation.</p>
+</header>
+<main>
+  <div class="cartes">
+    <a class="carte" href="diaporama.html"><b>▶ Le diaporama</b><span>11 diapositives, 10 à 15 minutes : constat de départ, principe du moteur commun, démonstration, ce qu'il faut pour se lancer. Notes de l'intervenant (touche N), version imprimable.</span></a>
+    <a class="carte" href="deroule.html"><b>⏱ Le déroulé minuté</b><span>Une présentation de 30 ou de 45 minutes, avec un temps de manipulation par les collègues, la préparation et un plan de première séance à remplir.</span></a>
+  </div>
+
+  <section class="bloc">
+    <h2>📊 Quelques chiffres <span class="sous">(à jour avec le catalogue de l'année)</span></h2>
+    <div class="chiffres">
+      <div class="chiffre"><b data-chiffre="jeux">…</b>jeux jouables</div>
+      <div class="chiffre"><b data-chiffre="prevus">…</b>jeux dans la progression</div>
+      <div class="chiffre"><b data-chiffre="matieres">…</b>matières</div>
+      <div class="chiffre"><b data-chiffre="competences">…</b>compétences travaillées</div>
+    </div>
+    <p class="sous" style="margin-top:6px">Matières : <span data-chiffre="listematieres">…</span>. Une compétence du programme par leçon de chaque jeu (comme dans le <a href="../passeport.html">passeport</a>) ; voir <a href="../annee.html">L'année en escape games</a>.</p>
+  </section>
+
+  <section class="bloc">
+    <h2>🖼️ Captures d'écran</h2>
+    <div class="captures" id="captures">
+      <figure><a href="captures/accueil.jpg"><img src="captures/accueil.jpg" alt="Capture : accueil de la collection avec la mascotte Noa" loading="lazy"></a><figcaption>L'accueil de la collection et Noa, la mascotte</figcaption></figure>
+      <figure><a href="captures/jeu-accueil.jpg"><img src="captures/jeu-accueil.jpg" alt="Capture : accueil d'un jeu" loading="lazy"></a><figcaption>L'accueil d'un jeu : nom d'équipe, niveau, règles</figcaption></figure>
+      <figure><a href="captures/jeu-enigme.jpg"><img src="captures/jeu-enigme.jpg" alt="Capture : une énigme" loading="lazy"></a><figcaption>Une énigme du Laboratoire de Madame Mélange</figcaption></figure>
+      <figure><a href="captures/tableau-de-bord.jpg"><img src="captures/tableau-de-bord.jpg" alt="Capture : le tableau de bord enseignant" loading="lazy"></a><figcaption>Le tableau de bord enseignant (équipes fictives)</figcaption></figure>
+      <figure><a href="captures/correction-collective.jpg"><img src="captures/correction-collective.jpg" alt="Capture : la correction collective" loading="lazy"></a><figcaption>La correction collective, à projeter</figcaption></figure>
+      <figure><a href="captures/bilan-de-classe.jpg"><img src="captures/bilan-de-classe.jpg" alt="Capture : le bilan de classe" loading="lazy"></a><figcaption>Le bilan de classe (données fictives)</figcaption></figure>
+      <figure><a href="captures/annee.jpg"><img src="captures/annee.jpg" alt="Capture : la vue d'ensemble de l'année" loading="lazy"></a><figcaption>L'année en escape games</figcaption></figure>
+    </div>
+    <p class="sous" style="margin-top:8px">Les captures sont refaites à partir des vraies pages : <code>node presentation/capturer.js</code>.</p>
+  </section>
+
+  <section class="bloc">
+    <h2>🚀 Et ensuite ?</h2>
+    <p>Les collègues qui veulent essayer trouveront tout dans le <a href="../adopter.html">kit « adopter ce projet »</a> (en ligne, tablettes, archive, mode classe, adapter une énigme) et les <a href="../sequences/">fiches de séquence</a>. En cas de question : <a href="../faq.html">aide et dépannage</a>.</p>
+  </section>
+</main>
+<script src="../commun/donnees/catalogue.js?c3"></script>
+<script src="chiffres.js?c1"></script>
+<script>CHIFFRES.afficher("../");</script>
+</body>
+</html>

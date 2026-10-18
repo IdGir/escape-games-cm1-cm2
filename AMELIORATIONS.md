@@ -368,4 +368,4 @@ Champ optionnel de surcharge dans `enigmes.json` (contrôlé par A7), écran de 
 ### N21 — Kit de présentation pour une animation pédagogique ou un conseil de cycle
 Diaporama de 10-15 minutes, déroulé minuté de 30 à 45 minutes, captures et chiffres à jour avec C1,
 regroupés dans `presentation/` et liés depuis `adopter.html`.
-**Jeux concernés :** page d'accueil / adopter.html · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** page d'accueil / adopter.html · **Effort :** M · **Statut :** Fait

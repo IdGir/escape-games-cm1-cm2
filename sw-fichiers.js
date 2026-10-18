@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "7261a1c31d";
+self.VERSION_HORS_LIGNE = "36ee3e16d3";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -602,6 +602,9 @@ self.FICHIERS_CODE = [
 "renaissance/lecons-imprimables.html",
 "renaissance/prof.html",
 "resultats.html",
+"sequences/donnees.js",
+"sequences/fiche.html",
+"sequences/index.html",
 "station-meteo/assets/data/dialogues.json",
 "station-meteo/assets/data/enigmes.json",
 "station-meteo/assets/data/evaluations.json",
