@@ -4,6 +4,10 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 18 octobre 2026
+
+- F2 : journaux des versions à jour (D7, N11, N13, N15, N16, N18 à N21) et précache hors ligne
+
 ## 10 octobre 2026
 
 - F2 : journaux des versions à jour (A5, B5, E5, N1, N4, N5, N6)
@@ -60,4 +64,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Mission géographique Année A : escape game filé sur toute l'année
 
-<!-- dernier-commit: d8ba72a -->
+<!-- dernier-commit: a0c4b04 -->

@@ -13,9 +13,12 @@
    Chargé après app.js, sans modifier app.js.
    ============================================================ */
 (function(){
-  if(typeof CATALOGUE === "undefined" || typeof JEU === "undefined") return;
+  /* jeu classique (JEU) ou variante immersive (VML_JEU) ; les liens mènent à la variante immersive par défaut */
+  const idJeu = (typeof JEU !== "undefined" && JEU.id) || (window.VML_JEU && window.VML_JEU.id);
+  if(typeof CATALOGUE === "undefined" || !idJeu) return;
+  const pre = window.VML_JEU ? "../../" : "../";
   const jeux = CATALOGUE.jeux;
-  const ici = jeux.find(j => j.dossier === JEU.id || j.id === JEU.id);
+  const ici = jeux.find(j => j.dossier === idJeu || j.id === idJeu);
   if(!ici) return;
   const parId = id => jeux.find(j => j.id === id || j.dossier === id);
   const rang = j => (j.periodes && j.periodes.length ? +j.periodes[0].slice(1) : 9) * 100 + (parseInt(j.num, 10) || 50);
@@ -36,10 +39,10 @@
   function encart(){
     const l = liens();
     if(!l.length) return "";
-    return `<div class="encart-suite" style="margin:22px auto;max-width:680px;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.75);border:2px dashed rgba(0,0,0,.2)">
+    return `<div class="encart-suite" style="margin:22px auto;max-width:680px;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.85);color:#2b1d10;border:2px dashed rgba(0,0,0,.2)">
       <h3 style="margin:0 0 8px">🧭 Et ensuite ?</h3>
       ${l.map(x => `<p style="margin:6px 0">${x.motif}
-        <a class="lien-jeu-${x.sens}" href="../${x.jeu.dossier}/" style="font-weight:700">${x.sens === "precedent" ? "⬅️" : "➡️"} ${x.jeu.icone || ""} ${x.jeu.titre}</a>
+        <a class="lien-jeu-${x.sens}" href="${pre}${x.jeu.immersif || x.jeu.dossier}/" style="font-weight:700">${x.sens === "precedent" ? "⬅️" : "➡️"} ${x.jeu.icone || ""} ${x.jeu.titre}</a>
         <span style="opacity:.75;font-size:.9rem">(${x.jeu.matiere}${x.jeu.periodes && x.jeu.periodes.length === 1 ? ", " + x.jeu.periodes[0] : ""})</span></p>`).join("")}
     </div>`;
   }
@@ -57,5 +60,15 @@
       return r;
     };
   }
-  window.JEU_SUIVANT = { liens };
+  /* Variantes immersives : l'encart s'ajoute à l'écran du coffre ouvert */
+  if(window.VML && typeof window.VML.ouvrirCoffre === "function"){
+    const ouvrirCoffre = window.VML.ouvrirCoffre;
+    window.VML.ouvrirCoffre = function(){
+      const res = ouvrirCoffre.apply(this, arguments);
+      const E = window.VML.ETAT, c = document.getElementById("fin-contenu"), h = encart();
+      if(E && E.coffreOuvert && c && h && !c.querySelector(".encart-suite")) c.insertAdjacentHTML("beforeend", h);
+      return res;
+    };
+  }
+  window.JEU_SUIVANT = { liens, encart };
 })();

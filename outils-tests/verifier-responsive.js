@@ -39,9 +39,21 @@ const FORMATS = {
   tablette7: { nom: "tablette 7″", width: 600, height: 960, mobile: true },
   smartphone: { nom: "smartphone", width: 390, height: 844, mobile: true }
 };
+const IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"].map(j => "immersifs/" + j);
 const JEUX_SALLES = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere"];
 const VALIDER = '[data-valider], [id^="btn-verif"]';
 const INDICE = '#btn-indice, [id^="indice-"]';
+/* Variantes immersives (jouées par défaut) : accueil, énigme ouverte depuis l'objet du décor, coffre, fin d'escale */
+const OUVRIR_ENIGME = "(function(){ var z = document.querySelector('.zone.cible'); if(z) z.dispatchEvent(new MouseEvent('click', { bubbles: true })); })()";
+const ECRANS_IMMERSIFS = {
+  accueil: { query: "", attend: "#btn-embarquer", essentiels: [["#btn-embarquer"], ["#nom-equipe"]] },
+  decor: { query: "?verif=1&escale=1&niveau=matelot&enigme=1", attend: ".zone.cible", essentiels: [["#btn-pause"], ["#btn-reglages"]] },
+  /* le panneau d'énigme est modal : seuls ses propres boutons doivent rester accessibles (pause et réglages sont derrière) */
+  enigme: { query: "?verif=1&escale=1&niveau=matelot&enigme=1", attend: ".zone.cible", avant: OUVRIR_ENIGME, attendApres: ".enigme-carte .barre-outils",
+            essentiels: [[VALIDER], ["[data-indice]"], [".fermer-panneau"]] }
+};
+const ecransDe = jeu => /^immersifs\//.test(jeu) ? ECRANS_IMMERSIFS : ECRANS;
+
 /* Écrans : adresse, attente, action préalable, boutons essentiels (au moins un de chaque groupe doit exister) */
 const ECRANS = {
   accueil: { query: "", attend: "#btn-demarrer", essentiels: [["#btn-demarrer"]] },
@@ -103,9 +115,11 @@ function mesurer(ecran, formats){
     window.scrollTo(0, 0);
     /* éléments qui dépassent du bord de l'écran (hors zones qui défilent volontairement) */
     const dedans = el => { for(let p = el.parentElement; p; p = p.parentElement){ const o = getComputedStyle(p).overflowX; if((o === "auto" || o === "scroll") && p.scrollWidth > p.clientWidth) return true; } return false; };
+    /* coupé par un conteneur qui rogne (décor d'une scène, lien d'évitement hors champ) : rien ne déborde réellement */
+    const rogne = el => { for(let p = el.parentElement; p && p !== document.body; p = p.parentElement){ const cs = getComputedStyle(p); if(cs.overflowX === "hidden" || cs.overflowX === "clip"){ const r = p.getBoundingClientRect(); if(r.left >= -2 && r.right <= vw + 2) return true; } } return false; };
     const vus = new Set();
     document.querySelectorAll("body *").forEach(el => {
-      if(resultat.depassements.length >= 5 || !visible(el) || dedans(el)) return;
+      if(resultat.depassements.length >= 5 || !visible(el) || dedans(el) || rogne(el) || el.classList.contains("evitement")) return;
       const cs = getComputedStyle(el);
       if(cs.position === "fixed" || cs.position === "sticky") return;
       if(["svg", "path", "g", "circle", "rect", "line", "ellipse", "polygon", "text", "tspan", "use", "defs", "image", "video", "source", "script", "style"].includes(el.tagName.toLowerCase())) return;
@@ -121,7 +135,7 @@ function mesurer(ecran, formats){
 }
 
 async function controlerEcran(page, base, jeu, ecran, format){
-  const cfg = ECRANS[ecran];
+  const cfg = ecransDe(jeu)[ecran];
   const url = `${base}/${jeu}/index.html${cfg.query}`;
   const erreurs = [];
   const ecoute = e => erreurs.push(e.message);
@@ -129,6 +143,7 @@ async function controlerEcran(page, base, jeu, ecran, format){
   await page.goto(url, { waitUntil: "load", timeout: 20000 });
   try{ await page.waitForSelector(cfg.attend, { visible: true, timeout: 6000 }); }catch(e){ /* l'absence est signalée par les essentiels */ }
   if(cfg.avant){ try{ await page.evaluate(cfg.avant); await new Promise(r => setTimeout(r, 300)); }catch(e){} }
+  if(cfg.attendApres){ try{ await page.waitForSelector(cfg.attendApres, { visible: true, timeout: 6000 }); }catch(e){} }
   await new Promise(r => setTimeout(r, 150));
   await page.evaluate(() => { document.querySelectorAll(".toast, .rideau-salle, .rideau-duel, #cine, .cinematique, .ecran-cine").forEach(x => x.remove()); });
   const m = await page.evaluate(mesurer(ecran, format), { essentiels: cfg.essentiels, tous: !!cfg.tous });
@@ -143,8 +158,8 @@ async function lancer(args){
   const captures = opt("captures") || (rapide ? "defauts" : "toutes");
   const fmts = (opt("largeurs") || Object.keys(FORMATS).join(",")).split(",").filter(f => FORMATS[f]);
   const choix = args.filter(a => !a.startsWith("--"));
-  const jeux = choix.length ? choix : JEUX_SALLES;
-  const ecrans = rapide ? ["accueil", "enigme"] : Object.keys(ECRANS);
+  const jeux = choix.length ? choix : JEUX_SALLES.concat(IMMERSIFS);
+  const ecransPour = jeu => { const tous = Object.keys(ecransDe(jeu)); return rapide ? tous.filter(e => e === "accueil" || e === "enigme") : tous; };
 
   let puppeteer = null;
   try{ puppeteer = require("puppeteer-core"); }catch(e){}
@@ -169,7 +184,7 @@ async function lancer(args){
         const F = FORMATS[f];
         const page = await browser.newPage();
         await page.setViewport({ width: F.width, height: F.height, deviceScaleFactor: 1, isMobile: F.mobile, hasTouch: F.mobile });
-        for(const e of ecrans){
+        for(const e of ecransPour(jeu)){
           R.total++;
           let res;
           try{ res = await controlerEcran(page, base, jeu, e, F); }
@@ -187,13 +202,13 @@ async function lancer(args){
           notes.forEach(n => R.alertes.push({ jeu, f: F.nom, e, msg: n }));
           if(!defauts.length) R.ok++;
           if(captures === "toutes" || (captures === "defauts" && (defauts.length || notes.length))){
-            try{ await page.screenshot({ path: path.join(dossierCaptures, `${jeu}-${f}-${e}.png`) }); R.captures++; }catch(err){}
+            try{ await page.screenshot({ path: path.join(dossierCaptures, `${jeu.replace(/\//g, "-")}-${f}-${e}.png`) }); R.captures++; }catch(err){}
           }
           lignes.push(defauts.length ? "✗" : notes.length ? "⚠" : "✓");
         }
         await page.close();
       }
-      sorties[jeu] = `${lignes.includes("✗") ? "✗" : lignes.includes("⚠") ? "⚠" : "✓"} ${jeu.padEnd(18)} ${lignes.join("")}  (${fmts.map(f => FORMATS[f].nom).join(" · ")} × ${ecrans.join(", ")})`;
+      sorties[jeu] = `${lignes.includes("✗") ? "✗" : lignes.includes("⚠") ? "⚠" : "✓"} ${jeu.padEnd(18)} ${lignes.join("")}  (${fmts.map(f => FORMATS[f].nom).join(" · ")} × ${ecransPour(jeu).join(", ")})`;
     };
     const file = jeux.slice();
     await Promise.all(Array.from({ length: Math.min(4, file.length) }, async () => { while(file.length) await controlerJeu(file.shift()); }));
@@ -218,4 +233,4 @@ async function lancer(args){
 }
 
 if(require.main === module) lancer(process.argv.slice(2)).then(c => process.exit(c), e => { console.error(e); process.exit(1); });
-module.exports = { chargerPuppeteer: () => { try{ return require("puppeteer-core"); }catch(e){ return null; } }, lancer, FORMATS, ECRANS, trouverNavigateur, serveur, controlerEcran, mesurerPage: () => mesurer() };
+module.exports = { IMMERSIFS, ECRANS_IMMERSIFS, chargerPuppeteer: () => { try{ return require("puppeteer-core"); }catch(e){ return null; } }, lancer, FORMATS, ECRANS, trouverNavigateur, serveur, controlerEcran, mesurerPage: () => mesurer() };

@@ -49,7 +49,7 @@
     const contenu = `<span class="ic" aria-hidden="true">${esc(j.icone || "🎲")}</span><span>${esc(j.titre)}<span class="mat">${esc(j.matiere)}${dispo ? "" : " · à venir"}</span></span>`;
     const titre = `${j.titre} — ${j.matiere}${j.annee && j.annee.length === 1 ? ", Année " + j.annee : ""}${j.periodes.length === 1 ? ", " + j.periodes[0] : ""} : ${j.competences}`;
     return dispo && o.lien !== false
-      ? `<a class="frise-jeu" style="${fond}" href="${esc(o.racine || "")}${esc(j.dossier)}/" title="${esc(titre)}" data-jeu="${esc(j.id)}">${contenu}</a>`
+      ? `<a class="frise-jeu" style="${fond}" href="${esc(o.racine || "")}${esc(j.immersif || j.dossier)}/" title="${esc(titre)}" data-jeu="${esc(j.id)}">${contenu}</a>`
       : `<span class="frise-jeu ${dispo ? "" : "avenir"}" style="${fond}" title="${esc(titre)}" data-jeu="${esc(j.id)}">${contenu}</span>`;
   }
   function dessiner(el, o = {}){

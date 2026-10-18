@@ -9,6 +9,8 @@
    démonstration), les liens « jeu suivant » en fin de partie, le
    passeport de compétences et les fiches de période.
    Un nouveau jeu publié : renseigner son « dossier » (et ses couleurs).
+   « immersif » : adresse de la variante immersive, JOUÉE PAR DÉFAUT (la version classique, « dossier », reste
+   accessible : lien « version classique »). Utiliser CATALOGUE_JEU.adresse(j) pour construire un lien de jeu.
    Fichier .js (et non .json) pour fonctionner aussi en double-clic.
    ============================================================ */
 var CATALOGUE = {
@@ -33,6 +35,7 @@ var CATALOGUE = {
    ],
    "competences": "Décrire le rôle social de l'Église (pauvres et malades, enseignement) ; différencier art roman et art gothique.",
    "dossier": "moyen-age-abbaye",
+   "immersif": "immersifs/moyen-age-abbaye",
    "icone": "📜",
    "couleurs": [
     "#7a3b1d",
@@ -55,6 +58,7 @@ var CATALOGUE = {
    ],
    "competences": "Décrire les fonctions d'un château fort ; raconter la vie quotidienne des paysannes et des paysans.",
    "dossier": "chateau-fort",
+   "immersif": "immersifs/chateau-fort",
    "icone": "🏰",
    "couleurs": [
     "#3d5266",
@@ -77,6 +81,7 @@ var CATALOGUE = {
    ],
    "competences": "Réaliser et exploiter des mesures météorologiques avec des capteurs (thermomètre, anémomètre, pluviomètre).",
    "dossier": "station-meteo",
+   "immersif": "immersifs/station-meteo",
    "icone": "🌦️",
    "couleurs": [
     "#1d5c8f",
@@ -99,6 +104,7 @@ var CATALOGUE = {
    ],
    "competences": "Décrire le fonctionnement et la constitution d'objets techniques.",
    "dossier": "objets-techniques",
+   "immersif": "immersifs/objets-techniques",
    "icone": "⚙️",
    "couleurs": [
     "#1e5a6e",
@@ -121,6 +127,7 @@ var CATALOGUE = {
    ],
    "competences": "Comparer/mesurer des masses ; distinguer mélanges homogènes/hétérogènes ; séparer leurs constituants.",
    "dossier": "melanges",
+   "immersif": "immersifs/melanges",
    "icone": "⚗️",
    "couleurs": [
     "#1f5f6b",
@@ -143,6 +150,7 @@ var CATALOGUE = {
    ],
    "competences": "La naissance du protestantisme (édit de Nantes) ; la monarchie absolue à Versailles.",
    "dossier": "versailles",
+   "immersif": "immersifs/versailles",
    "icone": "👑",
    "couleurs": [
     "#2a3f6b",
@@ -165,6 +173,7 @@ var CATALOGUE = {
    ],
    "competences": "François Ier, protecteur des arts et des lettres à la Renaissance (Léonard de Vinci).",
    "dossier": "renaissance",
+   "immersif": "immersifs/renaissance",
    "icone": "🎨",
    "couleurs": [
     "#8a4b1e",
@@ -187,6 +196,7 @@ var CATALOGUE = {
    ],
    "competences": "Besoins alimentaires et nutrition humaine : grandir, des besoins qui varient, mâcher, digérer ; le sang livre les nutriments.",
    "dossier": "alimentation",
+   "immersif": "immersifs/alimentation",
    "icone": "🍲",
    "couleurs": [
     "#2b5d6b",
@@ -209,6 +219,7 @@ var CATALOGUE = {
    ],
    "competences": "La lumière : sources, matériaux, ombres, ombre d'un bâton, phases de la Lune.",
    "dossier": "lumiere",
+   "immersif": "immersifs/lumiere",
    "icone": "💡",
    "couleurs": [
     "#1d3557",
@@ -627,6 +638,7 @@ var CATALOGUE = {
    ],
    "competences": "La Constitution du 4 octobre 1958 ; lois protectrices des droits et des libertés (EMC et histoire).",
    "dossier": "constitution",
+   "immersif": "immersifs/constitution",
    "icone": "⚖️",
    "precedent": "declaration",
    "couleurs": [
@@ -738,4 +750,11 @@ var CATALOGUE = {
   }
  },
  "programmesVerifies": "2026-10-01"
+};
+
+/* Adresses d'un jeu : la variante immersive par défaut, la version classique en option */
+var CATALOGUE_JEU = {
+  adresse: function(j){ return j && (j.immersif || j.dossier) || ""; },
+  classique: function(j){ return j && j.dossier || ""; },
+  aImmersif: function(j){ return !!(j && j.immersif); }
 };

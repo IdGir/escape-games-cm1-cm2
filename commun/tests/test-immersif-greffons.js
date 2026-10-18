@@ -321,6 +321,74 @@ SECTIONS.prof = async () => {
   }
 };
 
+SECTIONS.defaut = async () => {
+  console.log("\n== Immersif par défaut, classique en option ==");
+  const C = new Function(fs.readFileSync(path.join(RACINE, "commun/donnees/catalogue.js"), "utf8") + "; return { CATALOGUE, CATALOGUE_JEU };")();
+  const avecImm = C.CATALOGUE.jeux.filter(j => j.immersif);
+  ok(avecImm.length === IMM.length && IMM.every(j => avecImm.some(x => x.dossier === j && x.immersif === "immersifs/" + j)), `catalogue : champ « immersif » pour les ${IMM.length} jeux qui ont une variante`);
+  ok(avecImm.every(j => fs.existsSync(path.join(RACINE, j.immersif, "index.html"))), "catalogue : chaque variante existe");
+  ok(C.CATALOGUE_JEU.adresse(avecImm[0]) === avecImm[0].immersif && C.CATALOGUE_JEU.classique(avecImm[0]) === avecImm[0].dossier, "CATALOGUE_JEU.adresse = immersif, classique = dossier");
+  const sans = C.CATALOGUE.jeux.filter(j => j.dossier && !j.immersif).map(j => j.dossier).sort().join();
+  ok(sans === "declaration,mission-geo,tour-du-monde", `sans variante immersive : ${sans} (restent à l'adresse classique)`);
+  // accueil de la collection : « Jouer » mène à l'immersif, la version classique est proposée
+  const A = await charger(RACINE, "", { page: "index.html", attente: 500 });
+  const d = A.w.document;
+  for (const j of IMM) {
+    const carte = [...d.querySelectorAll("article")].find(a => a.querySelector(`a.jouer[href="immersifs/${j}/"]`));
+    ok(!!carte && !!carte.querySelector(`a.classique[href="${j}/"]`) && !!carte.querySelector(`a.prof[href="immersifs/${j}/prof.html"]`), `accueil : ${j} → immersif par défaut, lien « version classique » et tableau de bord`);
+  }
+  ok(!!d.querySelector('a.jouer[href="declaration/"]') && !!d.querySelector('a.jouer[href="mission-geo/"]'), "accueil : les jeux sans variante gardent leur adresse");
+  ok(/version immersive/.test(d.body.textContent), "accueil : la version immersive est annoncée");
+  const frise = [...d.querySelectorAll("#frise a.frise-jeu")].map(a => a.getAttribute("href"));
+  ok(IMM.every(j => frise.includes(`immersifs/${j}/`)) && frise.includes("declaration/"), "frise de l'année : variantes immersives par défaut");
+  ok(A.erreurs.length === 0, "accueil : erreurs JS " + A.erreurs.join(" | "));
+  // vue d'ensemble de l'année
+  const Y = await charger(RACINE, "", { page: "annee.html", attente: 800 });
+  const liens = [...Y.w.document.querySelectorAll(".liens a")].map(a => a.getAttribute("href"));
+  ok(IMM.every(j => liens.includes(`immersifs/${j}/`) && liens.includes(`${j}/`)), "année : « Jouer (immersif) » et « Version classique » pour chaque jeu");
+  // liens réciproques
+  for (const j of IMM) {
+    const I = await charger(J(j), "", { avant, attente: 400 });
+    ok(I.w.document.getElementById("lien-classique").getAttribute("href") === `../../${j}/`, `${j} immersif : lien « Version classique »`);
+    const html = fs.readFileSync(path.join(RACINE, j, "index.html"), "utf8");
+    ok(html.includes(`href="../immersifs/${j}/"`) && /lien-immersif/.test(html), `${j} classique : lien « version immersive »`);
+  }
+  // « Et ensuite ? » à l'écran du coffre ouvert : mène à l'immersif du jeu suivant, depuis la variante immersive
+  const parole = w => { avant(w); };
+  const { w } = await charger(J("constitution"), "", { avant: parole, attente: 800 });
+  const dd = w.document;
+  dd.getElementById("nom-equipe").value = "Les Lynx"; dd.getElementById("nom-equipe").dispatchEvent(new w.Event("input"));
+  dd.querySelector(".carte-grade").click(); dd.getElementById("btn-embarquer").click(); await dodo(500);
+  const E = w.VML.ETAT; E.escalesFaites = w.VML.escalesJouables(); E.coffreOuvert = true; E.fini = true; E.coffre = { erreurs: 0 };
+  w.VML.ouvrirCoffre(); await dodo(100);
+  const suite = dd.querySelector("#fin-contenu .encart-suite");
+  ok(!!suite, "variante immersive : encart « Et ensuite ? » au coffre ouvert");
+  const lienSuite = suite && [...suite.querySelectorAll("a")].map(a => a.getAttribute("href"));
+  ok(lienSuite && lienSuite.every(h => /^\.\.\/\.\.\//.test(h)), "…avec des liens relatifs à la variante (../../…) : " + (lienSuite || []).join(" "));
+  ok(lienSuite.some(h => h === "../../immersifs/versailles/" || h === "../../immersifs/declaration/" || /^\.\.\/\.\.\/(immersifs\/)?[a-z-]+\/$/.test(h)), "…vers la variante immersive par défaut quand elle existe");
+};
+
+SECTIONS.bilan = async () => {
+  console.log("\n== N12 : bilan de classe avec des parties immersives ==");
+  const e = (id, s, l, pc, err, ind) => ({ id, s, l, ok: 1, pc, e: err, i: ind, p: 0, c: 0 });
+  const base = { type: "escape-game-compte-rendu", version: 1, jeu: "renaissance", titre: "L'Atelier de Léonard à Amboise — Carnet de mission", mode: "equipe", niveau: "Peintre", palier: "timonier", termine: true, score: 100, scoreMax: 400, enigmes: 20, total: 20, premierCoup: 8, erreurs: 5, indices: 2, dureeMin: 40 };
+  const D = donnees("renaissance"), e1 = D.escales[0].enigmes[0], e2 = D.escales[0].enigmes[1];
+  const parties = [["Les Lynx", 0], ["Les Hiboux", 0], ["Les Renards", 1]].map(([nom, pc], k) => Object.assign({}, base, { eleve: nom, date: `2026-10-1${k}T10:00`, partie: `2026-10-1${k}T09:00`, detail: [e(e1.id, 1, e1.lecon, pc, pc ? 0 : 2, pc ? 0 : 1), e(e2.id, 1, e2.lecon, 1, 0, 0)] }));
+  const { w, erreurs } = await charger(RACINE, "", { page: "resultats.html", attente: 400, stockage: { escape_resultats: JSON.stringify(parties) } });
+  const d = w.document;
+  d.getElementById("btn-appareil").click();
+  await attendreQue(() => w.RESULTATS_PAGE.bilan && w.RESULTATS_PAGE.bilan.parties.length === 3, 4000); await dodo(200);
+  const B = w.RESULTATS_PAGE.bilan;
+  const en = B.enigmes.find(x => x.id === e1.id);
+  ok(en && en.imm === true && en.titre === e1.titre && en.n === 3 && en.pc === 1, `énigme immersive « ${en && en.titre} » : titre trouvé dans la variante, 1 réussite du premier coup sur 3`);
+  const comp = B.comps.find(c => c.lecon === e1.lecon);
+  ok(comp && comp.texte.length > 20, `compétence du programme retrouvée pour la leçon « ${e1.lecon} » : « ${comp && comp.texte.slice(0, 60)}… »`);
+  const liens = [...d.querySelectorAll("#bilan-contenu a.lien-lecon")].map(a => a.getAttribute("href"));
+  ok(liens.length >= 1 && liens.every(h => /^immersifs\/renaissance\/lecons-imprimables\.html\?niveau=timonier&lecon=/.test(h)), "liens vers les leçons à imprimer de la variante, au bon grade : " + liens.join(" ; "));
+  ok(liens.every(h => fs.existsSync(path.join(RACINE, h.split("?")[0]))), "les pages de leçons liées existent");
+  ok(erreurs.length === 0, "erreurs JS " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

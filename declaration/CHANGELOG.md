@@ -6,6 +6,8 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 ## 18 octobre 2026
 
+- Variantes immersives : les outils de la collection portés au moteur VML (D7, N1, N11, N12, N13, N15, N16, N19, N20)
+- F2 : journaux des versions à jour (D7, N11, N13, N15, N16, N18 à N21) et précache hors ligne
 - N21 : kit de présentation pour une animation pédagogique ou un conseil de cycle
 - N18 : fiches de séquence « avant / après » autour des jeux (sequences/)
 - N11 : mascotte commune Noa, guide de la collection
@@ -104,4 +106,4 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 - Range le dépôt : un dossier par jeu, page d'accueil et page de vérification
 
-<!-- dernier-commit: d8ba72a -->
+<!-- dernier-commit: a0c4b04 -->

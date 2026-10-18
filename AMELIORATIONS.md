@@ -369,3 +369,17 @@ Champ optionnel de surcharge dans `enigmes.json` (contrôlé par A7), écran de 
 Diaporama de 10-15 minutes, déroulé minuté de 30 à 45 minutes, captures et chiffres à jour avec C1,
 regroupés dans `presentation/` et liés depuis `adopter.html`.
 **Jeux concernés :** page d'accueil / adopter.html · **Effort :** M · **Statut :** Fait
+
+
+### N22 — Variantes immersives proposées par défaut, version classique en option
+Les 10 variantes `immersifs/<jeu>/` sont désormais la porte d'entrée : accueil, vue d'ensemble de l'année,
+frise, fin de partie (jeu précédent/suivant) et archives hors ligne (`JOUER.html`) mènent à l'immersif ;
+`JOUER-CLASSIQUE.html`, le lien « version classique » de chaque variante et le lien réciproque des jeux
+classiques conservent l'autre version. Outils portés au moteur immersif : joker, coup de pouce enseignant,
+alerte de fin de séance, difficulté par énigme, correction collective, bilan de classe (grades, compétences),
+mascotte, progression et trophées. Contrôles : tests dédiés (`test-immersif-greffons.js`), N17 étendu aux
+variantes immersives.
+**Limites connues :** duel, mode solo, auto-évaluation élève et export de la partie ne sont pas portés ;
+déclaration, tour-du-monde et mission-geo n'ont pas de variante ; droits des médias « à préciser » à régler
+(voir N14).
+**Jeux concernés :** 10 variantes + accueil, frise, resultats.html, archives (N9) · **Effort :** L · **Statut :** Fait

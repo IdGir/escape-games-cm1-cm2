@@ -7,9 +7,12 @@
               --dossier            (écrit l'arborescence décompressée au lieu du zip : pour les tests)
 
 Chaque archive <jeu>-hors-ligne.zip contient :
-  JOUER.html          à ouvrir d'un double-clic (renvoie vers <jeu>/index.html)
+  JOUER.html          à ouvrir d'un double-clic : la variante IMMERSIVE du jeu quand elle existe
+                      (immersifs/<jeu>/index.html), sinon la version classique (<jeu>/index.html)
+  JOUER-CLASSIQUE.html  la version classique (CM1 / CM2), quand une variante immersive existe
   LISEZ-MOI.txt       mode d'emploi pour l'enseignant
-  <jeu>/              le jeu (fichiers suivis par git, sans les tests)
+  <jeu>/              la version classique (fichiers suivis par git, sans les tests)
+  immersifs/<jeu>/    la variante immersive (sans les tests ni les outils de production)
   commun/             le tronc commun du moteur (sans les tests)
 Ouvert d'un double-clic (adresse file://), un navigateur refuse de lire les fichiers .json :
 le jeu retombait alors sur ses quelques « énigmes de secours ». Ici, toutes les données
@@ -76,6 +79,8 @@ def lisez_moi(jeu, titre):
    ou sur une clé USB. Ne lancez pas le jeu depuis l'intérieur du fichier zip.
 2. Double-cliquez sur JOUER.html : le jeu s'ouvre dans le navigateur (Chrome, Edge ou Firefox).
    Aucune connexion internet, aucun serveur, rien à installer.
+   Quand le jeu existe en version immersive (décors à explorer, cinq grades), c'est elle qui s'ouvre ;
+   JOUER-CLASSIQUE.html ouvre la version classique (une salle après l'autre, CM1 et CM2).
 
 Ce qui fonctionne : toutes les énigmes (CM1, CM2, Découverte), les leçons, les décors,
 les vidéos, les voix des personnages (voix du navigateur), le quizz, les impressions
@@ -92,13 +97,15 @@ Crédits des images et vidéos : {jeu}/assets/medias/CREDITS-medias.md (si prés
 et les mentions affichées dans le jeu.
 """
 
-def jouer_html(jeu, titre):
+def jouer_html(jeu, titre, adresse=None, autre=None):
+    adresse = adresse or f"{jeu}/index.html"
+    lien_autre = f'<p style="font-size:15px"><a href="{autre}">🎓 Version classique (CM1 / CM2)</a></p>' if autre else ""
     return f"""<!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8"><title>{titre}</title>
-<meta http-equiv="refresh" content="0; url={jeu}/index.html"></head>
+<meta http-equiv="refresh" content="0; url={adresse}"></head>
 <body style="font:18px/1.5 Georgia,serif;text-align:center;padding:40px">
-<p><a href="{jeu}/index.html">▶ Ouvrir « {titre} »</a></p>
-<p style="font-size:14px;color:#555">Si rien ne se passe, cliquez sur le lien ci-dessus.</p>
+<p><a href="{adresse}">▶ Ouvrir « {titre} »</a></p>
+{lien_autre}<p style="font-size:14px;color:#555">Si rien ne se passe, cliquez sur le lien ci-dessus.</p>
 </body></html>
 """
 
@@ -121,11 +128,14 @@ def contenu_archive(jeu, tous):
     racine_zip = f"{jeu}-hors-ligne/"
     fichiers = [f for f in tous if f.startswith(jeu + "/") and "/tests/" not in f]
     commun = [f for f in tous if f.startswith("commun/") and not f.startswith("commun/tests/")]
+    imm = [f for f in tous if f.startswith(f"immersifs/{jeu}/") and "/tests/" not in f and "/outils/" not in f]
     titre = titre_de(jeu)
-    elements = [(racine_zip + "JOUER.html", jouer_html(jeu, titre).encode("utf-8")),
+    elements = [(racine_zip + "JOUER.html", (jouer_html(jeu, titre, f"immersifs/{jeu}/index.html", f"{jeu}/index.html") if imm else jouer_html(jeu, titre)).encode("utf-8"))]
+    if imm: elements.append((racine_zip + "JOUER-CLASSIQUE.html", jouer_html(jeu, titre).encode("utf-8")))
+    elements += [
                 (racine_zip + "LISEZ-MOI.txt", lisez_moi(jeu, titre).replace("\n", "\r\n").encode("utf-8")),
                 (racine_zip + jeu + "/js/donnees-embarquees.js", donnees_embarquees(jeu, fichiers).encode("utf-8"))]
-    for f in fichiers + commun:
+    for f in fichiers + imm + commun:
         src = os.path.join(RACINE, f)
         if not os.path.isfile(src): continue
         if f in (f"{jeu}/{p}" for p in PAGES):

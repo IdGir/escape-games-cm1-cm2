@@ -172,7 +172,9 @@ SECTIONS.C4 = async () => {
     const { w, erreurs } = await charger(J(j), "?salle=6&niveau=CM2", { attente: 800 });
     await dodo(200);
     const a = w.document.querySelector(`#fin-contenu .encart-suite .lien-jeu-${sens}`);
-    ok(!!a && a.getAttribute("href") === `../${cible}/`, `${j} : lien « ${sens} » vers ${cible} (${a ? a.getAttribute("href") : "—"})`);
+    /* les liens mènent à la variante immersive du jeu voisin quand elle existe (proposée par défaut) */
+    const attendu = require("fs").existsSync(path.join(__dirname, "..", "..", "immersifs", cible, "index.html")) ? `../immersifs/${cible}/` : `../${cible}/`;
+    ok(!!a && a.getAttribute("href") === attendu, `${j} : lien « ${sens} » vers ${cible} (${a ? a.getAttribute("href") : "—"})`);
     ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
   }
   const t = await charger(J("tour-du-monde"), "?salle=6&niveau=CM2", { attente: 800 });

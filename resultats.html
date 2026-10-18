@@ -233,7 +233,9 @@ async function lireJson(url){ try{ const r = await fetch(url, { cache: "no-store
 async function meta(jeu){
   if(META[jeu]) return META[jeu];
   const m = META[jeu] = { titres: {}, comp: {}, leconDeSalle: {}, salles: {}, leconTitre: {} };
-  const [en, a4, lc] = await Promise.all([lireJson(`${jeu}/assets/data/enigmes.json`), lireJson(`${jeu}/assets/data/lecons-a4.json`), lireJson(`${jeu}/assets/data/lecons.json`)]);
+  const [en, a4, lc, im] = await Promise.all([lireJson(`${jeu}/assets/data/enigmes.json`), lireJson(`${jeu}/assets/data/lecons-a4.json`), lireJson(`${jeu}/assets/data/lecons.json`), lireJson(`immersifs/${jeu}/assets/data/enigmes.json`)]);
+  /* variante immersive : étapes (escales), énigmes et compétence de chaque énigme */
+  if(im) (im.escales || []).forEach(es => { m.salles[es.numero] = m.salles[es.numero] || es.titre; (es.enigmes || []).forEach(e => { m.titres[e.id] = e.titre; if(e.lecon && e.competence_programme && !m.comp[e.lecon]) m.comp[e.lecon] = e.competence_programme; }); });
   if(en) (en.salles || []).forEach(s => { m.salles[s.num] = s.titre; (s.enigmes || []).forEach(e => { m.titres[e.id] = e.titre; }); });
   if(a4 && a4.lecons) Object.entries(a4.lecons).forEach(([id, l]) => { if(l && l.competence) m.comp[id] = l.competence; });
   if(lc) (lc.lecons || []).forEach(l => { if(l.salle != null && !m.leconDeSalle[l.salle]) m.leconDeSalle[l.salle] = l.id; if(l.titre) m.leconTitre[l.id] = l.titre; });
@@ -253,20 +255,22 @@ async function agreger(){
       const lecon = n.l || m.leconDeSalle[n.s] || "";
       const k = r.jeu + "|" + n.id;
       const titre = m.titres[n.id] || (/^s\d+$/.test(String(n.id)) ? "Salle " + n.s + (m.salles[n.s] ? " — " + m.salles[n.s] : (m.leconTitre[lecon] ? " — " + m.leconTitre[lecon] : "")) : "");
-      const e = enigmes.get(k) || { jeu: r.jeu, id: n.id, s: n.s, lecon, titre, n: 0, pc: 0, err: 0, ind: 0, pass: 0, pouce: 0, niveaux: {} };
-      e.n++; e.pc += n.pc ? 1 : 0; e.err += n.e || 0; e.ind += n.i || 0; e.pass += n.p ? 1 : 0; e.pouce += n.c || 0; e.niveaux[r.niveau] = (e.niveaux[r.niveau] || 0) + 1;
+      const imm = GRADES_IMMERSIFS.includes(r.palier), niv = imm ? r.palier : r.niveau;
+      const e = enigmes.get(k) || { jeu: r.jeu, imm, id: n.id, s: n.s, lecon, titre, n: 0, pc: 0, err: 0, ind: 0, pass: 0, pouce: 0, niveaux: {} };
+      e.n++; e.pc += n.pc ? 1 : 0; e.err += n.e || 0; e.ind += n.i || 0; e.pass += n.p ? 1 : 0; e.pouce += n.c || 0; e.niveaux[niv] = (e.niveaux[niv] || 0) + 1;
       enigmes.set(k, e);
       const kc = r.jeu + "|" + (lecon || n.id);
-      const c = comps.get(kc) || { jeu: r.jeu, lecon, texte: m.comp[lecon] || m.leconTitre[lecon] || "", n: 0, pc: 0, err: 0, ind: 0, pass: 0, pouce: 0, niveaux: {} };
-      c.n++; c.pc += n.pc ? 1 : 0; c.err += n.e || 0; c.ind += n.i || 0; c.pass += n.p ? 1 : 0; c.pouce += n.c || 0; c.niveaux[r.niveau] = (c.niveaux[r.niveau] || 0) + 1;
+      const c = comps.get(kc) || { jeu: r.jeu, imm, lecon, texte: m.comp[lecon] || m.leconTitre[lecon] || "", n: 0, pc: 0, err: 0, ind: 0, pass: 0, pouce: 0, niveaux: {} };
+      c.n++; c.pc += n.pc ? 1 : 0; c.err += n.e || 0; c.ind += n.i || 0; c.pass += n.p ? 1 : 0; c.pouce += n.c || 0; c.niveaux[niv] = (c.niveaux[niv] || 0) + 1;
       comps.set(kc, c);
     }
   }
   const tri = (a, b) => pc100(a.pc, a.n) - pc100(b.pc, b.n) || b.n - a.n;
   return { parties, enigmes: [...enigmes.values()].sort(tri), comps: [...comps.values()].sort(tri) };
 }
-const niveauDominant = e => Object.entries(e.niveaux || {}).sort((a, b) => b[1] - a[1]).map(x => x[0])[0] || "CM2";
-const lienLecon = e => e.lecon ? `${e.jeu}/lecons-imprimables.html?niveau=${niveauDominant(e)}&lecon=${encodeURIComponent(e.lecon)}` : "";
+const GRADES_IMMERSIFS = ["mousse", "matelot", "timonier", "lieutenant", "second"];
+const niveauDominant = e => Object.entries(e.niveaux || {}).sort((a, b) => b[1] - a[1]).map(x => x[0])[0] || (e.imm ? "matelot" : "CM2");
+const lienLecon = e => e.lecon ? `${e.imm ? "immersifs/" : ""}${e.jeu}/lecons-imprimables.html?niveau=${niveauDominant(e)}&lecon=${encodeURIComponent(e.lecon)}` : "";
 let BILAN = null, bilanEnCours = 0;
 async function rendreBilan(){
   const mien = ++bilanEnCours;

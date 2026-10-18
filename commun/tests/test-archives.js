@@ -35,6 +35,20 @@ const python = ["python3", "python"].find(p => { try { execFileSync(p, ["--versi
       const l = await charger(path.join(base, j), "", { page: "lecons-imprimables.html", avant: sansFetch, attente: 700 });
       ok(/donnees-embarquees/.test(fs.readFileSync(path.join(base, j, "lecons-imprimables.html"), "utf8")) && l.w.document.body.textContent.length > 500, `${j} : leçons imprimables lisibles sans serveur`);
     }
+    // Variante immersive : c'est elle que JOUER.html ouvre ; la version classique reste en option
+    {
+      const base = path.join(SORTIE, "lumiere-hors-ligne");
+      const jouer = fs.readFileSync(path.join(base, "JOUER.html"), "utf8");
+      ok(/immersifs\/lumiere\/index\.html/.test(jouer) && /lumiere\/index\.html/.test(jouer) && fs.existsSync(path.join(base, "JOUER-CLASSIQUE.html")), "lumiere : JOUER.html ouvre la variante immersive, avec un lien vers la version classique (JOUER-CLASSIQUE.html)");
+      ok(/url=lumiere\/index\.html/.test(fs.readFileSync(path.join(base, "JOUER-CLASSIQUE.html"), "utf8")), "lumiere : JOUER-CLASSIQUE.html ouvre la version classique");
+      ok(fs.existsSync(path.join(base, "immersifs", "lumiere", "index.html")) && fs.existsSync(path.join(base, "immersifs", "lumiere", "js", "donnees-embarquees.js")) && fs.existsSync(path.join(base, "commun", "js", "immersif", "vml-joker.js")), "lumiere : variante immersive, données embarquées et outils communs dans l'archive");
+      ok(!fs.existsSync(path.join(base, "immersifs", "lumiere", "tests")) && !fs.existsSync(path.join(base, "immersifs", "lumiere", "outils")), "lumiere : sans les tests ni les outils de production de la variante");
+      ok(/immersi/i.test(fs.readFileSync(path.join(base, "LISEZ-MOI.txt"), "utf8")), "lumiere : LISEZ-MOI.txt présente la variante immersive");
+      const im = await charger(path.join(base, "immersifs", "lumiere"), "?verif=1&escale=1&niveau=matelot&enigme=1", { avant: w => { sansFetch(w); w.VML_RAPIDE = true; }, attente: 900 });
+      const nE = im.w.eval("((VML.D.enigmes || {}).escales || []).reduce((t, es) => t + es.enigmes.length, 0)");
+      ok(nE >= 15, `lumiere immersif : sans serveur, ${nE} énigmes chargées (données embarquées)`);
+      ok(im.erreurs.filter(e => !/Failed to fetch/.test(e)).length === 0, "lumiere immersif : erreurs JS : " + im.erreurs.join(" | "));
+    }
     // Témoin : le jeu du dépôt, ouvert sans serveur, n'a que ses énigmes de secours
     const t = await charger(path.join(RACINE, "lumiere"), "?salle=1&niveau=CM2", { avant: sansFetch, attente: 700 });
     const n0 = t.w.eval("ENIGMES.salles.reduce((t,s)=>t+s.enigmes.length,0)");
