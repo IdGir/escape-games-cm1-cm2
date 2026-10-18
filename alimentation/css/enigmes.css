@@ -285,7 +285,7 @@
 .pli-final.ouvert .rabat{transform:scaleY(-1)}
 body.calme .pli-final .sceau, body.calme .pli-final .rabat{transition:none}
 /* Documents des énigmes : tableaux de relevés (carnet de Nathan, toise de Lou, carnet de la docteure) */
-.tableau-releves{border-collapse:collapse;margin:8px auto;background:#fff;font-size:.92rem}
+.tableau-releves{border-collapse:collapse;margin:8px auto;background:#fff;font-size:.92rem;display:block;width:max-content;max-width:100%;overflow-x:auto}   /* N17 : ne dépasse plus de l'écran sur smartphone */
 .tableau-releves th,.tableau-releves td{border:1px solid #6f8f9a;padding:5px 10px;text-align:center}
 .tableau-releves th{background:#e6f0f2;color:#1d434e}
 .doc-titre{text-align:center;margin-top:8px;font-size:.92rem;color:var(--encre-doux)}

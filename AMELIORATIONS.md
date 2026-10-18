@@ -348,7 +348,7 @@ format de l'export de partie (A5), sans serveur ni compte.
 `outils-tests/verifier-responsive.js` : chaque jeu à 3 largeurs types (tablette 10", tablette 7",
 smartphone), contrôle qu'aucun bouton essentiel ne sort de l'écran, capture ; branché sur le crochet
 avant `git push`.
-**Jeux concernés :** tous · **Effort :** M · **Statut :** Sélectionné
+**Jeux concernés :** tous · **Effort :** M · **Statut :** Fait
 
 ### N18 — Fiche de séquence « avant / après » autour de chaque jeu
 Modèle (objectif, activité avant 15-20 min, le jeu, activité après 15-20 min, lien avec C5), deux

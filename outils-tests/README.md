@@ -105,3 +105,25 @@ Il contrôle aussi les liens **fabriqués par le code** : dossiers, `suite` et `
 trophées, pages communes attendues. Rapport lisible : page, lien, motif. ✗ = lien cassé (bloquant),
 ⚠ = ancre ou média absent (à regarder). Il est branché, avec A7, sur le crochet `pre-push`
 (`git config core.hooksPath outils-tests/hooks`).
+
+## Contrôle de l'affichage tablette et smartphone (N17)
+
+`verifier-responsive.js` ouvre chaque jeu dans un **vrai navigateur** (Chrome ou Edge, sans fenêtre) à trois
+largeurs types — **tablette 10″ (1280 × 800), tablette 7″ (600 × 960), smartphone (390 × 844)** — sur
+quatre écrans (accueil, énigme, coffre, fin) et prend une capture de chacun
+(`outils-tests/captures-responsive/`, non publié) :
+
+```
+node outils-testserifier-responsive.js                tous les jeux, 4 écrans (≈ 70 s)
+node outils-testserifier-responsive.js melanges       un seul jeu
+node outils-testserifier-responsive.js --rapide       accueil + énigme, captures des seuls défauts (≈ 30 s, crochet pre-push)
+```
+
+✗ bloquant : un bouton essentiel (démarrer, valider, indice, coffre, pause, réglages…) sort de l'écran
+ou est recouvert une fois amené à l'écran (on défile vers le bas, jamais de côté). ⚠ : la page défile
+de côté, ou un élément dépasse du bord (texte coupé, tableau trop large). Il faut **Chrome ou Edge**
+installé (ou la variable `CHROME_PATH`) et un `npm install` dans `outils-tests` (`puppeteer-core` ne
+télécharge aucun navigateur) ; sinon le contrôle est sauté avec un avertissement. Test du contrôleur
+lui-même : `node commun/tests/test-responsive.js` (défauts simulés : bouton hors écran, recouvert,
+page trop large). Premier passage : un tableau de l'« Atelier de la cheffe » (Le Grand Repas du chef)
+dépassait de 9 px sur smartphone ; corrigé.
