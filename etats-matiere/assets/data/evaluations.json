@@ -1,0 +1,679 @@
+{
+ "metadata": {
+  "sujet": "Les états de la matière, l'air, les changements d'état de l'eau, la conservation de la masse, les propriétés de la matière, le cycle de l'eau",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "programme": "Sciences et technologie, cycle 3 — thème « La matière, les mouvements et les signaux » (BO n° 24 du 11 juin 2026). Progression de l'enseignant : année B, période 2 (« États et constitution de la matière à l'échelle macroscopique. Propriétés de la matière. »).",
+  "sources": "Voir README.md du jeu, section Sources."
+ },
+ "quizz_final": {
+  "CM1": [
+   {
+    "q": "Lequel de ces objets est un solide ?",
+    "options": [
+     "Du lait",
+     "Un glaçon",
+     "L'air"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "L'air est...",
+    "options": [
+     "de la matière, un gaz",
+     "un liquide",
+     "du vide"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "À quelle température la glace fond-elle ?",
+    "options": [
+     "0 °C",
+     "50 °C",
+     "100 °C"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "Quand des glaçons fondent dans une boîte fermée, leur masse...",
+    "options": [
+     "reste la même",
+     "augmente",
+     "diminue"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "De quoi un nuage est-il fait ?",
+    "options": [
+     "De vapeur visible",
+     "De fumée",
+     "De gouttelettes d'eau"
+    ],
+    "bonne": 2
+   }
+  ],
+  "CM2": [
+   {
+    "q": "Quel état a un volume propre mais pas de forme propre ?",
+    "options": [
+     "Le gaz",
+     "Le liquide",
+     "Aucun",
+     "Le solide"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "Un litre d'air a une masse d'environ...",
+    "options": [
+     "1,2 g",
+     "1 kg",
+     "100 g",
+     "0 g"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "Comment s'appelle le passage de l'état gazeux à l'état liquide ?",
+    "options": [
+     "La vaporisation",
+     "La solidification",
+     "La liquéfaction",
+     "La fusion"
+    ],
+    "bonne": 2
+   },
+   {
+    "q": "Quand l'eau gèle, qu'est-ce qui augmente ?",
+    "options": [
+     "Sa masse",
+     "Rien",
+     "Son volume",
+     "Sa quantité de matière"
+    ],
+    "bonne": 2
+   },
+   {
+    "q": "Dans le cycle de l'eau, que se passe-t-il juste après l'évaporation ?",
+    "options": [
+     "Il pleut tout de suite",
+     "La vapeur monte et se liquéfie en gouttelettes",
+     "L'eau gèle dans la mer",
+     "La rivière se vide"
+    ],
+    "bonne": 1
+   }
+  ]
+ },
+ "fiches_preparatoires": [
+  {
+   "salle": 1,
+   "titre": "Le hall des cuves — solide, liquide ou gaz",
+   "objectifs": [
+    "Reconnaître les trois états de la matière",
+    "Utiliser des critères : forme, volume, écoulement, compression"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "solide",
+     "def": "garde sa forme"
+    },
+    {
+     "mot": "liquide",
+     "def": "coule et prend la forme du récipient"
+    },
+    {
+     "mot": "gaz",
+     "def": "occupe toute la place, souvent invisible"
+    }
+   ],
+   "contexte": "Un solide en poudre (sable, farine, sucre) reste un solide : chaque grain garde sa forme. Un solide n'est pas forcément dur."
+  },
+  {
+   "salle": 2,
+   "titre": "La terrasse du ballon-sonde — l'air est de la matière",
+   "objectifs": [
+    "Savoir que l'air occupe un volume",
+    "Savoir que l'air a une masse"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "masse",
+     "def": "quantité de matière, mesurée avec une balance"
+    },
+    {
+     "mot": "volume",
+     "def": "place occupée"
+    },
+    {
+     "mot": "compressible",
+     "def": "que l'on peut serrer dans moins de place"
+    }
+   ],
+   "contexte": "Un verre « vide » est plein d'air. Un ballon gonflé à la pompe devient plus lourd. Un litre d'air a une masse d'environ 1,2 g."
+  },
+  {
+   "salle": 3,
+   "titre": "La glacerie de Paolo — les changements d'état",
+   "objectifs": [
+    "Nommer fusion, solidification, vaporisation, liquéfaction",
+    "Connaître 0 °C et 100 °C pour l'eau"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "fusion",
+     "def": "solide vers liquide"
+    },
+    {
+     "mot": "solidification",
+     "def": "liquide vers solide"
+    },
+    {
+     "mot": "vaporisation",
+     "def": "liquide vers gaz"
+    }
+   ],
+   "contexte": "La vapeur d'eau est invisible : la « fumée » d'une casserole est faite de gouttelettes. Évaporation (lente, toute température) et ébullition (100 °C, bulles) sont deux vaporisations."
+  },
+  {
+   "salle": 4,
+   "titre": "La cuisine de Fatou — ce qui change, ce qui se conserve",
+   "objectifs": [
+    "Savoir que la masse se conserve lors d'un changement d'état",
+    "Savoir que le volume de l'eau augmente quand elle gèle"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "se conserver",
+     "def": "rester la même"
+    },
+    {
+     "mot": "récipient gradué",
+     "def": "pour mesurer un volume"
+    }
+   ],
+   "contexte": "200 g de glaçons donnent 200 g d'eau. Une bouteille pleine gonfle au congélateur : 1 000 mL d'eau donnent environ 1 090 mL de glace."
+  },
+  {
+   "salle": 5,
+   "titre": "Le château d'eau de Ninon — propriétés et cycle de l'eau",
+   "objectifs": [
+    "Classer des matériaux par leurs propriétés",
+    "Décrire le cycle de l'eau"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "conducteur de la chaleur",
+     "def": "laisse bien passer la chaleur (métaux)"
+    },
+    {
+     "mot": "se dissoudre",
+     "def": "ne plus être visible dans un liquide"
+    },
+    {
+     "mot": "précipitations",
+     "def": "pluie, neige, grêle"
+    }
+   ],
+   "contexte": "Évaporation, liquéfaction en gouttelettes (nuages), précipitations, ruissellement : l'eau tourne sans cesse en changeant d'état."
+  }
+ ],
+ "qcm": {
+  "CM1": [
+   {
+    "q": "Le sable est...",
+    "options": [
+     "un solide",
+     "un liquide",
+     "un gaz"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Un liquide prend...",
+    "options": [
+     "toute la place, comme un gaz",
+     "toujours la forme d'une boule",
+     "la forme du récipient"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Au repos, la surface de l'eau est...",
+    "options": [
+     "en pente",
+     "en vagues",
+     "plate et horizontale"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Un verre « vide » contient...",
+    "options": [
+     "rien du tout",
+     "de l'air",
+     "de l'eau"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Pour montrer que l'air a une masse, on...",
+    "options": [
+     "pèse un ballon avant et après l'avoir gonflé",
+     "regarde l'air",
+     "met le ballon au soleil"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "L'eau bout à...",
+    "options": [
+     "100 °C",
+     "0 °C",
+     "20 °C"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "La glace qui devient de l'eau liquide, c'est...",
+    "options": [
+     "l'ébullition",
+     "la fusion",
+     "la solidification"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "La vapeur d'eau est...",
+    "options": [
+     "blanche",
+     "invisible",
+     "bleue"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Quel objet flotte sur l'eau ?",
+    "options": [
+     "Un bouchon en liège",
+     "Une clé en fer",
+     "Un caillou"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Quel objet conduit bien la chaleur ?",
+    "options": [
+     "Un gant en laine",
+     "Un manche en bois",
+     "Une cuillère en métal"
+    ],
+    "bonne": 2,
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "Lequel de ces solides est divisé en grains ?",
+    "options": [
+     "La farine",
+     "Un glaçon",
+     "Une pierre",
+     "Une gomme"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Un gaz...",
+    "options": [
+     "est toujours visible",
+     "n'a ni forme ni volume propres",
+     "a un volume propre",
+     "a une forme propre"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "On pousse le piston d'une seringue bouchée pleine d'air. L'air...",
+    "options": [
+     "disparaît",
+     "ne bouge pas du tout",
+     "se comprime un peu",
+     "devient liquide"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "On ajoute 10 L d'air dans un ballon (1 L d'air ≈ 1,2 g). La masse augmente d'environ...",
+    "options": [
+     "12 g",
+     "120 g",
+     "0 g",
+     "1,2 g"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Le passage du liquide au solide s'appelle...",
+    "options": [
+     "la solidification",
+     "la liquéfaction",
+     "la vaporisation",
+     "la fusion"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "L'évaporation...",
+    "options": [
+     "se fait seulement à 100 °C",
+     "fait des bulles dans tout le liquide",
+     "transforme l'eau en glace",
+     "se fait à toute température, à la surface"
+    ],
+    "bonne": 3,
+    "pts": 1
+   },
+   {
+    "q": "La buée sur un miroir froid est due à...",
+    "options": [
+     "la solidification de l'air",
+     "l'ébullition de l'eau",
+     "la fusion du miroir",
+     "la liquéfaction de la vapeur d'eau de l'air"
+    ],
+    "bonne": 3,
+    "pts": 1
+   },
+   {
+    "q": "Pendant la fusion de la glace, le thermomètre plongé dans le mélange indique...",
+    "options": [
+     "moins 15 °C",
+     "une température qui monte très vite",
+     "100 °C",
+     "0 °C"
+    ],
+    "bonne": 3,
+    "pts": 1
+   },
+   {
+    "q": "1 000 mL d'eau donnent environ 1 090 mL de glace. 500 mL d'eau donnent environ...",
+    "options": [
+     "450 mL de glace",
+     "1 090 mL de glace",
+     "545 mL de glace",
+     "500 mL de glace"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Pourquoi un glaçon flotte-t-il ?",
+    "options": [
+     "Il est plus lourd que l'eau",
+     "Il est très froid",
+     "À masse égale, la glace prend plus de place que l'eau liquide",
+     "Il contient de l'air"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Le sucre dans l'eau...",
+    "options": [
+     "devient du sable",
+     "se dissout : on ne le voit plus mais il est là",
+     "fond comme la glace",
+     "disparaît pour toujours"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Quelle suite décrit le cycle de l'eau ?",
+    "options": [
+     "nuage, évaporation, mer, pluie",
+     "pluie, évaporation, rivière, nuage",
+     "évaporation, nuage, précipitations, ruissellement",
+     "ruissellement, nuage, évaporation, mer"
+    ],
+    "bonne": 2,
+    "pts": 1
+   }
+  ]
+ },
+ "questions_fermees": {
+  "CM1": [
+   {
+    "q": "Le sucre en poudre est un solide.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Un solide est toujours dur.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "L'air a une masse.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "La fumée blanche au-dessus d'une casserole est de la vapeur d'eau.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Cite les trois états de la matière.",
+    "type": "court",
+    "rep": "solide, liquide, gaz",
+    "pts": 1
+   },
+   {
+    "q": "À quelle température l'eau bout-elle ?",
+    "type": "court",
+    "rep": "à 100 °C",
+    "pts": 1
+   },
+   {
+    "q": "Comment s'appelle le passage de l'eau liquide à la glace ?",
+    "type": "court",
+    "rep": "la solidification",
+    "pts": 1
+   },
+   {
+    "q": "Cite un matériau qui flotte sur l'eau.",
+    "type": "court",
+    "rep": "par exemple le bois, le liège, la glace",
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "Un liquide a un volume propre.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Un gaz est compressible.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "La masse de l'eau augmente quand elle gèle.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "L'évaporation ne se fait qu'à 100 °C.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Nomme les quatre changements d'état étudiés.",
+    "type": "court",
+    "rep": "fusion, solidification, vaporisation, liquéfaction",
+    "pts": 1
+   },
+   {
+    "q": "Quelle est la différence entre évaporation et ébullition ?",
+    "type": "court",
+    "rep": "l'évaporation est lente, à la surface, à toute température ; l'ébullition se fait à 100 °C avec des bulles dans tout le liquide",
+    "pts": 1
+   },
+   {
+    "q": "Pourquoi une bouteille pleine d'eau gonfle-t-elle au congélateur ?",
+    "type": "court",
+    "rep": "en gelant, l'eau augmente de volume (sa masse ne change pas)",
+    "pts": 1
+   },
+   {
+    "q": "De quoi un nuage est-il fait ?",
+    "type": "court",
+    "rep": "de gouttelettes d'eau liquide (ou de cristaux de glace)",
+    "pts": 1
+   }
+  ]
+ },
+ "etudes_documents": {
+  "CM1": [
+   {
+    "titre": "Le carnet de Fatou",
+    "document": {
+     "contenu": "Lundi : 4 glaçons de 25 g dans un bol fermé, sur la balance : 100 g. Une heure plus tard, plus de glaçons, de l'eau liquide : 100 g.",
+     "source": "Expérience inventée pour le jeu, d'après La main à la pâte."
+    },
+    "questions": [
+     {
+      "q": "Quel changement d'état s'est produit ?",
+      "type": "court",
+      "rep": "la fusion : la glace est devenue de l'eau liquide",
+      "pts": 1
+     },
+     {
+      "q": "La masse a-t-elle changé ?",
+      "type": "court",
+      "rep": "non, elle est restée à 100 g",
+      "pts": 1
+     },
+     {
+      "q": "Pourquoi le bol est-il fermé ?",
+      "type": "court",
+      "rep": "pour ne rien perdre (l'eau ne peut pas s'évaporer)",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "L'expérience du verre de Bastien",
+    "document": {
+     "contenu": "Bastien colle un mouchoir au fond d'un verre. Il enfonce le verre à l'envers, bien droit, dans une bassine d'eau. Il le ressort : le mouchoir est sec.",
+     "source": "Expérience classique, d'après La main à la pâte."
+    },
+    "questions": [
+     {
+      "q": "Qu'y a-t-il dans le verre « vide » ?",
+      "type": "court",
+      "rep": "de l'air",
+      "pts": 1
+     },
+     {
+      "q": "Pourquoi le mouchoir reste-t-il sec ?",
+      "type": "court",
+      "rep": "l'air occupe la place et empêche l'eau d'entrer",
+      "pts": 1
+     },
+     {
+      "q": "Que se passerait-il si on penchait le verre ?",
+      "type": "court",
+      "rep": "des bulles d'air sortiraient et l'eau entrerait : le mouchoir serait mouillé",
+      "pts": 1
+     }
+    ]
+   }
+  ],
+  "CM2": [
+   {
+    "titre": "Le relevé de Paolo",
+    "document": {
+     "contenu": "Paolo chauffe des glaçons sortis du congélateur et note la température toutes les 2 minutes. 0 min : −15 °C. 2 min : −6 °C. 4 min : 0 °C (glace et eau). 6 min : 0 °C (glace et eau). 8 min : 0 °C (presque plus de glace). 10 min : 25 °C. 12 min : 45 °C. 14 min : 70 °C. 16 min : 90 °C. 18 min : 100 °C (grosses bulles). 20 min : 100 °C.",
+     "source": "Relevé inventé pour le jeu, d'après La main à la pâte."
+    },
+    "questions": [
+     {
+      "q": "Entre quelles minutes la glace fond-elle ?",
+      "type": "court",
+      "rep": "entre 4 et 8 minutes environ, à 0 °C",
+      "pts": 1
+     },
+     {
+      "q": "Que remarques-tu sur la température pendant la fusion ?",
+      "type": "court",
+      "rep": "elle reste à 0 °C",
+      "pts": 1
+     },
+     {
+      "q": "Comment s'appelle ce qui se passe à 100 °C ?",
+      "type": "court",
+      "rep": "l'ébullition (une vaporisation)",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "Le carnet de Fatou",
+    "document": {
+     "contenu": "Bouteille de 500 g d'eau, bouchée, au congélateur. Le lendemain : bouteille gonflée, bouchon soulevé. Sur la balance : 500 g. Note : 1 000 mL d'eau donnent environ 1 090 mL de glace.",
+     "source": "Expérience inventée pour le jeu ; rapport des volumes d'après Vikidia, « Glace »."
+    },
+    "questions": [
+     {
+      "q": "Qu'est-ce qui a changé ?",
+      "type": "court",
+      "rep": "l'état (liquide puis solide), la forme et le volume",
+      "pts": 1
+     },
+     {
+      "q": "Qu'est-ce qui s'est conservé ?",
+      "type": "court",
+      "rep": "la masse (500 g) : c'est toujours de l'eau",
+      "pts": 1
+     },
+     {
+      "q": "Quel volume de glace donnent environ 500 mL d'eau ?",
+      "type": "court",
+      "rep": "environ 545 mL",
+      "pts": 1
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "hall": {
+   "titre": "Le hall des cuves, au cœur de la Fabrique",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les trois cuves de verre",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Trois cuves aux étiquettes effacées par l'orage."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tableau des critères",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un tableau noir couvert des critères de l'ingénieure."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La cuve à grains",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une cuve où coulent du sable, de la farine et du sucre."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet de contrôle",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le carnet où Inès note ses idées sur la matière."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "terrasse": {
+   "titre": "La terrasse de la Fabrique, sous le ciel",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le ballon-sonde",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un grand ballon à moitié gonflé, attaché à la table."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La balance et la pompe",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une balance électronique, une pompe et un ballon de basket."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La bassine et la seringue",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une bassine d'eau, un verre retourné et une seringue bouchée."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet de calcul",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le carnet où Bastien calcule la masse de l'air pompé."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "glacerie": {
+   "titre": "La glacerie, au sous-sol de la Fabrique",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les machines sans étiquette",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un congélateur, un chauffe-glace et une bouilloire, sans étiquette."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les thermomètres du mur",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des thermomètres plongés dans la glace qui fond et dans l'eau qui bout."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La casserole sur la plaque",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une casserole où un glaçon va fondre puis bouillir."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le panache blanc",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un nuage blanc au-dessus de la casserole."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "cuisine": {
+   "titre": "La cuisine de la cantine de la Fabrique",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La balance de cuisine",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une balance et un bol fermé rempli de glaçons."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le carnet de Fatou",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet accroché au congélateur par un aimant."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La bouteille gonflée",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une bouteille gonflée, son bouchon soulevé."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le tableau noir de la cuisine",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Deux colonnes : ce qui change, ce qui reste."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "tour": {
+   "titre": "Le château d'eau, au-dessus de la Fabrique",
+   "reference": null,
+   "ambiance": [
+    "vent"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le bassin d'essai",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un bassin d'eau claire au centre de la tour."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les fiches des matériaux",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des fiches posées sur l'établi de Ninon."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La fenêtre sur le lac",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande fenêtre qui montre le lac, la rivière et les nuages."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le message de Ninon",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un message écrit à la main, laissé sur le rebord de la fenêtre."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

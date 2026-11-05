@@ -1,0 +1,152 @@
+{
+ "metadata": {
+  "jeu": "La Fabrique des états",
+  "sujet": "Les états de la matière (solide, liquide, gaz), l'air, les changements d'état de l'eau, la conservation de la masse, les propriétés de la matière et le cycle de l'eau — sciences, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "lien_autres_jeux": "Prolonge « Le Laboratoire de Madame Mélange » (n°05 : masses, dissolution). Se relie à « La Station météo disparue » (n°03 : thermomètre, pluie) et prépare le jeu n°26 « Mission Climat ».",
+  "sources": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026) ; La main à la pâte ; Académie de Grenoble ; Vikidia ; IRM et Météo-France."
+ },
+ "personnages": {
+  "ines": {
+   "nom": "Inès",
+   "role": "Ingénieure de la Fabrique des états"
+  },
+  "bastien": {
+   "nom": "Bastien",
+   "role": "Agent météo, responsable du ballon-sonde"
+  },
+  "paolo": {
+   "nom": "Paolo",
+   "role": "Glacier, maître de la glacerie"
+  },
+  "fatou": {
+   "nom": "Fatou",
+   "role": "Cuisinière de la cantine de la Fabrique"
+  },
+  "ninon": {
+   "nom": "Ninon",
+   "role": "Gardienne du château d'eau"
+  }
+ },
+ "intro_accueil": "Bonjour, et bienvenue à la Fabrique des états ! Je suis Inès, l'ingénieure. Ici, nous fabriquons de la glace pour les glaciers, de l'eau chaude pour la ville et de la vapeur pour notre vieille machine. Cette nuit, un orage a tout arrêté : le grand pupitre est verrouillé par un code de cinq mots. Chaque mot est caché dans un atelier, et chacun parle de la matière. Vous êtes mes ingénieurs stagiaires : retrouvez les cinq mots, notez-les bien, et nous redémarrerons la Fabrique ensemble.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "Le hall des cuves",
+   "decor": "hall",
+   "motCle": "SOLIDE",
+   "lieu": "Le hall des cuves, au cœur de la Fabrique",
+   "description": "Une grande halle aux murs de brique. Trois cuves de verre portent des étiquettes effacées. Des tuyaux courent au plafond, et un grand pupitre aux voyants éteints attend son code.",
+   "sens": [
+    "À voir : trois cuves de verre aux étiquettes effacées",
+    "À entendre : le goutte-à-goutte d'un tuyau",
+    "À sentir : l'odeur du métal froid"
+   ],
+   "dialogue_intro": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Bonjour, et merci d'être venus si vite ! Je suis Inès, l'ingénieure de la Fabrique. Cette nuit, l'orage a effacé les étiquettes de mes réservoirs. Avant de remettre les machines en marche, il faut savoir ce que contient chaque cuve : un solide, un liquide ou un gaz ?"
+   },
+   "dialogue_reussite": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Bravo ! Le premier mot est <b>SOLIDE</b> : un solide garde sa forme, même en poudre. Montez sur la terrasse : Bastien prépare son ballon-sonde."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "La terrasse du ballon-sonde",
+   "decor": "terrasse",
+   "motCle": "AIR",
+   "lieu": "La terrasse de la Fabrique, sous le ciel",
+   "description": "Un toit plat, une girouette, un abri météo blanc. Un grand ballon-sonde attend, à moitié gonflé, attaché à une table où se trouvent une pompe, un ballon de basket et une balance.",
+   "sens": [
+    "À voir : la girouette qui tourne",
+    "À entendre : le vent qui siffle dans les câbles",
+    "À sentir : l'air frais sur le visage"
+   ],
+   "dialogue_intro": {
+    "perso": "bastien",
+    "nom": "Bastien",
+    "texte": "Salut, ingénieurs ! Je suis Bastien, agent météo. Mon ballon-sonde doit partir mesurer le ciel, mais mon chef dit que l'air, ce n'est rien du tout. Moi, je pense que l'air est de la matière. Aidez-moi à le prouver."
+   },
+   "dialogue_reussite": {
+    "perso": "bastien",
+    "nom": "Bastien",
+    "texte": "Le deuxième mot est <b>AIR</b> : on ne le voit pas, mais il occupe de la place et il a une masse. Descendez à la glacerie : Paolo a des ennuis avec ses machines."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "La glacerie de Paolo",
+   "decor": "glacerie",
+   "motCle": "VAPEUR",
+   "lieu": "La glacerie, au sous-sol de la Fabrique",
+   "description": "Une salle carrelée de blanc. D'un côté, un congélateur couvert de givre ; de l'autre, une bouilloire et une casserole sur une plaque. Des thermomètres sont accrochés au mur.",
+   "sens": [
+    "À voir : le givre sur la porte du congélateur",
+    "À entendre : la bouilloire qui chante",
+    "À sentir : le froid qui pique les doigts"
+   ],
+   "dialogue_intro": {
+    "perso": "paolo",
+    "nom": "Paolo",
+    "texte": "Bonjour ! Je suis Paolo, le glacier. Mes machines refroidissent, chauffent, font fondre, font geler... mais l'orage a effacé leurs étiquettes. Sans elles, je risque de faire bouillir mes glaces ! Aidez-moi à reconnaître chaque changement d'état."
+   },
+   "dialogue_reussite": {
+    "perso": "paolo",
+    "nom": "Paolo",
+    "texte": "Le troisième mot est <b>VAPEUR</b> : la vapeur d'eau est de l'eau à l'état de gaz, et elle est invisible. Fatou vous attend à la cuisine."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "La cuisine de Fatou",
+   "decor": "cuisine",
+   "motCle": "MASSE",
+   "lieu": "La cuisine de la cantine de la Fabrique",
+   "description": "Une cuisine claire, avec un plan de travail, des bols, une balance de cuisine et un grand congélateur. Sur la porte du congélateur, un carnet est accroché par un aimant.",
+   "sens": [
+    "À voir : la balance posée près des bols",
+    "À entendre : le ronronnement du congélateur",
+    "À sentir : l'odeur de la soupe qui mijote"
+   ],
+   "dialogue_intro": {
+    "perso": "fatou",
+    "nom": "Fatou",
+    "texte": "Entrez, entrez ! Je suis Fatou, la cuisinière. Ce matin, une bouteille oubliée au congélateur a fait sauter son bouchon. Mon commis dit que l'eau a grossi en gelant, donc qu'elle pèse plus lourd. Je n'en suis pas sûre : pesons, comparons et calculons ensemble."
+   },
+   "dialogue_reussite": {
+    "perso": "fatou",
+    "nom": "Fatou",
+    "texte": "Le quatrième mot est <b>MASSE</b> : pendant un changement d'état, la masse se conserve, même si le volume change. Le dernier mot vous attend en haut du château d'eau, chez Ninon."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "Le château d'eau de Ninon",
+   "decor": "tour",
+   "motCle": "NUAGE",
+   "lieu": "Le château d'eau, au-dessus de la Fabrique",
+   "description": "Une salle ronde en haut d'une tour. Au centre, un bassin d'essai rempli d'eau. Par les fenêtres, on voit le lac, la rivière, les collines et de gros nuages blancs.",
+   "sens": [
+    "À voir : les nuages au-dessus du lac",
+    "À entendre : l'eau qui clapote dans le bassin",
+    "À sentir : l'air humide"
+   ],
+   "dialogue_intro": {
+    "perso": "ninon",
+    "nom": "Ninon",
+    "texte": "Bienvenue tout en haut ! Je suis Ninon, la gardienne du château d'eau. D'ici, je vois tout le voyage de l'eau, du lac jusqu'aux nuages. Mais avant, faisons quelques essais dans mon bassin : chaque matière a ses propriétés."
+   },
+   "dialogue_fin": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Le dernier mot est <b>NUAGE</b> : il est fait de gouttelettes d'eau liquide, pas de vapeur. Vous avez les cinq mots ! Retournez au pupitre et tapez-les dans l'ordre des salles : la Fabrique redémarrera."
+   }
+  }
+ ]
+}
