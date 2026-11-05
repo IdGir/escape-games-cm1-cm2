@@ -39,8 +39,8 @@ const FORMATS = {
   tablette7: { nom: "tablette 7″", width: 600, height: 960, mobile: true },
   smartphone: { nom: "smartphone", width: 390, height: 844, mobile: true }
 };
-const IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"].map(j => "immersifs/" + j);
-const JEUX_SALLES = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere"];
+const IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"].map(j => "immersifs/" + j);
+const JEUX_SALLES = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
 const VALIDER = '[data-valider], [id^="btn-verif"]';
 const INDICE = '#btn-indice, [id^="indice-"]';
 /* Variantes immersives (jouées par défaut) : accueil, énigme ouverte depuis l'objet du décor, coffre, fin d'escale */

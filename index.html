@@ -8,7 +8,7 @@
 <style>
   :root{
     --fond:#f6f4ef; --papier:#fff; --encre:#1f2430; --doux:#5d6472; --ligne:#e2ddd2;
-    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227; --ali:#2b5d6b; --ali-2:#d9a21b; --lum:#1d3557; --lum-2:#f2c230;
+    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227; --ali:#2b5d6b; --ali-2:#d9a21b; --lum:#1d3557; --lum-2:#f2c230; --etm:#1f4e5f; --etm-2:#7fb8e6;
   }
   *{box-sizing:border-box}
   body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
@@ -62,6 +62,8 @@
   .alimentation .jouer{background:var(--ali)}
   .lumiere .bandeau{background:linear-gradient(135deg,var(--lum),#0b1626 60%,var(--lum-2))}
   .lumiere .jouer{background:var(--lum)}
+  .etats-matiere .bandeau{background:linear-gradient(135deg,var(--etm),#0d2129 60%,var(--etm-2))}
+  .etats-matiere .jouer{background:var(--etm)}
   .meteo .bandeau{background:linear-gradient(135deg,var(--met),#0f3350 60%,var(--met-2))}
   .meteo .jouer{background:var(--met)}
   .enseignant{max-width:1100px;margin:0 auto 50px;padding:0 20px}
@@ -349,6 +351,26 @@
       </div>
     </div>
   </article>
+  <article class="jeu etats-matiere">
+    <div class="bandeau">
+      <img class="affiche" src="etats-matiere/assets/images/affiche.jpg" alt="Affiche : La Fabrique des états" loading="lazy" onerror="this.remove()">
+      <div class="icone">🧊</div>
+      <h2>La Fabrique des états</h2>
+      <div class="meta">Sciences · Les états de la matière, l'air, l'eau qui change d'état · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
+    </div>
+    <div class="corps">
+      <p>Au lendemain d'un orage, la Fabrique des états est à l'arrêt. Les ingénieurs stagiaires d'Inès retrouvent les cinq mots du pupitre : solide, air, vapeur, masse et nuage.</p>
+      <a class="jouer" href="immersifs/etats-matiere/">▶ Jouer</a>
+      <div class="liens">
+        <a class="telecharger-affiche" href="etats-matiere/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="etats-matiere/assets/videos/bande-annonce.mp4" data-titre="La Fabrique des états">🎬 Bande-annonce</a>
+        <a class="classique" href="etats-matiere/">🎓 Version classique (CM1 / CM2)</a>
+        <a class="prof" href="immersifs/etats-matiere/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a class="prof" href="etats-matiere/prof.html" hidden>👨‍🏫 Tableau de bord (classique)</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/etats-matiere#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
 </main>
 
 <section class="enseignant" id="annee">
@@ -453,7 +475,7 @@
     prep.addEventListener("click", () => {
       prep.disabled = true; prep.textContent = "⏳ Téléchargement des images…";
       navigator.serviceWorker.ready.then(r => {
-        ["immersifs","declaration","tour-du-monde","mission-geo","constitution","moyen-age-abbaye","station-meteo","melanges","objets-techniques","chateau-fort","versailles","renaissance","alimentation","lumiere"]
+        ["immersifs","declaration","tour-du-monde","mission-geo","constitution","moyen-age-abbaye","station-meteo","melanges","objets-techniques","chateau-fort","versailles","renaissance","alimentation","lumiere","etats-matiere"]
           .forEach(j => r.active.postMessage({ type: "preparer-images", jeu: j }));
       });
     });

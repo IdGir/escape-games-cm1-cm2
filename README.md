@@ -19,6 +19,7 @@ Treize escape games d'histoire, de géographie, d'EMC et de sciences, jouables d
 | 🎨 | **L'Atelier de Léonard à Amboise** — Histoire, François Ier, Léonard de Vinci et la Renaissance | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/renaissance/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/renaissance/) | [renaissance/README.md](renaissance/README.md) | [liste](renaissance/assets/README.md) |
 | 🍲 | **Le Grand Repas du chef** — Sciences, l'alimentation humaine : besoins alimentaires et nutrition | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/alimentation/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/alimentation/) | [alimentation/README.md](alimentation/README.md) | [liste](alimentation/assets/README.md) |
 | 💡 | **Le Phare de l'île Lumière** — Sciences, la lumière : sources, ombres, Soleil et Lune | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/lumiere/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/lumiere/) | [lumiere/README.md](lumiere/README.md) | [liste](lumiere/assets/README.md) |
+| 🧊 | **La Fabrique des états** — Sciences, les états de la matière, l'air, les changements d'état de l'eau | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/etats-matiere/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/etats-matiere/) | [etats-matiere/README.md](etats-matiere/README.md) | [liste](etats-matiere/assets/README.md) |
 
 - 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/ — avec la **frise de l'année** : les 26 jeux de la progression sur les périodes P1 à P5 (Années A et B), en couleur ceux qui sont déjà jouables
 - 📅 **L'année en escape games** (périodes, Années A/B, points du programme couverts) : https://idgir.github.io/escape-games-cm1-cm2/annee.html
@@ -47,7 +48,7 @@ fois pour toutes.
 ### 📲 Sur tablette, sans internet — application installable
 
 Ouvrez une fois l'accueil en ligne dans Chrome ou Edge : quand le bloc **📲 Sur tablette, sans internet**
-indique « ✅ Prêt hors connexion », les 13 jeux fonctionnent **sans réseau et sans serveur**. Le bouton
+indique « ✅ Prêt hors connexion », les 14 jeux fonctionnent **sans réseau et sans serveur**. Le bouton
 **📲 Installer l'application** les place sur l'écran d'accueil de la tablette. Hors connexion, les vidéos sont
 remplacées par les images ou les décors dessinés. Détails et mise à jour : [outils-pwa/README.md](outils-pwa/README.md).
 
@@ -149,6 +150,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | L'Atelier de Léonard à Amboise | `renaissance/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = coffre, carnet et fin ; `&enigme=K` vise une énigme | [salle 4, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/renaissance/?salle=4&niveau=CM2&enigme=1) |
 | Le Grand Repas du chef | `alimentation/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = coffre, Livre des cinq services et fin ; `&enigme=K` vise une énigme | [salle 4, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/alimentation/?salle=4&niveau=CM2&enigme=1) |
 | Le Phare de l'île Lumière | `lumiere/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = tableau de commande, registre du phare et fin ; `&enigme=K` vise une énigme | [salle 5, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/lumiere/?salle=5&niveau=CM2&enigme=3) |
+| La Fabrique des états | `etats-matiere/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = pupitre, registre de la Fabrique et fin ; `&enigme=K` vise une énigme | [salle 4, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/etats-matiere/?salle=4&niveau=CM2&enigme=3) |
 
 ---
 
@@ -182,7 +184,7 @@ imprimée ou en régénérer les visuels : [outils-lecons/README.md](outils-leco
 
 ## 2 ter. Règles de jeu communes (moteur v2, octobre 2026)
 
-Les 13 jeux suivent les mêmes règles, pensées pour que les élèves **réfléchissent et consultent les
+Les 14 jeux suivent les mêmes règles, pensées pour que les élèves **réfléchissent et consultent les
 leçons** plutôt que de cliquer au hasard :
 
 - **Tout juste du premier coup = 10 points**, après une erreur = **3 points** seulement (rappel en
@@ -206,7 +208,7 @@ Vérification : ajouter `&palier=decouverte` à une adresse en `niveau=CM1`.
 
 Scores maximaux : 185 (CM1) / 235 (CM2) pour les jeux à 5 salles (195 / 245 pour l'abbaye, avec le
 fermoir), 95 pour la Déclaration et le Tour du monde ; Mission géographique : 10 points par énigme.
-Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 13 jeux :
+Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 14 jeux :
 [outils-tests/README.md](outils-tests/README.md).
 
 ---
@@ -313,7 +315,7 @@ PROJET ESCAPE GAMES/
 ├── lancer.bat              Serveur local, Windows (double-clic)
 ├── lancer-mac.command      Serveur local, Mac
 ├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
-├── outils-tests/          Tests automatiques des 13 jeux (Node + jsdom) : node outils-tests/tous.js
+├── outils-tests/          Tests automatiques des 14 jeux (Node + jsdom) : node outils-tests/tous.js
 ├── CHARTE-GRAPHIQUE.md    Charte graphique commune : palette, traits, décors, personnages, médias
 ├── commun/                ★ Tronc commun du moteur (médias, sons, voix, énigmes, impressions…) : un seul
 │                           exemplaire pour tous les jeux — voir commun/README.md
@@ -425,12 +427,19 @@ PROJET ESCAPE GAMES/
 │   ├── css/ · js/          moteur commun (commun/js/)
 │   └── tests/              test-jeu.js · test-verifier.js (Node + jsdom) · test_json.py · generer-readme.py
 │
-└── lumiere/                💡 Le Phare de l'île Lumière (sciences, la lumière : sources, matériaux, ombres, Soleil et Lune)
+├── lumiere/                💡 Le Phare de l'île Lumière (sciences, la lumière : sources, matériaux, ombres, Soleil et Lune)
+│   ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
+│   ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
+│   ├── A-VERIFIER.md       Faits vérifiés et points à relire
+│   ├── index.html · prof.html · lecons-imprimables.html
+│   ├── assets/data/        ★ enigmes.json (20 énigmes, schémas dessinés) · lecons.json = 5 leçons rédigées
+│   ├── css/ · js/          moteur commun (commun/js/)
+│   └── tests/              test-jeu.js · test-verifier.js (Node + jsdom) · test_json.py · generer-readme.py
+└── etats-matiere/          🧊 La Fabrique des états (sciences, les états de la matière, l'air, les changements d'état de l'eau)
     ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
     ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
-    ├── A-VERIFIER.md       Faits vérifiés et points à relire
-    ├── index.html · prof.html · lecons-imprimables.html
-    ├── assets/data/        ★ enigmes.json (20 énigmes, schémas dessinés) · lecons.json = 5 leçons rédigées
+    ├── A-VERIFIER.md       Points à contrôler (programme 2026, valeurs, données inventées)
+    ├── assets/data/        ★ enigmes.json (20 énigmes, 11 types) · lecons.json = 5 leçons rédigées
     ├── css/ · js/          moteur commun (commun/js/)
     └── tests/              test-jeu.js · test-verifier.js (Node + jsdom) · test_json.py · generer-readme.py
 ```

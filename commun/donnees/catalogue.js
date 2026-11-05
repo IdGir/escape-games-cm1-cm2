@@ -241,13 +241,14 @@ var CATALOGUE = {
     "P2"
    ],
    "competences": "États et constitution de la matière à l'échelle macroscopique ; propriétés de la matière.",
-   "dossier": null,
+   "dossier": "etats-matiere",
+   "immersif": "immersifs/etats-matiere",
    "icone": "🧊",
    "couleurs": [
-    "#2b5d6b",
-    "#7fb3c8"
+    "#1f4e5f",
+    "#7fb8e6"
    ],
-   "resume": "",
+   "resume": "Au lendemain d'un orage, la Fabrique des états est à l'arrêt : les ingénieurs stagiaires d'Inès retrouvent les cinq mots du pupitre, du solide au nuage, en passant par l'air, la vapeur et la masse.",
    "prompt": "10-etats-matiere.md",
    "programme": [
     "st2026"
