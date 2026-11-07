@@ -54,10 +54,10 @@ def donnees(svg, bloc=None):
             ["Ouvre la fiche " + FICHE + " : cherche « L'air a une masse ».", "On pèse d'abord, avant de changer quelque chose.", "La conclusion vient à la fin."]),
         "lieutenant": ordre(
             "Bastien écrit le protocole pour peser l'air. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui explique pourquoi on ne change qu'une seule chose.",
-            ["Régler la balance électronique au gramme près.", "Poser le ballon de basket peu gonflé et noter sa masse.",
+            ["Allumer la balance électronique et la mettre à zéro.", "Poser le ballon de basket peu gonflé et noter sa masse.",
              "Gonfler le même ballon avec la pompe, sans rien ajouter d'autre.", "Reposer le même ballon sur la même balance et noter la masse.",
              "Comparer : la deuxième masse est plus grande.", "Conclure : l'air ajouté a une masse."],
-            ["Une balance précise se prépare avant la première pesée.", "« Avant » vient avant « après ».", "Pour la justification : cherche le mot « Méthode »."],
+            ["La balance se met à zéro avant la première pesée.", "« Avant » vient avant « après ».", "Pour la justification : cherche le mot « Méthode »."],
             J("Pourquoi Bastien garde-t-il le même ballon et la même balance ?", P_METHODE, [P_PRECIS, P_VERRE, P_MELANGE], pos=0)),
         "second": ordre(
             "Bastien veut aussi montrer que l'air occupe la place, avec un verre et un mouchoir. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui décrit ce qu'on voit à la fin.",

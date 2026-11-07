@@ -84,7 +84,7 @@ def donnees(svg, bloc=None):
         "second": tri(
             "Les pièges de la cuve à grains : range chaque matière selon son état à la température de la pièce, puis choisis la phrase de la fiche qui justifie le classement des poudres.",
             [("solide", "Solide"), ("liquide", "Liquide")],
-            [("du sable", "solide"), ("de la farine", "solide"), ("du sel fin", "solide"), ("du gel douche", "liquide"),
+            [("du sable", "solide"), ("de la farine", "solide"), ("du sel fin", "solide"), ("de l'huile", "liquide"),
              ("du sirop épais", "liquide"), ("du miel", "liquide"), ("une éponge mouillée", "solide")],
             ["Épais ne veut pas dire solide : regarde si la surface finit par devenir plate.", "Une poudre est faite de grains qui gardent leur forme.",
              "Mouillée ou non, l'éponge garde sa forme."],
