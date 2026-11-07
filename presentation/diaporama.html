@@ -12,48 +12,111 @@
   Impression : une diapositive par page (A4 paysage), notes comprises. Les chiffres viennent du catalogue (C1).
 -->
 <style>
-  :root{--fond:#0f1b3d;--papier:#fffdf6;--encre:#1f2430;--doux:#5d6472;--accent:#1d3a8a;--or:#c9a227}
+  :root{--nuit:#0b1536;--nuit2:#16275e;--papier:#fffdf6;--encre:#1f2430;--doux:#5d6472;--accent:#1d3a8a;--accent2:#2f55c4;--or:#c9a227;--or2:#f0d77a;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif}
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
-  body{font:20px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre);overflow:hidden}
-  .scene{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2vh 2vw}
-  .diapo{display:none;width:min(1280px,100%);height:min(720px,100%);background:var(--papier);border-radius:18px;padding:3vh 4vw;overflow:auto;box-shadow:0 10px 40px rgba(0,0,0,.45);flex-direction:column}
-  .diapo.actuelle{display:flex}
-  .diapo h1{font-size:2.3em;margin:.1em 0;color:var(--accent)} .diapo h2{font-size:1.65em;margin:0 0 .4em;color:var(--accent)}
+  body{font:20px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--encre);overflow:hidden;
+    background:radial-gradient(1100px 700px at 12% 8%,#243a7c 0%,transparent 60%),radial-gradient(900px 600px at 95% 100%,#3a2b6b 0%,transparent 55%),var(--nuit)}
+  .scene{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2.2vh 2.2vw 5.2vh}
+
+  /* ---- La diapositive ---- */
+  .diapo{display:none;flex-direction:column;width:min(1280px,100%);height:min(720px,100%);overflow:auto;position:relative;
+    padding:4.2vh 4.5vw 3.6vh 5.6vw;border-radius:22px;
+    background:linear-gradient(180deg,var(--or2),var(--or)) left top/14px 100% no-repeat,radial-gradient(900px 400px at 100% 0,#eef2ff 0%,transparent 70%),var(--papier);
+    box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06)}
+  .diapo.actuelle{display:flex;animation:entree .38s cubic-bezier(.2,.7,.2,1)}
+  @keyframes entree{from{opacity:0;transform:translateY(14px) scale(.992)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.diapo.actuelle{animation:none}}
+
+  .diapo h1{font:700 2.7em/1.08 var(--serif);margin:.15em 0;color:var(--accent);letter-spacing:-.01em}
+  .diapo h2{font:700 1.85em/1.15 var(--serif);margin:0 0 .55em;color:var(--accent);letter-spacing:-.005em}
+  .diapo h2::before{content:var(--n,"");display:block;font:700 .38em/1 system-ui,sans-serif;letter-spacing:.32em;color:var(--or);margin:0 0 .7em}
+  .diapo h2::after{content:"";display:block;width:64px;height:4px;border-radius:2px;margin-top:.45em;background:linear-gradient(90deg,var(--or),var(--or2))}
   .diapo .sous{color:var(--doux);font-size:1.05em;margin:.2em 0 .8em}
-  .diapo ul{margin:.3em 0;padding-left:1.2em} .diapo li{margin:.28em 0}
-  .deux{display:grid;grid-template-columns:1.1fr 1fr;gap:2vw;align-items:start;flex:1;min-height:0}
-  .deux img,.diapo img{max-width:100%;max-height:100%;border-radius:10px;border:1px solid #ddd;box-shadow:0 3px 12px rgba(0,0,0,.18)}
-  .chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:12px 0}
-  .chiffre{background:#fff;border:2px solid var(--or);border-radius:14px;padding:12px;text-align:center}
-  .chiffre b{display:block;font-size:2.4em;color:var(--accent);line-height:1.1}
-  .moteur{display:flex;gap:12px;align-items:stretch;margin:10px 0}
-  .moteur div{flex:1;border-radius:12px;padding:10px 14px;font-size:.92em}
-  .moteur .commun{background:#e5ecff;border:2px solid var(--accent)} .moteur .propre{background:#fff6d8;border:2px dashed var(--or)}
-  .tag{display:inline-block;padding:1px 12px;border-radius:999px;background:#f0eee9;font-size:.7em;font-weight:600;color:var(--doux);vertical-align:middle}
-  .notes{display:none;margin-top:auto;padding:8px 14px;border-left:6px solid var(--or);background:#fff8e1;font-size:.72em;line-height:1.4}
-  body.avec-notes .notes{display:block}
-  .barre{position:fixed;left:0;right:0;bottom:0;display:flex;gap:10px;align-items:center;padding:6px 14px;background:rgba(0,0,0,.55);color:#fff;font-size:.62em;z-index:5}
-  .barre .prog{flex:1;height:5px;background:rgba(255,255,255,.25);border-radius:3px;overflow:hidden}.barre .prog i{display:block;height:100%;background:var(--or);width:0}
-  .barre button{font:inherit;border:0;border-radius:6px;padding:3px 10px;cursor:pointer;background:#fff;color:#1f2430}
-  .barre a{color:#fff}
+  .diapo p{margin:.4em 0}
   a{color:var(--accent)}
-  .liens{display:flex;flex-wrap:wrap;gap:8px 12px;margin:.5em 0}
-  .liens a{padding:3px 14px;border:2px solid var(--accent);border-radius:999px;text-decoration:none;font-size:.85em;background:#fff}
-  @media (max-width:900px){body{font-size:16px}.deux{grid-template-columns:1fr}.chiffres{grid-template-columns:repeat(2,1fr)}.moteur{flex-direction:column}}
+  code{background:#eef1fa;color:var(--accent);padding:0 .35em;border-radius:6px;font-size:.88em}
+
+  /* Listes : losange doré (sans puce quand chaque ligne commence par une icône) */
+  .diapo ul{list-style:none;margin:.35em 0;padding:0}
+  .diapo li{position:relative;margin:.55em 0;padding-left:1.45em}
+  .diapo li::before{content:"";position:absolute;left:.1em;top:.6em;width:.52em;height:.52em;border-radius:3px;background:var(--or);transform:rotate(45deg)}
+  .diapo ul.ico li{padding-left:0}.diapo ul.ico li::before{display:none}
+  .diapo b{color:#142a6b}
+
+  /* Mise en page texte + capture */
+  .deux{display:grid;grid-template-columns:1.08fr 1fr;gap:3vw;align-items:center;flex:1;min-height:0}
+  .deux>div{display:flex;align-items:center;justify-content:center;min-height:0}
+  .diapo img{display:block;max-width:100%;max-height:50vh;border-radius:12px;
+    padding-top:22px;background:radial-gradient(circle at 14px 11px,#ff6058 4.5px,transparent 5.5px),radial-gradient(circle at 31px 11px,#ffbd2e 4.5px,transparent 5.5px),radial-gradient(circle at 48px 11px,#28c940 4.5px,transparent 5.5px),#e6e9f3;
+    box-shadow:0 22px 44px rgba(11,21,54,.30),0 2px 6px rgba(11,21,54,.18);transform:rotate(.6deg)}
+
+  /* Chiffres */
+  .chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:14px 0 10px}
+  .chiffre{background:#fff;border-radius:16px;padding:16px 10px 14px;text-align:center;color:var(--doux);font-size:.88em;line-height:1.3;
+    border-top:5px solid var(--or);box-shadow:0 10px 26px rgba(29,58,138,.13)}
+  .chiffre b{display:block;font:700 2.9em/1.1 var(--serif);margin-bottom:.1em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .chiffre small{display:block;margin-top:.3em;font-size:.8em}
+
+  /* Moteur commun / propre à chaque jeu, et avant-jeu-après */
+  .moteur{display:flex;gap:14px;align-items:stretch;margin:12px 0}
+  .moteur div{flex:1;border-radius:14px;padding:12px 16px;font-size:.92em;border-top:5px solid transparent;box-shadow:0 8px 20px rgba(11,21,54,.08)}
+  .moteur .commun{background:#e7eeff;border-top-color:var(--accent)}
+  .moteur .propre{background:#fff4cf;border-top-color:var(--or)}
+  .moteur .avant{background:#fff1e0;border-top-color:#b45309}
+  .moteur .jeu{background:#e3f6e9;border-top-color:#15803d}
+  .moteur .apres{background:#f0eaff;border-top-color:#6d28d9}
+
+  .tag{display:inline-block;padding:2px 14px;border-radius:999px;background:#eef1fa;border:1px solid #d6dcf0;font:600 .68em/1.6 system-ui,sans-serif;color:var(--accent);vertical-align:middle;letter-spacing:.02em}
+  .liens{display:flex;flex-wrap:wrap;gap:10px 12px;margin:.7em 0 .2em}
+  .liens a{padding:6px 18px;border-radius:999px;text-decoration:none;font-size:.82em;font-weight:600;color:#fff;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 6px 14px rgba(29,58,138,.28);transition:transform .15s,box-shadow .15s}
+  .liens a:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(29,58,138,.34)}
+
+  .notes{display:none;margin-top:auto;padding:9px 16px;border-left:6px solid var(--or);border-radius:0 10px 10px 0;background:#fff8e1;font-size:.72em;line-height:1.4}
+  body.avec-notes .notes{display:block}
+
+  /* ---- Diapositives d'ouverture et de fin ---- */
+  .diapo.titre,.diapo.fin{color:#fff;justify-content:center;
+    background:radial-gradient(700px 420px at 88% 18%,rgba(240,215,122,.20) 0%,transparent 62%),radial-gradient(800px 500px at 0 100%,rgba(47,85,196,.55) 0%,transparent 60%),linear-gradient(135deg,#0b1536 0%,#16318a 100%)}
+  .diapo.titre::before,.diapo.fin::before{content:"";position:absolute;right:-90px;top:-90px;width:420px;height:420px;border-radius:50%;border:2px solid rgba(240,215,122,.35);box-shadow:0 0 0 46px rgba(240,215,122,.07),0 0 0 100px rgba(240,215,122,.04)}
+  .diapo.titre::after,.diapo.fin::after{content:"";position:absolute;left:5.6vw;bottom:0;width:140px;height:6px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,var(--or),var(--or2))}
+  .diapo.titre h1,.diapo.fin h1{color:#fff;font-size:3.2em;max-width:16em;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+  .diapo.titre .sous,.diapo.fin .sous{color:#cdd8ff}
+  .diapo.titre b,.diapo.fin b{color:var(--or2)}
+  .diapo.titre .tag,.diapo.fin .tag{background:rgba(240,215,122,.16);border-color:rgba(240,215,122,.5);color:var(--or2);margin-bottom:.8em}
+  .diapo.titre .notes,.diapo.fin .notes{color:var(--encre)}
+  .diapo.titre .notes b,.diapo.fin .notes b{color:#142a6b}
+  .diapo.fin .liens a{background:#fff;color:var(--accent);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+
+  /* ---- Barre de commande ---- */
+  .barre{position:fixed;left:0;right:0;bottom:0;display:flex;gap:10px;align-items:center;padding:7px 16px;background:rgba(6,12,32,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#dfe6ff;font-size:.62em;z-index:5}
+  .barre .prog{flex:1;height:5px;background:rgba(255,255,255,.18);border-radius:3px;overflow:hidden}
+  .barre .prog i{display:block;height:100%;background:linear-gradient(90deg,var(--or),var(--or2));width:0;transition:width .35s}
+  .barre button{font:inherit;border:0;border-radius:8px;padding:3px 11px;cursor:pointer;background:rgba(255,255,255,.14);color:#fff}
+  .barre button:hover{background:rgba(255,255,255,.28)}
+  .barre a{color:var(--or2)}
+
+  @media (max-width:900px){body{font-size:16px}.deux{grid-template-columns:1fr}.chiffres{grid-template-columns:repeat(2,1fr)}.moteur{flex-direction:column}.diapo.titre h1,.diapo.fin h1{font-size:2.2em}}
   @media print{
     @page{size:A4 landscape;margin:8mm}
     body{overflow:visible;background:#fff;font-size:12pt}.scene{position:static;display:block;padding:0}
-    .diapo{display:flex!important;width:100%;height:auto;min-height:170mm;box-shadow:none;border:1px solid #bbb;border-radius:6px;margin:0 0 4mm;break-after:page;overflow:visible}
-    .notes{display:block!important}.barre{display:none}.liens a{border-color:#999}
+    .diapo{display:flex!important;width:100%;height:auto;min-height:170mm;box-shadow:none;border:1px solid #bbb;border-radius:6px;margin:0 0 4mm;break-after:page;overflow:visible;animation:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .diapo.titre,.diapo.fin{background:#fffdf6 linear-gradient(180deg,var(--or2),var(--or)) left top/14px 100% no-repeat;color:var(--encre)}
+    .diapo.titre::before,.diapo.fin::before,.diapo.titre::after,.diapo.fin::after{display:none}
+    .diapo.titre h1,.diapo.fin h1{color:var(--accent);text-shadow:none}.diapo.titre .sous,.diapo.fin .sous{color:var(--doux)}
+    .diapo.titre b,.diapo.fin b{color:#142a6b}.diapo.fin .liens a{background:var(--accent);color:#fff}
+    .diapo img{transform:none}
+    .notes{display:block!important}.barre{display:none}.liens a{box-shadow:none}
   }
 </style>
 </head>
 <body>
 <div class="scene" id="scene">
 
-<section class="diapo" data-min="0.5" data-titre="Titre">
-  <div style="margin:auto 0">
+<section class="diapo titre" data-min="0.5" data-titre="Titre">
+  <div style="margin:auto 0;position:relative;z-index:1">
     <span class="tag">Animation pédagogique · conseil de cycle</span>
     <h1>🎓 Des escape games pour apprendre en équipe</h1>
     <p class="sous" style="font-size:1.3em">CM1 · CM2 — histoire, géographie, EMC et sciences, sur tablette, ordinateur ou tableau interactif.</p>
@@ -120,7 +183,7 @@
 <section class="diapo" data-min="1.5" data-titre="Ce que vivent les élèves">
   <h2>Ce que vivent les élèves</h2>
   <div class="deux">
-    <ul>
+    <ul class="ico">
       <li>🧑‍🎓 <b>Noa</b>, la mascotte, explique les règles au premier lancement — et se tait pendant les énigmes.</li>
       <li>💡 Des <b>indices</b> proposés quand l'équipe bloque (jamais imposés) ; 🔊 consignes lues à voix haute ; police adaptée à la dyslexie.</li>
       <li>🏅 Des <b>trophées</b> qui se cumulent d'un jeu à l'autre ; une <b>auto-évaluation</b> en fin de partie.</li>
@@ -134,7 +197,7 @@
 <section class="diapo" data-min="2" data-titre="Ce que fait l'enseignant">
   <h2>Ce que fait l'enseignant pendant la séance</h2>
   <div class="deux">
-    <ul>
+    <ul class="ico">
       <li>👨‍🏫 Un <b>tableau de bord</b> en direct : où en est chaque équipe, pause générale, message, 💡 indice.</li>
       <li>🤝 Un <b>coup de pouce</b> sans donner la réponse ; 🃏 le <b>joker</b> d'équipe pour ne pas rester bloqué.</li>
       <li>🔔 « <b>Fin dans 5 min</b> » : un bandeau discret chez toutes les équipes.</li>
@@ -148,7 +211,7 @@
 <section class="diapo" data-min="1.5" data-titre="Après la partie">
   <h2>Après la partie : institutionnaliser</h2>
   <div class="deux">
-    <ul>
+    <ul class="ico">
       <li>🖥️ <b>Correction collective</b> à projeter : les bonnes réponses, salle par salle, révélées au clic.</li>
       <li>📚 <b>Bilan de classe</b> : réussite du premier coup par énigme et par compétence, liste « à retravailler » avec la leçon à imprimer.</li>
       <li>🎓 <b>Passeport de compétences</b> de chaque élève, cumulé sur l'année ; 📄 fiche de période pour les familles.</li>
@@ -161,9 +224,9 @@
 <section class="diapo" data-min="1" data-titre="Une séquence autour du jeu">
   <h2>Une séquence autour du jeu</h2>
   <div class="moteur">
-    <div class="propre" style="border-color:#b45309"><b>🔎 Avant</b> · 15-20 min<br>une manipulation ou une question qui donne envie de chercher</div>
-    <div class="commun" style="border-color:#15803d;background:#e5f5ea"><b>🎮 Le jeu</b> · 45-75 min<br>en une séance ou en plusieurs</div>
-    <div class="propre" style="border-color:#6d28d9;background:#f1ebff"><b>🧩 Après</b> · 15-20 min<br>réinvestissement et trace écrite</div>
+    <div class="avant"><b>🔎 Avant</b> · 15-20 min<br>une manipulation ou une question qui donne envie de chercher</div>
+    <div class="jeu"><b>🎮 Le jeu</b> · 45-75 min<br>en une séance ou en plusieurs</div>
+    <div class="apres"><b>🧩 Après</b> · 15-20 min<br>réinvestissement et trace écrite</div>
   </div>
   <p>Des fiches prêtes à imprimer, déjà rédigées pour deux jeux et reliées à la fiche de compétences.</p>
   <div class="liens"><a href="../sequences/" target="_blank" rel="noopener">📘 Voir les fiches de séquence</a></div>
@@ -172,7 +235,7 @@
 
 <section class="diapo" data-min="1" data-titre="Pour se lancer">
   <h2>Pour se lancer <span class="tag">kit « adopter ce projet »</span></h2>
-  <ul>
+  <ul class="ico">
     <li>🌐 <b>En ligne</b> : un navigateur suffit, rien à installer.</li>
     <li>📲 <b>Tablettes sans internet</b> : « Installer l'application » une fois en ligne, puis tout fonctionne hors connexion.</li>
     <li>📦 <b>Archive</b> par jeu, à décompresser (ordinateurs sans réseau) ; 🏫 <b>mode classe</b> pour le tableau de bord en direct.</li>
@@ -182,11 +245,11 @@
   <div class="notes">⏱ 1 min — Rassurer : on peut commencer par un seul jeu, une seule salle, en ligne. Le kit tient en une page et s'imprime.</div>
 </section>
 
-<section class="diapo" data-min="0.5" data-titre="À vous !">
-  <div style="margin:auto 0;text-align:center">
+<section class="diapo fin" data-min="0.5" data-titre="À vous !">
+  <div style="margin:auto 0;position:relative;z-index:1">
     <h1>À vous de jouer !</h1>
     <p class="sous" style="font-size:1.3em">Par équipes de 3 ou 4 : choisissez un jeu et lancez-vous (temps de manipulation).</p>
-    <div class="liens" style="justify-content:center"><a href="../index.html" target="_blank" rel="noopener">▶ Accueil des jeux</a><a href="deroule.html" target="_blank" rel="noopener">⏱ Déroulé de la séance</a></div>
+    <div class="liens"><a href="../index.html" target="_blank" rel="noopener">▶ Accueil des jeux</a><a href="deroule.html" target="_blank" rel="noopener">⏱ Déroulé de la séance</a></div>
   </div>
   <div class="notes">⏱ 30 s — Passer à la manipulation (voir le déroulé minuté : 15 minutes en équipes). Chaque équipe choisit un jeu et une salle ; l'intervenant passe aider.</div>
 </section>
@@ -200,6 +263,7 @@
 "use strict";
 const diapos = [...document.querySelectorAll(".diapo")];
 let k = 0;
+diapos.forEach((d, i) => d.style.setProperty("--n", '"' + String(i + 1).padStart(2, "0") + ' / ' + String(diapos.length).padStart(2, "0") + '"'));
 const duree = diapos.reduce((t, d) => t + (+d.dataset.min || 0), 0);
 function aller(n){
   k = Math.max(0, Math.min(diapos.length - 1, n));

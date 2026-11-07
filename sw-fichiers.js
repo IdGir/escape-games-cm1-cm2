@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "f7cd250c8b";
+self.VERSION_HORS_LIGNE = "47e1273976";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -149,6 +149,7 @@ self.FICHIERS_CODE = [
 "declaration/prof.html",
 "demo.html",
 "editeur.html",
+"enseignant.html",
 "etats-matiere/assets/data/dialogues.json",
 "etats-matiere/assets/data/enigmes.json",
 "etats-matiere/assets/data/evaluations.json",
@@ -913,6 +914,7 @@ self.IMAGES_JEUX = {
 "immersifs/constitution/assets/images/ui/icone.svg",
 "immersifs/etats-matiere/assets/images/ui/icone.svg",
 "immersifs/lumiere/assets/images/ui/icone.svg",
+"immersifs/melanges/assets/images/decors/2111528005372219392.jpeg",
 "immersifs/melanges/assets/images/decors/atelier.webp",
 "immersifs/melanges/assets/images/decors/balances.webp",
 "immersifs/melanges/assets/images/decors/cuisine.webp",
