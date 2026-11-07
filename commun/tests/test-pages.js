@@ -609,6 +609,310 @@ SECTIONS.N21 = async () => {
   ok(fs.existsSync(path.join(P, "README.md")), "README du dossier");
 };
 
+/* ---- N24 : export du passeport au format LSU ---- */
+SECTIONS.N24 = async () => {
+  console.log("\n== N24 : export du passeport pour le LSU (passeport.html) ==");
+  const fs = require("fs"), path = require("path");
+  const LSU = require(path.join(RACINE, "commun/donnees/lsu.js"));
+  const EXP = require(path.join(RACINE, "commun/js/export-lsu.js"));
+  // 1. la table couvre toutes les leçons du passeport, sans intitulé inconnu ni leçon fantôme
+  const jeux = fs.readdirSync(RACINE).filter(d => fs.existsSync(path.join(RACINE, d, "assets/data/lecons-a4.json")));
+  let manquantes = [], fantomes = [], inconnus = [], total = 0;
+  for (const j of jeux) {
+    const lecons = Object.keys(JSON.parse(fs.readFileSync(path.join(RACINE, j, "assets/data/lecons-a4.json"), "utf8")).lecons || {});
+    const table = LSU.correspondance[j] || {};
+    total += lecons.length;
+    lecons.forEach(l => { if (!table[l]) manquantes.push(j + "/" + l); else if (!LSU.items[table[l][0]] || !["=", "~"].includes(table[l][1])) inconnus.push(j + "/" + l); });
+    Object.keys(table).forEach(l => { if (!lecons.includes(l)) fantomes.push(j + "/" + l); });
+  }
+  ok(jeux.length >= 14 && manquantes.length === 0, `chaque leçon de ${jeux.length} jeux (${total}) a son intitulé LSU ${manquantes.join(", ")}`);
+  ok(fantomes.length === 0 && inconnus.length === 0, `aucune ligne orpheline ni intitulé inconnu ${fantomes.concat(inconnus).join(", ")}`);
+  ok(Object.keys(LSU.correspondance).every(j => jeux.includes(j)), "table : seulement des jeux publiés");
+  ok(Object.values(LSU.items).every(i => i.discipline && i.type && i.libelle), "chaque intitulé LSU : discipline, type, libellé");
+  // 2. niveaux suggérés (règle simple, « dépassés » jamais proposé)
+  ok(EXP.niveau({ A: 3, E: 0, N: 0 }, LSU) === "Objectifs atteints" && EXP.niveau({ A: 1, E: 1, N: 0 }, LSU) === "Objectifs partiellement atteints"
+    && EXP.niveau({ A: 2, E: 0, N: 1 }, LSU) === "Objectifs partiellement atteints" && EXP.niveau({ A: 0, E: 0, N: 2 }, LSU) === "Objectifs non atteints"
+    && EXP.niveau({ A: 0, E: 1, N: 0 }, LSU) === "Objectifs partiellement atteints" && EXP.niveau({ A: 0, E: 0, N: 0 }, LSU) === "", "règle des niveaux suggérés");
+  ok(!Object.values(LSU.niveaux).some(n => /dépass/i.test(n)), "« dépassés » jamais proposé");
+  // 3. dans la page : un élève à l'historique varié, un élève sans note
+  const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200 });
+  const d = w.document, P = w.PASSEPORT;
+  const cle = (jeu, lecon) => { const k = P.COMPETENCES.find(c => c.jeu === jeu && c.lecon === lecon); if (!k) throw new Error("compétence introuvable " + jeu + "/" + lecon); return k.cle; };
+  ok(P.COMPETENCES.every(c => c.lecon), "passeport : la clé de leçon est conservée sur chaque compétence");
+  const note = (v, date) => ({ v, date, t: date + "T10:00:00Z" });
+  const lea = {};
+  [["moyen-age-abbaye", "clovis", "A", "2026-09-15"], ["moyen-age-abbaye", "charlemagne", "A", "2026-09-15"],      // Et avant la France ? : 2/2 acquises
+   ["moyen-age-abbaye", "scriptorium", "E", "2026-09-22"], ["chateau-fort", "vie-des-paysans", "N", "2026-10-06"],   // Le temps des rois : en cours + non acquise (approchée), partielle
+   ["etats-matiere", "etats", "A", "2026-10-13"], ["etats-matiere", "air", "A", "2026-10-13"], ["etats-matiere", "changements", "A", "2026-10-13"],
+   ["etats-matiere", "conservation", "A", "2026-10-13"], ["etats-matiere", "proprietes", "A", "2026-10-13"],     // matière : 5/5 acquises (exacte)
+   ["melanges", "masses", "N", "2026-11-03"],                                                                        // + 1 non acquise approchée → partiellement atteints
+   ["lumiere", "sources", "N", "2026-11-03"],                                                                        // signal : 1 seule note, non acquise, partielle
+   ["constitution", "textes", "A", "2026-11-04"], ["declaration", "bastille", "E", "2026-11-04"], ["tour-du-monde", "carte", "A", "2026-11-04"],
+   ["mission-geo", "l11", "E", "2026-11-05"]
+  ].forEach(([j, l, v, dt]) => { lea[cle(j, l)] = note(v, dt); });
+  w.localStorage.setItem("escape_passeport", JSON.stringify({ eleves: ["Léa B.", "Tom R."], notes: { "Léa B.": lea } }));
+  P.D.eleves.splice(0, P.D.eleves.length, "Léa B.", "Tom R."); P.D.notes["Léa B."] = lea; P.rendre();
+  ok(d.getElementById("panneau-lsu").hidden && d.getElementById("btn-lsu") && /Exporter pour le LSU/.test(d.getElementById("btn-lsu").textContent), "bouton « 🧾 Exporter pour le LSU » (panneau fermé au départ)");
+  d.getElementById("btn-lsu").click();
+  const panneau = d.getElementById("panneau-lsu");
+  ok(!panneau.hidden && /aide à la saisie, pas une validation/i.test(d.getElementById("lsu-avertissement").textContent) && /garde la main/.test(d.getElementById("lsu-avertissement").textContent), "avertissement : une aide, pas une validation, l'enseignant garde la main");
+  const rows = [...d.querySelectorAll("#lsu-apercu table tr")].slice(1).map(tr => [...tr.children].map(td => td.textContent.trim()));
+  const ligne = intitule => rows.find(r => r[1].startsWith(intitule));
+  ok(rows.length === 8, `8 intitulés LSU pour Léa (${rows.length}) : ` + rows.map(r => r[1].slice(0, 30)).join(" / "));
+  ok(ligne("Et avant la France ?")[2] === "Objectifs atteints" && /2 acquises — 2 notées sur 2/.test(ligne("Et avant la France ?")[3]) && !/partielle/.test(ligne("Et avant la France ?")[3]), "« Et avant la France ? » : atteints, évaluation complète");
+  const rois = ligne("Le temps des rois");
+  ok(rois[2] === "Objectifs partiellement atteints" && /1 en cours, 1 non acquise — 2 notées sur 18/.test(rois[3]) && /évaluation partielle/.test(rois[3]) && /≈/.test(rois[1]), "« Le temps des rois » : partiel, correspondance approchée (≈) et évaluation partielle signalées : " + rois.join(" | "));
+  const matiere = ligne("Matière, mouvement, énergie, information : décrire");
+  ok(matiere[2] === "Objectifs partiellement atteints" && /5 acquises, 1 non acquise — 6 notées sur 10/.test(matiere[3]), "matière : 5 acquises + 1 non acquise (mélanges) regroupées : " + matiere.join(" | "));
+  ok(ligne("Matière, mouvement, énergie, information : identifier un signal")[2] === "Objectifs non atteints", "signal : non atteints");
+  ok(ligne("Les principes et les valeurs de la République")[2] === "Objectifs atteints" && ligne("Appréhender la notion d'échelle")[2] === "Objectifs atteints" && ligne("Consommer en France")[2] === "Objectifs partiellement atteints", "EMC, compétence d'échelle et « Consommer en France » : une ligne chacun");
+  ok(rows.every(r => r[0]) && rows[0][0] === "Histoire et géographie", "classé par discipline (histoire-géographie d'abord)");
+  const L = w.EXPORT_LSU.construire({ eleves: ["Léa B."], notes: { "Léa B.": lea }, competences: P.COMPETENCES, donnees: w.LSU, catalogue: w.CATALOGUE });
+  ok(L.lignes.length === 8 && L.partielles >= 5 && L.approchees >= 3, `signalements : ${L.partielles} évaluations partielles, ${L.approchees} correspondances approchées`);
+  // texte à copier-coller et CSV
+  const texte = d.getElementById("lsu-texte").value;
+  ok(/^AIDE À LA SAISIE LSU/.test(texte) && /LÉA B\./.test(texte) && /Histoire et géographie/.test(texte) && /Le temps des rois → Objectifs partiellement atteints/.test(texte) && /\[correspondance approchée\]/.test(texte) && !/TOM R/.test(texte), "texte à copier-coller : avertissement, élève, discipline, niveau, signalements");
+  d.getElementById("btn-lsu-csv").click();
+  const csv = w.__dernierExport.contenu, lignes = csv.replace(/^\uFEFF/, "").split("\r\n");
+  ok(/^passeport-LSU-\d{4}-\d{2}-\d{2}\.csv$/.test(w.__dernierExport.nom) && csv.startsWith("\uFEFF") && lignes.length === 9, `CSV : en-tête + 8 lignes, BOM Excel, nom daté (${lignes.length} lignes)`);
+  ok(lignes[0] === "eleve;discipline_LSU;type;intitule_LSU;niveau_suggere;detail;evaluation_complete;correspondance;derniere_date;jeux;programme_de_reference", "CSV : colonnes");
+  ok(lignes.some(l => /^Léa B\.;Histoire et géographie;Élément de programme;Et avant la France \?;Objectifs atteints;.*;complète;exacte;2026-09-15;Le Manuscrit de l'abbaye;Arrêté du 22 avril 2026/.test(l)), "CSV : une ligne complète lue (programme de référence du bandeau BO, C2)");
+  ok(lignes.every(l => l.split(";").length >= 11), "CSV : 11 colonnes partout (séparateurs protégés)");
+  // filtre « depuis » : seules les notes récentes (bilan de la période)
+  const dep = d.getElementById("lsu-depuis"); dep.value = "2026-11-01"; dep.dispatchEvent(new w.Event("change"));
+  const rows2 = [...d.querySelectorAll("#lsu-apercu table tr")].slice(1).map(tr => tr.children[1].textContent);
+  ok(rows2.length === 6 && !rows2.some(r => /Et avant la France/.test(r)), `depuis le 1er novembre : ${rows2.length} intitulés (les notes de septembre-octobre sont écartées)`);
+  dep.value = "2026-12-01"; dep.dispatchEvent(new w.Event("change"));
+  ok(/rien à reporter/.test(d.getElementById("lsu-apercu").textContent) && d.getElementById("lsu-texte").value.includes("aucune compétence notée"), "aucune note sur la période : message clair, rien à reporter");
+  dep.value = ""; dep.dispatchEvent(new w.Event("change"));
+  // portée : un élève sans note, puis toute la classe
+  const sel = d.getElementById("choix-eleve"); sel.value = "Tom R."; sel.dispatchEvent(new w.Event("change"));
+  ok(/rien à reporter/.test(d.getElementById("lsu-apercu").textContent), "élève sans note : rien à reporter");
+  const v = d.getElementById("choix-vue"); v.value = "classe"; v.dispatchEvent(new w.Event("change"));
+  ok(/Toute la classe : 2 élève\(s\)/.test(d.getElementById("lsu-portee").textContent) && d.querySelectorAll("#lsu-apercu table tr").length === 9, "vue de la classe : l'export concerne toute la classe (colonne Élève)");
+  // 4. leçon inconnue de la table (nouveau jeu) : retombe sur la discipline du bandeau BO (C2), sans rien inventer
+  const inconnue = EXP.construire({ eleves: ["Zoé"], notes: { Zoé: { "chateau-fort|1": note("A", "2026-11-01"), "jeu-futur|1": note("E", "2026-11-01") } },
+    competences: [{ cle: "chateau-fort|1", jeu: "chateau-fort", lecon: "leçon-inconnue", titre: "Le Secret du donjon", matiere: "Histoire", texte: "x" },
+                  { cle: "jeu-futur|1", jeu: "jeu-futur", lecon: "a", titre: "Futur", matiere: "?", texte: "y" }],
+    donnees: LSU, catalogue: w.CATALOGUE });
+  ok(inconnue.lignes.length === 2 && inconnue.lignes[0].discipline === "Histoire et géographie" && inconnue.lignes[0].intitule === "(à rattacher dans votre LSU)" && inconnue.lignes[0].approchee, "leçon absente de la table : discipline du bandeau BO (C2), « à rattacher dans votre LSU »");
+  ok(inconnue.lignes[1].discipline === "(discipline à préciser)", "jeu inconnu : discipline à préciser, rien d'inventé");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
+/* ---- N30 : fiche synthèse pour les familles ---- */
+SECTIONS.N30 = async () => {
+  console.log("\n== N30 : fiche synthèse pour les familles (passeport.html) ==");
+  const fs = require("fs"), path = require("path");
+  const FAM = require(path.join(RACINE, "commun/donnees/familles.js"));
+  const FF = require(path.join(RACINE, "commun/js/fiche-famille.js"));
+  // 1. toutes les leçons du passeport ont leur formulation, sans jargon
+  const jeux = fs.readdirSync(RACINE).filter(d => fs.existsSync(path.join(RACINE, d, "assets/data/lecons-a4.json")));
+  const manque = [], fantomes = [], jargon = [], longs = [];
+  const JARGON = /comp[ée]tence|socle|cycle\b(?! de l'eau)|programme|acquis|évalu|\bBO\b|élément|objectif|séquence|\bCM[12]\b|savoir-faire|\bitem|référentiel|\bLSU\b|domaine/i;
+  for (const j of jeux) {
+    const lecons = Object.keys(JSON.parse(fs.readFileSync(path.join(RACINE, j, "assets/data/lecons-a4.json"), "utf8")).lecons || {});
+    const F = FAM.jeux[j];
+    if (!F) { manque.push(j); continue; }
+    lecons.forEach(l => { if (!F.lecons[l]) manque.push(j + "/" + l); });
+    Object.keys(F.lecons).forEach(l => { if (!lecons.includes(l)) fantomes.push(j + "/" + l); });
+    [[j + "/deroule", F.deroule]].concat(Object.entries(F.lecons).map(([l, t]) => [j + "/" + l, t])).forEach(([k, t]) => {
+      if (JARGON.test(t) || /\b(?![IVXL]+\b)[A-Z]{3,}\b/.test(t)) jargon.push(k);   // sigles (les chiffres romains des rois sont permis)
+      if (t.length > (k.endsWith("/deroule") ? 230 : 120)) longs.push(k + " (" + t.length + ")");
+    });
+  }
+  ok(manque.length === 0 && fantomes.length === 0, `une formulation pour chacune des leçons de ${jeux.length} jeux ${manque.concat(fantomes).join(", ")}`);
+  ok(jargon.length === 0, "aucun jargon de programme (compétence, socle, cycle, acquis…) : " + jargon.join(", "));
+  ok(longs.length === 0, "phrases courtes (lecture rapide par un parent) : " + longs.join(", "));
+  ok(Object.values(FAM.jeux).every(j => /^[A-ZÀÉ]/.test(j.deroule) && /\.$/.test(j.deroule)), "chaque phrase de déroulé est une phrase");
+  ok(!Object.values(FAM.niveaux).some(n => /non acquis|insuffisant|échec|faible/i.test(n)), "étiquettes bienveillantes : " + Object.values(FAM.niveaux).join(" / "));
+  // 2. dans la page
+  const hist = JSON.stringify([
+    { type: "escape-game-compte-rendu", jeu: "chateau-fort", eleve: "Les Lynx", mode: "equipe", termine: true, date: "2026-11-05T10:00", score: 150, scoreMax: 185,
+      detail: [{ id: "1-1", l: "construire-un-chateau", ok: 1, pc: 1 }, { id: "2-1", l: "les-defenses", ok: 1, pc: 0 }, { id: "3-1", l: "vie-du-seigneur", ok: 0 }, { id: "4-1", l: "vie-des-paysans", ok: 1, pc: 1 }] },
+    { type: "escape-game-compte-rendu", jeu: "chateau-fort", eleve: "Mia (solo)", mode: "solo", termine: true, date: "2026-11-05T11:00", detail: [{ id: "1-1", l: "les-defenses", ok: 1 }] }
+  ]);
+  const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200, stockage: { escape_resultats: hist } });
+  const d = w.document, P = w.PASSEPORT;
+  const cle = (jeu, lecon) => P.COMPETENCES.find(c => c.jeu === jeu && c.lecon === lecon).cle;
+  const note = (v, date) => ({ v, date, t: date + "T10:00:00Z" });
+  P.D.eleves.splice(0, P.D.eleves.length, "Léa B.", "Tom R.", "Inès M.");
+  P.D.notes["Léa B."] = { [cle("chateau-fort", "vie-des-paysans")]: note("N", "2026-11-05"), [cle("chateau-fort", "construire-un-chateau")]: note("A", "2026-11-05"),
+    [cle("chateau-fort", "les-defenses")]: note("E", "2026-11-05"), [cle("chateau-fort", "vie-du-seigneur")]: note("A", "2026-11-05"), [cle("melanges", "masses")]: note("A", "2026-10-01") };
+  P.D.notes["Tom R."] = { [cle("chateau-fort", "vie-des-paysans")]: note("N", "2026-11-05") };
+  P.rendre();
+  ok(d.getElementById("panneau-famille").hidden && /Fiche pour les familles/.test(d.getElementById("btn-famille").textContent), "bouton « 👪 Fiche pour les familles » (panneau fermé au départ)");
+  d.getElementById("btn-famille").click();
+  const sel = id => d.getElementById(id), apercu = () => sel("fam-apercu").textContent, fiches = () => d.querySelectorAll("#fam-apercu .ffam");
+  ok(sel("fam-jeu").value === "chateau-fort" && sel("fam-pour").value === "eleve", "jeu proposé : le plus récemment travaillé par l'élève (" + sel("fam-jeu").value + ")");
+  ok(fiches().length === 1 && /Le Secret du donjon/.test(apercu()) && /Léa B\./.test(apercu()), "une fiche : nom du jeu et de l'élève");
+  const puces = [...d.querySelectorAll("#fam-apercu li")].map(li => li.textContent.trim());
+  ok(puces.length === 3 && /^Expliquer comment et pourquoi on construisait un château fort.*bien en place/.test(puces[0]) && /^Raconter la vie du seigneur.*bien en place/.test(puces[1]) && /^Décrire comment un château fort protégeait.*en progrès/.test(puces[2]),
+    "3 points au plus, les mieux maîtrisés d'abord : " + puces.join(" | "));
+  ok(!/à consolider|non acquis|%|\d\s*\/\s*\d/i.test(apercu()), "la leçon non acquise n'est pas étalée, aucune note chiffrée");
+  ok(/Au Moyen Âge, en équipe, les élèves ont parcouru un château/.test(apercu()) && /Pas de note chiffrée/.test(apercu()), "une phrase sur le déroulé du jeu et la mention « pas de note chiffrée »");
+  ok(!/compétence|socle|programme|cycle|acquis/i.test(apercu()), "aucun jargon dans la fiche affichée");
+  // un élève avec une seule leçon à consolider : présentée avec bienveillance
+  sel("choix-eleve").value = "Tom R."; sel("choix-eleve").dispatchEvent(new w.Event("change"));
+  ok(fiches().length === 1 && /Raconter la vie de tous les jours des paysans.*à consolider/.test(apercu()) && /Tom R\./.test(apercu()), "élève Tom : une seule leçon, « à consolider »");
+  // élève sans aucune note : rien d'affirmé sur lui, seulement ce que le jeu fait travailler
+  sel("choix-eleve").value = "Inès M."; sel("choix-eleve").dispatchEvent(new w.Event("change"));
+  ok(/Pendant ce jeu, la classe a travaillé à/.test(apercu()) && d.querySelectorAll("#fam-apercu li").length === 3 && d.querySelectorAll("#fam-apercu .et").length === 0, "sans note : « la classe a travaillé à… », 3 premières leçons, aucune étiquette");
+  // une équipe : leçons de sa dernière partie
+  const optEq = [...sel("fam-pour").options].map(o => o.value);
+  ok(optEq.includes("equipe:Les Lynx") && !optEq.some(v => /Mia/.test(v)), "équipes proposées : celles du jeu (le mode solo n'en est pas une) : " + optEq.join(", "));
+  sel("fam-pour").value = "equipe:Les Lynx"; sel("fam-pour").dispatchEvent(new w.Event("change"));
+  const pe = [...d.querySelectorAll("#fam-apercu li")].map(li => li.textContent.trim());
+  ok(/L'équipe « Les Lynx »/.test(apercu()) && /Ce que l'équipe a travaillé/.test(apercu()) && pe.length === 3 && pe.every(t => /bien en place/.test(t)) && !/vie du seigneur/i.test(apercu()), "fiche d'équipe : leçons réussies d'abord, la leçon non réussie reste dans l'ombre : " + pe.join(" | "));
+  ok(/5 novembre 2026/.test(apercu()), "date de la partie de l'équipe");
+  // toute la classe, mot de l'enseignant (échappé), impression et texte à copier
+  sel("fam-pour").value = "classe"; sel("fam-pour").dispatchEvent(new w.Event("change"));
+  sel("fam-mot").value = "Bravo <b>l'équipe</b> !"; sel("fam-mot").dispatchEvent(new w.Event("input"));
+  ok(fiches().length === 3 && d.querySelectorAll("#fam-apercu .mot").length === 3 && !d.querySelector("#fam-apercu .mot b b") && /<b>l'équipe<\/b>/.test(apercu()), "classe : 3 fiches, mot de l'enseignant sur chacune et affiché tel quel (non interprété)");
+  const texte = sel("fam-texte").value;
+  ok(texte.split("————————————————").length === 3 && /^Un escape game en classe : « Le Secret du donjon »/.test(texte) && /Mot de l'enseignant : Bravo/.test(texte) && /• Expliquer comment et pourquoi on construisait un château fort \(bien en place\)/.test(texte), "texte à copier-coller : une fiche par élève, séparées, avec puces et mot");
+  sel("btn-fam-imprimer").click();
+  ok(w.__imprime === 1 && d.querySelectorAll("#impression .ffam").length === 3, "impression : 3 fiches envoyées à l'impression");
+  ok(/\.ffam\{[^}]*height:128mm/.test(fs.readFileSync(path.join(RACINE, "passeport.html"), "utf8")), "mise en page : deux fiches par feuille A4 (demi-page)");
+  // autre jeu au choix
+  sel("fam-jeu").value = "melanges"; sel("fam-jeu").dispatchEvent(new w.Event("change"));
+  ok(/Laboratoire de Madame Mélange/.test(apercu()) && /Comparer et mesurer des masses/.test(apercu()), "autre jeu choisi : sa fiche");
+  // 3. module seul : jeu sans formulation = erreur claire, jeux proposés = ceux qui en ont
+  let err = ""; try { FF.construire({ jeu: "jeu-futur", donnees: FAM, competences: [], sujet: { type: "eleve", nom: "Z" } }); } catch (e) { err = e.message; }
+  ok(/Jeu sans formulation/.test(err), "jeu sans formulation : erreur explicite");
+  ok(FF.jeuxDe([{ jeu: "melanges" }, { jeu: "jeu-futur" }], FAM).join() === "melanges", "jeux proposés : seulement ceux qui ont des formulations");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
+/* ---- N31 : rapport de séance PDF ---- */
+SECTIONS.N31 = async () => {
+  console.log("\n== N31 : rapport de séance en PDF (resultats.html) ==");
+  const fs = require("fs"), os = require("os"), path = require("path"), cp = require("child_process");
+  const RS = require(path.join(RACINE, "commun/js/rapport-seance.js"));
+  const dec = new TextDecoder("windows-1252");
+  /** Lecture « à la main » d'un PDF fabriqué : structure, une page, textes décodés. */
+  const lire = octets => {
+    const s = Buffer.from(octets).toString("latin1");
+    const nObj = (s.match(/\d+ 0 obj/g) || []).length;
+    const xref = +(s.match(/startxref\n(\d+)\n%%EOF/) || [])[1];
+    const offs = [...s.slice(xref).matchAll(/(\d{10}) 00000 n /g)].map(m => +m[1]);
+    const offsOk = offs.length === nObj && offs.every((o, i) => s.slice(o).startsWith(`${i + 1} 0 obj`));
+    const flux = (s.match(/stream\n([\s\S]*?)\nendstream/) || [])[1] || "";
+    const longueur = +(s.match(/\/Length (\d+)/) || [])[1];
+    const textes = [...flux.matchAll(/\(((?:\\.|[^\\)])*)\) Tj/g)].map(m => dec.decode(Buffer.from(m[1].replace(/\\([\\()])/g, "$1"), "latin1")));
+    return { s, entete: s.startsWith("%PDF-1.4"), fin: s.trimEnd().endsWith("%%EOF"), offsOk, pages: (s.match(/\/Type \/Page /g) || []).length, count: (s.match(/\/Count (\d+)/) || [])[1],
+      longueurOk: longueur === flux.length, textes, tout: textes.join("\n") };
+  };
+  // 1. outils : encodage, mesure, coupe
+  ok(RS.encode("Séance « œuvre » — l’été").length === "Séance « œuvre » — l’été".length && RS.encode("🎲 ok ✓") === "ok", "encodage Windows-1252 : accents et guillemets gardés, emojis retirés");
+  ok(RS.echappe("a(b)c\\d") === "a\\(b\\)c\\\\d", "parenthèses et barre oblique protégées dans le PDF");
+  const l1 = RS.coupe("Décrire les fonctions d'un château fort : lieu de protection (sa construction) et de puissance pour le seigneur", 10, 150);
+  ok(l1.length >= 3 && l1.every(x => RS.largeur(x, 10) <= 150.01), "retour à la ligne : aucune ligne plus large que la zone (" + l1.length + " lignes)");
+  ok(RS.largeur(RS.tronque("Un nom d'équipe vraiment beaucoup trop long pour sa colonne", 10, 100), 10) <= 100.01, "nom trop long : abrégé");
+  // 2. séances : regroupement
+  const rec = (o) => Object.assign({ type: "escape-game-compte-rendu", version: 1, jeu: "chateau-fort", titre: "Le Secret du donjon", mode: "equipe", niveau: "CM2", palier: "", date: "2026-11-05T09:40", termine: true,
+    dureeMin: 30, score: 150, scoreMax: 185, enigmes: 5, total: 5, premierCoup: 3, erreurs: 2, indices: 1 }, o);
+  const det = (l, pc, ok1 = 1) => ({ id: "1-1", s: 1, l, ok: ok1, pc });
+  const J = ["construire-un-chateau", "les-defenses", "vie-du-seigneur", "vie-des-paysans", "seigneur-et-paysans"];
+  const parties = [
+    rec({ eleve: "Les Lynx", dureeMin: 38, detail: J.map((l, i) => det(l, i % 2)) }),
+    rec({ eleve: "Les Hiboux", niveau: "CM1", dureeMin: 31, score: 120, detail: J.map(l => det(l, 1)) }),
+    rec({ eleve: "Les Renards", termine: false, enigmes: 2, dureeMin: 14, score: 40, detail: J.slice(0, 2).map(l => det(l, 0)) }),
+    rec({ eleve: "Les Écureuils", termine: false, enigmes: 0, dureeMin: 0, score: 0, scoreMax: null }),
+    rec({ eleve: "Les Renards", termine: false, enigmes: 1, dureeMin: 5, date: "2026-11-05T08:50" }),          // ancienne partie interrompue de la même équipe
+    rec({ eleve: "Mia", mode: "solo" }),                                                                         // devoirs à la maison : pas une séance
+    rec({ eleve: "Les Lynx", date: "2026-11-04T09:40" }),                                                        // un autre jour
+    rec({ eleve: "Les Lynx", jeu: "melanges", titre: "Le Laboratoire de Madame Mélange" })                      // un autre jeu
+  ];
+  const S = RS.seances(parties);
+  ok(S.length === 3 && S[0].jour === "2026-11-05" && S.every(x => x.parties.every(r => r.mode !== "solo")), "séances : un jeu + un jour, jamais le mode individuel (" + S.map(x => x.cle).join(", ") + ")");
+  ok(RS.parEquipe(S.find(x => x.cle === "chateau-fort|2026-11-05").parties).length === 4, "une équipe qui a rejoué n'est comptée qu'une fois (4 équipes)");
+  // 3. dans la page : séance incomplète (2 équipes sur 4 interrompues)
+  const { w, erreurs } = await charger(RACINE, "", { page: "resultats.html", attente: 800, stockage: { escape_resultats: JSON.stringify(parties) } });
+  const d = w.document;
+  d.getElementById("btn-appareil").click();
+  ok(/Exporter le rapport de séance \(PDF\)/.test(d.getElementById("exp-rapport").textContent), "bouton « Exporter le rapport de séance (PDF) »");
+  const opts = [...d.querySelectorAll("#rap-seance option")].map(o => o.textContent);
+  ok(opts.length === 3 && /05\/11\/2026 — Le Secret du donjon — 4 équipes \(2 interrompues\)/.test(opts[0]), "liste des séances, la plus récente d'abord : " + opts[0]);
+  d.getElementById("rap-classe").value = "CM1-CM2 Raoul Follereau (Mme B.)"; d.getElementById("rap-classe").dispatchEvent(new w.Event("input"));
+  ok(w.localStorage.getItem("escape_classe") === "CM1-CM2 Raoul Follereau (Mme B.)", "nom de classe retenu sur l'appareil");
+  d.getElementById("exp-rapport").click(); await dodo(900);
+  const E = w.__dernierExport;
+  ok(E && /^rapport-seance-2026-11-05-le-secret-du-donjon\.pdf$/.test(E.nom) && E.contenu instanceof w.Uint8Array || (E && E.contenu && E.contenu.length > 1000), "fichier « " + (E && E.nom) + " »");
+  const P = lire(E.contenu);
+  ok(P.entete && P.fin && P.offsOk && P.longueurOk, "PDF bien formé : en-tête, table des références exacte, longueur du flux, %%EOF");
+  ok(P.pages === 1 && P.count === "1", "une seule page");
+  for (const att of ["Rapport de séance", "CM1-CM2 Raoul Follereau (Mme B.)", "jeudi 5 novembre 2026", "Le Secret du donjon (Histoire)", "38 min (équipe la plus longue), 28 min en moyenne", "4 dont 2 interrompues",
+    "Les Lynx", "Les Hiboux", "Les Renards", "Les Écureuils", "interrompue", "terminée", "Compétences travaillées", "% du 1er coup", "Arrêté du 22 avril 2026"])
+    ok(P.tout.includes(att), "le rapport contient « " + att + " »");
+  ok(/Séance incomplète : 2 équipes sur 4 n'ont pas terminé/.test(P.tout), "bandeau « séance incomplète » (2 équipes sur 4)");
+  ok(!/undefined|NaN|null|\[object/.test(P.tout), "aucune valeur « undefined », « NaN » ou « null » dans le rapport");
+  ok(!/Mia/.test(P.tout) && !/melanges|Laboratoire/.test(P.tout), "ni le mode individuel ni un autre jeu");
+  ok(w.__dernierRapport.bas >= RS.BAS, "le contenu reste au-dessus de la marge basse (" + w.__dernierRapport.bas.toFixed(0) + " ≥ " + RS.BAS + ")");
+  // lecteur PDF réel, quand l'outil est présent (poppler) : vraie lecture du fichier
+  let lecteur = false; try { cp.execSync("pdfinfo -v", { stdio: "ignore" }); lecteur = true; } catch (e) {}
+  if (lecteur) {
+    const f = path.join(os.tmpdir(), "rapport-test-n31.pdf"); fs.writeFileSync(f, Buffer.from(E.contenu));
+    const info = cp.execSync(`pdfinfo "${f}"`).toString(), txt = cp.execSync(`pdftotext -layout "${f}" -`).toString();
+    ok(/Pages:\s+1\b/.test(info) && /A4/.test(info) && /Les Écureuils/.test(txt) && /Séance incomplète/.test(txt), "lecteur PDF (pdfinfo/pdftotext) : 1 page A4, textes lisibles");
+    fs.unlinkSync(f);
+  } else console.log("  (pdfinfo absent : contrôle par lecteur PDF sauté, la structure du fichier est vérifiée ci-dessus)");
+  // 4. séance interrompue sans aucun détail ni durée (anciennes parties, texte collé…)
+  const maigre = rec({ eleve: "", termine: false, enigmes: 1, total: 0, dureeMin: 0, score: undefined, scoreMax: null, date: "2026-11-06T10:00", niveau: "" });
+  const mm = RS.modele({ parties: [maigre], jeu: "chateau-fort", catalogue: w.CATALOGUE, classe: "", meta: await (async () => { const r = JSON.parse(fs.readFileSync(path.join(RACINE, "chateau-fort/assets/data/lecons-a4.json"), "utf8")); const c = {}; Object.entries(r.lecons).forEach(([k, l]) => c[k] = l.competence); return { comp: c }; })() });
+  const pm = RS.pdf(mm), Pm = lire(pm.octets);
+  ok(Pm.pages === 1 && Pm.offsOk && Pm.longueurOk, "séance interrompue sans détail : PDF valide d'une page");
+  ok(/Séance incomplète : 1 équipe sur 1 n'a pas terminé/.test(Pm.tout) && /détail énigme par énigme n'est pas enregistré/.test(Pm.tout) && /Compétences prévues par le jeu/.test(Pm.tout) && /non enregistrée/.test(Pm.tout) && /\(sans nom\)/.test(Pm.tout) && /à compléter/.test(Pm.tout), "dit clairement : incomplète, détail absent, durée non enregistrée, nom et classe à compléter");
+  ok(!/undefined|NaN|null|0 min|\[object/.test(Pm.tout) && Pm.textes.filter(t => /Construire|Décrire|Raconter/.test(t)).length >= 3, "aucune valeur absurde ; compétences du jeu listées comme « prévues »");
+  // 5. séance sans aucune équipe, et jeu inconnu : toujours un PDF correct
+  const vide = RS.pdf(RS.modele({ parties: [], jeu: "jeu-inconnu", catalogue: w.CATALOGUE }));
+  ok(lire(vide.octets).pages === 1 && /Aucune partie en équipe/.test(lire(vide.octets).tout), "aucune partie : PDF d'une page qui le dit");
+  // 6. séance énorme : 40 équipes aux noms piégeux, 12 compétences : toujours UNE page, listes raccourcies
+  const noms = ["Aa (Super) Éq\\ 😀 œuvre", "Ab « très » nombreuse et au nom vraiment beaucoup trop long pour sa colonne"];
+  const grosses = Array.from({ length: 40 }, (_, i) => rec({ eleve: i < 2 ? noms[i] : "Équipe " + (i + 1), termine: i % 3 !== 0, dureeMin: 20 + i, detail: [det(J[i % 5], i % 2)] }));
+  const comp = {}; for (let i = 0; i < 12; i++) comp["c" + i] = "Compétence numéro " + (i + 1) + " : décrire, comparer et expliquer en plusieurs phrases ce que l'on a compris pendant la séance, avec des mots précis.";
+  const gros = RS.modele({ parties: grosses.map(r => Object.assign({}, r, { detail: Object.keys(comp).map((l, k) => ({ id: "1-" + k, s: 1, l, ok: 1, pc: k % 2 })) })), jeu: "chateau-fort", catalogue: w.CATALOGUE, classe: "CM2", meta: { comp } });
+  const pg = RS.pdf(gros), Pg = lire(pg.octets);
+  ok(Pg.pages === 1 && Pg.offsOk && Pg.longueurOk && pg.bas >= RS.BAS - 1, "40 équipes et 12 compétences : toujours une page, au-dessus de la marge (" + pg.bas.toFixed(0) + ")");
+  ok(/\.\.\. et \d+ autres? équipes? \(voir le tableur\)/.test(Pg.tout), "liste d'équipes raccourcie, avec renvoi au tableur");
+  ok(/Aa \(Super\) Éq\\ œuvre/.test(Pg.tout) && !/😀/.test(Pg.tout) && Pg.textes.length > 20, "noms avec parenthèses et barre oblique : écrits tels quels, emoji retiré");
+  ok((Pg.tout.match(/% du 1er coup/g) || []).length >= 4, "au moins 4 compétences gardées malgré la place prise par les équipes");
+  // 7. aucune séance chargée : message, pas d'erreur
+  const V = await charger(RACINE, "", { page: "resultats.html", attente: 500 });
+  V.w.document.getElementById("exp-rapport").click(); await dodo(100);
+  ok(/Aucune séance à exporter/.test(V.w.document.getElementById("rap-msg").textContent) && !V.w.__dernierExport, "sans partie chargée : message clair, aucun fichier");
+  ok(erreurs.length === 0 && V.erreurs.length === 0, "erreurs JS : " + erreurs.concat(V.erreurs).join(" | "));
+};
+
+/* ---- N26 : réglage « temps majoré » dans le passeport ---- */
+SECTIONS.N26 = async () => {
+  console.log("\n== N26 : temps majoré (passeport.html) ==");
+  const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 800, stockage: { escape_passeport: JSON.stringify({ eleves: ["Léa B.", "Tom R.", "Inès M."], notes: {} }) } });
+  const d = w.document;
+  const bloc = d.getElementById("bloc-amenag");
+  ok(!!bloc && bloc.tagName === "DETAILS" && !bloc.open, "volet « Temps majoré » présent et fermé au départ (discret)");
+  ok(/rien ne s'affiche chez les élèves/i.test(bloc.textContent) && /jamais dans les exports/i.test(bloc.textContent), "texte : discrétion et absence d'export expliquées");
+  const sels = [...d.querySelectorAll("#amenag-eleves select")];
+  ok(sels.length === 3 && sels.every(s => s.value === "1") && [...sels[0].options].map(o => o.value).join() === "1,1.25,1.33,1.5,2", "un choix par élève, « Aucun » par défaut");
+  sels[0].value = "1.5"; sels[0].dispatchEvent(new w.Event("change", { bubbles: true }));
+  sels[1].value = "1.33"; sels[1].dispatchEvent(new w.Event("change", { bubbles: true }));
+  let st = JSON.parse(w.localStorage.getItem("escape_amenagements"));
+  ok(st.coefs["Léa B."] === 1.5 && st.coefs["Tom R."] === 1.33 && !("Inès M." in st.coefs), "coefficients gardés sous leur propre clé (escape_amenagements)");
+  sels[1].value = "1"; sels[1].dispatchEvent(new w.Event("change", { bubbles: true }));
+  ok(!("Tom R." in JSON.parse(w.localStorage.getItem("escape_amenagements")).coefs), "revenir à « Aucun » efface le coefficient");
+  d.getElementById("amenag-equipes").value = "Les Fioles : Léa B., Tom R.\nligne sans deux-points\nLes Flammes: Inès M.";
+  d.getElementById("btn-amenag").click();
+  st = JSON.parse(w.localStorage.getItem("escape_amenagements"));
+  ok(JSON.stringify(st.equipes) === JSON.stringify({ "Les Fioles": ["Léa B.", "Tom R."], "Les Flammes": ["Inès M."] }), "composition des équipes lue ligne à ligne");
+  ok(w.AMENAGEMENTS.coefPour("Les Fioles") === 1.5 && w.AMENAGEMENTS.coefPour("Les Flammes") === 1, "coefficient d'équipe cohérent avec la saisie");
+  const exp = JSON.stringify(w.PROGRESSION.contenu({}));
+  ok(!/amenag|coefs/.test(exp), "export « Ma progression » : aucun aménagement");
+  w.AMENAGEMENTS.tracer("melanges", "Les Fioles", 1.5);
+  w.eval("AM = AMENAGEMENTS.lire(); rendre();");
+  ok(/Les Fioles/.test(d.getElementById("amenag-traces").textContent) && /×1,5/.test(d.getElementById("amenag-traces").textContent), "trace lisible dans le passeport");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

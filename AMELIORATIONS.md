@@ -383,3 +383,70 @@ variantes immersives.
 déclaration, tour-du-monde et mission-geo n'ont pas de variante ; droits des médias « à préciser » à régler
 (voir N14).
 **Jeux concernés :** 10 variantes + accueil, frise, resultats.html, archives (N9) · **Effort :** L · **Statut :** Fait
+
+### N28 — Intégration continue (CI) sur GitHub : tous les contrôles automatiques à chaque push
+Le crochet `pre-push` dépend d'une installation locale (`git config core.hooksPath`) : après un changement
+de machine, du code peut partir sans contrôle. `.github/workflows/verifications.yml` relance sur GitHub, à
+chaque push et pull request, les mêmes scripts (énigmes A7, liens N10, charte B1, affichage N17) ; le
+résultat (✓/✗) s'affiche sur le commit et la pull request. Le crochet local reste, pour un retour plus rapide.
+Lecture d'un échec : `outils-tests/LIRE-UN-ECHEC-CI.md`.
+**Jeux concernés :** tous (outils-tests/ + dépôt GitHub) · **Effort :** S · **Statut :** Fait
+
+### N24 — Export du passeport de compétences au format LSU
+Le LSU a ses propres intitulés (éléments de programme et compétences du cycle 3). Table de correspondance
+leçon du passeport → intitulé LSU le plus proche (`commun/donnees/lsu.js`, qui s'appuie sur le rattachement
+aux programmes du bandeau BO, C2 ; chaque ligne est « exacte » ou « approchée »), module `commun/js/export-lsu.js`
+et bouton « 🧾 Exporter pour le LSU » dans `passeport.html` : aperçu par intitulé avec niveau LSU suggéré,
+texte à copier-coller et fichier CSV, filtre « notes depuis le… » pour un bilan périodique, un élève ou la classe.
+C'est une aide, pas une validation : avertissement affiché partout, « dépassés » jamais proposé, évaluation
+partielle et correspondance approchée signalées ; l'enseignant garde la main sur la saisie finale.
+**Jeux concernés :** passeport.html (commun) · **Effort :** M · **Statut :** Fait
+
+### N30 — Fiche synthèse pour les familles, à partir du passeport de compétences
+Demi-page en langage de tous les jours, fabriquée sans rédaction : nom du jeu, 2-3 points travaillés
+(`commun/donnees/familles.js`, une formulation simple par leçon, aucun jargon de programme), une phrase sur le
+déroulé du jeu, mot de l'enseignant facultatif. Générée dans `passeport.html` (« 👪 Fiche pour les familles ») depuis
+le passeport (C3) pour un élève ou toute la classe, ou depuis la dernière partie d'une équipe (N12) ; sans note,
+elle dit seulement ce que le jeu fait travailler. Version imprimable (2 par feuille A4) et texte à copier dans un ENT
+ou un cahier de liaison numérique. Étiquettes bienveillantes (« bien en place », « en progrès », « à consolider »),
+jamais de note chiffrée. Contrôles automatiques : une formulation par leçon, pas de jargon, phrases courtes.
+**Reste à faire (humain) :** relecture de la formulation par un parent non enseignant.
+**Jeux concernés :** passeport.html (commun) + C5 · **Effort :** M · **Statut :** Fait
+
+### N31 — Rapport de séance PDF auto-généré pour le cahier journal
+Bouton « Exporter le rapport de séance (PDF) » dans `resultats.html` (le bilan de classe N12 y est déjà) : un PDF
+d'une page A4 fabriqué par `commun/js/rapport-seance.js`, sans bibliothèque ni serveur, hors connexion. Contenu :
+classe (retenue sur l'appareil), date, jeu, durée de la séance, nombre d'équipes, une ligne par équipe (énigmes,
+score, durée, terminée / interrompue), compétences travaillées avec leur réussite du premier coup (liées aux
+leçons C3) et programme officiel de référence (C2). Une séance = un jeu joué en équipe le même jour (le mode
+individuel n'en est pas une) ; une équipe qui a rejoué compte une fois. Séance interrompue ou incomplète : bandeau
+explicite, durée « non enregistrée » plutôt que 0, compétences « prévues par le jeu » sans détail énigme par énigme,
+jamais de valeur « undefined » ou « NaN » ; listes longues raccourcies pour garder une page. Correctif au passage :
+le cache des métadonnées du bilan (N12) garde désormais la promesse de chargement (deux appels rapprochés
+recevaient une fiche encore vide).
+**Jeux concernés :** resultats.html (commun) · **Effort :** M · **Statut :** Fait
+
+### N29 — Réglage global de la taille du texte et des espacements (confort)
+Dans ⚙️ Réglages, bloc « 🔎 Taille du texte et des boutons » : trois tailles (Normal / Grand / Très grand) qui
+agrandissent ensemble le texte (base ×1,125 puis ×1,25), les boutons et champs (plus hauts), les cases à cocher,
+l'interlignage et les espacements. Greffon `commun/js/accessibilite.js` (E4) prolongé : aucun nouveau script à
+ajouter dans les jeux. Gardé sur l'appareil dans la clé `escape_lecture` (champ `taille`), donc pour tous les jeux,
+et **cumulatif** avec la police, l'interlignage et l'espacement d'E4 ainsi qu'avec le curseur propre à chaque jeu.
+Mission géographique : sa base de taille suit déjà `--echelle`, elle est multipliée et non remplacée. Réservé à
+l'écran (`@media screen`) : l'impression n'est pas touchée. Contrôles : section N29 de `commun/tests/test-greffons.js`
+(trois jeux, cumul, persistance d'un jeu à l'autre, ancien réglage sans `taille`) ; `verifier-responsive.js` (N17)
+accepte `--taille=grand|tres` : 144 écrans × 2 tailles (tablette 10″, 7″, smartphone) sans bouton essentiel hors écran.
+**Jeux concernés :** les 12 « salles » + les immersifs et Mission géographique (commun) · **Effort :** S · **Statut :** Fait
+
+### N26 — Temps majoré individualisé (PAP / PPS)
+Volet « ⏱️ Temps majoré » dans `passeport.html` (fermé au départ) : un coefficient par élève (aucun par défaut ; ×1,25 ·
+×1,33 · ×1,5 · ×2) et, au besoin, la composition des équipes (« Les Fioles : Léa B., Tom R. »). Appliqué par
+`commun/js/minuteur-equipe.js` (E6, déjà chargé par les 13 jeux « salles ») au départ de la partie : coefficient du membre
+de l'équipe qui en a le plus besoin (un élève seul, mode D2, est reconnu par son prénom). Le bonus de rapidité est jugé sur
+le temps réel ÷ coefficient (8 min avec ×1,5 comptent pour 5 min 20), l'alerte de durée de séance est repoussée ; le chrono
+total et le temps réel des salles restent vrais. **Discrétion :** aucun message, aucune icône, rien dans le HUD, l'écran de
+fin ni le compte-rendu ; données sous leur propre clé `escape_amenagements`, jamais dans les exports « Ma progression »
+(N16) ni sur le serveur de classe ; trace (10 dernières applications) lisible dans le volet du passeport seulement.
+Documenté dans le kit collègues (`adopter.html`, N2) et la FAQ. Tests : sections N26 de `test-greffons.js` (3 jeux, avec et
+sans réglage, pas de double majoration) et de `test-pages.js` (passeport).
+**Limite :** ne concerne pas encore les variantes immersives (`immersifs/`). **Jeux concernés :** les 13 jeux « salles » + passeport · **Effort :** M · **Statut :** Fait

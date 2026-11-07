@@ -1,0 +1,57 @@
+# Intégration continue (amélioration N28) : les contrôles automatiques du dépôt, sur GitHub.
+# À chaque push (toutes branches) et à chaque pull request, les mêmes scripts que le crochet local
+# outils-tests/hooks/pre-push (+ le contrôle de charte) sont relancés SANS dépendre d'une installation
+# locale. Le résultat (✓ / ✗) s'affiche sur le commit et sur la pull request ; onglet « Actions » pour
+# le détail. Comment lire un échec : outils-tests/LIRE-UN-ECHEC-CI.md.
+# Le crochet local reste utile : même contrôle, mais avant même d'envoyer le code.
+name: Vérifications (N28)
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verifications-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verifications:
+    name: Contrôles automatiques
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # puppeteer-core ne télécharge aucun navigateur : on utilise le Chrome installé sur le serveur.
+      - name: Installer les dépendances des contrôles
+        working-directory: outils-tests
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Vérifier que Chrome est disponible (sinon le contrôle d'affichage serait sauté sans bruit)
+        run: |
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then echo "::error::Aucun navigateur Chrome/Chromium sur le serveur : le contrôle d'affichage (N17) ne peut pas tourner."; exit 1; fi
+          echo "CHROME_PATH=$CHROME" >> "$GITHUB_ENV"
+          "$CHROME" --version
+      # Chaque contrôle a son étape (if: always()) : un échec n'empêche pas de voir les autres résultats.
+      - name: Énigmes de tous les jeux (A7)
+        if: always()
+        run: node outils-tests/verifier-enigmes.js
+      - name: Liens internes de navigation (N10)
+        if: always()
+        run: node outils-tests/verifier-liens-internes.js
+      - name: Charte graphique (B1)
+        if: always()
+        run: node outils-tests/verifier-charte.js
+      - name: Affichage tablette et smartphone (N17)
+        if: always()
+        run: node outils-tests/verifier-responsive.js --rapide
+      - name: Captures des défauts d'affichage
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: captures-responsive
+          path: outils-tests/captures-responsive/
+          if-no-files-found: ignore
+          retention-days: 14

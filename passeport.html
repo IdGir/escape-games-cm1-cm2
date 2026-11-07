@@ -37,9 +37,15 @@
   .jauge .barre span{display:block;height:100%}
   table.classe{border-collapse:collapse;width:100%;font-size:.86rem} table.classe th,table.classe td{border:1px solid var(--ligne);padding:4px 6px;text-align:center}
   table.classe th:first-child,table.classe td:first-child{text-align:left}
+  table.tab-amenag{border-collapse:collapse;font-size:.9rem} table.tab-amenag th,table.tab-amenag td{border:1px solid var(--ligne);padding:4px 10px;text-align:left}
   .aide{color:var(--doux);font-size:.88rem}
   .impression{display:none}
+  .ffam{border:2px solid var(--encre);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fff;max-width:640px}
+  .ffam h3{margin:0;font-size:1.1rem} .ffam .qui{margin:2px 0 8px;color:var(--doux)} .ffam p{margin:6px 0} .ffam ul{margin:4px 0 8px;padding-left:20px}
+  .ffam li{margin:3px 0} .ffam .et{font-size:.8rem;border:1px solid var(--ligne);border-radius:999px;padding:0 8px;margin-left:4px;white-space:nowrap;color:var(--doux)}
+  .ffam .mot{border-left:4px solid var(--e);padding:2px 10px;background:#fff8ec} .ffam .pied{font-size:.82rem;color:var(--doux)}
   @media print{
+    .ffam{break-inside:avoid;page-break-inside:avoid;border:1.5px dashed #777;border-radius:0;max-width:none;height:128mm;box-sizing:border-box;margin:0 0 6mm;padding:8mm 10mm;font-size:11pt;overflow:hidden}
     body{background:#fff;font-size:10pt} header,main{display:none} .impression{display:block}
     .fiche{page-break-after:always;padding:10mm 12mm} .fiche h1{font-size:16pt;margin:0}
     .fiche table{width:100%;border-collapse:collapse;font-size:9pt;margin-top:6px} .fiche td,.fiche th{border:1px solid #bbb;padding:3px 5px;text-align:left}
@@ -61,14 +67,59 @@
     <div class="ligne"><button class="principal" id="btn-eleves">✔ Enregistrer la liste</button><span id="msg" class="aide"></span></div>
   </section>
 
+  <details class="bloc" id="bloc-amenag">
+    <summary style="cursor:pointer"><b>⏱️ Temps majoré (PAP / PPS)</b> <span class="aide">— réglage discret, sur cet appareil seulement</span></summary>
+    <p class="aide">Pour un élève qui bénéficie d'un aménagement de temps : le jeu juge le bonus de rapidité et l'alerte de durée sur son allure (temps réel ÷ coefficient). <b>Rien ne s'affiche chez les élèves</b> : ni message, ni icône, ni dans le bilan. Pour une équipe, le coefficient du membre qui en a le plus besoin est retenu. Ces données ne sont jamais dans les exports « Ma progression » ni dans les comptes-rendus. Fermez ce volet avant de projeter la page.</p>
+    <div id="amenag-eleves"></div>
+    <p style="margin:12px 0 4px"><b>Composition des équipes</b> <span class="aide">(facultatif, une équipe par ligne : <i>Nom de l'équipe : élève, élève</i>). Un élève qui joue seul est reconnu par son prénom.</span></p>
+    <textarea id="amenag-equipes" placeholder="Les Fioles : Léa B., Tom R."></textarea>
+    <div class="ligne"><button class="principal" id="btn-amenag">✔ Enregistrer les équipes</button><span id="amenag-msg" class="aide" role="status"></span></div>
+    <div id="amenag-traces"></div>
+  </details>
+
   <section class="bloc">
     <div class="ligne">
       <label>Élève <select id="choix-eleve"></select></label>
       <label>Afficher <select id="choix-vue"><option value="eleve">le passeport de l'élève</option><option value="classe">la vue de la classe</option></select></label>
       <button id="btn-imprimer">🖨️ Imprimer les passeports</button>
       <button id="btn-csv">📄 CSV (tableur, Schooly)</button>
+      <button id="btn-lsu" aria-expanded="false" aria-controls="panneau-lsu">🧾 Exporter pour le LSU</button>
+      <button id="btn-famille" aria-expanded="false" aria-controls="panneau-famille">👪 Fiche pour les familles</button>
     </div>
     <div id="vue"></div>
+  </section>
+
+  <section class="bloc" id="panneau-lsu" hidden>
+    <h2 style="margin:0 0 6px;font-size:1.05rem">🧾 Export pour le LSU (bilans périodiques)</h2>
+    <p class="aide" id="lsu-avertissement" role="note" style="border-left:4px solid var(--e);padding:4px 10px;background:#fff8ec"></p>
+    <div class="ligne">
+      <label>Notes prises en compte depuis le <input type="date" id="lsu-depuis"></label>
+      <span class="aide" id="lsu-portee"></span>
+    </div>
+    <div id="lsu-apercu" style="overflow-x:auto;margin-top:8px"></div>
+    <div class="ligne" style="margin-top:8px">
+      <button class="principal" id="btn-lsu-copier">📋 Copier le texte</button>
+      <button id="btn-lsu-csv">📄 Télécharger le CSV</button>
+      <span class="aide" id="lsu-msg" role="status"></span>
+    </div>
+    <textarea id="lsu-texte" readonly style="min-height:140px;margin-top:8px;font:.82rem monospace" aria-label="Texte à copier-coller dans le LSU"></textarea>
+  </section>
+
+  <section class="bloc" id="panneau-famille" hidden>
+    <h2 style="margin:0 0 6px;font-size:1.05rem">👪 Fiche synthèse pour les familles</h2>
+    <p class="aide">Une demi-page en langage de tous les jours : le jeu, 2 ou 3 points travaillés, une phrase sur le déroulé. Elle est fabriquée à partir du passeport (ou de la dernière partie d'une équipe) : rien à rédiger. Vous pouvez la relire et ajouter un mot avant de l'imprimer ou de la copier dans l'ENT ou le cahier de liaison numérique.</p>
+    <div class="ligne">
+      <label>Jeu <select id="fam-jeu"></select></label>
+      <label>Pour <select id="fam-pour"></select></label>
+      <label>Un mot de l'enseignant (facultatif) <input type="text" id="fam-mot" maxlength="200" size="38" placeholder="Bravo pour l'esprit d'équipe !"></label>
+    </div>
+    <div id="fam-apercu"></div>
+    <div class="ligne">
+      <button class="principal" id="btn-fam-imprimer">🖨️ Imprimer (2 fiches par feuille)</button>
+      <button id="btn-fam-copier">📋 Copier le texte (ENT, cahier de liaison)</button>
+      <span class="aide" id="fam-msg" role="status"></span>
+    </div>
+    <textarea id="fam-texte" readonly style="min-height:130px;margin-top:8px;font:.85rem monospace" aria-label="Texte à copier dans l'ENT ou le cahier de liaison numérique"></textarea>
   </section>
 
   <section class="bloc" id="transfert">
@@ -91,6 +142,11 @@
 
 <script src="commun/donnees/catalogue.js?c3"></script>
 <script src="commun/js/progression.js?c1"></script>
+<script src="commun/js/minuteur-equipe.js?c1"></script>
+<script src="commun/donnees/lsu.js?n24"></script>
+<script src="commun/js/export-lsu.js?n24"></script>
+<script src="commun/donnees/familles.js?n30"></script>
+<script src="commun/js/fiche-famille.js?n30"></script>
 <script>
 "use strict";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
@@ -108,10 +164,10 @@ async function chargerCompetences(){
     .sort((a, b) => ((a.periodes[0] || "P9") > (b.periodes[0] || "P9")) - ((a.periodes[0] || "P9") < (b.periodes[0] || "P9")) || (parseInt(a.num, 10) || 99) - (parseInt(b.num, 10) || 99));
   const liste = [];
   for(const j of jeux){
-    let comps = [j.competences];
-    try{ const r = await fetch(`${j.dossier}/assets/data/lecons-a4.json`); if(r.ok) comps = Object.values((await r.json()).lecons || {}).map(l => l.competence).filter(Boolean); }catch(e){}
-    comps.forEach((t, i) => liste.push({ cle: `${j.dossier}|${i + 1}`, jeu: j.dossier, titre: j.titre, matiere: j.matiere, icone: j.icone, couleur: j.couleurs[0], rang: i + 1,
-      texte: (j.seancesParPeriode ? `Séance ${i + 1} : ` : "") + t }));
+    let comps = [{ lecon: "", competence: j.competences }];
+    try{ const r = await fetch(`${j.dossier}/assets/data/lecons-a4.json`); if(r.ok) comps = Object.entries((await r.json()).lecons || {}).map(([k, l]) => ({ lecon: k, competence: l.competence })).filter(l => l.competence); }catch(e){}
+    comps.forEach((l, i) => liste.push({ cle: `${j.dossier}|${i + 1}`, jeu: j.dossier, lecon: l.lecon, titre: j.titre, matiere: j.matiere, icone: j.icone, couleur: j.couleurs[0], rang: i + 1,
+      texte: (j.seancesParPeriode ? `Séance ${i + 1} : ` : "") + l.competence }));
   }
   COMPETENCES = liste;
 }
@@ -155,6 +211,41 @@ function vueClasse(){
         return `<td>${cs.some(c => n[c.cle]) ? `${a}/${cs.length}` : "—"}</td>`; }).join("")}<td><b>${tot}</b> / ${COMPETENCES.length}</td></tr>`; }).join("")}</table></div>
     <p class="aide">Chaque case : compétences acquises sur le nombre de compétences du jeu (une par leçon).</p>`;
 }
+/* ---- Temps majoré individualisé (N26) : coefficient par élève, composition des équipes, traces ---- */
+const AMENAG_LIB = { 1: "Aucun", 1.25: "×1,25 (¼ de temps en plus)", 1.33: "×1,33 (tiers-temps)", 1.5: "×1,5 (moitié en plus)", 2: "×2 (double)" };
+let AM = AMENAGEMENTS.lire();
+const amenagSauver = () => { if(!AMENAGEMENTS.ecrire(AM)) document.getElementById("amenag-msg").textContent = "Impossible d'enregistrer dans ce navigateur."; };
+function amenagRendre(){
+  const el = document.getElementById("amenag-eleves");
+  el.innerHTML = D.eleves.length
+    ? `<table class="tab-amenag"><tr><th>Élève</th><th>Temps majoré</th></tr>${D.eleves.map((e, i) => { const c = AMENAGEMENTS.coefDe(AM, e);
+        return `<tr><td>${esc(e)}</td><td><select data-i="${i}" aria-label="Temps majoré de ${esc(e)}">${AMENAGEMENTS.COEFFICIENTS.map(k => `<option value="${k}"${k === c ? " selected" : ""}>${AMENAG_LIB[k]}</option>`).join("")}</select></td></tr>`; }).join("")}</table>`
+    : `<p class="aide">Enregistrez d'abord la liste de la classe (étape 1).</p>`;
+  const t = document.getElementById("amenag-equipes");
+  if(document.activeElement !== t) t.value = Object.entries(AM.equipes).map(([n, m]) => `${n} : ${m.join(", ")}`).join("\n");
+  const tr = AM.traces.slice(-10).reverse();
+  document.getElementById("amenag-traces").innerHTML = tr.length
+    ? `<p style="margin:12px 0 4px"><b>Trace</b> <span class="aide">(les 10 dernières applications, visibles ici seulement)</span></p><ul class="aide">${tr.map(x => `<li>${esc(new Date(x.date).toLocaleDateString("fr-FR"))} · ${esc(x.jeu)} · ${esc(x.equipe)} · ×${String(x.coef).replace(".", ",")}</li>`).join("")}</ul>`
+    : "";
+}
+document.getElementById("amenag-eleves").addEventListener("change", e => {
+  const s = e.target.closest("select[data-i]"); if(!s) return;
+  const eleve = D.eleves[+s.dataset.i], k = +s.value;
+  Object.keys(AM.coefs).filter(x => AMENAGEMENTS.norm(x) === AMENAGEMENTS.norm(eleve)).forEach(x => delete AM.coefs[x]);
+  if(k > 1) AM.coefs[eleve] = k;
+  amenagSauver();
+  document.getElementById("amenag-msg").textContent = "Réglage enregistré.";
+});
+document.getElementById("btn-amenag").addEventListener("click", () => {
+  const eq = {};
+  document.getElementById("amenag-equipes").value.split("\n").forEach(l => {
+    const i = l.indexOf(":"); if(i < 1) return;
+    const nom = l.slice(0, i).trim(), m = l.slice(i + 1).split(/[,;]/).map(x => x.trim()).filter(Boolean);
+    if(nom && m.length) eq[nom] = m;
+  });
+  AM.equipes = eq; amenagSauver();
+  document.getElementById("amenag-msg").textContent = `${Object.keys(eq).length} équipe(s) enregistrée(s).`;
+});
 function rendre(){
   const sel = document.getElementById("choix-eleve"), garde = sel.value;
   sel.innerHTML = D.eleves.map(e => `<option>${esc(e)}</option>`).join("");
@@ -163,6 +254,9 @@ function rendre(){
   const vue = document.getElementById("choix-vue").value;
   document.getElementById("vue").innerHTML = vue === "classe" ? vueClasse() : vueEleve(sel.value);
   if(typeof majPortee === "function" && document.getElementById("portee-export")) majPortee();
+  amenagRendre();                                                        // temps majoré (N26)
+  if(!document.getElementById("panneau-lsu").hidden) lsuRecalculer();       // panneau LSU ouvert : suit les notes (N24)
+  if(!document.getElementById("panneau-famille").hidden){ famPreparerListes(true); famRecalculer(); }   // fiche familles ouverte (N30)
 }
 document.getElementById("vue").addEventListener("click", e => {
   const b = e.target.closest(".etats button"); if(!b) return;
@@ -213,6 +307,97 @@ document.getElementById("btn-csv").addEventListener("click", () => {
   const l = [["eleve", "matiere", "jeu", "competence", "etat", "date"]];
   D.eleves.forEach(e => COMPETENCES.forEach(k => { const n = (D.notes[e] || {})[k.cle]; if(n) l.push([e, k.matiere, k.titre, k.texte, LIB[n.v], n.date]); }));
   telecharger(`passeport-competences-${new Date().toISOString().slice(0, 10)}.csv`, "﻿" + l.map(r => r.map(c).join(";")).join("\r\n"), "text/csv;charset=utf-8");
+});
+/* ---- Fiche synthèse pour les familles (N30) ---- */
+let famCourant = [];
+const historique = () => { try{ return JSON.parse(localStorage.getItem("escape_resultats") || "[]"); }catch(e){ return []; } };
+function famEquipes(jeu){
+  return [...new Set(historique().filter(r => r.jeu === jeu && r.mode !== "solo" && Array.isArray(r.detail) && r.eleve).map(r => String(r.eleve)))];
+}
+function famJeuParDefaut(eleve){
+  const jeux = FICHE_FAMILLE.jeuxDe(COMPETENCES, FAMILLES), n = (D.notes[eleve] || {});
+  let meilleur = "", date = "";
+  COMPETENCES.forEach(c => { const x = n[c.cle]; if(x && jeux.includes(c.jeu) && (x.date || "") >= date){ date = x.date || ""; meilleur = c.jeu; } });
+  return meilleur || (historique().map(r => r.jeu).find(j => jeux.includes(j))) || jeux[0] || "";
+}
+function famPreparerListes(garderJeu){
+  const jeux = FICHE_FAMILLE.jeuxDe(COMPETENCES, FAMILLES), sj = document.getElementById("fam-jeu"), sp = document.getElementById("fam-pour");
+  const eleve = document.getElementById("choix-eleve").value;
+  const jeu = garderJeu && jeux.includes(sj.value) ? sj.value : famJeuParDefaut(eleve);
+  const titre = j => { const c = COMPETENCES.find(x => x.jeu === j); return c ? `${c.icone} ${c.titre}` : j; };
+  sj.innerHTML = jeux.map(j => `<option value="${esc(j)}">${esc(titre(j))}</option>`).join(""); sj.value = jeu;
+  const avant = sp.value;
+  sp.innerHTML = (D.eleves.length ? `<option value="eleve">${eleve ? "l'élève : " + esc(eleve) : "l'élève choisi"}</option><option value="classe">toute la classe (une fiche par élève)</option>` : "")
+    + famEquipes(jeu).map(e => `<option value="equipe:${esc(e)}">l'équipe « ${esc(e)} »</option>`).join("");
+  if([...sp.options].some(o => o.value === avant)) sp.value = avant;
+  else sp.value = document.getElementById("choix-vue").value === "classe" && D.eleves.length ? "classe" : (sp.options[0] || {}).value || "";
+}
+function famRecalculer(){
+  const jeu = document.getElementById("fam-jeu").value, pour = document.getElementById("fam-pour").value, mot = document.getElementById("fam-mot").value;
+  const eleve = document.getElementById("choix-eleve").value;
+  const base = { jeu, notes: D.notes, competences: COMPETENCES, resultats: historique(), donnees: FAMILLES, catalogue: CATALOGUE, mot };
+  const sujets = !jeu || !pour ? [] : pour === "classe" ? D.eleves.map(nom => ({ type: "eleve", nom })) : pour === "eleve" ? [{ type: "eleve", nom: eleve }] : [{ type: "equipe", nom: pour.slice(7) }];
+  famCourant = sujets.map(sujet => FICHE_FAMILLE.construire(Object.assign({ sujet }, base)));
+  const carte = f => `<article class="ffam"><h3>Un escape game en classe : « ${esc(f.titreJeu)} »</h3>${f.nom ? `<p class="qui"><b>${esc(FICHE_FAMILLE.maj(f.sujet))}</b>${f.date ? " — " + esc(new Date(f.date.length > 10 ? f.date : f.date + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })) : ""}</p>` : ""}
+    <p>${esc(f.deroule)}</p><p><b>${f.neutre ? "Pendant ce jeu, la classe a travaillé à :" : esc(f.type === "equipe" ? "Ce que l'équipe a travaillé :" : "Ce que " + f.nom + " a travaillé :")}</b></p>
+    <ul>${f.points.map(p => `<li>${esc(p.texte)}${p.etiquette ? ` <span class="et">${esc(p.etiquette)}</span>` : ""}</li>`).join("")}</ul>
+    ${f.mot ? `<p class="mot"><b>Mot de l'enseignant :</b> ${esc(f.mot)}</p>` : ""}<p class="pied">Pas de note chiffrée : ce sont des repères pour en parler ensemble. N'hésitez pas à demander à l'enseignant.</p></article>`;
+  document.getElementById("fam-apercu").innerHTML = famCourant.length ? famCourant.map(carte).join("") : `<p class="aide">Enregistrez d'abord la liste de la classe, ou jouez une partie en équipe : il n'y a encore personne pour qui faire une fiche.</p>`;
+  document.getElementById("fam-texte").value = famCourant.map(f => f.texte).join("\n\n————————————————\n\n");
+  window.__famApercu = document.getElementById("fam-apercu").innerHTML;
+}
+document.getElementById("btn-famille").addEventListener("click", () => {
+  const p = document.getElementById("panneau-famille"), ouvrir = p.hidden;
+  p.hidden = !ouvrir; document.getElementById("btn-famille").setAttribute("aria-expanded", String(ouvrir));
+  if(ouvrir){ famPreparerListes(false); famRecalculer(); p.scrollIntoView({ block: "nearest" }); }
+});
+document.getElementById("fam-jeu").addEventListener("change", () => { famPreparerListes(true); famRecalculer(); });
+document.getElementById("fam-pour").addEventListener("change", famRecalculer);
+document.getElementById("fam-mot").addEventListener("input", famRecalculer);
+["choix-eleve", "choix-vue"].forEach(id => document.getElementById(id).addEventListener("change", () => { if(!document.getElementById("panneau-famille").hidden){ famPreparerListes(id === "choix-eleve" ? false : true); famRecalculer(); } }));
+document.getElementById("btn-fam-imprimer").addEventListener("click", () => {
+  famRecalculer();
+  document.getElementById("impression").innerHTML = document.getElementById("fam-apercu").innerHTML;
+  window.print();
+});
+document.getElementById("btn-fam-copier").addEventListener("click", async () => {
+  famRecalculer();
+  const ta = document.getElementById("fam-texte"); let copie = false;
+  try{ await navigator.clipboard.writeText(famCourant.map(f => f.texte).join("\n\n————————————————\n\n")); copie = true; }catch(e){ ta.select(); }
+  document.getElementById("fam-msg").textContent = copie ? "📋 Texte copié : à coller dans l'ENT ou le cahier de liaison, après relecture." : "Sélectionné : copiez-le avec Ctrl+C.";
+});
+/* ---- Export pour le LSU (N24) : une aide à la saisie, pas une validation ---- */
+let lsuCourant = null;
+function lsuPortee(){ const e = eleveExporte(); return e ? [e] : D.eleves.slice(); }
+function lsuRecalculer(){
+  const eleves = lsuPortee();
+  lsuCourant = EXPORT_LSU.construire({ eleves, notes: D.notes, competences: COMPETENCES, depuis: document.getElementById("lsu-depuis").value, donnees: LSU, catalogue: CATALOGUE });
+  document.getElementById("lsu-avertissement").textContent = "⚠ " + lsuCourant.avertissement;
+  document.getElementById("lsu-portee").textContent = eleves.length === 1 ? `Élève : ${eleves[0]} (pour toute la classe, choisissez « la vue de la classe »).` : `Toute la classe : ${eleves.length} élève(s).`;
+  const L = lsuCourant.lignes;
+  document.getElementById("lsu-apercu").innerHTML = L.length
+    ? `<table class="classe"><tr>${eleves.length > 1 ? "<th>Élève</th>" : ""}<th>Discipline</th><th>Intitulé LSU</th><th>Niveau suggéré</th><th>Détail</th></tr>${L.map(l => `<tr>${eleves.length > 1 ? `<td>${esc(l.eleve)}</td>` : ""}<td>${esc(l.discipline)}</td><td style="text-align:left">${esc(l.intitule)}${l.approchee ? ` <span title="Correspondance approchée : à confirmer" aria-label="correspondance approchée">≈</span>` : ""}</td><td><b>${esc(l.niveau)}</b></td><td style="text-align:left">${esc(l.detail)}${l.partielle ? " · évaluation partielle" : ""}</td></tr>`).join("")}</table>
+       <p class="aide">≈ correspondance approchée avec l'intitulé LSU (à confirmer). « Évaluation partielle » : des compétences de cet intitulé ne sont pas encore notées. « Dépassés » n'est jamais proposé : c'est à vous d'en juger.</p>`
+    : `<p class="aide">Aucune compétence notée${document.getElementById("lsu-depuis").value ? " depuis cette date" : ""} pour ${eleves.length === 1 ? "cet élève" : "la classe"} : rien à reporter dans le LSU.</p>`;
+  document.getElementById("lsu-texte").value = lsuCourant.texte;
+}
+document.getElementById("btn-lsu").addEventListener("click", () => {
+  const p = document.getElementById("panneau-lsu"), ouvrir = p.hidden;
+  p.hidden = !ouvrir; document.getElementById("btn-lsu").setAttribute("aria-expanded", String(ouvrir));
+  if(ouvrir){ lsuRecalculer(); p.scrollIntoView({ block: "nearest" }); }
+});
+document.getElementById("lsu-depuis").addEventListener("change", lsuRecalculer);
+["choix-eleve", "choix-vue"].forEach(id => document.getElementById(id).addEventListener("change", () => { if(!document.getElementById("panneau-lsu").hidden) lsuRecalculer(); }));
+document.getElementById("btn-lsu-csv").addEventListener("click", () => {
+  lsuRecalculer();
+  telecharger(`passeport-LSU-${new Date().toISOString().slice(0, 10)}.csv`, lsuCourant.csv, "text/csv;charset=utf-8");
+  document.getElementById("lsu-msg").textContent = "📄 CSV téléchargé : à lire et à reporter vous-même dans le LSU.";
+});
+document.getElementById("btn-lsu-copier").addEventListener("click", async () => {
+  lsuRecalculer();
+  const ta = document.getElementById("lsu-texte"); let copie = false;
+  try{ await navigator.clipboard.writeText(lsuCourant.texte); copie = true; }catch(e){ ta.select(); }
+  document.getElementById("lsu-msg").textContent = copie ? "📋 Texte copié : à coller dans votre outil, puis à vérifier." : "Sélectionné : copiez-le avec Ctrl+C.";
 });
 document.getElementById("btn-imprimer").addEventListener("click", () => {
   document.getElementById("impression").innerHTML = D.eleves.map(e => { const n = D.notes[e] || {};

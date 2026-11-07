@@ -4,6 +4,8 @@
 #   • N10 — liens internes de navigation       (outils-tests/verifier-liens-internes.js)
 #   • N17 — affichage tablette et smartphone   (outils-tests/verifier-responsive.js --rapide, ~30 s ;
 #           sauté s'il n'y a ni Chrome/Edge ni « npm install » dans outils-tests)
+#   La même série tourne aussi sur GitHub à chaque push (N28 : .github/workflows/verifications.yml) ;
+#   ce crochet local garde l'intérêt d'un retour immédiat, avant l'envoi.
 # Une erreur bloquante (✗) arrête la publication ; les alertes (⚠) non.
 #
 # Installation, une seule fois par ordinateur (depuis la racine du dépôt) :

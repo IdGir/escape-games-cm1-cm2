@@ -58,6 +58,50 @@ SECTIONS.E4 = async () => {
   ok(w.document.body.classList.contains("police-lisible") && w.document.body.classList.contains("interligne-aere"), "chateau-fort : préférence d'un autre jeu appliquée dès l'ouverture");
 };
 
+/* ---- N29 : taille du texte et des boutons ---- */
+SECTIONS.N29 = async () => {
+  console.log("\n== N29 : taille du texte et des boutons ==");
+  for (const j of ["melanges", "declaration", "mission-geo"]) {
+    const { w, erreurs } = await charger(J(j), j === "mission-geo" ? "" : "?salle=1&niveau=CM1");
+    const d = w.document, h = d.documentElement.classList;
+    if (j === "mission-geo") { w.eval("REGLAGES.ouvrir()"); } else { w.ouvrirReglages(); }
+    const bloc = await attendreQue(() => d.getElementById("lecture-reglages"), 3000);
+    ok(!!bloc, `${j} : bloc des réglages présent`);
+    if (!bloc) continue;
+    const btn = t => bloc.querySelector(`[data-taille="${t}"]`);
+    ok(["normal", "grand", "tres"].every(t => !!btn(t)), `${j} : trois tailles proposées (Normal / Grand / Très grand)`);
+    ok(btn("normal").getAttribute("aria-pressed") === "true" && !h.contains("taille-grand") && !h.contains("taille-tres"), `${j} : normal par défaut, aucune classe`);
+    btn("grand").click();
+    ok(h.contains("taille-grand") && !h.contains("taille-tres") && btn("grand").getAttribute("aria-pressed") === "true" && btn("normal").getAttribute("aria-pressed") === "false", `${j} : « Grand » appliqué tout de suite et signalé (aria-pressed)`);
+    ok(JSON.parse(w.localStorage.getItem("escape_lecture")).taille === "grand", `${j} : choix gardé sur l'appareil (escape_lecture.taille)`);
+    ok(h.contains("base-echelle") === (j === "mission-geo"), `${j} : base de taille ${j === "mission-geo" ? "multipliée à la variable --echelle" : "en pixels (pas de --echelle)"}`);
+    btn("tres").click();
+    ok(h.contains("taille-tres") && !h.contains("taille-grand"), `${j} : « Très grand » remplace « Grand »`);
+    // cumulatif avec la lecture facilitée (E4) : changer la police ne perd pas la taille
+    d.getElementById("lec-police").value = "dys";
+    d.getElementById("lec-interligne").value = "tres";
+    bloc.dispatchEvent(new w.Event("change", { bubbles: true }));
+    const st = JSON.parse(w.localStorage.getItem("escape_lecture"));
+    ok(st.taille === "tres" && st.police === "dys" && h.contains("taille-tres") && d.body.classList.contains("police-dys") && d.body.classList.contains("interligne-tres"), `${j} : cumul avec police et interligne (E4)`);
+    btn("grand").click();
+    const st2 = JSON.parse(w.localStorage.getItem("escape_lecture"));
+    ok(st2.taille === "grand" && st2.police === "dys" && d.body.classList.contains("police-dys"), `${j} : changer la taille garde la police`);
+    btn("normal").click();
+    ok(!h.contains("taille-grand") && !h.contains("taille-tres") && !h.contains("base-echelle"), `${j} : retour à Normal : plus aucune classe`);
+    const css = d.getElementById("style-lecture").textContent;
+    ok(/@media screen\{[\s\S]*html\.taille-grand\{font-size:18px\}/.test(css) && /html\.taille-tres\{font-size:20px\}/.test(css), `${j} : tailles 112 % et 125 % réservées à l'écran (impression non touchée)`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // la taille choisie dans un jeu s'applique dès l'ouverture d'un autre jeu
+  for (const j of ["chateau-fort", "mission-geo"]) {
+    const { w } = await charger(J(j), j === "mission-geo" ? "" : "?salle=1&niveau=CM1", { stockage: { escape_lecture: JSON.stringify({ taille: "tres" }) } });
+    ok(w.document.documentElement.classList.contains("taille-tres"), `${j} : taille « Très grand » appliquée dès l'ouverture`);
+  }
+  // un ancien réglage (sans champ « taille ») reste valide
+  const v = await charger(J("melanges"), "?salle=1&niveau=CM1", { stockage: { escape_lecture: JSON.stringify({ police: "lisible", interligne: "aere", espacement: false }) } });
+  ok(v.w.document.body.classList.contains("police-lisible") && !v.w.document.documentElement.classList.contains("taille-grand"), "melanges : ancien réglage sans « taille » = normal");
+};
+
 /* ---- E2 : palier « Découverte » ---- */
 SECTIONS.E2 = async () => {
   console.log("\n== E2 : palier Découverte ==");
@@ -162,6 +206,67 @@ SECTIONS.E6 = async () => {
   }
   const fs = require("fs");
   for (const j of JEUX8) ok(fs.readFileSync(J(j) + "/prof.html", "utf8").includes("','delai')"), `${j} : bouton ⏱️ + dans prof.html`);
+};
+
+/* ---- N26 : temps majoré individualisé (PAP / PPS) ---- */
+SECTIONS.N26 = async () => {
+  console.log("\n== N26 : temps majoré individualisé ==");
+  const fs = require("fs");
+  const AM = require(path.join(RACINE, "commun/js/minuteur-equipe.js"));
+  // 1. coefficient d'une équipe : le plus grand de ses membres ; élève seul reconnu par son prénom ; rien par défaut
+  const d = { coefs: { "Léa B.": 1.5, "Tom R.": 1.25, "Inès M.": 1 }, equipes: { "Les Fioles": ["lea b.", "Inès M."], "Les Flammes": ["Tom R.", "Léa B."] }, traces: [] };
+  ok(AM.coefPour("Les Fioles", d) === 1.5 && AM.coefPour("  les fioles ", d) === 1.5, "équipe : coefficient du membre concerné (noms sans accents ni casse)");
+  ok(AM.coefPour("Les Flammes", d) === 1.5, "équipe : le plus grand coefficient des membres est retenu");
+  ok(AM.coefPour("Tom R.", d) === 1.25 && AM.coefPour("Inconnue", d) === 1 && AM.coefPour("Les Fioles", AM.vide()) === 1, "élève seul reconnu ; par défaut aucun (1)");
+  ok(AM.coefDe({ coefs: { A: 9 } }, "A") === 1 && AM.coefDe({ coefs: { A: "x" } }, "A") === 1, "coefficient absurde ignoré");
+  const demarrer = async (w, nom) => {
+    const D = w.document;
+    D.getElementById("input-equipe").value = nom; D.getElementById("input-equipe").dispatchEvent(new w.Event("input", { bubbles: true }));
+    D.querySelector(".opt-niveau").click(); await dodo(20);
+    D.getElementById("btn-demarrer").click(); await dodo(60);
+  };
+  const reel = 8 * 60000;           // 8 min réelles : au-dessus de l'allure attendue (CM1 : 8 min ; 6 min pour tour-du-monde et declaration), mais dedans une fois ÷ 1,5
+  for (const j of ["melanges", "tour-du-monde", "declaration"]) {
+    // 2. avec réglage : équipe « Les Fioles » (×1,5)
+    const stock = { escape_amenagements: JSON.stringify({ coefs: { "Léa B.": 1.5 }, equipes: { "Les Fioles": ["Léa B.", "Tom R."] }, traces: [] }) };
+    const { w, erreurs } = await charger(J(j), "", { stockage: stock });
+    await demarrer(w, "Les Fioles");
+    const D = w.document;
+    ok(w.ETAT.coefTemps === 1.5, `${j} : coefficient ×1,5 retenu pour l'équipe`);
+    ok(w.ETAT.reglages.dureeMin === Math.round(w.ETAT.reglages.dureeMinBase * 1.5), `${j} : durée de séance repoussée (${w.ETAT.reglages.dureeMinBase} → ${w.ETAT.reglages.dureeMin} min)`);
+    const visible = D.body.cloneNode(true); visible.querySelectorAll("script,style").forEach(x => x.remove());
+    ok(!D.getElementById("hud-delai") && !/×\s?1[,.]5|tiers-temps|\bPAP\b|\bPPS\b|major/i.test(visible.textContent), `${j} : rien d'affiché à l'écran`);
+    ok(JSON.parse(w.localStorage.getItem("escape_amenagements")).traces.length === 1, `${j} : une trace dans les aménagements`);
+    ok(!/escape_amenagements|coefTemps/.test(JSON.stringify(w.COMPTE_RENDU.construire())), `${j} : rien dans le compte-rendu (donc ni dans les exports ni sur le serveur)`);
+    // 3. le bonus de rapidité est jugé sur le temps réel ÷ coefficient ; le temps réel est conservé
+    w.afficherSalle(1); await dodo(60);
+    const debut = Date.now() - reel;
+    w.ETAT.salleDebut = debut; w.ETAT.indicesSalle = 0; const s0 = w.ETAT.score;
+    w.validerSalle(1); await dodo(1200);
+    const tempsReel = w.ETAT.tempsParSalle[1];
+    ok(tempsReel >= reel - 200 && tempsReel <= reel + 2000, `${j} : temps réel de la salle conservé (${Math.round(tempsReel / 6000) / 10} min)`);
+    ok(w.ETAT.salleDebut === debut, `${j} : heure de début de salle rétablie`);
+    const gainAvec = w.ETAT.score - s0;
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+    // 4. sans réglage : la même salle en 12 min n'a PAS le bonus
+    const b = await charger(J(j), "", { stockage: {} });
+    await demarrer(b.w, "Les Fioles");
+    ok(!b.w.ETAT.coefTemps && b.w.ETAT.reglages.dureeMin === b.w.ETAT.reglages.dureeMinBase, `${j} : sans réglage, rien ne change`);
+    b.w.afficherSalle(1); await dodo(60);
+    b.w.ETAT.salleDebut = Date.now() - reel; b.w.ETAT.indicesSalle = 0; const t0 = b.w.ETAT.score;
+    b.w.validerSalle(1); await dodo(1200);
+    const gainSans = b.w.ETAT.score - t0;
+    ok(gainAvec > gainSans, `${j} : 8 min réelles à ×1,5 comptent pour ~5 min : bonus de rapidité accordé (gain ${gainAvec} points contre ${gainSans} sans réglage)`);
+    ok(JSON.parse(b.w.localStorage.getItem("escape_amenagements") || '{"traces":[]}').traces.length === 0, `${j} : sans réglage, aucune trace`);
+  }
+  // 5. deux départs de suite : la durée n'est pas majorée deux fois
+  const a = await charger(J("melanges"), "", { stockage: { escape_amenagements: JSON.stringify({ coefs: { "Léa B.": 1.5 }, equipes: {}, traces: [] }) } });
+  await demarrer(a.w, "Léa B.");
+  const base = a.w.ETAT.reglages.dureeMinBase;
+  a.w.document.getElementById("btn-demarrer").click(); await dodo(60);
+  ok(a.w.ETAT.reglages.dureeMinBase === base && a.w.ETAT.reglages.dureeMin === Math.round(base * 1.5), "deux départs de suite : la durée n'est pas majorée deux fois");
+  // 6. documentation pour les collègues (N2)
+  ok(/temps major/i.test(fs.readFileSync(path.join(RACINE, "adopter.html"), "utf8")) && /temps major/i.test(fs.readFileSync(path.join(RACINE, "faq.html"), "utf8")), "kit collègues (adopter.html) et FAQ : temps majoré documenté");
 };
 
 /* ---- C4 : jeu précédent / suivant ---- */
