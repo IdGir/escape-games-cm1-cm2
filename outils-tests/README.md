@@ -127,3 +127,11 @@ télécharge aucun navigateur) ; sinon le contrôle est sauté avec un avertisse
 lui-même : `node commun/tests/test-responsive.js` (défauts simulés : bouton hors écran, recouvert,
 page trop large). Premier passage : un tableau de l'« Atelier de la cheffe » (Le Grand Repas du chef)
 dépassait de 9 px sur smartphone ; corrigé.
+
+## Intégration continue sur GitHub (N28)
+
+`.github/workflows/verifications.yml` relance sur GitHub, à chaque push et pull request, les contrôles
+`verifier-enigmes.js`, `verifier-liens-internes.js`, `verifier-charte.js` et `verifier-responsive.js --rapide`,
+sans installation locale. Le résultat s'affiche (✓/✗) sur le commit et la pull request. Le crochet
+`pre-push` local reste en complément : même contrôle, plus rapide, avant même l'envoi. Lire un échec :
+[LIRE-UN-ECHEC-CI.md](LIRE-UN-ECHEC-CI.md).

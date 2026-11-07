@@ -383,3 +383,11 @@ variantes immersives.
 déclaration, tour-du-monde et mission-geo n'ont pas de variante ; droits des médias « à préciser » à régler
 (voir N14).
 **Jeux concernés :** 10 variantes + accueil, frise, resultats.html, archives (N9) · **Effort :** L · **Statut :** Fait
+
+### N28 — Intégration continue (CI) sur GitHub : tous les contrôles automatiques à chaque push
+Le crochet `pre-push` dépend d'une installation locale (`git config core.hooksPath`) : après un changement
+de machine, du code peut partir sans contrôle. `.github/workflows/verifications.yml` relance sur GitHub, à
+chaque push et pull request, les mêmes scripts (énigmes A7, liens N10, charte B1, affichage N17) ; le
+résultat (✓/✗) s'affiche sur le commit et la pull request. Le crochet local reste, pour un retour plus rapide.
+Lecture d'un échec : `outils-tests/LIRE-UN-ECHEC-CI.md`.
+**Jeux concernés :** tous (outils-tests/ + dépôt GitHub) · **Effort :** S · **Statut :** Fait
