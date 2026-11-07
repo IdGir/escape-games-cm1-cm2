@@ -391,3 +391,13 @@ chaque push et pull request, les mêmes scripts (énigmes A7, liens N10, charte 
 résultat (✓/✗) s'affiche sur le commit et la pull request. Le crochet local reste, pour un retour plus rapide.
 Lecture d'un échec : `outils-tests/LIRE-UN-ECHEC-CI.md`.
 **Jeux concernés :** tous (outils-tests/ + dépôt GitHub) · **Effort :** S · **Statut :** Fait
+
+### N24 — Export du passeport de compétences au format LSU
+Le LSU a ses propres intitulés (éléments de programme et compétences du cycle 3). Table de correspondance
+leçon du passeport → intitulé LSU le plus proche (`commun/donnees/lsu.js`, qui s'appuie sur le rattachement
+aux programmes du bandeau BO, C2 ; chaque ligne est « exacte » ou « approchée »), module `commun/js/export-lsu.js`
+et bouton « 🧾 Exporter pour le LSU » dans `passeport.html` : aperçu par intitulé avec niveau LSU suggéré,
+texte à copier-coller et fichier CSV, filtre « notes depuis le… » pour un bilan périodique, un élève ou la classe.
+C'est une aide, pas une validation : avertissement affiché partout, « dépassés » jamais proposé, évaluation
+partielle et correspondance approchée signalées ; l'enseignant garde la main sur la saisie finale.
+**Jeux concernés :** passeport.html (commun) · **Effort :** M · **Statut :** Fait

@@ -67,8 +67,25 @@
       <label>Afficher <select id="choix-vue"><option value="eleve">le passeport de l'élève</option><option value="classe">la vue de la classe</option></select></label>
       <button id="btn-imprimer">🖨️ Imprimer les passeports</button>
       <button id="btn-csv">📄 CSV (tableur, Schooly)</button>
+      <button id="btn-lsu" aria-expanded="false" aria-controls="panneau-lsu">🧾 Exporter pour le LSU</button>
     </div>
     <div id="vue"></div>
+  </section>
+
+  <section class="bloc" id="panneau-lsu" hidden>
+    <h2 style="margin:0 0 6px;font-size:1.05rem">🧾 Export pour le LSU (bilans périodiques)</h2>
+    <p class="aide" id="lsu-avertissement" role="note" style="border-left:4px solid var(--e);padding:4px 10px;background:#fff8ec"></p>
+    <div class="ligne">
+      <label>Notes prises en compte depuis le <input type="date" id="lsu-depuis"></label>
+      <span class="aide" id="lsu-portee"></span>
+    </div>
+    <div id="lsu-apercu" style="overflow-x:auto;margin-top:8px"></div>
+    <div class="ligne" style="margin-top:8px">
+      <button class="principal" id="btn-lsu-copier">📋 Copier le texte</button>
+      <button id="btn-lsu-csv">📄 Télécharger le CSV</button>
+      <span class="aide" id="lsu-msg" role="status"></span>
+    </div>
+    <textarea id="lsu-texte" readonly style="min-height:140px;margin-top:8px;font:.82rem monospace" aria-label="Texte à copier-coller dans le LSU"></textarea>
   </section>
 
   <section class="bloc" id="transfert">
@@ -91,6 +108,8 @@
 
 <script src="commun/donnees/catalogue.js?c3"></script>
 <script src="commun/js/progression.js?c1"></script>
+<script src="commun/donnees/lsu.js?n24"></script>
+<script src="commun/js/export-lsu.js?n24"></script>
 <script>
 "use strict";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
@@ -108,10 +127,10 @@ async function chargerCompetences(){
     .sort((a, b) => ((a.periodes[0] || "P9") > (b.periodes[0] || "P9")) - ((a.periodes[0] || "P9") < (b.periodes[0] || "P9")) || (parseInt(a.num, 10) || 99) - (parseInt(b.num, 10) || 99));
   const liste = [];
   for(const j of jeux){
-    let comps = [j.competences];
-    try{ const r = await fetch(`${j.dossier}/assets/data/lecons-a4.json`); if(r.ok) comps = Object.values((await r.json()).lecons || {}).map(l => l.competence).filter(Boolean); }catch(e){}
-    comps.forEach((t, i) => liste.push({ cle: `${j.dossier}|${i + 1}`, jeu: j.dossier, titre: j.titre, matiere: j.matiere, icone: j.icone, couleur: j.couleurs[0], rang: i + 1,
-      texte: (j.seancesParPeriode ? `Séance ${i + 1} : ` : "") + t }));
+    let comps = [{ lecon: "", competence: j.competences }];
+    try{ const r = await fetch(`${j.dossier}/assets/data/lecons-a4.json`); if(r.ok) comps = Object.entries((await r.json()).lecons || {}).map(([k, l]) => ({ lecon: k, competence: l.competence })).filter(l => l.competence); }catch(e){}
+    comps.forEach((l, i) => liste.push({ cle: `${j.dossier}|${i + 1}`, jeu: j.dossier, lecon: l.lecon, titre: j.titre, matiere: j.matiere, icone: j.icone, couleur: j.couleurs[0], rang: i + 1,
+      texte: (j.seancesParPeriode ? `Séance ${i + 1} : ` : "") + l.competence }));
   }
   COMPETENCES = liste;
 }
@@ -163,6 +182,7 @@ function rendre(){
   const vue = document.getElementById("choix-vue").value;
   document.getElementById("vue").innerHTML = vue === "classe" ? vueClasse() : vueEleve(sel.value);
   if(typeof majPortee === "function" && document.getElementById("portee-export")) majPortee();
+  if(!document.getElementById("panneau-lsu").hidden) lsuRecalculer();       // panneau LSU ouvert : suit les notes (N24)
 }
 document.getElementById("vue").addEventListener("click", e => {
   const b = e.target.closest(".etats button"); if(!b) return;
@@ -213,6 +233,39 @@ document.getElementById("btn-csv").addEventListener("click", () => {
   const l = [["eleve", "matiere", "jeu", "competence", "etat", "date"]];
   D.eleves.forEach(e => COMPETENCES.forEach(k => { const n = (D.notes[e] || {})[k.cle]; if(n) l.push([e, k.matiere, k.titre, k.texte, LIB[n.v], n.date]); }));
   telecharger(`passeport-competences-${new Date().toISOString().slice(0, 10)}.csv`, "﻿" + l.map(r => r.map(c).join(";")).join("\r\n"), "text/csv;charset=utf-8");
+});
+/* ---- Export pour le LSU (N24) : une aide à la saisie, pas une validation ---- */
+let lsuCourant = null;
+function lsuPortee(){ const e = eleveExporte(); return e ? [e] : D.eleves.slice(); }
+function lsuRecalculer(){
+  const eleves = lsuPortee();
+  lsuCourant = EXPORT_LSU.construire({ eleves, notes: D.notes, competences: COMPETENCES, depuis: document.getElementById("lsu-depuis").value, donnees: LSU, catalogue: CATALOGUE });
+  document.getElementById("lsu-avertissement").textContent = "⚠ " + lsuCourant.avertissement;
+  document.getElementById("lsu-portee").textContent = eleves.length === 1 ? `Élève : ${eleves[0]} (pour toute la classe, choisissez « la vue de la classe »).` : `Toute la classe : ${eleves.length} élève(s).`;
+  const L = lsuCourant.lignes;
+  document.getElementById("lsu-apercu").innerHTML = L.length
+    ? `<table class="classe"><tr>${eleves.length > 1 ? "<th>Élève</th>" : ""}<th>Discipline</th><th>Intitulé LSU</th><th>Niveau suggéré</th><th>Détail</th></tr>${L.map(l => `<tr>${eleves.length > 1 ? `<td>${esc(l.eleve)}</td>` : ""}<td>${esc(l.discipline)}</td><td style="text-align:left">${esc(l.intitule)}${l.approchee ? ` <span title="Correspondance approchée : à confirmer" aria-label="correspondance approchée">≈</span>` : ""}</td><td><b>${esc(l.niveau)}</b></td><td style="text-align:left">${esc(l.detail)}${l.partielle ? " · évaluation partielle" : ""}</td></tr>`).join("")}</table>
+       <p class="aide">≈ correspondance approchée avec l'intitulé LSU (à confirmer). « Évaluation partielle » : des compétences de cet intitulé ne sont pas encore notées. « Dépassés » n'est jamais proposé : c'est à vous d'en juger.</p>`
+    : `<p class="aide">Aucune compétence notée${document.getElementById("lsu-depuis").value ? " depuis cette date" : ""} pour ${eleves.length === 1 ? "cet élève" : "la classe"} : rien à reporter dans le LSU.</p>`;
+  document.getElementById("lsu-texte").value = lsuCourant.texte;
+}
+document.getElementById("btn-lsu").addEventListener("click", () => {
+  const p = document.getElementById("panneau-lsu"), ouvrir = p.hidden;
+  p.hidden = !ouvrir; document.getElementById("btn-lsu").setAttribute("aria-expanded", String(ouvrir));
+  if(ouvrir){ lsuRecalculer(); p.scrollIntoView({ block: "nearest" }); }
+});
+document.getElementById("lsu-depuis").addEventListener("change", lsuRecalculer);
+["choix-eleve", "choix-vue"].forEach(id => document.getElementById(id).addEventListener("change", () => { if(!document.getElementById("panneau-lsu").hidden) lsuRecalculer(); }));
+document.getElementById("btn-lsu-csv").addEventListener("click", () => {
+  lsuRecalculer();
+  telecharger(`passeport-LSU-${new Date().toISOString().slice(0, 10)}.csv`, lsuCourant.csv, "text/csv;charset=utf-8");
+  document.getElementById("lsu-msg").textContent = "📄 CSV téléchargé : à lire et à reporter vous-même dans le LSU.";
+});
+document.getElementById("btn-lsu-copier").addEventListener("click", async () => {
+  lsuRecalculer();
+  const ta = document.getElementById("lsu-texte"); let copie = false;
+  try{ await navigator.clipboard.writeText(lsuCourant.texte); copie = true; }catch(e){ ta.select(); }
+  document.getElementById("lsu-msg").textContent = copie ? "📋 Texte copié : à coller dans votre outil, puis à vérifier." : "Sélectionné : copiez-le avec Ctrl+C.";
 });
 document.getElementById("btn-imprimer").addEventListener("click", () => {
   document.getElementById("impression").innerHTML = D.eleves.map(e => { const n = D.notes[e] || {};

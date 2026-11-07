@@ -609,6 +609,97 @@ SECTIONS.N21 = async () => {
   ok(fs.existsSync(path.join(P, "README.md")), "README du dossier");
 };
 
+/* ---- N24 : export du passeport au format LSU ---- */
+SECTIONS.N24 = async () => {
+  console.log("\n== N24 : export du passeport pour le LSU (passeport.html) ==");
+  const fs = require("fs"), path = require("path");
+  const LSU = require(path.join(RACINE, "commun/donnees/lsu.js"));
+  const EXP = require(path.join(RACINE, "commun/js/export-lsu.js"));
+  // 1. la table couvre toutes les leçons du passeport, sans intitulé inconnu ni leçon fantôme
+  const jeux = fs.readdirSync(RACINE).filter(d => fs.existsSync(path.join(RACINE, d, "assets/data/lecons-a4.json")));
+  let manquantes = [], fantomes = [], inconnus = [], total = 0;
+  for (const j of jeux) {
+    const lecons = Object.keys(JSON.parse(fs.readFileSync(path.join(RACINE, j, "assets/data/lecons-a4.json"), "utf8")).lecons || {});
+    const table = LSU.correspondance[j] || {};
+    total += lecons.length;
+    lecons.forEach(l => { if (!table[l]) manquantes.push(j + "/" + l); else if (!LSU.items[table[l][0]] || !["=", "~"].includes(table[l][1])) inconnus.push(j + "/" + l); });
+    Object.keys(table).forEach(l => { if (!lecons.includes(l)) fantomes.push(j + "/" + l); });
+  }
+  ok(jeux.length >= 14 && manquantes.length === 0, `chaque leçon de ${jeux.length} jeux (${total}) a son intitulé LSU ${manquantes.join(", ")}`);
+  ok(fantomes.length === 0 && inconnus.length === 0, `aucune ligne orpheline ni intitulé inconnu ${fantomes.concat(inconnus).join(", ")}`);
+  ok(Object.keys(LSU.correspondance).every(j => jeux.includes(j)), "table : seulement des jeux publiés");
+  ok(Object.values(LSU.items).every(i => i.discipline && i.type && i.libelle), "chaque intitulé LSU : discipline, type, libellé");
+  // 2. niveaux suggérés (règle simple, « dépassés » jamais proposé)
+  ok(EXP.niveau({ A: 3, E: 0, N: 0 }, LSU) === "Objectifs atteints" && EXP.niveau({ A: 1, E: 1, N: 0 }, LSU) === "Objectifs partiellement atteints"
+    && EXP.niveau({ A: 2, E: 0, N: 1 }, LSU) === "Objectifs partiellement atteints" && EXP.niveau({ A: 0, E: 0, N: 2 }, LSU) === "Objectifs non atteints"
+    && EXP.niveau({ A: 0, E: 1, N: 0 }, LSU) === "Objectifs partiellement atteints" && EXP.niveau({ A: 0, E: 0, N: 0 }, LSU) === "", "règle des niveaux suggérés");
+  ok(!Object.values(LSU.niveaux).some(n => /dépass/i.test(n)), "« dépassés » jamais proposé");
+  // 3. dans la page : un élève à l'historique varié, un élève sans note
+  const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200 });
+  const d = w.document, P = w.PASSEPORT;
+  const cle = (jeu, lecon) => { const k = P.COMPETENCES.find(c => c.jeu === jeu && c.lecon === lecon); if (!k) throw new Error("compétence introuvable " + jeu + "/" + lecon); return k.cle; };
+  ok(P.COMPETENCES.every(c => c.lecon), "passeport : la clé de leçon est conservée sur chaque compétence");
+  const note = (v, date) => ({ v, date, t: date + "T10:00:00Z" });
+  const lea = {};
+  [["moyen-age-abbaye", "clovis", "A", "2026-09-15"], ["moyen-age-abbaye", "charlemagne", "A", "2026-09-15"],      // Et avant la France ? : 2/2 acquises
+   ["moyen-age-abbaye", "scriptorium", "E", "2026-09-22"], ["chateau-fort", "vie-des-paysans", "N", "2026-10-06"],   // Le temps des rois : en cours + non acquise (approchée), partielle
+   ["etats-matiere", "etats", "A", "2026-10-13"], ["etats-matiere", "air", "A", "2026-10-13"], ["etats-matiere", "changements", "A", "2026-10-13"],
+   ["etats-matiere", "conservation", "A", "2026-10-13"], ["etats-matiere", "proprietes", "A", "2026-10-13"],     // matière : 5/5 acquises (exacte)
+   ["melanges", "masses", "N", "2026-11-03"],                                                                        // + 1 non acquise approchée → partiellement atteints
+   ["lumiere", "sources", "N", "2026-11-03"],                                                                        // signal : 1 seule note, non acquise, partielle
+   ["constitution", "textes", "A", "2026-11-04"], ["declaration", "bastille", "E", "2026-11-04"], ["tour-du-monde", "carte", "A", "2026-11-04"],
+   ["mission-geo", "l11", "E", "2026-11-05"]
+  ].forEach(([j, l, v, dt]) => { lea[cle(j, l)] = note(v, dt); });
+  w.localStorage.setItem("escape_passeport", JSON.stringify({ eleves: ["Léa B.", "Tom R."], notes: { "Léa B.": lea } }));
+  P.D.eleves.splice(0, P.D.eleves.length, "Léa B.", "Tom R."); P.D.notes["Léa B."] = lea; P.rendre();
+  ok(d.getElementById("panneau-lsu").hidden && d.getElementById("btn-lsu") && /Exporter pour le LSU/.test(d.getElementById("btn-lsu").textContent), "bouton « 🧾 Exporter pour le LSU » (panneau fermé au départ)");
+  d.getElementById("btn-lsu").click();
+  const panneau = d.getElementById("panneau-lsu");
+  ok(!panneau.hidden && /aide à la saisie, pas une validation/i.test(d.getElementById("lsu-avertissement").textContent) && /garde la main/.test(d.getElementById("lsu-avertissement").textContent), "avertissement : une aide, pas une validation, l'enseignant garde la main");
+  const rows = [...d.querySelectorAll("#lsu-apercu table tr")].slice(1).map(tr => [...tr.children].map(td => td.textContent.trim()));
+  const ligne = intitule => rows.find(r => r[1].startsWith(intitule));
+  ok(rows.length === 8, `8 intitulés LSU pour Léa (${rows.length}) : ` + rows.map(r => r[1].slice(0, 30)).join(" / "));
+  ok(ligne("Et avant la France ?")[2] === "Objectifs atteints" && /2 acquises — 2 notées sur 2/.test(ligne("Et avant la France ?")[3]) && !/partielle/.test(ligne("Et avant la France ?")[3]), "« Et avant la France ? » : atteints, évaluation complète");
+  const rois = ligne("Le temps des rois");
+  ok(rois[2] === "Objectifs partiellement atteints" && /1 en cours, 1 non acquise — 2 notées sur 18/.test(rois[3]) && /évaluation partielle/.test(rois[3]) && /≈/.test(rois[1]), "« Le temps des rois » : partiel, correspondance approchée (≈) et évaluation partielle signalées : " + rois.join(" | "));
+  const matiere = ligne("Matière, mouvement, énergie, information : décrire");
+  ok(matiere[2] === "Objectifs partiellement atteints" && /5 acquises, 1 non acquise — 6 notées sur 10/.test(matiere[3]), "matière : 5 acquises + 1 non acquise (mélanges) regroupées : " + matiere.join(" | "));
+  ok(ligne("Matière, mouvement, énergie, information : identifier un signal")[2] === "Objectifs non atteints", "signal : non atteints");
+  ok(ligne("Les principes et les valeurs de la République")[2] === "Objectifs atteints" && ligne("Appréhender la notion d'échelle")[2] === "Objectifs atteints" && ligne("Consommer en France")[2] === "Objectifs partiellement atteints", "EMC, compétence d'échelle et « Consommer en France » : une ligne chacun");
+  ok(rows.every(r => r[0]) && rows[0][0] === "Histoire et géographie", "classé par discipline (histoire-géographie d'abord)");
+  const L = w.EXPORT_LSU.construire({ eleves: ["Léa B."], notes: { "Léa B.": lea }, competences: P.COMPETENCES, donnees: w.LSU, catalogue: w.CATALOGUE });
+  ok(L.lignes.length === 8 && L.partielles >= 5 && L.approchees >= 3, `signalements : ${L.partielles} évaluations partielles, ${L.approchees} correspondances approchées`);
+  // texte à copier-coller et CSV
+  const texte = d.getElementById("lsu-texte").value;
+  ok(/^AIDE À LA SAISIE LSU/.test(texte) && /LÉA B\./.test(texte) && /Histoire et géographie/.test(texte) && /Le temps des rois → Objectifs partiellement atteints/.test(texte) && /\[correspondance approchée\]/.test(texte) && !/TOM R/.test(texte), "texte à copier-coller : avertissement, élève, discipline, niveau, signalements");
+  d.getElementById("btn-lsu-csv").click();
+  const csv = w.__dernierExport.contenu, lignes = csv.replace(/^\uFEFF/, "").split("\r\n");
+  ok(/^passeport-LSU-\d{4}-\d{2}-\d{2}\.csv$/.test(w.__dernierExport.nom) && csv.startsWith("\uFEFF") && lignes.length === 9, `CSV : en-tête + 8 lignes, BOM Excel, nom daté (${lignes.length} lignes)`);
+  ok(lignes[0] === "eleve;discipline_LSU;type;intitule_LSU;niveau_suggere;detail;evaluation_complete;correspondance;derniere_date;jeux;programme_de_reference", "CSV : colonnes");
+  ok(lignes.some(l => /^Léa B\.;Histoire et géographie;Élément de programme;Et avant la France \?;Objectifs atteints;.*;complète;exacte;2026-09-15;Le Manuscrit de l'abbaye;Arrêté du 22 avril 2026/.test(l)), "CSV : une ligne complète lue (programme de référence du bandeau BO, C2)");
+  ok(lignes.every(l => l.split(";").length >= 11), "CSV : 11 colonnes partout (séparateurs protégés)");
+  // filtre « depuis » : seules les notes récentes (bilan de la période)
+  const dep = d.getElementById("lsu-depuis"); dep.value = "2026-11-01"; dep.dispatchEvent(new w.Event("change"));
+  const rows2 = [...d.querySelectorAll("#lsu-apercu table tr")].slice(1).map(tr => tr.children[1].textContent);
+  ok(rows2.length === 6 && !rows2.some(r => /Et avant la France/.test(r)), `depuis le 1er novembre : ${rows2.length} intitulés (les notes de septembre-octobre sont écartées)`);
+  dep.value = "2026-12-01"; dep.dispatchEvent(new w.Event("change"));
+  ok(/rien à reporter/.test(d.getElementById("lsu-apercu").textContent) && d.getElementById("lsu-texte").value.includes("aucune compétence notée"), "aucune note sur la période : message clair, rien à reporter");
+  dep.value = ""; dep.dispatchEvent(new w.Event("change"));
+  // portée : un élève sans note, puis toute la classe
+  const sel = d.getElementById("choix-eleve"); sel.value = "Tom R."; sel.dispatchEvent(new w.Event("change"));
+  ok(/rien à reporter/.test(d.getElementById("lsu-apercu").textContent), "élève sans note : rien à reporter");
+  const v = d.getElementById("choix-vue"); v.value = "classe"; v.dispatchEvent(new w.Event("change"));
+  ok(/Toute la classe : 2 élève\(s\)/.test(d.getElementById("lsu-portee").textContent) && d.querySelectorAll("#lsu-apercu table tr").length === 9, "vue de la classe : l'export concerne toute la classe (colonne Élève)");
+  // 4. leçon inconnue de la table (nouveau jeu) : retombe sur la discipline du bandeau BO (C2), sans rien inventer
+  const inconnue = EXP.construire({ eleves: ["Zoé"], notes: { Zoé: { "chateau-fort|1": note("A", "2026-11-01"), "jeu-futur|1": note("E", "2026-11-01") } },
+    competences: [{ cle: "chateau-fort|1", jeu: "chateau-fort", lecon: "leçon-inconnue", titre: "Le Secret du donjon", matiere: "Histoire", texte: "x" },
+                  { cle: "jeu-futur|1", jeu: "jeu-futur", lecon: "a", titre: "Futur", matiere: "?", texte: "y" }],
+    donnees: LSU, catalogue: w.CATALOGUE });
+  ok(inconnue.lignes.length === 2 && inconnue.lignes[0].discipline === "Histoire et géographie" && inconnue.lignes[0].intitule === "(à rattacher dans votre LSU)" && inconnue.lignes[0].approchee, "leçon absente de la table : discipline du bandeau BO (C2), « à rattacher dans votre LSU »");
+  ok(inconnue.lignes[1].discipline === "(discipline à préciser)", "jeu inconnu : discipline à préciser, rien d'inventé");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);
