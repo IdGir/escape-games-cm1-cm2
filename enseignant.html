@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espace enseignant — Escape games CM1 · CM2</title>
+<meta name="description" content="Toutes les ressources destinées à l'enseignant, classées par moment : préparer, jouer, suivre, après la partie, adapter, présenter. Un seul point d'entrée.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1d3a8a">
+<!--
+  ESPACE ENSEIGNANT — POINT D'ENTRÉE UNIQUE
+  Les pages et documents destinés à l'enseignant, classés par MOMENT (préparer, jouer, suivre, après, adapter,
+  présenter, aider) puis, jeu par jeu, dans un tableau.
+  Le tableau « jeu par jeu » est GÉNÉRÉ : python outils-docs/maj-espace-enseignant.py
+  (il lit commun/donnees/catalogue.js et ne met un lien que si le fichier existe).
+  Ne pas modifier à la main ce qui est entre les repères JEUX:DEBUT et JEUX:FIN.
+-->
+<style>
+  :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--bleu:#1d3a8a;--or:#c9a227}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}
+  header{padding-top:22px} h1{margin:4px 0 0;font-size:1.8rem}
+  header .chapo{color:var(--doux);margin:6px 0 0;font-size:1.05rem}
+  a{color:var(--bleu)}
+  h2{font-size:1.2rem;margin:30px 0 4px}
+  h2 + .sous{color:var(--doux);margin:0 0 10px;font-size:.93rem}
+  .cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+  .carte{background:var(--papier);border:1px solid var(--ligne);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column}
+  .carte h3{margin:0 0 2px;font-size:1rem}
+  .carte p{margin:2px 0 8px;font-size:.9rem;color:var(--doux);flex:1}
+  .carte a.go{align-self:flex-start;text-decoration:none;font-weight:600;font-size:.92rem;background:var(--bleu);color:#fff;padding:5px 12px;border-radius:9px}
+  .carte a.go.clair{background:#fff;color:var(--bleu);border:1px solid var(--bleu)}
+  .carte .liens{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:.72rem;background:#f0eee9;border-radius:6px;padding:1px 7px;color:var(--doux);margin-left:6px;white-space:nowrap;font-weight:400}
+  .tableau{overflow-x:auto;background:var(--papier);border:1px solid var(--ligne);border-radius:14px}
+  table{border-collapse:collapse;width:100%;font-size:.92rem}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--ligne);text-align:left;vertical-align:top}
+  th{background:#faf8f3;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;color:var(--doux);position:sticky;top:0}
+  tr:last-child td{border-bottom:none}
+  td.jeu{min-width:210px} td.jeu small{color:var(--doux);display:block}
+  td.vide{color:#bbb;text-align:center}
+  .note{color:var(--doux);font-size:.9rem}
+  .imprimer{float:right;font:inherit;padding:6px 12px;border-radius:10px;border:1px solid var(--ligne);background:#fff;cursor:pointer}
+  footer{padding:24px 18px 40px;color:var(--doux);font-size:.9rem}
+  @media print{
+    body{background:#fff;font-size:10pt} .imprimer,header nav{display:none}
+    .carte,.tableau{break-inside:avoid;border-color:#bbb} a{color:inherit;text-decoration:none}
+    .carte a.go{background:none;color:inherit;padding:0}
+    @page{size:A4 landscape;margin:10mm}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav><a href="index.html">← Accueil des jeux</a> · <a href="faq.html">❓ Aide</a></nav>
+  <button class="imprimer" id="btn-imprimer" type="button">🖨️ Imprimer cette page</button>
+  <h1>👩‍🏫 Espace enseignant</h1>
+  <p class="chapo">Tout ce qui est destiné à l'enseignant, au même endroit : classé par <b>moment</b>
+    (préparer, jouer, suivre, après la partie, adapter, présenter), puis <b>jeu par jeu</b> dans le tableau en bas de page.</p>
+</header>
+<main>
+
+  <h2>1. Je prépare ma première séance</h2>
+  <p class="sous">Une lecture de dix minutes suffit.</p>
+  <div class="cartes">
+    <div class="carte"><h3>🤝 Kit « adopter »</h3><p>Choisir sa façon de jouer, préparer, pendant, après : tout le parcours en une page (imprimable).</p><a class="go" href="adopter.html">Ouvrir le kit</a></div>
+    <div class="carte"><h3>🔁 Séquences avant / après</h3><p>Une mise en situation, le jeu, un réinvestissement : la fiche pour intégrer un jeu dans une progression.</p><a class="go" href="sequences/">Choisir une séquence</a></div>
+    <div class="carte"><h3>🗓️ Année et période</h3><p>Les 26 jeux sur le calendrier des cinq périodes ; fiche A4 par période.</p><div class="liens"><a class="go" href="annee.html">L'année</a><a class="go clair" href="periode.html">Fiche de période</a></div></div>
+    <div class="carte"><h3>💻 Chromebooks</h3><p>Guide pour les classes équipées de Chromebooks.</p><a class="go" href="guide-chromebooks-escape-games.pdf">Guide (PDF)</a></div>
+    <div class="carte"><h3>📘 Programmation</h3><p>Programmation histoire-géographie-sciences 2026 de référence.</p><a class="go" href="programmation%20histoire-g%C3%A9o%20sciences%202026.pdf">Programmation (PDF)</a></div>
+  </div>
+
+  <h2>2. Je lance le jeu</h2>
+  <p class="sous">En ligne, sur tablette sans internet, ou avec le serveur local de la classe.</p>
+  <div class="cartes">
+    <div class="carte"><h3>🎮 Choisir un jeu</h3><p>La liste des jeux jouables, avec affiches et bandes-annonces.</p><a class="go" href="index.html#annee">Accueil des jeux</a></div>
+    <div class="carte"><h3>📲 Hors connexion</h3><p>Installer l'application sur tablette, ou récupérer une archive par jeu.</p><a class="go" href="index.html#hors-ligne">Installer</a></div>
+    <div class="carte"><h3>📺 Démonstration</h3><p>Une boucle qui montre les jeux, pour l'afficher pendant une présentation ou un accueil.</p><a class="go" href="demo.html">Lancer la démo</a></div>
+    <div class="carte"><h3>🖥️ Serveur local</h3><p>Pour le suivi des équipes en direct : double-clic sur <code>lancer.bat</code> (Windows) ou <code>lancer-mac.command</code> (Mac).</p><a class="go clair" href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games#1-lancer-un-jeu" target="_blank" rel="noopener">Pas à pas</a></div>
+  </div>
+
+  <h2>3. Pendant la partie</h2>
+  <p class="sous">Ces pages marchent avec le serveur local : elles suivent les équipes en direct.</p>
+  <div class="cartes">
+    <div class="carte"><h3>📊 Tableau de bord <span class="tag">par jeu</span></h3><p>Voir où en est chaque équipe, diffuser un message, débloquer. Un tableau de bord par jeu : voir le tableau en bas de page.</p><a class="go" href="#jeux">Aller au tableau</a></div>
+    <div class="carte"><h3>🏆 Classement en direct</h3><p>Le classement des équipes, à projeter au tableau.</p><a class="go" href="classement.html">Ouvrir</a></div>
+  </div>
+
+  <h2>4. Après la partie</h2>
+  <p class="sous">Garder des traces, valoriser, évaluer.</p>
+  <div class="cartes">
+    <div class="carte"><h3>📊 Résultats de la classe</h3><p>Bilan de la classe, énigme par énigme, pour la trace écrite.</p><a class="go" href="resultats.html">Ouvrir</a></div>
+    <div class="carte"><h3>🎓 Passeport de compétences</h3><p>Les compétences travaillées par élève, au fil des jeux.</p><a class="go" href="passeport.html">Ouvrir</a></div>
+    <div class="carte"><h3>🏅 Trophées des équipes</h3><p>Les trophées gagnés, à afficher en classe.</p><a class="go" href="trophees.html">Ouvrir</a></div>
+    <div class="carte"><h3>🖨️ Leçons A4 illustrées</h3><p>Une page par salle, en versions CM1 et CM2, à imprimer. Une par jeu : voir le tableau.</p><a class="go" href="#jeux">Aller au tableau</a></div>
+  </div>
+
+  <h2>5. J'adapte ou je vérifie</h2>
+  <p class="sous">Modifier une énigme, contrôler les médias, repérer ce qui reste à vérifier.</p>
+  <div class="cartes">
+    <div class="carte"><h3>✏️ Éditeur d'énigmes</h3><p>Modifier une énigme sans écrire de code.</p><a class="go" href="editeur.html">Ouvrir</a></div>
+    <div class="carte"><h3>🔍 Vérifier les jeux</h3><p>Tester n'importe quelle énigme, voir tous les médias et ce qui manque, déposer un fichier.</p><a class="go" href="verifier.html">Ouvrir</a></div>
+    <div class="carte"><h3>🎨 Charte graphique</h3><p>Palette, traits, décors, personnages : pour rester cohérent.</p><a class="go clair" href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/CHARTE-GRAPHIQUE.md" target="_blank" rel="noopener">Lire</a></div>
+    <div class="carte"><h3>⚠️ Points à vérifier</h3><p>Données et faits à contrôler avant de jouer, jeu par jeu : voir la colonne « À vérifier » du tableau.</p><a class="go" href="#jeux">Aller au tableau</a></div>
+  </div>
+
+  <h2>6. Je présente ou je diffuse le projet</h2>
+  <p class="sous">À des collègues, en animation pédagogique, ou sur les plateformes nationales.</p>
+  <div class="cartes">
+    <div class="carte"><h3>🎤 Kit de présentation</h3><p>Diaporama de 10 à 15 min et déroulé minuté de 30 ou 45 min, pour un conseil de cycle.</p><a class="go" href="presentation/">Ouvrir le kit</a></div>
+    <div class="carte"><h3>🌐 Diffusion</h3><p>Fiche de présentation, licences, audit des médias, plateformes de dépôt.</p><a class="go clair" href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/diffusion" target="_blank" rel="noopener">Dossier diffusion</a></div>
+  </div>
+
+  <h2>7. Un souci, une question</h2>
+  <div class="cartes">
+    <div class="carte"><h3>❓ Aide et dépannage</h3><p>Les problèmes courants et leurs solutions.</p><a class="go" href="faq.html">Ouvrir</a></div>
+    <div class="carte"><h3>📁 Documentation complète</h3><p>Le README du dépôt : lancer, imprimer, ajouter des médias, organisation des dossiers.</p><a class="go clair" href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games#readme" target="_blank" rel="noopener">README</a></div>
+  </div>
+
+  <h2 id="jeux">8. Jeu par jeu</h2>
+  <p class="sous">Pour chaque jeu, tous ses documents enseignant. Un tiret = le document n'existe pas encore pour ce jeu.
+    Le tableau de bord demande le serveur local ; les guides s'ouvrent sur GitHub.</p>
+  <div class="tableau">
+<!-- JEUX:DEBUT -->
+  <table>
+    <thead><tr><th>Jeu</th><th>Jouer</th><th>Tableau de bord</th><th>Guide et solutions</th><th>Leçons A4</th><th>Séquence</th><th>À vérifier</th></tr></thead>
+    <tbody>
+      <tr><td class="jeu">📜 <b>Le Manuscrit de l&#x27;abbaye</b><small>Histoire</small></td><td><a href="immersifs/moyen-age-abbaye/">Immersif</a> · <a href="moyen-age-abbaye/">Classique</a></td><td><a href="moyen-age-abbaye/prof.html">Classique</a> · <a href="immersifs/moyen-age-abbaye/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/moyen-age-abbaye/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/moyen-age-abbaye/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="moyen-age-abbaye/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/moyen-age-abbaye/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">🏰 <b>Le Secret du donjon</b><small>Histoire</small></td><td><a href="immersifs/chateau-fort/">Immersif</a> · <a href="chateau-fort/">Classique</a></td><td><a href="chateau-fort/prof.html">Classique</a> · <a href="immersifs/chateau-fort/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/chateau-fort/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/chateau-fort/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="chateau-fort/lecons-imprimables.html">Imprimer</a></td><td><a href="sequences/fiche.html?jeu=chateau-fort">Fiche</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/chateau-fort/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">🌦️ <b>La Station météo disparue</b><small>Sciences</small></td><td><a href="immersifs/station-meteo/">Immersif</a> · <a href="station-meteo/">Classique</a></td><td><a href="station-meteo/prof.html">Classique</a> · <a href="immersifs/station-meteo/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/station-meteo/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/station-meteo/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="station-meteo/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/station-meteo/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">⚙️ <b>L&#x27;Atelier de l&#x27;inventeur</b><small>Sciences</small></td><td><a href="immersifs/objets-techniques/">Immersif</a> · <a href="objets-techniques/">Classique</a></td><td><a href="objets-techniques/prof.html">Classique</a> · <a href="immersifs/objets-techniques/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/objets-techniques/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/objets-techniques/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="objets-techniques/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/objets-techniques/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">⚗️ <b>Le Laboratoire de Madame Mélange</b><small>Sciences</small></td><td><a href="immersifs/melanges/">Immersif</a> · <a href="melanges/">Classique</a></td><td><a href="melanges/prof.html">Classique</a> · <a href="immersifs/melanges/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/melanges/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/melanges/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="melanges/lecons-imprimables.html">Imprimer</a></td><td><a href="sequences/fiche.html?jeu=melanges">Fiche</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/melanges/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">👑 <b>De l&#x27;édit de Nantes à Versailles</b><small>Histoire</small></td><td><a href="immersifs/versailles/">Immersif</a> · <a href="versailles/">Classique</a></td><td><a href="versailles/prof.html">Classique</a> · <a href="immersifs/versailles/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/versailles/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/versailles/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="versailles/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/versailles/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">🎨 <b>L&#x27;Atelier de Léonard à Amboise</b><small>Histoire</small></td><td><a href="immersifs/renaissance/">Immersif</a> · <a href="renaissance/">Classique</a></td><td><a href="renaissance/prof.html">Classique</a> · <a href="immersifs/renaissance/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/renaissance/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/renaissance/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="renaissance/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/renaissance/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">🍲 <b>Le Grand Repas du chef</b><small>Sciences</small></td><td><a href="immersifs/alimentation/">Immersif</a> · <a href="alimentation/">Classique</a></td><td><a href="alimentation/prof.html">Classique</a> · <a href="immersifs/alimentation/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/alimentation/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/alimentation/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="alimentation/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/alimentation/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">💡 <b>Le Phare de l&#x27;île Lumière</b><small>Sciences</small></td><td><a href="immersifs/lumiere/">Immersif</a> · <a href="lumiere/">Classique</a></td><td><a href="lumiere/prof.html">Classique</a> · <a href="immersifs/lumiere/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/lumiere/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/lumiere/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="lumiere/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/lumiere/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">🧊 <b>La Fabrique des états</b><small>Sciences</small></td><td><a href="immersifs/etats-matiere/">Immersif</a> · <a href="etats-matiere/">Classique</a></td><td><a href="etats-matiere/prof.html">Classique</a> · <a href="immersifs/etats-matiere/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/etats-matiere/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/etats-matiere/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="etats-matiere/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/etats-matiere/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+      <tr><td class="jeu">🏛️ <b>Le Secret de la Déclaration</b><small>Histoire</small></td><td><a href="declaration/">Classique</a></td><td><a href="declaration/prof.html">Classique</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/declaration/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/declaration/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="declaration/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td class="vide">—</td></tr>
+      <tr><td class="jeu">⚖️ <b>Le Sceau de la République</b><small>EMC</small></td><td><a href="immersifs/constitution/">Immersif</a> · <a href="constitution/">Classique</a></td><td><a href="constitution/prof.html">Classique</a> · <a href="immersifs/constitution/prof.html">Immersif</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/constitution/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/constitution/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="constitution/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td class="vide">—</td></tr>
+      <tr><td class="jeu">🗺️ <b>Mission géographique</b><small>Géographie</small></td><td><a href="mission-geo/">Classique</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/mission-geo/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="mission-geo/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td class="vide">—</td></tr>
+      <tr><td class="jeu">🧭 <b>Le Tour du Monde en 80 minutes</b><small>Géographie</small></td><td><a href="tour-du-monde/">Classique</a></td><td><a href="tour-du-monde/prof.html">Classique</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/tour-du-monde/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="tour-du-monde/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td class="vide">—</td></tr>
+      <tr><td class="jeu">🔱 <b>Le Journal du Nautilus</b><small>Modèle immersif</small></td><td><a href="vingt-mille-lieues/">Classique</a></td><td><a href="vingt-mille-lieues/prof.html">Classique</a></td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/vingt-mille-lieues/GUIDE-PEDAGOGIQUE.md" target="_blank" rel="noopener">Guide</a> · <a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/vingt-mille-lieues/README.md" target="_blank" rel="noopener">README (solutions)</a></td><td><a href="vingt-mille-lieues/lecons-imprimables.html">Imprimer</a></td><td class="vide">—</td><td><a href="https://github.com/IdGir/escape-games-cm1-cm2/blob/escape-games/vingt-mille-lieues/A-VERIFIER.md" target="_blank" rel="noopener">À vérifier</a></td></tr>
+    </tbody>
+  </table>
+<!-- JEUX:FIN -->
+  </div>
+  <p class="note">Tableau mis à jour par <code>python outils-docs/maj-espace-enseignant.py</code> (à relancer quand un jeu est ajouté).</p>
+</main>
+<footer>Une ressource enseignant qui manque ici ? Elle est à ajouter dans cette page, pour garder un seul point d'entrée.</footer>
+<script>
+  document.getElementById("btn-imprimer").addEventListener("click", function(){ window.print(); });
+</script>
+</body>
+</html>

@@ -169,7 +169,7 @@ function liensFabriques(){
     if (!existe(f)) err(source, cible, "cible manquante : " + rel(f));
   }
   /* pages communes de la racine toujours attendues par les jeux */
-  for (const p of ["index.html", "trophees.html", "passeport.html", "resultats.html", "classement.html", "annee.html", "faq.html", "adopter.html", "verifier.html"]) {
+  for (const p of ["index.html", "trophees.html", "passeport.html", "resultats.html", "classement.html", "annee.html", "faq.html", "adopter.html", "enseignant.html", "verifier.html"]) {
     R.liens++;
     if (!existe(path.join(RACINE, p))) err("racine", p, "page commune attendue absente");
   }

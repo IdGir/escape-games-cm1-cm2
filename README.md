@@ -311,6 +311,7 @@ présents dans le jeu ; il intègre automatiquement le plan d'ouverture Agnes d�
 ```
 PROJET ESCAPE GAMES/
 ├── index.html              Accueil : tous les jeux
+├── enseignant.html         ★ Espace enseignant : point d'entrée unique (par moment + jeu par jeu) — tableau généré par outils-docs/maj-espace-enseignant.py
 ├── verifier.html           Vérification : énigmes, médias, fichiers mal nommés
 ├── lancer.bat              Serveur local, Windows (double-clic)
 ├── lancer-mac.command      Serveur local, Mac
