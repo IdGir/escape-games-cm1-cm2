@@ -700,6 +700,90 @@ SECTIONS.N24 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+/* ---- N30 : fiche synthèse pour les familles ---- */
+SECTIONS.N30 = async () => {
+  console.log("\n== N30 : fiche synthèse pour les familles (passeport.html) ==");
+  const fs = require("fs"), path = require("path");
+  const FAM = require(path.join(RACINE, "commun/donnees/familles.js"));
+  const FF = require(path.join(RACINE, "commun/js/fiche-famille.js"));
+  // 1. toutes les leçons du passeport ont leur formulation, sans jargon
+  const jeux = fs.readdirSync(RACINE).filter(d => fs.existsSync(path.join(RACINE, d, "assets/data/lecons-a4.json")));
+  const manque = [], fantomes = [], jargon = [], longs = [];
+  const JARGON = /comp[ée]tence|socle|cycle\b(?! de l'eau)|programme|acquis|évalu|\bBO\b|élément|objectif|séquence|\bCM[12]\b|savoir-faire|\bitem|référentiel|\bLSU\b|domaine/i;
+  for (const j of jeux) {
+    const lecons = Object.keys(JSON.parse(fs.readFileSync(path.join(RACINE, j, "assets/data/lecons-a4.json"), "utf8")).lecons || {});
+    const F = FAM.jeux[j];
+    if (!F) { manque.push(j); continue; }
+    lecons.forEach(l => { if (!F.lecons[l]) manque.push(j + "/" + l); });
+    Object.keys(F.lecons).forEach(l => { if (!lecons.includes(l)) fantomes.push(j + "/" + l); });
+    [[j + "/deroule", F.deroule]].concat(Object.entries(F.lecons).map(([l, t]) => [j + "/" + l, t])).forEach(([k, t]) => {
+      if (JARGON.test(t) || /\b(?![IVXL]+\b)[A-Z]{3,}\b/.test(t)) jargon.push(k);   // sigles (les chiffres romains des rois sont permis)
+      if (t.length > (k.endsWith("/deroule") ? 230 : 120)) longs.push(k + " (" + t.length + ")");
+    });
+  }
+  ok(manque.length === 0 && fantomes.length === 0, `une formulation pour chacune des leçons de ${jeux.length} jeux ${manque.concat(fantomes).join(", ")}`);
+  ok(jargon.length === 0, "aucun jargon de programme (compétence, socle, cycle, acquis…) : " + jargon.join(", "));
+  ok(longs.length === 0, "phrases courtes (lecture rapide par un parent) : " + longs.join(", "));
+  ok(Object.values(FAM.jeux).every(j => /^[A-ZÀÉ]/.test(j.deroule) && /\.$/.test(j.deroule)), "chaque phrase de déroulé est une phrase");
+  ok(!Object.values(FAM.niveaux).some(n => /non acquis|insuffisant|échec|faible/i.test(n)), "étiquettes bienveillantes : " + Object.values(FAM.niveaux).join(" / "));
+  // 2. dans la page
+  const hist = JSON.stringify([
+    { type: "escape-game-compte-rendu", jeu: "chateau-fort", eleve: "Les Lynx", mode: "equipe", termine: true, date: "2026-11-05T10:00", score: 150, scoreMax: 185,
+      detail: [{ id: "1-1", l: "construire-un-chateau", ok: 1, pc: 1 }, { id: "2-1", l: "les-defenses", ok: 1, pc: 0 }, { id: "3-1", l: "vie-du-seigneur", ok: 0 }, { id: "4-1", l: "vie-des-paysans", ok: 1, pc: 1 }] },
+    { type: "escape-game-compte-rendu", jeu: "chateau-fort", eleve: "Mia (solo)", mode: "solo", termine: true, date: "2026-11-05T11:00", detail: [{ id: "1-1", l: "les-defenses", ok: 1 }] }
+  ]);
+  const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200, stockage: { escape_resultats: hist } });
+  const d = w.document, P = w.PASSEPORT;
+  const cle = (jeu, lecon) => P.COMPETENCES.find(c => c.jeu === jeu && c.lecon === lecon).cle;
+  const note = (v, date) => ({ v, date, t: date + "T10:00:00Z" });
+  P.D.eleves.splice(0, P.D.eleves.length, "Léa B.", "Tom R.", "Inès M.");
+  P.D.notes["Léa B."] = { [cle("chateau-fort", "vie-des-paysans")]: note("N", "2026-11-05"), [cle("chateau-fort", "construire-un-chateau")]: note("A", "2026-11-05"),
+    [cle("chateau-fort", "les-defenses")]: note("E", "2026-11-05"), [cle("chateau-fort", "vie-du-seigneur")]: note("A", "2026-11-05"), [cle("melanges", "masses")]: note("A", "2026-10-01") };
+  P.D.notes["Tom R."] = { [cle("chateau-fort", "vie-des-paysans")]: note("N", "2026-11-05") };
+  P.rendre();
+  ok(d.getElementById("panneau-famille").hidden && /Fiche pour les familles/.test(d.getElementById("btn-famille").textContent), "bouton « 👪 Fiche pour les familles » (panneau fermé au départ)");
+  d.getElementById("btn-famille").click();
+  const sel = id => d.getElementById(id), apercu = () => sel("fam-apercu").textContent, fiches = () => d.querySelectorAll("#fam-apercu .ffam");
+  ok(sel("fam-jeu").value === "chateau-fort" && sel("fam-pour").value === "eleve", "jeu proposé : le plus récemment travaillé par l'élève (" + sel("fam-jeu").value + ")");
+  ok(fiches().length === 1 && /Le Secret du donjon/.test(apercu()) && /Léa B\./.test(apercu()), "une fiche : nom du jeu et de l'élève");
+  const puces = [...d.querySelectorAll("#fam-apercu li")].map(li => li.textContent.trim());
+  ok(puces.length === 3 && /^Expliquer comment et pourquoi on construisait un château fort.*bien en place/.test(puces[0]) && /^Raconter la vie du seigneur.*bien en place/.test(puces[1]) && /^Décrire comment un château fort protégeait.*en progrès/.test(puces[2]),
+    "3 points au plus, les mieux maîtrisés d'abord : " + puces.join(" | "));
+  ok(!/à consolider|non acquis|%|\d\s*\/\s*\d/i.test(apercu()), "la leçon non acquise n'est pas étalée, aucune note chiffrée");
+  ok(/Au Moyen Âge, en équipe, les élèves ont parcouru un château/.test(apercu()) && /Pas de note chiffrée/.test(apercu()), "une phrase sur le déroulé du jeu et la mention « pas de note chiffrée »");
+  ok(!/compétence|socle|programme|cycle|acquis/i.test(apercu()), "aucun jargon dans la fiche affichée");
+  // un élève avec une seule leçon à consolider : présentée avec bienveillance
+  sel("choix-eleve").value = "Tom R."; sel("choix-eleve").dispatchEvent(new w.Event("change"));
+  ok(fiches().length === 1 && /Raconter la vie de tous les jours des paysans.*à consolider/.test(apercu()) && /Tom R\./.test(apercu()), "élève Tom : une seule leçon, « à consolider »");
+  // élève sans aucune note : rien d'affirmé sur lui, seulement ce que le jeu fait travailler
+  sel("choix-eleve").value = "Inès M."; sel("choix-eleve").dispatchEvent(new w.Event("change"));
+  ok(/Pendant ce jeu, la classe a travaillé à/.test(apercu()) && d.querySelectorAll("#fam-apercu li").length === 3 && d.querySelectorAll("#fam-apercu .et").length === 0, "sans note : « la classe a travaillé à… », 3 premières leçons, aucune étiquette");
+  // une équipe : leçons de sa dernière partie
+  const optEq = [...sel("fam-pour").options].map(o => o.value);
+  ok(optEq.includes("equipe:Les Lynx") && !optEq.some(v => /Mia/.test(v)), "équipes proposées : celles du jeu (le mode solo n'en est pas une) : " + optEq.join(", "));
+  sel("fam-pour").value = "equipe:Les Lynx"; sel("fam-pour").dispatchEvent(new w.Event("change"));
+  const pe = [...d.querySelectorAll("#fam-apercu li")].map(li => li.textContent.trim());
+  ok(/L'équipe « Les Lynx »/.test(apercu()) && /Ce que l'équipe a travaillé/.test(apercu()) && pe.length === 3 && pe.every(t => /bien en place/.test(t)) && !/vie du seigneur/i.test(apercu()), "fiche d'équipe : leçons réussies d'abord, la leçon non réussie reste dans l'ombre : " + pe.join(" | "));
+  ok(/5 novembre 2026/.test(apercu()), "date de la partie de l'équipe");
+  // toute la classe, mot de l'enseignant (échappé), impression et texte à copier
+  sel("fam-pour").value = "classe"; sel("fam-pour").dispatchEvent(new w.Event("change"));
+  sel("fam-mot").value = "Bravo <b>l'équipe</b> !"; sel("fam-mot").dispatchEvent(new w.Event("input"));
+  ok(fiches().length === 3 && d.querySelectorAll("#fam-apercu .mot").length === 3 && !d.querySelector("#fam-apercu .mot b b") && /<b>l'équipe<\/b>/.test(apercu()), "classe : 3 fiches, mot de l'enseignant sur chacune et affiché tel quel (non interprété)");
+  const texte = sel("fam-texte").value;
+  ok(texte.split("————————————————").length === 3 && /^Un escape game en classe : « Le Secret du donjon »/.test(texte) && /Mot de l'enseignant : Bravo/.test(texte) && /• Expliquer comment et pourquoi on construisait un château fort \(bien en place\)/.test(texte), "texte à copier-coller : une fiche par élève, séparées, avec puces et mot");
+  sel("btn-fam-imprimer").click();
+  ok(w.__imprime === 1 && d.querySelectorAll("#impression .ffam").length === 3, "impression : 3 fiches envoyées à l'impression");
+  ok(/\.ffam\{[^}]*height:128mm/.test(fs.readFileSync(path.join(RACINE, "passeport.html"), "utf8")), "mise en page : deux fiches par feuille A4 (demi-page)");
+  // autre jeu au choix
+  sel("fam-jeu").value = "melanges"; sel("fam-jeu").dispatchEvent(new w.Event("change"));
+  ok(/Laboratoire de Madame Mélange/.test(apercu()) && /Comparer et mesurer des masses/.test(apercu()), "autre jeu choisi : sa fiche");
+  // 3. module seul : jeu sans formulation = erreur claire, jeux proposés = ceux qui en ont
+  let err = ""; try { FF.construire({ jeu: "jeu-futur", donnees: FAM, competences: [], sujet: { type: "eleve", nom: "Z" } }); } catch (e) { err = e.message; }
+  ok(/Jeu sans formulation/.test(err), "jeu sans formulation : erreur explicite");
+  ok(FF.jeuxDe([{ jeu: "melanges" }, { jeu: "jeu-futur" }], FAM).join() === "melanges", "jeux proposés : seulement ceux qui ont des formulations");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

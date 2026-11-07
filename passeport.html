@@ -39,7 +39,12 @@
   table.classe th:first-child,table.classe td:first-child{text-align:left}
   .aide{color:var(--doux);font-size:.88rem}
   .impression{display:none}
+  .ffam{border:2px solid var(--encre);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fff;max-width:640px}
+  .ffam h3{margin:0;font-size:1.1rem} .ffam .qui{margin:2px 0 8px;color:var(--doux)} .ffam p{margin:6px 0} .ffam ul{margin:4px 0 8px;padding-left:20px}
+  .ffam li{margin:3px 0} .ffam .et{font-size:.8rem;border:1px solid var(--ligne);border-radius:999px;padding:0 8px;margin-left:4px;white-space:nowrap;color:var(--doux)}
+  .ffam .mot{border-left:4px solid var(--e);padding:2px 10px;background:#fff8ec} .ffam .pied{font-size:.82rem;color:var(--doux)}
   @media print{
+    .ffam{break-inside:avoid;page-break-inside:avoid;border:1.5px dashed #777;border-radius:0;max-width:none;height:128mm;box-sizing:border-box;margin:0 0 6mm;padding:8mm 10mm;font-size:11pt;overflow:hidden}
     body{background:#fff;font-size:10pt} header,main{display:none} .impression{display:block}
     .fiche{page-break-after:always;padding:10mm 12mm} .fiche h1{font-size:16pt;margin:0}
     .fiche table{width:100%;border-collapse:collapse;font-size:9pt;margin-top:6px} .fiche td,.fiche th{border:1px solid #bbb;padding:3px 5px;text-align:left}
@@ -68,6 +73,7 @@
       <button id="btn-imprimer">🖨️ Imprimer les passeports</button>
       <button id="btn-csv">📄 CSV (tableur, Schooly)</button>
       <button id="btn-lsu" aria-expanded="false" aria-controls="panneau-lsu">🧾 Exporter pour le LSU</button>
+      <button id="btn-famille" aria-expanded="false" aria-controls="panneau-famille">👪 Fiche pour les familles</button>
     </div>
     <div id="vue"></div>
   </section>
@@ -86,6 +92,23 @@
       <span class="aide" id="lsu-msg" role="status"></span>
     </div>
     <textarea id="lsu-texte" readonly style="min-height:140px;margin-top:8px;font:.82rem monospace" aria-label="Texte à copier-coller dans le LSU"></textarea>
+  </section>
+
+  <section class="bloc" id="panneau-famille" hidden>
+    <h2 style="margin:0 0 6px;font-size:1.05rem">👪 Fiche synthèse pour les familles</h2>
+    <p class="aide">Une demi-page en langage de tous les jours : le jeu, 2 ou 3 points travaillés, une phrase sur le déroulé. Elle est fabriquée à partir du passeport (ou de la dernière partie d'une équipe) : rien à rédiger. Vous pouvez la relire et ajouter un mot avant de l'imprimer ou de la copier dans l'ENT ou le cahier de liaison numérique.</p>
+    <div class="ligne">
+      <label>Jeu <select id="fam-jeu"></select></label>
+      <label>Pour <select id="fam-pour"></select></label>
+      <label>Un mot de l'enseignant (facultatif) <input type="text" id="fam-mot" maxlength="200" size="38" placeholder="Bravo pour l'esprit d'équipe !"></label>
+    </div>
+    <div id="fam-apercu"></div>
+    <div class="ligne">
+      <button class="principal" id="btn-fam-imprimer">🖨️ Imprimer (2 fiches par feuille)</button>
+      <button id="btn-fam-copier">📋 Copier le texte (ENT, cahier de liaison)</button>
+      <span class="aide" id="fam-msg" role="status"></span>
+    </div>
+    <textarea id="fam-texte" readonly style="min-height:130px;margin-top:8px;font:.85rem monospace" aria-label="Texte à copier dans l'ENT ou le cahier de liaison numérique"></textarea>
   </section>
 
   <section class="bloc" id="transfert">
@@ -110,6 +133,8 @@
 <script src="commun/js/progression.js?c1"></script>
 <script src="commun/donnees/lsu.js?n24"></script>
 <script src="commun/js/export-lsu.js?n24"></script>
+<script src="commun/donnees/familles.js?n30"></script>
+<script src="commun/js/fiche-famille.js?n30"></script>
 <script>
 "use strict";
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
@@ -183,6 +208,7 @@ function rendre(){
   document.getElementById("vue").innerHTML = vue === "classe" ? vueClasse() : vueEleve(sel.value);
   if(typeof majPortee === "function" && document.getElementById("portee-export")) majPortee();
   if(!document.getElementById("panneau-lsu").hidden) lsuRecalculer();       // panneau LSU ouvert : suit les notes (N24)
+  if(!document.getElementById("panneau-famille").hidden){ famPreparerListes(true); famRecalculer(); }   // fiche familles ouverte (N30)
 }
 document.getElementById("vue").addEventListener("click", e => {
   const b = e.target.closest(".etats button"); if(!b) return;
@@ -233,6 +259,64 @@ document.getElementById("btn-csv").addEventListener("click", () => {
   const l = [["eleve", "matiere", "jeu", "competence", "etat", "date"]];
   D.eleves.forEach(e => COMPETENCES.forEach(k => { const n = (D.notes[e] || {})[k.cle]; if(n) l.push([e, k.matiere, k.titre, k.texte, LIB[n.v], n.date]); }));
   telecharger(`passeport-competences-${new Date().toISOString().slice(0, 10)}.csv`, "﻿" + l.map(r => r.map(c).join(";")).join("\r\n"), "text/csv;charset=utf-8");
+});
+/* ---- Fiche synthèse pour les familles (N30) ---- */
+let famCourant = [];
+const historique = () => { try{ return JSON.parse(localStorage.getItem("escape_resultats") || "[]"); }catch(e){ return []; } };
+function famEquipes(jeu){
+  return [...new Set(historique().filter(r => r.jeu === jeu && r.mode !== "solo" && Array.isArray(r.detail) && r.eleve).map(r => String(r.eleve)))];
+}
+function famJeuParDefaut(eleve){
+  const jeux = FICHE_FAMILLE.jeuxDe(COMPETENCES, FAMILLES), n = (D.notes[eleve] || {});
+  let meilleur = "", date = "";
+  COMPETENCES.forEach(c => { const x = n[c.cle]; if(x && jeux.includes(c.jeu) && (x.date || "") >= date){ date = x.date || ""; meilleur = c.jeu; } });
+  return meilleur || (historique().map(r => r.jeu).find(j => jeux.includes(j))) || jeux[0] || "";
+}
+function famPreparerListes(garderJeu){
+  const jeux = FICHE_FAMILLE.jeuxDe(COMPETENCES, FAMILLES), sj = document.getElementById("fam-jeu"), sp = document.getElementById("fam-pour");
+  const eleve = document.getElementById("choix-eleve").value;
+  const jeu = garderJeu && jeux.includes(sj.value) ? sj.value : famJeuParDefaut(eleve);
+  const titre = j => { const c = COMPETENCES.find(x => x.jeu === j); return c ? `${c.icone} ${c.titre}` : j; };
+  sj.innerHTML = jeux.map(j => `<option value="${esc(j)}">${esc(titre(j))}</option>`).join(""); sj.value = jeu;
+  const avant = sp.value;
+  sp.innerHTML = (D.eleves.length ? `<option value="eleve">${eleve ? "l'élève : " + esc(eleve) : "l'élève choisi"}</option><option value="classe">toute la classe (une fiche par élève)</option>` : "")
+    + famEquipes(jeu).map(e => `<option value="equipe:${esc(e)}">l'équipe « ${esc(e)} »</option>`).join("");
+  if([...sp.options].some(o => o.value === avant)) sp.value = avant;
+  else sp.value = document.getElementById("choix-vue").value === "classe" && D.eleves.length ? "classe" : (sp.options[0] || {}).value || "";
+}
+function famRecalculer(){
+  const jeu = document.getElementById("fam-jeu").value, pour = document.getElementById("fam-pour").value, mot = document.getElementById("fam-mot").value;
+  const eleve = document.getElementById("choix-eleve").value;
+  const base = { jeu, notes: D.notes, competences: COMPETENCES, resultats: historique(), donnees: FAMILLES, catalogue: CATALOGUE, mot };
+  const sujets = !jeu || !pour ? [] : pour === "classe" ? D.eleves.map(nom => ({ type: "eleve", nom })) : pour === "eleve" ? [{ type: "eleve", nom: eleve }] : [{ type: "equipe", nom: pour.slice(7) }];
+  famCourant = sujets.map(sujet => FICHE_FAMILLE.construire(Object.assign({ sujet }, base)));
+  const carte = f => `<article class="ffam"><h3>Un escape game en classe : « ${esc(f.titreJeu)} »</h3>${f.nom ? `<p class="qui"><b>${esc(FICHE_FAMILLE.maj(f.sujet))}</b>${f.date ? " — " + esc(new Date(f.date.length > 10 ? f.date : f.date + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })) : ""}</p>` : ""}
+    <p>${esc(f.deroule)}</p><p><b>${f.neutre ? "Pendant ce jeu, la classe a travaillé à :" : esc(f.type === "equipe" ? "Ce que l'équipe a travaillé :" : "Ce que " + f.nom + " a travaillé :")}</b></p>
+    <ul>${f.points.map(p => `<li>${esc(p.texte)}${p.etiquette ? ` <span class="et">${esc(p.etiquette)}</span>` : ""}</li>`).join("")}</ul>
+    ${f.mot ? `<p class="mot"><b>Mot de l'enseignant :</b> ${esc(f.mot)}</p>` : ""}<p class="pied">Pas de note chiffrée : ce sont des repères pour en parler ensemble. N'hésitez pas à demander à l'enseignant.</p></article>`;
+  document.getElementById("fam-apercu").innerHTML = famCourant.length ? famCourant.map(carte).join("") : `<p class="aide">Enregistrez d'abord la liste de la classe, ou jouez une partie en équipe : il n'y a encore personne pour qui faire une fiche.</p>`;
+  document.getElementById("fam-texte").value = famCourant.map(f => f.texte).join("\n\n————————————————\n\n");
+  window.__famApercu = document.getElementById("fam-apercu").innerHTML;
+}
+document.getElementById("btn-famille").addEventListener("click", () => {
+  const p = document.getElementById("panneau-famille"), ouvrir = p.hidden;
+  p.hidden = !ouvrir; document.getElementById("btn-famille").setAttribute("aria-expanded", String(ouvrir));
+  if(ouvrir){ famPreparerListes(false); famRecalculer(); p.scrollIntoView({ block: "nearest" }); }
+});
+document.getElementById("fam-jeu").addEventListener("change", () => { famPreparerListes(true); famRecalculer(); });
+document.getElementById("fam-pour").addEventListener("change", famRecalculer);
+document.getElementById("fam-mot").addEventListener("input", famRecalculer);
+["choix-eleve", "choix-vue"].forEach(id => document.getElementById(id).addEventListener("change", () => { if(!document.getElementById("panneau-famille").hidden){ famPreparerListes(id === "choix-eleve" ? false : true); famRecalculer(); } }));
+document.getElementById("btn-fam-imprimer").addEventListener("click", () => {
+  famRecalculer();
+  document.getElementById("impression").innerHTML = document.getElementById("fam-apercu").innerHTML;
+  window.print();
+});
+document.getElementById("btn-fam-copier").addEventListener("click", async () => {
+  famRecalculer();
+  const ta = document.getElementById("fam-texte"); let copie = false;
+  try{ await navigator.clipboard.writeText(famCourant.map(f => f.texte).join("\n\n————————————————\n\n")); copie = true; }catch(e){ ta.select(); }
+  document.getElementById("fam-msg").textContent = copie ? "📋 Texte copié : à coller dans l'ENT ou le cahier de liaison, après relecture." : "Sélectionné : copiez-le avec Ctrl+C.";
 });
 /* ---- Export pour le LSU (N24) : une aide à la saisie, pas une validation ---- */
 let lsuCourant = null;

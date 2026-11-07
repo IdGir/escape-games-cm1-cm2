@@ -401,3 +401,14 @@ texte à copier-coller et fichier CSV, filtre « notes depuis le… » pour un b
 C'est une aide, pas une validation : avertissement affiché partout, « dépassés » jamais proposé, évaluation
 partielle et correspondance approchée signalées ; l'enseignant garde la main sur la saisie finale.
 **Jeux concernés :** passeport.html (commun) · **Effort :** M · **Statut :** Fait
+
+### N30 — Fiche synthèse pour les familles, à partir du passeport de compétences
+Demi-page en langage de tous les jours, fabriquée sans rédaction : nom du jeu, 2-3 points travaillés
+(`commun/donnees/familles.js`, une formulation simple par leçon, aucun jargon de programme), une phrase sur le
+déroulé du jeu, mot de l'enseignant facultatif. Générée dans `passeport.html` (« 👪 Fiche pour les familles ») depuis
+le passeport (C3) pour un élève ou toute la classe, ou depuis la dernière partie d'une équipe (N12) ; sans note,
+elle dit seulement ce que le jeu fait travailler. Version imprimable (2 par feuille A4) et texte à copier dans un ENT
+ou un cahier de liaison numérique. Étiquettes bienveillantes (« bien en place », « en progrès », « à consolider »),
+jamais de note chiffrée. Contrôles automatiques : une formulation par leçon, pas de jargon, phrases courtes.
+**Reste à faire (humain) :** relecture de la formulation par un parent non enseignant.
+**Jeux concernés :** passeport.html (commun) + C5 · **Effort :** M · **Statut :** Fait
