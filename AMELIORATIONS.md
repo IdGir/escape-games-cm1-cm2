@@ -437,3 +437,16 @@ l'écran (`@media screen`) : l'impression n'est pas touchée. Contrôles : secti
 (trois jeux, cumul, persistance d'un jeu à l'autre, ancien réglage sans `taille`) ; `verifier-responsive.js` (N17)
 accepte `--taille=grand|tres` : 144 écrans × 2 tailles (tablette 10″, 7″, smartphone) sans bouton essentiel hors écran.
 **Jeux concernés :** les 12 « salles » + les immersifs et Mission géographique (commun) · **Effort :** S · **Statut :** Fait
+
+### N26 — Temps majoré individualisé (PAP / PPS)
+Volet « ⏱️ Temps majoré » dans `passeport.html` (fermé au départ) : un coefficient par élève (aucun par défaut ; ×1,25 ·
+×1,33 · ×1,5 · ×2) et, au besoin, la composition des équipes (« Les Fioles : Léa B., Tom R. »). Appliqué par
+`commun/js/minuteur-equipe.js` (E6, déjà chargé par les 13 jeux « salles ») au départ de la partie : coefficient du membre
+de l'équipe qui en a le plus besoin (un élève seul, mode D2, est reconnu par son prénom). Le bonus de rapidité est jugé sur
+le temps réel ÷ coefficient (8 min avec ×1,5 comptent pour 5 min 20), l'alerte de durée de séance est repoussée ; le chrono
+total et le temps réel des salles restent vrais. **Discrétion :** aucun message, aucune icône, rien dans le HUD, l'écran de
+fin ni le compte-rendu ; données sous leur propre clé `escape_amenagements`, jamais dans les exports « Ma progression »
+(N16) ni sur le serveur de classe ; trace (10 dernières applications) lisible dans le volet du passeport seulement.
+Documenté dans le kit collègues (`adopter.html`, N2) et la FAQ. Tests : sections N26 de `test-greffons.js` (3 jeux, avec et
+sans réglage, pas de double majoration) et de `test-pages.js` (passeport).
+**Limite :** ne concerne pas encore les variantes immersives (`immersifs/`). **Jeux concernés :** les 13 jeux « salles » + passeport · **Effort :** M · **Statut :** Fait

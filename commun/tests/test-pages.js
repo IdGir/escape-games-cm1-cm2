@@ -884,6 +884,35 @@ SECTIONS.N31 = async () => {
   ok(erreurs.length === 0 && V.erreurs.length === 0, "erreurs JS : " + erreurs.concat(V.erreurs).join(" | "));
 };
 
+/* ---- N26 : réglage « temps majoré » dans le passeport ---- */
+SECTIONS.N26 = async () => {
+  console.log("\n== N26 : temps majoré (passeport.html) ==");
+  const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 800, stockage: { escape_passeport: JSON.stringify({ eleves: ["Léa B.", "Tom R.", "Inès M."], notes: {} }) } });
+  const d = w.document;
+  const bloc = d.getElementById("bloc-amenag");
+  ok(!!bloc && bloc.tagName === "DETAILS" && !bloc.open, "volet « Temps majoré » présent et fermé au départ (discret)");
+  ok(/rien ne s'affiche chez les élèves/i.test(bloc.textContent) && /jamais dans les exports/i.test(bloc.textContent), "texte : discrétion et absence d'export expliquées");
+  const sels = [...d.querySelectorAll("#amenag-eleves select")];
+  ok(sels.length === 3 && sels.every(s => s.value === "1") && [...sels[0].options].map(o => o.value).join() === "1,1.25,1.33,1.5,2", "un choix par élève, « Aucun » par défaut");
+  sels[0].value = "1.5"; sels[0].dispatchEvent(new w.Event("change", { bubbles: true }));
+  sels[1].value = "1.33"; sels[1].dispatchEvent(new w.Event("change", { bubbles: true }));
+  let st = JSON.parse(w.localStorage.getItem("escape_amenagements"));
+  ok(st.coefs["Léa B."] === 1.5 && st.coefs["Tom R."] === 1.33 && !("Inès M." in st.coefs), "coefficients gardés sous leur propre clé (escape_amenagements)");
+  sels[1].value = "1"; sels[1].dispatchEvent(new w.Event("change", { bubbles: true }));
+  ok(!("Tom R." in JSON.parse(w.localStorage.getItem("escape_amenagements")).coefs), "revenir à « Aucun » efface le coefficient");
+  d.getElementById("amenag-equipes").value = "Les Fioles : Léa B., Tom R.\nligne sans deux-points\nLes Flammes: Inès M.";
+  d.getElementById("btn-amenag").click();
+  st = JSON.parse(w.localStorage.getItem("escape_amenagements"));
+  ok(JSON.stringify(st.equipes) === JSON.stringify({ "Les Fioles": ["Léa B.", "Tom R."], "Les Flammes": ["Inès M."] }), "composition des équipes lue ligne à ligne");
+  ok(w.AMENAGEMENTS.coefPour("Les Fioles") === 1.5 && w.AMENAGEMENTS.coefPour("Les Flammes") === 1, "coefficient d'équipe cohérent avec la saisie");
+  const exp = JSON.stringify(w.PROGRESSION.contenu({}));
+  ok(!/amenag|coefs/.test(exp), "export « Ma progression » : aucun aménagement");
+  w.AMENAGEMENTS.tracer("melanges", "Les Fioles", 1.5);
+  w.eval("AM = AMENAGEMENTS.lire(); rendre();");
+  ok(/Les Fioles/.test(d.getElementById("amenag-traces").textContent) && /×1,5/.test(d.getElementById("amenag-traces").textContent), "trace lisible dans le passeport");
+  ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

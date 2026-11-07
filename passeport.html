@@ -37,6 +37,7 @@
   .jauge .barre span{display:block;height:100%}
   table.classe{border-collapse:collapse;width:100%;font-size:.86rem} table.classe th,table.classe td{border:1px solid var(--ligne);padding:4px 6px;text-align:center}
   table.classe th:first-child,table.classe td:first-child{text-align:left}
+  table.tab-amenag{border-collapse:collapse;font-size:.9rem} table.tab-amenag th,table.tab-amenag td{border:1px solid var(--ligne);padding:4px 10px;text-align:left}
   .aide{color:var(--doux);font-size:.88rem}
   .impression{display:none}
   .ffam{border:2px solid var(--encre);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fff;max-width:640px}
@@ -65,6 +66,16 @@
     <textarea id="liste-eleves" placeholder="Léa B.&#10;Tom R.&#10;Inès M."></textarea>
     <div class="ligne"><button class="principal" id="btn-eleves">✔ Enregistrer la liste</button><span id="msg" class="aide"></span></div>
   </section>
+
+  <details class="bloc" id="bloc-amenag">
+    <summary style="cursor:pointer"><b>⏱️ Temps majoré (PAP / PPS)</b> <span class="aide">— réglage discret, sur cet appareil seulement</span></summary>
+    <p class="aide">Pour un élève qui bénéficie d'un aménagement de temps : le jeu juge le bonus de rapidité et l'alerte de durée sur son allure (temps réel ÷ coefficient). <b>Rien ne s'affiche chez les élèves</b> : ni message, ni icône, ni dans le bilan. Pour une équipe, le coefficient du membre qui en a le plus besoin est retenu. Ces données ne sont jamais dans les exports « Ma progression » ni dans les comptes-rendus. Fermez ce volet avant de projeter la page.</p>
+    <div id="amenag-eleves"></div>
+    <p style="margin:12px 0 4px"><b>Composition des équipes</b> <span class="aide">(facultatif, une équipe par ligne : <i>Nom de l'équipe : élève, élève</i>). Un élève qui joue seul est reconnu par son prénom.</span></p>
+    <textarea id="amenag-equipes" placeholder="Les Fioles : Léa B., Tom R."></textarea>
+    <div class="ligne"><button class="principal" id="btn-amenag">✔ Enregistrer les équipes</button><span id="amenag-msg" class="aide" role="status"></span></div>
+    <div id="amenag-traces"></div>
+  </details>
 
   <section class="bloc">
     <div class="ligne">
@@ -131,6 +142,7 @@
 
 <script src="commun/donnees/catalogue.js?c3"></script>
 <script src="commun/js/progression.js?c1"></script>
+<script src="commun/js/minuteur-equipe.js?c1"></script>
 <script src="commun/donnees/lsu.js?n24"></script>
 <script src="commun/js/export-lsu.js?n24"></script>
 <script src="commun/donnees/familles.js?n30"></script>
@@ -199,6 +211,41 @@ function vueClasse(){
         return `<td>${cs.some(c => n[c.cle]) ? `${a}/${cs.length}` : "—"}</td>`; }).join("")}<td><b>${tot}</b> / ${COMPETENCES.length}</td></tr>`; }).join("")}</table></div>
     <p class="aide">Chaque case : compétences acquises sur le nombre de compétences du jeu (une par leçon).</p>`;
 }
+/* ---- Temps majoré individualisé (N26) : coefficient par élève, composition des équipes, traces ---- */
+const AMENAG_LIB = { 1: "Aucun", 1.25: "×1,25 (¼ de temps en plus)", 1.33: "×1,33 (tiers-temps)", 1.5: "×1,5 (moitié en plus)", 2: "×2 (double)" };
+let AM = AMENAGEMENTS.lire();
+const amenagSauver = () => { if(!AMENAGEMENTS.ecrire(AM)) document.getElementById("amenag-msg").textContent = "Impossible d'enregistrer dans ce navigateur."; };
+function amenagRendre(){
+  const el = document.getElementById("amenag-eleves");
+  el.innerHTML = D.eleves.length
+    ? `<table class="tab-amenag"><tr><th>Élève</th><th>Temps majoré</th></tr>${D.eleves.map((e, i) => { const c = AMENAGEMENTS.coefDe(AM, e);
+        return `<tr><td>${esc(e)}</td><td><select data-i="${i}" aria-label="Temps majoré de ${esc(e)}">${AMENAGEMENTS.COEFFICIENTS.map(k => `<option value="${k}"${k === c ? " selected" : ""}>${AMENAG_LIB[k]}</option>`).join("")}</select></td></tr>`; }).join("")}</table>`
+    : `<p class="aide">Enregistrez d'abord la liste de la classe (étape 1).</p>`;
+  const t = document.getElementById("amenag-equipes");
+  if(document.activeElement !== t) t.value = Object.entries(AM.equipes).map(([n, m]) => `${n} : ${m.join(", ")}`).join("\n");
+  const tr = AM.traces.slice(-10).reverse();
+  document.getElementById("amenag-traces").innerHTML = tr.length
+    ? `<p style="margin:12px 0 4px"><b>Trace</b> <span class="aide">(les 10 dernières applications, visibles ici seulement)</span></p><ul class="aide">${tr.map(x => `<li>${esc(new Date(x.date).toLocaleDateString("fr-FR"))} · ${esc(x.jeu)} · ${esc(x.equipe)} · ×${String(x.coef).replace(".", ",")}</li>`).join("")}</ul>`
+    : "";
+}
+document.getElementById("amenag-eleves").addEventListener("change", e => {
+  const s = e.target.closest("select[data-i]"); if(!s) return;
+  const eleve = D.eleves[+s.dataset.i], k = +s.value;
+  Object.keys(AM.coefs).filter(x => AMENAGEMENTS.norm(x) === AMENAGEMENTS.norm(eleve)).forEach(x => delete AM.coefs[x]);
+  if(k > 1) AM.coefs[eleve] = k;
+  amenagSauver();
+  document.getElementById("amenag-msg").textContent = "Réglage enregistré.";
+});
+document.getElementById("btn-amenag").addEventListener("click", () => {
+  const eq = {};
+  document.getElementById("amenag-equipes").value.split("\n").forEach(l => {
+    const i = l.indexOf(":"); if(i < 1) return;
+    const nom = l.slice(0, i).trim(), m = l.slice(i + 1).split(/[,;]/).map(x => x.trim()).filter(Boolean);
+    if(nom && m.length) eq[nom] = m;
+  });
+  AM.equipes = eq; amenagSauver();
+  document.getElementById("amenag-msg").textContent = `${Object.keys(eq).length} équipe(s) enregistrée(s).`;
+});
 function rendre(){
   const sel = document.getElementById("choix-eleve"), garde = sel.value;
   sel.innerHTML = D.eleves.map(e => `<option>${esc(e)}</option>`).join("");
@@ -207,6 +254,7 @@ function rendre(){
   const vue = document.getElementById("choix-vue").value;
   document.getElementById("vue").innerHTML = vue === "classe" ? vueClasse() : vueEleve(sel.value);
   if(typeof majPortee === "function" && document.getElementById("portee-export")) majPortee();
+  amenagRendre();                                                        // temps majoré (N26)
   if(!document.getElementById("panneau-lsu").hidden) lsuRecalculer();       // panneau LSU ouvert : suit les notes (N24)
   if(!document.getElementById("panneau-famille").hidden){ famPreparerListes(true); famRecalculer(); }   // fiche familles ouverte (N30)
 }

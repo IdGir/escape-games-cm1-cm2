@@ -208,6 +208,67 @@ SECTIONS.E6 = async () => {
   for (const j of JEUX8) ok(fs.readFileSync(J(j) + "/prof.html", "utf8").includes("','delai')"), `${j} : bouton ⏱️ + dans prof.html`);
 };
 
+/* ---- N26 : temps majoré individualisé (PAP / PPS) ---- */
+SECTIONS.N26 = async () => {
+  console.log("\n== N26 : temps majoré individualisé ==");
+  const fs = require("fs");
+  const AM = require(path.join(RACINE, "commun/js/minuteur-equipe.js"));
+  // 1. coefficient d'une équipe : le plus grand de ses membres ; élève seul reconnu par son prénom ; rien par défaut
+  const d = { coefs: { "Léa B.": 1.5, "Tom R.": 1.25, "Inès M.": 1 }, equipes: { "Les Fioles": ["lea b.", "Inès M."], "Les Flammes": ["Tom R.", "Léa B."] }, traces: [] };
+  ok(AM.coefPour("Les Fioles", d) === 1.5 && AM.coefPour("  les fioles ", d) === 1.5, "équipe : coefficient du membre concerné (noms sans accents ni casse)");
+  ok(AM.coefPour("Les Flammes", d) === 1.5, "équipe : le plus grand coefficient des membres est retenu");
+  ok(AM.coefPour("Tom R.", d) === 1.25 && AM.coefPour("Inconnue", d) === 1 && AM.coefPour("Les Fioles", AM.vide()) === 1, "élève seul reconnu ; par défaut aucun (1)");
+  ok(AM.coefDe({ coefs: { A: 9 } }, "A") === 1 && AM.coefDe({ coefs: { A: "x" } }, "A") === 1, "coefficient absurde ignoré");
+  const demarrer = async (w, nom) => {
+    const D = w.document;
+    D.getElementById("input-equipe").value = nom; D.getElementById("input-equipe").dispatchEvent(new w.Event("input", { bubbles: true }));
+    D.querySelector(".opt-niveau").click(); await dodo(20);
+    D.getElementById("btn-demarrer").click(); await dodo(60);
+  };
+  const reel = 8 * 60000;           // 8 min réelles : au-dessus de l'allure attendue (CM1 : 8 min ; 6 min pour tour-du-monde et declaration), mais dedans une fois ÷ 1,5
+  for (const j of ["melanges", "tour-du-monde", "declaration"]) {
+    // 2. avec réglage : équipe « Les Fioles » (×1,5)
+    const stock = { escape_amenagements: JSON.stringify({ coefs: { "Léa B.": 1.5 }, equipes: { "Les Fioles": ["Léa B.", "Tom R."] }, traces: [] }) };
+    const { w, erreurs } = await charger(J(j), "", { stockage: stock });
+    await demarrer(w, "Les Fioles");
+    const D = w.document;
+    ok(w.ETAT.coefTemps === 1.5, `${j} : coefficient ×1,5 retenu pour l'équipe`);
+    ok(w.ETAT.reglages.dureeMin === Math.round(w.ETAT.reglages.dureeMinBase * 1.5), `${j} : durée de séance repoussée (${w.ETAT.reglages.dureeMinBase} → ${w.ETAT.reglages.dureeMin} min)`);
+    const visible = D.body.cloneNode(true); visible.querySelectorAll("script,style").forEach(x => x.remove());
+    ok(!D.getElementById("hud-delai") && !/×\s?1[,.]5|tiers-temps|\bPAP\b|\bPPS\b|major/i.test(visible.textContent), `${j} : rien d'affiché à l'écran`);
+    ok(JSON.parse(w.localStorage.getItem("escape_amenagements")).traces.length === 1, `${j} : une trace dans les aménagements`);
+    ok(!/escape_amenagements|coefTemps/.test(JSON.stringify(w.COMPTE_RENDU.construire())), `${j} : rien dans le compte-rendu (donc ni dans les exports ni sur le serveur)`);
+    // 3. le bonus de rapidité est jugé sur le temps réel ÷ coefficient ; le temps réel est conservé
+    w.afficherSalle(1); await dodo(60);
+    const debut = Date.now() - reel;
+    w.ETAT.salleDebut = debut; w.ETAT.indicesSalle = 0; const s0 = w.ETAT.score;
+    w.validerSalle(1); await dodo(1200);
+    const tempsReel = w.ETAT.tempsParSalle[1];
+    ok(tempsReel >= reel - 200 && tempsReel <= reel + 2000, `${j} : temps réel de la salle conservé (${Math.round(tempsReel / 6000) / 10} min)`);
+    ok(w.ETAT.salleDebut === debut, `${j} : heure de début de salle rétablie`);
+    const gainAvec = w.ETAT.score - s0;
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+    // 4. sans réglage : la même salle en 12 min n'a PAS le bonus
+    const b = await charger(J(j), "", { stockage: {} });
+    await demarrer(b.w, "Les Fioles");
+    ok(!b.w.ETAT.coefTemps && b.w.ETAT.reglages.dureeMin === b.w.ETAT.reglages.dureeMinBase, `${j} : sans réglage, rien ne change`);
+    b.w.afficherSalle(1); await dodo(60);
+    b.w.ETAT.salleDebut = Date.now() - reel; b.w.ETAT.indicesSalle = 0; const t0 = b.w.ETAT.score;
+    b.w.validerSalle(1); await dodo(1200);
+    const gainSans = b.w.ETAT.score - t0;
+    ok(gainAvec > gainSans, `${j} : 8 min réelles à ×1,5 comptent pour ~5 min : bonus de rapidité accordé (gain ${gainAvec} points contre ${gainSans} sans réglage)`);
+    ok(JSON.parse(b.w.localStorage.getItem("escape_amenagements") || '{"traces":[]}').traces.length === 0, `${j} : sans réglage, aucune trace`);
+  }
+  // 5. deux départs de suite : la durée n'est pas majorée deux fois
+  const a = await charger(J("melanges"), "", { stockage: { escape_amenagements: JSON.stringify({ coefs: { "Léa B.": 1.5 }, equipes: {}, traces: [] }) } });
+  await demarrer(a.w, "Léa B.");
+  const base = a.w.ETAT.reglages.dureeMinBase;
+  a.w.document.getElementById("btn-demarrer").click(); await dodo(60);
+  ok(a.w.ETAT.reglages.dureeMinBase === base && a.w.ETAT.reglages.dureeMin === Math.round(base * 1.5), "deux départs de suite : la durée n'est pas majorée deux fois");
+  // 6. documentation pour les collègues (N2)
+  ok(/temps major/i.test(fs.readFileSync(path.join(RACINE, "adopter.html"), "utf8")) && /temps major/i.test(fs.readFileSync(path.join(RACINE, "faq.html"), "utf8")), "kit collègues (adopter.html) et FAQ : temps majoré documenté");
+};
+
 /* ---- C4 : jeu précédent / suivant ---- */
 SECTIONS.C4 = async () => {
   console.log("\n== C4 : jeu précédent / suivant en fin de partie ==");
