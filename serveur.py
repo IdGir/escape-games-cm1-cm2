@@ -33,8 +33,31 @@ COMMANDES_PROF = {}       # { "equipe": {"pause":bool, "indice":"..."} }
 LOCK = threading.Lock()
 # Résultats des parties terminées, gardés toute l'année sur CET ordinateur (amélioration D5).
 # Fichier jamais publié (.gitignore) : il contient les prénoms des élèves.
-FICHIER_RESULTATS = "resultats-classe.jsonl"
-FICHIER_DIFFICULTE = "difficulte-classe.json"   # N20 : réglages de difficulté énigme par énigme
+def dossier_donnees():
+    """Dossier où sont gardés les fichiers de la classe (résultats, difficulté).
+    Par défaut : le dossier du projet. Pour les retrouver ailleurs (ex. un dossier synchronisé OneDrive /
+    Google Drive / Nextcloud, lu ensuite depuis la maison) : écrire le chemin sur la 1re ligne d'un fichier
+    « dossier-donnees.txt » placé à côté de serveur.py (jamais publié, voir .gitignore), ou définir la variable
+    d'environnement ESCAPE_DONNEES."""
+    d = os.environ.get("ESCAPE_DONNEES", "").strip()
+    if not d:
+        ref = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dossier-donnees.txt")
+        if os.path.exists(ref):
+            with open(ref, encoding="utf-8-sig") as f:
+                d = f.readline().strip().strip('"')
+    if not d:
+        return ""
+    d = os.path.expanduser(os.path.expandvars(d))
+    try:
+        os.makedirs(d, exist_ok=True)
+    except OSError as e:
+        print("  ⚠️  Dossier de données inutilisable ({}) : {}. Le dossier du projet est utilisé.".format(d, e))
+        return ""
+    return d
+
+DOSSIER_DONNEES = dossier_donnees()
+FICHIER_RESULTATS = os.path.join(DOSSIER_DONNEES, "resultats-classe.jsonl")
+FICHIER_DIFFICULTE = os.path.join(DOSSIER_DONNEES, "difficulte-classe.json")   # N20 : réglages de difficulté énigme par énigme
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 
 def get_ip_locale():
@@ -414,6 +437,7 @@ def main():
     print("=" * 62)
     print()
     print("  ✅ Serveur démarré sur le port {} (multi-thread, vidéo activée)".format(PORT))
+    print("  🗂️  Résultats de la classe : {}".format(os.path.abspath(FICHIER_RESULTATS)))
     print()
     print("  🏠 ACCUEIL (tous les jeux)  →  http://{}:{}/".format(ip, PORT))
     print("  📺 CLASSEMENT À PROJETER   →  http://{}:{}/classement.html".format(ip, PORT))
