@@ -49,13 +49,13 @@ def ligne(j, seq):
         tdb.append(lien("Immersif", j["immersif"] + "/prof.html"))
     guide = lien("Guide", GITHUB + d + "/GUIDE-PEDAGOGIQUE.md", True) if existe(d, "GUIDE-PEDAGOGIQUE.md") else None
     readme = lien("README (solutions)", GITHUB + d + "/README.md", True) if existe(d, "README.md") else None
-    docs = " · ".join(x for x in (guide, readme) if x)
+    docs = " ".join(x for x in (guide, readme) if x)
     lecons = lien("Imprimer", d + "/lecons-imprimables.html") if existe(d, "lecons-imprimables.html") else None
     sequence = lien("Fiche", "sequences/fiche.html?jeu=" + d) if d in seq else None
     averifier = lien("À vérifier", GITHUB + d + "/A-VERIFIER.md", True) if existe(d, "A-VERIFIER.md") else None
     cell = lambda v: f"<td>{v}</td>" if v else vide()
     titre = f'<td class="jeu">{j.get("icone", "")} <b>{html.escape(j["titre"])}</b><small>{html.escape(j.get("matiere", ""))}</small></td>'
-    return "<tr>" + titre + cell(" · ".join(jouer)) + cell(" · ".join(tdb)) + cell(docs) + cell(lecons) + cell(sequence) + cell(averifier) + "</tr>"
+    return "<tr>" + titre + cell(" ".join(jouer)) + cell(" ".join(tdb)) + cell(docs) + cell(lecons) + cell(sequence) + cell(averifier) + "</tr>"
 
 def main():
     seq = sequences()
