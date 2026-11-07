@@ -784,6 +784,106 @@ SECTIONS.N30 = async () => {
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
+/* ---- N31 : rapport de séance PDF ---- */
+SECTIONS.N31 = async () => {
+  console.log("\n== N31 : rapport de séance en PDF (resultats.html) ==");
+  const fs = require("fs"), os = require("os"), path = require("path"), cp = require("child_process");
+  const RS = require(path.join(RACINE, "commun/js/rapport-seance.js"));
+  const dec = new TextDecoder("windows-1252");
+  /** Lecture « à la main » d'un PDF fabriqué : structure, une page, textes décodés. */
+  const lire = octets => {
+    const s = Buffer.from(octets).toString("latin1");
+    const nObj = (s.match(/\d+ 0 obj/g) || []).length;
+    const xref = +(s.match(/startxref\n(\d+)\n%%EOF/) || [])[1];
+    const offs = [...s.slice(xref).matchAll(/(\d{10}) 00000 n /g)].map(m => +m[1]);
+    const offsOk = offs.length === nObj && offs.every((o, i) => s.slice(o).startsWith(`${i + 1} 0 obj`));
+    const flux = (s.match(/stream\n([\s\S]*?)\nendstream/) || [])[1] || "";
+    const longueur = +(s.match(/\/Length (\d+)/) || [])[1];
+    const textes = [...flux.matchAll(/\(((?:\\.|[^\\)])*)\) Tj/g)].map(m => dec.decode(Buffer.from(m[1].replace(/\\([\\()])/g, "$1"), "latin1")));
+    return { s, entete: s.startsWith("%PDF-1.4"), fin: s.trimEnd().endsWith("%%EOF"), offsOk, pages: (s.match(/\/Type \/Page /g) || []).length, count: (s.match(/\/Count (\d+)/) || [])[1],
+      longueurOk: longueur === flux.length, textes, tout: textes.join("\n") };
+  };
+  // 1. outils : encodage, mesure, coupe
+  ok(RS.encode("Séance « œuvre » — l’été").length === "Séance « œuvre » — l’été".length && RS.encode("🎲 ok ✓") === "ok", "encodage Windows-1252 : accents et guillemets gardés, emojis retirés");
+  ok(RS.echappe("a(b)c\\d") === "a\\(b\\)c\\\\d", "parenthèses et barre oblique protégées dans le PDF");
+  const l1 = RS.coupe("Décrire les fonctions d'un château fort : lieu de protection (sa construction) et de puissance pour le seigneur", 10, 150);
+  ok(l1.length >= 3 && l1.every(x => RS.largeur(x, 10) <= 150.01), "retour à la ligne : aucune ligne plus large que la zone (" + l1.length + " lignes)");
+  ok(RS.largeur(RS.tronque("Un nom d'équipe vraiment beaucoup trop long pour sa colonne", 10, 100), 10) <= 100.01, "nom trop long : abrégé");
+  // 2. séances : regroupement
+  const rec = (o) => Object.assign({ type: "escape-game-compte-rendu", version: 1, jeu: "chateau-fort", titre: "Le Secret du donjon", mode: "equipe", niveau: "CM2", palier: "", date: "2026-11-05T09:40", termine: true,
+    dureeMin: 30, score: 150, scoreMax: 185, enigmes: 5, total: 5, premierCoup: 3, erreurs: 2, indices: 1 }, o);
+  const det = (l, pc, ok1 = 1) => ({ id: "1-1", s: 1, l, ok: ok1, pc });
+  const J = ["construire-un-chateau", "les-defenses", "vie-du-seigneur", "vie-des-paysans", "seigneur-et-paysans"];
+  const parties = [
+    rec({ eleve: "Les Lynx", dureeMin: 38, detail: J.map((l, i) => det(l, i % 2)) }),
+    rec({ eleve: "Les Hiboux", niveau: "CM1", dureeMin: 31, score: 120, detail: J.map(l => det(l, 1)) }),
+    rec({ eleve: "Les Renards", termine: false, enigmes: 2, dureeMin: 14, score: 40, detail: J.slice(0, 2).map(l => det(l, 0)) }),
+    rec({ eleve: "Les Écureuils", termine: false, enigmes: 0, dureeMin: 0, score: 0, scoreMax: null }),
+    rec({ eleve: "Les Renards", termine: false, enigmes: 1, dureeMin: 5, date: "2026-11-05T08:50" }),          // ancienne partie interrompue de la même équipe
+    rec({ eleve: "Mia", mode: "solo" }),                                                                         // devoirs à la maison : pas une séance
+    rec({ eleve: "Les Lynx", date: "2026-11-04T09:40" }),                                                        // un autre jour
+    rec({ eleve: "Les Lynx", jeu: "melanges", titre: "Le Laboratoire de Madame Mélange" })                      // un autre jeu
+  ];
+  const S = RS.seances(parties);
+  ok(S.length === 3 && S[0].jour === "2026-11-05" && S.every(x => x.parties.every(r => r.mode !== "solo")), "séances : un jeu + un jour, jamais le mode individuel (" + S.map(x => x.cle).join(", ") + ")");
+  ok(RS.parEquipe(S.find(x => x.cle === "chateau-fort|2026-11-05").parties).length === 4, "une équipe qui a rejoué n'est comptée qu'une fois (4 équipes)");
+  // 3. dans la page : séance incomplète (2 équipes sur 4 interrompues)
+  const { w, erreurs } = await charger(RACINE, "", { page: "resultats.html", attente: 800, stockage: { escape_resultats: JSON.stringify(parties) } });
+  const d = w.document;
+  d.getElementById("btn-appareil").click();
+  ok(/Exporter le rapport de séance \(PDF\)/.test(d.getElementById("exp-rapport").textContent), "bouton « Exporter le rapport de séance (PDF) »");
+  const opts = [...d.querySelectorAll("#rap-seance option")].map(o => o.textContent);
+  ok(opts.length === 3 && /05\/11\/2026 — Le Secret du donjon — 4 équipes \(2 interrompues\)/.test(opts[0]), "liste des séances, la plus récente d'abord : " + opts[0]);
+  d.getElementById("rap-classe").value = "CM1-CM2 Raoul Follereau (Mme B.)"; d.getElementById("rap-classe").dispatchEvent(new w.Event("input"));
+  ok(w.localStorage.getItem("escape_classe") === "CM1-CM2 Raoul Follereau (Mme B.)", "nom de classe retenu sur l'appareil");
+  d.getElementById("exp-rapport").click(); await dodo(900);
+  const E = w.__dernierExport;
+  ok(E && /^rapport-seance-2026-11-05-le-secret-du-donjon\.pdf$/.test(E.nom) && E.contenu instanceof w.Uint8Array || (E && E.contenu && E.contenu.length > 1000), "fichier « " + (E && E.nom) + " »");
+  const P = lire(E.contenu);
+  ok(P.entete && P.fin && P.offsOk && P.longueurOk, "PDF bien formé : en-tête, table des références exacte, longueur du flux, %%EOF");
+  ok(P.pages === 1 && P.count === "1", "une seule page");
+  for (const att of ["Rapport de séance", "CM1-CM2 Raoul Follereau (Mme B.)", "jeudi 5 novembre 2026", "Le Secret du donjon (Histoire)", "38 min (équipe la plus longue), 28 min en moyenne", "4 dont 2 interrompues",
+    "Les Lynx", "Les Hiboux", "Les Renards", "Les Écureuils", "interrompue", "terminée", "Compétences travaillées", "% du 1er coup", "Arrêté du 22 avril 2026"])
+    ok(P.tout.includes(att), "le rapport contient « " + att + " »");
+  ok(/Séance incomplète : 2 équipes sur 4 n'ont pas terminé/.test(P.tout), "bandeau « séance incomplète » (2 équipes sur 4)");
+  ok(!/undefined|NaN|null|\[object/.test(P.tout), "aucune valeur « undefined », « NaN » ou « null » dans le rapport");
+  ok(!/Mia/.test(P.tout) && !/melanges|Laboratoire/.test(P.tout), "ni le mode individuel ni un autre jeu");
+  ok(w.__dernierRapport.bas >= RS.BAS, "le contenu reste au-dessus de la marge basse (" + w.__dernierRapport.bas.toFixed(0) + " ≥ " + RS.BAS + ")");
+  // lecteur PDF réel, quand l'outil est présent (poppler) : vraie lecture du fichier
+  let lecteur = false; try { cp.execSync("pdfinfo -v", { stdio: "ignore" }); lecteur = true; } catch (e) {}
+  if (lecteur) {
+    const f = path.join(os.tmpdir(), "rapport-test-n31.pdf"); fs.writeFileSync(f, Buffer.from(E.contenu));
+    const info = cp.execSync(`pdfinfo "${f}"`).toString(), txt = cp.execSync(`pdftotext -layout "${f}" -`).toString();
+    ok(/Pages:\s+1\b/.test(info) && /A4/.test(info) && /Les Écureuils/.test(txt) && /Séance incomplète/.test(txt), "lecteur PDF (pdfinfo/pdftotext) : 1 page A4, textes lisibles");
+    fs.unlinkSync(f);
+  } else console.log("  (pdfinfo absent : contrôle par lecteur PDF sauté, la structure du fichier est vérifiée ci-dessus)");
+  // 4. séance interrompue sans aucun détail ni durée (anciennes parties, texte collé…)
+  const maigre = rec({ eleve: "", termine: false, enigmes: 1, total: 0, dureeMin: 0, score: undefined, scoreMax: null, date: "2026-11-06T10:00", niveau: "" });
+  const mm = RS.modele({ parties: [maigre], jeu: "chateau-fort", catalogue: w.CATALOGUE, classe: "", meta: await (async () => { const r = JSON.parse(fs.readFileSync(path.join(RACINE, "chateau-fort/assets/data/lecons-a4.json"), "utf8")); const c = {}; Object.entries(r.lecons).forEach(([k, l]) => c[k] = l.competence); return { comp: c }; })() });
+  const pm = RS.pdf(mm), Pm = lire(pm.octets);
+  ok(Pm.pages === 1 && Pm.offsOk && Pm.longueurOk, "séance interrompue sans détail : PDF valide d'une page");
+  ok(/Séance incomplète : 1 équipe sur 1 n'a pas terminé/.test(Pm.tout) && /détail énigme par énigme n'est pas enregistré/.test(Pm.tout) && /Compétences prévues par le jeu/.test(Pm.tout) && /non enregistrée/.test(Pm.tout) && /\(sans nom\)/.test(Pm.tout) && /à compléter/.test(Pm.tout), "dit clairement : incomplète, détail absent, durée non enregistrée, nom et classe à compléter");
+  ok(!/undefined|NaN|null|0 min|\[object/.test(Pm.tout) && Pm.textes.filter(t => /Construire|Décrire|Raconter/.test(t)).length >= 3, "aucune valeur absurde ; compétences du jeu listées comme « prévues »");
+  // 5. séance sans aucune équipe, et jeu inconnu : toujours un PDF correct
+  const vide = RS.pdf(RS.modele({ parties: [], jeu: "jeu-inconnu", catalogue: w.CATALOGUE }));
+  ok(lire(vide.octets).pages === 1 && /Aucune partie en équipe/.test(lire(vide.octets).tout), "aucune partie : PDF d'une page qui le dit");
+  // 6. séance énorme : 40 équipes aux noms piégeux, 12 compétences : toujours UNE page, listes raccourcies
+  const noms = ["Aa (Super) Éq\\ 😀 œuvre", "Ab « très » nombreuse et au nom vraiment beaucoup trop long pour sa colonne"];
+  const grosses = Array.from({ length: 40 }, (_, i) => rec({ eleve: i < 2 ? noms[i] : "Équipe " + (i + 1), termine: i % 3 !== 0, dureeMin: 20 + i, detail: [det(J[i % 5], i % 2)] }));
+  const comp = {}; for (let i = 0; i < 12; i++) comp["c" + i] = "Compétence numéro " + (i + 1) + " : décrire, comparer et expliquer en plusieurs phrases ce que l'on a compris pendant la séance, avec des mots précis.";
+  const gros = RS.modele({ parties: grosses.map(r => Object.assign({}, r, { detail: Object.keys(comp).map((l, k) => ({ id: "1-" + k, s: 1, l, ok: 1, pc: k % 2 })) })), jeu: "chateau-fort", catalogue: w.CATALOGUE, classe: "CM2", meta: { comp } });
+  const pg = RS.pdf(gros), Pg = lire(pg.octets);
+  ok(Pg.pages === 1 && Pg.offsOk && Pg.longueurOk && pg.bas >= RS.BAS - 1, "40 équipes et 12 compétences : toujours une page, au-dessus de la marge (" + pg.bas.toFixed(0) + ")");
+  ok(/\.\.\. et \d+ autres? équipes? \(voir le tableur\)/.test(Pg.tout), "liste d'équipes raccourcie, avec renvoi au tableur");
+  ok(/Aa \(Super\) Éq\\ œuvre/.test(Pg.tout) && !/😀/.test(Pg.tout) && Pg.textes.length > 20, "noms avec parenthèses et barre oblique : écrits tels quels, emoji retiré");
+  ok((Pg.tout.match(/% du 1er coup/g) || []).length >= 4, "au moins 4 compétences gardées malgré la place prise par les équipes");
+  // 7. aucune séance chargée : message, pas d'erreur
+  const V = await charger(RACINE, "", { page: "resultats.html", attente: 500 });
+  V.w.document.getElementById("exp-rapport").click(); await dodo(100);
+  ok(/Aucune séance à exporter/.test(V.w.document.getElementById("rap-msg").textContent) && !V.w.__dernierExport, "sans partie chargée : message clair, aucun fichier");
+  ok(erreurs.length === 0 && V.erreurs.length === 0, "erreurs JS : " + erreurs.concat(V.erreurs).join(" | "));
+};
+
 module.exports = { SECTIONS, avecEquipes };
 if (require.main === module) {
   const choix = process.argv[2] ? process.argv[2].split(",") : Object.keys(SECTIONS);

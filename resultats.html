@@ -104,6 +104,17 @@
     <div id="bilan-contenu"><p class="aide">Aucune partie avec le détail des énigmes pour l'instant.</p></div>
   </section>
 
+  <section class="bloc" id="rapport">
+    <h2>📄 Rapport de séance (PDF) pour le cahier journal</h2>
+    <p class="aide">Une page prête à coller ou à joindre : classe, date, jeu, durée, nombre d'équipes, résultat de chaque équipe et compétences travaillées (programme officiel de référence). Fabriquée à partir des parties ci-dessus (une séance = un jeu joué en équipe le même jour) : après la séance, cliquez sur « Parties jouées sur cet appareil » (ou « Parties de la classe »), puis exportez. Si la séance a été interrompue, le rapport le dit.</p>
+    <div class="ligne">
+      <label>Séance <select id="rap-seance"></select></label>
+      <label>Classe <input type="text" id="rap-classe" maxlength="60" size="26" placeholder="CM1-CM2 de l'école…" autocomplete="off"></label>
+      <button class="principal" id="exp-rapport">📄 Exporter le rapport de séance (PDF)</button>
+      <span class="aide" id="rap-msg" role="status"></span>
+    </div>
+  </section>
+
   <section class="bloc">
     <h2>3. Exporter</h2>
     <div class="ligne">
@@ -119,6 +130,7 @@
 </main>
 
 <script src="commun/donnees/catalogue.js?c3"></script>
+<script src="commun/js/rapport-seance.js?n31"></script>
 <script>
 "use strict";
 /* Même empreinte que commun/js/compte-rendu.js (code de contrôle) */
@@ -224,15 +236,18 @@ function rendre(){
     <td>${r._valide === true ? '<span class="ok">✔ vérifié</span>' : r._valide === false ? '<span class="ko">✗ modifié ?</span>' : '<span class="aide">texte collé</span>'}</td></tr>`).join("")
     || `<tr><td colspan="12" class="aide">Aucune partie pour l'instant : utilisez les boutons ci-dessus.</td></tr>`;
   if(typeof rendreBilan === "function") rendreBilan();
+  if(typeof rendreSeances === "function") rendreSeances();
 }
 ["filtre-eleve", "filtre-jeu", "filtre-mode"].forEach(id => document.getElementById(id).addEventListener("input", rendre));
 
 /* ---- Bilan de classe (N12) : réussite du premier coup par énigme et par compétence ---- */
 const META = {};   // jeu → { titres:{id:titre}, comp:{leconId:texte}, leconDeSalle:{n:leconId}, salles:{n:titre}, leconTitre:{id:titre} }
 async function lireJson(url){ try{ const r = await fetch(url, { cache: "no-store" }); return r.ok ? await r.json() : null; }catch(e){ return null; } }
-async function meta(jeu){
-  if(META[jeu]) return META[jeu];
-  const m = META[jeu] = { titres: {}, comp: {}, leconDeSalle: {}, salles: {}, leconTitre: {} };
+/* Le cache garde la PROMESSE : deux appels rapprochés (bilan, rapport de séance) attendent le même chargement
+   au lieu de recevoir, pour le second, une fiche encore vide. */
+function meta(jeu){ return META[jeu] || (META[jeu] = chargerMeta(jeu)); }
+async function chargerMeta(jeu){
+  const m = { titres: {}, comp: {}, leconDeSalle: {}, salles: {}, leconTitre: {} };
   const [en, a4, lc, im] = await Promise.all([lireJson(`${jeu}/assets/data/enigmes.json`), lireJson(`${jeu}/assets/data/lecons-a4.json`), lireJson(`${jeu}/assets/data/lecons.json`), lireJson(`immersifs/${jeu}/assets/data/enigmes.json`)]);
   /* variante immersive : étapes (escales), énigmes et compétence de chaque énigme */
   if(im) (im.escales || []).forEach(es => { m.salles[es.numero] = m.salles[es.numero] || es.titre; (es.enigmes || []).forEach(e => { m.titres[e.id] = e.titre; if(e.lecon && e.competence_programme && !m.comp[e.lecon]) m.comp[e.lecon] = e.competence_programme; }); });
@@ -310,6 +325,32 @@ document.getElementById("exp-bilan").addEventListener("click", async () => {
   (BILAN ? BILAN.comps : []).forEach(c => l.push(["Compétence", infoJeu(c.jeu).titre || c.jeu, c.lecon, c.texte, c.n, c.pc, pc100(c.pc, c.n), c.err, c.ind, c.pass, c.pouce, c.n >= mini && pc100(c.pc, c.n) < seuil ? "oui" : "", url(lienLecon(c))]));
   (BILAN ? BILAN.enigmes : []).forEach(e => l.push(["Énigme", infoJeu(e.jeu).titre || e.jeu, e.id, e.titre, e.n, e.pc, pc100(e.pc, e.n), e.err, e.ind, e.pass, e.pouce, e.n >= mini && pc100(e.pc, e.n) < seuil ? "oui" : "", url(lienLecon(e))]));
   telecharger(`bilan-de-classe-${aujourdhui()}.csv`, csv(l), "text/csv;charset=utf-8");
+});
+
+/* ---- Rapport de séance (N31) : un PDF d'une page, fabriqué sans bibliothèque ---- */
+const rapMsg = t => { document.getElementById("rap-msg").textContent = t; };
+let SEANCES = [];
+function rendreSeances(){
+  const sel = document.getElementById("rap-seance"), garde = sel.value;
+  SEANCES = RAPPORT_SEANCE.seances(RESULTATS);
+  sel.innerHTML = SEANCES.length ? SEANCES.map(s => { const m = RAPPORT_SEANCE.modele({ parties: s.parties, jeu: s.jeu, catalogue: CATALOGUE });
+    return `<option value="${esc(s.cle)}">${esc(new Date(s.jour + "T12:00:00").toLocaleDateString("fr-FR"))} — ${esc(m.jeuTitre)} — ${m.nbEquipes} équipe${m.nbEquipes > 1 ? "s" : ""}${m.nbInterrompues ? " (" + m.nbInterrompues + " interrompue" + (m.nbInterrompues > 1 ? "s" : "") + ")" : ""}</option>`; }).join("")
+    : `<option value="">Aucune séance en équipe : chargez d'abord des parties</option>`;
+  if(SEANCES.some(s => s.cle === garde)) sel.value = garde;
+}
+try{ document.getElementById("rap-classe").value = localStorage.getItem("escape_classe") || ""; }catch(e){}
+document.getElementById("rap-classe").addEventListener("input", e => { try{ localStorage.setItem("escape_classe", e.target.value); }catch(err){} });
+document.getElementById("exp-rapport").addEventListener("click", async () => {
+  const s = SEANCES.find(x => x.cle === document.getElementById("rap-seance").value);
+  if(!s){ rapMsg("Aucune séance à exporter : chargez d'abord les parties de la classe (bouton « Parties jouées sur cet appareil »)."); return; }
+  try{
+    const meta_ = await meta(s.jeu);
+    const m = RAPPORT_SEANCE.modele({ parties: s.parties, jeu: s.jeu, meta: meta_, catalogue: CATALOGUE, classe: document.getElementById("rap-classe").value });
+    const p = RAPPORT_SEANCE.pdf(m);
+    window.__dernierRapport = { modele: m, bas: p.bas };
+    telecharger(RAPPORT_SEANCE.nomFichier(m), p.octets, "application/pdf");
+    rapMsg(`📄 ${RAPPORT_SEANCE.nomFichier(m)} : ${m.nbEquipes} équipe(s)${m.nbInterrompues ? ", séance incomplète signalée dans le rapport" : ""}. À relire avant de le joindre au cahier journal.`);
+  }catch(e){ rapMsg("Le rapport n'a pas pu être fabriqué : " + e.message); }
 });
 
 /* ---- Exports ---- */

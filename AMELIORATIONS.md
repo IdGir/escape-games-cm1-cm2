@@ -412,3 +412,16 @@ ou un cahier de liaison numérique. Étiquettes bienveillantes (« bien en place
 jamais de note chiffrée. Contrôles automatiques : une formulation par leçon, pas de jargon, phrases courtes.
 **Reste à faire (humain) :** relecture de la formulation par un parent non enseignant.
 **Jeux concernés :** passeport.html (commun) + C5 · **Effort :** M · **Statut :** Fait
+
+### N31 — Rapport de séance PDF auto-généré pour le cahier journal
+Bouton « Exporter le rapport de séance (PDF) » dans `resultats.html` (le bilan de classe N12 y est déjà) : un PDF
+d'une page A4 fabriqué par `commun/js/rapport-seance.js`, sans bibliothèque ni serveur, hors connexion. Contenu :
+classe (retenue sur l'appareil), date, jeu, durée de la séance, nombre d'équipes, une ligne par équipe (énigmes,
+score, durée, terminée / interrompue), compétences travaillées avec leur réussite du premier coup (liées aux
+leçons C3) et programme officiel de référence (C2). Une séance = un jeu joué en équipe le même jour (le mode
+individuel n'en est pas une) ; une équipe qui a rejoué compte une fois. Séance interrompue ou incomplète : bandeau
+explicite, durée « non enregistrée » plutôt que 0, compétences « prévues par le jeu » sans détail énigme par énigme,
+jamais de valeur « undefined » ou « NaN » ; listes longues raccourcies pour garder une page. Correctif au passage :
+le cache des métadonnées du bilan (N12) garde désormais la promesse de chargement (deux appels rapprochés
+recevaient une fiche encore vide).
+**Jeux concernés :** resultats.html (commun) · **Effort :** M · **Statut :** Fait
