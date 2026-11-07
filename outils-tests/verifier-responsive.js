@@ -14,6 +14,9 @@
        node outils-tests/verifier-responsive.js --rapide        2 écrans par jeu, captures des seuls défauts
                                                                 (c'est ce que lance le crochet pre-push)
    Options : --captures=aucune|defauts|toutes · --largeurs=tablette10,tablette7,smartphone
+             --taille=grand|tres   (N29) rejoue le contrôle avec le réglage « Taille du texte et des boutons »
+                                   sur Grand ou Très grand (clé escape_lecture posée avant l'ouverture) :
+                                   aucun bouton essentiel ne doit sortir de l'écran, même agrandi.
 
    Formats : tablette 10″ (1280 × 800), tablette 7″ (600 × 960), smartphone (390 × 844).
    Écrans : accueil du jeu · une énigme (salle 1, CM2) · le coffre final · l'écran de fin.
@@ -134,12 +137,14 @@ function mesurer(ecran, formats){
   };
 }
 
+let TAILLE = "";   // N29 : "", "grand" ou "tres" (option --taille=)
 async function controlerEcran(page, base, jeu, ecran, format){
   const cfg = ecransDe(jeu)[ecran];
   const url = `${base}/${jeu}/index.html${cfg.query}`;
   const erreurs = [];
   const ecoute = e => erreurs.push(e.message);
   page.on("pageerror", ecoute);
+  if(TAILLE) await page.evaluateOnNewDocument(t => { try{ localStorage.setItem("escape_lecture", JSON.stringify({ taille: t })); }catch(e){} }, TAILLE);
   await page.goto(url, { waitUntil: "load", timeout: 20000 });
   try{ await page.waitForSelector(cfg.attend, { visible: true, timeout: 6000 }); }catch(e){ /* l'absence est signalée par les essentiels */ }
   if(cfg.avant){ try{ await page.evaluate(cfg.avant); await new Promise(r => setTimeout(r, 300)); }catch(e){} }
@@ -157,6 +162,7 @@ async function lancer(args){
   const opt = n => { const a = args.find(x => x.startsWith("--" + n + "=")); return a ? a.split("=")[1] : null; };
   const captures = opt("captures") || (rapide ? "defauts" : "toutes");
   const fmts = (opt("largeurs") || Object.keys(FORMATS).join(",")).split(",").filter(f => FORMATS[f]);
+  TAILLE = ["grand", "tres"].includes(opt("taille")) ? opt("taille") : "";
   const choix = args.filter(a => !a.startsWith("--"));
   const jeux = choix.length ? choix : JEUX_SALLES.concat(IMMERSIFS);
   const ecransPour = jeu => { const tous = Object.keys(ecransDe(jeu)); return rapide ? tous.filter(e => e === "accueil" || e === "enigme") : tous; };

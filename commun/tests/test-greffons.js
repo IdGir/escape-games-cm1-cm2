@@ -58,6 +58,50 @@ SECTIONS.E4 = async () => {
   ok(w.document.body.classList.contains("police-lisible") && w.document.body.classList.contains("interligne-aere"), "chateau-fort : préférence d'un autre jeu appliquée dès l'ouverture");
 };
 
+/* ---- N29 : taille du texte et des boutons ---- */
+SECTIONS.N29 = async () => {
+  console.log("\n== N29 : taille du texte et des boutons ==");
+  for (const j of ["melanges", "declaration", "mission-geo"]) {
+    const { w, erreurs } = await charger(J(j), j === "mission-geo" ? "" : "?salle=1&niveau=CM1");
+    const d = w.document, h = d.documentElement.classList;
+    if (j === "mission-geo") { w.eval("REGLAGES.ouvrir()"); } else { w.ouvrirReglages(); }
+    const bloc = await attendreQue(() => d.getElementById("lecture-reglages"), 3000);
+    ok(!!bloc, `${j} : bloc des réglages présent`);
+    if (!bloc) continue;
+    const btn = t => bloc.querySelector(`[data-taille="${t}"]`);
+    ok(["normal", "grand", "tres"].every(t => !!btn(t)), `${j} : trois tailles proposées (Normal / Grand / Très grand)`);
+    ok(btn("normal").getAttribute("aria-pressed") === "true" && !h.contains("taille-grand") && !h.contains("taille-tres"), `${j} : normal par défaut, aucune classe`);
+    btn("grand").click();
+    ok(h.contains("taille-grand") && !h.contains("taille-tres") && btn("grand").getAttribute("aria-pressed") === "true" && btn("normal").getAttribute("aria-pressed") === "false", `${j} : « Grand » appliqué tout de suite et signalé (aria-pressed)`);
+    ok(JSON.parse(w.localStorage.getItem("escape_lecture")).taille === "grand", `${j} : choix gardé sur l'appareil (escape_lecture.taille)`);
+    ok(h.contains("base-echelle") === (j === "mission-geo"), `${j} : base de taille ${j === "mission-geo" ? "multipliée à la variable --echelle" : "en pixels (pas de --echelle)"}`);
+    btn("tres").click();
+    ok(h.contains("taille-tres") && !h.contains("taille-grand"), `${j} : « Très grand » remplace « Grand »`);
+    // cumulatif avec la lecture facilitée (E4) : changer la police ne perd pas la taille
+    d.getElementById("lec-police").value = "dys";
+    d.getElementById("lec-interligne").value = "tres";
+    bloc.dispatchEvent(new w.Event("change", { bubbles: true }));
+    const st = JSON.parse(w.localStorage.getItem("escape_lecture"));
+    ok(st.taille === "tres" && st.police === "dys" && h.contains("taille-tres") && d.body.classList.contains("police-dys") && d.body.classList.contains("interligne-tres"), `${j} : cumul avec police et interligne (E4)`);
+    btn("grand").click();
+    const st2 = JSON.parse(w.localStorage.getItem("escape_lecture"));
+    ok(st2.taille === "grand" && st2.police === "dys" && d.body.classList.contains("police-dys"), `${j} : changer la taille garde la police`);
+    btn("normal").click();
+    ok(!h.contains("taille-grand") && !h.contains("taille-tres") && !h.contains("base-echelle"), `${j} : retour à Normal : plus aucune classe`);
+    const css = d.getElementById("style-lecture").textContent;
+    ok(/@media screen\{[\s\S]*html\.taille-grand\{font-size:18px\}/.test(css) && /html\.taille-tres\{font-size:20px\}/.test(css), `${j} : tailles 112 % et 125 % réservées à l'écran (impression non touchée)`);
+    ok(erreurs.length === 0, `${j} : erreurs JS : ` + erreurs.join(" | "));
+  }
+  // la taille choisie dans un jeu s'applique dès l'ouverture d'un autre jeu
+  for (const j of ["chateau-fort", "mission-geo"]) {
+    const { w } = await charger(J(j), j === "mission-geo" ? "" : "?salle=1&niveau=CM1", { stockage: { escape_lecture: JSON.stringify({ taille: "tres" }) } });
+    ok(w.document.documentElement.classList.contains("taille-tres"), `${j} : taille « Très grand » appliquée dès l'ouverture`);
+  }
+  // un ancien réglage (sans champ « taille ») reste valide
+  const v = await charger(J("melanges"), "?salle=1&niveau=CM1", { stockage: { escape_lecture: JSON.stringify({ police: "lisible", interligne: "aere", espacement: false }) } });
+  ok(v.w.document.body.classList.contains("police-lisible") && !v.w.document.documentElement.classList.contains("taille-grand"), "melanges : ancien réglage sans « taille » = normal");
+};
+
 /* ---- E2 : palier « Découverte » ---- */
 SECTIONS.E2 = async () => {
   console.log("\n== E2 : palier Découverte ==");

@@ -425,3 +425,15 @@ jamais de valeur « undefined » ou « NaN » ; listes longues raccourcies pour 
 le cache des métadonnées du bilan (N12) garde désormais la promesse de chargement (deux appels rapprochés
 recevaient une fiche encore vide).
 **Jeux concernés :** resultats.html (commun) · **Effort :** M · **Statut :** Fait
+
+### N29 — Réglage global de la taille du texte et des espacements (confort)
+Dans ⚙️ Réglages, bloc « 🔎 Taille du texte et des boutons » : trois tailles (Normal / Grand / Très grand) qui
+agrandissent ensemble le texte (base ×1,125 puis ×1,25), les boutons et champs (plus hauts), les cases à cocher,
+l'interlignage et les espacements. Greffon `commun/js/accessibilite.js` (E4) prolongé : aucun nouveau script à
+ajouter dans les jeux. Gardé sur l'appareil dans la clé `escape_lecture` (champ `taille`), donc pour tous les jeux,
+et **cumulatif** avec la police, l'interlignage et l'espacement d'E4 ainsi qu'avec le curseur propre à chaque jeu.
+Mission géographique : sa base de taille suit déjà `--echelle`, elle est multipliée et non remplacée. Réservé à
+l'écran (`@media screen`) : l'impression n'est pas touchée. Contrôles : section N29 de `commun/tests/test-greffons.js`
+(trois jeux, cumul, persistance d'un jeu à l'autre, ancien réglage sans `taille`) ; `verifier-responsive.js` (N17)
+accepte `--taille=grand|tres` : 144 écrans × 2 tailles (tablette 10″, 7″, smartphone) sans bouton essentiel hors écran.
+**Jeux concernés :** les 12 « salles » + les immersifs et Mission géographique (commun) · **Effort :** S · **Statut :** Fait
