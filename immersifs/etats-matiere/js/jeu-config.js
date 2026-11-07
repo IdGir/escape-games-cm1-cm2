@@ -8,8 +8,11 @@ window.VML_JEU = {
     "racine": 261.63
   },
   "grades": [
+    "mousse",
     "matelot",
-    "timonier"
+    "timonier",
+    "lieutenant",
+    "second"
   ],
   "textes": {
     "auteur": "Escape game · cycle 3",

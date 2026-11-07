@@ -1,7 +1,13 @@
 {
- "_commentaire": "Généré par outils/immersif/migrer-jeu.py depuis « etats-matiere ». À compléter : voir MIGRATION-RAPPORT.md.",
  "version": 1,
  "niveaux": [
+  {
+   "id": "mousse",
+   "nom": "Apprenti",
+   "icone": "🧤",
+   "equivalent": "≈ CE2",
+   "profil": "énigmes courtes, vocabulaire simple, aides renforcées (premier indice offert, fiche mise en évidence)"
+  },
   {
    "id": "matelot",
    "nom": "Technicien",
@@ -14,7 +20,21 @@
    "nom": "Ingénieur",
    "icone": "⚙️",
    "equivalent": "≈ CM2",
-   "profil": "cœur de programme CM2"
+   "profil": "cœur de programme CM2, plus d'éléments, vocabulaire précis"
+  },
+  {
+   "id": "lieutenant",
+   "nom": "Physicien",
+   "icone": "🌡️",
+   "equivalent": "≈ 6ᵉ",
+   "profil": "raisonnement en deux étapes, documents à croiser, justification"
+  },
+  {
+   "id": "second",
+   "nom": "Expert de la Fabrique",
+   "icone": "🏭",
+   "equivalent": "≈ 5ᵉ",
+   "profil": "synthèse, données chiffrées, pièges de logique, justification"
   }
  ],
  "escales": [
@@ -60,7 +80,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "etats",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (tri) ; Technicien (tri) ; Ingénieur (tri) ; Physicien (tri) ; Expert de la Fabrique (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Dans les réservoirs, la pierre, le bois et le glaçon gardent leur forme : ils sont solides. L'eau, le lait et l'huile prennent la forme du récipient : ce sont des liquides. L'air et la vapeur d'eau occupent tout l'espace : ce sont des gaz. Le glaçon est classé à l'instant où on le sort : à la température de la pièce, il fondra peu à peu. Le sable, la farine et le sucre en poudre sont des solides en petits grains : chaque grain garde sa forme.",
      "matelot": {
       "colonnes": [
@@ -167,6 +187,183 @@
        "La vapeur d'eau est invisible, comme l'air : c'est un gaz."
       ],
       "dialogue": "Bonjour, et merci d'être venus si vite ! Je suis Inès, l'ingénieure de la Fabrique. Cette nuit, l'orage a effacé les étiquettes de mes réservoirs. Avant de remettre les machines en marche, il faut savoir ce que contient chaque cuve : un solide, un liquide ou un gaz ?"
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "solide",
+        "titre": "Solide"
+       },
+       {
+        "id": "liquide",
+        "titre": "Liquide"
+       },
+       {
+        "id": "gaz",
+        "titre": "Gaz"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une pierre",
+        "col": "solide"
+       },
+       {
+        "txt": "un glaçon",
+        "col": "solide"
+       },
+       {
+        "txt": "de l'eau",
+        "col": "liquide"
+       },
+       {
+        "txt": "du jus de pomme",
+        "col": "liquide"
+       },
+       {
+        "txt": "l'air d'un ballon",
+        "col": "gaz"
+       }
+      ],
+      "consigne": "Inès range les réservoirs. Range chaque carte : solide, liquide ou gaz. Clique sur une carte, puis sur une colonne.",
+      "indices": [
+       "Ouvre la fiche « Solide, liquide ou gaz : comment les reconnaître ? » dans la Bibliothèque.",
+       "Un solide garde sa forme, même si on le change de boîte.",
+       "L'air ne se voit pas : c'est un gaz."
+      ],
+      "dialogue": "Bonjour, et merci d'être venus si vite ! Je suis Inès, l'ingénieure de la Fabrique. Cette nuit, l'orage a effacé les étiquettes de mes réservoirs. Avant de remettre les machines en marche, il faut savoir ce que contient chaque cuve : un solide, un liquide ou un gaz ?"
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "solide",
+        "titre": "Solide"
+       },
+       {
+        "id": "liquide",
+        "titre": "Liquide"
+       },
+       {
+        "id": "gaz",
+        "titre": "Gaz"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "de la farine",
+        "col": "solide"
+       },
+       {
+        "txt": "du sable",
+        "col": "solide"
+       },
+       {
+        "txt": "une éponge",
+        "col": "solide"
+       },
+       {
+        "txt": "de la pâte à modeler",
+        "col": "solide"
+       },
+       {
+        "txt": "du miel",
+        "col": "liquide"
+       },
+       {
+        "txt": "de l'huile",
+        "col": "liquide"
+       },
+       {
+        "txt": "de l'eau salée",
+        "col": "liquide"
+       },
+       {
+        "txt": "l'air d'un pneu",
+        "col": "gaz"
+       },
+       {
+        "txt": "la vapeur d'eau",
+        "col": "gaz"
+       },
+       {
+        "txt": "le gaz d'un ballon de fête",
+        "col": "gaz"
+       }
+      ],
+      "consigne": "Inès vérifie le contenu de dix réservoirs, à la température de la pièce. Range chaque carte, puis choisis la phrase de la fiche qui justifie le classement de la farine.",
+      "indices": [
+       "Mou ne veut pas dire liquide : une éponge garde sa forme.",
+       "Ce qui s'écoule en grains forme un tas : regarde un seul grain.",
+       "Pour la justification : cherche la phrase qui parle des grains."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche prouve que la farine est un solide ?",
+       "options": [
+        "Au repos, sa surface libre est plane et horizontale.",
+        "Le sable, la farine ou le sucre en poudre s'écoulent, mais ce sont des solides divisés : chaque grain garde sa forme, et versés, ils forment un tas.",
+        "Un solide n'est pas forcément dur : une éponge, un pull, de la pâte à modeler sont des solides.",
+        "La plupart des gaz sont invisibles, comme l'air et la vapeur d'eau."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour, et merci d'être venus si vite ! Je suis Inès, l'ingénieure de la Fabrique. Cette nuit, l'orage a effacé les étiquettes de mes réservoirs. Avant de remettre les machines en marche, il faut savoir ce que contient chaque cuve : un solide, un liquide ou un gaz ?"
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel essai décrit un liquide ?",
+        "options": [
+         "L'essai A",
+         "L'essai B",
+         "L'essai C",
+         "Aucun"
+        ],
+        "bonne": 0,
+        "explication": "Le liquide prend la forme du récipient ; sa surface au repos est plane."
+       },
+       {
+        "q": "Quel essai décrit un gaz ?",
+        "options": [
+         "L'essai A",
+         "L'essai B",
+         "L'essai C",
+         "Les essais A et C"
+        ],
+        "bonne": 2,
+        "explication": "Un gaz occupe tout le volume et il est compressible."
+       },
+       {
+        "q": "Dans l'essai B, la matière est molle. Que peut-on dire ?",
+        "options": [
+         "C'est un liquide, car elle est molle",
+         "C'est un solide, même si elle est molle",
+         "C'est un gaz",
+         "On ne peut rien dire"
+        ],
+        "bonne": 1,
+        "explication": "Un solide garde sa forme, qu'il soit dur ou mou."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Carnet de contrôle d'Inès</b> (essais inventés pour le jeu). Essai A : on verse la matière d'une boîte carrée dans un bol ; elle prend la forme du bol, sa surface devient plate. Essai B : la matière garde sa forme dans les deux récipients. Essai C : la matière remplit tout le flacon fermé ; dans une seringue bouchée, on pousse un peu le piston.</div>Réponds aux trois questions à partir du carnet et de la fiche.",
+      "indices": [
+       "Compare chaque essai aux trois critères : forme, volume, compression.",
+       "Seul un gaz se laisse comprimer dans la seringue.",
+       "Une pâte à modeler est molle, mais elle garde sa forme."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Un gaz n'a ni forme ni volume propres : il occupe tout le volume du récipient qui le contient.",
+        "Il a un volume propre : un litre d'eau reste un litre, dans une bouteille comme dans une cuvette.",
+        "Un solide n'est pas forcément dur : une éponge, un pull, de la pâte à modeler sont des solides.",
+        "Il est compressible : dans une seringue bouchée, on peut pousser un peu le piston."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bonjour, et merci d'être venus si vite ! Je suis Inès, l'ingénieure de la Fabrique. Cette nuit, l'orage a effacé les étiquettes de mes réservoirs. Avant de remettre les machines en marche, il faut savoir ce que contient chaque cuve : un solide, un liquide ou un gaz ?"
      }
     },
     {
@@ -182,7 +379,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "bastien",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Inès vérifie que ses stagiaires savent reconnaître un état sans se tromper.",
      "enjeu": "Sans critères, on confond un solide en poudre avec un liquide.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; La main à la pâte, « Les états de l'eau et",
@@ -195,7 +392,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "etats",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (vraifaux) ; Technicien (qcm) ; Ingénieur (qcm) ; Physicien (qcm) ; Expert de la Fabrique (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Les trois états se reconnaissent à des critères observables. Le solide a une forme propre. Le liquide coule, prend la forme du récipient et sa surface libre est plane et horizontale au repos. Le gaz n'a ni forme ni volume propres : il occupe tout l'espace offert et on peut le comprimer.",
      "matelot": {
       "questions": [
@@ -292,6 +489,141 @@
        "Seul un gaz occupe toute la place qu'on lui donne."
       ],
       "dialogue": "Forme, volume, écoulement, compression : avec ces critères, on reconnaît chaque état. Répondez à mes questions."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "L'eau prend la forme du verre dans lequel on la verse.",
+        "vrai": true,
+        "explication": "Un liquide prend la forme du récipient."
+       },
+       {
+        "txt": "Une pierre change de forme quand on la met dans une boîte.",
+        "vrai": false,
+        "explication": "Un solide garde sa forme."
+       },
+       {
+        "txt": "On ne voit pas l'air, mais il existe.",
+        "vrai": true,
+        "explication": "L'air est un gaz invisible."
+       }
+      ],
+      "consigne": "Inès a écrit trois phrases sur les états. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « Solide, liquide ou gaz : comment les reconnaître ? ».",
+       "Pense à de l'eau versée d'un verre dans un bol.",
+       "Le vent fait bouger les feuilles : l'air existe."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel état a un volume propre mais pas de forme propre ?",
+        "options": [
+         "Le solide",
+         "Le liquide",
+         "Le gaz",
+         "Aucun"
+        ],
+        "bonne": 1,
+        "explication": "Le liquide garde son volume."
+       },
+       {
+        "q": "On verse 1 L d'eau d'une bouteille dans une cuvette. Quel volume d'eau dans la cuvette ?",
+        "options": [
+         "Moins d'un litre",
+         "Un litre",
+         "Plus d'un litre",
+         "Cela dépend de la cuvette"
+        ],
+        "bonne": 1,
+        "explication": "Le volume d'un liquide ne change pas."
+       },
+       {
+        "q": "Quel état peut-on comprimer dans une seringue bouchée ?",
+        "options": [
+         "Le solide",
+         "Le liquide",
+         "Le gaz",
+         "Aucun"
+        ],
+        "bonne": 2,
+        "explication": "Un gaz est compressible."
+       },
+       {
+        "q": "On penche une cuve d'eau. Au repos, la surface de l'eau est...",
+        "options": [
+         "penchée comme la cuve",
+         "plane et horizontale",
+         "en bosse",
+         "en creux"
+        ],
+        "bonne": 1,
+        "explication": "La surface libre reste horizontale."
+       }
+      ],
+      "consigne": "Inès a écrit ses critères pour reconnaître un état. Réponds aux quatre questions, puis choisis la phrase de la fiche qui décrit le liquide.",
+      "indices": [
+       "Distingue bien « forme propre » et « volume propre ».",
+       "Un litre reste un litre, quel que soit le récipient.",
+       "Pour la justification : cherche « un litre d'eau »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit le volume d'un liquide ?",
+       "options": [
+        "Il a un volume propre : un litre d'eau reste un litre, dans une bouteille comme dans une cuvette.",
+        "Un gaz n'a ni forme ni volume propres : il occupe tout le volume du récipient qui le contient.",
+        "Un solide a une forme propre et un volume propre : il garde sa forme et la place qu'il occupe, quel que soit le récipient.",
+        "La plupart des gaz sont invisibles, comme l'air et la vapeur d'eau."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "le piston d'une seringue d'air bouchée avance un peu",
+        "d": "un gaz est compressible"
+       },
+       {
+        "g": "le parfum ouvert remplit toute la pièce",
+        "d": "un gaz occupe tout le volume"
+       },
+       {
+        "g": "l'eau d'une bouteille penchée reste horizontale",
+        "d": "la surface libre d'un liquide est plane"
+       },
+       {
+        "g": "une éponge garde sa forme dans tous les seaux",
+        "d": "un solide a une forme propre"
+       },
+       {
+        "g": "1 L de lait reste 1 L dans une casserole",
+        "d": "un liquide a un volume propre"
+       }
+      ],
+      "consigne": "Inès a noté des observations dans son carnet. Relie chaque observation au critère qu'elle montre, puis choisis la phrase de la fiche qui explique la seringue.",
+      "indices": [
+       "Chaque observation montre un seul critère.",
+       "La seringue et le parfum parlent tous deux d'un gaz, mais pas du même critère.",
+       "Pour la justification : cherche le mot « compressible »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique ce qui se passe dans la seringue ?",
+       "options": [
+        "Au repos, sa surface libre est plane et horizontale.",
+        "La plupart des gaz sont invisibles, comme l'air et la vapeur d'eau.",
+        "Un solide n'est pas forcément dur : une éponge, un pull, de la pâte à modeler sont des solides.",
+        "Il est compressible : dans une seringue bouchée, on peut pousser un peu le piston."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
      }
     },
     {
@@ -307,7 +639,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "paolo",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Dans la cuve à grains, une seule matière n'est pas un solide.",
      "enjeu": "Un liquide versé par erreur dans la cuve à grains bloquerait la machine.",
      "episode_du_roman": "La main à la pâte, « Les états de l'eau et les changements d'états » ; Académie de Grenoble, fiche « Les états et la constitution de la mati",
@@ -320,7 +652,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "etats",
      "type": "intrus",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (intrus) ; Technicien (intrus) ; Ingénieur (intrus) ; Physicien (intrus) ; Expert de la Fabrique (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le sable, la farine, le sucre en poudre et le sel fin s'écoulent, mais chaque grain est un petit solide qui garde sa forme. Versés, ils forment un tas. L'huile est l'intrus : c'est un liquide, sa surface devient plate et horizontale.",
      "matelot": {
       "cartes": [
@@ -379,6 +711,132 @@
        "Une seule matière n'a pas de grains."
       ],
       "dialogue": "Tout coule dans cette cuve, et pourtant presque tout est solide. Trouvez l'intrus."
+     },
+     "mousse": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "du sable",
+        "intrus": false
+       },
+       {
+        "txt": "du sucre en poudre",
+        "intrus": false
+       },
+       {
+        "txt": "de l'eau",
+        "intrus": true
+       }
+      ],
+      "consigne": "Dans la cuve à grains, tout coule... ou presque. Trouve l'intrus : la seule matière qui n'est pas un solide.",
+      "indices": [
+       "Ouvre la fiche « Solide, liquide ou gaz : comment les reconnaître ? » : cherche le mot « grain ».",
+       "Le sable versé fait un tas.",
+       "L'eau ne fait jamais de tas."
+      ],
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "lieutenant": {
+      "type": "intrus",
+      "cartes": [
+       {
+        "txt": "de la semoule",
+        "intrus": false
+       },
+       {
+        "txt": "du sel fin",
+        "intrus": false
+       },
+       {
+        "txt": "de la farine",
+        "intrus": false
+       },
+       {
+        "txt": "du sable sec",
+        "intrus": false
+       },
+       {
+        "txt": "du lait",
+        "intrus": true
+       }
+      ],
+      "consigne": "Cinq matières s'écoulent dans la cuve à grains. Une seule est un liquide : trouve-la, puis choisis la phrase de la fiche qui permet de la reconnaître.",
+      "indices": [
+       "Versée sur la table, quelle matière ne fait pas de tas ?",
+       "À la loupe, quatre matières montrent des grains.",
+       "Pour la justification : pense à la surface au repos."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche permet de reconnaître le liquide ?",
+       "options": [
+        "Un solide a une forme propre et un volume propre : il garde sa forme et la place qu'il occupe, quel que soit le récipient.",
+        "Au repos, sa surface libre est plane et horizontale.",
+        "Il est compressible : dans une seringue bouchée, on peut pousser un peu le piston.",
+        "Un gaz n'a ni forme ni volume propres : il occupe tout le volume du récipient qui le contient."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Un de ces éléments n'est pas comme les autres. Trouvez-le."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "solide",
+        "titre": "Solide"
+       },
+       {
+        "id": "liquide",
+        "titre": "Liquide"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "du sable",
+        "col": "solide"
+       },
+       {
+        "txt": "de la farine",
+        "col": "solide"
+       },
+       {
+        "txt": "du sel fin",
+        "col": "solide"
+       },
+       {
+        "txt": "du gel douche",
+        "col": "liquide"
+       },
+       {
+        "txt": "du sirop épais",
+        "col": "liquide"
+       },
+       {
+        "txt": "du miel",
+        "col": "liquide"
+       },
+       {
+        "txt": "une éponge mouillée",
+        "col": "solide"
+       }
+      ],
+      "consigne": "Les pièges de la cuve à grains : range chaque matière selon son état à la température de la pièce, puis choisis la phrase de la fiche qui justifie le classement des poudres.",
+      "indices": [
+       "Épais ne veut pas dire solide : regarde si la surface finit par devenir plate.",
+       "Une poudre est faite de grains qui gardent leur forme.",
+       "Mouillée ou non, l'éponge garde sa forme."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le classement des poudres ?",
+       "options": [
+        "Le sable, la farine ou le sucre en poudre s'écoulent, mais ce sont des solides divisés : chaque grain garde sa forme, et versés, ils forment un tas.",
+        "Il a un volume propre : un litre d'eau reste un litre, dans une bouteille comme dans une cuvette.",
+        "Au repos, sa surface libre est plane et horizontale.",
+        "Un solide n'est pas forcément dur : une éponge, un pull, de la pâte à modeler sont des solides."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -394,7 +852,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "fatou",
+     "personnage_emetteur": "ines",
      "probleme_narratif": "Inès relit son carnet de contrôle avant de rendre le premier mot.",
      "enjeu": "Une idée fausse dans le carnet ferait mal régler les cuves.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Vikidia, « Gaz »",
@@ -407,10 +865,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "etats",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Ingénieur (vraifaux) ; Physicien (vraifaux) ; Expert de la Fabrique (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un solide n'est pas forcément dur : une éponge, de la pâte à modeler ou un pull sont des solides. Les gaz sont de la matière, souvent invisibles. Un solide en poudre s'écoule mais garde des grains de forme propre. Le volume d'un gaz dépend du récipient.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "affirmations": [
@@ -442,6 +902,100 @@
        "Un gaz prend toute la place de son récipient."
       ],
       "dialogue": "Mon carnet contient des pièges. Dites-moi ce qui est vrai et ce qui est faux."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un solide est toujours dur.",
+        "vrai": false,
+        "explication": "Une éponge ou de la pâte à modeler sont des solides mous."
+       },
+       {
+        "txt": "Un gaz occupe tout le volume du récipient qui le contient.",
+        "vrai": true,
+        "explication": "Il n'a pas de volume propre."
+       },
+       {
+        "txt": "On ne peut presque pas comprimer un liquide.",
+        "vrai": true,
+        "explication": "Un liquide est presque incompressible."
+       },
+       {
+        "txt": "La vapeur d'eau est la fumée blanche au-dessus d'une casserole.",
+        "vrai": false,
+        "explication": "La vapeur d'eau est invisible."
+       },
+       {
+        "txt": "Le sucre en poudre est un liquide, car il s'écoule.",
+        "vrai": false,
+        "explication": "Chaque grain de sucre garde sa forme : c'est un solide."
+       }
+      ],
+      "consigne": "Inès relit son carnet de contrôle. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche qui corrige l'erreur sur les solides.",
+      "indices": [
+       "Pense à une éponge, un pull, de la pâte à modeler.",
+       "La vapeur d'eau est un gaz : la plupart des gaz ne se voient pas.",
+       "Pour la justification : cherche « pas forcément dur »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche corrige l'erreur sur les solides ?",
+       "options": [
+        "Un solide n'est pas forcément dur : une éponge, un pull, de la pâte à modeler sont des solides.",
+        "Le sable, la farine ou le sucre en poudre s'écoulent, mais ce sont des solides divisés : chaque grain garde sa forme, et versés, ils forment un tas.",
+        "Un solide a une forme propre et un volume propre : il garde sa forme et la place qu'il occupe, quel que soit le récipient.",
+        "Il est compressible : dans une seringue bouchée, on peut pousser un peu le piston."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un gaz n'a pas de forme propre, mais il a un volume propre.",
+        "vrai": false,
+        "explication": "Un gaz n'a ni forme ni volume propres."
+       },
+       {
+        "txt": "Un liquide a un volume propre, mais pas de forme propre.",
+        "vrai": true,
+        "explication": "Il prend la forme du récipient."
+       },
+       {
+        "txt": "Dans un flacon fermé, l'air n'occupe que le bas du flacon.",
+        "vrai": false,
+        "explication": "Un gaz occupe tout le volume."
+       },
+       {
+        "txt": "Un pull est un solide, même s'il est mou.",
+        "vrai": true,
+        "explication": "Il garde sa forme propre."
+       },
+       {
+        "txt": "Si on ne voit rien dans un bocal, c'est qu'il est vide.",
+        "vrai": false,
+        "explication": "Il peut contenir de l'air, invisible."
+       }
+      ],
+      "consigne": "Inès prépare le contrôle final du hall. Pour chaque phrase, choisis vrai ou faux. Attention aux phrases presque justes.",
+      "indices": [
+       "Lis chaque phrase en entier : une seule moitié peut être fausse.",
+       "Un gaz prend toute la place qu'on lui donne.",
+       "La plupart des gaz sont invisibles."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche corrige la première affirmation ?",
+       "options": [
+        "Il a un volume propre : un litre d'eau reste un litre, dans une bouteille comme dans une cuvette.",
+        "La plupart des gaz sont invisibles, comme l'air et la vapeur d'eau.",
+        "Un gaz n'a ni forme ni volume propres : il occupe tout le volume du récipient qui le contient.",
+        "Au repos, sa surface libre est plane et horizontale."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     }
    ]
@@ -488,7 +1042,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "air",
      "type": "vraifaux",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (vraifaux) ; Technicien (vraifaux) ; Ingénieur (vraifaux) ; Physicien (vraifaux) ; Expert de la Fabrique (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "L'air ne se voit pas, mais c'est de la matière : un gaz. Il occupe de la place : un verre « vide » est plein d'air. On le sent quand le vent souffle. Il a une masse : un ballon que l'on gonfle à la pompe devient plus lourd.",
      "matelot": {
       "affirmations": [
@@ -546,6 +1100,135 @@
        "Le vent, c'est de l'air qui se déplace."
       ],
       "dialogue": "Salut, ingénieurs ! Je suis Bastien, agent météo. Mon ballon-sonde doit partir mesurer le ciel, mais mon chef dit que l'air, ce n'est rien du tout. Moi, je pense que l'air est de la matière. Aidez-moi à le prouver."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le vent, c'est de l'air qui bouge.",
+        "vrai": true,
+        "explication": "Le vent est de l'air en mouvement."
+       },
+       {
+        "txt": "Un verre « vide » contient de l'air.",
+        "vrai": true,
+        "explication": "L'air occupe la place."
+       },
+       {
+        "txt": "L'air n'est rien du tout.",
+        "vrai": false,
+        "explication": "L'air est de la matière."
+       }
+      ],
+      "consigne": "Bastien prépare son ballon-sonde. Pour chaque phrase sur l'air, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « L'air est de la matière » dans la Bibliothèque.",
+       "Le vent fait tourner la girouette : il pousse quelque chose.",
+       "Ce qu'on ne voit pas peut quand même exister."
+      ],
+      "dialogue": "Salut, ingénieurs ! Je suis Bastien, agent météo. Mon ballon-sonde doit partir mesurer le ciel, mais mon chef dit que l'air, ce n'est rien du tout. Moi, je pense que l'air est de la matière. Aidez-moi à le prouver."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "L'air est un mélange de gaz.",
+        "vrai": true,
+        "explication": "C'est la première phrase de la fiche."
+       },
+       {
+        "txt": "La girouette tourne parce que l'air la pousse.",
+        "vrai": true,
+        "explication": "Le vent est de l'air en mouvement."
+       },
+       {
+        "txt": "Un ballon dégonflé ne contient plus du tout d'air.",
+        "vrai": false,
+        "explication": "Il en reste un peu : le ballon n'est jamais vide."
+       },
+       {
+        "txt": "L'air n'a pas de masse, puisqu'il ne se voit pas.",
+        "vrai": false,
+        "explication": "Invisible ne veut pas dire sans masse."
+       },
+       {
+        "txt": "L'air se laisse un peu comprimer.",
+        "vrai": true,
+        "explication": "Comme tous les gaz, il est compressible."
+       }
+      ],
+      "consigne": "Bastien note ses idées sur l'air avant le lâcher. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche qui prouve que l'air est de la matière.",
+      "indices": [
+       "Le vent agit sur la girouette et sur les voiles : il pousse.",
+       "Ne pas voir une chose ne prouve pas qu'elle n'existe pas.",
+       "Pour la justification : cherche la phrase de la girouette."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche prouve que l'air est de la matière ?",
+       "options": [
+        "C'est peu : il faut une balance précise au gramme pour voir la différence.",
+        "Si on incline le verre, des bulles d'air s'échappent et l'eau entre.",
+        "On ne le voit pas, mais c'est de la matière : on le sent quand le vent souffle, il fait tourner une girouette et gonfle les voiles des bateaux.",
+        "Dans les conditions habituelles, un litre d'air a une masse d'environ 1,2 g."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Salut, ingénieurs ! Je suis Bastien, agent météo. Mon ballon-sonde doit partir mesurer le ciel, mais mon chef dit que l'air, ce n'est rien du tout. Moi, je pense que l'air est de la matière. Aidez-moi à le prouver."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Une salle de classe contient de l'air. Quelle masse environ ?",
+        "options": [
+         "Moins de 1 g",
+         "Environ 1,2 g",
+         "Plus de 200 kg",
+         "0 g : l'air ne pèse rien"
+        ],
+        "bonne": 2,
+        "explication": "Un litre d'air, c'est peu ; mais une salle contient beaucoup de litres."
+       },
+       {
+        "q": "Pourquoi ne sent-on pas le poids de l'air dans la main ?",
+        "options": [
+         "Parce qu'un litre d'air n'a qu'une très petite masse",
+         "Parce que l'air n'a pas de masse",
+         "Parce que l'air est un liquide",
+         "Parce que l'air est toujours en mouvement"
+        ],
+        "bonne": 0,
+        "explication": "Environ 1,2 g par litre."
+       },
+       {
+        "q": "De quoi l'air est-il fait ?",
+        "options": [
+         "D'un seul gaz",
+         "D'un mélange de gaz",
+         "De vapeur seulement",
+         "De vide"
+        ],
+        "bonne": 1,
+        "explication": "L'air est un mélange de gaz."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Relevé de Bastien</b> (inventé pour le jeu). La terrasse de la Fabrique mesure environ la taille d'une salle de classe.</div>Réponds aux trois questions à partir du relevé et de la fiche.",
+      "indices": [
+       "Une petite masse multipliée par beaucoup de litres donne une grande masse.",
+       "Pour voir la masse d'un litre d'air, il faut une balance précise.",
+       "Relis la première phrase de la fiche."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 1 ?",
+       "options": [
+        "On ne le voit pas, mais c'est de la matière : on le sent quand le vent souffle, il fait tourner une girouette et gonfle les voiles des bateaux.",
+        "Une salle de classe contient pourtant plus de 200 kg d'air.",
+        "La balance affiche une masse plus grande : l'air ajouté a une masse.",
+        "Si on incline le verre, des bulles d'air s'échappent et l'eau entre."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Salut, ingénieurs ! Je suis Bastien, agent météo. Mon ballon-sonde doit partir mesurer le ciel, mais mon chef dit que l'air, ce n'est rien du tout. Moi, je pense que l'air est de la matière. Aidez-moi à le prouver."
      }
     },
     {
@@ -561,7 +1244,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "paolo",
+     "personnage_emetteur": "bastien",
      "probleme_narratif": "Bastien prépare l'expérience qui pèse l'air.",
      "enjeu": "Sans protocole rigoureux, l'expérience ne prouvera rien.",
      "episode_du_roman": "La main à la pâte, « Est-ce que l'air est pesant ? » (livret enseignant) ; Académie de Grenoble, fiche « L'air »",
@@ -574,7 +1257,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "air",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (ordre) ; Technicien (ordre) ; Ingénieur (ordre) ; Physicien (ordre) ; Expert de la Fabrique (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "On pèse d'abord le ballon peu gonflé et on note la masse. On ajoute ensuite de l'air avec la pompe, sans rien changer d'autre. On repèse le même ballon et on compare : la masse a augmenté. L'air ajouté a donc une masse.",
      "matelot": {
       "items": [
@@ -637,6 +1320,122 @@
        "La conclusion arrive après la comparaison."
       ],
       "dialogue": "Pour peser l'air, il faut faire les étapes dans le bon ordre. Remettez mon protocole en ordre."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Peser le ballon peu gonflé.",
+        "rang": 1
+       },
+       {
+        "txt": "Ajouter de l'air avec la pompe.",
+        "rang": 2
+       },
+       {
+        "txt": "Peser à nouveau : la masse a augmenté.",
+        "rang": 3
+       }
+      ],
+      "consigne": "Bastien veut montrer que l'air a une masse. Remets ses trois étapes dans l'ordre (flèches ▲ et ▼).",
+      "indices": [
+       "Ouvre la fiche « L'air est de la matière » : cherche « L'air a une masse ».",
+       "On pèse d'abord, avant de changer quelque chose.",
+       "La conclusion vient à la fin."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Régler la balance électronique au gramme près.",
+        "rang": 1
+       },
+       {
+        "txt": "Poser le ballon de basket peu gonflé et noter sa masse.",
+        "rang": 2
+       },
+       {
+        "txt": "Gonfler le même ballon avec la pompe, sans rien ajouter d'autre.",
+        "rang": 3
+       },
+       {
+        "txt": "Reposer le même ballon sur la même balance et noter la masse.",
+        "rang": 4
+       },
+       {
+        "txt": "Comparer : la deuxième masse est plus grande.",
+        "rang": 5
+       },
+       {
+        "txt": "Conclure : l'air ajouté a une masse.",
+        "rang": 6
+       }
+      ],
+      "consigne": "Bastien écrit le protocole pour peser l'air. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui explique pourquoi on ne change qu'une seule chose.",
+      "indices": [
+       "Une balance précise se prépare avant la première pesée.",
+       "« Avant » vient avant « après ».",
+       "Pour la justification : cherche le mot « Méthode »."
+      ],
+      "justification": {
+       "question": "Pourquoi Bastien garde-t-il le même ballon et la même balance ?",
+       "options": [
+        "Pour prouver quelque chose par une expérience, on compare un « avant » et un « après » en ne changeant qu'une seule chose.",
+        "C'est peu : il faut une balance précise au gramme pour voir la différence.",
+        "Enfoncé à l'envers dans l'eau, il garde sec le mouchoir collé au fond : l'air enfermé occupe la place.",
+        "L'air est un mélange de gaz."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Coller un mouchoir sec au fond d'un verre.",
+        "rang": 1
+       },
+       {
+        "txt": "Retourner le verre, ouverture vers le bas.",
+        "rang": 2
+       },
+       {
+        "txt": "L'enfoncer bien droit dans la cuve d'eau.",
+        "rang": 3
+       },
+       {
+        "txt": "Le ressortir bien droit : le mouchoir est sec.",
+        "rang": 4
+       },
+       {
+        "txt": "Recommencer en inclinant le verre sous l'eau.",
+        "rang": 5
+       },
+       {
+        "txt": "Observer les bulles d'air qui remontent : l'eau entre.",
+        "rang": 6
+       }
+      ],
+      "consigne": "Bastien veut aussi montrer que l'air occupe la place, avec un verre et un mouchoir. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui décrit ce qu'on voit à la fin.",
+      "indices": [
+       "Le mouchoir doit être en place avant de retourner le verre.",
+       "Le premier essai se fait verre bien droit.",
+       "Pour la justification : cherche « incline »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit la dernière étape ?",
+       "options": [
+        "Enfoncé à l'envers dans l'eau, il garde sec le mouchoir collé au fond : l'air enfermé occupe la place.",
+        "La balance affiche une masse plus grande : l'air ajouté a une masse.",
+        "Si on incline le verre, des bulles d'air s'échappent et l'eau entre.",
+        "Une salle de classe contient pourtant plus de 200 kg d'air."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -652,7 +1451,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "fatou",
+     "personnage_emetteur": "bastien",
      "probleme_narratif": "Bastien enfonce un verre à l'envers dans l'eau et pousse le piston d'une seringue.",
      "enjeu": "Il faut une preuve de plus : l'air occupe aussi de la place.",
      "episode_du_roman": "La main à la pâte, « Les états de l'eau et les changements d'états » ; La main à la pâte, « Est-ce que l'air est pesant ? »",
@@ -665,7 +1464,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "air",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (qcm) ; Technicien (qcm) ; Ingénieur (qcm) ; Physicien (qcm) ; Expert de la Fabrique (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un mouchoir est collé au fond d'un verre. On enfonce le verre à l'envers dans l'eau : le mouchoir reste sec, car l'air enfermé occupe la place et empêche l'eau d'entrer. Dans une seringue bouchée, l'air se comprime un peu, puis le piston revient quand on le lâche. Avec de l'eau, le piston ne bouge presque pas.",
      "matelot": {
       "questions": [
@@ -762,6 +1561,140 @@
        "Si on incline le verre, des bulles remontent : l'air s'échappe."
       ],
       "dialogue": "Regardez bien mon verre et ma seringue. Que montrent ces deux expériences ?"
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quand on ressort le verre, le mouchoir est...",
+        "options": [
+         "mouillé",
+         "sec",
+         "déchiré"
+        ],
+        "bonne": 1,
+        "explication": "L'air enfermé a gardé la place."
+       },
+       {
+        "q": "Qu'est-ce qui empêche l'eau d'entrer ?",
+        "options": [
+         "L'air dans le verre",
+         "Le mouchoir",
+         "Rien"
+        ],
+        "bonne": 0,
+        "explication": "L'air occupe la place."
+       }
+      ],
+      "consigne": "Bastien enfonce un verre à l'envers dans l'eau, avec un mouchoir collé au fond. Réponds aux deux questions.",
+      "indices": [
+       "Ouvre la fiche « L'air est de la matière » : cherche le mouchoir.",
+       "Le verre n'est pas vide : il contient de l'air.",
+       "L'air prend de la place, même invisible."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "On pousse les deux pistons. Lequel avance un peu ?",
+        "options": [
+         "Celui de la seringue d'air",
+         "Celui de la seringue d'eau",
+         "Les deux autant",
+         "Aucun"
+        ],
+        "bonne": 0,
+        "explication": "Un gaz est compressible."
+       },
+       {
+        "q": "On lâche le piston de la seringue d'air. Il...",
+        "options": [
+         "reste enfoncé",
+         "revient en arrière",
+         "sort de la seringue",
+         "fond"
+        ],
+        "bonne": 1,
+        "explication": "L'air comprimé repousse le piston."
+       },
+       {
+        "q": "Le mouchoir collé au fond du verre enfoncé à l'envers reste sec. Pourquoi ?",
+        "options": [
+         "L'air enfermé occupe la place",
+         "Le verre est imperméable",
+         "L'eau est trop froide",
+         "Le mouchoir repousse l'eau"
+        ],
+        "bonne": 0,
+        "explication": "L'air est de la matière : il occupe un volume."
+       }
+      ],
+      "consigne": "Bastien compare deux seringues bouchées : l'une pleine d'air, l'autre pleine d'eau. Réponds, puis choisis la phrase de la fiche qui explique le verre au mouchoir.",
+      "indices": [
+       "Un liquide ne se laisse presque pas comprimer ; un gaz, un peu.",
+       "L'air écrasé pousse dans l'autre sens.",
+       "Pour la justification : cherche le mot « mouchoir »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique l'expérience du mouchoir ?",
+       "options": [
+        "Si on incline le verre, des bulles d'air s'échappent et l'eau entre.",
+        "L'air est un mélange de gaz.",
+        "C'est peu : il faut une balance précise au gramme pour voir la différence.",
+        "Enfoncé à l'envers dans l'eau, il garde sec le mouchoir collé au fond : l'air enfermé occupe la place."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Pour peser l'air d'un ballon, une balance de cuisine graduée de 100 g en 100 g suffit.",
+        "vrai": false,
+        "explication": "Il faut une balance précise au gramme."
+       },
+       {
+        "txt": "Le ballon gonflé est plus lourd parce que l'air ajouté a une masse.",
+        "vrai": true,
+        "explication": "Seul l'air a changé."
+       },
+       {
+        "txt": "On a changé de ballon entre les deux pesées : la preuve est bonne.",
+        "vrai": false,
+        "explication": "On ne change qu'une seule chose."
+       },
+       {
+        "txt": "Les bulles qui sortent d'un verre incliné sous l'eau sont de l'air.",
+        "vrai": true,
+        "explication": "L'air enfermé s'échappe."
+       },
+       {
+        "txt": "L'air de la seringue disparaît quand on pousse le piston.",
+        "vrai": false,
+        "explication": "Il est comprimé, pas détruit : il repousse le piston."
+       }
+      ],
+      "consigne": "Bastien relit le compte rendu de l'équipe d'avant. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche qui justifie la balance.",
+      "indices": [
+       "Une différence de quelques grammes ne se voit pas sur n'importe quelle balance.",
+       "Pour comparer, une seule chose doit changer.",
+       "Pour la justification : cherche « précise »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la première affirmation ?",
+       "options": [
+        "C'est peu : il faut une balance précise au gramme pour voir la différence.",
+        "Dans les conditions habituelles, un litre d'air a une masse d'environ 1,2 g.",
+        "Pour prouver quelque chose par une expérience, on compare un « avant » et un « après » en ne changeant qu'une seule chose.",
+        "On ne le voit pas, mais c'est de la matière : on le sent quand le vent souffle, il fait tourner une girouette et gonfle les voiles des bateaux."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
      }
     },
     {
@@ -777,7 +1710,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ninon",
+     "personnage_emetteur": "bastien",
      "probleme_narratif": "Bastien calcule combien pèse l'air ajouté dans le ballon de basket.",
      "enjeu": "Le chef veut un chiffre, pas seulement une impression.",
      "episode_du_roman": "La main à la pâte, « Est-ce que l'air est pesant ? » ; Académie de Grenoble, fiche « L'air » (1 L d'air a une masse d'environ 1,2 g)",
@@ -790,10 +1723,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "air",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Ingénieur (code) ; Physicien (code) ; Expert de la Fabrique (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Cinq litres d'air ajoutés : 5 × 1,2 g = 6 g. Le ballon passe de 600 g à 606 g. Il faut une balance précise au gramme pour voir la différence.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "champs": [
@@ -815,6 +1750,70 @@
        "Ajoute ce résultat à 600 g."
       ],
       "dialogue": "Un litre d'air, environ un gramme deux. Calculez la masse de l'air ajouté."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Masse de l'air ajouté (en g)",
+        "valeur": "12",
+        "longueur": 2
+       },
+       {
+        "libelle": "Nouvelle masse du ballon (en g)",
+        "valeur": "462",
+        "longueur": 3
+       }
+      ],
+      "consigne": "Bastien fait un essai avec un ballon de 450 g. Il y ajoute 10 litres d'air. Un litre d'air a une masse d'environ 1,2 g. Calcule, puis choisis la phrase de la fiche qui donne la masse d'un litre d'air.",
+      "indices": [
+       "10 litres, c'est dix fois 1,2 g.",
+       "10 × 1,2 g = 12 g.",
+       "Ajoute la masse de l'air à celle du ballon : 450 + 12."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne la valeur utilisée ?",
+       "options": [
+        "Dans les conditions habituelles, un litre d'air a une masse d'environ 1,2 g.",
+        "Une salle de classe contient pourtant plus de 200 kg d'air.",
+        "La balance affiche une masse plus grande : l'air ajouté a une masse.",
+        "C'est peu : il faut une balance précise au gramme pour voir la différence."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Masse de l'air ajouté (en g)",
+        "valeur": "12",
+        "longueur": 2
+       },
+       {
+        "libelle": "Volume d'air ajouté (en litres)",
+        "valeur": "10",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Bastien pèse le ballon de basket : 600 g. Il le gonfle, et la balance affiche 612 g. Un litre d'air a une masse d'environ 1,2 g. Retrouve la masse de l'air ajouté, puis le nombre de litres d'air ajoutés.",
+      "indices": [
+       "Masse ajoutée = masse après − masse avant.",
+       "612 − 600 = 12 g.",
+       "Combien de fois 1,2 g dans 12 g ? 12 ÷ 1,2."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche permet de passer de la masse au volume ?",
+       "options": [
+        "La balance affiche une masse plus grande : l'air ajouté a une masse.",
+        "Une salle de classe contient pourtant plus de 200 kg d'air.",
+        "Dans les conditions habituelles, un litre d'air a une masse d'environ 1,2 g.",
+        "Pour prouver quelque chose par une expérience, on compare un « avant » et un « après » en ne changeant qu'une seule chose."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
      }
     }
    ]
@@ -861,7 +1860,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "changements",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (association) ; Technicien (association) ; Ingénieur (association) ; Physicien (association) ; Expert de la Fabrique (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Quand on chauffe la glace, elle fond : c'est la fusion (solide vers liquide). Quand on refroidit l'eau liquide, elle gèle : c'est la solidification. Quand l'eau liquide devient vapeur, c'est la vaporisation. Quand la vapeur redevient liquide, c'est la liquéfaction, que l'on appelle aussi condensation dans la vie courante.",
      "matelot": {
       "paires": [
@@ -912,6 +1911,144 @@
        "Solidification : le liquide devient solide."
       ],
       "dialogue": "Bonjour ! Je suis Paolo, le glacier. Mes machines refroidissent, chauffent, font fondre, font geler... mais l'orage a effacé leurs étiquettes. Sans elles, je risque de faire bouillir mes glaces ! Aidez-moi à reconnaître chaque changement d'état."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "le congélateur",
+        "d": "l'eau devient de la glace"
+       },
+       {
+        "g": "le chauffe-glace",
+        "d": "la glace devient de l'eau"
+       },
+       {
+        "g": "la bouilloire",
+        "d": "l'eau devient de la vapeur"
+       }
+      ],
+      "consigne": "Paolo a perdu les étiquettes de ses machines. Relie chaque machine à ce qu'elle fait à l'eau. Clique sur une machine, puis sur ce qu'elle fait.",
+      "indices": [
+       "Ouvre la fiche « Les changements d'état de l'eau » dans la Bibliothèque.",
+       "Le congélateur refroidit, la bouilloire chauffe.",
+       "Chauffer de la glace la fait fondre."
+      ],
+      "dialogue": "Bonjour ! Je suis Paolo, le glacier. Mes machines refroidissent, chauffent, font fondre, font geler... mais l'orage a effacé leurs étiquettes. Sans elles, je risque de faire bouillir mes glaces ! Aidez-moi à reconnaître chaque changement d'état."
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "les glaçons se forment dans le bac",
+        "d": "solidification"
+       },
+       {
+        "g": "le sorbet coule dans le cornet au soleil",
+        "d": "fusion"
+       },
+       {
+        "g": "la flaque de la cour disparaît",
+        "d": "vaporisation"
+       },
+       {
+        "g": "de la buée apparaît sur la vitre froide",
+        "d": "liquéfaction"
+       },
+       {
+        "g": "l'eau de la casserole bout",
+        "d": "vaporisation par ébullition"
+       }
+      ],
+      "consigne": "Paolo range ses observations. Relie chaque situation au changement d'état qu'elle montre, puis choisis la phrase de la fiche qui parle de la buée.",
+      "indices": [
+       "Repère l'état de départ et l'état d'arrivée de l'eau.",
+       "Une flaque qui disparaît et une casserole qui bout : deux façons de se vaporiser.",
+       "Pour la justification : cherche le mot « condensation »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la buée ?",
+       "options": [
+        "Ces changements sont réversibles : on peut revenir à l'état de départ.",
+        "Dans la vie courante, on dit souvent condensation (la buée sur un miroir).",
+        "L'évaporation est lente, se fait à la surface de l'eau et à toute température : le linge sèche, une flaque disparaît.",
+        "L'eau bout à 100 °C."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour ! Je suis Paolo, le glacier. Mes machines refroidissent, chauffent, font fondre, font geler... mais l'orage a effacé leurs étiquettes. Sans elles, je risque de faire bouillir mes glaces ! Aidez-moi à reconnaître chaque changement d'état."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "fusion",
+        "titre": "Fusion"
+       },
+       {
+        "id": "solidification",
+        "titre": "Solidification"
+       },
+       {
+        "id": "vaporisation",
+        "titre": "Vaporisation"
+       },
+       {
+        "id": "liquefaction",
+        "titre": "Liquéfaction"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la neige fond sur le toit",
+        "col": "fusion"
+       },
+       {
+        "txt": "un glaçon fond dans le verre",
+        "col": "fusion"
+       },
+       {
+        "txt": "la flaque gèle pendant la nuit",
+        "col": "solidification"
+       },
+       {
+        "txt": "l'eau du bac à glaçons durcit",
+        "col": "solidification"
+       },
+       {
+        "txt": "le linge sèche sur le fil",
+        "col": "vaporisation"
+       },
+       {
+        "txt": "l'eau bout dans la bouilloire",
+        "col": "vaporisation"
+       },
+       {
+        "txt": "la buée sur le miroir de la salle de bains",
+        "col": "liquefaction"
+       },
+       {
+        "txt": "des gouttes sur une canette sortie du réfrigérateur",
+        "col": "liquefaction"
+       }
+      ],
+      "consigne": "Paolo affiche le tableau des changements d'état de la glacerie. Range chaque situation dans la bonne colonne, puis choisis la phrase de la fiche qui justifie la colonne « liquéfaction ».",
+      "indices": [
+       "Pour chaque situation : quel état au départ, quel état à l'arrivée ?",
+       "Les gouttes sur la canette viennent de l'air, pas de la canette.",
+       "Pour la justification : la buée est une liquéfaction de tous les jours."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie la colonne « Liquéfaction » ?",
+       "options": [
+        "L'évaporation est lente, se fait à la surface de l'eau et à toute température : le linge sèche, une flaque disparaît.",
+        "Tant qu'il reste de la glace dans l'eau, le thermomètre reste à 0 °C.",
+        "Ces changements sont réversibles : on peut revenir à l'état de départ.",
+        "Dans la vie courante, on dit souvent condensation (la buée sur un miroir)."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Bonjour ! Je suis Paolo, le glacier. Mes machines refroidissent, chauffent, font fondre, font geler... mais l'orage a effacé leurs étiquettes. Sans elles, je risque de faire bouillir mes glaces ! Aidez-moi à reconnaître chaque changement d'état."
      }
     },
     {
@@ -927,7 +2064,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "fatou",
+     "personnage_emetteur": "paolo",
      "probleme_narratif": "Paolo contrôle ses thermomètres avant de rallumer la glacerie.",
      "enjeu": "Sans les bonnes températures, les glaces fondent ou le sirop brûle.",
      "episode_du_roman": "La main à la pâte, « Les états de l'eau et les changements d'états » ; Académie de Grenoble, fiche « Les états et la constitution de la mati",
@@ -940,7 +2077,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "changements",
      "type": "instrument",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (qcm) ; Technicien (instrument) ; Ingénieur (instrument) ; Physicien (instrument) ; Expert de la Fabrique (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "La glace fond à 0 °C : tant qu'il reste de la glace dans l'eau, le thermomètre reste à 0 °C. Au niveau de la mer, l'eau bout à 100 °C. Le congélateur de Paolo est réglé à moins quinze degrés : la glace y reste solide.",
      "matelot": {
       "instrument": "thermometre",
@@ -1002,6 +2139,138 @@
        "Glace qui fond : 0 °C ; eau qui bout : 100 °C."
       ],
       "dialogue": "Mes thermomètres ne mentent pas, mais il faut savoir les lire. À vous."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "La glace fond. Le thermomètre dans la glace indique...",
+        "options": [
+         "0 °C",
+         "50 °C",
+         "100 °C"
+        ],
+        "bonne": 0,
+        "explication": "La glace fond à 0 °C."
+       },
+       {
+        "q": "L'eau bout dans la casserole. Le thermomètre indique...",
+        "options": [
+         "0 °C",
+         "20 °C",
+         "100 °C"
+        ],
+        "bonne": 2,
+        "explication": "L'eau bout à 100 °C."
+       }
+      ],
+      "consigne": "Paolo montre deux thermomètres. Réponds aux deux questions.",
+      "indices": [
+       "Ouvre la fiche « Les changements d'état de l'eau » : cherche « températures repères ».",
+       "La glace fond quand il fait 0 degré.",
+       "L'eau bout quand elle est très chaude : 100 degrés."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "instrument",
+      "instrument": "thermometre",
+      "unite": "°C",
+      "min": -20,
+      "max": 110,
+      "pas": 5,
+      "etiquettes": 20,
+      "items": [
+       {
+        "libelle": "Glace et eau mélangées, après 5 minutes",
+        "mode": "lire",
+        "valeur": 0
+       },
+       {
+        "libelle": "Bac où il reste quelques glaçons",
+        "mode": "regler",
+        "valeur": 0,
+        "depart": 30
+       },
+       {
+        "libelle": "Eau qui bout depuis 3 minutes",
+        "mode": "regler",
+        "valeur": 100,
+        "depart": 30
+       }
+      ],
+      "consigne": "Paolo contrôle trois cuves. Lis le premier thermomètre, puis règle les deux autres avec les flèches. Enfin, choisis la phrase de la fiche qui explique le deuxième thermomètre.",
+      "indices": [
+       "Chaque petit trait vaut 5 °C.",
+       "Tant que la glace n'a pas fini de fondre, la température ne monte pas.",
+       "L'eau qui bout reste à la même température."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique le deuxième thermomètre ?",
+       "options": [
+        "Tant qu'il reste de la glace dans l'eau, le thermomètre reste à 0 °C.",
+        "L'eau bout à 100 °C.",
+        "L'évaporation est lente, se fait à la surface de l'eau et à toute température : le linge sèche, une flaque disparaît.",
+        "Ces changements sont réversibles : on peut revenir à l'état de départ."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Lisez bien mes instruments, puis réglez-les avec soin."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Entre quels moments la glace fond-elle ?",
+        "options": [
+         "Entre 0 et 2 min",
+         "Entre 4 et 8 min environ",
+         "Entre 10 et 12 min",
+         "Pendant tout le relevé"
+        ],
+        "bonne": 1,
+        "explication": "Glace et eau mélangées : c'est la fusion."
+       },
+       {
+        "q": "Pendant la fusion, la température...",
+        "options": [
+         "monte vite",
+         "reste à 0 °C",
+         "descend",
+         "monte jusqu'à 100 °C"
+        ],
+        "bonne": 1,
+        "explication": "Tant qu'il reste de la glace, elle reste à 0 °C."
+       },
+       {
+        "q": "À 10 min, dans quel état est l'eau ?",
+        "options": [
+         "Solide",
+         "Liquide",
+         "Gazeux",
+         "Solide et liquide"
+        ],
+        "bonne": 1,
+        "explication": "Toute la glace a fondu."
+       }
+      ],
+      "consigne": "<div class=\"doc-titre\"><i>Relevé de Paolo : un bloc de glace chauffé doucement (relevé inventé pour le jeu)</i></div><table class=\"tableau-releves\"><tr><th>Temps</th><th>Température</th><th>Ce qu'on voit</th></tr><tr><td>0 min</td><td>−10 °C</td><td>glace</td></tr><tr><td>2 min</td><td>−4 °C</td><td>glace</td></tr><tr><td>4 min</td><td>0 °C</td><td>glace et eau</td></tr><tr><td>6 min</td><td>0 °C</td><td>glace et eau</td></tr><tr><td>8 min</td><td>0 °C</td><td>glace et eau</td></tr><tr><td>10 min</td><td>5 °C</td><td>eau liquide</td></tr><tr><td>12 min</td><td>12 °C</td><td>eau liquide</td></tr></table>Réponds aux trois questions à partir du relevé et de la fiche.",
+      "indices": [
+       "Regarde la colonne « Ce qu'on voit » en même temps que la température.",
+       "Trois mesures de suite donnent la même température.",
+       "Après la fusion, l'eau liquide se réchauffe."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique les trois mesures à 0 °C ?",
+       "options": [
+        "L'eau bout à 100 °C.",
+        "Ces changements sont réversibles : on peut revenir à l'état de départ.",
+        "Tant qu'il reste de la glace dans l'eau, le thermomètre reste à 0 °C.",
+        "La vapeur d'eau est un gaz invisible."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     },
     {
@@ -1017,7 +2286,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ninon",
+     "personnage_emetteur": "paolo",
      "probleme_narratif": "Paolo chauffe un glaçon sorti du congélateur.",
      "enjeu": "Paolo doit expliquer à son apprenti ce qui arrive au glaçon qu'on chauffe.",
      "episode_du_roman": "La main à la pâte, « Les états de l'eau et les changements d'états » ; Académie de Grenoble, fiche « Les états et la constitution de la mati",
@@ -1030,7 +2299,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "changements",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (ordre) ; Technicien (ordre) ; Ingénieur (ordre) ; Physicien (ordre) ; Expert de la Fabrique (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le glaçon sort du congélateur, solide et très froid. En chauffant, il fond : il y a de l'eau liquide et de la glace, à 0 °C. Puis toute la glace a fondu et l'eau liquide se réchauffe. À 100 °C, l'eau bout : de grosses bulles de vapeur se forment dans tout le liquide. La vapeur part dans l'air, invisible.",
      "matelot": {
       "items": [
@@ -1089,6 +2358,122 @@
        "L'ébullition se fait à 100 °C."
       ],
       "dialogue": "Du glaçon à la vapeur, l'eau passe par plusieurs étapes. Remettez-les dans l'ordre."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le glaçon est solide.",
+        "rang": 1
+       },
+       {
+        "txt": "Le glaçon fond : il devient de l'eau.",
+        "rang": 2
+       },
+       {
+        "txt": "L'eau bout : elle devient de la vapeur.",
+        "rang": 3
+       }
+      ],
+      "consigne": "Paolo chauffe un glaçon dans une casserole. Remets les trois étapes dans l'ordre (flèches ▲ et ▼).",
+      "indices": [
+       "Ouvre la fiche « Les changements d'état de l'eau ».",
+       "Au début, le glaçon sort du congélateur.",
+       "La vapeur vient en dernier."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La glace sort du congélateur, bien en dessous de 0 °C.",
+        "rang": 1
+       },
+       {
+        "txt": "La glace se réchauffe jusqu'à 0 °C.",
+        "rang": 2
+       },
+       {
+        "txt": "Fusion : glace et eau mélangées, le thermomètre reste à 0 °C.",
+        "rang": 3
+       },
+       {
+        "txt": "Toute la glace a fondu : l'eau liquide se réchauffe.",
+        "rang": 4
+       },
+       {
+        "txt": "Ébullition à 100 °C : des bulles naissent dans tout le liquide.",
+        "rang": 5
+       },
+       {
+        "txt": "La vapeur d'eau, invisible, part dans l'air.",
+        "rang": 6
+       }
+      ],
+      "consigne": "Paolo chauffe un bloc de glace jusqu'à l'ébullition. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui décrit la dernière étape visible.",
+      "indices": [
+       "La fusion ne commence qu'à 0 °C.",
+       "Tant qu'il reste de la glace, la température ne monte pas.",
+       "Pour la justification : cherche le mot « bulles »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit l'ébullition ?",
+       "options": [
+        "L'évaporation est lente, se fait à la surface de l'eau et à toute température : le linge sèche, une flaque disparaît.",
+        "L'ébullition se produit à 100 °C, avec des bulles de vapeur qui naissent dans tout le liquide.",
+        "La « fumée » blanche d'une casserole, la buée, le brouillard et les nuages sont faits de gouttelettes d'eau liquide : la vapeur s'est liquéfiée au contact de l'air plus froid.",
+        "Tant qu'il reste de la glace dans l'eau, le thermomètre reste à 0 °C."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La bouilloire envoie de la vapeur d'eau invisible.",
+        "rang": 1
+       },
+       {
+        "txt": "La vapeur touche une assiette froide posée au-dessus.",
+        "rang": 2
+       },
+       {
+        "txt": "Liquéfaction : des gouttelettes d'eau apparaissent sur l'assiette.",
+        "rang": 3
+       },
+       {
+        "txt": "On recueille l'eau liquide dans un petit moule.",
+        "rang": 4
+       },
+       {
+        "txt": "On met le moule au congélateur.",
+        "rang": 5
+       },
+       {
+        "txt": "Solidification : l'eau devient un glaçon.",
+        "rang": 6
+       }
+      ],
+      "consigne": "Paolo fait le chemin inverse : de la vapeur de la bouilloire jusqu'à un glaçon. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui prouve que c'est possible.",
+      "indices": [
+       "On part du gaz pour arriver au solide.",
+       "Il faut une surface froide pour retrouver de l'eau liquide.",
+       "Pour la justification : cherche le mot « réversibles »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche prouve qu'on peut revenir à l'état de départ ?",
+       "options": [
+        "Ces changements sont réversibles : on peut revenir à l'état de départ.",
+        "L'eau bout à 100 °C.",
+        "L'ébullition se produit à 100 °C, avec des bulles de vapeur qui naissent dans tout le liquide.",
+        "La vapeur d'eau est un gaz invisible."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -1104,7 +2489,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ines",
+     "personnage_emetteur": "paolo",
      "probleme_narratif": "Paolo explique ce qu'on voit vraiment au-dessus de la casserole.",
      "enjeu": "L'apprenti croit que ce nuage blanc est de la vapeur : il faut corriger son idée.",
      "episode_du_roman": "La main à la pâte, « Les états de l'eau et les changements d'états » ; IRM (Institut royal météorologique de Belgique), « Nuages : compositi",
@@ -1117,10 +2502,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "changements",
      "type": "trous",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Ingénieur (trous) ; Physicien (trous) ; Expert de la Fabrique (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le linge sèche par évaporation : à toute température, l'eau passe lentement à l'état de gaz, à la surface. L'ébullition, elle, se produit à 100 °C, avec des bulles de vapeur dans tout le liquide. La vapeur d'eau est invisible. La « fumée » blanche au-dessus de la casserole est faite de gouttelettes d'eau liquide : la vapeur s'est liquéfiée dans l'air plus froid. La buée sur un miroir froid se forme de la même manière.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "texte": "<p>Le linge sèche dehors, même en hiver : c'est l'[[évaporation]], lente, à la surface de l'eau. Dans la casserole, à 100 °C, de grosses bulles montent : c'est l'[[ébullition]]. La vapeur d'eau est [[invisible]]. La « fumée » blanche au-dessus de la casserole, ce sont de fines [[gouttelettes]] d'eau liquide : la vapeur s'est [[liquéfiée]] en touchant l'air plus froid.</p>",
@@ -1140,6 +2527,71 @@
        "Ce que l'on voit, ce sont des gouttelettes."
       ],
       "dialogue": "Ce que l'on voit au-dessus de la casserole n'est pas ce que l'on croit. Complétez mon texte."
+     },
+     "lieutenant": {
+      "type": "trous",
+      "texte": "<p>La vapeur d'eau est un gaz [[invisible]]. La « fumée » blanche au-dessus de la casserole n'est donc pas de la vapeur : ce sont de fines [[gouttelettes]] d'eau [[liquide]]. La vapeur s'est [[liquéfiée]] au contact de l'air plus [[froid]].</p>",
+      "etiquettes": [
+       "invisible",
+       "gouttelettes",
+       "liquide",
+       "liquéfiée",
+       "froid",
+       "blanche",
+       "solidifiée",
+       "chaud",
+       "fumée"
+      ],
+      "consigne": "Paolo explique ce qu'on voit au-dessus de la casserole. Complète son texte (il y a des étiquettes en trop), puis choisis la phrase de la fiche qui le justifie.",
+      "indices": [
+       "Ce qu'on voit ne peut pas être un gaz invisible.",
+       "De la buée, c'est de l'eau liquide.",
+       "Pour la justification : cherche « fumée » dans la fiche."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie le texte de Paolo ?",
+       "options": [
+        "La « fumée » blanche d'une casserole, la buée, le brouillard et les nuages sont faits de gouttelettes d'eau liquide : la vapeur s'est liquéfiée au contact de l'air plus froid.",
+        "L'ébullition se produit à 100 °C, avec des bulles de vapeur qui naissent dans tout le liquide.",
+        "Dans la vie courante, on dit souvent condensation (la buée sur un miroir).",
+        "L'évaporation est lente, se fait à la surface de l'eau et à toute température : le linge sèche, une flaque disparaît."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>Le linge sèche dehors, même en hiver : c'est l'[[évaporation]]. Elle est [[lente]], se fait à la [[surface]] de l'eau et à toute température. Dans la casserole, à [[100]] °C, des bulles de vapeur naissent dans [[tout]] le liquide : c'est l'[[ébullition]].</p>",
+      "etiquettes": [
+       "évaporation",
+       "lente",
+       "surface",
+       "100",
+       "tout",
+       "ébullition",
+       "rapide",
+       "fusion",
+       "0",
+       "liquéfaction"
+      ],
+      "consigne": "Paolo compare deux façons de vaporiser l'eau. Complète son carnet (il y a des étiquettes en trop), puis choisis la phrase de la fiche qui décrit l'évaporation.",
+      "indices": [
+       "Le linge ne bout pas : il sèche doucement.",
+       "L'ébullition de l'eau a une température repère.",
+       "Pour la justification : cherche « à toute température »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit l'évaporation ?",
+       "options": [
+        "L'ébullition se produit à 100 °C, avec des bulles de vapeur qui naissent dans tout le liquide.",
+        "L'évaporation est lente, se fait à la surface de l'eau et à toute température : le linge sèche, une flaque disparaît.",
+        "L'eau bout à 100 °C.",
+        "La « fumée » blanche d'une casserole, la buée, le brouillard et les nuages sont faits de gouttelettes d'eau liquide : la vapeur s'est liquéfiée au contact de l'air plus froid."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
      }
     }
    ]
@@ -1186,7 +2638,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "conservation",
      "type": "qcm",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (qcm) ; Technicien (qcm) ; Ingénieur (qcm) ; Physicien (qcm) ; Expert de la Fabrique (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Pendant un changement d'état, la quantité de matière ne change pas : la masse se conserve. Des glaçons de 200 g donnent 200 g d'eau liquide. C'est toujours de l'eau : seul son état change. Le volume, lui, peut changer.",
      "matelot": {
       "questions": [
@@ -1283,6 +2735,151 @@
        "Ce qui peut changer, c'est le volume."
       ],
       "dialogue": "Entrez, entrez ! Je suis Fatou, la cuisinière. Ce matin, une bouteille oubliée au congélateur a fait sauter son bouchon. Mon commis dit que l'eau a grossi en gelant, donc qu'elle pèse plus lourd. Je n'en suis pas sûre : pesons, comparons et calculons ensemble."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Avant : 100 g de glaçons. Après la fusion, la balance affiche...",
+        "options": [
+         "50 g",
+         "100 g",
+         "150 g"
+        ],
+        "bonne": 1,
+        "explication": "La masse ne change pas."
+       },
+       {
+        "q": "Quand les glaçons ont fondu, la boîte contient...",
+        "options": [
+         "de l'eau liquide",
+         "de l'air seulement",
+         "du sable"
+        ],
+        "bonne": 0,
+        "explication": "La glace devient de l'eau liquide."
+       }
+      ],
+      "consigne": "Fatou pèse des glaçons dans une boîte fermée, avant et après qu'ils ont fondu. Réponds aux deux questions.",
+      "indices": [
+       "Ouvre la fiche « Ce qui change et ce qui se conserve » dans la Bibliothèque.",
+       "La boîte est fermée : rien ne sort, rien n'entre.",
+       "La glace, c'est encore de l'eau."
+      ],
+      "dialogue": "Entrez, entrez ! Je suis Fatou, la cuisinière. Ce matin, une bouteille oubliée au congélateur a fait sauter son bouchon. Mon commis dit que l'eau a grossi en gelant, donc qu'elle pèse plus lourd. Je n'en suis pas sûre : pesons, comparons et calculons ensemble."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Boîte fermée : 300 g de glaçons fondent. La balance affiche...",
+        "options": [
+         "250 g",
+         "300 g",
+         "330 g",
+         "0 g"
+        ],
+        "bonne": 1,
+        "explication": "La masse se conserve."
+       },
+       {
+        "q": "Bol ouvert au soleil toute la journée : la masse d'eau a un peu baissé. Pourquoi ?",
+        "options": [
+         "La masse ne se conserve pas",
+         "Un peu d'eau s'est évaporée dans l'air",
+         "La glace était plus lourde",
+         "La balance est cassée"
+        ],
+        "bonne": 1,
+        "explication": "L'eau partie dans l'air n'est plus pesée."
+       },
+       {
+        "q": "Quand l'eau gèle, qu'est-ce qui augmente ?",
+        "options": [
+         "La masse",
+         "Le volume",
+         "La quantité d'eau",
+         "Rien"
+        ],
+        "bonne": 1,
+        "explication": "Elle augmente de volume d'environ un dixième."
+       },
+       {
+        "q": "Pourquoi un glaçon flotte-t-il ?",
+        "options": [
+         "Il est creux",
+         "À masse égale, la glace prend plus de place que l'eau liquide",
+         "Il est plus lourd que l'eau",
+         "Il est froid"
+        ],
+        "bonne": 1,
+        "explication": "La glace est moins dense que l'eau liquide."
+       }
+      ],
+      "consigne": "Fatou compare des masses avant et après un changement d'état. Réponds aux quatre questions, puis choisis la phrase de la fiche qui explique la question 2.",
+      "indices": [
+       "Un récipient fermé empêche l'eau de partir en vapeur.",
+       "Dans un bol ouvert, l'eau s'évapore lentement.",
+       "Pour la justification : cherche « récipient fermé »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique la question 2 ?",
+       "options": [
+        "Pendant un changement d'état, la matière ne disparaît pas et n'apparaît pas : la masse se conserve.",
+        "200 g de glaçons donnent 200 g d'eau liquide, à condition de travailler dans un récipient fermé pour ne rien perdre par évaporation.",
+        "À masse égale, la glace prend plus de place que l'eau liquide : c'est aussi pour cela que les glaçons et les icebergs flottent.",
+        "Ce qui change : l'état, la forme, parfois le volume."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Entrez, entrez ! Je suis Fatou, la cuisinière. Ce matin, une bouteille oubliée au congélateur a fait sauter son bouchon. Mon commis dit que l'eau a grossi en gelant, donc qu'elle pèse plus lourd. Je n'en suis pas sûre : pesons, comparons et calculons ensemble."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "En gelant, l'eau devient plus lourde, puisqu'elle prend plus de place.",
+        "vrai": false,
+        "explication": "Le volume augmente, la masse reste la même."
+       },
+       {
+        "txt": "Un iceberg flotte parce que, à masse égale, la glace prend plus de place que l'eau liquide.",
+        "vrai": true,
+        "explication": "C'est écrit dans la fiche."
+       },
+       {
+        "txt": "La glace n'est plus de l'eau : c'est une autre matière.",
+        "vrai": false,
+        "explication": "La glace, c'est encore de l'eau."
+       },
+       {
+        "txt": "Pour comparer des volumes, on utilise un récipient gradué.",
+        "vrai": true,
+        "explication": "La balance mesure la masse, le récipient gradué le volume."
+       },
+       {
+        "txt": "Si la masse baisse dans un bol ouvert, c'est que la matière a disparu.",
+        "vrai": false,
+        "explication": "Elle est partie dans l'air par évaporation."
+       }
+      ],
+      "consigne": "Fatou relit les conclusions d'une équipe. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche qui résume ce qui se conserve.",
+      "indices": [
+       "Prendre plus de place ne veut pas dire peser plus.",
+       "Une balance pour la masse ; un récipient gradué pour le volume.",
+       "Pour la justification : cherche « Ce qui reste »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche résume ce qui se conserve ?",
+       "options": [
+        "Ce qui change : l'état, la forme, parfois le volume.",
+        "Pour savoir ce qui change, on mesure avant et après : avec une balance pour la masse, avec un récipient gradué pour le volume.",
+        "Ce qui reste : la masse, et la nature de la matière (la glace, c'est encore de l'eau).",
+        "C'est pourquoi une bouteille pleine gonfle au congélateur, et pourquoi les canalisations peuvent éclater en hiver."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Entrez, entrez ! Je suis Fatou, la cuisinière. Ce matin, une bouteille oubliée au congélateur a fait sauter son bouchon. Mon commis dit que l'eau a grossi en gelant, donc qu'elle pèse plus lourd. Je n'en suis pas sûre : pesons, comparons et calculons ensemble."
      }
     },
     {
@@ -1298,7 +2895,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ninon",
+     "personnage_emetteur": "fatou",
      "probleme_narratif": "Fatou calcule masses et volumes avant de ranger ses bouteilles.",
      "enjeu": "Fatou doit prévoir la place de ses bouteilles dans le congélateur.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Vikidia, « Glace » (la glace occupe enviro",
@@ -1311,7 +2908,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "conservation",
      "type": "code",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (code) ; Technicien (code) ; Ingénieur (code) ; Physicien (code) ; Expert de la Fabrique (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Quatre glaçons de 25 g : 4 × 25 g = 100 g de glace, donc 100 g d'eau liquide après la fusion. Pour la bouteille : la masse se conserve, 1 500 g d'eau donnent 1 500 g de glace. Le volume augmente : 1 000 mL donnent 1 090 mL, donc 500 mL donnent 545 mL, et 1 500 mL donnent 1 635 mL environ.",
      "matelot": {
       "champs": [
@@ -1349,6 +2946,87 @@
        "1 090 + 545 = ?"
       ],
       "dialogue": "Mon carnet m'aide à calculer. À vous de trouver les bons nombres."
+     },
+     "mousse": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Masse de l'eau (en g)",
+        "valeur": "60",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Fatou met 3 glaçons de 20 g chacun dans un bol fermé. Ils fondent. Quelle est la masse de l'eau obtenue ?",
+      "indices": [
+       "Ouvre la fiche « Ce qui change et ce qui se conserve » : cherche « Calculer ».",
+       "La masse ne change pas : calcule la masse des glaçons.",
+       "20 + 20 + 20."
+      ],
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Masse de la glace (en g)",
+        "valeur": "2000",
+        "longueur": 4
+       },
+       {
+        "libelle": "Volume de la glace (en mL)",
+        "valeur": "2180",
+        "longueur": 4
+       }
+      ],
+      "consigne": "Fatou met au congélateur une bouteille de 2 000 g d'eau (2 000 mL). Son carnet dit : 1 000 mL d'eau donnent environ 1 090 mL de glace. Calcule la masse de la glace, puis son volume. Choisis enfin la phrase de la fiche que tu as utilisée pour le volume.",
+      "indices": [
+       "La masse se conserve : elle ne change pas.",
+       "2 000 mL, c'est deux fois 1 000 mL.",
+       "2 × 1 090 mL = 2 180 mL."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche as-tu utilisée pour le volume ?",
+       "options": [
+        "1 000 mL d'eau liquide donnent environ 1 090 mL de glace.",
+        "200 g de glaçons donnent 200 g d'eau liquide, à condition de travailler dans un récipient fermé pour ne rien perdre par évaporation.",
+        "Pendant un changement d'état, la matière ne disparaît pas et n'apparaît pas : la masse se conserve.",
+        "Pour savoir ce qui change, on mesure avant et après : avec une balance pour la masse, avec un récipient gradué pour le volume."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Volume d'eau liquide (en mL)",
+        "valeur": "2000",
+        "longueur": 4
+       },
+       {
+        "libelle": "Masse de l'eau (en g)",
+        "valeur": "2000",
+        "longueur": 4
+       }
+      ],
+      "consigne": "Dans le bac de Fatou, il y a 2 180 mL de glace. Son carnet dit : 1 000 mL d'eau donnent environ 1 090 mL de glace, et 1 mL d'eau liquide a une masse de 1 g. Quand toute la glace aura fondu, dans un bac fermé, quel volume d'eau liquide obtiendra-t-elle ? Quelle masse ?",
+      "indices": [
+       "Fais le calcul à l'envers : 1 090 mL de glace redonnent 1 000 mL d'eau.",
+       "2 180, c'est deux fois 1 090.",
+       "Bac fermé : la masse de la glace est celle de l'eau."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche permet de trouver la masse ?",
+       "options": [
+        "À masse égale, la glace prend plus de place que l'eau liquide : c'est aussi pour cela que les glaçons et les icebergs flottent.",
+        "Pendant un changement d'état, la matière ne disparaît pas et n'apparaît pas : la masse se conserve.",
+        "1 000 mL d'eau liquide donnent environ 1 090 mL de glace.",
+        "Ce qui change : l'état, la forme, parfois le volume."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
      }
     },
     {
@@ -1364,7 +3042,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ines",
+     "personnage_emetteur": "fatou",
      "probleme_narratif": "Fatou compare la bouteille avant et après une nuit au congélateur.",
      "enjeu": "Il faut comprendre pourquoi le bouchon a sauté, sans croire que l'eau a grossi en masse.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Vikidia, « Glace »",
@@ -1377,7 +3055,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "conservation",
      "type": "plan",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (plan) ; Technicien (plan) ; Ingénieur (plan) ; Physicien (plan) ; Expert de la Fabrique (plan). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Repère 1 : de l'eau liquide. Repère 2 : de la glace. Repère 3 : la balance affiche toujours 500 g, la masse s'est conservée. Repère 4 : la bouteille a gonflé et le bouchon s'est soulevé, car le volume de la glace est plus grand que celui de l'eau liquide. C'est pour cela qu'il ne faut jamais mettre une bouteille en verre pleine au congélateur.",
      "matelot": {
       "titre": "La bouteille avant et après le congélateur",
@@ -1445,6 +3123,136 @@
        "Les étiquettes en trop parlent d'une masse qui change."
       ],
       "dialogue": "Regardez ma bouteille avant et après le congélateur. Placez chaque étiquette au bon endroit."
+     },
+     "mousse": {
+      "type": "plan",
+      "titre": "La bouteille avant et après le congélateur",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "eau liquide"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "glace"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "500 g : même masse"
+       }
+      ],
+      "etiquettes": [
+       "eau liquide",
+       "glace",
+       "500 g : même masse"
+      ],
+      "consigne": "Fatou a oublié une bouteille d'eau au congélateur. Place chaque étiquette sur le bon repère du schéma. Clique sur une étiquette, puis sur la case du repère.\n<svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Deux bouteilles d'eau bouchées posées sur une balance. À gauche, avant : eau liquide, la balance affiche 500 grammes. À droite, après une nuit au congélateur : la bouteille est pleine de glace, un peu gonflée, le bouchon est soulevé, l'affichage de la balance est caché. Repères numérotés de 1 à 3.\" style=\"display:block;max-width:470px;width:100%;margin:10px auto;background:#f6f9fc;border:2px solid #2f6f8f;border-radius:10px\"><rect width=\"420\" height=\"250\" fill=\"#f6f9fc\"/><text x=\"105\" y=\"24\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1f2430\">AVANT : dans le frigo</text><text x=\"315\" y=\"24\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1f2430\">APRÈS : une nuit au congélateur</text><line x1=\"210\" y1=\"34\" x2=\"210\" y2=\"236\" stroke=\"#9aa7b5\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/><path d=\"M83.0 172 L83.0 102 Q83.0 88 96 82 L96 76 L114 76 L114 82 Q127.0 88 127.0 102 L127.0 172 Z\" fill=\"#ffffff\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"85.0\" y=\"106\" width=\"40\" height=\"64\" fill=\"#7fb8e6\"/><line x1=\"85.0\" y1=\"106\" x2=\"125.0\" y2=\"106\" stroke=\"#1d5c8f\" stroke-width=\"2\"/><path d=\"M83.0 172 L83.0 102 Q83.0 88 96 82 L96 76 L114 76 L114 82 Q127.0 88 127.0 102 L127.0 172 Z\" fill=\"none\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"95\" y=\"68\" width=\"20\" height=\"9\" rx=\"2\" fill=\"#c0392b\"/><rect x=\"43\" y=\"172\" width=\"124\" height=\"16\" rx=\"4\" fill=\"#5b6b7b\"/><rect x=\"51\" y=\"188\" width=\"108\" height=\"34\" rx=\"6\" fill=\"#d8dee6\" stroke=\"#5b6b7b\" stroke-width=\"2\"/><rect x=\"71\" y=\"194\" width=\"68\" height=\"22\" rx=\"3\" fill=\"#163c2c\"/><text x=\"105\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#7cf0a8\">500 g</text><path d=\"M287.0 172 L287.0 102 Q287.0 88 306 82 L306 76 L324 76 L324 82 Q343.0 88 343.0 102 L343.0 172 Z\" fill=\"#ffffff\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"289.0\" y=\"88\" width=\"52\" height=\"82\" fill=\"#dff1fb\"/><path d=\"M293.0 152 l10 -14 M315 132 l12 -10 M307 110 l14 6\" stroke=\"#9cc9e3\" stroke-width=\"2\" fill=\"none\"/><rect x=\"307\" y=\"78\" width=\"16\" height=\"12\" fill=\"#dff1fb\"/><path d=\"M287.0 172 L287.0 102 Q287.0 88 306 82 L306 76 L324 76 L324 82 Q343.0 88 343.0 102 L343.0 172 Z\" fill=\"none\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"305\" y=\"54\" width=\"20\" height=\"9\" rx=\"2\" fill=\"#c0392b\" transform=\"rotate(-18 315 58)\"/><rect x=\"253\" y=\"172\" width=\"124\" height=\"16\" rx=\"4\" fill=\"#5b6b7b\"/><rect x=\"261\" y=\"188\" width=\"108\" height=\"34\" rx=\"6\" fill=\"#d8dee6\" stroke=\"#5b6b7b\" stroke-width=\"2\"/><rect x=\"281\" y=\"194\" width=\"68\" height=\"22\" rx=\"3\" fill=\"#163c2c\"/><text x=\"315\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#7cf0a8\">? g</text><circle cx=\"150\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"150\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">1</text><circle cx=\"272\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"272\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">2</text><circle cx=\"380\" cy=\"205\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"380\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">3</text></svg>",
+      "indices": [
+       "Ouvre la fiche « Ce qui change et ce qui se conserve ».",
+       "Avant le congélateur, l'eau coule ; après, elle est dure.",
+       "La balance montre la même masse avant et après."
+      ],
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
+     },
+     "lieutenant": {
+      "type": "plan",
+      "titre": "La bouteille avant et après le congélateur",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "eau liquide"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "glace"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "500 g : même masse"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "volume plus grand"
+       }
+      ],
+      "etiquettes": [
+       "eau liquide",
+       "glace",
+       "500 g : même masse",
+       "volume plus grand",
+       "550 g : masse plus grande",
+       "volume plus petit",
+       "vapeur d'eau"
+      ],
+      "consigne": "Fatou compare la bouteille bouchée avant et après le congélateur. Place chaque étiquette sur le bon repère (trois sont en trop), puis choisis la phrase de la fiche qui explique le bouchon soulevé.\n<svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Deux bouteilles d'eau bouchées posées sur une balance. À gauche, avant : eau liquide, la balance affiche 500 grammes. À droite, après une nuit au congélateur : la bouteille est pleine de glace, un peu gonflée, le bouchon est soulevé, l'affichage de la balance est caché. Repères numérotés de 1 à 4.\" style=\"display:block;max-width:470px;width:100%;margin:10px auto;background:#f6f9fc;border:2px solid #2f6f8f;border-radius:10px\"><rect width=\"420\" height=\"250\" fill=\"#f6f9fc\"/><text x=\"105\" y=\"24\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1f2430\">AVANT : dans le frigo</text><text x=\"315\" y=\"24\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1f2430\">APRÈS : une nuit au congélateur</text><line x1=\"210\" y1=\"34\" x2=\"210\" y2=\"236\" stroke=\"#9aa7b5\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/><path d=\"M83.0 172 L83.0 102 Q83.0 88 96 82 L96 76 L114 76 L114 82 Q127.0 88 127.0 102 L127.0 172 Z\" fill=\"#ffffff\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"85.0\" y=\"106\" width=\"40\" height=\"64\" fill=\"#7fb8e6\"/><line x1=\"85.0\" y1=\"106\" x2=\"125.0\" y2=\"106\" stroke=\"#1d5c8f\" stroke-width=\"2\"/><path d=\"M83.0 172 L83.0 102 Q83.0 88 96 82 L96 76 L114 76 L114 82 Q127.0 88 127.0 102 L127.0 172 Z\" fill=\"none\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"95\" y=\"68\" width=\"20\" height=\"9\" rx=\"2\" fill=\"#c0392b\"/><rect x=\"43\" y=\"172\" width=\"124\" height=\"16\" rx=\"4\" fill=\"#5b6b7b\"/><rect x=\"51\" y=\"188\" width=\"108\" height=\"34\" rx=\"6\" fill=\"#d8dee6\" stroke=\"#5b6b7b\" stroke-width=\"2\"/><rect x=\"71\" y=\"194\" width=\"68\" height=\"22\" rx=\"3\" fill=\"#163c2c\"/><text x=\"105\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#7cf0a8\">500 g</text><path d=\"M287.0 172 L287.0 102 Q287.0 88 306 82 L306 76 L324 76 L324 82 Q343.0 88 343.0 102 L343.0 172 Z\" fill=\"#ffffff\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"289.0\" y=\"88\" width=\"52\" height=\"82\" fill=\"#dff1fb\"/><path d=\"M293.0 152 l10 -14 M315 132 l12 -10 M307 110 l14 6\" stroke=\"#9cc9e3\" stroke-width=\"2\" fill=\"none\"/><rect x=\"307\" y=\"78\" width=\"16\" height=\"12\" fill=\"#dff1fb\"/><path d=\"M287.0 172 L287.0 102 Q287.0 88 306 82 L306 76 L324 76 L324 82 Q343.0 88 343.0 102 L343.0 172 Z\" fill=\"none\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"305\" y=\"54\" width=\"20\" height=\"9\" rx=\"2\" fill=\"#c0392b\" transform=\"rotate(-18 315 58)\"/><rect x=\"253\" y=\"172\" width=\"124\" height=\"16\" rx=\"4\" fill=\"#5b6b7b\"/><rect x=\"261\" y=\"188\" width=\"108\" height=\"34\" rx=\"6\" fill=\"#d8dee6\" stroke=\"#5b6b7b\" stroke-width=\"2\"/><rect x=\"281\" y=\"194\" width=\"68\" height=\"22\" rx=\"3\" fill=\"#163c2c\"/><text x=\"315\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#7cf0a8\">? g</text><circle cx=\"150\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"150\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">1</text><circle cx=\"272\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"272\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">2</text><circle cx=\"380\" cy=\"205\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"380\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">3</text><circle cx=\"358\" cy=\"62\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"358\" y=\"67\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">4</text></svg>",
+      "indices": [
+       "La masse ne change pas pendant un changement d'état.",
+       "Regarde le bouchon de la bouteille de droite.",
+       "Pour la justification : cherche « bouteille pleine »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique le bouchon soulevé ?",
+       "options": [
+        "200 g de glaçons donnent 200 g d'eau liquide, à condition de travailler dans un récipient fermé pour ne rien perdre par évaporation.",
+        "Ce qui reste : la masse, et la nature de la matière (la glace, c'est encore de l'eau).",
+        "C'est pourquoi une bouteille pleine gonfle au congélateur, et pourquoi les canalisations peuvent éclater en hiver.",
+        "Pour savoir ce qui change, on mesure avant et après : avec une balance pour la masse, avec un récipient gradué pour le volume."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
+     },
+     "second": {
+      "type": "plan",
+      "titre": "La bouteille avant et après le congélateur",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "eau liquide"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "glace"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "500 g : même masse"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "volume plus grand"
+       }
+      ],
+      "etiquettes": [
+       "eau liquide",
+       "glace",
+       "500 g : même masse",
+       "volume plus grand",
+       "545 g : masse plus grande",
+       "même volume",
+       "eau solide et vapeur",
+       "450 g : masse plus petite"
+      ],
+      "consigne": "Fatou a noté dans son carnet : « Mercredi matin, la bouteille est gonflée, le bouchon s'est soulevé. Sur la balance : 500 g. » Place chaque étiquette sur le bon repère (quatre sont en trop), puis choisis la phrase de la fiche qui dit ce qui change.\n<svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Deux bouteilles d'eau bouchées posées sur une balance. À gauche, avant : eau liquide, la balance affiche 500 grammes. À droite, après une nuit au congélateur : la bouteille est pleine de glace, un peu gonflée, le bouchon est soulevé, l'affichage de la balance est caché. Repères numérotés de 1 à 4.\" style=\"display:block;max-width:470px;width:100%;margin:10px auto;background:#f6f9fc;border:2px solid #2f6f8f;border-radius:10px\"><rect width=\"420\" height=\"250\" fill=\"#f6f9fc\"/><text x=\"105\" y=\"24\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1f2430\">AVANT : dans le frigo</text><text x=\"315\" y=\"24\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"13\" font-weight=\"bold\" fill=\"#1f2430\">APRÈS : une nuit au congélateur</text><line x1=\"210\" y1=\"34\" x2=\"210\" y2=\"236\" stroke=\"#9aa7b5\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/><path d=\"M83.0 172 L83.0 102 Q83.0 88 96 82 L96 76 L114 76 L114 82 Q127.0 88 127.0 102 L127.0 172 Z\" fill=\"#ffffff\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"85.0\" y=\"106\" width=\"40\" height=\"64\" fill=\"#7fb8e6\"/><line x1=\"85.0\" y1=\"106\" x2=\"125.0\" y2=\"106\" stroke=\"#1d5c8f\" stroke-width=\"2\"/><path d=\"M83.0 172 L83.0 102 Q83.0 88 96 82 L96 76 L114 76 L114 82 Q127.0 88 127.0 102 L127.0 172 Z\" fill=\"none\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"95\" y=\"68\" width=\"20\" height=\"9\" rx=\"2\" fill=\"#c0392b\"/><rect x=\"43\" y=\"172\" width=\"124\" height=\"16\" rx=\"4\" fill=\"#5b6b7b\"/><rect x=\"51\" y=\"188\" width=\"108\" height=\"34\" rx=\"6\" fill=\"#d8dee6\" stroke=\"#5b6b7b\" stroke-width=\"2\"/><rect x=\"71\" y=\"194\" width=\"68\" height=\"22\" rx=\"3\" fill=\"#163c2c\"/><text x=\"105\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#7cf0a8\">500 g</text><path d=\"M287.0 172 L287.0 102 Q287.0 88 306 82 L306 76 L324 76 L324 82 Q343.0 88 343.0 102 L343.0 172 Z\" fill=\"#ffffff\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"289.0\" y=\"88\" width=\"52\" height=\"82\" fill=\"#dff1fb\"/><path d=\"M293.0 152 l10 -14 M315 132 l12 -10 M307 110 l14 6\" stroke=\"#9cc9e3\" stroke-width=\"2\" fill=\"none\"/><rect x=\"307\" y=\"78\" width=\"16\" height=\"12\" fill=\"#dff1fb\"/><path d=\"M287.0 172 L287.0 102 Q287.0 88 306 82 L306 76 L324 76 L324 82 Q343.0 88 343.0 102 L343.0 172 Z\" fill=\"none\" stroke=\"#3b4a5a\" stroke-width=\"2\"/><rect x=\"305\" y=\"54\" width=\"20\" height=\"9\" rx=\"2\" fill=\"#c0392b\" transform=\"rotate(-18 315 58)\"/><rect x=\"253\" y=\"172\" width=\"124\" height=\"16\" rx=\"4\" fill=\"#5b6b7b\"/><rect x=\"261\" y=\"188\" width=\"108\" height=\"34\" rx=\"6\" fill=\"#d8dee6\" stroke=\"#5b6b7b\" stroke-width=\"2\"/><rect x=\"281\" y=\"194\" width=\"68\" height=\"22\" rx=\"3\" fill=\"#163c2c\"/><text x=\"315\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#7cf0a8\">? g</text><circle cx=\"150\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"150\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">1</text><circle cx=\"272\" cy=\"120\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"272\" y=\"125\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">2</text><circle cx=\"380\" cy=\"205\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"380\" y=\"210\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">3</text><circle cx=\"358\" cy=\"62\" r=\"11\" fill=\"#fff\" stroke=\"#b03a2e\" stroke-width=\"3\"/><text x=\"358\" y=\"67\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#b03a2e\">4</text></svg>",
+      "indices": [
+       "545, c'est le volume en mL de la glace, pas sa masse.",
+       "La bouteille gonflée montre un changement de volume.",
+       "Pour la justification : cherche « Ce qui change »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce qui change pendant la congélation ?",
+       "options": [
+        "Ce qui change : l'état, la forme, parfois le volume.",
+        "Ce qui reste : la masse, et la nature de la matière (la glace, c'est encore de l'eau).",
+        "Pendant un changement d'état, la matière ne disparaît pas et n'apparaît pas : la masse se conserve.",
+        "1 000 mL d'eau liquide donnent environ 1 090 mL de glace."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
      }
     },
     {
@@ -1460,7 +3268,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "bastien",
+     "personnage_emetteur": "fatou",
      "probleme_narratif": "Fatou fait le bilan de l'expérience de la bouteille.",
      "enjeu": "Fatou veut que son commis retienne la règle une fois pour toutes.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; La main à la pâte, « Les changements d'éta",
@@ -1473,10 +3281,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "conservation",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Ingénieur (tri) ; Physicien (tri) ; Expert de la Fabrique (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Pendant la solidification, l'état change (liquide puis solide), la forme devient fixe et le volume augmente un peu. La masse et la nature de la matière (c'est toujours de l'eau) ne changent pas.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "colonnes": [
@@ -1518,6 +3328,113 @@
        "La balance affiche le même nombre."
       ],
       "dialogue": "Quand l'eau gèle, certaines choses changent, d'autres non. Rangez mes cartes."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "change",
+        "titre": "Ce qui change"
+       },
+       {
+        "id": "reste",
+        "titre": "Ce qui reste pareil"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "l'état : solide puis liquide",
+        "col": "change"
+       },
+       {
+        "txt": "la forme : celle du bloc, puis celle de la casserole",
+        "col": "change"
+       },
+       {
+        "txt": "le volume",
+        "col": "change"
+       },
+       {
+        "txt": "la masse : 1 kg",
+        "col": "reste"
+       },
+       {
+        "txt": "la matière : c'est toujours de l'eau",
+        "col": "reste"
+       }
+      ],
+      "consigne": "Fatou fait fondre un bloc de glace de 1 kg dans une casserole fermée. Range chaque carte, puis choisis la phrase de la fiche qui justifie la colonne « Ce qui reste ».",
+      "indices": [
+       "La balance donne la même masse avant et après.",
+       "L'eau liquide prend la forme de la casserole.",
+       "Pour la justification : cherche « Ce qui reste »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie la colonne « Ce qui reste pareil » ?",
+       "options": [
+        "Ce qui change : l'état, la forme, parfois le volume.",
+        "Ce qui reste : la masse, et la nature de la matière (la glace, c'est encore de l'eau).",
+        "Pour savoir ce qui change, on mesure avant et après : avec une balance pour la masse, avec un récipient gradué pour le volume.",
+        "À masse égale, la glace prend plus de place que l'eau liquide : c'est aussi pour cela que les glaçons et les icebergs flottent."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Lundi, pourquoi la masse n'a-t-elle pas changé ?",
+        "options": [
+         "La glace et l'eau ont la même masse, car la matière n'a pas disparu",
+         "La balance n'est pas assez précise",
+         "La glace pèse moins que l'eau",
+         "Il faisait froid"
+        ],
+        "bonne": 0,
+        "explication": "La masse se conserve."
+       },
+       {
+        "q": "Mardi, où sont passés les 8 g manquants ?",
+        "options": [
+         "Ils ont disparu",
+         "Dans l'air, sous forme de vapeur",
+         "Dans la balance",
+         "Ils sont devenus de la glace"
+        ],
+        "bonne": 1,
+        "explication": "Bol ouvert : l'eau s'est évaporée."
+       },
+       {
+        "q": "Quelle expérience permet de vérifier que la masse se conserve ?",
+        "options": [
+         "Celle de lundi",
+         "Celle de mardi",
+         "Les deux",
+         "Aucune"
+        ],
+        "bonne": 0,
+        "explication": "Il faut un récipient fermé."
+       }
+      ],
+      "consigne": "<div class='doc-carnet'><b>Carnet de Fatou</b> (expériences inventées pour le jeu). Lundi : 4 glaçons de 25 g dans un bol fermé : 100 g ; une heure plus tard, de l'eau liquide : 100 g. Mardi : un bol ouvert de 100 g d'eau, laissé au soleil : 92 g le soir.</div>Réponds aux trois questions à partir du carnet et de la fiche.",
+      "indices": [
+       "Compare : bol fermé le lundi, bol ouvert le mardi.",
+       "100 − 92 = 8 g sont partis quelque part.",
+       "Une expérience de conservation se fait sans rien perdre."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Pendant un changement d'état, la matière ne disparaît pas et n'apparaît pas : la masse se conserve.",
+        "Pour savoir ce qui change, on mesure avant et après : avec une balance pour la masse, avec un récipient gradué pour le volume.",
+        "200 g de glaçons donnent 200 g d'eau liquide, à condition de travailler dans un récipient fermé pour ne rien perdre par évaporation.",
+        "C'est pourquoi une bouteille pleine gonfle au congélateur, et pourquoi les canalisations peuvent éclater en hiver."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
      }
     }
    ]
@@ -1564,7 +3481,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "proprietes",
      "type": "tri",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (tri) ; Technicien (tri) ; Ingénieur (tri) ; Physicien (tri) ; Expert de la Fabrique (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le bouchon en liège, la planche de bois, le glaçon et la balle de ping-pong flottent. La clé en fer, la bille en verre, le caillou et la pièce de monnaie coulent. Un gros tronc d'arbre flotte alors qu'une petite bille coule : c'est la matière qui compte, pas la taille.",
      "matelot": {
       "colonnes": [
@@ -1663,6 +3580,163 @@
        "Une pièce de monnaie est petite, mais elle coule."
       ],
       "dialogue": "Bienvenue tout en haut ! Je suis Ninon, la gardienne du château d'eau. D'ici, je vois tout le voyage de l'eau, du lac jusqu'aux nuages. Mais avant, faisons quelques essais dans mon bassin : chaque matière a ses propriétés."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "flotte",
+        "titre": "Il flotte"
+       },
+       {
+        "id": "coule",
+        "titre": "Il coule"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "un bouchon en liège",
+        "col": "flotte"
+       },
+       {
+        "txt": "un glaçon",
+        "col": "flotte"
+       },
+       {
+        "txt": "une clé en fer",
+        "col": "coule"
+       },
+       {
+        "txt": "un caillou",
+        "col": "coule"
+       }
+      ],
+      "consigne": "Ninon plonge des objets dans le bassin. Range chaque objet : il flotte ou il coule ?",
+      "indices": [
+       "Ouvre la fiche « Les propriétés de la matière et le cycle de l'eau » dans la Bibliothèque.",
+       "Le bois et le liège flottent.",
+       "Le fer et les pierres coulent."
+      ],
+      "dialogue": "Bienvenue tout en haut ! Je suis Ninon, la gardienne du château d'eau. D'ici, je vois tout le voyage de l'eau, du lac jusqu'aux nuages. Mais avant, faisons quelques essais dans mon bassin : chaque matière a ses propriétés."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "flotte",
+        "titre": "Il flotte"
+       },
+       {
+        "id": "coule",
+        "titre": "Il coule"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une grosse bûche",
+        "col": "flotte"
+       },
+       {
+        "txt": "un iceberg",
+        "col": "flotte"
+       },
+       {
+        "txt": "un bouchon en liège",
+        "col": "flotte"
+       },
+       {
+        "txt": "une règle en bois",
+        "col": "flotte"
+       },
+       {
+        "txt": "une petite pièce de monnaie",
+        "col": "coule"
+       },
+       {
+        "txt": "un trombone en métal",
+        "col": "coule"
+       },
+       {
+        "txt": "une bille en verre",
+        "col": "coule"
+       },
+       {
+        "txt": "un petit gravier",
+        "col": "coule"
+       }
+      ],
+      "consigne": "Ninon prépare le bassin d'essai. Range chaque objet, puis choisis la phrase de la fiche qui explique le piège de la taille.",
+      "indices": [
+       "Ne regarde pas la taille : regarde la matière.",
+       "Bois, liège, glace d'un côté ; métal, verre, pierre de l'autre.",
+       "Pour la justification : cherche « ce n'est pas la taille »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique le piège de la taille ?",
+       "options": [
+        "Se dissoudre : le sucre et le sel se dissolvent dans l'eau, ils ne se voient plus mais la masse totale se conserve.",
+        "Conduire la chaleur : les métaux sont de bons conducteurs de la chaleur ; le bois, le plastique, la laine et l'air la conduisent mal : ce sont des isolants.",
+        "Flotter ou couler : ce n'est pas la taille qui compte, mais la matière.",
+        "La vapeur invisible monte, se refroidit et se liquéfie en gouttelettes, ou forme de minuscules cristaux de glace : ce sont les nuages."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bienvenue tout en haut ! Je suis Ninon, la gardienne du château d'eau. D'ici, je vois tout le voyage de l'eau, du lac jusqu'aux nuages. Mais avant, faisons quelques essais dans mon bassin : chaque matière a ses propriétés."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quels objets flottent ?",
+        "options": [
+         "A et C",
+         "B et D",
+         "A seulement",
+         "Tous"
+        ],
+        "bonne": 0,
+        "explication": "Le bois et la glace flottent."
+       },
+       {
+        "q": "L'objet B coule. Pourquoi ?",
+        "options": [
+         "Parce qu'il est petit",
+         "Parce qu'il est en métal",
+         "Parce qu'il est froid",
+         "Parce qu'il coule toujours au fond du bassin"
+        ],
+        "bonne": 1,
+        "explication": "C'est la matière qui compte, pas la taille."
+       },
+       {
+        "q": "On remplace A par un bout de bois minuscule. Il...",
+        "options": [
+         "coule, car il est petit",
+         "flotte, car il est en bois",
+         "fond",
+         "se dissout"
+        ],
+        "bonne": 1,
+        "explication": "La matière n'a pas changé."
+       }
+      ],
+      "consigne": "<div class=\"doc-titre\"><i>Essais de Ninon dans le bassin (inventés pour le jeu)</i></div><table class=\"tableau-releves\"><tr><th>Objet</th><th>Matière</th><th>Taille</th></tr><tr><td>A</td><td>bois</td><td>très grand</td></tr><tr><td>B</td><td>fer</td><td>très petit</td></tr><tr><td>C</td><td>glace</td><td>moyen</td></tr><tr><td>D</td><td>verre</td><td>petit</td></tr></table>Réponds aux trois questions à partir du tableau et de la fiche.",
+      "indices": [
+       "Pour chaque objet, regarde d'abord la colonne « Matière ».",
+       "Un gros tronc flotte, une petite pièce coule.",
+       "Changer la taille ne change pas la matière."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ta réponse à la question 3 ?",
+       "options": [
+        "Le bois, le liège et la glace flottent sur l'eau ; les métaux, le verre et les pierres coulent.",
+        "Flotter ou couler : ce n'est pas la taille qui compte, mais la matière.",
+        "Dissoudre n'est pas fondre : il n'y a pas besoin de chauffer.",
+        "Les gouttes grossissent et tombent : ce sont les précipitations (pluie, neige, grêle)."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bienvenue tout en haut ! Je suis Ninon, la gardienne du château d'eau. D'ici, je vois tout le voyage de l'eau, du lac jusqu'aux nuages. Mais avant, faisons quelques essais dans mon bassin : chaque matière a ses propriétés."
      }
     },
     {
@@ -1678,7 +3752,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "ines",
+     "personnage_emetteur": "ninon",
      "probleme_narratif": "Ninon range ses fiches de matériaux.",
      "enjeu": "Sans les bonnes propriétés, Ninon choisirait un tuyau qui brûle les doigts.",
      "episode_du_roman": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; La main à la pâte, « Les états de l'eau et",
@@ -1691,7 +3765,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "proprietes",
      "type": "association",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (association) ; Technicien (association) ; Ingénieur (association) ; Physicien (association) ; Expert de la Fabrique (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le métal conduit bien la chaleur : une cuillère en métal plongée dans une soupe chaude devient vite chaude au bout. Le bois conduit mal la chaleur : c'est pour cela qu'on fait des manches en bois. Le sucre se dissout dans l'eau : on ne le voit plus, mais il est toujours là. Le sable ne se dissout pas : il se dépose au fond.",
      "matelot": {
       "paires": [
@@ -1746,6 +3820,132 @@
        "Une propriété qui flotte : le liège."
       ],
       "dialogue": "Chaque matière a ses propriétés. Reliez chaque propriété à l'expérience qui la montre."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "conduit bien la chaleur",
+        "d": "la cuillère en métal devient chaude"
+       },
+       {
+        "g": "se dissout dans l'eau",
+        "d": "le sucre ne se voit plus dans l'eau"
+       },
+       {
+        "g": "ne se dissout pas",
+        "d": "le sable reste au fond du verre"
+       }
+      ],
+      "consigne": "Ninon range ses fiches. Relie chaque propriété à l'exemple qui la montre.",
+      "indices": [
+       "Ouvre la fiche « Les propriétés de la matière et le cycle de l'eau ».",
+       "Le métal chauffe jusqu'au bout.",
+       "Le sucre disparaît à la vue, le sable non."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "bon conducteur de la chaleur",
+        "d": "la casserole en métal chauffe vite"
+       },
+       {
+        "g": "isolant",
+        "d": "le gant en laine protège de la casserole chaude"
+       },
+       {
+        "g": "se dissout dans l'eau",
+        "d": "le sel ne se voit plus, mais l'eau est salée"
+       },
+       {
+        "g": "ne se dissout pas",
+        "d": "le sable se dépose au fond"
+       },
+       {
+        "g": "flotte sur l'eau",
+        "d": "le glaçon reste à la surface"
+       }
+      ],
+      "consigne": "Ninon range ses fiches de matériaux. Relie chaque propriété à l'expérience qui la montre, puis choisis la phrase de la fiche qui distingue dissoudre et fondre.",
+      "indices": [
+       "Un isolant conduit mal la chaleur.",
+       "Le sel ne disparaît pas : on le goûte encore.",
+       "Pour la justification : cherche « pas besoin de chauffer »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche distingue dissoudre et fondre ?",
+       "options": [
+        "Se dissoudre : le sucre et le sel se dissolvent dans l'eau, ils ne se voient plus mais la masse totale se conserve.",
+        "Un gros tronc flotte, une petite pièce coule.",
+        "Chauffée par le Soleil, l'eau des mers, des lacs et des sols s'évapore.",
+        "Dissoudre n'est pas fondre : il n'y a pas besoin de chauffer."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "conducteur",
+        "titre": "Conduit bien la chaleur"
+       },
+       {
+        "id": "isolant",
+        "titre": "Conduit mal la chaleur (isolant)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le cuivre",
+        "col": "conducteur"
+       },
+       {
+        "txt": "l'aluminium",
+        "col": "conducteur"
+       },
+       {
+        "txt": "le fer",
+        "col": "conducteur"
+       },
+       {
+        "txt": "le bois",
+        "col": "isolant"
+       },
+       {
+        "txt": "le plastique",
+        "col": "isolant"
+       },
+       {
+        "txt": "la laine",
+        "col": "isolant"
+       },
+       {
+        "txt": "l'air",
+        "col": "isolant"
+       }
+      ],
+      "consigne": "Ninon doit choisir les matériaux d'une nouvelle cuve chauffée. Range chaque matériau selon sa propriété, puis choisis la phrase de la fiche qui justifie ton classement.",
+      "indices": [
+       "Les métaux d'un côté.",
+       "L'air conduit mal la chaleur : c'est pour cela qu'un pull qui garde de l'air tient chaud.",
+       "Pour la justification : cherche « isolants »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche justifie ton classement ?",
+       "options": [
+        "Conduire la chaleur : les métaux sont de bons conducteurs de la chaleur ; le bois, le plastique, la laine et l'air la conduisent mal : ce sont des isolants.",
+        "Le bois, le liège et la glace flottent sur l'eau ; les métaux, le verre et les pierres coulent.",
+        "Se dissoudre : le sucre et le sel se dissolvent dans l'eau, ils ne se voient plus mais la masse totale se conserve.",
+        "Flotter ou couler : ce n'est pas la taille qui compte, mais la matière."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
      }
     },
     {
@@ -1761,7 +3961,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "bastien",
+     "personnage_emetteur": "ninon",
      "probleme_narratif": "Ninon montre le chemin de l'eau, du lac jusqu'aux nuages et retour.",
      "enjeu": "Le pupitre demande le voyage de l'eau dans l'ordre pour rouvrir le réservoir.",
      "episode_du_roman": "Météo-France et IRM, « Nuages : composition » ; Vikidia, « Cycle de l'eau » ; Programme de sciences et technologie, cycle 3 (arrêté du 5 jui",
@@ -1774,7 +3974,7 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "proprietes",
      "type": "ordre",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Apprenti (ordre) ; Technicien (ordre) ; Ingénieur (ordre) ; Physicien (ordre) ; Expert de la Fabrique (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Le Soleil chauffe la mer : l'eau s'évapore et devient de la vapeur invisible. En montant, la vapeur se refroidit et se liquéfie en fines gouttelettes : elles forment les nuages. Les gouttes grossissent et tombent en pluie, ou en neige quand il fait très froid. L'eau ruisselle jusqu'aux rivières, qui la ramènent à la mer. Le cycle recommence.",
      "matelot": {
       "items": [
@@ -1841,6 +4041,126 @@
        "Les précipitations viennent après le nuage."
       ],
       "dialogue": "D'ici, on voit tout le voyage de l'eau. Remettez ses étapes dans l'ordre."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le Soleil chauffe la mer : l'eau s'évapore.",
+        "rang": 1
+       },
+       {
+        "txt": "La vapeur monte et forme un nuage.",
+        "rang": 2
+       },
+       {
+        "txt": "Il pleut.",
+        "rang": 3
+       },
+       {
+        "txt": "La rivière ramène l'eau à la mer.",
+        "rang": 4
+       }
+      ],
+      "consigne": "Ninon montre le voyage de l'eau. Remets les quatre étapes dans l'ordre, en partant de la mer (flèches ▲ et ▼).",
+      "indices": [
+       "Ouvre la fiche « Les propriétés de la matière et le cycle de l'eau » : cherche « cycle de l'eau ».",
+       "Le Soleil commence le voyage.",
+       "La pluie tombe du nuage."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Chauffée par le Soleil, l'eau du lac s'évapore.",
+        "rang": 1
+       },
+       {
+        "txt": "La vapeur invisible monte et se refroidit.",
+        "rang": 2
+       },
+       {
+        "txt": "Elle se liquéfie en gouttelettes : un nuage se forme.",
+        "rang": 3
+       },
+       {
+        "txt": "Les gouttes grossissent et tombent : il pleut.",
+        "rang": 4
+       },
+       {
+        "txt": "Une partie de l'eau s'infiltre dans le sol, l'autre ruisselle vers la rivière.",
+        "rang": 5
+       },
+       {
+        "txt": "La rivière rejoint le lac : le cycle recommence.",
+        "rang": 6
+       }
+      ],
+      "consigne": "Ninon montre le cycle de l'eau autour de la Fabrique, en partant du lac. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui décrit la formation des nuages.",
+      "indices": [
+       "La vapeur doit se refroidir pour former des gouttelettes.",
+       "Les précipitations viennent après les nuages.",
+       "Pour la justification : cherche « ce sont les nuages »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit la formation des nuages ?",
+       "options": [
+        "La vapeur invisible monte, se refroidit et se liquéfie en gouttelettes, ou forme de minuscules cristaux de glace : ce sont les nuages.",
+        "Chauffée par le Soleil, l'eau des mers, des lacs et des sols s'évapore.",
+        "Les gouttes grossissent et tombent : ce sont les précipitations (pluie, neige, grêle).",
+        "L'eau ruisselle vers les rivières ou s'infiltre dans le sol, puis rejoint la mer."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Chauffée par le Soleil, l'eau de la mer s'évapore.",
+        "rang": 1
+       },
+       {
+        "txt": "La vapeur monte très haut et se refroidit beaucoup.",
+        "rang": 2
+       },
+       {
+        "txt": "Elle forme de minuscules cristaux de glace dans le nuage.",
+        "rang": 3
+       },
+       {
+        "txt": "Il fait très froid : la précipitation tombe en neige sur la colline.",
+        "rang": 4
+       },
+       {
+        "txt": "Au printemps, la neige fond : c'est la fusion.",
+        "rang": 5
+       },
+       {
+        "txt": "L'eau liquide s'infiltre dans le sol et rejoint la nappe qui alimente la tour.",
+        "rang": 6
+       }
+      ],
+      "consigne": "Une goutte de pluie tombe sur la colline, en hiver. Ninon retrace son voyage jusqu'à la tour. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche qui décrit la première étape.",
+      "indices": [
+       "La neige vient d'un nuage où il fait très froid.",
+       "La fusion de la neige vient après sa chute.",
+       "Pour la justification : la première étape parle du Soleil."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit la première étape ?",
+       "options": [
+        "La vapeur invisible monte, se refroidit et se liquéfie en gouttelettes, ou forme de minuscules cristaux de glace : ce sont les nuages.",
+        "Chauffée par le Soleil, l'eau des mers, des lacs et des sols s'évapore.",
+        "L'eau ruisselle vers les rivières ou s'infiltre dans le sol, puis rejoint la mer.",
+        "Dissoudre n'est pas fondre : il n'y a pas besoin de chauffer."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
      }
     },
     {
@@ -1856,7 +4176,7 @@
       "objet-3",
       "objet-4"
      ],
-     "personnage_emetteur": "paolo",
+     "personnage_emetteur": "ninon",
      "probleme_narratif": "Ninon a laissé un message avant de redescendre ouvrir les vannes.",
      "enjeu": "Le dernier mot est caché dans le message de Ninon.",
      "episode_du_roman": "IRM (Institut royal météorologique de Belgique), « Nuages : composition »",
@@ -1869,10 +4189,12 @@
      "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
      "lecon": "proprietes",
      "type": "lettres",
-     "niveau_variantes": "Données du jeu d'origine (CM1 / CM2).",
+     "niveau_variantes": "Ingénieur (lettres) ; Physicien (lettres) ; Expert de la Fabrique (lettres). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
      "correction_origine": "Un nuage est fait de gouttelettes d'eau liquide, ou de minuscules cristaux de glace quand il fait très froid. Il ne contient pas de vapeur visible : la vapeur d'eau est invisible. Le mot caché est GOUTTE.",
      "niveaux": [
-      "timonier"
+      "timonier",
+      "lieutenant",
+      "second"
      ],
      "timonier": {
       "cible": [
@@ -1891,6 +4213,64 @@
        "Le mot commence par G."
       ],
       "dialogue": "Un mot est caché dans mon message. Retrouvez ce que contient vraiment un nuage."
+     },
+     "lieutenant": {
+      "type": "lettres",
+      "cible": [
+       "G",
+       "L",
+       "A",
+       "C",
+       "E"
+      ],
+      "texte": "<p>Du haut de la tour, je regarde le <b data-l='N'>n</b>uage. Il n'est pas fait de vapeur : la vapeur est invisible. Tout en haut, où il fait très froid, la vapeur forme de minuscu<b data-l='L'>l</b>es <b data-l='C'>c</b>ristaux de <b data-l='G'>g</b>lace, et <b data-l='A'>a</b>ussi des gouttel<b data-l='E'>e</b>ttes. Un jour, ils tomberont en neige ou en <b data-l='P'>p</b>luie.</p>",
+      "consigne": "Ninon a laissé un message. Des lettres sont marquées : clique dans l'ordre celles qui forment ce que contient un nuage quand il fait très froid. Attention aux lettres pièges. Puis choisis la phrase de la fiche qui le dit.",
+      "indices": [
+       "Le mot a cinq lettres.",
+       "Il fait très froid en haut du nuage : l'eau y est solide.",
+       "Pour la justification : cherche « cristaux »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que contient un nuage ?",
+       "options": [
+        "Les gouttes grossissent et tombent : ce sont les précipitations (pluie, neige, grêle).",
+        "Chauffée par le Soleil, l'eau des mers, des lacs et des sols s'évapore.",
+        "La vapeur invisible monte, se refroidit et se liquéfie en gouttelettes, ou forme de minuscules cristaux de glace : ce sont les nuages.",
+        "Se dissoudre : le sucre et le sel se dissolvent dans l'eau, ils ne se voient plus mais la masse totale se conserve."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
+     },
+     "second": {
+      "type": "lettres",
+      "cible": [
+       "L",
+       "I",
+       "Q",
+       "U",
+       "I",
+       "D",
+       "E"
+      ],
+      "texte": "<p>Mon carnet <b data-l='D'>d</b>it vrai : la vapeur ne se voit <b data-l='P'>p</b>as. Le nuage blanc est fait d'eau <b data-l='L'>l</b>iquide, en gouttelettes, ou de petits cristaux <b data-l='Q'>q</b>uand il fait très froid. Les gouttes grossissent, pu<b data-l='I'>i</b>s tombent : c'est la pl<b data-l='U'>u</b>ie. Elle <b data-l='R'>r</b>uisselle jusqu'aux rivières, s'<b data-l='I'>i</b>nfiltre dans le sol, et r<b data-l='E'>e</b>joint la mer. <b data-l='S'>S</b>i tu as trouvé, bravo !</p>",
+      "consigne": "Dernier message de Ninon. Des lettres sont marquées : clique dans l'ordre celles qui forment l'état de l'eau dans les gouttelettes d'un nuage. Attention aux lettres pièges. Puis choisis la phrase de la fiche qui montre comment l'eau du nuage revient à la mer.",
+      "indices": [
+       "Le mot a sept lettres.",
+       "Une gouttelette n'est ni solide ni gazeuse.",
+       "Pour la justification : cherche « ruisselle »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche montre comment l'eau du nuage revient à la mer ?",
+       "options": [
+        "L'eau ruisselle vers les rivières ou s'infiltre dans le sol, puis rejoint la mer.",
+        "La vapeur invisible monte, se refroidit et se liquéfie en gouttelettes, ou forme de minuscules cristaux de glace : ce sont les nuages.",
+        "Chauffée par le Soleil, l'eau des mers, des lacs et des sols s'évapore.",
+        "Flotter ou couler : ce n'est pas la taille qui compte, mais la matière."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Un mot est caché dans mon texte. Retrouvez-le."
      }
     }
    ]

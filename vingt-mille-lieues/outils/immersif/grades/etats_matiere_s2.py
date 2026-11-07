@@ -79,7 +79,7 @@ def donnees(svg, bloc=None):
              ("On lâche le piston de la seringue d'air. Il...", ["reste enfoncé", "revient en arrière", "sort de la seringue", "fond"], 1, "L'air comprimé repousse le piston."),
              ("Le mouchoir collé au fond du verre enfoncé à l'envers reste sec. Pourquoi ?", ["L'air enfermé occupe la place", "Le verre est imperméable", "L'eau est trop froide", "Le mouchoir repousse l'eau"], 0,
               "L'air est de la matière : il occupe un volume.")],
-            ["Un liquide se laisse presque pas comprimer, un gaz un peu.", "L'air écrasé pousse dans l'autre sens.", "Pour la justification : cherche le mot « mouchoir »."],
+            ["Un liquide ne se laisse presque pas comprimer ; un gaz, un peu.", "L'air écrasé pousse dans l'autre sens.", "Pour la justification : cherche le mot « mouchoir »."],
             J("Quelle phrase de la fiche explique l'expérience du mouchoir ?", P_VERRE, [P_BULLES, P_MELANGE, P_PRECIS], pos=3)),
         "second": vf(
             "Bastien relit le compte rendu de l'équipe d'avant. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche qui justifie la balance.",

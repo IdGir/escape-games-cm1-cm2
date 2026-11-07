@@ -1,178 +1,178 @@
 {
-  "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
-  "accueil": {
-    "personnage": "ines",
-    "texte": "Bonjour, et bienvenue à la Fabrique des états ! Je suis Inès, l'ingénieure. Ici, nous fabriquons de la glace pour les glaciers, de l'eau chaude pour la ville et de la vapeur pour notre vieille machine. Cette nuit, un orage a tout arrêté : le grand pupitre est verrouillé par un code de cinq mots. Chaque mot est caché dans un atelier, et chacun parle de la matière. Vous êtes mes ingénieurs stagiaires : retrouvez les cinq mots, notez-les bien, et nous redémarrerons la Fabrique ensemble."
-  },
-  "coffre": {
-    "personnage": "ines",
-    "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
-  },
-  "cinematiques": {
-    "transition-e1": {
-      "titre": "Salle 1 — Le hall des cuves",
-      "plans": [
-        {
-          "decor": "hall",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "ines",
-          "texte": "Bonjour, et merci d'être venus si vite ! Je suis Inès, l'ingénieure de la Fabrique. Cette nuit, l'orage a effacé les étiquettes de mes réservoirs. Avant de remettre les machines en marche, il faut savoir ce que contient chaque cuve : un solide, un liquide ou un gaz ?",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e1": {
-      "titre": "Fin de la salle 1",
-      "plans": [
-        {
-          "decor": "hall",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "ines",
-          "texte": "Bravo ! Le premier mot est SOLIDE : un solide garde sa forme, même en poudre. Montez sur la terrasse : Bastien prépare son ballon-sonde.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e2": {
-      "titre": "Salle 2 — La terrasse du ballon-sonde",
-      "plans": [
-        {
-          "decor": "terrasse",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "bastien",
-          "texte": "Salut, ingénieurs ! Je suis Bastien, agent météo. Mon ballon-sonde doit partir mesurer le ciel, mais mon chef dit que l'air, ce n'est rien du tout. Moi, je pense que l'air est de la matière. Aidez-moi à le prouver.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e2": {
-      "titre": "Fin de la salle 2",
-      "plans": [
-        {
-          "decor": "terrasse",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "bastien",
-          "texte": "Le deuxième mot est AIR : on ne le voit pas, mais il occupe de la place et il a une masse. Descendez à la glacerie : Paolo a des ennuis avec ses machines.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e3": {
-      "titre": "Salle 3 — La glacerie de Paolo",
-      "plans": [
-        {
-          "decor": "glacerie",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "paolo",
-          "texte": "Bonjour ! Je suis Paolo, le glacier. Mes machines refroidissent, chauffent, font fondre, font geler... mais l'orage a effacé leurs étiquettes. Sans elles, je risque de faire bouillir mes glaces ! Aidez-moi à reconnaître chaque changement d'état.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e3": {
-      "titre": "Fin de la salle 3",
-      "plans": [
-        {
-          "decor": "glacerie",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "paolo",
-          "texte": "Le troisième mot est VAPEUR : la vapeur d'eau est de l'eau à l'état de gaz, et elle est invisible. Fatou vous attend à la cuisine.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e4": {
-      "titre": "Salle 4 — La cuisine de Fatou",
-      "plans": [
-        {
-          "decor": "cuisine",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "fatou",
-          "texte": "Entrez, entrez ! Je suis Fatou, la cuisinière. Ce matin, une bouteille oubliée au congélateur a fait sauter son bouchon. Mon commis dit que l'eau a grossi en gelant, donc qu'elle pèse plus lourd. Je n'en suis pas sûre : pesons, comparons et calculons ensemble.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e4": {
-      "titre": "Fin de la salle 4",
-      "plans": [
-        {
-          "decor": "cuisine",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "fatou",
-          "texte": "Le quatrième mot est MASSE : pendant un changement d'état, la masse se conserve, même si le volume change. Le dernier mot vous attend en haut du château d'eau, chez Ninon.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "transition-e5": {
-      "titre": "Salle 5 — Le château d'eau de Ninon",
-      "plans": [
-        {
-          "decor": "tour",
-          "etat": "normal",
-          "duree": 8,
-          "personnage": "ninon",
-          "texte": "Bienvenue tout en haut ! Je suis Ninon, la gardienne du château d'eau. D'ici, je vois tout le voyage de l'eau, du lac jusqu'aux nuages. Mais avant, faisons quelques essais dans mon bassin : chaque matière a ses propriétés.",
-          "mouvement": "zoom"
-        }
-      ]
-    },
-    "fin-e5": {
-      "titre": "Fin de la salle 5",
-      "plans": [
-        {
-          "decor": "tour",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "ines",
-          "texte": "Le dernier mot est NUAGE : il est fait de gouttelettes d'eau liquide, pas de vapeur. Vous avez les cinq mots ! Retournez au pupitre et tapez-les dans l'ordre des salles : la Fabrique redémarrera.",
-          "mouvement": "glisse"
-        }
-      ]
-    },
-    "fin": {
-      "titre": "Fin de « La Fabrique des états »",
-      "plans": [
-        {
-          "decor": "tour",
-          "etat": "normal",
-          "duree": 7,
-          "personnage": "ninon",
-          "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
-          "mouvement": "zoom"
-        }
-      ]
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "ines",
+  "texte": "Bonjour, et bienvenue à la Fabrique des états ! Je suis Inès, l'ingénieure. Ici, nous fabriquons de la glace pour les glaciers, de l'eau chaude pour la ville et de la vapeur pour notre vieille machine. Cette nuit, un orage a tout arrêté : le grand pupitre est verrouillé par un code de cinq mots. Chaque mot est caché dans un atelier, et chacun parle de la matière. Vous êtes mes ingénieurs stagiaires : retrouvez les cinq mots, notez-les bien, et nous redémarrerons la Fabrique ensemble."
+ },
+ "coffre": {
+  "personnage": "ines",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — Le hall des cuves",
+   "plans": [
+    {
+     "decor": "hall",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "Bonjour, et merci d'être venus si vite ! Je suis Inès, l'ingénieure de la Fabrique. Cette nuit, l'orage a effacé les étiquettes de mes réservoirs. Avant de remettre les machines en marche, il faut savoir ce que contient chaque cuve : un solide, un liquide ou un gaz ?",
+     "mouvement": "zoom"
     }
+   ]
   },
-  "fin_escale": {
-    "1": {
-      "personnage": "ines",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "2": {
-      "personnage": "bastien",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "3": {
-      "personnage": "paolo",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "4": {
-      "personnage": "fatou",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
-    },
-    "5": {
-      "personnage": "ninon",
-      "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "hall",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Bravo ! Le premier mot est SOLIDE : un solide garde sa forme, même en poudre. Montez sur la terrasse : Bastien prépare son ballon-sonde.",
+     "mouvement": "glisse"
     }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — La terrasse du ballon-sonde",
+   "plans": [
+    {
+     "decor": "terrasse",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "bastien",
+     "texte": "Salut, ingénieurs ! Je suis Bastien, agent météo. Mon ballon-sonde doit partir mesurer le ciel, mais mon chef dit que l'air, ce n'est rien du tout. Moi, je pense que l'air est de la matière. Aidez-moi à le prouver.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "terrasse",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "bastien",
+     "texte": "Le deuxième mot est AIR : on ne le voit pas, mais il occupe de la place et il a une masse. Descendez à la glacerie : Paolo a des ennuis avec ses machines.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — La glacerie de Paolo",
+   "plans": [
+    {
+     "decor": "glacerie",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "paolo",
+     "texte": "Bonjour ! Je suis Paolo, le glacier. Mes machines refroidissent, chauffent, font fondre, font geler... mais l'orage a effacé leurs étiquettes. Sans elles, je risque de faire bouillir mes glaces ! Aidez-moi à reconnaître chaque changement d'état.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "glacerie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "paolo",
+     "texte": "Le troisième mot est VAPEUR : la vapeur d'eau est de l'eau à l'état de gaz, et elle est invisible. Fatou vous attend à la cuisine.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — La cuisine de Fatou",
+   "plans": [
+    {
+     "decor": "cuisine",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "fatou",
+     "texte": "Entrez, entrez ! Je suis Fatou, la cuisinière. Ce matin, une bouteille oubliée au congélateur a fait sauter son bouchon. Mon commis dit que l'eau a grossi en gelant, donc qu'elle pèse plus lourd. Je n'en suis pas sûre : pesons, comparons et calculons ensemble.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "cuisine",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "fatou",
+     "texte": "Le quatrième mot est MASSE : pendant un changement d'état, la masse se conserve, même si le volume change. Le dernier mot vous attend en haut du château d'eau, chez Ninon.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — Le château d'eau de Ninon",
+   "plans": [
+    {
+     "decor": "tour",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ninon",
+     "texte": "Bienvenue tout en haut ! Je suis Ninon, la gardienne du château d'eau. D'ici, je vois tout le voyage de l'eau, du lac jusqu'aux nuages. Mais avant, faisons quelques essais dans mon bassin : chaque matière a ses propriétés.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "tour",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ninon",
+     "texte": "Le dernier mot est NUAGE : il est fait de gouttelettes d'eau liquide, pas de vapeur. Vous avez les cinq mots ! Retournez au pupitre et tapez-les dans l'ordre des salles : la Fabrique redémarrera.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « La Fabrique des états »",
+   "plans": [
+    {
+     "decor": "tour",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ninon",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
   }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "bastien",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "paolo",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "fatou",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "ninon",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
 }
