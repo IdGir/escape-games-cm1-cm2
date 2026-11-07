@@ -3,6 +3,10 @@ window.VML_JEU = {
   "id": "lumiere",
   "decorAccueil": "lanterne",
   "prefixeStockage": "vml_lumiere",
+  "musique": {
+    "style": "sciences",
+    "racine": 293.66
+  },
   "grades": [
     "mousse",
     "matelot",

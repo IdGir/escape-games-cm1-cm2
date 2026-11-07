@@ -3,6 +3,10 @@ window.VML_JEU = {
   "id": "station-meteo",
   "decorAccueil": "abri",
   "prefixeStockage": "vml_station_meteo",
+  "musique": {
+    "style": "nature",
+    "racine": 220
+  },
   "grades": [
     "mousse",
     "matelot",

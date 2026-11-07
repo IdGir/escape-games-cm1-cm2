@@ -3,6 +3,10 @@ window.VML_JEU = {
   "id": "etats-matiere",
   "decorAccueil": "hall",
   "prefixeStockage": "vml_etats_matiere",
+  "musique": {
+    "style": "sciences",
+    "racine": 261.63
+  },
   "grades": [
     "matelot",
     "timonier"

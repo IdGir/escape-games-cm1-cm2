@@ -504,6 +504,8 @@ def main():
         ecrire(os.path.join(dest, "assets/data", ("decors-fx" if k == "fx" else k) + ".json"), jeu[k])
     ecrire(os.path.join(dest, "assets/data/decors-fx.json"), jeu["fx"])
     cfg = {"id": slug_jeu, "decorAccueil": jeu["enigmes"]["escales"][0]["enigmes"][0]["decor"], "prefixeStockage": "vml_" + slug_jeu.replace("-", "_"), "grades": jeu["grades"], "textes": textes, "mots": theme["mots"]}
+    if theme.get("musique"):
+        cfg["musique"] = theme["musique"]   # style de musique d'ambiance (voir js/sons.js)
     open(os.path.join(dest, "js/jeu-config.js"), "w", encoding="utf-8", newline="\n").write(
         "/* Configuration du jeu — GÉNÉRÉ par outils/immersif/migrer-jeu.py ; modifiable à la main (titres, grades, vocabulaire). */\nwindow.VML_JEU = "
         + json.dumps(cfg, ensure_ascii=False, indent=2) + ";\n")

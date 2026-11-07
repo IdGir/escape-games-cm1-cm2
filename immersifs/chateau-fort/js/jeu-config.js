@@ -3,6 +3,7 @@ window.VML_JEU = {
   "id": "chateau-fort",
   "decorAccueil": "motte",
   "prefixeStockage": "vml_chateau_fort",
+  "musique": "medieval",
   "grades": [
     "mousse",
     "matelot",

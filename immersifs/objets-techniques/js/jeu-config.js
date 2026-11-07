@@ -3,6 +3,7 @@ window.VML_JEU = {
   "id": "objets-techniques",
   "decorAccueil": "atelier",
   "prefixeStockage": "vml_objets_techniques",
+  "musique": "atelier",
   "grades": [
     "mousse",
     "matelot",

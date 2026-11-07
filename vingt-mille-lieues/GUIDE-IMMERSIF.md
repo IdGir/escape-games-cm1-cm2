@@ -72,7 +72,15 @@ python vingt-mille-lieues/outils/immersif/migrer-jeu.py --maj-moteur immersifs/r
 
 Remplace `js/`, `css/`, les pages, les tests et les outils médias ; **conserve** les données, les médias, la config, le thème, `medias.csv`.
 
-## 7. Tests
+## 7. Sons et musique d'ambiance
+
+Tout est synthétisé par `js/sons.js` (Web Audio), sans fichier. Deux couches, réglables dans ⚙️ (« Sons et ambiances », « Musique d'ambiance », volume) :
+
+- **Ambiance de décor** : `decors-fx.json` → `decors.<id>.ambiance`, liste de 1 à 3 noms. Choisir des sons **qui existent dans le lieu** : `piece` (silence habité), `brise`, `oiseaux`, `murmure` (assemblée, foule), `crepitement` (cheminée, chandelle), `atelier` (tocs, outils), `horloge`, `mijotage` (cuisine, fioles), `ruisseau`, `cloches`, `pluie`, `glace`. Ne pas employer `vent`, `vagues`, `sousMarin` hors jeu maritime : ils sonnent comme un ressac. Un fichier `assets/audio/ambiances/<décor>.mp3` remplace l'ambiance générée.
+- **Musique de fond** : `js/jeu-config.js` → `"musique"` : un style (`medieval`, `abbaye`, `renaissance`, `baroque`, `solennel`, `sciences`, `nature`, `atelier`) ou `{"style": "...", "racine": Hz}` pour changer la tonalité. Elle ne se répète jamais à l'identique ; elle baisse pendant une cinématique avec musique.
+- Après modification : `python outils/embarquer-donnees.py` (jeu), puis augmenter `VERSION` dans `sw.js`. Le migrateur écrit la clé `musique` depuis le thème (`theme-defaut.json`).
+
+## 8. Tests
 
 | Test | Ce qu'il fait |
 |---|---|

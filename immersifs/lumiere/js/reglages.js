@@ -13,7 +13,7 @@ var VML = window.VML || (window.VML = {});
 
 VML.REGLAGES_DEFAUT = {
   niveauImpose: null, indices: true, delaiIndiceMin: null, antiTatonnement: true,
-  sons: true, voix: true, debitVoix: 1, animationsReduites: false, lecture: "normale",
+  sons: true, musiqueFond: true, volumeFond: 0.6, voix: true, debitVoix: 1, animationsReduites: false, lecture: "normale",
   sansReference: false, dureeEscaleMin: 25, escales: null
 };
 
@@ -37,6 +37,7 @@ VML.REGLAGES_DEFAUT = {
     document.body.classList.toggle("anim-reduites", !!r.animationsReduites);
     document.body.dataset.lecture = r.lecture || "normale";
     if(!r.sons && VML.couperAmbiances) VML.couperAmbiances();
+    if(VML.majMusiqueFond) VML.majMusiqueFond();
   };
 
   const ligne = (id, lib, html) => `<label class="reg-ligne" for="${id}"><span>${lib}</span>${html}</label>`;
@@ -67,6 +68,7 @@ VML.REGLAGES_DEFAUT = {
           </section>
           <section><h4>🔊 Sons, voix, affichage</h4>
             ${caseACocher("sons", "Sons et ambiances")}
+            ${(window.VML_JEU || {}).musique ? caseACocher("musiqueFond", "Musique d'ambiance") + ligne("reg-volfond", "Volume de la musique d'ambiance", `<input type="range" id="reg-volfond" min="0" max="1" step="0.05" value="${r.volumeFond}">`) : ""}
             ${caseACocher("voix", "Voix des personnages (les sous-titres restent)")}
             ${ligne("reg-debit", "Débit de la voix", `<input type="range" id="reg-debit" min="0.7" max="1.3" step="0.05" value="${r.debitVoix}">`)}
             ${caseACocher("animationsReduites", "Animations réduites")}
@@ -103,6 +105,7 @@ VML.REGLAGES_DEFAUT = {
     el.querySelector("#reg-niveau").addEventListener("change", ev => { VML.changerReglage("niveauImpose", ev.target.value || null); if(ev.target.value && VML.changerGrade) VML.changerGrade(ev.target.value); });
     el.querySelector("#reg-duree").addEventListener("change", ev => VML.changerReglage("dureeEscaleMin", Math.max(10, +ev.target.value || 25)));
     el.querySelector("#reg-delai").addEventListener("change", ev => VML.changerReglage("delaiIndiceMin", +ev.target.value || null));
+    const vf = el.querySelector("#reg-volfond"); if(vf) vf.addEventListener("input", ev => VML.changerReglage("volumeFond", +ev.target.value));
     el.querySelector("#reg-debit").addEventListener("change", ev => VML.changerReglage("debitVoix", +ev.target.value));
     el.querySelector("#reg-lecture").addEventListener("change", ev => VML.changerReglage("lecture", ev.target.value));
     el.querySelectorAll("[data-act]").forEach(b => b.addEventListener(b.tagName === "INPUT" ? "change" : "click", ev => VML.actionReglage(b.dataset.act, ev)));

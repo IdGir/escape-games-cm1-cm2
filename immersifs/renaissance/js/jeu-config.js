@@ -3,6 +3,7 @@ window.VML_JEU = {
   "id": "renaissance",
   "decorAccueil": "imprimerie",
   "prefixeStockage": "vml_renaissance",
+  "musique": "renaissance",
   "grades": [
     "mousse",
     "matelot",

@@ -3,6 +3,7 @@ window.VML_JEU = {
   "id": "alimentation",
   "decorAccueil": "potager",
   "prefixeStockage": "vml_alimentation",
+  "musique": "nature",
   "grades": [
     "mousse",
     "matelot",

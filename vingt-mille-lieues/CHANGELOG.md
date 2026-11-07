@@ -1,5 +1,11 @@
 # Journal des versions — Le Journal du Nautilus
 
+## 2026-11-07 — fonds sonores adaptés et musique d'ambiance
+- Les 11 variantes immersives utilisaient toutes l'ambiance « vent » (bruit filtré à va-et-vient lent) : elle sonnait comme un ressac, hors de propos pour un château, une assemblée ou un atelier.
+- `js/sons.js` : 11 nouvelles ambiances sans va-et-vient régulier (piece, brise, oiseaux, murmure, crepitement, atelier, horloge, mijotage, ruisseau, cloches, pluie) et une **musique d'ambiance générée** (8 styles). Nautilus garde ses sons marins.
+- Chaque décor de chaque variante reçoit un fond sonore cohérent avec le lieu ; chaque jeu un style musical (`"musique"` dans `js/jeu-config.js`).
+- `js/reglages.js` : cases « Musique d'ambiance » et volume. Migrateur et thème par défaut mis à jour. Service workers incrémentés.
+
 ## 2026-10-06 — modèle immersif réutilisable, migrateur, sources de médias
 - **Migrateur** `outils/immersif/migrer-jeu.py` : transforme un jeu existant (9 migrables) en variante immersive dans `immersifs/<jeu>/`, sans toucher à l'original ; thème, grades et vocabulaire configurables ; `--maj-moteur` met à jour le moteur sans perdre le travail ; rapport des brouillons. Variante de démonstration : `immersifs/renaissance/`.
 - **Moteur** : configuration par jeu (`js/jeu-config.js`, `css/theme.css`), vocabulaire du thème (« salle » à la place d'« escale »), énigmes réservées à certains grades (`niveaux`), portraits génériques déduits de la fiche d'un personnage, type « instrument » pris en charge par les corrigés et les tests.

@@ -3,6 +3,7 @@ window.VML_JEU = {
   "id": "moyen-age-abbaye",
   "decorAccueil": "reims",
   "prefixeStockage": "vml_moyen_age_abbaye",
+  "musique": "abbaye",
   "grades": [
     "mousse",
     "matelot",

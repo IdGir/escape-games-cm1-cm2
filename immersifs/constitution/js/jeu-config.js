@@ -3,6 +3,7 @@ window.VML_JEU = {
   "id": "constitution",
   "decorAccueil": "cour",
   "prefixeStockage": "vml_constitution",
+  "musique": "solennel",
   "grades": [
     "mousse",
     "matelot",

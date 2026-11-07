@@ -62,7 +62,7 @@
 <details><summary>Jouer sur un ordinateur sans internet, sans rien installer</summary><div class="rep">
   <p>Téléchargez l'<a href="https://github.com/IdGir/escape-games-cm1-cm2/releases/tag/hors-ligne">archive du jeu</a> (un fichier <code>…-hors-ligne.zip</code> par jeu, vidéos comprises), décompressez-la (clic droit → Extraire tout), puis double-cliquez sur <b>JOUER.html</b>. Tout fonctionne sauf le tableau de bord en direct et l'écran de classement (mode classe avec <code>lancer.bat</code>).</p></div></details>
 
-<h2 class="rubrique">🎞️ Images, vidéos, sons</h2>
+<h2 class="rubrique" id="sons">🎞️ Images, vidéos, sons</h2>
 <details><summary>Mon image ou ma vidéo n'apparaît pas</summary><div class="rep">
   <p>Ouvrez la <a href="verifier.html">page de vérification</a> : chaque emplacement indique le <b>nom exact</b> attendu (📋 le copie), et la rubrique 🧹 signale les fichiers mal nommés (majuscule, accent, mauvais dossier). Puis <b>Ctrl+F5</b> dans le jeu.</p></div></details>
 <details><summary>L'ancienne image reste affichée</summary><div class="rep">
@@ -70,7 +70,11 @@
 <details><summary>Des erreurs « 404 » dans la console (F12)</summary><div class="rep">
   <p>C'est normal : le jeu cherche les médias que vous auriez pu déposer, puis se rabat sur ses dessins. Rien n'empêche de jouer.</p></div></details>
 <details><summary>Pas de voix ou pas de son</summary><div class="rep">
-  <p>⚙️ Réglages : vérifiez la narration et le volume. La voix est celle du navigateur (Chrome et Edge ont des voix françaises) ; les décors vidéo sont muets par défaut.</p></div></details>
+  <p>⚙️ Réglages : vérifiez « Sons et ambiances », la narration et le volume. La voix est celle du navigateur (Chrome et Edge ont des voix françaises) ; les décors vidéo sont muets par défaut. Le navigateur n'autorise le son qu'après un premier clic : cliquez une fois dans le jeu.</p></div></details>
+<details><summary>Couper la musique d'ambiance ou changer son volume</summary><div class="rep">
+  <p>Dans les versions immersives : ⚙️ Réglages → 🔊 Sons, voix, affichage. Décochez <b>Musique d'ambiance</b> pour ne garder que les bruits du décor, ou baissez son volume ; décochez <b>Sons et ambiances</b> pour tout couper. Le réglage est gardé sur l'appareil, jeu par jeu.</p></div></details>
+<details><summary>Mettre ma propre ambiance ou ma propre musique</summary><div class="rep">
+  <p>Déposez un fichier libre de droits dans le dossier du jeu immersif : <code>assets/audio/ambiances/&lt;nom du décor&gt;.mp3</code> remplace le fond sonore de ce décor, <code>assets/audio/musiques/&lt;cinématique&gt;.mp3</code> (<code>intro</code>, <code>fin</code>, <code>transition-e1</code>…) donne la musique d'une cinématique. Pendant une cinématique avec fichier, la musique d'ambiance baisse puis revient. Sans fichier, le jeu garde ses sons générés ; pensez à citer la source dans <code>assets/medias/CREDITS-medias.md</code>.</p></div></details>
 
 <h2 class="rubrique">🧩 Pendant la partie</h2>
 <details><summary>Une équipe est bloquée sur une énigme</summary><div class="rep">

@@ -3,6 +3,10 @@ window.VML_JEU = {
   "id": "melanges",
   "decorAccueil": "balances",
   "prefixeStockage": "vml_melanges",
+  "musique": {
+    "style": "sciences",
+    "racine": 220
+  },
   "grades": [
     "mousse",
     "matelot",
