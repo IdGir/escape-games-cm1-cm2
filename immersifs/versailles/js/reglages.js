@@ -57,7 +57,7 @@ VML.REGLAGES_DEFAUT = {
             <p class="note">Les équivalences scolaires ne sont visibles qu'ici et dans le tableau de bord. Pour régler une équipe à distance : <code>prof.html</code>.</p>
           </section>
           <section><h4>🗺️ Escales</h4>
-            ${es.map(x => ligne("reg-es-" + x.numero, `Escale ${x.numero} — ${x.titre} <small>(${x.periode_conseillee || ""})</small>`, `<input type="checkbox" data-escale="${x.numero}" ${VML.escalesJouables().includes(x.numero) ? "checked" : ""}>`)).join("")}
+            ${es.map(x => ligne("reg-es-" + x.numero, `Escale ${x.numero} — ${x.titre} ${x.periode_conseillee ? `<small>(${x.periode_conseillee})</small>` : ""}`, `<input type="checkbox" data-escale="${x.numero}" ${VML.escalesJouables().includes(x.numero) ? "checked" : ""}>`)).join("")}
             <p class="note">Décochez les escales à ne pas jouer (une séance par escale, ou toute la campagne). Le coffre final s'ouvre avec les mots des escales jouées.</p>
           </section>
           <section><h4>⏱️ Temps et aides</h4>
@@ -79,7 +79,7 @@ VML.REGLAGES_DEFAUT = {
             <div class="reg-boutons">
               <button class="btn-laiton petit" data-act="fiche">✍️ Fiche de mission</button>
               <button class="btn-laiton petit" data-act="lecons">📖 Leçons A4</button>
-              <button class="btn-laiton petit" data-act="corriges">🔑 Corrigés (5 grades)</button>
+              <button class="btn-laiton petit" data-act="corriges">🔑 Corrigés (${VML.GRADES.length} grade${VML.GRADES.length > 1 ? "s" : ""})</button>
               <button class="btn-laiton petit" data-act="journal">📔 Journal de bord</button>
             </div>
           </section>
@@ -89,7 +89,7 @@ VML.REGLAGES_DEFAUT = {
               <label class="btn-laiton petit">⬆️ Importer <input type="file" accept=".json" data-act="importer" hidden></label>
               <button class="btn-laiton petit gris" data-act="effacer">🗑️ Effacer la partie de cet appareil</button>
             </div>
-            <p class="note">Vérification sans rien enregistrer : <code>?verif=1&amp;escale=2&amp;niveau=timonier&amp;enigme=3</code> · <a href="medias.html" target="_blank" rel="noopener">🖼️ Médias</a> · <a href="prof.html" target="_blank" rel="noopener">📊 Tableau de bord</a></p>
+            <p class="note">Vérification sans rien enregistrer : <code>?verif=1&amp;escale=${Math.min(2, es.length || 1)}&amp;niveau=${VML.GRADES[VML.GRADES.length - 1]}&amp;enigme=1</code> · <a href="medias.html" target="_blank" rel="noopener">🖼️ Médias</a> · <a href="prof.html" target="_blank" rel="noopener">📊 Tableau de bord</a></p>
           </section>
         </div>
       </div>`;
@@ -112,11 +112,18 @@ VML.REGLAGES_DEFAUT = {
   };
 
   VML.actionReglage = function(act, ev){
+    const ET = VML.ETAT || null;   // vide tant qu'aucune équipe n'a commencé : ne jamais lire ET.xxx sans garde
     if(act === "fiche") VML.imprimer(VML.htmlFicheMission(), "Fiche de mission");
-    if(act === "lecons") window.open("lecons-imprimables.html?niveau=" + (VML.ETAT.niveau || "matelot"), "_blank");
+    if(act === "lecons") window.open("lecons-imprimables.html?niveau=" + ((ET && ET.niveau) || VML.reglage("niveauImpose") || VML.GRADES[0] || "matelot"), "_blank");
     if(act === "corriges") VML.imprimer(VML.htmlCorriges(), "Corrigés (enseignant)");
-    if(act === "journal") VML.imprimer(VML.htmlJournal(), "Journal de bord");
-    if(act === "exporter") VML.telecharger(VML.T("fichierExport") + "-" + (VML.ETAT.equipe || "partie").replace(/[^\w-]+/g, "_") + ".json", JSON.stringify(VML.ETAT, null, 1));
+    if(act === "journal"){
+      if(!ET){ alert("Le journal de bord se remplit pendant la partie : il sera disponible dès qu'une équipe aura commencé."); return; }
+      VML.imprimer(VML.htmlJournal(), "Journal de bord");
+    }
+    if(act === "exporter"){
+      if(!ET){ alert("Aucune partie à exporter : démarrez une équipe d'abord."); return; }
+      VML.telecharger(VML.T("fichierExport") + "-" + (ET.equipe || "partie").replace(/[^\w-]+/g, "_") + ".json", JSON.stringify(ET, null, 1));
+    }
     if(act === "importer"){
       const f = ev.target.files && ev.target.files[0]; if(!f) return;
       f.text().then(t => { try{ const d = JSON.parse(t); if(!d || !d.niveau) throw 0; localStorage.setItem(VML.CLE_PARTIE, JSON.stringify(d)); location.reload(); }catch(e){ alert("Fichier de partie illisible."); } });
@@ -128,7 +135,7 @@ VML.REGLAGES_DEFAUT = {
   };
 
   VML.htmlFicheMission = function(){
-    const E = VML.ETAT;
+    const E = VML.ETAT || {};   // la fiche vierge s'imprime avant la partie
     const cases = Array.from({ length: ((VML.D.enigmes || {}).escales || []).length || 11 }, (_, i) => `<div class="fm-case"><div class="fm-num">${VML.T("escale", "Escale")} ${i + 1}</div><div class="fm-mot"></div></div>`).join("");
     return `<div class="fiche-mission">
       <h2>${VML.T("mission")}</h2>

@@ -29,7 +29,12 @@ VML.sonderImage = function(url, delai){
 };
 
 VML.parametre = function(nom){
-  try{ return new URLSearchParams(location.search).get(nom); }catch(e){ return null; }
+  try{
+    const q = new URLSearchParams(location.search);
+    // « escale » est affiché « salle » ou « étape » selon le thème du jeu (VML.motsDuTheme) : les trois noms sont acceptés
+    if(nom === "escale" && q.get(nom) == null) return q.get("salle") != null ? q.get("salle") : q.get("etape");
+    return q.get(nom);
+  }catch(e){ return null; }
 };
 
 /** Résout la source d'un décor (mise en cache). */

@@ -8,7 +8,7 @@
    correction est vue tout de suite), cache d'abord pour le reste.
    Changer VERSION à chaque publication (le test le contrôle).
    ============================================================ */
-const VERSION = "vml-constitution-4";
+const VERSION = "vml-constitution-5";
 const FICHIERS = [
   "./", "index.html", "prof.html", "medias.html", "lecons-imprimables.html", "manifest.webmanifest", "css/nautilus.css", "css/enigmes-nautilus.css", "css/theme.css", "js/jeu-config.js", "js/donnees-embarquees.js", "js/donnees.js", "js/niveaux.js", "js/sons.js", "js/decors-secours.js", "js/scene.js", "js/personnages.js", "js/voix.js", "js/type-circuit.js", "js/solutions.js", "js/moteur.js", "js/bibliotheque.js", "js/journal.js", "js/reglages.js", "js/sync-nautilus.js", "js/app.js", "assets/images/ui/icone.svg", "../../commun/js/enigmes.js", "../../commun/donnees/catalogue.js", "../../commun/donnees/trophees.js", "../../commun/donnees/mascotte.js", "../../commun/js/aides-enigmes.js", "../../commun/js/immersif/vml-suivi.js", "../../commun/js/immersif/vml-joker.js", "../../commun/js/immersif/vml-pouce.js", "../../commun/js/immersif/vml-difficulte.js", "../../commun/js/immersif/vml-trophees.js", "../../commun/js/immersif/vml-correction.js", "../../commun/js/correction-collective.js", "../../commun/js/alerte-seance.js", "../../commun/js/mascotte.js", "../../commun/js/progression.js", "../../commun/js/jeu-suivant.js", "../../commun/polices/atkinson-hyperlegible-latin-400-normal.woff2", "../../commun/polices/atkinson-hyperlegible-latin-700-normal.woff2", "../../commun/polices/opendyslexic-latin-400-normal.woff2", "../../commun/polices/opendyslexic-latin-700-normal.woff2"
 ];

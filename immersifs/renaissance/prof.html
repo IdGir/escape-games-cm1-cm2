@@ -24,11 +24,12 @@
   .barre-prog{ height: 8px; background: #1a2a30; border-radius: 6px; overflow: hidden; margin-top: 4px; } .barre-prog span{ display: block; height: 100%; background: linear-gradient(90deg, var(--laiton), var(--laiton-clair)); }
   .anonyme .nom-eq{ filter: blur(6px); }
 </style>
+<style>button:disabled{opacity:.45;cursor:not-allowed}.alerte-serveur{margin:10px 0;padding:10px 14px;border-radius:10px;background:#fff3cd;color:#5a4300;border:1px solid #e0b84a;font-size:.95rem}.alerte-serveur[hidden]{display:none}</style>
 </head>
 <body>
 <div class="prof">
   <h1>📊 Tableau de bord — <span data-t="journal">Le carnet de mission</span></h1>
-  <p class="note">Fonctionne en mode local : lancez <code>lancer.bat</code> (ou <code>python serveur.py</code>) et faites jouer les équipes à l'adresse affichée, <code>…/vingt-mille-lieues/</code>. Les équivalences des grades sont visibles ici seulement.</p>
+  <p class="note">Le suivi en direct (pause, message, indice, équipes) fonctionne en mode local : lancez <code>lancer.bat</code> (ou <code>python serveur.py</code>) et faites jouer les équipes à l'adresse affichée, <code>…/immersifs/renaissance/</code>. Les équivalences des grades sont visibles ici seulement.</p>
   <div class="barre">
     <span class="etat-serveur" id="etat-serveur">Recherche du serveur…</span>
     <button class="btn-laiton petit" id="tout-pause">⏸ Pause générale</button>
@@ -45,9 +46,14 @@
     <button class="btn-laiton petit" id="export-csv">⬇️ Export CSV</button>
     <button class="btn-laiton petit" id="imprimer">🖨️ Imprimer / PDF</button>
     <label class="btn-laiton petit"><input type="checkbox" id="anonymiser"> Anonymiser</label>
+    <a class="btn-laiton petit" href="lecons-imprimables.html" target="_blank" rel="noopener" title="Une page A4 par leçon, en CM1 ou CM2 : à imprimer">📖 Leçons à imprimer (A4)</a>
+    <a class="btn-laiton petit" href="../../resultats.html" target="_blank" rel="noopener" title="Toutes les parties de l'année, export tableur">📚 Résultats de l'année</a>
+    <a class="btn-laiton petit" href="../../classement.html?jeu=renaissance" target="_blank" rel="noopener" title="Écran séparé, à projeter au tableau pendant la partie">📺 Écran de classement</a>
+    <a class="btn-laiton petit" href="index.html" target="_blank" rel="noopener" title="Ouvrir le jeu sur ce poste">🎮 Ouvrir un poste élève</a>
     <a class="btn-laiton petit" href="medias.html" target="_blank" rel="noopener">🖼️ Médias</a>
     <a class="btn-laiton petit" href="index.html?verif=1&escale=2&niveau=matelot&enigme=1" target="_blank" rel="noopener">🧪 Tester</a>
   </div>
+  <p class="alerte-serveur" id="alerte-serveur" hidden>⚠️ <b>Suivi en direct indisponible</b> : la pause, les messages, les indices et le suivi des équipes demandent le serveur local. Double-cliquez sur <code>lancer.bat</code> (Windows) ou <code>lancer-mac.command</code> (Mac), puis ouvrez cette page à l'adresse affichée (<code>http://127.0.0.1:8000/immersifs/renaissance/prof.html</code>). Les autres boutons (leçons, correction collective, fiche de séquence, export, impression) fonctionnent sans serveur.</p>
   <div class="equipes" id="equipes"><p class="vide">Aucune équipe pour l'instant.</p></div>
   <div class="synthese cadre-laiton" id="synthese"></div>
 </div>
@@ -60,7 +66,7 @@
 (async function(){
   await VML.chargerDonnees();
   const $ = s => document.querySelector(s);
-  const es = VML.escale(2);
+  let es = null;   // escale de la synthèse : celle où se trouve le plus d'équipes (la 1re sinon)
   const grades = (VML.D.enigmes || {}).niveaux || [];
   let equipes = [], serveur = false;
   const ech = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -78,7 +84,7 @@
   function carte(q){
     const e = q.enigme || {}, g = grades.find(x => x.id === q.niveau) || { icone: "", nom: q.niveau, equivalent: "" };
     const al = alertes(q);
-    const nbRes = Object.keys(e.resolues || {}).length, tot = e.total || (es ? es.enigmes.length : 4);
+    const nbRes = Object.keys(e.resolues || {}).length, tot = e.total || ((VML.escale(q.salle) || es || { enigmes: [1, 2, 3, 4] }).enigmes.length);
     const fiches = (e.fichesConsultees || []).map(f => (VML.lecon(f) || {}).titre || f);
     return `<div class="eq cadre-laiton ${al.length ? "alerte" : ""}" data-eq="${ech(q.equipe)}">
       <h3><span class="nom-eq">👥 ${ech(q.equipe)}</span><span>${q.enPause ? "⏸" : q.fini ? "🏁" : "🌊"}</span></h3>
@@ -103,6 +109,9 @@
     </div>`;
   }
   function synthese(){
+    const freq = {}; equipes.forEach(q => { if(q.salle) freq[q.salle] = (freq[q.salle] || 0) + 1; });
+    const num = +(Object.keys(freq).sort((a, b) => freq[b] - freq[a])[0] || (VML.escalesJouables ? VML.escalesJouables()[0] : 1) || 1);
+    es = VML.escale(num) || VML.escale(1);
     if(!es) return "";
     const lignes = es.enigmes.map(en => {
       const faites = equipes.filter(q => ((q.enigme || {}).resolues || {})[en.id]);
@@ -110,10 +119,10 @@
       const doc = faites.filter(q => q.enigme.resolues[en.id].bienDoc).length;
       return `<tr><td>${ech(en.titre)}</td><td>${ech(en.competence_programme)}</td><td>${faites.length}/${equipes.length}</td><td>${premier}</td><td>${doc}</td></tr>`;
     }).join("");
-    return `<h3>📈 Synthèse par notion — escale 2</h3><table><tr><th>Énigme</th><th>Compétence</th><th>Résolue</th><th>Du premier coup</th><th>Bien documentée</th></tr>${lignes}</table>`;
+    return `<h3>📈 Synthèse par notion — ${ech(VML.T ? VML.T("escale", "Escale") : "Escale")} ${es.numero} · ${ech(es.titre || "")}</h3><table><tr><th>Énigme</th><th>Compétence</th><th>Résolue</th><th>Du premier coup</th><th>Bien documentée</th></tr>${lignes}</table>`;
   }
   function dessiner(){
-    $("#equipes").innerHTML = equipes.length ? equipes.map(carte).join("") : `<p class="vide">${serveur ? "Aucune équipe connectée pour l'instant." : "Serveur local introuvable : ouvrez cette page avec lancer.bat (http://127.0.0.1:8000/vingt-mille-lieues/prof.html)."}</p>`;
+    $("#equipes").innerHTML = equipes.length ? equipes.map(carte).join("") : `<p class="vide">${serveur ? "Aucune équipe connectée pour l'instant." : "Serveur local introuvable : voir l'encadré orange ci-dessus (lancer.bat)."}</p>`;
     $("#synthese").innerHTML = synthese();
     document.querySelectorAll(".eq").forEach(c => {
       const nom = c.dataset.eq, q = equipes.find(x => x.equipe === nom);
@@ -142,6 +151,8 @@
     }catch(e){ serveur = false; equipes = []; }
     $("#etat-serveur").textContent = serveur ? `✅ Serveur local · ${equipes.length} équipe(s)` : "❌ Serveur local introuvable";
     $("#etat-serveur").classList.toggle("ok", serveur);
+    document.querySelectorAll("#tout-pause,#tout-reprise,#tout-message,#tout-fin").forEach(b => { b.disabled = !serveur; });
+    $("#alerte-serveur").hidden = serveur;
     dessiner();
   }
   $("#tout-pause").onclick = () => commande("*", { pause: true });

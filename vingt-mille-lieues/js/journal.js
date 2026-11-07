@@ -105,7 +105,7 @@ var VML = window.VML || (window.VML = {});
   VML.imprimer = function(html, titre){
     let z = document.getElementById("zone-impression");
     if(!z){ z = document.createElement("div"); z.id = "zone-impression"; document.body.appendChild(z); }
-    z.innerHTML = `<div class="impression-tete">⚓ Vingt mille lieues sous les mers — ${titre || ""}</div>${html}`;
+    z.innerHTML = `<div class="impression-tete">⚓ ${VML.echapper(VML.T("titre", "Escape game"))} — ${titre || ""}</div>${html}`;
     document.body.classList.add("imprime");
     setTimeout(() => { window.print(); setTimeout(() => document.body.classList.remove("imprime"), 500); }, 50);
   };

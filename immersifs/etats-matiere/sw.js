@@ -8,7 +8,7 @@
    correction est vue tout de suite), cache d'abord pour le reste.
    Changer VERSION à chaque publication (le test le contrôle).
    ============================================================ */
-const VERSION = "vml-etats-matiere-2";
+const VERSION = "vml-etats-matiere-3";
 const FICHIERS = [
   "./", "index.html", "prof.html", "medias.html", "lecons-imprimables.html", "manifest.webmanifest", "css/nautilus.css", "css/enigmes-nautilus.css", "css/theme.css", "js/jeu-config.js", "js/donnees-embarquees.js", "js/donnees.js", "js/niveaux.js", "js/sons.js", "js/decors-secours.js", "js/scene.js", "js/personnages.js", "js/voix.js", "js/type-circuit.js", "js/solutions.js", "js/moteur.js", "js/bibliotheque.js", "js/journal.js", "js/reglages.js", "js/sync-nautilus.js", "js/app.js", "assets/data/enigmes.json", "assets/data/lecons.json", "assets/data/decors-fx.json", "assets/data/dialogues.json", "assets/data/personnages.json", "assets/images/ui/icone.svg", "../../commun/js/enigmes.js", "../../commun/polices/atkinson-hyperlegible-latin-400-normal.woff2", "../../commun/polices/atkinson-hyperlegible-latin-700-normal.woff2", "../../commun/polices/opendyslexic-latin-400-normal.woff2", "../../commun/polices/opendyslexic-latin-700-normal.woff2"
 ];
