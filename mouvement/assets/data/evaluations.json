@@ -1,0 +1,658 @@
+{
+ "metadata": {
+  "sujet": "Mesurer une distance et une durée, comparer des déplacements, trajectoires, la Terre autour du Soleil, le rôle de l'observateur",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "programme": "Sciences et technologie, cycle 3 — « Différents types de mouvement » (BO n° 24 du 11 juin 2026). Progression de l'enseignant : année B, période 2 (« Mesure une distance et une durée lors du déplacement d'un objet. Différents types de mouvement. »).",
+  "sources": "Voir README.md du jeu, section Sources."
+ },
+ "quizz_final": {
+  "CM1": [
+   {
+    "q": "Pour mesurer une piste de 50 m, on prend...",
+    "options": [
+     "une règle",
+     "un décamètre",
+     "un sablier"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "Une durée, c'est...",
+    "options": [
+     "le temps entre deux instants",
+     "une heure précise",
+     "une longueur"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "Sur la même distance, le plus rapide est celui qui...",
+    "options": [
+     "part le dernier",
+     "met le plus de temps",
+     "met le moins de temps"
+    ],
+    "bonne": 2
+   },
+   {
+    "q": "La nacelle de la grande roue se déplace...",
+    "options": [
+     "en cercle",
+     "en ligne droite",
+     "elle ne bouge pas"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "Dans le train qui roule, pour son voisin assis, le voyageur est...",
+    "options": [
+     "en mouvement",
+     "immobile",
+     "dehors"
+    ],
+    "bonne": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "2 km et 300 m, cela fait...",
+    "options": [
+     "230 m",
+     "2 300 m",
+     "23 000 m"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "2 min 30 s, cela fait...",
+    "options": [
+     "230 s",
+     "130 s",
+     "150 s"
+    ],
+    "bonne": 2
+   },
+   {
+    "q": "Pendant une même durée, le plus rapide est celui qui...",
+    "options": [
+     "va le plus loin",
+     "s'arrête le premier",
+     "va le moins loin"
+    ],
+    "bonne": 0
+   },
+   {
+    "q": "La Terre fait le tour du Soleil en environ...",
+    "options": [
+     "un jour",
+     "un an",
+     "un mois"
+    ],
+    "bonne": 1
+   },
+   {
+    "q": "Un mouvement se décrit toujours...",
+    "options": [
+     "en kilomètres",
+     "avec un chronomètre",
+     "par rapport à un observateur"
+    ],
+    "bonne": 2
+   }
+  ]
+ },
+ "fiches_preparatoires": [
+  {
+   "salle": 1,
+   "titre": "La ligne de départ — mesurer une distance",
+   "objectifs": [
+    "Repérer un départ et une arrivée",
+    "Choisir un instrument de mesure adapté"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "distance parcourue",
+     "def": "longueur du départ à l'arrivée"
+    },
+    {
+     "mot": "décamètre",
+     "def": "ruban gradué d'au moins 10 m"
+    },
+    {
+     "mot": "unité",
+     "def": "m, cm, km..."
+    }
+   ],
+   "contexte": "Une mesure s'écrit toujours avec son unité. Si le départ n'est pas au zéro, on soustrait les deux graduations."
+  },
+  {
+   "salle": 2,
+   "titre": "Le stand des chronométreurs — mesurer une durée",
+   "objectifs": [
+    "Distinguer un instant et une durée",
+    "Utiliser un chronomètre"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "instant",
+     "def": "moment précis"
+    },
+    {
+     "mot": "durée",
+     "def": "temps entre deux instants"
+    },
+    {
+     "mot": "chronomètre",
+     "def": "instrument qui mesure une durée"
+    }
+   ],
+   "contexte": "1 h = 60 min ; 1 min = 60 s. Pour calculer une durée, on peut passer par une heure ronde."
+  },
+  {
+   "salle": 3,
+   "titre": "Le tableau des temps — comparer des déplacements",
+   "objectifs": [
+    "Comparer sur une même distance",
+    "Comparer pendant une même durée"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "plus rapide",
+     "def": "moins de temps pour la même distance"
+    },
+    {
+     "mot": "km/h",
+     "def": "kilomètres par heure, une unité de vitesse"
+    }
+   ],
+   "contexte": "Pour comparer, on garde une grandeur identique : la distance ou la durée."
+  },
+  {
+   "salle": 4,
+   "titre": "La coupole de l'observatoire — trajectoires",
+   "objectifs": [
+    "Reconnaître un mouvement rectiligne ou circulaire",
+    "Situer la Terre dans le système solaire"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "trajectoire",
+     "def": "chemin dessiné par l'objet"
+    },
+    {
+     "mot": "rectiligne",
+     "def": "en ligne droite"
+    },
+    {
+     "mot": "circulaire",
+     "def": "en cercle"
+    }
+   ],
+   "contexte": "La Terre est la troisième planète à partir du Soleil ; elle en fait le tour en environ un an."
+  },
+  {
+   "salle": 5,
+   "titre": "Le quai du petit train — l'observateur",
+   "objectifs": [
+    "Dire si un objet est immobile ou en mouvement pour un observateur",
+    "Classer des durées"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "observateur",
+     "def": "celui qui regarde"
+    },
+    {
+     "mot": "immobile",
+     "def": "qui ne change pas de place pour l'observateur"
+    }
+   ],
+   "contexte": "Le même voyageur est immobile pour son voisin assis et en mouvement pour la personne sur le quai."
+  }
+ ],
+ "qcm": {
+  "CM1": [
+   {
+    "q": "Pour mesurer la longueur d'un crayon, on utilise...",
+    "options": [
+     "un décamètre",
+     "une règle graduée",
+     "un chronomètre"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "La distance parcourue se mesure entre...",
+    "options": [
+     "le départ et l'arrivée",
+     "le pilote et le public",
+     "deux chronomètres"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "1 m, c'est...",
+    "options": [
+     "10 cm",
+     "1 000 cm",
+     "100 cm"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "« 10 h 15 » est...",
+    "options": [
+     "un instant",
+     "une durée",
+     "une distance"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Pour chronométrer, on déclenche le chronomètre...",
+    "options": [
+     "à l'arrivée",
+     "au départ",
+     "n'importe quand"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "De 10 h 15 à 10 h 40, il s'écoule...",
+    "options": [
+     "15 min",
+     "40 min",
+     "25 min"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Sur 100 m, Léa met 30 s et Tom 45 s. Le plus rapide est...",
+    "options": [
+     "Léa",
+     "Tom",
+     "ils vont aussi vite"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Le cheval de bois du manège a une trajectoire...",
+    "options": [
+     "droite",
+     "en cercle",
+     "en zigzag"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Une bille lâchée tombe...",
+    "options": [
+     "en cercle",
+     "en zigzag",
+     "en ligne droite"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Pour le voyageur assis dans le train, la gare...",
+    "options": [
+     "défile",
+     "est immobile",
+     "tourne en rond"
+    ],
+    "bonne": 0,
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "3 km, cela fait...",
+    "options": [
+     "300 m",
+     "3 000 m",
+     "30 000 m"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Quelle longueur est la plus grande ?",
+    "options": [
+     "1 km et 20 m",
+     "1 010 m",
+     "950 m"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "1 dam, c'est...",
+    "options": [
+     "100 m",
+     "1 m",
+     "10 m"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "1 h 15 min, cela fait...",
+    "options": [
+     "75 min",
+     "115 min",
+     "65 min"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Un chronomètre affiche 01:30. La durée est de...",
+    "options": [
+     "130 s",
+     "90 s",
+     "13 s"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Pendant 10 s, A parcourt 40 m et B 30 m. Le plus rapide est...",
+    "options": [
+     "B",
+     "on ne peut pas savoir",
+     "A"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Un cycliste en ville roule en moyenne à environ...",
+    "options": [
+     "15 km/h",
+     "150 km/h",
+     "1 km/h"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Un ballon lancé vers le panier a une trajectoire...",
+    "options": [
+     "rectiligne",
+     "curviligne",
+     "circulaire"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "La Terre est la ... planète à partir du Soleil.",
+    "options": [
+     "première",
+     "cinquième",
+     "troisième"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "La caisse à savon freine avant l'arrivée : son mouvement est...",
+    "options": [
+     "ralenti",
+     "accéléré",
+     "circulaire"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Pour Margaux sur le quai, le voyageur assis dans le train est...",
+    "options": [
+     "immobile",
+     "en mouvement",
+     "invisible"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Hugo lâche son stylo dans le train qui roule tout droit. Pour Hugo, le stylo tombe...",
+    "options": [
+     "en cercle",
+     "en arrière",
+     "en ligne droite verticale"
+    ],
+    "bonne": 2,
+    "pts": 1
+   }
+  ]
+ },
+ "questions_fermees": {
+  "CM1": [
+   {
+    "q": "Une mesure doit toujours être écrite avec son unité.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Un sablier donne l'heure qu'il est.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Sur la même distance, le plus rapide met le plus de temps.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Un même objet peut être immobile pour une personne et en mouvement pour une autre.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Cite un instrument pour mesurer une distance.",
+    "type": "court",
+    "rep": "une règle graduée, un mètre ruban ou un décamètre",
+    "pts": 1
+   },
+   {
+    "q": "Cite un instrument pour mesurer une durée.",
+    "type": "court",
+    "rep": "un chronomètre ou un sablier",
+    "pts": 1
+   },
+   {
+    "q": "Comment appelle-t-on un mouvement en ligne droite ?",
+    "type": "court",
+    "rep": "un mouvement rectiligne",
+    "pts": 1
+   },
+   {
+    "q": "Comment appelle-t-on celui qui regarde un mouvement ?",
+    "type": "court",
+    "rep": "l'observateur",
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "1 km = 100 m.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Une minute vaut 60 secondes.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "La Terre tourne autour du Soleil en environ un an.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Le quai est immobile pour tous les observateurs.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Convertis 4 m en centimètres.",
+    "type": "court",
+    "rep": "400 cm",
+    "pts": 1
+   },
+   {
+    "q": "Convertis 3 min 20 s en secondes.",
+    "type": "court",
+    "rep": "200 s",
+    "pts": 1
+   },
+   {
+    "q": "Cite un objet qui a un mouvement circulaire.",
+    "type": "court",
+    "rep": "la nacelle d'une grande roue, un manège, l'aiguille d'une horloge...",
+    "pts": 1
+   },
+   {
+    "q": "Pourquoi faut-il préciser l'observateur pour décrire un mouvement ?",
+    "type": "court",
+    "rep": "parce qu'un objet peut être immobile pour l'un et en mouvement pour l'autre",
+    "pts": 1
+   }
+  ]
+ },
+ "etudes_documents": {
+  "CM1": [
+   {
+    "titre": "Le carnet de Margaux",
+    "document": {
+     "contenu": "Ruban posé le long de la piste. Ligne de départ : graduation 5 m. Ligne d'arrivée : graduation 17 m.",
+     "source": "Mesures inventées pour le jeu."
+    },
+    "questions": [
+     {
+      "q": "Quelle distance la petite voiture a-t-elle parcourue ?",
+      "type": "court",
+      "rep": "17 − 5 = 12 m",
+      "pts": 1
+     },
+     {
+      "q": "Quel instrument Margaux a-t-elle utilisé ?",
+      "type": "court",
+      "rep": "un décamètre (un ruban gradué)",
+      "pts": 1
+     },
+     {
+      "q": "Pourquoi écrit-elle « m » après les nombres ?",
+      "type": "court",
+      "rep": "c'est l'unité : les mètres",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "Le petit train",
+    "document": {
+     "contenu": "Dans le wagon, Lou est assise à côté de son frère. Sur le quai, leur grand-mère leur fait signe pendant que le train part.",
+     "source": "Texte inventé pour le jeu."
+    },
+    "questions": [
+     {
+      "q": "Pour son frère, Lou est-elle immobile ou en mouvement ?",
+      "type": "court",
+      "rep": "immobile",
+      "pts": 1
+     },
+     {
+      "q": "Pour la grand-mère, Lou est-elle immobile ou en mouvement ?",
+      "type": "court",
+      "rep": "en mouvement",
+      "pts": 1
+     },
+     {
+      "q": "Pour Lou, la grand-mère est-elle immobile ou en mouvement ?",
+      "type": "court",
+      "rep": "en mouvement : elle s'éloigne",
+      "pts": 1
+     }
+    ]
+   }
+  ],
+  "CM2": [
+   {
+    "titre": "Le relevé de Salomé",
+    "document": {
+     "contenu": "Course de 300 m. Salomé : 1 min 05 s. Yanis : 58 s. Léo : 1 min 20 s. Mila : 3 min 10 s.",
+     "source": "Durées inventées pour le jeu."
+    },
+    "questions": [
+     {
+      "q": "Convertis toutes les durées en secondes.",
+      "type": "court",
+      "rep": "65 s ; 58 s ; 80 s ; 190 s",
+      "pts": 1
+     },
+     {
+      "q": "Classe les concurrents du plus rapide au plus lent.",
+      "type": "court",
+      "rep": "Yanis, Salomé, Léo, Mila",
+      "pts": 1
+     },
+     {
+      "q": "Quel est l'écart entre le premier et le dernier ?",
+      "type": "court",
+      "rep": "190 − 58 = 132 s",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "Le schéma de Léonie",
+    "document": {
+     "contenu": "Au centre, le Soleil. Autour, trois cercles : Mercure sur le plus petit, Vénus sur le deuxième, la Terre sur le troisième.",
+     "source": "Description d'un schéma ; tailles et distances non respectées."
+    },
+    "questions": [
+     {
+      "q": "Quelle est la place de la Terre à partir du Soleil ?",
+      "type": "court",
+      "rep": "la troisième",
+      "pts": 1
+     },
+     {
+      "q": "Quelle est la forme de la trajectoire de la Terre ?",
+      "type": "court",
+      "rep": "presque un cercle",
+      "pts": 1
+     },
+     {
+      "q": "Combien de temps dure un tour complet ?",
+      "type": "court",
+      "rep": "environ un an (365 jours)",
+      "pts": 1
+     }
+    ]
+   }
+  ]
+ }
+}

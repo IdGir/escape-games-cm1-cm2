@@ -1,0 +1,1475 @@
+{
+ "metadata": {
+  "jeu": "Le Grand Prix de l'observatoire",
+  "version": 1,
+  "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+  "types": [
+   "association",
+   "code",
+   "intrus",
+   "lettres",
+   "ordre",
+   "plan",
+   "qcm",
+   "tri",
+   "trous",
+   "vraifaux"
+  ],
+  "sources": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Eduscol ; La main à la pâte ; Vikidia (Terre, TGV, vitesse des animaux) ; Fédération française de randonnée (vitesse d'un piéton) ; Club des villes et territoires cyclables (vitesse d'un cycliste). Mesures, durées et classements du Grand Prix : inventés pour le jeu. Détail : README.md, section Sources.",
+  "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e3-1\",\"legende\":\"…\",\"source\":\"…\"}. Déposez alors e3-1.jpg dans assets/images/cartes/. Sans fichier, l'énigme reste jouable. Les schémas (décamètre, circuit, système solaire) sont dessinés en SVG par script : ne pas les remplacer par des images générées par IA."
+ },
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La ligne de départ — Mesurer une distance",
+   "enigmes": [
+    {
+     "id": "1-1",
+     "titre": "Le bon instrument",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Margaux, la commissaire de course, doit tout remesurer avant midi. Range chaque longueur à mesurer sous l'instrument le plus adapté. Clique sur une carte, puis sur une colonne.",
+      "cm2": "Margaux prépare le matériel de mesure. Range chaque longueur à mesurer sous l'instrument le plus adapté : on choisit l'instrument selon la longueur à mesurer."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« mesurer une distance lors du déplacement d'un objet ») ; La main à la pâte, ressources « Mouvement » (cycle 3)",
+     "correction": "Pour une petite longueur, comme un crayon ou une feuille, la règle graduée suffit. Pour quelques mètres, comme une caisse à savon ou une porte, on prend un mètre ruban. Pour plusieurs dizaines de mètres, comme une piste ou l'écart entre deux plots, on déroule un décamètre. Pour une très longue distance, comme une route ou un tour de piste, on pousse une roue de mesure qui compte les mètres.",
+     "indices": {
+      "cm1": [
+       "Une règle d'écolier mesure 20 ou 30 cm.",
+       "Un mètre ruban se déroule sur quelques mètres.",
+       "Le décamètre est un long ruban d'au moins 10 m."
+      ],
+      "cm2": [
+       "Compare la longueur à mesurer avec la longueur de chaque instrument.",
+       "La roue de mesure compte les mètres en roulant : elle sert pour les très longues distances.",
+       "Le décamètre sert pour quelques dizaines de mètres."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "regle",
+        "titre": "Règle graduée"
+       },
+       {
+        "id": "metre",
+        "titre": "Mètre ruban"
+       },
+       {
+        "id": "deca",
+        "titre": "Décamètre"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la longueur d'un crayon",
+        "col": "regle"
+       },
+       {
+        "txt": "la largeur d'une feuille",
+        "col": "regle"
+       },
+       {
+        "txt": "la longueur d'une caisse à savon",
+        "col": "metre"
+       },
+       {
+        "txt": "la hauteur de la porte du garage",
+        "col": "metre"
+       },
+       {
+        "txt": "la longueur de la piste (50 m)",
+        "col": "deca"
+       },
+       {
+        "txt": "l'écart entre deux plots (15 m)",
+        "col": "deca"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "regle",
+        "titre": "Règle graduée"
+       },
+       {
+        "id": "metre",
+        "titre": "Mètre ruban"
+       },
+       {
+        "id": "deca",
+        "titre": "Décamètre"
+       },
+       {
+        "id": "roue",
+        "titre": "Roue de mesure"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la longueur d'une gomme",
+        "col": "regle"
+       },
+       {
+        "txt": "la largeur du volant d'une caisse à savon",
+        "col": "regle"
+       },
+       {
+        "txt": "la longueur d'un vélo",
+        "col": "metre"
+       },
+       {
+        "txt": "la hauteur d'un panneau",
+        "col": "metre"
+       },
+       {
+        "txt": "la longueur de la ligne droite (30 m)",
+        "col": "deca"
+       },
+       {
+        "txt": "l'écart entre deux plots (15 m)",
+        "col": "deca"
+       },
+       {
+        "txt": "la route d'accès à l'observatoire (2 km)",
+        "col": "roue"
+       },
+       {
+        "txt": "un tour complet du circuit (400 m)",
+        "col": "roue"
+       }
+      ]
+     },
+     "lecon": "distance"
+    },
+    {
+     "id": "1-2",
+     "titre": "Départ et arrivée",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Margaux interroge ses commissaires débutants avant la course. Réponds à chaque question.",
+      "cm2": "Margaux vérifie que ses commissaires savent mesurer et convertir. Réponds à chaque question."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Eduscol, ressources d'accompagnement « Matière, mouvement, énergie, information » (cycle 3)",
+     "correction": "La distance parcourue se mesure entre la ligne de départ et la ligne d'arrivée. On l'écrit toujours avec son unité : le mètre (m) pour une piste, le kilomètre (km) pour une route, le centimètre (cm) pour un petit objet. Un mètre vaut 100 centimètres et un kilomètre vaut 1 000 mètres.",
+     "indices": {
+      "cm1": [
+       "La distance parcourue va d'un point à un autre point.",
+       "Le kilogramme mesure une masse, la seconde une durée.",
+       "Sur la règle, il y a 100 petits centimètres dans un mètre."
+      ],
+      "cm2": [
+       "1 km = 1 000 m.",
+       "Convertis toutes les longueurs dans la même unité avant de comparer.",
+       "Un nombre sans unité ne dit pas de quelle longueur on parle."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Pour connaître la distance parcourue par une caisse à savon, on mesure entre...",
+        "options": [
+         "la ligne de départ et le public",
+         "la ligne de départ et la ligne d'arrivée",
+         "le pilote et le chronomètre"
+        ],
+        "bonne": 1,
+        "explication": "La distance parcourue va du point de départ au point d'arrivée."
+       },
+       {
+        "q": "Quelle unité choisir pour la longueur de la piste ?",
+        "options": [
+         "le mètre (m)",
+         "le kilogramme (kg)",
+         "la seconde (s)"
+        ],
+        "bonne": 0,
+        "explication": "Une longueur s'exprime en mètres, centimètres ou kilomètres."
+       },
+       {
+        "q": "Un mètre, c'est...",
+        "options": [
+         "10 centimètres",
+         "1 000 centimètres",
+         "100 centimètres"
+        ],
+        "bonne": 2,
+        "explication": "1 m = 100 cm."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "La route de l'observatoire mesure 2 km. Cela fait...",
+        "options": [
+         "200 m",
+         "2 000 m",
+         "20 000 m"
+        ],
+        "bonne": 1,
+        "explication": "1 km = 1 000 m, donc 2 km = 2 000 m."
+       },
+       {
+        "q": "La piste mesure 1 250 m. Cela fait...",
+        "options": [
+         "1 km et 250 m",
+         "12 km et 50 m",
+         "125 km"
+        ],
+        "bonne": 0,
+        "explication": "1 250 m = 1 000 m + 250 m."
+       },
+       {
+        "q": "Quelle distance est la plus longue ?",
+        "options": [
+         "950 m",
+         "1 010 m",
+         "1 km et 20 m"
+        ],
+        "bonne": 2,
+        "explication": "1 km et 20 m = 1 020 m."
+       },
+       {
+        "q": "Un commissaire note « la piste fait 50 ». Pourquoi est-ce insuffisant ?",
+        "options": [
+         "Parce que 50 est trop petit",
+         "Parce qu'il faut l'écrire en lettres",
+         "Parce qu'on ne sait pas si ce sont des mètres ou des kilomètres"
+        ],
+        "bonne": 2,
+        "explication": "Une mesure s'écrit toujours avec son unité."
+       }
+      ]
+     },
+     "lecon": "distance"
+    },
+    {
+     "id": "1-3",
+     "titre": "Le décamètre de Margaux",
+     "type": "code",
+     "consigne": {
+      "cm1": "Margaux a déroulé son décamètre le long de la piste des petites voitures. Lis la graduation de la ligne de départ et celle de la ligne d'arrivée, puis calcule la distance parcourue.<svg viewBox='0 0 640 170' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le décamètre de Margaux\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect x='0' y='0' width='640' height='170' rx='12' fill='#f4f7ec'/><text x='320.0' y='22' text-anchor='middle' font-size='15' font-weight='700' fill='#24361d' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le décamètre de Margaux</text><rect x='34' y='92' width='572' height='34' rx='4' fill='#f7d04a' stroke='#8a6d0b'/><line x1='40.0' y1='92' x2='40.0' y2='116' stroke='#3a2f05' stroke-width='2'/><text x='40.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>0</text><line x1='68.0' y1='92' x2='68.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='68.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><line x1='96.0' y1='92' x2='96.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='96.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><line x1='124.0' y1='92' x2='124.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='124.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><line x1='152.0' y1='92' x2='152.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='152.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><line x1='180.0' y1='92' x2='180.0' y2='116' stroke='#3a2f05' stroke-width='2'/><text x='180.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><line x1='208.0' y1='92' x2='208.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='208.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><line x1='236.0' y1='92' x2='236.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='236.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text><line x1='264.0' y1='92' x2='264.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='264.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>8</text><line x1='292.0' y1='92' x2='292.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='292.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>9</text><line x1='320.0' y1='92' x2='320.0' y2='116' stroke='#3a2f05' stroke-width='2'/><text x='320.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>10</text><line x1='348.0' y1='92' x2='348.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='348.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>11</text><line x1='376.0' y1='92' x2='376.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='376.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>12</text><line x1='404.0' y1='92' x2='404.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='404.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>13</text><line x1='432.0' y1='92' x2='432.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='432.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>14</text><line x1='460.0' y1='92' x2='460.0' y2='116' stroke='#3a2f05' stroke-width='2'/><text x='460.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>15</text><line x1='488.0' y1='92' x2='488.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='488.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>16</text><line x1='516.0' y1='92' x2='516.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='516.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>17</text><line x1='544.0' y1='92' x2='544.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='544.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>18</text><line x1='572.0' y1='92' x2='572.0' y2='110' stroke='#3a2f05' stroke-width='1'/><text x='572.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>19</text><line x1='600.0' y1='92' x2='600.0' y2='116' stroke='#3a2f05' stroke-width='2'/><text x='600.0' y='142' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>20</text><text x='604' y='162' text-anchor='end' font-size='11' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>graduations en mètres (m)</text><line x1='124.0' y1='40' x2='124.0' y2='92' stroke='#2d7d55' stroke-width='3'/><polygon points='124.0,40 152.0,48 124.0,56' fill='#2d7d55'/><text x='124.0' y='34' text-anchor='middle' font-size='12' font-weight='700' fill='#2d7d55' font-family='Atkinson Hyperlegible,Arial,sans-serif'>départ</text><line x1='544.0' y1='40' x2='544.0' y2='92' stroke='#222' stroke-width='3'/><rect x='544.0' y='40' width='9' height='8' fill='#222' stroke='#222' stroke-width='.5'/><rect x='553.0' y='40' width='9' height='8' fill='#fff' stroke='#222' stroke-width='.5'/><rect x='562.0' y='40' width='9' height='8' fill='#222' stroke='#222' stroke-width='.5'/><rect x='544.0' y='48' width='9' height='8' fill='#fff' stroke='#222' stroke-width='.5'/><rect x='553.0' y='48' width='9' height='8' fill='#222' stroke='#222' stroke-width='.5'/><rect x='562.0' y='48' width='9' height='8' fill='#fff' stroke='#222' stroke-width='.5'/><text x='544.0' y='34' text-anchor='middle' font-size='12' font-weight='700' fill='#222' font-family='Atkinson Hyperlegible,Arial,sans-serif'>arrivée</text></svg>",
+      "cm2": "La ligne droite est plus longue que le décamètre (10 m). Margaux le déroule plusieurs fois bout à bout, puis il reste 6 m jusqu'à l'arrivée. Calcule la longueur de la ligne droite, en mètres puis en centimètres.<svg viewBox='0 0 640 150' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Les reports du décamètre' style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='150' rx='12' fill='#f4f7ec'/><text x='320.0' y='22' text-anchor='middle' font-size='15' font-weight='700' fill='#24361d' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La piste mesurée avec un décamètre de 10 m</text><rect x='40.0' y='60' width='104.0' height='30' rx='3' fill='#f7d04a' stroke='#8a6d0b'/><text x='92.0' y='80' text-anchor='middle' font-size='13' font-weight='700' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>10 m</text><text x='92.0' y='110' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>report 1</text><rect x='148.0' y='60' width='104.0' height='30' rx='3' fill='#f7d04a' stroke='#8a6d0b'/><text x='200.0' y='80' text-anchor='middle' font-size='13' font-weight='700' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>10 m</text><text x='200.0' y='110' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>report 2</text><rect x='256.0' y='60' width='104.0' height='30' rx='3' fill='#f7d04a' stroke='#8a6d0b'/><text x='308.0' y='80' text-anchor='middle' font-size='13' font-weight='700' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>10 m</text><text x='308.0' y='110' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>report 3</text><rect x='364.0' y='60' width='104.0' height='30' rx='3' fill='#f7d04a' stroke='#8a6d0b'/><text x='416.0' y='80' text-anchor='middle' font-size='13' font-weight='700' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>10 m</text><text x='416.0' y='110' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>report 4</text><rect x='472.0' y='60' width='64.8' height='30' rx='3' fill='#fbe79a' stroke='#8a6d0b' stroke-dasharray='4 3'/><text x='504.4' y='80' text-anchor='middle' font-size='14' font-weight='700' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>?</text><text x='504.4' y='110' text-anchor='middle' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>fin</text><polygon points='40,40 64,47 40,54' fill='#2d7d55'/><line x1='40' y1='40' x2='40' y2='60' stroke='#2d7d55' stroke-width='3'/><line x1='536.8' y1='40' x2='536.8' y2='60' stroke='#222' stroke-width='3'/><text x='40' y='134' text-anchor='start' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>départ</text><text x='536.8' y='134' text-anchor='end' font-size='12' fill='#3a2f05' font-family='Atkinson Hyperlegible,Arial,sans-serif'>arrivée</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (CM2 : « effectuer des conversions d'unités de distance ») ; La main à la pâte, ressources « Mouvement » (cycle 3) ; mesures données inventées pour le jeu",
+     "correction": "Sur le ruban, la ligne de départ est à 3 m et la ligne d'arrivée à 18 m : la petite voiture a parcouru 18 − 3 = 15 m. Pour la ligne droite, quatre reports de 10 m font 40 m, plus les 6 m restants : 46 m, soit 4 600 cm, car 1 m = 100 cm.",
+     "indices": {
+      "cm1": [
+       "Le drapeau vert montre le départ, le damier l'arrivée.",
+       "Le départ n'est pas au zéro du ruban.",
+       "Fais une soustraction : arrivée moins départ."
+      ],
+      "cm2": [
+       "Compte les reports entiers de 10 m.",
+       "Ajoute les mètres qui restent après le dernier report.",
+       "Pour passer des mètres aux centimètres, multiplie par 100."
+      ]
+     },
+     "cm1": {
+      "champs": [
+       {
+        "libelle": "Graduation du départ (en m)",
+        "valeur": "3",
+        "longueur": 1
+       },
+       {
+        "libelle": "Graduation de l'arrivée (en m)",
+        "valeur": "18",
+        "longueur": 2
+       },
+       {
+        "libelle": "Distance parcourue (en m)",
+        "valeur": "15",
+        "longueur": 2
+       }
+      ]
+     },
+     "cm2": {
+      "champs": [
+       {
+        "libelle": "Longueur de la ligne droite (en m)",
+        "valeur": "46",
+        "longueur": 2
+       },
+       {
+        "libelle": "La même longueur (en cm)",
+        "valeur": "4600",
+        "longueur": 4
+       }
+      ]
+     },
+     "lecon": "distance"
+    },
+    {
+     "id": "1-4",
+     "titre": "Les conversions du carnet",
+     "type": "association",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Le vent a mélangé les fiches du carnet de Margaux. Relie chaque longueur à la longueur égale.",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (CM2 : « effectuer des conversions d'unités de distance »)",
+     "correction": "Dans le carnet, 1 kilomètre égale 1 000 mètres, 1 mètre égale 100 centimètres, 1 centimètre égale 10 millimètres et 1 décamètre égale 10 mètres. Enfin, 3 km et 500 m font 3 000 m + 500 m, c'est-à-dire 3 500 m.",
+     "indices": {
+      "cm2": [
+       "Le préfixe « kilo » veut dire mille.",
+       "Le préfixe « déca » veut dire dix.",
+       "3 km et 500 m : convertis d'abord les kilomètres en mètres."
+      ]
+     },
+     "commun": {
+      "paires": [
+       {
+        "g": "1 km",
+        "d": "1 000 m"
+       },
+       {
+        "g": "1 m",
+        "d": "100 cm"
+       },
+       {
+        "g": "1 cm",
+        "d": "10 mm"
+       },
+       {
+        "g": "1 dam",
+        "d": "10 m"
+       },
+       {
+        "g": "3 km et 500 m",
+        "d": "3 500 m"
+       }
+      ]
+     },
+     "lecon": "distance"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "titre": "Le stand des chronométreurs — Mesurer une durée",
+   "enigmes": [
+    {
+     "id": "2-1",
+     "titre": "Chronométrer une descente",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "Yanis, le pilote de la caisse à savon, explique comment on chronomètre sa descente. Remets les étapes dans l'ordre.",
+      "cm2": "Yanis rédige le protocole de chronométrage du Grand Prix. Remets les étapes dans l'ordre."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« l'élève utilise un chronomètre ou tout autre instrument de mesure adapté pour déterminer la durée du déplacement ») ; La main à la pâte, ressources « Mouvement » (cycle 3)",
+     "correction": "On remet d'abord le chronomètre à zéro. On le déclenche au signal du départ et on l'arrête quand la caisse franchit la ligne d'arrivée. On lit ensuite la durée affichée et on la note avec son unité. Refaire la mesure permet de vérifier qu'on ne s'est pas trompé.",
+     "indices": {
+      "cm1": [
+       "Avant tout, l'écran du chronomètre doit afficher zéro.",
+       "On déclenche au départ, on arrête à l'arrivée.",
+       "On note la durée à la fin."
+      ],
+      "cm2": [
+       "On commence par fixer où la course commence et où elle finit.",
+       "Le chronomètre est déclenché au moment exact du départ.",
+       "Une deuxième mesure permet de vérifier la première."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "Remettre le chronomètre à zéro.",
+        "rang": 1
+       },
+       {
+        "txt": "Déclencher le chronomètre au signal du départ.",
+        "rang": 2
+       },
+       {
+        "txt": "Arrêter le chronomètre quand la caisse franchit la ligne d'arrivée.",
+        "rang": 3
+       },
+       {
+        "txt": "Lire la durée affichée et la noter avec son unité.",
+        "rang": 4
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "Repérer la ligne de départ et la ligne d'arrivée.",
+        "rang": 1
+       },
+       {
+        "txt": "Remettre le chronomètre à zéro.",
+        "rang": 2
+       },
+       {
+        "txt": "Déclencher le chronomètre au moment exact du départ.",
+        "rang": 3
+       },
+       {
+        "txt": "L'arrêter quand l'avant de la caisse franchit la ligne d'arrivée.",
+        "rang": 4
+       },
+       {
+        "txt": "Lire la durée affichée et la noter avec son unité.",
+        "rang": 5
+       },
+       {
+        "txt": "Recommencer la mesure sur une autre descente pour vérifier.",
+        "rang": 6
+       }
+      ]
+     },
+     "lecon": "duree"
+    },
+    {
+     "id": "2-2",
+     "titre": "Instant ou durée ?",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Yanis a noté des phrases sur le tableau du stand. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Yanis a noté des phrases sur le tableau du stand. Pour chaque phrase, choisis vrai ou faux. Attention aux unités."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« mesurer une durée, comme intervalle entre deux instants ») ; Eduscol, ressources d'accompagnement « Matière, mouvement, énergie, information » (cycle 3)",
+     "correction": "Un instant est un moment précis, comme 10 h 15. Une durée est le temps écoulé entre deux instants : pour la connaître, il faut l'instant du départ et l'instant de l'arrivée. Le chronomètre et le sablier mesurent des durées, l'horloge donne l'instant. Une minute vaut 60 secondes et une heure vaut 60 minutes.",
+     "indices": {
+      "cm1": [
+       "Un instant répond à la question « à quelle heure ? ».",
+       "Une durée répond à la question « combien de temps ? ».",
+       "Avec seulement l'heure d'arrivée, on ne sait pas quand la course a commencé."
+      ],
+      "cm2": [
+       "Une minute, ce n'est pas cent secondes.",
+       "Sur un chronomètre, 01:30 se lit une minute et trente secondes.",
+       "Un sablier ne donne pas l'heure."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "« La course commence à 10 h » : cette phrase donne un instant.",
+        "vrai": true,
+        "explication": "10 h est un moment précis : c'est un instant."
+       },
+       {
+        "txt": "Une durée, c'est le temps qui passe entre deux instants.",
+        "vrai": true,
+        "explication": "Par exemple entre le départ et l'arrivée."
+       },
+       {
+        "txt": "Un sablier sert à mesurer une durée.",
+        "vrai": true,
+        "explication": "Il mesure toujours la même durée."
+       },
+       {
+        "txt": "Pour connaître la durée d'une course, il suffit de connaître l'heure d'arrivée.",
+        "vrai": false,
+        "explication": "Il faut aussi l'heure de départ."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Une minute vaut 100 secondes.",
+        "vrai": false,
+        "explication": "Une minute vaut 60 secondes."
+       },
+       {
+        "txt": "Une heure vaut 60 minutes.",
+        "vrai": true,
+        "explication": "1 h = 60 min."
+       },
+       {
+        "txt": "Un chronomètre affiche 01:30 : la durée est d'une minute et trente secondes.",
+        "vrai": true,
+        "explication": "Soit 90 secondes."
+       },
+       {
+        "txt": "Un sablier indique l'heure qu'il est.",
+        "vrai": false,
+        "explication": "Il mesure une durée, pas un instant."
+       },
+       {
+        "txt": "Pour calculer une durée, on a besoin de deux instants.",
+        "vrai": true,
+        "explication": "L'instant du départ et celui de l'arrivée."
+       }
+      ]
+     },
+     "lecon": "duree"
+    },
+    {
+     "id": "2-3",
+     "titre": "Le registre des départs",
+     "type": "code",
+     "consigne": {
+      "cm1": "<p><i>Registre des départs (horaires inventés pour le jeu)</i></p><table class='tab-releves'><tr><th>Pilote</th><th>Départ</th><th>Arrivée</th></tr><tr><td>Yanis</td><td>10 h 15 min</td><td>10 h 40 min</td></tr><tr><td>Salomé</td><td>10 h 50 min</td><td>11 h 05 min</td></tr></table><p>Calcule la durée de chaque essai, en minutes.</p>",
+      "cm2": "<p><i>Registre des essais (durées inventées pour le jeu)</i></p><table class='tab-releves'><tr><th>Essai</th><th>Mesure</th></tr><tr><td>Descente de Yanis</td><td>2 min 30 s</td></tr><tr><td>Séance d'essais du matin</td><td>1 h 15 min</td></tr><tr><td>Tour de Salomé</td><td>de 9 h 50 min à 10 h 25 min</td></tr></table><p>Convertis ou calcule chaque durée dans l'unité demandée.</p>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (CM2 : « effectuer des conversions d'unités de […] temps ») ; horaires données inventées pour le jeu",
+     "correction": "L'essai de Yanis va de 10 h 15 à 10 h 40 : 25 minutes. Celui de Salomé va de 10 h 50 à 11 h 05 : 10 minutes pour arriver à 11 h, puis 5 minutes, soit 15 minutes. En CM2, 2 min 30 s = 120 s + 30 s = 150 s ; 1 h 15 min = 60 min + 15 min = 75 min ; de 9 h 50 à 10 h 25, il y a 10 min puis 25 min, soit 35 min.",
+     "indices": {
+      "cm1": [
+       "Compte les minutes de 15 jusqu'à 40.",
+       "Pour Salomé, passe par 11 h.",
+       "De 10 h 50 à 11 h, il y a 10 minutes."
+      ],
+      "cm2": [
+       "1 min = 60 s.",
+       "1 h = 60 min.",
+       "Pour le tour de Salomé, passe par 10 h."
+      ]
+     },
+     "cm1": {
+      "champs": [
+       {
+        "libelle": "Durée de l'essai de Yanis (en min)",
+        "valeur": "25",
+        "longueur": 2
+       },
+       {
+        "libelle": "Durée de l'essai de Salomé (en min)",
+        "valeur": "15",
+        "longueur": 2
+       }
+      ]
+     },
+     "cm2": {
+      "champs": [
+       {
+        "libelle": "Descente de Yanis (en s)",
+        "valeur": "150",
+        "longueur": 3
+       },
+       {
+        "libelle": "Séance d'essais (en min)",
+        "valeur": "75",
+        "longueur": 2
+       },
+       {
+        "libelle": "Tour de Salomé (en min)",
+        "valeur": "35",
+        "longueur": 2
+       }
+      ]
+     },
+     "lecon": "duree"
+    },
+    {
+     "id": "2-4",
+     "titre": "Les étiquettes du stand",
+     "type": "tri",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Les étiquettes du tableau d'affichage sont tombées. Range chaque étiquette : est-ce un instant ou une durée ?",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« la durée […] comme intervalle entre deux instants »)",
+     "correction": "Les heures lues sur l'horloge, comme 10 h 15 ou midi, sont des instants. Le temps écoulé pendant une course, mesuré au chronomètre ou au sablier, comme 25 minutes ou 2 min 30 s, est une durée.",
+     "indices": {
+      "cm2": [
+       "Un instant se lit sur une horloge.",
+       "Une durée se mesure avec un chronomètre ou un sablier.",
+       "« Midi, heure limite » : est-ce un moment ou un temps écoulé ?"
+      ]
+     },
+     "commun": {
+      "colonnes": [
+       {
+        "id": "instant",
+        "titre": "Un instant"
+       },
+       {
+        "id": "duree",
+        "titre": "Une durée"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "10 h 15 min, heure du départ",
+        "col": "instant"
+       },
+       {
+        "txt": "midi, heure limite des résultats",
+        "col": "instant"
+       },
+       {
+        "txt": "11 h 05 min, arrivée de Salomé",
+        "col": "instant"
+       },
+       {
+        "txt": "25 minutes de course",
+        "col": "duree"
+       },
+       {
+        "txt": "le sablier de 3 minutes",
+        "col": "duree"
+       },
+       {
+        "txt": "2 min 30 s au chronomètre",
+        "col": "duree"
+       }
+      ]
+     },
+     "lecon": "duree"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "titre": "Le tableau des temps — Comparer des déplacements",
+   "enigmes": [
+    {
+     "id": "3-1",
+     "titre": "Qui est le plus rapide ?",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Salomé, la cycliste, lit le tableau des temps de la course de 100 m.<p><i>Tableau des temps : course de 100 m (durées inventées pour le jeu)</i></p><table class='tab-releves'><tr><th>Concurrent</th><th>Durée pour 100 m</th></tr><tr><td>Salomé à vélo</td><td>20 s</td></tr><tr><td>Yanis en caisse à savon</td><td>25 s</td></tr><tr><td>Mila à pied</td><td>70 s</td></tr></table><p>Réponds à chaque question.</p>",
+      "cm2": "Salomé compare les concurrents d'une autre manière : chacun roule pendant 10 secondes.<p><i>Tableau des distances : chacun roule pendant 10 s (distances inventées pour le jeu)</i></p><table class='tab-releves'><tr><th>Concurrent</th><th>Distance en 10 s</th></tr><tr><td>Salomé à vélo</td><td>50 m</td></tr><tr><td>Yanis en caisse à savon</td><td>40 m</td></tr><tr><td>Léo à trottinette</td><td>30 m</td></tr><tr><td>Mila à pied</td><td>15 m</td></tr></table><p>Réponds à chaque question.</p>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (sixième : « constater que pendant une même durée, un objet peut parcourir des distances différentes ») ; La main à la pâte, ressources « Mouvement » (cycle 3) ; données inventées pour le jeu",
+     "correction": "Sur une même distance de 100 m, Salomé met 20 s : c'est la durée la plus courte, elle est la plus rapide ; Mila, avec 70 s, est la plus lente. Quand tous roulent pendant la même durée de 10 s, le plus rapide est celui qui va le plus loin : Salomé, avec 50 m. Pour comparer, on garde toujours une grandeur identique : la distance ou la durée.",
+     "indices": {
+      "cm1": [
+       "Tout le monde a parcouru la même distance : 100 m.",
+       "Le plus rapide met le moins de temps.",
+       "Le plus lent met le plus de temps."
+      ],
+      "cm2": [
+       "Cette fois, tout le monde roule pendant la même durée.",
+       "Le plus rapide va le plus loin.",
+       "Pour comparer, une des deux grandeurs doit être la même pour tous."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Qui est le plus rapide sur 100 m ?",
+        "options": [
+         "Yanis",
+         "Salomé",
+         "Mila"
+        ],
+        "bonne": 1,
+        "explication": "Salomé met la durée la plus courte : 20 s."
+       },
+       {
+        "q": "Qui est le plus lent ?",
+        "options": [
+         "Mila",
+         "Yanis",
+         "Salomé"
+        ],
+        "bonne": 0,
+        "explication": "Mila met 70 s, la durée la plus longue."
+       },
+       {
+        "q": "Pour comparer ces trois concurrents, ils ont tous parcouru...",
+        "options": [
+         "la même durée",
+         "des distances différentes",
+         "la même distance"
+        ],
+        "bonne": 2,
+        "explication": "La même distance : 100 m."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Pendant 10 s, qui parcourt la plus grande distance ?",
+        "options": [
+         "Yanis",
+         "Salomé",
+         "Léo"
+        ],
+        "bonne": 1,
+        "explication": "Salomé parcourt 50 m."
+       },
+       {
+        "q": "Qui est le moins rapide ?",
+        "options": [
+         "Léo",
+         "Yanis",
+         "Mila"
+        ],
+        "bonne": 2,
+        "explication": "Mila ne parcourt que 15 m en 10 s."
+       },
+       {
+        "q": "Pendant une même durée, le plus rapide est celui qui...",
+        "options": [
+         "va le plus loin",
+         "met le plus de temps",
+         "part le premier"
+        ],
+        "bonne": 0,
+        "explication": "Même durée : plus grande distance, plus rapide."
+       },
+       {
+        "q": "Yanis parcourt 40 m en 10 s et Léo 30 m en 10 s. Que peut-on dire ?",
+        "options": [
+         "Léo est plus rapide",
+         "Ils vont aussi vite",
+         "Yanis est plus rapide"
+        ],
+        "bonne": 2,
+        "explication": "En une même durée, Yanis va plus loin."
+       }
+      ]
+     },
+     "lecon": "comparer"
+    },
+    {
+     "id": "3-2",
+     "titre": "Le classement de la descente",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "Voici les durées de cinq concurrents sur la même descente de 200 m (durées inventées pour le jeu). Range-les du plus rapide au plus lent.",
+      "cm2": "Voici les durées de cinq concurrents sur la même descente de 200 m (durées inventées pour le jeu), notées dans des unités différentes. Range-les du plus rapide au plus lent."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (sixième : « constater qu'un objet peut parcourir une même distance pendant des durées différentes ») ; données inventées pour le jeu",
+     "correction": "Sur la même descente de 200 m, le classement suit les durées, de la plus courte à la plus longue : Salomé (40 s), Yanis (55 s), le petit train (70 s), Léo (90 s), puis Mila (150 s). En CM2, il faut d'abord convertir : 1 min 05 s = 65 s, 1 min 20 s = 80 s, 2 min 30 s = 150 s.",
+     "indices": {
+      "cm1": [
+       "Tous ont parcouru la même distance.",
+       "Le plus rapide a la durée la plus petite.",
+       "Commence par la plus petite durée."
+      ],
+      "cm2": [
+       "Convertis toutes les durées en secondes.",
+       "1 min = 60 s : 1 min 05 s = 65 s.",
+       "Du plus rapide au plus lent : de la plus petite durée à la plus grande."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "Salomé à vélo : 40 s",
+        "rang": 1
+       },
+       {
+        "txt": "Yanis en caisse à savon : 55 s",
+        "rang": 2
+       },
+       {
+        "txt": "Le petit train : 70 s",
+        "rang": 3
+       },
+       {
+        "txt": "Léo à trottinette : 90 s",
+        "rang": 4
+       },
+       {
+        "txt": "Mila à pied : 150 s",
+        "rang": 5
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "Salomé à vélo : 38 s",
+        "rang": 1
+       },
+       {
+        "txt": "Yanis en caisse à savon : 52 s",
+        "rang": 2
+       },
+       {
+        "txt": "Le petit train : 1 min 05 s",
+        "rang": 3
+       },
+       {
+        "txt": "Léo à trottinette : 1 min 20 s",
+        "rang": 4
+       },
+       {
+        "txt": "Mila à pied : 2 min 30 s",
+        "rang": 5
+       }
+      ]
+     },
+     "lecon": "comparer"
+    },
+    {
+     "id": "3-3",
+     "titre": "La règle de Salomé",
+     "type": "trous",
+     "consigne": {
+      "cm1": "Salomé écrit sa règle pour comparer les concurrents. Complète son texte avec les bonnes étiquettes. Attention : il y a des étiquettes en trop.",
+      "cm2": "Salomé écrit sa règle pour comparer les concurrents. Complète son texte avec les bonnes étiquettes. Attention : il y a des étiquettes en trop."
+     },
+     "source": "La main à la pâte, ressources « Mouvement » (cycle 3) ; Eduscol, ressources d'accompagnement « Matière, mouvement, énergie, information » (cycle 3)",
+     "correction": "Pour comparer deux déplacements, on garde une grandeur identique. Sur une même distance, le plus rapide met la durée la plus courte. Pendant une même durée, le plus rapide parcourt la plus grande distance. On peut exprimer la vitesse en kilomètres par heure (km/h).",
+     "indices": {
+      "cm1": [
+       "Il y a deux façons de comparer : même distance ou même durée.",
+       "Le plus rapide met le moins de temps.",
+       "Le plus rapide va le plus loin."
+      ],
+      "cm2": [
+       "On ne peut comparer que si une grandeur reste la même pour tous.",
+       "km/h se lit « kilomètres par heure ».",
+       "Les étiquettes en trop parlent de masse ou de grandeurs qui ne mesurent pas un déplacement."
+      ]
+     },
+     "cm1": {
+      "texte": "<p>Sur une même [[distance]], le plus rapide met la durée la plus [[courte]]. Pendant une même [[durée]], le plus rapide va le plus [[loin]].</p>",
+      "etiquettes": [
+       "distance",
+       "courte",
+       "durée",
+       "loin",
+       "longue",
+       "près"
+      ]
+     },
+     "cm2": {
+      "texte": "<p>Pour comparer deux déplacements, on garde une grandeur [[identique]]. Sur une même [[distance]], le plus rapide met la durée la plus [[courte]]. Pendant une même [[durée]], le plus rapide parcourt la plus grande distance. On peut exprimer la vitesse en [[kilomètres]] par heure.</p>",
+      "etiquettes": [
+       "identique",
+       "distance",
+       "courte",
+       "durée",
+       "kilomètres",
+       "kilogrammes",
+       "longue",
+       "différente"
+      ]
+     },
+     "lecon": "comparer"
+    },
+    {
+     "id": "3-4",
+     "titre": "Le panneau des records",
+     "type": "association",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Sur le panneau du Grand Prix, Salomé affiche des vitesses de la vie réelle, en ordres de grandeur. Relie chaque animal ou véhicule à sa vitesse.",
+     "source": "Vikidia, « Vitesse des animaux » (escargot, guépard) et « TGV » (vitesse commerciale de 320 km/h) ; Fédération française de randonnée, « À quelle vitesse marche un piéton en ville ? » (4 km/h utilisés par les aménageurs) ; Club des villes et territoires cyclables, « Comment ça roule ? » (vitesse moyenne des cyclistes : 15 km/h)",
+     "correction": "Ce sont des ordres de grandeur. L'escargot avance à moins d'un kilomètre par heure. Un piéton marche à environ 4 km/h et un cycliste en ville roule en moyenne à 15 km/h. Le guépard peut dépasser 100 km/h, mais seulement pendant quelques centaines de mètres. Le TGV roule jusqu'à 320 km/h.",
+     "indices": {
+      "cm2": [
+       "Range d'abord les cinq du plus lent au plus rapide.",
+       "Un piéton va moins vite qu'un cycliste.",
+       "Le plus rapide de tous est un train."
+      ]
+     },
+     "commun": {
+      "paires": [
+       {
+        "g": "un escargot",
+        "d": "moins de 1 km/h"
+       },
+       {
+        "g": "un piéton",
+        "d": "environ 4 km/h"
+       },
+       {
+        "g": "un cycliste en ville",
+        "d": "environ 15 km/h"
+       },
+       {
+        "g": "un guépard lancé",
+        "d": "plus de 100 km/h"
+       },
+       {
+        "g": "un TGV",
+        "d": "jusqu'à 320 km/h"
+       }
+      ]
+     },
+     "lecon": "comparer"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "titre": "La coupole de l'observatoire — Trajectoires",
+   "enigmes": [
+    {
+     "id": "4-1",
+     "titre": "Droite ou cercle ?",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Depuis la coupole, Léonie, l'astronome, observe le parc. Pour une personne immobile au sol, chaque objet se déplace-t-il en ligne droite ou en cercle ? Range chaque carte.",
+      "cm2": "Depuis la coupole, Léonie observe le parc. Pour une personne immobile au sol, range chaque mouvement selon sa trajectoire : rectiligne, circulaire ou curviligne."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (CM2 : « observer et identifier le mouvement rectiligne ou circulaire d'un objet, en fonction de l'observateur ») ; Eduscol, ressources d'accompagnement « Matière, mouvement, énergie, information » (cycle 3)",
+     "correction": "Pour une personne immobile au sol, la bille qui tombe, l'ascenseur et la caisse à savon dans la descente droite vont en ligne droite : leur mouvement est rectiligne. La nacelle de la grande roue, le cheval de bois du manège et le bout de l'aiguille de l'horloge tournent en rond : leur mouvement est circulaire. Le ballon lancé vers le panier et la caisse à savon dans le virage en S suivent une ligne courbe qui n'est pas un cercle : leur mouvement est curviligne.",
+     "indices": {
+      "cm1": [
+       "Imagine le chemin que dessine l'objet.",
+       "Ce qui tourne autour d'un centre dessine un cercle.",
+       "Une bille lâchée tombe tout droit vers le sol."
+      ],
+      "cm2": [
+       "Rectiligne : une droite ; circulaire : un cercle.",
+       "Curviligne : une courbe qui n'est pas un cercle.",
+       "Un ballon lancé monte puis redescend en dessinant une courbe."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "droite",
+        "titre": "En ligne droite"
+       },
+       {
+        "id": "cercle",
+        "titre": "En cercle"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une bille lâchée qui tombe",
+        "col": "droite"
+       },
+       {
+        "txt": "la caisse à savon dans la descente droite",
+        "col": "droite"
+       },
+       {
+        "txt": "l'ascenseur de l'observatoire",
+        "col": "droite"
+       },
+       {
+        "txt": "la nacelle de la grande roue",
+        "col": "cercle"
+       },
+       {
+        "txt": "un cheval de bois du manège",
+        "col": "cercle"
+       },
+       {
+        "txt": "le bout de l'aiguille de l'horloge",
+        "col": "cercle"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "rect",
+        "titre": "Rectiligne"
+       },
+       {
+        "id": "circ",
+        "titre": "Circulaire"
+       },
+       {
+        "id": "curv",
+        "titre": "Curviligne"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une bille lâchée qui tombe",
+        "col": "rect"
+       },
+       {
+        "txt": "l'ascenseur de l'observatoire",
+        "col": "rect"
+       },
+       {
+        "txt": "la nacelle de la grande roue",
+        "col": "circ"
+       },
+       {
+        "txt": "le bout de l'aiguille de l'horloge",
+        "col": "circ"
+       },
+       {
+        "txt": "un cheval de bois du manège",
+        "col": "circ"
+       },
+       {
+        "txt": "un ballon lancé vers le panier",
+        "col": "curv"
+       },
+       {
+        "txt": "la caisse à savon dans le virage en S",
+        "col": "curv"
+       }
+      ]
+     },
+     "lecon": "trajectoires"
+    },
+    {
+     "id": "4-2",
+     "titre": "Le plan de la coupole",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Léonie a dessiné le circuit vu du haut de la coupole. Place chaque étiquette sur le bon repère. Clique sur une étiquette, puis sur la case du repère.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le circuit vu du haut de l'observatoire\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#dfeccf'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#24361d' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le circuit vu du haut de l'observatoire</text><path d='M60 230 L330 230 Q420 230 430 160 Q440 90 560 90' fill='none' stroke='#6b6b6b' stroke-width='26' stroke-linecap='round'/><path d='M60 230 L330 230 Q420 230 430 160 Q440 90 560 90' fill='none' stroke='#fff' stroke-width='2' stroke-dasharray='10 8'/><line x1='60' y1='215' x2='60' y2='245' stroke='#2d7d55' stroke-width='5'/><circle cx='150' cy='110' r='55' fill='none' stroke='#b06a2b' stroke-width='5' stroke-dasharray='6 5'/><circle cx='150' cy='110' r='14' fill='#b06a2b'/><circle cx='205' cy='110' r='9' fill='#e8a33d' stroke='#6b3f12'/><text x='150' y='186' text-anchor='middle' font-size='12' fill='#24361d' font-family='Atkinson Hyperlegible,Arial,sans-serif'>le manège</text><text x='70' y='270' text-anchor='middle' font-size='12' font-weight='700' fill='#2d7d55' font-family='Atkinson Hyperlegible,Arial,sans-serif'>départ</text><circle cx='200' cy='262' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='200' y='267' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='466' cy='150' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='466' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='240' cy='70' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='240' y='75' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "cm2": "Sur le grand écran de la coupole, Léonie montre le Soleil et les trois premières planètes. Place chaque étiquette sur le bon repère. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Le Soleil et les trois premières planètes' style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#10172e'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#ffe9a8' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Soleil et les trois premières planètes</text><text x='320' y='308' text-anchor='middle' font-size='11' fill='#c9d3f5' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Schéma : les tailles et les distances ne sont pas respectées.</text><ellipse cx='320' cy='165' rx='88' ry='55' fill='none' stroke='#6f7fb8' stroke-width='1.2'/><ellipse cx='320' cy='165' rx='144' ry='90' fill='none' stroke='#6f7fb8' stroke-width='1.2'/><ellipse cx='320' cy='165' rx='200' ry='125' fill='none' stroke='#6f7fb8' stroke-width='3'/><circle cx='320' cy='165' r='26' fill='#ffcc33' stroke='#ff9f1a' stroke-width='4'/><circle cx='408' cy='165' r='6' fill='#b9aca0'/><circle cx='218' cy='110' r='9' fill='#e9c27a'/><circle cx='461' cy='257' r='11' fill='#3b82c4' stroke='#7ec26b' stroke-width='3'/><circle cx='286' cy='133' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='286' y='138' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='408' cy='141' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='408' y='146' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='486' cy='277' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='486' y='282' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='120' cy='165' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='120' y='170' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (CM2 : « décrire le mouvement de la Terre par rapport au Soleil et la situer dans le système solaire ») ; Vikidia, « Terre » (troisième planète du système solaire, tour du Soleil en environ 365 jours)",
+     "correction": "Sur le circuit, le repère 1 marque la ligne droite (trajectoire rectiligne), le repère 2 le virage (trajectoire courbe) et le repère 3 le manège (trajectoire circulaire). Sur l'écran, le repère 1 est le Soleil, au centre. Le repère 2 est Mercure, la planète la plus proche du Soleil. Le repère 3 est la Terre, troisième planète à partir du Soleil. Le repère 4 montre la trajectoire de la Terre : presque un cercle, parcouru en environ un an.",
+     "indices": {
+      "cm1": [
+       "Le repère 1 est sur la portion toute droite.",
+       "Le repère 2 est dans le virage.",
+       "Le cheval de bois du manège tourne en rond."
+      ],
+      "cm2": [
+       "Le Soleil est au centre.",
+       "Compte les planètes à partir du Soleil : Mercure, Vénus, puis la Terre.",
+       "Le repère 4 est posé sur une ligne, pas sur une planète."
+      ]
+     },
+     "cm1": {
+      "titre": "Le circuit vu du haut de l'observatoire",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "ligne droite"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "virage"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "cercle du manège"
+       }
+      ],
+      "etiquettes": [
+       "ligne droite",
+       "virage",
+       "cercle du manège"
+      ]
+     },
+     "cm2": {
+      "titre": "Le Soleil et les trois premières planètes",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "le Soleil"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "Mercure"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "la Terre"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "trajectoire de la Terre"
+       }
+      ],
+      "etiquettes": [
+       "le Soleil",
+       "Mercure",
+       "la Terre",
+       "trajectoire de la Terre",
+       "la Lune",
+       "trajectoire d'une comète"
+      ]
+     },
+     "lecon": "trajectoires"
+    },
+    {
+     "id": "4-3",
+     "titre": "L'intrus du parc",
+     "type": "intrus",
+     "consigne": {
+      "cm1": "Léonie a noté des objets qui tournent en rond. Trouve l'intrus : le seul qui se déplace en ligne droite.",
+      "cm2": "Léonie a noté des mouvements circulaires. Trouve l'intrus : le seul mouvement qui n'est pas circulaire pour une personne immobile au sol."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) ; Eduscol, ressources d'accompagnement « Matière, mouvement, énergie, information » (cycle 3)",
+     "correction": "La grande roue, le manège et l'aiguille de l'horloge tournent autour d'un centre : leur mouvement est circulaire. L'ascenseur monte et descend tout droit : c'est l'intrus. En CM2, la Terre autour du Soleil, la pointe d'une pale d'éolienne, la nacelle et le cheval de bois décrivent des cercles ; le petit train sur la voie droite va en ligne droite.",
+     "indices": {
+      "cm1": [
+       "Cherche ce qui tourne autour d'un centre.",
+       "Un ascenseur monte et descend.",
+       "L'intrus ne dessine pas de cercle."
+      ],
+      "cm2": [
+       "La Terre tourne autour du Soleil.",
+       "La pale d'une éolienne tourne autour de son axe.",
+       "Une voie droite donne une trajectoire rectiligne."
+      ]
+     },
+     "cm1": {
+      "cartes": [
+       {
+        "txt": "la grande roue",
+        "intrus": false
+       },
+       {
+        "txt": "le manège",
+        "intrus": false
+       },
+       {
+        "txt": "l'aiguille de l'horloge",
+        "intrus": false
+       },
+       {
+        "txt": "l'ascenseur de l'observatoire",
+        "intrus": true
+       }
+      ]
+     },
+     "cm2": {
+      "cartes": [
+       {
+        "txt": "la Terre autour du Soleil",
+        "intrus": false
+       },
+       {
+        "txt": "la pointe d'une pale d'éolienne",
+        "intrus": false
+       },
+       {
+        "txt": "la nacelle de la grande roue",
+        "intrus": false
+       },
+       {
+        "txt": "le cheval de bois du manège",
+        "intrus": false
+       },
+       {
+        "txt": "le petit train sur la voie droite",
+        "intrus": true
+       }
+      ]
+     },
+     "lecon": "trajectoires"
+    },
+    {
+     "id": "4-4",
+     "titre": "Les notes de Léonie",
+     "type": "qcm",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Léonie a préparé quelques questions sur les mouvements du ciel et du circuit. Réponds à chaque question.",
+     "source": "Vikidia, « Terre » (troisième planète ; tour du Soleil en environ 365 jours et 6 heures) ; Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026)",
+     "correction": "La Terre est la troisième planète à partir du Soleil ; elle en fait le tour en environ un an, soit à peu près 365 jours. Dans la descente, la caisse à savon prend de plus en plus de vitesse : son mouvement est accéléré. Au freinage, sa vitesse diminue : le mouvement est ralenti.",
+     "indices": {
+      "cm2": [
+       "Un tour complet de la Terre autour du Soleil donne une année.",
+       "Mercure, Vénus, puis...",
+       "Accéléré : la vitesse augmente ; ralenti : elle diminue."
+      ]
+     },
+     "commun": {
+      "questions": [
+       {
+        "q": "En combien de temps la Terre fait-elle le tour du Soleil ?",
+        "options": [
+         "En environ un jour",
+         "En environ un mois",
+         "En environ un an (365 jours)"
+        ],
+        "bonne": 2,
+        "explication": "Un tour complet dure environ 365 jours."
+       },
+       {
+        "q": "À partir du Soleil, la Terre est la...",
+        "options": [
+         "troisième planète",
+         "première planète",
+         "dixième planète"
+        ],
+        "bonne": 0,
+        "explication": "Mercure, Vénus, puis la Terre."
+       },
+       {
+        "q": "Dans la descente, la caisse à savon va de plus en plus vite. Son mouvement est...",
+        "options": [
+         "ralenti",
+         "accéléré",
+         "immobile"
+        ],
+        "bonne": 1,
+        "explication": "Sa vitesse augmente."
+       },
+       {
+        "q": "Avant l'arrivée, Yanis freine. Son mouvement est...",
+        "options": [
+         "accéléré",
+         "circulaire",
+         "ralenti"
+        ],
+        "bonne": 2,
+        "explication": "Sa vitesse diminue."
+       }
+      ]
+     },
+     "lecon": "trajectoires"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "titre": "Le quai du petit train — Tout dépend de l'observateur",
+   "enigmes": [
+    {
+     "id": "5-1",
+     "titre": "Les remarques des voyageurs",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Hugo, le contrôleur du petit train, écoute les voyageurs. Le train roule ; Margaux est restée sur le quai. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Hugo, le contrôleur du petit train, écoute les voyageurs. Le train roule tout droit, à vitesse constante ; Margaux est restée sur le quai. Pour chaque phrase, choisis vrai ou faux."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (CM2 : « le mouvement d'un objet est toujours décrit par rapport à un observateur » ; « un objet qu'on lâche décrit une droite verticale par rapport à la personne qui le lâche ») ; Eduscol, ressources d'accompagnement « Matière, mouvement, énergie, information » (cycle 3)",
+     "correction": "Un même voyageur peut être immobile et en mouvement : immobile pour Hugo, assis dans le même wagon, et en mouvement pour Margaux, restée sur le quai. On doit donc toujours dire par rapport à qui on décrit un mouvement. Dans le train qui roule tout droit à vitesse constante, le stylo lâché par Hugo tombe en ligne droite verticale par rapport à Hugo. Pour les voyageurs du train, c'est le quai qui défile.",
+     "indices": {
+      "cm1": [
+       "Hugo et le voyageur sont assis dans le même wagon.",
+       "Margaux, elle, ne monte pas dans le train.",
+       "Un mouvement se décrit toujours « par rapport à » quelqu'un."
+      ],
+      "cm2": [
+       "Demande-toi toujours : qui regarde ?",
+       "Pour le voyageur assis, le quai s'éloigne.",
+       "Celui qui lâche un objet le voit tomber tout droit vers le bas."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "Pour Hugo, assis en face de lui, le voyageur est immobile.",
+        "vrai": true,
+        "explication": "Ils roulent ensemble : pour Hugo, le voyageur ne bouge pas."
+       },
+       {
+        "txt": "Pour Margaux, restée sur le quai, ce voyageur est en mouvement.",
+        "vrai": true,
+        "explication": "Il s'éloigne d'elle avec le train."
+       },
+       {
+        "txt": "Un objet est immobile ou en mouvement de la même façon pour tout le monde.",
+        "vrai": false,
+        "explication": "Cela dépend de l'observateur."
+       },
+       {
+        "txt": "Pour décrire un mouvement, il faut dire par rapport à qui.",
+        "vrai": true,
+        "explication": "On choisit toujours un observateur."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Le voyageur assis est à la fois immobile pour Hugo et en mouvement pour Margaux.",
+        "vrai": true,
+        "explication": "Les deux sont vrais : l'observateur n'est pas le même."
+       },
+       {
+        "txt": "Le quai est immobile pour tous les observateurs.",
+        "vrai": false,
+        "explication": "Pour les voyageurs du train, le quai défile."
+       },
+       {
+        "txt": "Hugo lâche son stylo : par rapport à Hugo, le stylo tombe en ligne droite verticale.",
+        "vrai": true,
+        "explication": "C'est ce que dit le programme pour la personne qui lâche l'objet."
+       },
+       {
+        "txt": "Un objet immobile pour un observateur est immobile pour tous les autres.",
+        "vrai": false,
+        "explication": "Un autre observateur peut le voir bouger."
+       },
+       {
+        "txt": "Pour Margaux, le petit train a une trajectoire rectiligne sur la voie droite.",
+        "vrai": true,
+        "explication": "La voie est droite."
+       }
+      ]
+     },
+     "lecon": "observateur"
+    },
+    {
+     "id": "5-2",
+     "titre": "Immobile ou en mouvement ?",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Hugo est assis dans le petit train qui roule. Pour Hugo, chaque chose est-elle immobile ou en mouvement ? Range chaque carte.",
+      "cm2": "Range chaque situation : l'objet est-il immobile ou en mouvement pour l'observateur indiqué ? Le petit train roule ; Margaux est sur le quai."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (CM2 : « en fonction de l'observateur ») ; Eduscol, ressources d'accompagnement « Matière, mouvement, énergie, information » (cycle 3)",
+     "correction": "Pour Hugo, assis dans le train, tout ce qui roule avec lui reste à la même place : son voisin, son sac et la fenêtre du wagon sont immobiles. L'arbre, la gare et la vache couchée dans le pré défilent : pour lui, ils sont en mouvement. Pour Margaux sur le quai, c'est l'inverse : le quai est immobile et le voyageur assis bouge.",
+     "indices": {
+      "cm1": [
+       "Pour Hugo, ce qui roule avec lui ne bouge pas.",
+       "Regarde par la fenêtre : qu'est-ce qui défile ?",
+       "La vache ne bouge pas dans le pré, mais Hugo la voit passer."
+      ],
+      "cm2": [
+       "Lis bien qui est l'observateur sur chaque carte.",
+       "Le même voyageur peut aller dans les deux colonnes.",
+       "Un objet qui tombe est en mouvement."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "immobile",
+        "titre": "Immobile pour Hugo"
+       },
+       {
+        "id": "mouvement",
+        "titre": "En mouvement pour Hugo"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "son voisin assis",
+        "col": "immobile"
+       },
+       {
+        "txt": "son sac posé sur le siège",
+        "col": "immobile"
+       },
+       {
+        "txt": "la fenêtre du wagon",
+        "col": "immobile"
+       },
+       {
+        "txt": "l'arbre au bord de la voie",
+        "col": "mouvement"
+       },
+       {
+        "txt": "la gare",
+        "col": "mouvement"
+       },
+       {
+        "txt": "la vache couchée dans le pré",
+        "col": "mouvement"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "immobile",
+        "titre": "Immobile pour l'observateur"
+       },
+       {
+        "id": "mouvement",
+        "titre": "En mouvement pour l'observateur"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le voyageur assis, pour Hugo assis dans le wagon",
+        "col": "immobile"
+       },
+       {
+        "txt": "le quai, pour Margaux",
+        "col": "immobile"
+       },
+       {
+        "txt": "la locomotive, pour le conducteur assis dedans",
+        "col": "immobile"
+       },
+       {
+        "txt": "le voyageur assis, pour Margaux sur le quai",
+        "col": "mouvement"
+       },
+       {
+        "txt": "le quai, pour Hugo",
+        "col": "mouvement"
+       },
+       {
+        "txt": "le stylo que Hugo vient de lâcher, pour Hugo",
+        "col": "mouvement"
+       }
+      ]
+     },
+     "lecon": "observateur"
+    },
+    {
+     "id": "5-3",
+     "titre": "Le chronomètre officiel",
+     "type": "code",
+     "consigne": {
+      "cm1": "Il est presque midi. Le chronomètre officiel ne s'ouvre qu'avec le classement de la descente : écris les numéros de dossard, du premier arrivé au dernier.<p><i>Résultats officiels de la descente de 200 m (durées inventées pour le jeu)</i></p><table class='tab-releves'><tr><th>Dossard</th><th>Véhicule</th><th>Durée</th></tr><tr><td>2</td><td>le petit train</td><td>75 s</td></tr><tr><td>4</td><td>le vélo de Salomé</td><td>41 s</td></tr><tr><td>5</td><td>la voiture solaire de l'école</td><td>90 s</td></tr><tr><td>7</td><td>la caisse à savon de Yanis</td><td>48 s</td></tr><tr><td>9</td><td>la trottinette de Léo</td><td>63 s</td></tr></table>",
+      "cm2": "Il est presque midi. Le chronomètre officiel ne s'ouvre qu'avec le classement de la descente : écris les numéros de dossard, du plus rapide au plus lent, puis l'écart entre le premier et le dernier.<p><i>Résultats officiels de la descente de 200 m (durées inventées pour le jeu)</i></p><table class='tab-releves'><tr><th>Dossard</th><th>Véhicule</th><th>Durée</th></tr><tr><td>2</td><td>le petit train</td><td>1 min 15 s</td></tr><tr><td>4</td><td>le vélo de Salomé</td><td>41 s</td></tr><tr><td>5</td><td>la voiture solaire de l'école</td><td>1 min 30 s</td></tr><tr><td>7</td><td>la caisse à savon de Yanis</td><td>48 s</td></tr><tr><td>9</td><td>la trottinette de Léo</td><td>1 min 03 s</td></tr></table>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (mesure de durées ; CM2 : conversions d'unités de temps) ; données inventées pour le jeu",
+     "correction": "Sur la même descente de 200 m, on classe par durée croissante : dossard 4 (41 s), 7 (48 s), 9 (63 s), 2 (75 s), puis 5 (90 s). Le code est 47925. En CM2, il faut d'abord convertir : 1 min 03 s = 63 s, 1 min 15 s = 75 s et 1 min 30 s = 90 s. L'écart entre le premier et le dernier est de 90 − 41 = 49 s.",
+     "indices": {
+      "cm1": [
+       "Même distance pour tous : le plus rapide a la plus petite durée.",
+       "Le premier arrivé est le dossard 4.",
+       "Écris les cinq dossards à la suite, sans espace."
+      ],
+      "cm2": [
+       "Convertis d'abord toutes les durées en secondes.",
+       "1 min 03 s = 63 s.",
+       "L'écart : durée du dernier moins durée du premier."
+      ]
+     },
+     "cm1": {
+      "champs": [
+       {
+        "libelle": "Code du chronomètre officiel",
+        "valeur": "47925",
+        "longueur": 5
+       }
+      ]
+     },
+     "cm2": {
+      "champs": [
+       {
+        "libelle": "Code du chronomètre officiel",
+        "valeur": "47925",
+        "longueur": 5
+       },
+       {
+        "libelle": "Écart entre le premier et le dernier (en s)",
+        "valeur": "49",
+        "longueur": 2
+       }
+      ]
+     },
+     "lecon": "observateur"
+    },
+    {
+     "id": "5-4",
+     "titre": "Le message de la coupole",
+     "type": "lettres",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Léonie a envoyé un message au quai. Certaines lettres sont marquées : clique dans l'ordre celles qui forment le verbe qui résume le Grand Prix. Attention aux lettres pièges.",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026) (« le mouvement d'un objet est toujours décrit par rapport à un observateur »)",
+     "correction": "Avant de dire qu'un objet bouge ou ne bouge pas, il faut choisir qui le regarde : le mouvement se décrit toujours par rapport à un observateur. Le mot caché est OBSERVER.",
+     "indices": {
+      "cm2": [
+       "Le mot a huit lettres.",
+       "C'est ce que fait l'astronome avec sa lunette.",
+       "Il commence par O et finit par R."
+      ]
+     },
+     "commun": {
+      "cible": [
+       "O",
+       "B",
+       "S",
+       "E",
+       "R",
+       "V",
+       "E",
+       "R"
+      ],
+      "texte": "<p>Bravo, commissaires ! Depuis ma c<b data-l='O'>o</b>upole, j'ai tout vu : le train qui ro<b data-l='U'>u</b>le, le vélo, la caisse à savon. Mais n'ou<b data-l='B'>b</b>liez pa<b data-l='S'>s</b> : pour le voyageur assis, son voisin ne bouge pas. Pour la p<b data-l='E'>e</b>rsonne sur le quai, il s'éloigne. Avant de dire qui bouge, il faut toujou<b data-l='R'>r</b>s choisir qui regarde. C'est la règle de tous les ast<b data-l='R'>r</b>onomes, ici <b data-l='C'>c</b>omme dans le ciel. Bonne route à <b data-l='V'>v</b>ous tous, et rendez-vous l'an proch<b data-l='A'>a</b>in pour un nouv<b data-l='E'>e</b>au Grand Prix !</p>"
+     },
+     "lecon": "observateur"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "depart": {
+   "titre": "La ligne de départ, sur le plateau de l'observatoire",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La caisse à instruments",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une caisse en bois où le vent a tout mélangé : règles, mètres rubans, décamètres, roue de mesure."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le carnet des commissaires",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Le petit carnet où Margaux note ses consignes de mesure."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le décamètre jaune",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un long ruban jaune déroulé le long de la piste, entre deux drapeaux."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les fiches envolées",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des fiches de conversion collées par le vent contre la barrière."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "stand": {
+   "titre": "Le stand des chronométreurs, au bord de la piste",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le chronomètre du stand",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un chronomètre argenté posé sur la table, à côté d'un sablier."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tableau du stand",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un petit tableau couvert de phrases sur les instants et les durées."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le registre des départs",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un gros registre où l'on note l'heure de départ et l'heure d'arrivée de chaque essai."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les étiquettes du tableau d'affichage",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des étiquettes tombées au pied du tableau d'affichage."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "tableau": {
+   "titre": "Le tableau des temps, près des tribunes",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le grand tableau des temps",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un panneau noir où les temps sont écrits à la craie."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les plaques de classement",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Cinq plaques numérotées à accrocher sous le tableau, dans l'ordre."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La règle de Salomé",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une ardoise où Salomé écrit sa règle pour comparer."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le panneau des records",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un panneau qui compare les vitesses de la vie réelle."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "coupole": {
+   "titre": "La coupole de l'observatoire, au sommet du plateau",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La grande lunette",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "La lunette de la coupole, tournée vers le parc et la fête foraine."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le grand écran de la coupole",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un écran où Léonie projette le circuit, puis le système solaire."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le carnet d'observation",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le carnet où Léonie note tout ce qui tourne en rond."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les notes du ciel",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des notes épinglées près de la lunette : la Terre, le Soleil, la descente."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "quai": {
+   "titre": "Le quai du petit train, au pied du plateau",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le wagon des voyageurs",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un wagon rouge où deux voyageurs se disputent."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La fenêtre du wagon",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande fenêtre par laquelle on voit défiler les arbres et la gare."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le chronomètre officiel",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le grand chronomètre doré, verrouillé par un code à cinq chiffres."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le message de la coupole",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un message arrivé de la coupole par le haut-parleur du quai."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "metadata": {
+  "jeu": "Le Grand Prix de l'observatoire",
+  "sujet": "Mesurer une distance et une durée lors d'un déplacement, comparer des déplacements, différents types de mouvement (rectiligne, circulaire), le mouvement de la Terre autour du Soleil et le rôle de l'observateur — sciences, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "lien_autres_jeux": "Prépare le jeu n°14 « La Centrale en panne » et le jeu n°18 « Le Robot de l'atelier » ; se relie au « Tour du monde » (échelles, durées de trajet) et à « L'Atelier de l'inventeur » (n°04 : transmission du mouvement).",
+  "sources": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026) ; Eduscol ; La main à la pâte ; Vikidia. Détail : README.md, section Sources."
+ },
+ "personnages": {
+  "margaux": {
+   "nom": "Margaux",
+   "role": "Commissaire de course du Grand Prix"
+  },
+  "yanis": {
+   "nom": "Yanis",
+   "role": "Pilote de caisse à savon"
+  },
+  "salome": {
+   "nom": "Salomé",
+   "role": "Cycliste, responsable du tableau des temps"
+  },
+  "leonie": {
+   "nom": "Léonie",
+   "role": "Astronome de l'observatoire"
+  },
+  "hugo": {
+   "nom": "Hugo",
+   "role": "Contrôleur du petit train"
+  }
+ },
+ "intro_accueil": "Bonjour, et bienvenue au Grand Prix de l'observatoire ! Je suis Margaux, la commissaire de course. Chaque année, les véhicules de l'école descendent la piste du plateau, au pied de la coupole. Mais cette nuit, le vent a renversé les plots et dispersé nos feuilles de mesure, et le chronomètre officiel s'est verrouillé. Les résultats doivent être validés avant midi. Vous êtes mes commissaires : dans chacun des cinq postes, retrouvez un mot, notez-le bien, et le Grand Prix pourra avoir lieu.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La ligne de départ",
+   "decor": "depart",
+   "motCle": "DISTANCE",
+   "lieu": "La ligne de départ, sur le plateau de l'observatoire",
+   "description": "Une large piste descend du plateau. Les plots orange sont renversés, un décamètre jaune traîne dans l'herbe et une banderole « Départ » flotte au vent. Au loin, la coupole blanche de l'observatoire.",
+   "sens": [
+    "À voir : les plots renversés et le décamètre jaune",
+    "À entendre : la banderole qui claque au vent",
+    "À sentir : l'herbe fraîche du matin"
+   ],
+   "dialogue_intro": {
+    "perso": "margaux",
+    "nom": "Margaux",
+    "texte": "Merci d'être là ! Le vent a déplacé tous mes plots : je ne sais plus où sont les lignes de départ et d'arrivée. Avant midi, il faut tout remesurer. Prenez les bons instruments, et n'oubliez jamais l'unité !"
+   },
+   "dialogue_reussite": {
+    "perso": "margaux",
+    "nom": "Margaux",
+    "texte": "Bravo ! Le premier mot est <b>DISTANCE</b> : de la ligne de départ à la ligne d'arrivée, et toujours avec son unité. Filez au stand des chronométreurs : Yanis vous attend."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "Le stand des chronométreurs",
+   "decor": "stand",
+   "motCle": "DURÉE",
+   "lieu": "Le stand des chronométreurs, au bord de la piste",
+   "description": "Une tente rayée, une grande horloge, une table couverte de chronomètres et de sabliers. Une caisse à savon rouge attend, prête pour la descente.",
+   "sens": [
+    "À voir : la grande horloge et les chronomètres",
+    "À entendre : le bip d'un chronomètre",
+    "À sentir : l'odeur du bois verni de la caisse à savon"
+   ],
+   "dialogue_intro": {
+    "perso": "yanis",
+    "nom": "Yanis",
+    "texte": "Salut ! Je suis Yanis, pilote de la caisse à savon rouge. Mes temps d'essai ont été mélangés par le vent. Sans eux, je ne peux pas prendre le départ. Vous savez ce qu'est une durée ?"
+   },
+   "dialogue_reussite": {
+    "perso": "yanis",
+    "nom": "Yanis",
+    "texte": "Super ! Le deuxième mot est <b>DURÉE</b> : le temps entre deux instants, le départ et l'arrivée. Salomé a besoin de vous au tableau des temps."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "Le tableau des temps",
+   "decor": "tableau",
+   "motCle": "VITESSE",
+   "lieu": "Le tableau des temps, près des tribunes",
+   "description": "Un grand panneau noir où l'on écrit les résultats à la craie. Des vélos sont appuyés contre la barrière ; une petite tribune attend le public.",
+   "sens": [
+    "À voir : le grand panneau des résultats",
+    "À entendre : le cliquetis des roues de vélo",
+    "À sentir : la poussière de craie"
+   ],
+   "dialogue_intro": {
+    "perso": "salome",
+    "nom": "Salomé",
+    "texte": "Bonjour ! Je suis Salomé, cycliste et gardienne du tableau des temps. Tout le monde me demande qui est le plus rapide. Pour comparer, il faut une règle : aidez-moi à la retrouver."
+   },
+   "dialogue_reussite": {
+    "perso": "salome",
+    "nom": "Salomé",
+    "texte": "Voilà ! Le troisième mot est <b>VITESSE</b> : à distance égale, le plus rapide met le moins de temps. Montez à la coupole : Léonie observe tout le circuit."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "La coupole de l'observatoire",
+   "decor": "coupole",
+   "motCle": "TRAJECTOIRE",
+   "lieu": "La coupole de l'observatoire, au sommet du plateau",
+   "description": "Une salle ronde sous un toit qui s'ouvre. Au centre, une grande lunette. Par la fente du toit, on voit le circuit, le manège et la grande roue de la fête.",
+   "sens": [
+    "À voir : la grande lunette et le circuit tout en bas",
+    "À entendre : le grincement du toit qui tourne",
+    "À sentir : l'air frais qui entre par la fente"
+   ],
+   "dialogue_intro": {
+    "perso": "leonie",
+    "nom": "Léonie",
+    "texte": "Bienvenue sous ma coupole ! Je suis Léonie, l'astronome. D'ici, je regarde les étoiles la nuit et, le jour, le circuit du Grand Prix. Chaque objet dessine un chemin : une droite, un cercle, une courbe. Sauriez-vous les reconnaître ?"
+   },
+   "dialogue_reussite": {
+    "perso": "leonie",
+    "nom": "Léonie",
+    "texte": "Parfait ! Le quatrième mot est <b>TRAJECTOIRE</b> : le chemin que dessine un objet qui se déplace. Descendez au quai : Hugo va vous faire monter dans le petit train."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "Le quai du petit train",
+   "decor": "quai",
+   "motCle": "OBSERVATEUR",
+   "lieu": "Le quai du petit train, au pied du plateau",
+   "description": "Un petit quai de bois, une locomotive verte et trois wagons ouverts. Sur le quai, un pupitre porte le chronomètre officiel, verrouillé par un code.",
+   "sens": [
+    "À voir : la locomotive verte et le chronomètre officiel",
+    "À entendre : le sifflet du contrôleur",
+    "À sentir : l'odeur de l'huile des rails"
+   ],
+   "dialogue_intro": {
+    "perso": "hugo",
+    "nom": "Hugo",
+    "texte": "En voiture ! Je suis Hugo, le contrôleur du petit train. Dans mon wagon, les voyageurs se disputent : l'un dit qu'il ne bouge pas, l'autre qu'il avance. Qui a raison ? Montez, on va voir ça ensemble."
+   },
+   "dialogue_fin": {
+    "perso": "margaux",
+    "nom": "Margaux",
+    "texte": "Le dernier mot est <b>OBSERVATEUR</b> : un mouvement se décrit toujours par rapport à quelqu'un. Vous avez les cinq mots : ouvrons le coffre du Grand Prix !"
+   }
+  }
+ ]
+}

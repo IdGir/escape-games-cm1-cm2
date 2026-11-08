@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "margaux",
+  "texte": "Bonjour, et bienvenue au Grand Prix de l'observatoire ! Je suis Margaux, la commissaire de course. Chaque année, les véhicules de l'école descendent la piste du plateau, au pied de la coupole. Mais cette nuit, le vent a renversé les plots et dispersé nos feuilles de mesure, et le chronomètre officiel s'est verrouillé. Les résultats doivent être validés avant midi. Vous êtes mes commissaires : dans chacun des cinq postes, retrouvez un mot, notez-le bien, et le Grand Prix pourra avoir lieu."
+ },
+ "coffre": {
+  "personnage": "margaux",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — La ligne de départ",
+   "plans": [
+    {
+     "decor": "depart",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "margaux",
+     "texte": "Merci d'être là ! Le vent a déplacé tous mes plots : je ne sais plus où sont les lignes de départ et d'arrivée. Avant midi, il faut tout remesurer. Prenez les bons instruments, et n'oubliez jamais l'unité !",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "depart",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "margaux",
+     "texte": "Bravo ! Le premier mot est DISTANCE : de la ligne de départ à la ligne d'arrivée, et toujours avec son unité. Filez au stand des chronométreurs : Yanis vous attend.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — Le stand des chronométreurs",
+   "plans": [
+    {
+     "decor": "stand",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "yanis",
+     "texte": "Salut ! Je suis Yanis, pilote de la caisse à savon rouge. Mes temps d'essai ont été mélangés par le vent. Sans eux, je ne peux pas prendre le départ. Vous savez ce qu'est une durée ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "stand",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "yanis",
+     "texte": "Super ! Le deuxième mot est DURÉE : le temps entre deux instants, le départ et l'arrivée. Salomé a besoin de vous au tableau des temps.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — Le tableau des temps",
+   "plans": [
+    {
+     "decor": "tableau",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "salome",
+     "texte": "Bonjour ! Je suis Salomé, cycliste et gardienne du tableau des temps. Tout le monde me demande qui est le plus rapide. Pour comparer, il faut une règle : aidez-moi à la retrouver.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "tableau",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "salome",
+     "texte": "Voilà ! Le troisième mot est VITESSE : à distance égale, le plus rapide met le moins de temps. Montez à la coupole : Léonie observe tout le circuit.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — La coupole de l'observatoire",
+   "plans": [
+    {
+     "decor": "coupole",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "leonie",
+     "texte": "Bienvenue sous ma coupole ! Je suis Léonie, l'astronome. D'ici, je regarde les étoiles la nuit et, le jour, le circuit du Grand Prix. Chaque objet dessine un chemin : une droite, un cercle, une courbe. Sauriez-vous les reconnaître ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "coupole",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "leonie",
+     "texte": "Parfait ! Le quatrième mot est TRAJECTOIRE : le chemin que dessine un objet qui se déplace. Descendez au quai : Hugo va vous faire monter dans le petit train.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — Le quai du petit train",
+   "plans": [
+    {
+     "decor": "quai",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "hugo",
+     "texte": "En voiture ! Je suis Hugo, le contrôleur du petit train. Dans mon wagon, les voyageurs se disputent : l'un dit qu'il ne bouge pas, l'autre qu'il avance. Qui a raison ? Montez, on va voir ça ensemble.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "quai",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "hugo",
+     "texte": "Le dernier mot est OBSERVATEUR : un mouvement se décrit toujours par rapport à quelqu'un. Vous avez les cinq mots : ouvrons le coffre du Grand Prix !",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Le Grand Prix de l'observatoire »",
+   "plans": [
+    {
+     "decor": "quai",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "hugo",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "margaux",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "yanis",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "salome",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "leonie",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "hugo",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
+}
