@@ -221,6 +221,35 @@ def profondeur_de(dest):
     return 2 if rel.startswith("..") else len(rel.split(os.sep))
 
 
+GREFFONS_INDEX = ["commun/donnees/catalogue.js?c3", "commun/donnees/trophees.js?c2", "commun/donnees/mascotte.js?c1", "commun/js/aides-enigmes.js?c1",
+                  "commun/js/immersif/vml-suivi.js?c1", "commun/js/immersif/vml-joker.js?c1", "commun/js/immersif/vml-pouce.js?c1",
+                  "commun/js/immersif/vml-difficulte.js?c1", "commun/js/immersif/vml-trophees.js?c1", "commun/js/immersif/vml-correction.js?c1",
+                  "commun/js/jeu-suivant.js?c1", "commun/js/correction-collective.js?c1", "commun/js/alerte-seance.js?c1", "commun/js/mascotte.js?c1",
+                  "commun/js/progression.js?c1"]
+
+
+def greffer_variante(dest, slug_jeu, prof):
+    """Pages propres aux variantes : greffons de commun/ dans index.html (coup de pouce, fin de séance, joker, correction…),
+    lien vers la version classique, tableau de bord complet (modele-variante/prof.html). Sans cela, les boutons enseignant
+    de prof.html n'auraient aucun effet chez les élèves, et --maj-moteur les effaçait."""
+    haut = "../" * prof
+    p = os.path.join(dest, "index.html")
+    h = open(p, encoding="utf-8").read()
+    if "vml-suivi.js" not in h:
+        bloc = "".join(f'\n<script src="{haut}{g}"></script>' for g in GREFFONS_INDEX)
+        m = list(re.finditer(r'<script src="js/[^"]+"></script>', h))[-1]
+        h = h[:m.end()] + bloc + h[m.end():]
+    if "lien-classique" not in h and os.path.isfile(os.path.join(RACINE, slug_jeu, "index.html")):
+        lien = (f'\n        <a class="btn-laiton gris petit" id="lien-classique" href="{haut}{slug_jeu}/" title="La version classique du jeu : '
+                "une salle après l'autre, niveaux CM1 et CM2\">🎓 Version classique (CM1 / CM2)</a>")
+        h = re.sub(r'(<button[^>]*id="btn-bande-annonce"[^>]*>[^<]*</button>)', lambda m: m.group(1) + lien, h, count=1)
+    open(p, "w", encoding="utf-8", newline="\n").write(h)
+    modele = os.path.join(MODELE, "outils", "immersif", "modele-variante", "prof.html")
+    if os.path.isfile(modele):
+        t = open(modele, encoding="utf-8").read().replace("__SLUG__", slug_jeu).replace("../../", haut)
+        open(os.path.join(dest, "prof.html"), "w", encoding="utf-8", newline="\n").write(t)
+
+
 def copier_moteur(dest, slug_jeu):
     prof = profondeur_de(dest)
     for racine, dossiers, fichiers in os.walk(MODELE):
@@ -272,19 +301,30 @@ def copier_moteur(dest, slug_jeu):
             s = open(os.path.join(MODELE, "tests", f), encoding="utf-8").read()
             s = s.replace('path.resolve(__dirname, "../../outils-tests")', 'path.resolve(__dirname, "' + "../" * (prof + 1) + 'outils-tests")').replace('"../../outils-tests/charge"', '"' + "../" * (prof + 1) + 'outils-tests/charge"')
             open(os.path.join(dest, "tests", f), "w", encoding="utf-8", newline="\n").write(s)
+    greffer_variante(dest, slug_jeu, prof)
 
 
-def ecrire_sw(dest, slug_jeu):
-    """Service worker : cache propre à ce jeu, liste réduite aux fichiers existants (à appeler en DERNIER)."""
+def ecrire_sw(dest, slug_jeu, base=None):
+    """Service worker : cache propre à ce jeu, liste réduite aux fichiers existants (à appeler en DERNIER).
+    base : dossier de la variante quand dest est un dossier temporaire (--maj-moteur) : les données du jeu y sont."""
+    existe = lambda f: os.path.exists(os.path.join(dest, f)) or (base and os.path.exists(os.path.join(base, f)))
     p = os.path.join(dest, "sw.js")
     s = open(p, encoding="utf-8").read()
     s = re.sub(r'"vml-[a-z0-9-]*"', f'"vml-{slug_jeu}-1"', s, count=1).replace('startsWith("vml-")', f'startsWith("vml-{slug_jeu}-")')
     s = s.replace("« Le Journal du Nautilus »", f"« {slug_jeu} »").replace("vingt-mille-lieues/ uniquement", f"immersifs/{slug_jeu}/ uniquement")
     m = re.search(r"const FICHIERS = \[([\s\S]*?)\];", s)
     liste = json.loads("[" + m.group(1).replace("'", '"') + "]")
-    liste = [f for f in liste if f == "./" or f.startswith("../") or os.path.exists(os.path.join(dest, f))]
+    liste = [f for f in liste if f == "./" or f.startswith("../") or existe(f)]
     liste = [f if not f.startswith("../") or os.path.exists(os.path.normpath(os.path.join(dest, f))) else None for f in liste]
     liste = [f for f in liste if f]
+    # greffons de commun/ chargés par index.html : gardés hors connexion eux aussi (après commun/js/enigmes.js)
+    idx = open(os.path.join(dest, "index.html"), encoding="utf-8").read() if os.path.isfile(os.path.join(dest, "index.html")) else ""
+    ordre_sw = [g for g in GREFFONS_INDEX if "jeu-suivant" not in g] + [g for g in GREFFONS_INDEX if "jeu-suivant" in g]
+    greffons = [x for x in re.findall(r'<script src="((?:\.\./)+commun/[^"?]+)', idx) if x not in liste and not x.endswith("/enigmes.js")]
+    greffons = sorted(greffons, key=lambda x: next((i for i, g in enumerate(ordre_sw) if x.endswith(g.split("?")[0])), 99))
+    if greffons:
+        i = next((k + 1 for k, f in enumerate(liste) if f.endswith("commun/js/enigmes.js")), len(liste))
+        liste = liste[:i] + greffons + liste[i:]
     s = s[:m.start(1)] + "\n  " + ", ".join(json.dumps(f) for f in liste) + "\n" + s[m.end(1):]
     open(p, "w", encoding="utf-8", newline="\n").write(s)
 
@@ -427,7 +467,19 @@ def maj_moteur(dest):
         for f in ("js/jeu-config.js", "js/donnees-embarquees.js", "js/decors-secours.js", "css/theme.css"):   # fichiers propres au jeu : nécessaires à la liste hors ligne
             if os.path.isfile(os.path.join(dest, f)):
                 shutil.copy2(os.path.join(dest, f), os.path.join(temp, f))
-        ecrire_sw(temp, slug_jeu)
+        ecrire_sw(temp, slug_jeu, base=dest)
+        ancien_sw = os.path.join(dest, "sw.js")
+        if os.path.isfile(ancien_sw):   # garder le numéro de cache s'il n'y a rien de neuf, sinon l'augmenter (les élèves rechargent le jeu)
+            a = open(ancien_sw, encoding="utf-8").read()
+            mv = re.search(r'"vml-' + re.escape(slug_jeu) + r'-(\d+)"', a)
+            if mv:
+                n_v = int(mv.group(1))
+                t = open(os.path.join(temp, "sw.js"), encoding="utf-8").read()
+                meme = t.replace(f'"vml-{slug_jeu}-1"', f'"vml-{slug_jeu}-{n_v}"') == a
+                change = meme is False or any(open(os.path.join(r_, f_), "rb").read() != (open(os.path.join(dest, os.path.relpath(os.path.join(r_, f_), temp)), "rb").read() if os.path.isfile(os.path.join(dest, os.path.relpath(os.path.join(r_, f_), temp))) else b"")
+                                            for r_, _, fs_ in os.walk(temp) for f_ in fs_ if not f_ == "sw.js" and not any(os.path.relpath(os.path.join(r_, f_), temp).replace(os.sep, "/").startswith(g) for g in A_GARDER))
+                t = t.replace(f'"vml-{slug_jeu}-1"', f'"vml-{slug_jeu}-{n_v + 1 if change else n_v}"')
+                open(os.path.join(temp, "sw.js"), "w", encoding="utf-8", newline="\n").write(t)
         n = 0
         for racine, _, fichiers in os.walk(temp):
             for f in fichiers:

@@ -55,6 +55,8 @@
   let es = null;   // escale de la synthèse : celle où se trouve le plus d'équipes (la 1re sinon)
   const grades = (VML.D.enigmes || {}).niveaux || [];
   let equipes = [], serveur = false;
+  const attentePause = {};   // pause demandée, en attente de l'état renvoyé par l'équipe (le bouton bascule tout de suite)
+  const noterPause = (noms, oui) => { noms.forEach(n => { attentePause[n] = { enPause: oui, jusqua: Date.now() + 10000 }; const q = equipes.find(x => x.equipe === n); if(q) q.enPause = oui; }); dessiner(); };
   const ech = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const mmss = ms => { const s = Math.floor((ms || 0) / 1000); return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); };
   const commande = (equipe, cmd) => fetch("/api/commande", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ equipe, commande: Object.assign({ t: Date.now() }, cmd) }) }).catch(() => {});
@@ -113,7 +115,7 @@
       c.querySelectorAll("[data-c]").forEach(b => {
         const act = b.dataset.c;
         b.addEventListener(b.tagName === "SELECT" ? "change" : "click", () => {
-          if(act === "pause") commande(nom, { pause: !q.enPause });
+          if(act === "pause"){ const oui = !q.enPause; commande(nom, { pause: oui }); noterPause([nom], oui); }
           if(act === "t2") commande(nom, { delaiMin: 2 });
           if(act === "t5") commande(nom, { delaiMin: 5 });
           if(act === "msg"){ const m = prompt("Message pour « " + nom + " » :"); if(m) commande(nom, { message: m }); }
@@ -128,13 +130,14 @@
       const d = r.ok ? await r.json() : null;
       serveur = !!d;
       equipes = ((d && d.equipes) || []).filter(q => q.jeu === "vingt-mille-lieues");
+      equipes.forEach(q => { const a = attentePause[q.equipe]; if(a && Date.now() < a.jusqua && q.enPause !== a.enPause) q.enPause = a.enPause; else delete attentePause[q.equipe]; });
     }catch(e){ serveur = false; equipes = []; }
     $("#etat-serveur").textContent = serveur ? `✅ Serveur local · ${equipes.length} équipe(s)` : "❌ Serveur local introuvable";
     $("#etat-serveur").classList.toggle("ok", serveur);
     dessiner();
   }
-  $("#tout-pause").onclick = () => commande("*", { pause: true });
-  $("#tout-reprise").onclick = () => commande("*", { pause: false });
+  $("#tout-pause").onclick = () => { commande("*", { pause: true }); noterPause(equipes.map(q => q.equipe), true); };
+  $("#tout-reprise").onclick = () => { commande("*", { pause: false }); noterPause(equipes.map(q => q.equipe), false); };
   $("#tout-message").onclick = () => { const m = prompt("Message pour toutes les équipes :"); if(m) commande("*", { message: m }); };
   $("#anonymiser").onchange = ev => document.body.classList.toggle("anonyme", ev.target.checked);
   $("#imprimer").onclick = () => window.print();

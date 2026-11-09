@@ -45,7 +45,7 @@ VML.payloadEtat = function(){
 VML.envoyerEtat = function(){
   if(!VML.SYNC.actif || !VML.ETAT.equipe) return;
   fetch("/api/etat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(VML.payloadEtat()) })
-    .then(r => r.json()).then(d => { if(d && d.commande) VML.traiterCommande(d.commande); }).catch(() => {});
+    .then(r => r.json()).then(d => { if(d && d.commande){ VML.traiterCommande(d.commande); setTimeout(VML.envoyerEtat, 300); } }).catch(() => {});   // l'état à jour repart aussitôt : le tableau de bord n'attend pas 3 s
 };
 
 VML.traiterCommande = function(cmd){

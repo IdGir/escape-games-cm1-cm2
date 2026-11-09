@@ -1,5 +1,11 @@
 # Journal des versions — Le Journal du Nautilus
 
+## 2026-11-09 — boutons enseignant : pause immédiate, --maj-moteur sans régression
+- **Pause / reprise** (`prof.html`) : le bouton d'une équipe bascule tout de suite (« ⏸ Pause » → « ▶️ Reprendre ») ; avant, il gardait l'ancien état 3 à 6 s et un second clic renvoyait une pause au lieu d'une reprise. Pause et reprise générales mettent aussi les cartes à jour aussitôt.
+- **Synchronisation** (`js/sync-nautilus.js`) : après une commande de l'enseignant, l'équipe renvoie son état 0,3 s plus tard (au lieu de 3 s) : le tableau de bord reflète pause, grade, temps accordé presque immédiatement.
+- **`migrer-jeu.py`** : la migration et `--maj-moteur` recopiaient `index.html`, `prof.html` et `sw.js` de la source, plus ancienne : coup de pouce, fin de séance, correction collective, fiche de séquence, bandeau « serveur introuvable », greffons de `commun/` et lien « Version classique » disparaissaient. Nouveau modèle `outils/immersif/modele-variante/prof.html`, greffons ajoutés à `index.html` (`GREFFONS_INDEX`), service worker : greffons et données gardés hors connexion, numéro de cache conservé s'il n'y a rien de neuf, augmenté sinon.
+- Les 12 variantes mises à jour (service workers incrémentés). Tests : `vingt-mille-lieues/tests/test-boutons-enseignant-direct.js` (serveur local + une équipe : chaque bouton de prof.html arrive chez l'équipe, réglages pendant la partie, export CSV) et `vingt-mille-lieues/tests/test-maj-moteur.py` (--maj-moteur ne change rien à une variante à jour).
+
 ## 2026-11-07 — fonds sonores adaptés et musique d'ambiance
 - Les 11 variantes immersives utilisaient toutes l'ambiance « vent » (bruit filtré à va-et-vient lent) : elle sonnait comme un ressac, hors de propos pour un château, une assemblée ou un atelier.
 - `js/sons.js` : 11 nouvelles ambiances sans va-et-vient régulier (piece, brise, oiseaux, murmure, crepitement, atelier, horloge, mijotage, ruisseau, cloches, pluie) et une **musique d'ambiance générée** (8 styles). Nautilus garde ses sons marins.
