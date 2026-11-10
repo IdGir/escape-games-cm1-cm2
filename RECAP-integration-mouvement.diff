@@ -1,0 +1,491 @@
+diff --git a/README.md b/README.md
+index ac8cc7b..f2acc95 100644
+--- a/README.md
++++ b/README.md
+@@ -20,6 +20,7 @@ Treize escape games d'histoire, de géographie, d'EMC et de sciences, jouables d
+ | 🍲 | **Le Grand Repas du chef** — Sciences, l'alimentation humaine : besoins alimentaires et nutrition | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/alimentation/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/alimentation/) | [alimentation/README.md](alimentation/README.md) | [liste](alimentation/assets/README.md) |
+ | 💡 | **Le Phare de l'île Lumière** — Sciences, la lumière : sources, ombres, Soleil et Lune | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/lumiere/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/lumiere/) | [lumiere/README.md](lumiere/README.md) | [liste](lumiere/assets/README.md) |
+ | 🧊 | **La Fabrique des états** — Sciences, les états de la matière, l'air, les changements d'état de l'eau | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/etats-matiere/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/etats-matiere/) | [etats-matiere/README.md](etats-matiere/README.md) | [liste](etats-matiere/assets/README.md) |
++| ⏱️ | **Le Grand Prix de l'observatoire** — Sciences, mesurer une distance et une durée, types de mouvement, la Terre autour du Soleil | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/mouvement/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/mouvement/) | [mouvement/README.md](mouvement/README.md) | [liste](mouvement/assets/README.md) |
+ 
+ - 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/ — avec la **frise de l'année** : les 26 jeux de la progression sur les périodes P1 à P5 (Années A et B), en couleur ceux qui sont déjà jouables
+ - 📅 **L'année en escape games** (périodes, Années A/B, points du programme couverts) : https://idgir.github.io/escape-games-cm1-cm2/annee.html
+@@ -48,7 +49,7 @@ fois pour toutes.
+ ### 📲 Sur tablette, sans internet — application installable
+ 
+ Ouvrez une fois l'accueil en ligne dans Chrome ou Edge : quand le bloc **📲 Sur tablette, sans internet**
+-indique « ✅ Prêt hors connexion », les 14 jeux fonctionnent **sans réseau et sans serveur**. Le bouton
++indique « ✅ Prêt hors connexion », les 15 jeux fonctionnent **sans réseau et sans serveur**. Le bouton
+ **📲 Installer l'application** les place sur l'écran d'accueil de la tablette. Hors connexion, les vidéos sont
+ remplacées par les images ou les décors dessinés. Détails et mise à jour : [outils-pwa/README.md](outils-pwa/README.md).
+ 
+@@ -151,6 +152,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
+ | Le Grand Repas du chef | `alimentation/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = coffre, Livre des cinq services et fin ; `&enigme=K` vise une énigme | [salle 4, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/alimentation/?salle=4&niveau=CM2&enigme=1) |
+ | Le Phare de l'île Lumière | `lumiere/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = tableau de commande, registre du phare et fin ; `&enigme=K` vise une énigme | [salle 5, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/lumiere/?salle=5&niveau=CM2&enigme=3) |
+ | La Fabrique des états | `etats-matiere/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = pupitre, registre de la Fabrique et fin ; `&enigme=K` vise une énigme | [salle 4, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/etats-matiere/?salle=4&niveau=CM2&enigme=3) |
++| Le Grand Prix de l'observatoire | `mouvement/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = chronomètre officiel, coffre du Grand Prix et fin ; `&enigme=K` vise une énigme | [salle 2, énigme 1, CM1](https://idgir.github.io/escape-games-cm1-cm2/mouvement/?salle=2&niveau=CM1&enigme=1) |
+ 
+ ---
+ 
+@@ -184,7 +186,7 @@ imprimée ou en régénérer les visuels : [outils-lecons/README.md](outils-leco
+ 
+ ## 2 ter. Règles de jeu communes (moteur v2, octobre 2026)
+ 
+-Les 14 jeux suivent les mêmes règles, pensées pour que les élèves **réfléchissent et consultent les
++Les 15 jeux suivent les mêmes règles, pensées pour que les élèves **réfléchissent et consultent les
+ leçons** plutôt que de cliquer au hasard :
+ 
+ - **Tout juste du premier coup = 10 points**, après une erreur = **3 points** seulement (rappel en
+@@ -208,7 +210,7 @@ Vérification : ajouter `&palier=decouverte` à une adresse en `niveau=CM1`.
+ 
+ Scores maximaux : 185 (CM1) / 235 (CM2) pour les jeux à 5 salles (195 / 245 pour l'abbaye, avec le
+ fermoir), 95 pour la Déclaration et le Tour du monde ; Mission géographique : 10 points par énigme.
+-Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 14 jeux :
++Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 15 jeux :
+ [outils-tests/README.md](outils-tests/README.md).
+ 
+ ---
+@@ -316,7 +318,7 @@ PROJET ESCAPE GAMES/
+ ├── lancer.bat              Serveur local, Windows (double-clic)
+ ├── lancer-mac.command      Serveur local, Mac
+ ├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
+-├── outils-tests/          Tests automatiques des 14 jeux (Node + jsdom) : node outils-tests/tous.js
++├── outils-tests/          Tests automatiques des 15 jeux (Node + jsdom) : node outils-tests/tous.js
+ ├── CHARTE-GRAPHIQUE.md    Charte graphique commune : palette, traits, décors, personnages, médias
+ ├── commun/                ★ Tronc commun du moteur (médias, sons, voix, énigmes, impressions…) : un seul
+ │                           exemplaire pour tous les jeux — voir commun/README.md
+@@ -436,7 +438,8 @@ PROJET ESCAPE GAMES/
+ │   ├── assets/data/        ★ enigmes.json (20 énigmes, schémas dessinés) · lecons.json = 5 leçons rédigées
+ │   ├── css/ · js/          moteur commun (commun/js/)
+ │   └── tests/              test-jeu.js · test-verifier.js (Node + jsdom) · test_json.py · generer-readme.py
+-└── etats-matiere/          🧊 La Fabrique des états (sciences, les états de la matière, l'air, les changements d'état de l'eau)
++├── etats-matiere/          🧊 La Fabrique des états (sciences, les états de la matière, l'air, les changements d'état de l'eau)
++└── mouvement/              ⏱️ Le Grand Prix de l'observatoire (sciences, distances, durées, types de mouvement)
+     ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
+     ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
+     ├── A-VERIFIER.md       Points à contrôler (programme 2026, valeurs, données inventées)
+diff --git a/commun/README.md b/commun/README.md
+index bb21208..839d6b5 100644
+--- a/commun/README.md
++++ b/commun/README.md
+@@ -55,7 +55,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
+ | `js/mascotte.js` + `donnees/mascotte.js` | N11 — « Noa », mascotte commune (personnage original, 200 × 320, squelette commun animé, carnation hâlée de la palette, voix par la synthèse vocale, sous-titres) : accueille la classe (accueil de la collection et de chaque jeu), explique les règles communes au premier lancement (« ❓ Comment jouer ? » : barème, coffre, indices), annonce les trophées gagnés à l'écran de fin ; jamais pendant les énigmes ; ⚙️ → 🧑‍🎓 Mascotte (avec voix · sans voix · désactivée) ; aucun effet sur le score | l'accueil + les 13 jeux « salles » |
+ | `js/pwa.js` | A4 — enregistre le service worker `sw.js` (application installable, hors connexion ; voir `outils-pwa/README.md`) | les 13 jeux et l'accueil |
+ 
+-\* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation, lumiere, etats-matiere.
++\* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation, lumiere, etats-matiere, mouvement.
+ `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres
+ (énigme unique par salle) ; `mission-geo` a son propre moteur (16 séances).
+ 
+diff --git a/commun/donnees/catalogue.js b/commun/donnees/catalogue.js
+index 496cc55..e1beb35 100644
+--- a/commun/donnees/catalogue.js
++++ b/commun/donnees/catalogue.js
+@@ -264,13 +264,14 @@ var CATALOGUE = {
+     "P2"
+    ],
+    "competences": "Mesurer une distance et une durée lors d'un déplacement ; différents types de mouvement.",
+-   "dossier": null,
++   "dossier": "mouvement",
++   "immersif": "immersifs/mouvement",
+    "icone": "⏱️",
+    "couleurs": [
+-    "#2b5d6b",
+-    "#7fb3c8"
++    "#1d2f52",
++    "#d9a23a"
+    ],
+-   "resume": "",
++   "resume": "Le matin du Grand Prix des véhicules de l'école, le vent a dispersé les feuilles de mesure de Margaux : les commissaires retrouvent les cinq mots du coffre, de la distance à l'observateur, en passant par la durée, la vitesse et la trajectoire.",
+    "prompt": "11-mouvement.md",
+    "programme": [
+     "st2026"
+diff --git a/commun/tests/test-coherence.js b/commun/tests/test-coherence.js
+index ae55442..7c089c5 100644
+--- a/commun/tests/test-coherence.js
++++ b/commun/tests/test-coherence.js
+@@ -9,7 +9,7 @@
+ const fs = require("fs"), path = require("path");
+ const { charger, compteur, dodo, attendreQue, RACINE } = require("../../outils-tests/charge");
+ const T = compteur("Tronc commun et cohérence du moteur"); const ok = T.ok;
+-const JEUX8 = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
++const JEUX8 = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"];
+ const COMMUNS = fs.readdirSync(path.join(RACINE, "commun", "js")).filter(f => f.endsWith(".js"));
+ 
+ function disque(){
+diff --git a/commun/tests/test-greffons.js b/commun/tests/test-greffons.js
+index 2496443..cad84e5 100644
+--- a/commun/tests/test-greffons.js
++++ b/commun/tests/test-greffons.js
+@@ -10,7 +10,7 @@ const path = require("path");
+ const { charger, compteur, dodo, attendreQue, RACINE } = require("../../outils-tests/charge");
+ const T = compteur("Greffons du tronc commun"); const ok = T.ok;
+ const J = j => path.join(RACINE, j);
+-const JEUX8 = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
++const JEUX8 = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"];
+ const SECTIONS = {};
+ 
+ /* ---- B6 : transitions entre salles ---- */
+diff --git a/commun/tests/test-hors-ligne.js b/commun/tests/test-hors-ligne.js
+index 13c8b40..ee01c03 100644
+--- a/commun/tests/test-hors-ligne.js
++++ b/commun/tests/test-hors-ligne.js
+@@ -32,7 +32,7 @@ function controleListe(L){
+   const absents = L.FICHIERS_CODE.filter(f => !fs.existsSync(path.join(RACINE, f)));
+   ok(!absents.length, "fichiers listés présents sur le disque " + absents.slice(0, 5).join(", "));
+   const pages = ["index.html", "classement.html", "resultats.html"].concat(
+-    ["chateau-fort", "constitution", "declaration", "melanges", "mission-geo", "moyen-age-abbaye", "objets-techniques", "station-meteo", "tour-du-monde", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]
++    ["chateau-fort", "constitution", "declaration", "melanges", "mission-geo", "moyen-age-abbaye", "objets-techniques", "station-meteo", "tour-du-monde", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"]
+       .flatMap(j => [j + "/index.html", j + "/lecons-imprimables.html"]));
+   const manquants = [];
+   for (const p of pages) {
+diff --git a/commun/tests/test-immersif-greffons.js b/commun/tests/test-immersif-greffons.js
+index 2fa540b..e1e8e7f 100644
+--- a/commun/tests/test-immersif-greffons.js
++++ b/commun/tests/test-immersif-greffons.js
+@@ -9,7 +9,7 @@ const fs = require("fs"), path = require("path");
+ const { charger, compteur, dodo, attendreQue, clic, RACINE } = require("../../outils-tests/charge");
+ const T = compteur("Outils communs dans les variantes immersives"); const ok = T.ok;
+ const J = j => path.join(RACINE, "immersifs", j);
+-const IMM = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"];
++const IMM = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "mouvement", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"];
+ const avant = w => { w.VML_RAPIDE = true; };
+ const SECTIONS = {};
+ const donnees = j => JSON.parse(fs.readFileSync(path.join(J(j), "assets/data/enigmes.json"), "utf8"));
+diff --git a/commun/tests/test-pages.js b/commun/tests/test-pages.js
+index 740550c..a8a4602 100644
+--- a/commun/tests/test-pages.js
++++ b/commun/tests/test-pages.js
+@@ -192,7 +192,7 @@ SECTIONS.F4 = async () => {
+ SECTIONS.D4 = async () => {
+   console.log("\n== D4 : éditeur d'énigmes (editeur.html) ==");
+   const path = require("path");
+-  for (const j of ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]) {
++  for (const j of ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"]) {
+     const { w, erreurs } = await charger(RACINE, "?jeu=" + j, { page: "editeur.html", attente: 600 });
+     await attendreQue(() => w.document.querySelectorAll("#arbre .item").length, 3000);
+     const E = w.EDITEUR, b = E.bilanGlobal();
+@@ -533,7 +533,7 @@ SECTIONS.N18 = async () => {
+   ok(/Modèle vierge/.test(X.w.document.getElementById("sous-titre").textContent) && X.erreurs.length === 0, "jeu inconnu : modèle vierge, sans erreur");
+ 
+   // liens depuis chaque jeu et depuis la vue d'ensemble de l'année
+-  const jeux = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
++  const jeux = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"];
+   const sans = jeux.filter(j => !fs.readFileSync(path.join(RACINE, j, "prof.html"), "utf8").includes(`../sequences/fiche.html?jeu=${j}`));
+   ok(sans.length === 0, "prof.html des 12 jeux : bouton « 📘 Fiche de séquence » " + sans.join(", "));
+   const A = await charger(RACINE, "", { page: "annee.html", attente: 600 });
+diff --git a/demo.html b/demo.html
+index 66506cd..ff170b1 100644
+--- a/demo.html
++++ b/demo.html
+@@ -55,7 +55,7 @@ const EXTRAITS = {
+   "objets-techniques": "?salle=4&niveau=CM2", "melanges": "?salle=2&niveau=CM1", "declaration": "?salle=1&niveau=CM2",
+   "constitution": "?salle=4&niveau=CM2", "mission-geo": "?seance=13&niveau=CM1", "tour-du-monde": "?salle=1&niveau=CM2",
+   "versailles": "?salle=3&niveau=CM2", "renaissance": "?salle=3&niveau=CM1",
+-  "alimentation": "?salle=4&niveau=CM2", "lumiere": "?salle=3&niveau=CM1", "etats-matiere": "?salle=3&niveau=CM2"
++  "alimentation": "?salle=4&niveau=CM2", "lumiere": "?salle=3&niveau=CM1", "etats-matiere": "?salle=3&niveau=CM2", "mouvement": "?salle=2&niveau=CM1"
+ };
+ const q = new URLSearchParams(location.search);
+ const jeux = CATALOGUE.jeux.filter(j => j.dossier && EXTRAITS[j.dossier]);
+diff --git a/editeur.html b/editeur.html
+index 740c97e..0719ef2 100644
+--- a/editeur.html
++++ b/editeur.html
+@@ -77,7 +77,7 @@
+ <script src="commun/donnees/catalogue.js?c3"></script>
+ <script>
+ "use strict";
+-const JEUX = ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
++const JEUX = ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"];
+ const TYPES = {
+   qcm: "QCM", vraifaux: "Vrai ou faux", association: "Association (paires)", ordre: "Remettre dans l'ordre", tri: "Tri en colonnes",
+   trous: "Texte à trous", lettres: "Lettres cachées", code: "Cadenas à code", intrus: "Trouver l'intrus", plan: "Plan / schéma à compléter",
+diff --git a/index.html b/index.html
+index dc70bc2..eadae28 100644
+--- a/index.html
++++ b/index.html
+@@ -8,7 +8,7 @@
+ <style>
+   :root{
+     --fond:#f6f4ef; --papier:#fff; --encre:#1f2430; --doux:#5d6472; --ligne:#e2ddd2;
+-    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227; --ali:#2b5d6b; --ali-2:#d9a21b; --lum:#1d3557; --lum-2:#f2c230; --etm:#1f4e5f; --etm-2:#7fb8e6;
++    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227; --ali:#2b5d6b; --ali-2:#d9a21b; --lum:#1d3557; --lum-2:#f2c230; --etm:#1f4e5f; --etm-2:#7fb8e6; --mvt:#1d2f52; --mvt-2:#d9a23a;
+   }
+   *{box-sizing:border-box}
+   body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+@@ -64,6 +64,8 @@
+   .lumiere .jouer{background:var(--lum)}
+   .etats-matiere .bandeau{background:linear-gradient(135deg,var(--etm),#0d2129 60%,var(--etm-2))}
+   .etats-matiere .jouer{background:var(--etm)}
++  .mouvement .bandeau{background:linear-gradient(135deg,var(--mvt),#0e1a33 60%,var(--mvt-2))}
++  .mouvement .jouer{background:var(--mvt)}
+   .meteo .bandeau{background:linear-gradient(135deg,var(--met),#0f3350 60%,var(--met-2))}
+   .meteo .jouer{background:var(--met)}
+   .enseignant{max-width:1100px;margin:0 auto 50px;padding:0 20px}
+@@ -371,6 +373,26 @@
+       </div>
+     </div>
+   </article>
++  <article class="jeu mouvement">
++    <div class="bandeau">
++      <img class="affiche" src="mouvement/assets/images/affiche.jpg" alt="Affiche : Le Grand Prix de l'observatoire" loading="lazy" onerror="this.remove()">
++      <div class="icone">⏱️</div>
++      <h2>Le Grand Prix de l'observatoire</h2>
++      <div class="meta">Sciences · Distances, durées, types de mouvement, la Terre autour du Soleil · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
++    </div>
++    <div class="corps">
++      <p>Le matin du Grand Prix des véhicules de l'école, le vent a dispersé les feuilles de mesure de Margaux. Les commissaires retrouvent les cinq mots du coffre : distance, durée, vitesse, trajectoire et observateur.</p>
++      <a class="jouer" href="immersifs/mouvement/">▶ Jouer</a>
++      <div class="liens">
++        <a class="telecharger-affiche" href="mouvement/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
++        <a class="bande-annonce" href="mouvement/assets/videos/bande-annonce.mp4" data-titre="Le Grand Prix de l'observatoire">🎬 Bande-annonce</a>
++        <a class="classique" href="mouvement/">🎓 Version classique (CM1 / CM2)</a>
++        <a class="prof" href="immersifs/mouvement/prof.html" hidden>👨‍🏫 Tableau de bord</a>
++        <a class="prof" href="mouvement/prof.html" hidden>👨‍🏫 Tableau de bord (classique)</a>
++        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/mouvement#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
++      </div>
++    </div>
++  </article>
+ </main>
+ 
+ <section class="enseignant" id="annee">
+diff --git a/outils-docs/maj-journaux.py b/outils-docs/maj-journaux.py
+index c524d87..a19e2ed 100644
+--- a/outils-docs/maj-journaux.py
++++ b/outils-docs/maj-journaux.py
+@@ -14,7 +14,7 @@ Repère technique en fin de fichier : <!-- dernier-commit: … -->.
+ import os, re, subprocess, sys, datetime
+ RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ JEUX = ["declaration", "tour-du-monde", "mission-geo", "constitution", "moyen-age-abbaye",
+-        "chateau-fort", "station-meteo", "melanges", "objets-techniques", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]
++        "chateau-fort", "station-meteo", "melanges", "objets-techniques", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"]
+ MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+ REPERE = re.compile(r"<!-- dernier-commit: ([0-9a-f]+) -->")
+ 
+diff --git a/outils-lecons/brancher_boutons.py b/outils-lecons/brancher_boutons.py
+index 8a927b2..cefc989 100644
+--- a/outils-lecons/brancher_boutons.py
++++ b/outils-lecons/brancher_boutons.py
+@@ -4,7 +4,7 @@ dans le tableau de bord (prof.html) de chaque jeu. Idempotent."""
+ import os, re, sys
+ RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ JEUX = ["chateau-fort", "moyen-age-abbaye", "station-meteo", "objets-techniques", "melanges",
+-        "constitution", "declaration", "tour-du-monde", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]
++        "constitution", "declaration", "tour-du-monde", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"]
+ SANS_SALLE = {"declaration", "tour-du-monde"}
+ MARQUE = "btn-lecons-a4"
+ 
+diff --git a/outils-lecons/verifier.py b/outils-lecons/verifier.py
+index 0c8710e..34ee22e 100644
+--- a/outils-lecons/verifier.py
++++ b/outils-lecons/verifier.py
+@@ -20,7 +20,7 @@ from playwright.async_api import async_playwright
+ 
+ BASE = "http://127.0.0.1:8765"
+ JEUX = ["moyen-age-abbaye", "chateau-fort", "station-meteo", "objets-techniques", "melanges",
+-        "constitution", "declaration", "tour-du-monde", "mission-geo", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]
++        "constitution", "declaration", "tour-du-monde", "mission-geo", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"]
+ erreurs = []
+ 
+ 
+diff --git a/outils-moteur/ajouter_greffon.py b/outils-moteur/ajouter_greffon.py
+index 6874daf..56e5f20 100644
+--- a/outils-moteur/ajouter_greffon.py
++++ b/outils-moteur/ajouter_greffon.py
+@@ -10,8 +10,8 @@ augmenter son numéro de version (?c2…) avec --version et --remplacer.
+ """
+ import argparse, pathlib, re, sys
+ JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges",
+-        "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]
+-IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"]
++        "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"]
++IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "mouvement", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"]
+ RACINE = pathlib.Path(__file__).resolve().parent.parent
+ 
+ def main():
+diff --git a/outils-tests/moteur-commun.js b/outils-tests/moteur-commun.js
+index 3b7a8fd..0a8fb0d 100644
+--- a/outils-tests/moteur-commun.js
++++ b/outils-tests/moteur-commun.js
+@@ -6,7 +6,7 @@
+    partagent le moteur d'énigmes v2 (outils-moteur/enigmes.js) :
+    constitution, station-meteo, melanges, objets-techniques,
+    moyen-age-abbaye, chateau-fort, versailles, renaissance,
+-   alimentation, lumiere, etats-matiere.
++   alimentation, lumiere, etats-matiere, mouvement.
+ 
+    Tout est déduit des données du jeu (enigmes.json, dialogues.json) :
+    nombre d'énigmes par niveau, mots-clés, barème. Un test de jeu se
+diff --git a/outils-tests/verifier-responsive.js b/outils-tests/verifier-responsive.js
+index d9bffbf..1a864f9 100644
+--- a/outils-tests/verifier-responsive.js
++++ b/outils-tests/verifier-responsive.js
+@@ -42,8 +42,8 @@ const FORMATS = {
+   tablette7: { nom: "tablette 7″", width: 600, height: 960, mobile: true },
+   smartphone: { nom: "smartphone", width: 390, height: 844, mobile: true }
+ };
+-const IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"].map(j => "immersifs/" + j);
+-const JEUX_SALLES = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
++const IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "mouvement", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"].map(j => "immersifs/" + j);
++const JEUX_SALLES = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"];
+ const VALIDER = '[data-valider], [id^="btn-verif"]';
+ const INDICE = '#btn-indice, [id^="indice-"]';
+ /* Variantes immersives (jouées par défaut) : accueil, énigme ouverte depuis l'objet du décor, coffre, fin d'escale */
+diff --git a/serveur.py b/serveur.py
+index 8e3cff0..22ebcd2 100644
+--- a/serveur.py
++++ b/serveur.py
+@@ -6,7 +6,7 @@
+  Sert les jeux (declaration/, tour-du-monde/, mission-geo/,
+  constitution/, station-meteo/, melanges/, moyen-age-abbaye/,
+  objets-techniques/, chateau-fort/, versailles/, renaissance/,
+- alimentation/, lumiere/, etats-matiere/),
++ alimentation/, lumiere/, etats-matiere/, mouvement/),
+  la page d'accueil et verifier.html, depuis la racine du projet.
+ ============================================================
+  Serveur HTTP stdlib + mini-API REST pour le pilotage prof.
+@@ -309,7 +309,7 @@ class Handler(BaseHTTPRequestHandler):
+             jeu = data.get("jeu", "")
+             if self.client_address[0] not in ("127.0.0.1", "::1"):
+                 self.json_reponse({"ok": False, "erreur": "enregistrement réservé à l'ordinateur qui a lancé le serveur"})
+-            elif jeu not in ("melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"):
++            elif jeu not in ("melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"):
+                 self.json_reponse({"ok": False, "erreur": "jeu inconnu"})
+             else:
+                 try:
+@@ -357,7 +357,7 @@ class Handler(BaseHTTPRequestHandler):
+             # Inventaire des médias déposés, lu par verifier.html :
+             # { "declaration/assets/videos/salle4.mp4": taille, ... }
+             fichiers = {}
+-            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo", "melanges", "moyen-age-abbaye", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"):
++            for jeu in ("declaration", "tour-du-monde", "mission-geo", "constitution", "station-meteo", "melanges", "moyen-age-abbaye", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"):
+                 for racine, _, noms in os.walk(os.path.join(jeu, "assets")):
+                     for nom in noms:
+                         chemin = os.path.join(racine, nom)
+@@ -457,6 +457,7 @@ def main():
+     print("     Alimentation (sc.)    →  http://{}:{}/alimentation/".format(ip, PORT))
+     print("     Lumière (sciences)    →  http://{}:{}/lumiere/".format(ip, PORT))
+     print("     États de la matière   →  http://{}:{}/etats-matiere/".format(ip, PORT))
++    print("     Mouvement (sciences)  →  http://{}:{}/mouvement/".format(ip, PORT))
+     print()
+     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
+     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
+@@ -472,6 +473,7 @@ def main():
+     print("     http://127.0.0.1:{}/alimentation/prof.html".format(PORT))
+     print("     http://127.0.0.1:{}/lumiere/prof.html".format(PORT))
+     print("     http://127.0.0.1:{}/etats-matiere/prof.html".format(PORT))
++    print("     http://127.0.0.1:{}/mouvement/prof.html".format(PORT))
+     print()
+     print("  🔍 VÉRIFICATION (médias, accès direct aux énigmes) :")
+     print("     http://127.0.0.1:{}/verifier.html".format(PORT))
+diff --git a/verifier.html b/verifier.html
+index bd48d84..212462f 100644
+--- a/verifier.html
++++ b/verifier.html
+@@ -157,6 +157,7 @@ const ONGLETS = [
+   { id: "alimentation",  titre: "🍲 Le Grand Repas du chef" },
+   { id: "lumiere",       titre: "💡 Le Phare de l'île Lumière" },
+   { id: "etats-matiere", titre: "🧊 La Fabrique des états" },
++  { id: "mouvement", titre: "⏱️ Le Grand Prix de l'observatoire" },
+   { id: "coherence",     titre: "🧬 Cohérence du moteur" }
+ ];
+ 
+@@ -229,7 +230,7 @@ async function construireDeclaration(){
+     ]})),
+     familles: [
+       { titre: "Décors et cinématiques", slots: [
+-        decor(R, "intro", "Cinématique d'ouverture", "Plein écran au clic sur « Commencer ». Sautée si absente.", [{ libelle: "Accueil", url: R }]),
++        decor(R, "intro", "Cinématique d'ouverture", "Plein écran au clic sur « Rejoindre le Grand Prix ». Sautée si absente.", [{ libelle: "Accueil", url: R }]),
+         ...salles.map(s => decor(R, "salle" + s.num, `Salle ${s.num} — ${s.titre}`,
+           "Décor de fond de la salle" + (s.num === 1 ? ", et de l'écran d'accueil" : "") + ".", deux(s.num))),
+         decor(R, "final", "Cinématique de fin", "Plein écran après la dernière énigme. Sautée si absente.", [{ libelle: "Salle 5", url: lien(5, "CM2") }])
+@@ -1046,6 +1047,68 @@ async function construireEtatsMatiere(){
+   };
+ }
+ 
++async function construireMouvement(){
++  const R = "mouvement/";
++  const [dial, lec, enig] = await Promise.all([
++    json(R + "assets/data/dialogues.json"),
++    json(R + "assets/data/lecons.json"),
++    json(R + "assets/data/enigmes.json")
++  ]);
++  const lien = (n, niv, e) => `${R}?salle=${n}&niveau=${niv}` + (e ? "&enigme=" + e : "");
++  const deux = n => [{ libelle: "CM1", url: lien(n, "CM1") }, { libelle: "CM2", url: lien(n, "CM2") }];
++  const salles = dial.salles;
++  const persoSalles = p => salles.filter(s => [s.dialogue_intro, s.dialogue_fin].some(d => d && d.perso === p))
++                                 .map(s => ({ libelle: "Salle " + s.num, url: lien(s.num, "CM2") }));
++  /* Énigmes du niveau demandé, dans l'ordre où le jeu les présente */
++  const enigmesDe = (num, niv) => {
++    const b = (enig.salles || []).find(x => x.num === num);
++    return b ? (b.enigmes || []).filter(e => !e.niveaux || e.niveaux.includes(niv)) : [];
++  };
++  const illustrations = [];
++  (enig.salles || []).forEach(b => (b.enigmes || []).forEach(e => {
++    if(!e.media || !e.media.base) return;
++    const niv = (!e.niveaux || e.niveaux.includes("CM1")) ? "CM1" : "CM2";
++    const rang = enigmesDe(b.num, niv).findIndex(x => x.id === e.id) + 1;
++    illustrations.push(imageSeule(R + "assets/images/cartes/", e.media.base,
++      `Énigme ${e.id} — ${e.titre}`,
++      (e.media.legende || "Illustration facultative") + ". Sans fichier, l'énigme reste jouable.",
++      EXT.image, [{ libelle: "Salle " + b.num + " · " + niv, url: lien(b.num, niv, rang) }]));
++  }));
++  return {
++    id: "mouvement", nom: "Le Grand Prix de l'observatoire", R,
++    defaut: "Sans fichier : décor dessiné",
++    tests: ["CM1", "CM2"].map(niv => ({ titre: niv + " — " + salles.reduce((t,s)=>t+enigmesDe(s.num,niv).length,0) + " énigmes", liens: [
++      ...salles.flatMap(s => [
++        { libelle: s.num + ". " + s.titre, url: lien(s.num, niv) },
++        ...enigmesDe(s.num, niv).map((e, i) => ({ libelle: "   ↳ " + e.id + " " + e.titre + " (" + e.type + ")", url: lien(s.num, niv, i + 1) }))
++      ]),
++      { libelle: "🏁 Le chronomètre officiel, le coffre du Grand Prix (quizz) et la fin", url: lien(6, niv) }
++    ]})),
++    familles: [
++      { titre: "Décors et cinématiques", slots: [
++        decor(R, "intro", "Cinématique d'ouverture", "Plein écran au clic sur « Rejoindre le Grand Prix ». Sautée si absente.", [{ libelle: "Accueil", url: R }]),
++        ...salles.map(s => decor(R, "salle" + s.num, `Salle ${s.num} — ${s.titre}`,
++          "Décor de fond de la salle" + (s.num === 1 ? ", et de l'écran d'accueil" : "") + ".", deux(s.num))),
++        decor(R, "final", "Cinématique de fin", "Plein écran quand le Grand Prix est validé. Sautée si absente.", [{ libelle: "Fin", url: lien(6, "CM2") }])
++      ]},
++      { titre: "Personnages", slots: Object.entries(dial.personnages || {}).map(([cle, p]) =>
++          personnage(R, cle, (p && p.nom) || cle, persoSalles(cle))) },
++      { titre: "Illustrations d'énigmes (facultatives)", slots: illustrations },
++      { titre: "Documents des leçons (📚)", slots: listeLecons(lec)
++          .filter(l => l.document && l.document.type === "image")
++          .map(l => imageSeule(R + "assets/images/documents/", l.document.fichier || l.id, l.document.titre,
++            `Leçon « ${l.titre} ». Format .jpg uniquement.`, EXT.jpg)) }
++    ],
++    docs: [
++      { libelle: "📘 Guide du jeu (énigmes et solutions)", url: lienGitHub(R + "README.md") },
++      { libelle: "🎞️ Liste des médias", url: lienGitHub(R + "assets/README.md") },
++      { libelle: "📖 Guide pédagogique", url: lienGitHub(R + "GUIDE-PEDAGOGIQUE.md") },
++      { libelle: "✅ Points vérifiés et à relire", url: lienGitHub(R + "A-VERIFIER.md") },
++      { libelle: "▶ Écran d'accueil du jeu", url: R }
++    ]
++  };
++}
++
+ const CONSTRUCTEURS = {
+   "declaration": construireDeclaration,
+   "tour-du-monde": construireTour,
+@@ -1060,7 +1123,8 @@ const CONSTRUCTEURS = {
+   "renaissance": construireRenaissance,
+   "alimentation": construireAlimentation,
+   "lumiere": construireLumiere,
+-  "etats-matiere": construireEtatsMatiere
++  "etats-matiere": construireEtatsMatiere,
++  "mouvement": construireMouvement
+ };
+ 
+ /* ---------------- Quels fichiers existent ? ----------------
+@@ -1322,8 +1386,8 @@ function rendre(){
+         absentes d'autres : la trace typique d'un correctif appliqué à un
+         seul jeu et oublié ailleurs.
+    ============================================================ */
+-const COH_JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
+-const COH_COMMUN_6 = ["constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
++const COH_JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"];
++const COH_COMMUN_6 = ["constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement"];
+ const COH_MODULES = ["media", "audio", "narration", "api", "sync", "fiche-mission", "enigmes", "impression", "transitions", "accessibilite", "palier-decouverte", "indices-adaptatifs", "minuteur-equipe", "jeu-suivant", "variantes", "compte-rendu", "mode-solo", "pwa", "bandeau-bo"];
+ const COH_PROPRES = ["app", "reglages", "lecons", "decors", "personnages"];
+ const COH_CHAMPS = ["id", "titre", "voix", "voixFeminines", "ambiances", "ia"];

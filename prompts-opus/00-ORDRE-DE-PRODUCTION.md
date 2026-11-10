@@ -28,7 +28,7 @@ Classés dans l'ordre du calendrier scolaire : la période 1 est en cours, on co
 | 08 | Le Grand Repas du chef | Sciences | A | P2 | Besoins alimentaires et nutrition humaine (programme 2026 : besoin de matière pour grandir, variation des besoins, mastication et digestion, circulation sanguine et effort ; « production et conservation des aliments » ne figure plus au programme). | `08-alimentation.md` | [x] (commit 3f8fe6e, 03/10/2026, à pousser) |
 | 09 | Le Phare de l'île Lumière | Sciences | A | P2 | La lumière (matière, mouvement, énergie et information). | `09-lumiere.md` | [x] (commit 09603ba, 03/10/2026, à pousser) |
 | 10 | La Fabrique des états | Sciences | B | P2 | États et constitution de la matière à l'échelle macroscopique ; propriétés de la matière. | `10-etats-matiere.md` | [x] (immersif 5 grades le 07/11/2026, commit b74eade) |
-| 11 | Le Grand Prix de l'observatoire | Sciences | B | P2 | Mesurer une distance et une durée lors d'un déplacement ; différents types de mouvement. | `11-mouvement.md` | [ ] |
+| 11 | Le Grand Prix de l'observatoire | Sciences | B | P2 | Mesurer une distance et une durée lors d'un déplacement ; différents types de mouvement. | `11-mouvement.md` | [x] (commit 1b41786, 08/11/2026 ; pas encore sur l'accueil : voir RECAP-integration-mouvement.md) |
 | 12 | Les Archives du port | Histoire | A | P3 | La traite des esclaves Afrique-Amérique ; les échanges commerciaux avec les colonies. | `12-traite-colonies.md` | [ ] |
 | 13 | La Caravelle du capitaine | Histoire | B | P3 | Les progrès techniques des explorations ; la constitution des premiers empires coloniaux. | `13-grandes-explorations.md` | [ ] |
 | 14 | La Centrale en panne | Sciences | A | P3 | L'électricité. | `14-electricite.md` | [ ] |
