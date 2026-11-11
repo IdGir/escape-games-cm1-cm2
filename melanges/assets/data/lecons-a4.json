@@ -31,7 +31,11 @@
      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 116\" role=\"img\" aria-label=\"Tableau\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"26.9\" fill=\"#1f5f6b\"/><text x=\"110.8\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Étape</text><text x=\"290.8\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Affichage</text><text x=\"5.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >1. Je pose le récipient vide</text><text x=\"226.5\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >150 g</text><rect x=\"0.5\" y=\"56.0\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >2. J'appuie sur « tare »</text><text x=\"226.5\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >0 g</text><text x=\"5.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >3. Je verse le liquide</text><text x=\"226.5\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >masse du liquide</text><line x1=\"221.5\" y1=\"0\" x2=\"221.5\" y2=\"115.2\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"115.2\" fill=\"none\" stroke=\"#9aa4ad\" stroke-width=\"1\"/></svg>",
      "legende": "Sans tare : masse du liquide = masse totale − masse du récipient."
     }
-   ]
+   ],
+   "texte": {
+    "cm1": "<ul><li>La <b>balance à plateaux</b> compare : à l'<b>équilibre</b>, les masses sont égales.</li><li>La <b>balance électronique</b> donne la masse en <b>grammes</b> (g).</li><li><b>1 kg = 1 000 g</b></li></ul><div class='encadre'><b>Peser un liquide :</b> masse du liquide = récipient plein − récipient vide.</div>",
+    "cm2": "<ul><li>Balance à plateaux : à l'<b>équilibre</b>, les masses sont égales. Balance électronique : affichage direct.</li><li>La touche <b>tare</b> remet l'affichage à 0 avec le récipient.</li><li><b>1 t = 1 000 kg · 1 kg = 1 000 g · 1 g = 1 000 mg</b></li></ul><div class='encadre'><b>À retenir :</b> le <b>litre</b> mesure un <b>volume</b>, pas une masse : 1 L d'eau ≈ 1 kg ; 1 L d'huile ≈ 920 g (elle flotte).</div>"
+   }
   },
   "conservation": {
    "competence": "Distinguer mélanges homogènes et hétérogènes (la dissolution).",
@@ -47,7 +51,11 @@
      "type": "schema",
      "titre": "La conservation de la masse"
     }
-   ]
+   ],
+   "texte": {
+    "cm1": "<p>Le sucre dans l'eau n'a pas disparu : il s'est <b>dissous</b>. Si l'eau s'évapore, on retrouve le sel.</p><div class='encadre'>eau 200 g + sucre 20 g → <b>220 g</b> : la masse <b>se conserve</b>.</div><p>L'air est de la matière : il a une masse.</p><div class='encadre'><b>Sécurité :</b> au laboratoire, on ne goûte jamais et on ne sent jamais un produit.</div>",
+    "cm2": "<ul><li>Sucre et sel se <b>dissolvent</b> dans l'eau (pas le sable). La quantité dissoute est limitée.</li><li>Masse de l'eau + masse du solide = masse du mélange : 250 g + 20 g = <b>270 g</b>.</li><li><b>Dissoudre n'est pas fondre</b> : fondre = chaleur, solide → liquide.</li></ul><div class='encadre'><b>Sécurité :</b> au laboratoire, on ne goûte jamais et on ne sent jamais un produit.</div>"
+   }
   },
   "melanges": {
    "competence": "Distinguer mélanges homogènes et hétérogènes (l'observation).",
@@ -63,7 +71,11 @@
      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 161\" role=\"img\" aria-label=\"Tableau\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"42.5\" fill=\"#1f5f6b\"/><text x=\"90.0\" y=\"19.1\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Homogène</text><text x=\"90.0\" y=\"33.8\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >(un seul aspect)</text><text x=\"270.0\" y=\"19.1\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Hétérogène</text><text x=\"270.0\" y=\"33.8\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >(plusieurs aspects)</text><text x=\"5.0\" y=\"58.9\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >eau salée</text><text x=\"185.0\" y=\"58.9\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >eau et huile</text><rect x=\"0.5\" y=\"71.6\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"87.9\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >sirop à l'eau</text><text x=\"185.0\" y=\"87.9\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >vinaigrette</text><text x=\"5.0\" y=\"117.0\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >eau du robinet</text><text x=\"185.0\" y=\"117.0\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >eau boueuse</text><rect x=\"0.5\" y=\"129.8\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"146.1\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >air</text><text x=\"185.0\" y=\"146.1\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >riz et semoule</text><line x1=\"180.0\" y1=\"0\" x2=\"180.0\" y2=\"159.8\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"159.8\" fill=\"none\" stroke=\"#9aa4ad\" stroke-width=\"1\"/></svg>",
      "legende": "On observe à l'œil nu : distingue-t-on au moins deux constituants ?"
     }
-   ]
+   ],
+   "texte": {
+    "cm1": "<p>Un <b>mélange</b> contient au moins deux constituants.</p><ul><li><b>Homogène</b> : on ne voit qu'une seule chose (eau salée, eau sucrée).</li><li><b>Hétérogène</b> : on voit au moins deux choses (eau et huile, eau et sable).</li></ul><div class='encadre'><b>Attention :</b> l'eau salée <b>est</b> un mélange, même si on ne voit pas le sel !</div>",
+    "cm2": "<ul><li><b>Homogène</b> : on ne distingue pas les constituants à l'œil nu (eau salée, sirop, air).</li><li><b>Hétérogène</b> : on en distingue au moins deux (eau et huile, vinaigrette, eau boueuse).</li><li>Un mélange peut changer : le sel est d'abord hétérogène, puis homogène une fois dissous.</li></ul><div class='encadre'><b>À retenir :</b> bien observer permet de <b>choisir la méthode de séparation</b>.</div>"
+   }
   },
   "separer-solides": {
    "competence": "Séparer les constituants de mélanges solides (le tri, l'aimantation).",
@@ -78,7 +90,11 @@
      "titre": "Une différence, une méthode",
      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 145\" role=\"img\" aria-label=\"Tableau\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"26.9\" fill=\"#1f5f6b\"/><text x=\"57.1\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Différence</text><text x=\"171.4\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Méthode</text><text x=\"294.3\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Exemple</text><text x=\"5.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >la taille</text><text x=\"119.3\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >tamisage</text><text x=\"233.6\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >sable et cailloux</text><rect x=\"0.5\" y=\"56.0\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >le fer</text><text x=\"119.3\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >aimantation</text><text x=\"233.6\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >sable et limaille</text><text x=\"5.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >flotte ou coule</text><text x=\"119.3\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >flottation</text><text x=\"233.6\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >sciure et sable</text><rect x=\"0.5\" y=\"114.2\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"130.5\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >l'aspect</text><text x=\"119.3\" y=\"130.5\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >tri à la main</text><text x=\"233.6\" y=\"130.5\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >perles de couleur</text><line x1=\"114.3\" y1=\"0\" x2=\"114.3\" y2=\"144.2\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><line x1=\"228.6\" y1=\"0\" x2=\"228.6\" y2=\"144.2\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"144.2\" fill=\"none\" stroke=\"#9aa4ad\" stroke-width=\"1\"/></svg>"
     }
-   ]
+   ],
+   "texte": {
+    "cm1": "<p>Chaque méthode utilise une <b>différence</b> :</p><ul><li><b>Tri à la main</b> : gros objets.</li><li><b>Tamisage</b> : le tamis retient les gros grains.</li><li><b>Aimantation</b> : l'aimant attire le fer.</li><li><b>Flottation</b> : certains flottent, d'autres coulent.</li></ul><div class='encadre'><b>À retenir :</b> l'aimant attire le fer et l'acier, pas l'aluminium.</div>",
+    "cm2": "<p>On cherche une <b>différence</b> entre les constituants :</p><ul><li>la <b>taille</b> → <b>tamisage</b> ;</li><li>le <b>fer</b> → <b>aimantation</b> (fer et acier seulement) ;</li><li>flotter ou couler → <b>flottation</b> ;</li><li>l'aspect → <b>tri à la main</b>.</li></ul><div class='encadre'><b>À retenir :</b> un tamis ne sépare pas la limaille de fer du sable (grains de même taille) : on utilise l'aimant.</div>"
+   }
   },
   "separer-liquide": {
    "competence": "Séparer les constituants de mélanges solides et solide-liquide (filtration, décantation, évaporation).",
@@ -102,7 +118,11 @@
      "credit": "Photo : Nono vlf — CC BY-SA 3.0 — Wikimedia Commons.",
      "etiquette": "Photo"
     }
-   ]
+   ],
+   "texte": {
+    "cm1": "<ul><li><b>Décantation</b> : on laisse reposer, le solide tombe au fond, on verse doucement le liquide.</li><li><b>Filtration</b> : l'entonnoir et le <b>papier filtre</b> retiennent les grains.</li><li><b>Évaporation</b> : l'eau part, le sel reste.</li></ul><div class='encadre'><b>À retenir :</b> le sel <b>dissous</b> traverse le filtre : il faut faire <b>évaporer</b> l'eau (marais salants).</div>",
+    "cm2": "<ul><li><b>Décantation</b> : le solide non dissous se dépose ; on transvase le liquide.</li><li><b>Filtration</b> : le papier filtre retient les grains non dissous.</li><li><b>Évaporation</b> : l'eau part en vapeur, le solide dissous reste.</li></ul><div class='encadre'><b>À retenir :</b> un solide <b>dissous</b> traverse le filtre. Marais salants : le soleil et le vent évaporent l'eau, le paludier récolte le sel (35 g par litre d'eau de mer).</div>"
+   }
   }
  }
 }

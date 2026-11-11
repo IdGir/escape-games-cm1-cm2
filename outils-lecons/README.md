@@ -21,6 +21,26 @@ Ne modifiez pas `lecons-a4.json` à la main : éditez `jeux/<jeu>.py`, puis rela
 Le texte des leçons, lui, se modifie dans `<jeu>/assets/data/lecons.json` (il change alors aussi
 dans le jeu) ; il n'y a rien à reconstruire.
 
+## Rendu des pages (code couleur et dispositions)
+
+Un cadre fin par rôle, le même pour l'histoire, les sciences, la géographie et l'EMC :
+
+| Couleur | Contenu |
+|---|---|
+| Bleu | La leçon à connaître |
+| Vert | Le lexique |
+| Brun | La frise chronologique |
+| Orange | Le schéma, l'expérience, le protocole |
+| Violet | Le document |
+| Gris ardoise | Les cartes, graphiques et tableaux (agrandis au maximum) |
+
+Les couleurs sont définies en haut de `commun/css/lecons-a4.css` (`--bleu`, `--vert`, `--brun`, `--orange`, `--violet`, `--ardoise`).
+Le script `commun/js/lecons-a4.js` essaie deux dispositions pour chaque page et garde celle qui donne les plus grands visuels :
+- **A** : leçon à gauche, cartes et graphiques dans une colonne à droite (largeur de 70 à 112 mm) ;
+- **B** : leçon en pleine largeur (texte sur 2 colonnes), puis cartes et graphiques côte à côte en dessous.
+Le texte reste entre ≈ 9 et ≈ 12,5 pt ; les photos d'illustration ne servent qu'à remplir la place libre.
+Après un changement du CSS ou du JS, augmenter le numéro `?c2` dans les `lecons-imprimables.html` (et dans `modele/`) pour forcer le rechargement.
+
 ## Régénérer après une modification
 
 Outil : **Invite de commandes Windows** (touches Windows + R, taper `cmd`, Entrée), avec
@@ -58,3 +78,20 @@ Outil : **Invite de commandes Windows** (touches Windows + R, taper `cmd`, Entr�
 - Photos : celles du jeu (Wikimedia Commons, Gallica, Pixabay), crédit sous chaque photo.
 - Les tracés historiques (royaumes vers 511, empire en 814) sont **simplifiés et approximatifs** :
   c'est indiqué sous chaque carte.
+
+## Textes courts de la page A4 (cadre bleu « La leçon à connaître »)
+
+Les leçons du jeu (`assets/data/lecons.json`) sont rédigées pour être lues à l'écran. Sur la feuille A4, le cadre bleu
+doit être **court et écrit gros** (jusqu'à ≈ 16 pt) : chaque leçon a donc, en plus, un texte court propre à l'impression.
+
+- Fichiers : `outils-lecons/textes/<jeu>.json` → `{ "<id-leçon>": { "cm1": "<html>", "cm2": "<html>" } }`
+  (ou une simple chaîne HTML identique aux deux niveaux, utilisée pour `mission-geo`).
+- Style : 3 à 5 puces ou une courte phrase + un encadré `<div class='encadre'><b>À retenir :</b> …</div>`.
+  Garder dates, chiffres et mots de vocabulaire ; supprimer exemples et redites.
+- Quand un texte court existe, le bloc « J'apprends à… » n'est pas imprimé (le texte court suffit).
+  Pour le rétablir : dans `commun/js/lecons-a4.js`, remplacer `${texteCourt ? "" : blocObjectifs(l)}` par `${blocObjectifs(l)}`.
+- Fusion dans `lecons-a4.json` :
+  - `python3 outils-lecons/construire.py <jeu>` (avec Node) fusionne automatiquement `textes/<jeu>.json` ;
+  - `python3 outils-lecons/injecter_textes.py [<jeu>]` (sans Node) ne fait que cette fusion, et crée `lecons-a4.json` si absent (cas de `traite-colonies`).
+- Taille maximale du texte : constante `EMAX` dans `commun/js/lecons-a4.js` (1,6 = ≈ 16,5 pt).
+- Après toute modification du CSS ou du JS : incrémenter `?c3` dans les `lecons-imprimables.html`, le modèle et `construire.py`.

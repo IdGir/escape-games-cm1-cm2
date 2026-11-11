@@ -77,7 +77,7 @@ def copier_modele(jeu, scripts):
     html = open(os.path.join(mod, "lecons-imprimables.html"), encoding="utf-8").read()
     if scripts:
         tags = "".join(f'  <script src="{s}"></script>\n' for s in scripts)
-        balise = '  <script src="../commun/js/lecons-a4.js?c1"></script>'
+        balise = '  <script src="../commun/js/lecons-a4.js?c3"></script>'
         html = html.replace(balise, tags + balise)
     ecrire(os.path.join(RACINE, jeu, "lecons-imprimables.html"), html)
 
@@ -106,6 +106,8 @@ def construire(jeu):
     if getattr(cfg, "LECONS_BASE", None):
         sortie["lecons_base"] = cfg.LECONS_BASE
     manquants = []
+    fichier_textes = os.path.join(ICI, "textes", jeu + ".json")
+    textes_courts = json.load(open(fichier_textes, encoding="utf-8")) if os.path.exists(fichier_textes) else {}
     for lid, l in cfg.LECONS.items():
         visuels = []
         for v in l.get("visuels", []):
@@ -128,6 +130,8 @@ def construire(jeu):
             visuels.append(v)
         entree = {k: val for k, val in l.items() if k != "visuels"}
         entree["visuels"] = visuels
+        if lid in textes_courts:
+            entree["texte"] = textes_courts[lid]      # texte court réservé à la page A4
         sortie["lecons"][lid] = entree
     copier_modele(jeu, getattr(cfg, "SCRIPTS", []))
     dest = os.path.join(RACINE, jeu, "assets", "data", "lecons-a4.json")

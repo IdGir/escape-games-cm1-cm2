@@ -95,14 +95,25 @@
   /* ---------- Blocs ---------- */
   function blocVisuel(v){
     if(!v) return "";
-    const titre = v.titre ? `<div class="vtitre">${v.etiquette ? `<i>${v.etiquette}</i>` : ""}<span>${v.titre}</span></div>` : "";
+    // Code couleur : le cadre dépend du rôle du visuel (carte, graphique, tableau → ardoise ;
+    // schéma / expérience → orange ; document → violet ; photo → gris)
+    const estPhoto = v.type === "photo" || v.type === "image";
+    const etiquette = v.etiquette || (estPhoto ? "Photo" : "Schéma");
+    const norm = etiquette.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    const role = { carte:"carte", graphique:"graphique", tableau:"tableau", schema:"schema", protocole:"schema",
+                   experience:"schema", document:"document", photo:"photo" }[norm] || (estPhoto ? "photo" : "schema");
+    const titre = v.titre ? `<div class="vtitre">${v.titre}</div>` : "";
     const legende = v.legende ? `<div class="legende">${v.legende}</div>` : "";
     const credit = (v.credit || v.source) ? `<div class="credit">${v.credit || v.source}</div>` : "";
-    const fac = (v.facultatif === true || (v.facultatif !== false && (v.type === "photo" || v.type === "image") && v.etiquette !== "Document")) ? ' data-facultatif="1"' : "";
-    if(v.type === "photo" || v.type === "image"){
-      return `<figure class="visuel photo"${fac}>${titre}<img src="${encodeURI(v.src)}" alt="${texte(v.alt || v.titre).replace(/"/g,"&quot;")}" loading="eager">${legende}${credit}</figure>`;
+    const fac = (v.facultatif === true || (v.facultatif !== false && estPhoto && v.etiquette !== "Document")) ? ' data-facultatif="1"' : "";
+    const tete = `<span class="etiq">${etiquette}</span>${titre}`;
+    const vb = /viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/.exec(v.svg || "");
+    const ratio = vb && +vb[2] > 0 ? Math.max(0.6, Math.min(4, +vb[1] / +vb[2])) : 1.4;
+    const st = ` style="--ratio:${ratio.toFixed(2)}"`;
+    if(estPhoto){
+      return `<figure class="visuel cadre v-${role} photo"${fac}${st}>${tete}<img src="${encodeURI(v.src)}" alt="${texte(v.alt || v.titre).replace(/"/g,"&quot;")}" loading="eager">${legende}${credit}</figure>`;
     }
-    return `<figure class="visuel"${fac}>${titre}${v.svg || ""}${legende}${credit}</figure>`;
+    return `<figure class="visuel cadre v-${role}"${fac}${st}>${tete}${v.svg || ""}${legende}${credit}</figure>`;
   }
 
   function listeVisuels(l, extra){
@@ -134,7 +145,7 @@
   function blocFrise(l){
     const f = l.frise;
     if(!f || !f.length) return "";
-    return `<div class="frise"><div class="vtitre">${l.frise_titre || "Frise chronologique"}</div>
+    return `<div class="frise cadre"><span class="etiq">Frise chronologique</span>${l.frise_titre ? `<div class="ftitre">${l.frise_titre}</div>` : ""}
       <div class="ligne">${f.map(e => `<div class="evt"><b>${e.date}</b>${e.evt}</div>`).join("")}</div></div>`;
   }
 
@@ -142,7 +153,7 @@
     const d = l.document;
     if(!d || (extra.masquer || []).includes("document")) return "";
     if(d.type === "text" || d.type === "texte"){
-      return `<div class="document"><div class="dtitre">Document — ${d.titre || ""}</div>
+      return `<div class="document cadre"><span class="etiq">Document</span><div class="dtitre">${d.titre || ""}</div>
         ${/^\s*[«"“]/.test(d.contenu || "") ? `<span class="citation">${d.contenu}</span>` : `<q>${d.contenu || ""}</q>`}${d.source ? `<div class="dsource">${d.source}</div>` : ""}</div>`;
     }
     return "";
@@ -151,7 +162,7 @@
   function blocLexique(l){
     const lx = l.lexique;
     if(!lx || !lx.length) return "";
-    return `<div class="lexique"><div class="vtitre">Lexique</div>
+    return `<div class="lexique cadre"><span class="etiq">Lexique</span>
       <dl>${lx.map(m => `<div><dt>${m.mot}</dt><dd>${m.def}</dd></div>`).join("")}</dl></div>`;
   }
 
@@ -187,11 +198,14 @@
       l.salle ? `${(etat.a4.jeu||{}).unite || "Salle"} ${l.salle}` : `Leçon ${i + 1}`,
       jeu.titre ? `escape game « ${jeu.titre} »` : ""
     ].filter(Boolean).join(" · ");
+    // version courte, rédigée pour l'impression (outils-lecons/textes/<jeu>.json) : texte plus gros
+    const tc = extra.texte;
+    const texteCourt = tc ? (typeof tc === "string" ? tc : (tc[etat.niveau.toLowerCase()] || tc.cm2 || tc.cm1 || "")) : "";
     const competence = extra.competence
       ? `<div class="competence"><b>Compétence du programme :</b> ${extra.competence}</div>` : "";
 
     return `
-    <section class="feuille" data-id="${l.id}">
+    <section class="feuille" data-id="${l.id}" data-matiere="${texte(jeu.matiere).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z]+/g, "-")}">
       <header class="entete">
         <div class="matiere"><b>${jeu.matiere || "Leçon"}</b><span>Cycle 3 · CM1-CM2</span></div>
         <div class="jeu"><div class="nom-jeu">${jeu.titre || ""}</div><div class="theme">${jeu.theme || ""}</div></div>
@@ -203,8 +217,8 @@
         <div class="niveau">${etat.niveau}</div>
       </div>
       ${competence}
-      <div class="corps ${colonne.length ? (extra.colonne_large ? "visuels-larges" : "") : "sans-visuel"}">
-        <div class="texte">${blocObjectifs(l)}${contenuNiveau(l)}</div>
+      <div class="corps ${colonne.length ? "" : "sans-visuel"}">
+        <div class="texte cadre"><span class="etiq">La leçon à connaître</span>${texteCourt ? "" : blocObjectifs(l)}${texteCourt || contenuNiveau(l)}</div>
         ${colonne.length ? `<div class="visuels">${colonne.map(blocVisuel).join("")}</div>` : ""}
       </div>
       ${larges.length ? `<div class="pleine-largeur">${larges.map(blocVisuel).join("")}</div>` : ""}
@@ -258,8 +272,10 @@
     return ep != null && !deborde(f);
   }
 
+  const EMAX = 1.6;     // le texte ne dépasse pas ≈ 16,5 pt, même sur une page presque vide
+
   function chercher(f, minPleine){
-    let bas = 0.62, haut = 1.3, ok = null;
+    let bas = 0.62, haut = EMAX, ok = null;
     if(tient(f, haut, minPleine)) return haut;
     for(let k = 0; k < 8; k++){
       const m = (bas + haut) / 2;
@@ -268,14 +284,90 @@
     return ok;
   }
 
-  function ajuster(f){
-    // on cherche le plus grand texte possible en gardant les grandes cartes lisibles (≥ 60 %)
-    let ok = chercher(f, 0.6);
-    if(ok == null || ok < 0.8){ const ok2 = chercher(f, 0.45); if(ok2 != null && (ok == null || ok2 > ok + 0.05)) ok = ok2; }
-    tient(f, ok == null ? 0.62 : ok, 0.45);
-    const haut = 1.3;
+  /* Les visuels (cartes, graphiques, schémas) passent avant le texte :
+     on part de la colonne la plus large et on la rétrécit seulement si le texte
+     devrait descendre sous SEUIL (≈ 10 pt) pour que la page tienne.
+     Les photos d'illustration (facultatives) ne comptent pas dans ce calcul :
+     on les met de côté, puis on les remet seulement si la colonne des visuels
+     a de la place, à la taille de cette place. */
+  const COLONNES = [112, 106, 100, 94, 88, 82, 76, 70];  // largeur de la colonne des visuels, en mm
+  const SEUIL = 0.95;                                     // échelle de texte souhaitée (≈ 10 pt)
+  const ACCEPTE = 0.88;                                   // échelle de texte encore acceptée (≈ 9 pt)
+
+  function choisirColonne(f){
+    // la colonne la plus large où le texte garde une taille confortable, sinon acceptable,
+    // sinon la colonne qui laisse le plus grand texte
+    for(const seuil of [SEUIL, ACCEPTE]){
+      for(const w of COLONNES){
+        f.style.setProperty("--col-vis", w + "mm");
+        if(tient(f, seuil, 0.6)) return w;
+      }
+    }
+    let meilleur = COLONNES[COLONNES.length - 1], emax = -1;
+    for(const w of COLONNES){
+      f.style.setProperty("--col-vis", w + "mm");
+      const e = chercher(f, 0.6);
+      if(e != null && e > emax + 0.02){ emax = e; meilleur = w; }
+    }
+    return meilleur;
+  }
+
+  // remet une photo dans la colonne des visuels, à la plus grande hauteur qui tient sur la page
+  function remettrePhoto(f, photo){
+    const vis = f.querySelector(".visuels");
+    const px_mm = f.clientWidth / 210;
+    vis.appendChild(photo);
+    let bas = 0, haut = 72, ok = 0;
+    for(let k = 0; k < 7; k++){
+      const m = (bas + haut) / 2;
+      photo.style.setProperty("--h-photo", m.toFixed(1) + "mm");
+      if(!deborde(f)){ ok = m; bas = m; } else haut = m;
+    }
+    if(ok < 26){ photo.remove(); return; }              // pas assez de place : on y renonce
+    photo.style.setProperty("--h-photo", ok.toFixed(1) + "mm");
+  }
+
+  // état de départ d'une page : photos d'illustration mises de côté (f._photos), disposition en colonne
+  function preparer(f){
+    f.classList.remove("rempli");
+    const corps = f.querySelector(".corps");
+    corps.classList.remove("rangee");
+    const vis = f.querySelector(".visuels");
+    if(!vis) return null;
+    if(!f._photos){
+      f._photos = [...vis.querySelectorAll("[data-facultatif]")];
+      f._photos.forEach(p => p.remove());
+      f._photoSeule = false;
+      if(!vis.querySelector(".visuel")){
+        if(f.querySelector(".pleine-largeur")){            // la grande carte est en pleine largeur :
+          vis.remove(); f._photos = [];                    // pas de colonne, le texte prend toute la largeur
+          corps.classList.add("sans-visuel");
+          return null;
+        }
+        vis.appendChild(f._photos.shift());                // photo seule : elle reste
+        f._photoSeule = true;
+      }
+    }else{
+      f._photos.forEach(p => { p.remove(); p.style.removeProperty("--h-photo"); });
+    }
+    f.style.removeProperty("--rb");
+    return vis;
+  }
+
+  /* Disposition A : la leçon à gauche, les visuels dans une colonne à droite */
+  function fitA(f, vis){
+    if(vis) f.style.setProperty("--col-vis", choisirColonne(f) + "mm");
+    // on cherche le plus grand texte possible ; une grande carte en pleine largeur n'est
+    // réduite que si le texte descend sous SEUIL (90 % → 75 % → 60 % → 45 % de sa largeur)
+    let ok = null, mp = 0.6;
+    for(const m of (f.querySelector(".pleine-largeur") ? [0.9, 0.75, 0.6, 0.45] : [0.6, 0.45])){
+      const e = chercher(f, m);
+      if(e != null && (ok == null || e > ok + 0.02)){ ok = e; mp = m; }
+      if(ok != null && ok >= (f.querySelector(".pleine-largeur") ? ACCEPTE : SEUIL)) break;
+    }
+    tient(f, ok == null ? 0.62 : ok, ok == null ? 0.45 : mp);
     // page peu remplie (texte court) : on agrandit encore les visuels tant que la page n'est pas pleine
-    if(ok === haut && f.querySelector(".visuels")){
+    if(ok === EMAX && vis){
       let evb = parseFloat(f.style.getPropertyValue("--echelle-visuel")), evh = 2.2, evok = evb;
       for(let k = 0; k < 8; k++){
         const m = (evb + evh) / 2;
@@ -284,21 +376,59 @@
       }
       f.style.setProperty("--echelle-visuel", evok.toFixed(3));
     }
-    // visuels trop réduits : on retire d'abord les photos d'illustration (facultatives)
-    const ev = parseFloat(f.style.getPropertyValue("--echelle-visuel"));
-    const fac = [...f.querySelectorAll(".visuels [data-facultatif]")];
-    if(ev < 0.8 && fac.length && f.querySelectorAll(".visuels .visuel").length > 1){
-      fac[fac.length - 1].remove();
-      return ajuster(f);
+    // la place qui reste dans la colonne des visuels est offerte à une photo d'illustration
+    if(vis && f._photos && f._photos.length && !deborde(f)) remettrePhoto(f, f._photos[0]);
+  }
+
+  /* Disposition B : la leçon en pleine largeur (texte sur 2 colonnes), puis les visuels
+     côte à côte en grand, à la même hauteur. Utile quand la colonne de droite resterait
+     à moitié vide (visuels plats ou peu nombreux). */
+  function fitB(f){
+    f.querySelector(".corps").classList.add("rangee");
+    f.style.setProperty("--echelle-visuel", "1");
+    f.style.setProperty("--rb", "1");
+    for(let e = EMAX; e >= ACCEPTE - 0.001; e -= 0.04){          // d'abord le texte le plus grand, rangée pleine largeur
+      f.style.setProperty("--echelle", e.toFixed(3));
+      if(!deborde(f)) return;
     }
-    // encore de la place : on élargit la colonne des visuels (une fois, puis une seconde)
-    const vide = f.querySelector(".espace-pied").offsetHeight;
-    const corps = f.querySelector(".corps");
-    const px_mm = f.clientWidth / 210;
-    if(vide > 22 * px_mm && corps && f.querySelector(".visuels")){
-      if(!corps.classList.contains("visuels-larges")){ corps.classList.add("visuels-larges"); return ajuster(f); }
-      if(!corps.classList.contains("visuels-tres-larges")){ corps.classList.add("visuels-tres-larges"); return ajuster(f); }
+    f.style.setProperty("--echelle", "0.92");                     // sinon on réduit la rangée
+    for(let r = 0.95; r >= 0.45; r -= 0.05){
+      f.style.setProperty("--rb", r.toFixed(2));
+      if(!deborde(f)) return;
     }
+  }
+
+  // surface des cartes, graphiques et schémas, en mm² : ce que l'on cherche à agrandir
+  function metriques(f){
+    const mm = f.clientWidth / 210;
+    let aire = 0;
+    f.querySelectorAll(".visuel:not(.v-photo) svg").forEach(s => {
+      const r = s.getBoundingClientRect(); aire += r.width * r.height / (mm * mm);
+    });
+    // place vide dans la colonne de droite (disposition A) : hauteur du texte − hauteur des visuels
+    const t = f.querySelector(".texte"), v = f.querySelector(".visuels");
+    const vide = (t && v && !f.querySelector(".corps.rangee")) ? (t.offsetHeight - v.offsetHeight) / mm : 0;
+    return { aire, vide, e: parseFloat(f.style.getPropertyValue("--echelle")), deb: deborde(f) };
+  }
+
+  function ajuster(f){
+    const vis = preparer(f);
+    fitA(f, vis);
+    if(vis && !f._photoSeule && !f.querySelector(".pleine-largeur")){
+      const mA = metriques(f);
+      preparer(f); fitB(f);
+      const mB = metriques(f);
+      const valA = !mA.deb && mA.e >= ACCEPTE - 0.005, valB = !mB.deb && mB.e >= ACCEPTE - 0.005;
+      // B l'emporte si ses visuels sont nettement plus grands, ou si la colonne de droite
+      // resterait à moitié vide en A (plus de 30 mm de blanc), pourvu que le texte reste lisible
+      const prendreB = valB ? (!valA || (mB.aire > 1.15 * mA.aire && mB.e >= SEUIL - 0.005) || mA.vide > 30)
+                            : (!valA && !mB.deb && mB.e > mA.e);
+      if(!prendreB){ preparer(f); fitA(f, f.querySelector(".visuels")); }
+    }
+    // l'espace restant est absorbé par le cadre de la leçon et celui du visuel principal :
+    // les deux zones descendent jusqu'au bas du corps, la page est pleine
+    f.classList.add("rempli");
+    if(deborde(f)) f.classList.remove("rempli");
     f.classList.toggle("deborde", deborde(f));
   }
 
@@ -318,6 +448,9 @@
     const liste = selection();
     zone.innerHTML = liste.map((l, i) => page(l, i, liste.length)).join("");
     await imagesChargees(zone);
+    zone.querySelectorAll(".visuel.photo img").forEach(img => {
+      if(img.naturalWidth) img.closest("figure").style.setProperty("--ratio", Math.max(0.8, Math.min(1.8, img.naturalWidth / img.naturalHeight)).toFixed(2));
+    });
     if(document.fonts && document.fonts.ready) await document.fonts.ready;
     zone.querySelectorAll(".feuille").forEach(ajuster);
     document.body.dataset.pret = "1";

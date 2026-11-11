@@ -1,8 +1,11 @@
-# Crédits des médias — Les Archives du port
+﻿# Credits des photographies - Les Archives du port
 
-Aucune photo ni vidéo n'est fournie pour l'instant : les décors, les personnages, les cartes et les schémas du jeu sont
-**dessinés** (SVG, `js/decors.js`, `js/personnages.js`, cartes des énigmes 1-1 et 4-4 et schémas des leçons, tracés par
-`tests/donnees/schemas.py`). Aucun média n'a été produit : la production se fait seulement avec l'accord de l'enseignant.
+Photos de lieux et d'oeuvres reels, Wikimedia Commons (licences libres) ; quelques photos generiques d'illustration viennent de Pixabay
+(Pixabay Content License, https://pixabay.com) ; documents anciens du domaine public : Gallica, BnF. Les videos animees a partir d'une photo
+sous licence CC BY-SA heritent de cette licence. Personnages et scenes generiques : images creees avec Agnes AI,
+personnages entierement fictifs.
 
-| Fichier | Sujet | Auteur | Licence | Site |
+| Fichier | Sujet | Source | Auteur | Licence |
 |---|---|---|---|---|
+| `assets/images/cartes/e3-2.jpg` | Le Code noir, page de titre d'une édition ancienne (document) | [File:Edit du Roi touchant la discipline des esclaves nègres des Isles de l'Amérique Française, 1685.png](https://commons.wikimedia.org/wiki/File:Edit_du_Roi_touchant_la_discipline_des_esclaves_n%C3%A8gres_des_Isles_de_l%27Am%C3%A9rique_Fran%C3%A7aise,_1685.png) | Louis XIV | Public domain |
+| `assets/images/cartes/e5-2.jpg` | Toussaint Louverture, gravure ancienne (document) | [File:Toussaint Louverture jpg.jpg](https://commons.wikimedia.org/wiki/File:Toussaint_Louverture_jpg.jpg) | François-Séraphin Delpech | Public domain |
