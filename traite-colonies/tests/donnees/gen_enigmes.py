@@ -348,6 +348,14 @@ S.append({"num": 5, "titre": "La salle de lecture — Résistances et abolitions
 ]})
 
 
+MEDIAS = {"3-2": {"base": "e3-2", "legende": "Le Code noir : page de titre d'une édition ancienne.", "source": "Wikimedia Commons (crédits : assets/medias/CREDITS-medias.md)"},
+          "5-2": {"base": "e5-2", "legende": "Toussaint Louverture, gravure ancienne (document d'archives).", "source": "Wikimedia Commons (crédits : assets/medias/CREDITS-medias.md)"}}
+for _s in S:
+    for _e in _s["enigmes"]:
+        if _e["id"] in MEDIAS:
+            _e["media"] = MEDIAS[_e["id"]]
+
+
 def main(dest):
     meta = {"jeu": "Les Archives du port", "version": 1,
             "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",

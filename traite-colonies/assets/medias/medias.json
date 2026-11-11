@@ -1,0 +1,287 @@
+{
+ "_commentaire": "Manifeste des médias du jeu Les Archives du port. Sujet sensible : aucune image de personnes réduites en esclavage, de chaînes, de violence ni de navire chargé de captifs. Décors : archives imaginaires générées par l'API Agnes, sans personne. Personnages inventés (Agnes). Documents réels : Wikimedia Commons. Cartes et schémas jamais générés par IA. Généré par tests/donnees/gen_medias.py.",
+ "jeu": "traite-colonies",
+ "titre": "Les Archives du port",
+ "api": {
+  "nom": "Agnes AI",
+  "base": "https://apihub.agnes-ai.com",
+  "modele_image": "agnes-image-2.1-flash",
+  "modele_video": "agnes-video-v2.0"
+ },
+ "negatif": "text, letters, words, watermark, logo, signature, distorted hands, extra fingers, deformed face, blurry, low quality, violence, chains, shackles, blood, slaves, captives, slave ship, caricature, celebrity likeness",
+ "photos": [
+  {
+   "cle": "e3-2",
+   "cible": "assets/images/cartes/e3-2.jpg",
+   "recherche": "Code noir 1685 edit page titre",
+   "lieu": "Le Code noir, page de titre d'une édition ancienne (document)",
+   "paysage": false,
+   "rang": 1
+  },
+  {
+   "cle": "e5-2",
+   "cible": "assets/images/cartes/e5-2.jpg",
+   "recherche": "Toussaint Louverture portrait gravure",
+   "lieu": "Toussaint Louverture, gravure ancienne (document)",
+   "paysage": false,
+   "rang": 1
+  }
+ ],
+ "images": [
+  {
+   "cle": "salle1",
+   "nom": "Salle 1, la salle des cartes (archives imaginaires)",
+   "cible": "assets/images/decors/salle1.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: an old archive map room with tall wooden plan chests with wide flat drawers, a reading table with a green banker's lamp and a magnifying glass, a large antique map of the Atlantic Ocean framed on the wall, parquet floor.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle2",
+   "nom": "Salle 2, le cabinet des registres (archives imaginaires)",
+   "cible": "assets/images/decors/salle2.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: an archive study lined with shelves of old leather-bound ledgers, a wooden lectern with an open handwritten logbook, a model of an 18th-century merchant sailing ship under a glass case, a wall clock.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle3",
+   "nom": "Salle 3, le fonds des colonies (archives imaginaires)",
+   "cible": "assets/images/decors/salle3.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: a quiet archive reading room on a rainy day, rain on tall windows, a wooden table with an old map-like plan of a sugar estate and an old law book under a glass case, a green lamp.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle4",
+   "nom": "Salle 4, le musée du port (archives imaginaires)",
+   "cible": "assets/images/decors/salle4.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: a small harbour history museum gallery, lit display cases with sugar, coffee beans, cocoa pods, cotton and indigo, wooden barrels and burlap sacks, a framed map of a coastline on the wall, parquet floor.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "salle5",
+   "nom": "Salle 5, la salle de lecture (archives imaginaires)",
+   "cible": "assets/images/decors/salle5.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: a large bright archive reading hall with tall arched windows, long wooden tables with green lamps, a wooden easel holding a blank timeline board, a closed old ledger with a brass clasp on the table.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "cine-intro",
+   "nom": "Cinématique d'ouverture (image de départ)",
+   "cible": "assets/images/decors/intro.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: the stone facade of an old archive building on a harbour quay at dawn, mist over the water, a few moored small modern boats, warm lights behind the windows.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "cine-final",
+   "nom": "Cinématique de fin (image de départ)",
+   "cible": "assets/images/decors/final.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: close-up of an old leather ledger being closed on a wooden table, a brass clasp, a green lamp, soft golden light.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "affiche-fond",
+   "nom": "Affiche du jeu : fond sans texte",
+   "cible": "assets/images/affiche-fond.jpg",
+   "prompt": "Photorealistic cinematic wide shot for a children's educational history game, 16:9 composition, soft natural autumn light, rich detail, calm and respectful atmosphere, no people at all. No text, no lettering, no readable writing, no signage, no watermark. Scene: Keep the left third of the image calm and slightly darker, to leave room for a title. An old archive room with shelves of leather ledgers, an antique Atlantic map and a green lamp on a table, golden dust in the light.",
+   "taille": "1344x768"
+  },
+  {
+   "cle": "ines",
+   "nom": "Inès, archiviste",
+   "cible": "assets/images/personnages/ines.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, kind and serious expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a French woman archivist in her forties, long dark hair, round glasses, grey archivist's coat over a red scarf, holding a cardboard archive folder.",
+   "taille": "768x1024"
+  },
+  {
+   "cle": "malik",
+   "nom": "Malik, historien venu de Dakar",
+   "cible": "assets/images/personnages/malik.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, kind and serious expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Senegalese man historian in his fifties, short black hair and short beard, brown jacket over a white shirt, holding a dark blue notebook.",
+   "taille": "768x1024"
+  },
+  {
+   "cle": "celia",
+   "nom": "Célia, historienne venue de Guadeloupe",
+   "cible": "assets/images/personnages/celia.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, kind and serious expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a Black woman historian from Guadeloupe in her thirties, curly black hair, green dress with a small golden pendant, holding an open book.",
+   "taille": "768x1024"
+  },
+  {
+   "cle": "margot",
+   "nom": "Margot, conservatrice du musée du port",
+   "cible": "assets/images/personnages/margot.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, kind and serious expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a French woman museum curator in her thirties, auburn hair in a bun, slate-blue suit, white cotton museum gloves.",
+   "taille": "768x1024"
+  },
+  {
+   "cle": "theo",
+   "nom": "Théo, élève de l'atelier d'enquête",
+   "cible": "assets/images/personnages/theo.png",
+   "prompt": "Realistic digital painting portrait for a children's educational game. Completely fictional person, not resembling any real or public figure. Waist-up, three-quarter view, kind and serious expression, soft warm key light from the left, plain deep black background, vertical portrait framing, sharp focus on the eyes. No text, no lettering, no logo, no watermark. Subject: a 10-year-old French schoolboy with short ginger hair, red sweatshirt, small backpack straps, holding a paper worksheet, eager and serious.",
+   "taille": "768x1024"
+  }
+ ],
+ "videos": [
+  {
+   "cle": "salle1-video",
+   "nom": "Salle 1, la salle des cartes (vidéo)",
+   "cible": "assets/videos/salle1.mp4",
+   "depuis": "salle1",
+   "prompt": "Slow cinematic push-in, gentle steady camera move forward, soft light and floating dust, no people appearing, nothing new invented, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle2-video",
+   "nom": "Salle 2, le cabinet des registres (vidéo)",
+   "cible": "assets/videos/salle2.mp4",
+   "depuis": "salle2",
+   "prompt": "Slow cinematic push-in, gentle steady camera move forward, soft light and floating dust, no people appearing, nothing new invented, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle3-video",
+   "nom": "Salle 3, le fonds des colonies (vidéo)",
+   "cible": "assets/videos/salle3.mp4",
+   "depuis": "salle3",
+   "prompt": "Slow cinematic push-in, gentle steady camera move forward, soft light and floating dust, no people appearing, nothing new invented, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle4-video",
+   "nom": "Salle 4, le musée du port (vidéo)",
+   "cible": "assets/videos/salle4.mp4",
+   "depuis": "salle4",
+   "prompt": "Slow cinematic push-in, gentle steady camera move forward, soft light and floating dust, no people appearing, nothing new invented, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "salle5-video",
+   "nom": "Salle 5, la salle de lecture (vidéo)",
+   "cible": "assets/videos/salle5.mp4",
+   "depuis": "salle5",
+   "prompt": "Slow cinematic push-in, gentle steady camera move forward, soft light and floating dust, no people appearing, nothing new invented, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "ines-repos",
+   "nom": "Inès, archiviste (au repos)",
+   "cible": "assets/videos/personnages/ines.mp4",
+   "depuis": "ines",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "ines-parle",
+   "nom": "Inès, archiviste (parle)",
+   "cible": "assets/videos/personnages/ines-parle.mp4",
+   "depuis": "ines",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, gentle serious expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "malik-repos",
+   "nom": "Malik, historien venu de Dakar (au repos)",
+   "cible": "assets/videos/personnages/malik.mp4",
+   "depuis": "malik",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "malik-parle",
+   "nom": "Malik, historien venu de Dakar (parle)",
+   "cible": "assets/videos/personnages/malik-parle.mp4",
+   "depuis": "malik",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, gentle serious expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "celia-repos",
+   "nom": "Célia, historienne venue de Guadeloupe (au repos)",
+   "cible": "assets/videos/personnages/celia.mp4",
+   "depuis": "celia",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "celia-parle",
+   "nom": "Célia, historienne venue de Guadeloupe (parle)",
+   "cible": "assets/videos/personnages/celia-parle.mp4",
+   "depuis": "celia",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, gentle serious expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "margot-repos",
+   "nom": "Margot, conservatrice du musée du port (au repos)",
+   "cible": "assets/videos/personnages/margot.mp4",
+   "depuis": "margot",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "margot-parle",
+   "nom": "Margot, conservatrice du musée du port (parle)",
+   "cible": "assets/videos/personnages/margot-parle.mp4",
+   "depuis": "margot",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, gentle serious expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "theo-repos",
+   "nom": "Théo, élève de l'atelier d'enquête (au repos)",
+   "cible": "assets/videos/personnages/theo.mp4",
+   "depuis": "theo",
+   "prompt": "Subtle idle animation of the portrait: slow natural breathing, occasional gentle blinking, very slight head movement. Static camera, unchanged framing, black background stays black. Calm, loopable, no speech.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "theo-parle",
+   "nom": "Théo, élève de l'atelier d'enquête (parle)",
+   "cible": "assets/videos/personnages/theo-parle.mp4",
+   "depuis": "theo",
+   "prompt": "The person speaks calmly to the camera: natural mouth movement, small head nods, gentle serious expression, occasional blinking. Static camera, unchanged framing, black background stays black.",
+   "largeur": 768,
+   "hauteur": 1152
+  },
+  {
+   "cle": "intro",
+   "nom": "Cinématique d'ouverture",
+   "cible": "assets/videos/intro.mp4",
+   "depuis": "cine-intro",
+   "prompt": "Slow cinematic push-in towards the archive building, mist drifting over the water, light slowly rising, no people appearing, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "final",
+   "nom": "Cinématique de fin",
+   "cible": "assets/videos/final.mp4",
+   "depuis": "cine-final",
+   "prompt": "The ledger closes slowly and the brass clasp shuts, the lamp light glows softly, static camera, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  },
+  {
+   "cle": "bande-annonce-ouverture",
+   "nom": "Bande-annonce : plan d'ouverture",
+   "cible": "assets/videos/bande-annonce-ouverture.mp4",
+   "depuis": "affiche-fond",
+   "prompt": "Slow cinematic push-in, gentle steady camera move forward, soft light and floating dust, no people appearing, nothing new invented, photorealistic, calm. No text appears.",
+   "largeur": 1152,
+   "hauteur": 768
+  }
+ ]
+}
