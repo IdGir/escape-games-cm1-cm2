@@ -1,3 +1,11 @@
+# Reprise : jeu n°12 « Les Archives du port » — PRODUIT (11/11/2026, commit 5e81663, non poussé)
+
+Reste à faire : relecture de l'enseignant (sujet sensible, A-VERIFIER.md) ; intégration à l'accueil, au catalogue et à verifier.html (fichiers protégés, comme pour mouvement) ; leçons A4 (outils-lecons/jeux/traite_colonies.py) ; médias (accord).
+
+---
+
+(Notes de la session du 10/11, conservées)
+
 # Reprise : jeu n°12 « Les Archives du port » (traite-colonies) — à produire
 
 État au 10/11/2026 (tâche planifiée) : **rien n'est écrit dans le dépôt**. Le jeu n'a pas été produit dans cette session : un jeu complet
