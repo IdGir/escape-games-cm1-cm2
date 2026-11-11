@@ -1,0 +1,177 @@
+{
+ "accueil": {
+  "personnage": "ines",
+  "texte": "Bonjour, et bienvenue aux Archives du port. Je suis Inès, l'archiviste. Ici, nous gardons les papiers des navires partis de nos côtes il y a plus de deux siècles. Cette nuit, l'humidité a décollé les pages d'un registre précieux : elles se sont mélangées dans cinq salles. Ce registre raconte une histoire grave, celle de la traite des esclaves. Vous êtes nos enquêtrices et nos enquêteurs : dans chaque salle, retrouvez un mot, notez-le bien, et nous pourrons reconstituer le registre."
+ },
+ "coffre": {
+  "personnage": "ines",
+  "texte": "Le fermoir ne s'ouvre qu'avec les cinq mots des salles, dans l'ordre. Vous les avez notés sur votre fiche de mission."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — La salle des cartes",
+   "plans": [
+    {
+     "decor": "cartes",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "La première page du registre est une carte. Les noms ont été effacés par l'humidité. Pour comprendre le voyage des navires, il faut d'abord savoir où ils allaient. Prenez les loupes, et regardez bien les flèches.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "cartes",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Le premier mot est TRIANGLE : Europe, Afrique, Amériques. Malik vous attend dans le cabinet des registres.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — Le cabinet des registres",
+   "plans": [
+    {
+     "decor": "registres",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "malik",
+     "texte": "Bonjour. Je suis Malik, historien. Je viens de Dakar pour étudier ces registres. Derrière chaque ligne, il y a des personnes : des femmes, des hommes et des enfants arrachés à l'Afrique. Les historiens comptent avec soin, pour mesurer l'ampleur de ce crime. Aidez-moi à remettre de l'ordre dans mes fiches.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "registres",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "malik",
+     "texte": "Le deuxième mot est CAPTIFS : des millions de personnes déportées de force. Célia vous attend dans le fonds des colonies.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — Le fonds des colonies",
+   "plans": [
+    {
+     "decor": "colonies",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "celia",
+     "texte": "Bonjour, je suis Célia, historienne. Je viens de Guadeloupe. Mes recherches portent sur la vie des personnes réduites en esclavage dans les plantations. Elles ont subi un travail forcé et une loi injuste. Mais elles ont aussi résisté. Venez voir.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "colonies",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "celia",
+     "texte": "Le troisième mot est PLANTATIONS : le travail forcé, le Code noir, mais aussi les résistances. Margot vous attend au musée du port.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — Le musée du port",
+   "plans": [
+    {
+     "decor": "musee",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "margot",
+     "texte": "Bienvenue au musée du port. Je suis Margot, la conservatrice. Ici, nous montrons ce que les navires emportaient et ce qu'ils rapportaient. Ces richesses venaient du travail forcé des esclaves : un musée doit le dire clairement. Aidez-moi à refaire mes vitrines.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "musee",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "margot",
+     "texte": "Le quatrième mot est PORTS : des villes qui se sont enrichies grâce à ce commerce. Théo vous attend dans la salle de lecture.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — La salle de lecture",
+   "plans": [
+    {
+     "decor": "lecture",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "theo",
+     "texte": "Salut ! Moi, c'est Théo, je suis dans l'atelier d'enquête de mon école. Ma frise est toute mélangée. Je voulais montrer que les esclaves ont résisté et que l'esclavage a été aboli. Vous m'aidez ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "lecture",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "theo",
+     "texte": "Le dernier mot est LIBERTÉ : conquise par les révoltes et inscrite dans la loi en 1848. Vous avez les cinq mots : refermons le registre.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Les Archives du port »",
+   "plans": [
+    {
+     "decor": "lecture",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "theo",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "malik",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "celia",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "margot",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "theo",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
+}

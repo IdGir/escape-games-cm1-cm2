@@ -1,0 +1,153 @@
+{
+ "metadata": {
+  "jeu": "Les Archives du port",
+  "sujet": "La traite des esclaves entre l'Afrique et l'Amérique, la vie des esclaves dans les plantations, les échanges commerciaux avec les colonies, les résistances et les abolitions — histoire, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "lien_autres_jeux": "Prépare le jeu n°13 « La Caravelle du capitaine » (explorations, premiers empires coloniaux) et le jeu n°16 « Le Testament de l'Empereur » (Napoléon rétablit l'esclavage en 1802) ; se relie à « De l'édit de Nantes à Versailles » (Louis XIV signe le Code noir en 1685) et au « Secret de la Déclaration » (1789).",
+  "sources": "Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; BnF France-Amériques ; académies de Bordeaux, de Martinique et de Guyane ; Sénat ; ministère de la Culture. Détail : README.md, section Sources.",
+  "vigilance": "Sujet sensible. Les élèves sont des enquêteurs d'archives, jamais des personnages réduits en esclavage. Aucune personne réelle ne parle."
+ },
+ "personnages": {
+  "ines": {
+   "nom": "Inès",
+   "role": "Archiviste des Archives du port"
+  },
+  "malik": {
+   "nom": "Malik",
+   "role": "Historien venu de Dakar"
+  },
+  "celia": {
+   "nom": "Célia",
+   "role": "Historienne venue de Guadeloupe"
+  },
+  "margot": {
+   "nom": "Margot",
+   "role": "Conservatrice du musée du port"
+  },
+  "theo": {
+   "nom": "Théo",
+   "role": "Élève de l'atelier d'enquête"
+  }
+ },
+ "intro_accueil": "Bonjour, et bienvenue aux Archives du port. Je suis Inès, l'archiviste. Ici, nous gardons les papiers des navires partis de nos côtes il y a plus de deux siècles. Cette nuit, l'humidité a décollé les pages d'un registre précieux : elles se sont mélangées dans cinq salles. Ce registre raconte une histoire grave, celle de la traite des esclaves. Vous êtes nos enquêtrices et nos enquêteurs : dans chaque salle, retrouvez un mot, notez-le bien, et nous pourrons reconstituer le registre.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La salle des cartes",
+   "decor": "cartes",
+   "motCle": "TRIANGLE",
+   "lieu": "La salle des cartes des Archives du port",
+   "description": "De grands meubles à tiroirs plats, une table éclairée par une lampe verte et, au mur, une carte ancienne de l'océan Atlantique. Une page du registre est posée sur la table.",
+   "sens": [
+    "À voir : la grande carte de l'Atlantique",
+    "À entendre : le froissement du papier ancien",
+    "À sentir : l'odeur de la poussière et de l'encre"
+   ],
+   "dialogue_intro": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "La première page du registre est une carte. Les noms ont été effacés par l'humidité. Pour comprendre le voyage des navires, il faut d'abord savoir où ils allaient. Prenez les loupes, et regardez bien les flèches."
+   },
+   "dialogue_reussite": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Le premier mot est <b>TRIANGLE</b> : Europe, Afrique, Amériques. Malik vous attend dans le cabinet des registres."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "Le cabinet des registres",
+   "decor": "registres",
+   "motCle": "CAPTIFS",
+   "lieu": "Le cabinet des registres de navires",
+   "description": "Des étagères chargées de registres reliés de cuir. Sur un pupitre, un journal de bord ouvert et une maquette de navire sous verre.",
+   "sens": [
+    "À voir : les registres alignés et la maquette du navire",
+    "À entendre : l'horloge du cabinet",
+    "À sentir : le cuir des vieilles reliures"
+   ],
+   "dialogue_intro": {
+    "perso": "malik",
+    "nom": "Malik",
+    "texte": "Bonjour. Je suis Malik, historien. Je viens de Dakar pour étudier ces registres. Derrière chaque ligne, il y a des personnes : des femmes, des hommes et des enfants arrachés à l'Afrique. Les historiens comptent avec soin, pour mesurer l'ampleur de ce crime. Aidez-moi à remettre de l'ordre dans mes fiches."
+   },
+   "dialogue_reussite": {
+    "perso": "malik",
+    "nom": "Malik",
+    "texte": "Le deuxième mot est <b>CAPTIFS</b> : des millions de personnes déportées de force. Célia vous attend dans le fonds des colonies."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "Le fonds des colonies",
+   "decor": "colonies",
+   "motCle": "PLANTATIONS",
+   "lieu": "Le fonds des colonies, au premier étage",
+   "description": "Une salle de lecture calme. Sur la table, le plan d'une habitation sucrière des Antilles et un vieux livre de lois, ouvert sous une vitre.",
+   "sens": [
+    "À voir : le plan de l'habitation et le livre de lois",
+    "À entendre : la pluie contre la fenêtre",
+    "À sentir : le bois ciré des tables"
+   ],
+   "dialogue_intro": {
+    "perso": "celia",
+    "nom": "Célia",
+    "texte": "Bonjour, je suis Célia, historienne. Je viens de Guadeloupe. Mes recherches portent sur la vie des personnes réduites en esclavage dans les plantations. Elles ont subi un travail forcé et une loi injuste. Mais elles ont aussi résisté. Venez voir."
+   },
+   "dialogue_reussite": {
+    "perso": "celia",
+    "nom": "Célia",
+    "texte": "Le troisième mot est <b>PLANTATIONS</b> : le travail forcé, le Code noir, mais aussi les résistances. Margot vous attend au musée du port."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "Le musée du port",
+   "decor": "musee",
+   "motCle": "PORTS",
+   "lieu": "Le musée du port, au rez-de-chaussée",
+   "description": "Des vitrines éclairées, des sacs de toile, des barriques et des caisses de bois. Au mur, la carte de la côte atlantique et de la Manche.",
+   "sens": [
+    "À voir : les vitrines et les barriques",
+    "À entendre : les pas des visiteurs sur le parquet",
+    "À sentir : une légère odeur de café et de toile de jute"
+   ],
+   "dialogue_intro": {
+    "perso": "margot",
+    "nom": "Margot",
+    "texte": "Bienvenue au musée du port. Je suis Margot, la conservatrice. Ici, nous montrons ce que les navires emportaient et ce qu'ils rapportaient. Ces richesses venaient du travail forcé des esclaves : un musée doit le dire clairement. Aidez-moi à refaire mes vitrines."
+   },
+   "dialogue_reussite": {
+    "perso": "margot",
+    "nom": "Margot",
+    "texte": "Le quatrième mot est <b>PORTS</b> : des villes qui se sont enrichies grâce à ce commerce. Théo vous attend dans la salle de lecture."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "La salle de lecture",
+   "decor": "lecture",
+   "motCle": "LIBERTÉ",
+   "lieu": "La salle de lecture des Archives",
+   "description": "Une grande salle claire aux longues tables. Sur un chevalet, une frise inachevée. Au centre, le registre reconstitué, fermé par un fermoir à chiffres.",
+   "sens": [
+    "À voir : la frise et le registre fermé",
+    "À entendre : le murmure des lecteurs",
+    "À sentir : le papier neuf des fiches"
+   ],
+   "dialogue_intro": {
+    "perso": "theo",
+    "nom": "Théo",
+    "texte": "Salut ! Moi, c'est Théo, je suis dans l'atelier d'enquête de mon école. Ma frise est toute mélangée. Je voulais montrer que les esclaves ont résisté et que l'esclavage a été aboli. Vous m'aidez ?"
+   },
+   "dialogue_fin": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Le dernier mot est <b>LIBERTÉ</b> : conquise par les révoltes et inscrite dans la loi en 1848. Vous avez les cinq mots : refermons le registre."
+   }
+  }
+ ]
+}

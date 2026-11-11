@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr" data-titre-page="Leçons A4 — {journal}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçons A4 — La Bibliothèque des leçons</title>
+<style>
+  body{ font-family: Georgia, "Times New Roman", serif; background: #ddd; margin: 0; color: #1f1a14; }
+  .outils{ position: sticky; top: 0; background: #2a140a; color: #f0d48e; padding: 8px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-family: system-ui, sans-serif; }
+  .outils select, .outils button{ font-size: 1rem; }
+  .page{ width: 210mm; min-height: 297mm; margin: 12px auto; background: #fff; padding: 16mm 16mm 12mm; box-sizing: border-box; box-shadow: 0 4px 18px rgba(0,0,0,.3); page-break-after: always; position: relative; }
+  .page h1{ font-size: 22pt; margin: 0 0 4px; color: #3a1a0c; }
+  .entete{ display: flex; justify-content: space-between; font-size: 9pt; color: #6b4a12; border-bottom: 2px solid #c9a24a; padding-bottom: 4px; margin-bottom: 10px; font-family: system-ui, sans-serif; }
+  .competence{ background: #f3e9d2; border-left: 5px solid #c9a24a; padding: 6px 10px; font-size: 10pt; margin-bottom: 10px; }
+  table{ border-collapse: collapse; width: 100%; } td, th{ border: 1px solid #b39a6a; padding: 5px 7px; vertical-align: top; } th{ background: #efe2c2; }
+  .encadre{ background: #fff8e6; border-left: 5px solid #c9a24a; padding: 6px 10px; margin: 8px 0; } .encadre.danger{ border-color: #a3261b; background: #fdecea; }
+  .roman{ font-style: italic; color: #5a3a1c; border-top: 1px dashed #b39a6a; padding-top: 6px; margin-top: 10px; }
+  .pied{ position: absolute; bottom: 8mm; left: 16mm; right: 16mm; font-size: 8pt; color: #888; font-family: system-ui, sans-serif; }
+  @media print{ body{ background: #fff; } .outils{ display: none; } .page{ margin: 0; box-shadow: none; } @page{ size: A4; margin: 0; } }
+</style>
+</head>
+<body>
+<div class="outils">
+  <b>📖 Leçons A4 — <span data-t="bibliotheque">La Bibliothèque des leçons</span></b>
+  <label>Grade : <select id="grade"></select></label>
+  <label>Fiche : <select id="fiche"><option value="toutes">toutes</option></select></label>
+  <button id="imprimer">🖨️ Imprimer</button>
+  <span style="font-size:.85rem;opacity:.8">Format A4 portrait, cocher « Graphiques d'arrière-plan ».</span>
+</div>
+<div id="pages"></div>
+<script src="js/jeu-config.js?v1"></script>
+<script src="js/donnees-embarquees.js?v1"></script>
+<script src="js/donnees.js?v1"></script>
+<script src="js/niveaux.js?v1"></script>
+<script src="js/bibliotheque.js?v1"></script>
+<script>
+(async function(){
+  await VML.chargerDonnees();
+  const q = new URLSearchParams(location.search);
+  const sg = document.getElementById("grade"), sf = document.getElementById("fiche");
+  const niveaux = (VML.D.enigmes || {}).niveaux || [];
+  sg.innerHTML = niveaux.map(n => `<option value="${n.id}">${n.icone} ${n.nom} (${n.equivalent})</option>`).join("");
+  sg.value = VML.gradeValide(q.get("niveau")) || "matelot";
+  const L = VML.D.lecons.lecons;
+  sf.innerHTML += L.map(l => `<option value="${l.id}">${VML.referenceFiche(l.id)} — ${l.titre}</option>`).join("");
+  sf.value = L.some(l => l.id === q.get("lecon")) ? q.get("lecon") : "toutes";
+  const dessiner = () => {
+    const g = sg.value, choix = sf.value === "toutes" ? L : L.filter(l => l.id === sf.value);
+    document.getElementById("pages").innerHTML = choix.map(l => `<section class="page">
+      <div class="entete"><span>${VML.T("hud") || "⚓"} — ${VML.T("titre")}</span><span>${VML.referenceFiche(l.id)}</span></div>
+      <h1>${l.icone} ${l.titre}</h1>
+      <div class="competence"><b>Compétence du programme</b> : ${l.competence}</div>
+      ${VML.contenuFiche(l, g).replace(/class='fiche-roman'/g, "class='roman'").replace(/tab-lecon/g, "")}
+      <div class="pied">Leçon de l'escale ${l.escale} · grade ${VML.infoGrade(g).nom} · fiche consultable aussi dans le jeu (📚 Bibliothèque).</div>
+    </section>`).join("");
+  };
+  sg.onchange = sf.onchange = dessiner;
+  document.getElementById("imprimer").onclick = () => window.print();
+  dessiner();
+})();
+</script>
+</body>
+</html>

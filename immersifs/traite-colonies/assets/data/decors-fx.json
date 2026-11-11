@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "cartes": {
+   "titre": "La salle des cartes des Archives du port",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La carte de l'Atlantique",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une carte ancienne au mur ; les noms des continents ont été effacés par l'humidité."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les fiches des trajets",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Trois fiches retrouvées dans un meuble à plans, une pour chaque flèche de la carte."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le journal de bord",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un journal de bord dont les pages se sont détachées et mélangées."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La loupe d'Inès",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une grosse loupe posée sur la table de consultation, près de la carte."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "registres": {
+   "titre": "Le cabinet des registres de navires",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les fiches de Malik",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une pile de fiches cartonnées, couvertes de chiffres et de notes."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les fiches de lieux",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des fiches de lieux tombées d'une étagère : ports, côtes, îles."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La page déchirée",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une page du registre, déchirée en plusieurs morceaux."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le tiroir du registre",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un tiroir fermé par un petit cadenas à chiffres, sous le pupitre."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "colonies": {
+   "titre": "Le fonds des colonies, au premier étage",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le plan de l'habitation",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le plan ancien d'une habitation sucrière, sans aucun personnage."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le livre de lois",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un vieux livre de lois, ouvert sous une vitre : le Code noir."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les fiches des résistances",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des fiches sur les fuites et les révoltes, rangées dans une chemise verte."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le lexique de Célia",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un cahier de lexique où les définitions se sont effacées."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "musee": {
+   "titre": "Le musée du port, au rez-de-chaussée",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La vitrine des produits",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une vitrine vidée pour le nettoyage : sucre, café, cacao, coton, indigo."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La vitrine des ports",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une vitrine consacrée aux ports de la traite, avec une étiquette de trop."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les barriques et les sacs",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des barriques et des sacs de toile, comme ceux des cales des navires."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La carte de la côte",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une carte de la façade atlantique et de la Manche, dont les noms ont disparu."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "lecture": {
+   "titre": "La salle de lecture des Archives",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La frise de Théo",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une frise inachevée sur un chevalet, avec des cartes mélangées."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les fiches de Théo",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des fiches sur des personnes réelles : Toussaint Louverture, Victor Schœlcher."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le fermoir du registre",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le registre reconstitué, fermé par un fermoir de laiton à chiffres."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La dernière page",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "La dernière page du registre, où Inès a recopié un message."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

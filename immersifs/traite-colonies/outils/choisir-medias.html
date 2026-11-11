@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choisir les médias proposés — Le Journal du Nautilus</title>
+<style>
+  body{ font-family: system-ui, sans-serif; background: #0b1820; color: #f3e9d2; margin: 0; padding: 12px 16px; }
+  h1{ font-size: 1.4rem; color: #f0d48e; }
+  .m{ border: 2px solid #c9a24a; border-radius: 10px; padding: 10px; margin: 12px 0; background: #1a0f08; }
+  .rang{ display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; }
+  figure{ margin: 0; } figure img, figure video, figure svg{ width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #000; display: block; }
+  figcaption{ font-size: 13px; margin-top: 4px; } a{ color: #5fd0ff; }
+  .note{ opacity: .85; font-size: 14px; } code{ background: #fff2; padding: 1px 4px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<h1>🖼️ Choisir parmi les propositions (assets/medias-proposes/)</h1>
+<p class="note">Pour chaque média : le secours actuel (décor dessiné ou image de référence) et les propositions générées
+(<code>&lt;id&gt;-v1</code> … <code>-v4</code>). <b>Rien n'entre dans le jeu sans votre choix</b> : téléchargez la proposition retenue sous
+le nom indiqué et déposez-la dans le dossier indiqué. Refuser une proposition ne change rien. Page à ouvrir avec un serveur
+(<code>lancer.bat</code>) pour qu'elle trouve les fichiers.</p>
+<div id="liste">Chargement…</div>
+<script src="../js/donnees-embarquees.js"></script>
+<script src="../js/decors-secours.js"></script>
+<script src="../js/personnages.js"></script>
+<script>
+(async function(){
+  const t = await fetch("../medias.csv").then(r => r.ok ? r.text() : "").catch(() => "");
+  if(!t){ document.getElementById("liste").textContent = "medias.csv introuvable : ouvrez cette page avec lancer.bat (serveur local)."; return; }
+  const lignes = t.trim().split("\n").slice(1).map(l => { const c = []; let cur = "", q = false; for(const ch of l){ if(ch === '"') q = !q; else if(ch === ";" && !q){ c.push(cur); cur = ""; } else cur += ch; } c.push(cur); return c; });
+  const existe = async u => { try{ const r = await fetch(u, { method: "HEAD" }); return r.ok; }catch(e){ return false; } };
+  const html = [];
+  for(const c of lignes){
+    const [id, type, fichier] = c;
+    const props = [];
+    for(let v = 1; v <= 4; v++) for(const ext of type === "image" ? [".webp", ".png"] : [".mp4"]){ const u = `../assets/medias-proposes/${id}-v${v}${ext}`; if(await existe(u)){ props.push(u); break; } }
+    if(!props.length) continue;
+    const base = id.replace(/^(decor|portrait|video)-/, "");
+    const secours = type === "image" ? (id.startsWith("decor-") ? (window.VML.SVG_DECORS[base] || "") : id.startsWith("portrait-") ? window.VML.svgPortrait(base) : "") : "<p>cinématique en direct</p>";
+    const nom = fichier.split("/").pop();
+    html.push(`<div class="m"><b>${id}</b> → déposer sous <code>${fichier}</code><div class="rang">
+      <figure>${secours}<figcaption>Secours actuel (Claude)</figcaption></figure>
+      ${props.map(u => `<figure>${type === "image" ? `<img src="${u}" alt="">` : `<video src="${u}" controls muted></video>`}<figcaption>${u.split("/").pop()} · <a href="${u}" download="${type === "image" ? nom.replace(/\.\w+$/, u.slice(u.lastIndexOf("."))) : nom}">⬇️ Garder (télécharger sous le bon nom)</a></figcaption></figure>`).join("")}
+    </div></div>`);
+  }
+  document.getElementById("liste").innerHTML = html.join("") || "<p>Aucune proposition pour l'instant (lancer <code>python outils/generer-medias.py</code>, après accord).</p>";
+})();
+</script>
+</body>
+</html>
