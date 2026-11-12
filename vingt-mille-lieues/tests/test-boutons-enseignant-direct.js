@@ -95,7 +95,9 @@ async function testerJeu(base, jeu){
     ["🤝 Coup de pouce", () => clicCarte('[data-c="pouce"]'), () => j.toasts.some(m => m.includes("🤝"))],
     ["Grade (liste)", () => { const s = carte().querySelector('select[data-c="niveau"]'); const autre = [...s.options].map(o => o.value).find(v => v !== grade0); s.value = autre; s.dispatchEvent(new p.w.Event("change")); return !!autre; }, () => V.ETAT.niveau !== grade0],
     ["⏸ Pause générale", () => { p.d.getElementById("tout-pause").click(); return true; }, () => V.ETAT.enPause === true],
+    ["🤝 Coup de pouce pendant la pause (gardé)", () => { j.toasts.length = 0; return clicCarte('[data-c="pouce"]'); }, () => !!V.ETAT.poucePending],
     ["▶️ Reprise générale", () => { p.d.getElementById("tout-reprise").click(); return true; }, () => !V.ETAT.enPause],
+    ["(coup de pouce de la pause appliqué à la reprise)", () => true, () => j.toasts.some(m => m.includes("🤝"))],
     ["📣 Message à toutes", () => { j.toasts.length = 0; p.d.getElementById("tout-message").click(); return true; }, () => j.toasts.some(m => m.includes("Message de test"))],
     ["🔔 Fin de séance", () => { p.d.getElementById("tout-fin").click(); return true; }, () => finRecue != null],
   ];

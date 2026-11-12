@@ -7,6 +7,7 @@
    lettre ou caractère donné, élément fixé…). Si plus aucune aide de ce type n'est possible, un indice
    est offert (sans point retiré) ; au coffre final : première lettre et longueur de chaque mot.
    Si l'équipe n'a pas ouvert d'énigme, l'aide l'attend : elle s'applique à l'ouverture du panneau.
+   Envoyé pendant une pause, il est gardé et appliqué à la reprise.
    Trace : « pouces » dans l'état de l'énigme, le journal, le compte-rendu (vml-suivi.js) et prof.html.
    Coût en points choisi à l'envoi (aucun par défaut). Commande : {pouce:true, cout, id}.
    Chargé après js/app.js, vml-suivi.js et aides-enigmes.js.
@@ -37,8 +38,13 @@
   /** Applique un coup de pouce ; renvoie { ok, texte } ou { ok:false, attente:true }. */
   VML.coupDePouce = function(cout){
     const E = VML.ETAT;
-    if(!E || E.enPause || E.fini) return null;
+    if(!E || E.fini) return null;
     cout = Math.max(0, Math.min(5, Math.round(+cout || 0)));
+    if(E.enPause){   // envoyé pendant une pause : gardé, appliqué à la reprise (avant : perdu sans message)
+      E.poucePending = { cout, ts: Date.now() };
+      if(VML.sauver) VML.sauver();
+      return { ok: false, attente: true };
+    }
     const coffre = document.querySelector(".coffre") && !E.coffreOuvert;
     let texte = "", id = null, carte = null;
     if(coffre){
@@ -75,6 +81,18 @@
     const fb = carte && carte.querySelector("#fb-" + id);
     if(fb && !fb.classList.contains("show")){ fb.className = "feedback pouce show"; fb.innerHTML = `🤝 <b>Coup de pouce de l'enseignant :</b> ${texte}.`; }
     return { ok: true, texte, cout };
+  };
+
+  /* Coup de pouce reçu pendant une pause : appliqué dès la reprise */
+  const pause = VML.mettreEnPause;
+  if(typeof pause === "function") VML.mettreEnPause = function(oui){
+    const res = pause.apply(this, arguments);
+    const E = VML.ETAT;
+    if(!oui && E && E.poucePending){
+      const c = E.poucePending.cout; delete E.poucePending;
+      setTimeout(() => VML.coupDePouce(c), 300);
+    }
+    return res;
   };
 
   /* Coup de pouce en attente : appliqué à l'ouverture de l'énigme suivante */
