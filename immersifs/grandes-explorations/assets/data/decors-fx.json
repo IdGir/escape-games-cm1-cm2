@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "cale": {
+   "titre": "La cale de la Rose des vents",
+   "reference": null,
+   "ambiance": [
+    "vagues"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La carte roulée",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une carte roulée dépasse d'un coffre ouvert ; l'eau de la tempête a effacé les noms."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les sacs de la cale",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des sacs de toile et des coffres dont les étiquettes ont glissé au sol."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le tonneau aux histoires",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un tonneau couvert de feuillets punaisés : les histoires que racontent les visiteurs."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les caisses du négociant",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Trois caisses vides marquées richesse, religion, savoir."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "pont": {
+   "titre": "Le pont de la Rose des vents",
+   "reference": null,
+   "ambiance": [
+    "vagues"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le coffre d'instruments",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un coffre en laiton ouvert près de la barre : boussole, astrolabe, sablier."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le plan de la caravelle",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un plan cloué près du mât, dont les noms ont été arrachés par le vent."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La barre",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "La barre du navire, où Rosa interroge ceux qui veulent la tenir."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "L'astrolabe de midi",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "L'astrolabe suspendu à un crochet, prêt à viser le Soleil."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "cartes": {
+   "titre": "La chambre des cartes, sous le château arrière",
+   "reference": null,
+   "ambiance": [
+    "vagues"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La corde aux pages",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une corde tendue où pendent, en désordre, les pages du journal."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les cartons des explorateurs",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des cartons portant des noms d'explorateurs, posés sur la table."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La grande carte",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "La grande carte du monde, couverte de routes de couleur sans étiquettes."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La page mouillée",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une page du journal encore humide, dont des mots ont coulé."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "rivage": {
+   "titre": "La tente des conteurs, sur le quai",
+   "reference": null,
+   "ambiance": [
+    "vagues"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les dessins de la tente",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des dessins accrochés aux piquets de la tente : une ville sur un lac, des montagnes, des maisons longues."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le livre d'Itzel",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un livre ouvert sur les genoux d'Itzel, avec un texte adapté pour les élèves."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le sable du rivage",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un bac de sable où des visiteurs ont écrit des phrases avec un bâton."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le panier d'Itzel",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un panier rempli de maïs, de tomates, de cacao et de pommes de terre."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "cabinet": {
+   "titre": "Le cabinet du cartographe, au fond du navire",
+   "reference": null,
+   "ambiance": [
+    "vagues"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La carte du partage",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Au mur, une carte coupée par une ligne en pointillés."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les pavillons pliés",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des pavillons pliés sur une étagère, chacun avec une fiche."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le coffre de bord",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le coffre de bord, fermé par un cadenas à chiffres."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les registres de marchandises",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des registres de marchandises posés sur le coffre."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

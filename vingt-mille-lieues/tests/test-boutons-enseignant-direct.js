@@ -42,7 +42,7 @@ async function charger(url, attente){
 const dossier = jeu => "immersifs/" + jeu;
 
 async function testerJeu(base, jeu){
-  const nomEq = "Test-" + jeu;
+  const nomEq = ("Test-" + jeu).slice(0, 20);   // le champ du nom d'équipe est limité en longueur (24 caractères)
   // 1. l'équipe démarre
   const j = await charger(`${base}/${dossier(jeu)}/index.html`, 3500);
   for(let i = 0; i < 20 && !(j.w.VML && j.w.VML.D && j.w.VML.D.enigmes && j.d.querySelector(".carte-grade")); i++) await dormir(500);   // machine chargée : laisser finir

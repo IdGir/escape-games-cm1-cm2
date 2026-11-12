@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "amaury",
+  "texte": "Bienvenue à bord de la Rose des vents, la copie d'une caravelle amarrée au port de Saint-Malo pour le festival de la mer. Je suis Bastien, le capitaine. Cette nuit, une tempête a ouvert le coffre où je gardais le journal de bord que nous lisons aux visiteurs : ses pages se sont envolées dans tout le navire. Ce journal raconte comment les Européens sont partis sur les océans, il y a plus de cinq cents ans, et ce qui s'est passé en arrivant. Il raconte aussi une rencontre, puis une conquête. Vous êtes mes nouveaux mousses : retrouvez les pages, remettez-les dans l'ordre et notez les cinq mots qui ouvriront le coffre de bord."
+ },
+ "coffre": {
+  "personnage": "amaury",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — La cale aux épices",
+   "plans": [
+    {
+     "decor": "cale",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "amaury",
+     "texte": "Bonjour, moussaillons ! Je suis Amaury. Pendant le festival, je raconte aux visiteurs le commerce des épices. Respirez : ce parfum de poivre a fait rêver toute l'Europe. Mais pourquoi traverser des océans inconnus pour quelques graines ? Les premières pages du journal le disent. Aidez-moi à les retrouver dans la cale.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "cale",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "amaury",
+     "texte": "Le premier mot est ÉPICES : c'est d'abord pour elles que l'on part. Rosa vous attend sur le pont, avec ses instruments.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — Le pont de la caravelle",
+   "plans": [
+    {
+     "decor": "pont",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "rosa",
+     "texte": "Bonjour, je suis Rosa, cartographe. Je restaure des cartes anciennes. Partir, c'est bien ; revenir, c'est mieux ! Pour oser quitter les côtes, les marins avaient besoin d'un bon navire et d'instruments pour savoir où ils étaient. Le vent a mélangé mes étiquettes : à vous de jouer.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "pont",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "rosa",
+     "texte": "Le deuxième mot est ASTROLABE : grâce à lui, le pilote trouve sa route en pleine mer. Le capitaine vous attend dans la chambre des cartes.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — La chambre des cartes",
+   "plans": [
+    {
+     "decor": "cartes",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "bastien",
+     "texte": "Entrez dans ma chambre des cartes. Ici, le journal raconte les grands voyages : vers l'ouest, vers l'est, et même autour du monde. Mais attention : les terres où ces navires arrivaient étaient habitées depuis des milliers d'années. Remettez mes pages dans l'ordre et retrouvez les routes.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "cartes",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "bastien",
+     "texte": "Le troisième mot est OCÉAN : Atlantique, Indien, Pacifique, ces marins les ont tous traversés. Descendez sur le quai : Itzel vous attend.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — Le rivage",
+   "plans": [
+    {
+     "decor": "rivage",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "itzel",
+     "texte": "Bonjour. Je m'appelle Itzel, je viens de Mexico. Mes ancêtres parlaient le nahuatl, la langue des Aztèques. Dans vos livres, on lit souvent que l'Amérique a été découverte. Mais nous étions là ! Je vais vous raconter cette rencontre, de l'autre côté de l'océan. Elle a été belle parfois, et très dure souvent.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "rivage",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "itzel",
+     "texte": "Le quatrième mot est RENCONTRE : une rencontre qui est vite devenue une conquête. Simon vous attend dans le cabinet du cartographe.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — Le cabinet du cartographe",
+   "plans": [
+    {
+     "decor": "cabinet",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "simon",
+     "texte": "Salut ! Moi, c'est Simon, le mousse. J'ai retrouvé les dernières pages : elles parlent de pays d'Europe qui se partagent des terres qui n'étaient pas à eux. Et le coffre de bord est fermé ! Il faut relier chaque grand voyage à sa date. On s'y met ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "cabinet",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "simon",
+     "texte": "Le dernier mot est EMPIRES : l'Espagne, le Portugal, puis la France et l'Angleterre se sont construit des empires coloniaux. Vous avez les cinq mots : ouvrons le coffre de bord.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « La Caravelle du capitaine »",
+   "plans": [
+    {
+     "decor": "cabinet",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "simon",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "amaury",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "rosa",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "bastien",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "itzel",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "simon",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
+}
