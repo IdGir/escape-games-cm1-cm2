@@ -17,6 +17,14 @@ const { JSDOM, VirtualConsole } = require("jsdom");
 const RACINE = path.resolve(__dirname, "../..");
 let echecs = 0, verifs = 0;
 const ok = (c, msg) => { verifs++; if(!c){ echecs++; console.log("  ✖ " + msg); } };
+// Une page fermée par le test peut encore finir un rafraîchissement en cours (fetch) : son erreur (« document » absent)
+// est un artefact de jsdom, pas un défaut du moteur. Toute autre erreur non rattrapée compte comme un échec.
+const fermees = [];
+process.on("unhandledRejection", e => {
+  const pile = String(e && e.stack || e);
+  if(fermees.some(u => pile.includes(u))) return;
+  echecs++; verifs++; console.log("  ✖ erreur non rattrapée : " + pile.split("\n").slice(0, 2).join(" | "));
+});
 const dormir = ms => new Promise(r => setTimeout(r, ms));
 const portLibre = () => new Promise(r => { const s = net.createServer(); s.listen(0, "127.0.0.1", () => { const p = s.address().port; s.close(() => r(p)); }); });
 
@@ -116,6 +124,7 @@ async function testerJeu(base, jeu){
   const blob = p.telechargements[0];
   const csv = blob ? await new Promise(r => { const f = new p.w.FileReader(); f.onload = () => r(String(f.result)); f.onerror = () => r(""); f.readAsText(blob); }) : "";
   ok(csv.includes(nomEq), `${jeu} prof : l'export CSV ne contient pas l'équipe`);
+  fermees.push(j.w.location.href.split("?")[0], p.w.location.href.split("?")[0]);
   j.w.close(); p.w.close();
 }
 
