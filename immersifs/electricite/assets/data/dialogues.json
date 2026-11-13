@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "nour",
+  "texte": "Bonsoir, je suis Hélène, ingénieure à la centrale de Clairval. Un violent orage a frappé la vallée : la foudre a fait disjoncter le réseau, et toute la ville est plongée dans le noir. Nos ordinateurs sont arrêtés, il faut tout vérifier à la main, pièce par pièce. Vous êtes nos apprentis électriciens. Dans chaque salle, réparez ce qui doit l'être et notez le mot que vous donnera le responsable. Avec les cinq mots, nous pourrons rebrancher les quartiers un par un. Une seule règle, et elle ne se discute pas : ici, on travaille avec des piles, jamais avec les prises."
+ },
+ "coffre": {
+  "personnage": "nour",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — L'atelier du club sciences",
+   "plans": [
+    {
+     "decor": "atelier",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "nour",
+     "texte": "Salut ! Moi, c'est Nour. Je suis au club sciences de la centrale. Avec la panne, la lampe de secours du couloir s'est éteinte, et ma lampe de poche aussi est presque vide. J'ai des piles neuves, des lampes et des fils, mais mon montage ne marche pas. Vous m'aidez à comprendre pourquoi ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "atelier",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "nour",
+     "texte": "La lampe brille ! Le premier mot est BOUCLE : sans boucle complète, pas de lumière. Maëlle vous attend au magasin, au fond du couloir.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — Le magasin de matériel",
+   "plans": [
+    {
+     "decor": "magasin",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "maelle",
+     "texte": "Bonjour, je suis Maëlle, je m'occupe du matériel. L'orage a renversé mon bac de pièces, et tout est mélangé. Pour réparer les lignes, les électriciens ont besoin de ce qui laisse passer le courant ; pour se protéger, de ce qui l'arrête. On trie ensemble ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "magasin",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "maelle",
+     "texte": "Bien triés ! Le deuxième mot est CONDUCTEUR : c'est lui qui laisse passer le courant. Hélène vous attend dans la salle de contrôle.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — La salle de contrôle",
+   "plans": [
+    {
+     "decor": "controle",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "helene",
+     "texte": "Voici la salle de contrôle. Ici, on ne dessine pas les appareils comme dans un livre d'images : on utilise des symboles, les mêmes dans le monde entier. Le pupitre ne redémarrera que si vous savez lire ses schémas. Les étiquettes sont tombées pendant l'orage.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "controle",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "helene",
+     "texte": "Les voyants s'allument un à un. Le troisième mot est SCHÉMA . Marius a ramené de la ville la maison témoin de nos visites : il vous attend.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — La maison témoin",
+   "plans": [
+    {
+     "decor": "maison",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "marius",
+     "texte": "Salut, je suis Marius, électricien de la ville. Quand le courant va revenir, chaque maison de Clairval sera de nouveau sous tension. Avant de rallumer, je veux être sûr que vous connaissez les règles de sécurité. Les piles de l'atelier, ce n'est pas la même chose que les prises de la maison. Montrez-moi ce que vous savez.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "maison",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "marius",
+     "texte": "Vous pouvez rallumer sans danger. Le quatrième mot est SÉCURITÉ . Karim vous attend au poste de conduite du réseau.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — Le poste de conduite du réseau",
+   "plans": [
+    {
+     "decor": "reseau",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "karim",
+     "texte": "Bonsoir, je suis Karim, technicien du réseau. La centrale est prête. Mais il faut amener l'électricité jusqu'aux maisons, et rebrancher les quartiers un par un : si on les rallume tous d'un coup, le réseau disjoncte à nouveau. Le pupitre demande des codes. Vous êtes prêts ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "reseau",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "karim",
+     "texte": "Le dernier mot est CENTRALE : c'est là que l'électricité est produite. Vous avez les cinq mots : fermons le dernier circuit et rallumons Clairval.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « La Centrale en panne »",
+   "plans": [
+    {
+     "decor": "reseau",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "karim",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "nour",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "maelle",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "helene",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "marius",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "karim",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
+}

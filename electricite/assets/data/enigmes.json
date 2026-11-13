@@ -1,0 +1,1505 @@
+{
+ "metadata": {
+  "jeu": "La Centrale en panne",
+  "version": 1,
+  "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+  "types": [
+   "association",
+   "code",
+   "intrus",
+   "ordre",
+   "plan",
+   "qcm",
+   "tri",
+   "trous",
+   "vraifaux"
+  ],
+  "sources": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 » ; Eduscol, ressources d'accompagnement du programme de sciences et technologie au cycle 3 ; Enedis, conseils de prévention des accidents électriques ; RTE, Bilan électrique 2025 (d'après Connaissance des énergies) ; Connaissance des énergies, fiche pédagogique « RTE » (réseau de transport) ; Lumni, vidéos « L'électricité » (cycle 3). Détail : README.md, section Sources.",
+  "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e3-1\",\"legende\":\"…\",\"source\":\"…\"}. Les montages et les schémas sont dessinés en SVG par script : ne jamais les remplacer par des images générées par IA."
+ },
+ "salles": [
+  {
+   "num": 1,
+   "titre": "L'atelier du club sciences — Le circuit électrique",
+   "enigmes": [
+    {
+     "id": "1-1",
+     "titre": "Le montage de Nour",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Nour a préparé un montage pour rallumer sa lampe, mais les étiquettes sont tombées. Place chaque nom sur son repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le montage de Nour\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='330' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le montage de Nour</text><rect x='90' y='182' width='110' height='70' rx='6' fill='#1f6fb2' stroke='#1d2733' stroke-width='2'/><rect x='90' y='228' width='110' height='24' rx='4' fill='#f2c230' stroke='#1d2733' stroke-width='2'/><text x='145' y='216' text-anchor='middle' font-size='15' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4,5 V</text><rect x='112' y='156' width='12' height='28' fill='#b9bfc6' stroke='#1d2733'/><rect x='164' y='148' width='12' height='36' fill='#b9bfc6' stroke='#1d2733'/><circle cx='480' cy='110' r='20' fill='#f4f6f8' stroke='#1d2733' stroke-width='2'/><path d='M474 114 Q480 100 486 114' fill='none' stroke='#7a5a2a' stroke-width='2'/><rect x='468' y='128' width='24' height='16' fill='#b9bfc6' stroke='#1d2733'/><rect x='450' y='144' width='60' height='18' rx='3' fill='#6b4f3a' stroke='#1d2733'/><rect x='260' y='270' width='80' height='16' rx='3' fill='#6b4f3a' stroke='#1d2733'/><circle cx='272' cy='270' r='5' fill='#b9bfc6' stroke='#1d2733'/><circle cx='328' cy='270' r='5' fill='#b9bfc6' stroke='#1d2733'/><line x1='272' y1='268' x2='320' y2='244' stroke='#8a9099' stroke-width='6' stroke-linecap='round'/><path d='M174 166 L174 110 L455 110 L455 150' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><path d='M505 150 L540 150 L540 270 L333 270' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><path d='M267 270 L50 270 L50 150 L118 150 L118 174' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><circle cx='222' cy='240' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='222' y='245' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='530' cy='100' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='530' y='105' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='300' cy='235' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='300' y='240' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><text x='320' y='324' text-anchor='middle' font-size='11' fill='#4a5560' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Dessin simplifié. Interrupteur ouvert.</text></svg>",
+      "cm2": "Nour a préparé un montage, mais les étiquettes sont tombées. Place chaque nom sur son repère. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le montage de Nour\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='330' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le montage de Nour</text><rect x='90' y='182' width='110' height='70' rx='6' fill='#1f6fb2' stroke='#1d2733' stroke-width='2'/><rect x='90' y='228' width='110' height='24' rx='4' fill='#f2c230' stroke='#1d2733' stroke-width='2'/><text x='145' y='216' text-anchor='middle' font-size='15' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4,5 V</text><rect x='112' y='156' width='12' height='28' fill='#b9bfc6' stroke='#1d2733'/><rect x='164' y='148' width='12' height='36' fill='#b9bfc6' stroke='#1d2733'/><circle cx='480' cy='110' r='20' fill='#f4f6f8' stroke='#1d2733' stroke-width='2'/><path d='M474 114 Q480 100 486 114' fill='none' stroke='#7a5a2a' stroke-width='2'/><rect x='468' y='128' width='24' height='16' fill='#b9bfc6' stroke='#1d2733'/><rect x='450' y='144' width='60' height='18' rx='3' fill='#6b4f3a' stroke='#1d2733'/><rect x='260' y='270' width='80' height='16' rx='3' fill='#6b4f3a' stroke='#1d2733'/><circle cx='272' cy='270' r='5' fill='#b9bfc6' stroke='#1d2733'/><circle cx='328' cy='270' r='5' fill='#b9bfc6' stroke='#1d2733'/><line x1='272' y1='268' x2='320' y2='244' stroke='#8a9099' stroke-width='6' stroke-linecap='round'/><path d='M174 166 L174 110 L455 110 L455 150' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><path d='M505 150 L540 150 L540 270 L333 270' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><path d='M267 270 L50 270 L50 150 L118 150 L118 174' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><circle cx='222' cy='240' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='222' y='245' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='530' cy='100' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='530' y='105' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='300' cy='235' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='300' y='240' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='330' cy='110' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='330' y='115' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='200' cy='175' r='13' fill='#c0392b' stroke='#fff' stroke-width='2'/><text x='200' y='180' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><text x='320' y='324' text-anchor='middle' font-size='11' fill='#4a5560' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Dessin simplifié. Interrupteur ouvert.</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "Sur ce dessin, la pile plate est le repère 1, la lampe sur sa douille le repère 2 et l'interrupteur le repère 3. En CM2, le repère 4 est un fil de connexion et le repère 5 une borne de la pile, la lame métallique où l'on branche le fil.",
+     "indices": {
+      "cm1": [
+       "La pile est le bloc bleu et jaune.",
+       "La lampe est en haut à droite.",
+       "L'interrupteur est sur le fil du bas."
+      ],
+      "cm2": [
+       "Les fils sont les traits orange.",
+       "Une borne est une lame métallique de la pile.",
+       "Le moteur et l'ampoule de phare ne sont pas sur ce dessin."
+      ]
+     },
+     "cm1": {
+      "titre": "Le montage de Nour",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "pile"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "lampe"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "interrupteur"
+       }
+      ],
+      "etiquettes": [
+       "pile",
+       "lampe",
+       "interrupteur"
+      ]
+     },
+     "cm2": {
+      "titre": "Le montage de Nour",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "pile"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "lampe"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "interrupteur"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "fil de connexion"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "borne de la pile"
+       }
+      ],
+      "etiquettes": [
+       "pile",
+       "lampe",
+       "interrupteur",
+       "fil de connexion",
+       "borne de la pile",
+       "moteur",
+       "prise"
+      ]
+     },
+     "lecon": "circuit"
+    },
+    {
+     "id": "1-2",
+     "titre": "Ouvert ou fermé ?",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Nour a noté ce qu'elle a compris en essayant son montage. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Nour a écrit ses observations dans son cahier d'expériences. Pour chaque phrase, choisis vrai ou faux."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 » ; Lumni, vidéos « L'électricité » (cycle 3)",
+     "correction": "La lampe ne brille que si le courant fait une boucle complète, d'une borne de la pile à l'autre : le circuit est alors fermé. Si l'interrupteur est ouvert, la boucle est coupée et la lampe reste éteinte. En CM2 : un seul fil suffit à couper la boucle s'il est débranché ; le courant ne s'use pas dans la lampe, c'est la pile qui s'use ; deux lampes dans la même boucle s'éteignent ensemble si l'une est dévissée.",
+     "indices": {
+      "cm1": [
+       "Le courant doit aller d'une borne de la pile à l'autre.",
+       "Un interrupteur ouvert coupe le chemin.",
+       "Une seule borne ne suffit pas."
+      ],
+      "cm2": [
+       "Un fil débranché, c'est une boucle coupée.",
+       "Ce qui s'use, ce n'est pas le courant.",
+       "Dans une seule boucle, tout s'arrête si on la coupe."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "Pour que la lampe brille, le courant doit faire une boucle complète.",
+        "vrai": true,
+        "explication": "D'une borne de la pile à l'autre, sans interruption."
+       },
+       {
+        "txt": "Si l'interrupteur est ouvert, la lampe brille quand même.",
+        "vrai": false,
+        "explication": "La boucle est coupée : la lampe est éteinte."
+       },
+       {
+        "txt": "Il suffit de relier la lampe à une seule borne de la pile.",
+        "vrai": false,
+        "explication": "Il faut relier les deux bornes."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Quand la boucle est complète, on dit que le circuit est fermé.",
+        "vrai": true,
+        "explication": "Le courant circule et la lampe brille."
+       },
+       {
+        "txt": "Un seul fil débranché suffit à éteindre la lampe.",
+        "vrai": true,
+        "explication": "La boucle est coupée : le circuit est ouvert."
+       },
+       {
+        "txt": "Le courant s'use en traversant la lampe.",
+        "vrai": false,
+        "explication": "Le courant ne s'use pas ; c'est la pile qui s'use peu à peu."
+       },
+       {
+        "txt": "Avec deux lampes dans la même boucle, si l'on dévisse l'une, l'autre reste allumée.",
+        "vrai": false,
+        "explication": "La boucle est coupée : les deux s'éteignent."
+       },
+       {
+        "txt": "L'interrupteur sert à ouvrir ou fermer le circuit sans débrancher les fils.",
+        "vrai": true,
+        "explication": "C'est son rôle."
+       }
+      ]
+     },
+     "lecon": "circuit"
+    },
+    {
+     "id": "1-3",
+     "titre": "Quelle lampe s'allume ?",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Nour a fait plusieurs essais. Lis la description de chaque montage et choisis la bonne réponse.",
+      "cm2": "Nour a fait plusieurs essais avec une pile, des fils et des lampes. Lis chaque montage et choisis la bonne réponse."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "Seul le montage où les deux bornes de la pile sont reliées à la lampe, avec l'interrupteur fermé, forme une boucle complète : la lampe brille. Un fil qui ne touche qu'une borne, ou un interrupteur ouvert, coupe la boucle. En CM2 : relier directement les deux bornes de la pile par un fil, sans lampe, est un court-circuit : le fil chauffe et la pile s'use très vite.",
+     "indices": {
+      "cm1": [
+       "Il faut deux fils, un pour chaque borne.",
+       "L'interrupteur doit être fermé.",
+       "Une lampe toute seule ne s'allume pas."
+      ],
+      "cm2": [
+       "Cherche la boucle complète.",
+       "Un fil seul entre les deux bornes : danger pour la pile.",
+       "Une pile usée ne fait plus briller la lampe."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Dans quel montage la lampe brille-t-elle ?",
+        "options": [
+         "un fil relie la borne + à la lampe, rien d'autre",
+         "deux fils relient la lampe aux deux bornes de la pile",
+         "la lampe est posée sur la pile, sans fil",
+         "un fil relie les deux bornes de la pile"
+        ],
+        "bonne": 1,
+        "explication": "Les deux bornes sont reliées : la boucle est complète."
+       },
+       {
+        "q": "Le montage est complet, mais la lampe ne brille pas. Que vérifier d'abord ?",
+        "options": [
+         "la couleur des fils",
+         "la taille de la table",
+         "que l'interrupteur est bien fermé",
+         "l'heure qu'il est"
+        ],
+        "bonne": 2,
+        "explication": "Un interrupteur ouvert coupe la boucle."
+       },
+       {
+        "q": "Que faut-il au minimum pour allumer une lampe ?",
+        "options": [
+         "une pile, une lampe et deux fils",
+         "une prise et une lampe",
+         "une lampe seulement",
+         "trois piles"
+        ],
+        "bonne": 0,
+        "explication": "Pile, lampe et fils forment la boucle."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Quel montage forme une boucle complète ?",
+        "options": [
+         "pile, fil, lampe, fil vers la même borne",
+         "pile, fil, lampe, fil vers l'autre borne",
+         "pile, fil, lampe, fil laissé libre",
+         "lampe et fil, sans pile"
+        ],
+        "bonne": 1,
+        "explication": "Le courant part d'une borne et revient à l'autre."
+       },
+       {
+        "q": "Un fil relie directement les deux bornes de la pile. Que se passe-t-il ?",
+        "options": [
+         "la lampe brille plus fort",
+         "rien du tout",
+         "le fil chauffe et la pile s'use très vite",
+         "la pile se recharge"
+        ],
+        "bonne": 2,
+        "explication": "C'est un court-circuit."
+       },
+       {
+        "q": "La boucle est complète, l'interrupteur fermé, mais la lampe reste éteinte. Que peut-on soupçonner ?",
+        "options": [
+         "la pile est usée ou la lampe est grillée",
+         "les fils sont trop courts",
+         "le courant s'est usé",
+         "la table est en bois"
+        ],
+        "bonne": 0,
+        "explication": "Une pile usée ou une lampe grillée empêchent la lampe de briller."
+       },
+       {
+        "q": "Combien de bornes possède une lampe ?",
+        "options": [
+         "une",
+         "deux",
+         "trois",
+         "aucune"
+        ],
+        "bonne": 1,
+        "explication": "Deux bornes, sur son culot."
+       }
+      ]
+     },
+     "lecon": "circuit"
+    },
+    {
+     "id": "1-4",
+     "titre": "Le pas-à-pas de Nour",
+     "type": "ordre",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Nour veut écrire la fiche de montage pour le club. Remets les étapes dans l'ordre.",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "On vérifie d'abord que l'interrupteur est ouvert, puis on relie la borne + de la pile à l'interrupteur, l'interrupteur à la lampe, et la lampe à la borne − : la boucle est complète. On ferme enfin l'interrupteur pour allumer la lampe, et on l'ouvre pour l'éteindre.",
+     "indices": {
+      "cm2": [
+       "On prépare le matériel sans courant qui circule.",
+       "On construit la boucle fil par fil.",
+       "On ferme l'interrupteur en dernier."
+      ]
+     },
+     "commun": {
+      "items": [
+       {
+        "txt": "Poser l'interrupteur en position ouverte.",
+        "rang": 1
+       },
+       {
+        "txt": "Relier la borne + de la pile à l'interrupteur.",
+        "rang": 2
+       },
+       {
+        "txt": "Relier l'interrupteur à la lampe.",
+        "rang": 3
+       },
+       {
+        "txt": "Relier la lampe à la borne − de la pile.",
+        "rang": 4
+       },
+       {
+        "txt": "Fermer l'interrupteur : la lampe s'allume.",
+        "rang": 5
+       }
+      ]
+     },
+     "lecon": "circuit"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "titre": "Le magasin de matériel — Conducteurs et isolants",
+   "enigmes": [
+    {
+     "id": "2-1",
+     "titre": "Le bac renversé",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Maëlle a testé chaque objet du bac avec son circuit testeur. Range chaque objet : conducteur (la lampe s'allume) ou isolant (la lampe reste éteinte).",
+      "cm2": "Maëlle a testé chaque objet du bac avec son circuit testeur. Range chaque objet dans la bonne colonne. Attention aux pièges."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "Les objets en métal (clé en fer, trombone, papier d'aluminium, pièce de monnaie) sont conducteurs. Les objets en plastique, en bois, en verre, en caoutchouc ou en papier sont isolants. En CM2, la mine du crayon à papier, en graphite, est conductrice alors que ce n'est pas un métal.",
+     "indices": {
+      "cm1": [
+       "Les métaux sont conducteurs.",
+       "Le plastique et le bois sont isolants.",
+       "Le papier d'aluminium est un métal."
+      ],
+      "cm2": [
+       "La mine du crayon conduit le courant.",
+       "Le bois du crayon, lui, est isolant.",
+       "Le verre et le caoutchouc sont isolants."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "cond",
+        "titre": "Conducteur"
+       },
+       {
+        "id": "isol",
+        "titre": "Isolant"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une clé en fer",
+        "col": "cond"
+       },
+       {
+        "txt": "un trombone",
+        "col": "cond"
+       },
+       {
+        "txt": "du papier d'aluminium",
+        "col": "cond"
+       },
+       {
+        "txt": "une règle en plastique",
+        "col": "isol"
+       },
+       {
+        "txt": "un crayon de couleur en bois",
+        "col": "isol"
+       },
+       {
+        "txt": "une gomme",
+        "col": "isol"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "cond",
+        "titre": "Conducteur"
+       },
+       {
+        "id": "isol",
+        "titre": "Isolant"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une pièce de monnaie",
+        "col": "cond"
+       },
+       {
+        "txt": "un trombone",
+        "col": "cond"
+       },
+       {
+        "txt": "la mine d'un crayon à papier",
+        "col": "cond"
+       },
+       {
+        "txt": "une vis en acier",
+        "col": "cond"
+       },
+       {
+        "txt": "un bouchon en liège",
+        "col": "isol"
+       },
+       {
+        "txt": "une bille en verre",
+        "col": "isol"
+       },
+       {
+        "txt": "un élastique en caoutchouc",
+        "col": "isol"
+       },
+       {
+        "txt": "une feuille de papier",
+        "col": "isol"
+       }
+      ]
+     },
+     "lecon": "conducteurs"
+    },
+    {
+     "id": "2-2",
+     "titre": "L'intrus de la boîte",
+     "type": "intrus",
+     "consigne": {
+      "cm1": "Maëlle a rangé dans une boîte les objets qui font briller la lampe du testeur. Un objet s'est glissé là par erreur. Trouve l'intrus.",
+      "cm2": "Maëlle a rangé dans une boîte des objets conducteurs. L'un d'eux ne laisse pas passer le courant. Trouve l'intrus."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "La cuillère en bois est l'intrus en CM1 : le bois est isolant, alors que la fourchette, le clou et la canette sont en métal. En CM2, l'intrus est le gant en caoutchouc : il est isolant, c'est même pour cela que les électriciens en portent ; la mine de crayon en graphite, elle, est conductrice.",
+     "indices": {
+      "cm1": [
+       "Cherche l'objet qui n'est pas en métal.",
+       "Une cuillère peut être en métal ou en bois.",
+       "Le bois est isolant."
+      ],
+      "cm2": [
+       "Le graphite de la mine conduit le courant.",
+       "Que portent les électriciens pour se protéger ?",
+       "Le caoutchouc est isolant."
+      ]
+     },
+     "cm1": {
+      "cartes": [
+       {
+        "txt": "une fourchette en métal",
+        "intrus": false
+       },
+       {
+        "txt": "un clou",
+        "intrus": false
+       },
+       {
+        "txt": "une canette en aluminium",
+        "intrus": false
+       },
+       {
+        "txt": "une cuillère en bois",
+        "intrus": true
+       }
+      ]
+     },
+     "cm2": {
+      "cartes": [
+       {
+        "txt": "un fil de cuivre dénudé",
+        "intrus": false
+       },
+       {
+        "txt": "la mine d'un crayon à papier",
+        "intrus": false
+       },
+       {
+        "txt": "une clé en laiton",
+        "intrus": false
+       },
+       {
+        "txt": "une barrette en aluminium",
+        "intrus": false
+       },
+       {
+        "txt": "un gant en caoutchouc",
+        "intrus": true
+       }
+      ]
+     },
+     "lecon": "conducteurs"
+    },
+    {
+     "id": "2-3",
+     "titre": "Les étiquettes des bobines",
+     "type": "association",
+     "consigne": {
+      "cm1": "Les étiquettes des bobines et des outils se sont décollées. Relie chaque objet à ce qu'il fait.",
+      "cm2": "Maëlle explique à quoi sert chaque matériau du magasin. Relie chaque élément à son rôle."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 » ; Enedis, conseils de prévention des accidents électriques",
+     "correction": "Le cœur en cuivre du fil conduit le courant ; la gaine en plastique isole et protège les doigts ; le circuit testeur dit si un objet est conducteur. En CM2 : les poignées des outils et les prises sont en plastique pour protéger les personnes ; l'air sec, entre les lames d'un interrupteur ouvert, coupe la boucle ; le corps humain conduit le courant, d'où le danger du secteur.",
+     "indices": {
+      "cm1": [
+       "Le cuivre est un métal.",
+       "Le plastique arrête le courant.",
+       "Le testeur a une lampe."
+      ],
+      "cm2": [
+       "L'air est isolant.",
+       "Les poignées doivent protéger la main.",
+       "Le corps humain n'est pas isolant."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "le cœur en cuivre du fil",
+        "d": "conduit le courant"
+       },
+       {
+        "g": "la gaine en plastique du fil",
+        "d": "isole et protège les doigts"
+       },
+       {
+        "g": "le circuit testeur",
+        "d": "dit si un objet est conducteur"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "le cœur en cuivre du fil",
+        "d": "laisse passer le courant"
+       },
+       {
+        "g": "la gaine en plastique",
+        "d": "empêche le courant de sortir du fil"
+       },
+       {
+        "g": "la poignée en plastique d'un tournevis",
+        "d": "protège la main de l'électricien"
+       },
+       {
+        "g": "l'air entre les lames d'un interrupteur ouvert",
+        "d": "coupe la boucle"
+       },
+       {
+        "g": "le corps humain",
+        "d": "conduit le courant : le secteur est dangereux"
+       }
+      ]
+     },
+     "lecon": "conducteurs"
+    },
+    {
+     "id": "2-4",
+     "titre": "La notice du testeur",
+     "type": "trous",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "La notice du circuit testeur a pris l'eau : des mots ont disparu. Complète-la. Attention : il y a des étiquettes en trop.",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "On place l'objet dans la boucle du circuit testeur. Si la lampe s'allume, l'objet est conducteur ; si elle reste éteinte, il est isolant. Les métaux, comme le cuivre, sont conducteurs ; le plastique est isolant.",
+     "indices": {
+      "cm2": [
+       "L'objet doit faire partie de la boucle.",
+       "Lampe allumée : le courant passe.",
+       "Le cuivre est un métal."
+      ]
+     },
+     "commun": {
+      "texte": "<p>Pour tester un objet, on le place dans la [[boucle]] du circuit. Si la lampe [[s'allume]], l'objet est [[conducteur]]. Si elle reste éteinte, il est [[isolant]]. Le [[cuivre]] des fils est conducteur ; le [[plastique]] des gaines est isolant.</p>",
+      "etiquettes": [
+       "boucle",
+       "s'allume",
+       "conducteur",
+       "isolant",
+       "cuivre",
+       "plastique",
+       "s'use",
+       "bois",
+       "électron"
+      ]
+     },
+     "lecon": "conducteurs"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "titre": "La salle de contrôle — Le schéma électrique",
+   "enigmes": [
+    {
+     "id": "3-1",
+     "titre": "La légende des symboles",
+     "type": "association",
+     "consigne": {
+      "cm1": "La légende du tableau mural s'est effacée. Relie chaque symbole décrit à l'appareil qu'il représente.",
+      "cm2": "Hélène a besoin de la légende complète du tableau mural. Relie chaque symbole décrit à ce qu'il représente."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Eduscol, ressources d'accompagnement du programme de sciences et technologie au cycle 3 ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "Un grand trait et un petit trait parallèles représentent la pile ; un cercle barré d'une croix, la lampe ; un cercle avec un M, le moteur. En CM2 : le trait levé est un interrupteur ouvert, le trait couché qui ferme le passage un interrupteur fermé, et le trait droit un fil de connexion.",
+     "indices": {
+      "cm1": [
+       "La pile a deux bornes : deux traits.",
+       "La lampe ressemble à une croix dans un rond.",
+       "M comme moteur."
+      ],
+      "cm2": [
+       "Un passage coupé, c'est un interrupteur ouvert.",
+       "Le grand trait de la pile est la borne +.",
+       "Le fil est le plus simple des symboles."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "un grand trait et un petit trait parallèles",
+        "d": "la pile"
+       },
+       {
+        "g": "un cercle barré d'une croix",
+        "d": "la lampe"
+       },
+       {
+        "g": "un cercle avec la lettre M",
+        "d": "le moteur"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "un grand trait et un petit trait parallèles",
+        "d": "la pile"
+       },
+       {
+        "g": "un cercle barré d'une croix",
+        "d": "la lampe"
+       },
+       {
+        "g": "un cercle avec la lettre M",
+        "d": "le moteur"
+       },
+       {
+        "g": "un trait levé entre deux points",
+        "d": "l'interrupteur ouvert"
+       },
+       {
+        "g": "un trait droit",
+        "d": "le fil de connexion"
+       }
+      ]
+     },
+     "lecon": "schema"
+    },
+    {
+     "id": "3-2",
+     "titre": "Le schéma du pupitre",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Sur le pupitre, le schéma de la lampe de secours a perdu ses étiquettes. Place chaque nom sur son repère.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le schéma du pupitre\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le schéma du pupitre</text><rect x='150' y='80' width='340' height='180' fill='none' stroke='#2b3440' stroke-width='3'/><rect x='120' y='160' width='60' height='20' fill='#eef3f7'/><line x1='124' y1='164' x2='176' y2='164' stroke='#1d2733' stroke-width='4' stroke-linecap='round'/><line x1='137' y1='176' x2='163' y2='176' stroke='#1d2733' stroke-width='7' stroke-linecap='round'/><text x='188' y='168' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>+</text><text x='188' y='184' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>−</text><rect x='296' y='76' width='48' height='8' fill='#eef3f7'/><circle cx='298' cy='80' r='3.5' fill='#1d2733'/><circle cx='342' cy='80' r='3.5' fill='#1d2733'/><line x1='298' y1='80' x2='336' y2='60' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><rect x='486' y='152' width='8' height='36' fill='#eef3f7'/><circle cx='490' cy='170' r='16' fill='#fff' stroke='#1d2733' stroke-width='3'/><line x1='478.8' y1='158.8' x2='501.2' y2='181.2' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><line x1='478.8' y1='181.2' x2='501.2' y2='158.8' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><rect x='302' y='256' width='36' height='8' fill='#eef3f7'/><circle cx='320' cy='260' r='16' fill='#fff' stroke='#1d2733' stroke-width='3'/><text x='320' y='266' text-anchor='middle' font-size='17' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>M</text><circle cx='88' cy='170' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='88' y='175' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='320' cy='46' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='320' y='51' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='530' cy='170' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='530' y='175' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><text x='320' y='312' text-anchor='middle' font-size='11' fill='#4a5560' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Schéma normalisé : on suit le courant de la borne + à la borne −.</text></svg>",
+      "cm2": "Sur le pupitre, le schéma du circuit de secours a perdu ses étiquettes. Place chaque nom sur son repère. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le schéma du pupitre\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le schéma du pupitre</text><rect x='150' y='80' width='340' height='180' fill='none' stroke='#2b3440' stroke-width='3'/><rect x='120' y='160' width='60' height='20' fill='#eef3f7'/><line x1='124' y1='164' x2='176' y2='164' stroke='#1d2733' stroke-width='4' stroke-linecap='round'/><line x1='137' y1='176' x2='163' y2='176' stroke='#1d2733' stroke-width='7' stroke-linecap='round'/><text x='188' y='168' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>+</text><text x='188' y='184' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>−</text><rect x='296' y='76' width='48' height='8' fill='#eef3f7'/><circle cx='298' cy='80' r='3.5' fill='#1d2733'/><circle cx='342' cy='80' r='3.5' fill='#1d2733'/><line x1='298' y1='80' x2='336' y2='60' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><rect x='486' y='152' width='8' height='36' fill='#eef3f7'/><circle cx='490' cy='170' r='16' fill='#fff' stroke='#1d2733' stroke-width='3'/><line x1='478.8' y1='158.8' x2='501.2' y2='181.2' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><line x1='478.8' y1='181.2' x2='501.2' y2='158.8' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><rect x='302' y='256' width='36' height='8' fill='#eef3f7'/><circle cx='320' cy='260' r='16' fill='#fff' stroke='#1d2733' stroke-width='3'/><text x='320' y='266' text-anchor='middle' font-size='17' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>M</text><circle cx='88' cy='170' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='88' y='175' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='320' cy='46' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='320' y='51' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='530' cy='170' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='530' y='175' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='364' cy='282' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='364' y='287' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='430' cy='62' r='13' fill='#1f6fb2' stroke='#fff' stroke-width='2'/><text x='430' y='67' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><text x='320' y='312' text-anchor='middle' font-size='11' fill='#4a5560' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Schéma normalisé : on suit le courant de la borne + à la borne −.</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Eduscol, ressources d'accompagnement du programme de sciences et technologie au cycle 3",
+     "correction": "Le repère 1, à gauche, est la pile : un grand trait et un petit trait. Le repère 2, en haut, est l'interrupteur, ici ouvert. Le repère 3, à droite, est la lampe. En CM2, le repère 4 est le moteur, le cercle avec un M, et le repère 5 un fil de connexion.",
+     "indices": {
+      "cm1": [
+       "Ouvre la fiche « Le schéma électrique ».",
+       "La croix dans le cercle, c'est la lampe.",
+       "Le trait levé, c'est l'interrupteur."
+      ],
+      "cm2": [
+       "Le M désigne le moteur.",
+       "Le repère 5 est sur un trait droit.",
+       "Il n'y a ni prise ni buzzer sur ce schéma."
+      ]
+     },
+     "cm1": {
+      "titre": "Le schéma du pupitre",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "pile"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "interrupteur"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "lampe"
+       }
+      ],
+      "etiquettes": [
+       "pile",
+       "interrupteur",
+       "lampe"
+      ]
+     },
+     "cm2": {
+      "titre": "Le schéma du pupitre",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "pile"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "interrupteur"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "lampe"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "moteur"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "fil de connexion"
+       }
+      ],
+      "etiquettes": [
+       "pile",
+       "interrupteur",
+       "lampe",
+       "moteur",
+       "fil de connexion",
+       "prise",
+       "buzzer"
+      ]
+     },
+     "lecon": "schema"
+    },
+    {
+     "id": "3-3",
+     "titre": "Ce que dit le schéma",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Hélène te demande de lire le schéma du pupitre. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Hélène vérifie que tu sais lire le schéma du pupitre. Pour chaque phrase, choisis vrai ou faux."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Eduscol, ressources d'accompagnement du programme de sciences et technologie au cycle 3",
+     "correction": "Sur ce schéma, l'interrupteur est ouvert : la boucle est coupée, la lampe est éteinte et le moteur à l'arrêt. Un schéma utilise des symboles, pas des dessins ressemblants. En CM2 : la lampe, le moteur et l'interrupteur sont dans une seule boucle, donc l'interrupteur commande les deux ; et le grand trait de la pile est la borne +.",
+     "indices": {
+      "cm1": [
+       "Regarde la forme de l'interrupteur.",
+       "Interrupteur ouvert : boucle coupée.",
+       "Un schéma n'est pas une photo."
+      ],
+      "cm2": [
+       "Il n'y a qu'une seule boucle.",
+       "Qui est le grand trait de la pile ?",
+       "Un interrupteur ouvert coupe tout ce qui est dans sa boucle."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "Sur ce schéma, l'interrupteur est ouvert.",
+        "vrai": true,
+        "explication": "Le trait est levé."
+       },
+       {
+        "txt": "Sur ce schéma, la lampe est allumée.",
+        "vrai": false,
+        "explication": "La boucle est coupée : elle est éteinte."
+       },
+       {
+        "txt": "Un schéma dessine les objets avec des symboles.",
+        "vrai": true,
+        "explication": "Les mêmes pour tout le monde."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Sur ce schéma, la lampe et le moteur sont dans la même boucle.",
+        "vrai": true,
+        "explication": "Il n'y a qu'un seul chemin."
+       },
+       {
+        "txt": "Si l'on ferme l'interrupteur, seule la lampe fonctionnera.",
+        "vrai": false,
+        "explication": "La lampe et le moteur fonctionneront tous les deux."
+       },
+       {
+        "txt": "Le grand trait de la pile représente la borne +.",
+        "vrai": true,
+        "explication": "Le petit trait est la borne −."
+       },
+       {
+        "txt": "Pour lire un schéma, on suit le courant de la borne + à la borne −.",
+        "vrai": true,
+        "explication": "En passant par chaque appareil."
+       },
+       {
+        "txt": "Un schéma doit ressembler le plus possible aux vrais objets.",
+        "vrai": false,
+        "explication": "Il ne garde que l'essentiel : les appareils et leurs liaisons."
+       }
+      ]
+     },
+     "lecon": "schema"
+    },
+    {
+     "id": "3-4",
+     "titre": "Suivre le courant",
+     "type": "ordre",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Hélène pose le doigt sur la borne + de la pile du schéma. Range les éléments dans l'ordre où le courant les traverse, jusqu'à la borne −.",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Eduscol, ressources d'accompagnement du programme de sciences et technologie au cycle 3",
+     "correction": "En partant du grand trait de la pile, la borne +, le courant traverse d'abord l'interrupteur, en haut, puis la lampe, à droite, puis le moteur, en bas, avant de revenir à la borne −, le petit trait.",
+     "indices": {
+      "cm2": [
+       "La borne + est en haut de la pile.",
+       "On fait le tour du rectangle dans le sens des aiguilles d'une montre.",
+       "La borne − est en dernier."
+      ]
+     },
+     "commun": {
+      "items": [
+       {
+        "txt": "la borne + de la pile",
+        "rang": 1
+       },
+       {
+        "txt": "l'interrupteur",
+        "rang": 2
+       },
+       {
+        "txt": "la lampe",
+        "rang": 3
+       },
+       {
+        "txt": "le moteur",
+        "rang": 4
+       },
+       {
+        "txt": "la borne − de la pile",
+        "rang": 5
+       }
+      ]
+     },
+     "lecon": "schema"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "titre": "La maison témoin — La sécurité électrique",
+   "enigmes": [
+    {
+     "id": "4-1",
+     "titre": "Le quiz de Marius",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Avant de rallumer les maisons, Marius pose ses questions. Choisis la bonne réponse.",
+      "cm2": "Avant de rallumer Clairval, Marius vérifie que tu connais les dangers. Choisis la bonne réponse."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Enedis, conseils de prévention des accidents électriques ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "La pile plate de la classe, de 4,5 volts, est sans danger ; le courant des prises, de 230 volts, est dangereux et peut tuer. On ne met jamais d'objet dans une prise. En CM2 : en cas d'accident, on ne touche pas la personne, on coupe le courant au disjoncteur, puis on appelle le 18 ou le 112 ; on débranche en tirant sur la fiche, pas sur le fil.",
+     "indices": {
+      "cm1": [
+       "Ouvre la fiche « La sécurité électrique ».",
+       "Les prises sont dangereuses, les piles de la classe non.",
+       "Rien ne doit entrer dans une prise, sauf une fiche."
+      ],
+      "cm2": [
+       "Il faut d'abord couper le courant.",
+       "Les numéros d'urgence ont deux ou trois chiffres.",
+       "La fiche est faite pour être tenue."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Avec quoi a-t-on le droit de faire des expériences en classe ?",
+        "options": [
+         "avec la prise de la classe",
+         "avec une pile plate",
+         "avec une rallonge",
+         "avec un grille-pain"
+        ],
+        "bonne": 1,
+        "explication": "La pile de la classe est sans danger."
+       },
+       {
+        "q": "Le courant des prises de la maison est…",
+        "options": [
+         "sans danger",
+         "dangereux, il peut tuer",
+         "le même que celui d'une pile",
+         "seulement chaud"
+        ],
+        "bonne": 1,
+        "explication": "Il a une tension de 230 volts."
+       },
+       {
+        "q": "Que ne faut-il jamais mettre dans une prise ?",
+        "options": [
+         "la fiche d'une lampe",
+         "un objet, comme un clou ou une épingle",
+         "la fiche d'un chargeur",
+         "la fiche d'un aspirateur"
+        ],
+        "bonne": 1,
+        "explication": "Seules les fiches vont dans les prises."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Quelle est la tension des prises de la maison ?",
+        "options": [
+         "4,5 volts",
+         "12 volts",
+         "230 volts",
+         "400 000 volts"
+        ],
+        "bonne": 2,
+        "explication": "230 volts : c'est dangereux."
+       },
+       {
+        "q": "Une personne est électrisée par un appareil. Que fais-tu d'abord ?",
+        "options": [
+         "je la tire par le bras",
+         "je coupe le courant au disjoncteur",
+         "je lui jette de l'eau",
+         "j'attends qu'elle se relève"
+        ],
+        "bonne": 1,
+        "explication": "On ne la touche pas tant que le courant passe."
+       },
+       {
+        "q": "Quel numéro appeler ensuite ?",
+        "options": [
+         "le 18 ou le 112",
+         "le 36 30",
+         "le 3615",
+         "le numéro de l'école"
+        ],
+        "bonne": 0,
+        "explication": "Pompiers (18) ou numéro d'urgence européen (112)."
+       },
+       {
+        "q": "Comment débrancher un appareil ?",
+        "options": [
+         "en tirant sur le fil",
+         "en tirant sur la fiche",
+         "avec les mains mouillées",
+         "en coupant le fil"
+        ],
+        "bonne": 1,
+        "explication": "Tirer sur le fil l'abîme."
+       }
+      ]
+     },
+     "lecon": "securite"
+    },
+    {
+     "id": "4-2",
+     "titre": "Les affiches tombées",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Les affiches de prévention de la maison témoin sont tombées. Range chaque situation : danger ou sans danger.",
+      "cm2": "Marius veut raccrocher les affiches de prévention. Range chaque situation dans la bonne colonne."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Enedis, conseils de prévention des accidents électriques",
+     "correction": "Une pile plate, une lampe de poche ou un jouet à piles sont sans danger. Mettre un objet dans une prise, toucher un sèche-cheveux branché avec les mains mouillées ou jouer près d'un pylône sont dangereux. En CM2 : faire voler un cerf-volant près des lignes, entrer dans un poste électrique, utiliser un fil abîmé sont dangereux ; débrancher par la fiche, éteindre la lumière en partant et laisser un adulte changer une ampoule appareil débranché sont de bons réflexes.",
+     "indices": {
+      "cm1": [
+       "Les piles de la classe : sans danger.",
+       "L'eau et le secteur ne vont pas ensemble.",
+       "Les pylônes portent des lignes très dangereuses."
+      ],
+      "cm2": [
+       "Les lignes électriques sont dangereuses même sans les toucher.",
+       "Un fil abîmé laisse voir le cuivre.",
+       "Un bon réflexe protège."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "danger",
+        "titre": "Danger"
+       },
+       {
+        "id": "sans",
+        "titre": "Sans danger"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "glisser une épingle dans une prise",
+        "col": "danger"
+       },
+       {
+        "txt": "toucher un sèche-cheveux branché avec les mains mouillées",
+        "col": "danger"
+       },
+       {
+        "txt": "jouer au pied d'un pylône",
+        "col": "danger"
+       },
+       {
+        "txt": "monter un circuit avec une pile plate",
+        "col": "sans"
+       },
+       {
+        "txt": "allumer une lampe de poche",
+        "col": "sans"
+       },
+       {
+        "txt": "jouer avec une petite voiture à piles",
+        "col": "sans"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "danger",
+        "titre": "Danger"
+       },
+       {
+        "id": "bon",
+        "titre": "Bon réflexe"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "faire voler un cerf-volant près des lignes électriques",
+        "col": "danger"
+       },
+       {
+        "txt": "entrer dans un poste électrique pour récupérer un ballon",
+        "col": "danger"
+       },
+       {
+        "txt": "utiliser une rallonge dont le fil est abîmé",
+        "col": "danger"
+       },
+       {
+        "txt": "téléphoner en charge dans le bain",
+        "col": "danger"
+       },
+       {
+        "txt": "débrancher en tirant sur la fiche",
+        "col": "bon"
+       },
+       {
+        "txt": "couper le courant avant de secourir une personne électrisée",
+        "col": "bon"
+       },
+       {
+        "txt": "éteindre la lumière en quittant une pièce",
+        "col": "bon"
+       },
+       {
+        "txt": "demander à un adulte de changer une ampoule, lampe débranchée",
+        "col": "bon"
+       }
+      ]
+     },
+     "lecon": "securite"
+    },
+    {
+     "id": "4-3",
+     "titre": "Les idées reçues",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Des visiteurs ont écrit leurs idées sur le tableau de la maison témoin. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Marius corrige les idées reçues des visiteurs. Pour chaque phrase, choisis vrai ou faux."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Enedis, conseils de prévention des accidents électriques ; Fondation La main à la pâte, « L'électricité au cycle 3 »",
+     "correction": "On peut faire des expériences avec une pile plate, mais jamais avec le secteur. L'eau et l'électricité du secteur ensemble sont très dangereuses. Éteindre la lumière en quittant une pièce économise l'électricité. En CM2 : une lampe à LED consomme beaucoup moins qu'une lampe à incandescence ; un appareil en veille consomme encore ; une ligne électrique peut être dangereuse même sans la toucher.",
+     "indices": {
+      "cm1": [
+       "Pile : oui ; prise : jamais.",
+       "L'eau conduit le courant du secteur.",
+       "Une lampe éteinte ne consomme pas."
+      ],
+      "cm2": [
+       "Une LED chauffe très peu.",
+       "Le petit voyant rouge d'un appareil en veille est allumé.",
+       "Le courant d'une ligne peut sauter vers un objet proche."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "On peut faire des expériences avec les prises de la classe si l'on fait attention.",
+        "vrai": false,
+        "explication": "Jamais : seulement avec des piles."
+       },
+       {
+        "txt": "Il ne faut jamais toucher un appareil électrique avec les mains mouillées.",
+        "vrai": true,
+        "explication": "L'eau conduit le courant du secteur."
+       },
+       {
+        "txt": "Éteindre la lumière en quittant une pièce permet d'économiser l'électricité.",
+        "vrai": true,
+        "explication": "Une lampe éteinte ne consomme rien."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Une lampe à LED consomme beaucoup moins qu'une ancienne lampe à incandescence.",
+        "vrai": true,
+        "explication": "Elle éclaire autant en consommant beaucoup moins."
+       },
+       {
+        "txt": "Un téléviseur en veille ne consomme rien du tout.",
+        "vrai": false,
+        "explication": "Il consomme encore un peu."
+       },
+       {
+        "txt": "Une ligne à haute tension n'est dangereuse que si on la touche.",
+        "vrai": false,
+        "explication": "Le courant peut sauter vers un objet très proche, comme un cerf-volant."
+       },
+       {
+        "txt": "La pile plate de 4,5 volts ne présente pas de danger pour le corps.",
+        "vrai": true,
+        "explication": "C'est pour cela qu'on l'utilise en classe."
+       },
+       {
+        "txt": "Le disjoncteur permet de couper le courant de toute la maison.",
+        "vrai": true,
+        "explication": "On le coupe avant de secourir une personne électrisée."
+       }
+      ]
+     },
+     "lecon": "securite"
+    },
+    {
+     "id": "4-4",
+     "titre": "Les bons réflexes",
+     "type": "association",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Marius montre les pièces de la maison témoin. Relie chaque situation au bon réflexe.",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Enedis, conseils de prévention des accidents électriques",
+     "correction": "Dans la salle de bain, on n'utilise pas d'appareil électrique près de l'eau. Pour débrancher, on tire sur la fiche. Face à une personne électrisée, on coupe le courant avant de la toucher. Un ballon dans un poste électrique : on appelle un adulte, qui préviendra le gestionnaire du réseau. En quittant la pièce, on éteint la lumière.",
+     "indices": {
+      "cm2": [
+       "L'eau et le secteur ne se mélangent pas.",
+       "On ne touche jamais une personne électrisée tant que le courant passe.",
+       "Un poste électrique est fermé pour une bonne raison."
+      ]
+     },
+     "commun": {
+      "paires": [
+       {
+        "g": "la salle de bain",
+        "d": "aucun appareil branché près de la baignoire"
+       },
+       {
+        "g": "une lampe à débrancher",
+        "d": "tirer sur la fiche, pas sur le fil"
+       },
+       {
+        "g": "une personne électrisée",
+        "d": "couper le courant, puis appeler le 18 ou le 112"
+       },
+       {
+        "g": "un ballon tombé dans un poste électrique",
+        "d": "ne pas entrer et prévenir un adulte"
+       },
+       {
+        "g": "une pièce que l'on quitte",
+        "d": "éteindre la lumière"
+       }
+      ]
+     },
+     "lecon": "securite"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "titre": "Le poste de conduite du réseau — Produire et transporter l'électricité",
+   "enigmes": [
+    {
+     "id": "5-1",
+     "titre": "De la centrale à la prise",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "Sur la carte lumineuse, le trajet de l'électricité est effacé. Remets les étapes dans l'ordre, de la centrale jusqu'à la lampe de la maison.",
+      "cm2": "Karim doit rallumer le trajet complet de l'électricité sur la carte. Remets les étapes dans l'ordre, de la centrale jusqu'à la prise."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Connaissance des énergies, fiche pédagogique « RTE » (réseau de transport)",
+     "correction": "L'électricité part de la centrale, voyage sur les lignes à très haute tension portées par des pylônes, arrive dans un poste près de la ville, puis passe par les câbles du quartier jusqu'à la maison. En CM2 : un transformateur élève la tension à la sortie de la centrale ; le poste l'abaisse ; le réseau de distribution va jusqu'au compteur, puis aux prises.",
+     "indices": {
+      "cm1": [
+       "Tout commence là où l'électricité est produite.",
+       "Les pylônes portent les grandes lignes.",
+       "La maison est en dernier."
+      ],
+      "cm2": [
+       "Le transformateur est juste à la sortie de la centrale.",
+       "Le poste est près de la ville.",
+       "Le compteur est à l'entrée de la maison."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "la centrale",
+        "rang": 1
+       },
+       {
+        "txt": "les lignes à très haute tension sur les pylônes",
+        "rang": 2
+       },
+       {
+        "txt": "le poste près de la ville",
+        "rang": 3
+       },
+       {
+        "txt": "la lampe de la maison",
+        "rang": 4
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "la centrale produit le courant",
+        "rang": 1
+       },
+       {
+        "txt": "un transformateur élève la tension",
+        "rang": 2
+       },
+       {
+        "txt": "les lignes à très haute tension le transportent",
+        "rang": 3
+       },
+       {
+        "txt": "un poste abaisse la tension près de la ville",
+        "rang": 4
+       },
+       {
+        "txt": "le réseau de distribution l'amène au compteur",
+        "rang": 5
+       },
+       {
+        "txt": "la prise de la maison",
+        "rang": 6
+       }
+      ]
+     },
+     "lecon": "production"
+    },
+    {
+     "id": "5-2",
+     "titre": "Les centrales de la vallée",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Sur la carte de la vallée, Karim a placé les centrales qui alimentent Clairval. Range chacune selon ce qu'elle utilise : une source qui se renouvelle ou une source qui s'épuise.",
+      "cm2": "Karim range les centrales du pays selon leur source d'énergie. Place chaque carte dans la bonne colonne."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; RTE, Bilan électrique 2025 (d'après Connaissance des énergies) ; Lumni, vidéos « L'électricité » (cycle 3)",
+     "correction": "Les centrales hydrauliques (l'eau d'un barrage), les éoliennes (le vent) et les panneaux solaires (la lumière du Soleil) utilisent des sources renouvelables. Les centrales nucléaires (l'uranium) et les centrales thermiques (gaz, charbon, fioul) utilisent des sources qui ne se renouvellent pas.",
+     "indices": {
+      "cm1": [
+       "Le vent, l'eau et le Soleil reviennent toujours.",
+       "L'uranium est extrait du sol.",
+       "Le gaz brûlé ne revient pas."
+      ],
+      "cm2": [
+       "Regarde ce qui fait tourner la turbine.",
+       "Le panneau solaire ne fait rien tourner.",
+       "Le charbon est un combustible fossile."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "renouv",
+        "titre": "Source renouvelable"
+       },
+       {
+        "id": "epuise",
+        "titre": "Source qui s'épuise"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le barrage hydraulique",
+        "col": "renouv"
+       },
+       {
+        "txt": "le parc d'éoliennes",
+        "col": "renouv"
+       },
+       {
+        "txt": "les panneaux solaires",
+        "col": "renouv"
+       },
+       {
+        "txt": "la centrale nucléaire",
+        "col": "epuise"
+       },
+       {
+        "txt": "la centrale au gaz",
+        "col": "epuise"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "renouv",
+        "titre": "Renouvelable"
+       },
+       {
+        "id": "epuise",
+        "titre": "Non renouvelable"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "l'eau retenue par un barrage",
+        "col": "renouv"
+       },
+       {
+        "txt": "le vent qui fait tourner les pales",
+        "col": "renouv"
+       },
+       {
+        "txt": "la lumière du Soleil sur les panneaux",
+        "col": "renouv"
+       },
+       {
+        "txt": "la marée dans une usine marémotrice",
+        "col": "renouv"
+       },
+       {
+        "txt": "l'uranium d'une centrale nucléaire",
+        "col": "epuise"
+       },
+       {
+        "txt": "le gaz d'une centrale thermique",
+        "col": "epuise"
+       },
+       {
+        "txt": "le charbon",
+        "col": "epuise"
+       },
+       {
+        "txt": "le fioul",
+        "col": "epuise"
+       }
+      ]
+     },
+     "lecon": "production"
+    },
+    {
+     "id": "5-3",
+     "titre": "Le pupitre de reconnexion",
+     "type": "code",
+     "consigne": {
+      "cm1": "Pour rebrancher les quatre quartiers de Clairval un par un, le pupitre demande quatre codes. Chaque code est la production d'un type de centrale en 2025, lue dans le tableau de Karim.<div class='doc-titre'><i>Production d'électricité en France en 2025 (en milliards de kilowattheures, arrondis)</i></div><table class='tableau-releves'><tr><th>Centrales</th><th>Production</th></tr><tr><td>nucléaires</td><td>373</td></tr><tr><td>hydrauliques</td><td>62</td></tr><tr><td>éoliennes</td><td>50</td></tr><tr><td>solaires</td><td>33</td></tr><tr><td>au gaz, au charbon, au fioul</td><td>19</td></tr></table>",
+      "cm2": "Pour rebrancher les quatre quartiers un par un, le pupitre demande quatre codes, lus ou calculés dans le tableau de Karim. Arrondis à l'unité.<div class='doc-titre'><i>Production d'électricité en France en 2025 (en milliards de kilowattheures) — total : 547,5</i></div><table class='tableau-releves'><tr><th>Centrales</th><th>Production</th></tr><tr><td>nucléaires</td><td>373</td></tr><tr><td>hydrauliques</td><td>62,4</td></tr><tr><td>éoliennes</td><td>49,6</td></tr><tr><td>solaires</td><td>32,9</td></tr><tr><td>au gaz, au charbon, au fioul</td><td>environ 18,7</td></tr></table>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; RTE, Bilan électrique 2025 (d'après Connaissance des énergies)",
+     "correction": "Le quartier de la gare se rallume avec 373, la production nucléaire ; le quartier du port avec 62, l'hydraulique ; le quartier des écoles avec 50, l'éolien ; le quartier du marché avec 33, le solaire. En CM2, il fallait arrondir 62,4 à 62, 49,6 à 50 et 32,9 à 33, et calculer la part du nucléaire : 373 sur 547,5, soit environ 68 %.",
+     "indices": {
+      "cm1": [
+       "Lis la ligne de chaque type de centrale.",
+       "Le nucléaire a le plus grand nombre.",
+       "Les éoliennes : la ligne du milieu."
+      ],
+      "cm2": [
+       "49,6 s'arrondit à 50.",
+       "Pour la part du nucléaire, divise 373 par 547,5.",
+       "Le résultat est un peu plus de deux tiers."
+      ]
+     },
+     "cm1": {
+      "champs": [
+       {
+        "libelle": "Quartier de la gare : production nucléaire",
+        "valeur": "373",
+        "longueur": 3
+       },
+       {
+        "libelle": "Quartier du port : production hydraulique",
+        "valeur": "62",
+        "longueur": 2
+       },
+       {
+        "libelle": "Quartier des écoles : production éolienne",
+        "valeur": "50",
+        "longueur": 2
+       },
+       {
+        "libelle": "Quartier du marché : production solaire",
+        "valeur": "33",
+        "longueur": 2
+       }
+      ]
+     },
+     "cm2": {
+      "champs": [
+       {
+        "libelle": "Quartier de la gare : part du nucléaire, en %",
+        "valeur": "68",
+        "longueur": 2
+       },
+       {
+        "libelle": "Quartier du port : production hydraulique arrondie",
+        "valeur": "62",
+        "longueur": 2
+       },
+       {
+        "libelle": "Quartier des écoles : production éolienne arrondie",
+        "valeur": "50",
+        "longueur": 2
+       },
+       {
+        "libelle": "Quartier du marché : production solaire arrondie",
+        "valeur": "33",
+        "longueur": 2
+       }
+      ]
+     },
+     "lecon": "production"
+    },
+    {
+     "id": "5-4",
+     "titre": "Le carnet de Karim",
+     "type": "trous",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Karim a noté comment on produit l'électricité, mais l'orage a mouillé son carnet. Complète-le. Attention : il y a des étiquettes en trop.",
+     "source": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; RTE, Bilan électrique 2025 (d'après Connaissance des énergies) ; Lumni, vidéos « L'électricité » (cycle 3)",
+     "correction": "Dans la plupart des centrales, une turbine reliée à un alternateur tourne pour produire le courant : la vapeur dans une centrale nucléaire, l'eau d'un barrage dans une centrale hydraulique, le vent dans une éolienne. Les panneaux solaires, eux, transforment directement la lumière. L'électricité se stocke très mal : il faut produire à chaque instant autant que l'on consomme.",
+     "indices": {
+      "cm2": [
+       "La turbine fait tourner une autre machine.",
+       "Dans le nucléaire, la chaleur fait de la vapeur.",
+       "Ce qui ne se garde pas bien, c'est l'électricité."
+      ]
+     },
+     "commun": {
+      "texte": "<p>Dans la plupart des centrales, une [[turbine]] reliée à un [[alternateur]] tourne pour produire le courant. Dans une centrale nucléaire, c'est la [[vapeur]] qui la fait tourner ; dans une éolienne, c'est le [[vent]]. Les panneaux solaires transforment directement la [[lumière]] en électricité. L'électricité se [[stocke]] très mal : il faut produire à chaque instant autant que l'on consomme.</p>",
+      "etiquettes": [
+       "turbine",
+       "alternateur",
+       "vapeur",
+       "vent",
+       "lumière",
+       "stocke",
+       "pile",
+       "fumée",
+       "use"
+      ]
+     },
+     "lecon": "production"
+    }
+   ]
+  }
+ ]
+}

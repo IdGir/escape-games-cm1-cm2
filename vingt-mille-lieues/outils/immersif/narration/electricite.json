@@ -1,0 +1,166 @@
+{
+ "tons": {
+  "nour": "Élève curieuse et têtue, fait des essais, n'aime pas qu'une lampe refuse de s'allumer",
+  "maelle": "Magasinière pratique et rapide, aime que tout soit rangé à sa place, insiste sur la protection",
+  "helene": "Ingénieure posée et rassurante, explique avec des mots exacts, rappelle la règle des piles",
+  "marius": "Électricien ferme et bienveillant, ne plaisante jamais avec la sécurité",
+  "karim": "Technicien du réseau calme sous pression, pense à toute la ville, aime les chiffres justes"
+ },
+ "enigmes": {
+  "e1-1": {
+   "objet": "Le montage de Nour",
+   "description": "Sur la table, une pile plate, une lampe sur sa douille, un interrupteur et des fils à pinces.",
+   "enjeu": "Sans lumière dans l'atelier, impossible de lire les plans pour réparer la centrale.",
+   "situation": "Le montage de Nour est presque fini, mais la lampe reste éteinte.",
+   "reaction": "Le filament rougit, puis la lampe éclaire toute la table."
+  },
+  "e1-2": {
+   "objet": "Le cahier d'expériences",
+   "description": "Un cahier ouvert, couvert de croquis de montages et de flèches.",
+   "enjeu": "Nour doit comprendre pourquoi ses essais marchent ou non avant d'aller plus loin.",
+   "situation": "Les notes de Nour mélangent ce qui est juste et ce qui ne l'est pas.",
+   "reaction": "Nour barre ses erreurs et entoure ce qui est juste.",
+   "dialogue": "J'ai écrit tout ce que j'ai vu. Mais je me suis peut-être trompée : vérifiez avec moi."
+  },
+  "e1-3": {
+   "objet": "Les essais ratés",
+   "description": "Des montages défaits, alignés sur une étagère, chacun avec une étiquette.",
+   "enjeu": "Comprendre les essais ratés évite de refaire les mêmes erreurs dans toute la centrale.",
+   "situation": "Nour a fait plusieurs montages ; certains ne marchent pas.",
+   "reaction": "Les montages qui fonctionnent s'allument un à un sur l'étagère.",
+   "dialogue": "Regardez mes essais. Lesquels pouvaient marcher ?"
+  },
+  "e1-4": {
+   "objet": "La fiche du club",
+   "description": "Une feuille vierge épinglée au mur : « Fiche de montage du club ».",
+   "enjeu": "La lampe de secours du couloir doit pouvoir être remontée par n'importe qui.",
+   "situation": "Nour veut laisser une fiche claire pour les autres membres du club.",
+   "reaction": "La lampe de secours du couloir se rallume.",
+   "dialogue": "Il faut une fiche que tout le monde puisse suivre. On l'écrit ensemble ?"
+  },
+  "e2-1": {
+   "objet": "Le bac renversé",
+   "description": "Un bac en plastique renversé : clés, gommes, vis, bouchons et trombones mêlés.",
+   "enjeu": "Les électriciens ne peuvent pas réparer les lignes sans savoir quel matériel conduit le courant.",
+   "situation": "L'orage a renversé le bac de pièces de Maëlle.",
+   "reaction": "Les deux tiroirs se referment : conducteurs à gauche, isolants à droite."
+  },
+  "e2-2": {
+   "objet": "La boîte des métaux",
+   "description": "Une boîte en métal étiquetée « Conducteurs ».",
+   "enjeu": "Un objet mal rangé pourrait laisser croire à un électricien qu'il est protégé.",
+   "situation": "Un objet s'est glissé dans la mauvaise boîte.",
+   "reaction": "L'intrus retourne dans le tiroir des isolants.",
+   "dialogue": "Dans cette boîte, tout devrait laisser passer le courant. Quelque chose cloche."
+  },
+  "e2-3": {
+   "objet": "Les bobines de fil",
+   "description": "Des bobines de fil de cuivre gainé de plastique, de toutes les couleurs.",
+   "enjeu": "Pour réparer, il faut savoir à quoi sert chaque partie du matériel.",
+   "situation": "Les étiquettes des bobines se sont décollées.",
+   "reaction": "Les étiquettes se recollent ; les bobines brillent sous la lampe.",
+   "dialogue": "Mes étiquettes se sont envolées. À quoi sert chaque chose ?"
+  },
+  "e2-4": {
+   "objet": "La notice du testeur",
+   "description": "Une notice plastifiée, tachée d'eau, accrochée à l'établi.",
+   "enjeu": "Sans notice, les nouveaux apprentis ne sauront pas tester leur matériel.",
+   "situation": "La pluie a effacé des mots de la notice.",
+   "reaction": "La lampe du testeur clignote deux fois : la notice est complète.",
+   "dialogue": "Ma notice est illisible. Vous vous souvenez des bons mots ?"
+  },
+  "e3-1": {
+   "objet": "La légende du tableau",
+   "description": "Un grand tableau mural couvert de symboles ; la légende est effacée.",
+   "enjeu": "Sans légende, personne ne peut lire les schémas de la centrale.",
+   "situation": "La légende du tableau mural s'est effacée.",
+   "reaction": "La légende réapparaît sous chaque symbole."
+  },
+  "e3-2": {
+   "objet": "Le schéma du pupitre",
+   "description": "Un schéma dessiné sur le pupitre, à côté des voyants éteints.",
+   "enjeu": "Le pupitre ne redémarrera que si l'on sait lire son schéma.",
+   "situation": "Les étiquettes du schéma du pupitre sont tombées.",
+   "reaction": "Les voyants du pupitre s'allument en suivant le schéma.",
+   "dialogue": "Ce schéma commande la lampe de secours. Remettez ses étiquettes."
+  },
+  "e3-3": {
+   "objet": "Les voyants",
+   "description": "Une rangée de voyants verts et rouges au-dessus du schéma.",
+   "enjeu": "Il faut savoir ce que dit un schéma avant de fermer un interrupteur.",
+   "situation": "Hélène veut s'assurer que vous lisez bien le schéma.",
+   "reaction": "Un voyant vert s'allume pour chaque bonne lecture.",
+   "dialogue": "Que nous dit ce schéma ? Lisez-le avec moi."
+  },
+  "e3-4": {
+   "objet": "Le trajet du courant",
+   "description": "Une baguette lumineuse posée sur le schéma.",
+   "enjeu": "Pour trouver une panne, on suit le trajet du courant.",
+   "situation": "Hélène pose le doigt sur la borne + et attend la suite.",
+   "reaction": "Une lumière parcourt le schéma, de la borne + à la borne −.",
+   "dialogue": "Suivez le courant avec moi, de la borne + à la borne −."
+  },
+  "e4-1": {
+   "objet": "Le tableau électrique",
+   "description": "Le tableau électrique de la maison témoin, avec son disjoncteur.",
+   "enjeu": "Avant de remettre le courant dans les maisons, il faut connaître les dangers.",
+   "situation": "Marius ne rallumera rien sans vérifier vos connaissances.",
+   "reaction": "Le voyant du disjoncteur passe au vert."
+  },
+  "e4-2": {
+   "objet": "Les affiches tombées",
+   "description": "Des affiches de prévention éparpillées sur le sol du salon.",
+   "enjeu": "Les visiteurs de demain doivent trouver les affiches à leur place.",
+   "situation": "L'orage a fait tomber les affiches de la maison témoin.",
+   "reaction": "Les affiches se raccrochent au mur, bien rangées.",
+   "dialogue": "Mes affiches sont par terre. Aidez-moi à les remettre au bon endroit."
+  },
+  "e4-3": {
+   "objet": "Le tableau des idées reçues",
+   "description": "Un tableau blanc couvert de phrases écrites par les visiteurs.",
+   "enjeu": "Une idée fausse sur l'électricité peut provoquer un accident.",
+   "situation": "Des visiteurs ont écrit des idées vraies et fausses.",
+   "reaction": "Les idées fausses s'effacent du tableau.",
+   "dialogue": "Les visiteurs ont écrit beaucoup de choses. Corrigeons ensemble."
+  },
+  "e4-4": {
+   "objet": "La visite des pièces",
+   "description": "Les portes de la cuisine, de la salle de bain et du salon de la maison témoin.",
+   "enjeu": "Chaque pièce a ses risques et ses bons réflexes.",
+   "situation": "Marius fait le tour des pièces avec vous.",
+   "reaction": "Chaque pièce s'éclaire quand le bon réflexe est trouvé.",
+   "dialogue": "Faisons le tour de la maison. Dans chaque pièce, un réflexe à connaître."
+  },
+  "e5-1": {
+   "objet": "La carte lumineuse",
+   "description": "Une grande carte de la vallée : la centrale, les pylônes, les postes et la ville.",
+   "enjeu": "Rallumer la ville, c'est d'abord rétablir le chemin de l'électricité.",
+   "situation": "Le trajet de l'électricité est éteint sur la carte.",
+   "reaction": "Le trajet s'allume sur la carte, de la centrale jusqu'à la ville."
+  },
+  "e5-2": {
+   "objet": "Les centrales de la vallée",
+   "description": "Des pions lumineux sur la carte : barrage, éoliennes, panneaux solaires, centrales.",
+   "enjeu": "Karim doit savoir sur quelles centrales compter pour la nuit.",
+   "situation": "Les centrales de la carte ne sont plus classées.",
+   "reaction": "Les pions des centrales s'allument chacun de leur couleur.",
+   "dialogue": "Toutes nos centrales ne marchent pas de la même façon. Classons-les."
+  },
+  "e5-3": {
+   "objet": "Le pupitre de reconnexion",
+   "description": "Quatre leviers, un par quartier, sous quatre cadrans à chiffres.",
+   "enjeu": "Rallumer les quartiers un par un évite que le réseau disjoncte à nouveau.",
+   "situation": "Chaque levier demande un code tiré du tableau de production.",
+   "reaction": "Les quartiers de la gare, du port, des écoles et du marché se rallument l'un après l'autre.",
+   "dialogue": "Un code par quartier. Prenez votre temps : un faux code, et tout disjoncte."
+  },
+  "e5-4": {
+   "objet": "Le carnet de Karim",
+   "description": "Un petit carnet mouillé, ouvert sur la table de conduite.",
+   "enjeu": "Comprendre comment on produit l'électricité aide à ne pas la gaspiller.",
+   "situation": "La pluie a effacé des mots du carnet de Karim.",
+   "reaction": "La dernière lampe de la carte s'allume : la centrale tourne à plein.",
+   "dialogue": "Mon carnet a pris l'eau. Retrouvez les mots qui manquent."
+  }
+ }
+}

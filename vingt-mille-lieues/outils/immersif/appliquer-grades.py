@@ -33,6 +33,7 @@ DIALOGUES = {
     "plan": "Voici mon schéma. Placez chaque étiquette au bon endroit.",
     "intrus": "Un de ces éléments n'est pas comme les autres. Trouvez-le.",
     "instrument": "Lisez bien mes instruments, puis réglez-les avec soin.",
+    "circuit": "Voici les bornes. Posez les fils pour que le courant fasse le bon chemin.",
 }
 
 

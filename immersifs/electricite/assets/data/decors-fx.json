@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "atelier": {
+   "titre": "L'atelier du club sciences, au rez-de-chaussée de la centrale",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le montage de Nour",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Sur la table, une pile plate, une lampe sur sa douille, un interrupteur et des fils à pinces."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le cahier d'expériences",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un cahier ouvert, couvert de croquis de montages et de flèches."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les essais ratés",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des montages défaits, alignés sur une étagère, chacun avec une étiquette."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La fiche du club",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une feuille vierge épinglée au mur : « Fiche de montage du club »."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "magasin": {
+   "titre": "Le magasin de matériel électrique",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le bac renversé",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un bac en plastique renversé : clés, gommes, vis, bouchons et trombones mêlés."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La boîte des métaux",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une boîte en métal étiquetée « Conducteurs »."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les bobines de fil",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des bobines de fil de cuivre gainé de plastique, de toutes les couleurs."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La notice du testeur",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une notice plastifiée, tachée d'eau, accrochée à l'établi."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "controle": {
+   "titre": "La salle de contrôle de la centrale",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La légende du tableau",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un grand tableau mural couvert de symboles ; la légende est effacée."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le schéma du pupitre",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un schéma dessiné sur le pupitre, à côté des voyants éteints."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les voyants",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une rangée de voyants verts et rouges au-dessus du schéma."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le trajet du courant",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une baguette lumineuse posée sur le schéma."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "maison": {
+   "titre": "La maison témoin, dans le hall des visites",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le tableau électrique",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Le tableau électrique de la maison témoin, avec son disjoncteur."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les affiches tombées",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des affiches de prévention éparpillées sur le sol du salon."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le tableau des idées reçues",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un tableau blanc couvert de phrases écrites par les visiteurs."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La visite des pièces",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Les portes de la cuisine, de la salle de bain et du salon de la maison témoin."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "reseau": {
+   "titre": "Le poste de conduite du réseau",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La carte lumineuse",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande carte de la vallée : la centrale, les pylônes, les postes et la ville."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les centrales de la vallée",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des pions lumineux sur la carte : barrage, éoliennes, panneaux solaires, centrales."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le pupitre de reconnexion",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Quatre leviers, un par quartier, sous quatre cadrans à chiffres."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet de Karim",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un petit carnet mouillé, ouvert sur la table de conduite."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

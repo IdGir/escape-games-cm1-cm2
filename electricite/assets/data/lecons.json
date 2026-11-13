@@ -1,0 +1,219 @@
+{
+ "lecons": [
+  {
+   "id": "circuit",
+   "salle": 1,
+   "icone": "1",
+   "titre": "Le circuit électrique",
+   "duree": "4 min",
+   "niveau": "CM1-CM2",
+   "objectifs": [
+    "Nommer les éléments d'un circuit : pile, lampe, interrupteur, fils",
+    "Savoir qu'une lampe ne brille que dans une boucle complète",
+    "Distinguer circuit ouvert et circuit fermé",
+    "CM2 : expliquer qu'une lampe dévissée éteint les autres lampes de la même boucle"
+   ],
+   "contenu": {
+    "cm1": "<h4>Les éléments</h4><p>Un circuit électrique comprend une <b>pile</b>, une <b>lampe</b> (ou un moteur) et des <b>fils</b>. La pile a deux bornes : la borne + et la borne −.</p><h4>Une boucle complète</h4><p>La lampe ne s'allume que si le courant peut faire une <b>boucle</b> sans interruption, d'une borne de la pile à l'autre. Le circuit est alors <b>fermé</b>. Si un fil est débranché, le circuit est <b>ouvert</b> : la lampe s'éteint.</p><h4>L'interrupteur</h4><p>L'<b>interrupteur</b> ouvre ou ferme le circuit sans débrancher les fils.</p>",
+    "cm2": "<h4>Les éléments d'un circuit</h4><p>Un circuit électrique simple comprend un générateur, comme une pile, un ou plusieurs récepteurs, comme une lampe ou un moteur, et des fils de connexion. La pile a deux bornes, la borne + et la borne − ; une lampe a elle aussi deux bornes, sur son culot.</p><h4>Une boucle sans interruption</h4><p>Pour qu'une lampe s'allume, il faut une boucle ininterrompue de conducteurs et de récepteurs, qui part d'une borne de la pile et revient à l'autre borne. Quand la boucle est complète, on dit que le circuit est fermé : le courant circule et la lampe brille. Si un fil est débranché ou si l'interrupteur est ouvert, la boucle est coupée : le circuit est ouvert et la lampe s'éteint. L'interrupteur sert à ouvrir ou à fermer le circuit sans débrancher les fils.</p><h4>Deux récepteurs</h4><p>On peut placer deux lampes dans la même boucle : si l'une est dévissée, la boucle est coupée et l'autre s'éteint aussi. En dérivation, chaque lampe a sa propre boucle reliée à la pile : si l'une est dévissée, l'autre reste allumée.</p><h4>Ce qui s'use</h4><p>Le courant ne s'use pas en traversant la lampe : c'est la pile qui s'use peu à peu et finit par ne plus faire briller la lampe. Relier directement les deux bornes de la pile par un fil, sans récepteur, provoque un court-circuit : le fil chauffe et la pile s'use très vite.</p>"
+   },
+   "lexique": [
+    {
+     "mot": "circuit",
+     "def": "chemin fermé que suit le courant électrique"
+    },
+    {
+     "mot": "borne",
+     "def": "point où l'on branche un fil sur une pile ou une lampe"
+    },
+    {
+     "mot": "récepteur",
+     "def": "appareil qui utilise le courant : lampe, moteur"
+    },
+    {
+     "mot": "générateur",
+     "def": "appareil qui fournit le courant : la pile"
+    },
+    {
+     "mot": "interrupteur",
+     "def": "dispositif qui ouvre ou ferme le circuit"
+    }
+   ],
+   "schema": {
+    "titre": "Un circuit fermé",
+    "svg": "<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Un circuit fermé : la lampe brille\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='330' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Un circuit fermé : la lampe brille</text><rect x='90' y='182' width='110' height='70' rx='6' fill='#1f6fb2' stroke='#1d2733' stroke-width='2'/><rect x='90' y='228' width='110' height='24' rx='4' fill='#f2c230' stroke='#1d2733' stroke-width='2'/><text x='145' y='216' text-anchor='middle' font-size='15' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4,5 V</text><rect x='112' y='156' width='12' height='28' fill='#b9bfc6' stroke='#1d2733'/><rect x='164' y='148' width='12' height='36' fill='#b9bfc6' stroke='#1d2733'/><circle cx='480' cy='110' r='34' fill='#ffe066' opacity='.55'/><circle cx='480' cy='110' r='20' fill='#fff4b0' stroke='#1d2733' stroke-width='2'/><path d='M474 114 Q480 100 486 114' fill='none' stroke='#7a5a2a' stroke-width='2'/><rect x='468' y='128' width='24' height='16' fill='#b9bfc6' stroke='#1d2733'/><rect x='450' y='144' width='60' height='18' rx='3' fill='#6b4f3a' stroke='#1d2733'/><rect x='260' y='270' width='80' height='16' rx='3' fill='#6b4f3a' stroke='#1d2733'/><circle cx='272' cy='270' r='5' fill='#b9bfc6' stroke='#1d2733'/><circle cx='328' cy='270' r='5' fill='#b9bfc6' stroke='#1d2733'/><line x1='272' y1='268' x2='328' y2='268' stroke='#8a9099' stroke-width='6' stroke-linecap='round'/><path d='M174 166 L174 110 L455 110 L455 150' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><path d='M505 150 L540 150 L540 270 L333 270' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><path d='M267 270 L50 270 L50 150 L118 150 L118 174' fill='none' stroke='#c47a2c' stroke-width='4' stroke-linejoin='round'/><text x='145' y='292' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>pile plate</text><text x='480' y='196' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>lampe sur sa douille</text><text x='300' y='305' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>interrupteur</text><text x='320' y='100' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>fil de connexion</text><text x='206' y='160' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>borne</text><text x='320' y='324' text-anchor='middle' font-size='11' fill='#4a5560' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Dessin simplifié. Interrupteur fermé.</text></svg>"
+   },
+   "sources": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 » ; Lumni, « Le circuit électrique »."
+  },
+  {
+   "id": "conducteurs",
+   "salle": 2,
+   "icone": "2",
+   "titre": "Conducteurs et isolants",
+   "duree": "4 min",
+   "niveau": "CM1-CM2",
+   "objectifs": [
+    "Trier des matériaux conducteurs et isolants",
+    "Savoir que les métaux conduisent le courant",
+    "Utiliser un circuit testeur",
+    "CM2 : expliquer la composition d'un fil électrique"
+   ],
+   "contenu": {
+    "cm1": "<h4>Conducteur ou isolant ?</h4><p>Un <b>conducteur</b> laisse passer le courant : les <b>métaux</b> (fer, cuivre, aluminium). Un <b>isolant</b> ne le laisse pas passer : le <b>plastique</b>, le <b>bois</b>, le <b>verre</b>, le <b>papier</b>, le <b>caoutchouc</b>.</p><h4>Le circuit testeur</h4><p>On place l'objet dans la boucle d'un circuit. Si la lampe s'allume, l'objet est conducteur.</p><h4>Le fil électrique</h4><p>Le cœur du fil est en <b>cuivre</b> (conducteur) ; la gaine est en <b>plastique</b> (isolant).</p>",
+    "cm2": "<h4>Conducteurs et isolants</h4><p>Un conducteur est un matériau qui laisse passer le courant électrique. Les métaux, comme le cuivre, le fer, l'aluminium ou l'or, sont de bons conducteurs. Un isolant est un matériau qui ne laisse pas passer le courant : le plastique, le verre, le bois sec, le caoutchouc, le papier ou le tissu sont isolants. L'air sec est isolant : quand l'interrupteur est ouvert, c'est une couche d'air qui coupe la boucle.</p><h4>Tester un objet</h4><p>Pour savoir si un objet est conducteur, on le place dans la boucle d'un circuit testeur : si la lampe s'allume, l'objet est conducteur. La mine d'un crayon à papier, faite de graphite, conduit le courant même si ce n'est pas un métal. Un même objet peut être fabriqué dans un matériau conducteur ou isolant : une cuillère en métal conduit, une cuillère en bois ne conduit pas.</p><h4>Dans la vie de tous les jours</h4><p>Un fil électrique est fait d'un cœur en cuivre qui conduit le courant, entouré d'une gaine en plastique qui isole. On utilise des isolants pour protéger les personnes : les prises, les interrupteurs et les poignées des outils d'électricien sont en plastique. Le corps humain conduit lui aussi le courant : c'est pour cela que le courant du secteur est dangereux pour nous. L'eau du robinet conduit le courant du secteur : c'est pourquoi il ne faut jamais toucher un appareil électrique avec les mains mouillées.</p>"
+   },
+   "lexique": [
+    {
+     "mot": "conducteur",
+     "def": "matériau qui laisse passer le courant électrique"
+    },
+    {
+     "mot": "isolant",
+     "def": "matériau qui ne laisse pas passer le courant"
+    },
+    {
+     "mot": "gaine",
+     "def": "enveloppe isolante autour d'un fil"
+    },
+    {
+     "mot": "graphite",
+     "def": "matière noire de la mine du crayon, qui conduit le courant"
+    }
+   ],
+   "schema": {
+    "titre": "Le circuit testeur",
+    "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le circuit testeur\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le circuit testeur</text><rect x='70' y='170' width='110' height='70' rx='6' fill='#1f6fb2' stroke='#1d2733' stroke-width='2'/><rect x='70' y='216' width='110' height='24' rx='4' fill='#f2c230' stroke='#1d2733' stroke-width='2'/><text x='125' y='204' text-anchor='middle' font-size='15' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4,5 V</text><rect x='92' y='144' width='12' height='28' fill='#b9bfc6' stroke='#1d2733'/><rect x='144' y='136' width='12' height='36' fill='#b9bfc6' stroke='#1d2733'/><circle cx='470' cy='90' r='34' fill='#ffe066' opacity='.55'/><circle cx='470' cy='90' r='20' fill='#fff4b0' stroke='#1d2733' stroke-width='2'/><path d='M464 94 Q470 80 476 94' fill='none' stroke='#7a5a2a' stroke-width='2'/><rect x='458' y='108' width='24' height='16' fill='#b9bfc6' stroke='#1d2733'/><rect x='440' y='124' width='60' height='18' rx='3' fill='#6b4f3a' stroke='#1d2733'/><path d='M154 136 L154 70 L445 70 L445 130' fill='none' stroke='#c47a2c' stroke-width='4'/><path d='M495 130 L540 130 L540 240 L380 240' fill='none' stroke='#c47a2c' stroke-width='4'/><path d='M98 150 L98 130 L40 130 L40 240 L260 240' fill='none' stroke='#c47a2c' stroke-width='4'/><rect x='262' y='232' width='116' height='16' rx='4' fill='#b9bfc6' stroke='#1d2733'/><text x='320' y='225' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>objet à tester (ici une clé en fer)</text><text x='470' y='190' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>la lampe brille : conducteur</text><text x='320' y='280' text-anchor='middle' font-size='12' fill='#4a5560' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Si la lampe reste éteinte, l'objet est isolant.</text></svg>"
+   },
+   "sources": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 » ; Lumni, « Conducteurs et isolants »."
+  },
+  {
+   "id": "schema",
+   "salle": 3,
+   "icone": "3",
+   "titre": "Le schéma électrique",
+   "duree": "4 min",
+   "niveau": "CM1-CM2",
+   "objectifs": [
+    "Reconnaître les symboles de la pile, de la lampe, du moteur et de l'interrupteur",
+    "Lire un schéma normalisé",
+    "Passer du dessin au schéma",
+    "CM2 : suivre le trajet du courant de la borne + à la borne −"
+   ],
+   "contenu": {
+    "cm1": "<h4>Les symboles</h4><p>Sur un <b>schéma</b>, on remplace les objets par des <b>symboles</b>, les mêmes pour tout le monde. La pile : un grand trait et un petit trait. La lampe : un cercle avec une croix. Le moteur : un cercle avec un M. L'interrupteur ouvert : un trait levé.</p><h4>Les fils</h4><p>Les fils sont des traits droits. Le circuit forme souvent un rectangle.</p>",
+    "cm2": "<h4>Pourquoi un schéma ?</h4><p>Un schéma électrique représente un circuit avec des symboles normalisés, les mêmes partout dans le monde. Sur un dessin réaliste, on reconnaît la forme des objets ; sur un schéma, on ne garde que l'essentiel : les appareils et la façon dont ils sont reliés. Un schéma est plus rapide à dessiner qu'un dessin réaliste, et tout le monde peut le comprendre.</p><h4>Les symboles</h4><p>La pile est représentée par un grand trait et un petit trait parallèles : le grand trait est la borne +. La lampe est représentée par un cercle barré d'une croix. Le moteur est représenté par un cercle contenant la lettre M. L'interrupteur ouvert est dessiné par un trait levé, l'interrupteur fermé par un trait couché qui ferme le passage.</p><h4>Dessiner et lire un schéma</h4><p>Les fils de connexion sont dessinés par des traits droits, et le circuit forme souvent un rectangle. Pour dessiner un schéma, on trace les fils à la règle et on place les symboles sur les fils, sans laisser de trou dans la boucle. Pour lire un schéma, on suit le trajet du courant avec le doigt, de la borne + de la pile jusqu'à la borne −, en passant par chaque appareil. Si l'interrupteur dessiné est ouvert, la boucle est coupée : sur ce schéma, aucun appareil de la boucle ne fonctionne. On peut dessiner les appareils à des places différentes : deux schémas sont équivalents si les appareils sont reliés de la même façon.</p>"
+   },
+   "lexique": [
+    {
+     "mot": "schéma",
+     "def": "dessin simplifié qui utilise des symboles"
+    },
+    {
+     "mot": "symbole",
+     "def": "signe qui représente un objet"
+    },
+    {
+     "mot": "normalisé",
+     "def": "fait selon une règle commune à tous"
+    }
+   ],
+   "schema": {
+    "titre": "Les symboles normalisés",
+    "svg": "<svg viewBox='0 0 640 260' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Les symboles normalisés\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='260' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Les symboles normalisés</text><line x1='90' y1='92' x2='90' y2='114' stroke='#2b3440' stroke-width='3' stroke-linecap='round'/><line x1='90' y1='126' x2='90' y2='148' stroke='#2b3440' stroke-width='3' stroke-linecap='round'/><rect x='60' y='110' width='60' height='20' fill='#eef3f7'/><line x1='64' y1='114' x2='116' y2='114' stroke='#1d2733' stroke-width='4' stroke-linecap='round'/><line x1='77' y1='126' x2='103' y2='126' stroke='#1d2733' stroke-width='7' stroke-linecap='round'/><text x='128' y='118' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>+</text><text x='128' y='134' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>−</text><text x='90' y='190' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>pile</text><circle cx='220' cy='120' r='16' fill='#fff' stroke='#1d2733' stroke-width='3'/><line x1='208.8' y1='108.8' x2='231.2' y2='131.2' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><line x1='208.8' y1='131.2' x2='231.2' y2='108.8' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><text x='220' y='190' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>lampe</text><circle cx='340' cy='120' r='16' fill='#fff' stroke='#1d2733' stroke-width='3'/><text x='340' y='126' text-anchor='middle' font-size='17' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>M</text><text x='340' y='190' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>moteur</text><line x1='420' y1='120' x2='436' y2='120' stroke='#2b3440' stroke-width='3' stroke-linecap='round'/><rect x='436' y='116' width='48' height='8' fill='#eef3f7'/><circle cx='438' cy='120' r='3.5' fill='#1d2733'/><circle cx='482' cy='120' r='3.5' fill='#1d2733'/><line x1='438' y1='120' x2='476' y2='100' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><line x1='484' y1='120' x2='500' y2='120' stroke='#2b3440' stroke-width='3' stroke-linecap='round'/><text x='460' y='190' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>interrupteur ouvert</text><line x1='540' y1='120' x2='556' y2='120' stroke='#2b3440' stroke-width='3' stroke-linecap='round'/><rect x='556' y='116' width='48' height='8' fill='#eef3f7'/><circle cx='558' cy='120' r='3.5' fill='#1d2733'/><circle cx='602' cy='120' r='3.5' fill='#1d2733'/><line x1='558' y1='120' x2='602' y2='120' stroke='#1d2733' stroke-width='3' stroke-linecap='round'/><line x1='604' y1='120' x2='620' y2='120' stroke='#2b3440' stroke-width='3' stroke-linecap='round'/><text x='580' y='190' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>interrupteur fermé</text><line x1='60' y1='228' x2='140' y2='228' stroke='#2b3440' stroke-width='3' stroke-linecap='round'/><text x='250' y='232' text-anchor='start' font-size='12' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>fil de connexion : un trait droit</text></svg>"
+   },
+   "sources": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; Fondation La main à la pâte, « L'électricité au cycle 3 » ; Eduscol, ressources d'accompagnement du programme de sciences et technologie au cycle 3."
+  },
+  {
+   "id": "securite",
+   "salle": 4,
+   "icone": "4",
+   "titre": "La sécurité électrique",
+   "duree": "4 min",
+   "niveau": "CM1-CM2",
+   "objectifs": [
+    "Savoir que la pile de la classe est sans danger et que le secteur est dangereux",
+    "Connaître les règles de sécurité à la maison et dehors",
+    "Savoir quoi faire en cas d'accident",
+    "Citer des gestes pour économiser l'électricité"
+   ],
+   "contenu": {
+    "cm1": "<h4>Pile ou secteur ?</h4><p>La <b>pile</b> de la classe (4,5 volts) est sans danger. Le courant des <b>prises</b> (230 volts) est <b>dangereux</b> : il peut brûler et tuer. On ne fait <b>jamais</b> d'expérience avec une prise.</p><h4>Les règles</h4><p>Ne jamais mettre un objet dans une prise. Ne jamais toucher un appareil avec les mains mouillées. Tirer sur la fiche, pas sur le fil. Ne jamais jouer près des lignes électriques ni grimper sur un pylône.</p><h4>En cas d'accident</h4><p>Ne pas toucher la personne : couper le courant, puis appeler le <b>18</b> ou le <b>112</b>.</p><h4>Économiser</h4><p>Éteindre la lumière en quittant une pièce, ne pas laisser les appareils en veille.</p>",
+    "cm2": "<h4>Pile ou secteur ?</h4><p>Les piles utilisées en classe, comme la pile plate de 4,5 volts, ne présentent pas de danger pour le corps. Le courant du secteur, celui des prises de la maison, a une tension de 230 volts : il est dangereux et peut tuer. Si le courant traverse le corps, il provoque une électrisation qui peut brûler et arrêter le cœur ; quand elle est mortelle, on parle d'électrocution.</p><h4>Les règles à la maison</h4><p>Il ne faut jamais introduire un objet dans une prise, ni démonter un appareil branché. Il ne faut jamais utiliser un appareil électrique avec les mains mouillées ou près d'une baignoire. Pour débrancher un appareil, on tire sur la fiche et non sur le fil ; un fil abîmé doit être remplacé.</p><h4>Dehors et en cas d'accident</h4><p>Il ne faut jamais faire voler un cerf-volant ou un drone près des lignes électriques, ni grimper sur un pylône ou entrer dans un poste électrique. Si une personne est électrisée, on ne la touche pas : on coupe d'abord le courant au disjoncteur, puis on appelle les secours au 18 ou au 112.</p><h4>Économiser l'électricité</h4><p>Éteindre la lumière en quittant une pièce et ne pas laisser les appareils en veille permettent d'économiser l'électricité. Une lampe à LED éclaire autant qu'une ancienne lampe à incandescence en consommant beaucoup moins d'électricité.</p>"
+   },
+   "lexique": [
+    {
+     "mot": "secteur",
+     "def": "courant électrique des prises de la maison"
+    },
+    {
+     "mot": "électrisation",
+     "def": "passage du courant dans le corps"
+    },
+    {
+     "mot": "disjoncteur",
+     "def": "appareil qui coupe le courant de la maison"
+    },
+    {
+     "mot": "veille",
+     "def": "appareil éteint mais encore branché, qui consomme un peu"
+    }
+   ],
+   "schema": {
+    "titre": "Pile ou secteur ?",
+    "svg": "<svg viewBox='0 0 640 250' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Pile ou secteur ?\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='250' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Pile ou secteur ?</text><rect x='80' y='110' width='110' height='70' rx='6' fill='#1f6fb2' stroke='#1d2733' stroke-width='2'/><rect x='80' y='156' width='110' height='24' rx='4' fill='#f2c230' stroke='#1d2733' stroke-width='2'/><text x='135' y='144' text-anchor='middle' font-size='15' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4,5 V</text><rect x='102' y='84' width='12' height='28' fill='#b9bfc6' stroke='#1d2733'/><rect x='154' y='76' width='12' height='36' fill='#b9bfc6' stroke='#1d2733'/><text x='135' y='215' text-anchor='middle' font-size='13' font-weight='700' fill='#2f6b4a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>pile plate 4,5 V : sans danger</text><rect x='420' y='80' width='110' height='110' rx='16' fill='#f4f6f8' stroke='#1d2733' stroke-width='2'/><circle cx='455' cy='135' r='8' fill='#1d2733'/><circle cx='495' cy='135' r='8' fill='#1d2733'/><path d='M560 70 L600 140 L520 140 Z' fill='#f2c230' stroke='#1d2733' stroke-width='2'/><text x='560' y='132' text-anchor='middle' font-size='30' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>!</text><text x='475' y='215' text-anchor='middle' font-size='13' font-weight='700' fill='#9a2a1a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>prise du secteur 230 V : DANGER</text></svg>"
+   },
+   "sources": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité (règles de sécurité électrique) ; Fondation La main à la pâte, « L'électricité au cycle 3 » ; Enedis, conseils de prévention des accidents électriques."
+  },
+  {
+   "id": "production",
+   "salle": 5,
+   "icone": "5",
+   "titre": "Produire et transporter l'électricité",
+   "duree": "4 min",
+   "niveau": "CM1-CM2",
+   "objectifs": [
+    "Nommer des centrales : nucléaire, hydraulique, éolienne, solaire, thermique",
+    "Distinguer sources renouvelables et non renouvelables",
+    "Décrire le trajet de l'électricité, de la centrale à la prise",
+    "CM2 : lire les chiffres de la production française en 2025"
+   ],
+   "contenu": {
+    "cm1": "<h4>Les centrales</h4><p>L'électricité des prises est produite dans des <b>centrales</b>. Dans une centrale <b>nucléaire</b> ou <b>thermique</b>, de la vapeur fait tourner une turbine. Dans une centrale <b>hydraulique</b>, c'est l'eau d'un barrage. Dans une <b>éolienne</b>, c'est le vent. Les panneaux <b>solaires</b> transforment la lumière en électricité.</p><h4>Renouvelable ou non ?</h4><p>L'eau, le vent et le Soleil se renouvellent. L'uranium, le gaz et le charbon ne se renouvellent pas. En France, la plus grande partie de l'électricité vient des centrales nucléaires.</p><h4>Le voyage de l'électricité</h4><p>Centrale, transformateur, lignes à très haute tension sur des pylônes, poste, puis réseau de la ville jusqu'au compteur et aux prises.</p>",
+    "cm2": "<h4>Les centrales</h4><p>L'électricité du secteur est produite dans des centrales électriques. Dans la plupart des centrales, quelque chose fait tourner une turbine reliée à un alternateur, qui produit le courant. Dans une centrale nucléaire, la chaleur produite par l'uranium transforme de l'eau en vapeur, qui fait tourner la turbine. Dans une centrale hydraulique, c'est l'eau retenue par un barrage qui fait tourner la turbine en descendant. Dans une éolienne, c'est le vent qui fait tourner les pales. Les panneaux solaires photovoltaïques transforment directement la lumière du Soleil en électricité, sans rien faire tourner. Dans une centrale thermique, on brûle du gaz, du charbon ou du fioul pour produire de la vapeur.</p><h4>Des sources renouvelables ou non</h4><p>L'eau, le vent et le Soleil sont des sources d'énergie renouvelables ; l'uranium, le gaz, le charbon et le fioul ne se renouvellent pas. En 2025, la France a produit 547,5 milliards de kilowattheures d'électricité : environ 68 % venaient du nucléaire, 11 % de l'hydraulique, 9 % de l'éolien, 6 % du solaire et 3 % du gaz.</p><h4>De la centrale à la prise</h4><p>À la sortie de la centrale, un transformateur élève la tension, puis les lignes à très haute tension portées par des pylônes transportent l'électricité sur de longues distances. Le réseau de transport français compte environ 106 000 km de lignes à haute et très haute tension. Près des villes, des postes de transformation abaissent la tension ; le réseau de distribution amène ensuite l'électricité jusqu'au compteur et aux prises de chaque maison. L'électricité se stocke très mal : à chaque instant, il faut produire autant d'électricité que l'on en consomme.</p>"
+   },
+   "lexique": [
+    {
+     "mot": "centrale",
+     "def": "usine qui produit de l'électricité"
+    },
+    {
+     "mot": "turbine",
+     "def": "roue à pales que l'on fait tourner"
+    },
+    {
+     "mot": "alternateur",
+     "def": "machine qui produit le courant quand on la fait tourner"
+    },
+    {
+     "mot": "renouvelable",
+     "def": "qui ne s'épuise pas : vent, eau, Soleil"
+    },
+    {
+     "mot": "pylône",
+     "def": "grand support métallique des lignes électriques"
+    }
+   ],
+   "schema": {
+    "titre": "De la centrale à la prise",
+    "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"De la centrale à la prise\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#eef3f7'/><text x='320' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>De la centrale à la prise</text><rect x='20' y='150' width='90' height='70' fill='#9aa5b1' stroke='#1d2733'/><path d='M40 150 Q50 100 70 150 Z' fill='#cfd6dd' stroke='#1d2733'/><rect x='80' y='110' width='14' height='40' fill='#7a858f' stroke='#1d2733'/><rect x='140' y='170' width='40' height='50' fill='#5d6d7e' stroke='#1d2733'/><path d='M240 220 L252 110 L264 220 M244 180 L260 180 M234 125 L270 125' fill='none' stroke='#1d2733' stroke-width='2'/><path d='M330 220 L342 110 L354 220 M334 180 L350 180 M324 125 L360 125' fill='none' stroke='#1d2733' stroke-width='2'/><path d='M420 220 L432 110 L444 220 M424 180 L440 180 M414 125 L450 125' fill='none' stroke='#1d2733' stroke-width='2'/><path d='M180 185 Q210 135 246 125 Q290 140 336 125 Q380 140 426 125 Q455 140 470 175' fill='none' stroke='#2b3440' stroke-width='2'/><rect x='465' y='175' width='36' height='45' fill='#5d6d7e' stroke='#1d2733'/><path d='M501 200 L540 200' stroke='#2b3440' stroke-width='2'/><path d='M540 220 L540 175 L570 150 L600 175 L600 220 Z' fill='#e9d8b4' stroke='#1d2733'/><rect x='563' y='195' width='14' height='25' fill='#8a5a32'/><text x='65' y='240' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>centrale</text><text x='160' y='240' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>transformateur</text><text x='335' y='240' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>lignes à très haute tension</text><text x='483' y='240' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>poste</text><text x='570' y='240' text-anchor='middle' font-size='12' font-weight='700' fill='#1d2733' font-family='Atkinson Hyperlegible,Arial,sans-serif'>maison</text><text x='320' y='270' text-anchor='middle' font-size='11' fill='#4a5560' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le transformateur élève la tension ; le poste l'abaisse ; le réseau de distribution va jusqu'au compteur.</text></svg>"
+   },
+   "document": {
+    "type": "texte",
+    "titre": "La production d'électricité en France en 2025",
+    "contenu": "Production totale : 547,5 milliards de kilowattheures (TWh). Nucléaire : 373 TWh (68 %). Hydraulique : 62,4 TWh (11 %). Éolien : 49,6 TWh (9 %). Solaire : 32,9 TWh (6 %). Gaz, charbon et fioul : environ 18,7 TWh (3 % pour le gaz). Plus de 95 % de cette électricité est produite sans rejeter beaucoup de gaz carbonique.",
+    "source": "RTE, Bilan électrique 2025, d'après Connaissance des énergies."
+   },
+   "sources": "Programme de sciences et technologie, cycle 3 (arrêté du 5 juin 2026, BO n° 24 du 11 juin 2026), CM2, « Signaux » : électricité ; RTE, Bilan électrique 2025 (repris par Connaissance des énergies, « 95,2 % d'électricité bas carbone en 2025 ») ; Connaissance des énergies, fiche « RTE » ; Lumni, « Comment produit-on de l'électricité ? »."
+  }
+ ]
+}
