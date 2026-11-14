@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "ines",
+  "texte": "Bonjour, je suis Inès, la vétérinaire du zoo des Trois-Sources. Cette nuit, une tempête a ouvert les fenêtres de la nurserie. Les fiches de naissance se sont envolées et toutes les étiquettes des œufs et des berceaux sont mélangées. Demain matin, les familles des petits attendent leurs nouveau-nés, et le carnet de naissance du zoo est verrouillé. Vous êtes nos apprentis soigneurs. Dans chaque salle, retrouvez comment naît chaque animal et notez le mot que vous donnera le responsable. Avec les cinq mots, nous ouvrirons le carnet et rendrons chaque petit à sa famille."
+ },
+ "coffre": {
+  "personnage": "ines",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — Le laboratoire de la vétérinaire",
+   "plans": [
+    {
+     "decor": "laboratoire",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "Entrez ! Avant de rendre les petits à leur famille, il faut comprendre comment commence la vie d'un animal. Tout part de deux cellules, si petites qu'on ne les voit qu'au microscope. Le vent a mélangé mon schéma et les étiquettes de mes bocaux. Vous m'aidez à tout remettre en ordre ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "laboratoire",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Parfait. Le premier mot est CELLULE : chaque petit commence par une seule cellule, l'œuf. Théo vous attend à l'aquarium, de l'autre côté de l'allée.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — L'aquarium et la mare",
+   "plans": [
+    {
+     "decor": "aquarium",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "theo",
+     "texte": "Salut, je suis Théo. Je soigne les poissons et les grenouilles. Regardez ces petites boules de gelée dans la mare : ce sont des œufs. Mais tous les animaux ne font pas comme la grenouille. La tempête a jeté mes fiches à l'eau : il faut savoir, pour chaque animal, où se rencontrent les cellules du mâle et de la femelle.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "aquarium",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "theo",
+     "texte": "Fiches sauvées ! Le deuxième mot est EAU : c'est là que se fait la fécondation externe. Malo vous attend dans la galerie des surprises.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — La galerie des surprises",
+   "plans": [
+    {
+     "decor": "galerie",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "malo",
+     "texte": "Bonjour, je suis Malo. Ma galerie, c'est celle des surprises ! Certains animaux pondent des œufs, d'autres donnent naissance à des petits vivants. Et puis il y a ceux qui ne font rien comme les autres. Les panneaux sont tombés : remettons chaque animal dans la bonne vitrine.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "galerie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "malo",
+     "texte": "Toutes les vitrines sont justes. Le troisième mot est VIVIPARE : le petit grandit dans le ventre de sa mère et naît vivant. Jeanne vous attend à la couveuse de la ferme.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — La couveuse de la ferme",
+   "plans": [
+    {
+     "decor": "couveuse",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "jeanne",
+     "texte": "Bonjour les apprentis, moi c'est Jeanne. J'élève les poules de la ferme du zoo. Ici, on regarde grandir les poussins dans leur œuf, jour après jour. Et dans l'écurie, la jument attend son poulain. Mon calendrier et mon tableau ont été mélangés par la tempête. Aidez-moi à savoir ce qui se passe avant la naissance.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "couveuse",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "jeanne",
+     "texte": "Les berceaux sont prêts. Le quatrième mot est EMBRYON : c'est le petit qui grandit avant de naître. Sacha vous attend au bureau du carnet de naissance.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — Le bureau du carnet de naissance",
+   "plans": [
+    {
+     "decor": "bureau",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "sacha",
+     "texte": "Bonjour ! Je suis Sacha, je suis en CM2 et ma classe visite le zoo aujourd'hui. Inès m'a confié une mission : remettre les panneaux des enclos et ouvrir le carnet de naissance. Mais je n'y arriverai pas tout seul. On fait équipe ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "bureau",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "sacha",
+     "texte": "Le dernier mot est NAISSANCE . Vous avez les cinq mots : ouvrons le carnet et rendons chaque petit à sa famille.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « La Nurserie du zoo »",
+   "plans": [
+    {
+     "decor": "bureau",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "sacha",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "theo",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "malo",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "jeanne",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "sacha",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
+}

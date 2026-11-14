@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "laboratoire": {
+   "titre": "Le laboratoire de la vétérinaire, à côté de la nurserie",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le schéma d'Inès",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Au tableau blanc, un dessin de cellules dont les étiquettes sont tombées au sol."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les fiches du stagiaire",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une pile de fiches recopiées à la main, posée près du microscope."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'armoire aux bocaux",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une armoire vitrée remplie de bocaux dont les étiquettes ont glissé."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "L'affiche des visiteurs",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une grande affiche en morceaux, posée sur la paillasse."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "aquarium": {
+   "titre": "L'aquarium et la mare pédagogique",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les fiches flottantes",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des fiches plastifiées qui flottent à la surface du grand bassin."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La vitre de l'aquarium",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande vitre derrière laquelle nagent des truites argentées."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le panneau de la mare",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un panneau en bois au bord de la mare, couvert d'éclaboussures."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le grand bassin",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le grand bassin et ses quatre fiches accrochées à la rambarde."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "galerie": {
+   "titre": "La galerie des animaux étonnants",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La vitrine des pondeurs",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une vitrine remplie d'œufs de toutes les tailles."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tableau de la galerie",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un grand tableau aimanté, ses cartes d'animaux tombées au pied du mur."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les panneaux des surprises",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des panneaux sur l'ornithorynque, les requins et la vipère."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le mur des exceptions",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un mur de cadres mélangés : photos et légendes séparées."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "couveuse": {
+   "titre": "La couveuse de la ferme du zoo",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le calendrier de la couveuse",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un calendrier de 21 cases accroché au-dessus de la couveuse."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La lampe à mirer",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une lampe qui éclaire l'intérieur d'un œuf, et un dessin à légender."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'armoire des berceaux",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une armoire en bois fermée par un cadenas à chiffres."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "L'écurie de la jument",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une stalle paisible où la jument attend son poulain."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "bureau": {
+   "titre": "Le bureau du carnet de naissance",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les panneaux des enclos",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des panneaux d'enclos empilés sur le bureau, à remettre dans la bonne case."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les berceaux de la nurserie",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une rangée de berceaux et de paniers, chacun avec un petit qui attend."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le carnet de naissance",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un gros carnet de cuir posé sur le bureau, presque complet."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le cadenas du carnet",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un petit cadenas à trois chiffres sur la couverture du carnet."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}
