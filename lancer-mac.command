@@ -21,13 +21,16 @@ fi
 echo "  Python détecté :"
 python3 --version
 echo ""
-echo "  >> ACCUEIL (les 3 jeux + page de vérification)"
-echo "     http://127.0.0.1:8000/"
+echo "  >> RÉSULTATS DES ÉLÈVES : enregistrés AUTOMATIQUEMENT"
+echo "     (resultats-classe.jsonl + resultats-classe.csv pour Excel,"
+echo "      copie de sécurité chaque jour dans sauvegardes-resultats)"
+echo "     Les voir : http://127.0.0.1:8000/resultats.html (s'ouvre tout seul)"
 echo ""
-echo "  >> JEUX"
-echo "     Le Secret de la Déclaration : http://127.0.0.1:8000/declaration/"
-echo "     Le Tour du Monde            : http://127.0.0.1:8000/tour-du-monde/"
-echo "     Mission géographique        : http://127.0.0.1:8000/mission-geo/"
+echo "  >> ÉLÈVES : ils doivent jouer depuis l'adresse http://192.168.… affichée plus bas."
+echo "     Depuis GitHub, le résultat reste dans le Chromebook."
+echo ""
+echo "  >> ESPACE ENSEIGNANT : http://127.0.0.1:8000/enseignant.html"
+echo "  >> ACCUEIL DES JEUX  : http://127.0.0.1:8000/"
 echo ""
 echo "  >> VÉRIFICATION (médias + accès direct aux énigmes)"
 echo "     http://127.0.0.1:8000/verifier.html"
@@ -36,6 +39,6 @@ echo "  Ctrl+C pour arrêter le serveur."
 echo ""
 
 # Ouvrir le navigateur après 2 secondes
-(sleep 2 && open "http://127.0.0.1:8000/") &
+(sleep 2 && open "http://127.0.0.1:8000/resultats.html") &
 
 python3 serveur.py 8000

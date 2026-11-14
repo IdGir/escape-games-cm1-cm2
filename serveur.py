@@ -23,9 +23,17 @@ import json
 import time
 import socket
 import threading
+import shutil
+import csv
+import io
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from socketserver import ThreadingMixIn
 from urllib.parse import urlparse, parse_qs, unquote
+
+# Le serveur travaille TOUJOURS dans le dossier du projet, d'où qu'on le lance
+# (raccourci, « Exécuter en tant qu'administrateur », autre dossier courant…).
+DOSSIER_PROJET = os.path.dirname(os.path.abspath(__file__))
+os.chdir(DOSSIER_PROJET)
 
 # ---- État partagé des équipes (en mémoire) ----
 ETATS_EQUIPES = {}        # { "Les Patriotes": {salle, score, fragments, ...} }
@@ -55,8 +63,16 @@ def dossier_donnees():
         return ""
     return d
 
-DOSSIER_DONNEES = dossier_donnees()
+DOSSIER_DONNEES = dossier_donnees() or DOSSIER_PROJET
+# Résultats des élèves (jamais publiés, jamais servis par le réseau : ils contiennent les prénoms) :
+#   resultats-classe.jsonl   une partie par ligne, enregistrée automatiquement (ajout seulement)
+#   resultats-classe.csv     le même contenu pour Excel / LibreOffice, remis à jour à chaque partie
+#   sauvegardes-resultats/   une copie de sécurité par jour (60 jours gardés)
 FICHIER_RESULTATS = os.path.join(DOSSIER_DONNEES, "resultats-classe.jsonl")
+FICHIER_RESULTATS_CSV = os.path.join(DOSSIER_DONNEES, "resultats-classe.csv")
+DOSSIER_SAUVEGARDES = os.path.join(DOSSIER_DONNEES, "sauvegardes-resultats")
+RESULTATS_LOCK = threading.RLock()
+TAILLE_MAX_REQUETE = 5 * 1024 * 1024
 FICHIER_DIFFICULTE = os.path.join(DOSSIER_DONNEES, "difficulte-classe.json")   # N20 : réglages de difficulté énigme par énigme
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 
@@ -69,6 +85,179 @@ def get_ip_locale():
         return ip
     except Exception:
         return "127.0.0.1"
+
+
+# ---- Adresses de CET ordinateur : seul l'enseignant lit les résultats ----
+_ADRESSES = {"t": 0, "v": set()}
+
+def adresses_locales():
+    """Adresses de cet ordinateur (boucle locale + IP du réseau), rafraîchies chaque minute."""
+    if time.time() - _ADRESSES["t"] > 60:
+        ad = {"127.0.0.1", "::1"}
+        try:
+            ad.add(get_ip_locale())
+            for info in socket.getaddrinfo(socket.gethostname(), None):
+                ad.add(info[4][0])
+        except Exception:
+            pass
+        _ADRESSES["t"], _ADRESSES["v"] = time.time(), ad
+    return _ADRESSES["v"]
+
+def est_adresse_locale(ip):
+    ip = str(ip or "")
+    if ip.startswith("::ffff:"):
+        ip = ip[7:]
+    return ip in adresses_locales()
+
+
+# ---- Résultats des parties (D5) : enregistrement automatique, sûr, sans doublon ----
+def cle_resultat(r):
+    """Une partie = jeu + équipe/élève + mode + début (même clé que resultats.html)."""
+    return "|".join([str(r.get("jeu") or ""), str(r.get("eleve") or ""), str(r.get("mode") or ""),
+                     str(r.get("partie") or r.get("date") or "")])
+
+def resultat_valide(r):
+    if not isinstance(r, dict) or r.get("type") != "escape-game-compte-rendu":
+        return False
+    if not isinstance(r.get("jeu", ""), str) or not isinstance(r.get("eleve", ""), str):
+        return False
+    try:
+        return len(json.dumps(r, ensure_ascii=False)) < 200000
+    except (TypeError, ValueError):
+        return False
+
+def lire_resultats():
+    """Toutes les parties (dernière version de chacune). Une ligne abîmée est ignorée, jamais fatale."""
+    index, ordre = {}, []
+    with RESULTATS_LOCK:
+        try:
+            with open(FICHIER_RESULTATS, encoding="utf-8", errors="replace") as f:
+                for ligne in f:
+                    ligne = ligne.strip()
+                    if not ligne:
+                        continue
+                    try:
+                        r = json.loads(ligne)
+                    except ValueError:
+                        continue
+                    if not resultat_valide(r):
+                        continue
+                    k = cle_resultat(r)
+                    if k not in index:
+                        ordre.append(k)
+                    index[k] = r
+        except OSError:
+            pass
+    return [index[k] for k in ordre]
+
+def date_fr(s):
+    s = str(s or "")
+    try:
+        return "{}/{}/{} {}".format(s[8:10], s[5:7], s[0:4], s[11:16]).strip() if len(s) >= 10 else s
+    except Exception:
+        return s
+
+def texte_sur(v):
+    """Neutralise les formules (=, +, -, @) : un prénom saisi par un élève ne doit pas s'exécuter dans Excel."""
+    v = str(v if v is not None else "")
+    return ("'" + v) if v[:1] in ("=", "+", "-", "@", "\t", "\r") else v
+
+def ecrire_csv(liste):
+    """resultats-classe.csv : même contenu que le .jsonl, ouvrable dans Excel (écriture atomique)."""
+    try:
+        lignes = [["Date", "Élève / équipe", "Mode", "Jeu", "Niveau", "Palier", "Score", "Score max", "Pourcentage",
+                   "Énigmes réussies", "Énigmes", "Du premier coup", "Erreurs", "Indices", "Durée (min)", "Partie terminée"]]
+        for r in sorted(liste, key=lambda x: str(x.get("date") or ""), reverse=True):
+            sc, mx = r.get("score"), r.get("scoreMax")
+            pct = round(100.0 * sc / mx) if isinstance(sc, (int, float)) and isinstance(mx, (int, float)) and mx else ""
+            lignes.append([date_fr(r.get("date")), texte_sur(r.get("eleve")), "individuel" if r.get("mode") == "solo" else "équipe",
+                           texte_sur(r.get("titre") or r.get("jeu")), texte_sur(r.get("niveau")), texte_sur(r.get("palier")),
+                           sc if sc is not None else "", mx if mx is not None else "", pct,
+                           r.get("enigmes", ""), r.get("total", ""), r.get("premierCoup", ""), r.get("erreurs", ""),
+                           r.get("indices", ""), str(r.get("dureeMin", "")).replace(".", ","),
+                           "oui" if r.get("termine") else "non"])
+        tampon = io.StringIO(newline="")
+        csv.writer(tampon, delimiter=";", lineterminator="\r\n").writerows(lignes)
+        tmp = FICHIER_RESULTATS_CSV + ".tmp"
+        with open(tmp, "w", encoding="utf-8-sig", newline="") as f:
+            f.write(tampon.getvalue())
+        os.replace(tmp, FICHIER_RESULTATS_CSV)
+    except OSError:
+        pass
+
+def copie_de_securite():
+    """Copie du jour dans sauvegardes-resultats/ (remise à jour à chaque écriture, 60 jours gardés)."""
+    try:
+        if not os.path.exists(FICHIER_RESULTATS):
+            return
+        os.makedirs(DOSSIER_SAUVEGARDES, exist_ok=True)
+        cible = os.path.join(DOSSIER_SAUVEGARDES, "resultats-classe-%s.jsonl" % time.strftime("%Y-%m-%d"))
+        shutil.copyfile(FICHIER_RESULTATS, cible + ".tmp")
+        os.replace(cible + ".tmp", cible)
+        anciennes = sorted(f for f in os.listdir(DOSSIER_SAUVEGARDES) if f.startswith("resultats-classe-") and f.endswith(".jsonl"))
+        for ancienne in anciennes[:-60]:
+            os.remove(os.path.join(DOSSIER_SAUVEGARDES, ancienne))
+    except OSError:
+        pass
+
+def enregistrer_resultats(liste):
+    """Ajoute les parties nouvelles ou modifiées. Retourne (nombre écrit, nombre total). Jamais d'effacement."""
+    with RESULTATS_LOCK:
+        existants = {}
+        for r in lire_resultats():
+            existants[cle_resultat(r)] = r
+        a_ecrire = []
+        for r in liste:
+            if not resultat_valide(r):
+                continue
+            r = {k: v for k, v in r.items() if not str(k).startswith("_")}   # marques internes de la page, pas des données
+            k = cle_resultat(r)
+            if existants.get(k) == r:
+                continue                                                    # déjà enregistrée à l'identique
+            existants[k] = r
+            a_ecrire.append(r)
+        if a_ecrire:
+            try:
+                debut_de_ligne = True
+                if os.path.exists(FICHIER_RESULTATS) and os.path.getsize(FICHIER_RESULTATS) > 0:
+                    with open(FICHIER_RESULTATS, "rb") as f:
+                        f.seek(-1, os.SEEK_END)
+                        debut_de_ligne = f.read(1) == b"\n"           # dernière ligne coupée (arrêt brutal) : on repart à la ligne
+                with open(FICHIER_RESULTATS, "a", encoding="utf-8", newline="\n") as f:
+                    if not debut_de_ligne:
+                        f.write("\n")
+                    for r in a_ecrire:
+                        f.write(json.dumps(r, ensure_ascii=False) + "\n")
+                    f.flush()
+                    os.fsync(f.fileno())
+            except OSError as e:
+                print("  ⚠️  Résultats NON enregistrés (" + str(e) + ")")
+                return -1, len(existants)
+            ecrire_csv(list(existants.values()))
+            copie_de_securite()
+        return len(a_ecrire), len(existants)
+
+def infos_stockage():
+    liste = lire_resultats()
+    try:
+        nb_copies = len([f for f in os.listdir(DOSSIER_SAUVEGARDES) if f.endswith(".jsonl")])
+    except OSError:
+        nb_copies = 0
+    ip = get_ip_locale()
+    return {"ok": True, "nbParties": len(liste), "fichier": FICHIER_RESULTATS, "csv": FICHIER_RESULTATS_CSV,
+            "dossierSauvegardes": DOSSIER_SAUVEGARDES, "nbCopies": nb_copies,
+            "derniere": max([str(r.get("date") or "") for r in liste] or [""]),
+            "ip": ip, "port": PORT, "adresseEleves": "http://{}:{}/".format(ip, PORT)}
+
+def chemin_prive(chemin_relatif):
+    """Fichiers qu'on ne sert jamais par le réseau : résultats des élèves, copies, clés, dépôt git."""
+    segments = [x for x in chemin_relatif.replace("\\", "/").split("/") if x]
+    if not segments:
+        return False
+    nom = segments[-1].lower()
+    return (".git" in [x.lower() for x in segments] or segments[0].lower() == "sauvegardes-resultats"
+            or nom.startswith("resultats-classe") or nom.startswith("difficulte-classe") or nom.startswith("dossier-donnees")
+            or (nom.startswith("cle-") and nom.endswith(".txt")))
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -95,8 +284,14 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         parsed = urlparse(self.path)
         path = parsed.path
-        longueur = int(self.headers.get("Content-Length", 0))
-        corps = self.rfile.read(longueur).decode("utf-8") if longueur else ""
+        try:
+            longueur = int(self.headers.get("Content-Length", 0))
+        except ValueError:
+            longueur = 0
+        if longueur > TAILLE_MAX_REQUETE:
+            self.send_error(413, "Requête trop volumineuse")
+            return
+        corps = self.rfile.read(longueur).decode("utf-8", errors="replace") if longueur else ""
         try:
             data = json.loads(corps) if corps else {}
         except Exception:
@@ -147,6 +342,9 @@ class Handler(BaseHTTPRequestHandler):
 
         # Décodage des URL (les dossiers peuvent contenir des espaces)
         path = unquote(path).lstrip("/")
+        if chemin_prive(path):
+            self.send_error(404, "Fichier non trouvé")
+            return
 
         # Sécurité : interdire toute remontée hors du dossier du projet
         racine = os.path.abspath(".")
@@ -265,12 +463,11 @@ class Handler(BaseHTTPRequestHandler):
                 cmd = COMMANDES_PROF.pop(equipe, None)
             self.json_reponse({"ok": True, "commande": cmd})
         elif path == "/api/resultat" and methode == "POST":
-            # Compte-rendu d'une partie terminée (commun/js/compte-rendu.js)
-            if data.get("type") == "escape-game-compte-rendu":
-                with LOCK:
-                    with open(FICHIER_RESULTATS, "a", encoding="utf-8") as f:
-                        f.write(json.dumps(data, ensure_ascii=False) + "\n")
-            self.json_reponse({"ok": True})
+            # Compte-rendu d'une partie (commun/js/compte-rendu.js et journal.js des jeux immersifs).
+            # Ouvert aux ordinateurs des élèves : c'est ce qui rend l'enregistrement automatique.
+            valide = resultat_valide(data)
+            ecrites, total = enregistrer_resultats([data]) if valide else (0, len(lire_resultats()))
+            self.json_reponse({"ok": valide and ecrites >= 0, "ajoutees": max(ecrites, 0), "total": total})
         elif path == "/api/difficulte" and methode == "GET":
             # N20 : réglages de difficulté énigme par énigme, posés depuis prof.html : {"jeu": {"1-2": 1, ...}}
             jeu = (parse_qs(urlparse(self.path).query).get("jeu") or [""])[0]
@@ -328,16 +525,25 @@ class Handler(BaseHTTPRequestHandler):
                 except (ValueError, AttributeError, OSError) as e:
                     self.json_reponse({"ok": False, "erreur": "fichier refusé : " + str(e)})
         elif path == "/api/resultats" and methode == "GET":
-            # Tous les comptes-rendus gardés sur cet ordinateur (lus par resultats.html)
-            liste = []
-            if os.path.exists(FICHIER_RESULTATS):
-                with open(FICHIER_RESULTATS, encoding="utf-8") as f:
-                    for ligne in f:
-                        try:
-                            liste.append(json.loads(ligne))
-                        except ValueError:
-                            pass
-            self.json_reponse({"resultats": liste})
+            # Toutes les parties gardées sur cet ordinateur (lues par resultats.html) : réservé à l'enseignant
+            if not self.reserve_enseignant():
+                return
+            liste = lire_resultats()
+            self.json_prive({"resultats": liste, "total": len(liste)})
+        elif path == "/api/resultats" and methode == "POST":
+            # Parties importées (fichiers des Chromebooks, texte collé…) : gardées dans le même fichier
+            if not self.reserve_enseignant():
+                return
+            lot = data.get("resultats") if isinstance(data, dict) else None
+            if not isinstance(lot, list):
+                self.json_prive({"ok": False, "erreur": "liste « resultats » attendue"}, 400)
+                return
+            ecrites, total = enregistrer_resultats(lot[:5000])
+            self.json_prive({"ok": ecrites >= 0, "ajoutees": max(ecrites, 0), "total": total})
+        elif path == "/api/stockage" and methode == "GET":
+            if not self.reserve_enseignant():
+                return
+            self.json_prive(infos_stockage())
         elif path == "/api/equipes" and methode == "GET":
             # Le prof récupère tous les états
             with LOCK:
@@ -368,7 +574,8 @@ class Handler(BaseHTTPRequestHandler):
                 "serveur": "Escape games pédagogiques CM1-CM2",
                 "ip": get_ip_locale(),
                 "port": PORT,
-                "equipes_connectees": len(ETATS_EQUIPES)
+                "equipes_connectees": len(ETATS_EQUIPES),
+                "local": est_adresse_locale(self.client_address[0])
             })
         elif path == "/api/export" and methode == "GET":
             # Export CSV simplifié
@@ -393,6 +600,23 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(csv.encode("utf-8"))
         else:
             self.send_error(404, "API inconnue : " + path)
+
+    def reserve_enseignant(self):
+        """Résultats des élèves : lisibles seulement depuis l'ordinateur qui fait tourner le serveur."""
+        if est_adresse_locale(self.client_address[0]):
+            return True
+        self.json_prive({"ok": False, "erreur": "réservé à l'ordinateur de l'enseignant (ouvrez http://127.0.0.1:{}/resultats.html sur ce PC)".format(PORT)}, 403)
+        return False
+
+    def json_prive(self, obj, code=200):
+        """Données personnelles : pas d'en-tête « Access-Control-Allow-Origin », jamais mises en cache."""
+        corps = json.dumps(obj, ensure_ascii=False).encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(corps)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(corps)
 
     def json_reponse(self, obj):
         corps = json.dumps(obj).encode("utf-8")
@@ -476,9 +700,20 @@ def main():
     print("  🔍 VÉRIFICATION (médias, accès direct aux énigmes) :")
     print("     http://127.0.0.1:{}/verifier.html".format(PORT))
     print()
+    print("  💾 RÉSULTATS DES ÉLÈVES — enregistrés automatiquement, rien à faire :")
+    print("     {} partie(s) déjà gardée(s)".format(len(lire_resultats())))
+    print("     Excel   : {}".format(FICHIER_RESULTATS_CSV))
+    print("     Copies  : {} (une par jour)".format(DOSSIER_SAUVEGARDES))
+    print("     📊 Voir les résultats  →  http://127.0.0.1:{}/resultats.html".format(PORT))
+    print()
+    print("  ⚠️  Pour être enregistrés ici, les élèves doivent jouer depuis :")
+    print("        http://{}:{}/".format(ip, PORT))
+    print("     (jouer depuis GitHub : le résultat reste dans le Chromebook ; voir resultats.html)")
+    print()
     print("  ⌨️  Ctrl+C pour arrêter le serveur.")
     print()
     print("-" * 62)
+    copie_de_securite()
     serveur = ServeurMultiThread(("0.0.0.0", PORT), Handler)
     try:
         serveur.serve_forever()

@@ -103,6 +103,18 @@ comptes-rendus envoyés par les élèves en mode individuel (fichiers déposés 
 contrôle). Exports : **tableur** (CSV pour Excel/LibreOffice), **Schooly** (CSV, une ligne par élève et par
 partie), sauvegarde JSON. Rien n'est envoyé sur internet.
 
+**Enregistrement automatique (ne rien exporter, ne rien importer).** Double-clic sur `lancer.bat` (ou `resultats.bat`,
+qui ouvre directement la page des résultats) : les élèves qui jouent depuis l'adresse `http://192.168…:8000/` affichée
+dans la fenêtre noire sont enregistrés tout seuls dans `resultats-classe.jsonl` (+ `resultats-classe.csv` pour Excel
+et une copie de sécurité par jour dans `sauvegardes-resultats/`, 60 jours gardés). Aucun doublon, une ligne abîmée
+n'empêche rien. Ces fichiers ne sont **jamais servis aux élèves** ni publiés ; la page des résultats n'est lisible que
+depuis l'ordinateur du serveur. Pour les ranger dans un dossier synchronisé (Nextcloud…), voir `dossier-donnees.txt`.
+Tout ce qui est importé dans la page (fichiers des Chromebooks, sauvegardes de partie des jeux immersifs, texte
+collé) est gardé dans ce même fichier et retrouvé à chaque ouverture.
+**Limite :** une partie jouée depuis GitHub reste dans le navigateur du Chromebook (une page https ne peut pas écrire
+sur le serveur local). Sur chaque Chromebook : ouvrir `resultats.html` (même adresse que pour jouer), « 📤 Exporter les
+parties de cet appareil », puis importer le fichier sur le PC de l'enseignant. Test : `python commun/tests/test-resultats-serveur.py`.
+
 ## 1 ter. Le passeport de compétences : passeport.html
 
 **[passeport.html](https://idgir.github.io/escape-games-cm1-cm2/passeport.html)** cumule, pour chaque élève et
