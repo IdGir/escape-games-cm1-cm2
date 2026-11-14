@@ -11,9 +11,14 @@
     2. en classe avec lancer.bat : toutes les parties de la classe (fichier
        resultats-classe.jsonl sur l'ordinateur de l'enseignant, jamais publié) ;
     3. les comptes-rendus envoyés par les élèves (mode individuel) : fichiers
-       .json déposés ici, ou textes collés depuis l'ENT.
+       .json déposés ici, ou textes collés depuis l'ENT ;
+    4. les sauvegardes de partie des jeux immersifs (bouton « exporter » des réglages du jeu).
+  ENREGISTREMENT AUTOMATIQUE : avec lancer.bat, chaque partie des élèves qui jouent depuis
+  l'adresse du serveur est écrite toute seule dans resultats-classe.jsonl (+ .csv pour Excel,
+  + une copie de sécurité par jour). Tout ce qui est importé ici est aussi envoyé à ce fichier,
+  et la page retrouve tout à chaque ouverture. Rien n'est envoyé sur internet.
+  Les résultats ne sont lisibles que depuis l'ordinateur du serveur (pas depuis les élèves).
   Exports : tableur (CSV pour Excel / LibreOffice), Schooly (CSV), sauvegarde JSON.
-  Tout reste dans le navigateur : rien n'est envoyé sur internet.
 -->
 <style>
   :root{--fond:#f6f4ef;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e2ddd2;--bleu:#2f55c8;--vert:#15803d;--rouge:#b91c1c;--ambre:#b45309}
@@ -39,6 +44,11 @@
   .pastille{display:inline-block;padding:2px 8px;border-radius:999px;background:#f0eee9;font-size:.8rem}
   .table-defile{overflow-x:auto;max-height:60vh}
   #message{min-height:1.4em}
+  #stockage{border-left:6px solid var(--ambre);background:#fff8ec}
+  #stockage.stockage-ok{border-left-color:var(--vert);background:#f0faf3}
+  #stockage.stockage-ko{border-left-color:var(--rouge);background:#fdf2f2}
+  #stockage p{margin:3px 0} #stockage ul{margin:4px 0 2px;padding-left:20px}
+  #message-stockage{display:block;min-height:1.2em}
   .barre-taux{display:inline-block;width:90px;height:9px;border-radius:5px;background:#eee;vertical-align:middle;overflow:hidden;margin-right:6px}
   .barre-taux i{display:block;height:100%;background:var(--vert)} .barre-taux.faible i{background:var(--rouge)} .barre-taux.moyen i{background:var(--ambre)}
   .a-retravailler li{margin:4px 0}
@@ -56,13 +66,16 @@
 <body>
 <header>
   <h1>📊 Résultats de la classe</h1>
-  <p>Toutes les parties de l'année au même endroit, prêtes pour un tableur ou pour Schooly. <a href="index.html">← Accueil des jeux</a></p>
+  <p>Toutes les parties de l'année au même endroit, prêtes pour un tableur ou pour Schooly. <a href="index.html">← Accueil des jeux</a> <small class="aide">· enregistrement automatique ✔</small></p>
 </header>
 <main>
+  <section class="bloc" id="stockage" aria-live="polite"><b>Vérification de l'enregistrement…</b></section>
+
   <section class="bloc">
     <h2>1. Rassembler les comptes-rendus</h2>
     <div class="ligne">
       <button id="btn-appareil">💻 Parties jouées sur cet appareil</button>
+      <button id="exp-appareil" title="À faire sur chaque Chromebook : un seul clic charge les parties de l'appareil et télécharge le fichier à déposer dans Nextcloud">📤 Exporter les parties de cet appareil</button>
       <button id="btn-serveur">🏫 Parties de la classe (serveur local)</button>
       <span class="aide">Le serveur local (lancer.bat) garde toutes les parties de l'année sur votre ordinateur.</span>
     </div>
@@ -71,6 +84,7 @@
     <p class="aide" style="margin-top:10px">… ou collez un ou plusieurs comptes-rendus reçus par message (texte commençant par « Compte-rendu — ») :</p>
     <textarea id="colle" placeholder="Compte-rendu — Le Laboratoire de Madame Mélange (escape game)&#10;Élève : …"></textarea>
     <div class="ligne"><button id="btn-colle">➕ Ajouter les comptes-rendus collés</button><span id="message" class="aide"></span></div>
+    <span id="message-stockage" class="aide"></span>
   </section>
 
   <section class="bloc">
@@ -122,6 +136,7 @@
       <button class="principal" id="exp-schooly">🎓 Schooly (CSV)</button>
       <button id="exp-json">💾 Sauvegarde complète (JSON)</button>
       <button id="btn-vider">🗑️ Vider l'historique de cet appareil</button>
+      <button id="btn-vider-importes">🗑️ Vider les parties importées</button>
     </div>
     <p class="aide">Le CSV « tableur » s'ouvre directement dans Excel ou LibreOffice (séparateur point-virgule). Le CSV « Schooly » a une ligne
       par élève et par partie : <code>eleve ; date ; matiere ; activite ; niveau ; note ; note_max ; pourcentage ; observation</code>
@@ -148,40 +163,158 @@ const infoJeu = id => JEUX.find(j => j.dossier === id || j.id === id) || {};
 
 let RESULTATS = [];
 const cle = r => [r.jeu, r.eleve, r.mode, r.partie || r.date].join("|");
+/* Mémorisation des parties importées (fichiers, texte collé, sauvegardes) : sur cet appareil (localStorage) ET, si le serveur local tourne, dans resultats-classe.jsonl */
+const CLE_IMPORTES = "escape_resultats_importes", SOURCES_MEMORISEES = ["fichier", "texte", "sauvegarde"];
+const lireImportes = () => { try{ const h = JSON.parse(localStorage.getItem(CLE_IMPORTES) || "[]"); return Array.isArray(h) ? h : []; }catch(e){ return []; } };
+const sansMarques = r => { const c = Object.assign({}, r); delete c._source; delete c._valide; return c; };
+const messageStockage = t => { const z = document.getElementById("message-stockage"); if(z) z.textContent = t; };
+/** Gardé à deux endroits : ce navigateur ET le fichier du serveur de la classe (s'il tourne). */
+function memoriser(nouveaux){
+  if(!nouveaux.length) return;
+  let local = true;
+  try{
+    const h = lireImportes();
+    for(const r of nouveaux){ const i = h.findIndex(x => cle(x) === cle(r)); if(i >= 0) h[i] = r; else h.push(r); }
+    localStorage.setItem(CLE_IMPORTES, JSON.stringify(h));
+  }catch(e){ local = false; }
+  envoyerAuServeur(nouveaux).then(d => {
+    if(d) messageStockage(`✅ Gardé dans le fichier de la classe (${d.ajoutees} nouvelle(s) partie(s) enregistrée(s), ${d.total} au total).`);
+    else messageStockage(local ? "⚠️ Gardé seulement dans ce navigateur : le serveur de la classe n'est pas lancé. Ce sera envoyé tout seul à la prochaine ouverture de cette page avec lancer.bat." : "⚠️ NON gardé : ni le navigateur ni le serveur n'ont pu l'enregistrer. Utilisez « 💾 Sauvegarde complète (JSON) ».");
+  });
+}
+/* ---- Serveur de la classe (lancer.bat) : état, envoi, lecture ---- */
+let SERVEUR = { actif: false, refuse: false, info: null }, totalServeurVu = -1;
+async function envoyerAuServeur(liste){
+  if(!liste.length) return null;
+  try{
+    const r = await fetch("/api/resultats", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ resultats: liste.map(sansMarques) }) });
+    if(!r.ok) return null;
+    const d = await r.json();
+    return d && d.ok ? d : null;
+  }catch(e){ return null; }
+}
+async function etatServeur(){
+  try{
+    const r = await fetch("/api/stockage", { cache: "no-store" });
+    if(r.status === 403) SERVEUR = { actif: false, refuse: true, info: null };
+    else if(!r.ok) SERVEUR = { actif: false, refuse: false, info: null };
+    else { const i = await r.json(); SERVEUR = i && i.ok ? { actif: true, refuse: false, info: i } : { actif: false, refuse: false, info: null }; }
+  }catch(e){ SERVEUR = { actif: false, refuse: false, info: null }; }
+  afficherStockage();
+  return SERVEUR.actif;
+}
+function afficherStockage(){
+  const z = document.getElementById("stockage"); if(!z) return;
+  const i = SERVEUR.info, enLigne = /(^|\.)github\.io$/.test(location.hostname);
+  if(SERVEUR.actif){
+    z.className = "bloc stockage-ok";
+    z.innerHTML = `<p><b>✅ Enregistrement automatique actif</b> — ${i.nbParties} partie(s) gardée(s) sur l'ordinateur de l'enseignant${i.derniere ? " (la plus récente : " + esc(dateFr(i.derniere)) + ")" : ""}.</p>
+      <ul><li>Les élèves qui jouent depuis <b>${esc(i.adresseEleves)}</b> sont enregistrés tout seuls : rien à exporter, rien à importer.</li>
+      <li>Tout ce que vous importez ci-dessous est aussi gardé dans le même fichier. Cette page se met à jour toute seule.</li>
+      <li class="aide">Fichier : ${esc(i.fichier)} · Excel : ${esc(i.csv)} · copie de sécurité chaque jour : ${esc(i.dossierSauvegardes)} (${i.nbCopies} jour(s)).</li></ul>`;
+  }else if(SERVEUR.refuse){
+    z.className = "bloc stockage-ko";
+    z.innerHTML = `<p><b>🔒 Résultats réservés à l'ordinateur de l'enseignant.</b> Ouvrez <b>http://127.0.0.1:8000/resultats.html</b> sur le PC où tourne lancer.bat.</p>`;
+  }else if(enLigne){
+    z.className = "bloc";
+    z.innerHTML = `<p><b>⚠️ Page ouverte depuis GitHub : aucune partie n'est centralisée.</b> Chaque Chromebook garde seulement ses propres parties (dans son navigateur).</p>
+      <ul><li><b>Pour tout retrouver automatiquement :</b> sur le PC de l'enseignant, double-clic sur <b>lancer.bat</b>, puis les élèves jouent depuis l'adresse affichée dans la fenêtre noire (« http://192.168… »).</li>
+      <li><b>Pour les parties déjà jouées sur GitHub :</b> sur chaque Chromebook, ouvrez cette page avec la même adresse que pour jouer, cliquez sur « 📤 Exporter les parties de cet appareil », déposez le fichier dans Nextcloud, puis importez-le dans la page des résultats du PC de l'enseignant.</li></ul>`;
+  }else{
+    z.className = "bloc";
+    z.innerHTML = `<p><b>⚠️ Serveur de la classe non lancé.</b> Les parties importées ici sont gardées dans ce navigateur seulement (adresse ${esc(location.origin)}) et seront envoyées au fichier de la classe à la prochaine ouverture de cette page quand lancer.bat tourne.</p>
+      <p class="aide">Pour l'enregistrement automatique : double-clic sur <b>lancer.bat</b> (ou <b>resultats.bat</b>), puis ouvrez http://127.0.0.1:8000/resultats.html.</p>`;
+  }
+}
+/** Relit le fichier de la classe ; silencieux si rien de nouveau. */
+async function chargerServeur(avecMessage){
+  try{
+    const r = await fetch("/api/resultats", { cache: "no-store" });
+    if(!r.ok) throw 0;
+    const d = await r.json(), liste = d.resultats || [];
+    const n = ajouter(liste, "serveur"); totalServeurVu = liste.length;
+    if(avecMessage) message(`${n} partie(s) ajoutée(s) depuis le serveur local (${liste.length} dans le fichier de la classe).`);
+    else if(n) message(`${n} nouvelle(s) partie(s) reçue(s) du serveur de la classe.`);
+    return true;
+  }catch(e){
+    if(avecMessage) message("Serveur local introuvable : double-clic sur lancer.bat puis ouvrez http://127.0.0.1:8000/resultats.html");
+    return false;
+  }
+}
 function ajouter(liste, source){
-  let n = 0;
+  let n = 0; const aGarder = [];
   for(const r of liste){
     if(!r || r.type !== "escape-game-compte-rendu") continue;
-    r._source = r._source || source;
+    r._source = SOURCES_MEMORISEES.includes(source) ? source : (r._source || source);   // un fichier importé reste « importé », même s'il venait d'un autre appareil
     r._valide = r._valide !== undefined ? r._valide : valide(r);
     const i = RESULTATS.findIndex(x => cle(x) === cle(r));
+    const identique = i >= 0 && JSON.stringify(sansMarques(RESULTATS[i])) === JSON.stringify(sansMarques(r));
     if(i >= 0) RESULTATS[i] = r; else { RESULTATS.push(r); n++; }
+    if(SOURCES_MEMORISEES.includes(source) && !identique) aGarder.push(r);
   }
   RESULTATS.sort((a, b) => String(b.date).localeCompare(String(a.date)));
   rendre();
+  memoriser(aGarder);
   return n;
 }
 const message = t => { document.getElementById("message").textContent = t; };
 
 /* ---- Sources ---- */
-document.getElementById("btn-appareil").addEventListener("click", () => {
-  let h = []; try { h = JSON.parse(localStorage.getItem("escape_resultats") || "[]"); } catch(e) {}
-  message(`${ajouter(h, "appareil")} partie(s) ajoutée(s) depuis cet appareil.`);
+const historiqueAppareil = () => { let h = []; try { h = JSON.parse(localStorage.getItem("escape_resultats") || "[]"); } catch(e) {} return Array.isArray(h) ? h.filter(r => r && r.type === "escape-game-compte-rendu") : []; };
+document.getElementById("btn-appareil").addEventListener("click", async () => {
+  const h = historiqueAppareil();
+  message(`${ajouter(h, "appareil")} partie(s) ajoutée(s) depuis cet appareil (${h.length} dans ce navigateur).`);
+  const d = await envoyerAuServeur(h);
+  if(d) messageStockage(`✅ Aussi gardé dans le fichier de la classe (${d.ajoutees} nouvelle(s), ${d.total} au total).`);
 });
-document.getElementById("btn-serveur").addEventListener("click", async () => {
-  try{
-    const r = await fetch("/api/resultats", { cache: "no-store" });
-    if(!r.ok) throw 0;
-    const d = await r.json();
-    message(`${ajouter(d.resultats || [], "serveur")} partie(s) ajoutée(s) depuis le serveur local.`);
-  }catch(e){ message("Serveur local introuvable : lancez lancer.bat puis ouvrez http://127.0.0.1:8000/resultats.html"); }
+/** Chromebook : un seul clic charge les parties de l'appareil ET télécharge le fichier (plus d'export vide par oubli). */
+document.getElementById("exp-appareil").addEventListener("click", () => {
+  const h = historiqueAppareil();
+  if(!h.length){ message("Aucune partie dans ce navigateur (adresse " + location.origin + "). Les élèves ont-ils joué depuis cette même adresse, avec ce même profil, hors navigation privée ? Sinon passez par le serveur de la classe (lancer.bat)."); return; }
+  ajouter(h, "appareil");
+  const d = new Date(), deux = n => String(n).padStart(2, "0");
+  telecharger(`parties-appareil-${aujourdhui()}-${deux(d.getHours())}h${deux(d.getMinutes())}.json`, JSON.stringify(h, null, 1), "application/json");
+  message(`${h.length} partie(s) exportée(s) : déposez le fichier téléchargé dans Nextcloud, puis importez-le sur la page des résultats du PC de l'enseignant.`);
 });
+document.getElementById("btn-serveur").addEventListener("click", async () => { await etatServeur(); chargerServeur(true); });
+/** Sauvegarde de partie d'un jeu immersif (bouton « exporter » des réglages du jeu), pas un compte-rendu. */
+const estSauvegarde = o => !!o && typeof o === "object" && !Array.isArray(o) && !o.type && o.equipe !== undefined && !!o.niveau && !!o.resolues && typeof o.resolues === "object";
+function jeuDepuisNom(nom){
+  const base = String(nom || "").replace(/\.json$/i, "");
+  if(/^nautilus-/i.test(base)) return "vingt-mille-lieues";
+  return JEUX.map(j => j.dossier).filter(d => d && base.startsWith(d + "-")).sort((a, b) => b.length - a.length)[0] || "";
+}
+/** Sauvegarde → compte-rendu partiel (sans code de contrôle : _valide = null). Même clé que le compte-rendu final de la même partie. */
+async function depuisSauvegarde(o, nom){
+  const jeu = jeuDepuisNom(nom);
+  const d = jeu ? (await lireJson(`immersifs/${jeu}/assets/data/enigmes.json`)) || (await lireJson(`${jeu}/assets/data/enigmes.json`)) : null;
+  const grade = d && (d.niveaux || []).find(n => n.id === o.niveau);
+  const escales = (d && d.escales) || [];
+  const faites = new Set([...(o.escalesFaites || []), o.escale].filter(x => x != null));
+  const total = escales.filter(e => faites.has(e.numero)).reduce((t, e) => t + (e.enigmes || []).length, 0);
+  const res = Object.values(o.resolues || {});
+  const debut = o.debut ? new Date(o.debut).toISOString().slice(0, 16) : "";
+  return { type: "escape-game-compte-rendu", version: 1, jeu, titre: (infoJeu(jeu).titre || jeu || "Jeu inconnu"),
+    eleve: o.equipe || "", mode: o.solo ? "solo" : "equipe", niveau: grade ? grade.nom : o.niveau, palier: o.niveau,
+    date: debut, partie: debut, termine: !!o.escaleTerminee,
+    dureeMin: Math.round((o.msTotal || o.msEcoules || 0) / 6000) / 10, score: o.score || 0, scoreMax: null,
+    enigmes: res.length, total: total || res.length, premierCoup: res.filter(r => r.premier).length,
+    erreurs: o.erreursTotal || 0, indices: o.indicesTotal || 0, quiz: null, _source: "sauvegarde", _valide: null };
+}
 async function lireFichiers(fichiers){
-  let n = 0, err = 0;
+  if(!fichiers.length){ message("Aucun fichier reçu. Le glisser-déposer depuis une page web (Nextcloud en ligne…) ne marche pas : utilisez « choisissez-les » ou glissez depuis l'Explorateur Windows."); return; }
+  let n = 0, err = 0, sauv = 0, vides = 0, autres = 0;
   for(const f of fichiers){
-    try{ const o = JSON.parse(await f.text()); n += ajouter(Array.isArray(o) ? o : [o], "fichier"); }catch(e){ err++; }
+    let o;
+    try{ o = JSON.parse(await f.text()); }catch(e){ err++; continue; }
+    if(estSauvegarde(o)){ sauv++; n += ajouter([await depuisSauvegarde(o, f.name)], "sauvegarde"); continue; }
+    const liste = Array.isArray(o) ? o : [o];
+    n += ajouter(liste, "fichier");
+    if(!liste.length) vides++; else if(!liste.some(r => r && r.type === "escape-game-compte-rendu")) autres++;
   }
-  message(`${n} compte(s)-rendu(s) ajouté(s)` + (err ? `, ${err} fichier(s) illisible(s)` : "") + ".");
+  message(`${n} compte(s)-rendu(s) ajouté(s)` + (sauv ? ` (dont ${sauv} sauvegarde(s) de partie : résultats partiels, sans code de contrôle)` : "")
+    + (err ? `, ${err} fichier(s) illisible(s)` : "") + (vides ? `, ${vides} fichier(s) vide(s) : sur l'appareil d'origine, cliquez d'abord sur « Parties jouées sur cet appareil » avant d'exporter` : "")
+    + (autres ? `, ${autres} fichier(s) ignoré(s) : ce ne sont pas des comptes-rendus de partie` : "") + ".");
 }
 document.getElementById("fichiers").addEventListener("change", e => lireFichiers([...e.target.files]));
 const depot = document.getElementById("depot");
@@ -233,7 +366,7 @@ function rendre(){
     <td class="num">${r.score}${r.scoreMax ? " / " + r.scoreMax : ""}</td><td class="num">${pct(r)}</td>
     <td class="num">${r.enigmes}/${r.total}</td><td class="num">${r.premierCoup}</td><td class="num">${r.erreurs}</td><td class="num">${r.indices}</td>
     <td class="num">${r.dureeMin} min</td>
-    <td>${r._valide === true ? '<span class="ok">✔ vérifié</span>' : r._valide === false ? '<span class="ko">✗ modifié ?</span>' : '<span class="aide">texte collé</span>'}</td></tr>`).join("")
+    <td>${r._valide === true ? '<span class="ok">✔ vérifié</span>' : r._valide === false ? '<span class="ko">✗ modifié ?</span>' : r._source === "sauvegarde" ? '<span class="aide">sauvegarde (partiel)</span>' : '<span class="aide">texte collé</span>'}</td></tr>`).join("")
     || `<tr><td colspan="12" class="aide">Aucune partie pour l'instant : utilisez les boutons ci-dessus.</td></tr>`;
   if(typeof rendreBilan === "function") rendreBilan();
   if(typeof rendreSeances === "function") rendreSeances();
@@ -382,11 +515,32 @@ document.getElementById("exp-schooly").addEventListener("click", () => {
   telecharger(`schooly-escape-games-${aujourdhui()}.csv`, csv(l), "text/csv;charset=utf-8");
 });
 document.getElementById("exp-json").addEventListener("click", () => telecharger(`resultats-escape-games-${aujourdhui()}.json`, JSON.stringify(visibles(), null, 1), "application/json"));
+document.getElementById("btn-vider-importes").addEventListener("click", () => {
+  if(!confirm("Effacer les parties importées (fichiers, texte collé, sauvegardes) gardées sur CET appareil ? (Exportez d'abord si besoin. Les parties déjà envoyées au serveur local restent dans resultats-classe.jsonl.)")) return;
+  try { localStorage.removeItem(CLE_IMPORTES); } catch(e) {}
+  RESULTATS = RESULTATS.filter(r => !SOURCES_MEMORISEES.includes(r._source)); rendre(); message("Parties importées effacées de cet appareil.");
+});
 document.getElementById("btn-vider").addEventListener("click", () => {
   if(!confirm("Effacer l'historique des parties gardé sur CET appareil ? (Exportez d'abord si besoin.)")) return;
   try { localStorage.removeItem("escape_resultats"); } catch(e) {}
   RESULTATS = RESULTATS.filter(r => r._source !== "appareil"); rendre(); message("Historique de cet appareil effacé.");
 });
+/* À l'ouverture : on retrouve tout (importées, jouées ici, serveur de la classe) puis on envoie au serveur ce qu'il n'a pas encore */
+(async function retrouver(){
+  const imp = lireImportes(), h = historiqueAppareil();
+  const n = ajouter(imp, "restauration") + ajouter(h, "appareil");
+  if(n) message(`${n} partie(s) retrouvée(s) sur cet appareil (importées ou jouées ici).`);
+  if(await etatServeur()){
+    const d = await envoyerAuServeur(imp.concat(h));      // le serveur ignore ce qu'il a déjà : aucun doublon
+    if(d && d.ajoutees) messageStockage(`✅ ${d.ajoutees} partie(s) de ce navigateur ajoutée(s) au fichier de la classe.`);
+    await chargerServeur(false);
+    await etatServeur();
+    setInterval(async () => {                              // mise à jour automatique pendant que la page est ouverte
+      if(document.hidden) return;
+      if(await etatServeur() && SERVEUR.info.nbParties !== totalServeurVu) chargerServeur(false);
+    }, 20000);
+  }
+})();
 rendre();
 window.RESULTATS_PAGE = { ajouter, lireTexte, valide, rendreBilan, get bilan(){ return BILAN; }, get liste(){ return RESULTATS; } };
 </script>

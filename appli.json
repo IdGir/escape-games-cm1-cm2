@@ -1,0 +1,58 @@
+{
+  "id": "escape-games",
+  "nom": "Escape games",
+  "icone": "🗝️",
+  "resume": "Les escape games d'histoire, géographie, EMC et sciences, avec pilotage de la classe.",
+  "geste": "classe",
+  "public": "les-deux",
+  "matieres": [
+    "Histoire",
+    "Géographie",
+    "EMC",
+    "Sciences"
+  ],
+  "lancement": {
+    "type": "service",
+    "commande": [
+      "python",
+      "serveur.py",
+      "8000"
+    ],
+    "port": 8000,
+    "ouvrir": "http://localhost:8000/"
+  },
+  "liens": [
+    {
+      "nom": "Espace enseignant",
+      "chemin": "enseignant.html"
+    },
+    {
+      "nom": "Résultats de la classe",
+      "chemin": "resultats.html"
+    },
+    {
+      "nom": "Séquences",
+      "chemin": "sequences/index.html"
+    },
+    {
+      "nom": "L'année",
+      "chemin": "annee.html"
+    },
+    {
+      "nom": "Éditeur",
+      "chemin": "editeur.html"
+    }
+  ],
+  "en_ligne": "https://idgir.github.io/escape-games-cm1-cm2/",
+  "autonome": "Déjà en ligne pour les Chromebooks ; hors ligne : lancer.bat ou les archives du dossier archives-hors-ligne.",
+  "livrables": [
+    {
+      "dossier": "Claude outputs",
+      "recursif": true
+    }
+  ],
+  "sauvegarde": [
+    "resultats-classe.jsonl",
+    "difficulte-classe.json"
+  ]
+}

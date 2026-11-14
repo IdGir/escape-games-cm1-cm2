@@ -1,0 +1,24 @@
+CORRECTIF RESULTATS - Escape games
+===================================
+Contenu : serveur.py, resultats.html, lancer.bat, resultats.bat, lancer-mac.command,
+.gitignore, README.md, sw-fichiers.js, commun/tests/test-resultats-serveur.py,
+commun/tests/test-resultats-page.js
+
+INSTALLATION (pas a pas)
+1. Dezippez correctif-resultats.zip dans un dossier temporaire.
+2. Ouvrez le dossier de votre projet (celui qui contient lancer.bat et serveur.py).
+3. Selectionnez TOUT le contenu du dossier dezippe, copiez-le, collez-le dans le dossier du projet,
+   puis choisissez "Remplacer les fichiers dans la destination".
+   (ATTENTION : .gitignore est un fichier cache, affichez les elements masques si besoin.)
+4. Fermez la fenetre noire de l'ancien serveur s'il tourne.
+5. Double-cliquez sur lancer.bat : la page des resultats s'ouvre toute seule.
+   Pour la rouvrir plus tard sans rien relancer : double-clic sur resultats.bat.
+
+UTILISATION
+- Les eleves jouent depuis l'adresse affichee dans la fenetre noire (http://192.168.x.x:8000/) :
+  chaque partie est enregistree toute seule dans resultats-classe.jsonl + resultats-classe.csv (Excel)
+  + une copie de securite par jour dans sauvegardes-resultats/.
+- Eleves jouant depuis GitHub (Chromebook) : sur chaque Chromebook, ouvrir resultats.html,
+  bouton "Exporter les parties de cet appareil", deposer le fichier dans Nextcloud ;
+  puis sur le PC ecole : bouton "Importer", choisir les fichiers (pas de glisser-deposer depuis le web).
+  Une fois importees, les parties sont gardees dans le fichier de la classe : on les retrouve a chaque lancer.bat.
