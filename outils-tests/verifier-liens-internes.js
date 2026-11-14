@@ -129,7 +129,9 @@ function liensFabriques(){
       if (j.dossier) {
         if (filtre && j.dossier !== filtre) continue;
         R.liens++;
-        if (!existe(path.join(RACINE, j.dossier, "index.html"))) err("commun/donnees/catalogue.js", `../${j.dossier}/`, `${nom} : dossier publié sans index.html`);
+        /* jeu immersif seul (« classique »: false) : la page à vérifier est celle de la variante immersive */
+        const cibleIndex = j.classique === false && j.immersif ? j.immersif.replace(/^\.?\/?/, "").replace(/\/$/, "") : j.dossier;
+        if (!existe(path.join(RACINE, cibleIndex, "index.html"))) err("commun/donnees/catalogue.js", `../${cibleIndex}/`, `${nom} : dossier publié sans index.html`);
       }
       for (const champ of ["precedent", "suite"]) {
         if (!j[champ]) continue;
@@ -137,7 +139,7 @@ function liensFabriques(){
         const autre = parId(j[champ]);
         if (!autre) err("commun/donnees/catalogue.js", j[champ], `${nom} : « ${champ} » inconnu dans le catalogue`);
         else if (!autre.dossier) alerte("commun/donnees/catalogue.js", j[champ], `${nom} : « ${champ} » pas encore publié (lien non affiché)`);
-        else if (!existe(path.join(RACINE, autre.dossier, "index.html"))) err("commun/donnees/catalogue.js", `../${autre.dossier}/`, `${nom} : « ${champ} » sans index.html`);
+        else if (!existe(path.join(RACINE, autre.classique === false && autre.immersif ? autre.immersif.replace(/^\.?\/?/, "").replace(/\/$/, "") : autre.dossier, "index.html"))) err("commun/donnees/catalogue.js", `../${autre.dossier}/`, `${nom} : « ${champ} » sans index.html`);
       }
     }
     /* chaque jeu à moteur commun doit être reconnu par jeu-suivant.js (JEU.id = dossier ou id du catalogue) */
