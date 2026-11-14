@@ -10,8 +10,8 @@ augmenter son numéro de version (?c2…) avec --version et --remplacer.
 """
 import argparse, pathlib, re, sys
 JEUX = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges",
-        "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]
-IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"]
+        "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement", "traite-colonies"]
+IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "electricite", "etats-matiere", "grandes-explorations", "lumiere", "melanges", "mouvement", "moyen-age-abbaye", "naissances-animaux", "objets-techniques", "renaissance", "station-meteo", "traite-colonies", "versailles"]
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 
 def main():

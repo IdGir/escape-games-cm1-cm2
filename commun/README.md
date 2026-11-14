@@ -55,7 +55,7 @@ fonctions existantes (`afficherSalle`, `ouvrirReglages`…) et lisent l'état du
 | `js/mascotte.js` + `donnees/mascotte.js` | N11 — « Noa », mascotte commune (personnage original, 200 × 320, squelette commun animé, carnation hâlée de la palette, voix par la synthèse vocale, sous-titres) : accueille la classe (accueil de la collection et de chaque jeu), explique les règles communes au premier lancement (« ❓ Comment jouer ? » : barème, coffre, indices), annonce les trophées gagnés à l'écran de fin ; jamais pendant les énigmes ; ⚙️ → 🧑‍🎓 Mascotte (avec voix · sans voix · désactivée) ; aucun effet sur le score | l'accueil + les 13 jeux « salles » |
 | `js/pwa.js` | A4 — enregistre le service worker `sw.js` (application installable, hors connexion ; voir `outils-pwa/README.md`) | les 13 jeux et l'accueil |
 
-\* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation, lumiere, etats-matiere.
+\* constitution, station-meteo, melanges, objets-techniques, moyen-age-abbaye, chateau-fort, versailles, renaissance, alimentation, lumiere, etats-matiere, mouvement, traite-colonies.
 `declaration` et `tour-du-monde` gardent leur moteur d'énigmes et leurs impressions propres
 (énigme unique par salle) ; `mission-geo` a son propre moteur (16 séances).
 

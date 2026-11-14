@@ -9,6 +9,8 @@
    démonstration), les liens « jeu suivant » en fin de partie, le
    passeport de compétences et les fiches de période.
    Un nouveau jeu publié : renseigner son « dossier » (et ses couleurs).
+   « classique »: false : jeu sans version classique (le dossier racine ne garde que les données sources et les guides).
+   « medias_en_attente » : images, affiche ou bande-annonce encore à produire (retiré par la finition du jeu).
    « immersif » : adresse de la variante immersive, JOUÉE PAR DÉFAUT (la version classique, « dossier », reste
    accessible : lien « version classique »). Utiliser CATALOGUE_JEU.adresse(j) pour construire un lien de jeu.
    Fichier .js (et non .json) pour fonctionner aussi en double-clic.
@@ -264,13 +266,15 @@ var CATALOGUE = {
     "P2"
    ],
    "competences": "Mesurer une distance et une durée lors d'un déplacement ; différents types de mouvement.",
-   "dossier": null,
+   "dossier": "mouvement",
+   "immersif": "immersifs/mouvement",
    "icone": "⏱️",
    "couleurs": [
-    "#2b5d6b",
-    "#7fb3c8"
+    "#1d2f52",
+    "#d9a23a"
    ],
-   "resume": "",
+   "resume": "Le matin du Grand Prix des véhicules de l'école, le vent a dispersé les feuilles de mesure de Margaux : les commissaires retrouvent les cinq mots du coffre, de la distance à l'observateur, en passant par la durée, la vitesse et la trajectoire.",
+   "medias_en_attente": true,
    "prompt": "11-mouvement.md",
    "programme": [
     "st2026"
@@ -286,13 +290,14 @@ var CATALOGUE = {
     "P3"
    ],
    "competences": "La traite des esclaves Afrique-Amérique ; les échanges commerciaux avec les colonies.",
-   "dossier": null,
+   "dossier": "traite-colonies",
+   "immersif": "immersifs/traite-colonies",
    "icone": "⚓",
    "couleurs": [
     "#6b4a2b",
     "#c9a227"
    ],
-   "resume": "",
+   "resume": "Dans les archives d'un port de l'Atlantique, les pages d'un registre de navire se sont mélangées : les enquêteurs reconstituent l'histoire de la traite, des plantations, des résistances et des abolitions.",
    "prompt": "12-traite-colonies.md",
    "programme": [
     "hg2026"
@@ -308,13 +313,16 @@ var CATALOGUE = {
     "P3"
    ],
    "competences": "Les progrès techniques des explorations ; la constitution des premiers empires coloniaux.",
-   "dossier": null,
+   "dossier": "grandes-explorations",
+   "immersif": "immersifs/grandes-explorations",
+   "classique": false,
    "icone": "⛵",
    "couleurs": [
     "#6b4a2b",
     "#c9a227"
    ],
-   "resume": "",
+   "resume": "Au festival de la mer de Saint-Malo, une tempête a dispersé le journal de bord de la Rose des vents : les mousses retrouvent les cinq mots du coffre, des épices aux premiers empires.",
+   "medias_en_attente": true,
    "prompt": "13-grandes-explorations.md",
    "programme": [
     "hg2026"
@@ -330,13 +338,16 @@ var CATALOGUE = {
     "P3"
    ],
    "competences": "L'électricité.",
-   "dossier": null,
+   "dossier": "electricite",
+   "immersif": "immersifs/electricite",
+   "classique": false,
    "icone": "🔌",
    "couleurs": [
     "#2b5d6b",
     "#7fb3c8"
    ],
-   "resume": "",
+   "resume": "Un orage a plongé la petite ville de Clairval dans le noir : les apprentis électriciens de la centrale réparent salle après salle et ferment le dernier circuit.",
+   "medias_en_attente": true,
    "prompt": "14-electricite.md",
    "programme": [
     "st2026"
@@ -352,13 +363,16 @@ var CATALOGUE = {
     "P3"
    ],
    "competences": "Étapes du développement des animaux (fécondation à la naissance) ; reproduction ovipare/vivipare.",
-   "dossier": null,
+   "dossier": "naissances-animaux",
+   "immersif": "immersifs/naissances-animaux",
+   "classique": false,
    "icone": "🐣",
    "couleurs": [
     "#2b5d6b",
     "#7fb3c8"
    ],
-   "resume": "",
+   "resume": "Une tempête a mélangé les fiches de la nurserie du zoo des Trois-Sources : les apprentis soigneurs retrouvent comment naît chaque animal, de la cellule à la naissance.",
+   "medias_en_attente": true,
    "prompt": "15-naissances-animaux.md",
    "programme": [
     "st2026"

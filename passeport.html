@@ -164,7 +164,7 @@ async function chargerCompetences(){
     .sort((a, b) => ((a.periodes[0] || "P9") > (b.periodes[0] || "P9")) - ((a.periodes[0] || "P9") < (b.periodes[0] || "P9")) || (parseInt(a.num, 10) || 99) - (parseInt(b.num, 10) || 99));
   const liste = [];
   for(const j of jeux){
-    let comps = [{ lecon: "", competence: j.competences }];
+    let comps = j.classique === false ? [] : [{ lecon: "", competence: j.competences }];   // jeu immersif seul : compétences ajoutées avec ses leçons A4
     try{ const r = await fetch(`${j.dossier}/assets/data/lecons-a4.json`); if(r.ok) comps = Object.entries((await r.json()).lecons || {}).map(([k, l]) => ({ lecon: k, competence: l.competence })).filter(l => l.competence); }catch(e){}
     comps.forEach((l, i) => liste.push({ cle: `${j.dossier}|${i + 1}`, jeu: j.dossier, lecon: l.lecon, titre: j.titre, matiere: j.matiere, icone: j.icone, couleur: j.couleurs[0], rang: i + 1,
       texte: (j.seancesParPeriode ? `Séance ${i + 1} : ` : "") + l.competence }));

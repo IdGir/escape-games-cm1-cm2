@@ -73,6 +73,26 @@ var FAMILLES = {
     "proprietes": "classer des matériaux selon leurs propriétés et raconter le cycle de l'eau"
    }
   },
+  "mouvement": {
+   "deroule": "En équipe, les élèves sont devenus commissaires d'un Grand Prix de véhicules et ont retrouvé les feuilles de mesure en mesurant des distances et des durées.",
+   "lecons": {
+    "distance": "mesurer la distance parcourue par un objet et passer d'une unité à l'autre",
+    "duree": "mesurer une durée entre deux instants avec un chronomètre",
+    "comparer": "comparer deux déplacements : lequel va le plus loin, lequel va le plus vite",
+    "trajectoires": "reconnaître un mouvement en ligne droite ou en cercle",
+    "observateur": "comprendre qu'un mouvement se décrit toujours depuis la place de celui qui regarde"
+   }
+  },
+  "traite-colonies": {
+   "deroule": "En équipe, les élèves ont enquêté dans les archives d'un port pour comprendre la traite des esclaves, la vie dans les plantations, les résistances et les abolitions.",
+   "lecons": {
+    "triangle": "expliquer le commerce triangulaire entre l'Europe, l'Afrique et l'Amérique",
+    "traite": "comprendre ce qu'était la traite des Africains réduits en esclavage",
+    "plantations": "décrire la vie et le travail forcé des esclaves dans les plantations",
+    "ports": "montrer comment des ports français se sont enrichis grâce à ce commerce",
+    "abolitions": "situer les résistances et les abolitions de l'esclavage (1794, 1848)"
+   }
+  },
   "lumiere": {
    "deroule": "Sur une île imaginaire, le phare ne s'allumait plus : en équipe, les élèves l'ont rallumé avant l'arrivée d'un bateau, en résolvant des énigmes sur la lumière, les ombres, le Soleil et la Lune.",
    "lecons": {

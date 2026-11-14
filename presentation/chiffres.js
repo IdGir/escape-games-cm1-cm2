@@ -20,7 +20,7 @@ var CHIFFRES = (function(){
     for(const j of publies){
       const a = await lireJson(`${racine}${j.dossier}/assets/data/lecons-a4.json`);
       if(a && a.lecons){ competences += Object.values(a.lecons).filter(l => l && l.competence).length; }
-      else{ competences += 1; estime = true; }          // lecture impossible (double-clic) : au moins la compétence du catalogue
+      else if(j.classique !== false){ competences += 1; estime = true; }   // lecture impossible (double-clic) : au moins la compétence du catalogue ; jeu immersif seul sans leçons A4 : rien
     }
     return { jeux: publies.length, prevus: cat.length, matieres, nbMatieres: matieres.length, competences, estime, niveaux: 3 };
   }

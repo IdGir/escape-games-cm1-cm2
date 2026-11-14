@@ -20,6 +20,11 @@ Treize escape games d'histoire, de géographie, d'EMC et de sciences, jouables d
 | 🍲 | **Le Grand Repas du chef** — Sciences, l'alimentation humaine : besoins alimentaires et nutrition | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/alimentation/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/alimentation/) | [alimentation/README.md](alimentation/README.md) | [liste](alimentation/assets/README.md) |
 | 💡 | **Le Phare de l'île Lumière** — Sciences, la lumière : sources, ombres, Soleil et Lune | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/lumiere/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/lumiere/) | [lumiere/README.md](lumiere/README.md) | [liste](lumiere/assets/README.md) |
 | 🧊 | **La Fabrique des états** — Sciences, les états de la matière, l'air, les changements d'état de l'eau | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/etats-matiere/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/etats-matiere/) | [etats-matiere/README.md](etats-matiere/README.md) | [liste](etats-matiere/assets/README.md) |
+| ⏱️ | **Le Grand Prix de l'observatoire** — Sciences, mesurer une distance et une durée, types de mouvement, la Terre autour du Soleil | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/mouvement/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/mouvement/) | [mouvement/README.md](mouvement/README.md) | [liste](mouvement/assets/README.md) |
+| ⚓ | **Les Archives du port** — Histoire, la traite Afrique-Amérique, les plantations, les résistances et les abolitions (sujet sensible : lire le guide) | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/traite-colonies/) · [classique](https://idgir.github.io/escape-games-cm1-cm2/traite-colonies/) | [traite-colonies/README.md](traite-colonies/README.md) | [liste](traite-colonies/assets/README.md) |
+| ⛵ | **La Caravelle du capitaine** — Histoire, les explorations et les premiers empires coloniaux (immersif seulement, 5 grades) | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/grandes-explorations/) | [grandes-explorations/README.md](grandes-explorations/README.md) | médias à produire |
+| 🔌 | **La Centrale en panne** — Sciences, l'électricité (immersif seulement, 5 grades) | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/electricite/) | [electricite/README.md](electricite/README.md) | médias à produire |
+| 🐣 | **La Nurserie du zoo** — Sciences, le développement des animaux, ovipares et vivipares (immersif seulement, 5 grades) | [▶ en ligne (immersif)](https://idgir.github.io/escape-games-cm1-cm2/immersifs/naissances-animaux/) | [naissances-animaux/README.md](naissances-animaux/README.md) | médias à produire |
 
 - 🏠 **Accueil des jeux** : https://idgir.github.io/escape-games-cm1-cm2/ — avec la **frise de l'année** : les 26 jeux de la progression sur les périodes P1 à P5 (Années A et B), en couleur ceux qui sont déjà jouables
 - 📅 **L'année en escape games** (périodes, Années A/B, points du programme couverts) : https://idgir.github.io/escape-games-cm1-cm2/annee.html
@@ -48,7 +53,7 @@ fois pour toutes.
 ### 📲 Sur tablette, sans internet — application installable
 
 Ouvrez une fois l'accueil en ligne dans Chrome ou Edge : quand le bloc **📲 Sur tablette, sans internet**
-indique « ✅ Prêt hors connexion », les 14 jeux fonctionnent **sans réseau et sans serveur**. Le bouton
+indique « ✅ Prêt hors connexion », les 15 jeux fonctionnent **sans réseau et sans serveur**. Le bouton
 **📲 Installer l'application** les place sur l'écran d'accueil de la tablette. Hors connexion, les vidéos sont
 remplacées par les images ou les décors dessinés. Détails et mise à jour : [outils-pwa/README.md](outils-pwa/README.md).
 
@@ -163,6 +168,7 @@ Les boutons « Tester » sont de simples adresses, que vous pouvez aussi taper o
 | Le Grand Repas du chef | `alimentation/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = coffre, Livre des cinq services et fin ; `&enigme=K` vise une énigme | [salle 4, énigme 1, CM2](https://idgir.github.io/escape-games-cm1-cm2/alimentation/?salle=4&niveau=CM2&enigme=1) |
 | Le Phare de l'île Lumière | `lumiere/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = tableau de commande, registre du phare et fin ; `&enigme=K` vise une énigme | [salle 5, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/lumiere/?salle=5&niveau=CM2&enigme=3) |
 | La Fabrique des états | `etats-matiere/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = pupitre, registre de la Fabrique et fin ; `&enigme=K` vise une énigme | [salle 4, énigme 3, CM2](https://idgir.github.io/escape-games-cm1-cm2/etats-matiere/?salle=4&niveau=CM2&enigme=3) |
+| Le Grand Prix de l'observatoire | `mouvement/?salle=N&niveau=CM1` (ou `CM2`) — N de 1 à 5, 6 = chronomètre officiel, coffre du Grand Prix et fin ; `&enigme=K` vise une énigme | [salle 2, énigme 1, CM1](https://idgir.github.io/escape-games-cm1-cm2/mouvement/?salle=2&niveau=CM1&enigme=1) |
 
 ---
 
@@ -196,7 +202,7 @@ imprimée ou en régénérer les visuels : [outils-lecons/README.md](outils-leco
 
 ## 2 ter. Règles de jeu communes (moteur v2, octobre 2026)
 
-Les 14 jeux suivent les mêmes règles, pensées pour que les élèves **réfléchissent et consultent les
+Les 15 jeux suivent les mêmes règles, pensées pour que les élèves **réfléchissent et consultent les
 leçons** plutôt que de cliquer au hasard :
 
 - **Tout juste du premier coup = 10 points**, après une erreur = **3 points** seulement (rappel en
@@ -220,7 +226,7 @@ Vérification : ajouter `&palier=decouverte` à une adresse en `niveau=CM1`.
 
 Scores maximaux : 185 (CM1) / 235 (CM2) pour les jeux à 5 salles (195 / 245 pour l'abbaye, avec le
 fermoir), 95 pour la Déclaration et le Tour du monde ; Mission géographique : 10 points par énigme.
-Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 14 jeux :
+Outils : [outils-moteur/README.md](outils-moteur/README.md) · tests automatiques des 15 jeux :
 [outils-tests/README.md](outils-tests/README.md).
 
 ---
@@ -328,7 +334,7 @@ PROJET ESCAPE GAMES/
 ├── lancer.bat              Serveur local, Windows (double-clic)
 ├── lancer-mac.command      Serveur local, Mac
 ├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
-├── outils-tests/          Tests automatiques des 14 jeux (Node + jsdom) : node outils-tests/tous.js
+├── outils-tests/          Tests automatiques des 15 jeux (Node + jsdom) : node outils-tests/tous.js
 ├── CHARTE-GRAPHIQUE.md    Charte graphique commune : palette, traits, décors, personnages, médias
 ├── commun/                ★ Tronc commun du moteur (médias, sons, voix, énigmes, impressions…) : un seul
 │                           exemplaire pour tous les jeux — voir commun/README.md
@@ -448,7 +454,8 @@ PROJET ESCAPE GAMES/
 │   ├── assets/data/        ★ enigmes.json (20 énigmes, schémas dessinés) · lecons.json = 5 leçons rédigées
 │   ├── css/ · js/          moteur commun (commun/js/)
 │   └── tests/              test-jeu.js · test-verifier.js (Node + jsdom) · test_json.py · generer-readme.py
-└── etats-matiere/          🧊 La Fabrique des états (sciences, les états de la matière, l'air, les changements d'état de l'eau)
+├── etats-matiere/          🧊 La Fabrique des états (sciences, les états de la matière, l'air, les changements d'état de l'eau)
+└── mouvement/              ⏱️ Le Grand Prix de l'observatoire (sciences, distances, durées, types de mouvement)
     ├── README.md           Guide du jeu : salles, énigmes, solutions, sources
     ├── GUIDE-PEDAGOGIQUE.md  Programmes, déroulés, différenciation, évaluation
     ├── A-VERIFIER.md       Points à contrôler (programme 2026, valeurs, données inventées)

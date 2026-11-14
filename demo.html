@@ -55,7 +55,8 @@ const EXTRAITS = {
   "objets-techniques": "?salle=4&niveau=CM2", "melanges": "?salle=2&niveau=CM1", "declaration": "?salle=1&niveau=CM2",
   "constitution": "?salle=4&niveau=CM2", "mission-geo": "?seance=13&niveau=CM1", "tour-du-monde": "?salle=1&niveau=CM2",
   "versailles": "?salle=3&niveau=CM2", "renaissance": "?salle=3&niveau=CM1",
-  "alimentation": "?salle=4&niveau=CM2", "lumiere": "?salle=3&niveau=CM1", "etats-matiere": "?salle=3&niveau=CM2"
+  "alimentation": "?salle=4&niveau=CM2", "lumiere": "?salle=3&niveau=CM1", "etats-matiere": "?salle=3&niveau=CM2", "mouvement": "?salle=2&niveau=CM1", "traite-colonies": "?salle=2&niveau=CM2",
+  "grandes-explorations": "?salle=2", "electricite": "?salle=3", "naissances-animaux": "?salle=3"
 };
 const q = new URLSearchParams(location.search);
 const jeux = CATALOGUE.jeux.filter(j => j.dossier && EXTRAITS[j.dossier]);
@@ -86,7 +87,7 @@ function montrer(i){
   c.innerHTML = `<div class="ic">${esc(j.icone)}</div><h1>${esc(j.titre)}</h1><div class="meta">${esc(j.matiere)}${j.annee && j.annee.length === 1 ? " · Année " + esc(j.annee) : ""}${j.periodes && j.periodes.length === 1 ? " · " + esc(j.periodes[0]) : ""}</div><p>${esc(j.resume || j.competences)}</p>`;
   c.classList.remove("cache");
   $("titre").textContent = `${j.icone} ${j.titre} — ${etat.i + 1} / ${jeux.length}`;
-  $("cadre").src = `${j.dossier}/${EXTRAITS[j.dossier]}`;
+  $("cadre").src = `${j.classique === false ? j.immersif : j.dossier}/${EXTRAITS[j.dossier]}`;
   setTimeout(() => c.classList.add("cache"), 3500);     // carton de présentation, puis l'extrait
   etat.debut = Date.now(); etat.ecoule = 0;
 }

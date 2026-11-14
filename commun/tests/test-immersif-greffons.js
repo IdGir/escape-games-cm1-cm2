@@ -9,7 +9,7 @@ const fs = require("fs"), path = require("path");
 const { charger, compteur, dodo, attendreQue, clic, RACINE } = require("../../outils-tests/charge");
 const T = compteur("Outils communs dans les variantes immersives"); const ok = T.ok;
 const J = j => path.join(RACINE, "immersifs", j);
-const IMM = ["alimentation", "chateau-fort", "constitution", "lumiere", "etats-matiere", "melanges", "moyen-age-abbaye", "objets-techniques", "renaissance", "station-meteo", "versailles"];
+const IMM = ["alimentation", "chateau-fort", "constitution", "electricite", "etats-matiere", "grandes-explorations", "lumiere", "melanges", "mouvement", "moyen-age-abbaye", "naissances-animaux", "objets-techniques", "renaissance", "station-meteo", "traite-colonies", "versailles"];
 const avant = w => { w.VML_RAPIDE = true; };
 const SECTIONS = {};
 const donnees = j => JSON.parse(fs.readFileSync(path.join(J(j), "assets/data/enigmes.json"), "utf8"));
@@ -333,9 +333,11 @@ SECTIONS.defaut = async () => {
   // accueil de la collection : « Jouer » mène à l'immersif, la version classique est proposée
   const A = await charger(RACINE, "", { page: "index.html", attente: 500 });
   const d = A.w.document;
+  const SANS_CL = C.CATALOGUE.jeux.filter(j => j.classique === false).map(j => j.dossier);   // immersif seulement, pas de version classique
+  const AVEC_CL = IMM.filter(j => !SANS_CL.includes(j));
   for (const j of IMM) {
     const carte = [...d.querySelectorAll("article")].find(a => a.querySelector(`a.jouer[href="immersifs/${j}/"]`));
-    ok(!!carte && !!carte.querySelector(`a.classique[href="${j}/"]`) && !!carte.querySelector(`a.prof[href="immersifs/${j}/prof.html"]`), `accueil : ${j} → immersif par défaut, lien « version classique » et tableau de bord`);
+    ok(!!carte && (SANS_CL.includes(j) ? !carte.querySelector("a.classique") : !!carte.querySelector(`a.classique[href="${j}/"]`)) && !!carte.querySelector(`a.prof[href="immersifs/${j}/prof.html"]`), `accueil : ${j} → immersif par défaut, ${SANS_CL.includes(j) ? "sans" : "avec"} lien « version classique », tableau de bord`);
   }
   ok(!!d.querySelector('a.jouer[href="declaration/"]') && !!d.querySelector('a.jouer[href="mission-geo/"]'), "accueil : les jeux sans variante gardent leur adresse");
   ok(/version immersive/.test(d.body.textContent), "accueil : la version immersive est annoncée");
@@ -345,9 +347,9 @@ SECTIONS.defaut = async () => {
   // vue d'ensemble de l'année
   const Y = await charger(RACINE, "", { page: "annee.html", attente: 800 });
   const liens = [...Y.w.document.querySelectorAll(".liens a")].map(a => a.getAttribute("href"));
-  ok(IMM.every(j => liens.includes(`immersifs/${j}/`) && liens.includes(`${j}/`)), "année : « Jouer (immersif) » et « Version classique » pour chaque jeu");
-  // liens réciproques
-  for (const j of IMM) {
+  ok(IMM.every(j => liens.includes(`immersifs/${j}/`)) && AVEC_CL.every(j => liens.includes(`${j}/`)) && SANS_CL.every(j => !liens.includes(`${j}/`)), "année : « Jouer (immersif) » pour chaque jeu, « Version classique » quand elle existe");
+  // liens réciproques (jeux qui ont une version classique)
+  for (const j of AVEC_CL) {
     const I = await charger(J(j), "", { avant, attente: 400 });
     ok(I.w.document.getElementById("lien-classique").getAttribute("href") === `../../${j}/`, `${j} immersif : lien « Version classique »`);
     const html = fs.readFileSync(path.join(RACINE, j, "index.html"), "utf8");

@@ -121,7 +121,7 @@ SECTIONS.C5 = async () => {
   const a = d.getElementById("choix-avenir"); a.checked = true; a.dispatchEvent(new w.Event("change"));
   ok(d.querySelectorAll(".jeu.avenir").length === 0, "P1 : tous les jeux de la période sont déjà publiés");
   const p = d.getElementById("choix-p"); p.value = "P2"; p.dispatchEvent(new w.Event("change"));
-  ok(d.querySelectorAll(".jeu.avenir").length === 1, "P2 Année B : 1 jeu à venir");
+  ok(d.querySelectorAll(".jeu.avenir").length === 0, "P2 Année B : tous les jeux de la période sont publiés");
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
 
@@ -130,7 +130,7 @@ SECTIONS.C3 = async () => {
   const hist = JSON.stringify([{ type: "escape-game-compte-rendu", jeu: "melanges", eleve: "Léa B.", termine: true, score: 200, scoreMax: 235 }]);
   const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200, stockage: { escape_resultats: hist } });
   const d = w.document, P = w.PASSEPORT;
-  ok(P.COMPETENCES.length === 5 * 11 + 8 + 6 + 16, `compétences des 14 jeux publiés, une par leçon (${P.COMPETENCES.length})`);
+  ok(P.COMPETENCES.length === 5 * 12 + 8 + 6 + 16, `compétences des jeux publiés qui ont leurs leçons A4, une par leçon (${P.COMPETENCES.length})`);
   d.getElementById("liste-eleves").value = "Léa B.\nTom R.\n\nLéa B.";
   d.getElementById("btn-eleves").click();
   ok(P.D.eleves.join(",") === "Léa B.,Tom R.", "liste de la classe (doublons et lignes vides ignorés)");
@@ -175,16 +175,17 @@ SECTIONS.F4 = async () => {
   const fs = require("fs"), path = require("path");
   const { w, erreurs } = await charger(RACINE, "?duree=12", { page: "demo.html", attente: 200 });
   const D = w.DEMO;
-  ok(D.jeux.length === 14 && D.jeux.every(j => fs.existsSync(path.join(RACINE, j.dossier, "index.html"))), "un extrait pour chacun des 14 jeux publiés");
+  const nbPub = w.CATALOGUE.jeux.filter(j => j.dossier).length;
+  ok(D.jeux.length === nbPub && D.jeux.every(j => fs.existsSync(path.join(RACINE, j.classique === false ? j.immersif : j.dossier, "index.html"))), `un extrait pour chacun des ${nbPub} jeux publiés`);
   ok(D.jeux.every(j => /[?&](salle|seance)=/.test(D.EXTRAITS[j.dossier])), "extraits en mode vérification (rien n'est enregistré)");
   await dodo(2700);
   ok(D.etat.i === 0 && /\/\?/.test(w.document.getElementById("cadre").getAttribute("src")), "premier extrait lancé : " + w.document.getElementById("cadre").getAttribute("src"));
-  ok(/1 \/ 14/.test(w.document.getElementById("titre").textContent), "bandeau : 1 / 14");
+  ok(new RegExp("1 / " + nbPub).test(w.document.getElementById("titre").textContent), "bandeau : 1 / " + nbPub);
   w.document.getElementById("b-suivant").click();
   ok(D.etat.i === 1, "⏭ extrait suivant");
   w.document.getElementById("b-pause").click(); const avant = D.etat.i; await dodo(400);
   ok(D.etat.pause && D.etat.i === avant, "⏸ pause");
-  D.montrer(13); D.montrer(D.etat.i + 1);
+  D.montrer(D.jeux.length - 1); D.montrer(D.etat.i + 1);
   ok(D.etat.i === 0, "la boucle repart au premier jeu");
   ok(erreurs.length === 0, "erreurs JS : " + erreurs.join(" | "));
 };
@@ -192,7 +193,7 @@ SECTIONS.F4 = async () => {
 SECTIONS.D4 = async () => {
   console.log("\n== D4 : éditeur d'énigmes (editeur.html) ==");
   const path = require("path");
-  for (const j of ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"]) {
+  for (const j of ["melanges", "objets-techniques", "station-meteo", "chateau-fort", "moyen-age-abbaye", "constitution", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement", "traite-colonies"]) {
     const { w, erreurs } = await charger(RACINE, "?jeu=" + j, { page: "editeur.html", attente: 600 });
     await attendreQue(() => w.document.querySelectorAll("#arbre .item").length, 3000);
     const E = w.EDITEUR, b = E.bilanGlobal();
@@ -237,7 +238,7 @@ SECTIONS.B2 = async () => {
   const fs = require("fs"), path = require("path"), { execFileSync } = require("child_process");
   const { w, erreurs } = await charger(RACINE, "", { page: "index.html", attente: 300 });
   const d = w.document, C = w.eval("CATALOGUE");
-  const jeux = C.jeux.filter(j => j.dossier).map(j => j.dossier);
+  const jeux = C.jeux.filter(j => j.dossier && !j.medias_en_attente).map(j => j.dossier);   // médias encore à produire : pas de bande-annonce
   const liens = [...d.querySelectorAll("a.bande-annonce")];
   ok(liens.length === jeux.length, `un lien « Bande-annonce » par jeu disponible (${liens.length}/${jeux.length})`);
   const manquants = liens.map(a => a.getAttribute("href")).filter(h => !fs.existsSync(path.join(RACINE, h)));
@@ -533,7 +534,7 @@ SECTIONS.N18 = async () => {
   ok(/Modèle vierge/.test(X.w.document.getElementById("sous-titre").textContent) && X.erreurs.length === 0, "jeu inconnu : modèle vierge, sans erreur");
 
   // liens depuis chaque jeu et depuis la vue d'ensemble de l'année
-  const jeux = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere"];
+  const jeux = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement", "traite-colonies"];
   const sans = jeux.filter(j => !fs.readFileSync(path.join(RACINE, j, "prof.html"), "utf8").includes(`../sequences/fiche.html?jeu=${j}`));
   ok(sans.length === 0, "prof.html des 12 jeux : bouton « 📘 Fiche de séquence » " + sans.join(", "));
   const A = await charger(RACINE, "", { page: "annee.html", attente: 600 });
@@ -571,7 +572,7 @@ SECTIONS.N21 = async () => {
   ok(lu("prevus").every(t => +t === cat.length), `chiffres : ${cat.length} jeux dans la progression`);
   const matieres = [...new Set(cat.filter(j => j.dossier).map(j => j.matiere))];
   ok(lu("matieres").every(t => +t === matieres.length) && lu("listematieres")[0] === matieres.join(", "), `chiffres : ${matieres.length} matières (${matieres.join(", ")})`);
-  const attendu = 5 * 11 + 8 + 6 + 16;       // même décompte que le passeport (C3) : une compétence par leçon
+  const attendu = 5 * 12 + 8 + 6 + 16;       // même décompte que le passeport (C3) : une compétence par leçon
   ok(lu("competences").every(t => +t === attendu), `chiffres : ${lu("competences")[0]} compétences, comme le passeport (${attendu})`);
   ok(!/[0-9]{2,} jeux|\b13 jeux\b/.test(fs.readFileSync(path.join(P, "diaporama.html"), "utf8").replace(/<script[\s\S]*?<\/script>/g, "")), "aucun nombre de jeux écrit en dur dans le diaporama");
   ok(D.erreurs.length === 0, "diaporama : erreurs JS : " + D.erreurs.join(" | "));
@@ -663,7 +664,7 @@ SECTIONS.N24 = async () => {
   const rois = ligne("Le temps des rois");
   ok(rois[2] === "Objectifs partiellement atteints" && /1 en cours, 1 non acquise — 2 notées sur 18/.test(rois[3]) && /évaluation partielle/.test(rois[3]) && /≈/.test(rois[1]), "« Le temps des rois » : partiel, correspondance approchée (≈) et évaluation partielle signalées : " + rois.join(" | "));
   const matiere = ligne("Matière, mouvement, énergie, information : décrire");
-  ok(matiere[2] === "Objectifs partiellement atteints" && /5 acquises, 1 non acquise — 6 notées sur 10/.test(matiere[3]), "matière : 5 acquises + 1 non acquise (mélanges) regroupées : " + matiere.join(" | "));
+  ok(matiere[2] === "Objectifs partiellement atteints" && /5 acquises, 1 non acquise — 6 notées sur 14/.test(matiere[3]), "matière : 5 acquises + 1 non acquise (mélanges) regroupées : " + matiere.join(" | "));
   ok(ligne("Matière, mouvement, énergie, information : identifier un signal")[2] === "Objectifs non atteints", "signal : non atteints");
   ok(ligne("Les principes et les valeurs de la République")[2] === "Objectifs atteints" && ligne("Appréhender la notion d'échelle")[2] === "Objectifs atteints" && ligne("Consommer en France")[2] === "Objectifs partiellement atteints", "EMC, compétence d'échelle et « Consommer en France » : une ligne chacun");
   ok(rows.every(r => r[0]) && rows[0][0] === "Histoire et géographie", "classé par discipline (histoire-géographie d'abord)");

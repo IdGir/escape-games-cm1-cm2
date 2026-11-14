@@ -31,7 +31,8 @@ def police(gras=True, serif=True, taille=40):
 
 def catalogue():
     t = open(os.path.join(RACINE, "commun", "donnees", "catalogue.js"), encoding="utf-8").read()
-    return json.loads(t[t.index("var CATALOGUE = ") + 16: t.rindex(";")])
+    # raw_decode : le fichier contient aussi CATALOGUE_JEU après l'objet (sinon « Extra data »)
+    return json.JSONDecoder().raw_decode(t[t.index("var CATALOGUE = ") + 16:])[0]
 
 def fond(jeu):
     """(chemin, crédit ou None) de l'image de fond."""

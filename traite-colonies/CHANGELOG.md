@@ -10,3 +10,5 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
   20 en CM2, 10 types d'énigmes, 5 leçons rédigées, évaluations imprimables, version immersive à 5 grades
   (`immersifs/traite-colonies/`). Données générées par les scripts de `tests/donnees/`. Sujet sensible : relecture
   de l'enseignant attendue avant la classe.
+
+<!-- dernier-commit: 5e81663 -->

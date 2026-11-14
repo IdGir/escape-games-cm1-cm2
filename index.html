@@ -8,7 +8,7 @@
 <style>
   :root{
     --fond:#f6f4ef; --papier:#fff; --encre:#1f2430; --doux:#5d6472; --ligne:#e2ddd2;
-    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227; --ali:#2b5d6b; --ali-2:#d9a21b; --lum:#1d3557; --lum-2:#f2c230; --etm:#1f4e5f; --etm-2:#7fb8e6;
+    --decl:#1d3a8a; --decl-2:#b22222; --tdm:#0f4c5c; --tdm-2:#c08a3e; --mg:#2f6b3a; --mg-2:#d9a21b; --cst:#5b2b6b; --cst-2:#c9a227; --mab:#7a3b1d; --mab-2:#c9a227; --mel:#1f5f6b; --mel-2:#8e3b62; --met:#1d5c8f; --met-2:#f2c14e; --ot:#1e5a6e; --ot-2:#a8461b; --chf:#3d5266; --chf-2:#c9a227; --ver:#2a3f6b; --ver-2:#c9a227; --ren:#8a4b1e; --ren-2:#c9a227; --ali:#2b5d6b; --ali-2:#d9a21b; --lum:#1d3557; --lum-2:#f2c230; --etm:#1f4e5f; --etm-2:#7fb8e6; --mvt:#1d2f52; --mvt-2:#d9a23a; --trc:#4a2f1b; --trc-2:#c9a227; --gex:#173a5e; --gex-2:#d9a23a; --ele:#1c2e4a; --ele-2:#f2c14e; --nai:#2f5a3a; --nai-2:#e8a65a;
   }
   *{box-sizing:border-box}
   body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
@@ -64,6 +64,16 @@
   .lumiere .jouer{background:var(--lum)}
   .etats-matiere .bandeau{background:linear-gradient(135deg,var(--etm),#0d2129 60%,var(--etm-2))}
   .etats-matiere .jouer{background:var(--etm)}
+  .mouvement .bandeau{background:linear-gradient(135deg,var(--mvt),#0e1a33 60%,var(--mvt-2))}
+  .mouvement .jouer{background:var(--mvt)}
+  .traite-colonies .bandeau{background:linear-gradient(135deg,var(--trc),#0e1a33 60%,var(--trc-2))}
+  .traite-colonies .jouer{background:var(--trc)}
+  .grandes-explorations .bandeau{background:linear-gradient(135deg,var(--gex),#0e1a33 60%,var(--gex-2))}
+  .grandes-explorations .jouer{background:var(--gex)}
+  .electricite .bandeau{background:linear-gradient(135deg,var(--ele),#0e1a33 60%,var(--ele-2))}
+  .electricite .jouer{background:var(--ele)}
+  .naissances-animaux .bandeau{background:linear-gradient(135deg,var(--nai),#0e1a33 60%,var(--nai-2))}
+  .naissances-animaux .jouer{background:var(--nai)}
   .meteo .bandeau{background:linear-gradient(135deg,var(--met),#0f3350 60%,var(--met-2))}
   .meteo .jouer{background:var(--met)}
   .enseignant{max-width:1100px;margin:0 auto 50px;padding:0 20px}
@@ -368,6 +378,88 @@
         <a class="prof" href="immersifs/etats-matiere/prof.html" hidden>👨‍🏫 Tableau de bord</a>
         <a class="prof" href="etats-matiere/prof.html" hidden>👨‍🏫 Tableau de bord (classique)</a>
         <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/etats-matiere#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+  <article class="jeu mouvement">
+    <div class="bandeau">
+      <div class="icone">⏱️</div>
+      <h2>Le Grand Prix de l'observatoire</h2>
+      <div class="meta">Sciences · Distances, durées, types de mouvement, la Terre autour du Soleil · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
+    </div>
+    <div class="corps">
+      <p>Le matin du Grand Prix des véhicules de l'école, le vent a dispersé les feuilles de mesure de Margaux. Les commissaires retrouvent les cinq mots du coffre : distance, durée, vitesse, trajectoire et observateur.</p>
+      <a class="jouer" href="immersifs/mouvement/">▶ Jouer</a>
+      <div class="liens">
+        <a class="classique" href="mouvement/">🎓 Version classique (CM1 / CM2)</a>
+        <a class="prof" href="immersifs/mouvement/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a class="prof" href="mouvement/prof.html" hidden>👨‍🏫 Tableau de bord (classique)</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/mouvement#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+  <article class="jeu traite-colonies">
+    <div class="bandeau">
+      <img class="affiche" src="traite-colonies/assets/images/affiche.jpg" alt="Affiche : Les Archives du port" loading="lazy" onerror="this.remove()">
+      <div class="icone">⚓</div>
+      <h2>Les Archives du port</h2>
+      <div class="meta">Histoire · La traite, les plantations, les résistances et les abolitions · 60 à 75 min · 15 énigmes en CM1, 20 en CM2</div>
+    </div>
+    <div class="corps">
+      <p>Dans les archives d'un port de l'Atlantique, les pages d'un registre de navire se sont mélangées. Les enquêteurs reconstituent l'histoire de la traite, de la vie dans les plantations, des résistances et des abolitions. Sujet sensible : lire le guide avant la séance.</p>
+      <a class="jouer" href="immersifs/traite-colonies/">▶ Jouer</a>
+      <div class="liens">
+        <a class="telecharger-affiche" href="traite-colonies/assets/images/affiche.jpg" download>🖼️ Affiche (16:9)</a>
+        <a class="bande-annonce" href="traite-colonies/assets/videos/bande-annonce.mp4" data-titre="Les Archives du port">🎬 Bande-annonce</a>
+        <a class="classique" href="traite-colonies/">🎓 Version classique (CM1 / CM2)</a>
+        <a class="prof" href="immersifs/traite-colonies/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a class="prof" href="traite-colonies/prof.html" hidden>👨‍🏫 Tableau de bord (classique)</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/traite-colonies#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+  <article class="jeu grandes-explorations">
+    <div class="bandeau">
+      <div class="icone">⛵</div>
+      <h2>La Caravelle du capitaine</h2>
+      <div class="meta">Histoire · Les explorations et les premiers empires coloniaux · 60 à 75 min · 5 grades, du mousse au cartographe</div>
+    </div>
+    <div class="corps">
+      <p>Au festival de la mer de Saint-Malo, une tempête a dispersé le journal de bord de la Rose des vents. Les mousses retrouvent les cinq mots du coffre : épices, astrolabe, océan, rencontre et empires.</p>
+      <a class="jouer" href="immersifs/grandes-explorations/">▶ Jouer</a>
+      <div class="liens">
+        <a class="prof" href="immersifs/grandes-explorations/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/grandes-explorations#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+  <article class="jeu electricite">
+    <div class="bandeau">
+      <div class="icone">🔌</div>
+      <h2>La Centrale en panne</h2>
+      <div class="meta">Sciences · Le circuit électrique, conducteurs et isolants, la sécurité · 60 à 75 min · 5 grades, du stagiaire au chef de quart</div>
+    </div>
+    <div class="corps">
+      <p>Un orage a plongé Clairval dans le noir. Les apprentis électriciens réparent la centrale salle après salle et retrouvent les cinq mots du dernier circuit : boucle, conducteur, schéma, sécurité et centrale.</p>
+      <a class="jouer" href="immersifs/electricite/">▶ Jouer</a>
+      <div class="liens">
+        <a class="prof" href="immersifs/electricite/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/electricite#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
+      </div>
+    </div>
+  </article>
+  <article class="jeu naissances-animaux">
+    <div class="bandeau">
+      <div class="icone">🐣</div>
+      <h2>La Nurserie du zoo</h2>
+      <div class="meta">Sciences · Le développement des animaux, ovipares et vivipares · 60 à 75 min · 5 grades, du bénévole au chef de la nurserie</div>
+    </div>
+    <div class="corps">
+      <p>Une tempête a mélangé les fiches de la nurserie du zoo. Les apprentis soigneurs retrouvent comment naît chaque animal et les cinq mots du carnet : cellule, eau, vivipare, embryon et naissance.</p>
+      <a class="jouer" href="immersifs/naissances-animaux/">▶ Jouer</a>
+      <div class="liens">
+        <a class="prof" href="immersifs/naissances-animaux/prof.html" hidden>👨‍🏫 Tableau de bord</a>
+        <a href="https://github.com/IdGir/escape-games-cm1-cm2/tree/escape-games/naissances-animaux#readme" target="_blank" rel="noopener">📘 Guide du jeu</a>
       </div>
     </div>
   </article>
