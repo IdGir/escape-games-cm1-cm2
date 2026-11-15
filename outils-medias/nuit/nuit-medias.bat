@@ -4,4 +4,5 @@ REM Fabrique de nuit des medias (lancee par le Planificateur de taches). Ne rien
 cd /d "%~dp0\..\.."
 set PY=python
 python --version >nul 2>&1 || set PY=py
+set PYTHONIOENCODING=utf-8
 %PY% outils-medias\nuit\nuit-medias.py %* >> outils-medias\nuit\sortie-console.txt 2>&1
