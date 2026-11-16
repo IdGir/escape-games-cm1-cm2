@@ -8,6 +8,12 @@ Ce dossier contient les **données sources** (format des jeux classiques) d'où 
 
 **Sécurité** : aucune expérience ni manipulation avec le secteur ; seules les piles de la classe sont utilisées.
 
+## Imprimer
+
+- **Leçons A4 illustrées** (CM1 / CM2, compétence du programme, schémas, lexique) : `lecons-imprimables.html`.
+- **Évaluations** (fiches préparatoires, QCM, vrai/faux, études de documents, corrigés à la fin) : `evaluations-imprimables.html`.
+- Ces deux pages s'ouvrent aussi depuis la variante immersive (Bibliothèque → page « Leçons A4 »).
+
 ## Fil narratif
 
 Un orage a plongé dans le noir la petite ville de Clairval (inventée). Les élèves, apprentis électriciens de la centrale, réparent salle après salle et retrouvent cinq mots qui ferment le dernier circuit :

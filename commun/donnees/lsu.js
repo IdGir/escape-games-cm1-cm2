@@ -101,6 +101,9 @@ var LSU = {
   "mouvement": {
    "distance": ["sc-matiere", "="], "duree": ["sc-matiere", "="], "comparer": ["sc-matiere", "="], "trajectoires": ["sc-matiere", "="], "observateur": ["sc-terre", "~"]
   },
+  "electricite": {
+   "circuit": ["sc-energie", "~"], "conducteurs": ["sc-objets", "~"], "schema": ["sc-langages", "="], "securite": ["sc-energie", "~"], "production": ["sc-energie", "="]
+  },
   "traite-colonies": {
    "triangle": ["hg-rois", "~"], "traite": ["hg-rois", "~"], "plantations": ["hg-rois", "~"], "ports": ["hg-rois", "~"], "abolitions": ["hg-revol", "~"]
   },

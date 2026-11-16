@@ -83,6 +83,16 @@ var FAMILLES = {
     "observateur": "comprendre qu'un mouvement se décrit toujours depuis la place de celui qui regarde"
    }
   },
+  "electricite": {
+   "deroule": "Après un orage qui a plongé une petite ville dans le noir, les élèves, apprentis électriciens d'une centrale, ont réparé salle après salle en comprenant comment marche l'électricité.",
+   "lecons": {
+    "circuit": "brancher une pile, une lampe et des fils, et comprendre que la lampe ne brille que si la boucle est complète",
+    "conducteurs": "trier les matériaux qui laissent passer le courant et ceux qui ne le laissent pas passer",
+    "schema": "dessiner et lire le schéma d'un circuit avec des symboles que tout le monde comprend",
+    "securite": "connaître les règles pour se protéger du courant des prises, et des gestes pour économiser l'électricité",
+    "production": "savoir comment l'électricité est produite dans les centrales et comment elle arrive jusqu'à la maison"
+   }
+  },
   "traite-colonies": {
    "deroule": "En équipe, les élèves ont enquêté dans les archives d'un port pour comprendre la traite des esclaves, la vie dans les plantations, les résistances et les abolitions.",
    "lecons": {
