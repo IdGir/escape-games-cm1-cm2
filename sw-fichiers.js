@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "cfcaf34cdb";
+self.VERSION_HORS_LIGNE = "90527e16a6";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -1141,7 +1141,22 @@ self.IMAGES_JEUX = {
 "immersifs/electricite/assets/images/ui/icone.svg",
 "immersifs/etats-matiere/assets/images/ui/icone.svg",
 "immersifs/grandes-explorations/assets/images/ui/icone.svg",
+"immersifs/lumiere/assets/images/decors/atelier.webp",
+"immersifs/lumiere/assets/images/decors/chambre.webp",
+"immersifs/lumiere/assets/images/decors/cour.webp",
+"immersifs/lumiere/assets/images/decors/galerie.webp",
+"immersifs/lumiere/assets/images/decors/lanterne.webp",
+"immersifs/lumiere/assets/images/personnages/achille.webp",
+"immersifs/lumiere/assets/images/personnages/maelle.webp",
+"immersifs/lumiere/assets/images/personnages/nils.webp",
+"immersifs/lumiere/assets/images/personnages/salome.webp",
+"immersifs/lumiere/assets/images/personnages/yasmine.webp",
 "immersifs/lumiere/assets/images/ui/icone.svg",
+"immersifs/lumiere/assets/medias-depart/transition-e1.jpg",
+"immersifs/lumiere/assets/medias-depart/transition-e2.jpg",
+"immersifs/lumiere/assets/medias-depart/transition-e3.jpg",
+"immersifs/lumiere/assets/medias-depart/transition-e4.jpg",
+"immersifs/lumiere/assets/medias-depart/transition-e5.jpg",
 "immersifs/melanges/assets/images/decors/2111528005372219392.jpeg",
 "immersifs/melanges/assets/images/decors/atelier.webp",
 "immersifs/melanges/assets/images/decors/balances.webp",
