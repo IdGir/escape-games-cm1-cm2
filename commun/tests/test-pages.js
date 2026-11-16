@@ -130,7 +130,7 @@ SECTIONS.C3 = async () => {
   const hist = JSON.stringify([{ type: "escape-game-compte-rendu", jeu: "melanges", eleve: "Léa B.", termine: true, score: 200, scoreMax: 235 }]);
   const { w, erreurs } = await charger(RACINE, "", { page: "passeport.html", attente: 1200, stockage: { escape_resultats: hist } });
   const d = w.document, P = w.PASSEPORT;
-  ok(P.COMPETENCES.length === 5 * 13 + 8 + 6 + 16, `compétences des jeux publiés qui ont leurs leçons A4, une par leçon (${P.COMPETENCES.length})`);
+  ok(P.COMPETENCES.length === 5 * 14 + 8 + 6 + 16, `compétences des jeux publiés qui ont leurs leçons A4, une par leçon (${P.COMPETENCES.length})`);
   d.getElementById("liste-eleves").value = "Léa B.\nTom R.\n\nLéa B.";
   d.getElementById("btn-eleves").click();
   ok(P.D.eleves.join(",") === "Léa B.,Tom R.", "liste de la classe (doublons et lignes vides ignorés)");
@@ -572,7 +572,7 @@ SECTIONS.N21 = async () => {
   ok(lu("prevus").every(t => +t === cat.length), `chiffres : ${cat.length} jeux dans la progression`);
   const matieres = [...new Set(cat.filter(j => j.dossier).map(j => j.matiere))];
   ok(lu("matieres").every(t => +t === matieres.length) && lu("listematieres")[0] === matieres.join(", "), `chiffres : ${matieres.length} matières (${matieres.join(", ")})`);
-  const attendu = 5 * 13 + 8 + 6 + 16;       // même décompte que le passeport (C3) : une compétence par leçon
+  const attendu = 5 * 14 + 8 + 6 + 16;       // même décompte que le passeport (C3) : une compétence par leçon
   ok(lu("competences").every(t => +t === attendu), `chiffres : ${lu("competences")[0]} compétences, comme le passeport (${attendu})`);
   ok(!/[0-9]{2,} jeux|\b13 jeux\b/.test(fs.readFileSync(path.join(P, "diaporama.html"), "utf8").replace(/<script[\s\S]*?<\/script>/g, "")), "aucun nombre de jeux écrit en dur dans le diaporama");
   ok(D.erreurs.length === 0, "diaporama : erreurs JS : " + D.erreurs.join(" | "));
@@ -662,7 +662,7 @@ SECTIONS.N24 = async () => {
   ok(rows.length === 8, `8 intitulés LSU pour Léa (${rows.length}) : ` + rows.map(r => r[1].slice(0, 30)).join(" / "));
   ok(ligne("Et avant la France ?")[2] === "Objectifs atteints" && /2 acquises — 2 notées sur 2/.test(ligne("Et avant la France ?")[3]) && !/partielle/.test(ligne("Et avant la France ?")[3]), "« Et avant la France ? » : atteints, évaluation complète");
   const rois = ligne("Le temps des rois");
-  ok(rois[2] === "Objectifs partiellement atteints" && /1 en cours, 1 non acquise — 2 notées sur 18/.test(rois[3]) && /évaluation partielle/.test(rois[3]) && /≈/.test(rois[1]), "« Le temps des rois » : partiel, correspondance approchée (≈) et évaluation partielle signalées : " + rois.join(" | "));
+  ok(rois[2] === "Objectifs partiellement atteints" && /1 en cours, 1 non acquise — 2 notées sur 22/.test(rois[3]) && /évaluation partielle/.test(rois[3]) && /≈/.test(rois[1]), "« Le temps des rois » : partiel, correspondance approchée (≈) et évaluation partielle signalées : " + rois.join(" | "));
   const matiere = ligne("Matière, mouvement, énergie, information : décrire");
   ok(matiere[2] === "Objectifs partiellement atteints" && /5 acquises, 1 non acquise — 6 notées sur 14/.test(matiere[3]), "matière : 5 acquises + 1 non acquise (mélanges) regroupées : " + matiere.join(" | "));
   ok(ligne("Matière, mouvement, énergie, information : identifier un signal")[2] === "Objectifs non atteints", "signal : non atteints");
