@@ -42,7 +42,7 @@ const FORMATS = {
   tablette7: { nom: "tablette 7″", width: 600, height: 960, mobile: true },
   smartphone: { nom: "smartphone", width: 390, height: 844, mobile: true }
 };
-const IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "electricite", "etats-matiere", "grandes-explorations", "lumiere", "melanges", "mouvement", "moyen-age-abbaye", "naissances-animaux", "objets-techniques", "renaissance", "station-meteo", "traite-colonies", "versailles"].map(j => "immersifs/" + j);
+const IMMERSIFS = ["alimentation", "chateau-fort", "constitution", "electricite", "etats-matiere", "grandes-explorations", "lumiere", "melanges", "mouvement", "moyen-age-abbaye", "naissances-animaux", "objets-techniques", "renaissance", "station-meteo", "traite-colonies", "versailles", "vivant-ecosystemes"].map(j => "immersifs/" + j);
 const JEUX_SALLES = ["declaration", "tour-du-monde", "constitution", "moyen-age-abbaye", "station-meteo", "melanges", "objets-techniques", "chateau-fort", "versailles", "renaissance", "alimentation", "lumiere", "etats-matiere", "mouvement", "traite-colonies"];
 const VALIDER = '[data-valider], [id^="btn-verif"]';
 const INDICE = '#btn-indice, [id^="indice-"]';

@@ -410,13 +410,16 @@ var CATALOGUE = {
     "P4"
    ],
    "competences": "Panorama du vivant, biodiversité ; structure et dynamique d'un écosystème.",
-   "dossier": null,
+   "dossier": "vivant-ecosystemes",
+   "immersif": "immersifs/vivant-ecosystemes",
+   "classique": false,
    "icone": "🦋",
    "couleurs": [
-    "#2b5d6b",
-    "#7fb3c8"
+    "#2f5f3a",
+    "#e3b23c"
    ],
-   "resume": "",
+   "resume": "Le ruisseau a inondé le campement de l'expédition : les jeunes naturalistes de la réserve du Val-des-Saules reconstituent la carte du vivant, de l'espèce au réseau alimentaire.",
+   "medias_en_attente": true,
    "prompt": "17-vivant-ecosystemes.md",
    "programme": [
     "st2026"

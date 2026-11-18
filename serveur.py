@@ -888,6 +888,7 @@ def main():
     print("     Mouvement (sciences)  →  http://{}:{}/mouvement/".format(ip, PORT))
     print("     Archives du port      →  http://{}:{}/traite-colonies/".format(ip, PORT))
     print("     Immersifs n°13 à 15   →  http://{}:{}/immersifs/grandes-explorations/ , electricite/ , naissances-animaux/".format(ip, PORT))
+    print("     Immersif n°17        →  http://{}:{}/immersifs/vivant-ecosystemes/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
