@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "lina",
+  "texte": "Bonjour, je suis Lina, biologiste. Bienvenue dans la réserve naturelle du Val-des-Saules. Samedi, pour la Fête de la nature, nous devons présenter la grande carte du vivant de la réserve. Mais cette nuit, le ruisseau a débordé : notre campement a pris l'eau, et toutes les fiches de l'expédition sont mélangées. Vous êtes nos jeunes naturalistes. Dans chaque lieu de la réserve, aidez l'expert qui vous attend et notez le mot qu'il vous donnera. Avec les cinq mots, nous ouvrirons la boîte de la carte du vivant."
+ },
+ "coffre": {
+  "personnage": "lina",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque étape, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Étape 1 — La tente-laboratoire",
+   "plans": [
+    {
+     "decor": "tente",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "lina",
+     "texte": "Entrez ! Un naturaliste commence toujours par bien observer. Mes carnets ont pris l'eau, et le dessin de ma mésange a perdu ses étiquettes. Il faut décrire chaque être vivant par ce qu'il possède, et savoir qui appartient à la même espèce. Vous m'aidez ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de l'étape 1",
+   "plans": [
+    {
+     "decor": "tente",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "lina",
+     "texte": "Bravo. Le premier mot est ESPÈCE : des êtres vivants qui se ressemblent et peuvent avoir des petits ensemble. Hugo, le garde, vous attend à sa cabane, à l'entrée de la forêt.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Étape 2 — La cabane du garde",
+   "plans": [
+    {
+     "decor": "cabane",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "hugo",
+     "texte": "Salut, moi c'est Hugo, le garde de la réserve. L'eau a renversé mes caisses : toutes les fiches sont mélangées. Ici, on range les êtres vivants selon ce qu'ils possèdent, jamais selon ce qui leur manque. Et pour trouver le nom d'une petite bête, on suit ma clé.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de l'étape 2",
+   "plans": [
+    {
+     "decor": "cabane",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "hugo",
+     "texte": "Tout est rangé. Le deuxième mot est GROUPES : des groupes emboîtés, comme des boîtes dans des boîtes. Amara, la paléontologue, vous attend à l'ancienne carrière.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Étape 3 — L'ancienne carrière",
+   "plans": [
+    {
+     "decor": "carriere",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "amara",
+     "texte": "Bonjour, je suis Amara, paléontologue. Ici, la roche garde la mémoire du vivant d'autrefois : des coquilles, des os, des empreintes. Mes étiquettes sont tombées dans les flaques. Remettons de l'ordre dans des millions d'années d'histoire !",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de l'étape 3",
+   "plans": [
+    {
+     "decor": "carriere",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "amara",
+     "texte": "Magnifique. Le troisième mot est FOSSILES : ils racontent le vivant d'autrefois. Rose vous attend près des ruches, au bord de la mare.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Étape 4 — La mare et le pré fleuri",
+   "plans": [
+    {
+     "decor": "mare",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "rose",
+     "texte": "Bonjour les naturalistes ! Je suis Rose, je m'occupe des ruches du pré. Mes abeilles ont besoin des fleurs, et les fleurs ont besoin de mes abeilles. Autour de cette mare, tout est lié. Mes relevés ont été mouillés : aidez-moi à décrire cet écosystème.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de l'étape 4",
+   "plans": [
+    {
+     "decor": "mare",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "rose",
+     "texte": "Merci ! Le quatrième mot est MILIEU : chaque être vivant vit là où le milieu lui convient. Élio vous attend sur le ponton de l'étang.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Étape 5 — Le ponton de l'étang",
+   "plans": [
+    {
+     "decor": "etang",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "elio",
+     "texte": "Salut ! Moi, c'est Élio. Je pêche dans cet étang depuis longtemps, et je sais qui mange qui. Ma carte du réseau de l'étang a perdu des morceaux. Si on la refait, on pourra ouvrir la boîte de la carte du vivant.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de l'étape 5",
+   "plans": [
+    {
+     "decor": "etang",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "elio",
+     "texte": "Le dernier mot est RÉSEAU . Vous avez les cinq mots : ouvrons la boîte et terminons la carte du vivant de la réserve.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « L'Expédition biodiversité »",
+   "plans": [
+    {
+     "decor": "etang",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "elio",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "lina",
+   "texte": "Notez le mot de cette étape : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "hugo",
+   "texte": "Notez le mot de cette étape : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "amara",
+   "texte": "Notez le mot de cette étape : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "rose",
+   "texte": "Notez le mot de cette étape : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "elio",
+   "texte": "Notez le mot de cette étape : il servira à ouvrir le coffre final."
+  }
+ }
+}

@@ -1,0 +1,369 @@
+{
+ "decors": {
+  "tente": {
+   "titre": "La tente-laboratoire de l'expédition, au bord du ruisseau",
+   "reference": null,
+   "ambiance": [
+    "oiseaux",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le carnet de terrain",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet ouvert qui sèche sur la table, avec le dessin d'une mésange sans étiquettes."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les notes mouillées",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une pile de feuilles gondolées, l'encre a coulé par endroits."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les boîtes d'observation",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des boîtes transparentes avec une loupe sur le couvercle ; les fiches sont tombées à côté."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La question des visiteurs",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un panneau de questions laissé par les visiteurs de la veille."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "cabane": {
+   "titre": "La cabane du garde, à l'entrée de la forêt",
+   "reference": null,
+   "ambiance": [
+    "oiseaux",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les caisses renversées",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des caisses en bois couchées sur le plancher, les fiches éparpillées."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "L'affiche des règles",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une affiche à moitié décollée : « Comment classer ? »"
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La clé des petites bêtes",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande clé de détermination punaisée au mur, au-dessus d'un bac de feuilles mortes."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La caisse des poils",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une caisse étiquetée, avec une fiche qui dépasse."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "carriere": {
+   "titre": "L'ancienne carrière de calcaire de la réserve",
+   "reference": null,
+   "ambiance": [
+    "oiseaux",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La grande frise",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une longue frise en tissu déroulée sur le sol, ses étapes décrochées."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tiroir des fossiles",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un tiroir à compartiments, les fossiles sans leurs étiquettes."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le panneau de la crise",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un panneau illustré sur la disparition des dinosaures, avec des phrases à vérifier."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La vitrine au cadenas",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une vitrine fermée par un cadenas à chiffres, derrière laquelle brillent des ammonites."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "mare": {
+   "titre": "La mare de la réserve et le pré fleuri où sont les ruches",
+   "reference": null,
+   "ambiance": [
+    "oiseaux",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le dessin de la mare",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un grand dessin de la mare sur un chevalet, ses étiquettes envolées."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les relevés de Rose",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet de relevés posé sur une ruche, plein de mots mélangés."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les questions de Rose",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Rose, voile d'apicultrice relevée, près des ruches qui bourdonnent."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les panneaux du sentier",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des panneaux en bois à planter le long du sentier, encore vierges."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "etang": {
+   "titre": "Le ponton du grand étang de la réserve",
+   "reference": null,
+   "ambiance": [
+    "oiseaux",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La chaîne d'Élio",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des cartes d'êtres vivants accrochées à une ficelle le long du ponton, dans le désordre."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les flèches du carnet",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Le carnet de pêche d'Élio, couvert de flèches au crayon."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'affiche déchirée",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une affiche de la réserve déchirée, des morceaux de mots manquent."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La boîte de la carte du vivant",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une boîte en bois fermée par un cadenas à trois chiffres, posée sur la table du ponton."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}
