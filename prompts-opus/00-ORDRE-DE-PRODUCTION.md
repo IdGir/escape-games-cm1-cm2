@@ -34,7 +34,7 @@ Classés dans l'ordre du calendrier scolaire : la période 1 est en cours, on co
 | 14 | La Centrale en panne | Sciences | A | P3 | L'électricité. | `14-electricite.md` | [x] (commit 51c5d34, 13/11/2026, à pousser ; immersif 5 grades seulement, pas de version classique ni d'accueil) |
 | 15 | La Nurserie du zoo | Sciences | B | P3 | Étapes du développement des animaux (fécondation à la naissance) ; reproduction ovipare/vivipare. | `15-naissances-animaux.md` | [x] (commit bbd807c, 14/11/2026, à pousser ; immersif 5 grades seulement, pas de version classique ni d'accueil) |
 | 16 | Le Testament de l'Empereur | Histoire | B | P4 | Napoléon, du général à l'empereur ; lieux, symboles et rites de la République ; lois protectrices des libertés. | `16-napoleon-republique.md` | [ ] |
-| 17 | L'Expédition biodiversité | Sciences | A | P4 | Panorama du vivant, biodiversité ; structure et dynamique d'un écosystème. | `17-vivant-ecosystemes.md` | [ ] |
+| 17 | L'Expédition biodiversité | Sciences | A | P4 | Panorama du vivant, biodiversité ; structure et dynamique d'un écosystème. | `17-vivant-ecosystemes.md` | [x] (commits 076946e et e66c306, 18/11/2026, à pousser ; immersif 5 grades seulement, médias en attente) |
 | 18 | Le Robot de l'atelier | Sciences | B | P4 | Traduire un langage simple en langage naturel ; utiliser un programme pour agir sur un objet technique. | `18-programmation-robot.md` | [ ] |
 | 19 | Les Lettres du poilu | Histoire | A | P5 | Première Guerre mondiale : causes, déroulement, conséquences. | `19-grande-guerre.md` | [ ] |
 | 20 | Radio Londres | Histoire | A | P5 | Seconde Guerre mondiale : montée des extrêmes, collaboration et résistance, victoire des alliés. | `20-seconde-guerre.md` | [ ] |
