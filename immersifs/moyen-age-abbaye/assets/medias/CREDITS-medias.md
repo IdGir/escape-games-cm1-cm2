@@ -11,3 +11,6 @@ Chaque média déposé avec importer-image.py ajoute une ligne : fichier · sour
 - `assets/images/personnages/anselme.webp` · Agnes agnes-image-2.5-flash · à préciser (droits d’usage) · 2026-10-06
 - `assets/images/personnages/aude.webp` · Agnes agnes-image-2.5-flash · à préciser (droits d’usage) · 2026-10-06
 - `assets/images/personnages/garin.webp` · Agnes agnes-image-2.5-flash · à préciser (droits d’usage) · 2026-10-06
+- `assets/medias-depart/transition-e3.jpg` · Agnes AI (génération de nuit) · Image générée par IA · 2026-11-18
+- `assets/medias-depart/transition-e4.jpg` · Agnes AI (génération de nuit) · Image générée par IA · 2026-11-18
+- `assets/medias-depart/transition-e5.jpg` · Agnes AI (génération de nuit) · Image générée par IA · 2026-11-18

@@ -17,3 +17,6 @@ Chaque média déposé avec importer-image.py ajoute une ligne : fichier · sour
 - `assets/images/personnages/nils.webp` · Agnes AI (génération de nuit) · Image générée par IA · 2026-11-15
 - `assets/images/personnages/salome.webp` · Agnes AI (génération de nuit) · Image générée par IA · 2026-11-15
 - `assets/images/personnages/yasmine.webp` · Agnes AI (génération de nuit) · Image générée par IA · 2026-11-15
+- `assets/videos/transition-e1.mp4` · Agnes AI (génération de nuit) · Vidéo générée par IA · 2026-11-16
+- `assets/videos/transition-e2.mp4` · Agnes AI (génération de nuit) · Vidéo générée par IA · 2026-11-17
+- `assets/videos/transition-e5.mp4` · Agnes AI (génération de nuit) · Vidéo générée par IA · 2026-11-18
