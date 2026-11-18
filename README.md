@@ -137,6 +137,33 @@ sans indice, quizz parfait, historien, scientifique, géographe, citoyen, touche
 **[trophees.html](https://idgir.github.io/escape-games-cm1-cm2/trophees.html)** (vitrine, diplôme à imprimer),
 calculés sur les parties terminées de l'appareil — garder exactement le même nom d'équipe d'un jeu à l'autre.
 
+## 1 quater. La classe en trois gestes : Préparer, Lancer, Terminer (lot 2, novembre 2026)
+
+En haut de **enseignant.html** : le feu vert, le jeu prévu pour la période (calendrier du catalogue ; Année A en 2026-2027, B en 2027-2028), le niveau, puis trois boutons. Les 24 ressources d'avant sont repliées sous « Tout le reste ».
+
+| Geste | Ce qui se passe |
+|---|---|
+| **1 · Préparer** | revérifie le feu vert et ouvre `pack-impression.html` : un bouton « Tout imprimer » enchaîne la fiche de mission (une par équipe), l'évaluation et les leçons A4 du niveau choisi |
+| **2 · Lancer** | fixe la **séance du jour** (`POST /api/seance`, fichier `seance-du-jour.json` dans le dossier de données, jamais publié) et ouvre `tableau.html` (grand QR code + adresse courte, à projeter). L'accueil servi aux élèves n'affiche plus qu'un grand bouton « ▶ Jouer » vers la version immersive du jeu du jour (grade imposé si choisi) ; l'ordinateur de l'enseignant voit toujours tous les jeux (et `index.html?tous=1` partout). **Sans serveur** (site en ligne) : « Lancer » fabrique le lien `…/?jeu=<id>&grade=<grade>` (même effet) et son QR code |
+| **3 · Terminer** | termine la séance et ouvre `resultats.html?fin=<jeu>` : bilan de séance imprimable (PDF d'une page, `rapport-seance.js`) et passeport de compétences mis à jour (`commun/js/fin-seance.js` : réussite du premier coup ≥ 75 % « Acquis », ≥ 40 % « En cours », sinon « Non acquis » ; une note posée à la main n'est jamais remplacée) |
+
+**Feu vert** (`GET /api/sante`, réservé au PC du serveur) : serveur, version à jour par rapport à GitHub, médias du jeu du jour (`immersifs/<jeu>/medias.csv`), dossier des résultats accessible en écriture. Chaque voyant orange ou rouge dit quoi faire.
+
+### Adresse fixe pour les élèves (à faire une fois)
+Outil : le navigateur du PC de l'enseignant.
+1. Double-clic sur `lancer.bat` ; noter l'adresse affichée (ex. `http://192.168.1.23:8000/`).
+2. Touche Windows, taper `cmd`, Entrée ; taper `ipconfig /all`, Entrée ; relever « Adresse physique » (MAC) de la carte réseau utilisée.
+3. Ouvrir l'interface de la box (souvent `http://192.168.1.1`), se connecter, menu « DHCP » / « Réseau local » / « Baux statiques » → « Ajouter une réservation » : le PC (ou son adresse MAC) et son adresse IP actuelle → Enregistrer.
+4. Redémarrer le PC : l'adresse doit rester la même. Box gérée par la mairie ou l'académie : demander au référent « une réservation DHCP » pour cette adresse MAC.
+5. Projeter `tableau.html` ; sur chaque Chromebook, la première fois : Chrome → scanner le QR code ou taper l'adresse → Entrée → étoile ☆ de la barre d'adresse → « Terminé ». Les élèves passent ensuite par ce favori.
+
+### PC de l'école : mise à jour et serveur automatiques
+Outil : l'Explorateur de fichiers de Windows.
+1. Une fois : double-clic sur `installer-ecole.bat`. Il crée la tâche Windows « EscapeGames-Ecole » (ouverture de session) ou, sans droits administrateur, un lanceur dans le dossier Démarrage ; il propose de tout lancer tout de suite.
+2. À chaque ouverture de session, `demarrer-ecole.bat` : récupère la dernière version (`git fetch` + `git merge --ff-only` si le dossier est un dépôt git ; sinon `outils-ecole/maj-ecole.ps1` télécharge l'archive de la branche quand elle a changé, sans toucher aux résultats ni à `dossier-donnees.txt`), puis lance `serveur.py` sur le port 8000. Journal : `journal-ecole.txt` (jamais publié).
+3. Pour l'enlever : double-clic sur `desinstaller-ecole.bat`.
+4. À n'installer que sur le PC de l'école (pas sur l'ordinateur où l'on modifie les jeux).
+
 ## 2. Tout vérifier : la page de vérification
 
 **[verifier.html](https://idgir.github.io/escape-games-cm1-cm2/verifier.html)** —

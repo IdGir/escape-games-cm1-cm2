@@ -256,8 +256,182 @@ def chemin_prive(chemin_relatif):
         return False
     nom = segments[-1].lower()
     return (".git" in [x.lower() for x in segments] or segments[0].lower() == "sauvegardes-resultats"
-            or nom.startswith("resultats-classe") or nom.startswith("difficulte-classe") or nom.startswith("dossier-donnees")
+            or nom.startswith("resultats-classe") or nom.startswith("difficulte-classe") or nom.startswith("dossier-donnees") or nom.startswith("seance-du-jour")
+            or nom.startswith("journal-ecole") or nom == "version-installee.txt"
             or (nom.startswith("cle-") and nom.endswith(".txt")))
+
+
+# ---- Séance du jour (A1) et feu vert avant la séance (A4) ----
+# Le jeu du jour choisi par l'enseignant est gardé dans le dossier de données (jamais publié) :
+# l'accueil servi aux élèves n'affiche alors qu'un grand bouton « Jouer » vers ce jeu.
+FICHIER_SEANCE = os.path.join(DOSSIER_DONNEES, "seance-du-jour.json")
+GRADES_IMMERSIFS = ("mousse", "matelot", "timonier", "lieutenant", "second")
+DEPOT_GITHUB = "IdGir/escape-games-cm1-cm2"
+BRANCHE_GITHUB = "escape-games"
+
+def id_jeu_valide(jeu):
+    """Un identifiant de jeu : lettres, chiffres, tirets, et un dossier qui existe (variante immersive ou classique)."""
+    jeu = str(jeu or "").strip().lower()
+    if not jeu or len(jeu) > 60 or not all(c.isalnum() or c == "-" for c in jeu):
+        return ""
+    return jeu if (os.path.isdir(os.path.join("immersifs", jeu)) or os.path.isdir(jeu)) else ""
+
+def lire_seance():
+    try:
+        with open(FICHIER_SEANCE, encoding="utf-8") as f:
+            s = json.load(f)
+        return s if isinstance(s, dict) and id_jeu_valide(s.get("jeu")) else None
+    except (OSError, ValueError):
+        return None
+
+def ecrire_seance(seance):
+    """seance = None : plus de séance (l'accueil redevient normal)."""
+    if seance is None:
+        try:
+            os.remove(FICHIER_SEANCE)
+        except OSError:
+            pass
+        return True
+    try:
+        tmp = FICHIER_SEANCE + ".tmp"
+        with open(tmp, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(seance, f, ensure_ascii=False, indent=1)
+        os.replace(tmp, FICHIER_SEANCE)
+        return True
+    except OSError:
+        return False
+
+def adresse_jeu(jeu):
+    return "immersifs/{}/".format(jeu) if os.path.isdir(os.path.join("immersifs", jeu)) else "{}/".format(jeu)
+
+def version_locale():
+    """Version installée : le commit de la branche (dépôt git) ou version-installee.txt (installation par archive)."""
+    try:
+        with open(os.path.join(".git", "HEAD"), encoding="utf-8") as f:
+            tete = f.read().strip()
+        if tete.startswith("ref:"):
+            ref = tete[4:].strip()
+            chemin = os.path.join(".git", *ref.split("/"))
+            if os.path.exists(chemin):
+                with open(chemin, encoding="utf-8") as f:
+                    return f.read().strip()
+            with open(os.path.join(".git", "packed-refs"), encoding="utf-8") as f:
+                for ligne in f:
+                    if ligne.strip().endswith(" " + ref):
+                        return ligne.split()[0]
+        elif len(tete) >= 40:
+            return tete[:40]
+    except OSError:
+        pass
+    try:
+        with open("version-installee.txt", encoding="utf-8") as f:
+            return f.readline().strip()
+    except OSError:
+        return ""
+
+_VERSION_DISTANTE = {"t": 0, "v": None}
+
+def version_distante():
+    """Dernier commit publié sur GitHub (gardé 10 minutes ; None si internet ne répond pas)."""
+    if time.time() - _VERSION_DISTANTE["t"] < 600:
+        return _VERSION_DISTANTE["v"]
+    v = None
+    try:
+        import urllib.request
+        req = urllib.request.Request("https://api.github.com/repos/{}/commits/{}".format(DEPOT_GITHUB, BRANCHE_GITHUB),
+                                     headers={"Accept": "application/vnd.github.sha", "User-Agent": "escape-games-serveur"})
+        with urllib.request.urlopen(req, timeout=4) as r:
+            v = r.read(100).decode("ascii", "replace").strip()[:40] or None
+    except Exception:
+        v = None
+    _VERSION_DISTANTE["t"], _VERSION_DISTANTE["v"] = time.time(), v
+    return v
+
+def est_ancetre(ancien, recent):
+    """Vrai si le commit « ancien » est dans l'historique de « recent » (git requis ; None si on ne sait pas)."""
+    try:
+        import subprocess
+        r = subprocess.run(["git", "merge-base", "--is-ancestor", ancien, recent], cwd=DOSSIER_PROJET,
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=5)
+        return {0: True, 1: False}.get(r.returncode)
+    except Exception:
+        return None
+
+def medias_du_jeu(jeu):
+    """Médias attendus (medias.csv de la variante immersive) : (présents, attendus, exemples manquants)."""
+    base = os.path.join("immersifs", jeu)
+    csv_medias = os.path.join(base, "medias.csv")
+    if not os.path.exists(csv_medias):
+        return None
+    presents, attendus, manquants = 0, 0, []
+    try:
+        with open(csv_medias, encoding="utf-8-sig", newline="") as f:
+            for ligne in csv.DictReader(f, delimiter=";"):
+                fichier = (ligne.get("fichier") or "").strip()
+                if not fichier:
+                    continue
+                attendus += 1
+                if os.path.exists(os.path.join(base, *fichier.split("/"))):
+                    presents += 1
+                else:
+                    manquants.append(fichier)
+    except (OSError, csv.Error):
+        return None
+    return presents, attendus, manquants
+
+def etat_sante():
+    """Feu vert avant la séance (A4) : un voyant par point, avec l'action à faire pour chaque orange ou rouge."""
+    voyants = [{"id": "serveur", "nom": "Serveur", "etat": "vert",
+                "message": "Le serveur répond. Adresse des élèves : http://{}:{}/".format(get_ip_locale(), PORT), "action": ""}]
+    # Version à jour par rapport à GitHub
+    loc, dist = version_locale(), version_distante()
+    if not loc:
+        v = ("orange", "Version installée inconnue (ni dépôt git, ni version-installee.txt).",
+             "Installez la mise à jour automatique : double-clic sur installer-ecole.bat (une seule fois).")
+    elif not dist:
+        v = ("orange", "GitHub injoignable : version non comparée.",
+             "Rien à faire si le jeu marche (sinon : connexion internet du PC).")
+    elif loc == dist:
+        v = ("vert", "Version à jour (identique à GitHub, {}).".format(loc[:7]), "")
+    elif est_ancetre(dist, loc):
+        v = ("orange", "Ce PC a des modifications pas encore publiées sur GitHub ({} ici, {} en ligne).".format(loc[:7], dist[:7]),
+             "Publiez-les (git push) si les Chromebooks jouent aussi depuis le site en ligne.")
+    else:
+        v = ("orange", "Une version plus récente existe sur GitHub ({} en ligne, {} ici).".format(dist[:7], loc[:7]),
+             "Fermez la session Windows puis rouvrez-la (mise à jour automatique), ou double-clic sur demarrer-ecole.bat.")
+    voyants.append({"id": "version", "nom": "Version", "etat": v[0], "message": v[1], "action": v[2]})
+    # Médias du jeu du jour
+    s = lire_seance()
+    if not s:
+        voyants.append({"id": "medias", "nom": "Médias du jeu du jour", "etat": "orange",
+                        "message": "Aucun jeu du jour choisi.", "action": "Choisissez le jeu en haut de l'espace enseignant, puis « Lancer »."})
+    else:
+        m = medias_du_jeu(s["jeu"])
+        if not os.path.isdir(os.path.join("immersifs", s["jeu"])) and not os.path.isdir(s["jeu"]):
+            voyants.append({"id": "medias", "nom": "Médias du jeu du jour", "etat": "rouge", "message": "Le dossier du jeu est introuvable.",
+                            "action": "Mettez le dépôt à jour (demarrer-ecole.bat) ou choisissez un autre jeu."})
+        elif m is None:
+            voyants.append({"id": "medias", "nom": "Médias du jeu du jour", "etat": "vert", "message": "Jeu sans liste de médias : rien à vérifier.", "action": ""})
+        elif m[0] >= m[1]:
+            voyants.append({"id": "medias", "nom": "Médias du jeu du jour", "etat": "vert", "message": "Tous les médias sont là ({}/{}).".format(m[0], m[1]), "action": ""})
+        else:
+            voyants.append({"id": "medias", "nom": "Médias du jeu du jour", "etat": "orange",
+                            "message": "{} média(s) sur {} pas encore produits. Le jeu marche quand même (décors dessinés).".format(m[1] - m[0], m[1]),
+                            "action": "Rien d'obligatoire ; liste dans verifier.html.", "manquants": m[2][:20]})
+    # Dossier des résultats accessible en écriture
+    try:
+        os.makedirs(DOSSIER_DONNEES, exist_ok=True)
+        essai = os.path.join(DOSSIER_DONNEES, ".essai-ecriture.tmp")
+        with open(essai, "w", encoding="utf-8") as f:
+            f.write("ok")
+        os.remove(essai)
+        voyants.append({"id": "resultats", "nom": "Dossier des résultats", "etat": "vert", "message": "Les résultats seront bien enregistrés.", "action": ""})
+    except OSError as e:
+        voyants.append({"id": "resultats", "nom": "Dossier des résultats", "etat": "rouge",
+                        "message": "Impossible d'écrire dans le dossier des résultats ({}).".format(e.__class__.__name__),
+                        "action": "Vérifiez dossier-donnees.txt (chemin du dossier) et que ce dossier existe (clé USB, Nextcloud…), puis relancez le serveur."})
+    pire = "rouge" if any(x["etat"] == "rouge" for x in voyants) else "orange" if any(x["etat"] == "orange" for x in voyants) else "vert"
+    return {"ok": True, "etat": pire, "voyants": voyants, "seance": s}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -544,6 +718,35 @@ class Handler(BaseHTTPRequestHandler):
             if not self.reserve_enseignant():
                 return
             self.json_prive(infos_stockage())
+        elif path == "/api/seance" and methode == "GET":
+            # Jeu du jour (A1) : lu par l'accueil des élèves ; « local » = c'est l'ordinateur de l'enseignant
+            s = lire_seance()
+            if s:
+                s = dict(s, adresse=adresse_jeu(s["jeu"]))
+            self.json_prive({"ok": True, "seance": s, "local": est_adresse_locale(self.client_address[0])})
+        elif path == "/api/seance" and methode == "POST":
+            # Fixer ou terminer la séance : réservé à l'enseignant (ordinateur du serveur)
+            if not self.reserve_enseignant():
+                return
+            if not isinstance(data, dict) or data.get("fin") or not data.get("jeu"):
+                self.json_prive({"ok": ecrire_seance(None), "seance": None})
+                return
+            jeu = id_jeu_valide(data.get("jeu"))
+            if not jeu:
+                self.json_prive({"ok": False, "erreur": "jeu inconnu"}, 400)
+                return
+            grade = str(data.get("grade") or "").strip().lower()
+            if grade not in GRADES_IMMERSIFS:
+                grade = ""
+            s = {"jeu": jeu, "grade": grade, "titre": str(data.get("titre") or "")[:120],
+                 "depuis": time.strftime("%Y-%m-%dT%H:%M:%S")}
+            ok = ecrire_seance(s)
+            self.json_prive({"ok": ok, "seance": dict(s, adresse=adresse_jeu(jeu))} if ok else {"ok": False, "erreur": "écriture impossible dans " + DOSSIER_DONNEES}, 200 if ok else 500)
+        elif path == "/api/sante" and methode == "GET":
+            # Feu vert avant la séance (A4) : réservé à l'enseignant
+            if not self.reserve_enseignant():
+                return
+            self.json_prive(etat_sante())
         elif path == "/api/equipes" and methode == "GET":
             # Le prof récupère tous les états
             with LOCK:
@@ -665,6 +868,7 @@ def main():
     print()
     print("  🏠 ACCUEIL (tous les jeux)  →  http://{}:{}/".format(ip, PORT))
     print("  📺 CLASSEMENT À PROJETER   →  http://{}:{}/classement.html".format(ip, PORT))
+    print("  🔳 QR CODE DES ÉLÈVES       →  http://127.0.0.1:{}/tableau.html  (à projeter)".format(PORT))
     print()
     print("  📱 ADRESSES À DONNER AUX ÉLÈVES :")
     print("     Révolution française  →  http://{}:{}/declaration/".format(ip, PORT))

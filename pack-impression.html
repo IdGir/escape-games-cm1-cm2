@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pack d'impression — Escape games CM1 · CM2</title>
+<meta name="description" content="Un bouton pour imprimer d'un coup la fiche de mission, les leçons A4 du niveau choisi et l'évaluation du jeu du jour.">
+<meta name="theme-color" content="#0b1536">
+<!--
+  PACK D'IMPRESSION (B2) : pack-impression.html?jeu=<id>&grade=<grade>  (ou &niveau=CM1|CM2)
+  Un bouton « Tout imprimer » enchaîne trois impressions (une fenêtre d'impression par document) :
+    1. la fiche de mission (une par équipe) et l'évaluation, fabriquées ici à partir des données du jeu ;
+       si le jeu a sa page « evaluations-imprimables.html », c'est elle qui est imprimée à la place ;
+    2. les leçons A4 du niveau choisi (la page lecons-imprimables.html du jeu, ouverte dans un cadre invisible).
+  Aucune donnée d'élève.
+-->
+<style>
+  :root{--nuit:#0b1536;--bleu:#1d3a8a;--fond:#f5f3ec;--ligne:#e4dfd2;--doux:#5d6472}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:#1f2430}
+  .ecran{max-width:900px;margin:0 auto;padding:16px}
+  .ecran h1{margin:6px 0 4px;font:700 1.6rem/1.2 Georgia,serif;color:#142a6b}
+  .ecran .aide{color:var(--doux);font-size:.92rem;margin:4px 0}
+  .ligne{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+  select,button{font:inherit;padding:8px 12px;border-radius:10px;border:1.5px solid var(--ligne);background:#fff}
+  button.principal{background:var(--bleu);color:#fff;border-color:var(--bleu);font-weight:700;padding:12px 22px;font-size:1.1rem}
+  ul.docs{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}
+  ul.docs li{background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  ul.docs li b{flex:1;min-width:12rem}
+  ul.docs li a{font-size:.9rem}
+  .etat{font-size:.85rem;color:var(--doux)}
+  #msg{font-weight:600;color:#14532d}
+  /* ---- Documents (imprimés) ---- */
+  .feuille{background:#fff;width:210mm;max-width:100%;min-height:200mm;margin:14px auto;padding:14mm 14mm 10mm;box-shadow:0 4px 18px rgba(0,0,0,.12);font-family:Georgia,"Times New Roman",serif;font-size:11pt}
+  .feuille h2{margin:0 0 2mm;font-size:18pt;color:#142a6b}
+  .feuille h3{margin:5mm 0 2mm;font-size:12.5pt;color:#142a6b}
+  .feuille .sous{color:#555;font-size:10pt;margin:0 0 4mm}
+  .cartouche{display:grid;grid-template-columns:2fr 2fr 1fr;gap:4mm;margin:3mm 0 4mm}
+  .cartouche div{border-bottom:1.2px solid #333;padding-top:6mm;font-size:9pt;color:#555}
+  .cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(52mm,1fr));gap:3mm;margin:4mm 0}
+  .case{border:1.6px solid #333;border-radius:2mm;padding:2mm 3mm;min-height:20mm}
+  .case small{display:block;color:#555;font-size:8.5pt}
+  .case b{font-size:10.5pt}
+  .regle{border:2px solid #1d3a8a;border-radius:3mm;padding:3mm 4mm;background:#eef3ff;font-size:10pt;margin:3mm 0}
+  .regle.rouge{border-color:#b22222;background:#fff3f0}
+  ol.qcm{padding-left:6mm} ol.qcm li{margin:0 0 3mm;break-inside:avoid}
+  .options{display:flex;flex-wrap:wrap;gap:2mm 8mm;margin-top:1mm}
+  .options span::before{content:"☐ ";font-size:12pt}
+  .ecrire{border-bottom:1px dotted #333;height:7mm}
+  .corrige{font-size:9pt;color:#333}
+  @media screen and (max-width:700px){.feuille{padding:16px} .cartouche{grid-template-columns:1fr}}
+  @media print{
+    .ecran{display:none} body{background:#fff}
+    .feuille{box-shadow:none;margin:0;width:auto;min-height:0;padding:0;page-break-after:always}
+    .feuille:last-child{page-break-after:auto}
+    .feuille.corrige-prof{display:none}
+    @page{size:A4;margin:12mm}
+  }
+  iframe.cache{position:absolute;width:210mm;height:297mm;left:-10000px;top:0;border:0}
+</style>
+</head>
+<body>
+<div class="ecran">
+  <p><a href="enseignant.html">← Espace enseignant</a></p>
+  <h1>🖨️ Pack d'impression du jeu du jour</h1>
+  <p class="aide" id="titre-jeu"></p>
+  <div class="ligne">
+    <label>Jeu <select id="choix-jeu"></select></label>
+    <label>Niveau <select id="choix-grade"></select></label>
+    <label>Équipes <select id="choix-equipes"><option>4</option><option>5</option><option selected>6</option><option>7</option><option>8</option></select></label>
+  </div>
+  <ul class="docs" id="docs"></ul>
+  <div class="ligne">
+    <button class="principal" id="tout-imprimer" type="button">🖨️ Tout imprimer</button>
+    <span id="msg" role="status"></span>
+  </div>
+  <p class="aide">Une fenêtre d'impression s'ouvre pour chaque document (2 ou 3 au total) : choisissez l'imprimante une fois, puis « Imprimer ». Cochez « Graphiques d'arrière-plan » pour garder les couleurs des leçons.</p>
+</div>
+<div id="documents"></div>
+
+<script src="commun/donnees/catalogue.js?c3"></script>
+<script src="commun/js/seance.js?l2"></script>
+<script>
+"use strict";
+(function(){
+  const S = window.SEANCE, C = window.CATALOGUE, $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const q = new URLSearchParams(location.search), choix = S.choixLocal() || {};
+  const jeux = C.jeux.filter(S.jouable);
+  const existe = async url => { try{ const r = await fetch(url, { method: "HEAD", cache: "no-store" }); return r.ok; }catch(e){ try{ const r = await fetch(url); return r.ok; }catch(e2){ return false; } } };
+  const json = async url => { try{ const r = await fetch(url, { cache: "no-store" }); return r.ok ? await r.json() : null; }catch(e){ return null; } };
+  let PACK = null;
+
+  $("choix-jeu").innerHTML = jeux.map(j => `<option value="${esc(S.idDe(j))}">${esc(j.icone || "")} ${esc(j.titre)}</option>`).join("");
+  const jeuDepart = q.get("jeu") || choix.jeu || (S.jeuxDeLaPeriode(C)[0] ? S.idDe(S.jeuxDeLaPeriode(C)[0]) : S.idDe(jeux[0]));
+  $("choix-jeu").value = jeux.some(j => S.idDe(j) === jeuDepart) ? jeuDepart : S.idDe(jeux[0]);
+  const gradeDepart = q.get("grade") || (q.get("niveau") === "CM1" ? "matelot" : q.get("niveau") === "CM2" ? "timonier" : "") || choix.grade || "matelot";
+
+  async function grades(j){
+    const im = j.immersif ? await json(j.immersif + "/assets/data/enigmes.json") : null;
+    const n = (im && im.niveaux) || [];
+    return n.length ? n.map(g => ({ v: g.id, t: `${g.icone || ""} ${g.nom} (${g.equivalent || ""})` })) : [{ v: "matelot", t: "CM1" }, { v: "timonier", t: "CM2" }];
+  }
+
+  /* ---- Fiche de mission : une par équipe ---- */
+  function ficheMission(j, etapes, nb){
+    const cases = etapes.map((t, i) => `<div class="case"><small>Étape ${i + 1} — ${esc(t)}</small><b>Mot trouvé :</b></div>`).join("");
+    const une = `<section class="feuille fiche">
+      <h2>✍️ Fiche de mission</h2><p class="sous">${esc(j.icone || "")} ${esc(j.titre)}</p>
+      <div class="cartouche"><div>Nom de l'équipe</div><div>Prénoms</div><div>Grade</div></div>
+      <div class="regle"><b>🎯 Le barème récompense la réflexion, pas la vitesse :</b> 10 points tout juste du premier coup, 3 points après une erreur, moins 2 par indice.
+        Avant de valider, relisez la fiche de la bibliothèque (📚).</div>
+      <div class="regle rouge"><b>À la fin de chaque étape, un mot s'affiche une seule fois.</b> Recopiez-le aussitôt dans sa case : il faudra retaper les ${etapes.length} mots pour ouvrir le coffre final.</div>
+      <div class="cases">${cases}</div>
+    </section>`;
+    return Array.from({ length: nb }, () => une).join("");
+  }
+  /* ---- Évaluation (à partir de evaluations.json du jeu) ---- */
+  function evaluation(j, ev, niveau){
+    const qcm = (ev.qcm || {})[niveau] || [], qf = (ev.questions_fermees || {})[niveau] || [];
+    if(!qcm.length && !qf.length) return "";
+    const lQcm = qcm.map(x => `<li>${esc(x.q)}<div class="options">${(x.options || []).map(o => `<span>${esc(o)}</span>`).join("")}</div></li>`).join("");
+    const lQf = qf.map(x => `<li>${esc(x.q)}${x.type === "vf" ? `<div class="options"><span>Vrai</span><span>Faux</span></div>` : `<div class="ecrire"></div><div class="ecrire"></div>`}</li>`).join("");
+    const rep = x => x.options ? (x.options[x.bonne] != null ? x.options[x.bonne] : "") : (x.rep || x.bonne || "");
+    return `<section class="feuille eval">
+      <h2>📝 Évaluation — ${esc(j.titre)}</h2><p class="sous">Niveau ${niveau} · Prénom : ……………………………… · Date : …………………</p>
+      ${lQcm ? `<h3>1. Coche la bonne réponse</h3><ol class="qcm">${lQcm}</ol>` : ""}
+      ${lQf ? `<h3>${lQcm ? "2" : "1"}. Réponds</h3><ol class="qcm">${lQf}</ol>` : ""}
+    </section>
+    <section class="feuille corrige-prof"><h3>Corrigé (enseignant, non imprimé)</h3><ol class="corrige">${qcm.concat(qf).map(x => `<li>${esc(rep(x))}</li>`).join("")}</ol></section>`;
+  }
+
+  async function preparer(){
+    const id = $("choix-jeu").value, j = S.infoJeu(C, id) || jeux[0];
+    const gs = await grades(j);
+    const garde = $("choix-grade").value || gradeDepart;
+    $("choix-grade").innerHTML = gs.map(g => `<option value="${esc(g.v)}">${esc(g.t)}</option>`).join("");
+    $("choix-grade").value = gs.some(g => g.v === garde) ? garde : gs[Math.min(1, gs.length - 1)].v;
+    const grade = $("choix-grade").value, niveau = S.niveauScolaire(grade), nb = +$("choix-equipes").value || 6;
+    $("titre-jeu").textContent = `${j.icone || ""} ${j.titre} — ${j.matiere || ""} · niveau ${niveau}`;
+    const dos = j.dossier || id;
+    // étapes (titres) : variante immersive d'abord, sinon version classique
+    const im = j.immersif ? await json(j.immersif + "/assets/data/enigmes.json") : null;
+    const cl = await json(dos + "/assets/data/enigmes.json");
+    const etapes = (im && im.escales ? im.escales.map(e => e.titre) : (cl && cl.salles ? cl.salles.map(s => s.titre) : [])).slice(0, 12);
+    // leçons A4 : les leçons illustrées (CM1/CM2) ; à défaut, les fiches de la variante immersive au grade choisi
+    let lecons = "";
+    if(await existe(dos + "/lecons-imprimables.html")) lecons = `${dos}/lecons-imprimables.html?niveau=${niveau}&lecon=toutes`;
+    else if(j.immersif && await existe(j.immersif + "/lecons-imprimables.html")) lecons = `${j.immersif}/lecons-imprimables.html?niveau=${grade}`;
+    // évaluation : page dédiée si elle existe, sinon fabriquée ici à partir de evaluations.json
+    let evalPage = "", evalHtml = "";
+    if(await existe(dos + "/evaluations-imprimables.html")) evalPage = `${dos}/evaluations-imprimables.html?niveau=${niveau}`;
+    else{ const ev = await json(dos + "/assets/data/evaluations.json"); if(ev) evalHtml = evaluation(j, ev, niveau); }
+    $("documents").innerHTML = (etapes.length ? ficheMission(j, etapes, nb) : "") + evalHtml;
+    PACK = { jeu: id, grade, niveau, nb, fiche: etapes.length > 0, lecons, evalPage, evalIci: !!evalHtml };
+    const li = (ok, titre, detail, lien) => `<li><span>${ok ? "✅" : "⚠️"}</span><b>${titre}</b><span class="etat">${detail}</span>${lien ? ` <a href="${esc(lien)}" target="_blank" rel="noopener">voir</a>` : ""}</li>`;
+    $("docs").innerHTML =
+      li(PACK.fiche, "Fiche de mission", PACK.fiche ? `${nb} exemplaires (une par équipe), ${etapes.length} étapes` : "étapes introuvables pour ce jeu", "") +
+      li(!!lecons, `Leçons A4 — ${niveau}`, lecons ? "une page par leçon" : "pas encore de leçons A4 pour ce jeu", lecons) +
+      li(!!(evalPage || evalHtml), `Évaluation — ${niveau}`, evalPage ? "page d'évaluation du jeu (corrigé séparé)" : evalHtml ? "QCM et questions (corrigé non imprimé)" : "pas encore d'évaluation pour ce jeu", evalPage);
+    S.choixLocal(Object.assign({}, S.choixLocal() || {}, { jeu: id, grade }));
+    window.__pack = PACK;
+  }
+
+  /** Imprime une page du site dans un cadre invisible (même origine), après son affichage. */
+  function imprimerCadre(url){
+    return new Promise(res => {
+      const f = document.createElement("iframe");
+      f.className = "cache"; f.setAttribute("aria-hidden", "true"); f.src = url;
+      let fini = false;
+      const fin = () => { if(fini) return; fini = true; setTimeout(() => { f.remove(); res(true); }, 500); };
+      f.onload = () => setTimeout(() => {
+        try{ f.contentWindow.focus(); f.contentWindow.print(); }catch(e){ window.open(url, "_blank"); }
+        fin();
+      }, 1500);
+      setTimeout(fin, 20000);
+      document.body.appendChild(f);
+      window.__cadres = (window.__cadres || []).concat(url);
+    });
+  }
+  $("tout-imprimer").addEventListener("click", async () => {
+    if(!PACK) await preparer();
+    const b = $("tout-imprimer"); b.disabled = true;
+    let n = 0;
+    if(PACK.fiche || PACK.evalIci){ $("msg").textContent = "Impression 1 : fiche de mission" + (PACK.evalIci ? " et évaluation" : "") + "…"; window.print(); n++; }
+    if(PACK.lecons){ $("msg").textContent = "Impression : leçons A4…"; await imprimerCadre(PACK.lecons); n++; }
+    if(PACK.evalPage){ $("msg").textContent = "Impression : évaluation…"; await imprimerCadre(PACK.evalPage); n++; }
+    $("msg").textContent = `✅ ${n} document(s) envoyé(s) à l'impression.`;
+    b.disabled = false;
+  });
+  ["choix-jeu", "choix-grade", "choix-equipes"].forEach(id => $(id).addEventListener("change", preparer));
+  preparer();
+})();
+</script>
+</body>
+</html>

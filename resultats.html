@@ -69,6 +69,10 @@
   <p>Toutes les parties de l'année au même endroit, prêtes pour un tableur ou pour Schooly. <a href="index.html">← Accueil des jeux</a> <small class="aide">· enregistrement automatique ✔</small></p>
 </header>
 <main>
+  <section class="bloc" id="fin-seance" hidden aria-live="polite">
+    <h2>🏁 Fin de séance</h2>
+    <div id="fin-contenu"><p class="aide">Préparation du bilan de séance…</p></div>
+  </section>
   <section class="bloc" id="stockage" aria-live="polite"><b>Vérification de l'enregistrement…</b></section>
 
   <section class="bloc">
@@ -146,6 +150,8 @@
 
 <script src="commun/donnees/catalogue.js?c3"></script>
 <script src="commun/js/rapport-seance.js?n31"></script>
+<script src="commun/js/minuteur-equipe.js?c1"></script>
+<script src="commun/js/fin-seance.js?l2"></script>
 <script>
 "use strict";
 /* Même empreinte que commun/js/compte-rendu.js (code de contrôle) */
@@ -525,6 +531,58 @@ document.getElementById("btn-vider").addEventListener("click", () => {
   try { localStorage.removeItem("escape_resultats"); } catch(e) {}
   RESULTATS = RESULTATS.filter(r => r._source !== "appareil"); rendre(); message("Historique de cet appareil effacé.");
 });
+
+/* ---- Fin de séance en un clic (A5) : resultats.html?fin=<jeu> (bouton « Terminer la séance » de l'espace enseignant)
+   1. bilan de séance imprimable (PDF d'une page, rapport-seance.js) ; 2. passeport de compétences mis à jour (fin-seance.js). ---- */
+async function finDeSeance(jeu){
+  const bloc = document.getElementById("fin-seance"), zone = document.getElementById("fin-contenu");
+  bloc.hidden = false;
+  const titre = (infoJeu(jeu) || {}).titre || jeu;
+  rendreSeances();
+  const duJeu = SEANCES.filter(s => s.jeu === jeu);
+  const s = duJeu.find(x => x.jour === aujourdhui()) || duJeu[0];
+  if(!s){
+    zone.innerHTML = `<p>Aucune partie en équipe de <b>${esc(titre)}</b> n'est encore arrivée ici.</p>
+      <p class="aide">Avec le serveur local, les parties arrivent toutes seules. Sans serveur (site en ligne), exportez les parties de chaque Chromebook
+      (bouton « 📤 Exporter les parties de cet appareil ») et déposez les fichiers ci-dessous, puis cliquez : <button id="fin-relancer" type="button">🏁 Refaire la fin de séance</button></p>`;
+    document.getElementById("fin-relancer").addEventListener("click", () => finDeSeance(jeu));
+    window.__finSeance = { ok: false, jeu };
+    return window.__finSeance;
+  }
+  // 1. Bilan de séance (PDF)
+  let lienPdf = "", nomPdf = "", m = null;
+  try{
+    m = RAPPORT_SEANCE.modele({ parties: s.parties, jeu: s.jeu, meta: await meta(s.jeu), catalogue: CATALOGUE, classe: document.getElementById("rap-classe").value });
+    const p = RAPPORT_SEANCE.pdf(m);
+    nomPdf = RAPPORT_SEANCE.nomFichier(m);
+    telecharger(nomPdf, p.octets, "application/pdf");
+    try{ lienPdf = URL.createObjectURL(new Blob([p.octets], { type: "application/pdf" })); }catch(e){}
+    document.getElementById("rap-seance").value = s.cle;
+  }catch(e){ m = null; }
+  // 2. Passeport de compétences
+  let pass = {}; try{ pass = JSON.parse(localStorage.getItem("escape_passeport") || "{}") || {}; }catch(e){}
+  const comps = await FIN_SEANCE.competencesDuJeu(CATALOGUE, jeu, lireJson);
+  const r = FIN_SEANCE.majPasseport({ parties: s.parties, jeu, competences: comps, passeport: pass,
+    compositions: (window.AMENAGEMENTS ? AMENAGEMENTS.lire().equipes : {}), jour: s.jour });
+  let enregistre = false;
+  if(r.ajoutees){ try{ localStorage.setItem("escape_passeport", JSON.stringify(Object.assign({}, pass, { eleves: r.passeport.eleves, notes: r.passeport.notes }))); enregistre = true; }catch(e){} }
+  const sansListe = !(pass.eleves || []).length;
+  zone.innerHTML = `
+    <p>✅ Séance du <b>${esc(new Date(s.jour + "T12:00:00").toLocaleDateString("fr-FR"))}</b> — <b>${esc(titre)}</b> :
+      ${m ? `${m.nbEquipes} équipe(s), ${m.nbTerminees} terminée(s)${m.nbInterrompues ? `, ${m.nbInterrompues} interrompue(s)` : ""}` : "bilan indisponible"}.</p>
+    <div class="ligne">
+      ${lienPdf ? `<a class="principal" id="fin-pdf" href="${lienPdf}" target="_blank" rel="noopener" style="display:inline-block;padding:10px 18px;border-radius:10px;background:#1d3a8a;color:#fff;font-weight:700">🖨️ Ouvrir le bilan pour l'imprimer</a>` : ""}
+      <span class="aide">${nomPdf ? `Le PDF « ${esc(nomPdf)} » est aussi dans vos téléchargements.` : ""}</span>
+    </div>
+    <p>🎓 Passeport de compétences : ${sansListe ? `<b>liste de la classe vide</b> — enregistrez-la une fois dans <a href="passeport.html" style="text-decoration:underline">passeport.html</a>, puis refaites la fin de séance.`
+      : r.ajoutees ? `<b>${r.ajoutees}</b> évaluation(s) proposée(s) pour ${r.eleves.length} élève(s)${enregistre ? "" : " (enregistrement impossible dans ce navigateur)"}${r.gardees ? ` ; ${r.gardees} note(s) posée(s) à la main gardée(s)` : ""}. <a href="passeport.html" style="text-decoration:underline">Relire le passeport</a>`
+      : `aucune note ajoutée${r.gardees ? ` (${r.gardees} note(s) posée(s) à la main, jamais remplacées)` : ""}.`}</p>
+    ${r.equipesSansEleve.length ? `<p class="aide">⚠️ Équipes dont les élèves ne sont pas reconnus : ${r.equipesSansEleve.map(esc).join(", ")}. Indiquez leur composition dans passeport.html (« Temps majoré » → « Composition des équipes »), puis <button id="fin-relancer" type="button">🏁 Refaire la fin de séance</button></p>` : ""}
+    <p class="aide">Règle : réussite du premier coup ≥ ${FIN_SEANCE.SEUIL_A} % → « Acquis », ≥ ${FIN_SEANCE.SEUIL_E} % → « En cours », sinon « Non acquis » (par leçon quand le détail des énigmes existe, sinon sur le score). Ce sont des propositions : modifiez-les d'un clic dans le passeport.</p>`;
+  const rel = document.getElementById("fin-relancer"); if(rel) rel.addEventListener("click", () => finDeSeance(jeu));
+  window.__finSeance = { ok: true, jeu, seance: s.cle, pdf: nomPdf, passeport: r };
+  return window.__finSeance;
+}
 /* À l'ouverture : on retrouve tout (importées, jouées ici, serveur de la classe) puis on envoie au serveur ce qu'il n'a pas encore */
 (async function retrouver(){
   const imp = lireImportes(), h = historiqueAppareil();
@@ -535,6 +593,10 @@ document.getElementById("btn-vider").addEventListener("click", () => {
     if(d && d.ajoutees) messageStockage(`✅ ${d.ajoutees} partie(s) de ce navigateur ajoutée(s) au fichier de la classe.`);
     await chargerServeur(false);
     await etatServeur();
+  }
+  { const fin = new URLSearchParams(location.search).get("fin");
+    if(fin && /^[a-z0-9-]{1,60}$/.test(fin)){ rendre(); await finDeSeance(fin); } }
+  if(SERVEUR.actif){
     setInterval(async () => {                              // mise à jour automatique pendant que la page est ouverte
       if(document.hidden) return;
       if(await etatServeur() && SERVEUR.info.nbParties !== totalServeurVu) chargerServeur(false);

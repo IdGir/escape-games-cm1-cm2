@@ -84,6 +84,50 @@
   .note{color:var(--doux);font-size:.88rem;margin:12px 0 0 3.1rem}
   footer{padding:30px 20px 44px;color:var(--doux);font-size:.9rem}
 
+
+  /* ---- Séance du jour : trois gestes (B1), feu vert (A4) ---- */
+  .hero{padding:14px 0 26px}
+  .hero .tag{margin:12px 0 6px}
+  .hero h1{font-size:clamp(1.6rem,3.6vw,2.3rem)}
+  .hero .chapo{font-size:.95rem;margin-top:4px}
+  @media (max-height:820px) and (min-width:641px){.hero .chapo{display:none}}
+  .seance{max-width:1100px;margin:-14px auto 0;padding:0 20px;position:relative;z-index:5}
+  .feu{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;margin:0 0 12px;align-items:start}
+  .voyant{display:flex;gap:9px;align-items:flex-start;background:#fff;border:1px solid var(--ligne);border-left:7px solid #9ca3af;border-radius:12px;padding:8px 11px;font-size:.88rem;box-shadow:0 4px 12px rgba(20,42,107,.06)}
+  .voyant .pastille{flex:none;width:15px;height:15px;border-radius:50%;margin-top:3px;background:#9ca3af}
+  .voyant>span:last-child{min-width:0;overflow-wrap:anywhere}
+  .voyant b{display:block;color:#142a6b}
+  .voyant.vert .msg{display:none}
+  .voyant.vert:hover .msg,.voyant.vert:focus-within .msg{display:block}
+  .voyant .action{display:block;margin-top:2px;font-weight:600;color:#7c2d12}
+  .voyant.vert{border-left-color:#16a34a} .voyant.vert .pastille{background:#16a34a}
+  .voyant.orange{border-left-color:#f59e0b} .voyant.orange .pastille{background:#f59e0b}
+  .voyant.rouge{border-left-color:#dc2626} .voyant.rouge .pastille{background:#dc2626}
+  .carte-seance{background:var(--papier);border:1px solid var(--ligne);border-top:6px solid var(--or);border-radius:18px;padding:16px 18px;box-shadow:0 14px 34px rgba(20,42,107,.12)}
+  .carte-seance h2{margin:0 0 2px;font:700 1.35rem/1.2 var(--serif);color:#142a6b}
+  .carte-seance .periode{margin:0 0 10px;color:var(--doux);font-size:.92rem}
+  .choix-jeux{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+  .choix-jeux button{font:inherit;font-weight:600;cursor:pointer;padding:8px 14px;border-radius:999px;border:2px solid var(--c,#1d3a8a);background:#fff;color:#142a6b;min-height:44px}
+  .choix-jeux button[aria-pressed="true"]{background:var(--c,#1d3a8a);color:#fff}
+  .reglages-seance{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:0 0 12px;font-size:.95rem}
+  .reglages-seance select{font:inherit;padding:7px 10px;border-radius:10px;border:1.5px solid var(--ligne);background:#fff;max-width:100%}
+  .trois{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .trois button{font:700 1.25rem/1.2 system-ui,sans-serif;cursor:pointer;color:#fff;border:0;border-radius:16px;padding:16px 10px;min-height:84px;box-shadow:0 8px 18px rgba(0,0,0,.16);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+  .trois button small{font:500 .82rem/1.3 system-ui,sans-serif;opacity:.92}
+  .trois button:hover{filter:brightness(1.1)} .trois button:disabled{opacity:.6;cursor:wait}
+  #btn-preparer{background:#1d3a8a} #btn-lancer{background:#15803d} #btn-terminer{background:#6d28d9}
+  .etat-seance{margin:12px 0 0;font-size:.95rem}
+  .etat-seance a{font-weight:600}
+  .lien-eleves{margin:8px 0 0;padding:8px 12px;border-radius:10px;background:#eef1fa;font-size:.92rem;word-break:break-all}
+  details.une-fois{margin:12px 0 0;font-size:.93rem}
+  details.une-fois summary{cursor:pointer;font-weight:700;color:#142a6b}
+  details.une-fois ol{margin:6px 0 10px;padding-left:1.4rem} details.une-fois li{margin:3px 0}
+  details.tout-le-reste{max-width:1100px;margin:22px auto 0;padding:0 20px}
+  details.tout-le-reste>summary{cursor:pointer;list-style:none;font:700 1.1rem/1.3 system-ui,sans-serif;color:#142a6b;background:#fff;border:1.5px solid var(--ligne);border-radius:14px;padding:12px 16px}
+  details.tout-le-reste>summary::before{content:"▸ ";color:var(--or)} details.tout-le-reste[open]>summary::before{content:"▾ "}
+  details.tout-le-reste>main{padding:0}
+  @media (max-width:640px){.trois{grid-template-columns:1fr}.trois button{min-height:64px;flex-direction:row;gap:10px}.seance{margin-top:-10px}}
+  @media print{.seance,details.tout-le-reste>summary{display:none}}
   @media (max-width:640px){.moment .sous,.barre-filtre,.note{margin-left:0}.imprimer{display:none}.hero{padding-bottom:44px}}
   @media print{
     body{background:#fff;font-size:10pt} .imprimer,.hero nav,.moments,.barre-filtre{display:none}
@@ -102,12 +146,50 @@
     <nav><a href="index.html">← Accueil des jeux</a><a href="faq.html">❓ Aide</a></nav>
     <button class="imprimer" id="btn-imprimer" type="button">🖨️ Imprimer</button>
     <span class="tag">ESPACE ENSEIGNANT</span>
-    <h1>Tout pour l'enseignant,<br>au même endroit</h1>
+    <h1>Tout pour l'enseignant, au même endroit</h1>
     <p class="chapo">Les ressources sont classées par <b>moment de la séance</b> — préparer, lancer, suivre, bilan, adapter, présenter —
       puis <b>jeu par jeu</b> dans le tableau en bas de page.</p>
   </div>
 </header>
 
+
+<section class="seance" id="seance" aria-label="Séance du jour">
+  <div class="feu" id="feu" role="status" aria-live="polite"><div class="voyant"><span class="pastille"></span><span><b>Feu vert</b>Vérification…</span></div></div>
+  <div class="carte-seance">
+    <h2>🎯 Ma séance</h2>
+    <p class="periode" id="periode"></p>
+    <div class="choix-jeux" id="choix-jeux" role="group" aria-label="Jeu prévu pour la période"></div>
+    <div class="reglages-seance">
+      <label>Autre jeu <select id="autre-jeu"><option value="">—</option></select></label>
+      <label>Niveau <select id="choix-grade"><option value="">au choix des équipes</option></select></label>
+    </div>
+    <div class="trois">
+      <button type="button" id="btn-preparer">1 · Préparer<small>feu vert et pack d'impression</small></button>
+      <button type="button" id="btn-lancer">2 · Lancer<small>les élèves n'ont qu'un bouton</small></button>
+      <button type="button" id="btn-terminer">3 · Terminer<small>bilan imprimable et passeport</small></button>
+    </div>
+    <p class="etat-seance" id="etat-seance"></p>
+    <p class="lien-eleves" id="lien-eleves" hidden></p>
+    <details class="une-fois" id="une-fois">
+      <summary>🛠️ À faire une seule fois : adresse fixe, QR code, favori, PC qui démarre tout seul</summary>
+      <p><b>1. Réserver l'adresse du PC sur la box de l'école</b> (pour que l'adresse des élèves ne change plus). Outil : le navigateur du PC de l'enseignant.</p>
+      <ol>
+        <li>Lancez le serveur (double-clic sur <code>lancer.bat</code>) et notez l'adresse affichée (ex. <code>http://192.168.1.23:8000/</code>).</li>
+        <li>Notez l'adresse physique (MAC) du PC : touche Windows, tapez <code>cmd</code>, Entrée, puis tapez <code>ipconfig /all</code> et Entrée ; relevez la ligne « Adresse physique » de la carte Wi-Fi ou Ethernet utilisée.</li>
+        <li>Ouvrez l'interface de la box dans le navigateur (souvent <code>http://192.168.1.1</code>, ou l'adresse écrite sous la box) et connectez-vous (identifiant de l'école, ou demandez-le au référent numérique).</li>
+        <li>Cherchez le menu « DHCP », « Réseau local » ou « Baux statiques » puis « Ajouter une réservation » (ou « Bail statique ») : choisissez le PC (ou collez son adresse MAC) et gardez l'adresse IP actuelle.</li>
+        <li>Enregistrez, puis redémarrez le PC : l'adresse affichée par le serveur doit rester la même.</li>
+        <li>Si la box est gérée par la mairie ou l'académie : envoyez au référent l'adresse MAC et demandez « une réservation DHCP pour ce PC ».</li>
+      </ol>
+      <p><b>2. QR code et favori sur les Chromebooks.</b> Ouvrez <a href="tableau.html">tableau.html</a> au vidéoprojecteur (bouton « Plein écran »). Sur chaque Chromebook, la première fois : ouvrez Chrome, scannez le QR code (appareil photo) ou tapez l'adresse affichée, Entrée, puis cliquez sur l'étoile ☆ à droite de la barre d'adresse → « Terminé ». Ensuite les élèves cliquent sur ce favori : ils ne voient qu'un bouton « ▶ Jouer » quand une séance est lancée.</p>
+      <p><b>3. PC de l'école qui se met à jour et lance le serveur tout seul.</b> Une fois : Explorateur de fichiers → dossier du projet → double-clic sur <code>installer-ecole.bat</code> → suivez la fenêtre. À chaque ouverture de session Windows, le PC récupère la dernière version (git, ou l'archive de GitHub si git est absent) puis lance le serveur. Pour l'enlever : double-clic sur <code>desinstaller-ecole.bat</code>. Détails dans le README (« PC de l'école »).</p>
+      <p><b>Sans serveur (site en ligne) :</b> « Lancer » fabrique un lien <code>…/?jeu=…</code> à donner aux élèves (ou à projeter avec son QR code) ; les résultats restent dans les Chromebooks (à relever dans resultats.html).</p>
+    </details>
+  </div>
+</section>
+
+<details class="tout-le-reste" id="tout-le-reste">
+<summary>Tout le reste — les 24 ressources (préparer, pendant, après, adapter, présenter, aide) et le tableau jeu par jeu</summary>
 <nav class="moments" aria-label="Aller à un moment">
   <div class="moments-in">
     <a href="#preparer" style="--c:#1d3a8a">1 · Préparer</a>
@@ -238,7 +320,11 @@
   </section>
 
 </main>
+</details>
 <footer>Une ressource enseignant qui manque ici ? Elle est à ajouter dans cette page, pour garder un seul point d'entrée.</footer>
+<script src="commun/donnees/catalogue.js?c3"></script>
+<script src="commun/js/seance.js?l2"></script>
+<script src="commun/js/portail-seance.js?l2"></script>
 <script>
   document.getElementById("btn-imprimer").addEventListener("click", function(){ window.print(); });
   (function(){

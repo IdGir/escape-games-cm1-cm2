@@ -16,7 +16,7 @@ async function attendre(cond, ms = 4000){ const t = Date.now(); while (Date.now(
 
 const projet = fs.mkdtempSync(path.join(os.tmpdir(), "eg-page-"));
 const copier = rel => { const d = path.join(projet, rel); fs.mkdirSync(path.dirname(d), { recursive: true }); fs.copyFileSync(path.join(RACINE, rel), d); };
-["serveur.py", "resultats.html", "commun/donnees/catalogue.js", "commun/js/rapport-seance.js", "immersifs/moyen-age-abbaye/assets/data/enigmes.json"].forEach(copier);
+["serveur.py", "resultats.html", "commun/donnees/catalogue.js", "commun/js/rapport-seance.js", "commun/js/minuteur-equipe.js", "commun/js/fin-seance.js", "immersifs/moyen-age-abbaye/assets/data/enigmes.json"].forEach(copier);
 let serveur = null;
 const demarrer = async () => {
   serveur = spawn(process.platform === "win32" ? "python" : "python3", [path.join(projet, "serveur.py"), String(PORT)], { cwd: os.tmpdir(), stdio: "ignore", env: Object.assign({}, process.env, { PYTHONDONTWRITEBYTECODE: "1", ESCAPE_DONNEES: "" }) });

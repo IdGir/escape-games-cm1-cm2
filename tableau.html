@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR code des élèves — Escape games CM1 · CM2</title>
+<meta name="description" content="Page à projeter au tableau : un grand QR code et l'adresse courte que les élèves tapent sur leur Chromebook.">
+<meta name="theme-color" content="#0b1536">
+<!--
+  PAGE À PROJETER (A2) : grand QR code + adresse courte des élèves.
+  • Avec le serveur local : l'adresse est celle du PC de l'enseignant (http://192.168.x.y:8000/), lue sur /api/info.
+    Si l'adresse IP est réservée sur la box de l'école (voir enseignant.html, « Adresse fixe »), elle ne change plus :
+    les Chromebooks peuvent la garder en favori.
+  • Sans serveur (GitHub Pages) : l'adresse du site, avec « ?jeu=<id>&grade=<grade> » du jeu du jour.
+  Le QR code est calculé dans la page (commun/js/qrcode.js, bibliothèque libre MIT) : aucun service externe.
+-->
+<style>
+  :root{--nuit:#0b1536;--or:#f0d77a}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(10px,2.5vh,22px);padding:56px 16px 16px;
+    background:radial-gradient(900px 500px at 50% 0,rgba(240,215,122,.16),transparent 60%),linear-gradient(150deg,#16318a,#0b1536);color:#fff;
+    font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:center;overflow-x:hidden}
+  h1{margin:0;font:700 clamp(1.5rem,4.6vw,2.8rem)/1.15 Georgia,"Palatino Linotype",serif}
+  .jeu{margin:0;font-size:clamp(1rem,2.6vw,1.4rem);color:var(--or)}
+  #qr{background:#fff;padding:clamp(10px,2vh,18px);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.4);line-height:0}
+  #qr svg{display:block;width:min(56vh,82vw);height:min(56vh,82vw)}
+  .adresse{margin:0;font:800 clamp(1.6rem,6vw,3.4rem)/1.1 ui-monospace,"Cascadia Mono",Consolas,monospace;letter-spacing:.02em;word-break:break-all;max-width:95vw}
+  .aide{margin:0;max-width:44rem;color:#d6defc;font-size:clamp(.9rem,2vw,1.05rem)}
+  .barre{position:fixed;top:10px;right:12px;display:flex;gap:8px}
+  .barre a,.barre button{font:600 .85rem/1 system-ui,sans-serif;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:10px;padding:8px 12px;text-decoration:none;cursor:pointer}
+  .alerte{margin:0;padding:8px 14px;border-radius:10px;background:#7c2d12;color:#fff;max-width:44rem}
+  @media print{.barre{display:none} body{background:#fff;color:#000} .aide,.jeu{color:#333}}
+</style>
+</head>
+<body>
+<div class="barre"><a href="enseignant.html">← Espace enseignant</a><button type="button" id="plein-ecran">⛶ Plein écran</button></div>
+<h1>Sur votre Chromebook, scannez ou tapez :</h1>
+<p class="jeu" id="jeu"></p>
+<div id="qr" role="img" aria-label="QR code de l'adresse des élèves"></div>
+<p class="adresse" id="adresse">…</p>
+<p class="aide" id="aide">Ouvrez Chrome, tapez l'adresse dans la barre du haut, puis Entrée. Gardez-la en favori (étoile ☆) : elle ne changera pas.</p>
+<p class="alerte" id="alerte" hidden></p>
+
+<script src="commun/donnees/catalogue.js?c3"></script>
+<script src="commun/js/qrcode.js?l2"></script>
+<script src="commun/js/seance.js?l2"></script>
+<script>
+"use strict";
+(async function(){
+  const S = window.SEANCE, esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const q = new URLSearchParams(location.search);
+  /** Dessine le QR code en SVG (net à toutes les tailles, imprimable). */
+  function dessiner(texte){
+    const qr = qrcode(0, "M"); qr.addData(texte); qr.make();
+    const n = qr.getModuleCount(), m = 2;
+    let d = "";
+    for(let y = 0; y < n; y++) for(let x = 0; x < n; x++) if(qr.isDark(y, x)) d += `M${x + m},${y + m}h1v1h-1z`;
+    document.getElementById("qr").innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n + 2 * m} ${n + 2 * m}" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="${d}" fill="#000"/></svg>`;
+    window.__qrTexte = texte;
+  }
+  const info = await S.info("");
+  const choix = S.choixLocal() || {};
+  let jeu = q.get("jeu") || "", grade = q.get("grade") || "", adresse;
+  if(info && info.ip){
+    // Serveur local : l'adresse courte du PC (port 80 = encore plus court)
+    adresse = `http://${info.ip}${+info.port === 80 ? "" : ":" + info.port}/`;
+    if(!jeu){ const s = await S.lire(""); jeu = s.jeu || ""; grade = s.grade || ""; }
+    if(/^127\.|^localhost/.test(info.ip)){
+      const a = document.getElementById("alerte");
+      a.hidden = false; a.textContent = "⚠️ Le PC ne semble pas connecté au réseau de l'école (adresse 127.0.0.1) : les Chromebooks ne pourront pas le joindre.";
+    }
+  }else{
+    // Sans serveur : le site en ligne, avec le jeu du jour dans le lien
+    jeu = jeu || choix.jeu || ""; grade = grade || choix.grade || "";
+    const base = /^https?:$/.test(location.protocol) ? location.href : S.URL_EN_LIGNE;
+    adresse = S.lienEleves(base, jeu, grade);
+    document.getElementById("aide").textContent = "Ouvrez Chrome et scannez le QR code (ou tapez l'adresse). Le résultat de la partie reste dans le Chromebook : relevez-le ensuite dans resultats.html.";
+  }
+  const j = jeu ? S.infoJeu(window.CATALOGUE, jeu) : null;
+  document.getElementById("jeu").innerHTML = j ? `Jeu du jour : ${esc(j.icone || "")} <b>${esc(j.titre)}</b>` : "";
+  document.getElementById("adresse").textContent = adresse.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  dessiner(adresse);
+  document.getElementById("plein-ecran").addEventListener("click", () => { try{ document.documentElement.requestFullscreen(); }catch(e){} });
+})();
+</script>
+</body>
+</html>
