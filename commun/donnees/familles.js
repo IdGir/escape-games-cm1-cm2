@@ -103,6 +103,16 @@ var FAMILLES = {
     "abolitions": "situer les résistances et les abolitions de l'esclavage (1794, 1848)"
    }
   },
+  "grandes-explorations": {
+   "deroule": "Au festival de la mer de Saint-Malo, les élèves, mousses d'une caravelle, ont retrouvé les pages dispersées d'un journal de bord en découvrant l'époque des grands voyages.",
+   "lecons": {
+    "epices": "expliquer pourquoi les Européens sont partis explorer le monde, à la recherche des épices et d'une route par la mer",
+    "techniques": "décrire une caravelle et dire à quoi servaient la boussole, l'astrolabe et les cartes marines",
+    "voyages": "placer dans le temps et sur une carte les voyages de Colomb, de Vasco de Gama, de Magellan et de Cartier",
+    "rencontres": "raconter la rencontre avec les peuples d'Amérique, la conquête et les échanges entre les deux continents",
+    "empires": "expliquer comment des pays d'Europe se sont partagé l'Amérique et ont exploité leurs colonies"
+   }
+  },
   "lumiere": {
    "deroule": "Sur une île imaginaire, le phare ne s'allumait plus : en équipe, les élèves l'ont rallumé avant l'arrivée d'un bateau, en résolvant des énigmes sur la lumière, les ombres, le Soleil et la Lune.",
    "lecons": {

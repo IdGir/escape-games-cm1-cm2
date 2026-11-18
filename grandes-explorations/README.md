@@ -6,6 +6,12 @@ Thème 3 « Explorations et conquêtes » (programme 2026, BO n° 22 du 28 mai 2
 **Jouer** : version immersive `../immersifs/grandes-explorations/` (5 grades : Mousse ≈ CE2, Matelot ≈ CM1, Timonier ≈ CM2, Pilote ≈ 6ᵉ, Cartographe ≈ 5ᵉ).
 Ce dossier contient les **données sources** (format des jeux classiques) d'où la variante immersive est générée ; la version classique (pages `index.html`, `prof.html`) n'est pas encore écrite.
 
+## Imprimer
+
+- **Leçons A4 illustrées** (CM1 / CM2, compétence du programme, carte, schémas, frise, lexique) : `lecons-imprimables.html`.
+- **Évaluations** (fiches préparatoires, QCM, vrai/faux, études de documents, corrigés à la fin) : `evaluations-imprimables.html`.
+- Ces deux pages s'ouvrent aussi depuis la variante immersive (Bibliothèque → page « Leçons A4 »).
+
 ## Fil narratif
 
 Festival de la mer à Saint-Malo, à bord de la *Rose des vents*, copie d'une caravelle. Une tempête a dispersé les pages du journal de bord que l'équipage lit aux visiteurs.

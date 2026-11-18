@@ -107,6 +107,9 @@ var LSU = {
   "traite-colonies": {
    "triangle": ["hg-rois", "~"], "traite": ["hg-rois", "~"], "plantations": ["hg-rois", "~"], "ports": ["hg-rois", "~"], "abolitions": ["hg-revol", "~"]
   },
+  "grandes-explorations": {
+   "epices": ["hg-rois", "~"], "techniques": ["hg-rois", "~"], "voyages": ["hg-localiser", "~"], "rencontres": ["hg-rois", "~"], "empires": ["hg-rois", "~"]
+  },
   "melanges": {
    "masses": ["sc-matiere", "~"], "conservation": ["sc-matiere", "="], "melanges": ["sc-matiere", "="],
    "separer-solides": ["sc-matiere", "="], "separer-liquide": ["sc-matiere", "="]
