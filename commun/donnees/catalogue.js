@@ -457,13 +457,16 @@ var CATALOGUE = {
     "P5"
    ],
    "competences": "Première Guerre mondiale : causes, déroulement, conséquences.",
-   "dossier": null,
+   "dossier": "grande-guerre",
+   "immersif": "immersifs/grande-guerre",
+   "classique": false,
    "icone": "✉️",
    "couleurs": [
-    "#6b4a2b",
-    "#c9a227"
+    "#3d4f6b",
+    "#9e3a32"
    ],
-   "resume": "",
+   "resume": "Dans le grenier de l'école, une boîte de cinq lettres de 1914 à 1922 : les élèves historiens les datent, les situent et les font parler, du départ de Louis au monument aux morts du village.",
+   "medias_en_attente": true,
    "prompt": "19-grande-guerre.md",
    "programme": [
     "hg2026"
