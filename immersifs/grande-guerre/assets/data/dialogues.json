@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "jeanne",
+  "texte": "Si vous lisez ce mot, c'est que vous avez trouvé ma boîte, dans le grenier de l'école de Vaux-les-Tilleuls. Je m'appelle Jeanne Garnier. Dedans, il y a les cinq lettres que mon grand frère Louis et ceux qui l'ont connu m'ont écrites pendant la Grande Guerre, de 1914 à 1922. L'humidité a effacé des mots, des dates, des dessins. Historiennes et historiens, lisez chaque lettre, remettez de l'ordre dans ce qu'elle raconte, et notez le mot qu'elle vous confie. Avec les cinq mots, vous ouvrirez la dernière lettre, celle qui est fermée par un cadenas."
+ },
+ "coffre": {
+  "personnage": "jeanne",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque lettre, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Lettre 1 — La place du village",
+   "plans": [
+    {
+     "decor": "place",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "jeanne",
+     "texte": "Bonjour. Je m'appelle Jeanne, j'ai dix ans. Hier, les cloches ont sonné tout l'après-midi et une affiche a été collée sur la porte de la mairie. Ce matin, mon grand frère Louis part rejoindre l'armée. Les grands disent que ce sera court. Aidez-moi à comprendre pourquoi la guerre commence.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la lettre 1",
+   "plans": [
+    {
+     "decor": "place",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "jeanne",
+     "texte": "Merci. Le premier mot est MOBILISATION : tous les hommes appelés à rejoindre l'armée. Louis m'a écrit depuis le front. Ouvrons sa deuxième lettre.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Lettre 2 — L'abri de la tranchée",
+   "plans": [
+    {
+     "decor": "tranchee",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "louis",
+     "texte": "Ma chère Jeanne, je t'écris à la lueur d'une bougie. Je n'ai pas le droit de te dire où je suis : la censure lit nos lettres. Je vais bien, j'ai reçu ton colis. Je te dessine notre tranchée pour que tu comprennes comment on vit ici.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la lettre 2",
+   "plans": [
+    {
+     "decor": "tranchee",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "louis",
+     "texte": "Tu as tout compris. Le deuxième mot est TRANCHÉES . Ici, on tient grâce aux lettres et aux camarades. Embrasse Marcelle pour moi : elle travaille à l'usine, à la ville.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Lettre 3 — L'usine d'obus",
+   "plans": [
+    {
+     "decor": "usine",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "marcelle",
+     "texte": "Bonjour ! Je suis Marcelle, la fiancée de Louis. Avant la guerre, je cousais des robes. Maintenant, je fabrique des obus, comme des milliers de femmes. Pendant que les hommes sont au front, c'est tout le pays qui travaille. Je raconte tout à Louis dans ma lettre.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la lettre 3",
+   "plans": [
+    {
+     "decor": "usine",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "marcelle",
+     "texte": "Bravo. Le troisième mot est ARRIÈRE : tout le pays loin du front, qui travaille et attend. La lettre suivante vient de l'hôpital installé dans l'école du village.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Lettre 4 — L'hôpital de l'école",
+   "plans": [
+    {
+     "decor": "hopital",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "odette",
+     "texte": "Bonjour, je suis Odette, infirmière. Notre école est devenue un hôpital. Louis est ici : sa jambe guérit bien. Écoutez ! Les cloches sonnent dans tout le village. Il est onze heures, le 11 novembre 1918. Aidez-moi à expliquer aux soldats ce qui se passe.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la lettre 4",
+   "plans": [
+    {
+     "decor": "hopital",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "odette",
+     "texte": "Le quatrième mot est ARMISTICE : les combats s'arrêtent. Les soldats ne chantent pas, beaucoup pleurent leurs camarades. La dernière lettre vient de monsieur le maire, quatre ans plus tard.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Lettre 5 — Le monument aux morts",
+   "plans": [
+    {
+     "decor": "monument",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "emile",
+     "texte": "Bonjour, je suis Émile, le maire de Vaux-les-Tilleuls. Aujourd'hui, nous inaugurons le monument aux morts. Sept noms de notre village vont y être gravés. Je veux que les enfants s'en souviennent toujours, et qu'ils comprennent aussi pourquoi la paix reste fragile.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la lettre 5",
+   "plans": [
+    {
+     "decor": "monument",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "emile",
+     "texte": "Le dernier mot est MÉMOIRE . Vous avez les cinq mots : ouvrez la dernière lettre. Et quand vous passerez devant le monument aux morts de votre commune, lisez les noms.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Les Lettres du poilu »",
+   "plans": [
+    {
+     "decor": "monument",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "emile",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "jeanne",
+   "texte": "Notez le mot de cette lettre : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "louis",
+   "texte": "Notez le mot de cette lettre : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "marcelle",
+   "texte": "Notez le mot de cette lettre : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "odette",
+   "texte": "Notez le mot de cette lettre : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "emile",
+   "texte": "Notez le mot de cette lettre : il servira à ouvrir le coffre final."
+  }
+ }
+}

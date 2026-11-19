@@ -1,0 +1,1545 @@
+{
+ "metadata": {
+  "jeu": "Les Lettres du poilu",
+  "version": 1,
+  "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données. Repères en CM1, dates exactes et chiffres officiels en CM2.",
+  "types": [
+   "association",
+   "code",
+   "intrus",
+   "ordre",
+   "plan",
+   "qcm",
+   "tri",
+   "trous",
+   "vraifaux"
+  ],
+  "sources": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration ») ; Musée de l'Armée, fiche objet « L'affiche de mobilisation » (2025) ; Encyclopædia Universalis, « Guerre mondiale (Première) : le rôle des colonies » et « Grande Guerre et société » ; Mémoire des hommes, base des morts pour la France (ministère des Armées) ; info.gouv.fr, « Pourquoi le 11 novembre est-il férié en France ? » ; loi du 24 octobre 1922 ; ONACVG et Eduscol, « Commémorer le 11 novembre ». Détail : README.md, section Sources.",
+  "vigilance": "SUJET SENSIBLE : ton du souvenir, aucun détail violent, aucune photo de blessé, aucun « gagner la guerre » comme mécanisme ; village, famille Garnier, registre et personnages inventés ; les personnes réelles ne parlent jamais.",
+  "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e2-1\",\"legende\":\"…\",\"source\":\"…\"}. Les schémas (tranchée, monument, frise) sont dessinés en SVG par script : ne jamais les remplacer par des images générées par IA. Documents d'époque réels : seulement des photos d'archives libres (Wikimedia Commons, Europeana), jamais de blessés."
+ },
+ "salles": [
+  {
+   "num": 1,
+   "titre": "Lettre n°1, août 1914 — La place du village : l'entrée en guerre",
+   "enigmes": [
+    {
+     "id": "1-1",
+     "titre": "La frise de l'été 1914",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "La première lettre de Louis est tachée : les événements de l'été 1914 sont mélangés. Remets-les dans l'ordre, du plus ancien au plus récent.",
+      "cm2": "Jeanne a noté dans son cahier les événements de l'été 1914, dans le désordre. Remets-les dans l'ordre chronologique."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Musée de l'Armée, fiche objet « L'affiche de mobilisation » (2025) ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "D'abord l'attentat de Sarajevo (28 juin 1914), puis l'affiche de la mobilisation générale (1er août 1914), puis la déclaration de guerre de l'Allemagne à la France (3 août 1914). En CM2 : la perte de l'Alsace et de la Moselle date de la guerre de 1870 ; l'Autriche-Hongrie déclare la guerre à la Serbie le 28 juillet 1914, un mois après l'attentat.",
+     "indices": {
+      "cm1": [
+       "Tout commence par un attentat, en juin.",
+       "L'affiche est collée au début du mois d'août.",
+       "La déclaration de guerre arrive deux jours après l'affiche."
+      ],
+      "cm2": [
+       "La guerre de 1870 est la plus ancienne.",
+       "Sarajevo : 28 juin 1914.",
+       "Mobilisation le 1er août, déclaration de guerre le 3 août."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "l'attentat de Sarajevo",
+        "rang": 1,
+        "sous": "fin juin 1914"
+       },
+       {
+        "txt": "l'affiche de la mobilisation générale",
+        "rang": 2,
+        "sous": "début août 1914"
+       },
+       {
+        "txt": "l'Allemagne déclare la guerre à la France",
+        "rang": 3,
+        "sous": "début août 1914"
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "l'Alsace et la Moselle deviennent allemandes",
+        "rang": 1,
+        "sous": "après la guerre de 1870"
+       },
+       {
+        "txt": "l'attentat de Sarajevo",
+        "rang": 2,
+        "sous": "28 juin 1914"
+       },
+       {
+        "txt": "l'Autriche-Hongrie déclare la guerre à la Serbie",
+        "rang": 3,
+        "sous": "28 juillet 1914"
+       },
+       {
+        "txt": "l'affiche de la mobilisation générale",
+        "rang": 4,
+        "sous": "1er août 1914"
+       },
+       {
+        "txt": "l'Allemagne déclare la guerre à la France",
+        "rang": 5,
+        "sous": "3 août 1914"
+       }
+      ]
+     },
+     "lecon": "causes"
+    },
+    {
+     "id": "1-2",
+     "titre": "L'affiche de la mairie",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Jeanne a recopié l'affiche collée sur la porte de la mairie. Lis-la, puis réponds aux questions.<div class='doc-titre'><i>L'affiche collée sur la porte de la mairie (extrait simplifié, recopié par Jeanne)</i></div><blockquote>ORDRE DE MOBILISATION GÉNÉRALE. Par décret du Président de la République, la mobilisation des armées de terre et de mer est ordonnée. Le premier jour de la mobilisation est le dimanche 2 août 1914. Tout Français soumis aux obligations militaires doit obéir.</blockquote>",
+      "cm2": "Jeanne a recopié l'affiche collée sur la porte de la mairie. Lis-la, puis réponds aux questions.<div class='doc-titre'><i>L'affiche collée sur la porte de la mairie (extrait simplifié, recopié par Jeanne)</i></div><blockquote>ORDRE DE MOBILISATION GÉNÉRALE. Par décret du Président de la République, la mobilisation des armées de terre et de mer est ordonnée. Le premier jour de la mobilisation est le dimanche 2 août 1914. Tout Français soumis aux obligations militaires doit obéir.</blockquote>"
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Musée de l'Armée, fiche objet « L'affiche de mobilisation » (2025)",
+     "correction": "L'affiche ordonne la mobilisation générale : les hommes soumis aux obligations militaires doivent rejoindre l'armée. Le premier jour de la mobilisation est le dimanche 2 août 1914 ; l'affiche est collée le 1er août dans toutes les communes. En CM2 : l'armée passe de 800 000 hommes à près de 3,6 millions ; tout le monde croit à une guerre courte.",
+     "indices": {
+      "cm1": [
+       "Mobiliser, c'est appeler les soldats.",
+       "Cherche « premier jour » dans l'affiche.",
+       "Toutes les communes reçoivent l'affiche."
+      ],
+      "cm2": [
+       "« Mobilisation des armées » : on appelle les hommes.",
+       "De 800 000 à près de 3,6 millions.",
+       "On croit la guerre courte."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Que demande l'affiche ?",
+        "options": [
+         "de fêter le 14 Juillet",
+         "aux hommes mobilisables de rejoindre l'armée",
+         "de fermer les écoles",
+         "de partir en vacances"
+        ],
+        "bonne": 1,
+        "explication": "C'est l'ordre de mobilisation générale."
+       },
+       {
+        "q": "Quel est le premier jour de la mobilisation ?",
+        "options": [
+         "le 28 juin 1914",
+         "le 2 août 1914",
+         "le 11 novembre 1918",
+         "le 14 juillet 1914"
+        ],
+        "bonne": 1,
+        "explication": "C'est écrit sur l'affiche."
+       },
+       {
+        "q": "Où l'affiche est-elle collée ?",
+        "options": [
+         "seulement à Paris",
+         "dans toutes les communes de France",
+         "seulement dans les casernes",
+         "dans les journaux"
+        ],
+        "bonne": 1,
+        "explication": "Chaque mairie la reçoit."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Que veut dire « mobilisation générale » ?",
+        "options": [
+         "une fête nationale",
+         "l'appel de tous les hommes soumis aux obligations militaires",
+         "la fermeture des frontières",
+         "une élection"
+        ],
+        "bonne": 1,
+        "explication": "Les hommes rejoignent l'armée."
+       },
+       {
+        "q": "Quel est le premier jour de la mobilisation ?",
+        "options": [
+         "le 1er août 1914",
+         "le 2 août 1914",
+         "le 3 août 1914",
+         "le 28 juin 1914"
+        ],
+        "bonne": 1,
+        "explication": "Le dimanche 2 août 1914 ; l'affiche est collée la veille."
+       },
+       {
+        "q": "Combien d'hommes compte l'armée française après la mobilisation de 1914 ?",
+        "options": [
+         "environ 80 000",
+         "environ 800 000",
+         "près de 3,6 millions",
+         "près de 40 millions"
+        ],
+        "bonne": 2,
+        "explication": "Elle passe de 800 000 à près de 3,6 millions d'hommes."
+       },
+       {
+        "q": "Que pensent la plupart des gens en août 1914 ?",
+        "options": [
+         "que la guerre durera dix ans",
+         "que la guerre sera courte",
+         "qu'il n'y aura pas de guerre",
+         "que la guerre est déjà finie"
+        ],
+        "bonne": 1,
+        "explication": "Elle durera plus de quatre ans."
+       }
+      ]
+     },
+     "lecon": "causes"
+    },
+    {
+     "id": "1-3",
+     "titre": "Les deux camps",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Louis a dessiné une carte des alliances, mais les noms sont tombés. Range chaque pays dans son camp.",
+      "cm2": "Louis a dessiné une carte des alliances de 1914. Range chaque pays dans son camp."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "La France, le Royaume-Uni et la Russie forment la Triple-Entente ; l'Allemagne et l'Autriche-Hongrie sont dans l'autre camp. En CM2 : la Serbie et la Belgique, envahie en août 1914, combattent avec la France ; l'Empire ottoman rejoint l'Allemagne à l'automne 1914. À cause des alliances, une crise locale devient une guerre européenne.",
+     "indices": {
+      "cm1": [
+       "La France a deux grands alliés.",
+       "L'Allemagne et l'Autriche-Hongrie sont ensemble.",
+       "Le Royaume-Uni est le voisin de la France."
+      ],
+      "cm2": [
+       "La Serbie est attaquée par l'Autriche-Hongrie.",
+       "La Belgique est envahie par l'Allemagne.",
+       "L'Empire ottoman rejoint l'Allemagne."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "entente",
+        "titre": "Le camp de la France (Triple-Entente)"
+       },
+       {
+        "id": "allem",
+        "titre": "Le camp de l'Allemagne"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la France",
+        "col": "entente"
+       },
+       {
+        "txt": "le Royaume-Uni",
+        "col": "entente"
+       },
+       {
+        "txt": "la Russie",
+        "col": "entente"
+       },
+       {
+        "txt": "l'Allemagne",
+        "col": "allem"
+       },
+       {
+        "txt": "l'Autriche-Hongrie",
+        "col": "allem"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "entente",
+        "titre": "Le camp de la France"
+       },
+       {
+        "id": "allem",
+        "titre": "Le camp de l'Allemagne"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la France",
+        "col": "entente"
+       },
+       {
+        "txt": "le Royaume-Uni",
+        "col": "entente"
+       },
+       {
+        "txt": "la Russie",
+        "col": "entente"
+       },
+       {
+        "txt": "la Serbie",
+        "col": "entente"
+       },
+       {
+        "txt": "la Belgique",
+        "col": "entente"
+       },
+       {
+        "txt": "l'Allemagne",
+        "col": "allem"
+       },
+       {
+        "txt": "l'Autriche-Hongrie",
+        "col": "allem"
+       },
+       {
+        "txt": "l'Empire ottoman",
+        "col": "allem"
+       }
+      ]
+     },
+     "lecon": "causes"
+    },
+    {
+     "id": "1-4",
+     "titre": "La fleur au fusil ?",
+     "type": "vraifaux",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Sur une vieille carte postale, des soldats partent en souriant, une fleur au bout du fusil. Légende ou réalité ? Pour chaque phrase, choisis vrai ou faux.",
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Musée de l'Armée, fiche objet « L'affiche de mobilisation » (2025) ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "La plupart des mobilisés partent avec résignation et sens du devoir, pas dans la joie : la « fleur au fusil » est surtout une image de propagande et de cartes postales. Tout le monde croit à une guerre courte ; elle dure plus de quatre ans. Beaucoup de Français veulent retrouver l'Alsace et la Moselle, perdues en 1871.",
+     "indices": {
+      "cm2": [
+       "Une carte postale peut embellir la réalité.",
+       "On pensait rentrer vite.",
+       "L'Alsace et la Moselle étaient allemandes depuis 1871."
+      ]
+     },
+     "commun": {
+      "affirmations": [
+       {
+        "txt": "Tous les soldats partent en chantant de joie.",
+        "vrai": false,
+        "explication": "La plupart partent avec résignation et sens du devoir."
+       },
+       {
+        "txt": "La « fleur au fusil » est surtout une image de cartes postales.",
+        "vrai": true,
+        "explication": "Elle embellit la réalité."
+       },
+       {
+        "txt": "En août 1914, presque tout le monde croit que la guerre sera courte.",
+        "vrai": true,
+        "explication": "Elle durera plus de quatre ans."
+       },
+       {
+        "txt": "Beaucoup de Français veulent retrouver l'Alsace et la Moselle.",
+        "vrai": true,
+        "explication": "Elles sont allemandes depuis la guerre de 1870."
+       },
+       {
+        "txt": "Les soldats savent qu'ils partent pour quatre ans.",
+        "vrai": false,
+        "explication": "Personne ne l'imagine en 1914."
+       }
+      ]
+     },
+     "lecon": "causes"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "titre": "Lettre n°2, printemps 1916 — La tranchée : la vie des poilus",
+   "enigmes": [
+    {
+     "id": "2-1",
+     "titre": "Le croquis de Louis",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Dans sa lettre, Louis a dessiné la coupe de sa tranchée, mais il n'a pas eu le temps d'écrire les mots. Place chaque mot sur son repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Coupe d'une tranchée (schéma simplifié)\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f3efe6'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a2620' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Coupe d'une tranchée (schéma simplifié)</text><rect x='20' y='60' width='600' height='60' fill='#cfe0ea'/><rect x='270' y='118' width='140' height='115' fill='#c9b48a'/><path d='M20,120 L250,120 L250,130 L280,130 L280,230 L400,230 L400,120 L620,120 L620,285 L20,285 Z' fill='#8b6f4e'/><rect x='280' y='200' width='120' height='30' fill='#6d5338'/><rect x='280' y='178' width='34' height='22' fill='#a08560' stroke='#5a4630'/><rect x='300' y='238' width='90' height='36' rx='4' fill='#3e3226' stroke='#2a2620'/><path d='M318,238 l0,-8 l54,0 l0,8' fill='none' stroke='#2a2620' stroke-width='3'/><ellipse cx='262' cy='116' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='268' cy='107' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='262' cy='98' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='268' cy='89' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='262' cy='80' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><path d='M120,120 l0,-26 M106,106 l28,0 M106,98 l28,0' stroke='#555' stroke-width='2'/><path d='M100,102 q10,-8 20,0 q10,8 20,0' stroke='#777' stroke-width='1.5' fill='none'/><path d='M160,120 l0,-26 M146,106 l28,0 M146,98 l28,0' stroke='#555' stroke-width='2'/><path d='M140,102 q10,-8 20,0 q10,8 20,0' stroke='#777' stroke-width='1.5' fill='none'/><path d='M200,120 l0,-26 M186,106 l28,0 M186,98 l28,0' stroke='#555' stroke-width='2'/><path d='M180,102 q10,-8 20,0 q10,8 20,0' stroke='#777' stroke-width='1.5' fill='none'/><text x='110' y='140' text-anchor='middle' font-size='11' fill='#f3efe6' font-family='Atkinson Hyperlegible,Arial,sans-serif'>côté ennemi</text><text x='520' y='140' text-anchor='middle' font-size='11' fill='#f3efe6' font-family='Atkinson Hyperlegible,Arial,sans-serif'>côté de l'arrière</text><circle cx='262' cy='62' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='262' y='67' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='165' cy='72' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='165' y='77' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='345' cy='262' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='345' y='267' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "cm2": "Louis a dessiné la coupe de sa tranchée. Place chaque mot sur son repère. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Coupe d'une tranchée (schéma simplifié)\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f3efe6'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a2620' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Coupe d'une tranchée (schéma simplifié)</text><rect x='20' y='60' width='600' height='60' fill='#cfe0ea'/><rect x='270' y='118' width='140' height='115' fill='#c9b48a'/><path d='M20,120 L250,120 L250,130 L280,130 L280,230 L400,230 L400,120 L620,120 L620,285 L20,285 Z' fill='#8b6f4e'/><rect x='280' y='200' width='120' height='30' fill='#6d5338'/><rect x='280' y='178' width='34' height='22' fill='#a08560' stroke='#5a4630'/><rect x='300' y='238' width='90' height='36' rx='4' fill='#3e3226' stroke='#2a2620'/><path d='M318,238 l0,-8 l54,0 l0,8' fill='none' stroke='#2a2620' stroke-width='3'/><ellipse cx='262' cy='116' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='268' cy='107' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='262' cy='98' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='268' cy='89' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><ellipse cx='262' cy='80' rx='16' ry='6' fill='#c9b48a' stroke='#6d5a3a'/><path d='M120,120 l0,-26 M106,106 l28,0 M106,98 l28,0' stroke='#555' stroke-width='2'/><path d='M100,102 q10,-8 20,0 q10,8 20,0' stroke='#777' stroke-width='1.5' fill='none'/><path d='M160,120 l0,-26 M146,106 l28,0 M146,98 l28,0' stroke='#555' stroke-width='2'/><path d='M140,102 q10,-8 20,0 q10,8 20,0' stroke='#777' stroke-width='1.5' fill='none'/><path d='M200,120 l0,-26 M186,106 l28,0 M186,98 l28,0' stroke='#555' stroke-width='2'/><path d='M180,102 q10,-8 20,0 q10,8 20,0' stroke='#777' stroke-width='1.5' fill='none'/><text x='110' y='140' text-anchor='middle' font-size='11' fill='#f3efe6' font-family='Atkinson Hyperlegible,Arial,sans-serif'>côté ennemi</text><text x='520' y='140' text-anchor='middle' font-size='11' fill='#f3efe6' font-family='Atkinson Hyperlegible,Arial,sans-serif'>côté de l'arrière</text><circle cx='262' cy='62' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='262' y='67' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='165' cy='72' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='165' y='77' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='345' cy='262' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='345' y='267' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='297' cy='170' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='297' y='175' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='60' cy='100' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='60' y='105' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>"
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "Le repère 1 montre les sacs de sable qui protègent le haut de la tranchée, le repère 2 les barbelés, le repère 3 l'abri creusé sous terre. En CM2 : le repère 4 est la banquette de tir, la marche où le soldat monte pour guetter ; le repère 5 est le no man's land, la terre de personne entre les deux lignes. Le boyau, qui relie la tranchée à l'arrière, et la mairie ne sont pas sur ce dessin.",
+     "indices": {
+      "cm1": [
+       "Les sacs de sable sont empilés en haut.",
+       "Les barbelés sont devant, côté ennemi.",
+       "L'abri est sous terre, au fond."
+      ],
+      "cm2": [
+       "La banquette de tir est une marche.",
+       "Le no man's land est entre les lignes.",
+       "Le boyau n'est pas visible sur une coupe."
+      ]
+     },
+     "cm1": {
+      "titre": "Le croquis de Louis",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "les sacs de sable"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "les barbelés"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "l'abri"
+       }
+      ],
+      "etiquettes": [
+       "les sacs de sable",
+       "les barbelés",
+       "l'abri"
+      ]
+     },
+     "cm2": {
+      "titre": "Le croquis de Louis",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "les sacs de sable"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "les barbelés"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "l'abri"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "la banquette de tir"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "le no man's land"
+       }
+      ],
+      "etiquettes": [
+       "les sacs de sable",
+       "les barbelés",
+       "l'abri",
+       "la banquette de tir",
+       "le no man's land",
+       "le boyau",
+       "la mairie"
+      ]
+     },
+     "lecon": "front"
+    },
+    {
+     "id": "2-2",
+     "titre": "La vie dans la tranchée",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Louis raconte sa vie de poilu. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Louis raconte sa vie de poilu, mais une partie de sa lettre a été barrée par la censure. Pour chaque phrase, choisis vrai ou faux."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "Les poilus vivent dans la boue et le froid, avec les rats et les poux ; pour tenir, ils écrivent et reçoivent des lettres et des colis. « Poilu » est le surnom des soldats français. En CM2 : la censure lit le courrier ; les soldats ne peuvent pas écrire où ils sont ; la camaraderie les aide à tenir.",
+     "indices": {
+      "cm1": [
+       "Pense à la pluie dans un trou de terre.",
+       "Les colis viennent de la famille.",
+       "« Poilu » est un surnom."
+      ],
+      "cm2": [
+       "La censure surveille les lettres.",
+       "Louis ne peut pas écrire le nom du lieu.",
+       "Les camarades s'entraident."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "Dans la tranchée, les soldats vivent souvent dans la boue et le froid.",
+        "vrai": true,
+        "explication": "La pluie remplit les tranchées."
+       },
+       {
+        "txt": "Les poilus reçoivent des lettres et des colis de leur famille.",
+        "vrai": true,
+        "explication": "Cela les aide à tenir."
+       },
+       {
+        "txt": "Les soldats dorment dans des hôtels près du front.",
+        "vrai": false,
+        "explication": "Ils dorment dans des abris creusés sous terre."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "On appelle « poilus » les soldats français de la Grande Guerre.",
+        "vrai": true,
+        "explication": "C'est leur surnom."
+       },
+       {
+        "txt": "Les soldats peuvent écrire dans leurs lettres le lieu exact où ils se trouvent.",
+        "vrai": false,
+        "explication": "La censure l'interdit."
+       },
+       {
+        "txt": "Les rats et les poux font partie de la vie dans les tranchées.",
+        "vrai": true,
+        "explication": "Les conditions de vie sont très dures."
+       },
+       {
+        "txt": "La camaraderie aide les soldats à tenir.",
+        "vrai": true,
+        "explication": "Ils partagent les colis et les nouvelles."
+       },
+       {
+        "txt": "Le courrier des soldats n'est jamais lu par personne.",
+        "vrai": false,
+        "explication": "La censure surveille le courrier."
+       }
+      ]
+     },
+     "lecon": "front"
+    },
+    {
+     "id": "2-3",
+     "titre": "Verdun ou la Somme ?",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Louis a mélangé ses notes sur deux grandes batailles de 1916. Range chaque carte sous la bonne bataille.",
+      "cm2": "Louis a mélangé ses notes sur les deux grandes batailles de 1916. Range chaque carte sous la bonne bataille."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "Verdun commence le 21 février 1916 et se termine le 18 décembre 1916 : l'armée française y résiste aux attaques allemandes. La Somme commence le 1er juillet 1916 : les Britanniques et les Français y attaquent ensemble, jusqu'au 18 novembre ; les premiers chars britanniques y apparaissent.",
+     "indices": {
+      "cm1": [
+       "Verdun commence en février.",
+       "À la Somme, les Britanniques sont là.",
+       "Les deux batailles ont lieu en 1916."
+      ],
+      "cm2": [
+       "Verdun : de février à décembre.",
+       "Somme : de juillet à novembre.",
+       "Les premiers chars sont britanniques."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "verdun",
+        "titre": "Verdun"
+       },
+       {
+        "id": "somme",
+        "titre": "La Somme"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "commence en février 1916",
+        "col": "verdun"
+       },
+       {
+        "txt": "l'armée française résiste aux attaques allemandes",
+        "col": "verdun"
+       },
+       {
+        "txt": "commence en juillet 1916",
+        "col": "somme"
+       },
+       {
+        "txt": "Britanniques et Français attaquent ensemble",
+        "col": "somme"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "verdun",
+        "titre": "Verdun"
+       },
+       {
+        "id": "somme",
+        "titre": "La Somme"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "du 21 février au 18 décembre 1916",
+        "col": "verdun"
+       },
+       {
+        "txt": "l'armée française résiste aux attaques allemandes",
+        "col": "verdun"
+       },
+       {
+        "txt": "près de la Meuse",
+        "col": "verdun"
+       },
+       {
+        "txt": "du 1er juillet au 18 novembre 1916",
+        "col": "somme"
+       },
+       {
+        "txt": "Britanniques et Français attaquent ensemble",
+        "col": "somme"
+       },
+       {
+        "txt": "apparition des premiers chars britanniques",
+        "col": "somme"
+       }
+      ]
+     },
+     "lecon": "front"
+    },
+    {
+     "id": "2-4",
+     "titre": "Les camarades de Louis",
+     "type": "qcm",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Louis parle de ses camarades et des armes qu'il découvre. Réponds aux questions.",
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration ») ; Encyclopædia Universalis, « Guerre mondiale (Première) : le rôle des colonies » et « Grande Guerre et société »",
+     "correction": "La guerre utilise des armes nouvelles ou bien plus nombreuses : mitrailleuses, canons lourds, gaz (à partir de 1915), avions, chars (1916). Environ 600 000 soldats venus des colonies (Afrique du Nord, Afrique de l'Ouest, Madagascar, Indochine) combattent dans l'armée française. Le masque protège des gaz.",
+     "indices": {
+      "cm2": [
+       "Les chars apparaissent en 1916.",
+       "Environ 600 000 soldats des colonies.",
+       "Le masque protège des gaz."
+      ]
+     },
+     "commun": {
+      "questions": [
+       {
+        "q": "Quelle arme apparaît pour la première fois pendant cette guerre ?",
+        "options": [
+         "l'épée",
+         "le char d'assaut",
+         "l'arc",
+         "le canon à boulets de pierre"
+        ],
+        "bonne": 1,
+        "explication": "Les premiers chars sont britanniques, en 1916."
+       },
+       {
+        "q": "Pourquoi Louis porte-t-il un masque ?",
+        "options": [
+         "pour se déguiser",
+         "pour se protéger des gaz de combat",
+         "pour avoir chaud",
+         "pour ne pas être reconnu"
+        ],
+        "bonne": 1,
+        "explication": "Les gaz sont employés à partir de 1915."
+       },
+       {
+        "q": "Amadou, le camarade de Louis, vient du Sénégal. Combien de soldats venus des colonies combattent dans l'armée française ?",
+        "options": [
+         "environ 6 000",
+         "environ 60 000",
+         "environ 600 000",
+         "environ 6 millions"
+        ],
+        "bonne": 2,
+        "explication": "D'Afrique du Nord, d'Afrique de l'Ouest, de Madagascar, d'Indochine."
+       },
+       {
+        "q": "Laquelle de ces armes est utilisée en grand nombre ?",
+        "options": [
+         "la catapulte",
+         "la mitrailleuse",
+         "l'arbalète",
+         "le bélier"
+        ],
+        "bonne": 1,
+        "explication": "Avec les canons lourds."
+       }
+      ]
+     },
+     "lecon": "front"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "titre": "Lettre n°3, 1917 — L'usine et les champs : l'arrière",
+   "enigmes": [
+    {
+     "id": "3-1",
+     "titre": "Les photos du journal",
+     "type": "intrus",
+     "consigne": {
+      "cm1": "Marcelle a découpé des photos dans le journal pour montrer à Louis ce que font les femmes pendant la guerre. Une carte ne va pas : trouve l'intruse.",
+      "cm2": "Marcelle a découpé des légendes de photos dans le journal pour montrer ce que font les femmes pendant la guerre. Une légende est fausse : trouve l'intruse."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Encyclopædia Universalis, « Guerre mondiale (Première) : le rôle des colonies » et « Grande Guerre et société »",
+     "correction": "Pendant la guerre, les femmes remplacent les hommes : elles moissonnent, fabriquent des obus, conduisent les tramways, soignent les blessés. Mais elles ne votent pas encore : en France, elles n'obtiendront le droit de vote qu'en 1944.",
+     "indices": {
+      "cm1": [
+       "Toutes les cartes sauf une montrent un travail.",
+       "Les femmes ne votent pas encore en 1917.",
+       "Le droit de vote des femmes arrive bien plus tard."
+      ],
+      "cm2": [
+       "Une seule légende est fausse.",
+       "Pense au droit de vote.",
+       "Les femmes votent en France à partir de 1944."
+      ]
+     },
+     "cm1": {
+      "cartes": [
+       {
+        "txt": "Une femme fait la moisson.",
+        "intrus": false
+       },
+       {
+        "txt": "Une ouvrière fabrique des obus.",
+        "intrus": false
+       },
+       {
+        "txt": "Une infirmière soigne un blessé.",
+        "intrus": false
+       },
+       {
+        "txt": "Des femmes votent aux élections de 1917.",
+        "intrus": true
+       }
+      ]
+     },
+     "cm2": {
+      "cartes": [
+       {
+        "txt": "Des paysannes font les vendanges à la place des hommes.",
+        "intrus": false
+       },
+       {
+        "txt": "Une munitionnette remplit des obus à l'usine.",
+        "intrus": false
+       },
+       {
+        "txt": "Une conductrice de tramway fait sa tournée.",
+        "intrus": false
+       },
+       {
+        "txt": "Une factrice distribue le courrier.",
+        "intrus": false
+       },
+       {
+        "txt": "Une femme est élue députée en 1917.",
+        "intrus": true
+       }
+      ]
+     },
+     "lecon": "arriere"
+    },
+    {
+     "id": "3-2",
+     "titre": "Le front ou l'arrière ?",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Marcelle explique à Jeanne la différence entre le front et l'arrière. Range chaque carte dans la bonne colonne.",
+      "cm2": "Marcelle range les nouvelles reçues cette semaine. Range chaque carte : sur le front, ou à l'arrière."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Encyclopædia Universalis, « Guerre mondiale (Première) : le rôle des colonies » et « Grande Guerre et société » ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "Le front, c'est la ligne des tranchées et des combats. L'arrière, c'est tout le reste du pays : les usines, les champs, les écoles, les familles qui attendent les lettres. En CM2 : l'hôpital installé dans une école de l'arrière accueille les blessés ; les colis partent de l'arrière vers le front.",
+     "indices": {
+      "cm1": [
+       "Le front : les tranchées.",
+       "L'arrière : le village, l'usine, l'école.",
+       "Les familles sont à l'arrière."
+      ],
+      "cm2": [
+       "Où vit Marcelle ?",
+       "Où sont les barbelés ?",
+       "Les colis sont préparés à l'arrière."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "front",
+        "titre": "Sur le front"
+       },
+       {
+        "id": "arriere",
+        "titre": "À l'arrière"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "les tranchées",
+        "col": "front"
+       },
+       {
+        "txt": "les barbelés",
+        "col": "front"
+       },
+       {
+        "txt": "l'usine d'obus",
+        "col": "arriere"
+       },
+       {
+        "txt": "l'école du village",
+        "col": "arriere"
+       },
+       {
+        "txt": "les champs de blé",
+        "col": "arriere"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "front",
+        "titre": "Sur le front"
+       },
+       {
+        "id": "arriere",
+        "titre": "À l'arrière"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la banquette de tir",
+        "col": "front"
+       },
+       {
+        "txt": "le no man's land",
+        "col": "front"
+       },
+       {
+        "txt": "les abris creusés sous terre",
+        "col": "front"
+       },
+       {
+        "txt": "l'usine d'obus",
+        "col": "arriere"
+       },
+       {
+        "txt": "les vendanges",
+        "col": "arriere"
+       },
+       {
+        "txt": "l'hôpital installé dans une école",
+        "col": "arriere"
+       },
+       {
+        "txt": "la préparation des colis",
+        "col": "arriere"
+       }
+      ]
+     },
+     "lecon": "arriere"
+    },
+    {
+     "id": "3-3",
+     "titre": "Le carnet de l'usine",
+     "type": "trous",
+     "consigne": {
+      "cm1": "Le carnet de Marcelle a pris l'eau. Complète-le avec les bonnes étiquettes.",
+      "cm2": "Le carnet de Marcelle a pris l'eau. Complète-le. Attention : il y a des étiquettes en trop."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Encyclopædia Universalis, « Guerre mondiale (Première) : le rôle des colonies » et « Grande Guerre et société »",
+     "correction": "Les femmes remplacent les hommes partis au front ; celles qui fabriquent des obus sont appelées munitionnettes. Toute l'économie travaille pour la guerre : c'est l'économie de guerre. En CM2 : environ 430 000 femmes travaillent dans les usines d'armement en 1918 ; des travailleurs venus des colonies et de pays étrangers, comme environ 40 000 ouvriers chinois, travaillent aussi en France.",
+     "indices": {
+      "cm1": [
+       "Les hommes sont partis au front.",
+       "Elles fabriquent des munitions.",
+       "Les usines fabriquent des obus."
+      ],
+      "cm2": [
+       "430 000 en 1918.",
+       "Environ 40 000 ouvriers venus de Chine.",
+       "L'économie travaille pour la guerre."
+      ]
+     },
+     "cm1": {
+      "texte": "<p>Les hommes sont partis au [[front]]. À l'usine, les femmes les [[remplacent]]. Celles qui fabriquent des obus s'appellent les [[munitionnettes]].</p>",
+      "etiquettes": [
+       "front",
+       "remplacent",
+       "munitionnettes"
+      ]
+     },
+     "cm2": {
+      "texte": "<p>Toute l'[[économie]] travaille pour la guerre : l'usine fabrique des [[obus]] au lieu de vélos. En 1918, environ [[430 000]] femmes travaillent dans les usines d'armement : on les appelle les [[munitionnettes]]. Des travailleurs venus des [[colonies]] et de l'étranger, comme environ [[40 000]] ouvriers chinois, travaillent aussi en France.</p>",
+      "etiquettes": [
+       "économie",
+       "obus",
+       "430 000",
+       "munitionnettes",
+       "colonies",
+       "40 000",
+       "4 300",
+       "infirmières",
+       "tranchées"
+      ]
+     },
+     "lecon": "arriere"
+    },
+    {
+     "id": "3-4",
+     "titre": "Qui fait quoi à l'arrière ?",
+     "type": "association",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Marcelle présente à Louis les personnes qu'elle croise chaque jour. Relie chaque personne à ce qu'elle fait pendant la guerre.",
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Encyclopædia Universalis, « Guerre mondiale (Première) : le rôle des colonies » et « Grande Guerre et société »",
+     "correction": "La munitionnette remplit des obus à l'usine ; la paysanne moissonne à la place des hommes ; l'infirmière soigne les blessés à l'hôpital ; l'écolier écrit aux soldats et collecte des vêtements ; l'ouvrier venu de Chine travaille à l'usine ou au port.",
+     "indices": {
+      "cm2": [
+       "L'infirmière est à l'hôpital.",
+       "L'écolier écrit des lettres.",
+       "Les ouvriers venus de loin travaillent aux usines et aux ports."
+      ]
+     },
+     "commun": {
+      "paires": [
+       {
+        "g": "la munitionnette",
+        "d": "remplit des obus à l'usine"
+       },
+       {
+        "g": "la paysanne",
+        "d": "moissonne à la place des hommes"
+       },
+       {
+        "g": "l'infirmière",
+        "d": "soigne les blessés"
+       },
+       {
+        "g": "l'écolier",
+        "d": "écrit aux soldats et collecte des vêtements"
+       },
+       {
+        "g": "l'ouvrier venu de Chine",
+        "d": "travaille à l'usine ou au port"
+       }
+      ]
+     },
+     "lecon": "arriere"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "titre": "Lettre n°4, 11 novembre 1918 — L'hôpital de l'école : l'armistice",
+   "enigmes": [
+    {
+     "id": "4-1",
+     "titre": "Les dates de la guerre",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "Odette a écrit les grandes dates de la guerre sur des étiquettes de pansements, qui se sont mélangées. Remets-les dans l'ordre.",
+      "cm2": "Odette affiche au mur de l'hôpital les grandes étapes de la guerre. Remets-les dans l'ordre chronologique."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "La guerre commence en août 1914 ; Verdun a lieu en 1916 ; l'armistice est signé le 11 novembre 1918 ; le traité de Versailles est signé le 28 juin 1919. En CM2 : l'attentat de Sarajevo (28 juin 1914) est le point de départ ; les États-Unis entrent en guerre en avril 1917.",
+     "indices": {
+      "cm1": [
+       "La guerre commence en 1914.",
+       "Verdun, c'est en 1916.",
+       "La paix est signée après l'armistice."
+      ],
+      "cm2": [
+       "Sarajevo : 1914.",
+       "Les États-Unis : avril 1917.",
+       "Versailles : 28 juin 1919."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "le début de la guerre",
+        "rang": 1,
+        "sous": "1914"
+       },
+       {
+        "txt": "la bataille de Verdun",
+        "rang": 2,
+        "sous": "1916"
+       },
+       {
+        "txt": "l'armistice",
+        "rang": 3,
+        "sous": "1918"
+       },
+       {
+        "txt": "le traité de Versailles",
+        "rang": 4,
+        "sous": "1919"
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "l'attentat de Sarajevo",
+        "rang": 1,
+        "sous": "28 juin 1914"
+       },
+       {
+        "txt": "la bataille de Verdun",
+        "rang": 2,
+        "sous": "21 février 1916"
+       },
+       {
+        "txt": "l'entrée en guerre des États-Unis",
+        "rang": 3,
+        "sous": "avril 1917"
+       },
+       {
+        "txt": "l'armistice",
+        "rang": 4,
+        "sous": "11 novembre 1918"
+       },
+       {
+        "txt": "le traité de Versailles",
+        "rang": 5,
+        "sous": "28 juin 1919"
+       }
+      ]
+     },
+     "lecon": "armistice"
+    },
+    {
+     "id": "4-2",
+     "titre": "Les cloches du 11 novembre",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Ce matin, les cloches sonnent. Odette explique aux blessés ce qui se passe. Réponds aux questions.",
+      "cm2": "Odette lit aux blessés le journal du 11 novembre 1918. Réponds aux questions."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "Un armistice est un accord qui arrête les combats ; ce n'est pas encore la paix. Il est signé le 11 novembre 1918 à 5 h 15 dans la clairière de Rethondes, en forêt de Compiègne ; à 11 heures, les clairons et les cloches annoncent la fin des combats. En CM2 : la paix sera signée à Versailles le 28 juin 1919.",
+     "indices": {
+      "cm1": [
+       "Armistice : on arrête de se battre.",
+       "La date est dans le titre de la lettre.",
+       "Les cloches sonnent à 11 heures."
+      ],
+      "cm2": [
+       "Rethondes est dans la forêt de Compiègne.",
+       "5 h 15 pour la signature, 11 h pour la fin des combats.",
+       "La paix vient plus tard, à Versailles."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Qu'est-ce qu'un armistice ?",
+        "options": [
+         "un accord qui arrête les combats",
+         "une grande bataille",
+         "une fête de village",
+         "une nouvelle arme"
+        ],
+        "bonne": 0,
+        "explication": "Ce n'est pas encore la paix."
+       },
+       {
+        "q": "Quel jour l'armistice est-il signé ?",
+        "options": [
+         "le 14 juillet 1914",
+         "le 11 novembre 1918",
+         "le 28 juin 1919",
+         "le 1er août 1914"
+        ],
+        "bonne": 1,
+        "explication": "Le 11 novembre 1918."
+       },
+       {
+        "q": "À quelle heure les combats s'arrêtent-ils ?",
+        "options": [
+         "à minuit",
+         "à 11 heures",
+         "à 5 heures du soir",
+         "à midi le lendemain"
+        ],
+        "bonne": 1,
+        "explication": "Les cloches sonnent à 11 heures."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Où l'armistice est-il signé ?",
+        "options": [
+         "à Versailles",
+         "dans la clairière de Rethondes, en forêt de Compiègne",
+         "à Verdun",
+         "à Sarajevo"
+        ],
+        "bonne": 1,
+        "explication": "En forêt de Compiègne, dans l'Oise."
+       },
+       {
+        "q": "À quelle heure est-il signé ?",
+        "options": [
+         "à 5 h 15",
+         "à 11 h",
+         "à midi",
+         "à 20 h"
+        ],
+        "bonne": 0,
+        "explication": "Les combats s'arrêtent à 11 heures."
+       },
+       {
+        "q": "L'armistice, est-ce la paix ?",
+        "options": [
+         "oui, la guerre est finie pour toujours",
+         "non, il arrête les combats ; la paix est signée en 1919",
+         "non, la guerre reprend en 1919",
+         "oui, c'est le traité de Versailles"
+        ],
+        "bonne": 1,
+        "explication": "La paix : traité de Versailles, 28 juin 1919."
+       },
+       {
+        "q": "Quel pays est entré en guerre en 1917 aux côtés de la France ?",
+        "options": [
+         "la Russie",
+         "les États-Unis",
+         "l'Autriche-Hongrie",
+         "l'Allemagne"
+        ],
+        "bonne": 1,
+        "explication": "En avril 1917 ; la même année, la Russie arrête bientôt de combattre."
+       }
+      ]
+     },
+     "lecon": "armistice"
+    },
+    {
+     "id": "4-3",
+     "titre": "Les chiffres du registre",
+     "type": "association",
+     "consigne": {
+      "cm1": "Dans le registre de l'hôpital, Odette a noté des nombres. Relie chaque nombre à ce qu'il compte.",
+      "cm2": "Odette recopie les chiffres officiels publiés après la guerre. Relie chaque nombre à ce qu'il compte."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration ») ; Musée de l'Armée, fiche objet « L'affiche de mobilisation » (2025)",
+     "correction": "Près de 1,4 million de soldats français sont morts ; la guerre a duré plus de quatre ans ; les combats s'arrêtent à 11 heures le 11 novembre 1918. En CM2 : 8,7 millions de Français ont été mobilisés pendant toute la guerre ; la guerre laisse près de 600 000 veuves ; la paix est signée le 28 juin 1919.",
+     "indices": {
+      "cm1": [
+       "Le plus grand nombre : les soldats morts.",
+       "1914 à 1918 : compte les années.",
+       "Les cloches sonnent à cette heure-là."
+      ],
+      "cm2": [
+       "8,7 millions : tous les mobilisés.",
+       "1,4 million : les soldats français morts.",
+       "600 000 : les veuves."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "près de 1,4 million",
+        "d": "soldats français morts"
+       },
+       {
+        "g": "plus de 4 ans",
+        "d": "la durée de la guerre"
+       },
+       {
+        "g": "11 heures",
+        "d": "l'heure où les combats s'arrêtent"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "8,7 millions",
+        "d": "Français mobilisés pendant la guerre"
+       },
+       {
+        "g": "près de 1,4 million",
+        "d": "soldats français morts"
+       },
+       {
+        "g": "près de 600 000",
+        "d": "veuves de guerre en France"
+       },
+       {
+        "g": "5 h 15",
+        "d": "l'heure de la signature de l'armistice"
+       },
+       {
+        "g": "28 juin 1919",
+        "d": "la signature du traité de Versailles"
+       }
+      ]
+     },
+     "lecon": "armistice"
+    },
+    {
+     "id": "4-4",
+     "titre": "Le journal de 1919",
+     "type": "trous",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Un an plus tard, Odette colle dans son cahier un article sur le traité de paix. Complète-le. Attention : il y a des étiquettes en trop.",
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "La paix est signée le 28 juin 1919 à Versailles, dans la galerie des Glaces. L'Allemagne est déclarée responsable de la guerre : elle rend l'Alsace et la Moselle à la France, doit payer des réparations et réduire son armée. Beaucoup d'Allemands vivent ce traité avec colère.",
+     "indices": {
+      "cm2": [
+       "Le traité porte le nom d'un château.",
+       "L'Alsace et la Moselle reviennent à la France.",
+       "Les vaincus sont en colère."
+      ]
+     },
+     "commun": {
+      "texte": "<p>Le traité de paix est signé le 28 juin 1919 à [[Versailles]], dans la galerie des Glaces. L'[[Allemagne]] est déclarée responsable de la guerre. Elle rend l'Alsace et la [[Moselle]] à la France, doit payer des [[réparations]] et réduire son [[armée]]. Beaucoup d'Allemands vivent ce traité avec [[colère]].</p>",
+      "etiquettes": [
+       "Versailles",
+       "Allemagne",
+       "Moselle",
+       "réparations",
+       "armée",
+       "colère",
+       "Verdun",
+       "Russie",
+       "joie"
+      ]
+     },
+     "lecon": "armistice"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "titre": "Lettre n°5, 1922 — Le monument aux morts : se souvenir",
+   "enigmes": [
+    {
+     "id": "5-1",
+     "titre": "Le plan du monument",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Le maire montre le plan du monument aux morts que l'on inaugure aujourd'hui. Place chaque mot sur son repère.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le monument aux morts de Vaux-les-Tilleuls\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#f3efe6'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a2620' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le monument aux morts de Vaux-les-Tilleuls</text><rect x='220' y='270' width='200' height='20' fill='#b9b2a3'/><rect x='250' y='130' width='140' height='140' fill='#d8d2c4' stroke='#8e877a' stroke-width='2'/><rect x='240' y='118' width='160' height='14' fill='#c4bdae'/><circle cx='320' cy='62' r='12' fill='#9aa0a6'/><path d='M308,58 q12,-14 24,0 z' fill='#7d848b'/><path d='M306,76 l28,0 l6,42 l-40,0 z' fill='#9aa0a6'/><path d='M334,80 l14,-30' stroke='#7d848b' stroke-width='4'/><text x='320' y='150' text-anchor='middle' font-size='13' font-weight='700' fill='#2a2620' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1914 - 1918</text><rect x='272' y='166' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='180' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='194' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='208' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='222' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='236' width='96' height='5' rx='2' fill='#8e877a'/><path d='M215,130 l10,-10 l10,10 l-10,10 z' fill='#8a6d2b' stroke='#5a4620'/><rect x='222' y='100' width='6' height='20' fill='#2e5a8a'/><rect x='228' y='100' width='6' height='20' fill='#b23a3a'/><ellipse cx='320' cy='282' rx='46' ry='12' fill='#4e7d3a'/><circle cx='296' cy='278' r='6' fill='#c0392b'/><circle cx='320' cy='274' r='6' fill='#e8e2d0'/><circle cx='344' cy='278' r='6' fill='#2e5a8a'/><circle cx='360' cy='60' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='360' y='65' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='410' cy='200' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='410' y='205' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='230' cy='150' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='230' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "cm2": "Le maire montre le plan du monument aux morts. Place chaque mot sur son repère. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le monument aux morts de Vaux-les-Tilleuls\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#f3efe6'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a2620' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le monument aux morts de Vaux-les-Tilleuls</text><rect x='220' y='270' width='200' height='20' fill='#b9b2a3'/><rect x='250' y='130' width='140' height='140' fill='#d8d2c4' stroke='#8e877a' stroke-width='2'/><rect x='240' y='118' width='160' height='14' fill='#c4bdae'/><circle cx='320' cy='62' r='12' fill='#9aa0a6'/><path d='M308,58 q12,-14 24,0 z' fill='#7d848b'/><path d='M306,76 l28,0 l6,42 l-40,0 z' fill='#9aa0a6'/><path d='M334,80 l14,-30' stroke='#7d848b' stroke-width='4'/><text x='320' y='150' text-anchor='middle' font-size='13' font-weight='700' fill='#2a2620' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1914 - 1918</text><rect x='272' y='166' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='180' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='194' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='208' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='222' width='96' height='5' rx='2' fill='#8e877a'/><rect x='272' y='236' width='96' height='5' rx='2' fill='#8e877a'/><path d='M215,130 l10,-10 l10,10 l-10,10 z' fill='#8a6d2b' stroke='#5a4620'/><rect x='222' y='100' width='6' height='20' fill='#2e5a8a'/><rect x='228' y='100' width='6' height='20' fill='#b23a3a'/><ellipse cx='320' cy='282' rx='46' ry='12' fill='#4e7d3a'/><circle cx='296' cy='278' r='6' fill='#c0392b'/><circle cx='320' cy='274' r='6' fill='#e8e2d0'/><circle cx='344' cy='278' r='6' fill='#2e5a8a'/><circle cx='360' cy='60' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='360' y='65' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='410' cy='200' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='410' y='205' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='230' cy='150' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='230' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='196' cy='120' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='196' y='125' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='400' cy='290' r='13' fill='#3d4f6b' stroke='#fff' stroke-width='2'/><text x='400' y='295' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>"
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration ») ; ONACVG et Eduscol, « Commémorer le 11 novembre »",
+     "correction": "Le repère 1 montre la statue du poilu, le repère 2 la liste des noms des soldats de la commune morts pour la France, le repère 3 les dates de la guerre (1914-1918). En CM2 : le repère 4 est la croix de guerre, une décoration ; le repère 5 est la gerbe de fleurs déposée le 11 novembre. Les barbelés et l'affiche de mobilisation n'ont pas leur place sur un monument.",
+     "indices": {
+      "cm1": [
+       "La statue est en haut.",
+       "Les noms sont gravés sur la face du monument.",
+       "Les dates sont au-dessus des noms."
+      ],
+      "cm2": [
+       "La croix de guerre est une décoration.",
+       "La gerbe est au pied du monument.",
+       "Deux étiquettes ne vont pas sur un monument."
+      ]
+     },
+     "cm1": {
+      "titre": "Le monument de Vaux-les-Tilleuls",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "la statue du poilu"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "la liste des noms"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "les dates de la guerre"
+       }
+      ],
+      "etiquettes": [
+       "la statue du poilu",
+       "la liste des noms",
+       "les dates de la guerre"
+      ]
+     },
+     "cm2": {
+      "titre": "Le monument de Vaux-les-Tilleuls",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "la statue du poilu"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "la liste des noms"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "les dates de la guerre"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "la croix de guerre"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "la gerbe de fleurs"
+       }
+      ],
+      "etiquettes": [
+       "la statue du poilu",
+       "la liste des noms",
+       "les dates de la guerre",
+       "la croix de guerre",
+       "la gerbe de fleurs",
+       "les barbelés",
+       "l'affiche de mobilisation"
+      ]
+     },
+     "lecon": "memoire"
+    },
+    {
+     "id": "5-2",
+     "titre": "Le discours du maire",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Le maire prépare son discours pour l'inauguration. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Le maire prépare son discours. Il parle du souvenir, mais aussi de l'inquiétude pour l'avenir. Pour chaque phrase, choisis vrai ou faux."
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration ») ; info.gouv.fr, « Pourquoi le 11 novembre est-il férié en France ? » ; loi du 24 octobre 1922 ; Mémoire des hommes, base des morts pour la France (ministère des Armées)",
+     "correction": "Presque chaque commune de France construit un monument aux morts, surtout au début des années 1920 ; on y grave les noms des soldats morts pour la France. Le 11 novembre devient un jour férié par la loi du 24 octobre 1922. En CM2 : le Soldat inconnu repose sous l'Arc de Triomphe depuis 1920 ; la guerre laisse colère et difficultés, et des partis extrémistes en profitent : en Italie, Mussolini prend le pouvoir en 1922 et supprime peu à peu les libertés.",
+     "indices": {
+      "cm1": [
+       "Presque chaque village a son monument.",
+       "On y grave les noms.",
+       "Le 11 novembre, on se rassemble."
+      ],
+      "cm2": [
+       "Le Soldat inconnu est à Paris.",
+       "La loi de 1922 rend le 11 novembre férié.",
+       "En Italie, la démocratie recule."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "Presque chaque commune de France a construit un monument aux morts.",
+        "vrai": true,
+        "explication": "Surtout au début des années 1920."
+       },
+       {
+        "txt": "Sur le monument, on grave les noms des soldats de la commune morts pour la France.",
+        "vrai": true,
+        "explication": "Pour ne pas les oublier."
+       },
+       {
+        "txt": "Le 11 novembre, on se rassemble devant le monument aux morts.",
+        "vrai": true,
+        "explication": "C'est un jour de souvenir."
+       },
+       {
+        "txt": "On a construit les monuments pour fêter la guerre.",
+        "vrai": false,
+        "explication": "Ils servent à se souvenir des morts."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Le 11 novembre est devenu un jour férié avec la loi du 24 octobre 1922.",
+        "vrai": true,
+        "explication": "On se rassemble devant le monument."
+       },
+       {
+        "txt": "Le Soldat inconnu repose sous l'Arc de Triomphe, à Paris.",
+        "vrai": true,
+        "explication": "Il représente tous les morts de la guerre."
+       },
+       {
+        "txt": "Après la guerre, la paix est solide et tous les pays sont satisfaits.",
+        "vrai": false,
+        "explication": "La colère des vaincus et les difficultés rendent la paix fragile."
+       },
+       {
+        "txt": "En Italie, en 1922, Mussolini prend le pouvoir et supprime peu à peu les libertés.",
+        "vrai": true,
+        "explication": "Des partis extrémistes profitent de la colère."
+       },
+       {
+        "txt": "Aujourd'hui, on ne peut plus rien savoir des soldats morts en 1914-1918.",
+        "vrai": false,
+        "explication": "La base « Mémoire des hommes » garde la fiche de chacun."
+       }
+      ]
+     },
+     "lecon": "memoire"
+    },
+    {
+     "id": "5-3",
+     "titre": "Le registre des noms",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Le maire a recopié les noms à graver sur le monument. Lis le registre, puis réponds aux questions.<div class='doc-titre'><i>Le registre de la mairie : les noms à graver sur le monument (soldats inventés)</i></div><table class='tableau-releves'><tr><th>N°</th><th>Nom</th><th>Né en</th><th>Mort pour la France en</th><th>Lieu</th></tr><tr><td>1</td><td>Paul Bernard</td><td>1894</td><td>1914</td><td>la Marne</td></tr><tr><td>2</td><td>Henri Colin</td><td>1890</td><td>1915</td><td>l'Artois</td></tr><tr><td>3</td><td>Lucien Dubois</td><td>1896</td><td>1916</td><td>Verdun</td></tr><tr><td>4</td><td>Marcel Fabre</td><td>1897</td><td>1916</td><td>la Somme</td></tr><tr><td>5</td><td>Joseph Garnier</td><td>1888</td><td>1917</td><td>le Chemin des Dames</td></tr><tr><td>6</td><td>René Masson</td><td>1899</td><td>1918</td><td>la Champagne</td></tr><tr><td>7</td><td>Albert Petit</td><td>1885</td><td>1918</td><td>l'Aisne</td></tr></table>",
+      "cm2": "Le maire a recopié les noms à graver sur le monument. Mène l'enquête dans le registre, puis réponds aux questions.<div class='doc-titre'><i>Le registre de la mairie : les noms à graver sur le monument (soldats inventés)</i></div><table class='tableau-releves'><tr><th>N°</th><th>Nom</th><th>Né en</th><th>Mort pour la France en</th><th>Lieu</th></tr><tr><td>1</td><td>Paul Bernard</td><td>1894</td><td>1914</td><td>la Marne</td></tr><tr><td>2</td><td>Henri Colin</td><td>1890</td><td>1915</td><td>l'Artois</td></tr><tr><td>3</td><td>Lucien Dubois</td><td>1896</td><td>1916</td><td>Verdun</td></tr><tr><td>4</td><td>Marcel Fabre</td><td>1897</td><td>1916</td><td>la Somme</td></tr><tr><td>5</td><td>Joseph Garnier</td><td>1888</td><td>1917</td><td>le Chemin des Dames</td></tr><tr><td>6</td><td>René Masson</td><td>1899</td><td>1918</td><td>la Champagne</td></tr><tr><td>7</td><td>Albert Petit</td><td>1885</td><td>1918</td><td>l'Aisne</td></tr></table>"
+     },
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; Mémoire des hommes, base des morts pour la France (ministère des Armées)",
+     "correction": "Le registre compte 7 noms ; deux soldats sont morts en 1916 (à Verdun et dans la Somme) ; René Masson, né en 1899 et mort en 1918, était le plus jeune (environ 19 ans). En CM2 : Albert Petit (1885-1918) était le plus âgé (environ 33 ans) ; Paul Bernard est mort en 1914, la première année de la guerre ; Lucien Dubois est mort à Verdun, la bataille qui dure de février à décembre 1916. Les noms du registre sont inventés ; pour une vraie enquête, on consulte Mémoire des hommes.",
+     "indices": {
+      "cm1": [
+       "Compte les lignes du tableau.",
+       "Cherche 1916 dans la colonne « Mort pour la France en ».",
+       "Calcule : année de la mort moins année de naissance."
+      ],
+      "cm2": [
+       "Le plus âgé est né le plus tôt.",
+       "1914 est la première année de la guerre.",
+       "Cherche la bataille dans la colonne « Lieu »."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Combien de noms le registre compte-t-il ?",
+        "options": [
+         "5",
+         "6",
+         "7",
+         "8"
+        ],
+        "bonne": 2,
+        "explication": "Sept soldats de la commune."
+       },
+       {
+        "q": "Combien de soldats du registre sont morts en 1916 ?",
+        "options": [
+         "1",
+         "2",
+         "3",
+         "aucun"
+        ],
+        "bonne": 1,
+        "explication": "Lucien Dubois et Marcel Fabre."
+       },
+       {
+        "q": "Qui était le plus jeune au moment de sa mort ?",
+        "options": [
+         "Paul Bernard",
+         "René Masson",
+         "Albert Petit",
+         "Henri Colin"
+        ],
+        "bonne": 1,
+        "explication": "Né en 1899, mort en 1918 : environ 19 ans."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Qui était le plus âgé au moment de sa mort ?",
+        "options": [
+         "Joseph Garnier",
+         "Albert Petit",
+         "Henri Colin",
+         "Paul Bernard"
+        ],
+        "bonne": 1,
+        "explication": "Né en 1885, mort en 1918 : environ 33 ans."
+       },
+       {
+        "q": "Quel soldat est mort la première année de la guerre ?",
+        "options": [
+         "Paul Bernard",
+         "Henri Colin",
+         "René Masson",
+         "Marcel Fabre"
+        ],
+        "bonne": 0,
+        "explication": "En 1914, dans la Marne."
+       },
+       {
+        "q": "Lucien Dubois est mort pendant une bataille de 1916 qui a duré de février à décembre. Laquelle ?",
+        "options": [
+         "la Somme",
+         "Verdun",
+         "la Marne",
+         "l'Artois"
+        ],
+        "bonne": 1,
+        "explication": "Du 21 février au 18 décembre 1916."
+       },
+       {
+        "q": "Pour retrouver la fiche d'un vrai soldat mort pour la France, quelle base consulter ?",
+        "options": [
+         "Mémoire des hommes",
+         "le cadastre",
+         "l'annuaire",
+         "le dictionnaire"
+        ],
+        "bonne": 0,
+        "explication": "Base du ministère des Armées."
+       }
+      ]
+     },
+     "lecon": "memoire"
+    },
+    {
+     "id": "5-4",
+     "titre": "La date de la dernière lettre",
+     "type": "code",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "La dernière lettre est fermée par un cadenas à date. Jeanne a écrit : « J'ai écrit cette lettre le jour de l'inauguration du monument : le même jour et le même mois que l'armistice, l'année où une loi a fait de ce jour un jour férié. » Trouve le jour, le mois (en chiffres) et l'année.",
+     "source": "Programme d'histoire du cycle 3 (arrêté du 22 avril 2026, BO n° 22 du 28 mai 2026), Première Guerre mondiale (CM2) ; progression de l'enseignant : thème 6 « La France des guerres mondiales à l'Union européenne », année A, période 5 ; info.gouv.fr, « Pourquoi le 11 novembre est-il férié en France ? » ; loi du 24 octobre 1922 ; Ministère des Armées, Chemins de mémoire (« Un deuil national » ; « 1916. Les batailles de Verdun et de la Somme » ; « 11 novembre, journée nationale de commémoration »)",
+     "correction": "L'armistice est signé le 11 novembre 1918 : le jour est 11 et le mois est 11 (novembre est le onzième mois). La loi qui fait du 11 novembre un jour férié date du 24 octobre 1922 : l'année est 1922. La lettre est datée du 11 novembre 1922.",
+     "indices": {
+      "cm2": [
+       "Le jour de l'armistice : 11.",
+       "Novembre est le onzième mois.",
+       "La loi du 24 octobre 1922."
+      ]
+     },
+     "commun": {
+      "champs": [
+       {
+        "libelle": "Jour",
+        "valeur": "11",
+        "longueur": 2
+       },
+       {
+        "libelle": "Mois",
+        "valeur": "11",
+        "longueur": 2
+       },
+       {
+        "libelle": "Année",
+        "valeur": "1922",
+        "longueur": 4
+       }
+      ]
+     },
+     "lecon": "memoire"
+    }
+   ]
+  }
+ ]
+}

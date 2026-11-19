@@ -1,0 +1,154 @@
+{
+ "metadata": {
+  "jeu": "Les Lettres du poilu",
+  "sujet": "La Première Guerre mondiale : causes, front et tranchées, arrière, armistice et paix, mémoire et conséquences (montée des extrêmes) — histoire, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "phrase_bilan": "La MOBILISATION de 1914 envoie les hommes dans les TRANCHÉES ; à l'ARRIÈRE, tout le pays travaille ; l'ARMISTICE du 11 novembre 1918 arrête les combats ; la MÉMOIRE garde leurs noms.",
+  "lien_autres_jeux": "Suite directe : « Radio Londres » (n°20, Seconde Guerre mondiale). Ancrage local : le monument aux morts de la commune de l'école.",
+  "sources": "Programme d'histoire du cycle 3 (BO n° 22 du 28 mai 2026) ; ministère des Armées (Chemins de mémoire, Mémoire des hommes) ; musée de l'Armée ; Encyclopædia Universalis ; info.gouv.fr ; ONACVG et Eduscol. Détail : README.md, section Sources.",
+  "vigilance": "SUJET SENSIBLE : ton du souvenir ; aucun détail violent ni photo de blessé ; aucun « gagner la guerre » comme mécanisme ; chiffres officiels avec source ; village, famille Garnier et registre inventés ; respecter les familles pour qui la guerre est une histoire proche."
+ },
+ "personnages": {
+  "jeanne": {
+   "nom": "Jeanne",
+   "role": "Petite sœur de Louis, 10 ans en 1914"
+  },
+  "louis": {
+   "nom": "Louis",
+   "role": "Soldat, l'auteur des lettres"
+  },
+  "marcelle": {
+   "nom": "Marcelle",
+   "role": "Ouvrière dans une usine d'obus"
+  },
+  "odette": {
+   "nom": "Odette",
+   "role": "Infirmière à l'hôpital installé dans l'école"
+  },
+  "emile": {
+   "nom": "Émile",
+   "role": "Maire de Vaux-les-Tilleuls"
+  }
+ },
+ "intro_accueil": "Si vous lisez ce mot, c'est que vous avez trouvé ma boîte, dans le grenier de l'école de Vaux-les-Tilleuls. Je m'appelle Jeanne Garnier. Dedans, il y a les cinq lettres que mon grand frère Louis et ceux qui l'ont connu m'ont écrites pendant la Grande Guerre, de 1914 à 1922. L'humidité a effacé des mots, des dates, des dessins. Historiennes et historiens, lisez chaque lettre, remettez de l'ordre dans ce qu'elle raconte, et notez le mot qu'elle vous confie. Avec les cinq mots, vous ouvrirez la dernière lettre, celle qui est fermée par un cadenas.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La place du village",
+   "decor": "place",
+   "motCle": "MOBILISATION",
+   "lieu": "La place de Vaux-les-Tilleuls, devant la mairie, le 2 août 1914",
+   "description": "Une place de village de Bourgogne, l'église, la mairie et son affiche blanche sur la porte, un tilleul, des familles rassemblées et des valises posées au pied de la fontaine.",
+   "sens": [
+    "À voir : l'affiche blanche collée sur la porte de la mairie",
+    "À entendre : les cloches de l'église qui sonnent le tocsin",
+    "À toucher : le papier rugueux de la première lettre"
+   ],
+   "dialogue_intro": {
+    "perso": "jeanne",
+    "nom": "Jeanne",
+    "texte": "Bonjour. Je m'appelle Jeanne, j'ai dix ans. Hier, les cloches ont sonné tout l'après-midi et une affiche a été collée sur la porte de la mairie. Ce matin, mon grand frère Louis part rejoindre l'armée. Les grands disent que ce sera court. Aidez-moi à comprendre pourquoi la guerre commence."
+   },
+   "dialogue_reussite": {
+    "perso": "jeanne",
+    "nom": "Jeanne",
+    "texte": "Merci. Le premier mot est <b>MOBILISATION</b> : tous les hommes appelés à rejoindre l'armée. Louis m'a écrit depuis le front. Ouvrons sa deuxième lettre."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "L'abri de la tranchée",
+   "decor": "tranchee",
+   "motCle": "TRANCHÉES",
+   "lieu": "Un abri creusé sous la terre, dans une tranchée du front, au printemps 1916",
+   "description": "Un abri étroit étayé de planches, une bougie dans une boîte de conserve, une couverture, un masque dans sa boîte, des lettres et un colis ouvert sur une caisse.",
+   "sens": [
+    "À voir : la petite flamme de la bougie",
+    "À entendre : la pluie qui ruisselle sur les planches",
+    "À toucher : la terre froide et humide des murs"
+   ],
+   "dialogue_intro": {
+    "perso": "louis",
+    "nom": "Louis",
+    "texte": "Ma chère Jeanne, je t'écris à la lueur d'une bougie. Je n'ai pas le droit de te dire où je suis : la censure lit nos lettres. Je vais bien, j'ai reçu ton colis. Je te dessine notre tranchée pour que tu comprennes comment on vit ici."
+   },
+   "dialogue_reussite": {
+    "perso": "louis",
+    "nom": "Louis",
+    "texte": "Tu as tout compris. Le deuxième mot est <b>TRANCHÉES</b>. Ici, on tient grâce aux lettres et aux camarades. Embrasse Marcelle pour moi : elle travaille à l'usine, à la ville."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "L'usine d'obus",
+   "decor": "usine",
+   "motCle": "ARRIÈRE",
+   "lieu": "L'atelier d'une usine d'obus de la ville voisine, en 1917",
+   "description": "Un grand atelier sous une verrière, des machines alignées, des caisses d'obus vides, des ouvrières en blouse et en foulard, et sur un établi la lettre de Marcelle.",
+   "sens": [
+    "À voir : les rangées de machines sous la verrière",
+    "À entendre : le bruit régulier des machines",
+    "À toucher : le métal froid d'un obus vide"
+   ],
+   "dialogue_intro": {
+    "perso": "marcelle",
+    "nom": "Marcelle",
+    "texte": "Bonjour ! Je suis Marcelle, la fiancée de Louis. Avant la guerre, je cousais des robes. Maintenant, je fabrique des obus, comme des milliers de femmes. Pendant que les hommes sont au front, c'est tout le pays qui travaille. Je raconte tout à Louis dans ma lettre."
+   },
+   "dialogue_reussite": {
+    "perso": "marcelle",
+    "nom": "Marcelle",
+    "texte": "Bravo. Le troisième mot est <b>ARRIÈRE</b> : tout le pays loin du front, qui travaille et attend. La lettre suivante vient de l'hôpital installé dans l'école du village."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "L'hôpital de l'école",
+   "decor": "hopital",
+   "motCle": "ARMISTICE",
+   "lieu": "La salle de classe de Vaux-les-Tilleuls transformée en hôpital, le 11 novembre 1918",
+   "description": "Une salle de classe aux pupitres poussés contre le mur, des lits blancs alignés, une infirmière, un tableau noir avec la date du jour, et par la fenêtre le clocher qui sonne.",
+   "sens": [
+    "À voir : la date du jour écrite au tableau noir",
+    "À entendre : toutes les cloches du village qui sonnent",
+    "À toucher : le drap blanc et rêche d'un lit"
+   ],
+   "dialogue_intro": {
+    "perso": "odette",
+    "nom": "Odette",
+    "texte": "Bonjour, je suis Odette, infirmière. Notre école est devenue un hôpital. Louis est ici : sa jambe guérit bien. Écoutez ! Les cloches sonnent dans tout le village. Il est onze heures, le 11 novembre 1918. Aidez-moi à expliquer aux soldats ce qui se passe."
+   },
+   "dialogue_reussite": {
+    "perso": "odette",
+    "nom": "Odette",
+    "texte": "Le quatrième mot est <b>ARMISTICE</b> : les combats s'arrêtent. Les soldats ne chantent pas, beaucoup pleurent leurs camarades. La dernière lettre vient de monsieur le maire, quatre ans plus tard."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "Le monument aux morts",
+   "decor": "monument",
+   "motCle": "MÉMOIRE",
+   "lieu": "La place du village, devant le nouveau monument aux morts, le 11 novembre 1922",
+   "description": "Un monument de pierre claire surmonté d'une statue de poilu, des noms gravés, une gerbe de fleurs bleues, blanches et rouges, et le village rassemblé en silence.",
+   "sens": [
+    "À voir : les noms gravés dans la pierre",
+    "À entendre : le silence de tout le village",
+    "À toucher : la pierre lisse du monument"
+   ],
+   "dialogue_intro": {
+    "perso": "emile",
+    "nom": "Émile",
+    "texte": "Bonjour, je suis Émile, le maire de Vaux-les-Tilleuls. Aujourd'hui, nous inaugurons le monument aux morts. Sept noms de notre village vont y être gravés. Je veux que les enfants s'en souviennent toujours, et qu'ils comprennent aussi pourquoi la paix reste fragile."
+   },
+   "dialogue_fin": {
+    "perso": "jeanne",
+    "nom": "Jeanne",
+    "texte": "Le dernier mot est <b>MÉMOIRE</b>. Vous avez les cinq mots : ouvrez la dernière lettre. Et quand vous passerez devant le monument aux morts de votre commune, lisez les noms."
+   }
+  }
+ ]
+}
