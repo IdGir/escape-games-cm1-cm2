@@ -1,0 +1,114 @@
+{
+ "_commentaire": "Généré par outils-lecons/construire.py — ne pas modifier à la main : éditer outils-lecons/jeux/vivant_ecosystemes.py puis relancer.",
+ "jeu": {
+  "titre": "L'Expédition biodiversité",
+  "matiere": "Sciences et technologie",
+  "theme": "Observer le vivant et définir l'espèce, classer en groupes emboîtés et identifier, la biodiversité passée et les fossiles, l'écosystème, le réseau alimentaire",
+  "couleur": "#2f5d3a",
+  "accent": "#b5832a",
+  "couleur_pale": "#e6efe6",
+  "accent_pale": "#f6ecd9"
+ },
+ "lecons": {
+  "espece": {
+   "competence": "Décrire un être vivant par ses attributs ; définir l'espèce comme un ensemble d'êtres vivants qui se ressemblent et peuvent se reproduire entre eux ; faire l'inventaire d'un lieu (prolongement 6e : la cellule, unité du vivant).",
+   "visuels": [
+    {
+     "type": "schema",
+     "titre": "Observer les attributs"
+    },
+    {
+     "type": "svg",
+     "etiquette": "Tableau",
+     "titre": "Même espèce ou non ?",
+     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 116\" role=\"img\" aria-label=\"Tableau : même espèce ou non ? chien, âne et cheval, héron cendré\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"26.9\" fill=\"#2f5d3a\"/><text x=\"80.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Question</text><text x=\"260.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Même espèce ?</text><text x=\"5.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >un caniche et un berger allemand</text><text x=\"165.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >oui : ce sont deux chiens</text><rect x=\"0.5\" y=\"56.0\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >un âne et une jument</text><text x=\"165.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >non : leur petit, le mulet, ne peut pas avoir de petits</text><text x=\"5.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >deux hérons cendrés</text><text x=\"165.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >oui : leurs petits auront des petits</text><line x1=\"160.0\" y1=\"0\" x2=\"160.0\" y2=\"115.2\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"115.2\" fill=\"none\" stroke=\"#9aa4ad\" stroke-width=\"1\"/></svg>",
+     "legende": "Chaque espèce a un nom scientifique en deux mots : le héron cendré s'appelle Ardea cinerea."
+    }
+   ],
+   "texte": {
+    "cm1": "<ul><li>Pour décrire un être vivant, on observe ses <b>attributs</b> : ce qu'il <b>possède</b> (plumes, poils, coquille, pattes, ailes).</li><li>On compte avec précision : six pattes, huit pattes, quatre ailes.</li><li>Les êtres vivants d'une même <b>espèce</b> se ressemblent et peuvent avoir des petits ensemble ; ces petits pourront à leur tour avoir des petits.</li><li>Un caniche et un berger allemand sont deux <b>chiens</b> : même espèce.</li><li>Noter toutes les espèces d'un lieu, c'est faire son <b>inventaire</b>.</li></ul><div class='encadre'><b>À retenir :</b> plus il y a d'espèces dans un lieu, plus sa <b>biodiversité</b> est grande.</div>",
+    "cm2": "<ul><li>Un <b>attribut</b> est ce que l'on voit sur l'être vivant ; ce qu'il mange ou l'endroit où il vit ne sont pas des attributs.</li><li>Une <b>espèce</b> : des êtres vivants qui se ressemblent et peuvent se reproduire entre eux ; leurs petits auront aussi des petits.</li><li>L'âne et la jument ont un petit, le <b>mulet</b>, qui ne peut pas avoir de petits : l'âne et le cheval sont <b>deux espèces</b>.</li><li>Chaque espèce a un <b>nom scientifique</b> en deux mots : le héron cendré, <i>Ardea cinerea</i>.</li><li>Pour aller plus loin (6<sup>e</sup>) : tous les êtres vivants sont faits de <b>cellules</b> (membrane, cytoplasme, souvent un noyau).</li></ul><div class='encadre'><b>À retenir :</b> l'<b>inventaire</b> des espèces d'un lieu mesure sa biodiversité.</div>"
+   }
+  },
+  "classer": {
+   "competence": "Réaliser une classification en groupes emboîtés à partir des attributs ; en déduire des liens de parenté ; identifier des espèces proches avec une clé de détermination.",
+   "visuels": [
+    {
+     "type": "schema",
+     "titre": "Des groupes emboîtés"
+    },
+    {
+     "type": "svg",
+     "etiquette": "Tableau",
+     "titre": "Compter les pattes",
+     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 145\" role=\"img\" aria-label=\"Tableau : compter les pattes pour identifier une petite bête\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"26.9\" fill=\"#2f5d3a\"/><text x=\"108.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Animal</text><text x=\"288.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Nombre de pattes</text><text x=\"5.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >insecte (coccinelle, abeille)</text><text x=\"221.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >6</text><rect x=\"0.5\" y=\"56.0\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >araignée</text><text x=\"221.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >8</text><text x=\"5.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >cloporte</text><text x=\"221.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >14</text><rect x=\"0.5\" y=\"114.2\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"130.5\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >mille-pattes</text><text x=\"221.0\" y=\"130.5\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >de très nombreuses paires</text><line x1=\"216.0\" y1=\"0\" x2=\"216.0\" y2=\"144.2\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"144.2\" fill=\"none\" stroke=\"#9aa4ad\" stroke-width=\"1\"/></svg>",
+     "legende": "On classe avec ce que l'être vivant possède, jamais avec ce qu'il ne possède pas, ni avec son lieu de vie."
+    }
+   ],
+   "texte": {
+    "cm1": "<ul><li><b>Classer</b>, c'est ranger les êtres vivants dans des <b>groupes</b> selon les attributs qu'ils possèdent en commun.</li><li>Les groupes sont <b>emboîtés</b>, comme des boîtes rangées les unes dans les autres.</li><li>On ne fait jamais un groupe avec ce qu'un être vivant <b>ne possède pas</b>.</li><li>Le lieu de vie ne sert pas à classer : le dauphin a des poumons et allaite ses petits, il est rangé avec la vache.</li><li>Une <b>clé de détermination</b> : des questions simples pour trouver le nom d'un être vivant.</li></ul><div class='encadre'><b>À retenir :</b> insecte : 6 pattes ; araignée : 8 pattes ; cloporte : 14 pattes.</div>",
+    "cm2": "<ul><li>Classer : des <b>groupes emboîtés</b> d'après les attributs partagés (les animaux à poils sont rangés dans les animaux à squelette interne).</li><li>« Les animaux sans pattes » n'est <b>pas</b> un groupe de classification.</li><li>Deux espèces qui partagent beaucoup d'attributs sont <b>proches parentes</b> : le renard est plus proche du loup que du hérisson.</li><li>Une <b>clé de détermination</b> donne le nom d'une espèce ; une application d'identification peut se tromper : on vérifie avec une clé.</li><li>Identifier n'est pas classer. Pour aller plus loin (6<sup>e</sup>) : l'<b>arbre de parenté</b> et l'<b>ancêtre commun</b>.</li></ul><div class='encadre'><b>À retenir :</b> la classification montre les <b>liens de parenté</b> entre les espèces.</div>"
+   }
+  },
+  "fossiles": {
+   "competence": "Distinguer les échelles du temps géologique et de l'histoire humaine ; caractériser l'évolution de la biodiversité grâce aux fossiles ; l'extinction massive de la fin du Crétacé (CM2).",
+   "visuels": [
+    {
+     "type": "schema",
+     "titre": "Quelques repères du temps géologique"
+    },
+    {
+     "type": "svg",
+     "etiquette": "Frise",
+     "titre": "Une très longue histoire",
+     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 317\" role=\"img\" aria-label=\"Frise du temps géologique : de la formation de la Terre à Homo sapiens\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10z\" fill=\"#6b7580\"/></marker></defs><rect x=\"2\" y=\"2.0\" width=\"356\" height=\"46.8\" rx=\"5\" fill=\"#fff\" stroke=\"#b5832a\" stroke-width=\"1.4\"/><rect x=\"2\" y=\"2.0\" width=\"31.2\" height=\"46.8\" rx=\"5\" fill=\"#b5832a\"/><text x=\"17.6\" y=\"30.8\" font-size=\"15.6\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >1</text><text x=\"41.1\" y=\"21.1\" font-size=\"14.2\" text-anchor=\"start\" fill=\"#b5832a\" font-weight=\"700\" >4,6 milliards d'années</text><text x=\"41.1\" y=\"38.2\" font-size=\"11.6\" text-anchor=\"start\" fill=\"#3b434b\" font-weight=\"400\" >formation de la Terre</text><line x1=\"180.0\" y1=\"49.8\" x2=\"180.0\" y2=\"65.7\" stroke=\"#6b7580\" stroke-width=\"1.6\" marker-end=\"url(#fl)\"/><rect x=\"2\" y=\"68.7\" width=\"356\" height=\"46.8\" rx=\"5\" fill=\"#fff\" stroke=\"#b5832a\" stroke-width=\"1.4\"/><rect x=\"2\" y=\"68.7\" width=\"31.2\" height=\"46.8\" rx=\"5\" fill=\"#b5832a\"/><text x=\"17.6\" y=\"97.4\" font-size=\"15.6\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >2</text><text x=\"41.1\" y=\"87.8\" font-size=\"14.2\" text-anchor=\"start\" fill=\"#b5832a\" font-weight=\"700\" >3,8 milliards d'années</text><text x=\"41.1\" y=\"104.8\" font-size=\"11.6\" text-anchor=\"start\" fill=\"#3b434b\" font-weight=\"400\" >premières traces de vie</text><line x1=\"180.0\" y1=\"116.5\" x2=\"180.0\" y2=\"132.3\" stroke=\"#6b7580\" stroke-width=\"1.6\" marker-end=\"url(#fl)\"/><rect x=\"2\" y=\"135.3\" width=\"356\" height=\"46.8\" rx=\"5\" fill=\"#fff\" stroke=\"#b5832a\" stroke-width=\"1.4\"/><rect x=\"2\" y=\"135.3\" width=\"31.2\" height=\"46.8\" rx=\"5\" fill=\"#b5832a\"/><text x=\"17.6\" y=\"164.1\" font-size=\"15.6\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >3</text><text x=\"41.1\" y=\"154.5\" font-size=\"14.2\" text-anchor=\"start\" fill=\"#b5832a\" font-weight=\"700\" >540 millions d'années</text><text x=\"41.1\" y=\"171.5\" font-size=\"11.6\" text-anchor=\"start\" fill=\"#3b434b\" font-weight=\"400\" >les trilobites dans la mer</text><line x1=\"180.0\" y1=\"183.1\" x2=\"180.0\" y2=\"199.0\" stroke=\"#6b7580\" stroke-width=\"1.6\" marker-end=\"url(#fl)\"/><rect x=\"2\" y=\"202.0\" width=\"356\" height=\"46.8\" rx=\"5\" fill=\"#fff\" stroke=\"#b5832a\" stroke-width=\"1.4\"/><rect x=\"2\" y=\"202.0\" width=\"31.2\" height=\"46.8\" rx=\"5\" fill=\"#b5832a\"/><text x=\"17.6\" y=\"230.8\" font-size=\"15.6\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >4</text><text x=\"41.1\" y=\"221.1\" font-size=\"14.2\" text-anchor=\"start\" fill=\"#b5832a\" font-weight=\"700\" >66 millions d'années</text><text x=\"41.1\" y=\"238.1\" font-size=\"11.6\" text-anchor=\"start\" fill=\"#3b434b\" font-weight=\"400\" >extinction des dinosaures et des ammonites</text><line x1=\"180.0\" y1=\"249.8\" x2=\"180.0\" y2=\"265.6\" stroke=\"#6b7580\" stroke-width=\"1.6\" marker-end=\"url(#fl)\"/><rect x=\"2\" y=\"268.6\" width=\"356\" height=\"46.8\" rx=\"5\" fill=\"#fff\" stroke=\"#b5832a\" stroke-width=\"1.4\"/><rect x=\"2\" y=\"268.6\" width=\"31.2\" height=\"46.8\" rx=\"5\" fill=\"#b5832a\"/><text x=\"17.6\" y=\"297.4\" font-size=\"15.6\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >5</text><text x=\"41.1\" y=\"287.8\" font-size=\"14.2\" text-anchor=\"start\" fill=\"#b5832a\" font-weight=\"700\" >300 000 ans</text><text x=\"41.1\" y=\"304.8\" font-size=\"11.6\" text-anchor=\"start\" fill=\"#3b434b\" font-weight=\"400\" >apparition d'Homo sapiens en Afrique</text></svg>",
+     "legende": "Aucun humain n'a jamais vu de dinosaure vivant. Sources : académie de Martinique ; Espace des sciences."
+    }
+   ],
+   "texte": {
+    "cm1": "<ul><li>Un <b>fossile</b> est un reste ou une trace d'un être vivant ancien conservé dans une <b>roche</b> : coquille, os, dent, empreinte de feuille.</li><li>La plupart se forment au fond de l'eau, sous le sable ou la boue.</li><li>Les fossiles montrent que la biodiversité <b>change</b> : des espèces apparaissent, d'autres disparaissent.</li><li>L'histoire de la Terre est <b>très longue</b> : on la compte en millions d'années.</li><li>Les <b>dinosaures</b> et les <b>ammonites</b> ont disparu bien avant l'arrivée des humains.</li></ul><div class='encadre'><b>À retenir :</b> aucun humain n'a jamais vu de dinosaure vivant.</div>",
+    "cm2": "<ul><li>Temps géologique : en <b>millions</b> et <b>milliards</b> d'années ; histoire des humains : en siècles et milliers d'années.</li><li>Terre : environ <b>4,6 milliards</b> d'années ; premières traces de vie : environ <b>3,8 milliards</b> d'années.</li><li><b>Trilobites</b> : il y a 540 millions d'années, disparus il y a <b>252</b> millions d'années.</li><li>Il y a <b>66 millions</b> d'années, une <b>extinction massive</b> : dinosaures et ammonites disparaissent (météorite géante au Mexique, éruptions en Inde).</li><li>Ensuite, les <b>mammifères</b> se diversifient ; les <b>oiseaux</b> descendent de petits dinosaures à plumes. <i>Homo sapiens</i> : environ <b>300 000 ans</b>.</li></ul><div class='encadre'><b>À retenir :</b> après une crise, de nouvelles espèces apparaissent rapidement.</div>"
+   }
+  },
+  "ecosysteme": {
+   "competence": "Définir un écosystème : un milieu de vie, les êtres vivants qui l'habitent et leurs relations ; relier la présence d'êtres vivants aux caractéristiques du milieu ; prédation et coopération.",
+   "visuels": [
+    {
+     "type": "schema",
+     "titre": "La mare : un milieu de vie et des êtres vivants"
+    },
+    {
+     "type": "svg",
+     "etiquette": "Tableau",
+     "titre": "Des relations entre êtres vivants",
+     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 116\" role=\"img\" aria-label=\"Tableau des relations dans l&#x27;écosystème : prédation, coopération, besoin du milieu\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"26.9\" fill=\"#2f5d3a\"/><text x=\"60.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Relation</text><text x=\"240.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Exemple dans la réserve</text><text x=\"5.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >prédation</text><text x=\"125.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >le héron cendré attrape les grenouilles et les poissons</text><rect x=\"0.5\" y=\"56.0\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >coopération</text><text x=\"125.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >l'abeille boit le nectar et transporte le pollen</text><text x=\"5.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >besoin du milieu</text><text x=\"125.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >la grenouille pond dans l'eau de la mare</text><line x1=\"120.0\" y1=\"0\" x2=\"120.0\" y2=\"115.2\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"115.2\" fill=\"none\" stroke=\"#9aa4ad\" stroke-width=\"1\"/></svg>",
+     "legende": "Une mare, une forêt, une prairie ou une vigne sont des écosystèmes."
+    }
+   ],
+   "texte": {
+    "cm1": "<ul><li>Un <b>écosystème</b> : un <b>milieu de vie</b>, les <b>êtres vivants</b> qui l'habitent et leurs <b>relations</b>.</li><li>Le milieu se décrit par sa température, sa lumière, son humidité, la pluie.</li><li>Les êtres vivants dépendent du milieu : les nénuphars aiment l'eau calme et ensoleillée, les mousses l'ombre humide.</li><li><b>Prédation</b> : le héron attrape les grenouilles.</li><li><b>Coopération</b> : l'abeille boit le nectar et transporte le <b>pollen</b>.</li></ul><div class='encadre'><b>À retenir :</b> une mare, une forêt, une prairie sont des écosystèmes.</div>",
+    "cm2": "<ul><li><b>Écosystème</b> = milieu de vie + êtres vivants + relations entre eux.</li><li>Caractéristiques physiques du milieu : <b>température, lumière, humidité, pluie, altitude</b>.</li><li>La grenouille a besoin de la mare pour <b>pondre</b> et de la prairie pour <b>chasser</b> les insectes.</li><li><b>Prédation</b> : un prédateur et sa proie. <b>Coopération</b> : chacun gagne (l'abeille et la fleur).</li><li>L'écosystème change avec les <b>saisons</b> et peut se rétablir après une perturbation, mais seulement <b>dans certaines limites</b>.</li></ul><div class='encadre'><b>À retenir :</b> les êtres vivants d'un lieu dépendent de son milieu et les uns des autres.</div>"
+   }
+  },
+  "reseau": {
+   "competence": "Représenter les liens alimentaires par un réseau (flèche de la proie vers celui qui la mange) ; expliquer l'effet d'une forte variation d'une espèce ; conséquences d'actions humaines.",
+   "visuels": [
+    {
+     "type": "schema",
+     "titre": "Le réseau alimentaire de l'étang"
+    },
+    {
+     "type": "svg",
+     "etiquette": "Tableau",
+     "titre": "Perturber ou protéger",
+     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 116\" role=\"img\" aria-label=\"Tableau : ce qui perturbe un réseau alimentaire et ce qui protège les écosystèmes\" font-family=\"Segoe UI, Helvetica, Arial, sans-serif\"><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"26.9\" fill=\"#2f5d3a\"/><text x=\"90.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Ce qui perturbe</text><text x=\"270.0\" y=\"18.4\" font-size=\"12.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\" >Ce qui protège</text><text x=\"5.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >la surpêche</text><text x=\"185.0\" y=\"43.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >creuser une mare</text><rect x=\"0.5\" y=\"56.0\" width=\"359\" height=\"29.1\" fill=\"#f2f5f8\"/><text x=\"5.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >une espèce exotique envahissante</text><text x=\"185.0\" y=\"72.3\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >laisser des haies</text><text x=\"5.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"700\" >les pesticides</text><text x=\"185.0\" y=\"101.4\" font-size=\"12.1\" text-anchor=\"start\" fill=\"#1f2328\" font-weight=\"400\" >ne jamais relâcher un animal exotique</text><line x1=\"180.0\" y1=\"0\" x2=\"180.0\" y2=\"115.2\" stroke=\"#c9d1d9\" stroke-width=\"0.8\"/><rect x=\"0.5\" y=\"0.5\" width=\"359\" height=\"115.2\" fill=\"none\" stroke=\"#9aa4ad\" stroke-width=\"1\"/></svg>",
+     "legende": "Au départ de chaque chaîne, une plante ou une algue fabrique sa matière grâce à la lumière."
+    }
+   ],
+   "texte": {
+    "cm1": "<ul><li>Les animaux mangent d'autres êtres vivants, plantes ou animaux.</li><li>On dessine « <b>est mangé par</b> » par une <b>flèche</b> de la <b>proie</b> vers celui qui la mange.</li><li>Les chaînes se croisent : elles forment un <b>réseau alimentaire</b>.</li><li>Dans l'étang : algues → têtards → larves de libellule → perches → héron.</li><li>Si une espèce devient trop rare ou trop nombreuse, <b>tout le réseau</b> est touché.</li></ul><div class='encadre'><b>À retenir :</b> au départ de chaque chaîne, il y a une <b>plante</b> ou une <b>algue</b>.</div>",
+    "cm2": "<ul><li>Flèche « est mangé par » : de la <b>proie</b> vers le <b>prédateur</b>.</li><li>Les végétaux fabriquent leur propre matière grâce à la <b>lumière</b> : ils sont au départ des chaînes.</li><li><b>Surpêche</b> des perches : trop de larves de libellule, et le héron manque de poissons.</li><li>Espèces exotiques envahissantes : l'<b>écrevisse de Louisiane</b> (introduite en France en 1976), le <b>frelon asiatique</b> (observé depuis 2004).</li><li>Protéger : creuser une mare, garder les haies, éviter les pesticides. Pour aller plus loin (6<sup>e</sup>) : la <b>décomposition</b> rend la matière au sol.</li></ul><div class='encadre'><b>À retenir :</b> une action humaine peut perturber ou protéger un réseau alimentaire.</div>"
+   }
+  }
+ }
+}

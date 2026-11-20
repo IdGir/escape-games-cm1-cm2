@@ -8,6 +8,12 @@ Ce dossier contient les **données sources** (format des jeux classiques) d'où 
 
 **Vigilance** : vocabulaire du programme (« milieu de vie », « êtres vivants » ; ni biotope ni biocénose) ; pas de groupe « invertébrés » (on ne classe pas sur une absence) ; ton non alarmiste ; réserve et personnages inventés.
 
+## Imprimer
+
+- **Leçons A4 illustrées** (CM1 / CM2, compétence du programme, schémas, tableaux, frise du temps géologique, lexique) : `lecons-imprimables.html`.
+- **Évaluations** (fiches préparatoires, QCM, vrai/faux, études de documents, corrigés à la fin) : `evaluations-imprimables.html`.
+- Ces deux pages s'ouvrent aussi depuis la variante immersive (Bibliothèque → page « Leçons A4 »).
+
 ## Fil narratif
 
 Le ruisseau a débordé sur le campement de l'expédition, dans la réserve naturelle (inventée) du Val-des-Saules, en Bourgogne : toutes les fiches sont mélangées. Les élèves, jeunes naturalistes, aident cinq experts et rassemblent cinq mots qui ouvrent la boîte de la carte du vivant :

@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "929a4e2770";
+self.VERSION_HORS_LIGNE = "d7679d2d0f";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -1108,7 +1108,13 @@ self.FICHIERS_CODE = [
 "vingt-mille-lieues/sw.js",
 "vivant-ecosystemes/assets/data/dialogues.json",
 "vivant-ecosystemes/assets/data/enigmes.json",
-"vivant-ecosystemes/assets/data/lecons.json"
+"vivant-ecosystemes/assets/data/evaluations-embarquees.js",
+"vivant-ecosystemes/assets/data/evaluations.json",
+"vivant-ecosystemes/assets/data/lecons-a4.json",
+"vivant-ecosystemes/assets/data/lecons.json",
+"vivant-ecosystemes/css/print.css",
+"vivant-ecosystemes/evaluations-imprimables.html",
+"vivant-ecosystemes/lecons-imprimables.html"
 ];
 self.IMAGES_JEUX = {
 "alimentation": [

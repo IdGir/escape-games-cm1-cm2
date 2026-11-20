@@ -110,6 +110,9 @@ var LSU = {
   "grandes-explorations": {
    "epices": ["hg-rois", "~"], "techniques": ["hg-rois", "~"], "voyages": ["hg-localiser", "~"], "rencontres": ["hg-rois", "~"], "empires": ["hg-rois", "~"]
   },
+  "vivant-ecosystemes": {
+   "espece": ["sc-vivant", "="], "classer": ["sc-vivant", "="], "fossiles": ["sc-vivant", "~"], "ecosysteme": ["sc-terre", "="], "reseau": ["sc-terre", "="]
+  },
   "melanges": {
    "masses": ["sc-matiere", "~"], "conservation": ["sc-matiere", "="], "melanges": ["sc-matiere", "="],
    "separer-solides": ["sc-matiere", "="], "separer-liquide": ["sc-matiere", "="]

@@ -113,6 +113,16 @@ var FAMILLES = {
     "empires": "expliquer comment des pays d'Europe se sont partagé l'Amérique et ont exploité leurs colonies"
    }
   },
+  "vivant-ecosystemes": {
+   "deroule": "Dans une réserve naturelle imaginaire de Bourgogne, le ruisseau a inondé le campement d'une expédition : les élèves, jeunes naturalistes, ont aidé cinq experts à remettre en ordre leurs fiches en découvrant la diversité du vivant.",
+   "lecons": {
+    "espece": "décrire un être vivant par ce qu'il possède et expliquer ce qu'est une espèce",
+    "classer": "ranger des êtres vivants dans des groupes emboîtés et trouver le nom d'une petite bête avec une clé de détermination",
+    "fossiles": "expliquer ce qu'est un fossile et situer de grands repères de l'histoire de la Terre (fin des dinosaures)",
+    "ecosysteme": "décrire un écosystème (un milieu, des êtres vivants, leurs relations) : prédation et coopération",
+    "reseau": "dessiner un réseau alimentaire et expliquer ce qui arrive quand une espèce devient trop rare ou trop nombreuse"
+   }
+  },
   "lumiere": {
    "deroule": "Sur une île imaginaire, le phare ne s'allumait plus : en équipe, les élèves l'ont rallumé avant l'arrivée d'un bateau, en résolvant des énigmes sur la lumière, les ombres, le Soleil et la Lune.",
    "lecons": {
