@@ -20,3 +20,4 @@ Chaque média déposé avec importer-image.py ajoute une ligne : fichier · sour
 - `assets/videos/transition-e1.mp4` · Agnes AI (génération de nuit) · Vidéo générée par IA · 2026-11-16
 - `assets/videos/transition-e2.mp4` · Agnes AI (génération de nuit) · Vidéo générée par IA · 2026-11-17
 - `assets/videos/transition-e5.mp4` · Agnes AI (génération de nuit) · Vidéo générée par IA · 2026-11-18
+- `assets/videos/transition-e3.mp4` · Agnes AI (génération de nuit) · Vidéo générée par IA · 2026-11-19
