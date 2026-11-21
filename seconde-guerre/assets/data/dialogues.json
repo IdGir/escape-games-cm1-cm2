@@ -1,0 +1,154 @@
+{
+ "metadata": {
+  "jeu": "Radio Londres",
+  "sujet": "La Seconde Guerre mondiale : montée des dictatures, défaite de 1940 et Vichy, vie sous l'Occupation, Résistance, Libération et victoire des Alliés — histoire, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "phrase_bilan": "Après la crise, les DICTATURES menacent la paix ; en juin 1940, l'APPEL du 18 Juin refuse la défaite ; sous l'OCCUPATION, des Français choisissent la RÉSISTANCE, jusqu'à la LIBÉRATION.",
+  "lien_autres_jeux": "Suite directe des « Lettres du poilu » (n°19, Première Guerre mondiale) ; pont vers le jeu n°22 sur la construction européenne (« plus jamais ça »). Ancrage local : les maquis du Morvan.",
+  "sources": "Programme d'histoire du cycle 3 (BO n° 22 du 28 mai 2026) ; ministère des Armées (Chemins de mémoire) ; USHMM ; Encyclopædia Universalis ; Ordre de la Libération ; Fondation de la Résistance ; Mémorial de Caen ; Musée de la Résistance en Morvan. Détail : README.md, section Sources.",
+  "vigilance": "SUJET TRÈS SENSIBLE : aucune énigme notée sur les persécutions ; aucune image de camp ni symbole nazi ; vocabulaire exact (Shoah, génocide des Juifs) ; Vichy et la collaboration à côté de la Résistance ; village et personnages inventés ; prévoir un temps de parole après le jeu."
+ },
+ "personnages": {
+  "bastien": {
+   "nom": "Bastien",
+   "role": "Instituteur du village"
+  },
+  "paul": {
+   "nom": "Paul",
+   "role": "Cheminot, employé de la gare"
+  },
+  "madeleine": {
+   "nom": "Madeleine",
+   "role": "Épicière du village"
+  },
+  "marc": {
+   "nom": "Marc",
+   "role": "Opérateur radio du maquis"
+  },
+  "lucie": {
+   "nom": "Lucie",
+   "role": "Agente de liaison, 17 ans"
+  }
+ },
+ "intro_accueil": "Ici Lucie. Si vous entendez ce message, c'est que vous avez trouvé le vieux poste de radio caché dans la cave de l'école de Chantelune-en-Morvan. Nous sommes au printemps 1944. Vous êtes nos nouveaux messagers. Londres nous a envoyé un message important, mais il est arrivé en cinq morceaux, sur cinq fréquences. Chaque fréquence vous ramène dans un souvenir de ces années terribles, de 1938 à 1945. Écoutez chaque témoin, retrouvez chaque mot, et le poste s'allumera.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La salle de classe",
+   "decor": "classe",
+   "motCle": "DICTATURES",
+   "lieu": "La salle de classe de Chantelune-en-Morvan, en 1938",
+   "description": "Une salle de classe de village, des pupitres en bois, un poêle, une carte de l'Europe au mur, une frise à demi effacée au tableau noir et un journal posé sur le bureau du maître.",
+   "sens": [
+    "À voir : la carte de l'Europe punaisée au mur",
+    "À entendre : le tic-tac de la pendule de la classe",
+    "À toucher : le bois usé d'un pupitre"
+   ],
+   "dialogue_intro": {
+    "perso": "bastien",
+    "nom": "Bastien",
+    "texte": "Bonjour, je suis Bastien Morel, l'instituteur. En 1938, je dis à mes élèves que la paix est fragile. Depuis la grande crise, des chefs ont pris tout le pouvoir dans plusieurs pays d'Europe. Aidez-moi à expliquer ce qui se passe, avant qu'il ne soit trop tard."
+   },
+   "dialogue_reussite": {
+    "perso": "bastien",
+    "nom": "Bastien",
+    "texte": "Merci. Le premier mot est <b>DICTATURES</b>. En septembre 1939, la guerre éclate. Le deuxième souvenir vous attend à la gare, en juin 1940."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "La gare",
+   "decor": "gare",
+   "motCle": "APPEL",
+   "lieu": "La petite gare de Chantelune, en juin 1940",
+   "description": "Un quai de gare de campagne encombré de valises et de vélos, une horloge, une carte de France au mur du bureau du chef de gare et un poste de radio posé sur le guichet.",
+   "sens": [
+    "À voir : les valises empilées sur le quai",
+    "À entendre : la radio qui grésille dans le bureau",
+    "À toucher : la poignée froide d'une valise"
+   ],
+   "dialogue_intro": {
+    "perso": "paul",
+    "nom": "Paul",
+    "texte": "Bonjour, je suis Paul, je travaille à la gare. Depuis des jours, des familles arrivent du nord avec leurs valises : elles fuient l'armée allemande. Ce soir, la radio parle sans arrêt. Deux voix disent deux choses différentes. Aidez-moi à y voir clair."
+   },
+   "dialogue_reussite": {
+    "perso": "paul",
+    "nom": "Paul",
+    "texte": "Le deuxième mot est <b>APPEL</b> : l'appel du 18 Juin. Peu de gens l'ont entendu ce soir-là, mais il a donné du courage à beaucoup. Allez voir Madeleine, à l'épicerie."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "L'épicerie",
+   "decor": "epicerie",
+   "motCle": "OCCUPATION",
+   "lieu": "L'épicerie de Madeleine, pendant l'hiver 1942-1943",
+   "description": "Une petite épicerie de village aux étagères presque vides, un comptoir avec une balance, un cahier de comptes, des tickets de rationnement et une file de clients dehors, dans le froid.",
+   "sens": [
+    "À voir : les étagères presque vides",
+    "À entendre : la clochette de la porte",
+    "À toucher : les petits tickets de papier"
+   ],
+   "dialogue_intro": {
+    "perso": "madeleine",
+    "nom": "Madeleine",
+    "texte": "Bonjour, je suis Madeleine, l'épicière. Regardez mes étagères : il manque presque tout, et chacun doit donner ses tickets. Mon fils Robert vient de recevoir une convocation pour aller travailler en Allemagne. Aidez-moi à tenir mes comptes, et à comprendre ce que nous vivons."
+   },
+   "dialogue_reussite": {
+    "perso": "madeleine",
+    "nom": "Madeleine",
+    "texte": "Le troisième mot est <b>OCCUPATION</b>. Robert ne partira pas : il a rejoint le maquis. Et la petite fille qui vit chez moi, je dis qu'elle est ma nièce. Ses parents me l'ont confiée, car ils sont juifs et pourchassés. Personne ne doit le savoir. Allez retrouver Marc, dans la forêt."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "Le maquis",
+   "decor": "maquis",
+   "motCle": "RÉSISTANCE",
+   "lieu": "Une cabane de résistants cachée dans la forêt du Morvan, au printemps 1944",
+   "description": "Une cabane de bûcherons cachée sous les grands arbres, une table avec un poste émetteur dans une valise, un carnet, une carte roulée, une machine à écrire et une lampe tempête.",
+   "sens": [
+    "À voir : la valise du poste émetteur",
+    "À entendre : le vent dans les grands arbres",
+    "À toucher : les touches froides de la machine à écrire"
+   ],
+   "dialogue_intro": {
+    "perso": "marc",
+    "nom": "Marc",
+    "texte": "Chut ! Entrez vite. Je suis Marc, l'opérateur radio du maquis. Chaque soir, j'écoute Londres. Les messages arrivent codés, pour que l'occupant ne les comprenne pas. Ce soir, j'ai besoin de vous pour déchiffrer, et pour expliquer aux nouveaux venus ce qu'est la Résistance."
+   },
+   "dialogue_reussite": {
+    "perso": "marc",
+    "nom": "Marc",
+    "texte": "Le quatrième mot est <b>RÉSISTANCE</b>. Les résistants étaient peu nombreux au début, et ils ont tout risqué. Lucie vous attend sur la place du village : la Libération approche."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "La place de la mairie",
+   "decor": "mairie",
+   "motCle": "LIBÉRATION",
+   "lieu": "La place de la mairie de Chantelune, le 8 mai 1945",
+   "description": "Une place de village pavoisée de drapeaux tricolores, la mairie, un grand calendrier affiché, une carte de France dessinée à la main et, sur une table, un vieux poste de radio fermé.",
+   "sens": [
+    "À voir : les drapeaux tricolores aux fenêtres",
+    "À entendre : les cloches qui sonnent la victoire",
+    "À toucher : le bouton du vieux poste de radio"
+   ],
+   "dialogue_intro": {
+    "perso": "lucie",
+    "nom": "Lucie",
+    "texte": "Bonjour, c'est moi, Lucie. Pendant deux ans, j'ai porté des messages à vélo, cachés dans le guidon. Aujourd'hui, les cloches sonnent : la guerre est finie en Europe. Aidez-moi à retracer le chemin de la Libération, puis allumons enfin le poste."
+   },
+   "dialogue_fin": {
+    "perso": "lucie",
+    "nom": "Lucie",
+    "texte": "Le dernier mot est <b>LIBÉRATION</b>. Avec les cinq mots, le poste s'allume : « Ici Londres. Les Français parlent aux Français. » N'oubliez jamais celles et ceux qui ont dit non, ni toutes les victimes de cette guerre."
+   }
+  }
+ ]
+}

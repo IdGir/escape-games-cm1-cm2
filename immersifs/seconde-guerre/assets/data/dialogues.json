@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "bastien",
+  "texte": "Ici Lucie. Si vous entendez ce message, c'est que vous avez trouvé le vieux poste de radio caché dans la cave de l'école de Chantelune-en-Morvan. Nous sommes au printemps 1944. Vous êtes nos nouveaux messagers. Londres nous a envoyé un message important, mais il est arrivé en cinq morceaux, sur cinq fréquences. Chaque fréquence vous ramène dans un souvenir de ces années terribles, de 1938 à 1945. Écoutez chaque témoin, retrouvez chaque mot, et le poste s'allumera."
+ },
+ "coffre": {
+  "personnage": "bastien",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque fréquence, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Fréquence 1 — La salle de classe",
+   "plans": [
+    {
+     "decor": "classe",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "bastien",
+     "texte": "Bonjour, je suis Bastien Morel, l'instituteur. En 1938, je dis à mes élèves que la paix est fragile. Depuis la grande crise, des chefs ont pris tout le pouvoir dans plusieurs pays d'Europe. Aidez-moi à expliquer ce qui se passe, avant qu'il ne soit trop tard.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la fréquence 1",
+   "plans": [
+    {
+     "decor": "classe",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "bastien",
+     "texte": "Merci. Le premier mot est DICTATURES . En septembre 1939, la guerre éclate. Le deuxième souvenir vous attend à la gare, en juin 1940.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Fréquence 2 — La gare",
+   "plans": [
+    {
+     "decor": "gare",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "paul",
+     "texte": "Bonjour, je suis Paul, je travaille à la gare. Depuis des jours, des familles arrivent du nord avec leurs valises : elles fuient l'armée allemande. Ce soir, la radio parle sans arrêt. Deux voix disent deux choses différentes. Aidez-moi à y voir clair.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la fréquence 2",
+   "plans": [
+    {
+     "decor": "gare",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "paul",
+     "texte": "Le deuxième mot est APPEL : l'appel du 18 Juin. Peu de gens l'ont entendu ce soir-là, mais il a donné du courage à beaucoup. Allez voir Madeleine, à l'épicerie.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Fréquence 3 — L'épicerie",
+   "plans": [
+    {
+     "decor": "epicerie",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "madeleine",
+     "texte": "Bonjour, je suis Madeleine, l'épicière. Regardez mes étagères : il manque presque tout, et chacun doit donner ses tickets. Mon fils Robert vient de recevoir une convocation pour aller travailler en Allemagne. Aidez-moi à tenir mes comptes, et à comprendre ce que nous vivons.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la fréquence 3",
+   "plans": [
+    {
+     "decor": "epicerie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "madeleine",
+     "texte": "Le troisième mot est OCCUPATION . Robert ne partira pas : il a rejoint le maquis. Et la petite fille qui vit chez moi, je dis qu'elle est ma nièce. Ses parents me l'ont confiée, car ils sont juifs et pourchassés. Personne ne doit le savoir. Allez retrouver Marc, dans la forêt.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Fréquence 4 — Le maquis",
+   "plans": [
+    {
+     "decor": "maquis",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "marc",
+     "texte": "Chut ! Entrez vite. Je suis Marc, l'opérateur radio du maquis. Chaque soir, j'écoute Londres. Les messages arrivent codés, pour que l'occupant ne les comprenne pas. Ce soir, j'ai besoin de vous pour déchiffrer, et pour expliquer aux nouveaux venus ce qu'est la Résistance.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la fréquence 4",
+   "plans": [
+    {
+     "decor": "maquis",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "marc",
+     "texte": "Le quatrième mot est RÉSISTANCE . Les résistants étaient peu nombreux au début, et ils ont tout risqué. Lucie vous attend sur la place du village : la Libération approche.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Fréquence 5 — La place de la mairie",
+   "plans": [
+    {
+     "decor": "mairie",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "lucie",
+     "texte": "Bonjour, c'est moi, Lucie. Pendant deux ans, j'ai porté des messages à vélo, cachés dans le guidon. Aujourd'hui, les cloches sonnent : la guerre est finie en Europe. Aidez-moi à retracer le chemin de la Libération, puis allumons enfin le poste.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la fréquence 5",
+   "plans": [
+    {
+     "decor": "mairie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "lucie",
+     "texte": "Le dernier mot est LIBÉRATION . Avec les cinq mots, le poste s'allume : « Ici Londres. Les Français parlent aux Français. » N'oubliez jamais celles et ceux qui ont dit non, ni toutes les victimes de cette guerre.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Radio Londres »",
+   "plans": [
+    {
+     "decor": "mairie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "lucie",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "bastien",
+   "texte": "Notez le mot de cette fréquence : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "paul",
+   "texte": "Notez le mot de cette fréquence : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "madeleine",
+   "texte": "Notez le mot de cette fréquence : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "marc",
+   "texte": "Notez le mot de cette fréquence : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "lucie",
+   "texte": "Notez le mot de cette fréquence : il servira à ouvrir le coffre final."
+  }
+ }
+}

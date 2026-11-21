@@ -1,0 +1,74 @@
+{
+  "_commentaire": "Sources de production d'images et de vidéos. Pour AJOUTER un service : copier un bloc de « sources », changer l'adresse, le nom de la variable de clé et les noms des champs (voir « exemple-http-generique »), puis : python produire.py --liste-sources. La clé n'est jamais écrite ici : seulement le NOM de la variable d'environnement qui la contient (ou une ligne NOM=valeur dans cles-api.local, fichier jamais publié). Pour un service hors du cadre JSON/HTTP, indiquer « adaptateur » : un fichier .py avec produire_image(source, **kw) et/ou produire_video(source, **kw).",
+  "defaut": { "image": "agnes", "video": "agnes" },
+  "hebergement_images": {
+    "_commentaire": "Les services de vidéo « image de départ » lisent l'image par ADRESSE PUBLIQUE. raw-github : le fichier de assets/medias-depart/ est poussé sur la branche, puis lu sur raw.githubusercontent.com. Autre hébergement : { \"mode\": \"url-base\", \"url_base\": \"https://mon-site.fr/nautilus\" }.",
+    "mode": "raw-github"
+  },
+  "sources": {
+    "agnes": {
+      "nom": "Agnes AI",
+      "base_url": "https://apihub.agnes-ai.com",
+      "documentation": "https://wiki.agnes-ai.com",
+      "cle": { "env": "AGNES_API_KEY", "en_tete": "Authorization", "format": "Bearer {cle}", "optionnelle": true },
+      "cout": "image : selon le modèle ; vidéo agnes-video-2.5-flash : gratuite (720P, 4 à 12 s) ; agnes-video-2.5 : 0,025 $/s",
+      "image": {
+        "methode": "POST", "url": "{base_url}/v1/images/generations",
+        "modeles": ["agnes-image-2.5-flash", "agnes-image-2.1-flash"],
+        "taille_defaut": "2K",
+        "corps": { "model": "{modele}", "prompt": "{prompt}", "size": "{taille}", "ratio": "{ratio}",
+                   "extra_body": { "image": "{refs}", "response_format": "b64_json" } },
+        "reponse": { "b64": "data.0.b64_json", "url": "data.0.url" },
+        "references": { "mode": "urls", "max": 4, "formats_refuses": ["webp"] }
+      },
+      "video": {
+        "modeles": ["agnes-video-2.5-flash"],
+        "creer": { "methode": "POST", "url": "{base_url}/v1/videos",
+                   "corps": { "model": "{modele}", "prompt": "{prompt}", "mode": "keyframe", "first_frame": "{depart}", "last_frame": "{fin}",
+                              "seconds": "{secondes}", "size": "720P", "aspect_ratio": "16:9" },
+                   "reponse": { "id": "video_id" } },
+        "sonder": { "methode": "GET", "url": "{base_url}/agnesapi?video_id={id}&model_name={modele}",
+                    "statut": "status", "termine": ["completed"], "echec": ["failed"], "url_video": "url", "erreur": "error", "intervalle_s": 10 },
+        "depart": { "mode": "url" },
+        "attente_file_s": 60, "essais_file": 30
+      }
+    },
+    "openai-images": {
+      "nom": "API d'images compatible OpenAI (gpt-image, serveurs compatibles)",
+      "base_url": "https://api.openai.com", "base_url_env": "OPENAI_BASE_URL",
+      "cle": { "env": "OPENAI_API_KEY" },
+      "image": {
+        "methode": "POST", "url": "{base_url}/v1/images/generations",
+        "modeles": ["gpt-image-1"],
+        "tailles_par_ratio": { "16:9": "1536x1024", "3:4": "1024x1536", "1:1": "1024x1024" },
+        "corps": { "model": "{modele}", "prompt": "{prompt}", "size": "{taille}", "n": 1 },
+        "reponse": { "b64": "data.0.b64_json", "url": "data.0.url" }
+      }
+    },
+    "exemple-http-generique": {
+      "_commentaire": "MODÈLE À COPIER pour un nouveau service (inactif tant que la clé n'est pas définie). Un service d'images synchrone et un service de vidéo asynchrone (création, puis interrogation).",
+      "nom": "Mon service (exemple)",
+      "base_url": "https://api.exemple.fr",
+      "cle": { "env": "EXEMPLE_API_KEY", "en_tete": "X-Api-Key", "format": "{cle}" },
+      "image": {
+        "methode": "POST", "url": "{base_url}/generate",
+        "modeles": ["modele-a"],
+        "corps": { "text": "{prompt}", "model": "{modele}", "aspect": "{ratio}", "image_urls": "{refs}" },
+        "reponse": { "b64": "result.image_base64", "url": "result.image_url" }
+      },
+      "video": {
+        "modeles": ["modele-v"],
+        "creer": { "methode": "POST", "url": "{base_url}/video/jobs",
+                   "corps": { "text": "{prompt}", "model": "{modele}", "first_image": "{depart}", "duration": "{secondes}" },
+                   "reponse": { "id": "job.id" } },
+        "sonder": { "methode": "GET", "url": "{base_url}/video/jobs/{id}", "statut": "job.state", "termine": ["done"], "echec": ["error"], "url_video": "job.output.url", "intervalle_s": 15 },
+        "depart": { "mode": "data-uri" }
+      }
+    },
+    "fichier-local": {
+      "nom": "Images et vidéos faites ailleurs (Midjourney, ChatGPT, Runway, photo, dessin…)",
+      "type": "dossier", "dossier": "assets/medias-a-importer",
+      "_commentaire": "Rien à appeler : déposez les fichiers dans le dossier, nommés decor-<id>.png, portrait-<id>.png, depart-<video>.jpg ou video-<nom>.mp4, puis : python importer-image.py --dossier"
+    }
+  }
+}
