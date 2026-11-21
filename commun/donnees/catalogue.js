@@ -482,13 +482,16 @@ var CATALOGUE = {
     "P5"
    ],
    "competences": "Seconde Guerre mondiale : montée des extrêmes, collaboration et résistance, victoire des alliés.",
-   "dossier": null,
+   "dossier": "seconde-guerre",
+   "immersif": "immersifs/seconde-guerre",
+   "classique": false,
    "icone": "📻",
    "couleurs": [
-    "#6b4a2b",
-    "#c9a227"
+    "#3b4a5a",
+    "#8a2f2a"
    ],
-   "resume": "",
+   "resume": "Dans la cave de l'école, un vieux poste de radio clandestin : cinq fréquences ramènent les jeunes messagers de 1938 à 1945, de la montée des dictatures à la Libération.",
+   "medias_en_attente": true,
    "prompt": "20-seconde-guerre.md",
    "programme": [
     "hg2026"

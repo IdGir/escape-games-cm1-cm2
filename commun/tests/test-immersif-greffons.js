@@ -9,7 +9,7 @@ const fs = require("fs"), path = require("path");
 const { charger, compteur, dodo, attendreQue, clic, RACINE } = require("../../outils-tests/charge");
 const T = compteur("Outils communs dans les variantes immersives"); const ok = T.ok;
 const J = j => path.join(RACINE, "immersifs", j);
-const IMM = ["alimentation", "chateau-fort", "constitution", "electricite", "etats-matiere", "grandes-explorations", "lumiere", "melanges", "mouvement", "moyen-age-abbaye", "naissances-animaux", "objets-techniques", "renaissance", "station-meteo", "traite-colonies", "versailles", "vivant-ecosystemes", "grande-guerre"];
+const IMM = ["alimentation", "chateau-fort", "constitution", "electricite", "etats-matiere", "grandes-explorations", "lumiere", "melanges", "mouvement", "moyen-age-abbaye", "naissances-animaux", "objets-techniques", "renaissance", "station-meteo", "traite-colonies", "versailles", "vivant-ecosystemes", "grande-guerre", "seconde-guerre"];
 const avant = w => { w.VML_RAPIDE = true; };
 const SECTIONS = {};
 const donnees = j => JSON.parse(fs.readFileSync(path.join(J(j), "assets/data/enigmes.json"), "utf8"));
