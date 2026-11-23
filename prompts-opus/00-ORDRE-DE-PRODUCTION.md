@@ -36,8 +36,8 @@ Classés dans l'ordre du calendrier scolaire : la période 1 est en cours, on co
 | 16 | Le Testament de l'Empereur | Histoire | B | P4 | Napoléon, du général à l'empereur ; lieux, symboles et rites de la République ; lois protectrices des libertés. | `16-napoleon-republique.md` | [ ] |
 | 17 | L'Expédition biodiversité | Sciences | A | P4 | Panorama du vivant, biodiversité ; structure et dynamique d'un écosystème. | `17-vivant-ecosystemes.md` | [x] (commits 076946e et e66c306, 18/11/2026, à pousser ; immersif 5 grades seulement, médias en attente) |
 | 18 | Le Robot de l'atelier | Sciences | B | P4 | Traduire un langage simple en langage naturel ; utiliser un programme pour agir sur un objet technique. | `18-programmation-robot.md` | [ ] |
-| 19 | Les Lettres du poilu | Histoire | A | P5 | Première Guerre mondiale : causes, déroulement, conséquences. | `19-grande-guerre.md` | [ ] |
-| 20 | Radio Londres | Histoire | A | P5 | Seconde Guerre mondiale : montée des extrêmes, collaboration et résistance, victoire des alliés. | `20-seconde-guerre.md` | [ ] |
+| 19 | Les Lettres du poilu | Histoire | A | P5 | Première Guerre mondiale : causes, déroulement, conséquences. | `19-grande-guerre.md` | [x] (commits c81c9b5 et 2dd2f86, 19/11/2026, à pousser ; immersif 5 grades seulement, médias en attente, RELECTURE OBLIGATOIRE) |
+| 20 | Radio Londres | Histoire | A | P5 | Seconde Guerre mondiale : montée des extrêmes, collaboration et résistance, victoire des alliés. | `20-seconde-guerre.md` | [x] (commits 69e2fde et 534a971, 21/11/2026, à pousser ; immersif 5 grades seulement, médias en attente, RELECTURE OBLIGATOIRE) |
 | 21 | L'Exposition universelle | Histoire | B | P5 | Énergies et machines ; la ville industrielle, révolution industrielle et progrès technique. | `21-age-industriel.md` | [ ] |
 | 22 | Le Traité perdu de Rome | Histoire | B | P5 | La construction européenne : CECA, CEE, UE (monnaie unique, institutions). | `22-europe.md` | [ ] |
 | 23 | L'Observatoire des volcans | Sciences | A | P5 | La Terre, une planète active (activité interne). | `23-terre-active.md` | [ ] |
