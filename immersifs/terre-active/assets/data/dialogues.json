@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "ines",
+  "texte": "Bonjour, je suis Inès, géologue. Bienvenue à la station d'observation des Hauts, sur l'île de La Réunion. Votre classe est jumelée avec l'école de Bois-Clair, le village au pied du volcan. Cette nuit, nos capteurs ont enregistré de petits séismes sous le volcan, et une secousse a tout renversé dans la station. Rien de grave, mais demain matin, les habitants attendent notre message d'information. Vous êtes nos jeunes volcanologues et sismologues. Dans chaque salle, aidez la personne qui vous attend et notez le mot qu'elle vous donnera : les cinq mots composeront le message."
+ },
+ "coffre": {
+  "personnage": "ines",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — La galerie de la Terre",
+   "plans": [
+    {
+     "decor": "galerie",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "Entrez ! Voici ma galerie, un peu en désordre. Pour comprendre ce qui se passe sous le volcan, il faut d'abord savoir ce qu'il y a sous nos pieds. Aidez-moi à remettre les panneaux et les étiquettes de la maquette.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "galerie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Merci. Le premier mot est ACTIVE : la Terre est une planète active. Noé vous attend dans la salle des cartes.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — La salle des cartes",
+   "plans": [
+    {
+     "decor": "cartes",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "noe",
+     "texte": "Salut, moi c'est Noé. J'étudie les plaques, ces grands morceaux de la surface qui bougent tout doucement. Ma maquette et mon planisphère ont souffert de la secousse. On les répare ensemble ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "cartes",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "noe",
+     "texte": "Parfait. Le deuxième mot est PLAQUES : elles bougent lentement, et volcans et séismes se trouvent souvent à leurs frontières. Maëva vous attend sur le sentier du cratère.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — Le sentier du cratère",
+   "plans": [
+    {
+     "decor": "cratere",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "maeva",
+     "texte": "Bonjour ! Je suis Maëva, volcanologue. J'ai grandi ici, au pied du volcan. Il n'y a pas de danger sur ce sentier, il est surveillé. Mais mon carnet s'est envolé avec la secousse : aidez-moi à expliquer comment fonctionne un volcan.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "cratere",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "maeva",
+     "texte": "Bravo. Le troisième mot est MAGMA : la roche fondue qui monte dans le volcan. Samuel vous attend dans la salle des sismographes.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — La salle des sismographes",
+   "plans": [
+    {
+     "decor": "sismographes",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "samuel",
+     "texte": "Bonjour, je suis Samuel, sismologue. Je suis né en Guadeloupe, où l'on connaît bien les séismes. Cette nuit, mes appareils ont tout enregistré. Il faut maintenant répondre aux questions des habitants, avec les bons mots.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "sismographes",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "samuel",
+     "texte": "Excellent. Le quatrième mot est SECOUSSES : elles font trembler le sol, et on sait les mesurer. Adèle vous attend au centre de secours de Bois-Clair.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — Le centre de secours",
+   "plans": [
+    {
+     "decor": "secours",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "adele",
+     "texte": "Bonjour les scientifiques ! Je suis Adèle, lieutenante de sapeurs-pompiers. Mon travail, c'est que chacun sache quoi faire. Les risques existent, mais on sait s'y préparer. Aidez-moi à finir les affiches et le message pour les habitants.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "secours",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "adele",
+     "texte": "Le dernier mot est PRÉVENTION . Vous avez les cinq mots : composons le message d'information pour les habitants de Bois-Clair.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « L'Observatoire des volcans »",
+   "plans": [
+    {
+     "decor": "secours",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "adele",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "noe",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "maeva",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "samuel",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "adele",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
+}

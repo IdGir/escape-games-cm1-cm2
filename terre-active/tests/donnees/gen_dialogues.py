@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+"""Génère dialogues.json (L'Observatoire des volcans). Lancer : python gen_dialogues.py <dossier data>
+Station d'observation des Hauts et village de Bois-Clair (La Réunion) inventés ; personnages inventés ; ton rassurant."""
+import json, os, sys
+
+MOTS = ["ACTIVE", "PLAQUES", "MAGMA", "SECOUSSES", "PRÉVENTION"]
+PHRASE = "La Terre est une planète ACTIVE : ses PLAQUES bougent lentement, le MAGMA monte dans les volcans, les SECOUSSES font trembler le sol, et la PRÉVENTION protège les habitants."
+
+DIALOGUES = {
+    "metadata": {"jeu": "L'Observatoire des volcans",
+                 "sujet": "La Terre, une planète active : manifestations de l'activité interne et externe, enveloppes de la Terre, plaques, volcans, séismes, risque naturel, prévention et protection — sciences, cycle 3",
+                 "niveaux": ["CM1", "CM2"],
+                 "phrase_bilan": PHRASE,
+                 "lien_autres_jeux": "Fait suite à « La Station météo disparue » (n°03) ; prépare « Mission Climat » (n°26).",
+                 "sources": "Programme de sciences et technologie du cycle 3 (BO n° 24 du 11 juin 2026) ; IPGP ; SDES ; préfectures (consignes séisme) ; ministère de l'Europe et des Affaires étrangères ; Géorisques. Détail : README.md, section Sources.",
+                 "vigilance": "Ton rassurant (les risques existent, on sait s'y préparer) ; on ne prévoit pas le jour d'un séisme ; la catastrophe de 1902 est évoquée avec sobriété ; station, village et personnages inventés."},
+    "personnages": {"ines": {"nom": "Inès", "role": "Géologue, responsable de la galerie de la station"},
+                    "noe": {"nom": "Noé", "role": "Géophysicien, spécialiste des plaques"},
+                    "maeva": {"nom": "Maëva", "role": "Volcanologue, née à La Réunion"},
+                    "samuel": {"nom": "Samuel", "role": "Sismologue, né en Guadeloupe"},
+                    "adele": {"nom": "Adèle", "role": "Lieutenante de sapeurs-pompiers du centre de secours de Bois-Clair"}},
+    "intro_accueil": "Bonjour, je suis Inès, géologue. Bienvenue à la station d'observation des Hauts, sur l'île de La Réunion. Votre classe est jumelée avec l'école de Bois-Clair, le village au pied du volcan. Cette nuit, nos capteurs ont enregistré de petits séismes sous le volcan, et une secousse a tout renversé dans la station. Rien de grave, mais demain matin, les habitants attendent notre message d'information. Vous êtes nos jeunes volcanologues et sismologues. Dans chaque salle, aidez la personne qui vous attend et notez le mot qu'elle vous donnera : les cinq mots composeront le message.",
+    "salles": [
+        {"num": 1, "titre": "La galerie de la Terre", "decor": "galerie", "motCle": MOTS[0], "lieu": "La galerie d'exposition de la station d'observation des Hauts",
+         "description": "Une grande salle avec une maquette de la Terre coupée en deux, des panneaux tombés au sol, des vitrines de roches volcaniques et une baie vitrée qui donne sur le volcan.",
+         "sens": ["À voir : la maquette de la Terre coupée en deux", "À entendre : le bourdonnement des ordinateurs qui redémarrent", "À toucher : une roche volcanique légère et pleine de trous"],
+         "dialogue_intro": {"perso": "ines", "nom": "Inès", "texte": "Entrez ! Voici ma galerie, un peu en désordre. Pour comprendre ce qui se passe sous le volcan, il faut d'abord savoir ce qu'il y a sous nos pieds. Aidez-moi à remettre les panneaux et les étiquettes de la maquette."},
+         "dialogue_reussite": {"perso": "ines", "nom": "Inès", "texte": "Merci. Le premier mot est <b>ACTIVE</b> : la Terre est une planète active. Noé vous attend dans la salle des cartes."}},
+        {"num": 2, "titre": "La salle des cartes", "decor": "cartes", "motCle": MOTS[1], "lieu": "La salle des cartes de la station",
+         "description": "Un grand planisphère au mur, des punaises tombées, une table avec une maquette de plaques en polystyrène sur de la pâte à modeler, et des rouleaux de cartes.",
+         "sens": ["À voir : le grand planisphère et ses punaises", "À entendre : le froissement des cartes qu'on déroule", "À toucher : la pâte molle de la maquette"],
+         "dialogue_intro": {"perso": "noe", "nom": "Noé", "texte": "Salut, moi c'est Noé. J'étudie les plaques, ces grands morceaux de la surface qui bougent tout doucement. Ma maquette et mon planisphère ont souffert de la secousse. On les répare ensemble ?"},
+         "dialogue_reussite": {"perso": "noe", "nom": "Noé", "texte": "Parfait. Le deuxième mot est <b>PLAQUES</b> : elles bougent lentement, et volcans et séismes se trouvent souvent à leurs frontières. Maëva vous attend sur le sentier du cratère."}},
+        {"num": 3, "titre": "Le sentier du cratère", "decor": "cratere", "motCle": MOTS[2], "lieu": "Le sentier d'observation au bord de l'enclos du cratère",
+         "description": "Un sentier balisé sur une ancienne coulée de lave noire, une table d'orientation, des capteurs sur trépied, et au loin le cratère d'où monte une fine fumée.",
+         "sens": ["À voir : la fine fumée au-dessus du cratère", "À entendre : le vent sur la lave refroidie", "À toucher : la lave durcie, rugueuse et sombre"],
+         "dialogue_intro": {"perso": "maeva", "nom": "Maëva", "texte": "Bonjour ! Je suis Maëva, volcanologue. J'ai grandi ici, au pied du volcan. Il n'y a pas de danger sur ce sentier, il est surveillé. Mais mon carnet s'est envolé avec la secousse : aidez-moi à expliquer comment fonctionne un volcan."},
+         "dialogue_reussite": {"perso": "maeva", "nom": "Maëva", "texte": "Bravo. Le troisième mot est <b>MAGMA</b> : la roche fondue qui monte dans le volcan. Samuel vous attend dans la salle des sismographes."}},
+        {"num": 4, "titre": "La salle des sismographes", "decor": "sismographes", "motCle": MOTS[3], "lieu": "La salle des sismographes de la station",
+         "description": "Des écrans qui affichent des tracés en zigzag, un vieux sismographe à tambour, un grand tableau avec un schéma de séisme et des tiroirs d'étiquettes ouverts.",
+         "sens": ["À voir : les tracés en zigzag sur les écrans", "À entendre : le léger grattement de l'aiguille du sismographe", "À toucher : la table qui ne bouge plus"],
+         "dialogue_intro": {"perso": "samuel", "nom": "Samuel", "texte": "Bonjour, je suis Samuel, sismologue. Je suis né en Guadeloupe, où l'on connaît bien les séismes. Cette nuit, mes appareils ont tout enregistré. Il faut maintenant répondre aux questions des habitants, avec les bons mots."},
+         "dialogue_reussite": {"perso": "samuel", "nom": "Samuel", "texte": "Excellent. Le quatrième mot est <b>SECOUSSES</b> : elles font trembler le sol, et on sait les mesurer. Adèle vous attend au centre de secours de Bois-Clair."}},
+        {"num": 5, "titre": "Le centre de secours", "decor": "secours", "motCle": MOTS[4], "lieu": "Le centre de secours des sapeurs-pompiers de Bois-Clair",
+         "description": "Un bureau avec la carte des risques du village, des affiches de consignes, un poste de radio, des casques rangés, et un ordinateur où attend le message d'information verrouillé.",
+         "sens": ["À voir : la carte des risques épinglée au mur", "À entendre : la radio qui annonce un exercice", "À toucher : un casque de pompier, lourd et solide"],
+         "dialogue_intro": {"perso": "adele", "nom": "Adèle", "texte": "Bonjour les scientifiques ! Je suis Adèle, lieutenante de sapeurs-pompiers. Mon travail, c'est que chacun sache quoi faire. Les risques existent, mais on sait s'y préparer. Aidez-moi à finir les affiches et le message pour les habitants."},
+         "dialogue_fin": {"perso": "ines", "nom": "Inès", "texte": "Le dernier mot est <b>PRÉVENTION</b>. Vous avez les cinq mots : composons le message d'information pour les habitants de Bois-Clair."}},
+    ]}
+
+
+def main(dest):
+    json.dump(DIALOGUES, open(os.path.join(dest, "dialogues.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1] if len(sys.argv) > 1 else ".")

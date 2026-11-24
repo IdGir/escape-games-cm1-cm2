@@ -1,0 +1,1544 @@
+{
+ "metadata": {
+  "jeu": "L'Observatoire des volcans",
+  "version": 1,
+  "differenciation": "CM1 : 3 énigmes par salle (15 au total). CM2 : 4 énigmes par salle (20 au total). Le champ \"niveaux\" limite une énigme à un niveau ; les blocs \"cm1\" / \"cm2\" / \"commun\" portent les données.",
+  "types": [
+   "association",
+   "code",
+   "ordre",
+   "plan",
+   "qcm",
+   "tri",
+   "trous",
+   "vraifaux"
+  ],
+  "sources": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Structure de la Terre » (2018) ; Ministère de la Culture, « Patrimoine mondial de l'Unesco : une victoire volcanique » (6 juillet 2018) ; Espace des sciences, Sciences Ouest n° 416, « L'éruption de la montagne Pelée, détonateur de la volcanologie » (2024) ; Futura-Sciences, « Il y a 120 ans, la plus grande catastrophe volcanique du XXe siècle » (2022) ; Futura-Sciences, « Le Piton de la Fournaise s'est réveillé » (2020) ; Institut de physique du globe de Paris (IPGP), observatoires volcanologiques ; IPGP, communiqué « Soufrière 50 » (juin 2026) ; Service des données et études statistiques (SDES), Chiffres clés des risques naturels, « Séismes en métropole et en outre-mer » (2023) ; Préfecture du Puy-de-Dôme, « Les bons réflexes en cas de séisme » ; préfecture de la Nièvre, DDRM 2019, « Consignes risque sismique » ; ministère de l'Europe et des Affaires étrangères, « Que faire en cas de séisme » et « Que faire en cas d'éruption volcanique » (2026) ; Géorisques (georisques.gouv.fr). Détail : README.md, section Sources.",
+  "media": "Chaque énigme accepte un bloc \"media\" : {\"base\":\"e3-1\",\"legende\":\"…\",\"source\":\"…\"}. Les schémas (coupe de la Terre, maquette des plaques, volcan, séisme, carte des risques) sont dessinés en SVG par script : ne jamais les remplacer par des images générées par IA. Volcans réels : photos Wikimedia Commons."
+ },
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La galerie de la Terre — Une planète active",
+   "enigmes": [
+    {
+     "id": "1-1",
+     "titre": "Les panneaux renversés",
+     "type": "tri",
+     "consigne": {
+      "cm1": "La secousse de cette nuit a fait tomber les panneaux de la galerie. Range chaque phénomène : vient-il de l'intérieur de la Terre ou de l'air et de l'eau, à la surface ?",
+      "cm2": "Range chaque phénomène selon son origine : activité interne (sous nos pieds) ou activité externe (l'air et l'eau, à la surface)."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Structure de la Terre » (2018)",
+     "correction": "Les éruptions volcaniques, les coulées de lave et les séismes viennent de l'intérieur de la Terre : ce sont des manifestations de l'activité interne. Les tempêtes, les inondations et l'érosion des falaises par les vagues viennent de l'air et de l'eau : activité externe. En CM2 : un tsunami est le plus souvent provoqué par un séisme sous la mer (interne) ; un cyclone et un glissement de terrain après de fortes pluies sont externes.",
+     "indices": {
+      "cm1": [
+       "Sous nos pieds : la chaleur de la Terre.",
+       "Le vent et la pluie viennent de l'air.",
+       "Un séisme fait trembler le sol depuis l'intérieur."
+      ],
+      "cm2": [
+       "Un tsunami suit souvent un séisme sous la mer.",
+       "Un cyclone est un vent très violent.",
+       "Le glissement vient ici des fortes pluies."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "int",
+        "titre": "Vient de l'intérieur de la Terre"
+       },
+       {
+        "id": "ext",
+        "titre": "Vient de l'air et de l'eau"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une éruption volcanique",
+        "col": "int"
+       },
+       {
+        "txt": "un séisme",
+        "col": "int"
+       },
+       {
+        "txt": "une coulée de lave",
+        "col": "int"
+       },
+       {
+        "txt": "une tempête",
+        "col": "ext"
+       },
+       {
+        "txt": "une inondation",
+        "col": "ext"
+       },
+       {
+        "txt": "une falaise rongée par les vagues",
+        "col": "ext"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "int",
+        "titre": "Activité interne"
+       },
+       {
+        "id": "ext",
+        "titre": "Activité externe"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une éruption volcanique",
+        "col": "int"
+       },
+       {
+        "txt": "un séisme",
+        "col": "int"
+       },
+       {
+        "txt": "un tsunami après un séisme sous la mer",
+        "col": "int"
+       },
+       {
+        "txt": "une coulée de lave",
+        "col": "int"
+       },
+       {
+        "txt": "un cyclone",
+        "col": "ext"
+       },
+       {
+        "txt": "une inondation",
+        "col": "ext"
+       },
+       {
+        "txt": "un glissement de terrain après de fortes pluies",
+        "col": "ext"
+       },
+       {
+        "txt": "une falaise rongée par les vagues",
+        "col": "ext"
+       }
+      ]
+     },
+     "lecon": "activite"
+    },
+    {
+     "id": "1-2",
+     "titre": "La maquette coupée",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Au milieu de la galerie, la grande maquette de la Terre est coupée en deux. Ses étiquettes sont tombées. Place chaque mot sur son repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La maquette d'Inès : la Terre coupée en deux\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La maquette d'Inès : la Terre coupée en deux</text><path d='M10,300 A220,220 0 0 1 450,300 Z' fill='#7a5a3a'/><path d='M20,300 A210,210 0 0 1 440,300 Z' fill='#e07b39'/><path d='M130,300 A100,100 0 0 1 330,300 Z' fill='#f2c14e'/><path d='M185,300 A45,45 0 0 1 275,300 Z' fill='#fbe7a1'/><line x1='0' y1='300' x2='460' y2='300' stroke='#2a1d17' stroke-width='2'/><circle cx='230' cy='300' r='4' fill='#2a1d17'/><text x='560' y='70' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La croûte est dessinée</text><text x='560' y='85' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>plus épaisse qu'en réalité</text><text x='560' y='100' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>pour être visible.</text><circle cx='80' cy='145' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='80' y='150' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='120' cy='190' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='120' y='195' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='168' cy='260' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='168' y='265' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "cm2": "Replace les étiquettes de la maquette de la Terre sur leurs repères. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La maquette d'Inès : la Terre coupée en deux\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La maquette d'Inès : la Terre coupée en deux</text><path d='M10,300 A220,220 0 0 1 450,300 Z' fill='#7a5a3a'/><path d='M20,300 A210,210 0 0 1 440,300 Z' fill='#e07b39'/><path d='M130,300 A100,100 0 0 1 330,300 Z' fill='#f2c14e'/><path d='M185,300 A45,45 0 0 1 275,300 Z' fill='#fbe7a1'/><line x1='0' y1='300' x2='460' y2='300' stroke='#2a1d17' stroke-width='2'/><circle cx='230' cy='300' r='4' fill='#2a1d17'/><text x='560' y='70' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La croûte est dessinée</text><text x='560' y='85' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>plus épaisse qu'en réalité</text><text x='560' y='100' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>pour être visible.</text><circle cx='80' cy='145' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='80' y='150' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='120' cy='190' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='120' y='195' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='168' cy='260' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='168' y='265' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='301' cy='229' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='301' y='234' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='230' cy='278' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='230' y='283' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Structure de la Terre » (2018)",
+     "correction": "Le repère 1 montre la croûte, la mince enveloppe où nous vivons ; le repère 2 le manteau, très épais ; le repère 3 le noyau, au centre. En CM2 : le repère 4 marque la limite entre le manteau et le noyau, vers 2 900 km de profondeur, et le repère 5 le centre de la Terre, à environ 6 400 km. L'atmosphère et l'océan ne sont pas des enveloppes de l'intérieur du globe.",
+     "indices": {
+      "cm1": [
+       "La croûte est la fine bordure extérieure.",
+       "Le manteau est la couche la plus épaisse.",
+       "Le noyau est au centre."
+      ],
+      "cm2": [
+       "Le centre est le point le plus profond.",
+       "2 900 km : la limite entre deux enveloppes.",
+       "L'air et l'eau sont au-dessus de la croûte."
+      ]
+     },
+     "cm1": {
+      "titre": "La maquette d'Inès",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "la croûte"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "le manteau"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "le noyau"
+       }
+      ],
+      "etiquettes": [
+       "la croûte",
+       "le manteau",
+       "le noyau"
+      ]
+     },
+     "cm2": {
+      "titre": "La maquette d'Inès",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "la croûte"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "le manteau"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "le noyau"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "environ 2 900 km"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "le centre, à environ 6 400 km"
+       }
+      ],
+      "etiquettes": [
+       "la croûte",
+       "le manteau",
+       "le noyau",
+       "environ 2 900 km",
+       "le centre, à environ 6 400 km",
+       "l'atmosphère",
+       "l'océan"
+      ]
+     },
+     "lecon": "activite"
+    },
+    {
+     "id": "1-3",
+     "titre": "Le quiz de la galerie",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Inès prépare le quiz des visiteurs de la galerie. Réponds à ses questions.",
+      "cm2": "Inès vérifie les réponses du quiz de la galerie. Choisis la bonne réponse."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Structure de la Terre » (2018) ; Ministère de la Culture, « Patrimoine mondial de l'Unesco : une victoire volcanique » (6 juillet 2018)",
+     "correction": "La Terre est une planète active : sa surface change, parfois lentement, parfois brusquement. La croûte est l'enveloppe la plus fine, le noyau est au centre. En CM2 : sous les continents, la croûte mesure en moyenne environ 30 km ; le manteau descend jusqu'à environ 2 900 km ; personne n'est allé dans le manteau, on l'étudie grâce aux ondes des séismes.",
+     "indices": {
+      "cm1": [
+       "Une planète active change.",
+       "La croûte est fine comme une peau.",
+       "Le noyau est au milieu."
+      ],
+      "cm2": [
+       "30 km, c'est très peu à côté de 6 400 km.",
+       "2 900 km : la fin du manteau.",
+       "Les ondes des séismes traversent la Terre."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Que veut dire « la Terre est une planète active » ?",
+        "options": [
+         "sa surface ne change jamais",
+         "sa surface change, parfois brusquement",
+         "elle tourne plus vite chaque année",
+         "elle n'a pas d'intérieur"
+        ],
+        "bonne": 1,
+        "explication": "Volcans et séismes en sont des signes."
+       },
+       {
+        "q": "Quelle est l'enveloppe la plus fine ?",
+        "options": [
+         "le noyau",
+         "le manteau",
+         "la croûte",
+         "le centre"
+        ],
+        "bonne": 2,
+        "explication": "Nous vivons sur la croûte."
+       },
+       {
+        "q": "Où se trouve le noyau ?",
+        "options": [
+         "à la surface",
+         "au centre de la Terre",
+         "dans les nuages",
+         "au fond de la mer"
+        ],
+        "bonne": 1,
+        "explication": "C'est la partie la plus profonde."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Sous les continents, quelle est l'épaisseur moyenne de la croûte ?",
+        "options": [
+         "environ 3 km",
+         "environ 30 km",
+         "environ 3 000 km",
+         "environ 6 400 km"
+        ],
+        "bonne": 1,
+        "explication": "C'est très mince par rapport au rayon de la Terre."
+       },
+       {
+        "q": "Jusqu'à quelle profondeur descend le manteau ?",
+        "options": [
+         "environ 30 km",
+         "environ 290 km",
+         "environ 2 900 km",
+         "environ 29 000 km"
+        ],
+        "bonne": 2,
+        "explication": "Ensuite commence le noyau."
+       },
+       {
+        "q": "Comment les scientifiques étudient-ils l'intérieur de la Terre ?",
+        "options": [
+         "en y descendant en ascenseur",
+         "grâce aux ondes des séismes",
+         "en creusant jusqu'au noyau",
+         "avec un télescope"
+        ],
+        "bonne": 1,
+        "explication": "Personne n'est jamais allé dans le manteau."
+       },
+       {
+        "q": "Pourquoi dit-on que la Terre est une planète active ?",
+        "options": [
+         "parce qu'elle a des océans",
+         "parce que sa surface change, parfois brusquement",
+         "parce qu'elle a une Lune",
+         "parce qu'il y pleut"
+        ],
+        "bonne": 1,
+        "explication": "Les volcans et les séismes le montrent."
+       }
+      ]
+     },
+     "lecon": "activite"
+    },
+    {
+     "id": "1-4",
+     "titre": "Le voyage vers le centre",
+     "type": "ordre",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Inès imagine un voyage de la surface jusqu'au centre de la Terre. Remets les étapes dans l'ordre, de la surface au centre.",
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Structure de la Terre » (2018)",
+     "correction": "On part de la surface (montagnes et océans), on traverse la croûte (environ 30 km sous les continents), puis le manteau jusqu'à environ 2 900 km, puis le noyau, et l'on arrive au centre, à environ 6 400 km de profondeur.",
+     "indices": {
+      "cm2": [
+       "On commence là où nous vivons.",
+       "Le manteau est sous la croûte.",
+       "6 400 km, c'est le plus profond."
+      ]
+     },
+     "commun": {
+      "items": [
+       {
+        "txt": "La surface : montagnes et océans",
+        "rang": 1,
+        "sous": "0 km"
+       },
+       {
+        "txt": "La croûte",
+        "rang": 2,
+        "sous": "jusqu'à environ 30 km sous les continents"
+       },
+       {
+        "txt": "Le manteau",
+        "rang": 3,
+        "sous": "jusqu'à environ 2 900 km"
+       },
+       {
+        "txt": "Le noyau",
+        "rang": 4,
+        "sous": "au-delà de 2 900 km"
+       },
+       {
+        "txt": "Le centre de la Terre",
+        "rang": 5,
+        "sous": "à environ 6 400 km"
+       }
+      ]
+     },
+     "lecon": "activite"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "titre": "La salle des cartes — Les plaques",
+   "enigmes": [
+    {
+     "id": "2-1",
+     "titre": "La maquette de Noé",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Noé a construit une maquette de deux plaques qui se rapprochent. La secousse a fait tomber ses étiquettes. Place chaque mot sur son repère.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La maquette de Noé : deux plaques qui se rapprochent\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La maquette de Noé : deux plaques qui se rapprochent</text><rect x='20' y='150' width='600' height='130' fill='#e8a46a'/><rect x='20' y='118' width='300' height='22' fill='#5aa0c8'/><polygon points='20,140 320,140 470,250 470,270 300,160 20,160' fill='#6b6b6b'/><polygon points='330,120 620,120 620,170 470,170 330,140' fill='#8c6a46'/><polygon points='470,120 500,72 530,120' fill='#7a4a2a'/><ellipse cx='505' cy='58' rx='16' ry='10' fill='#9a9a9a'/><ellipse cx='520' cy='44' rx='20' ry='12' fill='#b0b0b0'/><line x1='500' y1='120' x2='470' y2='230' stroke='#d9481c' stroke-width='4' stroke-dasharray='6,4'/><circle cx='400' cy='192' r='9' fill='#ffd23f' stroke='#b03a2e' stroke-width='3'/><line x1='120' y1='105' x2='220' y2='105' stroke='#2a1d17' stroke-width='2.5'/><polygon points='230,105 220,99 220,111' fill='#2a1d17'/><line x1='600' y1='100' x2='555' y2='100' stroke='#2a1d17' stroke-width='2.5'/><polygon points='545,100 555,106 555,94' fill='#2a1d17'/><text x='175' y='95' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>lent mouvement</text><text x='575' y='90' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'></text><circle cx='590' cy='145' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='590' y='150' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='120' cy='230' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='120' y='235' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='470' cy='80' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='470' y='85' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "cm2": "Replace les étiquettes de la maquette de Noé. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La maquette de Noé : deux plaques qui se rapprochent\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La maquette de Noé : deux plaques qui se rapprochent</text><rect x='20' y='150' width='600' height='130' fill='#e8a46a'/><rect x='20' y='118' width='300' height='22' fill='#5aa0c8'/><polygon points='20,140 320,140 470,250 470,270 300,160 20,160' fill='#6b6b6b'/><polygon points='330,120 620,120 620,170 470,170 330,140' fill='#8c6a46'/><polygon points='470,120 500,72 530,120' fill='#7a4a2a'/><ellipse cx='505' cy='58' rx='16' ry='10' fill='#9a9a9a'/><ellipse cx='520' cy='44' rx='20' ry='12' fill='#b0b0b0'/><line x1='500' y1='120' x2='470' y2='230' stroke='#d9481c' stroke-width='4' stroke-dasharray='6,4'/><circle cx='400' cy='192' r='9' fill='#ffd23f' stroke='#b03a2e' stroke-width='3'/><line x1='120' y1='105' x2='220' y2='105' stroke='#2a1d17' stroke-width='2.5'/><polygon points='230,105 220,99 220,111' fill='#2a1d17'/><line x1='600' y1='100' x2='555' y2='100' stroke='#2a1d17' stroke-width='2.5'/><polygon points='545,100 555,106 555,94' fill='#2a1d17'/><text x='175' y='95' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>lent mouvement</text><text x='575' y='90' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'></text><circle cx='590' cy='145' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='590' y='150' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='120' cy='230' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='120' y='235' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='470' cy='80' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='470' y='85' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='400' cy='215' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='400' y='220' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='180' cy='150' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='180' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Structure de la Terre » (2018)",
+     "correction": "Le repère 1 montre une plaque, posée sur le repère 2, le manteau ; le repère 3 montre un volcan, près de la frontière des deux plaques. En CM2 : le repère 4 est le foyer d'un séisme, là où la roche casse, et le repère 5 la plaque qui s'enfonce sous l'autre. Le noyau est bien plus profond, et un glacier n'a rien à faire sur cette maquette.",
+     "indices": {
+      "cm1": [
+       "La plaque est la couche dure du dessus.",
+       "Le manteau est en dessous.",
+       "Le volcan a un panache de fumée."
+      ],
+      "cm2": [
+       "Le foyer est l'étoile jaune.",
+       "Une plaque plonge vers le bas.",
+       "Le noyau n'est pas sur la maquette."
+      ]
+     },
+     "cm1": {
+      "titre": "La maquette de Noé",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "une plaque"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "le manteau"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "un volcan"
+       }
+      ],
+      "etiquettes": [
+       "une plaque",
+       "le manteau",
+       "un volcan"
+      ]
+     },
+     "cm2": {
+      "titre": "La maquette de Noé",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "une plaque"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "le manteau"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "un volcan"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "le foyer d'un séisme"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "la plaque qui s'enfonce"
+       }
+      ],
+      "etiquettes": [
+       "une plaque",
+       "le manteau",
+       "un volcan",
+       "le foyer d'un séisme",
+       "la plaque qui s'enfonce",
+       "le noyau",
+       "un glacier"
+      ]
+     },
+     "lecon": "plaques"
+    },
+    {
+     "id": "2-2",
+     "titre": "Les notes de Noé",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Noé a écrit des phrases sur les plaques, mais la secousse a mélangé ses fiches. Pour chaque phrase, choisis vrai ou faux.",
+      "cm2": "Noé relit ses notes avant de les afficher. Pour chaque phrase, choisis vrai ou faux."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Service des données et études statistiques (SDES), Chiffres clés des risques naturels, « Séismes en métropole et en outre-mer » (2023)",
+     "correction": "La surface de la Terre est découpée en grandes plaques qui bougent très lentement, de quelques centimètres par an : on ne sent pas ce mouvement. La plupart des volcans et des séismes sont près des frontières entre les plaques. En CM2 : les Antilles sont à la frontière de plusieurs plaques, d'où les volcans et les séismes de Guadeloupe et de Martinique ; une maquette est un modèle, pas la réalité.",
+     "indices": {
+      "cm1": [
+       "Pense aux morceaux d'un puzzle.",
+       "Quelques centimètres par an, c'est très lent.",
+       "Les frontières sont les zones agitées."
+      ],
+      "cm2": [
+       "Les Antilles : plusieurs plaques se rencontrent.",
+       "Une maquette simplifie.",
+       "On ne sent pas bouger les plaques."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "La surface de la Terre est découpée en grandes plaques.",
+        "vrai": true,
+        "explication": "Comme les morceaux d'un puzzle."
+       },
+       {
+        "txt": "Les plaques bougent de plusieurs mètres chaque jour.",
+        "vrai": false,
+        "explication": "Elles bougent de quelques centimètres par an."
+       },
+       {
+        "txt": "Beaucoup de volcans se trouvent près des frontières entre les plaques.",
+        "vrai": true,
+        "explication": "C'est là que la Terre est la plus active."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Les plaques bougent de quelques centimètres par an.",
+        "vrai": true,
+        "explication": "On ne sent pas ce mouvement."
+       },
+       {
+        "txt": "La plupart des séismes ont lieu au milieu des plaques, loin des frontières.",
+        "vrai": false,
+        "explication": "La plupart sont près des frontières."
+       },
+       {
+        "txt": "La Guadeloupe et la Martinique sont à la frontière de plusieurs plaques.",
+        "vrai": true,
+        "explication": "D'où leurs volcans et leurs séismes."
+       },
+       {
+        "txt": "Une maquette montre exactement la réalité, à la bonne taille.",
+        "vrai": false,
+        "explication": "C'est un modèle simplifié."
+       },
+       {
+        "txt": "On sent les plaques bouger quand on marche.",
+        "vrai": false,
+        "explication": "Leur mouvement est bien trop lent."
+       }
+      ]
+     },
+     "lecon": "plaques"
+    },
+    {
+     "id": "2-3",
+     "titre": "Ce que représente la maquette",
+     "type": "association",
+     "consigne": {
+      "cm1": "Noé explique sa maquette aux visiteurs. Relie chaque élément de la maquette à ce qu'il représente dans la réalité.",
+      "cm2": "Relie chaque élément de la maquette de Noé à ce qu'il représente dans la réalité."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5)",
+     "correction": "Les plaques de polystyrène représentent les plaques de la surface ; la pâte molle en dessous, le manteau ; la main qui pousse lentement, le mouvement des plaques. En CM2 : la pâte qui se plisse représente une montagne qui se forme ; la fente qui s'ouvre, une frontière où les plaques s'écartent ; le craquement brusque, un séisme.",
+     "indices": {
+      "cm1": [
+       "Le polystyrène est dur, comme les plaques.",
+       "Le dessous est mou et chaud dans la réalité.",
+       "La main pousse lentement."
+      ],
+      "cm2": [
+       "Un pli de pâte, c'est un relief.",
+       "Une fente, c'est un écartement.",
+       "Un craquement brusque, c'est une roche qui casse."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "deux plaques de polystyrène",
+        "d": "deux plaques de la surface"
+       },
+       {
+        "g": "la pâte molle en dessous",
+        "d": "le manteau"
+       },
+       {
+        "g": "la main qui pousse lentement",
+        "d": "le mouvement des plaques"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "deux plaques de polystyrène",
+        "d": "deux plaques de la surface"
+       },
+       {
+        "g": "la pâte molle en dessous",
+        "d": "le manteau"
+       },
+       {
+        "g": "la pâte qui se plisse",
+        "d": "une montagne qui se forme"
+       },
+       {
+        "g": "la fente qui s'ouvre",
+        "d": "une frontière où les plaques s'écartent"
+       },
+       {
+        "g": "le craquement brusque du bâton",
+        "d": "un séisme"
+       }
+      ]
+     },
+     "lecon": "plaques"
+    },
+    {
+     "id": "2-4",
+     "titre": "Le planisphère des alertes",
+     "type": "tri",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Sur le planisphère de Noé, les punaises sont tombées. Range chaque lieu : près d'une frontière de plaques, où volcans et séismes sont fréquents, ou loin d'une frontière, où ils sont rares et faibles.",
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Service des données et études statistiques (SDES), Chiffres clés des risques naturels, « Séismes en métropole et en outre-mer » (2023)",
+     "correction": "La Guadeloupe et la Martinique, aux Antilles, l'Islande et le Japon sont près de frontières de plaques. La Bourgogne, le Bassin parisien et la Bretagne en sont loin : les séismes y sont rares et faibles.",
+     "indices": {
+      "cm2": [
+       "Les Antilles : plusieurs plaques s'y rencontrent.",
+       "L'Islande est coupée en deux par une frontière.",
+       "La métropole est loin des frontières."
+      ]
+     },
+     "commun": {
+      "colonnes": [
+       {
+        "id": "pres",
+        "titre": "Près d'une frontière de plaques"
+       },
+       {
+        "id": "loin",
+        "titre": "Loin d'une frontière"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la Guadeloupe",
+        "col": "pres"
+       },
+       {
+        "txt": "la Martinique",
+        "col": "pres"
+       },
+       {
+        "txt": "l'Islande",
+        "col": "pres"
+       },
+       {
+        "txt": "le Japon",
+        "col": "pres"
+       },
+       {
+        "txt": "la Bourgogne",
+        "col": "loin"
+       },
+       {
+        "txt": "le Bassin parisien",
+        "col": "loin"
+       },
+       {
+        "txt": "la Bretagne",
+        "col": "loin"
+       }
+      ]
+     },
+     "lecon": "plaques"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "titre": "Le sentier du cratère — Les volcans",
+   "enigmes": [
+    {
+     "id": "3-1",
+     "titre": "Le carnet de Maëva",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Au bord du sentier, Maëva montre son carnet : le volcan dessiné a perdu ses étiquettes. Place chaque mot sur son repère.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le carnet de Maëva : un volcan en coupe\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le carnet de Maëva : un volcan en coupe</text><rect x='20' y='230' width='600' height='75' fill='#a37c58'/><polygon points='90,230 290,90 350,90 550,230' fill='#6e5240'/><polygon points='300,92 340,92 330,110 310,110' fill='#d9481c'/><rect x='313' y='108' width='14' height='160' fill='#d9481c'/><ellipse cx='320' cy='275' rx='85' ry='24' fill='#e8572a'/><path d='M340,96 C380,130 400,170 470,215 L480,230 L455,230 C400,190 370,150 335,104 Z' fill='#f08a24'/><path d='M300,86 C250,40 330,30 320,58 C340,20 410,40 360,80 Z' fill='#8d8d8d'/><circle cx='270' cy='94' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='270' y='99' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='345' cy='175' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='345' y='180' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='420' cy='278' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='420' y='283' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "cm2": "Replace les étiquettes du volcan dessiné par Maëva. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le carnet de Maëva : un volcan en coupe\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='320' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le carnet de Maëva : un volcan en coupe</text><rect x='20' y='230' width='600' height='75' fill='#a37c58'/><polygon points='90,230 290,90 350,90 550,230' fill='#6e5240'/><polygon points='300,92 340,92 330,110 310,110' fill='#d9481c'/><rect x='313' y='108' width='14' height='160' fill='#d9481c'/><ellipse cx='320' cy='275' rx='85' ry='24' fill='#e8572a'/><path d='M340,96 C380,130 400,170 470,215 L480,230 L455,230 C400,190 370,150 335,104 Z' fill='#f08a24'/><path d='M300,86 C250,40 330,30 320,58 C340,20 410,40 360,80 Z' fill='#8d8d8d'/><circle cx='270' cy='94' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='270' y='99' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='345' cy='175' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='345' y='180' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='420' cy='278' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='420' y='283' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='470' cy='200' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='470' y='205' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='380' cy='44' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='380' y='49' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Le Piton de la Fournaise s'est réveillé » (2020) ; Institut de physique du globe de Paris (IPGP), observatoires volcanologiques",
+     "correction": "Le repère 1 montre le cratère, l'ouverture au sommet ; le repère 2 la cheminée, par où monte le magma ; le repère 3 la chambre magmatique, où le magma s'accumule. En CM2 : le repère 4 est une coulée de lave et le repère 5 le nuage de cendres et de gaz. Le noyau est bien plus profond et une source d'eau n'est pas une partie du volcan.",
+     "indices": {
+      "cm1": [
+       "Le cratère est tout en haut.",
+       "La cheminée est un long tuyau.",
+       "Le magma attend dans une poche, en bas."
+      ],
+      "cm2": [
+       "La lave coule sur le flanc.",
+       "Le nuage gris s'élève au-dessus.",
+       "Le noyau est au centre de la Terre."
+      ]
+     },
+     "cm1": {
+      "titre": "Le carnet de Maëva",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "le cratère"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "la cheminée"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "la chambre magmatique"
+       }
+      ],
+      "etiquettes": [
+       "le cratère",
+       "la cheminée",
+       "la chambre magmatique"
+      ]
+     },
+     "cm2": {
+      "titre": "Le carnet de Maëva",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "le cratère"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "la cheminée"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "la chambre magmatique"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "une coulée de lave"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "le nuage de cendres et de gaz"
+       }
+      ],
+      "etiquettes": [
+       "le cratère",
+       "la cheminée",
+       "la chambre magmatique",
+       "une coulée de lave",
+       "le nuage de cendres et de gaz",
+       "le noyau",
+       "une source d'eau"
+      ]
+     },
+     "lecon": "volcans"
+    },
+    {
+     "id": "3-2",
+     "titre": "L'éruption pas à pas",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "Maëva raconte une éruption aux visiteurs, mais ses cartes sont mélangées. Remets les étapes dans l'ordre.",
+      "cm2": "Maëva prépare le panneau « Une éruption pas à pas ». Remets les étapes dans l'ordre."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Le Piton de la Fournaise s'est réveillé » (2020) ; Institut de physique du globe de Paris (IPGP), observatoires volcanologiques",
+     "correction": "Le magma s'accumule dans la chambre magmatique, il monte par la cheminée, il sort par le cratère, puis la lave coule et refroidit en roche dure. En CM2 : avant l'éruption, l'observatoire enregistre souvent de petits séismes, signe que le magma monte ; à la fin, la lave refroidie forme une roche dure.",
+     "indices": {
+      "cm1": [
+       "Tout commence sous le volcan.",
+       "Le magma monte avant de sortir.",
+       "La lave refroidit à la fin."
+      ],
+      "cm2": [
+       "Les capteurs sentent le magma monter.",
+       "Sortir par le cratère vient après la montée.",
+       "La roche dure est la dernière étape."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "Le magma s'accumule dans la chambre magmatique.",
+        "rang": 1
+       },
+       {
+        "txt": "Le magma monte par la cheminée.",
+        "rang": 2
+       },
+       {
+        "txt": "Le magma sort par le cratère : c'est l'éruption.",
+        "rang": 3
+       },
+       {
+        "txt": "La lave coule, refroidit et devient une roche dure.",
+        "rang": 4
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "Le magma s'accumule dans la chambre magmatique.",
+        "rang": 1,
+        "sous": "sous le volcan"
+       },
+       {
+        "txt": "De petits séismes sont enregistrés par l'observatoire.",
+        "rang": 2,
+        "sous": "le magma pousse les roches"
+       },
+       {
+        "txt": "Le magma monte par la cheminée.",
+        "rang": 3,
+        "sous": "il s'approche de la surface"
+       },
+       {
+        "txt": "La lave sort par le cratère ou par des fissures.",
+        "rang": 4,
+        "sous": "c'est l'éruption"
+       },
+       {
+        "txt": "La lave refroidit et devient une roche dure.",
+        "rang": 5,
+        "sous": "après l'éruption"
+       }
+      ]
+     },
+     "lecon": "volcans"
+    },
+    {
+     "id": "3-3",
+     "titre": "Les volcans de France",
+     "type": "association",
+     "consigne": {
+      "cm1": "Maëva a rapporté trois échantillons. Relie chaque produit du volcan à sa description.",
+      "cm2": "Sur la carte des volcans de France, les fiches sont tombées. Relie chaque volcan à ce que l'on sait de lui."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Le Piton de la Fournaise s'est réveillé » (2020) ; Institut de physique du globe de Paris (IPGP), observatoires volcanologiques ; Espace des sciences, Sciences Ouest n° 416, « L'éruption de la montagne Pelée, détonateur de la volcanologie » (2024) ; Futura-Sciences, « Il y a 120 ans, la plus grande catastrophe volcanique du XXe siècle » (2022) ; IPGP, communiqué « Soufrière 50 » (juin 2026) ; Ministère de la Culture, « Patrimoine mondial de l'Unesco : une victoire volcanique » (6 juillet 2018)",
+     "correction": "La lave est une roche fondue qui coule puis durcit ; les cendres sont de fines poussières projetées dans l'air ; les gaz s'échappent du cratère. En CM2 : le Piton de la Fournaise, à La Réunion, est l'un des volcans les plus actifs du monde ; la montagne Pelée, en Martinique, a détruit Saint-Pierre le 8 mai 1902 ; la Soufrière, en Guadeloupe, a entraîné l'évacuation de dizaines de milliers d'habitants en 1976 ; la Chaîne des Puys, en Auvergne, compte 80 volcans endormis depuis au moins 8 000 ans.",
+     "indices": {
+      "cm1": [
+       "La lave est liquide et brûlante.",
+       "Les cendres ressemblent à de la poussière grise.",
+       "Les gaz sont invisibles ou forment une fumée."
+      ],
+      "cm2": [
+       "La Réunion est dans l'océan Indien.",
+       "1902 : Saint-Pierre, en Martinique.",
+       "L'Auvergne : des volcans endormis."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "la lave",
+        "d": "une roche fondue qui coule, puis durcit"
+       },
+       {
+        "g": "les cendres",
+        "d": "de fines poussières projetées dans l'air"
+       },
+       {
+        "g": "les gaz",
+        "d": "ils s'échappent du cratère en fumées"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "le Piton de la Fournaise",
+        "d": "La Réunion : l'un des volcans les plus actifs du monde"
+       },
+       {
+        "g": "la montagne Pelée",
+        "d": "Martinique : Saint-Pierre détruite le 8 mai 1902"
+       },
+       {
+        "g": "la Soufrière",
+        "d": "Guadeloupe : des dizaines de milliers d'habitants évacués en 1976"
+       },
+       {
+        "g": "la Chaîne des Puys",
+        "d": "Auvergne : 80 volcans endormis depuis au moins 8 000 ans"
+       },
+       {
+        "g": "le magma",
+        "d": "roche fondue qui s'accumule sous le volcan"
+       }
+      ]
+     },
+     "lecon": "volcans"
+    },
+    {
+     "id": "3-4",
+     "titre": "Deux éruptions, deux caractères",
+     "type": "qcm",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Maëva compare deux éruptions célèbres. Choisis la bonne réponse.",
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Futura-Sciences, « Le Piton de la Fournaise s'est réveillé » (2020) ; Institut de physique du globe de Paris (IPGP), observatoires volcanologiques ; Espace des sciences, Sciences Ouest n° 416, « L'éruption de la montagne Pelée, détonateur de la volcanologie » (2024) ; Futura-Sciences, « Il y a 120 ans, la plus grande catastrophe volcanique du XXe siècle » (2022)",
+     "correction": "Quand la lave est fluide, elle coule en longues coulées : l'éruption est effusive, comme souvent au Piton de la Fournaise. Quand le magma est épais et riche en gaz, il explose en cendres et en nuées ardentes : l'éruption est explosive, comme à la montagne Pelée en 1902. Une nuée ardente est un nuage brûlant de gaz et de cendres qui dévale la pente.",
+     "indices": {
+      "cm2": [
+       "Effusive : la lave coule.",
+       "Explosive : cendres et nuées ardentes.",
+       "1902 : la montagne Pelée."
+      ]
+     },
+     "commun": {
+      "questions": [
+       {
+        "q": "Au Piton de la Fournaise, la lave est souvent fluide et coule en longues coulées. L'éruption est…",
+        "options": [
+         "explosive",
+         "effusive",
+         "glaciaire",
+         "souterraine"
+        ],
+        "bonne": 1,
+        "explication": "La lave coule doucement."
+       },
+       {
+        "q": "Qu'est-ce qu'une nuée ardente ?",
+        "options": [
+         "un nuage de pluie",
+         "un nuage brûlant de gaz et de cendres qui dévale la pente",
+         "une coulée d'eau froide",
+         "un arc-en-ciel au-dessus du cratère"
+        ],
+        "bonne": 1,
+        "explication": "C'est ce qui a frappé Saint-Pierre en 1902."
+       },
+       {
+        "q": "En 1902, l'éruption de la montagne Pelée était…",
+        "options": [
+         "effusive",
+         "explosive",
+         "sans danger",
+         "sous la mer"
+        ],
+        "bonne": 1,
+        "explication": "Magma épais et riche en gaz."
+       },
+       {
+        "q": "Un volcan endormi depuis 8 000 ans, comme ceux de la Chaîne des Puys…",
+        "options": [
+         "est forcément éteint pour toujours",
+         "est surveillé, car un volcan endormi peut se réveiller",
+         "n'a jamais eu d'éruption",
+         "n'est pas un volcan"
+        ],
+        "bonne": 1,
+        "explication": "Les scientifiques les surveillent."
+       }
+      ]
+     },
+     "lecon": "volcans"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "titre": "La salle des sismographes — Les séismes",
+   "enigmes": [
+    {
+     "id": "4-1",
+     "titre": "Le lexique du sismologue",
+     "type": "association",
+     "consigne": {
+      "cm1": "Les étiquettes du lexique de Samuel sont tombées des tiroirs. Relie chaque mot à sa définition.",
+      "cm2": "Relie chaque mot du lexique de Samuel à sa définition."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Service des données et études statistiques (SDES), Chiffres clés des risques naturels, « Séismes en métropole et en outre-mer » (2023)",
+     "correction": "Le foyer est l'endroit sous terre où la roche casse ; l'épicentre est le point de la surface juste au-dessus ; le sismographe enregistre les vibrations du sol. En CM2 : les ondes sismiques sont les vibrations qui partent du foyer ; la magnitude mesure l'énergie libérée ; les répliques sont des secousses plus faibles qui suivent le séisme.",
+     "indices": {
+      "cm1": [
+       "Le foyer est en profondeur.",
+       "L'épicentre est à la surface.",
+       "Un « graphe » écrit."
+      ],
+      "cm2": [
+       "Les ondes voyagent.",
+       "La magnitude est un nombre.",
+       "Une réplique vient après."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "le foyer",
+        "d": "l'endroit sous terre où la roche casse"
+       },
+       {
+        "g": "l'épicentre",
+        "d": "le point de la surface juste au-dessus du foyer"
+       },
+       {
+        "g": "le sismographe",
+        "d": "l'appareil qui enregistre les vibrations du sol"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "le foyer",
+        "d": "l'endroit sous terre où la roche casse"
+       },
+       {
+        "g": "l'épicentre",
+        "d": "le point de la surface juste au-dessus du foyer"
+       },
+       {
+        "g": "les ondes sismiques",
+        "d": "les vibrations qui partent du foyer"
+       },
+       {
+        "g": "la magnitude",
+        "d": "le nombre qui mesure l'énergie libérée"
+       },
+       {
+        "g": "une réplique",
+        "d": "une secousse plus faible qui suit le séisme"
+       }
+      ]
+     },
+     "lecon": "seismes"
+    },
+    {
+     "id": "4-2",
+     "titre": "Le tableau du séisme",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Sur le grand tableau de Samuel, le schéma du séisme a perdu ses étiquettes. Place chaque mot sur son repère.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le tableau de Samuel : un séisme en coupe\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le tableau de Samuel : un séisme en coupe</text><rect x='20' y='110' width='600' height='175' fill='#c9a27a'/><rect x='20' y='104' width='600' height='8' fill='#6fae5a'/><line x1='250' y1='110' x2='350' y2='285' stroke='#5a3b24' stroke-width='5'/><circle cx='305' cy='210' r='10' fill='#ffd23f' stroke='#b03a2e' stroke-width='3'/><circle cx='305' cy='210' r='35' fill='none' stroke='#b03a2e' stroke-width='2' stroke-dasharray='5,5'/><circle cx='305' cy='210' r='65' fill='none' stroke='#b03a2e' stroke-width='2' stroke-dasharray='5,5'/><circle cx='305' cy='210' r='95' fill='none' stroke='#b03a2e' stroke-width='2' stroke-dasharray='5,5'/><polygon points='290,104 305,92 320,104' fill='#b03a2e'/><rect x='500' y='78' width='60' height='26' fill='#ffffff' stroke='#2a1d17' stroke-width='2'/><path d='M505,92 l8,0 l4,-8 l5,16 l5,-12 l4,8 l25,0' stroke='#2a1d17' stroke-width='1.5' fill='none'/><circle cx='330' cy='230' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='330' y='235' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='305' cy='74' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='305' y='79' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='262' cy='150' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='262' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "cm2": "Replace les étiquettes du schéma de Samuel. Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Le tableau de Samuel : un séisme en coupe\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le tableau de Samuel : un séisme en coupe</text><rect x='20' y='110' width='600' height='175' fill='#c9a27a'/><rect x='20' y='104' width='600' height='8' fill='#6fae5a'/><line x1='250' y1='110' x2='350' y2='285' stroke='#5a3b24' stroke-width='5'/><circle cx='305' cy='210' r='10' fill='#ffd23f' stroke='#b03a2e' stroke-width='3'/><circle cx='305' cy='210' r='35' fill='none' stroke='#b03a2e' stroke-width='2' stroke-dasharray='5,5'/><circle cx='305' cy='210' r='65' fill='none' stroke='#b03a2e' stroke-width='2' stroke-dasharray='5,5'/><circle cx='305' cy='210' r='95' fill='none' stroke='#b03a2e' stroke-width='2' stroke-dasharray='5,5'/><polygon points='290,104 305,92 320,104' fill='#b03a2e'/><rect x='500' y='78' width='60' height='26' fill='#ffffff' stroke='#2a1d17' stroke-width='2'/><path d='M505,92 l8,0 l4,-8 l5,16 l5,-12 l4,8 l25,0' stroke='#2a1d17' stroke-width='1.5' fill='none'/><circle cx='330' cy='230' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='330' y='235' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='305' cy='74' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='305' y='79' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='262' cy='150' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='262' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='390' cy='180' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='390' y='185' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='530' cy='60' r='13' fill='#1f4e79' stroke='#fff' stroke-width='2'/><text x='530' y='65' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Service des données et études statistiques (SDES), Chiffres clés des risques naturels, « Séismes en métropole et en outre-mer » (2023)",
+     "correction": "Le repère 1 montre le foyer, où la roche casse ; le repère 2 l'épicentre, juste au-dessus, à la surface ; le repère 3 la faille, la cassure dans les roches. En CM2 : le repère 4 montre les ondes sismiques qui partent du foyer et le repère 5 un sismographe, qui les enregistre. Le cratère et la cheminée appartiennent à un volcan.",
+     "indices": {
+      "cm1": [
+       "Le foyer est l'étoile jaune.",
+       "L'épicentre est sur le sol, au-dessus.",
+       "La faille est le grand trait marron."
+      ],
+      "cm2": [
+       "Les cercles en pointillés : les ondes.",
+       "La petite boîte enregistre.",
+       "Il n'y a pas de volcan ici."
+      ]
+     },
+     "cm1": {
+      "titre": "Le tableau de Samuel",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "le foyer"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "l'épicentre"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "la faille"
+       }
+      ],
+      "etiquettes": [
+       "le foyer",
+       "l'épicentre",
+       "la faille"
+      ]
+     },
+     "cm2": {
+      "titre": "Le tableau de Samuel",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "le foyer"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "l'épicentre"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "la faille"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "les ondes sismiques"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "un sismographe"
+       }
+      ],
+      "etiquettes": [
+       "le foyer",
+       "l'épicentre",
+       "la faille",
+       "les ondes sismiques",
+       "un sismographe",
+       "le cratère",
+       "la cheminée"
+      ]
+     },
+     "lecon": "seismes"
+    },
+    {
+     "id": "4-3",
+     "titre": "Les questions des habitants",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Les habitants de Bois-Clair ont téléphoné à l'observatoire. Aide Samuel à leur répondre.",
+      "cm2": "Samuel prépare les réponses aux questions des habitants. Choisis la bonne réponse."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Service des données et études statistiques (SDES), Chiffres clés des risques naturels, « Séismes en métropole et en outre-mer » (2023)",
+     "correction": "Un séisme se produit quand les roches cassent brusquement le long d'une faille. Personne ne sait prévoir le jour et l'heure d'un séisme, mais on sait où ils sont probables. En CM2 : la magnitude mesure l'énergie libérée ; depuis 2011, la France compte cinq zones de sismicité, et la Guadeloupe et la Martinique sont entièrement en zone forte ; le 11 novembre 2019, un séisme de magnitude 4,8 a endommagé Le Teil, en Ardèche.",
+     "indices": {
+      "cm1": [
+       "La roche casse d'un coup.",
+       "On ne connaît pas le jour à l'avance.",
+       "Les Antilles sont près des frontières de plaques."
+      ],
+      "cm2": [
+       "Cinq zones, de « très faible » à « forte ».",
+       "Le Teil : 2019, en Ardèche.",
+       "La magnitude est une mesure d'énergie."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Que se passe-t-il lors d'un séisme ?",
+        "options": [
+         "les roches cassent brusquement sous terre",
+         "il pleut très fort",
+         "la mer gèle",
+         "le volcan s'éteint"
+        ],
+        "bonne": 0,
+        "explication": "La cassure fait vibrer le sol."
+       },
+       {
+        "q": "Peut-on savoir le jour exact du prochain séisme ?",
+        "options": [
+         "oui, toujours",
+         "non, personne ne sait le prévoir",
+         "oui, grâce à la météo",
+         "oui, il arrive chaque lundi"
+        ],
+        "bonne": 1,
+        "explication": "On sait où, pas quand."
+       },
+       {
+        "q": "Où les séismes sont-ils les plus forts en France ?",
+        "options": [
+         "en Bourgogne",
+         "aux Antilles",
+         "à Paris",
+         "en Bretagne"
+        ],
+        "bonne": 1,
+        "explication": "La Guadeloupe et la Martinique sont en zone forte."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Que mesure la magnitude ?",
+        "options": [
+         "la durée du séisme",
+         "l'énergie libérée par le séisme",
+         "la profondeur de la mer",
+         "le nombre de maisons"
+        ],
+        "bonne": 1,
+        "explication": "Plus elle est grande, plus le séisme est fort."
+       },
+       {
+        "q": "Combien de zones de sismicité compte la France depuis 2011 ?",
+        "options": [
+         "deux",
+         "trois",
+         "cinq",
+         "dix"
+        ],
+        "bonne": 2,
+        "explication": "De « très faible » à « forte »."
+       },
+       {
+        "q": "Quelle commune a été endommagée par un séisme de magnitude 4,8 le 11 novembre 2019 ?",
+        "options": [
+         "Le Teil, en Ardèche",
+         "Saint-Pierre, en Martinique",
+         "Dijon",
+         "Clermont-Ferrand"
+        ],
+        "bonne": 0,
+        "explication": "Un séisme peu profond, en métropole."
+       },
+       {
+        "q": "Que savent faire les scientifiques ?",
+        "options": [
+         "prévoir l'heure exacte d'un séisme",
+         "dire où les séismes sont probables",
+         "empêcher les séismes",
+         "arrêter les plaques"
+        ],
+        "bonne": 1,
+        "explication": "D'où les cartes des risques."
+       }
+      ]
+     },
+     "lecon": "seismes"
+    },
+    {
+     "id": "4-4",
+     "titre": "La consigne du bord de mer",
+     "type": "trous",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Samuel rédige la consigne « tsunami » pour le panneau de la plage de Bois-Clair. Complète-la. Attention : il y a des étiquettes en trop.",
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Préfecture du Puy-de-Dôme, « Les bons réflexes en cas de séisme » ; préfecture de la Nièvre, DDRM 2019, « Consignes risque sismique » ; ministère de l'Europe et des Affaires étrangères, « Que faire en cas de séisme » et « Que faire en cas d'éruption volcanique » (2026)",
+     "correction": "Un tsunami est une série de vagues géantes, souvent provoquée par un séisme sous la mer. Si le sol tremble fort au bord de la mer, il faut s'éloigner de la côte et monter sur une hauteur, puis écouter les consignes des autorités.",
+     "indices": {
+      "cm2": [
+       "Le tsunami suit souvent un séisme.",
+       "On s'éloigne de l'eau.",
+       "On monte, on ne descend pas."
+      ]
+     },
+     "commun": {
+      "texte": "<p>Un tsunami est une série de vagues géantes, souvent provoquée par un [[séisme]] sous la mer. Si le sol tremble fort au bord de la mer, il faut s'éloigner de la [[côte]] et monter sur une [[hauteur]]. Ensuite, on écoute les [[consignes]] des autorités.</p>",
+      "etiquettes": [
+       "séisme",
+       "côte",
+       "hauteur",
+       "consignes",
+       "tempête",
+       "plage",
+       "cave"
+      ]
+     },
+     "lecon": "seismes"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "titre": "Le centre de secours — Prévenir et se protéger",
+   "enigmes": [
+    {
+     "id": "5-1",
+     "titre": "Les bons réflexes",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Adèle prépare une affiche pour l'école de Bois-Clair. Range chaque geste : bon réflexe pendant un séisme, ou geste à ne pas faire.",
+      "cm2": "Adèle range les consignes officielles « séisme » : avant, pendant ou après les secousses ?"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Préfecture du Puy-de-Dôme, « Les bons réflexes en cas de séisme » ; préfecture de la Nièvre, DDRM 2019, « Consignes risque sismique » ; ministère de l'Europe et des Affaires étrangères, « Que faire en cas de séisme » et « Que faire en cas d'éruption volcanique » (2026)",
+     "correction": "Pendant les secousses, on s'abrite sous un meuble solide ou près d'un mur porteur, on protège sa tête avec les bras et on s'éloigne des fenêtres ; on ne court pas dehors et on ne prend pas l'ascenseur. En CM2 : avant, on fixe les meubles lourds et on repère où s'abriter ; pendant, on reste où l'on est et on s'abrite ; après, on sort par les escaliers, sans ascenseur, on écoute les consignes des autorités et on ne va pas chercher les enfants à l'école.",
+     "indices": {
+      "cm1": [
+       "Une table solide protège des chutes d'objets.",
+       "Une vitre peut se briser.",
+       "Pendant les secousses, on ne court pas."
+      ],
+      "cm2": [
+       "Fixer et repérer : on le fait à l'avance.",
+       "S'abriter : pendant.",
+       "Sortir par l'escalier : après."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "bon",
+        "titre": "Bon réflexe"
+       },
+       {
+        "id": "non",
+        "titre": "À ne pas faire"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "se mettre sous une table solide",
+        "col": "bon"
+       },
+       {
+        "txt": "protéger sa tête avec les bras",
+        "col": "bon"
+       },
+       {
+        "txt": "s'éloigner des fenêtres",
+        "col": "bon"
+       },
+       {
+        "txt": "courir dehors pendant les secousses",
+        "col": "non"
+       },
+       {
+        "txt": "prendre l'ascenseur",
+        "col": "non"
+       },
+       {
+        "txt": "se coller contre une vitre",
+        "col": "non"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "avant",
+        "titre": "Avant"
+       },
+       {
+        "id": "pendant",
+        "titre": "Pendant"
+       },
+       {
+        "id": "apres",
+        "titre": "Après"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "fixer les meubles lourds",
+        "col": "avant"
+       },
+       {
+        "txt": "repérer les endroits où s'abriter",
+        "col": "avant"
+       },
+       {
+        "txt": "s'abriter sous un meuble solide",
+        "col": "pendant"
+       },
+       {
+        "txt": "rester où l'on est et protéger sa tête",
+        "col": "pendant"
+       },
+       {
+        "txt": "sortir par les escaliers, sans ascenseur",
+        "col": "apres"
+       },
+       {
+        "txt": "écouter les consignes des autorités",
+        "col": "apres"
+       },
+       {
+        "txt": "laisser l'école garder les enfants",
+        "col": "apres"
+       }
+      ]
+     },
+     "lecon": "prevention"
+    },
+    {
+     "id": "5-2",
+     "titre": "La carte des risques",
+     "type": "vraifaux",
+     "consigne": {
+      "cm1": "Adèle montre la carte des risques de Bois-Clair. Pour chaque phrase, choisis vrai ou faux.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La carte des risques de Bois-Clair (village inventé)\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La carte des risques de Bois-Clair (village inventé)</text><rect x='30' y='45' width='580' height='235' fill='#e9f1df' stroke='#2a1d17'/><path d='M30,45 L250,45 L180,280 L30,280 Z' fill='#f4b6a6'/><path d='M250,45 L420,45 L330,280 L180,280 Z' fill='#f9dfa8'/><polygon points='70,90 100,55 130,90' fill='#7a4a2a'/><text x='100' y='105' text-anchor='middle' font-size='11' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>volcan</text><rect x='470' y='170' width='40' height='30' fill='#ffffff' stroke='#2a1d17'/><text x='490' y='215' text-anchor='middle' font-size='11' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>école</text><rect x='380' y='230' width='40' height='26' fill='#ffffff' stroke='#2a1d17'/><text x='400' y='272' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>mairie</text><circle cx='540' cy='90' r='10' fill='#2f7a4a'/><text x='540' y='78' text-anchor='middle' font-size='10' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>point de rassemblement</text><text x='110' y='200' text-anchor='middle' font-size='13' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>zone A</text><text x='110' y='216' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>danger fort</text><text x='270' y='200' text-anchor='middle' font-size='13' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>zone B</text><text x='270' y='216' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>danger moyen</text><text x='500' y='140' text-anchor='middle' font-size='13' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>zone C</text><text x='500' y='156' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>danger faible</text></svg>",
+      "cm2": "Adèle vérifie les phrases du dossier « risques » de la mairie. Pour chaque phrase, choisis vrai ou faux.<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La carte des risques de Bois-Clair (village inventé)\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='300' rx='12' fill='#f6f1ea'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La carte des risques de Bois-Clair (village inventé)</text><rect x='30' y='45' width='580' height='235' fill='#e9f1df' stroke='#2a1d17'/><path d='M30,45 L250,45 L180,280 L30,280 Z' fill='#f4b6a6'/><path d='M250,45 L420,45 L330,280 L180,280 Z' fill='#f9dfa8'/><polygon points='70,90 100,55 130,90' fill='#7a4a2a'/><text x='100' y='105' text-anchor='middle' font-size='11' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>volcan</text><rect x='470' y='170' width='40' height='30' fill='#ffffff' stroke='#2a1d17'/><text x='490' y='215' text-anchor='middle' font-size='11' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>école</text><rect x='380' y='230' width='40' height='26' fill='#ffffff' stroke='#2a1d17'/><text x='400' y='272' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>mairie</text><circle cx='540' cy='90' r='10' fill='#2f7a4a'/><text x='540' y='78' text-anchor='middle' font-size='10' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>point de rassemblement</text><text x='110' y='200' text-anchor='middle' font-size='13' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>zone A</text><text x='110' y='216' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>danger fort</text><text x='270' y='200' text-anchor='middle' font-size='13' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>zone B</text><text x='270' y='216' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>danger moyen</text><text x='500' y='140' text-anchor='middle' font-size='13' font-weight='700' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>zone C</text><text x='500' y='156' text-anchor='middle' font-size='11' fill='#2a1d17' font-family='Atkinson Hyperlegible,Arial,sans-serif'>danger faible</text></svg>"
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Géorisques (georisques.gouv.fr) ; Préfecture du Puy-de-Dôme, « Les bons réflexes en cas de séisme » ; préfecture de la Nièvre, DDRM 2019, « Consignes risque sismique » ; ministère de l'Europe et des Affaires étrangères, « Que faire en cas de séisme » et « Que faire en cas d'éruption volcanique » (2026)",
+     "correction": "Un risque naturel existe quand un phénomène naturel peut toucher des personnes, des maisons ou des routes. La carte des risques montre les zones où le danger est fort : ici, la zone A, près du volcan ; l'école est en zone C. Les observatoires surveillent les volcans et les séismes jour et nuit. En CM2 : la prévention, c'est ce que l'on fait avant (surveiller, informer, construire solidement, s'entraîner) ; la protection met les personnes à l'abri pendant et après ; on ne sait pas prévoir le jour d'un séisme.",
+     "indices": {
+      "cm1": [
+       "Regarde où se trouve l'école sur la carte.",
+       "La zone A touche le volcan.",
+       "Un observatoire surveille sans arrêt."
+      ],
+      "cm2": [
+       "Prévenir, c'est agir avant.",
+       "Protéger, c'est mettre à l'abri.",
+       "On sait où, pas quand."
+      ]
+     },
+     "cm1": {
+      "affirmations": [
+       {
+        "txt": "Sur la carte, l'école est dans la zone où le danger est le plus fort.",
+        "vrai": false,
+        "explication": "L'école est en zone C, danger faible."
+       },
+       {
+        "txt": "Un observatoire surveille le volcan jour et nuit.",
+        "vrai": true,
+        "explication": "Avec des sismographes et d'autres capteurs."
+       },
+       {
+        "txt": "La carte des risques aide à choisir où construire.",
+        "vrai": true,
+        "explication": "On évite la zone A."
+       }
+      ]
+     },
+     "cm2": {
+      "affirmations": [
+       {
+        "txt": "Un risque naturel existe quand un phénomène naturel peut toucher des personnes ou des biens.",
+        "vrai": true,
+        "explication": "Sans habitants, pas de risque pour eux."
+       },
+       {
+        "txt": "La prévention, c'est ce que l'on fait seulement après la catastrophe.",
+        "vrai": false,
+        "explication": "La prévention se fait avant."
+       },
+       {
+        "txt": "Construire des bâtiments solides est une mesure de prévention.",
+        "vrai": true,
+        "explication": "Ils résistent mieux aux secousses."
+       },
+       {
+        "txt": "Grâce aux capteurs, on connaît le jour exact du prochain séisme.",
+        "vrai": false,
+        "explication": "Personne ne sait le prévoir."
+       },
+       {
+        "txt": "Évacuer les habitants sur ordre des autorités est une mesure de protection.",
+        "vrai": true,
+        "explication": "On les met à l'abri."
+       }
+      ]
+     },
+     "lecon": "prevention"
+    },
+    {
+     "id": "5-3",
+     "titre": "L'exercice de l'école",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "Demain, l'école de Bois-Clair fait un exercice « séisme ». Remets les étapes dans l'ordre pour la fiche d'Adèle.",
+      "cm2": "Adèle prépare la fiche de l'exercice « séisme » de l'école. Remets les étapes dans l'ordre."
+     },
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Préfecture du Puy-de-Dôme, « Les bons réflexes en cas de séisme » ; préfecture de la Nièvre, DDRM 2019, « Consignes risque sismique » ; ministère de l'Europe et des Affaires étrangères, « Que faire en cas de séisme » et « Que faire en cas d'éruption volcanique » (2026)",
+     "correction": "On reconnaît le signal de l'exercice, on s'abrite sous sa table en protégeant sa tête, on attend la fin des secousses, on sort calmement par l'escalier, puis on se rassemble au point de rassemblement, loin des bâtiments. En CM2 : avant de sortir, on vérifie que le chemin est sûr et l'on écoute la maîtresse ou le maître ; dehors, on s'éloigne des bâtiments et des fils électriques.",
+     "indices": {
+      "cm1": [
+       "D'abord se protéger.",
+       "On ne sort pas pendant les secousses.",
+       "Le rassemblement est la fin."
+      ],
+      "cm2": [
+       "S'abriter vient tout de suite.",
+       "On attend avant de bouger.",
+       "Dehors : loin des bâtiments."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "Le signal de l'exercice retentit.",
+        "rang": 1
+       },
+       {
+        "txt": "Je m'abrite sous ma table et je protège ma tête.",
+        "rang": 2
+       },
+       {
+        "txt": "J'attends la fin des secousses.",
+        "rang": 3
+       },
+       {
+        "txt": "Je sors calmement par l'escalier.",
+        "rang": 4
+       },
+       {
+        "txt": "Je rejoins le point de rassemblement.",
+        "rang": 5
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "Le signal de l'exercice retentit.",
+        "rang": 1,
+        "sous": "on reste où l'on est"
+       },
+       {
+        "txt": "Chacun s'abrite sous sa table et protège sa tête avec les bras.",
+        "rang": 2,
+        "sous": "loin des fenêtres"
+       },
+       {
+        "txt": "On attend la fin des secousses.",
+        "rang": 3,
+        "sous": "on écoute l'adulte"
+       },
+       {
+        "txt": "On sort calmement par l'escalier, sans ascenseur.",
+        "rang": 4,
+        "sous": "le chemin est vérifié"
+       },
+       {
+        "txt": "On se rassemble loin des bâtiments et des fils électriques.",
+        "rang": 5,
+        "sous": "au point de rassemblement"
+       }
+      ]
+     },
+     "lecon": "prevention"
+    },
+    {
+     "id": "5-4",
+     "titre": "Le message d'information",
+     "type": "code",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Le message d'information pour les habitants est prêt, mais il est verrouillé : il faut trois nombres pour l'ouvrir. Retrouve-les dans les fiches de l'observatoire.<div class='doc-titre'><i>Le carnet d'Adèle : trois nombres pour le message d'information</i></div><table class='tableau-releves'><tr><th>Ce que dit le carnet</th><th>Nombre</th></tr><tr><td>Nombre de zones de sismicité en France depuis 2011</td><td>?</td></tr><tr><td>Nombre de volcans de la Chaîne des Puys</td><td>?</td></tr><tr><td>Année du séisme du Teil, en Ardèche</td><td>?</td></tr></table><p><i>Aide-toi des fiches : elles contiennent ces trois nombres.</i></p>",
+     "source": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « La Terre, une planète active », CM2 « L'activité terrestre » (progression de l'enseignant : année A, période 5) ; Service des données et études statistiques (SDES), Chiffres clés des risques naturels, « Séismes en métropole et en outre-mer » (2023) ; Ministère de la Culture, « Patrimoine mondial de l'Unesco : une victoire volcanique » (6 juillet 2018)",
+     "correction": "Depuis 2011, la France est découpée en 5 zones de sismicité ; la Chaîne des Puys compte 80 volcans ; le séisme du Teil a eu lieu en 2019. Le code est 5, 80, 2019.",
+     "indices": {
+      "cm2": [
+       "Fiche « Les séismes » : les zones.",
+       "Fiche « Les volcans » : l'Auvergne.",
+       "Le Teil : un 11 novembre."
+      ]
+     },
+     "commun": {
+      "champs": [
+       {
+        "libelle": "Zones de sismicité",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Volcans de la Chaîne des Puys",
+        "valeur": "80",
+        "longueur": 2
+       },
+       {
+        "libelle": "Année du séisme du Teil",
+        "valeur": "2019",
+        "longueur": 4
+       }
+      ]
+     },
+     "lecon": "prevention"
+    }
+   ]
+  }
+ ]
+}
