@@ -26,7 +26,10 @@ function controleListe(L){
   const crypto = require("crypto"), h = crypto.createHash("sha1");
   for (const f of L.FICHIERS_CODE.concat(...Object.values(L.IMAGES_JEUX))) {
     if (!fs.existsSync(path.join(RACINE, f))) continue;
-    h.update(Buffer.from(f, "utf8")); h.update(crypto.createHash("sha1").update(fs.readFileSync(path.join(RACINE, f))).digest());
+    // fichiers texte : fins de ligne ramenées à LF, comme maj-hors-ligne.py (une copie Windows en CRLF reste « à jour »)
+    let d = fs.readFileSync(path.join(RACINE, f));
+    if (/\.(html|js|css|json|webmanifest|svg)$/i.test(f)) d = Buffer.from(d.toString("latin1").replace(/\r\n/g, "\n"), "latin1");
+    h.update(Buffer.from(f, "utf8")); h.update(crypto.createHash("sha1").update(d).digest());
   }
   ok(h.digest("hex").slice(0, 10) === L.VERSION_HORS_LIGNE, "version à jour (sinon : python outils-pwa/maj-hors-ligne.py avant de publier)");
   const absents = L.FICHIERS_CODE.filter(f => !fs.existsSync(path.join(RACINE, f)));

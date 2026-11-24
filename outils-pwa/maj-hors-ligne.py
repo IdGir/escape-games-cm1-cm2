@@ -10,13 +10,23 @@ fichier change : les tablettes installées téléchargent alors la nouvelle vers
   - IMAGES_JEUX   : images et documents PDF de chaque jeu (gardés à la demande, bouton de l'accueil) ;
   - les vidéos ne sont jamais gardées hors connexion (trop lourdes) : sans réseau, le jeu
     affiche l'image ou le décor dessiné à la place, comme quand une vidéo manque.
-Seuls les fichiers suivis par git sont listés (rien de local ni de privé).
+Seuls les fichiers suivis par git sont listés (rien de local ni de privé). version.json (réécrit à
+chaque commit par outils-tests/hooks/pre-commit) n'y est jamais : sinon chaque commit changerait la version.
 """
 import hashlib, json, os, subprocess
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXCLUS = ("outils-", "prompts-opus/", "_a-supprimer/", ".claude/")
 CODE = (".html", ".js", ".css", ".woff2", ".webmanifest", ".json")
 IMAGES = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".pdf")
+
+TEXTE = (".html", ".js", ".css", ".json", ".webmanifest", ".svg")
+
+def contenu(f):
+    """Octets du fichier ; pour un fichier texte, fins de ligne ramenées à LF comme dans le dépôt
+    (une copie Windows en CRLF donne ainsi la même version que le contenu publié)."""
+    with open(os.path.join(RACINE, f), "rb") as fh:
+        d = fh.read()
+    return d.replace(b"\r\n", b"\n") if f.lower().endswith(TEXTE) else d
 
 def suivis():
     sortie = subprocess.run(["git", "ls-files", "-z"], cwd=RACINE, capture_output=True, check=True).stdout
@@ -25,7 +35,7 @@ def suivis():
 def main():
     code, images = [], {}
     for f in suivis():
-        if f.startswith(EXCLUS) or "/tests/" in f or f in ("sw-fichiers.js", "sw.js"):
+        if f.startswith(EXCLUS) or "/tests/" in f or f in ("sw-fichiers.js", "sw.js", "version.json"):
             continue
         ext = os.path.splitext(f)[1].lower()
         if "/assets/" in f:
@@ -38,8 +48,7 @@ def main():
             code.append(f)
     h = hashlib.sha1()
     for f in code + [x for l in images.values() for x in l]:
-        with open(os.path.join(RACINE, f), "rb") as fh:
-            h.update(f.encode("utf-8")); h.update(hashlib.sha1(fh.read()).digest())
+        h.update(f.encode("utf-8")); h.update(hashlib.sha1(contenu(f)).digest())
     version = h.hexdigest()[:10]
     taille = sum(os.path.getsize(os.path.join(RACINE, f)) for f in code)
     js = ("/* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.\n"
