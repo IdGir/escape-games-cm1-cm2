@@ -168,6 +168,19 @@ Outil : l'Explorateur de fichiers de Windows.
 3. Pour l'enlever : double-clic sur `desinstaller-ecole.bat`.
 4. À n'installer que sur le PC de l'école (pas sur l'ordinateur où l'on modifie les jeux).
 
+### Le tableau de bord de l'enseignant (enseignant.html, novembre 2026)
+Une seule page d'accueil enseignante (bouton « Ouvrir mon tableau de bord » de l'accueil ; `lancer.bat` l'ouvre tout seul),
+lisible au vidéoprojecteur (bouton « Mode projection ») :
+1. **Barre d'état** : voyants serveur, version (ce PC / GitHub), médias du jeu du jour, dossier des résultats, sauvegarde ; chaque orange ou rouge dit quoi faire, avec un bouton.
+2. **Séance** : jeu prévu pour la période (Année A/B), niveau, Préparer / Lancer / Terminer.
+3. **En direct** : QR code des élèves et suivi des équipes (étape, énigme en cours, temps, aides), toutes les 5 s.
+4. **Après la séance** : bilan PDF, passeport, résultats, classement, trophées, export (CSV).
+5. **Production et qualité** : jeux finis / en cours / sensibles, médias et voix manquants, points « À vérifier », médias sans crédit, file « À relire ». Avec le serveur : `/api/production`, recalculé en direct ; sur le site en ligne : `commun/donnees/production.js` (à régénérer avant de publier : `python outils-docs/etat-production.py`).
+6. **Mes installations** : PC principal, PC de l'école, copie Nextcloud, site en ligne, Chromebooks, avec version et retard ; bouton « Mettre à jour cette installation » (PC de l'école : git ou archive ; PC principal : copie Nextcloud ; la publication en ligne reste à faire soi-même). Chaque serveur écrit sa fiche dans `installations/` (jamais publiée) ; celle du PC de l'école remonte par Nextcloud.
+7. **Comment faire ?** : un pas-à-pas court par action.
+
+Les autres pages (résultats, classement, passeport, vérification, QR code) gardent un bouton « ← Tableau de bord ».
+
 ### Mettre à jour chaque installation (chantier « distribution », novembre 2026)
 Chaque commit écrit `version.json` (numéro qui monte, date) grâce au crochet `outils-tests/hooks/pre-commit`
 (installé une fois : `git config core.hooksPath outils-tests/hooks`). Le voyant « Version » de l'espace enseignant,

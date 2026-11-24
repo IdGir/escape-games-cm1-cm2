@@ -21,6 +21,10 @@ if not exist "%DEMARRER%" (
     exit /b 1
 )
 
+REM Repere de ce PC pour le tableau de bord : "PC de l'ecole" (dans le profil Windows, jamais synchronise)
+if not exist "%APPDATA%\EscapeGames" mkdir "%APPDATA%\EscapeGames"
+> "%APPDATA%\EscapeGames\poste-ecole.txt" echo PC de l'ecole : demarrage automatique installe par installer-ecole.bat
+
 REM 1er essai : une tache Windows "a l'ouverture de session" (demande parfois les droits administrateur)
 schtasks /Create /F /SC ONLOGON /TN "EscapeGames-Ecole" /TR "\"%DEMARRER%\"" /RU "%USERNAME%" /IT >nul 2>&1
 if %errorlevel%==0 (

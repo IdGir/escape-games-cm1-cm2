@@ -40,7 +40,7 @@ $src = Get-ChildItem $tmp -Directory | Select-Object -First 1
 # Copie : les fichiers de la classe ne sont jamais remplaces ni effaces.
 robocopy $src.FullName $racine /E /NFL /NDL /NJH /NJS /NP /R:1 /W:1 `
     /XF resultats-classe.jsonl resultats-classe.csv dossier-donnees.txt seance-du-jour.json difficulte-classe.json version-installee.txt journal-ecole.txt diagnostic.txt copie-nextcloud.txt 'cle-*.txt' `
-    /XD sauvegardes-resultats .git | Out-Null
+    /XD sauvegardes-resultats installations .git | Out-Null
 if ($LASTEXITCODE -ge 8) {
     Write-Output "Copie incomplete (code robocopy $LASTEXITCODE) : relancer demarrer-ecole.bat."
     exit 1

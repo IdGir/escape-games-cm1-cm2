@@ -5,7 +5,7 @@ TEST DE LA SÉANCE DU JOUR ET DU FEU VERT (serveur.py, lot 2 : A1, A4)
 Depuis la racine du dépôt :  python commun/tests/test-seance-serveur.py
 Lance un vrai serveur sur une copie temporaire et vérifie :
   /api/seance (lecture publique, écriture réservée au PC de l'enseignant, fichier dans le dossier de données),
-  /api/sante (quatre voyants, dossier des résultats inaccessible = rouge), fichiers privés jamais servis.
+  /api/sante (cinq voyants, dossier des résultats inaccessible = rouge), fichiers privés jamais servis.
 """
 import json, os, shutil, subprocess, sys, tempfile, time, urllib.request, urllib.error
 
@@ -90,7 +90,7 @@ try:
         c, t, _ = requete("/api/sante")
         d = json.loads(t)
         ids = [v["id"] for v in d.get("voyants", [])]
-        ok(c == 200 and ids == ["serveur", "version", "medias", "resultats"], "quatre voyants : " + ", ".join(ids))
+        ok(c == 200 and ids == ["serveur", "version", "medias", "resultats", "sauvegarde"], "cinq voyants : " + ", ".join(ids))
         v = {x["id"]: x for x in d["voyants"]}
         ok(v["serveur"]["etat"] == "vert" and "http://" in v["serveur"]["message"], "serveur : vert, adresse des élèves")
         ok(v["medias"]["etat"] == "orange" and "1 média(s) sur 2" in v["medias"]["message"] and v["medias"]["manquants"] == ["assets/images/decors/b.webp"] and v["medias"]["action"], "médias du jeu du jour : 1 manquant sur 2 → orange avec action")

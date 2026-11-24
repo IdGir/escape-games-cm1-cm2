@@ -3,12 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Espace enseignant — Escape games CM1 · CM2</title>
+<title>Tableau de bord de l'enseignant — Escape games CM1 · CM2</title>
 <meta name="description" content="Toutes les ressources destinées à l'enseignant, classées par moment : préparer, jouer, suivre, après la partie, adapter, présenter. Un seul point d'entrée.">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b1536">
 <!--
-  ESPACE ENSEIGNANT — POINT D'ENTRÉE UNIQUE
+  TABLEAU DE BORD DE L'ENSEIGNANT — POINT D'ENTRÉE UNIQUE (session 2, chantier 3, 24/11/2026)
+  En haut : barre d'état (voyants du feu vert), séance (Préparer / Lancer / Terminer), en direct (QR code, équipes),
+  après la séance, production et qualité, mes installations (mise à jour), aide « comment faire ».
+  Logique : commun/js/portail-seance.js (séance, voyants) et commun/js/tableau-de-bord.js (le reste).
+  État de production hors serveur : commun/donnees/production.js (python outils-docs/etat-production.py).
   Les pages et documents destinés à l'enseignant, classés par MOMENT (préparer, jouer, suivre, après, adapter,
   présenter, aider) puis, jeu par jeu, dans un tableau avec filtre.
   Le tableau « jeu par jeu » est GÉNÉRÉ : python outils-docs/maj-espace-enseignant.py
@@ -138,6 +142,60 @@
     thead th{background:#eee;color:#000;position:static}
     @page{size:A4 landscape;margin:10mm}
   }
+
+  /* ---- Tableau de bord (session 2) : rubriques, en direct, après, production, installations, aide ---- */
+  .tdb{max-width:1100px;margin:0 auto;padding:0 20px}
+  .onglets{position:sticky;top:0;z-index:20;margin:14px -20px 0;background:rgba(245,243,236,.95);border-bottom:1px solid var(--ligne)}
+  .onglets-in{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 20px}
+  .onglets a,.onglets button{font:600 .9rem/1.3 system-ui,sans-serif;text-decoration:none;color:var(--bleu);background:#fff;border:1.5px solid var(--bleu);border-radius:999px;padding:7px 11px;min-height:40px;cursor:pointer}
+  .onglets a:hover,.onglets a:focus-visible{background:var(--bleu);color:#fff}
+  .onglets button{margin-left:auto;background:var(--nuit);color:#fff;border-color:var(--nuit)}
+  .bloc{margin:30px 0 0;background:var(--papier);border:1px solid var(--ligne);border-radius:18px;padding:18px 20px 20px;box-shadow:0 8px 22px rgba(20,42,107,.06)}
+  .bloc h2{margin:0;font:700 1.55rem/1.2 var(--serif);color:#142a6b}
+  .bloc h3{margin:20px 0 6px;font:700 1.15rem/1.3 var(--serif);color:#142a6b}
+  .bloc .sous{margin:4px 0 12px;color:var(--doux)}
+  .direct{display:grid;grid-template-columns:220px 1fr;gap:18px;align-items:start}
+  .qr-mini{margin:0;text-align:center}
+  .qr-mini svg{width:200px;height:200px;border:1px solid var(--ligne);border-radius:12px}
+  .qr-mini figcaption{font-size:.9rem;margin:6px 0;word-break:break-all}
+  .mini{display:inline-block;margin:6px 6px 0 0;font:600 .85rem/1.3 system-ui,sans-serif;color:var(--bleu);background:#fff;border:1.5px solid var(--bleu);border-radius:999px;padding:5px 12px;text-decoration:none;cursor:pointer}
+  .vide-direct{color:var(--doux);margin:8px 0}
+  .tableau-direct td small{display:block;color:var(--doux)}
+  .gros-boutons{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}
+  .gros,.gros-bouton{display:flex;flex-direction:column;justify-content:center;min-height:72px;padding:12px 16px;border-radius:14px;background:var(--bleu);color:#fff;text-decoration:none;font:700 1.08rem/1.25 system-ui,sans-serif;border:0;cursor:pointer;box-shadow:0 6px 14px rgba(20,42,107,.18)}
+  .gros small{font-weight:500;font-size:.82rem;opacity:.9}
+  .gros:hover,.gros:focus-visible,.gros-bouton:hover{background:var(--bleu2)}
+  .gros-bouton{display:inline-flex;min-height:56px}
+  .gros-bouton:disabled{background:#9ca3af;cursor:not-allowed}
+  .compteurs{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:6px 0 12px}
+  .compteur{background:#f8f7f2;border:1px solid var(--ligne);border-radius:12px;padding:8px 10px}
+  .compteur b{display:block;font:700 1.6rem/1.1 var(--serif);color:#142a6b}
+  .compteur span{font-size:.84rem;color:var(--doux)}
+  .compteur.fini b{color:#166534}.compteur.sensible b{color:#9a3412}
+  .filtres{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .filtres button{font:600 .9rem/1.3 system-ui,sans-serif;padding:6px 14px;border-radius:999px;border:1.5px solid var(--bleu);background:#fff;color:var(--bleu);cursor:pointer;min-height:38px}
+  .filtres button[aria-pressed=true]{background:var(--bleu);color:#fff}
+  .badge{display:inline-block;margin:1px 4px 1px 0;padding:1px 9px;border-radius:999px;font-size:.8rem;font-weight:700;white-space:nowrap}
+  .badge.fini{background:#dcfce7;color:#14532d}.badge.cours{background:#eef1fa;color:var(--bleu)}.badge.sensible{background:#ffedd5;color:#7c2d12}
+  .badge.retard{background:#fef3c7;color:#78350f}.badge.inconnu{background:#f1f5f9;color:#475569}.badge.ici{background:var(--nuit);color:#fff}
+  .badge.jeu{background:#e0f2fe;color:#075985}.badge.pause{background:#fef3c7;color:#78350f}
+  td .ok{color:#166534;font-weight:600}td .non{color:#9a3412;font-weight:700}
+  td.manque{font-size:.85rem;color:var(--doux);min-width:180px}
+  tr.ici td{background:#f5f8ff}
+  td.action{font-size:.88rem}
+  .a-relire{margin:0;padding-left:1.4rem}.a-relire li{margin:3px 0}.a-relire li.prio{color:#7c2d12}
+  .journal-maj{white-space:pre-wrap;background:#0b1536;color:#e5e7eb;border-radius:12px;padding:12px 14px;font-size:.85rem;max-height:300px;overflow:auto}
+  .aides{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:8px;margin-top:10px}
+  .aides details{background:#f8f7f2;border:1px solid var(--ligne);border-radius:12px;padding:8px 12px}
+  .aides summary{cursor:pointer;font-weight:700;color:#142a6b;min-height:32px}
+  .aides ol{margin:6px 0 4px;padding-left:1.3rem}
+  /* Mode projection : séance, QR code et équipes, en grand ; le reste masqué */
+  body.projection{font-size:20px}
+  body.projection #production,body.projection #installations,body.projection #aide-actions,body.projection #tout-le-reste,body.projection footer,body.projection .une-fois{display:none}
+  body.projection .qr-mini svg{width:300px;height:300px}
+  body.projection .direct{grid-template-columns:320px 1fr}
+  @media (max-width:720px){.direct{grid-template-columns:1fr}.onglets button{margin-left:0}}
+  @media print{.onglets,#installations,#btn-maj{display:none}}
 </style>
 </head>
 <body>
@@ -145,10 +203,10 @@
   <div class="hero-in">
     <nav><a href="index.html">← Accueil des jeux</a><a href="faq.html">❓ Aide</a></nav>
     <button class="imprimer" id="btn-imprimer" type="button">🖨️ Imprimer</button>
-    <span class="tag">ESPACE ENSEIGNANT</span>
-    <h1>Tout pour l'enseignant, au même endroit</h1>
-    <p class="chapo">Les ressources sont classées par <b>moment de la séance</b> — préparer, lancer, suivre, bilan, adapter, présenter —
-      puis <b>jeu par jeu</b> dans le tableau en bas de page.</p>
+    <span class="tag">TABLEAU DE BORD</span>
+    <h1>Mon tableau de bord</h1>
+    <p class="chapo">Tout en une page : <b>l'état du PC</b>, <b>la séance</b> en trois boutons, <b>les équipes en direct</b>,
+      le bilan, l'avancement des jeux et <b>la mise à jour</b> de chaque installation. Les autres ressources sont dans « Tout le reste », en bas.</p>
   </div>
 </header>
 
@@ -187,6 +245,106 @@
     </details>
   </div>
 </section>
+
+
+<div class="tdb" id="tdb">
+<nav class="onglets" aria-label="Rubriques du tableau de bord">
+  <div class="onglets-in">
+    <a href="#seance">🎯 Séance</a><a href="#direct">👀 En direct</a><a href="#apres-seance">📊 Après</a><a href="#production">🛠️ Production</a><a href="#installations">💻 Installations</a><a href="#aide-actions">❓ Comment faire</a><a href="#tout-le-reste">📚 Tout le reste</a>
+    <button type="button" id="btn-projection" aria-pressed="false">📽️ Mode projection</button>
+  </div>
+</nav>
+
+<section class="bloc" id="direct" aria-labelledby="titre-direct">
+  <h2 id="titre-direct">👀 En direct</h2>
+  <p class="sous" id="direct-etat">Recherche du serveur local…</p>
+  <div class="direct">
+    <figure class="qr-mini"><div id="qr-eleves"></div><figcaption id="adresse-eleves"></figcaption><a class="mini" href="tableau.html" target="_blank" rel="noopener">⛶ Projeter en grand</a></figure>
+    <div class="tableau tableau-direct" id="equipes"></div>
+  </div>
+</section>
+
+<section class="bloc" id="apres-seance" aria-labelledby="titre-apres">
+  <h2 id="titre-apres">📊 Après la séance</h2>
+  <div class="gros-boutons">
+    <a class="gros" id="lien-bilan" href="resultats.html">🧾 Bilan de séance<small>PDF à imprimer</small></a>
+    <a class="gros" href="passeport.html">🎓 Passeport<small>compétences par élève</small></a>
+    <a class="gros" href="resultats.html">📊 Résultats<small>énigme par énigme</small></a>
+    <a class="gros" href="classement.html">🏆 Classement<small>à projeter</small></a>
+    <a class="gros" href="trophees.html">🏅 Trophées<small>à afficher</small></a>
+    <a class="gros" id="lien-export" href="#apres-seance" hidden>⬇️ Export des équipes<small>tableur (CSV)</small></a>
+  </div>
+</section>
+
+<section class="bloc" id="production" aria-labelledby="titre-production">
+  <h2 id="titre-production">🛠️ Production et qualité</h2>
+  <p class="sous" id="production-source">Chargement…</p>
+  <div class="compteurs" id="production-compteurs"></div>
+  <div class="filtres" id="production-filtres" role="group" aria-label="Filtrer les jeux">
+    <button type="button" data-filtre="tous" aria-pressed="true">Tous</button><button type="button" data-filtre="en-cours" aria-pressed="false">En cours</button><button type="button" data-filtre="fini" aria-pressed="false">Finis</button><button type="button" data-filtre="sensible" aria-pressed="false">Sensibles</button><button type="button" data-filtre="medias" aria-pressed="false">Médias manquants</button>
+  </div>
+  <div class="tableau"><table id="production-table">
+    <thead><tr><th>Jeu</th><th>État</th><th>Médias manquants</th><th>Voix</th><th>Leçons A4</th><th>Évaluations</th><th>Affiche, bande-annonce</th><th>À vérifier</th><th>Sans crédit</th><th>Reste à faire</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <h3>📝 File « À relire »</h3>
+  <ol class="a-relire" id="a-relire"></ol>
+</section>
+
+<section class="bloc" id="installations" aria-labelledby="titre-installations">
+  <h2 id="titre-installations">💻 Mes installations</h2>
+  <p class="sous" id="installations-ici"></p>
+  <div class="tableau"><table id="installations-table">
+    <thead><tr><th>Installation</th><th>Version</th><th>Vue le</th><th>État</th><th>Pour la mettre à jour</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <p><button type="button" class="gros-bouton" id="btn-maj" disabled>🔄 Mettre à jour cette installation</button></p>
+  <pre class="journal-maj" id="maj-journal" hidden></pre>
+</section>
+
+<section class="bloc" id="aide-actions" aria-labelledby="titre-aide">
+  <h2 id="titre-aide">❓ Comment faire ?</h2>
+  <div class="aides">
+    <details id="aide-serveur"><summary>Lancer le serveur de la classe</summary><p>Outil : l'Explorateur de fichiers de Windows.</p><ol>
+      <li>Ouvrez le dossier des jeux (PC principal : <code>E:\IDRISS\PROJET ESCAPE GAMES</code>).</li>
+      <li>Double-clic sur <code>lancer.bat</code> : une fenêtre noire s'ouvre, l'ancien serveur est fermé tout seul.</li>
+      <li>La fenêtre affiche la version et l'adresse des élèves ; ce tableau de bord s'ouvre dans le navigateur.</li>
+      <li>Laissez la fenêtre noire ouverte pendant la séance (la fermer arrête le serveur).</li></ol></details>
+    <details id="aide-seance"><summary>Lancer une séance</summary><p>Outil : ce tableau de bord.</p><ol>
+      <li>Dans « Ma séance », cliquez sur le jeu prévu (ou choisissez-en un autre) et le niveau.</li>
+      <li>Cliquez sur <b>1 · Préparer</b> : le pack d'impression s'ouvre (fiche de mission, évaluation, leçons).</li>
+      <li>Cliquez sur <b>2 · Lancer</b> : la page du QR code s'ouvre ; projetez-la.</li>
+      <li>Les élèves scannent le QR code (ou ouvrent leur favori) : ils ne voient qu'un bouton « ▶ Jouer ».</li></ol></details>
+    <details id="aide-terminer"><summary>Terminer et imprimer le bilan</summary><p>Outil : ce tableau de bord.</p><ol>
+      <li>Cliquez sur <b>3 · Terminer</b>.</li><li>Le bilan de séance s'ouvre : imprimez-le ou enregistrez-le en PDF.</li>
+      <li>Le passeport de compétences est mis à jour tout seul ; ouvrez-le depuis « Après la séance ».</li></ol></details>
+    <details id="aide-ecole"><summary>Mettre à jour le PC de l'école</summary><p>Outil : l'Explorateur de fichiers du PC de l'école.</p><ol>
+      <li>Le plus simple : fermez la session Windows puis rouvrez-la (mise à jour automatique si <code>installer-ecole.bat</code> a été lancé une fois).</li>
+      <li>Sinon : double-clic sur <code>demarrer-ecole.bat</code> dans le dossier des jeux.</li>
+      <li>Ou, sur ce PC, dans « Mes installations » : bouton <b>Mettre à jour cette installation</b>.</li></ol></details>
+    <details id="aide-nextcloud"><summary>Mettre à jour la copie Nextcloud</summary><p>Outil : l'Explorateur de fichiers du PC principal.</p><ol>
+      <li>Double-clic sur <code>mettre-a-jour-nextcloud.bat</code> (ou bouton « Mettre à jour cette installation » sur le PC principal).</li>
+      <li>Lisez l'essai, puis tapez <code>O</code> et Entrée.</li>
+      <li>Si le dossier est introuvable : copiez le chemin de la copie (barre d'adresse de l'Explorateur), collez-le sur la 1re ligne de <code>outils-ecole\dossier-nextcloud.txt</code> (Bloc-notes), enregistrez, recommencez.</li></ol></details>
+    <details id="aide-publier"><summary>Publier sur le site en ligne</summary><p>Outil : l'Invite de commandes du PC principal. <b>Jeux sensibles : relecture d'abord.</b></p><ol>
+      <li>Touches Windows + R, tapez <code>cmd</code>, Entrée.</li>
+      <li>Tapez <code>cd /d "E:\IDRISS\PROJET ESCAPE GAMES"</code>, Entrée.</li>
+      <li>Tapez <code>git push origin escape-games</code>, Entrée.</li>
+      <li>Une minute plus tard, la ligne « Site en ligne » de « Mes installations » affiche le nouveau numéro.</li></ol></details>
+    <details id="aide-resultats"><summary>Le dossier des résultats est en rouge</summary><p>Outil : le Bloc-notes.</p><ol>
+      <li>Ouvrez <code>dossier-donnees.txt</code> dans le dossier des jeux (s'il existe).</li>
+      <li>Vérifiez que le chemin écrit sur la 1re ligne existe (clé USB branchée, dossier présent), ou effacez la ligne pour utiliser le dossier des jeux.</li>
+      <li>Enregistrez, puis relancez <code>lancer.bat</code>.</li></ol></details>
+    <details id="aide-sauvegarde"><summary>La sauvegarde est en orange</summary><ol>
+      <li>Les résultats sont copiés tout seuls chaque jour dans <code>sauvegardes-resultats</code> : rien à faire.</li>
+      <li>Sauvegarde complète du projet : laissez le PC principal branché, en veille, le dimanche soir ; vérifiez que le disque de <code>outils-medias\nuit\dossier-sauvegarde.txt</code> est branché.</li></ol></details>
+    <details id="aide-probleme"><summary>Un problème que je ne comprends pas</summary><p>Outil : l'Explorateur de fichiers.</p><ol>
+      <li>Double-clic sur <code>diagnostic.bat</code> dans le dossier des jeux.</li>
+      <li>Le Bloc-notes s'ouvre sur <code>diagnostic.txt</code> (aucun prénom d'élève dedans).</li>
+      <li>Envoyez ce fichier dans la conversation avec Claude.</li></ol></details>
+  </div>
+</section>
+</div>
 
 <details class="tout-le-reste" id="tout-le-reste">
 <summary>Tout le reste — les 24 ressources (préparer, pendant, après, adapter, présenter, aide) et le tableau jeu par jeu</summary>
@@ -328,7 +486,10 @@
 <footer>Une ressource enseignant qui manque ici ? Elle est à ajouter dans cette page, pour garder un seul point d'entrée.</footer>
 <script src="commun/donnees/catalogue.js?c3"></script>
 <script src="commun/js/seance.js?l2"></script>
-<script src="commun/js/portail-seance.js?l2"></script>
+<script src="commun/js/portail-seance.js?t1"></script>
+<script src="commun/js/qrcode.js?l2"></script>
+<script src="commun/donnees/production.js?t1"></script>
+<script src="commun/js/tableau-de-bord.js?t1"></script>
 <script>
   document.getElementById("btn-imprimer").addEventListener("click", function(){ window.print(); });
   (function(){

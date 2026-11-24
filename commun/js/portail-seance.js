@@ -67,7 +67,7 @@
 
   /* ---- Feu vert (A4) ---- */
   function voyant(v){
-    return `<div class="voyant ${esc(v.etat)}" tabindex="0" title="${esc(v.message)}"><span class="pastille" aria-hidden="true"></span><span><b>${esc(v.nom)} — ${({ vert: "OK", orange: "à regarder", rouge: "bloquant" })[v.etat] || ""}</b><span class="msg">${esc(v.message)}</span>${v.action ? `<span class="action">➜ ${esc(v.action)}</span>` : ""}</span></div>`;
+    return `<div class="voyant ${esc(v.etat)}" data-id="${esc(v.id || "")}" tabindex="0" title="${esc(v.message)}"><span class="pastille" aria-hidden="true"></span><span><b>${esc(v.nom)} — ${({ vert: "OK", orange: "à regarder", rouge: "bloquant" })[v.etat] || ""}</b><span class="msg">${esc(v.message)}</span>${v.action ? `<span class="action">➜ ${esc(v.action)}</span>` : ""}</span></div>`;
   }
   async function feuVert(){
     const z = $("feu");

@@ -255,7 +255,7 @@ def chemin_prive(chemin_relatif):
     if not segments:
         return False
     nom = segments[-1].lower()
-    return (".git" in [x.lower() for x in segments] or segments[0].lower() == "sauvegardes-resultats"
+    return (".git" in [x.lower() for x in segments] or segments[0].lower() in ("sauvegardes-resultats", "installations")
             or nom.startswith("resultats-classe") or nom.startswith("difficulte-classe") or nom.startswith("dossier-donnees") or nom.startswith("seance-du-jour")
             or nom.startswith("journal-ecole") or nom in ("version-installee.txt", "diagnostic.txt", "copie-nextcloud.txt", ".copie-escape-games.json")
             or (nom.startswith("cle-") and nom.endswith(".txt")))
@@ -481,8 +481,202 @@ def etat_sante():
         voyants.append({"id": "resultats", "nom": "Dossier des résultats", "etat": "rouge",
                         "message": "Impossible d'écrire dans le dossier des résultats ({}).".format(e.__class__.__name__),
                         "action": "Vérifiez dossier-donnees.txt (chemin du dossier) et que ce dossier existe (clé USB, Nextcloud…), puis relancez le serveur."})
+    voyants.append(voyant_sauvegarde())
     pire = "rouge" if any(x["etat"] == "rouge" for x in voyants) else "orange" if any(x["etat"] == "orange" for x in voyants) else "vert"
     return {"ok": True, "etat": pire, "voyants": voyants, "seance": s}
+
+
+def voyant_sauvegarde():
+    """Sauvegardes : copie du jour des résultats (sauvegardes-resultats/) et sauvegarde complète du projet (lot 3, D2)."""
+    v = {"id": "sauvegarde", "nom": "Sauvegarde", "etat": "vert", "message": "", "action": ""}
+    try:
+        copies = sorted(f for f in os.listdir(DOSSIER_SAUVEGARDES) if f.startswith("resultats-classe-") and f.endswith(".jsonl"))
+    except OSError:
+        copies = []
+    if os.path.exists(FICHIER_RESULTATS) and not copies:
+        v.update(etat="orange", message="Aucune copie de sécurité des résultats pour l'instant.",
+                 action="Elle se fait toute seule à la prochaine partie enregistrée ; rien à faire.")
+        return v
+    texte = "Copie des résultats du {}.".format(copies[-1][17:27]) if copies else "Pas encore de résultats à sauvegarder."
+    reglage = os.path.join(DOSSIER_PROJET, "outils-medias", "nuit", "dossier-sauvegarde.txt")
+    try:
+        with open(reglage, encoding="utf-8-sig") as f:
+            dest = f.readline().strip().strip('"')
+    except OSError:
+        dest = ""
+    if not dest:
+        v.update(message=texte + " Sauvegarde complète du projet : non installée sur ce PC.")
+        return v
+    try:
+        age = (time.time() - os.path.getmtime(dest)) / 86400
+    except OSError:
+        v.update(etat="orange", message=texte + " Dossier de sauvegarde complète introuvable : " + dest,
+                 action="Branchez le disque de sauvegarde, ou corrigez outils-medias\\nuit\\dossier-sauvegarde.txt.")
+        return v
+    if age > 8:
+        v.update(etat="orange", message=texte + " Dernière sauvegarde complète il y a {} jours.".format(int(age)),
+                 action="Laissez le PC allumé (ou en veille) le dimanche soir, ou relancez outils-medias\\nuit\\installer-nuit.bat.")
+    else:
+        v.update(message=texte + " Sauvegarde complète à jour (il y a {} jour{}).".format(int(age), "s" if int(age) > 1 else ""))
+    return v
+
+
+# ---- Tableau de bord (enseignant.html) : production, installations, mise à jour ----
+_MODULES = {}
+
+def module_outil(nom, chemin_relatif):
+    """Charge une seule fois un outil Python du dépôt (outils-docs/etat-production.py, outils-ecole/ecole.py)."""
+    if nom not in _MODULES:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(nom, os.path.join(DOSSIER_PROJET, *chemin_relatif.split("/")))
+        m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m)
+        _MODULES[nom] = m
+    return _MODULES[nom]
+
+_PRODUCTION = {"t": 0, "v": None}
+
+def etat_production():
+    """État de production des jeux, recalculé au plus une fois par minute (rien de personnel)."""
+    if _PRODUCTION["v"] is not None and time.time() - _PRODUCTION["t"] < 60:
+        return _PRODUCTION["v"]
+    try:
+        v = module_outil("etat_production", "outils-docs/etat-production.py").etat()
+        v["ok"], v["direct"] = True, True
+    except Exception as e:
+        v = {"ok": False, "erreur": "état de production illisible ({})".format(e.__class__.__name__)}
+    _PRODUCTION["t"], _PRODUCTION["v"] = time.time(), v
+    return v
+
+def role_installation():
+    """principal (dépôt git du PC où l'on modifie les jeux), ecole (PC de l'école), nextcloud (copie Nextcloud), archive."""
+    nextcloud = os.path.exists(os.path.join(DOSSIER_PROJET, "copie-nextcloud.txt"))
+    appdata = os.environ.get("APPDATA", "")
+    ecole = bool(appdata) and os.path.exists(os.path.join(appdata, "EscapeGames", "poste-ecole.txt"))
+    git = os.path.isdir(os.path.join(DOSSIER_PROJET, ".git"))
+    role = "ecole" if ecole else "nextcloud" if nextcloud else "principal" if git else \
+        "archive" if os.path.exists(os.path.join(DOSSIER_PROJET, "version-installee.txt")) else "copie"
+    return {"role": role, "ecole": ecole, "nextcloud": nextcloud, "git": git}
+
+def nom_machine():
+    return "".join(c if c.isalnum() or c in "-_" else "-" for c in (socket.gethostname() or "pc"))[:40] or "pc"
+
+def fiche_installation():
+    vj = lire_version_json()
+    f = dict(role_installation(), machine=nom_machine(), numero=vj.get("numero"), date=vj.get("date"),
+             texte=texte_numero(vj), commit=version_locale()[:12], vu=time.strftime("%Y-%m-%dT%H:%M"), dossier=DOSSIER_PROJET)
+    return f
+
+def noter_installation():
+    """installations/<machine>.json dans le dossier des jeux (jamais publié) : sur une copie Nextcloud, cette fiche
+    remonte jusqu'au PC principal, qui voit ainsi la version du PC de l'école."""
+    try:
+        d = os.path.join(DOSSIER_PROJET, "installations")
+        os.makedirs(d, exist_ok=True)
+        f = fiche_installation()
+        f.pop("dossier", None)
+        with open(os.path.join(d, f["machine"] + ".json.tmp"), "w", encoding="utf-8", newline="\n") as fh:
+            json.dump(f, fh, ensure_ascii=False)
+        os.replace(os.path.join(d, f["machine"] + ".json.tmp"), os.path.join(d, f["machine"] + ".json"))
+    except OSError:
+        pass
+
+def lire_fiches(dossier):
+    fiches = []
+    try:
+        noms = sorted(n for n in os.listdir(os.path.join(dossier, "installations")) if n.endswith(".json"))
+    except OSError:
+        return fiches
+    for n in noms[:20]:
+        try:
+            with open(os.path.join(dossier, "installations", n), encoding="utf-8") as fh:
+                x = json.load(fh)
+            if isinstance(x, dict):
+                fiches.append({k: x.get(k) for k in ("machine", "role", "ecole", "nextcloud", "numero", "date", "texte", "commit", "vu")})
+        except (OSError, ValueError):
+            pass
+    return fiches
+
+def etat_installations():
+    noter_installation()
+    ici = fiche_installation()
+    res = {"ok": True, "ici": ici, "fiches": [f for f in lire_fiches(DOSSIER_PROJET) if f.get("machine") != ici["machine"]],
+           "nextcloud": None, "en_ligne": version_en_ligne()}
+    if ici["role"] == "principal":
+        try:
+            E = module_outil("ecole", "outils-ecole/ecole.py")
+            dest = E.dossier_nextcloud_par_defaut()
+            nc = {"dossier": dest, "existe": os.path.isdir(dest), "version": E.lire_version(dest) if os.path.isdir(dest) else {}}
+            try:
+                with open(os.path.join(dest, ".copie-escape-games.json"), encoding="utf-8") as fh:
+                    nc["copie_du"] = json.load(fh).get("date")
+            except (OSError, ValueError):
+                nc["copie_du"] = None
+            nc["texte"] = texte_numero(nc["version"])
+            res["nextcloud"] = nc
+            res["fiches"] += [dict(f, via="nextcloud") for f in lire_fiches(dest) if f.get("machine") != ici["machine"]]
+        except Exception:
+            pass
+    return res
+
+MAJ = {"en_cours": False, "ok": None, "debut": "", "fin": "", "lignes": []}
+MAJ_LOCK = threading.Lock()
+
+def mettre_a_jour():
+    """Met à jour CETTE installation (thread) ; le journal est lu par GET /api/mettre-a-jour."""
+    import subprocess
+    def dire(t):
+        MAJ["lignes"].append(t)
+    def git(*args):
+        r = subprocess.run(["git", "-c", "gc.auto=0", "-c", "maintenance.auto=false"] + list(args), cwd=DOSSIER_PROJET,
+                           stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=900)
+        return r.returncode, r.stdout.decode("utf-8", "replace").strip()
+    ok = False
+    try:
+        r = role_installation()
+        if r["role"] == "principal":
+            dire("PC principal : c'est la source des jeux. Je mets à jour la copie Nextcloud (version commitée).")
+            E = module_outil("ecole", "outils-ecole/ecole.py")
+            dest = E.dossier_nextcloud_par_defaut()
+            if not os.path.isdir(dest):
+                dire("Copie Nextcloud introuvable : " + dest)
+                dire("Écrivez son chemin sur la 1re ligne de outils-ecole\\dossier-nextcloud.txt (Bloc-notes), puis recommencez.")
+            else:
+                c = E.synchroniser(DOSSIER_PROJET, dest, journal=lambda t: dire(t.strip()) if len(MAJ["lignes"]) < 60 else None)
+                dire("Copie Nextcloud : {ecrits} fichier(s) copié(s), {identiques} identique(s), {deplaces} rangé(s) dans _a-supprimer.".format(**c))
+                ok = not c.get("erreurs")
+            dire("Site en ligne (GitHub Pages) : à publier vous-même, après relecture des jeux sensibles. Invite de commandes :")
+            dire('cd /d "{}"  puis  git push origin escape-games'.format(DOSSIER_PROJET))
+        elif r["nextcloud"]:
+            dire("Copie Nextcloud : la mise à jour arrive par Nextcloud. Sur le PC principal, lancez mettre-a-jour-nextcloud.bat")
+            dire("(ou ce même bouton dans son tableau de bord). Ensuite, relancez lancer.bat ici.")
+            ok = True
+        elif r["git"]:
+            dire("Récupération de la dernière version (git fetch)...")
+            c, t = git("fetch", "origin", "escape-games")
+            if c != 0:
+                dire("Pas de connexion à GitHub : version actuelle gardée. " + t[-300:])
+            else:
+                c, t = git("merge", "--ff-only", "origin/escape-games")
+                dire(t[-600:] or "Déjà à jour.")
+                ok = c == 0
+                dire("Mise à jour faite : fermez la fenêtre noire du serveur puis double-clic sur lancer.bat." if ok
+                     else "Mise à jour refusée (fichiers modifiés sur ce PC) : lancez diagnostic.bat et envoyez diagnostic.txt.")
+        elif os.name == "nt" and os.path.exists(os.path.join(DOSSIER_PROJET, "outils-ecole", "maj-ecole.ps1")):
+            dire("Téléchargement de la dernière version depuis GitHub (plusieurs minutes la première fois)...")
+            p = subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                                os.path.join(DOSSIER_PROJET, "outils-ecole", "maj-ecole.ps1")], cwd=DOSSIER_PROJET,
+                               stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=3600)
+            dire(p.stdout.decode("utf-8", "replace").strip()[-600:])
+            ok = p.returncode == 0
+            if ok:
+                dire("Fermez la fenêtre noire du serveur puis double-clic sur lancer.bat pour utiliser la nouvelle version.")
+        else:
+            dire("Cette copie ne sait pas se mettre à jour seule : remplacez-la par une copie récente, ou installez git.")
+    except Exception as e:
+        dire("Erreur pendant la mise à jour : {}".format(e))
+    _PRODUCTION["v"] = None
+    MAJ.update(en_cours=False, ok=ok, fin=time.strftime("%H:%M:%S"))
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -823,6 +1017,23 @@ class Handler(BaseHTTPRequestHandler):
                         chemin = os.path.join(racine, nom)
                         fichiers[chemin.replace(os.sep, "/")] = os.path.getsize(chemin)
             self.json_reponse({"fichiers": fichiers})
+        elif path == "/api/production" and methode == "GET":
+            # État de production des jeux (tableau de bord) : aucune donnée d'élève
+            self.json_prive(etat_production())
+        elif path == "/api/installations" and methode == "GET":
+            if not self.reserve_enseignant():
+                return
+            self.json_prive(etat_installations())
+        elif path == "/api/mettre-a-jour":
+            # Bouton « Mettre à jour cette installation » : réservé à ce PC ; GET = où en est la mise à jour
+            if not self.reserve_enseignant():
+                return
+            if methode == "POST":
+                with MAJ_LOCK:
+                    if not MAJ["en_cours"]:
+                        MAJ.update(en_cours=True, ok=None, debut=time.strftime("%H:%M:%S"), fin="", lignes=[])
+                        threading.Thread(target=mettre_a_jour, daemon=True).start()
+            self.json_prive(dict(MAJ, ok_requete=True, role=role_installation()["role"]))
         elif path == "/api/version" and methode == "GET":
             # Version installée (lue par le tableau de bord, diagnostic.bat, le lanceur)
             vj = lire_version_json()
@@ -952,6 +1163,7 @@ def main():
     print("  🏠 ACCUEIL (tous les jeux)  →  http://{}:{}/".format(ip, PORT))
     print("  📺 CLASSEMENT À PROJETER   →  http://{}:{}/classement.html".format(ip, PORT))
     print("  🔳 QR CODE DES ÉLÈVES       →  http://127.0.0.1:{}/tableau.html  (à projeter)".format(PORT))
+    print("  👩‍🏫 TABLEAU DE BORD         →  http://127.0.0.1:{}/enseignant.html  (séance, équipes, mises à jour)".format(PORT))
     print()
     print("  📱 ADRESSES À DONNER AUX ÉLÈVES :")
     print("     Révolution française  →  http://{}:{}/declaration/".format(ip, PORT))
@@ -1018,6 +1230,7 @@ def main():
         print("     ou relancez lancer.bat (il ferme l'ancien serveur tout seul).\n")
         sys.exit(3)
     SERVEUR["v"] = serveur
+    noter_installation()
     try:
         serveur.serve_forever()
         print("\n  Serveur arrêté (un nouveau lancement l'a remplacé).\n")
