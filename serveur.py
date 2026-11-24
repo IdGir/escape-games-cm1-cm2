@@ -974,6 +974,7 @@ def main():
     print("     Immersif n°17        →  http://{}:{}/immersifs/vivant-ecosystemes/".format(ip, PORT))
     print("     Immersif n°19        →  http://{}:{}/immersifs/grande-guerre/".format(ip, PORT))
     print("     Immersif n°20        →  http://{}:{}/immersifs/seconde-guerre/".format(ip, PORT))
+    print("     Immersif n°23        →  http://{}:{}/immersifs/terre-active/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))

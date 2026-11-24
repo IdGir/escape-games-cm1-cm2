@@ -551,13 +551,16 @@ var CATALOGUE = {
     "P5"
    ],
    "competences": "La Terre, une planète active (activité interne).",
-   "dossier": null,
+   "dossier": "terre-active",
+   "immersif": "immersifs/terre-active",
+   "classique": false,
    "icone": "🌋",
    "couleurs": [
-    "#2b5d6b",
-    "#7fb3c8"
+    "#1f4e79",
+    "#e8873a"
    ],
-   "resume": "",
+   "resume": "Une secousse a tout renversé dans la station d'observation des Hauts, au pied du volcan de La Réunion : les jeunes volcanologues et sismologues préparent le message d'information des habitants de Bois-Clair.",
+   "medias_en_attente": true,
    "prompt": "23-terre-active.md",
    "programme": [
     "st2026"
