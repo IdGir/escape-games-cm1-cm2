@@ -40,7 +40,7 @@ Classés dans l'ordre du calendrier scolaire : la période 1 est en cours, on co
 | 20 | Radio Londres | Histoire | A | P5 | Seconde Guerre mondiale : montée des extrêmes, collaboration et résistance, victoire des alliés. | `20-seconde-guerre.md` | [x] (commits 69e2fde et 534a971, 21/11/2026, à pousser ; immersif 5 grades seulement, médias en attente, RELECTURE OBLIGATOIRE) |
 | 21 | L'Exposition universelle | Histoire | B | P5 | Énergies et machines ; la ville industrielle, révolution industrielle et progrès technique. | `21-age-industriel.md` | [ ] |
 | 22 | Le Traité perdu de Rome | Histoire | B | P5 | La construction européenne : CECA, CEE, UE (monnaie unique, institutions). | `22-europe.md` | [ ] |
-| 23 | L'Observatoire des volcans | Sciences | A | P5 | La Terre, une planète active (activité interne). | `23-terre-active.md` | [ ] |
+| 23 | L'Observatoire des volcans | Sciences | A | P5 | La Terre, une planète active (activité interne). | `23-terre-active.md` | [x] (commits 240abdd et 8f8948b, 24/11/2026, à pousser ; immersif 5 grades seulement, médias en attente) |
 | 24 | Le Jardin de la vie | Sciences | A | P5 | La reproduction sexuelle chez le vivant. | `24-reproduction.md` | [ ] |
 | 25 | Le Labo des illusions | Sciences | B | P5 | Le cerveau ; mécanismes perceptifs ; stratégies d'attention et de mémorisation. | `25-cerveau.md` | [ ] |
 | 26 | Mission Climat | Sciences | B | P5 | Définir le climat local ; conséquences du changement climatique, atténuation/adaptation. | `26-climat.md` | [ ] |
