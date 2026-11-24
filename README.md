@@ -167,6 +167,23 @@ Outil : l'Explorateur de fichiers de Windows.
 3. Pour l'enlever : double-clic sur `desinstaller-ecole.bat`.
 4. À n'installer que sur le PC de l'école (pas sur l'ordinateur où l'on modifie les jeux).
 
+### Mettre à jour chaque installation (chantier « distribution », novembre 2026)
+Chaque commit écrit `version.json` (numéro qui monte, date) grâce au crochet `outils-tests/hooks/pre-commit`
+(installé une fois : `git config core.hooksPath outils-tests/hooks`). Le voyant « Version » de l'espace enseignant,
+`lancer.bat`, `demarrer-ecole.bat` et `diagnostic.bat` affichent ce numéro et le comparent au site en ligne.
+
+| Installation | Pour la mettre à jour |
+|---|---|
+| PC principal (`E:\IDRISS\PROJET ESCAPE GAMES`) | Rien : c'est la source. Les tâches Claude y commitent. |
+| Site GitHub Pages (Chromebooks à la maison, collègues) | Invite de commandes : `cd /d "E:\IDRISS\PROJET ESCAPE GAMES"` puis `git push origin escape-games`. |
+| Copie Nextcloud | Sur le PC principal, double-clic sur `mettre-a-jour-nextcloud.bat` (essai, puis « O »). Copie la version **commitée**, jamais les résultats ni les réglages ; ce qui a disparu du dépôt va dans `_a-supprimer\` de la copie. Dossier : 1re ligne de `outils-ecole\dossier-nextcloud.txt`. |
+| PC de l'école | Fermer puis rouvrir la session Windows (ou double-clic sur `demarrer-ecole.bat`). Copie Nextcloud : la mise à jour arrive par Nextcloud. |
+| Chromebooks | Rien : ils lisent le PC de l'école (ou le site). Application installée : elle se met à jour à la connexion suivante. |
+
+`lancer.bat` et `demarrer-ecole.bat` ferment d'abord l'ancien serveur du port 8000 et ses fenêtres (plus de
+vieille version servie en douce), contrôlent les droits d'écriture, puis affichent la version et l'adresse des élèves.
+En cas de problème : double-clic sur `diagnostic.bat`, puis envoyer `diagnostic.txt` (aucun prénom d'élève dedans).
+
 ## 2. Tout vérifier : la page de vérification
 
 **[verifier.html](https://idgir.github.io/escape-games-cm1-cm2/verifier.html)** —
@@ -361,7 +378,11 @@ PROJET ESCAPE GAMES/
 ├── index.html              Accueil : tous les jeux
 ├── enseignant.html         ★ Espace enseignant : point d'entrée unique (par moment + jeu par jeu) — tableau généré par outils-docs/maj-espace-enseignant.py
 ├── verifier.html           Vérification : énigmes, médias, fichiers mal nommés
-├── lancer.bat              Serveur local, Windows (double-clic)
+├── lancer.bat              Serveur local, Windows (double-clic) : ferme l'ancien serveur, version, adresse, espace enseignant
+├── diagnostic.bat          En cas de problème : écrit diagnostic.txt (à envoyer)
+├── mettre-a-jour-nextcloud.bat  PC principal : met à jour la copie Nextcloud (version commitée, résultats jamais touchés)
+├── version.json            Numéro et date de la version (écrit à chaque commit par outils-tests/hooks/pre-commit)
+├── outils-ecole/           ecole.py (outils des .bat : port, version, diagnostic, copie Nextcloud), maj-ecole.ps1
 ├── lancer-mac.command      Serveur local, Mac
 ├── serveur.py              Le serveur lui-même (Python, rien d'autre à installer)
 ├── outils-tests/          Tests automatiques des 15 jeux (Node + jsdom) : node outils-tests/tous.js
@@ -539,6 +560,7 @@ avec le fichier et la ligne où chacun est cité.
 | L'ancienne image reste affichée | Le navigateur garde une copie : **Ctrl+F5**, ou attendez quelques minutes après un envoi sur GitHub. |
 | Pas de vidéo, seulement les dessins | Le jeu a été ouvert en double-clic : passez par l'adresse en ligne ou par `lancer.bat`. |
 | `lancer.bat` affiche « Python n'est pas installé » | Installez Python en cochant « Add Python to PATH », ou jouez en ligne. |
+| Une vieille version s'affiche, ou une ancienne fenêtre noire reste ouverte | Relancez `lancer.bat` : il ferme l'ancien serveur et ses fenêtres. Sinon : `diagnostic.bat`, puis envoyez `diagnostic.txt`. |
 | Le tableau de bord n'affiche aucune équipe | Il ne fonctionne qu'en mode local, avec les élèves sur l'adresse affichée par `lancer.bat`. |
 | Page blanche ou jeu figé | Chrome ou Edge à jour ; rechargez la page. |
 | Un élève dyslexique ou lecteur fragile | ⚙️ Réglages → Accessibilité → **📖 Lecture facilitée** : police OpenDyslexic ou très lisible, interlignage aéré, espacement. Réglé une fois, valable pour tous les jeux sur cet appareil. |

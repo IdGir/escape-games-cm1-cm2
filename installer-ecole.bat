@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title Escape games - installation du PC de l'ecole (une seule fois)
+title EG - installation du PC de l'ecole (une seule fois)
 cd /d "%~dp0"
 cls
 echo.
@@ -31,7 +31,7 @@ if %errorlevel%==0 (
 REM 2e essai, sans droits administrateur : un lanceur dans le dossier Demarrage de l'utilisateur
 set "STARTUP=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 if not exist "%STARTUP%" mkdir "%STARTUP%"
-> "%STARTUP%\EscapeGames-Ecole.cmd" echo @start "Escape games" /min "%DEMARRER%"
+> "%STARTUP%\EscapeGames-Ecole.cmd" echo @start "EG" /min "%DEMARRER%"
 if exist "%STARTUP%\EscapeGames-Ecole.cmd" (
     echo  [OK] Lanceur place dans le dossier Demarrage de Windows : il se lance a chaque ouverture de session.
     goto :essai
@@ -47,7 +47,7 @@ echo  Pour l'enlever plus tard : double-clic sur desinstaller-ecole.bat
 echo.
 choice /C ON /M "  Lancer la mise a jour et le serveur maintenant (O = oui, N = non) "
 if errorlevel 2 goto :fin
-start "Escape games" /min "%DEMARRER%"
+start "EG" /min "%DEMARRER%"
 echo.
 echo  Serveur en cours de lancement (fenetre reduite). Espace enseignant :
 echo     http://127.0.0.1:8000/enseignant.html

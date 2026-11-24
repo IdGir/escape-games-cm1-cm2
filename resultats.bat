@@ -12,4 +12,4 @@ echo.
 echo  Le serveur n'est pas lance : demarrage en cours.
 echo  La page des resultats s'ouvrira toute seule.
 echo.
-call lancer.bat
+call lancer.bat resultats.html

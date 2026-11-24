@@ -1,16 +1,24 @@
 @echo off
+REM Ouvre ce jeu. Passe par lancer.bat a la racine : il ferme l'ancien serveur du port 8000,
+REM affiche la version et l'adresse des eleves. Fichier genere par migrer-jeu.py.
+setlocal
 chcp 65001 >nul
-title Serveur local - traite-colonies
 cd /d "%~dp0..\..\"
-cls
-set CMD=
-python --version >nul 2>&1 && set CMD=python
-if not defined CMD py --version >nul 2>&1 && set CMD=py
+if not exist "lancer.bat" goto :simple
+if not exist "outils-ecole\ecole.py" goto :simple
+call lancer.bat immersifs/traite-colonies/
+exit /b
+
+:simple
+title Serveur local - traite-colonies
+set "CMD="
+python --version >nul 2>&1 && set "CMD=python"
+if not defined CMD py -3 --version >nul 2>&1 && set "CMD=py -3"
 if not defined CMD goto :sanspython
 echo  Jeu : http://127.0.0.1:8000/immersifs/traite-colonies/
 echo  Fermez cette fenetre pour arreter le serveur.
-start "" cmd /c "timeout /t 2 /nobreak >nul & start http://127.0.0.1:8000/immersifs/traite-colonies/"
-if exist serveur.py (%CMD% serveur.py 8000) else (%CMD% -m http.server 8000)
+start "" /min cmd /c "ping -n 3 127.0.0.1 >nul & start http://127.0.0.1:8000/immersifs/traite-colonies/"
+if exist "serveur.py" (%CMD% serveur.py 8000) else (%CMD% -m http.server 8000)
 pause
 exit /b 0
 

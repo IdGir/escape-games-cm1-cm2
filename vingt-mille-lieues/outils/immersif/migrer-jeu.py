@@ -430,16 +430,33 @@ def ecrire_rapport(dest, jeu, src_nom, rapport, theme, correspondances):
     open(os.path.join(dest, "MIGRATION-RAPPORT.md"), "w", encoding="utf-8", newline="\n").write("\n".join(L))
 
 
+def texte_lanceur(prof, adresse, slug_jeu):
+    """lancer.bat d'une variante : passe par lancer.bat de la racine (ferme l'ancien serveur du port 8000,
+    version, adresse) ; sans lui (archive du jeu seul), lancement simple, sans fenêtre de plus."""
+    remonter = "..\\" * prof
+    return ("@echo off\r\n"
+            "REM Ouvre ce jeu. Passe par lancer.bat a la racine : il ferme l'ancien serveur du port 8000,\r\n"
+            "REM affiche la version et l'adresse des eleves. Fichier genere par migrer-jeu.py.\r\n"
+            "setlocal\r\nchcp 65001 >nul\r\n"
+            "cd /d \"%~dp0" + remonter + "\"\r\n"
+            "if not exist \"lancer.bat\" goto :simple\r\n"
+            "if not exist \"outils-ecole\\ecole.py\" goto :simple\r\n"
+            f"call lancer.bat {adresse}/\r\n"
+            "exit /b\r\n\r\n"
+            ":simple\r\n"
+            "title Serveur local - " + slug_jeu + "\r\n"
+            "set \"CMD=\"\r\npython --version >nul 2>&1 && set \"CMD=python\"\r\n"
+            "if not defined CMD py -3 --version >nul 2>&1 && set \"CMD=py -3\"\r\nif not defined CMD goto :sanspython\r\n"
+            f"echo  Jeu : http://127.0.0.1:8000/{adresse}/\r\necho  Fermez cette fenetre pour arreter le serveur.\r\n"
+            f"start \"\" /min cmd /c \"ping -n 3 127.0.0.1 >nul & start http://127.0.0.1:8000/{adresse}/\"\r\n"
+            "if exist \"serveur.py\" (%CMD% serveur.py 8000) else (%CMD% -m http.server 8000)\r\npause\r\nexit /b 0\r\n\r\n:sanspython\r\n"
+            "echo  [ERREUR] Python n'est pas installe ou pas dans le PATH.\r\npause\r\nexit /b 1\r\n")
+
+
 def lanceur(dest, slug_jeu):
     prof = profondeur_de(dest)
     adresse = os.path.relpath(os.path.abspath(dest), RACINE).replace(os.sep, "/")
-    s = ("@echo off\r\nchcp 65001 >nul\r\ntitle Serveur local - " + slug_jeu + "\r\ncd /d \"%~dp0" + "..\\" * prof + "\"\r\ncls\r\nset CMD=\r\npython --version >nul 2>&1 && set CMD=python\r\n"
-         "if not defined CMD py --version >nul 2>&1 && set CMD=py\r\nif not defined CMD goto :sanspython\r\n"
-         f"echo  Jeu : http://127.0.0.1:8000/{adresse}/\r\necho  Fermez cette fenetre pour arreter le serveur.\r\n"
-         f"start \"\" cmd /c \"timeout /t 2 /nobreak >nul & start http://127.0.0.1:8000/{adresse}/\"\r\n"
-         "if exist serveur.py (%CMD% serveur.py 8000) else (%CMD% -m http.server 8000)\r\npause\r\nexit /b 0\r\n\r\n:sanspython\r\n"
-         "echo  [ERREUR] Python n'est pas installe ou pas dans le PATH.\r\npause\r\nexit /b 1\r\n")
-    open(os.path.join(dest, "lancer.bat"), "w", encoding="ascii", newline="").write(s)
+    open(os.path.join(dest, "lancer.bat"), "w", encoding="ascii", newline="").write(texte_lanceur(prof, adresse, slug_jeu))
 
 
 A_GARDER = ("assets/", "js/jeu-config.js", "js/donnees-embarquees.js", "js/decors-secours.js", "css/theme.css", "medias.csv", "MIGRATION-RAPPORT.md", "lancer.bat",

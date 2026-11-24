@@ -257,7 +257,7 @@ def chemin_prive(chemin_relatif):
     nom = segments[-1].lower()
     return (".git" in [x.lower() for x in segments] or segments[0].lower() == "sauvegardes-resultats"
             or nom.startswith("resultats-classe") or nom.startswith("difficulte-classe") or nom.startswith("dossier-donnees") or nom.startswith("seance-du-jour")
-            or nom.startswith("journal-ecole") or nom == "version-installee.txt"
+            or nom.startswith("journal-ecole") or nom in ("version-installee.txt", "diagnostic.txt", "copie-nextcloud.txt", ".copie-escape-games.json")
             or (nom.startswith("cle-") and nom.endswith(".txt")))
 
 
@@ -330,6 +330,40 @@ def version_locale():
         return ""
 
 _VERSION_DISTANTE = {"t": 0, "v": None}
+_VERSION_EN_LIGNE = {"t": 0, "v": None}
+
+def lire_version_json():
+    """version.json (écrit à chaque commit par outils-tests/hooks/pre-commit) : {numero, date, branche, commit_precedent}."""
+    try:
+        with open(os.path.join(DOSSIER_PROJET, "version.json"), encoding="utf-8-sig") as f:
+            v = json.load(f)
+        return v if isinstance(v, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+def texte_numero(v):
+    """« n° 412 du 23/11/2026 » (ou '' sans version.json)."""
+    if not v or not v.get("numero"):
+        return ""
+    d = str(v.get("date") or "")
+    return "n° {}{}".format(v["numero"], " du {}/{}/{}".format(d[8:10], d[5:7], d[0:4]) if len(d) >= 10 else "")
+
+def version_en_ligne():
+    """version.json du site GitHub Pages (gardé 10 minutes ; None si injoignable ou pas encore publié)."""
+    if time.time() - _VERSION_EN_LIGNE["t"] < 600:
+        return _VERSION_EN_LIGNE["v"]
+    v = None
+    try:
+        import urllib.request
+        req = urllib.request.Request("https://idgir.github.io/escape-games-cm1-cm2/version.json?t={}".format(int(time.time())),
+                                     headers={"User-Agent": "escape-games-serveur", "Cache-Control": "no-cache"})
+        with urllib.request.urlopen(req, timeout=4) as r:
+            v = json.loads(r.read(20000).decode("utf-8", "replace"))
+        v = v if isinstance(v, dict) and isinstance(v.get("numero"), int) else None
+    except Exception:
+        v = None
+    _VERSION_EN_LIGNE["t"], _VERSION_EN_LIGNE["v"] = time.time(), v
+    return v
 
 def version_distante():
     """Dernier commit publié sur GitHub (gardé 10 minutes ; None si internet ne répond pas)."""
@@ -385,21 +419,38 @@ def etat_sante():
                 "message": "Le serveur répond. Adresse des élèves : http://{}:{}/".format(get_ip_locale(), PORT), "action": ""}]
     # Version à jour par rapport à GitHub
     loc, dist = version_locale(), version_distante()
-    if not loc:
+    vj = lire_version_json()
+    num = texte_numero(vj)
+    en_ligne = version_en_ligne() if (vj.get("numero") and (not loc or not dist)) else None
+    if en_ligne and isinstance(vj.get("numero"), int):
+        # Copie sans git (Nextcloud, archive) : on compare les numéros de version.json
+        if vj["numero"] == en_ligne["numero"]:
+            v = ("vert", "Version à jour ({}, identique au site en ligne).".format(num), "")
+        elif vj["numero"] > en_ligne["numero"]:
+            v = ("orange", "Cette copie ({}) est plus récente que le site en ligne ({}).".format(num, texte_numero(en_ligne)),
+                 "Publiez depuis le PC principal (git push origin escape-games) si les Chromebooks jouent aussi en ligne.")
+        else:
+            v = ("orange", "Une version plus récente existe ({} en ligne, {} ici).".format(texte_numero(en_ligne), num),
+                 "Copie Nextcloud : lancez mettre-a-jour-nextcloud.bat sur le PC principal. PC de l'école : fermez puis rouvrez la session Windows.")
+    elif not loc and num:
+        v = ("orange", "Version installée : {} (site en ligne injoignable, non comparée).".format(num),
+             "Rien à faire si le jeu marche.")
+    elif not loc:
         v = ("orange", "Version installée inconnue (ni dépôt git, ni version-installee.txt).",
              "Installez la mise à jour automatique : double-clic sur installer-ecole.bat (une seule fois).")
     elif not dist:
         v = ("orange", "GitHub injoignable : version non comparée.",
              "Rien à faire si le jeu marche (sinon : connexion internet du PC).")
     elif loc == dist:
-        v = ("vert", "Version à jour (identique à GitHub, {}).".format(loc[:7]), "")
+        v = ("vert", "Version à jour (identique à GitHub, {}{}).".format(num + ", " if num else "", loc[:7]), "")
     elif est_ancetre(dist, loc):
         v = ("orange", "Ce PC a des modifications pas encore publiées sur GitHub ({} ici, {} en ligne).".format(loc[:7], dist[:7]),
              "Publiez-les (git push) si les Chromebooks jouent aussi depuis le site en ligne.")
     else:
         v = ("orange", "Une version plus récente existe sur GitHub ({} en ligne, {} ici).".format(dist[:7], loc[:7]),
              "Fermez la session Windows puis rouvrez-la (mise à jour automatique), ou double-clic sur demarrer-ecole.bat.")
-    voyants.append({"id": "version", "nom": "Version", "etat": v[0], "message": v[1], "action": v[2]})
+    voyants.append({"id": "version", "nom": "Version", "etat": v[0], "message": v[1], "action": v[2],
+                    "numero": vj.get("numero"), "date": vj.get("date"), "commit": loc[:40]})
     # Médias du jeu du jour
     s = lire_seance()
     if not s:
@@ -772,6 +823,18 @@ class Handler(BaseHTTPRequestHandler):
                         chemin = os.path.join(racine, nom)
                         fichiers[chemin.replace(os.sep, "/")] = os.path.getsize(chemin)
             self.json_reponse({"fichiers": fichiers})
+        elif path == "/api/version" and methode == "GET":
+            # Version installée (lue par le tableau de bord, diagnostic.bat, le lanceur)
+            vj = lire_version_json()
+            self.json_prive({"ok": True, "numero": vj.get("numero"), "date": vj.get("date"), "texte": texte_numero(vj),
+                             "commit": version_locale()[:40], "commit_precedent": vj.get("commit_precedent", ""),
+                             "nextcloud": os.path.exists(os.path.join(DOSSIER_PROJET, "copie-nextcloud.txt"))})
+        elif path == "/api/arreter" and methode == "POST":
+            # Arrêt propre, demandé par lancer.bat / demarrer-ecole.bat avant de relancer : réservé à ce PC
+            if not self.reserve_enseignant():
+                return
+            self.json_prive({"ok": True})
+            threading.Thread(target=arreter_serveur, daemon=True).start()
         elif path == "/api/info" and methode == "GET":
             self.json_reponse({
                 "serveur": "Escape games pédagogiques CM1-CM2",
@@ -839,7 +902,26 @@ class ServeurMultiThread(ThreadingMixIn, HTTPServer):
     petites requêtes /api/etat qui font vivre le tableau de bord du prof.
     """
     daemon_threads = True
-    allow_reuse_address = True
+    # Windows : SO_REUSEADDR y permet à DEUX serveurs d'écouter le même port (l'ancien continuait alors
+    # à servir une vieille version). On le réserve à Linux/Mac et on demande l'usage exclusif sous Windows.
+    allow_reuse_address = os.name != "nt"
+
+    def server_bind(self):
+        if os.name == "nt" and hasattr(socket, "SO_EXCLUSIVEADDRUSE"):
+            try:
+                self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+            except OSError:
+                pass
+        HTTPServer.server_bind(self)
+
+
+SERVEUR = {"v": None}
+
+def arreter_serveur():
+    time.sleep(0.3)   # laisse partir la réponse
+    s = SERVEUR["v"]
+    if s is not None:
+        s.shutdown()
 
 
 def preparer_console():
@@ -864,6 +946,7 @@ def main():
     print("=" * 62)
     print()
     print("  ✅ Serveur démarré sur le port {} (multi-thread, vidéo activée)".format(PORT))
+    print("  🏷️  Version des jeux : {}".format(texte_numero(lire_version_json()) or "inconnue (pas de version.json)"))
     print("  🗂️  Résultats de la classe : {}".format(os.path.abspath(FICHIER_RESULTATS)))
     print()
     print("  🏠 ACCUEIL (tous les jeux)  →  http://{}:{}/".format(ip, PORT))
@@ -926,12 +1009,20 @@ def main():
     print()
     print("-" * 62)
     copie_de_securite()
-    serveur = ServeurMultiThread(("0.0.0.0", PORT), Handler)
+    try:
+        serveur = ServeurMultiThread(("0.0.0.0", PORT), Handler)
+    except OSError as e:
+        print("\n  ❌ Impossible d'ouvrir le port {} : il est déjà utilisé ({}).".format(PORT, e))
+        print("     Un autre serveur des jeux tourne sans doute déjà : fermez sa fenêtre,")
+        print("     ou relancez lancer.bat (il ferme l'ancien serveur tout seul).\n")
+        sys.exit(3)
+    SERVEUR["v"] = serveur
     try:
         serveur.serve_forever()
+        print("\n  Serveur arrêté (un nouveau lancement l'a remplacé).\n")
     except KeyboardInterrupt:
         print("\n\nServeur arrêté. À bientôt !\n")
-        serveur.server_close()
+    serveur.server_close()
 
 
 if __name__ == "__main__":

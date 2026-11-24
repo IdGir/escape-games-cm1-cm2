@@ -1,0 +1,25 @@
+#!/bin/sh
+# Crochet git « pre-commit » : à chaque commit, écrit version.json à la racine et l'ajoute au commit.
+#   numero           : rang du commit dans la branche (1, 2, 3...) : plus grand = plus récent ;
+#   date             : date et heure du commit ;
+#   branche          : branche du commit (escape-games) ;
+#   commit_precedent : le commit sur lequel celui-ci est posé (un commit ne peut pas contenir
+#                      son propre identifiant ; serveur.py et diagnostic.bat donnent le commit exact).
+# Lu par serveur.py (/api/version, voyant « Version »), lancer.bat, demarrer-ecole.bat,
+# diagnostic.bat et le site en ligne (https://idgir.github.io/escape-games-cm1-cm2/version.json).
+#
+# Installation, une seule fois par ordinateur (depuis la racine du dépôt) :
+#     git config core.hooksPath outils-tests/hooks
+# Commit sans version.json, exceptionnellement :  ESCAPE_SANS_VERSION=1 git commit ...
+[ -n "$ESCAPE_SANS_VERSION" ] && exit 0
+RACINE="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+[ -f "$RACINE/serveur.py" ] || exit 0
+BASE="$(git rev-parse --short=12 HEAD 2>/dev/null)" || BASE=""
+N="$(git rev-list --count HEAD 2>/dev/null)" || N=0
+N=$((N + 1))
+BRANCHE="$(git symbolic-ref --short -q HEAD 2>/dev/null)" || BRANCHE=""
+DATE="$(date '+%Y-%m-%dT%H:%M:%S%z')"
+printf '{\n  "numero": %s,\n  "date": "%s",\n  "branche": "%s",\n  "commit_precedent": "%s"\n}\n' \
+  "$N" "$DATE" "$BRANCHE" "$BASE" > "$RACINE/version.json" || exit 0
+git add -- "$RACINE/version.json" || exit 0
+exit 0
