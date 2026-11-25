@@ -46,6 +46,7 @@ var LSU = {
   "hg-loger": { "discipline": "Histoire et géographie", "type": "Élément de programme", "libelle": "Se loger, travailler, se cultiver, avoir des loisirs en France" },
   "hg-consommer": { "discipline": "Histoire et géographie", "type": "Élément de programme", "libelle": "Consommer en France" },
   "hg-deplacer": { "discipline": "Histoire et géographie", "type": "Élément de programme", "libelle": "Se déplacer" },
+  "hg-guerres": { "discipline": "Histoire et géographie", "type": "Élément de programme", "libelle": "La France, des guerres mondiales à l'Union européenne" },
   "hg-periodes": { "discipline": "Histoire et géographie", "type": "Compétence", "libelle": "Situer des grandes périodes historiques" },
   "hg-localiser": { "discipline": "Histoire et géographie", "type": "Compétence", "libelle": "Nommer et localiser les grands repères géographiques" },
   "hg-echelle": { "discipline": "Histoire et géographie", "type": "Compétence", "libelle": "Appréhender la notion d'échelle géographique" },
@@ -109,6 +110,9 @@ var LSU = {
   },
   "grandes-explorations": {
    "epices": ["hg-rois", "~"], "techniques": ["hg-rois", "~"], "voyages": ["hg-localiser", "~"], "rencontres": ["hg-rois", "~"], "empires": ["hg-rois", "~"]
+  },
+  "grande-guerre": {
+   "causes": ["hg-guerres", "="], "front": ["hg-guerres", "="], "arriere": ["hg-guerres", "="], "armistice": ["hg-guerres", "="], "memoire": ["hg-guerres", "~"]
   },
   "vivant-ecosystemes": {
    "espece": ["sc-vivant", "="], "classer": ["sc-vivant", "="], "fossiles": ["sc-vivant", "~"], "ecosysteme": ["sc-terre", "="], "reseau": ["sc-terre", "="]

@@ -113,6 +113,16 @@ var FAMILLES = {
     "empires": "expliquer comment des pays d'Europe se sont partagé l'Amérique et ont exploité leurs colonies"
    }
   },
+  "grande-guerre": {
+   "deroule": "Dans le grenier de l'école d'un village imaginaire, les élèves ont lu cinq lettres écrites entre 1914 et 1922 pour comprendre comment la Première Guerre mondiale a touché les soldats, leurs familles et tout le pays.",
+   "lecons": {
+    "causes": "expliquer pourquoi les pays d'Europe sont entrés en guerre en 1914 et ce qu'était la mobilisation",
+    "front": "décrire la vie des soldats dans les tranchées et situer les grandes batailles de 1916",
+    "arriere": "raconter comment les femmes, les enfants et les travailleurs ont fait tourner le pays pendant la guerre",
+    "armistice": "dater la fin des combats (11 novembre 1918) et la paix de 1919, et dire pourquoi le bilan est si lourd",
+    "memoire": "expliquer à quoi servent le monument aux morts et le 11 novembre, et pourquoi la paix est restée fragile"
+   }
+  },
   "vivant-ecosystemes": {
    "deroule": "Dans une réserve naturelle imaginaire de Bourgogne, le ruisseau a inondé le campement d'une expédition : les élèves, jeunes naturalistes, ont aidé cinq experts à remettre en ordre leurs fiches en découvrant la diversité du vivant.",
    "lecons": {

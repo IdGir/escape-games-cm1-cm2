@@ -34,6 +34,12 @@ Dans le grenier de l'école du village (inventé) de Vaux-les-Tilleuls, en Côte
 
 CM1 : 3 énigmes par lettre (15) ; CM2 : 4 énigmes par lettre (20). Repères en CM1 (début et fin de la guerre, ordre des événements) ; dates exactes et chiffres officiels en CM2 (28 juin 1914, 1er-3 août 1914, 1916, 11 novembre 1918 à 5 h 15, 28 juin 1919, 1,4 million, 8,7 millions, 600 000 veuves, 430 000 munitionnettes, 1922).
 
+## Imprimer
+
+- **Leçons A4 illustrées** (CM1 / CM2, compétence du programme, schémas, frises, tableaux, lexique) : `lecons-imprimables.html`.
+- **Évaluations** (fiches préparatoires, QCM, vrai/faux, études de documents, corrigés à la fin) : `evaluations-imprimables.html`.
+- Ces deux pages s'ouvrent aussi depuis la variante immersive (page « Leçons A4 »). Jeu sensible : les relire avant la classe.
+
 ## Solutions (générées depuis `assets/data/enigmes.json`)
 
 ### Lettre n°1, août 1914 — La place du village : l'entrée en guerre (mot : **MOBILISATION**)

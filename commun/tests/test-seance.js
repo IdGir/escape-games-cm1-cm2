@@ -156,8 +156,8 @@ SECTIONS.B2 = async () => {
   ok(r.w.__imprime >= 1 && (r.w.__cadres || []).some(u => /lecons-imprimables/.test(u)), "un bouton : fiche + évaluation imprimées, puis les leçons");
   const g = d.getElementById("choix-grade"); g.value = "second"; g.dispatchEvent(new r.w.Event("change")); await dodo(400);
   ok(r.w.__pack.niveau === "CM2" && /niveau=CM2/.test(r.w.__pack.lecons) && /Niveau CM2/.test(d.querySelector(".feuille.eval").textContent), "grade Second → leçons et évaluation CM2");
-  const j = d.getElementById("choix-jeu"); j.value = "grande-guerre"; j.dispatchEvent(new r.w.Event("change")); await dodo(500);
-  ok(/immersifs\/grande-guerre\/lecons-imprimables\.html/.test(r.w.__pack.lecons) && /⚠️/.test(d.getElementById("docs").textContent), "jeu sans leçons A4 classiques : fiches de la variante immersive ; évaluation absente signalée");
+  const j = d.getElementById("choix-jeu"); j.value = "seconde-guerre"; j.dispatchEvent(new r.w.Event("change")); await dodo(500);
+  ok(/immersifs\/seconde-guerre\/lecons-imprimables\.html/.test(r.w.__pack.lecons) && /⚠️/.test(d.getElementById("docs").textContent), "jeu sans leçons A4 classiques : fiches de la variante immersive ; évaluation absente signalée");
   ok(r.erreurs.length === 0, "erreurs JS : " + r.erreurs.join(" | "));
 };
 

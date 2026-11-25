@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Évaluations à imprimer — Les Lettres du poilu</title>
+<link rel="stylesheet" href="css/print.css?e1">
+<style>
+  body{ margin:0; background:#dfe5ec; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color:#1b2733; }
+  .outils{ position:sticky; top:0; z-index:2; background:#3d4f6b; color:#fff; padding:10px 16px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .outils b{ margin-right:8px; }
+  .outils button, .outils select{ font-size:.95rem; padding:6px 10px; border-radius:6px; border:0; cursor:pointer; }
+  .outils button[aria-pressed="true"]{ background:#9e3a32; color:#fff; }
+  .outils .aide{ flex-basis:100%; font-size:.82rem; opacity:.85; }
+  .outils a{ color:#ffd98a; }
+  @media screen{
+    .zone-impression{ display:block; background:#fff; max-width:210mm; margin:14px auto; padding:14mm; box-sizing:border-box; box-shadow:0 4px 18px rgba(0,0,0,.25); }
+  }
+  @media print{ .outils{ display:none !important; } }
+</style>
+</head>
+<body>
+<div class="outils">
+  <b>📝 Évaluations — Les Lettres du poilu</b>
+  <label>Niveau : <select id="niveau"><option>CM1</option><option selected>CM2</option></select></label>
+  <button data-type="prepa">📋 Fiches préparatoires</button>
+  <button data-type="qcm">📝 QCM</button>
+  <button data-type="fermees">✅ Vrai/Faux et réponses courtes</button>
+  <button data-type="docs">📄 Étude de documents</button>
+  <button data-type="tout" aria-pressed="true">📚 Tout (élève + corrigés)</button>
+  <button id="imprimer">🖨️ Imprimer</button>
+  <span class="aide"><b>Jeu sensible : relire avant la classe.</b> Les corrigés sont regroupés à la fin, après l'intercalaire « CORRIGÉS ». Format A4 portrait, cocher « Graphiques d'arrière-plan ». Leçons A4 : <a href="lecons-imprimables.html">lecons-imprimables.html</a> · Jouer : <a href="../immersifs/grande-guerre/">version immersive</a>.</span>
+</div>
+<script src="assets/data/evaluations-embarquees.js?e1"></script>
+<script>
+/* Ce que commun/js/impression.js attend d'un jeu classique (objet JEU, état ETAT). */
+var JEU = {
+  titre: "Les Lettres du poilu",
+  impression: {
+    logo: "✉",
+    pied: "Les Lettres du poilu · la Première Guerre mondiale · cycle 3",
+    motSalle: "Lettre",
+    contexte: "📜 Ce qu'il faut savoir",
+    titreQcm: "La Première Guerre mondiale (1914-1918)",
+    theme: "l'entrée en guerre, le front et les tranchées, l'arrière, l'armistice et la paix, la mémoire",
+    mentions: ["", "", "", ""], sousTitre: "", libelleMotsCles: ""
+  }
+};
+var ETAT = { niveau: "CM2", equipe: "" };
+</script>
+<script src="../commun/js/impression.js?c1"></script>
+<script>
+(async function(){
+  let donnees = null;
+  try{ const r = await fetch("assets/data/evaluations.json", {cache:"no-store"}); if(r.ok) donnees = await r.json(); }catch(e){ /* double-clic : copie embarquée */ }
+  DONNEES_EVAL = donnees || window.EVAL_EMBARQUEES;
+  const q = new URLSearchParams(location.search);
+  const sel = document.getElementById("niveau");
+  if(["CM1","CM2"].includes(q.get("niveau"))) sel.value = q.get("niveau");
+  let type = ["prepa","qcm","fermees","docs","tout"].includes(q.get("type")) ? q.get("type") : "tout";
+  const dessiner = () => {
+    const niveau = ETAT.niveau = sel.value;
+    const eleve = [], corrige = [];
+    if(type==="prepa" || type==="tout") eleve.push(fichesPreparatoiresHTML());
+    if(type==="qcm" || type==="tout"){ eleve.push(qcmHTML(niveau,false)); corrige.push(qcmHTML(niveau,true)); }
+    if(type==="fermees" || type==="tout"){ eleve.push(fermeesHTML(niveau,false)); corrige.push(fermeesHTML(niveau,true)); }
+    if(type==="docs" || type==="tout"){ eleve.push(etudesDocsHTML(niveau,false)); corrige.push(etudesDocsHTML(niveau,true)); }
+    const pages = [...eleve, ...(corrige.length ? [separateurCorriges()] : []), ...corrige];
+    preparerZoneImpression().innerHTML = pages.filter(Boolean).join(sautPage());
+    document.querySelectorAll("[data-type]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.type === type)));
+    document.body.dataset.pret = "1";
+  };
+  document.querySelectorAll("[data-type]").forEach(b => b.onclick = () => { type = b.dataset.type; dessiner(); });
+  sel.onchange = dessiner;
+  document.getElementById("imprimer").onclick = () => window.print();
+  dessiner();
+})();
+</script>
+</body>
+</html>
