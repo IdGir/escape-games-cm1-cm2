@@ -18,6 +18,7 @@
 ============================================================
 """
 import os
+import re
 import sys
 import json
 import time
@@ -297,6 +298,39 @@ def ecrire_seance(seance):
         with open(tmp, "w", encoding="utf-8", newline="\n") as f:
             json.dump(seance, f, ensure_ascii=False, indent=1)
         os.replace(tmp, FICHIER_SEANCE)
+        return True
+    except OSError:
+        return False
+
+# ---- Relectures validées (page « À relire » de l'espace enseignant) ----
+# Un point validé ou à corriger est gardé dans le dossier de données (jamais publié) : relectures-validees.json.
+FICHIER_RELECTURES = os.path.join(DOSSIER_DONNEES, "relectures-validees.json")
+
+def lire_relectures():
+    try:
+        with open(FICHIER_RELECTURES, encoding="utf-8") as f:
+            r = json.load(f)
+        return r if isinstance(r, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+def noter_relecture(ident, etat, note):
+    """etat : « ok », « corriger » ou « » (remettre à relire). Renvoie True si le fichier est écrit."""
+    ident = str(ident or "")
+    if not re.match(r"^[a-z0-9-]{1,60}:\d{1,4}:[0-9a-f]{6}$", ident) or etat not in ("ok", "corriger", ""):
+        return False
+    r = lire_relectures()
+    if etat:
+        r[ident] = {"e": etat, "n": str(note or "")[:300], "d": time.strftime("%Y-%m-%d")}
+    else:
+        r.pop(ident, None)
+    if len(r) > 3000:
+        return False
+    try:
+        tmp = FICHIER_RELECTURES + ".tmp"
+        with open(tmp, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(r, f, ensure_ascii=False, indent=1)
+        os.replace(tmp, FICHIER_RELECTURES)
         return True
     except OSError:
         return False
@@ -987,6 +1021,16 @@ class Handler(BaseHTTPRequestHandler):
                  "depuis": time.strftime("%Y-%m-%dT%H:%M:%S")}
             ok = ecrire_seance(s)
             self.json_prive({"ok": ok, "seance": dict(s, adresse=adresse_jeu(jeu))} if ok else {"ok": False, "erreur": "écriture impossible dans " + DOSSIER_DONNEES}, 200 if ok else 500)
+        elif path == "/api/relectures" and methode == "GET":
+            if not self.reserve_enseignant():
+                return
+            self.json_prive({"ok": True, "relectures": lire_relectures()})
+        elif path == "/api/relectures" and methode == "POST":
+            if not self.reserve_enseignant():
+                return
+            d = data if isinstance(data, dict) else {}
+            ok = noter_relecture(d.get("id"), str(d.get("e") or ""), d.get("n"))
+            self.json_prive({"ok": ok}, 200 if ok else 400)
         elif path == "/api/sante" and methode == "GET":
             # Feu vert avant la séance (A4) : réservé à l'enseignant
             if not self.reserve_enseignant():

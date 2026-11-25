@@ -45,8 +45,8 @@ SECTIONS.SANS = async () => {
   await attendreQue(() => r.w.__tdbPret, 3000);
   ok(/Mon tableau de bord/.test(d.querySelector("h1").textContent) && /Tableau de bord/.test(d.title), "titre : tableau de bord de l'enseignant");
   const onglets = [...d.querySelectorAll(".onglets a")].map(a => a.getAttribute("href"));
-  ok(onglets.join(" ") === "#seance #direct #apres-seance #production #installations #aide-actions #tout-le-reste", "rubriques : " + onglets.join(" "));
-  ok(onglets.every(h => d.getElementById(h.slice(1))), "chaque rubrique existe dans la page");
+  ok(onglets.join(" ") === "#seance #direct #apres-seance a-relire.html #production #installations #aide-actions #tout-le-reste", "rubriques : " + onglets.join(" "));
+  ok(onglets.filter(h => h[0] === "#").every(h => d.getElementById(h.slice(1))), "chaque rubrique existe dans la page");
   ok(d.getElementById("seance").firstElementChild === d.getElementById("feu"), "barre d'état (voyants) tout en haut de la séance");
   const ordre = ["seance", "direct", "apres-seance", "production", "installations", "aide-actions", "tout-le-reste"].map(id => d.getElementById(id));
   ok(ordre.every((x, i) => i === 0 || (ordre[i - 1].compareDocumentPosition(x) & 4)), "ordre : barre d'état, séance, en direct, après, production, installations, aide, tout le reste");

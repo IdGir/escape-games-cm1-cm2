@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À relire — Espace enseignant · Escape games CM1 · CM2</title>
+<meta name="description" content="Tous les points à vérifier des escape games, avec lien direct, sources officielles et bouton Valider.">
+<meta name="theme-color" content="#0b1536">
+<!--
+  PAGE GÉNÉRÉE — ne pas modifier à la main : python outils-docs/gen-a-relire.py
+  (modèle : outils-docs/modele-a-relire.html ; sources et mots-clés : outils-docs/gen-a-relire.py)
+  Les validations sont gardées par le serveur local (/api/relectures → relectures-validees.json, jamais publié)
+  et par le navigateur (localStorage). Sur le site en ligne : navigateur seulement.
+-->
+<style>
+  :root{--nuit:#0b1536;--fond:#f5f3ec;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e4dfd2;--bleu:#1d3a8a;--vert:#166534;--vertf:#dcfce7;--rouge:#9a3412;--rougef:#ffedd5;--or:#c9a227}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  a{color:var(--bleu)}
+  header{background:var(--nuit);color:#fff;padding:14px 20px}
+  header .in,main{max-width:1000px;margin:0 auto}
+  header a{color:#f0d77a}
+  h1{margin:6px 0 2px;font-size:1.5rem}
+  header p{margin:0;color:#cbd5e1;font-size:.95rem}
+  main{padding:16px 20px 60px}
+  .etapes{background:var(--papier);border:1px solid var(--ligne);border-radius:10px;padding:10px 16px;margin:0 0 14px}
+  .etapes ol{margin:4px 0;padding-left:1.3rem}
+  .barre{position:sticky;top:0;z-index:5;background:var(--fond);padding:8px 0;border-bottom:1px solid var(--ligne);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .barre .seg{display:flex;border:1px solid #b8b2a0;border-radius:8px;overflow:hidden}
+  .barre .seg button{border:0;background:#fff;padding:7px 11px;font:inherit;cursor:pointer;border-right:1px solid #e4dfd2}
+  .barre .seg button:last-child{border-right:0}
+  .barre .seg button[aria-pressed=true]{background:var(--bleu);color:#fff}
+  select,input[type=search],input[type=text]{font:inherit;padding:6px 8px;border:1px solid #b8b2a0;border-radius:8px;background:#fff}
+  .btn{font:inherit;padding:7px 12px;border-radius:8px;border:1px solid var(--bleu);background:#fff;color:var(--bleu);cursor:pointer}
+  .btn:hover{background:#eef2ff}
+  .stat{margin:10px 0;color:var(--doux)}
+  .jauge{height:8px;background:#e7e3d6;border-radius:6px;overflow:hidden;margin:4px 0}
+  .jauge i{display:block;height:100%;background:var(--vert)}
+  details.jeu{background:var(--papier);border:1px solid var(--ligne);border-radius:12px;margin:12px 0}
+  details.jeu>summary{cursor:pointer;padding:12px 16px;font-weight:700;list-style:none;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  details.jeu>summary small{font-weight:400;color:var(--doux)}
+  .sens{background:var(--rougef);color:var(--rouge);border-radius:999px;padding:1px 9px;font-size:.8rem;font-weight:700}
+  .entete-liens{padding:0 16px 8px;font-size:.92rem;color:var(--doux)}
+  .entete-liens a{margin-right:10px}
+  .pt{border-top:1px solid var(--ligne);padding:12px 16px}
+  .pt.ok{background:#f3fbf5}
+  .pt.corriger{background:#fff8f0}
+  .tete{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.85rem;color:var(--doux)}
+  .num{background:var(--nuit);color:#fff;border-radius:6px;padding:0 7px;font-weight:700}
+  .puce{background:#eef0f6;border-radius:999px;padding:0 8px}
+  .etat-ok{background:var(--vertf);color:var(--vert);font-weight:700}
+  .etat-corriger{background:var(--rougef);color:var(--rouge);font-weight:700}
+  .txt{margin:6px 0}
+  .txt code{background:#f0ede2;padding:0 4px;border-radius:4px;font-size:.9em}
+  .verif{background:#eff6ff;border-left:4px solid var(--bleu);padding:6px 10px;margin:6px 0;border-radius:0 8px 8px 0;font-size:.93rem}
+  .liens,.srcs{font-size:.92rem;margin:4px 0}
+  .liens a{margin-right:12px}
+  .chip{display:inline-block;margin:2px 6px 2px 0;padding:2px 9px;border:1px solid #c7d2fe;border-radius:999px;background:#eef2ff;text-decoration:none}
+  .chip.gen{background:#f3f4f6;border-color:#d1d5db}
+  .act{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+  .act button{font:inherit;padding:7px 14px;border-radius:8px;border:1px solid;cursor:pointer;font-weight:600}
+  .b-ok{background:var(--vert);border-color:var(--vert);color:#fff}
+  .b-ko{background:#fff;border-color:var(--rouge);color:var(--rouge)}
+  .b-raz{background:#fff;border-color:#9ca3af;color:#4b5563;font-weight:400!important}
+  .act input{flex:1;min-width:200px}
+  #etat-enreg{font-size:.85rem;color:var(--doux)}
+  .vide{padding:30px;text-align:center;color:var(--doux)}
+  :focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+  @media print{.barre,.act{display:none}details.jeu{border:0}}
+</style>
+</head>
+<body>
+<header><div class="in">
+  <a href="enseignant.html">← Espace enseignant</a>
+  <h1>✅ À relire</h1>
+  <p>Chaque point à vérifier, avec le lien vers le jeu, les sources pour trancher, et un bouton pour le valider.</p>
+</div></header>
+<main>
+  <section class="etapes" aria-label="Comment faire">
+    <b>Comment faire, point par point (1 minute) :</b>
+    <ol>
+      <li>Cliquez sur un lien « Jouer » ou « Leçons A4 » pour voir le passage concerné (l'énigme ou la salle est indiquée en gris).</li>
+      <li>Cliquez sur une <b>source</b> (bleu) : comparez ce qu'elle dit avec le texte du point.</li>
+      <li>Si c'est juste : <b>✓ Valider</b>. Si c'est faux ou douteux : <b>✗ À corriger</b> (notez pourquoi), puis « Copier les points à corriger » et collez-les à Claude.</li>
+    </ol>
+  </section>
+  <div class="barre" role="toolbar" aria-label="Filtres">
+    <div class="seg" role="group" aria-label="État"><button type="button" data-f="relire" aria-pressed="true">À relire</button><button type="button" data-f="corriger" aria-pressed="false">À corriger</button><button type="button" data-f="ok" aria-pressed="false">Validés</button><button type="button" data-f="tous" aria-pressed="false">Tous</button></div>
+    <select id="f-jeu" aria-label="Jeu"></select>
+    <input type="search" id="f-q" placeholder="Rechercher un mot…" aria-label="Rechercher">
+    <button type="button" class="btn" id="b-copier">📋 Copier les points à corriger</button>
+    <button type="button" class="btn" id="b-export">⬇️ Exporter (JSON)</button>
+  </div>
+  <p class="stat" id="stat" aria-live="polite"></p>
+  <p id="etat-enreg"></p>
+  <div id="liste"></div>
+</main>
+<script>
+(function(){
+  var D = /*DONNEES*/null;
+  var CLE = "relectures-v1";
+  var SRV = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) && /^https?:$/.test(location.protocol);
+  var etat = {};
+  var filtre = "relire";
+  var recents = {};   // points modifiés pendant cette visite : ils restent affichés (pour annuler ou noter pourquoi)
+  var $ = function(s){ return document.querySelector(s); };
+  var esc = function(t){ return String(t).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+  var ids = {};
+  D.jeux.forEach(function(j){ j.points.forEach(function(p){ ids[p.id] = 1; }); });
+
+  function lireLocal(){ try { return JSON.parse(localStorage.getItem(CLE) || "{}") || {}; } catch(e){ return {}; } }
+  function ecrireLocal(){ try { localStorage.setItem(CLE, JSON.stringify(etat)); } catch(e){} }
+  function message(t){ $("#etat-enreg").textContent = t || ""; }
+
+  function charger(){
+    etat = lireLocal();
+    if(!SRV){ message("Enregistrement sur ce navigateur seulement (ouvrez la page depuis lancer.bat pour garder les validations dans le dossier du projet)."); return Promise.resolve(); }
+    return fetch("/api/relectures").then(function(r){ return r.json(); }).then(function(r){
+      if(r && r.ok && r.relectures){ Object.keys(r.relectures).forEach(function(k){ etat[k] = r.relectures[k]; }); ecrireLocal(); }
+      message("Validations enregistrées dans le dossier du projet (relectures-validees.json).");
+    }).catch(function(){ message("Serveur injoignable : validations gardées sur ce navigateur seulement."); });
+  }
+  function enregistrer(id, e, n){
+    if(!e){ delete etat[id]; } else { etat[id] = { e: e, n: n || "", d: new Date().toISOString().slice(0,10) }; }
+    ecrireLocal();
+    if(SRV){
+      fetch("/api/relectures", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: id, e: e || "", n: n || "" }) })
+        .then(function(r){ return r.json(); })
+        .then(function(r){ message(r && r.ok ? "Enregistré dans le dossier du projet." : "Non enregistré sur le serveur : gardé sur ce navigateur."); })
+        .catch(function(){ message("Serveur injoignable : gardé sur ce navigateur seulement."); });
+    }
+  }
+
+  function jeuLiens(j){ return j.liens.map(function(l){ return '<a href="'+esc(l[1])+'"'+(/^https?:/.test(l[1])?' target="_blank" rel="noopener"':'')+'>'+esc(l[0])+'</a>'; }).join(""); }
+  function chip(k, gen){ var s = D.sources[k]; if(!s) return ""; return '<a class="chip'+(gen?' gen':'')+'" href="'+esc(s[1])+'" target="_blank" rel="noopener">'+esc(s[0])+' ↗</a>'; }
+
+  function carte(j, p){
+    var s = etat[p.id], cl = s ? s.e : "";
+    var t = '<article class="pt '+cl+'" data-id="'+esc(p.id)+'"><div class="tete"><span class="num">n°'+p.n+'</span>';
+    if(p.section) t += '<span class="puce">'+esc(p.section)+'</span>';
+    p.ou.forEach(function(o){ t += '<span class="puce">'+esc(o)+'</span>'; });
+    if(s) t += '<span class="puce etat-'+s.e+'">'+(s.e==="ok"?"✓ Validé le ":"✗ À corriger depuis le ")+esc(s.d||"")+'</span>';
+    t += '</div><p class="txt">'+p.html+'</p>';
+    if(p.note) t += '<div class="verif"><b>Vérifié en ligne :</b> '+esc(p.note)+'</div>';
+    var liens = j.liens.filter(function(l){ return /^Jouer|^Leçons/.test(l[0]); }).slice(0,3).map(function(l){ return '<a href="'+esc(l[1])+'">'+esc(l[0])+'</a>'; }).join("");
+    t += '<div class="liens"><b>Voir :</b> '+liens+'<a href="'+esc(j.md+"#L"+p.ligne)+'" target="_blank" rel="noopener">Ligne '+p.ligne+' du fichier A-VERIFIER</a></div>';
+    if(p.src.length) t += '<div class="srcs"><b>Sources pour valider :</b> '+p.src.map(function(k){ return chip(k); }).join("")+'</div>';
+    else t += '<div class="srcs"><b>Pas de page précise trouvée</b> — pistes générales : '+p.gen.map(function(k){ return chip(k, true); }).join("")+'</div>';
+    t += '<div class="act"><button type="button" class="b-ok" data-a="ok">✓ Valider</button><button type="button" class="b-ko" data-a="corriger">✗ À corriger</button>';
+    if(s && s.e === "corriger") t += '<input type="text" maxlength="300" placeholder="Pourquoi ? (ex. date fausse, à reformuler)" value="'+esc(s.n||"")+'" aria-label="Note">';
+    if(s) t += '<button type="button" class="b-raz" data-a="">↺ Remettre à relire</button>';
+    return t + '</div></article>';
+  }
+
+  function visible(p, q){
+    var s = etat[p.id], e = s ? s.e : "relire";
+    if(recents[p.id] && filtre !== "tous" && !q){ return true; }
+    if(filtre !== "tous" && e !== filtre) return false;
+    return !q || (p.texte + " " + (p.note||"")).toLowerCase().indexOf(q) >= 0;
+  }
+
+  function afficher(){
+    var q = $("#f-q").value.trim().toLowerCase(), jeu = $("#f-jeu").value, out = "", n = 0, ok = 0, ko = 0, tot = 0;
+    D.jeux.forEach(function(j){
+      var okj = 0;
+      j.points.forEach(function(p){ var s = etat[p.id]; if(s && s.e==="ok") okj++; });
+      ok += okj; tot += j.points.length;
+      j.points.forEach(function(p){ var s = etat[p.id]; if(s && s.e==="corriger") ko++; });
+      if(jeu && jeu !== j.d) return;
+      var vus = j.points.filter(function(p){ return visible(p, q); });
+      if(!vus.length) return;
+      n += vus.length;
+      var pc = Math.round(100 * okj / j.points.length);
+      out += '<details class="jeu" open><summary>'+esc(j.icone)+' '+esc(j.titre)+(j.sensible?' <span class="sens">⚠ sensible : relecture obligatoire avant classe</span>':'')
+        +' <small>'+okj+' / '+j.points.length+' validés · '+vus.length+' affichés</small></summary>'
+        +'<div class="entete-liens"><div class="jauge" aria-hidden="true"><i style="width:'+pc+'%"></i></div>'+jeuLiens(j)+'<a href="'+esc(j.md)+'" target="_blank" rel="noopener">Fichier A-VERIFIER.md</a></div>'
+        +vus.map(function(p){ return carte(j, p); }).join("")+'</details>';
+    });
+    $("#liste").innerHTML = out || '<p class="vide">Rien à afficher avec ce filtre. 🎉</p>';
+    $("#stat").textContent = ok + " validés sur " + tot + " · " + ko + " à corriger · " + (tot-ok-ko) + " restent à relire";
+  }
+
+  function texteCorriger(){
+    var l = [];
+    D.jeux.forEach(function(j){ j.points.forEach(function(p){ var s = etat[p.id]; if(s && s.e==="corriger") l.push("- " + j.d + " n°" + p.n + " (ligne " + p.ligne + " de A-VERIFIER.md) : " + p.texte.slice(0,200) + (s.n ? "  → Pourquoi : " + s.n : "")); }); });
+    return l.length ? "Points à corriger (relecture du " + new Date().toLocaleDateString("fr-FR") + ") :\n" + l.join("\n") : "";
+  }
+  function copier(t){
+    if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(t); }
+    var a = document.createElement("textarea"); a.value = t; document.body.appendChild(a); a.select();
+    try { document.execCommand("copy"); } catch(e){} a.remove(); return Promise.resolve();
+  }
+
+  $("#liste").addEventListener("click", function(ev){
+    var b = ev.target.closest("button[data-a]"); if(!b) return;
+    var id = b.closest(".pt").getAttribute("data-id"), a = b.getAttribute("data-a");
+    recents[id] = 1;
+    enregistrer(id, a, a === "corriger" && etat[id] ? etat[id].n : "");
+    afficher();
+    if(a === "corriger"){ var inp = document.querySelector('.pt[data-id="'+id.replace(/"/g,"")+'"] input'); if(inp) inp.focus(); }
+  });
+  $("#liste").addEventListener("change", function(ev){
+    if(ev.target.tagName !== "INPUT") return;
+    var id = ev.target.closest(".pt").getAttribute("data-id");
+    if(etat[id]) enregistrer(id, "corriger", ev.target.value);
+  });
+  document.querySelectorAll(".seg button").forEach(function(b){ b.addEventListener("click", function(){
+    filtre = b.getAttribute("data-f"); recents = {};
+    document.querySelectorAll(".seg button").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    afficher();
+  }); });
+  $("#f-q").addEventListener("input", function(){ recents = {}; afficher(); });
+  $("#f-jeu").addEventListener("change", function(){ recents = {}; afficher(); });
+  $("#b-copier").addEventListener("click", function(){
+    var t = texteCorriger();
+    if(!t){ message("Aucun point marqué « À corriger »."); return; }
+    copier(t).then(function(){ message("Copié : collez-le dans votre conversation avec Claude."); });
+  });
+  $("#b-export").addEventListener("click", function(){
+    var blob = new Blob([JSON.stringify(etat, null, 1)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "relectures-validees.json"; a.click();
+  });
+
+  var sel = '<option value="">Tous les jeux</option>' + D.jeux.map(function(j){ return '<option value="'+esc(j.d)+'">'+esc(j.titre)+' ('+j.points.length+')</option>'; }).join("");
+  $("#f-jeu").innerHTML = sel;
+  charger().then(function(){
+    Object.keys(etat).forEach(function(k){ if(!ids[k]) delete etat[k]; });
+    var h = (location.hash || "").replace("#", "");
+    if(h && ids[h]){ filtre = "tous"; }
+    afficher();
+  });
+})();
+</script>
+</body>
+</html>
