@@ -55,7 +55,27 @@ def fond(jeu):
         for cible in photos:
             if os.path.basename(cible).split(".")[0] == nom and os.path.exists(os.path.join(RACINE, jeu, cible)):
                 return os.path.join(RACINE, jeu, cible), credit(jeu, cible)
+    # jeu sans version classique : premier décor de la variante immersive (immersifs/<jeu>/medias.csv)
+    for chemin in decors_immersif(jeu):
+        return chemin, None
     return None, None
+
+def decors_immersif(jeu):
+    """Décors présents de immersifs/<jeu>, dans l'ordre des salles (colonne « escale » de medias.csv)."""
+    import csv
+    base = os.path.join(RACINE, "immersifs", jeu)
+    try:
+        lignes_csv = list(csv.DictReader(open(os.path.join(base, "medias.csv"), encoding="utf-8-sig"), delimiter=";"))
+    except OSError:
+        return []
+    def rang(l):
+        try: return int(l.get("escale") or 99)
+        except ValueError: return 99
+    out = []
+    for l in sorted((l for l in lignes_csv if (l.get("id") or "").startswith("decor-")), key=rang):
+        f = os.path.join(base, l.get("fichier") or "~")
+        if os.path.isfile(f): out.append(f)
+    return out
 
 def credit(jeu, cible):
     try:
@@ -134,6 +154,7 @@ def composer(j):
         f_c = police(False, False, 18)
         d.text((L - 23 - d.textlength(cred, font=f_c), H - 33), cred, font=f_c, fill=(0, 0, 0)); d.text((L - 24 - d.textlength(cred, font=f_c), H - 34), cred, font=f_c, fill=(245, 245, 245))
     sortie = os.path.join(RACINE, jeu, "assets", "images", "affiche.jpg")
+    os.makedirs(os.path.dirname(sortie), exist_ok=True)
     im.convert("RGB").save(sortie, "JPEG", quality=86, optimize=True, progressive=True)
     noter_credit(jeu, src, cred)
     return sortie, src, cred
@@ -143,7 +164,8 @@ def noter_credit(jeu, src, cred):
     if not os.path.exists(p): return
     t = open(p, encoding="utf-8-sig").read()
     t = re.sub(r"\n## Affiche du jeu\n[\s\S]*?(?=\n## |\Z)", "\n", t).rstrip() + "\n"
-    rel = os.path.relpath(src, os.path.join(RACINE, jeu)).replace("\\", "/") if src else "aplat de couleur"
+    rel = (os.path.relpath(src, os.path.join(RACINE, jeu)) if not os.path.relpath(src, os.path.join(RACINE, jeu)).startswith("..")
+           else os.path.relpath(src, RACINE)).replace("\\", "/") if src else "aplat de couleur"
     t += ("\n## Affiche du jeu\n\n`assets/images/affiche.jpg` : composée par `outils-medias/affiches.py` à partir de `" + rel + "` "
           + ("(" + cred + " ; l'affiche reprend cette licence)." if cred else "(illustration créée avec Agnes AI, scène et personnages fictifs).") + "\n")
     open(p, "w", encoding="utf-8", newline="\n").write(t)

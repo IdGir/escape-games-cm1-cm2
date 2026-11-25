@@ -22,7 +22,7 @@ import json, os, shutil, subprocess, sys, tempfile
 from PIL import Image, ImageDraw, ImageFilter
 ICI = os.path.dirname(os.path.abspath(__file__)); RACINE = os.path.dirname(ICI)
 sys.path.insert(0, ICI)
-from affiches import police, catalogue, lignes   # mêmes polices et même catalogue que les affiches
+from affiches import police, catalogue, lignes, decors_immersif   # mêmes polices et même catalogue que les affiches
 LV, HV, IPS = 1280, 720, 24
 D_AFF, D_PLAN, D_FIN, FONDU = 3.0, 3.2, 3.0, 0.5
 
@@ -39,6 +39,8 @@ def plans(jeu):
     noms = {"mission-geo": ["mission-intro", "s03-coeur", "s09-coeur", "s12-coeur", "s16-coeur", "final-intro"],
             "tour-du-monde": ["intro", "etape1", "etape3", "etape4", "etape5", "final"]}.get(jeu, ["intro", "salle1", "salle2", "salle3", "salle4", "salle5", "final"])
     out = []
+    if not any(os.path.exists(v(n)) or i(n) for n in noms):
+        return plans_immersif(jeu)
     if os.path.exists(v("bande-annonce-ouverture")): out.append((v("bande-annonce-ouverture"), "video"))
     videos = [n for n in noms if os.path.exists(v(n)) and duree(v(n)) >= D_PLAN + 1.2]
     images = [n for n in noms if i(n) and n not in videos]
@@ -53,6 +55,18 @@ def plans(jeu):
     if videos and v(videos[-1]) not in [c for c, _ in out] and len(out) == 4:
         out[-1] = (v(videos[-1]), "video")
     return out
+
+def plans_immersif(jeu):
+    """Jeu sans version classique : décors de immersifs/<jeu> (ordre des salles), remplacés par la
+    vidéo de transition de la même salle quand elle existe ; quatre plans étalés sur le jeu."""
+    dec = decors_immersif(jeu)
+    vids = os.path.join(RACINE, "immersifs", jeu, "assets", "videos")
+    tous = []
+    for k, d in enumerate(dec, 1):
+        vid = os.path.join(vids, f"transition-e{k}.mp4")
+        tous.append((vid, "video") if os.path.exists(vid) and duree(vid) >= D_PLAN + 1.2 else (d, "image"))
+    if len(tous) <= 4: return tous
+    return [tous[0], tous[len(tous) // 3], tous[(2 * len(tous)) // 3], tous[-1]]
 
 def carton_fin(j, chemin):
     aff = os.path.join(RACINE, j["dossier"], "assets", "images", "affiche.jpg")
@@ -111,6 +125,10 @@ def monter(j):
     noter_credit(jeu, p)
     print(f"{jeu:18s} bande-annonce.mp4  {duree(sortie):.1f} s  {os.path.getsize(sortie) // 1024} Ko  plans : " + ", ".join(os.path.basename(c) for c, _ in p))
 
+def rel_jeu(jeu, c):
+    r = os.path.relpath(c, os.path.join(RACINE, jeu))
+    return (os.path.relpath(c, RACINE) if r.startswith("..") else r).replace(os.sep, "/")
+
 def noter_credit(jeu, p):
     f = os.path.join(RACINE, jeu, "assets", "medias", "CREDITS-medias.md")
     if not os.path.exists(f):   # jeu dont tous les médias sont générés : on crée le fichier de crédits
@@ -123,7 +141,7 @@ def noter_credit(jeu, p):
     import re
     t = re.sub(r"\n## Bande-annonce\n[\s\S]*?(?=\n## |\Z)", "\n", t).rstrip() + "\n"
     t += ("\n## Bande-annonce\n\n`assets/videos/bande-annonce.mp4` : montage (outils-medias/bande-annonce.py) de l'affiche et des médias du jeu "
-          + ", ".join(f"`{os.path.relpath(c, os.path.join(RACINE, jeu)).replace(os.sep, '/')}`" for c, _ in p)
+          + ", ".join(f"`{rel_jeu(jeu, c)}`" for c, _ in p)
           + " ; les crédits et licences de ces médias, indiqués ci-dessus, s'appliquent.\n")
     open(f, "w", encoding="utf-8", newline="\n").write(t)
 

@@ -347,7 +347,6 @@ var CATALOGUE = {
     "#7fb3c8"
    ],
    "resume": "Un orage a plongé la petite ville de Clairval dans le noir : les apprentis électriciens de la centrale réparent salle après salle et ferment le dernier circuit.",
-   "medias_en_attente": true,
    "prompt": "14-electricite.md",
    "programme": [
     "st2026"
