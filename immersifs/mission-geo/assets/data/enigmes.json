@@ -4536,6 +4536,2726 @@
      }
     }
    ]
+  },
+  {
+   "numero": 6,
+   "id": "etretat-la-station-balneaire",
+   "titre": "Étretat, station balnéaire",
+   "lieu": "Étretat, en Normandie, sur la promenade du front de mer",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 2",
+   "episode": "Une plage de galets au pied de hautes falaises blanches ; à gauche, une arche et une aiguille de craie plantée dans la mer. Sur la promenade, la foule et les voitures.",
+   "scenarimage": "",
+   "mot": "BALNÉAIRE",
+   "mot_origine": "Le mot-clé de la séance 6, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e6",
+   "cinematique_fin": "fin-e6",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e6-1",
+     "escale": 6,
+     "ordre": 1,
+     "titre": "Le guide d'un jour",
+     "decor": "etretat-falaises",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "ines",
+     "probleme_narratif": "Pour approcher la source, l'agent se fait passer pour un guide et doit conseiller des visiteurs étrangers.",
+     "enjeu": "Un faux guide qui se trompe d'activité serait démasqué aussitôt par la source.",
+     "episode_du_roman": "Séance 6 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Définir une station balnéaire",
+     "pourquoi_ce_savoir_ici": "La séance « Étretat — La station balnéaire » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Chaque visiteur repart content vers son activité ; la source, assise plus loin, lève les yeux."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l06",
+     "type": "association",
+     "niveau_variantes": "Découverte (association) ; Agent CM1 (association) ; Agent CM2 (association) ; Géographe (tri) ; Chef de mission (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Elena, sportive, randonne sur le GR21 ; Tom, qui aime les boutiques, va au marché couvert ; Zac se promène en famille au parc des Roches ; Isabelle, passionnée de littérature, visite le Clos Lupin, la maison de Maurice Leblanc ; Richard, passionné d'histoire, visite le château des Aygues, ancienne résidence d'été des reines d'Espagne.",
+     "matelot": {
+      "paires": [
+       {
+        "g": "Elena : « Mi chiamo Elena, amo lo sport ! »",
+        "d": "le sentier GR21"
+       },
+       {
+        "g": "Tom : « I'm Tom, I love shopping! »",
+        "d": "le marché couvert"
+       },
+       {
+        "g": "Zac : « J'aime me balader en famille. »",
+        "d": "le parc des Roches"
+       },
+       {
+        "g": "Isabelle : « J'adore la littérature ! »",
+        "d": "le Clos Lupin"
+       }
+      ],
+      "consigne": "Inès t'a trouvé une couverture : tu es guide touristique à Étretat. Lis le dépliant, puis propose à chaque visiteur l'activité qui lui plaira : clique sur un visiteur, puis sur une activité.<div class='doc-carnet'><b>Étretat, mode d'emploi.</b> Randonnée sur le sentier GR21, en haut des falaises ; paddle ou kayak au pied des arches ; balade en vélo-rail. À visiter : le Clos Lupin, maison de l'écrivain Maurice Leblanc ; le château des Aygues, ancienne résidence d'été des reines d'Espagne ; le marché couvert et ses boutiques ; le parc des Roches, espace de loisirs pour les familles.</div>",
+      "indices": [
+       "« Amo lo sport » : Elena aime le sport.",
+       "« I love shopping » : Tom aime les boutiques.",
+       "Maurice Leblanc était écrivain : sa maison plaira à une lectrice."
+      ],
+      "dialogue": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants."
+     },
+     "timonier": {
+      "paires": [
+       {
+        "g": "Elena : « Mi chiamo Elena, amo lo sport ! »",
+        "d": "le sentier GR21"
+       },
+       {
+        "g": "Tom : « I'm Tom, I love shopping! »",
+        "d": "le marché couvert"
+       },
+       {
+        "g": "Zac : « J'aime me balader en famille. »",
+        "d": "le parc des Roches"
+       },
+       {
+        "g": "Isabelle : « Je suis une grande fan de littérature ! »",
+        "d": "le Clos Lupin"
+       },
+       {
+        "g": "Richard : « Je suis passionné d'histoire. »",
+        "d": "le château des Aygues"
+       }
+      ],
+      "consigne": "Pour gagner la confiance de la source, tu joues au guide. Lis le dépliant, puis relie chaque visiteur à l'activité qui correspond à ses goûts.<div class='doc-carnet'><b>Étretat, mode d'emploi.</b> Randonnée sur le sentier GR21, en haut des falaises ; paddle ou kayak au pied des arches ; balade en vélo-rail. À visiter : le Clos Lupin, maison de l'écrivain Maurice Leblanc ; le château des Aygues, ancienne résidence d'été des reines d'Espagne ; le marché couvert et ses boutiques ; le parc des Roches, espace de loisirs pour les familles.</div>",
+      "indices": [
+       "Elena parle italien, Tom anglais : traduis d'abord leurs phrases.",
+       "Un château où ont séjourné des reines plaira à un passionné d'histoire.",
+       "Le parc des Roches est un espace de loisirs pour les familles."
+      ],
+      "dialogue": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "« Je veux marcher en haut des falaises. »",
+        "d": "le sentier GR21"
+       },
+       {
+        "g": "« Je veux acheter des souvenirs. »",
+        "d": "le marché couvert"
+       },
+       {
+        "g": "« J'adore les livres. »",
+        "d": "le Clos Lupin, maison d'un écrivain"
+       }
+      ],
+      "consigne": "Tu joues au guide. Relie chaque visiteur à l'activité qui lui plaira.",
+      "indices": [
+       "Ouvre la fiche « Le littoral touristique : la station balnéaire ».",
+       "Le GR21 est un sentier de randonnée.",
+       "Maurice Leblanc était écrivain."
+      ],
+      "dialogue": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "nat",
+        "titre": "Nature et sport"
+       },
+       {
+        "id": "pat",
+        "titre": "Patrimoine"
+       },
+       {
+        "id": "loi",
+        "titre": "Boutiques et loisirs"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la randonnée sur le sentier GR21",
+        "col": "nat"
+       },
+       {
+        "txt": "le paddle au pied des arches",
+        "col": "nat"
+       },
+       {
+        "txt": "le kayak le long des falaises",
+        "col": "nat"
+       },
+       {
+        "txt": "le Clos Lupin, maison de Maurice Leblanc",
+        "col": "pat"
+       },
+       {
+        "txt": "le château des Aygues, où ont séjourné des reines d'Espagne",
+        "col": "pat"
+       },
+       {
+        "txt": "le marché couvert et ses boutiques",
+        "col": "loi"
+       },
+       {
+        "txt": "le parc des Roches, pour les familles",
+        "col": "loi"
+       }
+      ],
+      "consigne": "Inès te confie le dépliant de l'office de tourisme. Range chaque proposition dans sa colonne, puis choisis la phrase de la fiche qui cite les activités d'Étretat.",
+      "indices": [
+       "Le patrimoine, ce sont les richesses héritées du passé.",
+       "Le paddle et le kayak se pratiquent sur la mer.",
+       "Pour la justification : cherche « sentier GR21 »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les activités proposées à Étretat ?",
+       "options": [
+        "Une station balnéaire est un lieu de séjour situé en bord de mer, aménagé pour accueillir des touristes.",
+        "Étretat, en Normandie, est célèbre pour ses falaises de craie et son Aiguille ; la ville s'est développée au XIXᵉ siècle avec la mode des bains de mer.",
+        "On y propose des activités variées : randonnée sur le sentier GR21, kayak ou paddle au pied des falaises, visite du Clos Lupin, maison de l'écrivain Maurice Leblanc, ou du château des Aygues.",
+        "Le tourisme crée des emplois dans les hôtels, les restaurants et les commerces ; il apporte aussi des animations et de nouveaux aménagements."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Maurice Leblanc, qui vivait au Clos Lupin, a inventé quel personnage ?",
+        "options": [
+         "Arsène Lupin",
+         "Sherlock Holmes",
+         "Tintin",
+         "Robinson Crusoé"
+        ],
+        "bonne": 0,
+        "explication": "L'une de ses aventures, « L'Aiguille creuse », se passe à Étretat."
+       },
+       {
+        "q": "Qui a séjourné au château des Aygues ?",
+        "options": [
+         "des reines d'Espagne",
+         "des rois de France",
+         "des pêcheurs",
+         "des moines"
+        ],
+        "bonne": 0,
+        "explication": "C'était leur résidence d'été."
+       },
+       {
+        "q": "Au XIXᵉ siècle, Étretat s'est développée grâce à…",
+        "options": [
+         "la mode des bains de mer",
+         "une mine de charbon",
+         "une grande usine",
+         "un aéroport"
+        ],
+        "bonne": 0,
+        "explication": "Les bains de mer ont attiré les premiers touristes."
+       },
+       {
+        "q": "Dans quelle région se trouve Étretat ?",
+        "options": [
+         "la Normandie",
+         "la Bretagne",
+         "les Hauts-de-France",
+         "la Nouvelle-Aquitaine"
+        ],
+        "bonne": 0,
+        "explication": "En Seine-Maritime, au bord de la Manche."
+       }
+      ],
+      "consigne": "La source teste ton déguisement de guide. Réponds à ses questions, puis choisis la phrase de la fiche qui présente Étretat.",
+      "indices": [
+       "Arsène Lupin est un « gentleman cambrioleur ».",
+       "Les reines venaient y passer l'été.",
+       "Pour la justification : cherche « bains de mer »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche présente Étretat ?",
+       "options": [
+        "Étretat, en Normandie, est célèbre pour ses falaises de craie et son Aiguille ; la ville s'est développée au XIXᵉ siècle avec la mode des bains de mer.",
+        "On y propose des activités variées : randonnée sur le sentier GR21, kayak ou paddle au pied des falaises, visite du Clos Lupin, maison de l'écrivain Maurice Leblanc, ou du château des Aygues.",
+        "Une station balnéaire est un lieu de séjour situé en bord de mer, aménagé pour accueillir des touristes.",
+        "Étretat compte environ 1 100 habitants mais reçoit plus d'un million de visiteurs par an."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants."
+     }
+    },
+    {
+     "id": "e6-2",
+     "escale": 6,
+     "ordre": 2,
+     "titre": "La définition du guide",
+     "decor": "etretat-falaises",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "ines",
+     "probleme_narratif": "Le guide officiel a fait tomber ses fiches : il faut reconstituer la définition d'une station balnéaire.",
+     "enjeu": "Sans la définition exacte, la couverture de guide ne tiendrait pas devant la source.",
+     "episode_du_roman": "Séance 6 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Définir une station balnéaire",
+     "pourquoi_ce_savoir_ici": "La séance « Étretat — La station balnéaire » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les fiches se rangent en une seule ligne ; le premier mot s'éclaire."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l06",
+     "type": "ordre",
+     "niveau_variantes": "Découverte (trous) ; Agent CM1 (ordre) ; Agent CM2 (ordre) ; Géographe (ordre) ; Chef de mission (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Une station balnéaire est un « lieu de séjour situé en bord de mer », aménagé pour accueillir des touristes. Le premier mot, « lieu », compte 4 lettres : c'est l'indice de la séance.",
+     "matelot": {
+      "items": [
+       {
+        "txt": "Lieu",
+        "rang": 1
+       },
+       {
+        "txt": "de séjour",
+        "rang": 2
+       },
+       {
+        "txt": "situé",
+        "rang": 3
+       },
+       {
+        "txt": "en bord",
+        "rang": 4
+       },
+       {
+        "txt": "de mer",
+        "rang": 5
+       }
+      ],
+      "consigne": "Le guide officiel d'Étretat a fait tomber ses fiches. Remets les morceaux dans l'ordre pour retrouver la définition d'une station balnéaire. Retiens bien le premier mot !",
+      "indices": [
+       "La définition commence par « Lieu », avec une majuscule.",
+       "On séjourne… en bord de mer.",
+       "Lieu de séjour situé…"
+      ],
+      "dialogue": "Ses fiches sont tombées. Remets la définition dans l'ordre, et retiens le premier mot."
+     },
+     "timonier": {
+      "items": [
+       {
+        "txt": "Lieu",
+        "rang": 1
+       },
+       {
+        "txt": "de séjour",
+        "rang": 2
+       },
+       {
+        "txt": "situé en bord de mer,",
+        "rang": 3
+       },
+       {
+        "txt": "aménagé",
+        "rang": 4
+       },
+       {
+        "txt": "pour accueillir",
+        "rang": 5
+       },
+       {
+        "txt": "des touristes",
+        "rang": 6
+       }
+      ],
+      "consigne": "Remets les morceaux dans l'ordre pour reconstituer la définition complète d'une station balnéaire. Compte ensuite les lettres du premier mot : c'est l'indice de la séance.",
+      "indices": [
+       "La majuscule montre le début de la définition.",
+       "Le lieu est d'abord situé, puis aménagé.",
+       "… aménagé pour accueillir des touristes."
+      ],
+      "dialogue": "Ses fiches sont tombées. Remets la définition dans l'ordre, et retiens le premier mot."
+     },
+     "mousse": {
+      "type": "trous",
+      "texte": "<p>Une station balnéaire est un [[lieu]] de séjour situé en bord de [[mer]].</p>",
+      "etiquettes": [
+       "lieu",
+       "mer",
+       "montagne"
+      ],
+      "consigne": "Complète la définition du guide. Un mot est l'intrus.",
+      "indices": [
+       "Ouvre la fiche « Le littoral touristique : la station balnéaire ».",
+       "Balnéaire : qui concerne les bains de mer.",
+       "La montagne est l'intrus."
+      ],
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Un village de pêcheurs au pied des falaises",
+        "rang": 1
+       },
+       {
+        "txt": "Au XIXᵉ siècle, la mode des bains de mer attire les premiers touristes",
+        "rang": 2
+       },
+       {
+        "txt": "On construit des villas, comme le château des Aygues et la maison de Maurice Leblanc",
+        "rang": 3
+       },
+       {
+        "txt": "Aujourd'hui, plus d'un million de visiteurs par an",
+        "rang": 4
+       }
+      ],
+      "consigne": "Le guide raconte l'histoire d'Étretat. Range les étapes dans l'ordre, de la plus ancienne à aujourd'hui, puis choisis la phrase de la fiche sur cette histoire.",
+      "indices": [
+       "Avant les touristes, il y avait les pêcheurs.",
+       "Les villas ont été construites pour les visiteurs fortunés.",
+       "Pour la justification : cherche « XIXᵉ siècle »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche raconte comment Étretat s'est développée ?",
+       "options": [
+        "Étretat compte environ 1 100 habitants mais reçoit plus d'un million de visiteurs par an.",
+        "Étretat, en Normandie, est célèbre pour ses falaises de craie et son Aiguille ; la ville s'est développée au XIXᵉ siècle avec la mode des bains de mer.",
+        "On y propose des activités variées : randonnée sur le sentier GR21, kayak ou paddle au pied des falaises, visite du Clos Lupin, maison de l'écrivain Maurice Leblanc, ou du château des Aygues.",
+        "Entre 2011 et 2023, Étretat est passée de 1 469 à 1 102 habitants."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>Une station balnéaire est un lieu de [[séjour]] situé en bord de mer, [[aménagé]] pour accueillir des [[touristes]]. Quand il y a trop de visiteurs pour un lieu, on parle de [[surfréquentation]].</p>",
+      "etiquettes": [
+       "séjour",
+       "aménagé",
+       "touristes",
+       "surfréquentation",
+       "habitants",
+       "industrie"
+      ],
+      "consigne": "Complète la fiche du guide (deux mots sont des intrus), puis choisis la phrase de la fiche qui définit une station balnéaire.",
+      "indices": [
+       "On vient y faire un séjour.",
+       "Les touristes sont accueillis, pas les usines.",
+       "Pour la justification : cherche « lieu de séjour »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit une station balnéaire ?",
+       "options": [
+        "Quand il y a trop de visiteurs pour un lieu, on parle de surfréquentation : la commune cherche alors à mieux répartir les visites.",
+        "Étretat, en Normandie, est célèbre pour ses falaises de craie et son Aiguille ; la ville s'est développée au XIXᵉ siècle avec la mode des bains de mer.",
+        "Étretat compte environ 1 100 habitants mais reçoit plus d'un million de visiteurs par an.",
+        "Une station balnéaire est un lieu de séjour situé en bord de mer, aménagé pour accueillir des touristes."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     }
+    },
+    {
+     "id": "e6-3",
+     "escale": 6,
+     "ordre": 3,
+     "titre": "Le revers de la carte postale",
+     "decor": "etretat-falaises",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "ines",
+     "probleme_narratif": "Une habitante raconte à Inès l'été à Étretat, entre emplois et embouteillages.",
+     "enjeu": "La source ne fait confiance qu'à ceux qui comprennent ce que vivent les habitants.",
+     "episode_du_roman": "Séance 6 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Définir une station balnéaire",
+     "pourquoi_ce_savoir_ici": "La séance « Étretat — La station balnéaire » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Le carnet se partage en deux colonnes, l'une verte, l'autre rouge."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l06",
+     "type": "tri",
+     "niveau_variantes": "Découverte (tri) ; Agent CM1 (tri) ; Agent CM2 (tri) ; Géographe (vraifaux) ; Chef de mission (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Le tourisme crée des emplois dans les restaurants et les commerces, apporte des animations et de nouveaux aménagements comme les sentiers et les promenades. Mais il provoque des embouteillages, des déchets sur le front de mer et une hausse du prix des logements, qui pousse des habitants à partir.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "p",
+        "titre": "Positif pour les habitants"
+       },
+       {
+        "id": "n",
+        "titre": "Négatif pour les habitants"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "des emplois dans les restaurants",
+        "col": "p"
+       },
+       {
+        "txt": "des animations et des fêtes",
+        "col": "p"
+       },
+       {
+        "txt": "de nouveaux sentiers et promenades",
+        "col": "p"
+       },
+       {
+        "txt": "des embouteillages et pas de place pour se garer",
+        "col": "n"
+       },
+       {
+        "txt": "des déchets sur le front de mer",
+        "col": "n"
+       },
+       {
+        "txt": "des logements de plus en plus chers",
+        "col": "n"
+       }
+      ],
+      "consigne": "Une habitante confie à Inès ce que vivent les habitants l'été. Lis son témoignage, puis range chaque conséquence du tourisme : positive ou négative pour les habitants ?<div class='doc-carnet'><b>Témoignage recueilli par Inès.</b> « L'été, le front de mer est noir de monde et des kilomètres de voitures cherchent une place. Nous sommes environ 1 100 habitants, et nous recevons plus d'un million de visiteurs par an. Des familles sont parties, car les logements coûtent trop cher. »</div>",
+      "indices": [
+       "Positif : ce qui aide les habitants.",
+       "Les voitures garées partout : c'est négatif.",
+       "Il y a 3 points positifs et 3 points négatifs."
+      ],
+      "dialogue": "Écoute bien cette habitante : le tourisme lui apporte autant qu'il lui coûte."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "p",
+        "titre": "Positif pour les habitants"
+       },
+       {
+        "id": "n",
+        "titre": "Négatif pour les habitants"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "des emplois dans les restaurants et les hôtels",
+        "col": "p"
+       },
+       {
+        "txt": "des recettes pour les commerçants",
+        "col": "p"
+       },
+       {
+        "txt": "des animations et des fêtes",
+        "col": "p"
+       },
+       {
+        "txt": "de nouveaux sentiers et promenades",
+        "col": "p"
+       },
+       {
+        "txt": "des embouteillages et pas de place pour se garer",
+        "col": "n"
+       },
+       {
+        "txt": "des déchets sur le front de mer",
+        "col": "n"
+       },
+       {
+        "txt": "des logements de plus en plus chers",
+        "col": "n"
+       },
+       {
+        "txt": "des habitants qui quittent la ville",
+        "col": "n"
+       }
+      ],
+      "consigne": "Lis le témoignage, puis range chaque conséquence de la fréquentation touristique : positive ou négative pour les habitants ?<div class='doc-carnet'><b>Témoignage recueilli par Inès.</b> « L'été, le front de mer est noir de monde et des kilomètres de voitures cherchent une place. Nous sommes environ 1 100 habitants, et nous recevons plus d'un million de visiteurs par an. Des familles sont parties, car les logements coûtent trop cher. »</div>",
+      "indices": [
+       "Quand les logements coûtent plus cher, les habitants ont du mal à se loger.",
+       "Les touristes dépensent de l'argent chez les commerçants.",
+       "Il y a 4 points positifs et 4 points négatifs."
+      ],
+      "dialogue": "Écoute bien cette habitante : le tourisme lui apporte autant qu'il lui coûte."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "p",
+        "titre": "Bon pour les habitants"
+       },
+       {
+        "id": "n",
+        "titre": "Mauvais pour les habitants"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "des emplois dans les restaurants",
+        "col": "p"
+       },
+       {
+        "txt": "des fêtes dans la ville",
+        "col": "p"
+       },
+       {
+        "txt": "des embouteillages",
+        "col": "n"
+       },
+       {
+        "txt": "des déchets sur la plage",
+        "col": "n"
+       }
+      ],
+      "consigne": "Range chaque conséquence du tourisme : bonne ou mauvaise pour les habitants ?",
+      "indices": [
+       "Ouvre la fiche « Le littoral touristique : la station balnéaire ».",
+       "Un emploi, c'est un travail : c'est bon.",
+       "Les déchets salissent la plage."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le tourisme crée des emplois dans les hôtels et les restaurants.",
+        "vrai": true,
+        "explication": "C'est un effet positif."
+       },
+       {
+        "txt": "Le tourisme fait baisser le prix des logements.",
+        "vrai": false,
+        "explication": "Il le fait monter."
+       },
+       {
+        "txt": "Les embouteillages gênent les habitants l'été.",
+        "vrai": true,
+        "explication": "Des kilomètres de voitures cherchent une place."
+       },
+       {
+        "txt": "Étretat reçoit moins de visiteurs qu'elle n'a d'habitants.",
+        "vrai": false,
+        "explication": "Plus d'un million de visiteurs pour environ 1 100 habitants."
+       },
+       {
+        "txt": "Des habitants partent car les logements coûtent trop cher.",
+        "vrai": true,
+        "explication": "C'est ce que dit l'habitante."
+       }
+      ],
+      "consigne": "Inès vérifie ce que tu as compris du témoignage. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur les effets négatifs.",
+      "indices": [
+       "Relis le témoignage.",
+       "1 000 000 de visiteurs, c'est beaucoup plus que 1 100 habitants.",
+       "Pour la justification : cherche « hausse du prix des logements »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les effets négatifs du tourisme ?",
+       "options": [
+        "Le tourisme crée des emplois dans les hôtels, les restaurants et les commerces ; il apporte aussi des animations et de nouveaux aménagements.",
+        "Il provoque aussi des embouteillages, des déchets et une hausse du prix des logements, qui pousse des habitants à partir.",
+        "Quand il y a trop de visiteurs pour un lieu, on parle de surfréquentation : la commune cherche alors à mieux répartir les visites.",
+        "Étretat compte environ 1 100 habitants mais reçoit plus d'un million de visiteurs par an."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "eco",
+        "titre": "L'économie"
+       },
+       {
+        "id": "vie",
+        "titre": "La vie des habitants"
+       },
+       {
+        "id": "nat",
+        "titre": "L'environnement"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "des emplois dans les hôtels et les restaurants",
+        "col": "eco"
+       },
+       {
+        "txt": "des recettes pour les commerçants",
+        "col": "eco"
+       },
+       {
+        "txt": "des logements de plus en plus chers",
+        "col": "vie"
+       },
+       {
+        "txt": "des embouteillages et pas de place pour se garer",
+        "col": "vie"
+       },
+       {
+        "txt": "des déchets abandonnés sur la plage",
+        "col": "nat"
+       },
+       {
+        "txt": "l'air pollué par les files de voitures",
+        "col": "nat"
+       }
+      ],
+      "consigne": "Chef de mission, classe les effets du tourisme selon ce qu'ils touchent. Range chaque carte, puis choisis la phrase de la fiche sur les effets positifs.",
+      "indices": [
+       "L'économie : le travail et l'argent.",
+       "Les déchets et la pollution touchent l'environnement.",
+       "Pour la justification : cherche « crée des emplois »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les effets positifs du tourisme ?",
+       "options": [
+        "Il provoque aussi des embouteillages, des déchets et une hausse du prix des logements, qui pousse des habitants à partir.",
+        "On y propose des activités variées : randonnée sur le sentier GR21, kayak ou paddle au pied des falaises, visite du Clos Lupin, maison de l'écrivain Maurice Leblanc, ou du château des Aygues.",
+        "Le tourisme crée des emplois dans les hôtels, les restaurants et les commerces ; il apporte aussi des animations et de nouveaux aménagements.",
+        "Une station balnéaire est un lieu de séjour situé en bord de mer, aménagé pour accueillir des touristes."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     }
+    },
+    {
+     "id": "e6-4",
+     "escale": 6,
+     "ordre": 4,
+     "titre": "Étretat saturée ?",
+     "decor": "etretat-falaises",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "ines",
+     "probleme_narratif": "Inès fait le point sur les chiffres et imagine ce que la mairie pourrait faire.",
+     "enjeu": "Avant de quitter Étretat, il faut prouver que l'on a compris le problème de la ville.",
+     "episode_du_roman": "Séance 6 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Définir une station balnéaire",
+     "pourquoi_ce_savoir_ici": "La séance « Étretat — La station balnéaire » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Le panneau s'allume : « Étretat saturée, revenez dans deux heures »."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l06",
+     "type": "qcm",
+     "niveau_variantes": "Agent CM2 (qcm) ; Géographe (code) ; Chef de mission (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Un million de visiteurs pour environ 1 100 habitants, cela fait à peu près 900 visiteurs par habitant et par an. Étretat a perdu 367 habitants entre 2011 et 2023. Un panneau « ville saturée » servirait à étaler les visites et à limiter les embouteillages, au risque de faire perdre des clients aux commerçants.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "questions": [
+       {
+        "q": "Étretat compte environ 1 100 habitants et reçoit environ 1 000 000 de visiteurs par an. Cela fait environ combien de visiteurs par habitant ?",
+        "options": [
+         "environ 900",
+         "environ 90",
+         "environ 9 000",
+         "environ 9"
+        ],
+        "bonne": 0,
+        "explication": "1 000 000 ÷ 1 100, c'est environ 909."
+       },
+       {
+        "q": "En 2011, Étretat comptait 1 469 habitants ; en 2023, 1 102. Combien d'habitants a-t-elle perdus ?",
+        "options": [
+         "367",
+         "467",
+         "2 571",
+         "1 102"
+        ],
+        "bonne": 0,
+        "explication": "1 469 − 1 102 = 367."
+       },
+       {
+        "q": "Imagine que la mairie affiche : « Étretat saturée pendant deux heures ». À quoi servirait ce panneau ?",
+        "options": [
+         "à étaler les visites dans la journée et à limiter les embouteillages",
+         "à attirer encore plus de voitures",
+         "à fermer la plage pour toujours",
+         "à annoncer une fête"
+        ],
+        "bonne": 0,
+        "explication": "Quand il y a trop de visiteurs, on cherche à mieux les répartir."
+       },
+       {
+        "q": "Quel risque ce panneau ferait-il courir aux commerçants ?",
+        "options": [
+         "avoir moins de clients pendant ces deux heures",
+         "avoir trop de clients",
+         "devoir déménager",
+         "aucun risque"
+        ],
+        "bonne": 0,
+        "explication": "Moins de visiteurs, c'est aussi moins de recettes."
+       }
+      ],
+      "consigne": "Inès fait le point avant de quitter Étretat. Réponds à ses questions, puis vérifie.",
+      "indices": [
+       "1 000 000 ÷ 1 000 = 1 000 : la réponse est un peu moins.",
+       "1 469 − 1 102 : pose la soustraction.",
+       "Trop de visiteurs à la fois : c'est la surfréquentation."
+      ],
+      "dialogue": "Un dernier point avant le départ : les chiffres de la ville."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Habitants perdus entre 2011 et 2023",
+        "valeur": "367",
+        "longueur": 3
+       },
+       {
+        "libelle": "Si elle en perdait encore autant, combien d'habitants resterait-il ?",
+        "valeur": "735",
+        "longueur": 3
+       }
+      ],
+      "consigne": "Inès a relevé les chiffres de l'Insee : Étretat comptait 1 469 habitants en 2011 et 1 102 en 2023. Calcule, puis choisis la phrase de la fiche qui donne ces chiffres.",
+      "indices": [
+       "Pose la soustraction : 1 469 − 1 102.",
+       "Puis 1 102 − 367.",
+       "Pour la justification : cherche « 1 469 »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne l'évolution du nombre d'habitants ?",
+       "options": [
+        "Entre 2011 et 2023, Étretat est passée de 1 469 à 1 102 habitants.",
+        "Étretat compte environ 1 100 habitants mais reçoit plus d'un million de visiteurs par an.",
+        "Il provoque aussi des embouteillages, des déchets et une hausse du prix des logements, qui pousse des habitants à partir.",
+        "Quand il y a trop de visiteurs pour un lieu, on parle de surfréquentation : la commune cherche alors à mieux répartir les visites."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Plus d'un million de visiteurs viennent chaque année",
+        "rang": 1
+       },
+       {
+        "txt": "Les logements loués aux touristes se multiplient",
+        "rang": 2
+       },
+       {
+        "txt": "Le prix des logements augmente",
+        "rang": 3
+       },
+       {
+        "txt": "Des habitants ne trouvent plus à se loger et partent",
+        "rang": 4
+       },
+       {
+        "txt": "La commune cherche à mieux répartir les visites",
+        "rang": 5
+       }
+      ],
+      "consigne": "Chef de mission, reconstitue l'enchaînement qui vide Étretat de ses habitants. Range les étapes dans l'ordre, puis choisis la phrase de la fiche sur la surfréquentation.",
+      "indices": [
+       "Tout commence par les visiteurs.",
+       "Quand les prix montent, les habitants ont du mal à se loger.",
+       "Pour la justification : cherche « mieux répartir »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique la surfréquentation ?",
+       "options": [
+        "Une station balnéaire est un lieu de séjour situé en bord de mer, aménagé pour accueillir des touristes.",
+        "Le tourisme crée des emplois dans les hôtels, les restaurants et les commerces ; il apporte aussi des animations et de nouveaux aménagements.",
+        "Étretat, en Normandie, est célèbre pour ses falaises de craie et son Aiguille ; la ville s'est développée au XIXᵉ siècle avec la mode des bains de mer.",
+        "Quand il y a trop de visiteurs pour un lieu, on parle de surfréquentation : la commune cherche alors à mieux répartir les visites."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 7,
+   "id": "biarritz-le-littoral-atlantique",
+   "titre": "Le littoral atlantique",
+   "lieu": "Biarritz, sur la Grande Plage, au bord de l'océan Atlantique",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 2",
+   "episode": "Une longue plage de sable au pied de villas et d'hôtels ; des surfeurs dans les rouleaux, un phare sur la pointe, des parasols serrés jusqu'à l'eau.",
+   "scenarimage": "",
+   "mot": "LITTORAL",
+   "mot_origine": "Le mot-clé de la séance 7, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e7",
+   "cinematique_fin": "fin-e7",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e7-1",
+     "escale": 7,
+     "ordre": 1,
+     "titre": "La carte de Théo",
+     "decor": "biarritz-plage",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "theo",
+     "probleme_narratif": "Théo déplie sa carte : il faut nommer les eaux qui bordent la France.",
+     "enjeu": "Le message du voleur parle de mers et d'océans : sans les nommer, impossible de le lire.",
+     "episode_du_roman": "Séance 7 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Nommer et situer les mers et l'océan qui bordent la France",
+     "pourquoi_ce_savoir_ici": "La séance « Biarritz — Le littoral atlantique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les noms des mers s'inscrivent en bleu le long des côtes."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l07",
+     "type": "plan",
+     "niveau_variantes": "Découverte (plan) ; Agent CM1 (plan) ; Agent CM2 (plan) ; Géographe (ordre) ; Chef de mission (plan). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La mer du Nord est tout au nord, la Manche au nord-ouest, entre la France et le Royaume-Uni, l'océan Atlantique à l'ouest et la mer Méditerranée au sud. Étretat est au bord de la Manche, Biarritz au bord de l'océan Atlantique, Marseille au bord de la Méditerranée.",
+     "matelot": {
+      "titre": "La France et ses mers",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La mer du Nord"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Manche"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "L'océan Atlantique"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "La mer Méditerranée"
+       }
+      ],
+      "consigne": "Théo, l'agent qui t'attend à Biarritz, déplie une carte de France. Place le nom de chaque mer ou océan sur son repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France et les mers qui la bordent\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><g stroke=\"#1f6fb8\" stroke-width=\"2\" fill=\"none\" opacity=\".5\"><path d=\"M60,120 q30,-12 60,0\"/><path d=\"M60,150 q30,-12 60,0\"/><path d=\"M470,470 q30,-12 60,0\"/><path d=\"M420,470 q-30,-12 -60,0\"/></g><circle cx='360' cy='26' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='360' y='32' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='186' cy='57' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='186' y='63' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='68' cy='286' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='68' y='292' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='422' cy='473' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='422' y='479' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text></svg>",
+      "indices": [
+       "La Méditerranée est au sud, là où se trouve la Corse.",
+       "L'océan Atlantique est à l'ouest : c'est le plus vaste.",
+       "La mer du Nord est tout en haut ; la Manche juste à sa gauche."
+      ],
+      "dialogue": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été."
+     },
+     "timonier": {
+      "titre": "La France, ses mers et ses stations",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La mer du Nord"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Manche"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "L'océan Atlantique"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "La mer Méditerranée"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Étretat"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Biarritz"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Marseille"
+       }
+      ],
+      "etiquettes": [
+       "La mer du Nord",
+       "La Manche",
+       "L'océan Atlantique",
+       "La mer Méditerranée",
+       "Étretat",
+       "Biarritz",
+       "Marseille",
+       "Dunkerque"
+      ],
+      "consigne": "Théo déplie une carte de France. Place chaque mer ou océan, puis les trois stations du littoral, sur le bon repère. Une étiquette est en trop.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France et les mers qui la bordent\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><g stroke=\"#1f6fb8\" stroke-width=\"2\" fill=\"none\" opacity=\".5\"><path d=\"M60,120 q30,-12 60,0\"/><path d=\"M60,150 q30,-12 60,0\"/><path d=\"M470,470 q30,-12 60,0\"/><path d=\"M420,470 q-30,-12 -60,0\"/></g><circle cx='360' cy='26' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='360' y='32' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='186' cy='57' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='186' y='63' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='68' cy='286' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='68' y='292' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='422' cy='473' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='422' y='479' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='236' cy='78' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='236' y='84' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='161' cy='385' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='161' y='391' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='403' cy='390' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='403' y='396' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text></svg>",
+      "indices": [
+       "Étretat est en Normandie, au bord de la Manche.",
+       "Biarritz est tout au sud-ouest, près de l'Espagne.",
+       "Marseille est au bord de la Méditerranée ; Dunkerque est l'étiquette en trop."
+      ],
+      "dialogue": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été."
+     },
+     "mousse": {
+      "type": "plan",
+      "titre": "La carte de Théo",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Manche"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "L'océan Atlantique"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "La mer Méditerranée"
+       }
+      ],
+      "etiquettes": [
+       "La Manche",
+       "L'océan Atlantique",
+       "La mer Méditerranée"
+      ],
+      "consigne": "Place chaque mer ou océan sur son repère.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France et les mers qui la bordent\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><g stroke=\"#1f6fb8\" stroke-width=\"2\" fill=\"none\" opacity=\".5\"><path d=\"M60,120 q30,-12 60,0\"/><path d=\"M60,150 q30,-12 60,0\"/><path d=\"M470,470 q30,-12 60,0\"/><path d=\"M420,470 q-30,-12 -60,0\"/></g><circle cx='186' cy='57' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='186' y='63' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='68' cy='286' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='68' y='292' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='422' cy='473' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='422' y='479' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "indices": [
+       "Ouvre la fiche « Les mers et l'océan qui bordent la France ».",
+       "La Méditerranée est au sud.",
+       "L'océan Atlantique est à l'ouest."
+      ],
+      "dialogue": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "la mer du Nord",
+        "rang": 1
+       },
+       {
+        "txt": "la Manche",
+        "rang": 2
+       },
+       {
+        "txt": "l'océan Atlantique",
+        "rang": 3
+       },
+       {
+        "txt": "la mer Méditerranée",
+        "rang": 4
+       }
+      ],
+      "consigne": "Théo fait le tour des côtes de France en bateau, de la Belgique à l'Italie. Range les eaux qu'il longe dans l'ordre, puis choisis la phrase de la fiche qui les cite toutes.",
+      "indices": [
+       "La Belgique est au nord.",
+       "Après la Manche, on longe la Bretagne vers l'ouest et le sud.",
+       "Pour la justification : cherche « quatre grandes étendues d'eau »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les eaux qui bordent la France ?",
+       "options": [
+        "Le littoral est la zone de contact entre la terre et la mer.",
+        "La France métropolitaine est bordée par quatre grandes étendues d'eau : la mer du Nord, la Manche, l'océan Atlantique et la mer Méditerranée.",
+        "La mer du Nord borde le nord de la France, vers la Belgique.",
+        "L'océan Atlantique borde l'ouest de la France ; en le traversant, on arrive en Amérique."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été."
+     },
+     "second": {
+      "type": "plan",
+      "titre": "La France, ses mers et ses stations",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La mer du Nord"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Manche"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "L'océan Atlantique"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "La mer Méditerranée"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Étretat"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Biarritz"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Marseille"
+       }
+      ],
+      "etiquettes": [
+       "La mer du Nord",
+       "La Manche",
+       "L'océan Atlantique",
+       "La mer Méditerranée",
+       "Étretat",
+       "Biarritz",
+       "Marseille",
+       "Dunkerque",
+       "La mer Baltique"
+      ],
+      "consigne": "Place les mers, l'océan et les trois stations sur leur repère (deux étiquettes sont en trop), puis choisis la phrase de la fiche qui situe l'océan Atlantique.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France et les mers qui la bordent\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#e6f2da\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><g stroke=\"#1f6fb8\" stroke-width=\"2\" fill=\"none\" opacity=\".5\"><path d=\"M60,120 q30,-12 60,0\"/><path d=\"M60,150 q30,-12 60,0\"/><path d=\"M470,470 q30,-12 60,0\"/><path d=\"M420,470 q-30,-12 -60,0\"/></g><circle cx='360' cy='26' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='360' y='32' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='186' cy='57' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='186' y='63' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='68' cy='286' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='68' y='292' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='422' cy='473' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='422' y='479' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='236' cy='78' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='236' y='84' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='161' cy='385' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='161' y='391' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='403' cy='390' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='403' y='396' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text></svg>",
+      "indices": [
+       "La mer Baltique ne borde pas la France.",
+       "Étretat est en Normandie, Biarritz près de l'Espagne.",
+       "Pour la justification : cherche « en Amérique »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche situe l'océan Atlantique ?",
+       "options": [
+        "La Manche sépare la France du Royaume-Uni ; on s'y baigne en Normandie.",
+        "La France métropolitaine est bordée par quatre grandes étendues d'eau : la mer du Nord, la Manche, l'océan Atlantique et la mer Méditerranée.",
+        "L'océan Atlantique borde l'ouest de la France ; en le traversant, on arrive en Amérique.",
+        "La mer Méditerranée borde le sud de la France ; on s'y baigne à Marseille, et la Corse en est entourée."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été."
+     }
+    },
+    {
+     "id": "e7-2",
+     "escale": 7,
+     "ordre": 2,
+     "titre": "Quelle mer ?",
+     "decor": "biarritz-plage",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "theo",
+     "probleme_narratif": "Le loueur de planches a remis à Théo le message laissé par le voleur.",
+     "enjeu": "Chaque phrase du message désigne une mer : une seule erreur et la piste est perdue.",
+     "episode_du_roman": "Séance 7 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Nommer et situer les mers et l'océan qui bordent la France",
+     "pourquoi_ce_savoir_ici": "La séance « Biarritz — Le littoral atlantique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Les phrases se rangent sous les noms des mers ; une destination se dessine."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l07",
+     "type": "tri",
+     "niveau_variantes": "Découverte (qcm) ; Agent CM1 (tri) ; Agent CM2 (tri) ; Géographe (qcm) ; Chef de mission (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "On se baigne dans la Méditerranée à Marseille, et la Corse en est entourée ; l'océan Atlantique borde l'ouest et mène en Amérique ; la Manche sépare la France du Royaume-Uni et borde la Normandie ; la mer du Nord borde le nord de la France, vers la Belgique.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "nord",
+        "titre": "La mer du Nord"
+       },
+       {
+        "id": "manche",
+        "titre": "La Manche"
+       },
+       {
+        "id": "atl",
+        "titre": "L'océan Atlantique"
+       },
+       {
+        "id": "med",
+        "titre": "La mer Méditerranée"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "On s'y baigne à Marseille.",
+        "col": "med"
+       },
+       {
+        "txt": "En le traversant, on arrive en Amérique.",
+        "col": "atl"
+       },
+       {
+        "txt": "On s'y baigne en Normandie.",
+        "col": "manche"
+       },
+       {
+        "txt": "Elle borde le nord de la France, vers la Belgique.",
+        "col": "nord"
+       },
+       {
+        "txt": "La Corse en est entourée.",
+        "col": "med"
+       },
+       {
+        "txt": "On s'y baigne à Biarritz.",
+        "col": "atl"
+       }
+      ],
+      "consigne": "Avant de choisir la destination, Théo te teste. Range chaque phrase sous la mer ou l'océan dont elle parle.",
+      "indices": [
+       "Marseille et la Corse sont au sud.",
+       "Un océan est bien plus vaste qu'une mer : il mène à un autre continent.",
+       "La Normandie est au bord de la Manche."
+      ],
+      "dialogue": "Voici le message du voleur. Chaque phrase parle d'une mer : à toi de les ranger."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "nord",
+        "titre": "La mer du Nord"
+       },
+       {
+        "id": "manche",
+        "titre": "La Manche"
+       },
+       {
+        "id": "atl",
+        "titre": "L'océan Atlantique"
+       },
+       {
+        "id": "med",
+        "titre": "La mer Méditerranée"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "On s'y baigne à Marseille.",
+        "col": "med"
+       },
+       {
+        "txt": "En le traversant, on arrive en Amérique.",
+        "col": "atl"
+       },
+       {
+        "txt": "On s'y baigne en Normandie.",
+        "col": "manche"
+       },
+       {
+        "txt": "Elle borde le nord de la France, vers la Belgique.",
+        "col": "nord"
+       },
+       {
+        "txt": "La Corse en est entourée.",
+        "col": "med"
+       },
+       {
+        "txt": "On s'y baigne à Biarritz.",
+        "col": "atl"
+       },
+       {
+        "txt": "En la traversant, on arrive au Royaume-Uni.",
+        "col": "manche"
+       },
+       {
+        "txt": "C'est la mer qui borde le sud de la France.",
+        "col": "med"
+       },
+       {
+        "txt": "Il borde l'ouest de la France.",
+        "col": "atl"
+       }
+      ],
+      "consigne": "Théo te teste avant le départ. Range chaque phrase sous la mer ou l'océan dont elle parle. Plusieurs phrases peuvent parler de la même étendue d'eau.",
+      "indices": [
+       "La Manche est entre la France et le Royaume-Uni.",
+       "Biarritz est au bord de l'océan.",
+       "La Méditerranée a trois phrases, l'Atlantique trois."
+      ],
+      "dialogue": "Voici le message du voleur. Chaque phrase parle d'une mer : à toi de les ranger."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Où se baigne-t-on à Marseille ?",
+        "options": [
+         "dans la mer Méditerranée",
+         "dans la Manche",
+         "dans la mer du Nord"
+        ],
+        "bonne": 0,
+        "explication": "Marseille est au sud."
+       },
+       {
+        "q": "Où se baigne-t-on à Biarritz ?",
+        "options": [
+         "dans l'océan Atlantique",
+         "dans la mer Méditerranée",
+         "dans la Manche"
+        ],
+        "bonne": 0,
+        "explication": "Biarritz est à l'ouest."
+       }
+      ],
+      "consigne": "Théo te pose deux questions avant de partir.",
+      "indices": [
+       "Ouvre la fiche « Les mers et l'océan qui bordent la France ».",
+       "Marseille est au bord de la mer, au sud.",
+       "Biarritz est au bord de l'océan."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Dunkerque, tout au nord, est au bord de…",
+        "options": [
+         "la mer du Nord",
+         "la Manche",
+         "l'océan Atlantique",
+         "la mer Méditerranée"
+        ],
+        "bonne": 0,
+        "explication": "Près de la Belgique."
+       },
+       {
+        "q": "Étretat est au bord de…",
+        "options": [
+         "la Manche",
+         "la mer du Nord",
+         "l'océan Atlantique",
+         "la mer Méditerranée"
+        ],
+        "bonne": 0,
+        "explication": "Comme toute la Normandie."
+       },
+       {
+        "q": "La Rochelle et Biarritz sont au bord de…",
+        "options": [
+         "l'océan Atlantique",
+         "la Manche",
+         "la mer Méditerranée",
+         "la mer du Nord"
+        ],
+        "bonne": 0,
+        "explication": "Sur la côte ouest."
+       },
+       {
+        "q": "Nice et Ajaccio sont au bord de…",
+        "options": [
+         "la mer Méditerranée",
+         "l'océan Atlantique",
+         "la Manche",
+         "la mer du Nord"
+        ],
+        "bonne": 0,
+        "explication": "Ajaccio est en Corse."
+       }
+      ],
+      "consigne": "Théo veut savoir si tu connais les villes du littoral. Réponds, puis choisis la phrase de la fiche sur la Méditerranée.",
+      "indices": [
+       "La mer du Nord est près de la Belgique.",
+       "La Corse est entourée par la Méditerranée.",
+       "Pour la justification : cherche « Corse »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la mer Méditerranée ?",
+       "options": [
+        "La mer du Nord borde le nord de la France, vers la Belgique.",
+        "La Manche sépare la France du Royaume-Uni ; on s'y baigne en Normandie.",
+        "L'océan Atlantique borde l'ouest de la France ; en le traversant, on arrive en Amérique.",
+        "La mer Méditerranée borde le sud de la France ; on s'y baigne à Marseille, et la Corse en est entourée."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La Manche est un océan.",
+        "vrai": false,
+        "explication": "C'est une mer, entre la France et le Royaume-Uni."
+       },
+       {
+        "txt": "En traversant l'océan Atlantique, on arrive en Amérique.",
+        "vrai": true,
+        "explication": "Il sépare l'Europe de l'Amérique."
+       },
+       {
+        "txt": "La Corse est entourée par la mer Méditerranée.",
+        "vrai": true,
+        "explication": "Elle est au sud-est de la France."
+       },
+       {
+        "txt": "La mer du Nord borde la Bretagne.",
+        "vrai": false,
+        "explication": "La Bretagne est bordée par la Manche et l'océan Atlantique."
+       },
+       {
+        "txt": "Biarritz est au bord de la Manche.",
+        "vrai": false,
+        "explication": "Biarritz est au bord de l'océan Atlantique."
+       }
+      ],
+      "consigne": "Le message du voleur contient des erreurs. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur la Manche.",
+      "indices": [
+       "La Manche est une mer.",
+       "La Bretagne est à l'ouest, pas au nord.",
+       "Pour la justification : cherche « Royaume-Uni »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la Manche ?",
+       "options": [
+        "La Manche sépare la France du Royaume-Uni ; on s'y baigne en Normandie.",
+        "La mer du Nord borde le nord de la France, vers la Belgique.",
+        "L'océan Atlantique borde l'ouest de la France ; en le traversant, on arrive en Amérique.",
+        "Le littoral est la zone de contact entre la terre et la mer."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     }
+    },
+    {
+     "id": "e7-3",
+     "escale": 7,
+     "ordre": 3,
+     "titre": "Où dormir ?",
+     "decor": "biarritz-plage",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "theo",
+     "probleme_narratif": "Théo doit loger les agents à Biarritz, au cœur de l'été.",
+     "enjeu": "En pleine saison, un agent sans logement doit quitter la ville.",
+     "episode_du_roman": "Séance 7 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Nommer et situer les mers et l'océan qui bordent la France",
+     "pourquoi_ce_savoir_ici": "La séance « Biarritz — Le littoral atlantique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Chaque annonce reçoit un nom d'agent épinglé."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l07",
+     "type": "association",
+     "niveau_variantes": "Découverte (association) ; Agent CM1 (association) ; Agent CM2 (association) ; Géographe (tri) ; Chef de mission (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Une tente est une toile que l'on plante soi-même ; une caravane, un véhicule aménagé tiré par une voiture ; un hôtel a une réception et des chambres numérotées ; un camping est un terrain aménagé pour les tentes et les caravanes ; un gîte, une maison de vacances louée entièrement ; un mobil-home, une maison préfabriquée posée sur un camping ; une chambre d'hôtes, une chambre chez l'habitant ; une auberge de jeunesse, un hébergement bon marché pour jeunes voyageurs.",
+     "matelot": {
+      "paires": [
+       {
+        "g": "une toile que l'on plante soi-même",
+        "d": "une tente"
+       },
+       {
+        "g": "un véhicule aménagé, tiré par une voiture",
+        "d": "une caravane"
+       },
+       {
+        "g": "un établissement avec une réception et des chambres numérotées",
+        "d": "un hôtel"
+       },
+       {
+        "g": "un terrain aménagé pour les tentes et les caravanes",
+        "d": "un camping"
+       },
+       {
+        "g": "une maison de vacances louée entièrement",
+        "d": "un gîte"
+       }
+      ],
+      "consigne": "En été, Biarritz accueille beaucoup de vacanciers. Théo doit loger les agents : relie chaque description au type d'hébergement.",
+      "indices": [
+       "La tente se plante, la caravane se tire.",
+       "Le camping est un terrain.",
+       "Le gîte est une maison entière."
+      ],
+      "dialogue": "Il faut loger tout le monde. Relie chaque description au bon hébergement."
+     },
+     "timonier": {
+      "paires": [
+       {
+        "g": "une toile que l'on plante soi-même",
+        "d": "une tente"
+       },
+       {
+        "g": "un véhicule aménagé, tiré par une voiture",
+        "d": "une caravane"
+       },
+       {
+        "g": "un établissement avec une réception et des chambres numérotées",
+        "d": "un hôtel"
+       },
+       {
+        "g": "un terrain aménagé pour les tentes et les caravanes",
+        "d": "un camping"
+       },
+       {
+        "g": "une maison de vacances louée entièrement",
+        "d": "un gîte"
+       },
+       {
+        "g": "une maison préfabriquée posée sur un terrain de camping",
+        "d": "un mobil-home"
+       },
+       {
+        "g": "une chambre chez l'habitant, petit-déjeuner compris",
+        "d": "une chambre d'hôtes"
+       },
+       {
+        "g": "un hébergement bon marché pour jeunes voyageurs",
+        "d": "une auberge de jeunesse"
+       }
+      ],
+      "consigne": "Théo cherche où loger les agents pendant la saison. Relie chaque description au type d'hébergement. Lis bien : certains se ressemblent.",
+      "indices": [
+       "Le mobil-home ne roule pas : il reste posé sur le camping.",
+       "Chez l'habitant, c'est la chambre d'hôtes.",
+       "L'auberge de jeunesse accueille les jeunes voyageurs."
+      ],
+      "dialogue": "Il faut loger tout le monde. Relie chaque description au bon hébergement."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "une toile que l'on plante soi-même",
+        "d": "une tente"
+       },
+       {
+        "g": "des chambres et une réception",
+        "d": "un hôtel"
+       },
+       {
+        "g": "un terrain pour les tentes",
+        "d": "un camping"
+       }
+      ],
+      "consigne": "Relie chaque description au bon hébergement.",
+      "indices": [
+       "Ouvre la fiche « Les mers et l'océan qui bordent la France ».",
+       "La tente se plante.",
+       "À l'hôtel, on est accueilli à la réception."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "air",
+        "titre": "En plein air, sur un camping"
+       },
+       {
+        "id": "bat",
+        "titre": "Dans un bâtiment"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "une tente",
+        "col": "air"
+       },
+       {
+        "txt": "une caravane",
+        "col": "air"
+       },
+       {
+        "txt": "un mobil-home",
+        "col": "air"
+       },
+       {
+        "txt": "un hôtel",
+        "col": "bat"
+       },
+       {
+        "txt": "un gîte",
+        "col": "bat"
+       },
+       {
+        "txt": "une chambre d'hôtes",
+        "col": "bat"
+       },
+       {
+        "txt": "une auberge de jeunesse",
+        "col": "bat"
+       }
+      ],
+      "consigne": "Théo trie les hébergements de Biarritz. Range chacun : en plein air (sur un camping) ou dans un bâtiment ? Choisis ensuite la phrase de la fiche sur les hébergements.",
+      "indices": [
+       "Le mobil-home est posé sur un terrain de camping.",
+       "Le gîte est une maison louée entièrement.",
+       "Pour la justification : cherche « Pour se loger »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite des hébergements de vacances ?",
+       "options": [
+        "Biarritz est une station balnéaire du Pays basque, dans les Pyrénées-Atlantiques, sur le littoral atlantique.",
+        "Pour se loger en vacances, on peut choisir un hôtel, un camping, un gîte, une chambre d'hôtes, un village de vacances, une location ou une auberge de jeunesse.",
+        "Le littoral est la zone de contact entre la terre et la mer.",
+        "L'été, la population d'une commune du littoral peut être multipliée par dix ou plus : les touristes s'ajoutent aux habitants, sur la même surface."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "« Je voyage seul, avec très peu d'argent. »",
+        "d": "une auberge de jeunesse"
+       },
+       {
+        "g": "« Je veux dormir chez des habitants, petit-déjeuner compris. »",
+        "d": "une chambre d'hôtes"
+       },
+       {
+        "g": "« Je viens avec ma caravane et ma tente. »",
+        "d": "un camping"
+       },
+       {
+        "g": "« Je veux une maison entière pour ma famille. »",
+        "d": "un gîte"
+       },
+       {
+        "g": "« Je veux des clubs et des animations pour mes enfants. »",
+        "d": "un village de vacances"
+       },
+       {
+        "g": "« Je veux une réception et le ménage fait chaque jour. »",
+        "d": "un hôtel"
+       }
+      ],
+      "consigne": "Six agents arrivent cet été. Relie le souhait de chacun à l'hébergement qui lui convient, puis choisis la phrase de la fiche sur les hébergements.",
+      "indices": [
+       "Le village de vacances propose des animations.",
+       "La caravane et la tente vont sur un terrain aménagé.",
+       "Pour la justification : cherche « village de vacances »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite des hébergements de vacances ?",
+       "options": [
+        "Le littoral est la zone de contact entre la terre et la mer.",
+        "L'été, la population d'une commune du littoral peut être multipliée par dix ou plus : les touristes s'ajoutent aux habitants, sur la même surface.",
+        "Pour se loger en vacances, on peut choisir un hôtel, un camping, un gîte, une chambre d'hôtes, un village de vacances, une location ou une auberge de jeunesse.",
+        "Biarritz est une station balnéaire du Pays basque, dans les Pyrénées-Atlantiques, sur le littoral atlantique."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     }
+    },
+    {
+     "id": "e7-4",
+     "escale": 7,
+     "ordre": 4,
+     "titre": "L'été, combien sont-ils ?",
+     "decor": "biarritz-plage",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "theo",
+     "probleme_narratif": "Théo compare le nombre de personnes présentes l'été et le reste de l'année.",
+     "enjeu": "Théo doit savoir combien de personnes se pressent sur le littoral un jour d'été.",
+     "episode_du_roman": "Séance 7 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Nommer et situer les mers et l'océan qui bordent la France",
+     "pourquoi_ce_savoir_ici": "La séance « Biarritz — Le littoral atlantique » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "La calculette affiche le résultat ; Théo siffle d'étonnement."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l07",
+     "type": "code",
+     "niveau_variantes": "Agent CM2 (code) ; Géographe (code) ; Chef de mission (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Hors vacances : 1 100 ÷ 4 = 275 habitants par km². Ce jour d'été : (1 100 + 15 000) ÷ 4 = 16 100 ÷ 4 = 4 025 habitants par km². 4 025 ÷ 275 donne environ 14,6 : la densité est environ multipliée par 15.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Densité hors vacances (hab/km²)",
+        "valeur": "275",
+        "longueur": 3
+       },
+       {
+        "libelle": "Densité ce jour d'été (hab/km²)",
+        "valeur": "4025",
+        "longueur": 4
+       },
+       {
+        "libelle": "La densité est multipliée par environ",
+        "valeur": "15",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Théo compare avec Étretat. Étretat mesure environ 4 km² et compte environ 1 100 habitants. Imagine un jour d'été où 15 000 visiteurs s'ajoutent aux habitants. Calcule, puis ouvre.",
+      "indices": [
+       "Densité = nombre de personnes ÷ surface en km².",
+       "D'abord 1 100 + 15 000 = 16 100.",
+       "Compare : 4 025 ÷ 275, arrondi à l'unité."
+      ],
+      "dialogue": "L'été, on est beaucoup plus nombreux. Calcule de combien."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Densité hors vacances (hab/km²)",
+        "valeur": "275",
+        "longueur": 3
+       },
+       {
+        "libelle": "Densité avec 10 000 visiteurs de plus (hab/km²)",
+        "valeur": "2775",
+        "longueur": 4
+       },
+       {
+        "libelle": "Multipliée par environ",
+        "valeur": "10",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Un jour d'été, Étretat (environ 4 km², environ 1 100 habitants) peut recevoir jusqu'à 10 000 visiteurs. Calcule, puis choisis la phrase de la fiche qui explique pourquoi la densité augmente.",
+      "indices": [
+       "1 100 ÷ 4 = 275.",
+       "(1 100 + 10 000) ÷ 4 = 11 100 ÷ 4.",
+       "2 775 ÷ 275, arrondi à l'unité. Pour la justification : cherche « sur la même surface »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique pourquoi la densité augmente l'été ?",
+       "options": [
+        "L'été, la population d'une commune du littoral peut être multipliée par dix ou plus : les touristes s'ajoutent aux habitants, sur la même surface.",
+        "Le littoral est la zone de contact entre la terre et la mer.",
+        "Biarritz est une station balnéaire du Pays basque, dans les Pyrénées-Atlantiques, sur le littoral atlantique.",
+        "Pour se loger en vacances, on peut choisir un hôtel, un camping, un gîte, une chambre d'hôtes, un village de vacances, une location ou une auberge de jeunesse."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Personnes nécessaires sur 4 km²",
+        "valeur": "6000",
+        "longueur": 4
+       },
+       {
+        "libelle": "Visiteurs à ajouter aux habitants",
+        "valeur": "4900",
+        "longueur": 4
+       },
+       {
+        "libelle": "Densité de la commune imaginaire (hab/km²)",
+        "valeur": "250",
+        "longueur": 3
+       }
+      ],
+      "consigne": "Problème de Théo : Étretat mesure environ 4 km² et compte environ 1 100 habitants. Combien de visiteurs faudrait-il pour que sa densité atteigne 1 500 habitants par km², comme dans une ville ? Et quelle est la densité d'une commune imaginaire de 2 000 habitants sur 8 km² ? Choisis ensuite la phrase de la fiche qui donne l'exemple d'Étretat.",
+      "indices": [
+       "Densité × surface = nombre de personnes : 1 500 × 4.",
+       "Retire les 1 100 habitants.",
+       "2 000 ÷ 8. Pour la justification : cherche « 275 habitants par km² »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne l'exemple d'Étretat ?",
+       "options": [
+        "L'été, la population d'une commune du littoral peut être multipliée par dix ou plus : les touristes s'ajoutent aux habitants, sur la même surface.",
+        "Étretat mesure environ 4 km² pour environ 1 100 habitants : sa densité est d'environ 275 habitants par km² ; avec 15 000 visiteurs de plus, elle passerait à 4 025, environ 15 fois plus.",
+        "La France métropolitaine est bordée par quatre grandes étendues d'eau : la mer du Nord, la Manche, l'océan Atlantique et la mer Méditerranée.",
+        "Pour se loger en vacances, on peut choisir un hôtel, un camping, un gîte, une chambre d'hôtes, un village de vacances, une location ou une auberge de jeunesse."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 8,
+   "id": "dhaka-les-inegalites-dans-le-monde",
+   "titre": "Niveaux de vie dans le monde",
+   "lieu": "Dhaka, capitale du Bangladesh, dans un marché très animé",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 2",
+   "episode": "Une rue étroite pleine de monde : des étals de tissus et de fruits, des pousse-pousse à vélo, des fils électriques emmêlés au-dessus des têtes, des immeubles neufs au loin.",
+   "scenarimage": "",
+   "mot": "INÉGALITÉS",
+   "mot_origine": "Le mot-clé de la séance 8, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e8",
+   "cinematique_fin": "fin-e8",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e8-1",
+     "escale": 8,
+     "ordre": 1,
+     "titre": "Le planisphère de Nour",
+     "decor": "dhaka-marche",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nour",
+     "probleme_narratif": "Nour a épinglé les pays qu'elle compare au Bangladesh, mais leurs noms sont tombés.",
+     "enjeu": "Pour comprendre les inégalités, il faut d'abord savoir où se trouvent les pays comparés.",
+     "episode_du_roman": "Séance 8 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Identifier les manifestations des inégalités de niveau de vie",
+     "pourquoi_ce_savoir_ici": "La séance « Dhaka — Les inégalités dans le monde » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Les noms des pays se fixent sous chaque épingle."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l08",
+     "type": "plan",
+     "niveau_variantes": "Découverte (plan) ; Agent CM1 (plan) ; Agent CM2 (plan) ; Géographe (association) ; Chef de mission (plan). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Les États-Unis sont en Amérique du Nord, la Norvège en Europe, le Tchad et le Mali en Afrique, le Bangladesh et le Japon en Asie, l'Australie en Océanie.",
+     "matelot": {
+      "titre": "Le planisphère de Nour",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "Les États-Unis"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Norvège"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Le Tchad"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Bangladesh"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "L'Australie"
+       }
+      ],
+      "consigne": "Nour, l'agente qui t'attend à Dhaka, compare la vie au Bangladesh avec celle d'autres pays. Elle a épinglé des pays sur son planisphère : replace chaque nom sur son repère.<svg viewBox=\"0 0 1000 500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Le planisphère de Nour\"><rect x=\"0\" y=\"0\" width=\"1000\" height=\"500\" fill=\"#bfe0f2\"/><line x1=\"0\" y1=\"250\" x2=\"1000\" y2=\"250\" stroke=\"#4a6b8c\" stroke-dasharray=\"8 6\" stroke-width=\"1.5\"/><text x=\"8\" y=\"245\" font-size=\"13\" fill=\"#3a5a7c\" font-style=\"italic\">équateur</text><path data-continent=\"amerique-nord\" d=\"M33,67 L111,83 L153,114 L175,161 L208,194 L231,206 L269,222 L278,181 L292,153 L317,125 L347,119 L333,89 L292,61 L236,50 L153,56 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"amerique-sud\" d=\"M278,228 L306,217 L333,236 L361,250 L403,267 L394,300 L367,319 L339,347 L319,375 L306,397 L292,375 L303,333 L306,300 L286,264 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"europe\" d=\"M472,150 L500,128 L528,144 L556,139 L578,136 L583,125 L611,117 L611,83 L583,67 L569,53 L528,75 L514,83 L486,111 L472,131 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"afrique\" d=\"M453,208 L500,208 L542,189 L589,164 L597,194 L619,217 L642,217 L617,256 L611,292 L597,311 L569,344 L550,344 L533,300 L522,239 L486,236 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"asie\" d=\"M611,117 L667,97 L722,83 L778,50 L889,50 L1000,67 L1000,97 L944,111 L889,125 L875,153 L839,167 L833,189 L792,222 L764,236 L722,228 L700,194 L667,181 L639,172 L619,217 L597,194 L589,164 L583,125 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"oceanie\" d=\"M814,311 L858,283 L894,281 L906,303 L917,319 L925,328 L917,356 L889,356 L858,339 L819,344 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"antarctique\" d=\"M80,468 L200,452 L340,462 L470,450 L600,462 L740,452 L900,470 L920,500 L60,500 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><circle cx='200' cy='150' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='156' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='560' cy='75' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='81' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='560' cy='220' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='226' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='760' cy='215' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='760' y='221' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='870' cy='320' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='870' y='326' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>",
+      "indices": [
+       "Le Bangladesh, où tu te trouves, est au sud de l'Asie.",
+       "L'Australie est en Océanie, en bas à droite.",
+       "Le Tchad est en Afrique ; la Norvège, au nord de l'Europe."
+      ],
+      "dialogue": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie."
+     },
+     "timonier": {
+      "titre": "Le planisphère de Nour",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "Les États-Unis"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Norvège"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Le Tchad"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Bangladesh"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "L'Australie"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Le Mali"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Le Japon"
+       }
+      ],
+      "consigne": "Nour a épinglé sept pays sur son planisphère. Replace chaque nom sur son repère, en t'aidant des continents.<svg viewBox=\"0 0 1000 500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Le planisphère de Nour\"><rect x=\"0\" y=\"0\" width=\"1000\" height=\"500\" fill=\"#bfe0f2\"/><line x1=\"0\" y1=\"250\" x2=\"1000\" y2=\"250\" stroke=\"#4a6b8c\" stroke-dasharray=\"8 6\" stroke-width=\"1.5\"/><text x=\"8\" y=\"245\" font-size=\"13\" fill=\"#3a5a7c\" font-style=\"italic\">équateur</text><path data-continent=\"amerique-nord\" d=\"M33,67 L111,83 L153,114 L175,161 L208,194 L231,206 L269,222 L278,181 L292,153 L317,125 L347,119 L333,89 L292,61 L236,50 L153,56 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"amerique-sud\" d=\"M278,228 L306,217 L333,236 L361,250 L403,267 L394,300 L367,319 L339,347 L319,375 L306,397 L292,375 L303,333 L306,300 L286,264 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"europe\" d=\"M472,150 L500,128 L528,144 L556,139 L578,136 L583,125 L611,117 L611,83 L583,67 L569,53 L528,75 L514,83 L486,111 L472,131 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"afrique\" d=\"M453,208 L500,208 L542,189 L589,164 L597,194 L619,217 L642,217 L617,256 L611,292 L597,311 L569,344 L550,344 L533,300 L522,239 L486,236 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"asie\" d=\"M611,117 L667,97 L722,83 L778,50 L889,50 L1000,67 L1000,97 L944,111 L889,125 L875,153 L839,167 L833,189 L792,222 L764,236 L722,228 L700,194 L667,181 L639,172 L619,217 L597,194 L589,164 L583,125 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"oceanie\" d=\"M814,311 L858,283 L894,281 L906,303 L917,319 L925,328 L917,356 L889,356 L858,339 L819,344 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"antarctique\" d=\"M80,468 L200,452 L340,462 L470,450 L600,462 L740,452 L900,470 L920,500 L60,500 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><circle cx='200' cy='150' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='156' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='560' cy='75' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='81' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='560' cy='220' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='226' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='760' cy='215' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='760' y='221' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='870' cy='320' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='870' y='326' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='495' cy='222' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='495' y='228' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='935' cy='100' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='935' y='106' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text></svg>",
+      "indices": [
+       "Le Japon est tout à l'est de l'Asie.",
+       "Le Mali est à l'ouest du Tchad.",
+       "Les États-Unis sont en Amérique du Nord."
+      ],
+      "dialogue": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie."
+     },
+     "mousse": {
+      "type": "plan",
+      "titre": "Le planisphère de Nour",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Norvège"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "Le Bangladesh"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "L'Australie"
+       }
+      ],
+      "etiquettes": [
+       "La Norvège",
+       "Le Bangladesh",
+       "L'Australie"
+      ],
+      "consigne": "Place chaque pays sur son repère.<svg viewBox=\"0 0 1000 500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Le planisphère de Nour\"><rect x=\"0\" y=\"0\" width=\"1000\" height=\"500\" fill=\"#bfe0f2\"/><line x1=\"0\" y1=\"250\" x2=\"1000\" y2=\"250\" stroke=\"#4a6b8c\" stroke-dasharray=\"8 6\" stroke-width=\"1.5\"/><text x=\"8\" y=\"245\" font-size=\"13\" fill=\"#3a5a7c\" font-style=\"italic\">équateur</text><path data-continent=\"amerique-nord\" d=\"M33,67 L111,83 L153,114 L175,161 L208,194 L231,206 L269,222 L278,181 L292,153 L317,125 L347,119 L333,89 L292,61 L236,50 L153,56 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"amerique-sud\" d=\"M278,228 L306,217 L333,236 L361,250 L403,267 L394,300 L367,319 L339,347 L319,375 L306,397 L292,375 L303,333 L306,300 L286,264 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"europe\" d=\"M472,150 L500,128 L528,144 L556,139 L578,136 L583,125 L611,117 L611,83 L583,67 L569,53 L528,75 L514,83 L486,111 L472,131 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"afrique\" d=\"M453,208 L500,208 L542,189 L589,164 L597,194 L619,217 L642,217 L617,256 L611,292 L597,311 L569,344 L550,344 L533,300 L522,239 L486,236 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"asie\" d=\"M611,117 L667,97 L722,83 L778,50 L889,50 L1000,67 L1000,97 L944,111 L889,125 L875,153 L839,167 L833,189 L792,222 L764,236 L722,228 L700,194 L667,181 L639,172 L619,217 L597,194 L589,164 L583,125 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"oceanie\" d=\"M814,311 L858,283 L894,281 L906,303 L917,319 L925,328 L917,356 L889,356 L858,339 L819,344 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"antarctique\" d=\"M80,468 L200,452 L340,462 L470,450 L600,462 L740,452 L900,470 L920,500 L60,500 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><circle cx='560' cy='75' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='81' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='760' cy='215' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='760' y='221' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='870' cy='320' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='870' y='326' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "indices": [
+       "Ouvre la fiche « Les inégalités de niveau de vie ».",
+       "Le Bangladesh est en Asie, où tu te trouves.",
+       "L'Australie est en bas à droite."
+      ],
+      "dialogue": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie."
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "les États-Unis",
+        "d": "l'Amérique du Nord"
+       },
+       {
+        "g": "la Norvège",
+        "d": "l'Europe"
+       },
+       {
+        "g": "le Tchad",
+        "d": "l'Afrique"
+       },
+       {
+        "g": "le Bangladesh",
+        "d": "l'Asie"
+       },
+       {
+        "g": "l'Australie",
+        "d": "l'Océanie"
+       }
+      ],
+      "consigne": "Nour range ses fiches de pays par continent. Relie chaque pays à son continent, puis choisis la phrase de la fiche qui dit où sont les pays les plus riches.",
+      "indices": [
+       "La Norvège est au nord de l'Europe.",
+       "Le Tchad est au cœur de l'Afrique.",
+       "Pour la justification : cherche « Asie de l'Est »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit où se trouvent les pays les plus riches ?",
+       "options": [
+        "Les pays les plus pauvres se trouvent surtout en Afrique et dans certaines régions d'Asie du Sud.",
+        "Le niveau de vie n'est pas le même partout dans le monde.",
+        "Les pays les plus riches se trouvent surtout en Amérique du Nord, en Europe, en Océanie et en Asie de l'Est, comme le Japon.",
+        "Pour comparer les pays, on utilise plusieurs indicateurs : le revenu par habitant, l'espérance de vie et la durée de la scolarisation."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie."
+     },
+     "second": {
+      "type": "plan",
+      "titre": "Le planisphère de Nour",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "Les États-Unis"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Norvège"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Le Tchad"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Bangladesh"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "L'Australie"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Le Mali"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Le Japon"
+       }
+      ],
+      "etiquettes": [
+       "Les États-Unis",
+       "La Norvège",
+       "Le Tchad",
+       "Le Bangladesh",
+       "L'Australie",
+       "Le Mali",
+       "Le Japon",
+       "Le Brésil"
+      ],
+      "consigne": "Place les sept pays sur leur repère (une étiquette est en trop), puis choisis la phrase de la fiche qui dit où se trouvent les pays les plus pauvres.<svg viewBox=\"0 0 1000 500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Le planisphère de Nour\"><rect x=\"0\" y=\"0\" width=\"1000\" height=\"500\" fill=\"#bfe0f2\"/><line x1=\"0\" y1=\"250\" x2=\"1000\" y2=\"250\" stroke=\"#4a6b8c\" stroke-dasharray=\"8 6\" stroke-width=\"1.5\"/><text x=\"8\" y=\"245\" font-size=\"13\" fill=\"#3a5a7c\" font-style=\"italic\">équateur</text><path data-continent=\"amerique-nord\" d=\"M33,67 L111,83 L153,114 L175,161 L208,194 L231,206 L269,222 L278,181 L292,153 L317,125 L347,119 L333,89 L292,61 L236,50 L153,56 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"amerique-sud\" d=\"M278,228 L306,217 L333,236 L361,250 L403,267 L394,300 L367,319 L339,347 L319,375 L306,397 L292,375 L303,333 L306,300 L286,264 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"europe\" d=\"M472,150 L500,128 L528,144 L556,139 L578,136 L583,125 L611,117 L611,83 L583,67 L569,53 L528,75 L514,83 L486,111 L472,131 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"afrique\" d=\"M453,208 L500,208 L542,189 L589,164 L597,194 L619,217 L642,217 L617,256 L611,292 L597,311 L569,344 L550,344 L533,300 L522,239 L486,236 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"asie\" d=\"M611,117 L667,97 L722,83 L778,50 L889,50 L1000,67 L1000,97 L944,111 L889,125 L875,153 L839,167 L833,189 L792,222 L764,236 L722,228 L700,194 L667,181 L639,172 L619,217 L597,194 L589,164 L583,125 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"oceanie\" d=\"M814,311 L858,283 L894,281 L906,303 L917,319 L925,328 L917,356 L889,356 L858,339 L819,344 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"antarctique\" d=\"M80,468 L200,452 L340,462 L470,450 L600,462 L740,452 L900,470 L920,500 L60,500 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><circle cx='200' cy='150' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='156' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='560' cy='75' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='81' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='560' cy='220' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='226' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='760' cy='215' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='760' y='221' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='870' cy='320' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='870' y='326' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='495' cy='222' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='495' y='228' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='935' cy='100' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='935' y='106' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text></svg>",
+      "indices": [
+       "Le Brésil est en Amérique du Sud : aucun repère n'y est placé.",
+       "Le Mali est à l'ouest du Tchad ; le Japon, tout à l'est de l'Asie.",
+       "Pour la justification : cherche « Asie du Sud »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit où se trouvent les pays les plus pauvres ?",
+       "options": [
+        "Les pays les plus riches se trouvent surtout en Amérique du Nord, en Europe, en Océanie et en Asie de l'Est, comme le Japon.",
+        "Les pays les plus pauvres se trouvent surtout en Afrique et dans certaines régions d'Asie du Sud.",
+        "Pour les enfants, la pauvreté a des conséquences graves : travail au lieu de l'école, malnutrition, problèmes de santé.",
+        "Le niveau de vie n'est pas le même partout dans le monde."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie."
+     }
+    },
+    {
+     "id": "e8-2",
+     "escale": 8,
+     "ordre": 2,
+     "titre": "Riches ou pauvres ?",
+     "decor": "dhaka-marche",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nour",
+     "probleme_narratif": "Nour montre le revenu moyen d'un habitant dans plusieurs pays.",
+     "enjeu": "Sans lire ce diagramme, impossible de savoir quels pays sont riches et lesquels sont pauvres.",
+     "episode_du_roman": "Séance 8 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Identifier les manifestations des inégalités de niveau de vie",
+     "pourquoi_ce_savoir_ici": "La séance « Dhaka — Les inégalités dans le monde » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les barres se colorent, les plus longues en haut."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l08",
+     "type": "tri",
+     "niveau_variantes": "Découverte (tri) ; Agent CM1 (tri) ; Agent CM2 (tri) ; Géographe (ordre) ; Chef de mission (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Avec plus de 40 000 dollars par habitant, la Norvège, les États-Unis, la France et le Japon sont des pays riches. Avec moins de 3 000 dollars, Haïti, le Mali, le Tchad et Madagascar sont des pays pauvres. Le Bangladesh (8 498 dollars) et la Guinée équatoriale (12 762 dollars) se situent entre les deux.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "r",
+        "titre": "Plus de 40 000 $ : pays riches"
+       },
+       {
+        "id": "p",
+        "titre": "Moins de 3 000 $ : pays pauvres"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la Norvège",
+        "col": "r"
+       },
+       {
+        "txt": "les États-Unis",
+        "col": "r"
+       },
+       {
+        "txt": "la France",
+        "col": "r"
+       },
+       {
+        "txt": "le Japon",
+        "col": "r"
+       },
+       {
+        "txt": "Haïti",
+        "col": "p"
+       },
+       {
+        "txt": "le Mali",
+        "col": "p"
+       },
+       {
+        "txt": "le Tchad",
+        "col": "p"
+       },
+       {
+        "txt": "Madagascar",
+        "col": "p"
+       }
+      ],
+      "consigne": "Nour te montre le revenu moyen d'un habitant dans plusieurs pays. Lis le diagramme, puis range chaque pays : plus de 40 000 dollars par habitant, ou moins de 3 000 ?<svg viewBox='0 0 640 314' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Revenu moyen par habitant en 2023 (en dollars)\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px'><rect width='640' height='314' rx='12' fill='#f4efe4'/><text x='320' y='26' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Revenu moyen par habitant en 2023 (en dollars)</text><text x='176' y='61' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La Norvège</text><rect x='186' y='46' width='330' height='20' rx='4' fill='#1d3b5c'/><text x='522' y='61' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>112 710 $</text><text x='176' y='91' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Les États-Unis</text><rect x='186' y='76' width='216' height='20' rx='4' fill='#1d3b5c'/><text x='408' y='91' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>73 650 $</text><text x='176' y='121' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La France</text><rect x='186' y='106' width='161' height='20' rx='4' fill='#1d3b5c'/><text x='353' y='121' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>55 060 $</text><text x='176' y='151' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Japon</text><rect x='186' y='136' width='140' height='20' rx='4' fill='#1d3b5c'/><text x='332' y='151' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>47 775 $</text><text x='176' y='181' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Haïti</text><rect x='186' y='166' width='9' height='20' rx='4' fill='#1d3b5c'/><text x='201' y='181' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2 935 $</text><text x='176' y='211' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Mali</text><rect x='186' y='196' width='7' height='20' rx='4' fill='#1d3b5c'/><text x='199' y='211' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2 342 $</text><text x='176' y='241' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Tchad</text><rect x='186' y='226' width='5' height='20' rx='4' fill='#1d3b5c'/><text x='197' y='241' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1 748 $</text><text x='176' y='271' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Madagascar</text><rect x='186' y='256' width='5' height='20' rx='4' fill='#1d3b5c'/><text x='197' y='271' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1 656 $</text><text x='320' y='304' text-anchor='middle' font-size='11' font-style='italic' fill='#4b3a2c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Source : PNUD, Rapport sur le développement humain 2025 (données 2023)</text></svg>",
+      "indices": [
+       "Regarde la longueur des barres.",
+       "Une barre très courte : un pays pauvre.",
+       "Il y a 4 pays dans chaque colonne."
+      ],
+      "dialogue": "Regarde ces barres : elles ne sont pas toutes de la même longueur."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "r",
+        "titre": "Plus de 40 000 $"
+       },
+       {
+        "id": "m",
+        "titre": "De 3 000 à 40 000 $"
+       },
+       {
+        "id": "p",
+        "titre": "Moins de 3 000 $"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la Norvège",
+        "col": "r"
+       },
+       {
+        "txt": "les États-Unis",
+        "col": "r"
+       },
+       {
+        "txt": "la France",
+        "col": "r"
+       },
+       {
+        "txt": "le Japon",
+        "col": "r"
+       },
+       {
+        "txt": "le Bangladesh",
+        "col": "m"
+       },
+       {
+        "txt": "la Guinée équatoriale",
+        "col": "m"
+       },
+       {
+        "txt": "Haïti",
+        "col": "p"
+       },
+       {
+        "txt": "le Mali",
+        "col": "p"
+       },
+       {
+        "txt": "le Tchad",
+        "col": "p"
+       },
+       {
+        "txt": "Madagascar",
+        "col": "p"
+       }
+      ],
+      "consigne": "Lis le diagramme du revenu moyen par habitant, puis range chaque pays dans sa colonne.<svg viewBox='0 0 640 374' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Revenu moyen par habitant en 2023 (en dollars)\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px'><rect width='640' height='374' rx='12' fill='#f4efe4'/><text x='320' y='26' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Revenu moyen par habitant en 2023 (en dollars)</text><text x='176' y='61' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La Norvège</text><rect x='186' y='46' width='330' height='20' rx='4' fill='#1d3b5c'/><text x='522' y='61' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>112 710 $</text><text x='176' y='91' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Les États-Unis</text><rect x='186' y='76' width='216' height='20' rx='4' fill='#1d3b5c'/><text x='408' y='91' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>73 650 $</text><text x='176' y='121' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La France</text><rect x='186' y='106' width='161' height='20' rx='4' fill='#1d3b5c'/><text x='353' y='121' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>55 060 $</text><text x='176' y='151' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Japon</text><rect x='186' y='136' width='140' height='20' rx='4' fill='#1d3b5c'/><text x='332' y='151' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>47 775 $</text><text x='176' y='181' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La Guinée équatoriale</text><rect x='186' y='166' width='37' height='20' rx='4' fill='#1d3b5c'/><text x='229' y='181' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>12 762 $</text><text x='176' y='211' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Bangladesh</text><rect x='186' y='196' width='25' height='20' rx='4' fill='#1d3b5c'/><text x='217' y='211' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>8 498 $</text><text x='176' y='241' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Haïti</text><rect x='186' y='226' width='9' height='20' rx='4' fill='#1d3b5c'/><text x='201' y='241' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2 935 $</text><text x='176' y='271' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Mali</text><rect x='186' y='256' width='7' height='20' rx='4' fill='#1d3b5c'/><text x='199' y='271' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2 342 $</text><text x='176' y='301' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Tchad</text><rect x='186' y='286' width='5' height='20' rx='4' fill='#1d3b5c'/><text x='197' y='301' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1 748 $</text><text x='176' y='331' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Madagascar</text><rect x='186' y='316' width='5' height='20' rx='4' fill='#1d3b5c'/><text x='197' y='331' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1 656 $</text><text x='320' y='364' text-anchor='middle' font-size='11' font-style='italic' fill='#4b3a2c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Source : PNUD, Rapport sur le développement humain 2025 (données 2023)</text></svg>",
+      "indices": [
+       "Lis les nombres écrits au bout des barres.",
+       "Le Bangladesh : 8 498 dollars, entre 3 000 et 40 000.",
+       "4 pays riches, 2 entre les deux, 4 pays pauvres."
+      ],
+      "dialogue": "Regarde ces barres : elles ne sont pas toutes de la même longueur."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "r",
+        "titre": "Pays riches"
+       },
+       {
+        "id": "p",
+        "titre": "Pays pauvres"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la Norvège",
+        "col": "r"
+       },
+       {
+        "txt": "la France",
+        "col": "r"
+       },
+       {
+        "txt": "le Tchad",
+        "col": "p"
+       },
+       {
+        "txt": "le Mali",
+        "col": "p"
+       }
+      ],
+      "consigne": "Regarde les barres : une longue barre, c'est un pays riche. Range chaque pays.<svg viewBox='0 0 640 194' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Revenu moyen par habitant en 2023 (en dollars)\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px'><rect width='640' height='194' rx='12' fill='#f4efe4'/><text x='320' y='26' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Revenu moyen par habitant en 2023 (en dollars)</text><text x='176' y='61' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La Norvège</text><rect x='186' y='46' width='330' height='20' rx='4' fill='#1d3b5c'/><text x='522' y='61' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>112 710 $</text><text x='176' y='91' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La France</text><rect x='186' y='76' width='161' height='20' rx='4' fill='#1d3b5c'/><text x='353' y='91' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>55 060 $</text><text x='176' y='121' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Mali</text><rect x='186' y='106' width='7' height='20' rx='4' fill='#1d3b5c'/><text x='199' y='121' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2 342 $</text><text x='176' y='151' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Tchad</text><rect x='186' y='136' width='5' height='20' rx='4' fill='#1d3b5c'/><text x='197' y='151' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1 748 $</text><text x='320' y='184' text-anchor='middle' font-size='11' font-style='italic' fill='#4b3a2c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Source : PNUD, Rapport sur le développement humain 2025 (données 2023)</text></svg>",
+      "indices": [
+       "Ouvre la fiche « Les inégalités de niveau de vie ».",
+       "Compare la longueur des barres.",
+       "Deux pays riches, deux pays pauvres."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "la Norvège",
+        "rang": 1
+       },
+       {
+        "txt": "les États-Unis",
+        "rang": 2
+       },
+       {
+        "txt": "la France",
+        "rang": 3
+       },
+       {
+        "txt": "le Bangladesh",
+        "rang": 4
+       },
+       {
+        "txt": "le Tchad",
+        "rang": 5
+       }
+      ],
+      "consigne": "Lis le diagramme de Nour, puis range les pays du revenu par habitant le plus élevé au plus faible. Choisis ensuite la phrase de la fiche qui compare la Norvège et le Bangladesh.<svg viewBox='0 0 640 224' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Revenu moyen par habitant en 2023 (en dollars)\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px'><rect width='640' height='224' rx='12' fill='#f4efe4'/><text x='320' y='26' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Revenu moyen par habitant en 2023 (en dollars)</text><text x='176' y='61' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La Norvège</text><rect x='186' y='46' width='330' height='20' rx='4' fill='#1d3b5c'/><text x='522' y='61' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>112 710 $</text><text x='176' y='91' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Les États-Unis</text><rect x='186' y='76' width='216' height='20' rx='4' fill='#1d3b5c'/><text x='408' y='91' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>73 650 $</text><text x='176' y='121' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La France</text><rect x='186' y='106' width='161' height='20' rx='4' fill='#1d3b5c'/><text x='353' y='121' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>55 060 $</text><text x='176' y='151' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Bangladesh</text><rect x='186' y='136' width='25' height='20' rx='4' fill='#1d3b5c'/><text x='217' y='151' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>8 498 $</text><text x='176' y='181' text-anchor='end' font-size='14' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Le Tchad</text><rect x='186' y='166' width='5' height='20' rx='4' fill='#1d3b5c'/><text x='197' y='181' font-size='13' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1 748 $</text><text x='320' y='214' text-anchor='middle' font-size='11' font-style='italic' fill='#4b3a2c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Source : PNUD, Rapport sur le développement humain 2025 (données 2023)</text></svg>",
+      "indices": [
+       "Commence par la plus longue barre.",
+       "Le Tchad a la barre la plus courte.",
+       "Pour la justification : cherche « 13 fois »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche compare la Norvège et le Bangladesh ?",
+       "options": [
+        "En 2023, selon le PNUD, le revenu moyen d'un habitant de la Norvège était plus de 13 fois plus élevé que celui d'un habitant du Bangladesh.",
+        "La richesse ne suffit pas à mesurer le développement : le Bangladesh a un revenu par habitant plus faible que la Guinée équatoriale, mais une espérance de vie plus longue.",
+        "Les richesses sont très mal partagées : les 10 % les plus riches de la population mondiale possèdent environ les trois quarts du patrimoine.",
+        "Pour comparer les pays, on utilise plusieurs indicateurs : le revenu par habitant, l'espérance de vie et la durée de la scolarisation."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "ric",
+        "titre": "La richesse"
+       },
+       {
+        "id": "san",
+        "titre": "La santé"
+       },
+       {
+        "id": "edu",
+        "titre": "L'éducation"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le revenu par habitant",
+        "col": "ric"
+       },
+       {
+        "txt": "le salaire moyen",
+        "col": "ric"
+       },
+       {
+        "txt": "l'espérance de vie",
+        "col": "san"
+       },
+       {
+        "txt": "le nombre de médecins par habitant",
+        "col": "san"
+       },
+       {
+        "txt": "la durée de la scolarisation",
+        "col": "edu"
+       },
+       {
+        "txt": "la part des enfants qui savent lire",
+        "col": "edu"
+       }
+      ],
+      "consigne": "Pour comparer les pays, Nour relève plusieurs mesures. Range chacune selon ce qu'elle mesure, puis choisis la phrase de la fiche qui cite les indicateurs.",
+      "indices": [
+       "L'espérance de vie dit combien de temps on vit.",
+       "Savoir lire dépend de l'école.",
+       "Pour la justification : cherche « plusieurs indicateurs »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les indicateurs qui servent à comparer les pays ?",
+       "options": [
+        "Le niveau de vie n'est pas le même partout dans le monde.",
+        "La richesse ne suffit pas à mesurer le développement : le Bangladesh a un revenu par habitant plus faible que la Guinée équatoriale, mais une espérance de vie plus longue.",
+        "En 2023, selon le PNUD, le revenu moyen d'un habitant de la Norvège était plus de 13 fois plus élevé que celui d'un habitant du Bangladesh.",
+        "Pour comparer les pays, on utilise plusieurs indicateurs : le revenu par habitant, l'espérance de vie et la durée de la scolarisation."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     }
+    },
+    {
+     "id": "e8-3",
+     "escale": 8,
+     "ordre": 3,
+     "titre": "Ce que Nour a vu",
+     "decor": "dhaka-marche",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nour",
+     "probleme_narratif": "Nour raconte ce qu'elle a observé à Dhaka et ce qu'elle en a compris.",
+     "enjeu": "Nour doit transmettre au Professeur Atlas ce qu'elle a vu, sans se tromper.",
+     "episode_du_roman": "Séance 8 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Identifier les manifestations des inégalités de niveau de vie",
+     "pourquoi_ce_savoir_ici": "La séance « Dhaka — Les inégalités dans le monde » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Le carnet se referme sur une page bien remplie."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l08",
+     "type": "qcm",
+     "niveau_variantes": "Découverte (vraifaux) ; Agent CM1 (qcm) ; Agent CM2 (qcm) ; Géographe (trous) ; Chef de mission (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "On compare les pays avec le revenu par habitant, l'espérance de vie et la durée de la scolarisation. Le gâteau du dessin représente les richesses du monde : les 10 % les plus riches possèdent environ les trois quarts du patrimoine. Un enfant qui travaille au lieu d'aller à l'école met sa santé en danger et aura plus de mal à sortir de la pauvreté ; en 2024, près de 138 millions d'enfants travaillaient dans le monde.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Pour comparer le niveau de vie des pays, on regarde le revenu par habitant, mais aussi…",
+        "options": [
+         "l'espérance de vie et la durée de la scolarisation",
+         "la couleur du drapeau",
+         "le nombre de montagnes"
+        ],
+        "bonne": 0,
+        "explication": "Trois indicateurs : le revenu, la santé et l'école."
+       },
+       {
+        "q": "Sur un dessin de presse, quelques convives se servent une énorme part de gâteau et la foule se partage les miettes. Que représente le gâteau ?",
+        "options": [
+         "les richesses du monde, très mal partagées",
+         "la nourriture d'une fête",
+         "la population de la Terre"
+        ],
+        "bonne": 0,
+        "explication": "Une petite partie de la population possède la plus grande partie des richesses."
+       },
+       {
+        "q": "Nour a vu un enfant trier des déchets au lieu d'aller à l'école. Que lui fait perdre la pauvreté ?",
+        "options": [
+         "l'école, et sa santé est en danger",
+         "rien du tout",
+         "ses vacances seulement"
+        ],
+        "bonne": 0,
+        "explication": "Sans école, il sera plus difficile pour lui de sortir de la pauvreté."
+       }
+      ],
+      "consigne": "Nour te raconte ce qu'elle a vu à Dhaka et ce qu'elle a appris. Réponds à ses questions, puis vérifie.",
+      "indices": [
+       "Trois indicateurs : l'argent, la santé, l'école.",
+       "Une énorme part pour quelques-uns, des miettes pour les autres.",
+       "L'école aide à sortir de la pauvreté."
+      ],
+      "dialogue": "Voici ce que j'ai vu ici. Aide-moi à le comprendre."
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Pour comparer le niveau de vie des pays, on regarde le revenu par habitant, mais aussi…",
+        "options": [
+         "l'espérance de vie et la durée de la scolarisation",
+         "la couleur du drapeau",
+         "le nombre de montagnes",
+         "la taille de la capitale"
+        ],
+        "bonne": 0,
+        "explication": "Trois indicateurs : le revenu, la santé et l'école."
+       },
+       {
+        "q": "Sur un dessin de presse, quelques convives se servent une énorme part de gâteau et la foule se partage les miettes. Que représente le gâteau ?",
+        "options": [
+         "les richesses du monde, très mal partagées",
+         "la nourriture d'une fête",
+         "la population de la Terre",
+         "les pays du monde"
+        ],
+        "bonne": 0,
+        "explication": "Les 10 % les plus riches possèdent environ les trois quarts du patrimoine mondial."
+       },
+       {
+        "q": "Nour a vu un enfant trier des déchets et un autre porter des briques. Quelle conséquence la pauvreté a-t-elle pour eux ?",
+        "options": [
+         "ils ne vont pas à l'école et leur santé est en danger",
+         "ils apprennent un métier sans danger",
+         "ils gagnent assez pour être riches",
+         "aucune conséquence"
+        ],
+        "bonne": 0,
+        "explication": "Sans école, il est plus difficile de sortir de la pauvreté."
+       },
+       {
+        "q": "Selon l'OIT et l'UNICEF, combien d'enfants travaillaient dans le monde en 2024 ?",
+        "options": [
+         "près de 138 millions",
+         "près de 138 000",
+         "près de 13 800",
+         "aucun"
+        ],
+        "bonne": 0,
+        "explication": "Le travail des enfants a presque diminué de moitié depuis 2000, mais il reste très répandu."
+       }
+      ],
+      "consigne": "Nour te raconte ce qu'elle a vu à Dhaka. Réponds à ses questions, puis vérifie.",
+      "indices": [
+       "L'espérance de vie dit si l'on vit longtemps.",
+       "Le gâteau, ce sont les richesses.",
+       "138 millions : relis la fiche « Les inégalités de niveau de vie »."
+      ],
+      "dialogue": "Voici ce que j'ai vu ici. Aide-moi à le comprendre."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Tout le monde a le même niveau de vie dans le monde.",
+        "vrai": false,
+        "explication": "Il y a des pays riches et des pays pauvres."
+       },
+       {
+        "txt": "Dans les pays pauvres, des enfants travaillent au lieu d'aller à l'école.",
+        "vrai": true,
+        "explication": "Nour l'a vu à Dhaka."
+       },
+       {
+        "txt": "Les pays les plus riches sont surtout en Afrique.",
+        "vrai": false,
+        "explication": "Ils sont surtout en Amérique du Nord, en Europe et en Océanie."
+       }
+      ],
+      "consigne": "Nour te raconte ce qu'elle a vu. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « Les inégalités de niveau de vie ».",
+       "Nour a vu des enfants trier des déchets.",
+       "L'Afrique compte beaucoup de pays pauvres."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "trous",
+      "texte": "<p>Pour comparer les pays, on utilise le [[revenu]] par habitant, l'[[espérance]] de vie et la durée de la [[scolarisation]]. En 2024, près de [[138]] millions d'enfants travaillaient dans le monde.</p>",
+      "etiquettes": [
+       "revenu",
+       "espérance",
+       "scolarisation",
+       "138",
+       "superficie",
+       "13"
+      ],
+      "consigne": "Complète le rapport de Nour (deux mots sont des intrus), puis choisis la phrase de la fiche sur le travail des enfants.",
+      "indices": [
+       "La superficie ne mesure pas le niveau de vie.",
+       "138 millions, selon l'OIT et l'UNICEF.",
+       "Pour la justification : cherche « OIT »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du nombre d'enfants qui travaillent ?",
+       "options": [
+        "La Convention internationale des droits de l'enfant, adoptée par l'ONU en 1989, protège les enfants contre le travail qui nuit à leur santé ou à leur éducation.",
+        "Pour les enfants, la pauvreté a des conséquences graves : travail au lieu de l'école, malnutrition, problèmes de santé.",
+        "En 2024, près de 138 millions d'enfants travaillaient dans le monde, selon l'OIT et l'UNICEF.",
+        "Les richesses sont très mal partagées : les 10 % les plus riches de la population mondiale possèdent environ les trois quarts du patrimoine."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quelle part du patrimoine mondial possèdent les 10 % les plus riches de la population ?",
+        "options": [
+         "environ les trois quarts",
+         "environ un dixième",
+         "la moitié exactement",
+         "presque rien"
+        ],
+        "bonne": 0,
+        "explication": "Environ 76 % selon le Rapport sur les inégalités mondiales 2022."
+       },
+       {
+        "q": "En quelle année l'ONU a-t-elle adopté la Convention internationale des droits de l'enfant ?",
+        "options": [
+         "1989",
+         "1789",
+         "1945",
+         "2024"
+        ],
+        "bonne": 0,
+        "explication": "1789, c'est la Déclaration des droits de l'homme."
+       },
+       {
+        "q": "Contre quoi cette convention protège-t-elle les enfants ?",
+        "options": [
+         "le travail qui nuit à leur santé ou à leur éducation",
+         "les devoirs du soir",
+         "les vacances trop longues",
+         "le sport à l'école"
+        ],
+        "bonne": 0,
+        "explication": "Article 32 de la Convention."
+       },
+       {
+        "q": "Pourquoi la pauvreté se transmet-elle souvent d'une génération à l'autre ?",
+        "options": [
+         "un enfant qui ne va pas à l'école trouvera plus difficilement un bon emploi",
+         "les enfants pauvres ne grandissent pas",
+         "l'école coûte toujours très cher",
+         "aucune raison"
+        ],
+        "bonne": 0,
+        "explication": "L'école est un moyen de sortir de la pauvreté."
+       }
+      ],
+      "consigne": "Nour prépare son rapport pour le Professeur Atlas. Réponds à ses questions, puis choisis la phrase de la fiche sur les droits de l'enfant.",
+      "indices": [
+       "Les trois quarts, c'est 75 %.",
+       "La Convention date de la fin du XXᵉ siècle.",
+       "Pour la justification : cherche « 1989 »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des droits de l'enfant ?",
+       "options": [
+        "En 2024, près de 138 millions d'enfants travaillaient dans le monde, selon l'OIT et l'UNICEF.",
+        "La Convention internationale des droits de l'enfant, adoptée par l'ONU en 1989, protège les enfants contre le travail qui nuit à leur santé ou à leur éducation.",
+        "Pour les enfants, la pauvreté a des conséquences graves : travail au lieu de l'école, malnutrition, problèmes de santé.",
+        "Les richesses sont très mal partagées : les 10 % les plus riches de la population mondiale possèdent environ les trois quarts du patrimoine."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     }
+    },
+    {
+     "id": "e8-4",
+     "escale": 8,
+     "ordre": 4,
+     "titre": "La richesse suffit-elle ?",
+     "decor": "dhaka-marche",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nour",
+     "probleme_narratif": "Nour compare quatre pays avec trois indicateurs.",
+     "enjeu": "Le rapport de Nour doit montrer que la richesse ne dit pas tout.",
+     "episode_du_roman": "Séance 8 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Identifier les manifestations des inégalités de niveau de vie",
+     "pourquoi_ce_savoir_ici": "La séance « Dhaka — Les inégalités dans le monde » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Deux cases du tableau s'entourent de rouge."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l08",
+     "type": "vraifaux",
+     "niveau_variantes": "Agent CM2 (vraifaux) ; Géographe (code) ; Chef de mission (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La Norvège a le revenu le plus élevé du tableau, plus de 13 fois celui du Bangladesh. Le Bangladesh est moins riche que la Guinée équatoriale, mais on y vit plus longtemps : la richesse ne suffit pas, à elle seule, à mesurer le développement.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "affirmations": [
+       {
+        "txt": "La Norvège a le revenu par habitant le plus élevé du tableau.",
+        "vrai": true,
+        "explication": "112 710 dollars."
+       },
+       {
+        "txt": "Le Bangladesh a un revenu par habitant plus faible que la Guinée équatoriale.",
+        "vrai": true,
+        "explication": "8 498 dollars contre 12 762 dollars."
+       },
+       {
+        "txt": "On vit moins longtemps au Bangladesh qu'en Guinée équatoriale.",
+        "vrai": false,
+        "explication": "74,7 ans contre 63,7 ans : on y vit plus longtemps."
+       },
+       {
+        "txt": "Dans ce tableau, plus un pays est riche, plus on y vit longtemps, sans exception.",
+        "vrai": false,
+        "explication": "Le Bangladesh, moins riche, a une espérance de vie plus longue que la Guinée équatoriale."
+       },
+       {
+        "txt": "Le revenu d'un habitant de la Norvège est plus de 13 fois celui d'un habitant du Bangladesh.",
+        "vrai": true,
+        "explication": "112 710 ÷ 8 498, c'est environ 13,3."
+       }
+      ],
+      "consigne": "Nour compare quatre pays dans un tableau du PNUD. Lis-le, puis choisis « Vrai » ou « Faux » pour chaque phrase.<div class=\"doc-titre\"><i>Trois indicateurs du développement (2023)</i></div><table class=\"tableau-releves\"><tr><th></th><th>La Norvège</th><th>Le Koweït</th><th>La Guinée équatoriale</th><th>Le Bangladesh</th></tr><tr><th>Revenu par habitant</th><td>112 710 $</td><td>56 612 $</td><td>12 762 $</td><td>8 498 $</td></tr><tr><th>Espérance de vie</th><td>83,3 ans</td><td>80,4 ans</td><td>63,7 ans</td><td>74,7 ans</td></tr><tr><th>Durée de scolarisation</th><td>18,8 ans</td><td>15,9 ans</td><td>12,5 ans</td><td>12,3 ans</td></tr></table><p style=\"font-size:.85em\"><i>Source : PNUD, Rapport sur le développement humain 2025 (données 2023).</i></p>",
+      "indices": [
+       "Compare les nombres ligne par ligne.",
+       "74,7 ans, c'est plus que 63,7 ans.",
+       "112 710 ÷ 8 498 : un peu plus de 13."
+      ],
+      "dialogue": "Ce tableau cache une surprise. Lis-le attentivement."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Le revenu d'un habitant de la Norvège est environ combien de fois celui d'un habitant du Bangladesh ? (arrondi à l'unité)",
+        "valeur": "13",
+        "longueur": 2
+       },
+       {
+        "libelle": "Combien d'années d'espérance de vie de plus au Bangladesh qu'en Guinée équatoriale ?",
+        "valeur": "11",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Lis le tableau du PNUD, calcule, puis choisis la phrase de la fiche qui montre que la richesse ne suffit pas.<div class=\"doc-titre\"><i>Trois indicateurs du développement (2023)</i></div><table class=\"tableau-releves\"><tr><th></th><th>La Norvège</th><th>Le Koweït</th><th>La Guinée équatoriale</th><th>Le Bangladesh</th></tr><tr><th>Revenu par habitant</th><td>112 710 $</td><td>56 612 $</td><td>12 762 $</td><td>8 498 $</td></tr><tr><th>Espérance de vie</th><td>83,3 ans</td><td>80,4 ans</td><td>63,7 ans</td><td>74,7 ans</td></tr><tr><th>Durée de scolarisation</th><td>18,8 ans</td><td>15,9 ans</td><td>12,5 ans</td><td>12,3 ans</td></tr></table><p style=\"font-size:.85em\"><i>Source : PNUD, Rapport sur le développement humain 2025 (données 2023).</i></p>",
+      "indices": [
+       "112 710 ÷ 8 498 : essaie 8 498 × 13.",
+       "74,7 − 63,7.",
+       "Pour la justification : cherche « ne suffit pas »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche montre que la richesse ne suffit pas à mesurer le développement ?",
+       "options": [
+        "En 2023, selon le PNUD, le revenu moyen d'un habitant de la Norvège était plus de 13 fois plus élevé que celui d'un habitant du Bangladesh.",
+        "Pour comparer les pays, on utilise plusieurs indicateurs : le revenu par habitant, l'espérance de vie et la durée de la scolarisation.",
+        "Le niveau de vie n'est pas le même partout dans le monde.",
+        "La richesse ne suffit pas à mesurer le développement : le Bangladesh a un revenu par habitant plus faible que la Guinée équatoriale, mais une espérance de vie plus longue."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le Bangladesh a un revenu par habitant plus faible que la Guinée équatoriale",
+        "rang": 1
+       },
+       {
+        "txt": "Pourtant, on y vit plus longtemps : 74,7 ans contre 63,7",
+        "rang": 2
+       },
+       {
+        "txt": "Le revenu ne dit donc pas tout du développement",
+        "rang": 3
+       },
+       {
+        "txt": "Pour comparer les pays, il faut croiser plusieurs indicateurs",
+        "rang": 4
+       }
+      ],
+      "consigne": "Chef de mission, reconstitue le raisonnement de Nour devant le tableau du PNUD. Range les étapes dans l'ordre, puis choisis la phrase de la fiche qui le résume.",
+      "indices": [
+       "On commence par lire le revenu.",
+       "« Pourtant » annonce une surprise.",
+       "Pour la justification : cherche « Guinée équatoriale »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche résume ce raisonnement ?",
+       "options": [
+        "La richesse ne suffit pas à mesurer le développement : le Bangladesh a un revenu par habitant plus faible que la Guinée équatoriale, mais une espérance de vie plus longue.",
+        "Pour comparer les pays, on utilise plusieurs indicateurs : le revenu par habitant, l'espérance de vie et la durée de la scolarisation.",
+        "En 2023, selon le PNUD, le revenu moyen d'un habitant de la Norvège était plus de 13 fois plus élevé que celui d'un habitant du Bangladesh.",
+        "Les pays les plus pauvres se trouvent surtout en Afrique et dans certaines régions d'Asie du Sud."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     }
+    }
+   ]
   }
  ]
 }

@@ -364,6 +364,225 @@
      "filtre": "none"
     }
    }
+  },
+  "etretat-falaises": {
+   "titre": "Étretat, en Normandie, sur la promenade du front de mer",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le dépliant de l'office de tourisme",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un dépliant plié en trois, posé sur un banc du front de mer, couvert d'activités."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les fiches du guide",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des fiches cartonnées éparpillées sur les galets, chacune avec un morceau de phrase."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le témoignage de l'habitante",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet ouvert à côté d'une tasse de café, à la terrasse d'un café du front de mer."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le panneau lumineux de l'entrée de ville",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un grand panneau lumineux au bord de la route, encore éteint."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "biarritz-plage": {
+   "titre": "Biarritz, sur la Grande Plage, au bord de l'océan Atlantique",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La carte de France de Théo",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une carte cornée posée sur la chaise haute du sauveteur, avec des repères numérotés en mer."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le message du voleur",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un papier glissé dans la housse d'une planche de surf, plein de phrases sur la mer."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le tableau des hébergements",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un tableau d'affichage du poste de secours, couvert d'annonces de logements."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La calculette du poste de secours",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une calculette posée sur le registre des baignades du jour."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "dhaka-marche": {
+   "titre": "Dhaka, capitale du Bangladesh, dans un marché très animé",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le planisphère de Nour",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un planisphère punaisé dans l'arrière-boutique d'un marchand de tissus, avec des épingles sans nom."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le diagramme des revenus",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une feuille couverte de barres de longueurs très différentes, posée sur un sac de riz."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le carnet de Nour",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet de reporter aux pages remplies de notes et de croquis."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le tableau du PNUD",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un tableau de chiffres imprimé, annoté au crayon par Nour."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
   }
  }
 }

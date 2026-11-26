@@ -25,7 +25,7 @@ def donnees(svg, bloc=None):
             J("Quelle phrase de la fiche cite les activités proposées à Étretat ?", B_ACTIVITES, [B_DEF, B_ETRETAT, B_POSITIFS], pos=2)),
         "second": qcm(
             "La source teste ton déguisement de guide. Réponds à ses questions, puis choisis la phrase de la fiche qui présente Étretat.",
-            [("Maurice Leblanc, qui vivait au Clos Lupin, a inventé quel personnage ?", ["Arsène Lupin", "Sherlock Holmes", "Tintin", "le capitaine Nemo"], 0,
+            [("Maurice Leblanc, qui vivait au Clos Lupin, a inventé quel personnage ?", ["Arsène Lupin", "Sherlock Holmes", "Tintin", "Robinson Crusoé"], 0,
               "L'une de ses aventures, « L'Aiguille creuse », se passe à Étretat."),
              ("Qui a séjourné au château des Aygues ?", ["des reines d'Espagne", "des rois de France", "des pêcheurs", "des moines"], 0, "C'était leur résidence d'été."),
              ("Au XIXᵉ siècle, Étretat s'est développée grâce à…", ["la mode des bains de mer", "une mine de charbon", "une grande usine", "un aéroport"], 0,

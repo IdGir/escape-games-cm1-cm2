@@ -6,6 +6,7 @@ git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
 ## 26 novembre 2026
 
+- Refonte immersive, étape P2 : séances 6 à 8 (Étretat, Biarritz, Dhaka ; 32 énigmes en tout, coffre de 8 mots), chiffres du PNUD 2025 et de l'Insee mis à jour.
 - Refonte immersive, étape P1 : version immersive `immersifs/mission-geo/` (séances 1 à 5 = escales 1 à 5, 5 grades, 20 énigmes),
   construite par `python mission-geo/tests/donnees/construire-immersif.py` ; reprise des parties de la version classique et du PC de la classe.
 - Import des parties commencées (format commun « mission-geo-partie » v2) et audit de la refonte.

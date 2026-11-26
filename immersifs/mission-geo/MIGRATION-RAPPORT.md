@@ -4,7 +4,7 @@
 
 Jeu d'origine : `mission-geo/` (**non modifié**). Variante immersive : `immersifs/mission-geo/`.
 
-- 5 séances, 20 énigmes ; grades : CM1 → matelot, CM2 → timonier.
+- 8 séances, 32 énigmes ; grades : CM1 → matelot, CM2 → timonier.
 - Le moteur est une copie de celui de « Vingt mille lieues » ; seuls `js/jeu-config.js`, `css/theme.css` et `assets/data/*.json` sont propres à ce jeu.
 
 ## Ce qui est converti tel quel
@@ -13,8 +13,8 @@ Jeu d'origine : `mission-geo/` (**non modifié**). Variante immersive : `immersi
 
 ## Ce qu'il reste à faire (brouillons)
 
-1. **Zones des décors** (5 décors) : 3 à 4 zones à positions standard. Déposer l'image du décor, puis caler avec `outils/caler-effets.html` et nommer chaque objet.
-2. **Enjeu et réaction du décor** de chacune des 20 énigmes : rédiger (champs `enjeu`, `reaction_du_decor`, `probleme_narratif`).
+1. **Zones des décors** (8 décors) : 3 à 4 zones à positions standard. Déposer l'image du décor, puis caler avec `outils/caler-effets.html` et nommer chaque objet.
+2. **Enjeu et réaction du décor** de chacune des 32 énigmes : rédiger (champs `enjeu`, `reaction_du_decor`, `probleme_narratif`).
 3. **Phrases des personnages** pour les énigmes 2 à 4 de chaque séance : écrire ce que dit l'émetteur (champ `dialogue` de chaque grade).
 4. **Médias** : `medias.csv` contient les prompts des décors, portraits et vidéos → `python outils/medias/produire.py --source <fournisseur>` (voir GUIDE-IMMERSIF.md).
 5. **Grades supplémentaires** (mousse, lieutenant, second) : à écrire si souhaité (le moteur les prend en charge).

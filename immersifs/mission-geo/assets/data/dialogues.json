@@ -6,7 +6,7 @@
  },
  "coffre": {
   "personnage": "atlas",
-  "texte": "Mon coffre ne s'ouvre qu'avec le mot de chaque séance, dans l'ordre. Ensemble, ils résument ce que vous avez appris : votre COMMUNE fait partie de territoires EMBOÎTÉS ; la DENSITÉ distingue la campagne de la ville ; la ville vit surtout du secteur TERTIAIRE ; la montagne vit du TOURISME."
+  "texte": "Mon coffre ne s'ouvre qu'avec le mot de chaque séance, dans l'ordre. Ensemble, ils résument ce que vous avez appris : votre COMMUNE fait partie de territoires EMBOÎTÉS ; la DENSITÉ distingue la campagne de la ville ; la ville vit surtout du secteur TERTIAIRE ; la montagne vit du TOURISME ; la station BALNÉAIRE attire tant de visiteurs que le LITTORAL change de visage chaque été ; et dans le monde, de fortes INÉGALITÉS séparent les pays riches des pays pauvres."
  },
  "cinematiques": {
   "transition-e1": {
@@ -139,15 +139,93 @@
     }
    ]
   },
+  "transition-e6": {
+   "titre": "Séance 6 — Étretat, station balnéaire",
+   "plans": [
+    {
+     "decor": "etretat-falaises",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e6": {
+   "titre": "Fin de la séance 6",
+   "plans": [
+    {
+     "decor": "etretat-falaises",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Ta couverture a tenu : la source t'a pris pour un vrai guide de station BALNÉAIRE . Notez ce mot. Elle a parlé : le voleur a longé la côte jusqu'à l'océan Atlantique. Théo vous attend à Biarritz.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e7": {
+   "titre": "Séance 7 — Le littoral atlantique",
+   "plans": [
+    {
+     "decor": "biarritz-plage",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "theo",
+     "texte": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e7": {
+   "titre": "Fin de la séance 7",
+   "plans": [
+    {
+     "decor": "biarritz-plage",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "theo",
+     "texte": "Bien joué : vous savez lire le LITTORAL comme un vrai sauveteur. Notez ce mot. Le message du voleur est clair maintenant : une escale lointaine, à Dhaka, au Bangladesh. Nour y est déjà.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e8": {
+   "titre": "Séance 8 — Niveaux de vie dans le monde",
+   "plans": [
+    {
+     "decor": "dhaka-marche",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "nour",
+     "texte": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e8": {
+   "titre": "Fin de la séance 8",
+   "plans": [
+    {
+     "decor": "dhaka-marche",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "nour",
+     "texte": "Vous avez compris les INÉGALITÉS qui séparent les pays du monde. Notez ce mot. Et regardez ce qu'un marchand m'a tendu : une photo froissée d'un drapeau. On n'en voit que deux couleurs.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
   "fin": {
    "titre": "Fin de « Mission géographique »",
    "plans": [
     {
-     "decor": "rousses-station",
+     "decor": "dhaka-marche",
      "etat": "normal",
      "duree": 7,
-     "personnage": "hugo",
-     "texte": "Le coffre est ouvert. Vous connaissez maintenant le territoire où vous vivez, ses villes, ses campagnes et ses montagnes. Mais la valise, elle, a quitté l'Europe. Gardez précieusement votre carnet : la mission continue à la séance suivante.",
+     "personnage": "nour",
+     "texte": "Le coffre est ouvert. Vous connaissez le territoire où vous vivez, ses villes, ses campagnes, ses montagnes et son littoral, et vous savez lire les inégalités du monde. La photo du drapeau rejoint votre carnet : vert et blanc, ce n'est pas le drapeau du Bangladesh. La valise est ailleurs. Gardez précieusement votre carnet : la mission continue à la séance suivante.",
      "mouvement": "zoom"
     }
    ]
@@ -173,6 +251,18 @@
   "5": {
    "personnage": "hugo",
    "texte": "Notez le mot de cette séance, TOURISME : il servira à ouvrir le coffre. Indice pour le carnet de mission : Le pays recherché est situé dans l'hémisphère nord."
+  },
+  "6": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette séance, BALNÉAIRE : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous le pentagone, écrivez 4 (nombre de lettres du premier mot de la définition)."
+  },
+  "7": {
+   "personnage": "theo",
+   "texte": "Notez le mot de cette séance, LITTORAL : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous le trapèze, écrivez 15 (coefficient multiplicateur de la densité en été)."
+  },
+  "8": {
+   "personnage": "nour",
+   "texte": "Notez le mot de cette séance, INÉGALITÉS : il servira à ouvrir le coffre. Indice pour le carnet de mission : Le drapeau du pays recherché comporte du vert et du blanc."
   }
  }
 }

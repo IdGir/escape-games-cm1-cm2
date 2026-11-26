@@ -78,6 +78,29 @@ classique ») tant que la nouvelle n'est pas finie ; les parties commencées pas
 - Non fait : voix mp3 (Edge, à générer sur le PC : `python immersifs/mission-geo/outils/voix/generer-voix.py`), médias, intégration au catalogue
   (le champ `immersif` du catalogue n'est pas posé : l'accueil et le tableau de bord proposent toujours la version classique).
 
+## 3 bis. Étape P2 faite (26/11/2026) : séances 6 à 8
+
+Même chaîne qu'en P1 : `python mission-geo/tests/donnees/construire-immersif.py` reconstruit les 8 séances.
+
+| Ajout | Fichier |
+|---|---|
+| Escales 6 à 8 (énigmes CM1 / CM2, dialogues, leçons l06 à l08) | `gen_escales.py` (E6, E7, E8, `doc()`, `ordre()`) |
+| Phrases des fiches « station balnéaire », « mers et océan », « inégalités » | `fiches.py` (`LECON_BALNEAIRE`, `LECON_LITTORAL`, `LECON_INEGALITES`) |
+| Carte des mers (repères), planisphère des pays, diagramme et tableau du PNUD (tracés par script) | `schemas.py` (`mers`, `pays`, `revenus`, `tableau_pnud`, `PNUD`) |
+| Grades Découverte, Géographe, Chef de mission | `grades/mission_geo_s6.py` … `_s8.py` ; voix, portraits, guides dans `mission_geo_theme.py` |
+| Narration (objets, enjeux, réactions, phrases) | `narration/mission-geo.json` (e6-1 … e8-4) |
+| Indices du carnet 6 à 8, période 2, texte du coffre et de la fin | `construire-immersif.py` |
+
+- Personnages inventés : Inès (Étretat, couverture de guide), Théo (sauveteur à Biarritz), Nour (agente à Dhaka). Voix Edge : Charline (fr-BE), Gérard (fr-BE), Ariane (fr-CH).
+- Mots du coffre : COMMUNE, EMBOÎTÉS, DENSITÉ, TERTIAIRE, TOURISME, **BALNÉAIRE, LITTORAL, INÉGALITÉS** ; le coffre s'ouvre désormais après la séance 8.
+- Fil narratif : la valise a quitté l'Europe, mais le voleur est passé par Étretat (la source le dit parti vers l'Atlantique), a laissé un message
+  à Biarritz (escale à Dhaka) ; à Dhaka, la photo d'un drapeau vert et blanc (ce n'est pas celui du Bangladesh) relance la piste.
+- Activités transformées : question ouverte « Étretat saturée » → QCM (panneau présenté comme une hypothèse) ; question ouverte sur le travail des enfants → QCM ;
+  « carte des richesses » par continent (trop simplifiée) → diagramme des revenus du PNUD 2025 ; appariement « niveau de développement » → vrai/faux de lecture du tableau.
+- Chiffres mis à jour : voir `A-VERIFIER.md`, points 12 à 18.
+- Tests : `test-immersif.js` (8 séances, 5 grades) ; `test-reprise.js` 19 vérifications (reprise à la séance 7, fin de la séance 8) ; version classique 985 (inchangée).
+- Non fait (comme en P1) : voix mp3, médias, intégration au catalogue.
+
 ## 4. Plan des prochaines conversations (une période à la fois)
 
 1. ~~**P1 (séances 1 à 5)**~~ (fait, voir § 3) : script `mission-geo/tests/donnees/gen_escales.py` (lit `js/donnees/*.js` par Node, écrit
@@ -85,9 +108,9 @@ classique ») tant que la nouvelle n'est pas finie ; les parties commencées pas
    Atlas, mot « séance »), grades `vingt-mille-lieues/outils/immersif/grades/mission_geo_s1..s5.py`, narration,
    `migrer-jeu.py mission-geo --theme …`, `appliquer-grades.py`, `appliquer-narration.py`, `finir-jeu.py`,
    lecture d'une partie importée (§ 1), tests `test-immersif.js`.
-2. **P2 (6 à 8)**, 3. **P3-P4 (9 à 13)**, 4. **P5 (14 à 16) + piste finale et coffre**. Pour chaque période : ajouter les salles à `gen_escales.py`
+2. ~~**P2 (6 à 8)**~~ (fait, voir § 3 bis), 3. **P3-P4 (9 à 13)**, 4. **P5 (14 à 16) + piste finale et coffre**. Pour chaque période : ajouter les salles à `gen_escales.py`
    (E6…), les leçons et phrases à `fiches.py`, `mission_geo_s6.py`…, la narration, `GUIDES` et `PERIODES`, `INDICES` dans `construire-immersif.py`,
-   puis relancer `construire-immersif.py`. Le coffre de la P1 s'ouvre provisoirement après la séance 5 (phrase-bilan de la période).
+   puis relancer `construire-immersif.py`. Le coffre s'ouvre provisoirement après la dernière séance construite (aujourd'hui la 8 ; phrase-bilan dans `construire-immersif.py`).
 5. Leçons A4 (les 16 leçons existent : textes courts dans `outils-lecons/textes/mission-geo.json`), évaluations
    imprimables, LSU (`commun/donnees/lsu.js`), familles, fiche de mission, `medias.csv` (16 décors, 5 portraits —
    Professeur Atlas et 4 agents inventés —, 16 vidéos ; prompts complets, aucune image générée ici), affiche et
