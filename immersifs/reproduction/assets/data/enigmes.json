@@ -1,0 +1,4591 @@
+{
+ "version": 1,
+ "niveaux": [
+  {
+   "id": "mousse",
+   "nom": "Visiteur du jardin",
+   "icone": "🎒",
+   "equivalent": "≈ CE2",
+   "profil": "énigmes courtes, vocabulaire simple (fleur, pollen, graine, œuf, petit), aides renforcées (premier indice offert, fiche mise en évidence)"
+  },
+  {
+   "id": "matelot",
+   "nom": "Apprenti jardinier",
+   "icone": "🌱",
+   "equivalent": "≈ CM1",
+   "profil": "repères : pièces de la fleur, pollinisation, graines et germination, fécondation interne et externe, ovipares et vivipares"
+  },
+  {
+   "id": "timonier",
+   "nom": "Naturaliste",
+   "icone": "🔎",
+   "equivalent": "≈ CM2",
+   "profil": "cœur du programme : cycle de vie, fécondation, ovipares et vivipares, espèce ; vocabulaire précis (ovaire, stigmate, gamète, larve)"
+  },
+  {
+   "id": "lieutenant",
+   "nom": "Botaniste",
+   "icone": "🌸",
+   "equivalent": "≈ 6ᵉ",
+   "profil": "programme de 6e : rôle de la pollinisation dans la transformation de la fleur en fruit, coopération, pollinisateurs ; justification par une phrase de la fiche"
+  },
+  {
+   "id": "second",
+   "nom": "Directeur du jardin",
+   "icone": "🧑‍🌾",
+   "equivalent": "≈ 5ᵉ",
+   "profil": "raisonnement en plusieurs étapes, démarche expérimentale, lien fécondation et mode de reproduction, diversité des individus, justification"
+  }
+ ],
+ "escales": [
+  {
+   "numero": 1,
+   "id": "la-serre-du-botaniste-la-fleur",
+   "titre": "La serre du botaniste",
+   "lieu": "La serre du jardin des Coteaux",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Une serre vitrée pleine de fleurs, une table de dissection avec des loupes, une grande planche de fleur tombée au sol, des étiquettes éparpillées et des pots renversés par le vent.",
+   "scenarimage": "",
+   "mot": "FLEUR",
+   "mot_origine": "Le mot-clé de la salle 1.",
+   "air": null,
+   "cinematique_ouverture": "transition-e1",
+   "cinematique_fin": "fin-e1",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e1-1",
+     "escale": 1,
+     "ordre": 1,
+     "titre": "La planche tombée",
+     "decor": "serre",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "basile",
+     "probleme_narratif": "Le vent de l'orage a fait tomber la planche de Basile et ses étiquettes.",
+     "enjeu": "Sans la planche, les écoles en visite ne pourront pas reconnaître les pièces de la fleur.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir que la fleur est l'organe de la reproduction des plantes à fleurs",
+     "pourquoi_ce_savoir_ici": "La salle « La serre du botaniste — La fleur » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "La planche se redresse et chaque pièce de la fleur s'éclaire."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fleur",
+     "type": "plan",
+     "niveau_variantes": "Visiteur du jardin (plan) ; Apprenti jardinier (plan) ; Naturaliste (plan) ; Botaniste (plan) ; Directeur du jardin (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Le repère 1 montre un pétale, coloré ; le repère 2 une étamine, dont le bout fabrique le pollen ; le repère 3 le pistil, au centre de la fleur. En CM2 : le repère 4 est un sépale, vert, sous les pétales ; le repère 5 est l'ovaire, la partie renflée du pistil, qui contient les ovules. Une racine et une graine ne sont pas des pièces de la fleur.",
+     "matelot": {
+      "titre": "La planche de Basile",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "un pétale"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "une étamine"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "le pistil"
+       }
+      ],
+      "etiquettes": [
+       "un pétale",
+       "une étamine",
+       "le pistil"
+      ],
+      "consigne": "Cette nuit, le vent a ouvert la porte de la serre et la grande planche de Basile est tombée : ses étiquettes se sont détachées. Place chaque mot sur son repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La planche de Basile : une fleur coupée en deux\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='330' rx='12' fill='#f5f7ee'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La planche de Basile : une fleur coupée en deux</text><rect x='316' y='250' width='8' height='70' fill='#4f8a3a'/><path d='M280,250 Q320,285 360,250 Z' fill='#6aa84f'/><path d='M280,250 C200,230 170,170 210,120 C240,170 270,210 290,245 Z' fill='#e86f9a'/><path d='M360,250 C440,230 470,170 430,120 C400,170 370,210 350,245 Z' fill='#e86f9a'/><path d='M278,252 C240,260 225,250 220,238 C245,240 265,243 280,248 Z' fill='#4f8a3a'/><path d='M362,252 C400,260 415,250 420,238 C395,240 375,243 360,248 Z' fill='#4f8a3a'/><ellipse cx='320' cy='228' rx='22' ry='26' fill='#9bc76f' stroke='#22301c' stroke-width='1.5'/><circle cx='313' cy='224' r='5' fill='#f6f1c8' stroke='#22301c'/><circle cx='327' cy='232' r='5' fill='#f6f1c8' stroke='#22301c'/><rect x='316' y='130' width='8' height='76' fill='#9bc76f'/><ellipse cx='320' cy='128' rx='14' ry='7' fill='#7fb04f'/><line x1='294.8' y1='245' x2='278' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='278' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='304.4' y1='245' x2='294' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='294' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='335.6' y1='245' x2='346' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='346' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='345.2' y1='245' x2='362' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='362' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><text x='560' y='290' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Schéma simplifié</text><text x='560' y='305' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>(vue en coupe)</text><circle cx='195' cy='165' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='195' y='170' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='386' cy='150' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='386' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='320' cy='100' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='320' y='105' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "indices": [
+       "Le pétale est la grande pièce rose.",
+       "L'étamine porte une petite boule jaune.",
+       "Le pistil est tout au centre."
+      ],
+      "dialogue": "Entrez ! Ma serre est sens dessus dessous. Pour comprendre comment naît une plante, il faut d'abord connaître la fleur. Aidez-moi à remettre ma planche et mes fiches en ordre."
+     },
+     "timonier": {
+      "titre": "La planche de Basile",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "un pétale"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "une étamine"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "le pistil"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "un sépale"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "l'ovaire et ses ovules"
+       }
+      ],
+      "etiquettes": [
+       "un pétale",
+       "une étamine",
+       "le pistil",
+       "un sépale",
+       "l'ovaire et ses ovules",
+       "une racine",
+       "une graine"
+      ],
+      "consigne": "Replace les étiquettes de la planche « Une fleur coupée en deux ». Attention : il y a des étiquettes en trop.<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La planche de Basile : une fleur coupée en deux\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='330' rx='12' fill='#f5f7ee'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La planche de Basile : une fleur coupée en deux</text><rect x='316' y='250' width='8' height='70' fill='#4f8a3a'/><path d='M280,250 Q320,285 360,250 Z' fill='#6aa84f'/><path d='M280,250 C200,230 170,170 210,120 C240,170 270,210 290,245 Z' fill='#e86f9a'/><path d='M360,250 C440,230 470,170 430,120 C400,170 370,210 350,245 Z' fill='#e86f9a'/><path d='M278,252 C240,260 225,250 220,238 C245,240 265,243 280,248 Z' fill='#4f8a3a'/><path d='M362,252 C400,260 415,250 420,238 C395,240 375,243 360,248 Z' fill='#4f8a3a'/><ellipse cx='320' cy='228' rx='22' ry='26' fill='#9bc76f' stroke='#22301c' stroke-width='1.5'/><circle cx='313' cy='224' r='5' fill='#f6f1c8' stroke='#22301c'/><circle cx='327' cy='232' r='5' fill='#f6f1c8' stroke='#22301c'/><rect x='316' y='130' width='8' height='76' fill='#9bc76f'/><ellipse cx='320' cy='128' rx='14' ry='7' fill='#7fb04f'/><line x1='294.8' y1='245' x2='278' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='278' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='304.4' y1='245' x2='294' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='294' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='335.6' y1='245' x2='346' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='346' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='345.2' y1='245' x2='362' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='362' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><text x='560' y='290' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Schéma simplifié</text><text x='560' y='305' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>(vue en coupe)</text><circle cx='195' cy='165' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='195' y='170' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='386' cy='150' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='386' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='320' cy='100' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='320' y='105' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='222' cy='268' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='222' y='273' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='354' cy='236' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='354' y='241' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>",
+      "indices": [
+       "Le sépale est vert, sous les pétales.",
+       "L'ovaire est en bas du pistil, gonflé.",
+       "Les racines sont sous la terre."
+      ],
+      "dialogue": "Entrez ! Ma serre est sens dessus dessous. Pour comprendre comment naît une plante, il faut d'abord connaître la fleur. Aidez-moi à remettre ma planche et mes fiches en ordre."
+     },
+     "mousse": {
+      "type": "plan",
+      "titre": "La planche de Basile",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "un pétale"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "une étamine"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "le pistil"
+       }
+      ],
+      "etiquettes": [
+       "un pétale",
+       "une étamine",
+       "le pistil"
+      ],
+      "consigne": "La planche de Basile est tombée. Place chaque mot sur son repère.<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La planche de Basile : une fleur coupée en deux\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='330' rx='12' fill='#f5f7ee'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La planche de Basile : une fleur coupée en deux</text><rect x='316' y='250' width='8' height='70' fill='#4f8a3a'/><path d='M280,250 Q320,285 360,250 Z' fill='#6aa84f'/><path d='M280,250 C200,230 170,170 210,120 C240,170 270,210 290,245 Z' fill='#e86f9a'/><path d='M360,250 C440,230 470,170 430,120 C400,170 370,210 350,245 Z' fill='#e86f9a'/><path d='M278,252 C240,260 225,250 220,238 C245,240 265,243 280,248 Z' fill='#4f8a3a'/><path d='M362,252 C400,260 415,250 420,238 C395,240 375,243 360,248 Z' fill='#4f8a3a'/><ellipse cx='320' cy='228' rx='22' ry='26' fill='#9bc76f' stroke='#22301c' stroke-width='1.5'/><circle cx='313' cy='224' r='5' fill='#f6f1c8' stroke='#22301c'/><circle cx='327' cy='232' r='5' fill='#f6f1c8' stroke='#22301c'/><rect x='316' y='130' width='8' height='76' fill='#9bc76f'/><ellipse cx='320' cy='128' rx='14' ry='7' fill='#7fb04f'/><line x1='294.8' y1='245' x2='278' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='278' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='304.4' y1='245' x2='294' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='294' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='335.6' y1='245' x2='346' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='346' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='345.2' y1='245' x2='362' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='362' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><text x='560' y='290' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Schéma simplifié</text><text x='560' y='305' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>(vue en coupe)</text><circle cx='195' cy='165' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='195' y='170' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='386' cy='150' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='386' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='320' cy='100' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='320' y='105' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "indices": [
+       "Ouvre la fiche « La fleur ».",
+       "Le pétale est la grande pièce rose.",
+       "Le pistil est au milieu."
+      ],
+      "dialogue": "Entrez ! Ma serre est sens dessus dessous. Pour comprendre comment naît une plante, il faut d'abord connaître la fleur. Aidez-moi à remettre ma planche et mes fiches en ordre."
+     },
+     "lieutenant": {
+      "type": "plan",
+      "titre": "La planche de Basile",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "un pétale"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "une étamine"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "le pistil"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "un sépale"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "l'ovaire et ses ovules"
+       }
+      ],
+      "etiquettes": [
+       "un pétale",
+       "une étamine",
+       "le pistil",
+       "un sépale",
+       "l'ovaire et ses ovules",
+       "le stigmate seul",
+       "une graine"
+      ],
+      "consigne": "Replace toutes les étiquettes de la planche (deux sont en trop), puis choisis la phrase de la fiche sur le pistil.<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"La planche de Basile : une fleur coupée en deux\" style='max-width:100%;height:auto;display:block;margin:10px auto'><rect width='640' height='330' rx='12' fill='#f5f7ee'/><text x='320.0' y='24' text-anchor='middle' font-size='15' font-weight='700' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>La planche de Basile : une fleur coupée en deux</text><rect x='316' y='250' width='8' height='70' fill='#4f8a3a'/><path d='M280,250 Q320,285 360,250 Z' fill='#6aa84f'/><path d='M280,250 C200,230 170,170 210,120 C240,170 270,210 290,245 Z' fill='#e86f9a'/><path d='M360,250 C440,230 470,170 430,120 C400,170 370,210 350,245 Z' fill='#e86f9a'/><path d='M278,252 C240,260 225,250 220,238 C245,240 265,243 280,248 Z' fill='#4f8a3a'/><path d='M362,252 C400,260 415,250 420,238 C395,240 375,243 360,248 Z' fill='#4f8a3a'/><ellipse cx='320' cy='228' rx='22' ry='26' fill='#9bc76f' stroke='#22301c' stroke-width='1.5'/><circle cx='313' cy='224' r='5' fill='#f6f1c8' stroke='#22301c'/><circle cx='327' cy='232' r='5' fill='#f6f1c8' stroke='#22301c'/><rect x='316' y='130' width='8' height='76' fill='#9bc76f'/><ellipse cx='320' cy='128' rx='14' ry='7' fill='#7fb04f'/><line x1='294.8' y1='245' x2='278' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='278' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='304.4' y1='245' x2='294' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='294' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='335.6' y1='245' x2='346' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='346' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><line x1='345.2' y1='245' x2='362' y2='150' stroke='#c9a227' stroke-width='3'/><ellipse cx='362' cy='146' rx='7' ry='11' fill='#f2c230' stroke='#a07d10'/><text x='560' y='290' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Schéma simplifié</text><text x='560' y='305' text-anchor='middle' font-size='11' fill='#22301c' font-family='Atkinson Hyperlegible,Arial,sans-serif'>(vue en coupe)</text><circle cx='195' cy='165' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='195' y='170' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='386' cy='150' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='386' y='155' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='320' cy='100' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='320' y='105' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='222' cy='268' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='222' y='273' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='354' cy='236' r='13' fill='#2f5d2a' stroke='#fff' stroke-width='2'/><text x='354' y='241' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>",
+      "indices": [
+       "Le sépale est vert, sous les pétales.",
+       "L'ovaire est le bas renflé du pistil.",
+       "Pour la justification : cherche « organe femelle »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit le pistil ?",
+       "options": [
+        "Les étamines sont les organes mâles de la fleur : elles fabriquent le pollen, une poudre souvent jaune.",
+        "Le pistil, au centre de la fleur, est l'organe femelle : sa partie renflée, l'ovaire, contient les ovules.",
+        "Les sépales, souvent verts, protègent le bouton ; les pétales, souvent colorés, attirent les insectes.",
+        "Le haut du pistil, le stigmate, est collant : c'est là que le pollen doit se déposer."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Entrez ! Ma serre est sens dessus dessous. Pour comprendre comment naît une plante, il faut d'abord connaître la fleur. Aidez-moi à remettre ma planche et mes fiches en ordre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "male",
+        "titre": "Organe mâle"
+       },
+       {
+        "id": "fem",
+        "titre": "Organe femelle"
+       },
+       {
+        "id": "ni",
+        "titre": "Ni mâle ni femelle"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "les étamines",
+        "col": "male"
+       },
+       {
+        "txt": "le pollen",
+        "col": "male"
+       },
+       {
+        "txt": "le pistil",
+        "col": "fem"
+       },
+       {
+        "txt": "l'ovaire",
+        "col": "fem"
+       },
+       {
+        "txt": "les ovules",
+        "col": "fem"
+       },
+       {
+        "txt": "les pétales",
+        "col": "ni"
+       },
+       {
+        "txt": "les sépales",
+        "col": "ni"
+       }
+      ],
+      "consigne": "Basile trie les pièces détachées d'une fleur disséquée. Range chaque pièce : organe mâle, organe femelle, ou ni l'un ni l'autre ; puis choisis la phrase de la fiche sur les étamines.",
+      "indices": [
+       "Le pollen vient d'un organe mâle.",
+       "Pétales et sépales protègent ou attirent.",
+       "Pour la justification : cherche « poudre »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit les étamines ?",
+       "options": [
+        "Les étamines sont les organes mâles de la fleur : elles fabriquent le pollen, une poudre souvent jaune.",
+        "Le pistil, au centre de la fleur, est l'organe femelle : sa partie renflée, l'ovaire, contient les ovules.",
+        "Beaucoup de fleurs ont à la fois des étamines et un pistil ; chez certaines plantes, comme le noisetier, il y a des fleurs mâles et des fleurs femelles séparées.",
+        "La fleur est l'organe de la reproduction des plantes à fleurs."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Entrez ! Ma serre est sens dessus dessous. Pour comprendre comment naît une plante, il faut d'abord connaître la fleur. Aidez-moi à remettre ma planche et mes fiches en ordre."
+     }
+    },
+    {
+     "id": "e1-2",
+     "escale": 1,
+     "ordre": 2,
+     "titre": "Les fiches des pièces de la fleur",
+     "decor": "serre",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "basile",
+     "probleme_narratif": "Les fiches des pièces de la fleur sont toutes mélangées.",
+     "enjeu": "Chaque fiche doit dire à quoi sert une pièce de la fleur.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir que la fleur est l'organe de la reproduction des plantes à fleurs",
+     "pourquoi_ce_savoir_ici": "La salle « La serre du botaniste — La fleur » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les fiches se rangent dans la boîte, chacune à sa place."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fleur",
+     "type": "association",
+     "niveau_variantes": "Visiteur du jardin (vraifaux) ; Apprenti jardinier (association) ; Naturaliste (association) ; Botaniste (association) ; Directeur du jardin (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Les pétales, souvent colorés, attirent les insectes ; les étamines, organes mâles, fabriquent le pollen ; le pistil, organe femelle, contient les ovules dans son ovaire. En CM2 : les sépales protègent le bouton avant qu'il s'ouvre ; le stigmate, en haut du pistil, est collant et retient le pollen.",
+     "matelot": {
+      "paires": [
+       {
+        "g": "les pétales",
+        "d": "attirent les insectes"
+       },
+       {
+        "g": "les étamines",
+        "d": "fabriquent le pollen"
+       },
+       {
+        "g": "le pistil",
+        "d": "contient les ovules"
+       }
+      ],
+      "consigne": "Basile range ses fiches. Relie chaque pièce de la fleur à son rôle.",
+      "indices": [
+       "Une couleur vive se voit de loin.",
+       "La poudre jaune vient des étamines.",
+       "Les ovules sont cachés au centre."
+      ],
+      "dialogue": "Mes fiches sont mélangées. Associons chaque pièce de la fleur à son rôle."
+     },
+     "timonier": {
+      "paires": [
+       {
+        "g": "les pétales",
+        "d": "attirent les insectes"
+       },
+       {
+        "g": "les sépales",
+        "d": "protègent le bouton"
+       },
+       {
+        "g": "les étamines",
+        "d": "fabriquent le pollen : organes mâles"
+       },
+       {
+        "g": "le pistil",
+        "d": "contient les ovules : organe femelle"
+       },
+       {
+        "g": "le stigmate",
+        "d": "retient le pollen, car il est collant"
+       }
+      ],
+      "consigne": "Relie chaque pièce de la fleur à son rôle, pour les fiches de Basile.",
+      "indices": [
+       "Le bouton fermé est entouré de vert.",
+       "Collant comme de la colle : le stigmate.",
+       "Mâle : étamines ; femelle : pistil."
+      ],
+      "dialogue": "Mes fiches sont mélangées. Associons chaque pièce de la fleur à son rôle."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le pollen est une poudre souvent jaune.",
+        "vrai": true,
+        "explication": "On le voit sur les doigts."
+       },
+       {
+        "txt": "Les pétales colorés attirent les insectes.",
+        "vrai": true,
+        "explication": "Les abeilles les voient de loin."
+       },
+       {
+        "txt": "Le pistil se trouve sous la terre.",
+        "vrai": false,
+        "explication": "Il est au centre de la fleur."
+       }
+      ],
+      "consigne": "Basile a écrit trois phrases sur la fleur. Pour chacune, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « La fleur ».",
+       "Touche une étamine : tes doigts jaunissent.",
+       "Le centre de la fleur, c'est le pistil."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "les sépales",
+        "d": "protègent le bouton"
+       },
+       {
+        "g": "les pétales",
+        "d": "attirent les insectes"
+       },
+       {
+        "g": "les étamines",
+        "d": "fabriquent le pollen"
+       },
+       {
+        "g": "le stigmate",
+        "d": "retient le pollen"
+       },
+       {
+        "g": "l'ovaire",
+        "d": "contient les ovules"
+       }
+      ],
+      "consigne": "Relie chaque pièce de la fleur à son rôle, puis choisis la phrase de la fiche sur le stigmate.",
+      "indices": [
+       "Le bouton fermé est vert.",
+       "Collant : le stigmate.",
+       "Pour la justification : cherche « collant »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit le stigmate ?",
+       "options": [
+        "Le pistil, au centre de la fleur, est l'organe femelle : sa partie renflée, l'ovaire, contient les ovules.",
+        "Les sépales, souvent verts, protègent le bouton ; les pétales, souvent colorés, attirent les insectes.",
+        "Le haut du pistil, le stigmate, est collant : c'est là que le pollen doit se déposer.",
+        "Les étamines sont les organes mâles de la fleur : elles fabriquent le pollen, une poudre souvent jaune."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Chez le noisetier, les fleurs mâles et les fleurs femelles sont séparées.",
+        "vrai": true,
+        "explication": "Les chatons sont les fleurs mâles."
+       },
+       {
+        "txt": "Une fleur sans pétales ne peut pas avoir de pollen.",
+        "vrai": false,
+        "explication": "Les fleurs du noisetier, sans pétales colorés, en produisent beaucoup."
+       },
+       {
+        "txt": "Le pollen doit se déposer sur le stigmate.",
+        "vrai": true,
+        "explication": "C'est le haut collant du pistil."
+       },
+       {
+        "txt": "Les ovules se trouvent dans les étamines.",
+        "vrai": false,
+        "explication": "Ils sont dans l'ovaire."
+       },
+       {
+        "txt": "Les sépales sont souvent verts.",
+        "vrai": true,
+        "explication": "Ils protègent le bouton."
+       }
+      ],
+      "consigne": "Basile corrige le panneau de la serre. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur les fleurs mâles et femelles.",
+      "indices": [
+       "Pense aux chatons du noisetier.",
+       "Ovules : organe femelle.",
+       "Pour la justification : cherche « noisetier »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des fleurs mâles et femelles séparées ?",
+       "options": [
+        "La fleur est l'organe de la reproduction des plantes à fleurs.",
+        "Le haut du pistil, le stigmate, est collant : c'est là que le pollen doit se déposer.",
+        "Le pistil, au centre de la fleur, est l'organe femelle : sa partie renflée, l'ovaire, contient les ovules.",
+        "Beaucoup de fleurs ont à la fois des étamines et un pistil ; chez certaines plantes, comme le noisetier, il y a des fleurs mâles et des fleurs femelles séparées."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     }
+    },
+    {
+     "id": "e1-3",
+     "escale": 1,
+     "ordre": 3,
+     "titre": "Le carnet d'observation",
+     "decor": "serre",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "basile",
+     "probleme_narratif": "Une goutte d'eau a brouillé le carnet : Basile ne sait plus quelles phrases sont justes.",
+     "enjeu": "Le carnet sert de guide aux visiteurs : il ne doit contenir que des phrases justes.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir que la fleur est l'organe de la reproduction des plantes à fleurs",
+     "pourquoi_ce_savoir_ici": "La salle « La serre du botaniste — La fleur » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Le carnet sèche et les phrases justes ressortent nettement."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fleur",
+     "type": "vraifaux",
+     "niveau_variantes": "Visiteur du jardin (qcm) ; Apprenti jardinier (vraifaux) ; Naturaliste (vraifaux) ; Botaniste (qcm) ; Directeur du jardin (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La fleur sert à la reproduction de la plante. Le pollen est fabriqué par les étamines, pas par les pétales. Les ovules sont dans le pistil. En CM2 : beaucoup de fleurs ont à la fois des étamines et un pistil, mais le noisetier a des fleurs mâles et des fleurs femelles séparées ; pour observer une fleur, on la dissèque de l'extérieur vers le centre.",
+     "matelot": {
+      "affirmations": [
+       {
+        "txt": "La fleur sert à la reproduction de la plante.",
+        "vrai": true,
+        "explication": "C'est son organe de reproduction."
+       },
+       {
+        "txt": "Le pollen est fabriqué par les pétales.",
+        "vrai": false,
+        "explication": "Il est fabriqué par les étamines."
+       },
+       {
+        "txt": "Les ovules se trouvent dans le pistil.",
+        "vrai": true,
+        "explication": "Dans l'ovaire, en bas du pistil."
+       }
+      ],
+      "consigne": "Basile relit le carnet d'observation de la serre. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "À quoi sert une fleur pour la plante ?",
+       "Le pollen vient d'une pièce mâle.",
+       "Le centre de la fleur cache les ovules."
+      ],
+      "dialogue": "Mon carnet a pris la pluie. Vérifions ensemble ce qui est vrai."
+     },
+     "timonier": {
+      "affirmations": [
+       {
+        "txt": "Les étamines sont les organes femelles de la fleur.",
+        "vrai": false,
+        "explication": "Ce sont les organes mâles."
+       },
+       {
+        "txt": "L'ovaire est la partie renflée du pistil.",
+        "vrai": true,
+        "explication": "Il contient les ovules."
+       },
+       {
+        "txt": "Toutes les fleurs ont à la fois des étamines et un pistil.",
+        "vrai": false,
+        "explication": "Le noisetier a des fleurs mâles et des fleurs femelles séparées."
+       },
+       {
+        "txt": "Pour disséquer une fleur, on détache ses pièces de l'extérieur vers le centre.",
+        "vrai": true,
+        "explication": "Sépales, pétales, étamines, puis pistil."
+       },
+       {
+        "txt": "Le stigmate est collant.",
+        "vrai": true,
+        "explication": "Il retient le pollen."
+       }
+      ],
+      "consigne": "Basile corrige les phrases du carnet avant la visite des écoles. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Pense au noisetier.",
+       "Disséquer : de l'extérieur vers le centre.",
+       "Mâle : étamines."
+      ],
+      "dialogue": "Mon carnet a pris la pluie. Vérifions ensemble ce qui est vrai."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "À quoi sert la fleur pour la plante ?",
+        "options": [
+         "à se reproduire",
+         "à boire",
+         "à respirer la nuit",
+         "à faire du bruit"
+        ],
+        "bonne": 0,
+        "explication": "Elle donnera des graines."
+       },
+       {
+        "q": "Qui fabrique le pollen ?",
+        "options": [
+         "les pétales",
+         "les étamines",
+         "les racines",
+         "les feuilles"
+        ],
+        "bonne": 1,
+        "explication": "Les étamines portent le pollen."
+       },
+       {
+        "q": "Où sont les ovules ?",
+        "options": [
+         "dans le pistil",
+         "dans les pétales",
+         "dans la tige",
+         "dans le pollen"
+        ],
+        "bonne": 0,
+        "explication": "Au centre de la fleur."
+       }
+      ],
+      "consigne": "Basile pose ses questions aux visiteurs. Choisis la bonne réponse.",
+      "indices": [
+       "Ouvre la fiche « La fleur ».",
+       "Le pollen est au bout des étamines.",
+       "Le pistil est au centre."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel organe femelle contient les ovules ?",
+        "options": [
+         "l'ovaire",
+         "l'étamine",
+         "le sépale",
+         "le pétale"
+        ],
+        "bonne": 0,
+        "explication": "C'est le bas renflé du pistil."
+       },
+       {
+        "q": "Où le pollen doit-il se déposer ?",
+        "options": [
+         "sur un pétale",
+         "sur le stigmate",
+         "sur une feuille",
+         "sur la tige"
+        ],
+        "bonne": 1,
+        "explication": "Le stigmate est collant."
+       },
+       {
+        "q": "À quoi servent les pétales colorés ?",
+        "options": [
+         "à attirer les insectes",
+         "à fabriquer le pollen",
+         "à protéger la racine",
+         "à contenir les ovules"
+        ],
+        "bonne": 0,
+        "explication": "Couleurs et parfums attirent."
+       }
+      ],
+      "consigne": "Basile prépare un quiz pour les élèves de 6e. Choisis la bonne réponse, puis la phrase de la fiche sur le rôle de la fleur.",
+      "indices": [
+       "Ovaire : organe femelle.",
+       "Le stigmate retient le pollen.",
+       "Pour la justification : cherche « organe de la reproduction »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit à quoi sert la fleur ?",
+       "options": [
+        "La fleur est l'organe de la reproduction des plantes à fleurs.",
+        "Les sépales, souvent verts, protègent le bouton ; les pétales, souvent colorés, attirent les insectes.",
+        "Beaucoup de fleurs ont à la fois des étamines et un pistil ; chez certaines plantes, comme le noisetier, il y a des fleurs mâles et des fleurs femelles séparées.",
+        "Pour observer une fleur, on la dissèque : on détache ses pièces une à une, de l'extérieur vers le centre, et on les colle sur une feuille."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "la racine",
+        "d": "puise l'eau dans le sol"
+       },
+       {
+        "g": "la feuille",
+        "d": "fabrique la nourriture de la plante à la lumière"
+       },
+       {
+        "g": "la fleur",
+        "d": "sert à la reproduction"
+       },
+       {
+        "g": "les étamines",
+        "d": "produisent le pollen"
+       },
+       {
+        "g": "l'ovaire",
+        "d": "abrite les ovules"
+       }
+      ],
+      "consigne": "Basile compare la fleur à d'autres organes de la plante. Relie chaque organe à son rôle, puis choisis la phrase de la fiche sur les sépales et les pétales.",
+      "indices": [
+       "Une seule partie sert à la reproduction.",
+       "La feuille a besoin de lumière.",
+       "Pour la justification : cherche « bouton »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit les sépales et les pétales ?",
+       "options": [
+        "La fleur est l'organe de la reproduction des plantes à fleurs.",
+        "Les sépales, souvent verts, protègent le bouton ; les pétales, souvent colorés, attirent les insectes.",
+        "Les étamines sont les organes mâles de la fleur : elles fabriquent le pollen, une poudre souvent jaune.",
+        "Le haut du pistil, le stigmate, est collant : c'est là que le pollen doit se déposer."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     }
+    },
+    {
+     "id": "e1-4",
+     "escale": 1,
+     "ordre": 4,
+     "titre": "L'étiquette égarée",
+     "decor": "serre",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "basile",
+     "probleme_narratif": "Une étiquette mâle s'est glissée parmi les pièces femelles.",
+     "enjeu": "Basile veut montrer aux visiteurs quelles pièces sont femelles.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir que la fleur est l'organe de la reproduction des plantes à fleurs",
+     "pourquoi_ce_savoir_ici": "La salle « La serre du botaniste — La fleur » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les pièces femelles s'alignent sous la loupe, sans intrus."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fleur",
+     "type": "intrus",
+     "niveau_variantes": "Naturaliste (intrus) ; Botaniste (ordre) ; Directeur du jardin (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Le pistil, l'ovaire, les ovules et le stigmate appartiennent à l'organe femelle de la fleur. L'étamine est un organe mâle : elle fabrique le pollen.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "cartes": [
+       {
+        "txt": "le pistil",
+        "intrus": false
+       },
+       {
+        "txt": "l'ovaire",
+        "intrus": false
+       },
+       {
+        "txt": "les ovules",
+        "intrus": false
+       },
+       {
+        "txt": "le stigmate",
+        "intrus": false
+       },
+       {
+        "txt": "l'étamine",
+        "intrus": true
+       }
+      ],
+      "consigne": "Sur la table de dissection, Basile a regroupé les pièces femelles de la fleur. Une étiquette s'est glissée par erreur dans le groupe : trouve l'intrus.",
+      "indices": [
+       "Les ovules sont dans l'organe femelle.",
+       "Le stigmate est le haut du pistil.",
+       "Qui fabrique le pollen ?"
+      ],
+      "dialogue": "Sur ma table, une étiquette n'est pas à sa place. Laquelle ?"
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Détacher les sépales.",
+        "rang": 1,
+        "sous": "à l'extérieur"
+       },
+       {
+        "txt": "Détacher les pétales.",
+        "rang": 2,
+        "sous": "les grandes pièces colorées"
+       },
+       {
+        "txt": "Détacher les étamines.",
+        "rang": 3,
+        "sous": "les organes mâles"
+       },
+       {
+        "txt": "Garder le pistil, au centre.",
+        "rang": 4,
+        "sous": "l'organe femelle"
+       },
+       {
+        "txt": "Coller chaque pièce sur une feuille et l'étiqueter.",
+        "rang": 5,
+        "sous": "la planche est prête"
+       }
+      ],
+      "consigne": "Basile dissèque une fleur de tulipe devant les élèves. Remets ses gestes dans l'ordre, puis choisis la phrase de la fiche sur la dissection.",
+      "indices": [
+       "De l'extérieur vers le centre.",
+       "Le pistil est le dernier.",
+       "Pour la justification : cherche « dissèque »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique comment observer une fleur ?",
+       "options": [
+        "La fleur est l'organe de la reproduction des plantes à fleurs.",
+        "Beaucoup de fleurs ont à la fois des étamines et un pistil ; chez certaines plantes, comme le noisetier, il y a des fleurs mâles et des fleurs femelles séparées.",
+        "Pour observer une fleur, on la dissèque : on détache ses pièces une à une, de l'extérieur vers le centre, et on les colle sur une feuille.",
+        "Les sépales, souvent verts, protègent le bouton ; les pétales, souvent colorés, attirent les insectes."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Une fleur femelle de noisetier n'a pas d'étamines. Que lui faut-il pour faire des noisettes ?",
+        "options": [
+         "rien de plus",
+         "du pollen venu d'une fleur mâle",
+         "plus de pétales",
+         "de l'engrais"
+        ],
+        "bonne": 1,
+        "explication": "Le vent apporte ce pollen."
+       },
+       {
+        "q": "Une tulipe a des étamines et un pistil. On dit que sa fleur est…",
+        "options": [
+         "seulement mâle",
+         "seulement femelle",
+         "à la fois mâle et femelle",
+         "ni mâle ni femelle"
+        ],
+        "bonne": 2,
+        "explication": "Elle porte les deux organes."
+       },
+       {
+        "q": "Si l'on coupe tous les pistils d'un massif de fleurs, il n'y aura pas…",
+        "options": [
+         "de pétales",
+         "de graines",
+         "de feuilles",
+         "de racines"
+        ],
+        "bonne": 1,
+        "explication": "Les ovules sont dans le pistil."
+       },
+       {
+        "q": "Le pollen se dépose d'abord…",
+        "options": [
+         "sur l'ovaire",
+         "sur le stigmate",
+         "dans les ovules",
+         "sur les sépales"
+        ],
+        "bonne": 1,
+        "explication": "Le stigmate est en haut du pistil."
+       }
+      ],
+      "consigne": "Basile pose des questions difficiles aux futurs botanistes. Choisis la bonne réponse, puis la phrase de la fiche sur l'ovaire.",
+      "indices": [
+       "Une fleur femelle seule ne fabrique pas de pollen.",
+       "Pistil = ovules = futures graines.",
+       "Pour la justification : cherche « renflée »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche situe les ovules ?",
+       "options": [
+        "Le haut du pistil, le stigmate, est collant : c'est là que le pollen doit se déposer.",
+        "Les étamines sont les organes mâles de la fleur : elles fabriquent le pollen, une poudre souvent jaune.",
+        "Beaucoup de fleurs ont à la fois des étamines et un pistil ; chez certaines plantes, comme le noisetier, il y a des fleurs mâles et des fleurs femelles séparées.",
+        "Le pistil, au centre de la fleur, est l'organe femelle : sa partie renflée, l'ovaire, contient les ovules."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 2,
+   "id": "le-rucher-pollinisation-et-fecondation",
+   "titre": "Le rucher",
+   "lieu": "Le rucher au fond du jardin, près du verger",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Des ruches en bois au bord d'un verger en fleurs, une cabane d'apicultrice avec une combinaison accrochée, un cahier taché par la pluie, des pots de miel et un panneau à moitié peint.",
+   "scenarimage": "",
+   "mot": "POLLEN",
+   "mot_origine": "Le mot-clé de la salle 2.",
+   "air": null,
+   "cinematique_ouverture": "transition-e2",
+   "cinematique_fin": "fin-e2",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e2-1",
+     "escale": 2,
+     "ordre": 1,
+     "titre": "Le voyage du pollen",
+     "decor": "rucher",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "capucine",
+     "probleme_narratif": "L'orage a décroché les dessins et les a mélangés.",
+     "enjeu": "Les dessins expliquent aux visiteurs comment une fleur devient un fruit.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Définir la pollinisation : le transport du pollen des étamines au pistil",
+     "pourquoi_ce_savoir_ici": "La salle « Le rucher — Pollinisation et fécondation » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les dessins se raccrochent dans l'ordre, de la fleur au fruit."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "pollen",
+     "type": "ordre",
+     "niveau_variantes": "Visiteur du jardin (ordre) ; Apprenti jardinier (ordre) ; Naturaliste (ordre) ; Botaniste (ordre) ; Directeur du jardin (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Une abeille vient boire le nectar d'une fleur et se couvre de pollen ; elle vole vers une autre fleur de la même espèce ; le pollen se dépose sur le pistil ; l'ovaire grossit et devient un fruit qui contient des graines. En CM2 : le pollen déposé sur le stigmate permet de féconder les ovules ; après la fécondation, les pétales fanent, l'ovaire devient le fruit et les ovules deviennent les graines.",
+     "matelot": {
+      "items": [
+       {
+        "txt": "Une abeille boit le nectar d'une fleur et se couvre de pollen.",
+        "rang": 1
+       },
+       {
+        "txt": "L'abeille vole vers une autre fleur de la même espèce.",
+        "rang": 2
+       },
+       {
+        "txt": "Le pollen se dépose sur le pistil.",
+        "rang": 3
+       },
+       {
+        "txt": "L'ovaire grossit et devient un fruit qui contient des graines.",
+        "rang": 4
+       }
+      ],
+      "consigne": "Capucine a dessiné le voyage du pollen pour les visiteurs, mais ses cartes sont mélangées. Remets les étapes dans l'ordre.",
+      "indices": [
+       "Tout commence par la visite d'une abeille.",
+       "Le pollen voyage avant de se déposer.",
+       "Le fruit arrive à la fin."
+      ],
+      "dialogue": "Bonjour, je suis Capucine, apicultrice. Mes abeilles sont déjà au travail dans le verger. L'orage a effacé mon cahier et mélangé mes dessins. Il faut que j'explique aux visiteurs à quoi servent les abeilles pour les fleurs."
+     },
+     "timonier": {
+      "items": [
+       {
+        "txt": "Une abeille se couvre du pollen des étamines.",
+        "rang": 1,
+        "sous": "en buvant le nectar"
+       },
+       {
+        "txt": "Elle dépose ce pollen sur le stigmate d'une autre fleur.",
+        "rang": 2,
+        "sous": "c'est la pollinisation"
+       },
+       {
+        "txt": "Le pollen permet de féconder les ovules.",
+        "rang": 3,
+        "sous": "c'est la fécondation"
+       },
+       {
+        "txt": "Les pétales et les étamines fanent et tombent.",
+        "rang": 4,
+        "sous": "ils ne servent plus"
+       },
+       {
+        "txt": "L'ovaire devient le fruit, les ovules deviennent les graines.",
+        "rang": 5,
+        "sous": "le fruit mûrit"
+       }
+      ],
+      "consigne": "Capucine prépare le panneau « De la fleur au fruit » du rucher. Remets les étapes dans l'ordre.",
+      "indices": [
+       "La fécondation suit la pollinisation.",
+       "Les pétales fanent après la fécondation.",
+       "Ovaire : fruit ; ovules : graines."
+      ],
+      "dialogue": "Bonjour, je suis Capucine, apicultrice. Mes abeilles sont déjà au travail dans le verger. L'orage a effacé mon cahier et mélangé mes dessins. Il faut que j'explique aux visiteurs à quoi servent les abeilles pour les fleurs."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "L'abeille se pose sur une fleur et se couvre de pollen.",
+        "rang": 1
+       },
+       {
+        "txt": "L'abeille dépose le pollen sur une autre fleur.",
+        "rang": 2
+       },
+       {
+        "txt": "La fleur devient un fruit.",
+        "rang": 3
+       }
+      ],
+      "consigne": "Capucine raconte le voyage du pollen. Remets les trois images dans l'ordre.",
+      "indices": [
+       "Ouvre la fiche « Pollinisation et fécondation ».",
+       "L'abeille se couvre de pollen d'abord.",
+       "Le fruit arrive à la fin."
+      ],
+      "dialogue": "Bonjour, je suis Capucine, apicultrice. Mes abeilles sont déjà au travail dans le verger. L'orage a effacé mon cahier et mélangé mes dessins. Il faut que j'explique aux visiteurs à quoi servent les abeilles pour les fleurs."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le pollen des étamines se dépose sur le stigmate.",
+        "rang": 1,
+        "sous": "pollinisation"
+       },
+       {
+        "txt": "Le pollen permet de féconder les ovules.",
+        "rang": 2,
+        "sous": "fécondation"
+       },
+       {
+        "txt": "Les pétales et les étamines fanent.",
+        "rang": 3,
+        "sous": "ils tombent"
+       },
+       {
+        "txt": "L'ovaire grossit.",
+        "rang": 4,
+        "sous": "il devient vert puis rouge"
+       },
+       {
+        "txt": "La cerise est mûre ; son noyau contient la graine.",
+        "rang": 5,
+        "sous": "l'ovule est devenu graine"
+       }
+      ],
+      "consigne": "Remets dans l'ordre la transformation de la fleur de cerisier en cerise, puis choisis la phrase de la fiche qui dit ce que deviennent l'ovaire et les ovules.",
+      "indices": [
+       "Pollinisation, puis fécondation.",
+       "Les pétales tombent avant que le fruit grossisse.",
+       "Pour la justification : cherche « devient le fruit »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que deviennent l'ovaire et les ovules ?",
+       "options": [
+        "Après la pollinisation, le pollen permet de féconder les ovules cachés dans l'ovaire.",
+        "Après la fécondation, l'ovaire grossit et devient le fruit, et les ovules deviennent les graines.",
+        "Pendant ce temps, les pétales et les étamines fanent et tombent : ils ne servent plus.",
+        "La pollinisation est le transport du pollen des étamines jusqu'au pistil d'une fleur de la même espèce."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour, je suis Capucine, apicultrice. Mes abeilles sont déjà au travail dans le verger. L'orage a effacé mon cahier et mélangé mes dessins. Il faut que j'explique aux visiteurs à quoi servent les abeilles pour les fleurs."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "l'ovaire",
+        "d": "devient le fruit"
+       },
+       {
+        "g": "les ovules",
+        "d": "deviennent les graines"
+       },
+       {
+        "g": "les pétales",
+        "d": "fanent et tombent"
+       },
+       {
+        "g": "les étamines",
+        "d": "fanent et tombent aussi"
+       },
+       {
+        "g": "le stigmate",
+        "d": "a reçu le pollen, puis se dessèche"
+       }
+      ],
+      "consigne": "Capucine compare une fleur et le fruit qu'elle deviendra. Relie chaque pièce de la fleur à ce qu'elle devient, puis choisis la phrase de la fiche sur les pétales.",
+      "indices": [
+       "Le fruit vient de l'organe femelle.",
+       "Deux pièces tombent : elles ne servent plus.",
+       "Pour la justification : cherche « fanent »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que deviennent les pétales ?",
+       "options": [
+        "Après la fécondation, l'ovaire grossit et devient le fruit, et les ovules deviennent les graines.",
+        "Après la pollinisation, le pollen permet de féconder les ovules cachés dans l'ovaire.",
+        "Pendant ce temps, les pétales et les étamines fanent et tombent : ils ne servent plus.",
+        "La plupart des fleurs sont pollinisées par des insectes, comme les abeilles, les bourdons ou les papillons, qui viennent boire le nectar."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bonjour, je suis Capucine, apicultrice. Mes abeilles sont déjà au travail dans le verger. L'orage a effacé mon cahier et mélangé mes dessins. Il faut que j'explique aux visiteurs à quoi servent les abeilles pour les fleurs."
+     }
+    },
+    {
+     "id": "e2-2",
+     "escale": 2,
+     "ordre": 2,
+     "titre": "Le cahier du rucher",
+     "decor": "rucher",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "capucine",
+     "probleme_narratif": "La pluie a effacé des mots importants du cahier.",
+     "enjeu": "Capucine note dans ce cahier tout ce qu'elle explique aux visiteurs.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Définir la pollinisation : le transport du pollen des étamines au pistil",
+     "pourquoi_ce_savoir_ici": "La salle « Le rucher — Pollinisation et fécondation » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Les mots réapparaissent à l'encre bleue."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "pollen",
+     "type": "trous",
+     "niveau_variantes": "Visiteur du jardin (vraifaux) ; Apprenti jardinier (trous) ; Naturaliste (trous) ; Botaniste (qcm) ; Directeur du jardin (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La pollinisation est le transport du pollen des étamines jusqu'au pistil. Les abeilles viennent boire le nectar et transportent le pollen. Après la fécondation, l'ovaire devient le fruit et les ovules deviennent les graines.",
+     "matelot": {
+      "texte": "<p>La [[pollinisation]] est le transport du pollen jusqu'au pistil. Les abeilles viennent boire le [[nectar]] des fleurs. Plus tard, la fleur devient un [[fruit]].</p>",
+      "etiquettes": [
+       "pollinisation",
+       "nectar",
+       "fruit"
+      ],
+      "consigne": "La pluie a effacé des mots dans le cahier de Capucine. Remets chaque mot à sa place.",
+      "indices": [
+       "Le pollen part des étamines.",
+       "Les abeilles boivent un liquide sucré.",
+       "Que devient l'ovaire ?"
+      ],
+      "dialogue": "Mon cahier a pris l'eau. Remettons les mots qui manquent."
+     },
+     "timonier": {
+      "texte": "<p>La pollinisation est le transport du [[pollen]] des [[étamines]] jusqu'au pistil d'une fleur de la même espèce. Le pollen permet ensuite de [[féconder]] les ovules. Après la fécondation, l'[[ovaire]] grossit et devient le fruit, et les [[ovules]] deviennent les graines.</p>",
+      "etiquettes": [
+       "pollen",
+       "étamines",
+       "féconder",
+       "ovaire",
+       "ovules"
+      ],
+      "consigne": "Complète la page du cahier du rucher avec les mots qui manquent.",
+      "indices": [
+       "Pollinisation, puis fécondation.",
+       "Le fruit vient de l'ovaire.",
+       "Les graines viennent des ovules."
+      ],
+      "dialogue": "Mon cahier a pris l'eau. Remettons les mots qui manquent."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les abeilles transportent le pollen de fleur en fleur.",
+        "vrai": true,
+        "explication": "Il se colle à leurs poils."
+       },
+       {
+        "txt": "Les abeilles viennent boire le nectar des fleurs.",
+        "vrai": true,
+        "explication": "C'est un liquide sucré."
+       },
+       {
+        "txt": "Sans pollen, une fleur de pommier donne quand même une pomme.",
+        "vrai": false,
+        "explication": "Il faut la pollinisation."
+       }
+      ],
+      "consigne": "Capucine a écrit trois phrases sur ses abeilles. Pour chacune, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « Pollinisation et fécondation ».",
+       "Le nectar est sucré.",
+       "Pas de pollen, pas de fruit."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Qu'est-ce que la pollinisation ?",
+        "options": [
+         "la chute des pétales",
+         "le transport du pollen des étamines au pistil",
+         "la germination d'une graine",
+         "la fabrication du miel"
+        ],
+        "bonne": 1,
+        "explication": "Le pollen voyage jusqu'au pistil."
+       },
+       {
+        "q": "Le pollen doit arriver sur une fleur…",
+        "options": [
+         "de n'importe quelle plante",
+         "de la même espèce",
+         "fanée",
+         "sans pistil"
+        ],
+        "bonne": 1,
+        "explication": "Le pollen de pommier sert aux fleurs de pommier."
+       },
+       {
+        "q": "Quels insectes pollinisent ?",
+        "options": [
+         "les abeilles, les bourdons, les papillons",
+         "seulement les fourmis",
+         "aucun insecte",
+         "seulement les moustiques"
+        ],
+        "bonne": 0,
+        "explication": "Ils viennent boire le nectar."
+       }
+      ],
+      "consigne": "Capucine fait réviser les visiteurs du rucher. Choisis la bonne réponse, puis la phrase de la fiche qui définit la pollinisation.",
+      "indices": [
+       "Pollinisation : un transport.",
+       "Même espèce.",
+       "Pour la justification : cherche « transport »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit la pollinisation ?",
+       "options": [
+        "La pollinisation est le transport du pollen des étamines jusqu'au pistil d'une fleur de la même espèce.",
+        "Après la pollinisation, le pollen permet de féconder les ovules cachés dans l'ovaire.",
+        "La plupart des fleurs sont pollinisées par des insectes, comme les abeilles, les bourdons ou les papillons, qui viennent boire le nectar.",
+        "La pollinisation est une coopération : l'insecte se nourrit de nectar et de pollen, et la plante est fécondée."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "On utilise beaucoup d'insecticides dans les champs.",
+        "rang": 1,
+        "sous": "pour tuer les insectes nuisibles"
+       },
+       {
+        "txt": "Les abeilles et les bourdons deviennent moins nombreux.",
+        "rang": 2,
+        "sous": "ils sont touchés aussi"
+       },
+       {
+        "txt": "Moins de fleurs sont pollinisées.",
+        "rang": 3,
+        "sous": "le pollen voyage moins"
+       },
+       {
+        "txt": "Moins d'ovules sont fécondés.",
+        "rang": 4,
+        "sous": "moins de graines se forment"
+       },
+       {
+        "txt": "La récolte donne moins de fruits et de graines.",
+        "rang": 5,
+        "sous": "le verger produit moins"
+       }
+      ],
+      "consigne": "Capucine explique aux agriculteurs une chaîne de conséquences. Remets-la dans l'ordre, puis choisis la phrase de la fiche sur les insecticides.",
+      "indices": [
+       "Tout part du traitement des champs.",
+       "Pollinisation, puis fécondation.",
+       "Pour la justification : cherche « insecticides »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des insecticides ?",
+       "options": [
+        "La pollinisation est une coopération : l'insecte se nourrit de nectar et de pollen, et la plante est fécondée.",
+        "La plupart des fleurs sont pollinisées par des insectes, comme les abeilles, les bourdons ou les papillons, qui viennent boire le nectar.",
+        "Après la fécondation, l'ovaire grossit et devient le fruit, et les ovules deviennent les graines.",
+        "Quand on utilise beaucoup d'insecticides, les pollinisateurs deviennent moins nombreux, et certaines cultures donnent moins de fruits et de graines."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     }
+    },
+    {
+     "id": "e2-3",
+     "escale": 2,
+     "ordre": 3,
+     "titre": "Les ruches et le vent",
+     "decor": "rucher",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "capucine",
+     "probleme_narratif": "Le plan est vierge : il faut savoir quelles plantes ont besoin des abeilles.",
+     "enjeu": "Capucine doit poser ses ruches près des plantes qui ont besoin des insectes.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Définir la pollinisation : le transport du pollen des étamines au pistil",
+     "pourquoi_ce_savoir_ici": "La salle « Le rucher — Pollinisation et fécondation » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les petites ruches se posent près des arbres fruitiers."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "pollen",
+     "type": "tri",
+     "niveau_variantes": "Visiteur du jardin (tri) ; Apprenti jardinier (tri) ; Naturaliste (tri) ; Botaniste (tri) ; Directeur du jardin (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Le pommier, le cerisier et le tournesol ont de grandes fleurs colorées et du nectar : les insectes les pollinisent. Le maïs, le noisetier et les graminées des prairies ont des fleurs discrètes et beaucoup de pollen : le vent les pollinise. En CM2 : le fraisier et la courgette sont pollinisés par les insectes ; le bouleau, par le vent.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "ins",
+        "titre": "Pollinisée par les insectes"
+       },
+       {
+        "id": "vent",
+        "titre": "Pollinisée par le vent"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le pommier",
+        "col": "ins"
+       },
+       {
+        "txt": "le cerisier",
+        "col": "ins"
+       },
+       {
+        "txt": "le tournesol",
+        "col": "ins"
+       },
+       {
+        "txt": "le maïs",
+        "col": "vent"
+       },
+       {
+        "txt": "le noisetier",
+        "col": "vent"
+       },
+       {
+        "txt": "les graminées des prairies",
+        "col": "vent"
+       }
+      ],
+      "consigne": "Capucine veut poser ses ruches près des plantes qui ont besoin des insectes. Range chaque plante : pollinisée par les insectes ou par le vent ?",
+      "indices": [
+       "Des fleurs colorées attirent les insectes.",
+       "Le noisetier lâche des nuages de pollen.",
+       "Le maïs n'a pas de pétales colorés."
+      ],
+      "dialogue": "Où poser mes ruches ? Il faut savoir qui transporte le pollen de chaque plante."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "ins",
+        "titre": "Pollinisée par les insectes"
+       },
+       {
+        "id": "vent",
+        "titre": "Pollinisée par le vent"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le pommier",
+        "col": "ins"
+       },
+       {
+        "txt": "le cerisier",
+        "col": "ins"
+       },
+       {
+        "txt": "le fraisier",
+        "col": "ins"
+       },
+       {
+        "txt": "la courgette",
+        "col": "ins"
+       },
+       {
+        "txt": "le maïs",
+        "col": "vent"
+       },
+       {
+        "txt": "le noisetier",
+        "col": "vent"
+       },
+       {
+        "txt": "le bouleau",
+        "col": "vent"
+       },
+       {
+        "txt": "les graminées des prairies",
+        "col": "vent"
+       }
+      ],
+      "consigne": "Range chaque plante selon la façon dont son pollen voyage : par les insectes ou par le vent.",
+      "indices": [
+       "Pétales colorés et nectar : insectes.",
+       "Fleurs discrètes, pollen abondant : vent.",
+       "Le bouleau fait éternuer au printemps."
+      ],
+      "dialogue": "Où poser mes ruches ? Il faut savoir qui transporte le pollen de chaque plante."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "ins",
+        "titre": "Avec les abeilles"
+       },
+       {
+        "id": "vent",
+        "titre": "Avec le vent"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le pommier",
+        "col": "ins"
+       },
+       {
+        "txt": "le tournesol",
+        "col": "ins"
+       },
+       {
+        "txt": "le maïs",
+        "col": "vent"
+       },
+       {
+        "txt": "le noisetier",
+        "col": "vent"
+       }
+      ],
+      "consigne": "Range chaque plante : son pollen voyage avec les abeilles ou avec le vent ?",
+      "indices": [
+       "Ouvre la fiche « Pollinisation et fécondation ».",
+       "Les fleurs colorées attirent les abeilles.",
+       "Le maïs n'a pas de pétales colorés."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "ins",
+        "titre": "Pollinisée par les insectes"
+       },
+       {
+        "id": "vent",
+        "titre": "Pollinisée par le vent"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "des pétales grands et colorés",
+        "col": "ins"
+       },
+       {
+        "txt": "un parfum sucré",
+        "col": "ins"
+       },
+       {
+        "txt": "du nectar",
+        "col": "ins"
+       },
+       {
+        "txt": "des fleurs discrètes, sans couleur vive",
+        "col": "vent"
+       },
+       {
+        "txt": "un pollen très abondant et léger",
+        "col": "vent"
+       },
+       {
+        "txt": "des étamines qui pendent hors de la fleur",
+        "col": "vent"
+       }
+      ],
+      "consigne": "Range chaque indice : il montre une fleur pollinisée par les insectes ou par le vent ? Puis choisis la phrase de la fiche sur le vent.",
+      "indices": [
+       "Les insectes sont attirés par la couleur et le parfum.",
+       "Le vent ne voit pas les couleurs.",
+       "Pour la justification : cherche « vent »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des plantes pollinisées par le vent ?",
+       "options": [
+        "La plupart des fleurs sont pollinisées par des insectes, comme les abeilles, les bourdons ou les papillons, qui viennent boire le nectar.",
+        "La pollinisation est le transport du pollen des étamines jusqu'au pistil d'une fleur de la même espèce.",
+        "Certaines plantes, comme le maïs, les graminées des prairies ou le noisetier, sont pollinisées par le vent : leurs fleurs sont discrètes et leur pollen très abondant.",
+        "Pendant ce temps, les pétales et les étamines fanent et tombent : ils ne servent plus."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pourquoi le noisetier produit-il énormément de pollen ?",
+        "options": [
+         "parce que le vent en perd beaucoup en route",
+         "pour nourrir les abeilles",
+         "pour colorer ses fleurs",
+         "il n'en produit pas"
+        ],
+        "bonne": 0,
+        "explication": "Le transport par le vent est peu précis."
+       },
+       {
+        "q": "Un champ de maïs n'a pas besoin de ruches pour être pollinisé, car…",
+        "options": [
+         "le maïs n'a pas de fleurs",
+         "le vent transporte son pollen",
+         "il n'a pas d'ovules",
+         "il pousse sous terre"
+        ],
+        "bonne": 1,
+        "explication": "Le maïs est pollinisé par le vent."
+       },
+       {
+        "q": "Pourquoi les abeilles visitent-elles les fleurs ?",
+        "options": [
+         "pour polliniser volontairement",
+         "pour se nourrir de nectar et de pollen",
+         "pour se réchauffer",
+         "pour pondre"
+        ],
+        "bonne": 1,
+        "explication": "Elles transportent le pollen sans le savoir."
+       },
+       {
+        "q": "Une fleur rouge, parfumée, pleine de nectar est sans doute pollinisée…",
+        "options": [
+         "par le vent",
+         "par des animaux",
+         "par l'eau",
+         "par personne"
+        ],
+        "bonne": 1,
+        "explication": "Couleur, parfum, nectar attirent."
+       }
+      ],
+      "consigne": "Capucine pose des cas difficiles. Choisis la bonne réponse, puis la phrase de la fiche sur les insectes pollinisateurs.",
+      "indices": [
+       "Le vent est peu précis.",
+       "L'abeille vient manger, pas « aider ».",
+       "Pour la justification : cherche « nectar »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des insectes pollinisateurs ?",
+       "options": [
+        "Certaines plantes, comme le maïs, les graminées des prairies ou le noisetier, sont pollinisées par le vent : leurs fleurs sont discrètes et leur pollen très abondant.",
+        "La plupart des fleurs sont pollinisées par des insectes, comme les abeilles, les bourdons ou les papillons, qui viennent boire le nectar.",
+        "La pollinisation est une coopération : l'insecte se nourrit de nectar et de pollen, et la plante est fécondée.",
+        "La pollinisation est le transport du pollen des étamines jusqu'au pistil d'une fleur de la même espèce."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     }
+    },
+    {
+     "id": "e2-4",
+     "escale": 2,
+     "ordre": 4,
+     "titre": "Le panneau des pollinisateurs",
+     "decor": "rucher",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "capucine",
+     "probleme_narratif": "Le panneau est inachevé : les réponses ne sont pas encore écrites.",
+     "enjeu": "Le panneau doit convaincre les voisins de protéger les pollinisateurs.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Définir la pollinisation : le transport du pollen des étamines au pistil",
+     "pourquoi_ce_savoir_ici": "La salle « Le rucher — Pollinisation et fécondation » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Le panneau est terminé et accroché à l'entrée du verger."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "pollen",
+     "type": "qcm",
+     "niveau_variantes": "Naturaliste (qcm) ; Botaniste (vraifaux) ; Directeur du jardin (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La pollinisation est une coopération : l'insecte se nourrit de nectar et de pollen, et la plante est fécondée. Après la fécondation, l'ovaire devient le fruit. Quand on utilise beaucoup d'insecticides, les pollinisateurs deviennent moins nombreux et certaines cultures donnent moins de fruits et de graines.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "questions": [
+       {
+        "q": "Pourquoi dit-on que la pollinisation est une coopération ?",
+        "options": [
+         "l'abeille et la fleur y gagnent toutes les deux",
+         "seule l'abeille y gagne",
+         "seule la fleur y gagne",
+         "aucune des deux n'y gagne"
+        ],
+        "bonne": 0,
+        "explication": "Nourriture pour l'insecte, fécondation pour la plante."
+       },
+       {
+        "q": "Que se passe-t-il si les pollinisateurs deviennent rares dans un verger ?",
+        "options": [
+         "il y a plus de fruits",
+         "il y a moins de fruits",
+         "rien ne change",
+         "les arbres fleurissent davantage"
+        ],
+        "bonne": 1,
+        "explication": "Moins de fleurs sont pollinisées."
+       },
+       {
+        "q": "Quel produit peut rendre les pollinisateurs moins nombreux ?",
+        "options": [
+         "l'eau de pluie",
+         "le compost",
+         "les insecticides",
+         "le paillage"
+        ],
+        "bonne": 2,
+        "explication": "Ils tuent aussi les insectes utiles."
+       },
+       {
+        "q": "Que devient l'ovaire après la fécondation ?",
+        "options": [
+         "une feuille",
+         "le fruit",
+         "une racine",
+         "un pétale"
+        ],
+        "bonne": 1,
+        "explication": "Et les ovules deviennent les graines."
+       }
+      ],
+      "consigne": "Capucine écrit un panneau pour expliquer aux agriculteurs voisins pourquoi il faut protéger les abeilles. Choisis la bonne réponse.",
+      "indices": [
+       "Chacun y gagne quelque chose.",
+       "Moins d'abeilles, moins de pollinisation.",
+       "Le fruit vient de l'ovaire."
+      ],
+      "dialogue": "Mon panneau pour les agriculteurs n'est pas fini. Aidez-moi à choisir les bonnes réponses."
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Les insecticides peuvent tuer aussi les abeilles.",
+        "vrai": true,
+        "explication": "Ils ne choisissent pas les insectes."
+       },
+       {
+        "txt": "Moins de pollinisateurs, c'est plus de fruits.",
+        "vrai": false,
+        "explication": "C'est moins de fruits."
+       },
+       {
+        "txt": "La pollinisation est une coopération entre l'insecte et la plante.",
+        "vrai": true,
+        "explication": "Les deux y gagnent."
+       },
+       {
+        "txt": "Toutes les cultures ont besoin des abeilles.",
+        "vrai": false,
+        "explication": "Le maïs est pollinisé par le vent."
+       },
+       {
+        "txt": "Un verger sans pollinisateurs donne moins de graines.",
+        "vrai": true,
+        "explication": "Moins d'ovules sont fécondés."
+       }
+      ],
+      "consigne": "Capucine relit le panneau « Protégeons les pollinisateurs ». Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur les insecticides.",
+      "indices": [
+       "Insecticide : il tue les insectes.",
+       "Pense au maïs.",
+       "Pour la justification : cherche « moins nombreux »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des insecticides ?",
+       "options": [
+        "Quand on utilise beaucoup d'insecticides, les pollinisateurs deviennent moins nombreux, et certaines cultures donnent moins de fruits et de graines.",
+        "La pollinisation est une coopération : l'insecte se nourrit de nectar et de pollen, et la plante est fécondée.",
+        "Certaines plantes, comme le maïs, les graminées des prairies ou le noisetier, sont pollinisées par le vent : leurs fleurs sont discrètes et leur pollen très abondant.",
+        "Après la fécondation, l'ovaire grossit et devient le fruit, et les ovules deviennent les graines."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "abeille",
+        "titre": "Ce que gagne l'abeille"
+       },
+       {
+        "id": "plante",
+        "titre": "Ce que gagne la plante"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "du nectar sucré",
+        "col": "abeille"
+       },
+       {
+        "txt": "du pollen pour nourrir ses larves",
+        "col": "abeille"
+       },
+       {
+        "txt": "de la nourriture pour la ruche",
+        "col": "abeille"
+       },
+       {
+        "txt": "du pollen apporté sur son stigmate",
+        "col": "plante"
+       },
+       {
+        "txt": "des ovules fécondés",
+        "col": "plante"
+       },
+       {
+        "txt": "des fruits et des graines",
+        "col": "plante"
+       }
+      ],
+      "consigne": "Capucine explique la coopération entre l'abeille et la fleur. Range chaque carte : ce que gagne l'abeille, ou ce que gagne la plante ; puis choisis la phrase de la fiche sur la coopération.",
+      "indices": [
+       "L'abeille vient se nourrir.",
+       "La plante a besoin du pollen d'une autre fleur.",
+       "Pour la justification : cherche « coopération »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique la coopération ?",
+       "options": [
+        "La plupart des fleurs sont pollinisées par des insectes, comme les abeilles, les bourdons ou les papillons, qui viennent boire le nectar.",
+        "Quand on utilise beaucoup d'insecticides, les pollinisateurs deviennent moins nombreux, et certaines cultures donnent moins de fruits et de graines.",
+        "La pollinisation est une coopération : l'insecte se nourrit de nectar et de pollen, et la plante est fécondée.",
+        "La pollinisation est le transport du pollen des étamines jusqu'au pistil d'une fleur de la même espèce."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 3,
+   "id": "le-potager-de-l-ecole-graines-et-germination",
+   "titre": "Le potager de l'école",
+   "lieu": "Le potager de l'école, au bord du jardin",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Des carrés de légumes, une table avec quatre pots d'expérience, des boîtes de graines renversées, une affiche du cycle de vie d'une plante et un arrosoir.",
+   "scenarimage": "",
+   "mot": "GRAINES",
+   "mot_origine": "Le mot-clé de la salle 3.",
+   "air": null,
+   "cinematique_ouverture": "transition-e3",
+   "cinematique_fin": "fin-e3",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e3-1",
+     "escale": 3,
+     "ordre": 1,
+     "titre": "Les graines voyageuses",
+     "decor": "potager",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "tom",
+     "probleme_narratif": "L'orage a renversé les boîtes de la collection de Tom.",
+     "enjeu": "Tom veut exposer sa collection de graines voyageuses à l'école.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir ce que contient une graine",
+     "pourquoi_ce_savoir_ici": "La salle « Le potager de l'école — Graines et germination » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Chaque graine retrouve sa boîte, étiquetée par son moyen de voyage."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "graines",
+     "type": "tri",
+     "niveau_variantes": "Visiteur du jardin (tri) ; Apprenti jardinier (tri) ; Naturaliste (tri) ; Botaniste (tri) ; Directeur du jardin (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Les graines du pissenlit (aigrettes) et de l'érable (ailes) sont emportées par le vent. Les fruits de la bardane s'accrochent aux poils des animaux ; les glands sont cachés par le geai et parfois oubliés. La noix de coco flotte sur l'eau. En CM2 : le tilleul a des fruits munis d'une aile (vent) ; les oiseaux mangent les cerises et rejettent le noyau plus loin (animaux) ; les graines de l'aulne flottent sur l'eau.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "vent",
+        "titre": "Le vent"
+       },
+       {
+        "id": "ani",
+        "titre": "Les animaux"
+       },
+       {
+        "id": "eau",
+        "titre": "L'eau"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le pissenlit",
+        "col": "vent"
+       },
+       {
+        "txt": "l'érable",
+        "col": "vent"
+       },
+       {
+        "txt": "la bardane",
+        "col": "ani"
+       },
+       {
+        "txt": "le gland du chêne",
+        "col": "ani"
+       },
+       {
+        "txt": "la noix de coco",
+        "col": "eau"
+       }
+      ],
+      "consigne": "Dans le potager, Tom a ramassé des graines qui viennent de loin. Range chaque graine selon ce qui l'a transportée.",
+      "indices": [
+       "Une aigrette, c'est un petit parachute.",
+       "Un crochet s'accroche aux poils.",
+       "La noix de coco flotte."
+      ],
+      "dialogue": "Salut ! Moi, c'est Tom, je m'occupe du potager de mon école. L'orage a renversé toutes mes boîtes de graines, et mon expérience sur la germination est à moitié effacée. Vous m'aidez ?"
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "vent",
+        "titre": "Le vent"
+       },
+       {
+        "id": "ani",
+        "titre": "Les animaux"
+       },
+       {
+        "id": "eau",
+        "titre": "L'eau"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le pissenlit",
+        "col": "vent"
+       },
+       {
+        "txt": "l'érable",
+        "col": "vent"
+       },
+       {
+        "txt": "le tilleul",
+        "col": "vent"
+       },
+       {
+        "txt": "la bardane",
+        "col": "ani"
+       },
+       {
+        "txt": "le gland du chêne",
+        "col": "ani"
+       },
+       {
+        "txt": "la cerise",
+        "col": "ani"
+       },
+       {
+        "txt": "la noix de coco",
+        "col": "eau"
+       },
+       {
+        "txt": "l'aulne",
+        "col": "eau"
+       }
+      ],
+      "consigne": "Tom classe sa collection de fruits et de graines selon leur moyen de dispersion. Range chaque carte.",
+      "indices": [
+       "Une aile tourne dans le vent.",
+       "Un fruit mangé voyage dans un oiseau.",
+       "L'aulne pousse au bord des rivières."
+      ],
+      "dialogue": "Salut ! Moi, c'est Tom, je m'occupe du potager de mon école. L'orage a renversé toutes mes boîtes de graines, et mon expérience sur la germination est à moitié effacée. Vous m'aidez ?"
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "vent",
+        "titre": "Le vent"
+       },
+       {
+        "id": "ani",
+        "titre": "Un animal"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le pissenlit",
+        "col": "vent"
+       },
+       {
+        "txt": "l'érable",
+        "col": "vent"
+       },
+       {
+        "txt": "la bardane",
+        "col": "ani"
+       },
+       {
+        "txt": "le gland",
+        "col": "ani"
+       }
+      ],
+      "consigne": "Tom a ramassé des graines. Range chaque graine : emportée par le vent, ou par un animal ?",
+      "indices": [
+       "Ouvre la fiche « Graines, dispersion et germination ».",
+       "Le pissenlit a de petits parachutes.",
+       "La bardane s'accroche aux poils."
+      ],
+      "dialogue": "Salut ! Moi, c'est Tom, je m'occupe du potager de mon école. L'orage a renversé toutes mes boîtes de graines, et mon expérience sur la germination est à moitié effacée. Vous m'aidez ?"
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "vent",
+        "titre": "Le vent"
+       },
+       {
+        "id": "ani",
+        "titre": "Les animaux"
+       },
+       {
+        "id": "eau",
+        "titre": "L'eau"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le pissenlit",
+        "col": "vent"
+       },
+       {
+        "txt": "le tilleul",
+        "col": "vent"
+       },
+       {
+        "txt": "la bardane",
+        "col": "ani"
+       },
+       {
+        "txt": "le gland oublié par le geai",
+        "col": "ani"
+       },
+       {
+        "txt": "la cerise mangée par un merle",
+        "col": "ani"
+       },
+       {
+        "txt": "la noix de coco",
+        "col": "eau"
+       },
+       {
+        "txt": "l'aulne, au bord de la rivière",
+        "col": "eau"
+       }
+      ],
+      "consigne": "Range chaque fruit ou graine selon son moyen de dispersion, puis choisis la phrase de la fiche sur les animaux.",
+      "indices": [
+       "Une aile ou une aigrette : le vent.",
+       "Accrochée, cachée ou mangée : un animal.",
+       "Pour la justification : cherche « geai »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des graines transportées par les animaux ?",
+       "options": [
+        "Certaines graines sont emportées par le vent grâce à des aigrettes, comme celles du pissenlit, ou à des ailes, comme celles de l'érable.",
+        "D'autres voyagent grâce aux animaux : accrochées à leurs poils, comme celles de la bardane, ou cachées et oubliées, comme les glands par le geai.",
+        "D'autres encore flottent et voyagent sur l'eau, comme la noix de coco.",
+        "Les graines s'éloignent de la plante mère : c'est la dispersion, qui permet à l'espèce de s'installer dans de nouveaux lieux."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Salut ! Moi, c'est Tom, je m'occupe du potager de mon école. L'orage a renversé toutes mes boîtes de graines, et mon expérience sur la germination est à moitié effacée. Vous m'aidez ?"
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pourquoi est-ce utile que les graines s'éloignent de la plante mère ?",
+        "options": [
+         "pour que l'espèce s'installe dans de nouveaux lieux",
+         "pour que la plante mère grandisse",
+         "pour que les graines sèchent",
+         "ce n'est pas utile"
+        ],
+        "bonne": 0,
+        "explication": "Elles colonisent de nouveaux endroits."
+       },
+       {
+        "q": "Un fruit à crochets est sans doute dispersé…",
+        "options": [
+         "par l'eau",
+         "par le vent",
+         "par les animaux",
+         "par la pluie seulement"
+        ],
+        "bonne": 2,
+        "explication": "Les crochets s'accrochent aux poils."
+       },
+       {
+        "q": "Le geai cache des glands et en oublie. Que se passe-t-il ?",
+        "options": [
+         "les glands pourrissent tous",
+         "certains germent et donnent de jeunes chênes",
+         "le geai les replante volontairement",
+         "rien"
+        ],
+        "bonne": 1,
+        "explication": "L'oubli aide la dispersion."
+       },
+       {
+        "q": "Une graine très légère, avec une aigrette, voyage…",
+        "options": [
+         "avec le vent",
+         "dans l'estomac d'un oiseau",
+         "sur l'eau seulement",
+         "elle ne voyage pas"
+        ],
+        "bonne": 0,
+        "explication": "Comme le pissenlit."
+       }
+      ],
+      "consigne": "Tom se demande à quoi sert la dispersion. Choisis la bonne réponse, puis la phrase de la fiche qui explique la dispersion.",
+      "indices": [
+       "La dispersion fait voyager l'espèce.",
+       "Le geai n'a pas de projet : il oublie.",
+       "Pour la justification : cherche « nouveaux lieux »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique la dispersion ?",
+       "options": [
+        "Les graines s'éloignent de la plante mère : c'est la dispersion, qui permet à l'espèce de s'installer dans de nouveaux lieux.",
+        "D'autres voyagent grâce aux animaux : accrochées à leurs poils, comme celles de la bardane, ou cachées et oubliées, comme les glands par le geai.",
+        "Le cycle de vie d'une plante à fleurs : la graine germe, la plante grandit, fleurit, ses fleurs deviennent des fruits qui contiennent de nouvelles graines.",
+        "Une graine contient une future plante, l'embryon, et des réserves de nourriture, protégés par une enveloppe."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Salut ! Moi, c'est Tom, je m'occupe du potager de mon école. L'orage a renversé toutes mes boîtes de graines, et mon expérience sur la germination est à moitié effacée. Vous m'aidez ?"
+     }
+    },
+    {
+     "id": "e3-2",
+     "escale": 3,
+     "ordre": 2,
+     "titre": "L'expérience des quatre pots",
+     "decor": "potager",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "tom",
+     "probleme_narratif": "Le tableau des résultats est à moitié effacé : il faut l'interpréter.",
+     "enjeu": "L'expérience doit montrer à la classe de quoi une graine a besoin pour germer.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir ce que contient une graine",
+     "pourquoi_ce_savoir_ici": "La salle « Le potager de l'école — Graines et germination » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les conclusions s'écrivent sous le tableau des quatre pots."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "graines",
+     "type": "qcm",
+     "niveau_variantes": "Visiteur du jardin (vraifaux) ; Apprenti jardinier (qcm) ; Naturaliste (qcm) ; Botaniste (qcm) ; Directeur du jardin (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Seuls les pots B et D ont germé : ils avaient de l'eau et une température douce. Le pot A (sans eau) et le pot C (trop froid) n'ont pas germé. Le pot D, dans le noir, a germé : la plupart des graines n'ont pas besoin de lumière pour germer. En CM2 : une bonne expérience ne change qu'une seule chose à la fois ; après la germination, la jeune plante aura besoin de lumière pour grandir.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Pourquoi le pot A n'a-t-il pas germé ?",
+        "options": [
+         "il manquait de l'eau",
+         "il manquait de la lumière",
+         "il faisait trop chaud",
+         "les graines étaient trop grosses"
+        ],
+        "bonne": 0,
+        "explication": "Le coton était sec."
+       },
+       {
+        "q": "Pourquoi le pot C n'a-t-il pas germé ?",
+        "options": [
+         "il avait trop d'eau",
+         "il faisait trop froid",
+         "il était dans le noir",
+         "il n'avait pas de terre"
+        ],
+        "bonne": 1,
+        "explication": "Le réfrigérateur est trop froid."
+       },
+       {
+        "q": "Le pot D, dans le noir, a germé. Qu'en conclut Tom ?",
+        "options": [
+         "la graine a besoin de lumière pour germer",
+         "la graine n'a pas besoin de lumière pour germer",
+         "le noir tue les graines",
+         "la graine a besoin de terre"
+        ],
+        "bonne": 1,
+        "explication": "Elle a germé sans lumière."
+       }
+      ],
+      "consigne": "Tom a fait une expérience avec des haricots. Lis son tableau, puis réponds aux questions.<div class='doc-titre'><i>L'expérience de Tom : quatre pots de haricots, une semaine plus tard</i></div><table class='tableau-releves'><tr><th>Pot</th><th>Ce que Tom a fait</th><th>Résultat</th></tr><tr><td>A</td><td>coton sec, dans la classe</td><td>rien ne pousse</td></tr><tr><td>B</td><td>coton mouillé, dans la classe</td><td>les graines ont germé</td></tr><tr><td>C</td><td>coton mouillé, dans le réfrigérateur</td><td>rien ne pousse</td></tr><tr><td>D</td><td>coton mouillé, dans un placard noir, dans la classe</td><td>les graines ont germé</td></tr></table>",
+      "indices": [
+       "Compare A et B : qu'est-ce qui change ?",
+       "Le réfrigérateur est très froid.",
+       "Le placard noir n'a pas de lumière."
+      ],
+      "dialogue": "Mon expérience est finie, mais il faut expliquer les résultats."
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Quels pots montrent que la graine a besoin d'eau ?",
+        "options": [
+         "A et B",
+         "B et D",
+         "C et D",
+         "A et C"
+        ],
+        "bonne": 0,
+        "explication": "Seule l'eau change entre A et B."
+       },
+       {
+        "q": "Quels pots montrent qu'il faut une température douce ?",
+        "options": [
+         "A et D",
+         "B et C",
+         "A et B",
+         "B et D"
+        ],
+        "bonne": 1,
+        "explication": "Seule la température change entre B et C."
+       },
+       {
+        "q": "Que montrent les pots B et D ?",
+        "options": [
+         "la lumière est indispensable pour germer",
+         "la plupart des graines germent même dans le noir",
+         "le placard fait pousser plus vite",
+         "il faut de la terre"
+        ],
+        "bonne": 1,
+        "explication": "D a germé dans le noir."
+       },
+       {
+        "q": "Après la germination, de quoi la jeune plante aura-t-elle besoin pour grandir ?",
+        "options": [
+         "de lumière",
+         "de froid",
+         "de noir complet",
+         "de rien du tout"
+        ],
+        "bonne": 0,
+        "explication": "La plante fabrique sa nourriture à la lumière."
+       }
+      ],
+      "consigne": "Lis le tableau de l'expérience de Tom, puis réponds aux questions.<div class='doc-titre'><i>L'expérience de Tom : quatre pots de haricots, une semaine plus tard</i></div><table class='tableau-releves'><tr><th>Pot</th><th>Ce que Tom a fait</th><th>Résultat</th></tr><tr><td>A</td><td>coton sec, dans la classe</td><td>rien ne pousse</td></tr><tr><td>B</td><td>coton mouillé, dans la classe</td><td>les graines ont germé</td></tr><tr><td>C</td><td>coton mouillé, dans le réfrigérateur</td><td>rien ne pousse</td></tr><tr><td>D</td><td>coton mouillé, dans un placard noir, dans la classe</td><td>les graines ont germé</td></tr></table>",
+      "indices": [
+       "Une seule différence entre deux pots.",
+       "D a germé sans lumière.",
+       "Pour grandir ensuite, il faut de la lumière."
+      ],
+      "dialogue": "Mon expérience est finie, mais il faut expliquer les résultats."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Une graine a besoin d'eau pour germer.",
+        "vrai": true,
+        "explication": "Sur du coton sec, rien ne pousse."
+       },
+       {
+        "txt": "Une graine germe très bien dans le réfrigérateur.",
+        "vrai": false,
+        "explication": "Il y fait trop froid."
+       },
+       {
+        "txt": "Quand la graine germe, la racine sort.",
+        "vrai": true,
+        "explication": "Puis la tige et les feuilles."
+       }
+      ],
+      "consigne": "Tom a écrit trois phrases sur ses haricots. Pour chacune, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « Graines, dispersion et germination ».",
+       "Le froid empêche de germer.",
+       "La racine sort en premier."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quelle expérience est la bonne ?",
+        "options": [
+         "un pot avec de l'eau et un pot sans eau",
+         "un pot mouillé à l'air et un pot rempli d'eau jusqu'en haut, sans air",
+         "un pot au soleil et un pot à l'ombre",
+         "un seul pot"
+        ],
+        "bonne": 1,
+        "explication": "On ne change qu'une chose : l'air."
+       },
+       {
+        "q": "Dans une expérience, on change…",
+        "options": [
+         "tout à la fois",
+         "une seule chose à la fois",
+         "rien du tout",
+         "deux choses"
+        ],
+        "bonne": 1,
+        "explication": "Sinon on ne sait pas ce qui a joué."
+       },
+       {
+        "q": "De quoi la graine n'a-t-elle presque jamais besoin pour germer ?",
+        "options": [
+         "d'eau",
+         "d'air",
+         "de lumière",
+         "d'une température douce"
+        ],
+        "bonne": 2,
+        "explication": "Elle germe même dans le noir."
+       }
+      ],
+      "consigne": "Tom veut prouver qu'une graine a besoin d'air pour germer. Choisis la bonne réponse, puis la phrase de la fiche sur les besoins de la graine.",
+      "indices": [
+       "Une seule différence entre les deux pots.",
+       "Noyée, la graine manque d'air.",
+       "Pour la justification : cherche « température douce »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne les besoins de la germination ?",
+       "options": [
+        "La germination est le moment où la graine se réveille : la racine sort, puis la tige et les premières feuilles.",
+        "Après la germination, la jeune plante a besoin de lumière pour grandir et fabriquer sa nourriture.",
+        "Pour germer, une graine a besoin d'eau, d'air et d'une température douce ; la plupart des graines n'ont pas besoin de lumière pour germer.",
+        "Une graine contient une future plante, l'embryon, et des réserves de nourriture, protégés par une enveloppe."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "germer",
+        "titre": "Nécessaire pour germer"
+       },
+       {
+        "id": "ensuite",
+        "titre": "Nécessaire ensuite pour grandir"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "de l'eau",
+        "col": "germer"
+       },
+       {
+        "txt": "de l'air",
+        "col": "germer"
+       },
+       {
+        "txt": "une température douce",
+        "col": "germer"
+       },
+       {
+        "txt": "de la lumière",
+        "col": "ensuite"
+       },
+       {
+        "txt": "des feuilles vertes au soleil",
+        "col": "ensuite"
+       }
+      ],
+      "consigne": "Tom range ses étiquettes. Pour chaque besoin, est-il nécessaire pour germer, ou seulement ensuite, pour que la jeune plante grandisse ? Puis choisis la phrase de la fiche sur la lumière.",
+      "indices": [
+       "Le pot D a germé dans le noir.",
+       "La jeune plante fabrique sa nourriture à la lumière.",
+       "Pour la justification : cherche « grandir »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la lumière ?",
+       "options": [
+        "Pour germer, une graine a besoin d'eau, d'air et d'une température douce ; la plupart des graines n'ont pas besoin de lumière pour germer.",
+        "Le cycle de vie d'une plante à fleurs : la graine germe, la plante grandit, fleurit, ses fleurs deviennent des fruits qui contiennent de nouvelles graines.",
+        "La germination est le moment où la graine se réveille : la racine sort, puis la tige et les premières feuilles.",
+        "Après la germination, la jeune plante a besoin de lumière pour grandir et fabriquer sa nourriture."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     }
+    },
+    {
+     "id": "e3-3",
+     "escale": 3,
+     "ordre": 3,
+     "titre": "Le cycle du haricot",
+     "decor": "potager",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "tom",
+     "probleme_narratif": "Les images de l'affiche se sont détachées.",
+     "enjeu": "La classe affichera ce cycle dans le couloir de l'école.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir ce que contient une graine",
+     "pourquoi_ce_savoir_ici": "La salle « Le potager de l'école — Graines et germination » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les images reprennent leur place en cercle."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "graines",
+     "type": "ordre",
+     "niveau_variantes": "Visiteur du jardin (ordre) ; Apprenti jardinier (ordre) ; Naturaliste (ordre) ; Botaniste (ordre) ; Directeur du jardin (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La graine germe, la jeune plante grandit, elle fleurit, la fleur devient un fruit qui contient des graines. En CM2 : entre la floraison et le fruit, il faut la pollinisation et la fécondation ; à la fin, les graines sont dispersées et le cycle recommence.",
+     "matelot": {
+      "items": [
+       {
+        "txt": "La graine germe.",
+        "rang": 1
+       },
+       {
+        "txt": "La jeune plante grandit.",
+        "rang": 2
+       },
+       {
+        "txt": "La plante fleurit.",
+        "rang": 3
+       },
+       {
+        "txt": "La fleur devient un fruit qui contient des graines.",
+        "rang": 4
+       }
+      ],
+      "consigne": "Tom raconte la vie de son haricot sur une grande affiche. Remets les étapes dans l'ordre.",
+      "indices": [
+       "On part de la graine.",
+       "Les fleurs viennent avant les fruits.",
+       "Le fruit contient de nouvelles graines."
+      ],
+      "dialogue": "Les images de mon affiche sont tombées. Dans quel ordre vit une plante ?"
+     },
+     "timonier": {
+      "items": [
+       {
+        "txt": "La graine germe.",
+        "rang": 1,
+        "sous": "racine, puis tige et feuilles"
+       },
+       {
+        "txt": "La plante grandit à la lumière.",
+        "rang": 2,
+        "sous": "elle fabrique sa nourriture"
+       },
+       {
+        "txt": "La plante fleurit.",
+        "rang": 3,
+        "sous": "étamines et pistil"
+       },
+       {
+        "txt": "Les fleurs sont pollinisées et fécondées.",
+        "rang": 4,
+        "sous": "grâce aux insectes ou au vent"
+       },
+       {
+        "txt": "Les fruits mûrissent.",
+        "rang": 5,
+        "sous": "ils contiennent des graines"
+       },
+       {
+        "txt": "Les graines sont dispersées.",
+        "rang": 6,
+        "sous": "le cycle recommence"
+       }
+      ],
+      "consigne": "Tom affiche le cycle de vie complet d'une plante à fleurs. Remets les étapes dans l'ordre, en partant de la graine.",
+      "indices": [
+       "La germination vient juste après la graine.",
+       "Pollinisation avant fruit.",
+       "La dispersion termine le cycle."
+      ],
+      "dialogue": "Les images de mon affiche sont tombées. Dans quel ordre vit une plante ?"
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La graine est plantée.",
+        "rang": 1
+       },
+       {
+        "txt": "La graine germe.",
+        "rang": 2
+       },
+       {
+        "txt": "La plante grandit.",
+        "rang": 3
+       },
+       {
+        "txt": "La plante fleurit.",
+        "rang": 4
+       }
+      ],
+      "consigne": "Tom raconte la vie de son haricot. Remets les étapes dans l'ordre.",
+      "indices": [
+       "Ouvre la fiche « Graines, dispersion et germination ».",
+       "La graine d'abord.",
+       "Les fleurs viennent à la fin."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La graine germe.",
+        "rang": 1,
+        "sous": "racine, tige, feuilles"
+       },
+       {
+        "txt": "La plante grandit à la lumière.",
+        "rang": 2,
+        "sous": "elle fabrique sa nourriture"
+       },
+       {
+        "txt": "La plante fleurit.",
+        "rang": 3,
+        "sous": "étamines et pistil"
+       },
+       {
+        "txt": "Les fleurs sont pollinisées.",
+        "rang": 4,
+        "sous": "par les insectes"
+       },
+       {
+        "txt": "Les fleurs deviennent des gousses.",
+        "rang": 5,
+        "sous": "ce sont les fruits"
+       },
+       {
+        "txt": "Les graines sont récoltées et semées.",
+        "rang": 6,
+        "sous": "le cycle recommence"
+       }
+      ],
+      "consigne": "Remets dans l'ordre le cycle de vie complet du haricot, puis choisis la phrase de la fiche qui le résume.",
+      "indices": [
+       "La gousse est le fruit du haricot.",
+       "La pollinisation précède le fruit.",
+       "Pour la justification : cherche « cycle de vie »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche résume le cycle de vie d'une plante à fleurs ?",
+       "options": [
+        "Le cycle de vie d'une plante à fleurs : la graine germe, la plante grandit, fleurit, ses fleurs deviennent des fruits qui contiennent de nouvelles graines.",
+        "La germination est le moment où la graine se réveille : la racine sort, puis la tige et les premières feuilles.",
+        "Les graines s'éloignent de la plante mère : c'est la dispersion, qui permet à l'espèce de s'installer dans de nouveaux lieux.",
+        "Après la germination, la jeune plante a besoin de lumière pour grandir et fabriquer sa nourriture."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Pendant la germination, la racine sort avant la tige.",
+        "vrai": true,
+        "explication": "Elle fixe la jeune plante et puise l'eau."
+       },
+       {
+        "txt": "Au début, la jeune plante se nourrit des réserves de la graine.",
+        "vrai": true,
+        "explication": "Avant d'avoir de vraies feuilles."
+       },
+       {
+        "txt": "Une graine sèche, rangée dans une boîte, est morte.",
+        "vrai": false,
+        "explication": "Elle attend l'eau pour germer."
+       },
+       {
+        "txt": "La gousse du haricot est un fruit.",
+        "vrai": true,
+        "explication": "Elle vient de l'ovaire de la fleur."
+       },
+       {
+        "txt": "Une plante ne fleurit qu'une fois qu'elle a fait ses graines.",
+        "vrai": false,
+        "explication": "Les graines viennent après les fleurs."
+       }
+      ],
+      "consigne": "Tom vérifie les phrases de son exposé. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur la germination.",
+      "indices": [
+       "La racine d'abord.",
+       "Une graine sèche est en sommeil.",
+       "Pour la justification : cherche « se réveille »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit la germination ?",
+       "options": [
+        "Le cycle de vie d'une plante à fleurs : la graine germe, la plante grandit, fleurit, ses fleurs deviennent des fruits qui contiennent de nouvelles graines.",
+        "La germination est le moment où la graine se réveille : la racine sort, puis la tige et les premières feuilles.",
+        "Pour germer, une graine a besoin d'eau, d'air et d'une température douce ; la plupart des graines n'ont pas besoin de lumière pour germer.",
+        "Une graine contient une future plante, l'embryon, et des réserves de nourriture, protégés par une enveloppe."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     }
+    },
+    {
+     "id": "e3-4",
+     "escale": 3,
+     "ordre": 4,
+     "titre": "La graine ouverte",
+     "decor": "potager",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "tom",
+     "probleme_narratif": "Tom a ouvert une graine, mais ne sait plus nommer ce qu'il voit.",
+     "enjeu": "Tom veut montrer ce qu'il y a dans une graine.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir ce que contient une graine",
+     "pourquoi_ce_savoir_ici": "La salle « Le potager de l'école — Graines et germination » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Sous la loupe, chaque partie de la graine se distingue nettement."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "graines",
+     "type": "association",
+     "niveau_variantes": "Naturaliste (association) ; Botaniste (association) ; Directeur du jardin (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "L'enveloppe protège la graine ; l'embryon est la future plante ; les réserves nourrissent la jeune plante au début ; l'eau réveille la graine ; la lumière servira ensuite à la jeune plante pour grandir.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "paires": [
+       {
+        "g": "l'enveloppe",
+        "d": "protège la graine"
+       },
+       {
+        "g": "l'embryon",
+        "d": "est la future plante"
+       },
+       {
+        "g": "les réserves",
+        "d": "nourrissent la jeune plante au début"
+       },
+       {
+        "g": "l'eau",
+        "d": "réveille la graine pour la germination"
+       },
+       {
+        "g": "la lumière",
+        "d": "sert ensuite à la jeune plante pour grandir"
+       }
+      ],
+      "consigne": "Tom a ouvert une graine de haricot trempée dans l'eau. Relie chaque partie de la graine, ou chaque besoin, à son rôle.",
+      "indices": [
+       "L'embryon est une plante miniature.",
+       "Les réserves sont comme un goûter.",
+       "La lumière sert après la germination."
+      ],
+      "dialogue": "J'ai ouvert une graine. Que voit-on dedans ?"
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "l'enveloppe",
+        "d": "protège la graine"
+       },
+       {
+        "g": "l'embryon",
+        "d": "est la future plante"
+       },
+       {
+        "g": "les réserves",
+        "d": "nourrissent la jeune plante au début"
+       },
+       {
+        "g": "l'eau",
+        "d": "réveille la graine"
+       },
+       {
+        "g": "la lumière",
+        "d": "sert ensuite à la jeune plante pour grandir"
+       }
+      ],
+      "consigne": "Tom ouvre une graine de haricot trempée. Relie chaque partie ou chaque besoin à son rôle, puis choisis la phrase de la fiche sur le contenu de la graine.",
+      "indices": [
+       "L'embryon est une plante miniature.",
+       "La lumière sert après la germination.",
+       "Pour la justification : cherche « embryon »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que contient une graine ?",
+       "options": [
+        "La germination est le moment où la graine se réveille : la racine sort, puis la tige et les premières feuilles.",
+        "Pour germer, une graine a besoin d'eau, d'air et d'une température douce ; la plupart des graines n'ont pas besoin de lumière pour germer.",
+        "Après la germination, la jeune plante a besoin de lumière pour grandir et fabriquer sa nourriture.",
+        "Une graine contient une future plante, l'embryon, et des réserves de nourriture, protégés par une enveloppe."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Poser une question : la graine a-t-elle besoin de chaleur pour germer ?",
+        "rang": 1,
+        "sous": "le problème"
+       },
+       {
+        "txt": "Proposer une hypothèse : il faut une température douce.",
+        "rang": 2,
+        "sous": "ce que l'on pense"
+       },
+       {
+        "txt": "Préparer deux pots identiques, mouillés, l'un dans la classe, l'autre au réfrigérateur.",
+        "rang": 3,
+        "sous": "une seule différence"
+       },
+       {
+        "txt": "Observer les deux pots chaque jour pendant une semaine.",
+        "rang": 4,
+        "sous": "noter les résultats"
+       },
+       {
+        "txt": "Conclure en comparant les deux pots.",
+        "rang": 5,
+        "sous": "l'hypothèse est validée ou non"
+       }
+      ],
+      "consigne": "Tom prépare une vraie démarche expérimentale sur la température. Remets les étapes dans l'ordre, puis choisis la phrase de la fiche sur les besoins de la germination.",
+      "indices": [
+       "La question vient en premier.",
+       "On observe avant de conclure.",
+       "Pour la justification : cherche « température douce »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne les besoins de la germination ?",
+       "options": [
+        "Après la germination, la jeune plante a besoin de lumière pour grandir et fabriquer sa nourriture.",
+        "Pour germer, une graine a besoin d'eau, d'air et d'une température douce ; la plupart des graines n'ont pas besoin de lumière pour germer.",
+        "La germination est le moment où la graine se réveille : la racine sort, puis la tige et les premières feuilles.",
+        "Les graines s'éloignent de la plante mère : c'est la dispersion, qui permet à l'espèce de s'installer dans de nouveaux lieux."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 4,
+   "id": "la-ferme-des-coteaux-la-fecondation-chez-les-animaux",
+   "titre": "La ferme des Coteaux",
+   "lieu": "La cour de la ferme des Coteaux, près de l'étang",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Une cour de ferme avec un poulailler, une étable, un petit étang aux roseaux, un tableau noir où est écrit le registre des animaux, et des panneaux tombés près de la barrière.",
+   "scenarimage": "",
+   "mot": "FÉCONDATION",
+   "mot_origine": "Le mot-clé de la salle 4.",
+   "air": null,
+   "cinematique_ouverture": "transition-e4",
+   "cinematique_fin": "fin-e4",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e4-1",
+     "escale": 4,
+     "ordre": 1,
+     "titre": "Les questions de la ferme",
+     "decor": "ferme",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yasmine",
+     "probleme_narratif": "Des questions des visiteurs attendent leurs réponses au tableau.",
+     "enjeu": "Les écoles arrivent cet après-midi : il faut des réponses justes.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir qu'il faut en général un mâle et une femelle de la même espèce",
+     "pourquoi_ce_savoir_ici": "La salle « La ferme des Coteaux — La fécondation chez les animaux » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les réponses s'écrivent à la craie sous chaque question."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fecondation",
+     "type": "qcm",
+     "niveau_variantes": "Visiteur du jardin (qcm) ; Apprenti jardinier (qcm) ; Naturaliste (qcm) ; Botaniste (association) ; Directeur du jardin (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Chez les animaux, pour avoir des petits, il faut en général un mâle et une femelle de la même espèce. La fécondation est la rencontre d'une cellule reproductrice mâle et d'une cellule reproductrice femelle. En CM2 : ces cellules s'appellent les gamètes ; chez les oiseaux et les mammifères, la fécondation est interne ; chez la grenouille, elle est externe, dans l'eau.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Pour que la poule ait des poussins, il faut…",
+        "options": [
+         "seulement une poule",
+         "un coq et une poule",
+         "un coq et une cane",
+         "deux poules"
+        ],
+        "bonne": 1,
+        "explication": "Un mâle et une femelle de la même espèce."
+       },
+       {
+        "q": "Qu'est-ce que la fécondation ?",
+        "options": [
+         "la naissance du petit",
+         "la rencontre d'une cellule mâle et d'une cellule femelle",
+         "la ponte de l'œuf",
+         "la croissance du petit"
+        ],
+        "bonne": 1,
+        "explication": "Elle donne la première cellule du petit."
+       },
+       {
+        "q": "Le mâle de la brebis s'appelle…",
+        "options": [
+         "le bouc",
+         "le bélier",
+         "le taureau",
+         "le jars"
+        ],
+        "bonne": 1,
+        "explication": "Le bouc est le mâle de la chèvre."
+       }
+      ],
+      "consigne": "À la ferme voisine, Yasmine répond aux questions des visiteurs. Aide-la à choisir la bonne réponse.",
+      "indices": [
+       "Il faut deux parents.",
+       "Mâle et femelle de la même espèce.",
+       "Fécondation : une rencontre."
+      ],
+      "dialogue": "Bonjour, je suis Yasmine, l'éleveuse. L'orage a renversé les panneaux de ma ferme pédagogique, et les écoles viennent cet après-midi. Il faut tout remettre en ordre pour expliquer comment les animaux ont des petits."
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Comment appelle-t-on les cellules reproductrices ?",
+        "options": [
+         "les gamètes",
+         "les graines",
+         "les embryons",
+         "les larves"
+        ],
+        "bonne": 0,
+        "explication": "Gamète mâle et gamète femelle."
+       },
+       {
+        "q": "Que donne la fécondation ?",
+        "options": [
+         "un adulte",
+         "la première cellule d'un nouvel être vivant",
+         "un œuf dur",
+         "deux parents"
+        ],
+        "bonne": 1,
+        "explication": "C'est le début de l'embryon."
+       },
+       {
+        "q": "Chez la vache, la fécondation est…",
+        "options": [
+         "externe, dans l'eau",
+         "interne, dans le corps de la femelle",
+         "faite par les abeilles",
+         "inutile"
+        ],
+        "bonne": 1,
+        "explication": "C'est un mammifère."
+       },
+       {
+        "q": "Chez la grenouille, la fécondation a lieu…",
+        "options": [
+         "dans le corps de la femelle",
+         "dans l'eau, hors du corps",
+         "dans un nid sec",
+         "dans la terre"
+        ],
+        "bonne": 1,
+        "explication": "Elle est externe."
+       }
+      ],
+      "consigne": "Yasmine prépare le quiz de la ferme pédagogique. Choisis la bonne réponse.",
+      "indices": [
+       "Les gamètes sont des cellules reproductrices.",
+       "Oiseaux et mammifères : interne.",
+       "La grenouille pond dans l'eau."
+      ],
+      "dialogue": "Bonjour, je suis Yasmine, l'éleveuse. L'orage a renversé les panneaux de ma ferme pédagogique, et les écoles viennent cet après-midi. Il faut tout remettre en ordre pour expliquer comment les animaux ont des petits."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pour avoir des poussins, il faut…",
+        "options": [
+         "un coq et une poule",
+         "deux coqs",
+         "une poule et un canard",
+         "une seule poule"
+        ],
+        "bonne": 0,
+        "explication": "Un mâle et une femelle."
+       },
+       {
+        "q": "Le petit de la vache s'appelle…",
+        "options": [
+         "l'agneau",
+         "le veau",
+         "le poussin",
+         "le chevreau"
+        ],
+        "bonne": 1,
+        "explication": "L'agneau est le petit de la brebis."
+       },
+       {
+        "q": "Le mâle de la poule s'appelle…",
+        "options": [
+         "le coq",
+         "le taureau",
+         "le bélier",
+         "le jars"
+        ],
+        "bonne": 0,
+        "explication": "Le jars est le mâle de l'oie."
+       }
+      ],
+      "consigne": "Yasmine répond aux plus jeunes visiteurs. Choisis la bonne réponse.",
+      "indices": [
+       "Ouvre la fiche « La fécondation chez les animaux ».",
+       "Il faut un mâle et une femelle.",
+       "Pense au chant du matin."
+      ],
+      "dialogue": "Bonjour, je suis Yasmine, l'éleveuse. L'orage a renversé les panneaux de ma ferme pédagogique, et les écoles viennent cet après-midi. Il faut tout remettre en ordre pour expliquer comment les animaux ont des petits."
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "un gamète",
+        "d": "une cellule reproductrice"
+       },
+       {
+        "g": "la fécondation",
+        "d": "la rencontre d'un gamète mâle et d'un gamète femelle"
+       },
+       {
+        "g": "la fécondation interne",
+        "d": "dans le corps de la femelle"
+       },
+       {
+        "g": "la fécondation externe",
+        "d": "dans l'eau, hors du corps"
+       },
+       {
+        "g": "l'embryon",
+        "d": "le tout début du petit"
+       }
+      ],
+      "consigne": "Yasmine fabrique un lexique pour son panneau. Relie chaque mot à sa définition, puis choisis la phrase de la fiche qui définit la fécondation.",
+      "indices": [
+       "Gamète : cellule reproductrice.",
+       "Externe : dehors.",
+       "Pour la justification : cherche « première cellule »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit la fécondation ?",
+       "options": [
+        "Le mâle produit des cellules reproductrices mâles, la femelle des cellules reproductrices femelles : on les appelle les gamètes.",
+        "Chez les animaux, pour avoir des petits, il faut en général un mâle et une femelle de la même espèce.",
+        "La fécondation est la rencontre d'une cellule reproductrice mâle et d'une cellule reproductrice femelle : elle donne la première cellule d'un nouvel être vivant.",
+        "Chez les oiseaux et les mammifères, la fécondation a lieu à l'intérieur du corps de la femelle : elle est interne."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bonjour, je suis Yasmine, l'éleveuse. L'orage a renversé les panneaux de ma ferme pédagogique, et les écoles viennent cet après-midi. Il faut tout remettre en ordre pour expliquer comment les animaux ont des petits."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le mâle et la femelle produisent chacun des cellules reproductrices.",
+        "vrai": true,
+        "explication": "Les gamètes mâles et femelles."
+       },
+       {
+        "txt": "Les gamètes sont des petits déjà formés.",
+        "vrai": false,
+        "explication": "Ce sont des cellules."
+       },
+       {
+        "txt": "Après la fécondation, il y a une seule première cellule.",
+        "vrai": true,
+        "explication": "Elle donnera l'embryon."
+       },
+       {
+        "txt": "Un bouc et une brebis peuvent avoir un agneau.",
+        "vrai": false,
+        "explication": "Ils ne sont pas de la même espèce."
+       },
+       {
+        "txt": "La fécondation est le début de la vie d'un nouvel animal.",
+        "vrai": true,
+        "explication": "C'est la première étape du développement."
+       }
+      ],
+      "consigne": "Yasmine vérifie les fiches de son stagiaire. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur les gamètes.",
+      "indices": [
+       "Une cellule, ce n'est pas un petit.",
+       "Bouc et brebis : deux espèces.",
+       "Pour la justification : cherche « gamètes »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit les gamètes ?",
+       "options": [
+        "Le mâle produit des cellules reproductrices mâles, la femelle des cellules reproductrices femelles : on les appelle les gamètes.",
+        "La fécondation est la rencontre d'une cellule reproductrice mâle et d'une cellule reproductrice femelle : elle donne la première cellule d'un nouvel être vivant.",
+        "Chez les animaux, pour avoir des petits, il faut en général un mâle et une femelle de la même espèce.",
+        "La fécondation externe se fait dans l'eau : les cellules reproductrices ne survivraient pas à l'air libre."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Bonjour, je suis Yasmine, l'éleveuse. L'orage a renversé les panneaux de ma ferme pédagogique, et les écoles viennent cet après-midi. Il faut tout remettre en ordre pour expliquer comment les animaux ont des petits."
+     }
+    },
+    {
+     "id": "e4-2",
+     "escale": 4,
+     "ordre": 2,
+     "titre": "Le registre de la ferme",
+     "decor": "ferme",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yasmine",
+     "probleme_narratif": "Une colonne du registre est vide : le type de fécondation de chaque animal.",
+     "enjeu": "Le registre doit être complet pour la visite des écoles.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir qu'il faut en général un mâle et une femelle de la même espèce",
+     "pourquoi_ce_savoir_ici": "La salle « La ferme des Coteaux — La fécondation chez les animaux » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "La colonne du registre se remplit, ligne par ligne."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fecondation",
+     "type": "tri",
+     "niveau_variantes": "Visiteur du jardin (tri) ; Apprenti jardinier (tri) ; Naturaliste (tri) ; Botaniste (tri) ; Directeur du jardin (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La poule, la vache et le lapin ont une fécondation interne, dans le corps de la femelle. La grenouille et la truite ont une fécondation externe, dans l'eau. En CM2 : la tortue et la cane, qui pondent pourtant des œufs, ont une fécondation interne ; le crapaud et le saumon ont une fécondation externe.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "int",
+        "titre": "Dans le corps de la femelle"
+       },
+       {
+        "id": "ext",
+        "titre": "Dehors, dans l'eau"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "int"
+       },
+       {
+        "txt": "la vache",
+        "col": "int"
+       },
+       {
+        "txt": "le lapin",
+        "col": "int"
+       },
+       {
+        "txt": "la grenouille",
+        "col": "ext"
+       },
+       {
+        "txt": "la truite",
+        "col": "ext"
+       }
+      ],
+      "consigne": "Yasmine remplit le registre des animaux de la ferme et de l'étang. Range chaque animal : fécondation dans le corps de la femelle, ou dehors, dans l'eau ?",
+      "indices": [
+       "Les oiseaux : dans le corps.",
+       "Les mammifères : dans le corps.",
+       "Dans l'étang, les œufs sont fécondés dans l'eau."
+      ],
+      "dialogue": "Il manque une colonne dans mon registre. Pour chaque animal, où a lieu la fécondation ?"
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "int",
+        "titre": "Fécondation interne"
+       },
+       {
+        "id": "ext",
+        "titre": "Fécondation externe"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "int"
+       },
+       {
+        "txt": "la vache",
+        "col": "int"
+       },
+       {
+        "txt": "la tortue",
+        "col": "int"
+       },
+       {
+        "txt": "la cane",
+        "col": "int"
+       },
+       {
+        "txt": "la grenouille",
+        "col": "ext"
+       },
+       {
+        "txt": "la truite",
+        "col": "ext"
+       },
+       {
+        "txt": "le crapaud",
+        "col": "ext"
+       },
+       {
+        "txt": "le saumon",
+        "col": "ext"
+       }
+      ],
+      "consigne": "Range chaque animal du registre selon son type de fécondation : interne ou externe.",
+      "indices": [
+       "Pondre des œufs ne veut pas dire fécondation externe.",
+       "La tortue est un reptile.",
+       "Le crapaud pond dans les mares."
+      ],
+      "dialogue": "Il manque une colonne dans mon registre. Pour chaque animal, où a lieu la fécondation ?"
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "int",
+        "titre": "Dans le corps de la mère"
+       },
+       {
+        "id": "ext",
+        "titre": "Dans l'eau"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "int"
+       },
+       {
+        "txt": "la vache",
+        "col": "int"
+       },
+       {
+        "txt": "la grenouille",
+        "col": "ext"
+       },
+       {
+        "txt": "la truite",
+        "col": "ext"
+       }
+      ],
+      "consigne": "Range chaque animal : ses œufs sont fécondés dans le corps de la mère, ou dans l'eau ?",
+      "indices": [
+       "Ouvre la fiche « La fécondation chez les animaux ».",
+       "La grenouille pond dans la mare.",
+       "La vache vit dans le pré."
+      ],
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "int",
+        "titre": "Fécondation interne"
+       },
+       {
+        "id": "ext",
+        "titre": "Fécondation externe"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "int"
+       },
+       {
+        "txt": "la tortue",
+        "col": "int"
+       },
+       {
+        "txt": "le lapin",
+        "col": "int"
+       },
+       {
+        "txt": "la chèvre",
+        "col": "int"
+       },
+       {
+        "txt": "la grenouille",
+        "col": "ext"
+       },
+       {
+        "txt": "le crapaud",
+        "col": "ext"
+       },
+       {
+        "txt": "la truite",
+        "col": "ext"
+       },
+       {
+        "txt": "le saumon",
+        "col": "ext"
+       }
+      ],
+      "consigne": "Range chaque animal du registre selon son type de fécondation, puis choisis la phrase de la fiche sur la fécondation interne.",
+      "indices": [
+       "Oiseaux, reptiles, mammifères : interne.",
+       "Amphibiens et beaucoup de poissons : externe.",
+       "Pour la justification : cherche « oiseaux »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit la fécondation interne ?",
+       "options": [
+        "Chez la grenouille et chez beaucoup de poissons, comme la truite, la femelle pond ses ovules dans l'eau et le mâle les féconde dehors : la fécondation est externe.",
+        "La fécondation est la rencontre d'une cellule reproductrice mâle et d'une cellule reproductrice femelle : elle donne la première cellule d'un nouvel être vivant.",
+        "Les animaux à fécondation externe pondent souvent un très grand nombre d'œufs, car beaucoup ne seront pas fécondés ou seront mangés.",
+        "Chez les oiseaux et les mammifères, la fécondation a lieu à l'intérieur du corps de la femelle : elle est interne."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Une femelle pond des milliers d'ovules dans un torrent ; le mâle passe au-dessus et les féconde. C'est…",
+        "options": [
+         "une fécondation interne",
+         "une fécondation externe",
+         "une germination",
+         "une pollinisation"
+        ],
+        "bonne": 1,
+        "explication": "C'est le cas de la truite."
+       },
+       {
+        "q": "Une cane pond des œufs dans un nid. Sa fécondation est…",
+        "options": [
+         "externe, car elle pond",
+         "interne, comme chez tous les oiseaux",
+         "impossible à savoir",
+         "faite par le vent"
+        ],
+        "bonne": 1,
+        "explication": "Pondre ne veut pas dire fécondation externe."
+       },
+       {
+        "q": "Pourquoi la grenouille va-t-elle pondre dans la mare ?",
+        "options": [
+         "parce que la fécondation externe se fait dans l'eau",
+         "pour se laver",
+         "parce qu'elle a froid",
+         "pour chercher du nectar"
+        ],
+        "bonne": 0,
+        "explication": "Les cellules reproductrices sècheraient à l'air."
+       },
+       {
+        "q": "Chez quel animal la fécondation est-elle externe ?",
+        "options": [
+         "le lapin",
+         "la brebis",
+         "le crapaud",
+         "la poule"
+        ],
+        "bonne": 2,
+        "explication": "Il pond dans les mares."
+       }
+      ],
+      "consigne": "Yasmine propose des énigmes aux futurs éleveurs. Choisis la bonne réponse, puis la phrase de la fiche sur la fécondation externe.",
+      "indices": [
+       "Les ovules sont dehors avant d'être fécondés.",
+       "Tous les oiseaux : interne.",
+       "Pour la justification : cherche « truite »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit la fécondation externe ?",
+       "options": [
+        "Chez les oiseaux et les mammifères, la fécondation a lieu à l'intérieur du corps de la femelle : elle est interne.",
+        "Chez la grenouille et chez beaucoup de poissons, comme la truite, la femelle pond ses ovules dans l'eau et le mâle les féconde dehors : la fécondation est externe.",
+        "La fécondation externe se fait dans l'eau : les cellules reproductrices ne survivraient pas à l'air libre.",
+        "Les animaux à fécondation externe pondent souvent un très grand nombre d'œufs, car beaucoup ne seront pas fécondés ou seront mangés."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     }
+    },
+    {
+     "id": "e4-3",
+     "escale": 4,
+     "ordre": 3,
+     "titre": "L'intrus de l'enclos",
+     "decor": "ferme",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yasmine",
+     "probleme_narratif": "Une carte s'est glissée par erreur sur le panneau.",
+     "enjeu": "Le panneau présente les animaux à fécondation interne.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir qu'il faut en général un mâle et une femelle de la même espèce",
+     "pourquoi_ce_savoir_ici": "La salle « La ferme des Coteaux — La fécondation chez les animaux » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "La carte de l'intrus s'envole vers le panneau de l'étang."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fecondation",
+     "type": "intrus",
+     "niveau_variantes": "Visiteur du jardin (vraifaux) ; Apprenti jardinier (intrus) ; Naturaliste (intrus) ; Botaniste (qcm) ; Directeur du jardin (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La poule, la chèvre, le cheval et la lapine ont une fécondation interne. La grenouille a une fécondation externe : ses ovules sont fécondés dans l'eau. En CM2 : la phrase « Les ovules sont pondus dans l'eau avant d'être fécondés » décrit une fécondation externe.",
+     "matelot": {
+      "cartes": [
+       {
+        "txt": "la poule",
+        "intrus": false
+       },
+       {
+        "txt": "la chèvre",
+        "intrus": false
+       },
+       {
+        "txt": "le cheval",
+        "intrus": false
+       },
+       {
+        "txt": "la lapine",
+        "intrus": false
+       },
+       {
+        "txt": "la grenouille",
+        "intrus": true
+       }
+      ],
+      "consigne": "Yasmine a regroupé les animaux dont la fécondation a lieu dans le corps de la femelle. Un animal s'est glissé dans le groupe : trouve l'intrus.",
+      "indices": [
+       "Quel animal vit dans la mare ?",
+       "Les mammifères : fécondation interne.",
+       "La poule aussi."
+      ],
+      "dialogue": "Une carte n'a rien à faire sur ce panneau. Laquelle ?"
+     },
+     "timonier": {
+      "cartes": [
+       {
+        "txt": "Le gamète mâle rejoint le gamète femelle dans le corps de la femelle.",
+        "intrus": false
+       },
+       {
+        "txt": "Elle existe chez les oiseaux.",
+        "intrus": false
+       },
+       {
+        "txt": "Elle existe chez les mammifères.",
+        "intrus": false
+       },
+       {
+        "txt": "Elle existe aussi chez les tortues.",
+        "intrus": false
+       },
+       {
+        "txt": "Les ovules sont pondus dans l'eau avant d'être fécondés.",
+        "intrus": true
+       }
+      ],
+      "consigne": "Toutes ces phrases parlent de la fécondation interne, sauf une. Trouve l'intrus.",
+      "indices": [
+       "Interne : dans le corps.",
+       "Une phrase parle de l'eau.",
+       "Pondre avant de féconder : dehors."
+      ],
+      "dialogue": "Une carte n'a rien à faire sur ce panneau. Laquelle ?"
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Il faut un mâle et une femelle de la même espèce pour avoir des petits.",
+        "vrai": true,
+        "explication": "Coq et poule, taureau et vache."
+       },
+       {
+        "txt": "Les œufs de la grenouille sont fécondés dans l'eau.",
+        "vrai": true,
+        "explication": "Dans la mare."
+       },
+       {
+        "txt": "Un coq et une vache peuvent avoir des petits.",
+        "vrai": false,
+        "explication": "Ils ne sont pas de la même espèce."
+       }
+      ],
+      "consigne": "Yasmine a écrit trois phrases. Pour chacune, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « La fécondation chez les animaux ».",
+       "La grenouille pond dans la mare.",
+       "Même espèce."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pourquoi la fécondation externe se fait-elle dans l'eau ?",
+        "options": [
+         "parce que les cellules reproductrices ne survivraient pas à l'air",
+         "parce que l'eau est chaude",
+         "parce que les poissons ont soif",
+         "par hasard"
+        ],
+        "bonne": 0,
+        "explication": "Elles sècheraient."
+       },
+       {
+        "q": "Chez la grenouille, qui féconde les ovules ?",
+        "options": [
+         "le mâle, dans l'eau",
+         "les abeilles",
+         "le vent",
+         "la femelle seule"
+        ],
+        "bonne": 0,
+        "explication": "Juste après la ponte."
+       },
+       {
+        "q": "Chez la chèvre, la fécondation est…",
+        "options": [
+         "externe",
+         "interne",
+         "dans l'eau",
+         "par le pollen"
+        ],
+        "bonne": 1,
+        "explication": "C'est un mammifère."
+       }
+      ],
+      "consigne": "Yasmine interroge les visiteurs sur l'étang. Choisis la bonne réponse, puis la phrase de la fiche qui explique pourquoi la fécondation externe se fait dans l'eau.",
+      "indices": [
+       "Une cellule sèche à l'air libre.",
+       "Le mâle est là au moment de la ponte.",
+       "Pour la justification : cherche « air libre »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique pourquoi la fécondation externe se fait dans l'eau ?",
+       "options": [
+        "Chez la grenouille et chez beaucoup de poissons, comme la truite, la femelle pond ses ovules dans l'eau et le mâle les féconde dehors : la fécondation est externe.",
+        "Chez les oiseaux et les mammifères, la fécondation a lieu à l'intérieur du corps de la femelle : elle est interne.",
+        "La fécondation externe se fait dans l'eau : les cellules reproductrices ne survivraient pas à l'air libre.",
+        "Chez les animaux, pour avoir des petits, il faut en général un mâle et une femelle de la même espèce."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "int",
+        "titre": "Plutôt fécondation interne"
+       },
+       {
+        "id": "ext",
+        "titre": "Plutôt fécondation externe"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la femelle pond des milliers d'ovules dans l'eau",
+        "col": "ext"
+       },
+       {
+        "txt": "le mâle féconde les ovules juste après la ponte",
+        "col": "ext"
+       },
+       {
+        "txt": "beaucoup d'œufs ne seront jamais fécondés",
+        "col": "ext"
+       },
+       {
+        "txt": "le petit se développe dans le ventre de sa mère",
+        "col": "int"
+       },
+       {
+        "txt": "c'est un oiseau qui pond quelques œufs dans un nid",
+        "col": "int"
+       },
+       {
+        "txt": "c'est un mammifère",
+        "col": "int"
+       }
+      ],
+      "consigne": "Yasmine reçoit des descriptions d'animaux inconnus. Range chaque indice : il fait penser à une fécondation interne, ou externe ? Puis choisis la phrase de la fiche sur le nombre d'œufs.",
+      "indices": [
+       "Des milliers d'œufs dans l'eau : dehors.",
+       "Oiseaux et mammifères : dedans.",
+       "Pour la justification : cherche « très grand nombre »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du nombre d'œufs ?",
+       "options": [
+        "Chez la grenouille et chez beaucoup de poissons, comme la truite, la femelle pond ses ovules dans l'eau et le mâle les féconde dehors : la fécondation est externe.",
+        "La fécondation externe se fait dans l'eau : les cellules reproductrices ne survivraient pas à l'air libre.",
+        "La fécondation est la rencontre d'une cellule reproductrice mâle et d'une cellule reproductrice femelle : elle donne la première cellule d'un nouvel être vivant.",
+        "Les animaux à fécondation externe pondent souvent un très grand nombre d'œufs, car beaucoup ne seront pas fécondés ou seront mangés."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     }
+    },
+    {
+     "id": "e4-4",
+     "escale": 4,
+     "ordre": 4,
+     "titre": "Les panneaux de l'étang",
+     "decor": "ferme",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yasmine",
+     "probleme_narratif": "Les phrases des panneaux ont été écrites trop vite : certaines sont fausses.",
+     "enjeu": "Les visiteurs liront ces panneaux en regardant les grenouilles.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Savoir qu'il faut en général un mâle et une femelle de la même espèce",
+     "pourquoi_ce_savoir_ici": "La salle « La ferme des Coteaux — La fécondation chez les animaux » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les panneaux de l'étang sont corrigés et redressés."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "fecondation",
+     "type": "vraifaux",
+     "niveau_variantes": "Naturaliste (vraifaux) ; Botaniste (vraifaux) ; Directeur du jardin (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La fécondation externe se fait dans l'eau, car les cellules reproductrices ne survivraient pas à l'air libre. Les animaux à fécondation externe pondent souvent un très grand nombre d'œufs. Un mâle et une femelle d'espèces différentes, comme un coq et une cane, n'ont pas de petits ensemble.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "affirmations": [
+       {
+        "txt": "La fécondation externe se fait dans l'eau.",
+        "vrai": true,
+        "explication": "Les cellules reproductrices ne survivraient pas à l'air libre."
+       },
+       {
+        "txt": "Une grenouille pond seulement un ou deux œufs.",
+        "vrai": false,
+        "explication": "Elle en pond un très grand nombre."
+       },
+       {
+        "txt": "Un coq et une cane peuvent avoir des petits ensemble.",
+        "vrai": false,
+        "explication": "Ils ne sont pas de la même espèce."
+       },
+       {
+        "txt": "Chez le canard, la fécondation est interne.",
+        "vrai": true,
+        "explication": "Comme chez tous les oiseaux."
+       },
+       {
+        "txt": "La fécondation donne la première cellule d'un nouvel être vivant.",
+        "vrai": true,
+        "explication": "C'est le début de l'embryon."
+       }
+      ],
+      "consigne": "Yasmine relit les panneaux de l'étang de la ferme. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Les cellules reproductrices sèchent à l'air.",
+       "Beaucoup d'œufs, car beaucoup seront mangés.",
+       "Même espèce pour avoir des petits."
+      ],
+      "dialogue": "Mes panneaux de l'étang ont des erreurs. Lesquelles ?"
+     },
+     "lieutenant": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "La grenouille pond un très grand nombre d'œufs.",
+        "vrai": true,
+        "explication": "Beaucoup ne deviendront pas des grenouilles."
+       },
+       {
+        "txt": "Tous les œufs pondus dans l'eau sont fécondés.",
+        "vrai": false,
+        "explication": "Beaucoup ne le sont pas."
+       },
+       {
+        "txt": "Beaucoup d'œufs de grenouille sont mangés par d'autres animaux.",
+        "vrai": true,
+        "explication": "Les poissons, les insectes d'eau."
+       },
+       {
+        "txt": "Chez la poule, la fécondation a lieu dans l'eau.",
+        "vrai": false,
+        "explication": "Elle est interne."
+       },
+       {
+        "txt": "La truite a une fécondation externe.",
+        "vrai": true,
+        "explication": "Comme beaucoup de poissons."
+       }
+      ],
+      "consigne": "Yasmine relit les panneaux de l'étang. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur le nombre d'œufs.",
+      "indices": [
+       "Beaucoup d'œufs, car beaucoup sont perdus.",
+       "La poule est un oiseau.",
+       "Pour la justification : cherche « mangés »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du nombre d'œufs ?",
+       "options": [
+        "Les animaux à fécondation externe pondent souvent un très grand nombre d'œufs, car beaucoup ne seront pas fécondés ou seront mangés.",
+        "La fécondation externe se fait dans l'eau : les cellules reproductrices ne survivraient pas à l'air libre.",
+        "Chez la grenouille et chez beaucoup de poissons, comme la truite, la femelle pond ses ovules dans l'eau et le mâle les féconde dehors : la fécondation est externe.",
+        "Chez les oiseaux et les mammifères, la fécondation a lieu à l'intérieur du corps de la femelle : elle est interne."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "la brebis",
+        "d": "le bélier"
+       },
+       {
+        "g": "la chèvre",
+        "d": "le bouc"
+       },
+       {
+        "g": "la vache",
+        "d": "le taureau"
+       },
+       {
+        "g": "la poule",
+        "d": "le coq"
+       },
+       {
+        "g": "l'oie",
+        "d": "le jars"
+       }
+      ],
+      "consigne": "Yasmine prépare les couples de la ferme pour le printemps. Relie chaque femelle au mâle de la même espèce, puis choisis la phrase de la fiche sur le mâle et la femelle.",
+      "indices": [
+       "Bouc et brebis ne vont pas ensemble.",
+       "Le jars a un long cou.",
+       "Pour la justification : cherche « même espèce »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce qu'il faut pour avoir des petits ?",
+       "options": [
+        "La fécondation est la rencontre d'une cellule reproductrice mâle et d'une cellule reproductrice femelle : elle donne la première cellule d'un nouvel être vivant.",
+        "Le mâle produit des cellules reproductrices mâles, la femelle des cellules reproductrices femelles : on les appelle les gamètes.",
+        "Chez les animaux, pour avoir des petits, il faut en général un mâle et une femelle de la même espèce.",
+        "Chez les oiseaux et les mammifères, la fécondation a lieu à l'intérieur du corps de la femelle : elle est interne."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 5,
+   "id": "la-bergerie-et-la-mare-naitre-ou-eclore",
+   "titre": "La bergerie et la mare",
+   "lieu": "La bergerie de la ferme et la mare voisine",
+   "matiere": "",
+   "periode_conseillee": "",
+   "episode": "Une bergerie avec des brebis et leurs agneaux, une couveuse avec des œufs, une mare pleine de têtards, la trousse de la vétérinaire et le grand portail fermé par un cadenas à chiffres.",
+   "scenarimage": "",
+   "mot": "ESPÈCE",
+   "mot_origine": "Le mot-clé de la salle 5.",
+   "air": null,
+   "cinematique_ouverture": "transition-e5",
+   "cinematique_fin": "fin-e5",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e5-1",
+     "escale": 5,
+     "ordre": 1,
+     "titre": "Les nids et la bergerie",
+     "decor": "bergerie",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nadia",
+     "probleme_narratif": "La liste de tournée n'est pas triée.",
+     "enjeu": "Nadia doit savoir chez qui chercher des œufs et chez qui attendre une naissance.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Décrire les étapes du développement d'un animal, de la fécondation à la naissance ou à l'éclosion",
+     "pourquoi_ce_savoir_ici": "La salle « La bergerie et la mare — Naître ou éclore » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "La liste se range en deux colonnes : œufs et naissances."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "naitre",
+     "type": "tri",
+     "niveau_variantes": "Visiteur du jardin (tri) ; Apprenti jardinier (tri) ; Naturaliste (tri) ; Botaniste (tri) ; Directeur du jardin (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La poule, la tortue et la grenouille pondent des œufs : elles sont ovipares. La vache, la brebis et la lapine portent leur petit dans leur ventre : elles sont vivipares. En CM2 : la truite et le papillon sont ovipares ; le dauphin et la chauve-souris sont des mammifères vivipares, même si l'un vit dans l'eau et l'autre vole.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "ovi",
+        "titre": "Sort d'un œuf pondu"
+       },
+       {
+        "id": "vivi",
+        "titre": "Naît du ventre de sa mère"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "ovi"
+       },
+       {
+        "txt": "la tortue",
+        "col": "ovi"
+       },
+       {
+        "txt": "la grenouille",
+        "col": "ovi"
+       },
+       {
+        "txt": "la vache",
+        "col": "vivi"
+       },
+       {
+        "txt": "la brebis",
+        "col": "vivi"
+       },
+       {
+        "txt": "la lapine",
+        "col": "vivi"
+       }
+      ],
+      "consigne": "Nadia, la vétérinaire, fait sa tournée du printemps. Range chaque animal : ses petits sortent d'un œuf pondu, ou naissent du ventre de leur mère ?",
+      "indices": [
+       "Un nid, c'est pour des œufs.",
+       "L'agneau naît du ventre de la brebis.",
+       "La grenouille pond dans la mare."
+      ],
+      "dialogue": "Bonjour les naturalistes ! Je suis Nadia, la vétérinaire. C'est le printemps : les agneaux naissent, les œufs éclosent, les têtards nagent dans la mare. Aidez-moi à finir ma tournée, et nous ouvrirons le portail du jardin."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "ovi",
+        "titre": "Ovipare"
+       },
+       {
+        "id": "vivi",
+        "titre": "Vivipare"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "ovi"
+       },
+       {
+        "txt": "la tortue",
+        "col": "ovi"
+       },
+       {
+        "txt": "la truite",
+        "col": "ovi"
+       },
+       {
+        "txt": "le papillon",
+        "col": "ovi"
+       },
+       {
+        "txt": "la vache",
+        "col": "vivi"
+       },
+       {
+        "txt": "la brebis",
+        "col": "vivi"
+       },
+       {
+        "txt": "le dauphin",
+        "col": "vivi"
+       },
+       {
+        "txt": "la chauve-souris",
+        "col": "vivi"
+       }
+      ],
+      "consigne": "Range chaque animal de la tournée de Nadia : ovipare ou vivipare ?",
+      "indices": [
+       "Ovipare : qui pond des œufs.",
+       "Le dauphin allaite son petit.",
+       "La chauve-souris est un mammifère."
+      ],
+      "dialogue": "Bonjour les naturalistes ! Je suis Nadia, la vétérinaire. C'est le printemps : les agneaux naissent, les œufs éclosent, les têtards nagent dans la mare. Aidez-moi à finir ma tournée, et nous ouvrirons le portail du jardin."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "ovi",
+        "titre": "Sort d'un œuf"
+       },
+       {
+        "id": "vivi",
+        "titre": "Naît du ventre de sa mère"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "ovi"
+       },
+       {
+        "txt": "la tortue",
+        "col": "ovi"
+       },
+       {
+        "txt": "la vache",
+        "col": "vivi"
+       },
+       {
+        "txt": "la brebis",
+        "col": "vivi"
+       }
+      ],
+      "consigne": "Range chaque animal : son petit sort d'un œuf, ou naît du ventre de sa mère ?",
+      "indices": [
+       "Ouvre la fiche « Naître ou éclore ».",
+       "La poule couve ses œufs.",
+       "L'agneau naît du ventre de la brebis."
+      ],
+      "dialogue": "Bonjour les naturalistes ! Je suis Nadia, la vétérinaire. C'est le printemps : les agneaux naissent, les œufs éclosent, les têtards nagent dans la mare. Aidez-moi à finir ma tournée, et nous ouvrirons le portail du jardin."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "ovi",
+        "titre": "Ovipare"
+       },
+       {
+        "id": "vivi",
+        "titre": "Vivipare"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la poule",
+        "col": "ovi"
+       },
+       {
+        "txt": "la grenouille",
+        "col": "ovi"
+       },
+       {
+        "txt": "la truite",
+        "col": "ovi"
+       },
+       {
+        "txt": "le papillon",
+        "col": "ovi"
+       },
+       {
+        "txt": "la lapine",
+        "col": "vivi"
+       },
+       {
+        "txt": "la chèvre",
+        "col": "vivi"
+       },
+       {
+        "txt": "le dauphin",
+        "col": "vivi"
+       },
+       {
+        "txt": "la chauve-souris",
+        "col": "vivi"
+       }
+      ],
+      "consigne": "Range chaque animal : ovipare ou vivipare ? Puis choisis la phrase de la fiche sur les vivipares.",
+      "indices": [
+       "Le dauphin est un mammifère.",
+       "La chauve-souris allaite ses petits.",
+       "Pour la justification : cherche « ventre de sa mère »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit les animaux vivipares ?",
+       "options": [
+        "Chez les animaux ovipares, comme la poule, la tortue ou la grenouille, l'embryon se développe dans un œuf pondu, puis le petit sort de l'œuf : c'est l'éclosion.",
+        "Chez les animaux vivipares, comme la vache, la brebis ou la lapine, l'embryon se développe dans le ventre de sa mère, puis le petit naît.",
+        "Après la fécondation, l'embryon se développe : il grandit et ses organes se forment.",
+        "Une fécondation externe va toujours avec la ponte d'œufs ; une fécondation interne peut aller avec la ponte d'œufs, comme chez la poule, ou avec une naissance, comme chez la vache."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bonjour les naturalistes ! Je suis Nadia, la vétérinaire. C'est le printemps : les agneaux naissent, les œufs éclosent, les têtards nagent dans la mare. Aidez-moi à finir ma tournée, et nous ouvrirons le portail du jardin."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "la poule",
+        "d": "fécondation interne, ovipare"
+       },
+       {
+        "g": "la vache",
+        "d": "fécondation interne, vivipare"
+       },
+       {
+        "g": "la grenouille",
+        "d": "fécondation externe, ovipare"
+       },
+       {
+        "g": "la tortue",
+        "d": "fécondation interne, ovipare, sur la terre"
+       },
+       {
+        "g": "la truite",
+        "d": "fécondation externe, ovipare, dans la rivière"
+       }
+      ],
+      "consigne": "Nadia complète le tableau de la ferme. Relie chaque animal à son type de fécondation et à son mode de reproduction, puis choisis la phrase de la fiche qui relie les deux.",
+      "indices": [
+       "Deux animaux sont dans l'eau.",
+       "Un seul est vivipare.",
+       "Pour la justification : cherche « toujours »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche relie le type de fécondation et le mode de reproduction ?",
+       "options": [
+        "Une fécondation externe va toujours avec la ponte d'œufs ; une fécondation interne peut aller avec la ponte d'œufs, comme chez la poule, ou avec une naissance, comme chez la vache.",
+        "Chez les animaux ovipares, comme la poule, la tortue ou la grenouille, l'embryon se développe dans un œuf pondu, puis le petit sort de l'œuf : c'est l'éclosion.",
+        "Chez les animaux vivipares, comme la vache, la brebis ou la lapine, l'embryon se développe dans le ventre de sa mère, puis le petit naît.",
+        "Après la fécondation, l'embryon se développe : il grandit et ses organes se forment."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Bonjour les naturalistes ! Je suis Nadia, la vétérinaire. C'est le printemps : les agneaux naissent, les œufs éclosent, les têtards nagent dans la mare. Aidez-moi à finir ma tournée, et nous ouvrirons le portail du jardin."
+     }
+    },
+    {
+     "id": "e5-2",
+     "escale": 5,
+     "ordre": 2,
+     "titre": "Le carnet de la vétérinaire",
+     "decor": "bergerie",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nadia",
+     "probleme_narratif": "Le carnet contient des phrases dont Nadia doute.",
+     "enjeu": "Les fiches de la ferme doivent être justes avant la visite des écoles.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Décrire les étapes du développement d'un animal, de la fécondation à la naissance ou à l'éclosion",
+     "pourquoi_ce_savoir_ici": "La salle « La bergerie et la mare — Naître ou éclore » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Les phrases justes du carnet sont cochées en vert."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "naitre",
+     "type": "vraifaux",
+     "niveau_variantes": "Visiteur du jardin (vraifaux) ; Apprenti jardinier (vraifaux) ; Naturaliste (vraifaux) ; Botaniste (qcm) ; Directeur du jardin (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Un petit appartient toujours à la même espèce que ses parents. Les petits ressemblent à leurs parents sans être identiques. L'œuf de poule contient un embryon et des réserves. En CM2 : une fécondation externe va toujours avec la ponte d'œufs ; une fécondation interne peut aller avec la ponte (poule) ou avec la naissance (vache) ; une espèce est un ensemble d'êtres vivants qui peuvent se reproduire entre eux.",
+     "matelot": {
+      "affirmations": [
+       {
+        "txt": "Un agneau appartient à la même espèce que ses parents.",
+        "vrai": true,
+        "explication": "Il naît d'une brebis et d'un bélier."
+       },
+       {
+        "txt": "Les agneaux sont tous exactement identiques à leurs parents.",
+        "vrai": false,
+        "explication": "Ils se ressemblent, mais chacun est unique."
+       },
+       {
+        "txt": "Dans l'œuf fécondé de la poule, l'embryon trouve des réserves de nourriture.",
+        "vrai": true,
+        "explication": "Le jaune."
+       }
+      ],
+      "consigne": "Nadia relit les phrases de son carnet. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Un agneau naît d'une brebis.",
+       "Regarde les agneaux du troupeau.",
+       "Le jaune nourrit l'embryon."
+      ],
+      "dialogue": "Mon carnet contient quelques erreurs. Vérifions-le ensemble."
+     },
+     "timonier": {
+      "affirmations": [
+       {
+        "txt": "Tous les animaux à fécondation interne sont vivipares.",
+        "vrai": false,
+        "explication": "La poule a une fécondation interne et pond des œufs."
+       },
+       {
+        "txt": "Une fécondation externe va toujours avec la ponte d'œufs.",
+        "vrai": true,
+        "explication": "Les ovules sont pondus puis fécondés dans l'eau."
+       },
+       {
+        "txt": "Une espèce est un ensemble d'êtres vivants qui peuvent se reproduire entre eux.",
+        "vrai": true,
+        "explication": "C'est la définition du programme."
+       },
+       {
+        "txt": "Deux agneaux des mêmes parents sont toujours identiques.",
+        "vrai": false,
+        "explication": "Chaque individu est unique."
+       },
+       {
+        "txt": "Une partie des différences entre individus est héritée des parents.",
+        "vrai": true,
+        "explication": "C'est une richesse pour l'espèce."
+       }
+      ],
+      "consigne": "Nadia vérifie les fiches de la ferme. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Interne ne veut pas dire vivipare.",
+       "Externe : toujours des œufs.",
+       "Espèce : qui peuvent se reproduire entre eux."
+      ],
+      "dialogue": "Mon carnet contient quelques erreurs. Vérifions-le ensemble."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le petit de la brebis est un agneau.",
+        "vrai": true,
+        "explication": "C'est un petit mouton."
+       },
+       {
+        "txt": "Un poussin peut naître d'un œuf de cane.",
+        "vrai": false,
+        "explication": "D'un œuf de cane sort un caneton."
+       },
+       {
+        "txt": "Les agneaux ressemblent à leurs parents.",
+        "vrai": true,
+        "explication": "Mais chacun est un peu différent."
+       }
+      ],
+      "consigne": "Nadia a écrit trois phrases. Pour chacune, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « Naître ou éclore ».",
+       "Chaque petit est de la même espèce que ses parents.",
+       "Le petit de la cane est le caneton."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "La poule a une fécondation interne. Elle est…",
+        "options": [
+         "vivipare",
+         "ovipare",
+         "ni l'un ni l'autre",
+         "les deux"
+        ],
+        "bonne": 1,
+        "explication": "Elle pond des œufs."
+       },
+       {
+        "q": "Un animal a une fécondation externe. Il est sûrement…",
+        "options": [
+         "ovipare",
+         "vivipare",
+         "un mammifère",
+         "un oiseau"
+        ],
+        "bonne": 0,
+        "explication": "Les ovules sont pondus."
+       },
+       {
+        "q": "Qu'est-ce qu'une espèce ?",
+        "options": [
+         "des animaux de la même couleur",
+         "des êtres vivants qui peuvent se reproduire entre eux",
+         "les animaux d'une même ferme",
+         "les animaux qui pondent"
+        ],
+        "bonne": 1,
+        "explication": "Définition du programme."
+       },
+       {
+        "q": "L'éclosion, c'est…",
+        "options": [
+         "la naissance du veau",
+         "la sortie du petit hors de l'œuf",
+         "la fécondation",
+         "la ponte"
+        ],
+        "bonne": 1,
+        "explication": "Le poussin casse sa coquille."
+       }
+      ],
+      "consigne": "Nadia fait réviser les visiteurs. Choisis la bonne réponse, puis la phrase de la fiche qui relie la fécondation et le mode de reproduction.",
+      "indices": [
+       "Interne ne veut pas dire vivipare.",
+       "Externe : toujours des œufs.",
+       "Pour la justification : cherche « toujours »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche relie la fécondation et le mode de reproduction ?",
+       "options": [
+        "Chez les animaux ovipares, comme la poule, la tortue ou la grenouille, l'embryon se développe dans un œuf pondu, puis le petit sort de l'œuf : c'est l'éclosion.",
+        "Une espèce est un ensemble d'êtres vivants qui peuvent se reproduire entre eux : un petit appartient toujours à la même espèce que ses parents.",
+        "Une fécondation externe va toujours avec la ponte d'œufs ; une fécondation interne peut aller avec la ponte d'œufs, comme chez la poule, ou avec une naissance, comme chez la vache.",
+        "Après la fécondation, l'embryon se développe : il grandit et ses organes se forment."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "le poussin",
+        "rang": 1,
+        "sous": "environ 21 jours de couvaison"
+       },
+       {
+        "txt": "l'agneau",
+        "rang": 2,
+        "sous": "environ 5 mois dans le ventre de la brebis"
+       },
+       {
+        "txt": "le veau",
+        "rang": 3,
+        "sous": "environ 9 mois dans le ventre de la vache"
+       }
+      ],
+      "consigne": "Nadia compare la durée de développement de trois petits. Range-les du plus court au plus long, puis choisis la phrase de la fiche qui donne ces durées.",
+      "indices": [
+       "21 jours, c'est 3 semaines.",
+       "5 mois est plus court que 9 mois.",
+       "Pour la justification : cherche « 21 jours »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne les durées de développement ?",
+       "options": [
+        "Chez les animaux ovipares, comme la poule, la tortue ou la grenouille, l'embryon se développe dans un œuf pondu, puis le petit sort de l'œuf : c'est l'éclosion.",
+        "Chez les animaux vivipares, comme la vache, la brebis ou la lapine, l'embryon se développe dans le ventre de sa mère, puis le petit naît.",
+        "Après la fécondation, l'embryon se développe : il grandit et ses organes se forment.",
+        "L'œuf de poule éclot après environ 21 jours de couvaison ; le veau naît après environ 9 mois, et l'agneau après environ 5 mois."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     }
+    },
+    {
+     "id": "e5-3",
+     "escale": 5,
+     "ordre": 3,
+     "titre": "De l'œuf au petit",
+     "decor": "bergerie",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nadia",
+     "probleme_narratif": "Les cartes du développement sont mélangées près de la couveuse.",
+     "enjeu": "Les élèves doivent comprendre comment naît un petit, étape par étape.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Décrire les étapes du développement d'un animal, de la fécondation à la naissance ou à l'éclosion",
+     "pourquoi_ce_savoir_ici": "La salle « La bergerie et la mare — Naître ou éclore » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Un œuf se fend doucement dans la couveuse."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "naitre",
+     "type": "ordre",
+     "niveau_variantes": "Visiteur du jardin (ordre) ; Apprenti jardinier (ordre) ; Naturaliste (ordre) ; Botaniste (ordre) ; Directeur du jardin (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Chez la poule : la fécondation a lieu dans le corps de la poule, elle pond l'œuf, elle le couve pendant que l'embryon se développe (environ 21 jours), le poussin sort de l'œuf (éclosion), puis il grandit. En CM2, chez la grenouille : les ovules sont pondus dans l'eau et fécondés par le mâle, l'embryon se développe dans l'œuf, une larve, le têtard, sort de l'œuf, des pattes lui poussent, puis il devient une jeune grenouille qui quitte l'eau.",
+     "matelot": {
+      "items": [
+       {
+        "txt": "La fécondation a lieu dans le corps de la poule.",
+        "rang": 1
+       },
+       {
+        "txt": "La poule pond l'œuf.",
+        "rang": 2
+       },
+       {
+        "txt": "La poule couve : l'embryon se développe dans l'œuf.",
+        "rang": 3
+       },
+       {
+        "txt": "Le poussin sort de l'œuf : c'est l'éclosion.",
+        "rang": 4
+       },
+       {
+        "txt": "Le poussin grandit et devient une poule ou un coq.",
+        "rang": 5
+       }
+      ],
+      "consigne": "Nadia montre aux élèves comment naît un poussin. Remets les étapes dans l'ordre.",
+      "indices": [
+       "La fécondation vient en premier.",
+       "Pendant la couvaison, l'embryon grandit.",
+       "L'éclosion vient avant la croissance."
+      ],
+      "dialogue": "Mes cartes sont mélangées. Dans quel ordre le petit se développe-t-il ?"
+     },
+     "timonier": {
+      "items": [
+       {
+        "txt": "Les ovules sont pondus dans l'eau et fécondés par le mâle.",
+        "rang": 1,
+        "sous": "fécondation externe"
+       },
+       {
+        "txt": "L'embryon se développe dans l'œuf.",
+        "rang": 2,
+        "sous": "dans la mare"
+       },
+       {
+        "txt": "Le têtard sort de l'œuf.",
+        "rang": 3,
+        "sous": "c'est une larve"
+       },
+       {
+        "txt": "Des pattes poussent au têtard.",
+        "rang": 4,
+        "sous": "sa queue raccourcit"
+       },
+       {
+        "txt": "La jeune grenouille quitte l'eau.",
+        "rang": 5,
+        "sous": "elle grandira jusqu'à l'âge adulte"
+       }
+      ],
+      "consigne": "À la mare, Nadia observe le développement des grenouilles. Remets les étapes dans l'ordre.",
+      "indices": [
+       "Tout commence dans l'eau.",
+       "Le têtard est la larve.",
+       "Les pattes poussent avant de quitter l'eau."
+      ],
+      "dialogue": "Mes cartes sont mélangées. Dans quel ordre le petit se développe-t-il ?"
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La poule pond un œuf.",
+        "rang": 1
+       },
+       {
+        "txt": "La poule couve l'œuf.",
+        "rang": 2
+       },
+       {
+        "txt": "Le poussin sort de l'œuf.",
+        "rang": 3
+       }
+      ],
+      "consigne": "Nadia montre comment naît un poussin. Remets les étapes dans l'ordre.",
+      "indices": [
+       "Ouvre la fiche « Naître ou éclore ».",
+       "Il faut d'abord un œuf.",
+       "La sortie de l'œuf est la fin."
+      ],
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Les ovules sont pondus et fécondés dans l'eau.",
+        "rang": 1,
+        "sous": "fécondation externe"
+       },
+       {
+        "txt": "L'embryon se développe dans l'œuf.",
+        "rang": 2,
+        "sous": "dans la mare"
+       },
+       {
+        "txt": "Le têtard sort de l'œuf.",
+        "rang": 3,
+        "sous": "c'est une larve"
+       },
+       {
+        "txt": "Les pattes poussent, la queue raccourcit.",
+        "rang": 4,
+        "sous": "le têtard se transforme"
+       },
+       {
+        "txt": "La jeune grenouille quitte l'eau.",
+        "rang": 5,
+        "sous": "elle deviendra adulte"
+       }
+      ],
+      "consigne": "Remets dans l'ordre le développement de la grenouille, puis choisis la phrase de la fiche sur les larves.",
+      "indices": [
+       "Tout commence dans l'eau.",
+       "Le têtard est une larve.",
+       "Pour la justification : cherche « têtard »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des larves ?",
+       "options": [
+        "Certains animaux sortent de l'œuf sous la forme d'une larve, très différente de l'adulte : le têtard devient grenouille, la chenille devient papillon.",
+        "Chez les animaux ovipares, comme la poule, la tortue ou la grenouille, l'embryon se développe dans un œuf pondu, puis le petit sort de l'œuf : c'est l'éclosion.",
+        "Après la fécondation, l'embryon se développe : il grandit et ses organes se forment.",
+        "Une fécondation externe va toujours avec la ponte d'œufs ; une fécondation interne peut aller avec la ponte d'œufs, comme chez la poule, ou avec une naissance, comme chez la vache."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Deux agneaux des mêmes parents sont toujours identiques.",
+        "vrai": false,
+        "explication": "Chaque individu est unique."
+       },
+       {
+        "txt": "Une partie des différences entre agneaux est héritée des parents.",
+        "vrai": true,
+        "explication": "Elles viennent en partie du bélier et de la brebis."
+       },
+       {
+        "txt": "Ces différences sont une richesse pour l'espèce.",
+        "vrai": true,
+        "explication": "Tous ne réagiront pas de la même façon."
+       },
+       {
+        "txt": "Un agneau peut appartenir à une autre espèce que ses parents.",
+        "vrai": false,
+        "explication": "Il est toujours de la même espèce."
+       },
+       {
+        "txt": "Une espèce est un ensemble d'êtres vivants qui peuvent se reproduire entre eux.",
+        "vrai": true,
+        "explication": "C'est la définition."
+       }
+      ],
+      "consigne": "Nadia relit l'exposé d'un stagiaire sur les agneaux du troupeau. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur les différences entre individus.",
+      "indices": [
+       "Chacun est unique.",
+       "Même espèce que les parents.",
+       "Pour la justification : cherche « richesse »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des différences entre individus ?",
+       "options": [
+        "Les petits ressemblent à leurs parents, mais ne sont pas identiques à eux ni entre eux : chaque individu est unique.",
+        "Ces petites différences entre les individus d'une même espèce sont en partie héritées des parents : c'est une richesse pour l'espèce.",
+        "Une espèce est un ensemble d'êtres vivants qui peuvent se reproduire entre eux : un petit appartient toujours à la même espèce que ses parents.",
+        "Après la fécondation, l'embryon se développe : il grandit et ses organes se forment."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     }
+    },
+    {
+     "id": "e5-4",
+     "escale": 5,
+     "ordre": 4,
+     "titre": "Le portail du jardin",
+     "decor": "bergerie",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "nadia",
+     "probleme_narratif": "Le portail s'est verrouillé pendant l'orage : il faut trois nombres.",
+     "enjeu": "C'est le dernier passage : derrière lui, le jardin doit refleurir.",
+     "episode_du_roman": "Programme de sciences et technologie, cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) : « Les êtres vivants dans leur environnement », CM1 « Re",
+     "competence_programme": "Décrire les étapes du développement d'un animal, de la fécondation à la naissance ou à l'éclosion",
+     "pourquoi_ce_savoir_ici": "La salle « La bergerie et la mare — Naître ou éclore » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Le cadenas s'ouvre ; le portail grince et le jardin apparaît en fleurs."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "naitre",
+     "type": "code",
+     "niveau_variantes": "Naturaliste (code) ; Botaniste (code) ; Directeur du jardin (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "L'œuf de poule éclot après environ 21 jours de couvaison ; le veau naît après environ 9 mois ; l'agneau après environ 5 mois. Le code est 21, 9, 5.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Jours de couvaison",
+        "valeur": "21",
+        "longueur": 2
+       },
+       {
+        "libelle": "Mois pour un veau",
+        "valeur": "9",
+        "longueur": 1
+       },
+       {
+        "libelle": "Mois pour un agneau",
+        "valeur": "5",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Le portail entre la ferme et le jardin est fermé par un cadenas à trois nombres. Retrouve-les dans les fiches, et le jardin refleurira.<div class='doc-titre'><i>Le carnet de Nadia : trois nombres pour ouvrir le portail du jardin</i></div><table class='tableau-releves'><tr><th>Ce que dit le carnet</th><th>Nombre</th></tr><tr><td>Nombre de jours de couvaison d'un œuf de poule (environ)</td><td>?</td></tr><tr><td>Nombre de mois avant la naissance d'un veau (environ)</td><td>?</td></tr><tr><td>Nombre de mois avant la naissance d'un agneau (environ)</td><td>?</td></tr></table><p><i>Aide-toi de la fiche « Naître ou éclore » : elle contient ces trois nombres.</i></p>",
+      "indices": [
+       "Fiche « Naître ou éclore » : « Combien de temps ? ».",
+       "La poule couve trois semaines.",
+       "La brebis porte son agneau moins longtemps que la vache."
+      ],
+      "dialogue": "Le portail est verrouillé. Les trois nombres sont dans vos fiches."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Jours de couvaison",
+        "valeur": "21",
+        "longueur": 2,
+        "numerique": true
+       },
+       {
+        "libelle": "Mois pour un veau",
+        "valeur": "9",
+        "longueur": 1,
+        "numerique": true
+       },
+       {
+        "libelle": "Mois pour un agneau",
+        "valeur": "5",
+        "longueur": 1,
+        "numerique": true
+       }
+      ],
+      "consigne": "Le portail du jardin est fermé par un cadenas à trois nombres. Retrouve-les dans la fiche, puis choisis la phrase qui les contient.<div class=\"doc-titre\"><i>Le carnet de Nadia</i></div><table class=\"tableau-releves\"><tr><th>Ce que dit le carnet</th><th>Nombre</th></tr><tr><td>Jours de couvaison d'un œuf de poule (environ)</td><td>?</td></tr><tr><td>Mois avant la naissance d'un veau (environ)</td><td>?</td></tr><tr><td>Mois avant la naissance d'un agneau (environ)</td><td>?</td></tr></table>",
+      "indices": [
+       "Fiche « Naître ou éclore » : « Combien de temps ? ».",
+       "Trois semaines de couvaison.",
+       "Pour la justification : cherche « couvaison »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche contient les trois nombres ?",
+       "options": [
+        "Chez les animaux vivipares, comme la vache, la brebis ou la lapine, l'embryon se développe dans le ventre de sa mère, puis le petit naît.",
+        "Chez les animaux ovipares, comme la poule, la tortue ou la grenouille, l'embryon se développe dans un œuf pondu, puis le petit sort de l'œuf : c'est l'éclosion.",
+        "L'œuf de poule éclot après environ 21 jours de couvaison ; le veau naît après environ 9 mois, et l'agneau après environ 5 mois.",
+        "Certains animaux sortent de l'œuf sous la forme d'une larve, très différente de l'adulte : le têtard devient grenouille, la chenille devient papillon."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Semaines de couvaison",
+        "valeur": "3",
+        "longueur": 1,
+        "numerique": true
+       },
+       {
+        "libelle": "Mois de différence",
+        "valeur": "4",
+        "longueur": 1,
+        "numerique": true
+       },
+       {
+        "libelle": "Jours de couvaison",
+        "valeur": "21",
+        "longueur": 2,
+        "numerique": true
+       }
+      ],
+      "consigne": "Le cadenas du portail demande des calculs. Utilise les durées de la fiche, puis choisis la phrase qui les contient.<div class=\"doc-titre\"><i>Le carnet de Nadia</i></div><table class=\"tableau-releves\"><tr><th>Question</th><th>Nombre</th></tr><tr><td>Nombre de semaines de couvaison d'un œuf de poule (environ)</td><td>?</td></tr><tr><td>Nombre de mois de plus pour un veau que pour un agneau</td><td>?</td></tr><tr><td>Nombre de jours de couvaison (environ)</td><td>?</td></tr></table>",
+      "indices": [
+       "Une semaine, c'est 7 jours.",
+       "9 moins 5.",
+       "Pour la justification : cherche « agneau »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne les durées de développement ?",
+       "options": [
+        "L'œuf de poule éclot après environ 21 jours de couvaison ; le veau naît après environ 9 mois, et l'agneau après environ 5 mois.",
+        "Chez les animaux vivipares, comme la vache, la brebis ou la lapine, l'embryon se développe dans le ventre de sa mère, puis le petit naît.",
+        "Une espèce est un ensemble d'êtres vivants qui peuvent se reproduire entre eux : un petit appartient toujours à la même espèce que ses parents.",
+        "Après la fécondation, l'embryon se développe : il grandit et ses organes se forment."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     }
+    }
+   ]
+  }
+ ]
+}

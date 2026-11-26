@@ -1,0 +1,154 @@
+{
+ "metadata": {
+  "jeu": "Le Jardin de la vie",
+  "sujet": "La reproduction sexuée des plantes à fleurs et des animaux : fleur, pollinisation, fruit et graines, dispersion et germination, fécondation interne et externe, ovipares et vivipares, espèce — sciences, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "phrase_bilan": "La FLEUR reçoit le POLLEN et devient un fruit plein de GRAINES ; chez les animaux, la FÉCONDATION donne un petit de la même ESPÈCE que ses parents.",
+  "lien_autres_jeux": "Suite de « L'Expédition biodiversité » (n°17) ; à jouer avec « La Nurserie du zoo » (n°15, développement des animaux).",
+  "sources": "Programme de sciences et technologie du cycle 3 (BO n° 24 du 11 juin 2026, annexe 2) ; La main à la pâte ; Universalis ; MNHN et OFB ; FAO ; Lumni. Détail : README.md, section Sources.",
+  "vigilance": "Plantes et animaux seulement : la reproduction humaine et la puberté relèvent d'une séquence à part menée par l'enseignant. Pas d'anthropomorphisme : les plantes et les animaux ne « veulent » rien. Jardin, ferme et personnages inventés."
+ },
+ "personnages": {
+  "basile": {
+   "nom": "Basile",
+   "role": "Botaniste, responsable de la serre du jardin des Coteaux"
+  },
+  "capucine": {
+   "nom": "Capucine",
+   "role": "Apicultrice, elle s'occupe des ruches du jardin"
+  },
+  "tom": {
+   "nom": "Tom",
+   "role": "Élève de CM2, jardinier du potager de l'école voisine"
+  },
+  "yasmine": {
+   "nom": "Yasmine",
+   "role": "Éleveuse de la ferme des Coteaux"
+  },
+  "nadia": {
+   "nom": "Nadia",
+   "role": "Vétérinaire des animaux de la ferme"
+  }
+ },
+ "intro_accueil": "Bonjour, je suis Basile, botaniste du jardin des Coteaux, en Bourgogne. Cette nuit, un gros orage a ouvert la porte de la serre et les barrières de la ferme voisine : mes planches, les cahiers du rucher, les graines du potager et les registres de la ferme sont tout mélangés. Le portail entre le jardin et la ferme s'est même verrouillé. Vous êtes nos apprentis naturalistes. Dans chaque salle, aidez la personne qui vous attend à retrouver comment naissent les êtres vivants, et notez le mot qu'elle vous donnera : les cinq mots ouvriront le portail.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "La serre du botaniste",
+   "decor": "serre",
+   "motCle": "FLEUR",
+   "lieu": "La serre du jardin des Coteaux",
+   "description": "Une serre vitrée pleine de fleurs, une table de dissection avec des loupes, une grande planche de fleur tombée au sol, des étiquettes éparpillées et des pots renversés par le vent.",
+   "sens": [
+    "À voir : une grande fleur coupée en deux sur la planche",
+    "À entendre : la pluie qui goutte sur les vitres",
+    "À toucher : la poudre jaune du pollen sur les doigts"
+   ],
+   "dialogue_intro": {
+    "perso": "basile",
+    "nom": "Basile",
+    "texte": "Entrez ! Ma serre est sens dessus dessous. Pour comprendre comment naît une plante, il faut d'abord connaître la fleur. Aidez-moi à remettre ma planche et mes fiches en ordre."
+   },
+   "dialogue_reussite": {
+    "perso": "basile",
+    "nom": "Basile",
+    "texte": "Merci. Le premier mot est <b>FLEUR</b> : c'est l'organe de la reproduction des plantes. Capucine vous attend au rucher."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "Le rucher",
+   "decor": "rucher",
+   "motCle": "POLLEN",
+   "lieu": "Le rucher au fond du jardin, près du verger",
+   "description": "Des ruches en bois au bord d'un verger en fleurs, une cabane d'apicultrice avec une combinaison accrochée, un cahier taché par la pluie, des pots de miel et un panneau à moitié peint.",
+   "sens": [
+    "À voir : les abeilles qui vont de fleur en fleur",
+    "À entendre : le bourdonnement des ruches",
+    "À toucher : la cire tiède d'un cadre de ruche"
+   ],
+   "dialogue_intro": {
+    "perso": "capucine",
+    "nom": "Capucine",
+    "texte": "Bonjour, je suis Capucine, apicultrice. Mes abeilles sont déjà au travail dans le verger. L'orage a effacé mon cahier et mélangé mes dessins. Il faut que j'explique aux visiteurs à quoi servent les abeilles pour les fleurs."
+   },
+   "dialogue_reussite": {
+    "perso": "capucine",
+    "nom": "Capucine",
+    "texte": "Bravo. Le deuxième mot est <b>POLLEN</b> : en voyageant jusqu'au pistil, il permet aux fleurs de devenir des fruits. Tom vous attend au potager."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "Le potager de l'école",
+   "decor": "potager",
+   "motCle": "GRAINES",
+   "lieu": "Le potager de l'école, au bord du jardin",
+   "description": "Des carrés de légumes, une table avec quatre pots d'expérience, des boîtes de graines renversées, une affiche du cycle de vie d'une plante et un arrosoir.",
+   "sens": [
+    "À voir : les petites pousses qui sortent de terre",
+    "À entendre : un merle qui fouille le paillage",
+    "À toucher : une graine de haricot gonflée d'eau"
+   ],
+   "dialogue_intro": {
+    "perso": "tom",
+    "nom": "Tom",
+    "texte": "Salut ! Moi, c'est Tom, je m'occupe du potager de mon école. L'orage a renversé toutes mes boîtes de graines, et mon expérience sur la germination est à moitié effacée. Vous m'aidez ?"
+   },
+   "dialogue_reussite": {
+    "perso": "tom",
+    "nom": "Tom",
+    "texte": "Génial ! Le troisième mot est <b>GRAINES</b> : elles voyagent, germent et donnent de nouvelles plantes. Yasmine vous attend à la ferme, de l'autre côté de la haie."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "La ferme des Coteaux",
+   "decor": "ferme",
+   "motCle": "FÉCONDATION",
+   "lieu": "La cour de la ferme des Coteaux, près de l'étang",
+   "description": "Une cour de ferme avec un poulailler, une étable, un petit étang aux roseaux, un tableau noir où est écrit le registre des animaux, et des panneaux tombés près de la barrière.",
+   "sens": [
+    "À voir : les poules qui picorent dans la cour",
+    "À entendre : les grenouilles qui coassent dans l'étang",
+    "À toucher : la paille sèche de l'étable"
+   ],
+   "dialogue_intro": {
+    "perso": "yasmine",
+    "nom": "Yasmine",
+    "texte": "Bonjour, je suis Yasmine, l'éleveuse. L'orage a renversé les panneaux de ma ferme pédagogique, et les écoles viennent cet après-midi. Il faut tout remettre en ordre pour expliquer comment les animaux ont des petits."
+   },
+   "dialogue_reussite": {
+    "perso": "yasmine",
+    "nom": "Yasmine",
+    "texte": "Parfait. Le quatrième mot est <b>FÉCONDATION</b> : la rencontre d'une cellule reproductrice mâle et d'une cellule reproductrice femelle. Nadia vous attend à la bergerie."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "La bergerie et la mare",
+   "decor": "bergerie",
+   "motCle": "ESPÈCE",
+   "lieu": "La bergerie de la ferme et la mare voisine",
+   "description": "Une bergerie avec des brebis et leurs agneaux, une couveuse avec des œufs, une mare pleine de têtards, la trousse de la vétérinaire et le grand portail fermé par un cadenas à chiffres.",
+   "sens": [
+    "À voir : les agneaux qui tètent leur mère",
+    "À entendre : un poussin qui tape contre sa coquille",
+    "À toucher : la laine chaude d'une brebis"
+   ],
+   "dialogue_intro": {
+    "perso": "nadia",
+    "nom": "Nadia",
+    "texte": "Bonjour les naturalistes ! Je suis Nadia, la vétérinaire. C'est le printemps : les agneaux naissent, les œufs éclosent, les têtards nagent dans la mare. Aidez-moi à finir ma tournée, et nous ouvrirons le portail du jardin."
+   },
+   "dialogue_fin": {
+    "perso": "basile",
+    "nom": "Basile",
+    "texte": "Le dernier mot est <b>ESPÈCE</b>. Vous avez les cinq mots : ouvrons le portail, et le jardin de la vie va refleurir."
+   }
+  }
+ ]
+}

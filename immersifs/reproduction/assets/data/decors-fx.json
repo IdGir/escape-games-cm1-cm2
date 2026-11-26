@@ -1,0 +1,369 @@
+{
+ "decors": {
+  "serre": {
+   "titre": "La serre du jardin des Coteaux",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La planche de la fleur",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande planche illustrée d'une fleur coupée en deux, tombée au pied de la table, ses étiquettes éparpillées."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le fichier des pièces",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une boîte à fiches ouverte, avec des cartes mélangées sur la table de dissection."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le carnet d'observation",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet à spirale ouvert, mouillé par une goutte de pluie, posé à côté d'une loupe."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La table de dissection",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une table avec une tulipe ouverte, une pince, une loupe et une feuille où sont collées des pièces."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "rucher": {
+   "titre": "Le rucher au fond du jardin, près du verger",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les dessins du rucher",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une série de dessins accrochés à une ficelle sous l'auvent de la cabane, décrochés par le vent."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le cahier du rucher",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un cahier taché par la pluie, posé sur une ruche, avec des mots effacés."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le plan des ruches",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un plan du verger et des champs voisins, avec des petites ruches en bois à poser."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le panneau des pollinisateurs",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un grand panneau en bois à moitié peint, destiné aux agriculteurs voisins."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "potager": {
+   "titre": "Le potager de l'école, au bord du jardin",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les boîtes de graines",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des boîtes en carton renversées dans l'allée, avec des fruits et des graines de toutes formes."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les pots d'expérience",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Quatre pots en plastique sur la table, garnis de coton et de haricots, avec un tableau à moitié effacé."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'affiche du cycle",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande affiche ronde du cycle de vie d'une plante, dont les images sont tombées dans l'herbe."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La graine ouverte",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une graine de haricot gonflée d'eau, ouverte en deux sur une soucoupe, à côté d'une loupe."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "ferme": {
+   "titre": "La cour de la ferme des Coteaux, près de l'étang",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le tableau des questions",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un tableau noir à l'entrée de la ferme pédagogique, où les visiteurs écrivent leurs questions."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le registre de la ferme",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un gros registre ouvert sur un tonneau, avec la liste des animaux de la ferme et de l'étang."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le panneau de l'enclos",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un panneau tombé devant l'enclos, avec des cartes d'animaux épinglées."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les panneaux de l'étang",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Deux petits panneaux plantés au bord de l'étang, près des roseaux."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "bergerie": {
+   "titre": "La bergerie de la ferme et la mare voisine",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La liste de tournée",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une planchette avec la liste des animaux à visiter, posée sur la trousse de la vétérinaire."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le carnet de la vétérinaire",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un petit carnet à couverture rouge, ouvert sur une botte de paille."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "La couveuse et la mare",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une couveuse vitrée avec des œufs, et à côté un aquarium de têtards pris dans la mare."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le portail du jardin",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le grand portail en fer entre la ferme et le jardin, fermé par un cadenas à chiffres."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

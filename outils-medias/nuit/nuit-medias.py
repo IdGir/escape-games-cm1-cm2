@@ -26,7 +26,7 @@ BILAN = os.path.join(ICI, "derniere-nuit.json")
 # Ordre des besoins de la classe (Année A en 2026-2027) : période en cours d'abord, puis P1 reportés, puis P3.
 FILE = ["lumiere", "versailles", "alimentation", "moyen-age-abbaye", "station-meteo", "objets-techniques",
         "traite-colonies", "electricite", "etats-matiere", "mouvement", "naissances-animaux", "grandes-explorations",
-        "melanges", "chateau-fort", "renaissance", "constitution", "vivant-ecosystemes", "grande-guerre", "seconde-guerre", "terre-active"]
+        "melanges", "chateau-fort", "renaissance", "constitution", "vivant-ecosystemes", "grande-guerre", "seconde-guerre", "terre-active", "reproduction"]
 SOURCE_CREDIT, LICENCE = "Agnes AI (génération de nuit)", "Image générée par IA"
 ENV = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
 

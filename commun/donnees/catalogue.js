@@ -575,13 +575,16 @@ var CATALOGUE = {
     "P5"
    ],
    "competences": "La reproduction sexuelle chez le vivant.",
-   "dossier": null,
-   "icone": "🌱",
+   "dossier": "reproduction",
+   "immersif": "immersifs/reproduction",
+   "classique": false,
+   "icone": "🌸",
    "couleurs": [
-    "#2b5d6b",
-    "#7fb3c8"
+    "#2f5d2a",
+    "#e0a526"
    ],
-   "resume": "",
+   "resume": "Un orage a tout mélangé au jardin des Coteaux et à la ferme voisine : fleurs, pollen, graines, œufs et petits. Les apprentis naturalistes retrouvent comment naissent les plantes et les animaux pour rouvrir le portail du jardin.",
+   "medias_en_attente": true,
    "prompt": "24-reproduction.md",
    "programme": [
     "st2026"
