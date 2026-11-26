@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "b6f2b2515a";
+self.VERSION_HORS_LIGNE = "6646d71cdd";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -8,6 +8,7 @@ self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/src/index.css",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/tsconfig.json",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/vite.config.js",
+"a-relire.html",
 "adopter.html",
 "alimentation/assets/data/dialogues.json",
 "alimentation/assets/data/enigmes.json",
@@ -97,6 +98,7 @@ self.FICHIERS_CODE = [
 "commun/js/mascotte.js",
 "commun/js/media.js",
 "commun/js/minuteur-equipe.js",
+"commun/js/mission-geo-import.js",
 "commun/js/mode-duel.js",
 "commun/js/mode-solo.js",
 "commun/js/narration.js",
@@ -889,6 +891,7 @@ self.FICHIERS_CODE = [
 "immersifs/vivant-ecosystemes/outils/medias/sources-medias.json",
 "immersifs/vivant-ecosystemes/prof.html",
 "immersifs/vivant-ecosystemes/sw.js",
+"importer-parties.html",
 "index.html",
 "lumiere/assets/data/dialogues.json",
 "lumiere/assets/data/enigmes.json",
@@ -951,6 +954,7 @@ self.FICHIERS_CODE = [
 "mission-geo/js/reglages.js",
 "mission-geo/js/sauvegarde.js",
 "mission-geo/lecons-imprimables.html",
+"mission-geo/secours-export.html",
 "mouvement/assets/data/dialogues.json",
 "mouvement/assets/data/enigmes.json",
 "mouvement/assets/data/evaluations.json",

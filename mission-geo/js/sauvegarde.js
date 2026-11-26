@@ -96,6 +96,8 @@ const SAUVEGARDE = (function(){
       console.warn("Sauvegarde illisible, on repart d'un carnet vierge.", e);
       etat = neuf();
     }
+    /* Dès l'ouverture : une partie commencée avant cette version arrive aussi sur le PC de la classe. */
+    if(Object.keys(etat.sessions || {}).length) setTimeout(() => envoyerAuPC(true), 1500);
     return etat;
   }
 
@@ -103,6 +105,49 @@ const SAUVEGARDE = (function(){
     if(VERIF) return;
     try{ localStorage.setItem(CLE, JSON.stringify(etat)); }
     catch(e){ console.warn("Impossible d'enregistrer la progression.", e); }
+    envoyerAuPC();
+  }
+
+  /* Copie de la partie sur le PC de la classe (serveur local, /api/parties), quelques secondes après
+     chaque enregistrement : si le Chromebook est réinitialisé, ou pour la future version immersive,
+     l'équipe reprend sa mission depuis le PC (⚙️ → Progression → « Reprendre depuis le PC »).
+     Jamais depuis le site en ligne ni en double-clic : rien ne sort de l'école. */
+  const SURPC = /^https?:$/.test(location.protocol) && !/github\.io$/.test(location.hostname);
+  let minuteurEnvoi = null;
+  function envoyerAuPC(immediat){
+    if(VERIF || !SURPC || typeof MISSION_GEO_IMPORT === "undefined" || !etat.equipe) return;
+    clearTimeout(minuteurEnvoi);
+    minuteurEnvoi = setTimeout(() => {
+      const c = MISSION_GEO_IMPORT.convertir(etat);
+      if(!c.ok || !c.partie.equipe) return;
+      try{
+        fetch("/api/parties?jeu=mission-geo", { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ jeu: "mission-geo", partie: c.partie }) })
+          .then(r => { etat.__envoi = r.ok ? new Date().toISOString() : null; }).catch(() => {});
+      }catch(e){}
+    }, immediat ? 0 : 3000);
+  }
+
+  /* Liste des parties gardées sur le PC de la classe (null : pas de serveur local). */
+  function partiesDuPC(){
+    if(!SURPC) return Promise.resolve(null);
+    return fetch("/api/parties?jeu=mission-geo", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(r => r && r.parties || null).catch(() => null);
+  }
+
+  /* Reprend la partie d'une équipe gardée sur le PC (fusion : rien de ce poste n'est perdu). */
+  function reprendreDuPC(slug){
+    return fetch("/api/parties?jeu=mission-geo&equipe=" + encodeURIComponent(slug), { cache: "no-store" })
+      .then(r => r.json()).then(r => {
+        if(!r || !r.ok || !r.partie) throw new Error("absente");
+        const ici = MISSION_GEO_IMPORT.convertir(etat).partie;
+        const p = (ici && ici.equipe && MISSION_GEO_IMPORT.slug(ici.equipe) === slug) ? MISSION_GEO_IMPORT.fusionner(r.partie, ici) : r.partie;
+        etat = Object.assign(neuf(), MISSION_GEO_IMPORT.versAncien(p, { reglages: etat.reglages, profil: etat.profil, recompense: etat.recompense }));
+        etat.reglages = Object.assign({}, REGLAGES_DEFAUT, etat.reglages || {});
+        etat.profil = Object.assign({}, PROFIL_DEFAUT, etat.profil || {});
+        etat.recompense = Object.assign({}, RECOMPENSE_DEFAUT, etat.recompense || {});
+        enregistrer();
+        return etat;
+      });
   }
 
   /* ---- Acces ---- */
@@ -161,7 +206,13 @@ const SAUVEGARDE = (function(){
       const fr = new FileReader();
       fr.onload = () => {
         try{
-          const lu = JSON.parse(fr.result);
+          let lu = JSON.parse(fr.result);
+          /* Fichier du script de secours ou partie au format commun : convertis d'abord. */
+          if(lu && typeof MISSION_GEO_IMPORT !== "undefined" && !("sessions" in lu)){
+            const c = MISSION_GEO_IMPORT.convertir(lu);
+            if(!c.ok) throw new Error("format");
+            lu = MISSION_GEO_IMPORT.versAncien(c.partie, { reglages: etat.reglages, profil: etat.profil, recompense: etat.recompense });
+          }
           if(!lu || typeof lu !== "object" || !("sessions" in lu)) throw new Error("format");
           etat = Object.assign(neuf(), lu);
           enregistrer();
@@ -176,6 +227,6 @@ const SAUVEGARDE = (function(){
   return {
     charger, enregistrer, lire, majSession, ajouterIndice, compterErreur,
     reussies, estReussie, pointsTotaux, reinitialiser,
-    exporter, importer, REGLAGES_DEFAUT, PROFIL_DEFAUT
+    exporter, importer, envoyerAuPC, partiesDuPC, reprendreDuPC, REGLAGES_DEFAUT, PROFIL_DEFAUT
   };
 })();

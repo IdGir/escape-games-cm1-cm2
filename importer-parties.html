@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Importer des parties — Tableau de bord de l'enseignant</title>
+<meta name="description" content="Rassembler sur le PC de la classe les missions déjà commencées (Mission géographique) : glisser-déposer des fichiers, aperçu, import sans perte.">
+<meta name="theme-color" content="#0b1536">
+<!--
+  IMPORTER DES PARTIES (session 4) — Mission géographique, jeu sur toute l'année.
+  Fichiers acceptés : exports de l'application (⚙️ → Progression → Exporter), fichiers de
+  mission-geo/secours-export.html, parties au format commun. Conversion : commun/js/mission-geo-import.js.
+  Avec le serveur local : parties rangées dans <dossier des résultats>/parties/mission-geo/ (jamais publiées),
+  FUSION sans perte (l'état précédent est gardé dans _historique/) ; « Remplacer » demande confirmation.
+  Sans serveur : téléchargement d'un lot converti.
+-->
+<style>
+  :root{--nuit:#0b1536;--fond:#f5f3ec;--papier:#fff;--encre:#1f2430;--doux:#5d6472;--ligne:#e4dfd2;--bleu:#1d3a8a;--bleu2:#2f55c4}
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fond);color:var(--encre)}
+  header{background:linear-gradient(135deg,#0b1536,#16318a);color:#fff;padding:16px 0 26px}
+  header .in,main{max-width:1100px;margin:0 auto;padding:0 20px}
+  header a{color:#f0d77a;font-weight:600;text-decoration:none}
+  h1{margin:10px 0 4px;font:700 2rem/1.15 Georgia,serif}
+  .bloc{margin:20px 0;background:var(--papier);border:1px solid var(--ligne);border-radius:18px;padding:18px 20px;box-shadow:0 8px 22px rgba(20,42,107,.06)}
+  .bloc h2{margin:0 0 8px;font:700 1.35rem/1.2 Georgia,serif;color:#142a6b}
+  .reglages{display:flex;flex-wrap:wrap;gap:14px;align-items:end}
+  label{display:flex;flex-direction:column;font-weight:600;font-size:.92rem;gap:4px}
+  select,input[type=text]{font:inherit;padding:8px 12px;border-radius:10px;border:1.5px solid var(--ligne);min-height:44px;background:#fff}
+  .depot{margin-top:14px;border:3px dashed #9aa6c8;border-radius:16px;padding:28px;text-align:center;background:#f8f9fd;cursor:pointer}
+  .depot.survol{background:#e9eefb;border-color:var(--bleu2)}
+  .depot b{font-size:1.15rem}
+  button{font:700 1rem/1.3 system-ui,sans-serif;min-height:48px;padding:10px 18px;border-radius:12px;border:0;background:var(--bleu);color:#fff;cursor:pointer}
+  button.clair{background:#fff;color:var(--bleu);border:1.5px solid var(--bleu)}
+  button:disabled{background:#9ca3af;cursor:not-allowed}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--ligne);text-align:left;vertical-align:top}
+  th{background:var(--nuit);color:#fff;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
+  .tableau{overflow-x:auto;border:1px solid var(--ligne);border-radius:14px}
+  td input[type=text]{min-height:36px;padding:4px 8px;width:100%}
+  .badge{display:inline-block;padding:1px 9px;border-radius:999px;font-size:.8rem;font-weight:700;margin:1px 3px 1px 0}
+  .nouveau{background:#dcfce7;color:#14532d}.fusion{background:#e0f2fe;color:#075985}.erreur{background:#fee2e2;color:#7f1d1d}.alerte{background:#fef3c7;color:#78350f}
+  .alertes{margin:4px 0 0;padding-left:1.1rem;font-size:.85rem;color:#78350f}
+  .rapport{white-space:pre-wrap;background:#0b1536;color:#e5e7eb;border-radius:12px;padding:12px 14px;font-size:.9rem}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+  ol li{margin:3px 0}
+  @media print{header a,.depot,.actions{display:none}}
+</style>
+</head>
+<body>
+<header><div class="in">
+  <a href="enseignant.html">← Tableau de bord</a>
+  <h1>📥 Importer des parties</h1>
+  <p>Rassembler sur le PC de la classe les missions déjà commencées (Mission géographique), sans rien perdre.</p>
+</div></header>
+<main>
+  <section class="bloc" aria-labelledby="t-fichiers">
+    <h2 id="t-fichiers">1. Les fichiers des équipes</h2>
+    <p id="etat-serveur">Recherche du serveur local…</p>
+    <div class="reglages">
+      <label>Jeu <select id="choix-jeu"><option value="mission-geo">🗺️ Mission géographique — Année A</option></select></label>
+      <label>Classe (facultatif) <input type="text" id="choix-classe" maxlength="40" placeholder="ex. CM1-CM2 Follereau"></label>
+      <label>Grade <select id="choix-grade">
+        <option value="">d'après le niveau du fichier</option>
+        <option value="mousse">Découverte (≈ CE2)</option><option value="matelot">CM1</option><option value="timonier">CM2</option>
+        <option value="lieutenant">6ᵉ</option><option value="second">5ᵉ</option></select></label>
+    </div>
+    <div class="depot" id="depot" tabindex="0" role="button" aria-label="Choisir ou déposer des fichiers">
+      <b>Glissez ici les fichiers <code>.json</code> des équipes</b><br>ou cliquez pour les choisir (plusieurs à la fois)
+      <input type="file" id="fichiers" accept=".json,application/json" multiple hidden>
+    </div>
+  </section>
+
+  <section class="bloc" aria-labelledby="t-apercu">
+    <h2 id="t-apercu">2. Aperçu avant import</h2>
+    <p id="apercu-vide">Aucun fichier pour l'instant.</p>
+    <div class="tableau" id="apercu-tableau" hidden><table>
+      <thead><tr><th>✔</th><th>Fichier</th><th>Équipe</th><th>Grade</th><th>Séances réussies</th><th>Points</th><th>Dernière séance</th><th>Sur ce PC</th></tr></thead>
+      <tbody id="apercu"></tbody>
+    </table></div>
+    <div class="actions">
+      <button type="button" id="btn-importer" disabled>📥 Importer la sélection (fusion sans perte)</button>
+      <button type="button" class="clair" id="btn-remplacer" disabled>Remplacer au lieu de fusionner…</button>
+      <button type="button" class="clair" id="btn-lot" disabled>⬇️ Télécharger le lot converti</button>
+    </div>
+    <div class="rapport" id="rapport" hidden></div>
+  </section>
+
+  <section class="bloc" aria-labelledby="t-pc">
+    <h2 id="t-pc">3. Parties gardées sur ce PC</h2>
+    <p id="pc-vide">—</p>
+    <div class="tableau" id="pc-tableau" hidden><table>
+      <thead><tr><th>Équipe</th><th>Grade</th><th>Séances réussies</th><th>Points</th><th>Indices</th><th>Dernière séance</th></tr></thead>
+      <tbody id="pc"></tbody>
+    </table></div>
+  </section>
+
+  <section class="bloc" aria-labelledby="t-aide">
+    <h2 id="t-aide">❓ Comment récupérer les missions des Chromebooks</h2>
+    <ol>
+      <li><b>Le plus simple</b> : les élèves ouvrent Mission géo depuis le PC de la classe (adresse du QR code). La version à jour copie toute seule leur mission sur ce PC : elle apparaît ci-dessus en 3.</li>
+      <li><b>Ancienne version, ou site en ligne</b> : sur chaque Chromebook, à l'adresse où l'équipe a joué, ouvrir <code>mission-geo/secours-export.html</code> (ou ⚙️ → Progression → « Exporter » dans le jeu). Un fichier <code>.json</code> se télécharge.</li>
+      <li>Rassembler les fichiers (clé USB, Drive de l'école), puis les glisser ici en 1, vérifier l'aperçu en 2, cliquer sur « Importer ».</li>
+      <li>Sur un Chromebook : ⚙️ → Progression → « Reprendre depuis le PC de la classe » pour retrouver sa mission.</li>
+    </ol>
+  </section>
+</main>
+<script src="commun/js/mission-geo-import.js?i1"></script>
+<script>
+(function(){
+  "use strict";
+  const I = window.MISSION_GEO_IMPORT, $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const jour = d => d ? String(d).slice(0, 10).split("-").reverse().join("/") : "—";
+  const NOMS = { mousse: "Découverte", matelot: "CM1", timonier: "CM2", lieutenant: "6ᵉ", second: "5ᵉ" };
+  const etat = { serveur: false, local: false, surPC: {}, lignes: [] };
+  window.__import = etat;
+
+  async function json(url, o){ try{ const r = await fetch(url, Object.assign({ cache: "no-store" }, o || {})); return { status: r.status, corps: await r.json() }; }catch(e){ return null; } }
+
+  async function chargerPC(){
+    const r = await json("api/parties?jeu=mission-geo");
+    etat.serveur = !!(r && r.corps && r.corps.ok);
+    etat.local = !!(r && r.corps && r.corps.local);
+    const liste = etat.serveur ? r.corps.parties : [];
+    etat.surPC = Object.fromEntries(liste.map(p => [p.slug, p]));
+    $("etat-serveur").innerHTML = etat.serveur
+      ? (etat.local ? "🟢 Serveur local : les parties seront rangées sur ce PC (dossier des résultats, jamais publié)." : "🟠 Ce n'est pas le PC de l'enseignant : la fusion marche, le remplacement non.")
+      : "ℹ️ Serveur local non lancé : vous pourrez seulement télécharger le lot converti. Pour ranger les parties sur le PC : double-clic sur <code>lancer.bat</code>, puis rouvrez cette page.";
+    $("pc-vide").textContent = !etat.serveur ? "Serveur local non lancé." : liste.length ? liste.length + " équipe(s)." : "Aucune partie gardée pour l'instant.";
+    $("pc-tableau").hidden = !liste.length;
+    $("pc").innerHTML = liste.map(p => `<tr><td><b>${esc(p.equipe)}</b>${p.classe ? "<br><small>" + esc(p.classe) + "</small>" : ""}</td><td>${esc(NOMS[p.grade] || p.grade || "")}</td><td>${p.reussies.length}/16 ${p.reussies.length ? "(" + p.reussies.join(", ") + ")" : ""}</td><td>${p.points}</td><td>${p.indices}</td><td>${jour(p.derniere)}${p.finale ? " · 🧳 valise ouverte" : ""}</td></tr>`).join("");
+    afficher();
+  }
+
+  function lireFichiers(liste){
+    const options = () => ({ classe: $("choix-classe").value, grade: $("choix-grade").value || undefined });
+    return Promise.all([...liste].map(f => new Promise(ok => {
+      const fr = new FileReader();
+      fr.onload = () => ok({ fichier: f.name, texte: fr.result });
+      fr.onerror = () => ok({ fichier: f.name, texte: "" });
+      fr.readAsText(f);
+    }))).then(lus => {
+      for(const l of lus){
+        let lot = null;
+        try{ const o = JSON.parse(l.texte); if(o && o.format === "lot-parties" && Array.isArray(o.parties)) lot = o.parties; }catch(e){}
+        for(const [k, brut] of (lot ? lot.map((p, n) => [l.fichier + " #" + (n + 1), p]) : [[l.fichier, l.texte]])){
+          const c = I.convertir(brut, Object.assign(options(), { fichier: k }));
+          etat.lignes.push({ fichier: k, c, choisi: c.ok && !!(c.partie && c.partie.equipe) });
+        }
+      }
+      afficher();
+    });
+  }
+
+  function afficher(){
+    const L = etat.lignes;
+    $("apercu-vide").hidden = !!L.length; $("apercu-tableau").hidden = !L.length;
+    $("apercu").innerHTML = L.map((l, i) => {
+      if(!l.c.ok) return `<tr><td>—</td><td>${esc(l.fichier)}</td><td colspan="6"><span class="badge erreur">Erreur</span> ${esc(l.c.erreurs.join(" "))}</td></tr>`;
+      const p = l.c.partie, r = I.resume(p), deja = etat.surPC[I.slug(p.equipe)];
+      const plus = deja ? r.reussies.filter(n => !deja.reussies.includes(n)) : r.reussies;
+      const ou = !p.equipe ? `<span class="badge erreur">Nom d'équipe à saisir</span>` : deja ? `<span class="badge fusion">Déjà là : fusion</span> ${plus.length ? "+" + plus.length + " séance(s)" : "rien de nouveau"}` : etat.serveur ? `<span class="badge nouveau">Nouvelle équipe</span>` : "—";
+      return `<tr data-i="${i}"><td><input type="checkbox" data-choix="${i}" ${l.choisi ? "checked" : ""} ${p.equipe ? "" : "disabled"} aria-label="Importer ${esc(p.equipe || l.fichier)}"></td>` +
+        `<td>${esc(l.fichier)}${l.c.alertes.length ? `<ul class="alertes">${l.c.alertes.slice(0, 4).map(a => "<li>" + esc(a) + "</li>").join("")}</ul>` : ""}</td>` +
+        `<td><input type="text" data-equipe="${i}" value="${esc(p.equipe)}" maxlength="40" aria-label="Nom de l'équipe"></td><td>${esc(NOMS[p.grade] || p.grade)}</td>` +
+        `<td>${r.nbReussies}/16 ${r.nbReussies ? "(" + r.reussies.join(", ") + ")" : ""}</td><td>${r.points}</td><td>${jour(r.derniere)}${r.finale ? " · 🧳" : ""}</td><td>${ou}</td></tr>`;
+    }).join("");
+    const n = L.filter(l => l.choisi).length;
+    $("btn-importer").disabled = !n || !etat.serveur;
+    $("btn-remplacer").disabled = !n || !etat.serveur || !etat.local;
+    $("btn-lot").disabled = !n;
+    $("btn-importer").textContent = `📥 Importer la sélection (${n}) — fusion sans perte`;
+  }
+
+  $("apercu").addEventListener("change", e => {
+    const c = e.target.dataset.choix, q = e.target.dataset.equipe;
+    if(c != null) etat.lignes[+c].choisi = e.target.checked;
+    if(q != null){ const p = etat.lignes[+q].c.partie; p.equipe = e.target.value.trim().slice(0, 40); etat.lignes[+q].choisi = !!p.equipe; }
+    afficher();
+  });
+  ["choix-classe", "choix-grade"].forEach(id => $(id).addEventListener("change", () => {
+    for(const l of etat.lignes) if(l.c.ok){ if($("choix-classe").value) l.c.partie.classe = $("choix-classe").value; if($("choix-grade").value) l.c.partie.grade = $("choix-grade").value; }
+    afficher();
+  }));
+  const depot = $("depot");
+  depot.addEventListener("click", () => $("fichiers").click());
+  depot.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); $("fichiers").click(); } });
+  $("fichiers").addEventListener("change", e => { lireFichiers(e.target.files); e.target.value = ""; });
+  depot.addEventListener("dragover", e => { e.preventDefault(); depot.classList.add("survol"); });
+  depot.addEventListener("dragleave", () => depot.classList.remove("survol"));
+  depot.addEventListener("drop", e => { e.preventDefault(); depot.classList.remove("survol"); lireFichiers(e.dataTransfer.files); });
+
+  async function importer(mode){
+    const choisies = etat.lignes.filter(l => l.choisi && l.c.ok && l.c.partie.equipe);
+    if(mode === "remplacer" && !confirm(`Remplacer ${choisies.length} partie(s) déjà gardée(s) par celles des fichiers ?\nL'état actuel de chaque équipe est gardé dans l'historique (dossier parties/mission-geo/_historique).`)) return;
+    const lignes = [];
+    for(const l of choisies){
+      const r = await json("api/parties?jeu=mission-geo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ jeu: "mission-geo", mode, partie: l.c.partie }) });
+      const ok = r && r.corps && r.corps.ok;
+      lignes.push(ok ? `✅ ${l.c.partie.equipe} : ${r.corps.message}${r.corps.ajoutees && r.corps.ajoutees.length ? " (+ séance(s) " + r.corps.ajoutees.join(", ") + ")" : ""}`
+                     : `⚠️ ${l.c.partie.equipe} (${l.fichier}) : ${r && r.corps && (r.corps.message || r.corps.erreur) || "serveur injoignable"}`);
+      if(ok) l.choisi = false;
+    }
+    $("rapport").hidden = false;
+    $("rapport").textContent = lignes.join("\n") + `\n\n${lignes.filter(x => x[0] === "✅").length} partie(s) importée(s) sur ${lignes.length}.`;
+    etat.rapport = lignes;
+    await chargerPC();
+  }
+  $("btn-importer").addEventListener("click", () => importer("fusion"));
+  $("btn-remplacer").addEventListener("click", () => importer("remplacer"));
+  $("btn-lot").addEventListener("click", () => {
+    const lot = { format: "lot-parties", jeu: "mission-geo", cree_le: new Date().toISOString(), parties: etat.lignes.filter(l => l.choisi && l.c.ok).map(l => l.c.partie) };
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(lot, null, 1)], { type: "application/json" }));
+    a.download = "parties-mission-geo-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+  etat.lire = lireFichiers;   /* pour les tests (glisser-déposer simulé) */
+  etat.pret = chargerPC();
+})();
+</script>
+</body>
+</html>

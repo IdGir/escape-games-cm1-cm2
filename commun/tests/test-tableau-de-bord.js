@@ -52,7 +52,7 @@ SECTIONS.SANS = async () => {
   ok(ordre.every((x, i) => i === 0 || (ordre[i - 1].compareDocumentPosition(x) & 4)), "ordre : barre d'état, séance, en direct, après, production, installations, aide, tout le reste");
   ok(d.querySelector("#qr-eleves svg path") && /idgir\.github\.io/.test(d.getElementById("adresse-eleves").textContent), "QR code du site en ligne dessiné dans la page");
   ok(/lancer\.bat/.test(d.getElementById("direct-etat").textContent) && !d.querySelector("#equipes table"), "en direct : sans serveur, la page dit quoi faire");
-  ok(d.querySelectorAll(".gros-boutons a.gros:not([hidden])").length === 5 && d.getElementById("lien-export").hidden, "après la séance : bilan, passeport, résultats, classement, trophées (export seulement avec le serveur)");
+  ok(d.querySelectorAll(".gros-boutons a.gros:not([hidden])").length === 6 && d.querySelector('.gros-boutons a[href="importer-parties.html"]') && d.getElementById("lien-export").hidden, "après la séance : bilan, passeport, résultats, classement, trophées (export seulement avec le serveur)");
   await attendreQue(() => /resultats\.html\?fin=/.test(d.getElementById("lien-bilan").getAttribute("href")), 2500);
   ok(/resultats\.html\?fin=[a-z-]+/.test(d.getElementById("lien-bilan").getAttribute("href")), "bilan : celui du jeu de la séance (" + d.getElementById("lien-bilan").getAttribute("href") + ")");
   ok(/Photographie du/.test(d.getElementById("production-source").textContent), "production : photographie de production.js (sans serveur)");

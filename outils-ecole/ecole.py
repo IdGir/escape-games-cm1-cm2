@@ -46,7 +46,7 @@ PROTEGES_NOMS = ("dossier-donnees.txt", "seance-du-jour.json", "version-installe
                  "dossier-nextcloud.txt", "desktop.ini", "thumbs.db", ".ds_store")
 PROTEGES_DEBUTS = ("resultats-classe", "difficulte-classe", ".essai-ecriture", ".~lock")
 PROTEGES_TXT = ("journal-", "cle-", "cles-")   # journaux et clés d'API : fichiers .txt seulement
-PROTEGES_DOSSIERS = ("sauvegardes-resultats", "installations", "_a-supprimer", ".git", "node_modules", ".sync")
+PROTEGES_DOSSIERS = ("sauvegardes-resultats", "installations", "parties", "_a-supprimer", ".git", "node_modules", ".sync")
 # Mêmes règles que .gitattributes : ces scripts Windows sont écrits avec des fins de ligne CRLF.
 EXT_CRLF = (".bat", ".cmd", ".ps1")
 MARQUEUR_NEXTCLOUD = "copie-nextcloud.txt"

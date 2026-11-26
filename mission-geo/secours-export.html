@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sauver ma mission — Mission géographique</title>
+<meta name="description" content="Récupère la mission commencée sur ce Chromebook (ancienne version comprise) : fichier à garder et copie sur le PC de la classe.">
+<!--
+  SECOURS : récupérer une partie commencée avec n'importe quelle version de Mission géo.
+  La page lit la sauvegarde du navigateur (clé « mission_geo_annee_a_v1 ») : elle doit être ouverte
+  à la MÊME adresse que celle où l'équipe a joué (le PC de la classe, ex. http://192.168.1.23:8000/mission-geo/secours-export.html,
+  ou le site en ligne). Elle ne modifie rien ; elle télécharge un fichier et, sur le PC de la classe, y range une copie.
+-->
+<style>
+  body{margin:0;font:18px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#f5f3ec;color:#1f2430}
+  main{max-width:760px;margin:0 auto;padding:24px 20px 48px}
+  h1{font:700 2rem/1.2 Georgia,serif;color:#142a6b;margin:.2em 0 .4em}
+  .carte{background:#fff;border:1px solid #e4dfd2;border-radius:16px;padding:18px 20px;margin:14px 0;box-shadow:0 6px 16px rgba(20,42,107,.07)}
+  button{font:700 1.1rem/1.3 system-ui,sans-serif;min-height:56px;padding:12px 22px;border-radius:14px;border:0;background:#1d3a8a;color:#fff;cursor:pointer}
+  .ok{color:#14532d;font-weight:700}.non{color:#9a3412;font-weight:700}
+  ol li{margin:4px 0}
+  code{background:#eef1fa;padding:0 .3em;border-radius:6px;font-size:.85em;word-break:break-all}
+  details{margin-top:10px}
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← Retour à la mission</a></p>
+  <h1>💾 Sauver ma mission</h1>
+  <div class="carte" id="etat" role="status" aria-live="polite">Recherche de la mission sur ce Chromebook…</div>
+  <p><button type="button" id="btn-sauver" hidden>⬇️ Télécharger ma mission</button></p>
+  <div class="carte">
+    <b>Pour l'enseignant</b>
+    <ol>
+      <li>Ouvrez cette page sur chaque Chromebook, <b>à la même adresse que celle où l'équipe a joué</b> (adresse du PC de la classe, ou le site en ligne).</li>
+      <li>Avec le PC de la classe : la mission y est copiée toute seule (rubrique « Importer des parties » du tableau de bord).</li>
+      <li>Sinon : « Télécharger ma mission » donne un fichier <code>.json</code> à glisser dans « Importer des parties » du tableau de bord.</li>
+    </ol>
+    <details><summary>Si cette page ne trouve rien (ancienne adresse, page bloquée)</summary>
+      <p>Sur le Chromebook, à l'adresse où l'équipe jouait : touches <b>Ctrl + Maj + J</b> (console), collez cette ligne puis Entrée ; un fichier se télécharge.</p>
+      <p><code id="ligne-console"></code></p>
+    </details>
+  </div>
+</main>
+<script src="../commun/js/mission-geo-import.js?i1"></script>
+<script>
+(function(){
+  "use strict";
+  const I = window.MISSION_GEO_IMPORT, $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  $("ligne-console").textContent = `(()=>{const v=localStorage.getItem("${I.CLE_ANCIENNE}");if(!v)return alert("Aucune mission ici");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify({cle:"${I.CLE_ANCIENNE}",valeur:v,exporte_le:new Date().toISOString()})],{type:"application/json"}));a.download="mission-geo-secours.json";a.click()})()`;
+  let brut = null;
+  try{ brut = localStorage.getItem(I.CLE_ANCIENNE); }catch(e){}
+  if(!brut){ $("etat").innerHTML = `<span class="non">Aucune mission trouvée sur ce Chromebook à cette adresse.</span><br>Ouvrez cette page à l'adresse où l'équipe a joué.`; window.__secours = { trouve: false }; return; }
+  const enveloppe = { cle: I.CLE_ANCIENNE, valeur: brut, exporte_le: new Date().toISOString(), origine: location.host };
+  const c = I.convertir(enveloppe);
+  const r = c.partie ? I.resume(c.partie) : null;
+  $("etat").innerHTML = r ? `<span class="ok">Mission trouvée</span> : équipe <b>${esc(r.equipe || "sans nom")}</b>, ${r.nbReussies} séance(s) réussie(s)${r.nbReussies ? " (" + r.reussies.join(", ") + ")" : ""}, ${r.indices} indice(s) dans le carnet.<br><span id="pc">Copie sur le PC de la classe…</span>`
+    : `<span class="non">Mission trouvée mais illisible</span> : téléchargez-la quand même, l'enseignant la regardera.`;
+  $("btn-sauver").hidden = false;
+  $("btn-sauver").addEventListener("click", () => {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(enveloppe, null, 1)], { type: "application/json" }));
+    a.download = "mission-geo-" + I.slug(r && r.equipe) + "-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+    window.__secours.telecharge = true;
+  });
+  window.__secours = { trouve: true, resume: r };
+  const surPC = /^https?:$/.test(location.protocol) && !/github\.io$/.test(location.hostname);
+  if(!r || !surPC || !c.partie.equipe){ if($("pc")) $("pc").textContent = surPC ? "Nom d'équipe absent : téléchargez le fichier." : "Site en ligne : téléchargez le fichier pour l'enseignant."; return; }
+  fetch("/api/parties?jeu=mission-geo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ jeu: "mission-geo", partie: c.partie }) })
+    .then(x => x.json()).then(x => { $("pc").innerHTML = x && x.ok ? `<span class="ok">Copiée sur le PC de la classe.</span>` : "PC de la classe injoignable : téléchargez le fichier."; window.__secours.pc = !!(x && x.ok); })
+    .catch(() => { $("pc").textContent = "PC de la classe injoignable : téléchargez le fichier."; });
+})();
+</script>
+</body>
+</html>

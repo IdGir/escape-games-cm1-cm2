@@ -96,6 +96,14 @@ const REGLAGES = (function(){
         </label>
         <button class="bouton-second" id="r-reset">♻️ Repartir de zéro</button>
       </p>
+      <div id="r-pc" hidden>
+        <p class="aide-panneau">La progression est aussi copiée toute seule sur le PC de la classe. Poste réinitialisé,
+        autre Chromebook : choisissez l'équipe, puis « Reprendre ».</p>
+        <p style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center">
+          <select id="r-pc-equipe" aria-label="Équipe à reprendre"></select>
+          <button class="bouton-second" id="r-pc-reprendre">🔄 Reprendre depuis le PC de la classe</button>
+        </p>
+      </div>
 
       <p style="margin-top:1.4rem">
         <button class="bouton-principal" id="r-ok">Enregistrer et fermer</button>
@@ -186,6 +194,20 @@ const REGLAGES = (function(){
           .then(() => { APP.fermerModale(); APP.appliquerReglages(); CARNET.dessinerHub();
                         APP.message("Progression importée.", "reussite"); })
           .catch(() => APP.message("Ce fichier n'est pas une sauvegarde valide.", "erreur"));
+      });
+      SAUVEGARDE.partiesDuPC().then(liste => {
+        if(!liste || !liste.length || !g("r-pc")) return;
+        g("r-pc").hidden = false;
+        g("r-pc-equipe").innerHTML = liste.map(p => '<option value="' + e(p.slug) + '">' + e(p.equipe) + " — " +
+          p.reussies.length + " séance(s) réussie(s)" + (p.derniere ? ", le " + e(String(p.derniere).slice(0, 10).split("-").reverse().join("/")) : "") + "</option>").join("");
+      });
+      g("r-pc-reprendre").addEventListener("click", () => {
+        const slug = g("r-pc-equipe").value;
+        if(!slug || !confirm("Reprendre la mission de cette équipe sur ce poste ?\nRien n'est perdu : ce qui a déjà été fait ici est gardé.")) return;
+        SAUVEGARDE.reprendreDuPC(slug)
+          .then(() => { APP.fermerModale(); APP.appliquerReglages(); CARNET.dessinerHub();
+                        APP.message("Mission reprise depuis le PC de la classe.", "reussite"); })
+          .catch(() => APP.message("Impossible de reprendre cette mission (PC de la classe injoignable ?).", "erreur"));
       });
       g("r-reset").addEventListener("click", () => {
         if(!confirm("Effacer toute la progression (séances, indices, piste finale) ?\n" +

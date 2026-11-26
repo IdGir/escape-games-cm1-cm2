@@ -256,7 +256,7 @@ def chemin_prive(chemin_relatif):
     if not segments:
         return False
     nom = segments[-1].lower()
-    return (".git" in [x.lower() for x in segments] or segments[0].lower() in ("sauvegardes-resultats", "installations")
+    return (".git" in [x.lower() for x in segments] or segments[0].lower() in ("sauvegardes-resultats", "installations", "parties")
             or nom.startswith("resultats-classe") or nom.startswith("difficulte-classe") or nom.startswith("dossier-donnees") or nom.startswith("seance-du-jour")
             or nom.startswith("journal-ecole") or nom in ("version-installee.txt", "diagnostic.txt", "copie-nextcloud.txt", ".copie-escape-games.json")
             or (nom.startswith("cle-") and nom.endswith(".txt")))
@@ -713,6 +713,126 @@ def mettre_a_jour():
     MAJ.update(en_cours=False, ok=ok, fin=time.strftime("%H:%M:%S"))
 
 
+# ---- Parties en cours des jeux sur toute l'année (Mission géo) : gardées sur ce PC, jamais publiées ----
+# parties/<jeu>/<equipe>.json (format commun « mission-geo-partie », commun/js/mission-geo-import.js) ;
+# avant chaque écriture, l'ancienne version va dans parties/<jeu>/_historique/ (20 gardées par équipe).
+DOSSIER_PARTIES = os.path.join(DOSSIER_DONNEES, "parties")
+JEUX_PARTIES = ("mission-geo",)
+PARTIES_LOCK = threading.RLock()
+
+def slug_equipe(s):
+    import unicodedata
+    t = unicodedata.normalize("NFD", str(s or "")).encode("ascii", "ignore").decode("ascii")
+    t = "".join(c.lower() if c.isalnum() else "-" for c in t)
+    while "--" in t:
+        t = t.replace("--", "-")
+    return t.strip("-")[:40] or "equipe"
+
+def partie_valide(p):
+    if not isinstance(p, dict) or p.get("format") != "mission-geo-partie" or not str(p.get("equipe") or "").strip():
+        return False
+    if not isinstance(p.get("seances"), dict) or not all(str(k).isdigit() and 1 <= int(k) <= 16 for k in p["seances"]):
+        return False
+    return len(json.dumps(p, ensure_ascii=False)) < 300000
+
+def lire_partie(jeu, slug):
+    try:
+        with open(os.path.join(DOSSIER_PARTIES, jeu, slug + ".json"), encoding="utf-8") as f:
+            p = json.load(f)
+        return p if isinstance(p, dict) else None
+    except (OSError, ValueError):
+        return None
+
+def fusion_parties(a, b):
+    """Sans perte : une séance réussie le reste, meilleur score, date la plus récente (mêmes règles que mission-geo-import.js)."""
+    if not a:
+        return b
+    p = json.loads(json.dumps(a))
+    p.setdefault("seances", {})
+    p.setdefault("indices", [])
+    for n, s in (b.get("seances") or {}).items():
+        n = str(n)
+        x = p["seances"].get(n)
+        if not x:
+            p["seances"][n] = s
+            continue
+        y = dict(x)
+        y.update(s)
+        y["reussie"] = bool(x.get("reussie") or s.get("reussie"))
+        y["points"] = max(x.get("points") or 0, s.get("points") or 0)
+        y["date"] = max([d for d in (x.get("date"), s.get("date")) if d] or [None])
+        p["seances"][n] = y
+    deja = {i.get("session") for i in p["indices"]}
+    p["indices"] += [i for i in (b.get("indices") or []) if i.get("session") not in deja]
+    p["indices"].sort(key=lambda i: i.get("numero") or 0)
+    fb = b.get("final") or {}
+    if fb.get("resolu"):
+        p["final"] = fb
+    else:
+        p.setdefault("final", {})
+        for k in ("pays", "colonne", "ligne", "code"):
+            if p["final"].get(k) is None and fb.get(k) is not None:
+                p["final"][k] = fb[k]
+    dates = sorted(s.get("date") for s in p["seances"].values() if s.get("date"))
+    p["derniere"] = dates[-1] if dates else p.get("derniere")
+    debuts = sorted(d for d in (p.get("debut"), b.get("debut")) if d)
+    p["debut"] = debuts[0] if debuts else None
+    for k in ("grade", "niveau", "palier", "classe"):
+        if b.get(k):
+            p[k] = b[k]
+    p["importe_le"] = b.get("importe_le") or p.get("importe_le")
+    return p
+
+def resume_partie(p, slug):
+    ss = list((p.get("seances") or {}).values())
+    return {"equipe": p.get("equipe"), "slug": slug, "grade": p.get("grade"), "niveau": p.get("niveau"), "classe": p.get("classe", ""),
+            "reussies": sorted(s.get("numero") for s in ss if s.get("reussie") and s.get("numero")),
+            "points": sum(s.get("points") or 0 for s in ss), "indices": len(p.get("indices") or []),
+            "derniere": p.get("derniere"), "finale": bool((p.get("final") or {}).get("resolu"))}
+
+def enregistrer_partie(jeu, partie, remplacer=False):
+    """Retourne (ok, résumé, séances ajoutées, message)."""
+    if jeu not in JEUX_PARTIES or not partie_valide(partie):
+        return False, None, [], "partie illisible (format mission-geo-partie attendu)"
+    slug = slug_equipe(partie["equipe"])
+    dossier = os.path.join(DOSSIER_PARTIES, jeu)
+    with PARTIES_LOCK:
+        ancienne = lire_partie(jeu, slug)
+        finale = partie if (remplacer or not ancienne) else fusion_parties(ancienne, partie)
+        avant = {str(k) for k, s in ((ancienne or {}).get("seances") or {}).items() if s.get("reussie")}
+        ajoutees = sorted(int(k) for k, s in finale["seances"].items() if s.get("reussie") and str(k) not in avant)
+        try:
+            os.makedirs(os.path.join(dossier, "_historique"), exist_ok=True)
+            if ancienne:
+                if json.dumps(ancienne, sort_keys=True) == json.dumps(finale, sort_keys=True):
+                    return True, resume_partie(finale, slug), [], "déjà à jour"
+                hist = os.path.join(dossier, "_historique", "{}-{}.json".format(slug, time.strftime("%Y%m%d-%H%M%S")))
+                with open(hist, "w", encoding="utf-8") as f:
+                    json.dump(ancienne, f, ensure_ascii=False)
+                vieux = sorted(n for n in os.listdir(os.path.join(dossier, "_historique")) if n.startswith(slug + "-2"))
+                for n in vieux[:-20]:
+                    os.remove(os.path.join(dossier, "_historique", n))
+            tmp = os.path.join(dossier, slug + ".json.tmp")
+            with open(tmp, "w", encoding="utf-8", newline="\n") as f:
+                json.dump(finale, f, ensure_ascii=False, indent=1)
+            os.replace(tmp, os.path.join(dossier, slug + ".json"))
+        except OSError as e:
+            return False, None, [], "écriture impossible ({})".format(e.__class__.__name__)
+    return True, resume_partie(finale, slug), ajoutees, "enregistrée"
+
+def liste_parties(jeu):
+    res = []
+    try:
+        noms = sorted(n for n in os.listdir(os.path.join(DOSSIER_PARTIES, jeu)) if n.endswith(".json"))
+    except OSError:
+        return res
+    for n in noms:
+        p = lire_partie(jeu, n[:-5])
+        if p:
+            res.append(resume_partie(p, n[:-5]))
+    return res
+
+
 class Handler(BaseHTTPRequestHandler):
     """Sert les fichiers statiques + expose /api/* pour la synchro."""
 
@@ -1061,6 +1181,27 @@ class Handler(BaseHTTPRequestHandler):
                         chemin = os.path.join(racine, nom)
                         fichiers[chemin.replace(os.sep, "/")] = os.path.getsize(chemin)
             self.json_reponse({"fichiers": fichiers})
+        elif path == "/api/parties":
+            # Parties en cours (Mission géo) : liste et reprise depuis les Chromebooks de la classe ;
+            # « remplacer » (écraser au lieu de fusionner) est réservé au PC de l'enseignant.
+            q = parse_qs(urlparse(self.path).query)
+            jeu = (q.get("jeu") or data.get("jeu") or ["mission-geo"])
+            jeu = jeu[0] if isinstance(jeu, list) else jeu
+            if jeu not in JEUX_PARTIES:
+                self.json_prive({"ok": False, "erreur": "jeu inconnu"}, 400)
+            elif methode == "GET" and q.get("equipe"):
+                p = lire_partie(jeu, slug_equipe(q["equipe"][0]))
+                self.json_prive({"ok": bool(p), "partie": p} if p else {"ok": False, "erreur": "aucune partie pour cette équipe"}, 200 if p else 404)
+            elif methode == "GET":
+                self.json_prive({"ok": True, "jeu": jeu, "parties": liste_parties(jeu), "local": est_adresse_locale(self.client_address[0])})
+            elif methode == "POST":
+                remplacer = data.get("mode") == "remplacer"
+                if remplacer and not self.reserve_enseignant():
+                    return
+                ok, res, ajoutees, msg = enregistrer_partie(jeu, data.get("partie"), remplacer)
+                self.json_prive({"ok": ok, "resume": res, "ajoutees": ajoutees, "message": msg}, 200 if ok else 400)
+            else:
+                self.send_error(405)
         elif path == "/api/production" and methode == "GET":
             # État de production des jeux (tableau de bord) : aucune donnée d'élève
             self.json_prive(etat_production())
@@ -1231,6 +1372,7 @@ def main():
     print("     Immersif n°19        →  http://{}:{}/immersifs/grande-guerre/".format(ip, PORT))
     print("     Immersif n°20        →  http://{}:{}/immersifs/seconde-guerre/".format(ip, PORT))
     print("     Immersif n°23        →  http://{}:{}/immersifs/terre-active/".format(ip, PORT))
+    print("     Immersif n°24        →  http://{}:{}/immersifs/reproduction/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
