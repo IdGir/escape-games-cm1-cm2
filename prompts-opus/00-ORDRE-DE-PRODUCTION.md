@@ -41,7 +41,7 @@ Classés dans l'ordre du calendrier scolaire : la période 1 est en cours, on co
 | 21 | L'Exposition universelle | Histoire | B | P5 | Énergies et machines ; la ville industrielle, révolution industrielle et progrès technique. | `21-age-industriel.md` | [ ] |
 | 22 | Le Traité perdu de Rome | Histoire | B | P5 | La construction européenne : CECA, CEE, UE (monnaie unique, institutions). | `22-europe.md` | [ ] |
 | 23 | L'Observatoire des volcans | Sciences | A | P5 | La Terre, une planète active (activité interne). | `23-terre-active.md` | [x] (commits 240abdd et 8f8948b, 24/11/2026, à pousser ; immersif 5 grades seulement, médias en attente) |
-| 24 | Le Jardin de la vie | Sciences | A | P5 | La reproduction sexuelle chez le vivant. | `24-reproduction.md` | [ ] |
+| 24 | Le Jardin de la vie | Sciences | A | P5 | La reproduction sexuelle chez le vivant. | `24-reproduction.md` | [x] (jeu dans 685e411 et a3c4dee, sw-fichiers 8b26bc1, 26/11/2026 ; immersif 5 grades seulement, médias en attente) |
 | 25 | Le Labo des illusions | Sciences | B | P5 | Le cerveau ; mécanismes perceptifs ; stratégies d'attention et de mémorisation. | `25-cerveau.md` | [ ] |
 | 26 | Mission Climat | Sciences | B | P5 | Définir le climat local ; conséquences du changement climatique, atténuation/adaptation. | `26-climat.md` | [ ] |
 
