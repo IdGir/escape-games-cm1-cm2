@@ -1,0 +1,369 @@
+{
+ "decors": {
+  "bureau-atlas": {
+   "titre": "Le bureau du Professeur Atlas, dans ta commune",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La liste des démarches",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une feuille épinglée sur le plan de la commune, avec des démarches à cocher."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le plan de la commune",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un grand plan punaisé au mur, couvert de bâtiments sans légende."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le message aux lettres marquées",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une note du Professeur où certaines lettres sont soulignées en couleur."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le dossier de la commune",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un dossier tamponné « Services publics », posé sur la valise."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "dijon-palais": {
+   "titre": "Dijon, place de la Libération, devant le palais des ducs de Bourgogne",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le carnet de Léna",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet ouvert sur le rebord d'une fontaine, rempli de questions."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La carte dépliée",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une grande carte étalée sur un banc, avec des numéros à la place des noms."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le passeport géographique",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un passeport de mission aux cases encore vides."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les décisions de la région",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une pile de dossiers de projets : écoles, collèges, lycées, trains."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "clamecy-bourg": {
+   "titre": "Clamecy, un bourg de la Nièvre, au bord de l'Yonne",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La vue sur le bourg",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Du haut du pont, les toits serrés du bourg et la campagne tout autour."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le carnet de Malik",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un petit carnet où une définition est restée à moitié écrite."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les trois carrés de terrain",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un schéma de trois espaces quadrillés, avec des points pour les habitants."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet de notes de Malik",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Les notes de Malik, avec des phrases à vérifier avant de partir."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "besancon-ville": {
+   "titre": "Besançon, préfecture du Doubs, dans la boucle de la rivière",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le message de la source",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un petit mot plié, laissé sur une table de terrasse."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Les fiches des professionnels",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Des fiches de rencontre avec un métier écrit sur chacune."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le document de la source",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une feuille de statistiques glissée sous une tasse de café."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le plan des quartiers",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un plan de la ville avec les lieux de travail marqués d'une croix."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "rousses-station": {
+   "titre": "La station des Rousses, dans le Haut-Jura, au pied de la Dôle",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le panneau des mots de la montagne",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un panneau de bois à l'entrée de la station, aux étiquettes mélangées."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le programme de la semaine",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un tableau d'activités au refuge, avec des cartes à placer."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les photos du séjour",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des photos punaisées au mur du refuge, sans légende."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La carte du monde du refuge",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une carte du monde punaisée au mur, devant laquelle un skieur s'est arrêté."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

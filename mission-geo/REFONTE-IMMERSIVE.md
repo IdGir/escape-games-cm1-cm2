@@ -54,14 +54,40 @@ classique ») tant que la nouvelle n'est pas finie ; les parties commencées pas
 - Médias : 93 noms attendus (`assets/README.md`) ; 10 médias sans crédit (AUDIT-MEDIAS).
 - Tests : `mission-geo/tests/test-jeu.js` (985 vérifications) à garder verts tant que la version classique existe.
 
-## 3. Plan des prochaines conversations (une période à la fois)
+## 3. Étape P1 faite (26/11/2026) : séances 1 à 5
 
-1. **P1 (séances 1 à 5)** : script `mission-geo/tests/donnees/gen_escales.py` (lit `js/donnees/*.js` par Node, écrit
+**Construire ou reconstruire** (tout est régénéré, les médias déposés sont gardés) :
+`python mission-geo/tests/donnees/construire-immersif.py` (Python 3 + Node ; `NODE_PATH` vers jsdom pour les tests).
+
+| Fichier | Rôle |
+|---|---|
+| `mission-geo/tests/donnees/gen_escales.py` | énigmes CM1 / CM2, dialogues, leçons, au format des salles → `vingt-mille-lieues/outils/immersif/sources/mission-geo/assets/data/` (la version classique n'est pas touchée) |
+| `mission-geo/tests/donnees/fiches.py` | phrases des fiches (leçons CM2), reprises mot pour mot par les justifications |
+| `mission-geo/tests/donnees/schemas.py` | cartes à repères numérotés : fonds de `js/cartes.js` (mêmes dessins que la version classique) |
+| `mission-geo/tests/donnees/theme-immersif.json` | thème : « Le bureau du Professeur Atlas », mot « séance » |
+| `vingt-mille-lieues/outils/immersif/grades/mission_geo_theme.py`, `mission_geo_s1.py` … `_s5.py` | grades Découverte, Géographe, Chef de mission ; palette, voix, portraits, guides |
+| `vingt-mille-lieues/outils/immersif/narration/mission-geo.json` | objets, enjeux, réactions du décor, phrases des personnages |
+| `mission-geo/tests/donnees/reprise-immersif.js` | reprise des parties (§ 1), ajoutée à `immersifs/mission-geo/js/jeu-config.js` |
+| `mission-geo/tests/donnees/construire-immersif.py`, `test-reprise.js` | chaîne complète et test de la reprise |
+
+- Personnages inventés : Professeur Atlas (séance 1), Léna (Dijon), Malik (Clamecy), Zoé (Besançon), Hugo (Les Rousses).
+- Mots du coffre : COMMUNE, EMBOÎTÉS, DENSITÉ, TERTIAIRE, TOURISME ; l'indice du carnet de la version classique est redonné à la fin de chaque séance.
+- Activités transformées : fiche d'agent « ta commune » et « village ou ville ? » (réponses propres à chaque école) → trace écrite sur la fiche de mission ;
+  questions ouvertes des séances 4 et 5 → QCM et vrai/faux de déduction ; mots mêlés et mots croisés → `lettres`, `association`, `tri`.
+- Tests : `test-immersif.js` 565 vérifications ; `test-reprise.js` 18 ; version classique `tests/test-jeu.js` 985 (inchangée).
+- Non fait : voix mp3 (Edge, à générer sur le PC : `python immersifs/mission-geo/outils/voix/generer-voix.py`), médias, intégration au catalogue
+  (le champ `immersif` du catalogue n'est pas posé : l'accueil et le tableau de bord proposent toujours la version classique).
+
+## 4. Plan des prochaines conversations (une période à la fois)
+
+1. ~~**P1 (séances 1 à 5)**~~ (fait, voir § 3) : script `mission-geo/tests/donnees/gen_escales.py` (lit `js/donnees/*.js` par Node, écrit
    `assets/data/enigmes.json` au format des salles, escales 1-5), thème `theme-immersif.json` (Bureau du Professeur
    Atlas, mot « séance »), grades `vingt-mille-lieues/outils/immersif/grades/mission_geo_s1..s5.py`, narration,
    `migrer-jeu.py mission-geo --theme …`, `appliquer-grades.py`, `appliquer-narration.py`, `finir-jeu.py`,
    lecture d'une partie importée (§ 1), tests `test-immersif.js`.
-2. **P2 (6 à 8)**, 3. **P3-P4 (9 à 13)**, 4. **P5 (14 à 16) + piste finale et coffre**.
+2. **P2 (6 à 8)**, 3. **P3-P4 (9 à 13)**, 4. **P5 (14 à 16) + piste finale et coffre**. Pour chaque période : ajouter les salles à `gen_escales.py`
+   (E6…), les leçons et phrases à `fiches.py`, `mission_geo_s6.py`…, la narration, `GUIDES` et `PERIODES`, `INDICES` dans `construire-immersif.py`,
+   puis relancer `construire-immersif.py`. Le coffre de la P1 s'ouvre provisoirement après la séance 5 (phrase-bilan de la période).
 5. Leçons A4 (les 16 leçons existent : textes courts dans `outils-lecons/textes/mission-geo.json`), évaluations
    imprimables, LSU (`commun/donnees/lsu.js`), familles, fiche de mission, `medias.csv` (16 décors, 5 portraits —
    Professeur Atlas et 4 agents inventés —, 16 vidéos ; prompts complets, aucune image générée ici), affiche et

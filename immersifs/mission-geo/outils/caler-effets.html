@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caler les zones et les effets — Le Journal du Nautilus</title>
+<style>
+  body{ font-family: system-ui, sans-serif; background: #0b1820; color: #f3e9d2; margin: 0; }
+  header{ padding: 10px 16px; background: #2a140a; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  main{ display: grid; grid-template-columns: 1fr 340px; gap: 12px; padding: 12px 16px; }
+  .scene{ position: relative; background: #000; user-select: none; }
+  .scene img, .scene svg.fond{ width: 100%; display: block; }
+  .z{ position: absolute; border: 2px dashed #f0d48e; background: rgba(240,212,142,.12); font-size: 12px; color: #fff; text-shadow: 0 1px 2px #000; }
+  .z.sel{ border-color: #5fd0ff; background: rgba(95,208,255,.2); }
+  .p{ position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; border: 2px solid #ff9a2e; background: rgba(255,154,46,.4); }
+  .p.sel{ border-color: #5fd0ff; }
+  aside{ background: #1a0f08; border: 2px solid #c9a24a; border-radius: 10px; padding: 10px; max-height: 85vh; overflow: auto; font-size: 14px; }
+  aside button.it{ display: block; width: 100%; text-align: left; margin: 3px 0; background: #3a1a0c; color: #f3e9d2; border: 1px solid #6b4a12; border-radius: 6px; padding: 5px; cursor: pointer; }
+  aside button.it.sel{ outline: 2px solid #5fd0ff; }
+  textarea{ width: 100%; height: 160px; font-family: monospace; font-size: 12px; }
+  .note{ font-size: 13px; opacity: .85; }
+</style>
+</head>
+<body>
+<header>
+  <b>🎯 Calage des zones cliquables et des effets</b>
+  <label>Décor : <select id="decor"></select></label>
+  <label>Source : <select id="source"><option value="depose">fichier déposé</option><option value="reference">image de référence</option><option value="secours">décor dessiné</option></select></label>
+  <span class="note">1) Choisir un élément à droite. 2) Zone : glisser sur l'image pour tracer le rectangle. Effet : cliquer pour le placer. 3) Exporter.</span>
+</header>
+<main>
+  <div class="scene" id="scene"></div>
+  <aside>
+    <div id="liste"></div>
+    <p><label><input type="checkbox" id="calage" checked> Exporter comme calage propre à cette source (recommandé : n'abîme pas les autres sources)</label></p>
+    <button id="exporter">⬇️ Télécharger decors-fx.json</button> <button id="copier">📋 Copier</button>
+    <textarea id="sortie" readonly></textarea>
+    <p class="note">Remplacer <code>assets/data/decors-fx.json</code> par le fichier téléchargé, puis lancer
+      <code>python outils/embarquer-donnees.py</code> (copie pour le double-clic).</p>
+  </aside>
+</main>
+<script src="../js/donnees-embarquees.js"></script>
+<script src="../js/decors-secours.js"></script>
+<script>
+(async function(){
+  let FX = null;
+  try{ const r = await fetch("../assets/data/decors-fx.json", { cache: "no-cache" }); if(r.ok) FX = await r.json(); }catch(e){}
+  FX = FX || JSON.parse(JSON.stringify(window.VML_DONNEES_EMBARQUEES["decors-fx"]));
+  const $ = s => document.querySelector(s);
+  const sel = { type: null, i: -1 };
+  $("#decor").innerHTML = Object.entries(FX.decors).map(([id, d]) => `<option value="${id}">${d.titre}</option>`).join("");
+  const essai = url => new Promise(r => { const i = new Image(); i.onload = () => r(url); i.onerror = () => r(null); i.src = url; });
+  const donnees = () => {
+    const d = FX.decors[$("#decor").value], src = $("#source").value;
+    if($("#calage").checked){
+      d.calages = d.calages || {};
+      if(!d.calages[src]) d.calages[src] = { zones: JSON.parse(JSON.stringify(d.zones)), effets: JSON.parse(JSON.stringify(d.effets)) };
+      return d.calages[src];
+    }
+    return d;
+  };
+  async function fond(){
+    const id = $("#decor").value, src = $("#source").value, d = FX.decors[id];
+    let url = null;
+    if(src === "depose") for(const e of [".webp", ".jpg", ".png"]){ url = await essai(`../assets/images/decors/${id}${e}`); if(url) break; }
+    if(src === "reference" && d.reference) url = await essai("../" + d.reference);
+    $("#scene").innerHTML = url ? `<img src="${url}" alt="">` : (window.VML.SVG_DECORS[id] || "").replace("<svg ", '<svg class="fond" ');
+    if(!url && src !== "secours") $("#scene").insertAdjacentHTML("afterbegin", `<p class="note" style="position:absolute;z-index:2;background:#000a;padding:4px">Aucune image pour cette source : décor dessiné affiché.</p>`);
+    dessiner();
+  }
+  function dessiner(){
+    const D = donnees(), sc = $("#scene");
+    sc.querySelectorAll(".z,.p").forEach(x => x.remove());
+    D.zones.forEach((z, i) => sc.insertAdjacentHTML("beforeend", `<div class="z ${sel.type === "z" && sel.i === i ? "sel" : ""}" style="left:${z.x}%;top:${z.y}%;width:${z.w}%;height:${z.h}%">${z.id}</div>`));
+    D.effets.forEach((e, i) => { if(e.x == null) return; sc.insertAdjacentHTML("beforeend", `<div class="p ${sel.type === "e" && sel.i === i ? "sel" : ""}" style="left:${e.x}%;top:${e.y}%" title="${e.type}"></div>`); });
+    $("#liste").innerHTML = "<b>Zones cliquables</b>" + D.zones.map((z, i) => `<button class="it ${sel.type === "z" && sel.i === i ? "sel" : ""}" data-t="z" data-i="${i}">🔲 ${z.id} (${z.x}, ${z.y}, ${z.w}×${z.h})</button>`).join("") +
+      "<b>Effets</b>" + D.effets.map((e, i) => e.x == null ? "" : `<button class="it ${sel.type === "e" && sel.i === i ? "sel" : ""}" data-t="e" data-i="${i}">✨ ${e.type} (${e.x}, ${e.y})</button>`).join("");
+    $("#liste").querySelectorAll(".it").forEach(b => b.onclick = () => { sel.type = b.dataset.t; sel.i = +b.dataset.i; dessiner(); });
+    $("#sortie").value = JSON.stringify(FX, null, 2);
+  }
+  const pct = ev => { const r = $("#scene").getBoundingClientRect(); return { x: Math.round(1000 * (ev.clientX - r.left) / r.width) / 10, y: Math.round(1000 * (ev.clientY - r.top) / r.height) / 10 }; };
+  let depart = null;
+  $("#scene").addEventListener("mousedown", ev => { depart = pct(ev); ev.preventDefault(); });
+  $("#scene").addEventListener("mouseup", ev => {
+    if(!depart || sel.i < 0) return;
+    const fin = pct(ev), D = donnees();
+    if(sel.type === "z"){
+      const z = D.zones[sel.i];
+      if(Math.abs(fin.x - depart.x) > 1 && Math.abs(fin.y - depart.y) > 1){ Object.assign(z, { x: Math.min(depart.x, fin.x), y: Math.min(depart.y, fin.y), w: Math.round(10 * Math.abs(fin.x - depart.x)) / 10, h: Math.round(10 * Math.abs(fin.y - depart.y)) / 10 }); }
+      else { z.x = fin.x - z.w / 2; z.y = fin.y - z.h / 2; }
+    }else{ const e = D.effets[sel.i]; const dx = fin.x - e.x, dy = fin.y - e.y; e.x = fin.x; e.y = fin.y; }
+    depart = null; dessiner();
+  });
+  $("#decor").onchange = $("#source").onchange = () => { sel.i = -1; fond(); };
+  $("#calage").onchange = dessiner;
+  $("#exporter").onclick = () => { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(FX, null, 2) + "\n"], { type: "application/json" })); a.download = "decors-fx.json"; a.click(); };
+  $("#copier").onclick = () => { $("#sortie").select(); navigator.clipboard && navigator.clipboard.writeText($("#sortie").value); };
+  fond();
+})();
+</script>
+</body>
+</html>

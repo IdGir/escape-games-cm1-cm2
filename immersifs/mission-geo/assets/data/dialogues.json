@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "atlas",
+  "texte": "Bienvenue au bureau du Professeur Atlas. Une valise pleine d'informations secrètes a été volée. Séance après séance, vous allez suivre sa trace à travers la France, puis le monde. Chaque séance réussie vous donne un mot pour le coffre et un indice pour votre carnet de mission."
+ },
+ "coffre": {
+  "personnage": "atlas",
+  "texte": "Mon coffre ne s'ouvre qu'avec le mot de chaque séance, dans l'ordre. Ensemble, ils résument ce que vous avez appris : votre COMMUNE fait partie de territoires EMBOÎTÉS ; la DENSITÉ distingue la campagne de la ville ; la ville vit surtout du secteur TERTIAIRE ; la montagne vit du TOURISME."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Séance 1 — Le grand départ",
+   "plans": [
+    {
+     "decor": "bureau-atlas",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "atlas",
+     "texte": "Agents, une valise pleine d'informations secrètes a été volée cette nuit. Je vous ai choisis pour la retrouver. Mais un bon agent connaît d'abord son propre terrain : avant de partir, faites vos démarches dans la commune. Chaque lieu a son rôle.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la séance 1",
+   "plans": [
+    {
+     "decor": "bureau-atlas",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "atlas",
+     "texte": "Parfait. Vos démarches sont faites et vous savez à quoi sert chaque lieu de la COMMUNE . Notez ce mot. Les lettres marquées ont parlé : on vous attend à Dijon. Léna vous y retrouvera.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Séance 2 — Direction Dijon !",
+   "plans": [
+    {
+     "decor": "dijon-palais",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "lena",
+     "texte": "Bienvenue à Dijon, chef-lieu de la région Bourgogne-Franche-Comté. Je suis Léna. Avant de vous confier la suite, je dois être sûre que vous savez vous présenter : votre commune, votre département, votre région, votre pays, votre continent.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la séance 2",
+   "plans": [
+    {
+     "decor": "dijon-palais",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "lena",
+     "texte": "Vous voilà avec un vrai passeport géographique : commune, département, région, pays, continent, tous EMBOÎTÉS . Notez ce mot. Sur le planisphère, sept continents : sept pistes possibles. Malik a une piste à Clamecy.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Séance 3 — Vivre à Clamecy",
+   "plans": [
+    {
+     "decor": "clamecy-bourg",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "malik",
+     "texte": "Salut, c'est Malik. On m'a dit qu'un informaticien lié au vol se cachait ici, à Clamecy. Pour passer inaperçu, il faut vivre comme les habitants : savoir combien ils sont, ce qu'on trouve ici, et comment on se déplace.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la séance 3",
+   "plans": [
+    {
+     "decor": "clamecy-bourg",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "malik",
+     "texte": "Fausse piste : l'informaticien est parti depuis longtemps. Mais vos calculs de DENSITÉ valent de l'or. Notez ce mot. Prochaine étape : Besançon, où Zoé attend une source.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Séance 4 — Besançon, travailler en ville",
+   "plans": [
+    {
+     "decor": "besancon-ville",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "zoe",
+     "texte": "Je suis Zoé. Une source a promis de parler, mais elle n'a pas dit où elle travaille. En ville, des milliers de personnes exercent des métiers très différents. Aidez-moi à les reconnaître : nous la trouverons.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la séance 4",
+   "plans": [
+    {
+     "decor": "besancon-ville",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "zoe",
+     "texte": "La source a parlé. Ici, presque tout le monde travaille dans le secteur TERTIAIRE : notez ce mot. Et retenez sa confidence : la valise n'est plus en Europe. Hugo vous attend à la montagne, pour souffler un peu.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Séance 5 — Les loisirs de la montagne",
+   "plans": [
+    {
+     "decor": "rousses-station",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "hugo",
+     "texte": "Salut, je suis Hugo, moniteur ici. Une pause bien méritée, mais gardez l'œil ouvert : la montagne attire beaucoup de monde, et tout ce monde laisse des traces.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la séance 5",
+   "plans": [
+    {
+     "decor": "rousses-station",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "hugo",
+     "texte": "Bravo : vous savez ce que le TOURISME apporte à la montagne, et ce qu'il lui coûte. Notez ce mot. Et souvenez-vous de la remarque du skieur : là où va la valise, c'est l'hiver en même temps qu'ici.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Mission géographique »",
+   "plans": [
+    {
+     "decor": "rousses-station",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "hugo",
+     "texte": "Le coffre est ouvert. Vous connaissez maintenant le territoire où vous vivez, ses villes, ses campagnes et ses montagnes. Mais la valise, elle, a quitté l'Europe. Gardez précieusement votre carnet : la mission continue à la séance suivante.",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "atlas",
+   "texte": "Notez le mot de cette séance, COMMUNE : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous l'étoile, écrivez 5 (nombre de lettres de la ville de rendez-vous)."
+  },
+  "2": {
+   "personnage": "lena",
+   "texte": "Notez le mot de cette séance, EMBOÎTÉS : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous le cercle, écrivez 7 (nombre de continents sur le planisphère)."
+  },
+  "3": {
+   "personnage": "malik",
+   "texte": "Notez le mot de cette séance, DENSITÉ : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous le nuage, écrivez 7 (total des trois densités calculées)."
+  },
+  "4": {
+   "personnage": "zoe",
+   "texte": "Notez le mot de cette séance, TERTIAIRE : il servira à ouvrir le coffre. Indice pour le carnet de mission : Le pays recherché se trouve en Amérique latine."
+  },
+  "5": {
+   "personnage": "hugo",
+   "texte": "Notez le mot de cette séance, TOURISME : il servira à ouvrir le coffre. Indice pour le carnet de mission : Le pays recherché est situé dans l'hémisphère nord."
+  }
+ }
+}

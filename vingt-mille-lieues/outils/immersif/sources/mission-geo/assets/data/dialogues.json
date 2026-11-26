@@ -1,0 +1,145 @@
+{
+ "metadata": {
+  "jeu": "Mission géographique"
+ },
+ "personnages": {
+  "atlas": {
+   "nom": "Professeur Atlas",
+   "role": "Géographe et chef de la mission, il dirige le bureau des agents depuis ta commune"
+  },
+  "lena": {
+   "nom": "Léna",
+   "role": "Agente de terrain, elle attend les recrues à Dijon"
+  },
+  "malik": {
+   "nom": "Malik",
+   "role": "Agent infiltré à Clamecy, spécialiste des chiffres"
+  },
+  "zoe": {
+   "nom": "Zoé",
+   "role": "Agente chargée de rencontrer les sources à Besançon"
+  },
+  "hugo": {
+   "nom": "Hugo",
+   "role": "Agent et moniteur de ski à la station des Rousses"
+  }
+ },
+ "intro_accueil": "Bienvenue au bureau du Professeur Atlas. Une valise contenant des informations secrètes a été volée. Séance après séance, vous allez suivre sa trace à travers la France, puis le monde. Chaque séance réussie vous donne un mot pour le coffre et un indice pour votre carnet de mission.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "Le grand départ",
+   "decor": "bureau-atlas",
+   "motCle": "COMMUNE",
+   "lieu": "Le bureau du Professeur Atlas, dans ta commune",
+   "description": "Un bureau rempli de cartes : un grand plan de la commune au mur, un globe, une valise vide ouverte sur la table, des tampons et des dossiers.",
+   "sens": [
+    "À voir : le plan de la commune punaisé au mur",
+    "À entendre : le tic-tac de la pendule et le froissement des cartes",
+    "À sentir : le vieux papier et l'encre des tampons"
+   ],
+   "dialogue_intro": {
+    "perso": "atlas",
+    "nom": "Professeur Atlas",
+    "texte": "Agents, une valise pleine d'informations secrètes a été volée cette nuit. Je vous ai choisis pour la retrouver. Mais un bon agent connaît d'abord son propre terrain : avant de partir, faites vos démarches dans la commune. Chaque lieu a son rôle."
+   },
+   "dialogue_reussite": {
+    "perso": "atlas",
+    "nom": "Professeur Atlas",
+    "texte": "Parfait. Vos démarches sont faites et vous savez à quoi sert chaque lieu de la <b>COMMUNE</b>. Notez ce mot. Les lettres marquées ont parlé : on vous attend à Dijon. Léna vous y retrouvera."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "Direction Dijon !",
+   "decor": "dijon-palais",
+   "motCle": "EMBOÎTÉS",
+   "lieu": "Dijon, place de la Libération, devant le palais des ducs de Bourgogne",
+   "description": "Une place en demi-cercle bordée de façades claires ; au fond, le palais et sa haute tour. Des fontaines au ras du sol, des passants, des pigeons.",
+   "sens": [
+    "À voir : la tour du palais qui domine la place",
+    "À entendre : l'eau des fontaines et les pas des passants",
+    "À sentir : l'air frais du matin et le pain chaud d'une boulangerie"
+   ],
+   "dialogue_intro": {
+    "perso": "lena",
+    "nom": "Léna",
+    "texte": "Bienvenue à Dijon, chef-lieu de la région Bourgogne-Franche-Comté. Je suis Léna. Avant de vous confier la suite, je dois être sûre que vous savez vous présenter : votre commune, votre département, votre région, votre pays, votre continent."
+   },
+   "dialogue_reussite": {
+    "perso": "lena",
+    "nom": "Léna",
+    "texte": "Vous voilà avec un vrai passeport géographique : commune, département, région, pays, continent, tous <b>EMBOÎTÉS</b>. Notez ce mot. Sur le planisphère, sept continents : sept pistes possibles. Malik a une piste à Clamecy."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "Vivre à Clamecy",
+   "decor": "clamecy-bourg",
+   "motCle": "DENSITÉ",
+   "lieu": "Clamecy, un bourg de la Nièvre, au bord de l'Yonne",
+   "description": "Des toits serrés autour d'une église, un pont de pierre sur la rivière, le canal et ses péniches, puis des champs et des forêts à perte de vue.",
+   "sens": [
+    "À voir : les toits serrés autour du clocher",
+    "À entendre : la rivière sous le pont et un tracteur au loin",
+    "À sentir : l'herbe coupée et la terre humide"
+   ],
+   "dialogue_intro": {
+    "perso": "malik",
+    "nom": "Malik",
+    "texte": "Salut, c'est Malik. On m'a dit qu'un informaticien lié au vol se cachait ici, à Clamecy. Pour passer inaperçu, il faut vivre comme les habitants : savoir combien ils sont, ce qu'on trouve ici, et comment on se déplace."
+   },
+   "dialogue_reussite": {
+    "perso": "malik",
+    "nom": "Malik",
+    "texte": "Fausse piste : l'informaticien est parti depuis longtemps. Mais vos calculs de <b>DENSITÉ</b> valent de l'or. Notez ce mot. Prochaine étape : Besançon, où Zoé attend une source."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "Besançon, travailler en ville",
+   "decor": "besancon-ville",
+   "motCle": "TERTIAIRE",
+   "lieu": "Besançon, préfecture du Doubs, dans la boucle de la rivière",
+   "description": "Une ville serrée dans la boucle du Doubs, dominée par une citadelle. Des rues commerçantes, des tramways, des bureaux et, au loin, l'hôpital.",
+   "sens": [
+    "À voir : la citadelle sur la colline et la rivière qui fait une boucle",
+    "À entendre : la sonnerie du tramway et le bruit des terrasses",
+    "À sentir : le café des terrasses et l'air de la rivière"
+   ],
+   "dialogue_intro": {
+    "perso": "zoe",
+    "nom": "Zoé",
+    "texte": "Je suis Zoé. Une source a promis de parler, mais elle n'a pas dit où elle travaille. En ville, des milliers de personnes exercent des métiers très différents. Aidez-moi à les reconnaître : nous la trouverons."
+   },
+   "dialogue_reussite": {
+    "perso": "zoe",
+    "nom": "Zoé",
+    "texte": "La source a parlé. Ici, presque tout le monde travaille dans le secteur <b>TERTIAIRE</b> : notez ce mot. Et retenez sa confidence : la valise n'est plus en Europe. Hugo vous attend à la montagne, pour souffler un peu."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "Les loisirs de la montagne",
+   "decor": "rousses-station",
+   "motCle": "TOURISME",
+   "lieu": "La station des Rousses, dans le Haut-Jura, au pied de la Dôle",
+   "description": "Des pistes enneigées, des télésièges, des chalets de bois ; au sommet de la Dôle, une grosse boule blanche ; à l'horizon, les Alpes.",
+   "sens": [
+    "À voir : les télésièges et la boule blanche au sommet de la Dôle",
+    "À entendre : le crissement de la neige et le moteur des canons à neige",
+    "À sentir : le froid sec et le bois des chalets"
+   ],
+   "dialogue_intro": {
+    "perso": "hugo",
+    "nom": "Hugo",
+    "texte": "Salut, je suis Hugo, moniteur ici. Une pause bien méritée, mais gardez l'œil ouvert : la montagne attire beaucoup de monde, et tout ce monde laisse des traces."
+   },
+   "dialogue_reussite": {
+    "perso": "hugo",
+    "nom": "Hugo",
+    "texte": "Bravo : vous savez ce que le <b>TOURISME</b> apporte à la montagne, et ce qu'il lui coûte. Notez ce mot. Et souvenez-vous de la remarque du skieur : là où va la valise, c'est l'hiver en même temps qu'ici."
+   }
+  }
+ ]
+}

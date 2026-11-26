@@ -1,0 +1,1575 @@
+{
+ "metadata": {
+  "jeu": "Mission géographique",
+  "auteur": "Escape game · cycle 3 · géographie",
+  "version": 1,
+  "differenciation": "Une escale par séance. CM1 : 3 énigmes par escale. CM2 : 4 énigmes par escale (la 4e : « niveaux »: [\"CM2\"]).",
+  "sources": "Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français » ; livret « Mission géographique » (Année A) ; Insee ; DGCL ; ministère de l'Agriculture (CEP) ; Office de tourisme des Rousses."
+ },
+ "salles": [
+  {
+   "num": 1,
+   "titre": "Le grand départ — Ma commune",
+   "enigmes": [
+    {
+     "id": "1-1",
+     "titre": "Les démarches de l'agent",
+     "type": "association",
+     "consigne": {
+      "cm1": "Avant de partir, le Professeur Atlas te confie une liste de démarches. Relie chaque démarche au lieu de la commune où tu dois aller : clique sur une démarche, puis sur le bon lieu.",
+      "cm2": "Le Professeur Atlas te confie sept démarches. Relie chacune au lieu de la commune où elle se fait. Réfléchis à ce que l'on vient chercher dans chaque bâtiment."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 1 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "On demande une carte d'identité à la mairie, on obtient un certificat médical au cabinet médical, on emprunte un guide à la bibliothèque, on s'entraîne à courir au parc, on achète une trousse de secours à la pharmacie, un goûter à la boulangerie, et l'on récupère ses cahiers à l'école.",
+     "indices": {
+      "cm1": [
+       "On ne se soigne pas à la boulangerie !",
+       "Les papiers officiels se demandent à la mairie.",
+       "On emprunte des livres sans les acheter."
+      ],
+      "cm2": [
+       "Demande-toi : qui travaille dans ce bâtiment ?",
+       "La pharmacie vend des médicaments et du matériel de soin.",
+       "Le parc est un lieu de loisirs : on peut y courir."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "Demander une carte d'identité",
+        "d": "la mairie"
+       },
+       {
+        "g": "Faire un certificat médical",
+        "d": "le cabinet médical"
+       },
+       {
+        "g": "Emprunter un guide de voyage",
+        "d": "la bibliothèque"
+       },
+       {
+        "g": "Acheter un goûter",
+        "d": "la boulangerie"
+       },
+       {
+        "g": "Récupérer ses cahiers",
+        "d": "l'école"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "Demander une carte d'identité",
+        "d": "la mairie"
+       },
+       {
+        "g": "Faire un certificat médical",
+        "d": "le cabinet médical"
+       },
+       {
+        "g": "Emprunter un guide de voyage",
+        "d": "la bibliothèque"
+       },
+       {
+        "g": "S'entraîner à la course à pied",
+        "d": "le parc"
+       },
+       {
+        "g": "Acheter une trousse de secours",
+        "d": "la pharmacie"
+       },
+       {
+        "g": "Acheter un goûter",
+        "d": "la boulangerie"
+       },
+       {
+        "g": "Récupérer ses devoirs et ses cahiers",
+        "d": "l'école"
+       }
+      ]
+     },
+     "lecon": "l01"
+    },
+    {
+     "id": "1-2",
+     "titre": "À quoi sert chaque lieu ?",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Sur le plan de la commune, chaque lieu a une fonction. Range chaque lieu dans la colonne de sa fonction : clique sur une carte, puis sur une colonne.",
+      "cm2": "Range chaque lieu de la commune selon sa fonction. Attention : plusieurs lieux peuvent avoir la même fonction."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 1 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "La mairie et la poste ont une fonction administrative ; l'école et la bibliothèque, une fonction éducative ; la boulangerie et le supermarché, une fonction commerciale ; le cabinet médical et la pharmacie, une fonction de santé ; le parc et le stade, une fonction de loisirs.",
+     "indices": {
+      "cm1": [
+       "À la mairie, on fait des papiers officiels : c'est administratif.",
+       "Deux lieux servent à se soigner.",
+       "Le parc sert à se détendre : ce sont les loisirs."
+      ],
+      "cm2": [
+       "La poste rend un service officiel, comme la mairie.",
+       "Éducatif : on y apprend.",
+       "Commercial : on y achète quelque chose."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "adm",
+        "titre": "Administrative"
+       },
+       {
+        "id": "edu",
+        "titre": "Éducative"
+       },
+       {
+        "id": "com",
+        "titre": "Commerciale"
+       },
+       {
+        "id": "san",
+        "titre": "Santé"
+       },
+       {
+        "id": "loi",
+        "titre": "Loisirs"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la mairie",
+        "col": "adm"
+       },
+       {
+        "txt": "l'école",
+        "col": "edu"
+       },
+       {
+        "txt": "la boulangerie",
+        "col": "com"
+       },
+       {
+        "txt": "le cabinet médical",
+        "col": "san"
+       },
+       {
+        "txt": "la pharmacie",
+        "col": "san"
+       },
+       {
+        "txt": "le parc",
+        "col": "loi"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "adm",
+        "titre": "Administrative"
+       },
+       {
+        "id": "edu",
+        "titre": "Éducative"
+       },
+       {
+        "id": "com",
+        "titre": "Commerciale"
+       },
+       {
+        "id": "san",
+        "titre": "Santé"
+       },
+       {
+        "id": "loi",
+        "titre": "Loisirs"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la mairie",
+        "col": "adm"
+       },
+       {
+        "txt": "la poste",
+        "col": "adm"
+       },
+       {
+        "txt": "l'école",
+        "col": "edu"
+       },
+       {
+        "txt": "la bibliothèque",
+        "col": "edu"
+       },
+       {
+        "txt": "la boulangerie",
+        "col": "com"
+       },
+       {
+        "txt": "le supermarché",
+        "col": "com"
+       },
+       {
+        "txt": "le cabinet médical",
+        "col": "san"
+       },
+       {
+        "txt": "la pharmacie",
+        "col": "san"
+       },
+       {
+        "txt": "le parc",
+        "col": "loi"
+       },
+       {
+        "txt": "le stade",
+        "col": "loi"
+       }
+      ]
+     },
+     "lecon": "l01"
+    },
+    {
+     "id": "1-3",
+     "titre": "Les lettres marquées",
+     "type": "lettres",
+     "consigne": {
+      "cm1": "Le Professeur Atlas a marqué des lettres en couleur dans sa liste. Clique sur les bonnes lettres pour former, dans l'ordre, le nom de la ville où tu es attendu (5 lettres). Attention, deux lettres sont des pièges.",
+      "cm2": "Dans le message du Professeur Atlas, des lettres sont en couleur. Forme le nom de la ville du rendez-vous (5 lettres, une préfecture de Bourgogne-Franche-Comté). Plusieurs lettres sont des pièges."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 1",
+     "correction": "Les lettres D, I, J, O et N forment DIJON : c'est là que les autres agents t'attendent. Dijon est la préfecture de la Côte-d'Or.",
+     "indices": {
+      "cm1": [
+       "La ville commence par D.",
+       "Elle est célèbre pour sa moutarde.",
+       "D, I, J… il reste deux lettres."
+      ],
+      "cm2": [
+       "C'est la préfecture de la Côte-d'Or.",
+       "La ville commence par D et finit par N.",
+       "Les lettres M et A sont des pièges."
+      ]
+     },
+     "cm1": {
+      "cible": [
+       "D",
+       "I",
+       "J",
+       "O",
+       "N"
+      ],
+      "texte": "<p>Liste des démarches : passer à l'éc<b data-l='O'>o</b>le, puis à la <b data-l='M'>m</b>airie. Aller au cabinet mé<b data-l='D'>d</b>ical, puis à la boula<b data-l='N'>n</b>gerie. Passer à la ph<b data-l='A'>a</b>rmacie, à la b<b data-l='I'>i</b>bliothèque, et finir par le parc, pour les <b data-l='J'>j</b>eux et la course.</p>"
+     },
+     "cm2": {
+      "cible": [
+       "D",
+       "I",
+       "J",
+       "O",
+       "N"
+      ],
+      "texte": "<p>Agent, votre mission commence ici, dans votre commune. Récupérez vos cahiers à l'éc<b data-l='O'>o</b>le et vos papiers à la <b data-l='M'>m</b>airie. Le cabinet mé<b data-l='D'>d</b>ical vous remettra un certificat ; la boula<b data-l='N'>n</b>gerie, votre goûter. Passez à la ph<b data-l='A'>a</b>rmacie pour la trousse de secours, puis à la b<b data-l='I'>i</b>bliothèque pour le guide. Entraînez-vous au parc : ses <b data-l='J'>j</b>eux et ses allées sont parfaits. <b data-l='R'>r</b>endez-vous ensuite à la gare.</p>"
+     },
+     "lecon": "l01"
+    },
+    {
+     "id": "1-4",
+     "titre": "Les services publics",
+     "type": "qcm",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Avant de fermer sa valise, le Professeur Atlas vérifie que tu connais bien ta commune. Réponds aux questions, puis vérifie.",
+     "source": "Livret « Mission géographique », Année A, séance 1 ; DGCL, « Les structures territoriales au 1er janvier 2026 » ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Un service public rend un service à tous les habitants, sans que l'on paie ce que l'on vient chercher : c'est le cas de la mairie, de l'école publique et de la bibliothèque municipale. La commune est dirigée par un maire. On parle souvent de village en dessous de 2 000 habitants, de ville au-delà.",
+     "indices": {
+      "cm2": [
+       "Un commerce vend quelque chose ; un service public rend un service à tous.",
+       "Le maire est élu par le conseil municipal.",
+       "Le seuil habituel est de 2 000 habitants."
+      ]
+     },
+     "commun": {
+      "questions": [
+       {
+        "q": "Lequel de ces lieux est un service public de la commune ?",
+        "options": [
+         "la bibliothèque municipale",
+         "la boulangerie",
+         "la pharmacie",
+         "le supermarché"
+        ],
+        "bonne": 0,
+        "explication": "On y emprunte des livres sans les acheter : elle sert à tous les habitants."
+       },
+       {
+        "q": "Qui dirige la commune ?",
+        "options": [
+         "le maire",
+         "le préfet",
+         "le président de la région",
+         "le directeur de l'école"
+        ],
+        "bonne": 0,
+        "explication": "Le maire est élu par le conseil municipal, lui-même élu par les habitants."
+       },
+       {
+        "q": "Une commune de 8 000 habitants est plutôt…",
+        "options": [
+         "une ville",
+         "un village",
+         "un hameau",
+         "un département"
+        ],
+        "bonne": 0,
+        "explication": "Au-delà de 2 000 habitants, on parle souvent de ville."
+       },
+       {
+        "q": "Combien y a-t-il de communes en France au 1er janvier 2026 ?",
+        "options": [
+         "34 875",
+         "101",
+         "3 487",
+         "348 750"
+        ],
+        "bonne": 0,
+        "explication": "La commune est le plus petit territoire administratif."
+       }
+      ]
+     },
+     "lecon": "l01"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "titre": "Direction Dijon ! — Des territoires emboîtés",
+   "enigmes": [
+    {
+     "id": "2-1",
+     "titre": "Qui décide ?",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Léna attend les agents à Dijon. Elle a noté des décisions à prendre. Range chaque décision chez celui qui décide : la commune, le département ou la région.",
+      "cm2": "Léna t'attend au point de rendez-vous. Réponds à ses questions sur Dijon et sur le découpage du territoire, puis vérifie."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 2 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Les écoles dépendent de la commune, les collèges du département, les lycées et les TER de la région. Le rendez-vous a lieu au palais des ducs de Bourgogne, place de la Libération : il abrite aujourd'hui la mairie et le musée des Beaux-Arts. Dijon est la préfecture de la Côte-d'Or et le chef-lieu de la région.",
+     "indices": {
+      "cm1": [
+       "L'école → la commune.",
+       "Le collège → le département.",
+       "Le lycée → la région : plus l'élève grandit, plus le territoire est grand."
+      ],
+      "cm2": [
+       "Le plus grand bâtiment de la place de la Libération.",
+       "Une préfecture est la ville principale d'un département.",
+       "Sept continents, treize régions en métropole."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "com",
+        "titre": "La commune"
+       },
+       {
+        "id": "dep",
+        "titre": "Le département"
+       },
+       {
+        "id": "reg",
+        "titre": "La région"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Rénover une école élémentaire",
+        "col": "com"
+       },
+       {
+        "txt": "Organiser la collecte des déchets",
+        "col": "com"
+       },
+       {
+        "txt": "Construire un collège",
+        "col": "dep"
+       },
+       {
+        "txt": "Agrandir un lycée",
+        "col": "reg"
+       },
+       {
+        "txt": "Créer une ligne de TER",
+        "col": "reg"
+       }
+      ],
+      "type": "tri"
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Où les agents se retrouvent-ils, place de la Libération ?",
+        "options": [
+         "au palais des ducs de Bourgogne",
+         "dans les caves voûtées",
+         "au musée Magnin",
+         "à l'hôtel de Vogüé"
+        ],
+        "bonne": 0,
+        "explication": "Le palais abrite aujourd'hui la mairie et le musée des Beaux-Arts."
+       },
+       {
+        "q": "Dijon est la préfecture de quel département ?",
+        "options": [
+         "la Côte-d'Or",
+         "le Doubs",
+         "la Nièvre",
+         "le Jura"
+        ],
+        "bonne": 0,
+        "explication": "Le numéro de la Côte-d'Or est le 21."
+       },
+       {
+        "q": "Combien de régions compte la France métropolitaine ?",
+        "options": [
+         "13",
+         "18",
+         "22",
+         "96"
+        ],
+        "bonne": 0,
+        "explication": "Avec l'outre-mer, on en compte 18."
+       },
+       {
+        "q": "Combien de continents compte-t-on habituellement ?",
+        "options": [
+         "7",
+         "5",
+         "6",
+         "13"
+        ],
+        "bonne": 0,
+        "explication": "L'Antarctique compte parmi eux."
+       }
+      ]
+     },
+     "lecon": "l02"
+    },
+    {
+     "id": "2-2",
+     "titre": "La carte de Léna",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Léna déplie un planisphère. Place le nom de chaque continent sur le bon repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox=\"0 0 1000 500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Le planisphère du Professeur Atlas\"><rect x=\"0\" y=\"0\" width=\"1000\" height=\"500\" fill=\"#bfe0f2\"/><line x1=\"0\" y1=\"250\" x2=\"1000\" y2=\"250\" stroke=\"#4a6b8c\" stroke-dasharray=\"8 6\" stroke-width=\"1.5\"/><text x=\"8\" y=\"245\" font-size=\"13\" fill=\"#3a5a7c\" font-style=\"italic\">équateur</text><path data-continent=\"amerique-nord\" d=\"M33,67 L111,83 L153,114 L175,161 L208,194 L231,206 L269,222 L278,181 L292,153 L317,125 L347,119 L333,89 L292,61 L236,50 L153,56 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"amerique-sud\" d=\"M278,228 L306,217 L333,236 L361,250 L403,267 L394,300 L367,319 L339,347 L319,375 L306,397 L292,375 L303,333 L306,300 L286,264 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"europe\" d=\"M472,150 L500,128 L528,144 L556,139 L578,136 L583,125 L611,117 L611,83 L583,67 L569,53 L528,75 L514,83 L486,111 L472,131 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"afrique\" d=\"M453,208 L500,208 L542,189 L589,164 L597,194 L619,217 L642,217 L617,256 L611,292 L597,311 L569,344 L550,344 L533,300 L522,239 L486,236 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"asie\" d=\"M611,117 L667,97 L722,83 L778,50 L889,50 L1000,67 L1000,97 L944,111 L889,125 L875,153 L839,167 L833,189 L792,222 L764,236 L722,228 L700,194 L667,181 L639,172 L619,217 L597,194 L589,164 L583,125 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"oceanie\" d=\"M814,311 L858,283 L894,281 L906,303 L917,319 L925,328 L917,356 L889,356 L858,339 L819,344 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"antarctique\" d=\"M80,468 L200,452 L340,462 L470,450 L600,462 L740,452 L900,470 L920,500 L60,500 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><circle cx='180' cy='130' r='18' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='180' y='136' text-anchor='middle' font-size='21' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='330' cy='315' r='18' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='330' y='321' text-anchor='middle' font-size='21' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='540' cy='100' r='18' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='540' y='106' text-anchor='middle' font-size='21' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='545' cy='265' r='18' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='545' y='271' text-anchor='middle' font-size='21' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='800' cy='140' r='18' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='800' y='146' text-anchor='middle' font-size='21' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='865' cy='320' r='18' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='865' y='326' text-anchor='middle' font-size='21' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='500' cy='470' r='18' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='500' y='476' text-anchor='middle' font-size='21' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text></svg>",
+      "cm2": "Léna déplie la carte des régions de France métropolitaine. Place chaque région sur son numéro. Commence par la région de ton école, puis par ses voisines.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Les 13 régions de France métropolitaine (numérotées)\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#f2ead6\" stroke=\"#7a6a4a\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#f2ead6\" stroke=\"#7a6a4a\" stroke-width=\"2.5\"/><circle cx=\"102\" cy=\"158\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"102\" y=\"163\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">1</text><circle cx=\"186\" cy=\"193\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"186\" y=\"198\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">2</text><circle cx=\"222\" cy=\"113\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"222\" y=\"118\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">3</text><circle cx=\"330\" cy=\"68\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"330\" y=\"73\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">4</text><circle cx=\"442\" cy=\"133\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"442\" y=\"138\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">5</text><circle cx=\"318\" cy=\"133\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"318\" y=\"138\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">6</text><circle cx=\"286\" cy=\"193\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"286\" y=\"198\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">7</text><circle cx=\"410\" cy=\"208\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"410\" y=\"213\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">8</text><circle cx=\"398\" cy=\"293\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"398\" y=\"298\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">9</text><circle cx=\"226\" cy=\"308\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"226\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">10</text><circle cx=\"306\" cy=\"378\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"306\" y=\"383\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">11</text><circle cx=\"458\" cy=\"373\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"458\" y=\"378\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">12</text><circle cx=\"582\" cy=\"458\" r=\"15\" fill=\"#1f6fb8\" stroke=\"#fff\" stroke-width=\"2.5\"/><text x=\"582\" y=\"463\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">13</text></svg>"
+     },
+     "source": "Livret « Mission géographique », Année A, séance 2 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français » ; fonds de carte dessinés par script (mission-geo/js/cartes.js)",
+     "correction": "Les sept continents sont l'Amérique du Nord, l'Amérique du Sud, l'Europe, l'Afrique, l'Asie, l'Océanie et l'Antarctique. La France métropolitaine compte 13 régions ; Dijon est en Bourgogne-Franche-Comté.",
+     "indices": {
+      "cm1": [
+       "L'Europe est au centre, en haut.",
+       "L'Afrique est juste en dessous de l'Europe.",
+       "L'Antarctique est tout en bas, autour du pôle Sud."
+      ],
+      "cm2": [
+       "Repère d'abord la Bretagne (à l'ouest) et la Corse (l'île).",
+       "Les Hauts-de-France sont tout au nord.",
+       "Dijon est dans la région numéro 8."
+      ]
+     },
+     "cm1": {
+      "titre": "Le planisphère de Léna",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "Amérique du Nord"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "Amérique du Sud"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Europe"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Afrique"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Asie"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Océanie"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Antarctique"
+       }
+      ]
+     },
+     "cm2": {
+      "titre": "Les régions de France métropolitaine",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "Bretagne"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "Pays de la Loire"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Normandie"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Hauts-de-France"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Grand Est"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Île-de-France"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Centre-Val de Loire"
+       },
+       {
+        "libelle": "Repère 8",
+        "reponse": "Bourgogne-Franche-Comté"
+       },
+       {
+        "libelle": "Repère 9",
+        "reponse": "Auvergne-Rhône-Alpes"
+       },
+       {
+        "libelle": "Repère 10",
+        "reponse": "Nouvelle-Aquitaine"
+       },
+       {
+        "libelle": "Repère 11",
+        "reponse": "Occitanie"
+       },
+       {
+        "libelle": "Repère 12",
+        "reponse": "Provence-Alpes-Côte d'Azur"
+       },
+       {
+        "libelle": "Repère 13",
+        "reponse": "Corse"
+       }
+      ]
+     },
+     "lecon": "l02"
+    },
+    {
+     "id": "2-3",
+     "titre": "Le passeport de la France",
+     "type": "trous",
+     "consigne": {
+      "cm1": "Complète la carte d'identité de la France : clique sur une étiquette, puis sur le trou où elle va. Deux étiquettes sont en trop.",
+      "cm2": "Complète la carte d'identité de la France. Lis bien les nombres : plusieurs étiquettes sont des pièges."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 2 ; Insee, bilan démographique 2025 ; IGN ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "La France est un pays d'Europe. Sa capitale est Paris, sa langue le français, sa monnaie l'euro, son hymne La Marseillaise et sa devise « Liberté, Égalité, Fraternité ». La France métropolitaine mesure environ 552 000 km² ; la France compte environ 69 millions d'habitants.",
+     "indices": {
+      "cm1": [
+       "La France est sur le même continent que l'Allemagne.",
+       "Notre monnaie est aussi celle de l'Espagne.",
+       "L'hymne national porte le nom d'une grande ville du sud."
+      ],
+      "cm2": [
+       "La capitale n'est pas la plus grande ville du sud.",
+       "69 millions : des millions, pas des milliards.",
+       "552 000 km² : des kilomètres carrés, pas des mètres carrés."
+      ]
+     },
+     "cm1": {
+      "texte": "<p>Continent : [[Europe]]. Capitale : [[Paris]]. Monnaie : [[l'euro]]. Hymne : [[La Marseillaise]]. Devise : [[Liberté, Égalité, Fraternité]].</p>",
+      "etiquettes": [
+       "Europe",
+       "Paris",
+       "l'euro",
+       "La Marseillaise",
+       "Liberté, Égalité, Fraternité",
+       "Asie",
+       "le dollar"
+      ]
+     },
+     "cm2": {
+      "texte": "<p>Continent : [[Europe]]. Capitale : [[Paris]]. Langue : [[français]]. Monnaie : [[l'euro]]. Superficie de la métropole : environ [[552 000 km²]]. Population : environ [[69 millions]] d'habitants. Hymne : [[La Marseillaise]].</p>",
+      "etiquettes": [
+       "Europe",
+       "Paris",
+       "français",
+       "l'euro",
+       "552 000 km²",
+       "69 millions",
+       "La Marseillaise",
+       "Marseille",
+       "552 000 m²",
+       "7 milliards",
+       "le franc"
+      ]
+     },
+     "lecon": "l02"
+    },
+    {
+     "id": "2-4",
+     "titre": "Les décisions de Léna",
+     "type": "tri",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Léna a noté des décisions prises dans la région. Range chacune chez celui qui décide : la commune, le département ou la région.",
+     "source": "Livret « Mission géographique », Année A, séance 2 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "La commune s'occupe des écoles, de l'eau et des déchets ; le département des collèges, de l'aide sociale et des routes départementales ; la région des lycées et des trains régionaux (TER).",
+     "indices": {
+      "cm2": [
+       "Écoles = commune, collèges = département, lycées = région.",
+       "Les trains régionaux s'appellent les TER.",
+       "Les routes départementales portent bien leur nom."
+      ]
+     },
+     "commun": {
+      "colonnes": [
+       {
+        "id": "com",
+        "titre": "La commune"
+       },
+       {
+        "id": "dep",
+        "titre": "Le département"
+       },
+       {
+        "id": "reg",
+        "titre": "La région"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Rénover une école élémentaire",
+        "col": "com"
+       },
+       {
+        "txt": "Organiser la collecte des déchets",
+        "col": "com"
+       },
+       {
+        "txt": "Construire un collège",
+        "col": "dep"
+       },
+       {
+        "txt": "Entretenir une route départementale",
+        "col": "dep"
+       },
+       {
+        "txt": "Agrandir un lycée",
+        "col": "reg"
+       },
+       {
+        "txt": "Créer une ligne de TER",
+        "col": "reg"
+       }
+      ]
+     },
+     "lecon": "l02"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "titre": "Vivre à Clamecy — L'espace rural",
+   "enigmes": [
+    {
+     "id": "3-1",
+     "titre": "Vivre à Clamecy",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Malik s'est installé à Clamecy pour passer inaperçu. Il a noté ce qu'il pense de la vie à la campagne. Range chaque carte : avantage ou inconvénient ?",
+      "cm2": "Malik t'envoie une vue aérienne d'un bourg, redessinée en plan. Place chaque élément sur le bon repère. Une étiquette est en trop.<svg viewBox=\"0 0 800 560\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Le bourg vu du ciel\"><rect x=\"0\" y=\"0\" width=\"800\" height=\"560\" fill=\"#7f9f5e\"/><g fill=\"#8fae6a\" stroke=\"#6f8c50\"><rect x=\"20\" y=\"20\" width=\"220\" height=\"150\"/><rect x=\"560\" y=\"30\" width=\"210\" height=\"170\"/><rect x=\"40\" y=\"400\" width=\"240\" height=\"140\"/><rect x=\"520\" y=\"380\" width=\"250\" height=\"160\"/></g><g stroke=\"#e8e3d2\" stroke-width=\"16\" fill=\"none\"><path d=\"M0,300 L800,290\"/><path d=\"M400,0 L390,560\"/><path d=\"M390,300 L640,120\"/></g><g fill=\"#cf7f5c\" stroke=\"#8a4f36\"><rect x=\"330\" y=\"250\" width=\"26\" height=\"22\"/><rect x=\"362\" y=\"246\" width=\"24\" height=\"20\"/><rect x=\"404\" y=\"252\" width=\"30\" height=\"24\"/><rect x=\"352\" y=\"282\" width=\"26\" height=\"22\"/><rect x=\"398\" y=\"288\" width=\"24\" height=\"20\"/><rect x=\"428\" y=\"262\" width=\"22\" height=\"18\"/></g><g fill=\"#b9b2a2\" stroke=\"#6f695c\"><rect x=\"368\" y=\"212\" width=\"34\" height=\"26\"/><rect x=\"378\" y=\"188\" width=\"12\" height=\"26\"/></g><g fill=\"#e0c98d\" stroke=\"#9c8a55\"><rect x=\"150\" y=\"330\" width=\"20\" height=\"18\"/><rect x=\"180\" y=\"330\" width=\"20\" height=\"18\"/><rect x=\"210\" y=\"330\" width=\"20\" height=\"18\"/><rect x=\"150\" y=\"358\" width=\"20\" height=\"18\"/><rect x=\"180\" y=\"358\" width=\"20\" height=\"18\"/><rect x=\"210\" y=\"358\" width=\"20\" height=\"18\"/></g><circle cx='376' cy='224' r='11' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='376' y='230' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='376' cy='269' r='11' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='376' y='275' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='192' cy='347' r='11' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='192' y='353' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='416' cy='291' r='11' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='416' y='297' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='328' cy='258' r='11' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='328' y='264' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='128' cy='95' r='11' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='128' y='101' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='640' cy='291' r='11' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='640' y='297' text-anchor='middle' font-size='14' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text></svg>"
+     },
+     "source": "Livret « Mission géographique », Année A, séance 3 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français » ; banatic.interieur.gouv.fr (Clamecy)",
+     "correction": "Vivre à la campagne, c'est profiter de la nature, du calme, de logements plus grands et moins chers. Mais il y a peu de commerces, de services et d'emplois, peu de transports en commun, et la voiture est souvent indispensable. Dans un bourg, les maisons se serrent autour de l'église, de la mairie et des commerces.",
+     "indices": {
+      "cm1": [
+       "Un avantage, c'est quelque chose d'agréable.",
+       "Sans bus, il faut une voiture.",
+       "Il y a 3 avantages et 3 inconvénients."
+      ],
+      "cm2": [
+       "Le centre-bourg est là où les maisons sont les plus serrées.",
+       "L'église a un clocher, au cœur du bourg.",
+       "Le lotissement est un quartier de maisons récentes, à l'écart."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "a",
+        "titre": "Avantages"
+       },
+       {
+        "id": "i",
+        "titre": "Inconvénients"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la proximité de la nature",
+        "col": "a"
+       },
+       {
+        "txt": "des logements moins chers",
+        "col": "a"
+       },
+       {
+        "txt": "peu de bruit",
+        "col": "a"
+       },
+       {
+        "txt": "peu de commerces",
+        "col": "i"
+       },
+       {
+        "txt": "peu de bus et de trains",
+        "col": "i"
+       },
+       {
+        "txt": "une voiture indispensable",
+        "col": "i"
+       }
+      ]
+     },
+     "cm2": {
+      "titre": "Le bourg vu du ciel",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "L'église"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "Le centre-bourg"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Le lotissement"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Un commerce"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "La mairie"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Un champ"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "La route principale"
+       }
+      ],
+      "etiquettes": [
+       "L'église",
+       "Le centre-bourg",
+       "Le lotissement",
+       "Un commerce",
+       "La mairie",
+       "Un champ",
+       "La route principale",
+       "La gare TGV"
+      ],
+      "type": "plan"
+     },
+     "lecon": "l03"
+    },
+    {
+     "id": "3-2",
+     "titre": "La définition de Malik",
+     "type": "trous",
+     "consigne": {
+      "cm1": "Complète la définition d'une commune rurale. Un mot de la liste est un intrus.",
+      "cm2": "Complète la définition d'une commune rurale. Deux mots de la liste sont des intrus."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 3 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Une commune rurale a une faible densité de population ; elle est marquée par les activités agricoles. Moins de 2 000 habitants : c'est un village ; une commune rurale plus grande, avec des commerces et des services, est un bourg.",
+     "indices": {
+      "cm1": [
+       "Rural : peu d'habitants sur beaucoup d'espace.",
+       "La densité y est donc faible.",
+       "L'intrus est le contraire de « faible »."
+      ],
+      "cm2": [
+       "« Élevée » est le contraire de « faible ».",
+       "À la campagne, on cultive et on élève : ce sont les activités agricoles.",
+       "Le bourg est plus grand que le village."
+      ]
+     },
+     "cm1": {
+      "texte": "<p>Une commune rurale est une commune où la [[densité]] de population est [[faible]]. Elle est marquée par les activités [[agricoles]]. Avec moins de 2 000 habitants, c'est un [[village]].</p>",
+      "etiquettes": [
+       "densité",
+       "faible",
+       "agricoles",
+       "village",
+       "élevée"
+      ]
+     },
+     "cm2": {
+      "texte": "<p>Une commune rurale est une commune où la [[densité]] de population est [[faible]]. Elle est marquée par les activités [[agricoles]]. Avec moins de 2 000 habitants, c'est un [[village]] ; plus grande, avec des commerces et des services utiles aux villages voisins, c'est un [[bourg]].</p>",
+      "etiquettes": [
+       "densité",
+       "faible",
+       "agricoles",
+       "village",
+       "bourg",
+       "élevée",
+       "industrielles"
+      ]
+     },
+     "lecon": "l03"
+    },
+    {
+     "id": "3-3",
+     "titre": "Le calcul des densités",
+     "type": "code",
+     "consigne": {
+      "cm1": "Pour passer inaperçu, Malik doit comprendre combien de personnes vivent ici. Calcule la densité de chaque espace (habitants ÷ km²), puis le total des trois. Écris les nombres, puis ouvre.<svg viewBox='0 0 640 215' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Trois espaces vus du dessus (1 carreau = 1 km sur 1 km)\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px'><rect width='640' height='215' rx='12' fill='#f4efe4'/><text x='320' y='26' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Trois espaces vus du dessus (1 carreau = 1 km sur 1 km)</text><rect x='40' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><circle cx='62' cy='90' r='7' fill='#7a1f2b'/><circle cx='88' cy='104' r='7' fill='#7a1f2b'/><text x='75' y='52' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Espace A</text><rect x='180' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><circle cx='198' cy='80' r='7' fill='#7a1f2b'/><circle cx='230' cy='82' r='7' fill='#7a1f2b'/><circle cx='204' cy='112' r='7' fill='#7a1f2b'/><circle cx='232' cy='110' r='7' fill='#7a1f2b'/><text x='215' y='52' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Espace B</text><rect x='330' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><rect x='330' y='130' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><rect x='400' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><rect x='400' y='130' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><circle cx='360' cy='90' r='7' fill='#7a1f2b'/><circle cx='440' cy='100' r='7' fill='#7a1f2b'/><circle cx='370' cy='170' r='7' fill='#7a1f2b'/><circle cx='442' cy='164' r='7' fill='#7a1f2b'/><text x='400' y='52' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Espace C</text><text x='560' y='120' text-anchor='middle' font-size='13' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>● = 1 habitant</text><text x='560' y='142' text-anchor='middle' font-size='13' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>□ = 1 km²</text></svg>",
+      "cm2": "Calcule la densité de chaque espace, le total des trois, puis celle de la ville B : 60 000 habitants sur 40 km². Écris les nombres, puis ouvre.<svg viewBox='0 0 640 215' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"Trois espaces vus du dessus (1 carreau = 1 km sur 1 km)\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px'><rect width='640' height='215' rx='12' fill='#f4efe4'/><text x='320' y='26' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Trois espaces vus du dessus (1 carreau = 1 km sur 1 km)</text><rect x='40' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><circle cx='62' cy='90' r='7' fill='#7a1f2b'/><circle cx='88' cy='104' r='7' fill='#7a1f2b'/><text x='75' y='52' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Espace A</text><rect x='180' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><circle cx='198' cy='80' r='7' fill='#7a1f2b'/><circle cx='230' cy='82' r='7' fill='#7a1f2b'/><circle cx='204' cy='112' r='7' fill='#7a1f2b'/><circle cx='232' cy='110' r='7' fill='#7a1f2b'/><text x='215' y='52' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Espace B</text><rect x='330' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><rect x='330' y='130' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><rect x='400' y='60' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><rect x='400' y='130' width='70' height='70' fill='#dfe9cf' stroke='#6b7a4e' stroke-width='1.5'/><circle cx='360' cy='90' r='7' fill='#7a1f2b'/><circle cx='440' cy='100' r='7' fill='#7a1f2b'/><circle cx='370' cy='170' r='7' fill='#7a1f2b'/><circle cx='442' cy='164' r='7' fill='#7a1f2b'/><text x='400' y='52' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>Espace C</text><text x='560' y='120' text-anchor='middle' font-size='13' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>● = 1 habitant</text><text x='560' y='142' text-anchor='middle' font-size='13' fill='#1b2a3a' font-family='Atkinson Hyperlegible,Arial,sans-serif'>□ = 1 km²</text></svg>"
+     },
+     "source": "Livret « Mission géographique », Année A, séance 3 (espaces A, B, C ; ville B imaginaire)",
+     "correction": "Espace A : 2 habitants sur 1 km², soit 2 hab/km². Espace B : 4 ÷ 1 = 4 hab/km². Espace C : 2 km sur 2 km font 4 km², et 4 ÷ 4 = 1 hab/km². Le total vaut 7. Ville B : 60 000 ÷ 40 = 1 500 hab/km², bien plus dense que nos espaces ruraux.",
+     "indices": {
+      "cm1": [
+       "Densité = habitants ÷ surface en km².",
+       "Espace C : 2 km × 2 km = 4 km².",
+       "Additionne les trois densités : 2 + 4 + 1."
+      ],
+      "cm2": [
+       "Attention à l'espace C : sa surface est de 4 km².",
+       "60 000 ÷ 40 : commence par 60 000 ÷ 10.",
+       "Le total des trois densités est un nombre à un chiffre."
+      ]
+     },
+     "cm1": {
+      "champs": [
+       {
+        "libelle": "Densité de l'espace A (hab/km²)",
+        "valeur": "2",
+        "longueur": 1
+       },
+       {
+        "libelle": "Densité de l'espace B (hab/km²)",
+        "valeur": "4",
+        "longueur": 1
+       },
+       {
+        "libelle": "Densité de l'espace C (hab/km²)",
+        "valeur": "1",
+        "longueur": 1
+       },
+       {
+        "libelle": "Total des trois densités",
+        "valeur": "7",
+        "longueur": 1
+       }
+      ]
+     },
+     "cm2": {
+      "champs": [
+       {
+        "libelle": "Densité de l'espace A (hab/km²)",
+        "valeur": "2",
+        "longueur": 1
+       },
+       {
+        "libelle": "Densité de l'espace B (hab/km²)",
+        "valeur": "4",
+        "longueur": 1
+       },
+       {
+        "libelle": "Densité de l'espace C (hab/km²)",
+        "valeur": "1",
+        "longueur": 1
+       },
+       {
+        "libelle": "Total des trois densités",
+        "valeur": "7",
+        "longueur": 1
+       },
+       {
+        "libelle": "Densité de la ville B (hab/km²)",
+        "valeur": "1500",
+        "longueur": 4
+       }
+      ]
+     },
+     "lecon": "l03"
+    },
+    {
+     "id": "3-4",
+     "titre": "Le carnet de Malik",
+     "type": "vraifaux",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Malik relit son carnet avant de quitter Clamecy. Pour chaque phrase, choisis « Vrai » ou « Faux », puis vérifie.",
+     "source": "Livret « Mission géographique », Année A, séance 3 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français » ; banatic.interieur.gouv.fr (Clamecy)",
+     "correction": "La densité se calcule en divisant le nombre d'habitants par la superficie. Un village de 600 habitants sur 30 km² a une densité de 20 hab/km². À la campagne, on trouve peu de commerces et la voiture est souvent indispensable. Clamecy est un bourg de la Nièvre, au bord de l'Yonne.",
+     "indices": {
+      "cm2": [
+       "600 ÷ 30 = 20.",
+       "Une forte densité, c'est beaucoup d'habitants sur peu d'espace.",
+       "Clamecy est dans la Nièvre."
+      ]
+     },
+     "commun": {
+      "affirmations": [
+       {
+        "txt": "Un village de 600 habitants sur 30 km² a une densité de 20 habitants par km².",
+        "vrai": true,
+        "explication": "600 ÷ 30 = 20."
+       },
+       {
+        "txt": "Un espace rural a une forte densité de population.",
+        "vrai": false,
+        "explication": "La densité y est faible."
+       },
+       {
+        "txt": "Pour calculer une densité, on multiplie les habitants par la superficie.",
+        "vrai": false,
+        "explication": "On divise les habitants par la superficie en km²."
+       },
+       {
+        "txt": "À la campagne, la voiture est souvent indispensable.",
+        "vrai": true,
+        "explication": "Les transports en commun y sont rares."
+       },
+       {
+        "txt": "Clamecy est un bourg de la Nièvre, au bord de l'Yonne.",
+        "vrai": true,
+        "explication": "Et du canal du Nivernais."
+       }
+      ]
+     },
+     "lecon": "l03"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "titre": "Besançon — Travailler en ville",
+   "enigmes": [
+    {
+     "id": "4-1",
+     "titre": "Le métier caché",
+     "type": "lettres",
+     "consigne": {
+      "cm1": "Zoé doit trouver une source qui travaille à Besançon. Le nom de son métier est caché dans le message : clique sur les lettres en couleur pour l'écrire (7 lettres). Trois lettres sont des pièges.",
+      "cm2": "Le message de Zoé cache le métier de la source (11 lettres) : clique sur les lettres en couleur pour l'écrire dans l'ordre. Attention aux lettres pièges."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 4 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "La source est un serveur, puis un ambulancier : deux métiers du secteur tertiaire, qui rendent un service aux personnes.",
+     "indices": {
+      "cm1": [
+       "Ce métier se fait au café ou au restaurant.",
+       "Il commence par S.",
+       "Il apporte les plats et les boissons."
+      ],
+      "cm2": [
+       "Ce métier conduit des malades à l'hôpital.",
+       "Il commence par A et finit par R.",
+       "Am-bu-lan-cier."
+      ]
+     },
+     "cm1": {
+      "cible": [
+       "S",
+       "E",
+       "R",
+       "V",
+       "E",
+       "U",
+       "R"
+      ],
+      "texte": "<p>La source m'attend près du Doubs, au centre-ville, dans un café. Elle a <b data-l='R'>r</b>angé son tablier noir sur une chaise. Elle a déjà tra<b data-l='V'>v</b>aillé ce matin : comman<b data-l='D'>d</b>es, boiss<b data-l='O'>o</b>ns, plats. Elle <b data-l='S'>s</b>ourit aux clients, puis <b data-l='E'>e</b>ssuie les tables. Elle aime son trav<b data-l='A'>a</b>il, même quand il y a beaucoup de bruit. Ce soir, elle r<b data-l='E'>e</b>nt<b data-l='R'>r</b>era chez elle à pied, sans se presser, par la r<b data-l='U'>u</b>e du port.</p>"
+     },
+     "cm2": {
+      "cible": [
+       "A",
+       "M",
+       "B",
+       "U",
+       "L",
+       "A",
+       "N",
+       "C",
+       "I",
+       "E",
+       "R"
+      ],
+      "texte": "<p>Changement de plan : la source a changé de métier. Elle conduit les malades vers le CHU. Notez bien : <b data-l='C'>c</b>ouloir, <b data-l='A'>a</b>ccueil, <b data-l='N'>n</b>uit, <b data-l='I'>i</b>nfirmerie, <b data-l='B'>b</b>rancard, <b data-l='E'>e</b>ntrée, <b data-l='U'>u</b>rgences, <b data-l='L'>l</b>it, <b data-l='M'>m</b>édecin, <b data-l='R'>r</b>adio, <b data-l='A'>a</b>nnonce, <b data-l='I'>i</b>ci, <b data-l='P'>p</b>ortail, <b data-l='T'>t</b>rajet.</p>"
+     },
+     "lecon": "l04"
+    },
+    {
+     "id": "4-2",
+     "titre": "Les trois secteurs",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Zoé a rencontré des professionnels de Besançon. Range chaque métier dans son secteur d'activité.",
+      "cm2": "Range chaque métier dans son secteur d'activité. Pense à ce que fait vraiment la personne : exploiter la nature, transformer, ou rendre un service."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 4 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Le secteur primaire exploite la nature (agriculteur, bûcheron), le secondaire transforme (soudeur, boulanger, glacier qui fabrique ses glaces), le tertiaire rend un service (caissier, infirmier, guide, serveur, consultant).",
+     "indices": {
+      "cm1": [
+       "Primaire : on exploite la nature.",
+       "Secondaire : on fabrique, on transforme.",
+       "Tertiaire : on rend un service."
+      ],
+      "cm2": [
+       "Le glacier fabrique ses glaces : il transforme du lait et des fruits.",
+       "Le bûcheron coupe les arbres de la forêt.",
+       "Le consultant conseille des entreprises : c'est un service."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "p",
+        "titre": "Primaire"
+       },
+       {
+        "id": "s",
+        "titre": "Secondaire"
+       },
+       {
+        "id": "t",
+        "titre": "Tertiaire"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "agriculteur",
+        "col": "p"
+       },
+       {
+        "txt": "soudeur",
+        "col": "s"
+       },
+       {
+        "txt": "boulanger",
+        "col": "s"
+       },
+       {
+        "txt": "caissier",
+        "col": "t"
+       },
+       {
+        "txt": "infirmier",
+        "col": "t"
+       },
+       {
+        "txt": "guide",
+        "col": "t"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "p",
+        "titre": "Primaire"
+       },
+       {
+        "id": "s",
+        "titre": "Secondaire"
+       },
+       {
+        "id": "t",
+        "titre": "Tertiaire"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "agriculteur",
+        "col": "p"
+       },
+       {
+        "txt": "bûcheron",
+        "col": "p"
+       },
+       {
+        "txt": "soudeur",
+        "col": "s"
+       },
+       {
+        "txt": "glacier (il fabrique ses glaces)",
+        "col": "s"
+       },
+       {
+        "txt": "maçon",
+        "col": "s"
+       },
+       {
+        "txt": "caissier",
+        "col": "t"
+       },
+       {
+        "txt": "infirmier",
+        "col": "t"
+       },
+       {
+        "txt": "pédiatre",
+        "col": "t"
+       },
+       {
+        "txt": "serveur",
+        "col": "t"
+       },
+       {
+        "txt": "consultant",
+        "col": "t"
+       }
+      ]
+     },
+     "lecon": "l04"
+    },
+    {
+     "id": "4-3",
+     "titre": "Les confidences de la source",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "La source accepte de parler. Réponds à ses deux questions, puis vérifie.",
+      "cm2": "La source accepte de parler si tu sais lire son document : « En 1911, près de 40 % des actifs travaillaient dans l'agriculture. En 2024, le tertiaire regroupe 76,6 % des emplois. » Réponds, puis vérifie."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 4 ; Insee, enquête Emploi 2024 ; ministère de l'Agriculture, CEP (recensement de 1911)",
+     "correction": "Aujourd'hui, plus de 3 emplois sur 4 sont dans le secteur tertiaire. En 1911, près de 40 % des actifs travaillaient dans l'agriculture. La phrase de la source, « Ce que vous cherchez n'est plus en Europe », indique que la valise a quitté le continent européen.",
+     "indices": {
+      "cm1": [
+       "Pense aux métiers rencontrés : la plupart rendent un service.",
+       "« N'est plus en Europe » : elle est sur un autre continent.",
+       "Relis la fiche « La ville »."
+      ],
+      "cm2": [
+       "76,6 % : plus de 3 sur 4.",
+       "40 % en 1911, environ 2 % aujourd'hui.",
+       "La source parle d'un continent."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Quel secteur emploie le plus de personnes en France aujourd'hui ?",
+        "options": [
+         "le tertiaire",
+         "le primaire",
+         "le secondaire"
+        ],
+        "bonne": 0,
+        "explication": "Plus de 3 emplois sur 4."
+       },
+       {
+        "q": "La source dit : « Ce que vous cherchez n'est plus en Europe. » Que peux-tu en déduire ?",
+        "options": [
+         "la valise est sur un autre continent",
+         "la valise est à Besançon",
+         "la valise est en France"
+        ],
+        "bonne": 0,
+        "explication": "Il faut chercher hors d'Europe."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Quel secteur emploie le plus de personnes en France en 2024 ?",
+        "options": [
+         "le tertiaire",
+         "le primaire",
+         "le secondaire",
+         "aucun : ils sont égaux"
+        ],
+        "bonne": 0,
+        "explication": "76,6 % des emplois."
+       },
+       {
+        "q": "Comment la part de l'agriculture a-t-elle changé depuis 1911 ?",
+        "options": [
+         "elle a beaucoup baissé",
+         "elle a beaucoup augmenté",
+         "elle n'a pas changé",
+         "elle a doublé"
+        ],
+        "bonne": 0,
+        "explication": "De près de 40 % à un peu plus de 2 %."
+       },
+       {
+        "q": "« Ce que vous cherchez n'est plus en Europe. » Que peux-tu en déduire ?",
+        "options": [
+         "la valise a quitté le continent européen",
+         "la valise est à Dijon",
+         "la valise est en Suisse",
+         "la valise a été détruite"
+        ],
+        "bonne": 0,
+        "explication": "Il faut chercher sur un autre continent."
+       }
+      ]
+     },
+     "lecon": "l04"
+    },
+    {
+     "id": "4-4",
+     "titre": "Où travaille chacun ?",
+     "type": "association",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Zoé doit retrouver chaque professionnel sur son lieu de travail. Relie chaque métier au lieu où il s'exerce.",
+     "source": "Livret « Mission géographique », Année A, séance 4 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Le caissier travaille au centre commercial, l'infirmier au CHU (l'hôpital), le guide dans le centre-ville historique, le consultant dans le quartier d'affaires et le soudeur à l'atelier de maintenance des trains.",
+     "indices": {
+      "cm2": [
+       "Le CHU est un grand hôpital.",
+       "Le guide fait visiter les monuments.",
+       "Le consultant travaille dans des bureaux."
+      ]
+     },
+     "commun": {
+      "paires": [
+       {
+        "g": "le caissier",
+        "d": "le centre commercial"
+       },
+       {
+        "g": "l'infirmier",
+        "d": "le CHU (l'hôpital)"
+       },
+       {
+        "g": "le guide",
+        "d": "le centre-ville historique"
+       },
+       {
+        "g": "le consultant",
+        "d": "le quartier d'affaires"
+       },
+       {
+        "g": "le soudeur",
+        "d": "l'atelier de maintenance des trains"
+       }
+      ]
+     },
+     "lecon": "l04"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "titre": "Les Rousses — Les loisirs de la montagne",
+   "enigmes": [
+    {
+     "id": "5-1",
+     "titre": "Les mots de la montagne",
+     "type": "association",
+     "consigne": {
+      "cm1": "Hugo, moniteur de ski, t'apprend les mots de la montagne. Relie chaque mot à sa définition.",
+      "cm2": "Hugo te teste sur le vocabulaire de la montagne. Relie chaque mot à sa définition."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 5 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Une piste est un chemin balisé pour descendre à ski ; un chalet, une maison de montagne en bois ; un télésiège, une remontée mécanique où l'on monte assis ; un torrent, un cours d'eau rapide ; le sommet, le point le plus haut ; une station, un lieu aménagé pour accueillir les touristes.",
+     "indices": {
+      "cm1": [
+       "Le chalet est en bois.",
+       "On s'assoit sur le télésiège.",
+       "Le sommet est tout en haut."
+      ],
+      "cm2": [
+       "Le torrent dévale la pente.",
+       "Une station est aménagée pour les touristes.",
+       "La piste est balisée."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "une piste",
+        "d": "chemin balisé pour descendre à ski"
+       },
+       {
+        "g": "un chalet",
+        "d": "maison de montagne en bois"
+       },
+       {
+        "g": "un télésiège",
+        "d": "remontée mécanique où l'on monte assis"
+       },
+       {
+        "g": "le sommet",
+        "d": "point le plus haut d'une montagne"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "une piste",
+        "d": "chemin balisé pour descendre à ski"
+       },
+       {
+        "g": "un chalet",
+        "d": "maison de montagne en bois"
+       },
+       {
+        "g": "un télésiège",
+        "d": "remontée mécanique où l'on monte assis"
+       },
+       {
+        "g": "un torrent",
+        "d": "cours d'eau rapide qui dévale la montagne"
+       },
+       {
+        "g": "le sommet",
+        "d": "point le plus haut d'une montagne"
+       },
+       {
+        "g": "une station",
+        "d": "lieu aménagé pour accueillir les touristes"
+       }
+      ]
+     },
+     "lecon": "l05"
+    },
+    {
+     "id": "5-2",
+     "titre": "Avec ou sans neige",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Hugo prépare le programme de la semaine. Range chaque loisir : se pratique-t-il sur la neige ou sans neige ?",
+      "cm2": "Range les dix loisirs de la montagne : sur la neige, ou sans neige ?"
+     },
+     "source": "Livret « Mission géographique », Année A, séance 5 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Le ski, le snowboard, la raquette et le biathlon se pratiquent sur la neige ; la randonnée, l'escalade, le trail, le parapente, le rafting et le paddle, sans neige. La montagne est un espace de loisirs été comme hiver.",
+     "indices": {
+      "cm1": [
+       "Le ski a besoin de neige.",
+       "La randonnée se fait sur un sentier.",
+       "Le rafting se fait sur une rivière."
+      ],
+      "cm2": [
+       "Le biathlon associe ski de fond et tir.",
+       "Le parapente vole au-dessus des pentes.",
+       "Le paddle se pratique sur un lac."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "n",
+        "titre": "Sur la neige"
+       },
+       {
+        "id": "s",
+        "titre": "Sans neige"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le ski",
+        "col": "n"
+       },
+       {
+        "txt": "le snowboard",
+        "col": "n"
+       },
+       {
+        "txt": "la raquette",
+        "col": "n"
+       },
+       {
+        "txt": "la randonnée",
+        "col": "s"
+       },
+       {
+        "txt": "l'escalade",
+        "col": "s"
+       },
+       {
+        "txt": "le rafting",
+        "col": "s"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "n",
+        "titre": "Sur la neige"
+       },
+       {
+        "id": "s",
+        "titre": "Sans neige"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "le ski",
+        "col": "n"
+       },
+       {
+        "txt": "le snowboard",
+        "col": "n"
+       },
+       {
+        "txt": "la raquette",
+        "col": "n"
+       },
+       {
+        "txt": "le biathlon",
+        "col": "n"
+       },
+       {
+        "txt": "la randonnée",
+        "col": "s"
+       },
+       {
+        "txt": "l'escalade",
+        "col": "s"
+       },
+       {
+        "txt": "le trail",
+        "col": "s"
+       },
+       {
+        "txt": "le parapente",
+        "col": "s"
+       },
+       {
+        "txt": "le rafting",
+        "col": "s"
+       },
+       {
+        "txt": "le paddle",
+        "col": "s"
+       }
+      ]
+     },
+     "lecon": "l05"
+    },
+    {
+     "id": "5-3",
+     "titre": "Les photos du séjour",
+     "type": "trous",
+     "consigne": {
+      "cm1": "Hugo a pris des photos dans la station. Complète la légende de chacune. Un mot ne sert à rien : c'est l'intrus.",
+      "cm2": "Complète la légende de chaque photo prise dans la station. Un mot de la liste est un intrus."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 5 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français »",
+     "correction": "Les files de voitures polluent l'air ; les constructions sur les forêts réduisent la biodiversité ; les mégots polluent les sols ; les canons à neige prélèvent de l'eau ; les remontées mécaniques consomment de l'énergie. Le mot « écologie », qui désigne une science, est l'intrus.",
+     "indices": {
+      "cm1": [
+       "Les voitures rejettent des gaz dans l'air.",
+       "Le canon à neige a besoin d'eau.",
+       "Le télésiège fonctionne à l'électricité."
+      ],
+      "cm2": [
+       "Atmosphérique : qui concerne l'air.",
+       "Biodiversité : l'ensemble des êtres vivants d'un milieu.",
+       "L'intrus désigne une science, pas un effet."
+      ]
+     },
+     "cm1": {
+      "texte": "<p>Photo 1 : une file de voitures à l'entrée de la station pollue l'[[air]]. Photo 2 : un canon à neige prélève de l'[[eau]]. Photo 3 : le télésiège consomme de l'[[énergie]]. Photo 4 : des mégots polluent les [[sols]].</p>",
+      "etiquettes": [
+       "air",
+       "eau",
+       "énergie",
+       "sols",
+       "écologie"
+      ]
+     },
+     "cm2": {
+      "texte": "<p>Photo 1 : file de voitures à l'entrée de la station : pollution [[atmosphérique]]. Photo 2 : nouvelle résidence sur un versant boisé : réduction de la [[biodiversité]]. Photo 3 : mégots sur les rochers : [[pollution]] des sols. Photo 4 : canon à neige en action : prélèvement d'[[eau]]. Photo 5 : télésiège en marche toute la journée : consommation d'[[énergie]].</p>",
+      "etiquettes": [
+       "atmosphérique",
+       "biodiversité",
+       "pollution",
+       "eau",
+       "énergie",
+       "écologie"
+      ]
+     },
+     "lecon": "l05"
+    },
+    {
+     "id": "5-4",
+     "titre": "La remarque du skieur",
+     "type": "vraifaux",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Au refuge, un skieur montre une carte du monde : « Là où va votre valise, c'est l'hiver quand c'est l'hiver ici. » Pour chaque phrase, choisis « Vrai » ou « Faux ».",
+     "source": "Livret « Mission géographique », Année A, séance 5 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français » ; Office de tourisme de la station des Rousses",
+     "correction": "Les saisons sont inversées entre les deux hémisphères : si c'est l'hiver au même moment qu'en France, le pays est dans l'hémisphère nord. Le tourisme crée des emplois, mais les canons à neige prélèvent beaucoup d'eau. La Dôle est un sommet suisse de 1 677 mètres.",
+     "indices": {
+      "cm2": [
+       "En décembre, c'est l'été en Australie.",
+       "Même saison qu'en France : même hémisphère.",
+       "Le tourisme a des effets positifs et négatifs."
+      ]
+     },
+     "commun": {
+      "affirmations": [
+       {
+        "txt": "Les saisons sont les mêmes dans les deux hémisphères.",
+        "vrai": false,
+        "explication": "Elles sont inversées : en décembre, c'est l'été dans l'hémisphère sud."
+       },
+       {
+        "txt": "Si c'est l'hiver là-bas quand c'est l'hiver en France, le pays est dans l'hémisphère nord.",
+        "vrai": true,
+        "explication": "Il a les mêmes saisons que nous."
+       },
+       {
+        "txt": "Le tourisme apporte des emplois aux habitants de la montagne.",
+        "vrai": true,
+        "explication": "Moniteurs, saisonniers, hôtels, restaurants."
+       },
+       {
+        "txt": "Les canons à neige ne consomment pas d'eau.",
+        "vrai": false,
+        "explication": "Ils prélèvent beaucoup d'eau."
+       },
+       {
+        "txt": "Le sommet de la Dôle, à 1 677 mètres, se trouve en Suisse.",
+        "vrai": true,
+        "explication": "Son domaine skiable est relié à la station des Rousses."
+       }
+      ]
+     },
+     "lecon": "l05"
+    }
+   ]
+  }
+ ]
+}

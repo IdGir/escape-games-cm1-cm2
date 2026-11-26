@@ -1,0 +1,166 @@
+{
+ "tons": {
+  "atlas": "Vieux géographe calme et un peu solennel, amoureux des cartes, il parle à ses agents comme à de futurs collègues",
+  "lena": "Agente de terrain vive et organisée, fière de Dijon, elle aime les présentations bien faites",
+  "malik": "Agent infiltré malicieux, à l'aise avec les chiffres, il cherche toujours à passer inaperçu",
+  "zoe": "Agente des sources précise et patiente, elle observe les gens et leurs métiers",
+  "hugo": "Moniteur de ski chaleureux du Haut-Jura, il aime sa montagne et ne cache pas ce qui l'abîme"
+ },
+ "enigmes": {
+  "e1-1": {
+   "objet": "La liste des démarches",
+   "description": "Une feuille épinglée sur le plan de la commune, avec des démarches à cocher.",
+   "enjeu": "Sans ses papiers et son matériel, l'agent ne peut pas partir en mission.",
+   "situation": "Le Professeur Atlas a préparé la liste des démarches à faire dans la commune avant le départ.",
+   "reaction": "Chaque démarche se coche d'un trait rouge et une épingle se plante sur le bon lieu du plan."
+  },
+  "e1-2": {
+   "objet": "Le plan de la commune",
+   "description": "Un grand plan punaisé au mur, couvert de bâtiments sans légende.",
+   "enjeu": "Un agent qui ne sait pas à quoi sert chaque lieu se perd dès le premier jour.",
+   "situation": "Les étiquettes du plan sont tombées : il faut rendre à chaque lieu sa fonction.",
+   "reaction": "Les lieux du plan s'éclairent par couleur, une couleur par fonction.",
+   "dialogue": "Mon plan a perdu sa légende. Rendez à chaque lieu sa fonction."
+  },
+  "e1-3": {
+   "objet": "Le message aux lettres marquées",
+   "description": "Une note du Professeur où certaines lettres sont soulignées en couleur.",
+   "enjeu": "Sans le nom de la ville, l'agent ne sait pas où rejoindre les autres.",
+   "situation": "Le lieu du rendez-vous est caché dans les lettres marquées du message.",
+   "reaction": "Un billet de train glisse hors de l'enveloppe, la destination enfin lisible.",
+   "dialogue": "Les lettres marquées cachent la ville du rendez-vous. À vous de la lire."
+  },
+  "e1-4": {
+   "objet": "Le dossier de la commune",
+   "description": "Un dossier tamponné « Services publics », posé sur la valise.",
+   "enjeu": "Le Professeur ne confie la mission qu'à un agent qui connaît vraiment sa commune.",
+   "situation": "Dernière vérification avant le départ : le Professeur pose ses questions.",
+   "reaction": "Le Professeur tamponne la fiche d'agent : mission accordée.",
+   "dialogue": "Une dernière vérification, et je vous laisse partir."
+  },
+  "e2-1": {
+   "objet": "Le carnet de Léna",
+   "description": "Un carnet ouvert sur le rebord d'une fontaine, rempli de questions.",
+   "enjeu": "Léna ne donne la suite de la mission qu'aux agents qui savent qui décide quoi.",
+   "situation": "Au point de rendez-vous, Léna teste les nouvelles recrues.",
+   "reaction": "Léna referme son carnet et sourit : vous êtes bien des agents."
+  },
+  "e2-2": {
+   "objet": "La carte dépliée",
+   "description": "Une grande carte étalée sur un banc, avec des numéros à la place des noms.",
+   "enjeu": "Une carte sans noms ne permet pas de suivre la valise.",
+   "situation": "Léna déplie une carte muette : il faut y replacer les noms.",
+   "reaction": "Les noms apparaissent un à un sur la carte.",
+   "dialogue": "Ma carte a perdu ses noms. Replacez-les, sinon nous serons perdus."
+  },
+  "e2-3": {
+   "objet": "Le passeport géographique",
+   "description": "Un passeport de mission aux cases encore vides.",
+   "enjeu": "Sans passeport rempli, l'agent ne peut pas se présenter aux autres participants.",
+   "situation": "Chaque agent doit présenter son pays : il faut compléter le passeport de la France.",
+   "reaction": "Le passeport reçoit un tampon officiel.",
+   "dialogue": "Votre passeport est vide. Complétez la carte d'identité de la France."
+  },
+  "e2-4": {
+   "objet": "Les décisions de la région",
+   "description": "Une pile de dossiers de projets : écoles, collèges, lycées, trains.",
+   "enjeu": "Un projet confié au mauvais échelon n'est jamais réalisé.",
+   "situation": "Léna trie des projets de la région avant de partir.",
+   "reaction": "Les dossiers se rangent en trois piles nettes.",
+   "dialogue": "Ces dossiers sont mélangés. Rendez chacun à celui qui décide."
+  },
+  "e3-1": {
+   "objet": "La vue sur le bourg",
+   "description": "Du haut du pont, les toits serrés du bourg et la campagne tout autour.",
+   "enjeu": "Pour passer inaperçu, il faut connaître la vie d'ici comme un habitant.",
+   "situation": "Malik observe Clamecy et note ce qu'il voit et ce qu'il vit.",
+   "reaction": "La vue s'éclaire : chaque élément du bourg trouve sa place."
+  },
+  "e3-2": {
+   "objet": "Le carnet de Malik",
+   "description": "Un petit carnet où une définition est restée à moitié écrite.",
+   "enjeu": "Une définition fausse trahirait l'agent auprès des habitants.",
+   "situation": "Malik doit expliquer ce qu'est une commune rurale sans se tromper.",
+   "reaction": "La définition se complète et Malik referme son carnet.",
+   "dialogue": "Ma définition est incomplète. Aidez-moi à la terminer."
+  },
+  "e3-3": {
+   "objet": "Les trois carrés de terrain",
+   "description": "Un schéma de trois espaces quadrillés, avec des points pour les habitants.",
+   "enjeu": "Sans les bons calculs, l'agent ne comprend pas combien de personnes vivent ici.",
+   "situation": "Malik compare trois espaces pour comprendre la densité.",
+   "reaction": "Les nombres justes s'inscrivent au bas du schéma.",
+   "dialogue": "Comptez les habitants, mesurez les surfaces, et calculez."
+  },
+  "e3-4": {
+   "objet": "Le carnet de notes de Malik",
+   "description": "Les notes de Malik, avec des phrases à vérifier avant de partir.",
+   "enjeu": "Une note fausse enverrait les agents sur une mauvaise piste.",
+   "situation": "Avant de quitter Clamecy, Malik relit ses notes.",
+   "reaction": "Les phrases fausses se barrent d'un trait.",
+   "dialogue": "Relisez mes notes : je ne veux rien laisser de faux."
+  },
+  "e4-1": {
+   "objet": "Le message de la source",
+   "description": "Un petit mot plié, laissé sur une table de terrasse.",
+   "enjeu": "Sans le métier de la source, impossible de savoir où la retrouver.",
+   "situation": "La source a laissé un message où son métier est caché.",
+   "reaction": "Le métier apparaît, et Zoé sait où chercher."
+  },
+  "e4-2": {
+   "objet": "Les fiches des professionnels",
+   "description": "Des fiches de rencontre avec un métier écrit sur chacune.",
+   "enjeu": "Zoé doit comprendre qui fait quoi pour trouver la bonne personne.",
+   "situation": "Zoé a rencontré beaucoup de professionnels de la ville.",
+   "reaction": "Les fiches se rangent en trois colonnes.",
+   "dialogue": "Toutes ces fiches sont mélangées. Rangez chaque métier dans son secteur."
+  },
+  "e4-3": {
+   "objet": "Le document de la source",
+   "description": "Une feuille de statistiques glissée sous une tasse de café.",
+   "enjeu": "La source ne parle qu'à ceux qui savent lire son document.",
+   "situation": "La source accepte de parler, à condition qu'on comprenne ses chiffres.",
+   "reaction": "La source se penche et murmure sa confidence.",
+   "dialogue": "La source a posé ses conditions. Lisez bien son document."
+  },
+  "e4-4": {
+   "objet": "Le plan des quartiers",
+   "description": "Un plan de la ville avec les lieux de travail marqués d'une croix.",
+   "enjeu": "Il faut retrouver chaque témoin sur son lieu de travail avant la nuit.",
+   "situation": "Zoé doit rendre visite à chaque professionnel rencontré.",
+   "reaction": "Un trait relie chaque croix à un métier.",
+   "dialogue": "Où travaille chacun ? Reliez les métiers aux lieux."
+  },
+  "e5-1": {
+   "objet": "Le panneau des mots de la montagne",
+   "description": "Un panneau de bois à l'entrée de la station, aux étiquettes mélangées.",
+   "enjeu": "Sans le vocabulaire de la montagne, l'agent comprend mal les consignes des pistes.",
+   "situation": "Hugo apprend les mots de la montagne aux nouveaux venus.",
+   "reaction": "Les étiquettes du panneau retrouvent leur place."
+  },
+  "e5-2": {
+   "objet": "Le programme de la semaine",
+   "description": "Un tableau d'activités au refuge, avec des cartes à placer.",
+   "enjeu": "Un programme mal fait enverrait les agents faire du ski sans neige.",
+   "situation": "Hugo prépare le programme des loisirs de la semaine.",
+   "reaction": "Le tableau se remplit, activité par activité.",
+   "dialogue": "Mon programme est en désordre. Rangez chaque loisir."
+  },
+  "e5-3": {
+   "objet": "Les photos du séjour",
+   "description": "Des photos punaisées au mur du refuge, sans légende.",
+   "enjeu": "Sans légende, personne ne comprend ce que le tourisme coûte à la montagne.",
+   "situation": "Hugo a photographié ce que le tourisme fait à la station.",
+   "reaction": "Chaque photo reçoit sa légende.",
+   "dialogue": "Mes photos n'ont pas de légende. Écrivez ce qu'elles montrent."
+  },
+  "e5-4": {
+   "objet": "La carte du monde du refuge",
+   "description": "Une carte du monde punaisée au mur, devant laquelle un skieur s'est arrêté.",
+   "enjeu": "La remarque du skieur peut éliminer la moitié du monde de la recherche.",
+   "situation": "Au refuge, un skieur fait une remarque sur le pays où va la valise.",
+   "reaction": "La moitié sud de la carte s'assombrit : la piste se resserre.",
+   "dialogue": "Écoutez bien ce skieur : sa remarque est un indice."
+  }
+ }
+}

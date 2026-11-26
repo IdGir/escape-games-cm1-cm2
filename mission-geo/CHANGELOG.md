@@ -4,6 +4,12 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 26 novembre 2026
+
+- Refonte immersive, étape P1 : version immersive `immersifs/mission-geo/` (séances 1 à 5 = escales 1 à 5, 5 grades, 20 énigmes),
+  construite par `python mission-geo/tests/donnees/construire-immersif.py` ; reprise des parties de la version classique et du PC de la classe.
+- Import des parties commencées (format commun « mission-geo-partie » v2) et audit de la refonte.
+
 ## 18 octobre 2026
 
 - F2 : journaux des versions à jour (D7, N11, N13, N15, N16, N18 à N21) et précache hors ligne
