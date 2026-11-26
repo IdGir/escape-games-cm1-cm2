@@ -100,3 +100,58 @@ def densites(titre="Trois espaces vus du dessus (1 carreau = 1 km sur 1 km)"):
     o.append(f"<text x='560' y='142' text-anchor='middle' font-size='13' fill='#1b2a3a' {POLICE}>□ = 1 km²</text>")
     o.append("</svg>")
     return "".join(o)
+
+
+# ---------------------------------------------------------------- période 2 (séances 6 à 8)
+MERS = [("La mer du Nord", 58, 5), ("La Manche", 30, 11), ("L'océan Atlantique", 11, 55), ("La mer Méditerranée", 68, 91),
+        ("Étretat", 38, 15), ("Biarritz", 26, 74), ("Marseille", 65, 75)]
+PAYS = [("Les États-Unis", 20, 30), ("La Norvège", 56, 15), ("Le Tchad", 56, 44), ("Le Bangladesh", 76, 43), ("L'Australie", 87, 64),
+        ("Le Mali", 49.5, 44.5), ("Le Japon", 93.5, 20)]
+# PNUD, Rapport sur le développement humain 2025 (données 2023) : revenu national brut par habitant (dollars PPA 2021),
+# espérance de vie à la naissance (années), durée attendue de scolarisation (années).
+PNUD = {"la Norvège": (112710, 83.3, 18.8), "les États-Unis": (73650, 79.3, 15.9), "l'Australie": (58277, 83.9, 20.7),
+        "le Koweït": (56612, 80.4, 15.9), "la France": (55060, 83.3, 16.1), "le Japon": (47775, 84.7, 15.5),
+        "la Guinée équatoriale": (12762, 63.7, 12.5), "le Bangladesh": (8498, 74.7, 12.3), "Haïti": (2935, 64.9, 10.9),
+        "le Mali": (2342, 60.4, 7.0), "le Tchad": (1748, 55.1, 8.3), "Madagascar": (1656, 63.6, 9.1)}
+SOURCE_PNUD = "PNUD, Rapport sur le développement humain 2025 (données 2023)"
+
+
+def mers(idx, titre="La France et les mers qui la bordent"):
+    return avec_reperes("france-mers", [(x, y) for _, x, y in [MERS[i] for i in idx]], titre, r=14)
+
+
+def pays(idx, titre="Le planisphère de Nour"):
+    return avec_reperes("planisphere-muet", [(x, y) for _, x, y in [PAYS[i] for i in idx]], titre, r=14)
+
+
+def nombre(n):
+    return f"{n:,}".replace(",", " ") if isinstance(n, int) else str(n).replace(".", ",")
+
+
+def revenus(noms, titre="Revenu moyen par habitant en 2023 (en dollars)"):
+    """Diagramme en barres horizontales tracé par script, chiffres du PNUD."""
+    h = 46 + 30 * len(noms) + 28
+    mx = max(PNUD[n][0] for n in noms)
+    o = [f"<svg viewBox='0 0 640 {h}' xmlns='http://www.w3.org/2000/svg' role='img' aria-label=\"{titre}\" {STYLE}>",
+         f"<rect width='640' height='{h}' rx='12' fill='#f4efe4'/>",
+         f"<text x='320' y='26' text-anchor='middle' font-size='15' font-weight='700' fill='#1b2a3a' {POLICE}>{titre}</text>"]
+    for i, n in enumerate(sorted(noms, key=lambda k: -PNUD[k][0])):
+        y = 46 + 30 * i
+        w = max(4, round(PNUD[n][0] / mx * 330))
+        nom = n[0].upper() + n[1:]
+        o.append(f"<text x='176' y='{y + 15}' text-anchor='end' font-size='14' fill='#1b2a3a' {POLICE}>{nom}</text>")
+        o.append(f"<rect x='186' y='{y}' width='{w}' height='20' rx='4' fill='#1d3b5c'/>")
+        o.append(f"<text x='{192 + w}' y='{y + 15}' font-size='13' font-weight='700' fill='#1b2a3a' {POLICE}>{nombre(PNUD[n][0])} $</text>")
+    o.append(f"<text x='320' y='{h - 10}' text-anchor='middle' font-size='11' font-style='italic' fill='#4b3a2c' {POLICE}>Source : {SOURCE_PNUD}</text>")
+    o.append("</svg>")
+    return "".join(o)
+
+
+def tableau_pnud(noms, titre="Trois indicateurs du développement (2023)"):
+    """Tableau HTML : revenu, espérance de vie, durée de scolarisation."""
+    th = "".join(f"<th>{n[0].upper() + n[1:]}</th>" for n in noms)
+    lignes = [("Revenu par habitant", lambda v: nombre(v[0]) + " $"), ("Espérance de vie", lambda v: nombre(v[1]) + " ans"),
+              ("Durée de scolarisation", lambda v: nombre(v[2]) + " ans")]
+    tr = "".join(f"<tr><th>{t}</th>" + "".join(f"<td>{f(PNUD[n])}</td>" for n in noms) + "</tr>" for t, f in lignes)
+    return (f'<div class="doc-titre"><i>{titre}</i></div><table class="tableau-releves"><tr><th></th>{th}</tr>{tr}</table>'
+            f'<p style="font-size:.85em"><i>Source : {SOURCE_PNUD}.</i></p>')

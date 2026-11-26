@@ -26,10 +26,13 @@ VOIX = {
     "malik": {"edge": "fr-FR-RemyMultilingualNeural",    "nom": "Rémy",     "rate": 1.02, "pitch": 1.0},    # agent infiltré, malicieux
     "zoe":   {"edge": "fr-FR-VivienneMultilingualNeural","nom": "Vivienne", "rate": 1.0,  "pitch": 1.0},    # agente des sources, précise
     "hugo":  {"edge": "fr-CH-FabriceNeural",             "nom": "Fabrice",  "rate": 1.0,  "pitch": 1.0},    # moniteur du Haut-Jura, chaleureux
+    "ines":  {"edge": "fr-BE-CharlineNeural",            "nom": "Charline", "rate": 1.02, "pitch": 1.0},    # agente de la côte normande, enjouée
+    "theo":  {"edge": "fr-BE-GerardNeural",              "nom": "Gérard",   "rate": 1.0,  "pitch": 1.0},    # sauveteur de Biarritz, décontracté
+    "nour":  {"edge": "fr-CH-ArianeNeural",              "nom": "Ariane",   "rate": 0.98, "pitch": 1.0},    # agente à Dhaka, grave et attentive
 }
 
-# Une séance = une escale ; le guide parle pour toutes les énigmes de sa séance (P1 : séances 1 à 5).
-GUIDES = {1: "atlas", 2: "lena", 3: "malik", 4: "zoe", 5: "hugo"}
+# Une séance = une escale ; le guide parle pour toutes les énigmes de sa séance (P1 : séances 1 à 5 ; P2 : 6 à 8).
+GUIDES = {1: "atlas", 2: "lena", 3: "malik", 4: "zoe", 5: "hugo", 6: "ines", 7: "theo", 8: "nour"}
 
 PORTRAITS = {
     "atlas": {"genre": "homme", "coiffure": "courte", "cheveux": "#d9d4cc", "peau": "#e9c4a6", "habit": "#1d3b5c", "barbe": True, "lunettes": True},
@@ -37,9 +40,12 @@ PORTRAITS = {
     "malik": {"genre": "homme", "coiffure": "courte", "cheveux": "#141010", "peau": "#a8704a", "habit": "#3f6f4a", "barbe": False, "lunettes": False},
     "zoe":   {"genre": "femme", "coiffure": "courte", "cheveux": "#141010", "peau": "#6e4630", "habit": "#c9a24a", "lunettes": True},
     "hugo":  {"genre": "homme", "coiffure": "courte", "cheveux": "#b8873e", "peau": "#f3d6bf", "habit": "#2a6f9e", "barbe": True, "lunettes": False},
+    "ines":  {"genre": "femme", "coiffure": "longue", "cheveux": "#2b1a12", "peau": "#d9a57e", "habit": "#3a6f8f", "lunettes": False},
+    "theo":  {"genre": "homme", "coiffure": "courte", "cheveux": "#e0c27a", "peau": "#e8b994", "habit": "#d9382c", "barbe": False, "lunettes": False},
+    "nour":  {"genre": "femme", "coiffure": "longue", "cheveux": "#141010", "peau": "#9a6a4a", "habit": "#2f7a4a", "lunettes": True},
 }
 
 STYLE_VISUEL = ("Photographie photoréaliste de cinéma, objectif 35 mm, France d'aujourd'hui, lumière naturelle douce, couleurs franches, "
                 "ambiance de film d'espionnage pour la jeunesse, aucune inscription lisible, grain fin.")
 EPOQUE = ("Univers contemporain : le bureau du Professeur Atlas (inventé), puis Dijon (place de la Libération), Clamecy (Nièvre), Besançon (boucle du Doubs), "
-          "la station des Rousses (Haut-Jura). Personnages inventés, aucune personne réelle, aucune violence.")
+          "la station des Rousses (Haut-Jura), Étretat (falaises, front de mer), Biarritz (Grande Plage), Dhaka (marché). Personnages inventés, aucune personne réelle, aucune violence.")

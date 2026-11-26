@@ -5,7 +5,7 @@
 Sortie par défaut : vingt-mille-lieues/outils/immersif/sources/mission-geo/assets/data/ (enigmes.json, dialogues.json, lecons.json),
 lue ensuite par migrer-jeu.py. La version classique (mission-geo/js/donnees/*.js) n'est ni lue ni modifiée par le jeu immersif :
 ce script en reprend les activités, transformées en énigmes corrigeables (voir mission-geo/REFONTE-IMMERSIVE.md, § 2).
-Une escale = une séance (séance N ↔ escale N). Étape P1 : séances 1 à 5 (période 1, « L'organisation du territoire français »).
+Une escale = une séance (séance N ↔ escale N). Étape P1 : séances 1 à 5 (période 1, « L'organisation du territoire français ») ; étape P2 : séances 6 à 8 (littoral touristique, inégalités dans le monde).
 Les phrases des fiches viennent de fiches.py (reprises mot pour mot par les justifications des grades Géographe et Chef de mission).
 """
 import json, os, sys
@@ -360,12 +360,218 @@ E5 = [
           {"txt": "Le sommet de la Dôle, à 1 677 mètres, se trouve en Suisse.", "vrai": True, "explication": "Son domaine skiable est relié à la station des Rousses."}]}),
 ]
 
+def doc(titre, corps):
+    """Encadré de document (témoignage, dépliant)."""
+    return f"<div class='doc-carnet'><b>{titre}</b> {corps}</div>"
+
+
+def ordre(items):
+    return {"items": [{"txt": t, "rang": i} for i, t in enumerate(items, 1)]}
+
+
+OT = "Office de tourisme Le Havre Étretat (Clos Lupin, château des Aygues, marché couvert, parc des Roches)"
+BO2 = "Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)"
+
+# ============================================================================ ESCALE 6 — Étretat, station balnéaire
+DOC_ETRETAT = doc("Étretat, mode d'emploi.", "Randonnée sur le sentier GR21, en haut des falaises ; paddle ou kayak au pied des arches ; balade en vélo-rail. "
+                  "À visiter : le Clos Lupin, maison de l'écrivain Maurice Leblanc ; le château des Aygues, ancienne résidence d'été des reines d'Espagne ; "
+                  "le marché couvert et ses boutiques ; le parc des Roches, espace de loisirs pour les familles.")
+DOC_FREQ = doc("Témoignage recueilli par Inès.", "« L'été, le front de mer est noir de monde et des kilomètres de voitures cherchent une place. "
+               "Nous sommes environ 1 100 habitants, et nous recevons plus d'un million de visiteurs par an. Des familles sont parties, car les logements coûtent trop cher. »")
+E6 = [
+    E("6-1", "Le guide d'un jour", "association",
+      {"cm1": "Inès t'a trouvé une couverture : tu es guide touristique à Étretat. Lis le dépliant, puis propose à chaque visiteur l'activité qui lui plaira : clique sur un visiteur, puis sur une activité." + DOC_ETRETAT,
+       "cm2": "Pour gagner la confiance de la source, tu joues au guide. Lis le dépliant, puis relie chaque visiteur à l'activité qui correspond à ses goûts." + DOC_ETRETAT},
+      LIVRET.format(n=6) + " ; " + OT,
+      "Elena, sportive, randonne sur le GR21 ; Tom, qui aime les boutiques, va au marché couvert ; Zac se promène en famille au parc des Roches ; "
+      "Isabelle, passionnée de littérature, visite le Clos Lupin, la maison de Maurice Leblanc ; Richard, passionné d'histoire, visite le château des Aygues, "
+      "ancienne résidence d'été des reines d'Espagne.",
+      {"cm1": ["« Amo lo sport » : Elena aime le sport.", "« I love shopping » : Tom aime les boutiques.", "Maurice Leblanc était écrivain : sa maison plaira à une lectrice."],
+       "cm2": ["Elena parle italien, Tom anglais : traduis d'abord leurs phrases.", "Un château où ont séjourné des reines plaira à un passionné d'histoire.", "Le parc des Roches est un espace de loisirs pour les familles."]},
+      "l06",
+      cm1={"paires": [{"g": "Elena : « Mi chiamo Elena, amo lo sport ! »", "d": "le sentier GR21"}, {"g": "Tom : « I'm Tom, I love shopping! »", "d": "le marché couvert"},
+                      {"g": "Zac : « J'aime me balader en famille. »", "d": "le parc des Roches"}, {"g": "Isabelle : « J'adore la littérature ! »", "d": "le Clos Lupin"}]},
+      cm2={"paires": [{"g": "Elena : « Mi chiamo Elena, amo lo sport ! »", "d": "le sentier GR21"}, {"g": "Tom : « I'm Tom, I love shopping! »", "d": "le marché couvert"},
+                      {"g": "Zac : « J'aime me balader en famille. »", "d": "le parc des Roches"}, {"g": "Isabelle : « Je suis une grande fan de littérature ! »", "d": "le Clos Lupin"},
+                      {"g": "Richard : « Je suis passionné d'histoire. »", "d": "le château des Aygues"}]}),
+    E("6-2", "La définition du guide", "ordre",
+      {"cm1": "Le guide officiel d'Étretat a fait tomber ses fiches. Remets les morceaux dans l'ordre pour retrouver la définition d'une station balnéaire. Retiens bien le premier mot !",
+       "cm2": "Remets les morceaux dans l'ordre pour reconstituer la définition complète d'une station balnéaire. Compte ensuite les lettres du premier mot : c'est l'indice de la séance."},
+      LIVRET.format(n=6) + " ; " + BO2,
+      "Une station balnéaire est un « lieu de séjour situé en bord de mer », aménagé pour accueillir des touristes. Le premier mot, « lieu », compte 4 lettres : c'est l'indice de la séance.",
+      {"cm1": ["La définition commence par « Lieu », avec une majuscule.", "On séjourne… en bord de mer.", "Lieu de séjour situé…"],
+       "cm2": ["La majuscule montre le début de la définition.", "Le lieu est d'abord situé, puis aménagé.", "… aménagé pour accueillir des touristes."]},
+      "l06",
+      cm1=ordre(["Lieu", "de séjour", "situé", "en bord", "de mer"]),
+      cm2=ordre(["Lieu", "de séjour", "situé en bord de mer,", "aménagé", "pour accueillir", "des touristes"])),
+    E("6-3", "Le revers de la carte postale", "tri",
+      {"cm1": "Une habitante confie à Inès ce que vivent les habitants l'été. Lis son témoignage, puis range chaque conséquence du tourisme : positive ou négative pour les habitants ?" + DOC_FREQ,
+       "cm2": "Lis le témoignage, puis range chaque conséquence de la fréquentation touristique : positive ou négative pour les habitants ?" + DOC_FREQ},
+      LIVRET.format(n=6) + " (d'après Francetvinfo, août 2022) ; Insee (Étretat, population en vigueur au 1er janvier 2026)",
+      "Le tourisme crée des emplois dans les restaurants et les commerces, apporte des animations et de nouveaux aménagements comme les sentiers et les promenades. "
+      "Mais il provoque des embouteillages, des déchets sur le front de mer et une hausse du prix des logements, qui pousse des habitants à partir.",
+      {"cm1": ["Positif : ce qui aide les habitants.", "Les voitures garées partout : c'est négatif.", "Il y a 3 points positifs et 3 points négatifs."],
+       "cm2": ["Quand les logements coûtent plus cher, les habitants ont du mal à se loger.", "Les touristes dépensent de l'argent chez les commerçants.", "Il y a 4 points positifs et 4 points négatifs."]},
+      "l06",
+      cm1=tri([("p", "Positif pour les habitants"), ("n", "Négatif pour les habitants")],
+              [("des emplois dans les restaurants", "p"), ("des animations et des fêtes", "p"), ("de nouveaux sentiers et promenades", "p"),
+               ("des embouteillages et pas de place pour se garer", "n"), ("des déchets sur le front de mer", "n"), ("des logements de plus en plus chers", "n")]),
+      cm2=tri([("p", "Positif pour les habitants"), ("n", "Négatif pour les habitants")],
+              [("des emplois dans les restaurants et les hôtels", "p"), ("des recettes pour les commerçants", "p"), ("des animations et des fêtes", "p"),
+               ("de nouveaux sentiers et promenades", "p"), ("des embouteillages et pas de place pour se garer", "n"), ("des déchets sur le front de mer", "n"),
+               ("des logements de plus en plus chers", "n"), ("des habitants qui quittent la ville", "n")])),
+    E("6-4", "Étretat saturée ?", "qcm",
+      "Inès fait le point avant de quitter Étretat. Réponds à ses questions, puis vérifie.",
+      "Insee (Étretat : 1 469 habitants en 2011, 1 102 en 2023) ; Francetvinfo, août 2022 ; " + LIVRET.format(n=6),
+      "Un million de visiteurs pour environ 1 100 habitants, cela fait à peu près 900 visiteurs par habitant et par an. Étretat a perdu 367 habitants entre 2011 et 2023. "
+      "Un panneau « ville saturée » servirait à étaler les visites et à limiter les embouteillages, au risque de faire perdre des clients aux commerçants.",
+      {"cm2": ["1 000 000 ÷ 1 000 = 1 000 : la réponse est un peu moins.", "1 469 − 1 102 : pose la soustraction.", "Trop de visiteurs à la fois : c'est la surfréquentation."]},
+      "l06", niveaux=["CM2"],
+      commun=qcm([("Étretat compte environ 1 100 habitants et reçoit environ 1 000 000 de visiteurs par an. Cela fait environ combien de visiteurs par habitant ?",
+                   ["environ 900", "environ 90", "environ 9 000", "environ 9"], 0, "1 000 000 ÷ 1 100, c'est environ 909."),
+                  ("En 2011, Étretat comptait 1 469 habitants ; en 2023, 1 102. Combien d'habitants a-t-elle perdus ?", ["367", "467", "2 571", "1 102"], 0, "1 469 − 1 102 = 367."),
+                  ("Imagine que la mairie affiche : « Étretat saturée pendant deux heures ». À quoi servirait ce panneau ?",
+                   ["à étaler les visites dans la journée et à limiter les embouteillages", "à attirer encore plus de voitures", "à fermer la plage pour toujours", "à annoncer une fête"], 0,
+                   "Quand il y a trop de visiteurs, on cherche à mieux les répartir."),
+                  ("Quel risque ce panneau ferait-il courir aux commerçants ?", ["avoir moins de clients pendant ces deux heures", "avoir trop de clients", "devoir déménager", "aucun risque"], 0,
+                   "Moins de visiteurs, c'est aussi moins de recettes.")])),
+]
+
+# ============================================================================ ESCALE 7 — Biarritz, le littoral atlantique
+E7 = [
+    E("7-1", "La carte de Théo", "plan",
+      {"cm1": "Théo, l'agent qui t'attend à Biarritz, déplie une carte de France. Place le nom de chaque mer ou océan sur son repère : clique sur une étiquette, puis sur la case du repère." + S.mers(range(4)),
+       "cm2": "Théo déplie une carte de France. Place chaque mer ou océan, puis les trois stations du littoral, sur le bon repère. Une étiquette est en trop." + S.mers(range(7))},
+      LIVRET.format(n=7) + " ; " + BO2 + " ; fond de carte dessiné par script (mission-geo/js/cartes.js)",
+      "La mer du Nord est tout au nord, la Manche au nord-ouest, entre la France et le Royaume-Uni, l'océan Atlantique à l'ouest et la mer Méditerranée au sud. "
+      "Étretat est au bord de la Manche, Biarritz au bord de l'océan Atlantique, Marseille au bord de la Méditerranée.",
+      {"cm1": ["La Méditerranée est au sud, là où se trouve la Corse.", "L'océan Atlantique est à l'ouest : c'est le plus vaste.", "La mer du Nord est tout en haut ; la Manche juste à sa gauche."],
+       "cm2": ["Étretat est en Normandie, au bord de la Manche.", "Biarritz est tout au sud-ouest, près de l'Espagne.", "Marseille est au bord de la Méditerranée ; Dunkerque est l'étiquette en trop."]},
+      "l07",
+      cm1=plan("La France et ses mers", [(f"Repère {i + 1}", S.MERS[i][0]) for i in range(4)], colonnes=2),
+      cm2=plan("La France, ses mers et ses stations", [(f"Repère {i + 1}", S.MERS[i][0]) for i in range(7)], [m[0] for m in S.MERS] + ["Dunkerque"], colonnes=2)),
+    E("7-2", "Quelle mer ?", "tri",
+      {"cm1": "Avant de choisir la destination, Théo te teste. Range chaque phrase sous la mer ou l'océan dont elle parle.",
+       "cm2": "Théo te teste avant le départ. Range chaque phrase sous la mer ou l'océan dont elle parle. Plusieurs phrases peuvent parler de la même étendue d'eau."},
+      LIVRET.format(n=7) + " ; " + BO2,
+      "On se baigne dans la Méditerranée à Marseille, et la Corse en est entourée ; l'océan Atlantique borde l'ouest et mène en Amérique ; "
+      "la Manche sépare la France du Royaume-Uni et borde la Normandie ; la mer du Nord borde le nord de la France, vers la Belgique.",
+      {"cm1": ["Marseille et la Corse sont au sud.", "Un océan est bien plus vaste qu'une mer : il mène à un autre continent.", "La Normandie est au bord de la Manche."],
+       "cm2": ["La Manche est entre la France et le Royaume-Uni.", "Biarritz est au bord de l'océan.", "La Méditerranée a trois phrases, l'Atlantique trois."]},
+      "l07",
+      cm1=tri([("nord", "La mer du Nord"), ("manche", "La Manche"), ("atl", "L'océan Atlantique"), ("med", "La mer Méditerranée")],
+              [("On s'y baigne à Marseille.", "med"), ("En le traversant, on arrive en Amérique.", "atl"), ("On s'y baigne en Normandie.", "manche"),
+               ("Elle borde le nord de la France, vers la Belgique.", "nord"), ("La Corse en est entourée.", "med"), ("On s'y baigne à Biarritz.", "atl")]),
+      cm2=tri([("nord", "La mer du Nord"), ("manche", "La Manche"), ("atl", "L'océan Atlantique"), ("med", "La mer Méditerranée")],
+              [("On s'y baigne à Marseille.", "med"), ("En le traversant, on arrive en Amérique.", "atl"), ("On s'y baigne en Normandie.", "manche"),
+               ("Elle borde le nord de la France, vers la Belgique.", "nord"), ("La Corse en est entourée.", "med"), ("On s'y baigne à Biarritz.", "atl"),
+               ("En la traversant, on arrive au Royaume-Uni.", "manche"), ("C'est la mer qui borde le sud de la France.", "med"), ("Il borde l'ouest de la France.", "atl")])),
+    E("7-3", "Où dormir ?", "association",
+      {"cm1": "En été, Biarritz accueille beaucoup de vacanciers. Théo doit loger les agents : relie chaque description au type d'hébergement.",
+       "cm2": "Théo cherche où loger les agents pendant la saison. Relie chaque description au type d'hébergement. Lis bien : certains se ressemblent."},
+      LIVRET.format(n=7) + " ; " + BO2,
+      "Une tente est une toile que l'on plante soi-même ; une caravane, un véhicule aménagé tiré par une voiture ; un hôtel a une réception et des chambres numérotées ; "
+      "un camping est un terrain aménagé pour les tentes et les caravanes ; un gîte, une maison de vacances louée entièrement ; un mobil-home, une maison préfabriquée posée sur un camping ; "
+      "une chambre d'hôtes, une chambre chez l'habitant ; une auberge de jeunesse, un hébergement bon marché pour jeunes voyageurs.",
+      {"cm1": ["La tente se plante, la caravane se tire.", "Le camping est un terrain.", "Le gîte est une maison entière."],
+       "cm2": ["Le mobil-home ne roule pas : il reste posé sur le camping.", "Chez l'habitant, c'est la chambre d'hôtes.", "L'auberge de jeunesse accueille les jeunes voyageurs."]},
+      "l07",
+      cm1={"paires": [{"g": "une toile que l'on plante soi-même", "d": "une tente"}, {"g": "un véhicule aménagé, tiré par une voiture", "d": "une caravane"},
+                      {"g": "un établissement avec une réception et des chambres numérotées", "d": "un hôtel"}, {"g": "un terrain aménagé pour les tentes et les caravanes", "d": "un camping"},
+                      {"g": "une maison de vacances louée entièrement", "d": "un gîte"}]},
+      cm2={"paires": [{"g": "une toile que l'on plante soi-même", "d": "une tente"}, {"g": "un véhicule aménagé, tiré par une voiture", "d": "une caravane"},
+                      {"g": "un établissement avec une réception et des chambres numérotées", "d": "un hôtel"}, {"g": "un terrain aménagé pour les tentes et les caravanes", "d": "un camping"},
+                      {"g": "une maison de vacances louée entièrement", "d": "un gîte"}, {"g": "une maison préfabriquée posée sur un terrain de camping", "d": "un mobil-home"},
+                      {"g": "une chambre chez l'habitant, petit-déjeuner compris", "d": "une chambre d'hôtes"}, {"g": "un hébergement bon marché pour jeunes voyageurs", "d": "une auberge de jeunesse"}]}),
+    E("7-4", "L'été, combien sont-ils ?", "code",
+      "Théo compare avec Étretat. Étretat mesure environ 4 km² et compte environ 1 100 habitants. Imagine un jour d'été où 15 000 visiteurs s'ajoutent aux habitants. Calcule, puis ouvre.",
+      "Insee (Étretat : 4,07 km², 1 102 habitants, population en vigueur au 1er janvier 2026) ; " + LIVRET.format(n=7),
+      "Hors vacances : 1 100 ÷ 4 = 275 habitants par km². Ce jour d'été : (1 100 + 15 000) ÷ 4 = 16 100 ÷ 4 = 4 025 habitants par km². "
+      "4 025 ÷ 275 donne environ 14,6 : la densité est environ multipliée par 15.",
+      {"cm2": ["Densité = nombre de personnes ÷ surface en km².", "D'abord 1 100 + 15 000 = 16 100.", "Compare : 4 025 ÷ 275, arrondi à l'unité."]},
+      "l07", niveaux=["CM2"],
+      commun={"champs": [{"libelle": "Densité hors vacances (hab/km²)", "valeur": "275", "longueur": 3},
+                         {"libelle": "Densité ce jour d'été (hab/km²)", "valeur": "4025", "longueur": 4},
+                         {"libelle": "La densité est multipliée par environ", "valeur": "15", "longueur": 2}]}),
+]
+
+# ============================================================================ ESCALE 8 — Dhaka, les inégalités dans le monde
+RICHES8 = ["la Norvège", "les États-Unis", "la France", "le Japon", "Haïti", "le Mali", "le Tchad", "Madagascar"]
+E8 = [
+    E("8-1", "Le planisphère de Nour", "plan",
+      {"cm1": "Nour, l'agente qui t'attend à Dhaka, compare la vie au Bangladesh avec celle d'autres pays. Elle a épinglé des pays sur son planisphère : replace chaque nom sur son repère." + S.pays(range(5)),
+       "cm2": "Nour a épinglé sept pays sur son planisphère. Replace chaque nom sur son repère, en t'aidant des continents." + S.pays(range(7))},
+      LIVRET.format(n=8) + " ; " + BO2 + " ; fond de carte dessiné par script (mission-geo/js/cartes.js)",
+      "Les États-Unis sont en Amérique du Nord, la Norvège en Europe, le Tchad et le Mali en Afrique, le Bangladesh et le Japon en Asie, l'Australie en Océanie.",
+      {"cm1": ["Le Bangladesh, où tu te trouves, est au sud de l'Asie.", "L'Australie est en Océanie, en bas à droite.", "Le Tchad est en Afrique ; la Norvège, au nord de l'Europe."],
+       "cm2": ["Le Japon est tout à l'est de l'Asie.", "Le Mali est à l'ouest du Tchad.", "Les États-Unis sont en Amérique du Nord."]},
+      "l08",
+      cm1=plan("Le planisphère de Nour", [(f"Repère {i + 1}", S.PAYS[i][0]) for i in range(5)], colonnes=2),
+      cm2=plan("Le planisphère de Nour", [(f"Repère {i + 1}", S.PAYS[i][0]) for i in range(7)], colonnes=2)),
+    E("8-2", "Riches ou pauvres ?", "tri",
+      {"cm1": "Nour te montre le revenu moyen d'un habitant dans plusieurs pays. Lis le diagramme, puis range chaque pays : plus de 40 000 dollars par habitant, ou moins de 3 000 ?" + S.revenus(RICHES8),
+       "cm2": "Lis le diagramme du revenu moyen par habitant, puis range chaque pays dans sa colonne." + S.revenus(RICHES8 + ["la Guinée équatoriale", "le Bangladesh"])},
+      S.SOURCE_PNUD + " ; " + LIVRET.format(n=8),
+      "Avec plus de 40 000 dollars par habitant, la Norvège, les États-Unis, la France et le Japon sont des pays riches. Avec moins de 3 000 dollars, Haïti, le Mali, le Tchad et Madagascar "
+      "sont des pays pauvres. Le Bangladesh (8 498 dollars) et la Guinée équatoriale (12 762 dollars) se situent entre les deux.",
+      {"cm1": ["Regarde la longueur des barres.", "Une barre très courte : un pays pauvre.", "Il y a 4 pays dans chaque colonne."],
+       "cm2": ["Lis les nombres écrits au bout des barres.", "Le Bangladesh : 8 498 dollars, entre 3 000 et 40 000.", "4 pays riches, 2 entre les deux, 4 pays pauvres."]},
+      "l08",
+      cm1=tri([("r", "Plus de 40 000 $ : pays riches"), ("p", "Moins de 3 000 $ : pays pauvres")],
+              [("la Norvège", "r"), ("les États-Unis", "r"), ("la France", "r"), ("le Japon", "r"), ("Haïti", "p"), ("le Mali", "p"), ("le Tchad", "p"), ("Madagascar", "p")]),
+      cm2=tri([("r", "Plus de 40 000 $"), ("m", "De 3 000 à 40 000 $"), ("p", "Moins de 3 000 $")],
+              [("la Norvège", "r"), ("les États-Unis", "r"), ("la France", "r"), ("le Japon", "r"), ("le Bangladesh", "m"), ("la Guinée équatoriale", "m"),
+               ("Haïti", "p"), ("le Mali", "p"), ("le Tchad", "p"), ("Madagascar", "p")])),
+    E("8-3", "Ce que Nour a vu", "qcm",
+      {"cm1": "Nour te raconte ce qu'elle a vu à Dhaka et ce qu'elle a appris. Réponds à ses questions, puis vérifie.",
+       "cm2": "Nour te raconte ce qu'elle a vu à Dhaka. Réponds à ses questions, puis vérifie."},
+      LIVRET.format(n=8) + " ; " + S.SOURCE_PNUD + " ; World Inequality Lab, Rapport sur les inégalités mondiales 2022 ; OIT et UNICEF, juin 2025",
+      "On compare les pays avec le revenu par habitant, l'espérance de vie et la durée de la scolarisation. Le gâteau du dessin représente les richesses du monde : "
+      "les 10 % les plus riches possèdent environ les trois quarts du patrimoine. Un enfant qui travaille au lieu d'aller à l'école met sa santé en danger et aura plus de mal "
+      "à sortir de la pauvreté ; en 2024, près de 138 millions d'enfants travaillaient dans le monde.",
+      {"cm1": ["Trois indicateurs : l'argent, la santé, l'école.", "Une énorme part pour quelques-uns, des miettes pour les autres.", "L'école aide à sortir de la pauvreté."],
+       "cm2": ["L'espérance de vie dit si l'on vit longtemps.", "Le gâteau, ce sont les richesses.", "138 millions : relis la fiche « Les inégalités de niveau de vie »."]},
+      "l08",
+      cm1=qcm([("Pour comparer le niveau de vie des pays, on regarde le revenu par habitant, mais aussi…", ["l'espérance de vie et la durée de la scolarisation", "la couleur du drapeau", "le nombre de montagnes"], 0,
+                "Trois indicateurs : le revenu, la santé et l'école."),
+               ("Sur un dessin de presse, quelques convives se servent une énorme part de gâteau et la foule se partage les miettes. Que représente le gâteau ?",
+                ["les richesses du monde, très mal partagées", "la nourriture d'une fête", "la population de la Terre"], 0, "Une petite partie de la population possède la plus grande partie des richesses."),
+               ("Nour a vu un enfant trier des déchets au lieu d'aller à l'école. Que lui fait perdre la pauvreté ?", ["l'école, et sa santé est en danger", "rien du tout", "ses vacances seulement"], 0,
+                "Sans école, il sera plus difficile pour lui de sortir de la pauvreté.")]),
+      cm2=qcm([("Pour comparer le niveau de vie des pays, on regarde le revenu par habitant, mais aussi…",
+                ["l'espérance de vie et la durée de la scolarisation", "la couleur du drapeau", "le nombre de montagnes", "la taille de la capitale"], 0, "Trois indicateurs : le revenu, la santé et l'école."),
+               ("Sur un dessin de presse, quelques convives se servent une énorme part de gâteau et la foule se partage les miettes. Que représente le gâteau ?",
+                ["les richesses du monde, très mal partagées", "la nourriture d'une fête", "la population de la Terre", "les pays du monde"], 0,
+                "Les 10 % les plus riches possèdent environ les trois quarts du patrimoine mondial."),
+               ("Nour a vu un enfant trier des déchets et un autre porter des briques. Quelle conséquence la pauvreté a-t-elle pour eux ?",
+                ["ils ne vont pas à l'école et leur santé est en danger", "ils apprennent un métier sans danger", "ils gagnent assez pour être riches", "aucune conséquence"], 0,
+                "Sans école, il est plus difficile de sortir de la pauvreté."),
+               ("Selon l'OIT et l'UNICEF, combien d'enfants travaillaient dans le monde en 2024 ?", ["près de 138 millions", "près de 138 000", "près de 13 800", "aucun"], 0,
+                "Le travail des enfants a presque diminué de moitié depuis 2000, mais il reste très répandu.")])),
+    E("8-4", "La richesse suffit-elle ?", "vraifaux",
+      "Nour compare quatre pays dans un tableau du PNUD. Lis-le, puis choisis « Vrai » ou « Faux » pour chaque phrase." + S.tableau_pnud(["la Norvège", "le Koweït", "la Guinée équatoriale", "le Bangladesh"]),
+      S.SOURCE_PNUD + " ; " + LIVRET.format(n=8),
+      "La Norvège a le revenu le plus élevé du tableau, plus de 13 fois celui du Bangladesh. Le Bangladesh est moins riche que la Guinée équatoriale, mais on y vit plus longtemps : "
+      "la richesse ne suffit pas, à elle seule, à mesurer le développement.",
+      {"cm2": ["Compare les nombres ligne par ligne.", "74,7 ans, c'est plus que 63,7 ans.", "112 710 ÷ 8 498 : un peu plus de 13."]},
+      "l08", niveaux=["CM2"],
+      commun={"affirmations": [
+          {"txt": "La Norvège a le revenu par habitant le plus élevé du tableau.", "vrai": True, "explication": "112 710 dollars."},
+          {"txt": "Le Bangladesh a un revenu par habitant plus faible que la Guinée équatoriale.", "vrai": True, "explication": "8 498 dollars contre 12 762 dollars."},
+          {"txt": "On vit moins longtemps au Bangladesh qu'en Guinée équatoriale.", "vrai": False, "explication": "74,7 ans contre 63,7 ans : on y vit plus longtemps."},
+          {"txt": "Dans ce tableau, plus un pays est riche, plus on y vit longtemps, sans exception.", "vrai": False, "explication": "Le Bangladesh, moins riche, a une espérance de vie plus longue que la Guinée équatoriale."},
+          {"txt": "Le revenu d'un habitant de la Norvège est plus de 13 fois celui d'un habitant du Bangladesh.", "vrai": True, "explication": "112 710 ÷ 8 498, c'est environ 13,3."}]}),
+]
+
 SALLES_E = [
     {"num": 1, "titre": "Le grand départ — Ma commune", "enigmes": E1},
     {"num": 2, "titre": "Direction Dijon ! — Des territoires emboîtés", "enigmes": E2},
     {"num": 3, "titre": "Vivre à Clamecy — L'espace rural", "enigmes": E3},
     {"num": 4, "titre": "Besançon — Travailler en ville", "enigmes": E4},
     {"num": 5, "titre": "Les Rousses — Les loisirs de la montagne", "enigmes": E5},
+    {"num": 6, "titre": "Étretat — La station balnéaire", "enigmes": E6},
+    {"num": 7, "titre": "Biarritz — Le littoral atlantique", "enigmes": E7},
+    {"num": 8, "titre": "Dhaka — Les inégalités dans le monde", "enigmes": E8},
 ]
 
 # ============================================================================ DIALOGUES
@@ -375,6 +581,9 @@ PERSONNAGES = {
     "malik": {"nom": "Malik", "role": "Agent infiltré à Clamecy, spécialiste des chiffres"},
     "zoe": {"nom": "Zoé", "role": "Agente chargée de rencontrer les sources à Besançon"},
     "hugo": {"nom": "Hugo", "role": "Agent et moniteur de ski à la station des Rousses"},
+    "ines": {"nom": "Inès", "role": "Agente de la côte normande, elle fournit aux recrues leurs couvertures"},
+    "theo": {"nom": "Théo", "role": "Agent et sauveteur sur la Grande Plage de Biarritz"},
+    "nour": {"nom": "Nour", "role": "Agente envoyée à Dhaka, elle enquête au milieu des marchés"},
 }
 SALLES_D = [
     {"num": 1, "titre": "Le grand départ", "decor": "bureau-atlas", "motCle": "COMMUNE",
@@ -417,6 +626,30 @@ SALLES_D = [
                         "la montagne attire beaucoup de monde, et tout ce monde laisse des traces."},
      "dialogue_reussite": {"perso": "hugo", "nom": "Hugo", "texte": "Bravo : vous savez ce que le <b>TOURISME</b> apporte à la montagne, et ce qu'il lui coûte. Notez ce mot. "
                            "Et souvenez-vous de la remarque du skieur : là où va la valise, c'est l'hiver en même temps qu'ici."}},
+    {"num": 6, "titre": "Étretat, station balnéaire", "decor": "etretat-falaises", "motCle": "BALNÉAIRE",
+     "lieu": "Étretat, en Normandie, sur la promenade du front de mer",
+     "description": "Une plage de galets au pied de hautes falaises blanches ; à gauche, une arche et une aiguille de craie plantée dans la mer. Sur la promenade, la foule et les voitures.",
+     "sens": ["À voir : l'arche et l'aiguille de craie au pied de la falaise", "À entendre : les galets roulés par les vagues et les klaxons des voitures", "À sentir : l'air salé et les frites des kiosques"],
+     "dialogue_intro": {"perso": "ines", "nom": "Inès", "texte": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. "
+                        "Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants."},
+     "dialogue_reussite": {"perso": "ines", "nom": "Inès", "texte": "Ta couverture a tenu : la source t'a pris pour un vrai guide de station <b>BALNÉAIRE</b>. Notez ce mot. "
+                           "Elle a parlé : le voleur a longé la côte jusqu'à l'océan Atlantique. Théo vous attend à Biarritz."}},
+    {"num": 7, "titre": "Le littoral atlantique", "decor": "biarritz-plage", "motCle": "LITTORAL",
+     "lieu": "Biarritz, sur la Grande Plage, au bord de l'océan Atlantique",
+     "description": "Une longue plage de sable au pied de villas et d'hôtels ; des surfeurs dans les rouleaux, un phare sur la pointe, des parasols serrés jusqu'à l'eau.",
+     "sens": ["À voir : les rouleaux de l'océan et les surfeurs", "À entendre : le fracas des vagues et le sifflet du sauveteur", "À sentir : la crème solaire et le sable chaud"],
+     "dialogue_intro": {"perso": "theo", "nom": "Théo", "texte": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. "
+                        "Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été."},
+     "dialogue_reussite": {"perso": "theo", "nom": "Théo", "texte": "Bien joué : vous savez lire le <b>LITTORAL</b> comme un vrai sauveteur. Notez ce mot. "
+                           "Le message du voleur est clair maintenant : une escale lointaine, à Dhaka, au Bangladesh. Nour y est déjà."}},
+    {"num": 8, "titre": "Niveaux de vie dans le monde", "decor": "dhaka-marche", "motCle": "INÉGALITÉS",
+     "lieu": "Dhaka, capitale du Bangladesh, dans un marché très animé",
+     "description": "Une rue étroite pleine de monde : des étals de tissus et de fruits, des pousse-pousse à vélo, des fils électriques emmêlés au-dessus des têtes, des immeubles neufs au loin.",
+     "sens": ["À voir : les pousse-pousse colorés et les étals de tissus", "À entendre : les sonnettes des vélos et les voix des marchands", "À sentir : les épices et la poussière chaude"],
+     "dialogue_intro": {"perso": "nour", "nom": "Nour", "texte": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. "
+                        "Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie."},
+     "dialogue_reussite": {"perso": "nour", "nom": "Nour", "texte": "Vous avez compris les <b>INÉGALITÉS</b> qui séparent les pays du monde. Notez ce mot. "
+                           "Et regardez ce qu'un marchand m'a tendu : une photo froissée d'un drapeau. On n'en voit que deux couleurs."}},
 ]
 INTRO = ("Bienvenue au bureau du Professeur Atlas. Une valise contenant des informations secrètes a été volée. Séance après séance, "
          "vous allez suivre sa trace à travers la France, puis le monde. Chaque séance réussie vous donne un mot pour le coffre et un indice pour votre carnet de mission.")
@@ -469,11 +702,43 @@ LECONS = [
      "lexique": [{"mot": "station de montagne", "def": "lieu aménagé pour accueillir des touristes en montagne"}, {"mot": "remontée mécanique", "def": "installation qui monte les skieurs en haut des pistes"},
                  {"mot": "neige de culture", "def": "neige fabriquée par des canons à neige, avec beaucoup d'eau"}, {"mot": "biodiversité", "def": "ensemble des êtres vivants d'un milieu"}],
      "sources": BO + " ; Office de tourisme de la station des Rousses (La Dôle, 1 677 m)."},
+    {"id": "l06", "salle": 6, "icone": "6", "titre": "Le littoral touristique : la station balnéaire", "duree": "4 min", "niveau": "CM1-CM2",
+     "objectifs": ["Définir une station balnéaire", "Identifier les activités proposées aux touristes", "Peser les effets positifs et négatifs de la fréquentation touristique"],
+     "contenu": {"cm1": "<h4>La station balnéaire</h4><p>Une <b>station balnéaire</b> est un lieu de séjour situé en bord de mer, aménagé pour accueillir des touristes. "
+                        "À Étretat, en Normandie, on randonne sur les falaises, on fait du kayak, on visite des maisons célèbres.</p>"
+                        "<h4>Le prix du succès</h4><p>Le tourisme crée des <b>emplois</b> et des <b>animations</b>. Mais il apporte aussi des <b>embouteillages</b>, des <b>déchets</b> "
+                        "et des <b>logements plus chers</b> : des habitants partent.</p>",
+                 "cm2": F.html(F.LECON_BALNEAIRE)},
+     "lexique": [{"mot": "station balnéaire", "def": "lieu de séjour situé en bord de mer, aménagé pour le tourisme"},
+                 {"mot": "surfréquentation", "def": "présence de trop de visiteurs pour la capacité d'un lieu"},
+                 {"mot": "saisonnier", "def": "qui ne dure qu'une partie de l'année, l'été par exemple"},
+                 {"mot": "patrimoine", "def": "richesses naturelles et culturelles héritées du passé"}],
+     "sources": BO2 + " ; Insee (Étretat) ; " + OT + " ; Francetvinfo, août 2022."},
+    {"id": "l07", "salle": 7, "icone": "7", "titre": "Les mers et l'océan qui bordent la France", "duree": "4 min", "niveau": "CM1-CM2",
+     "objectifs": ["Nommer et situer les mers et l'océan qui bordent la France", "Nommer différents types d'hébergements touristiques", "Mesurer l'effet des touristes sur la densité"],
+     "contenu": {"cm1": "<h4>Quatre étendues d'eau</h4><p>La France est bordée par la <b>mer du Nord</b> (au nord), la <b>Manche</b> (entre la France et le Royaume-Uni), "
+                        "l'<b>océan Atlantique</b> (à l'ouest) et la <b>mer Méditerranée</b> (au sud, autour de la Corse).</p>"
+                        "<h4>Le littoral en été</h4><p>Le <b>littoral</b>, c'est le bord de mer. L'été, les vacanciers dorment à l'hôtel, au camping, dans un gîte… "
+                        "La population des communes du littoral peut être multipliée par dix ou plus.</p>",
+                 "cm2": F.html(F.LECON_LITTORAL)},
+     "lexique": [{"mot": "littoral", "def": "zone de contact entre la terre et la mer"}, {"mot": "océan", "def": "très vaste étendue d'eau salée qui sépare des continents"},
+                 {"mot": "hébergement", "def": "lieu où l'on dort pendant un séjour"}, {"mot": "population saisonnière", "def": "population présente seulement pendant une partie de l'année"}],
+     "sources": BO2 + " ; Insee (Étretat : 4,07 km², 1 102 habitants)."},
+    {"id": "l08", "salle": 8, "icone": "8", "titre": "Les inégalités de niveau de vie", "duree": "5 min", "niveau": "CM1-CM2",
+     "objectifs": ["Identifier les manifestations des inégalités de niveau de vie", "Localiser sur un planisphère des pays riches et des pays pauvres", "Lire un tableau d'indicateurs de développement"],
+     "contenu": {"cm1": "<h4>Tout le monde n'a pas le même niveau de vie</h4><p>Pour comparer les pays, on regarde le <b>revenu par habitant</b>, l'<b>espérance de vie</b> "
+                        "et la <b>durée de la scolarisation</b>. Les pays riches sont surtout en Amérique du Nord, en Europe et en Océanie ; les pays pauvres, surtout en Afrique.</p>"
+                        "<h4>Les enfants et la pauvreté</h4><p>Dans les pays pauvres, des enfants <b>travaillent</b> au lieu d'aller à l'école. "
+                        "La Convention internationale des droits de l'enfant les protège.</p>",
+                 "cm2": F.html(F.LECON_INEGALITES)},
+     "lexique": [{"mot": "niveau de vie", "def": "ce que les habitants peuvent se procurer avec leurs revenus"}, {"mot": "espérance de vie", "def": "nombre moyen d'années que l'on peut espérer vivre"},
+                 {"mot": "indicateur", "def": "nombre qui permet de mesurer et de comparer"}, {"mot": "pays développé", "def": "pays où le niveau de vie, la santé et l'école sont élevés"}],
+     "sources": BO2 + " ; " + S.SOURCE_PNUD + " ; OIT et UNICEF, « Travail des enfants : estimations mondiales 2024 » (2025) ; World Inequality Lab, Rapport sur les inégalités mondiales 2022."},
 ]
 
 METADATA = {"jeu": "Mission géographique", "auteur": "Escape game · cycle 3 · géographie", "version": 1,
             "differenciation": "Une escale par séance. CM1 : 3 énigmes par escale. CM2 : 4 énigmes par escale (la 4e : « niveaux »: [\"CM2\"]).",
-            "sources": BO + " ; livret « Mission géographique » (Année A) ; Insee ; DGCL ; ministère de l'Agriculture (CEP) ; Office de tourisme des Rousses."}
+            "sources": BO + " ; livret « Mission géographique » (Année A) ; Insee ; DGCL ; ministère de l'Agriculture (CEP) ; Office de tourisme des Rousses ; PNUD (RDH 2025) ; OIT et UNICEF (2025)."}
 
 
 def main():

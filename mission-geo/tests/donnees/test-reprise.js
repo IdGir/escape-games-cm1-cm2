@@ -28,7 +28,11 @@ const v2 = IMPORT.convertir({ version: 1, equipe: "Atlas 2", niveau: "CM2", pali
   sessions: { s01: { reussie: true, points: 10 }, s02: { reussie: true, points: 9 }, s03: { reussie: true, points: 8 }, s04: { reussie: true, points: 7 }, s05: { reussie: true, points: 6 }, s06: { reussie: true, points: 5 } } }).partie;
 const E2 = R.versEtat(v2);
 ok(E2.niveau === "mousse", "Découverte → mousse");
-ok(E2.escaleTerminee && E2.escale === 5 && E2.escalesFaites.length === 5, "toutes les séances jouables faites : fin de la séance 5 (la séance 6 attend la période 2)");
+ok(!E2.escaleTerminee && E2.escale === 7 && E2.escalesFaites.length === 6 && E2.mots[5] === "BALNÉAIRE", "séances 1 à 6 faites : reprise à la séance 7 (période 2)");
+const v3 = IMPORT.convertir({ version: 1, equipe: "Atlas 3", niveau: "CM1",
+  sessions: Object.fromEntries([1, 2, 3, 4, 5, 6, 7, 8, 9].map(k => ["s0" + k, { reussie: true, points: k }])) }).partie;
+const E3 = R.versEtat(v3);
+ok(E3.escaleTerminee && E3.escale === 8 && E3.escalesFaites.length === 8 && E3.mots.join(" ").endsWith("LITTORAL INÉGALITÉS"), "toutes les séances jouables faites : fin de la séance 8 (la séance 9 attend la période 3)");
 ok(R.versEtat(Object.assign({}, v2, { grade: "lieutenant" })).niveau === "lieutenant", "grade imposé à l'import");
 
 // 3. Copie vers le PC : format accepté par le serveur (mission-geo-partie, séances 1 à 16)

@@ -4,7 +4,10 @@
   "lena": "Agente de terrain vive et organisée, fière de Dijon, elle aime les présentations bien faites",
   "malik": "Agent infiltré malicieux, à l'aise avec les chiffres, il cherche toujours à passer inaperçu",
   "zoe": "Agente des sources précise et patiente, elle observe les gens et leurs métiers",
-  "hugo": "Moniteur de ski chaleureux du Haut-Jura, il aime sa montagne et ne cache pas ce qui l'abîme"
+  "hugo": "Moniteur de ski chaleureux du Haut-Jura, il aime sa montagne et ne cache pas ce qui l'abîme",
+  "ines": "Agente enjouée de la côte normande, experte en déguisements, elle aime sa ville mais voit ce que la foule lui coûte",
+  "theo": "Sauveteur décontracté de Biarritz, attentif à l'océan, il parle simplement et va droit au but",
+  "nour": "Agente grave et attentive, elle observe sans juger et veut comprendre pourquoi tant de gens vivent dans la pauvreté"
  },
  "enigmes": {
   "e1-1": {
@@ -161,6 +164,99 @@
    "situation": "Au refuge, un skieur fait une remarque sur le pays où va la valise.",
    "reaction": "La moitié sud de la carte s'assombrit : la piste se resserre.",
    "dialogue": "Écoutez bien ce skieur : sa remarque est un indice."
+  },
+  "e6-1": {
+   "objet": "Le dépliant de l'office de tourisme",
+   "description": "Un dépliant plié en trois, posé sur un banc du front de mer, couvert d'activités.",
+   "enjeu": "Un faux guide qui se trompe d'activité serait démasqué aussitôt par la source.",
+   "situation": "Pour approcher la source, l'agent se fait passer pour un guide et doit conseiller des visiteurs étrangers.",
+   "reaction": "Chaque visiteur repart content vers son activité ; la source, assise plus loin, lève les yeux."
+  },
+  "e6-2": {
+   "objet": "Les fiches du guide",
+   "description": "Des fiches cartonnées éparpillées sur les galets, chacune avec un morceau de phrase.",
+   "enjeu": "Sans la définition exacte, la couverture de guide ne tiendrait pas devant la source.",
+   "situation": "Le guide officiel a fait tomber ses fiches : il faut reconstituer la définition d'une station balnéaire.",
+   "reaction": "Les fiches se rangent en une seule ligne ; le premier mot s'éclaire.",
+   "dialogue": "Ses fiches sont tombées. Remets la définition dans l'ordre, et retiens le premier mot."
+  },
+  "e6-3": {
+   "objet": "Le témoignage de l'habitante",
+   "description": "Un carnet ouvert à côté d'une tasse de café, à la terrasse d'un café du front de mer.",
+   "enjeu": "La source ne fait confiance qu'à ceux qui comprennent ce que vivent les habitants.",
+   "situation": "Une habitante raconte à Inès l'été à Étretat, entre emplois et embouteillages.",
+   "reaction": "Le carnet se partage en deux colonnes, l'une verte, l'autre rouge.",
+   "dialogue": "Écoute bien cette habitante : le tourisme lui apporte autant qu'il lui coûte."
+  },
+  "e6-4": {
+   "objet": "Le panneau lumineux de l'entrée de ville",
+   "description": "Un grand panneau lumineux au bord de la route, encore éteint.",
+   "enjeu": "Avant de quitter Étretat, il faut prouver que l'on a compris le problème de la ville.",
+   "situation": "Inès fait le point sur les chiffres et imagine ce que la mairie pourrait faire.",
+   "reaction": "Le panneau s'allume : « Étretat saturée, revenez dans deux heures ».",
+   "dialogue": "Un dernier point avant le départ : les chiffres de la ville."
+  },
+  "e7-1": {
+   "objet": "La carte de France de Théo",
+   "description": "Une carte cornée posée sur la chaise haute du sauveteur, avec des repères numérotés en mer.",
+   "enjeu": "Le message du voleur parle de mers et d'océans : sans les nommer, impossible de le lire.",
+   "situation": "Théo déplie sa carte : il faut nommer les eaux qui bordent la France.",
+   "reaction": "Les noms des mers s'inscrivent en bleu le long des côtes."
+  },
+  "e7-2": {
+   "objet": "Le message du voleur",
+   "description": "Un papier glissé dans la housse d'une planche de surf, plein de phrases sur la mer.",
+   "enjeu": "Chaque phrase du message désigne une mer : une seule erreur et la piste est perdue.",
+   "situation": "Le loueur de planches a remis à Théo le message laissé par le voleur.",
+   "reaction": "Les phrases se rangent sous les noms des mers ; une destination se dessine.",
+   "dialogue": "Voici le message du voleur. Chaque phrase parle d'une mer : à toi de les ranger."
+  },
+  "e7-3": {
+   "objet": "Le tableau des hébergements",
+   "description": "Un tableau d'affichage du poste de secours, couvert d'annonces de logements.",
+   "enjeu": "En pleine saison, un agent sans logement doit quitter la ville.",
+   "situation": "Théo doit loger les agents à Biarritz, au cœur de l'été.",
+   "reaction": "Chaque annonce reçoit un nom d'agent épinglé.",
+   "dialogue": "Il faut loger tout le monde. Relie chaque description au bon hébergement."
+  },
+  "e7-4": {
+   "objet": "La calculette du poste de secours",
+   "description": "Une calculette posée sur le registre des baignades du jour.",
+   "enjeu": "Théo doit savoir combien de personnes se pressent sur le littoral un jour d'été.",
+   "situation": "Théo compare le nombre de personnes présentes l'été et le reste de l'année.",
+   "reaction": "La calculette affiche le résultat ; Théo siffle d'étonnement.",
+   "dialogue": "L'été, on est beaucoup plus nombreux. Calcule de combien."
+  },
+  "e8-1": {
+   "objet": "Le planisphère de Nour",
+   "description": "Un planisphère punaisé dans l'arrière-boutique d'un marchand de tissus, avec des épingles sans nom.",
+   "enjeu": "Pour comprendre les inégalités, il faut d'abord savoir où se trouvent les pays comparés.",
+   "situation": "Nour a épinglé les pays qu'elle compare au Bangladesh, mais leurs noms sont tombés.",
+   "reaction": "Les noms des pays se fixent sous chaque épingle."
+  },
+  "e8-2": {
+   "objet": "Le diagramme des revenus",
+   "description": "Une feuille couverte de barres de longueurs très différentes, posée sur un sac de riz.",
+   "enjeu": "Sans lire ce diagramme, impossible de savoir quels pays sont riches et lesquels sont pauvres.",
+   "situation": "Nour montre le revenu moyen d'un habitant dans plusieurs pays.",
+   "reaction": "Les barres se colorent, les plus longues en haut.",
+   "dialogue": "Regarde ces barres : elles ne sont pas toutes de la même longueur."
+  },
+  "e8-3": {
+   "objet": "Le carnet de Nour",
+   "description": "Un carnet de reporter aux pages remplies de notes et de croquis.",
+   "enjeu": "Nour doit transmettre au Professeur Atlas ce qu'elle a vu, sans se tromper.",
+   "situation": "Nour raconte ce qu'elle a observé à Dhaka et ce qu'elle en a compris.",
+   "reaction": "Le carnet se referme sur une page bien remplie.",
+   "dialogue": "Voici ce que j'ai vu ici. Aide-moi à le comprendre."
+  },
+  "e8-4": {
+   "objet": "Le tableau du PNUD",
+   "description": "Un tableau de chiffres imprimé, annoté au crayon par Nour.",
+   "enjeu": "Le rapport de Nour doit montrer que la richesse ne dit pas tout.",
+   "situation": "Nour compare quatre pays avec trois indicateurs.",
+   "reaction": "Deux cases du tableau s'entourent de rouge.",
+   "dialogue": "Ce tableau cache une surprise. Lis-le attentivement."
   }
  }
 }

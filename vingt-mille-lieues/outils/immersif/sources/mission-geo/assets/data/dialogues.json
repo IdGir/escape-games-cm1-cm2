@@ -22,6 +22,18 @@
   "hugo": {
    "nom": "Hugo",
    "role": "Agent et moniteur de ski à la station des Rousses"
+  },
+  "ines": {
+   "nom": "Inès",
+   "role": "Agente de la côte normande, elle fournit aux recrues leurs couvertures"
+  },
+  "theo": {
+   "nom": "Théo",
+   "role": "Agent et sauveteur sur la Grande Plage de Biarritz"
+  },
+  "nour": {
+   "nom": "Nour",
+   "role": "Agente envoyée à Dhaka, elle enquête au milieu des marchés"
   }
  },
  "intro_accueil": "Bienvenue au bureau du Professeur Atlas. Une valise contenant des informations secrètes a été volée. Séance après séance, vous allez suivre sa trace à travers la France, puis le monde. Chaque séance réussie vous donne un mot pour le coffre et un indice pour votre carnet de mission.",
@@ -139,6 +151,75 @@
     "perso": "hugo",
     "nom": "Hugo",
     "texte": "Bravo : vous savez ce que le <b>TOURISME</b> apporte à la montagne, et ce qu'il lui coûte. Notez ce mot. Et souvenez-vous de la remarque du skieur : là où va la valise, c'est l'hiver en même temps qu'ici."
+   }
+  },
+  {
+   "num": 6,
+   "titre": "Étretat, station balnéaire",
+   "decor": "etretat-falaises",
+   "motCle": "BALNÉAIRE",
+   "lieu": "Étretat, en Normandie, sur la promenade du front de mer",
+   "description": "Une plage de galets au pied de hautes falaises blanches ; à gauche, une arche et une aiguille de craie plantée dans la mer. Sur la promenade, la foule et les voitures.",
+   "sens": [
+    "À voir : l'arche et l'aiguille de craie au pied de la falaise",
+    "À entendre : les galets roulés par les vagues et les klaxons des voitures",
+    "À sentir : l'air salé et les frites des kiosques"
+   ],
+   "dialogue_intro": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Je suis Inès. La valise a quitté l'Europe, mais le voleur est passé par ici, à Étretat, et une source l'a vu. Elle ne parle qu'aux gens du coin : pour l'approcher, tu vas te faire passer pour un guide touristique. Il faudra connaître la ville, et ce que vivent ses habitants."
+   },
+   "dialogue_reussite": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Ta couverture a tenu : la source t'a pris pour un vrai guide de station <b>BALNÉAIRE</b>. Notez ce mot. Elle a parlé : le voleur a longé la côte jusqu'à l'océan Atlantique. Théo vous attend à Biarritz."
+   }
+  },
+  {
+   "num": 7,
+   "titre": "Le littoral atlantique",
+   "decor": "biarritz-plage",
+   "motCle": "LITTORAL",
+   "lieu": "Biarritz, sur la Grande Plage, au bord de l'océan Atlantique",
+   "description": "Une longue plage de sable au pied de villas et d'hôtels ; des surfeurs dans les rouleaux, un phare sur la pointe, des parasols serrés jusqu'à l'eau.",
+   "sens": [
+    "À voir : les rouleaux de l'océan et les surfeurs",
+    "À entendre : le fracas des vagues et le sifflet du sauveteur",
+    "À sentir : la crème solaire et le sable chaud"
+   ],
+   "dialogue_intro": {
+    "perso": "theo",
+    "nom": "Théo",
+    "texte": "Salut, je suis Théo, sauveteur sur cette plage. Le voleur a laissé un message à un loueur de planches, mais il parle de mers et d'océans. Avant de le lire, il faut savoir nommer les eaux qui bordent la France, et comprendre qui vient ici chaque été."
+   },
+   "dialogue_reussite": {
+    "perso": "theo",
+    "nom": "Théo",
+    "texte": "Bien joué : vous savez lire le <b>LITTORAL</b> comme un vrai sauveteur. Notez ce mot. Le message du voleur est clair maintenant : une escale lointaine, à Dhaka, au Bangladesh. Nour y est déjà."
+   }
+  },
+  {
+   "num": 8,
+   "titre": "Niveaux de vie dans le monde",
+   "decor": "dhaka-marche",
+   "motCle": "INÉGALITÉS",
+   "lieu": "Dhaka, capitale du Bangladesh, dans un marché très animé",
+   "description": "Une rue étroite pleine de monde : des étals de tissus et de fruits, des pousse-pousse à vélo, des fils électriques emmêlés au-dessus des têtes, des immeubles neufs au loin.",
+   "sens": [
+    "À voir : les pousse-pousse colorés et les étals de tissus",
+    "À entendre : les sonnettes des vélos et les voix des marchands",
+    "À sentir : les épices et la poussière chaude"
+   ],
+   "dialogue_intro": {
+    "perso": "nour",
+    "nom": "Nour",
+    "texte": "Bienvenue à Dhaka. Je suis Nour. Ici, tu vas voir des immeubles neufs, et juste à côté, des enfants qui travaillent au lieu d'aller à l'école. Pour comprendre la suite de la piste, il faut d'abord comprendre pourquoi tout le monde n'a pas le même niveau de vie."
+   },
+   "dialogue_reussite": {
+    "perso": "nour",
+    "nom": "Nour",
+    "texte": "Vous avez compris les <b>INÉGALITÉS</b> qui séparent les pays du monde. Notez ce mot. Et regardez ce qu'un marchand m'a tendu : une photo froissée d'un drapeau. On n'en voit que deux couleurs."
    }
   }
  ]

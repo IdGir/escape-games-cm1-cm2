@@ -26,9 +26,12 @@ INDICES = {
     3: {"type": "nombre", "symbole": "nuage", "valeur": 7, "libelle": "Total des trois densités calculées"},
     4: {"type": "fait", "texte": "Le pays recherché se trouve en Amérique latine.", "libelle": "Confidence d'une source à Besançon"},
     5: {"type": "fait", "texte": "Le pays recherché est situé dans l'hémisphère nord.", "libelle": "Remarque d'un skieur au refuge"},
+    6: {"type": "nombre", "symbole": "pentagone", "valeur": 4, "libelle": "Nombre de lettres du premier mot de la définition"},
+    7: {"type": "nombre", "symbole": "trapeze", "valeur": 15, "libelle": "Coefficient multiplicateur de la densité en été"},
+    8: {"type": "fait", "texte": "Le drapeau du pays recherché comporte du vert et du blanc.", "libelle": "Photographie froissée récupérée à Dhaka"},
 }
-SYMBOLES = {"etoile": "l'étoile", "cercle": "le cercle", "nuage": "le nuage"}
-PERIODES = {1: "Période 1", 2: "Période 1", 3: "Période 1", 4: "Période 1", 5: "Période 1"}
+SYMBOLES = {"etoile": "l'étoile", "cercle": "le cercle", "nuage": "le nuage", "pentagone": "le pentagone", "trapeze": "le trapèze"}
+PERIODES = {1: "Période 1", 2: "Période 1", 3: "Période 1", 4: "Période 1", 5: "Période 1", 6: "Période 2", 7: "Période 2", 8: "Période 2"}
 
 
 def go(titre, cmd, cwd=RACINE, fin=4, obligatoire=True):
@@ -72,9 +75,11 @@ def finitions():
                               "sa trace à travers la France, puis le monde. Chaque séance réussie vous donne un mot pour le coffre et un indice pour votre carnet de mission.")
     DL["coffre"]["texte"] = ("Mon coffre ne s'ouvre qu'avec le mot de chaque séance, dans l'ordre. Ensemble, ils résument ce que vous avez appris : "
                              "votre COMMUNE fait partie de territoires EMBOÎTÉS ; la DENSITÉ distingue la campagne de la ville ; la ville vit surtout du secteur TERTIAIRE ; "
-                             "la montagne vit du TOURISME.")
-    DL["cinematiques"]["fin"]["plans"][0]["texte"] = ("Le coffre est ouvert. Vous connaissez maintenant le territoire où vous vivez, ses villes, ses campagnes et ses montagnes. "
-                                                      "Mais la valise, elle, a quitté l'Europe. Gardez précieusement votre carnet : la mission continue à la séance suivante.")
+                             "la montagne vit du TOURISME ; la station BALNÉAIRE attire tant de visiteurs que le LITTORAL change de visage chaque été ; "
+                             "et dans le monde, de fortes INÉGALITÉS séparent les pays riches des pays pauvres.")
+    DL["cinematiques"]["fin"]["plans"][0]["texte"] = ("Le coffre est ouvert. Vous connaissez le territoire où vous vivez, ses villes, ses campagnes, ses montagnes et son littoral, "
+                                                      "et vous savez lire les inégalités du monde. La photo du drapeau rejoint votre carnet : vert et blanc, ce n'est pas le drapeau du Bangladesh. "
+                                                      "La valise est ailleurs. Gardez précieusement votre carnet : la mission continue à la séance suivante.")
     ecrire("enigmes.json", E)
     ecrire("dialogues.json", DL)
     P = lire("personnages.json")
