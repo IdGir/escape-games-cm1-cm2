@@ -25,7 +25,7 @@
         "modeles": ["agnes-video-2.5-flash"],
         "creer": { "methode": "POST", "url": "{base_url}/v1/videos",
                    "corps": { "model": "{modele}", "prompt": "{prompt}", "mode": "keyframe", "first_frame": "{depart}", "last_frame": "{fin}",
-                              "seconds": "{secondes}", "size": "720P", "aspect_ratio": "16:9" },
+                              "seconds": "{secondes}", "size": "720P" },
                    "reponse": { "id": "video_id" } },
         "sonder": { "methode": "GET", "url": "{base_url}/agnesapi?video_id={id}&model_name={modele}",
                     "statut": "status", "termine": ["completed"], "echec": ["failed"], "url_video": "url", "erreur": "error", "intervalle_s": 10 },

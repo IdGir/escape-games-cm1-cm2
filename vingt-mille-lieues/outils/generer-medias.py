@@ -173,7 +173,7 @@ def main():
                 if not o.depart_url:
                     print(f"! {l['id']} : il faut l'URL PUBLIQUE du décor validé (--depart-url). Hébergement public temporaire nécessaire."); break
                 corps = {"model": MODELE_VIDEO, "prompt": (l["prompt_fr"] + " " + o.prompt_supplement).strip(), "mode": "keyframe", "first_frame": o.depart_url,
-                         "seconds": "8", "size": "720P", "aspect_ratio": "16:9"}
+                         "seconds": "8", "size": "720P"}
                 if o.fin_url: corps["last_frame"] = o.fin_url
                 if o.essai:
                     print(f"[essai] POST {BASE}/v1/videos → {os.path.relpath(cible, JEU)}\n        " + json.dumps(corps, ensure_ascii=False)[:400]); faites_v += 1; continue
