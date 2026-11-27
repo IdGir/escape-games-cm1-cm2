@@ -113,6 +113,16 @@ var FAMILLES = {
     "empires": "expliquer comment des pays d'Europe se sont partagé l'Amérique et ont exploité leurs colonies"
    }
   },
+  "seconde-guerre": {
+   "deroule": "Dans la cave de l'école d'un village imaginaire du Morvan, les élèves ont retrouvé un poste de radio clandestin et suivi cinq « fréquences », de 1938 à 1945, pour comprendre la Seconde Guerre mondiale en France.",
+   "lecons": {
+    "montee": "expliquer ce qu'est une dictature et pourquoi la démocratie est menacée après la crise de 1929",
+    "defaite": "raconter la défaite de 1940, l'appel du 18 juin du général de Gaulle et le régime de Vichy",
+    "occupation": "décrire la vie quotidienne sous l'Occupation (tickets, manque, travail obligatoire) et savoir ce qu'est la Shoah",
+    "resistance": "expliquer ce que veut dire résister et citer des formes de la Résistance",
+    "liberation": "dater la Libération (1944) et la victoire des Alliés (8 mai 1945), et dire ce qui change pour les femmes"
+   }
+  },
   "grande-guerre": {
    "deroule": "Dans le grenier de l'école d'un village imaginaire, les élèves ont lu cinq lettres écrites entre 1914 et 1922 pour comprendre comment la Première Guerre mondiale a touché les soldats, leurs familles et tout le pays.",
    "lecons": {

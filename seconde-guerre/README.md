@@ -36,6 +36,12 @@ Dans la cave de l'école du village (inventé) de Chantelune-en-Morvan, dans la 
 
 CM1 : 3 énigmes par fréquence (15) ; CM2 : 4 énigmes par fréquence (20). Repères en CM1 (ordre des événements, années) ; dates exactes en CM2 (30 janvier 1933, 1er et 3 septembre 1939, 10 mai, 14, 17, 18 et 22 juin 1940, 10 juillet 1940, 16 février 1943, 27 mai 1943, 6 juin, 15 et 25 août, 11 septembre 1944, 8 mai 1945).
 
+## Imprimer
+
+- **Leçons A4 illustrées** (CM1 / CM2, compétence du programme, schémas et cartes du jeu, frises, tableaux, lexique) : `lecons-imprimables.html`.
+- **Évaluations** (fiches préparatoires, QCM, vrai/faux, études de documents, corrigés à la fin) : `evaluations-imprimables.html`. Comme dans le jeu, aucune question notée ne porte sur les persécutions ni sur la Shoah.
+- Ces deux pages s'ouvrent aussi depuis la variante immersive (page « Leçons A4 »). Jeu très sensible : les relire avant la classe.
+
 ## Solutions (générées depuis `assets/data/enigmes.json`)
 
 ### Fréquence n°1, 1938 — La salle de classe : la montée des dictatures (mot : **DICTATURES**)

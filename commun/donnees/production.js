@@ -2,7 +2,7 @@
    État de production des jeux, lu par le tableau de bord (enseignant.html) quand le serveur local
    n'est pas là (site en ligne). Avec le serveur : /api/production, recalculé en direct. */
 var PRODUCTION = {
-"genere": "2026-11-27T05:42",
+"genere": "2026-11-27T06:03",
 "totaux": {
 "jeux": 24,
 "finis": 3,
@@ -723,8 +723,8 @@ var PRODUCTION = {
 ]
 },
 "voix": 48,
-"lecons": "immersifs/seconde-guerre/lecons-imprimables.html",
-"evaluations": "",
+"lecons": "seconde-guerre/lecons-imprimables.html",
+"evaluations": "seconde-guerre/evaluations-imprimables.html",
 "affiche": "",
 "bande_annonce": "",
 "a_verifier": 10,
@@ -740,7 +740,6 @@ var PRODUCTION = {
 "manque": [
 "10 images",
 "5 vidéos",
-"évaluations",
 "affiche",
 "bande-annonce",
 "carte de l'accueil « médias en attente »"

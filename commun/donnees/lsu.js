@@ -111,6 +111,9 @@ var LSU = {
   "grandes-explorations": {
    "epices": ["hg-rois", "~"], "techniques": ["hg-rois", "~"], "voyages": ["hg-localiser", "~"], "rencontres": ["hg-rois", "~"], "empires": ["hg-rois", "~"]
   },
+  "seconde-guerre": {
+   "montee": ["hg-guerres", "="], "defaite": ["hg-guerres", "="], "occupation": ["hg-guerres", "="], "resistance": ["hg-guerres", "="], "liberation": ["hg-guerres", "="]
+  },
   "grande-guerre": {
    "causes": ["hg-guerres", "="], "front": ["hg-guerres", "="], "arriere": ["hg-guerres", "="], "armistice": ["hg-guerres", "="], "memoire": ["hg-guerres", "~"]
   },

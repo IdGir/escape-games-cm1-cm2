@@ -1,0 +1,676 @@
+{
+ "metadata": {
+  "sujet": "La Seconde Guerre mondiale : la montée des dictatures, la défaite de 1940 et Vichy, la vie sous l'Occupation, la Résistance, la Libération et la victoire",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "programme": "Histoire, cycle 3 — la Seconde Guerre mondiale (programme 2026, BO n° 22 du 28 mai 2026). Progression de l'enseignant : thème 6, année A, période 5. Repères en CM1, dates exactes en CM2.",
+  "sources": "Leçons du jeu (assets/data/lecons.json) ; ministère des Armées (Chemins de mémoire), Ordre de la Libération, Fondation de la Résistance, Mémorial de Caen ; voir README.md et A-VERIFIER.md du jeu."
+ },
+ "quizz_final": {
+  "CM1": [
+   {
+    "q": "En quelle année commence une grave crise économique mondiale ?",
+    "options": [
+     "1929",
+     "1945",
+     "1914"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Le 18 juin 1940, depuis Londres, le général de Gaulle...",
+    "options": [
+     "signe l'armistice",
+     "appelle à continuer le combat",
+     "devient chef du gouvernement de Vichy"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Sous l'Occupation, pour acheter du pain, il faut...",
+    "options": [
+     "une carte d'électeur",
+     "un billet de train",
+     "des tickets de rationnement"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Qui réunit les mouvements de résistance en 1943 ?",
+    "options": [
+     "Jean Moulin",
+     "le maréchal Pétain",
+     "Mussolini"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Le 8 mai 1945...",
+    "options": [
+     "les Alliés débarquent en Normandie",
+     "l'Allemagne nazie capitule",
+     "Paris est occupé"
+    ],
+    "bonne": 1,
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "Hitler devient chancelier de l'Allemagne le...",
+    "options": [
+     "30 janvier 1933",
+     "1er septembre 1939",
+     "22 juin 1940"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "L'armistice de 1940 est signé le 22 juin à...",
+    "options": [
+     "Vichy",
+     "Londres",
+     "Rethondes"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "La loi qui crée le STO date du...",
+    "options": [
+     "10 juillet 1940",
+     "16 février 1943",
+     "6 juin 1944"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Le Conseil national de la Résistance se réunit pour la première fois le...",
+    "options": [
+     "27 mai 1943",
+     "25 août 1944",
+     "18 juin 1940"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Paris est libéré le...",
+    "options": [
+     "6 juin 1944",
+     "8 mai 1945",
+     "25 août 1944"
+    ],
+    "bonne": 2,
+    "pts": 1
+   }
+  ]
+ },
+ "fiches_preparatoires": [
+  {
+   "salle": 1,
+   "titre": "Fréquence 1, 1938 — La classe de Bastien : la montée des dictatures",
+   "objectifs": [
+    "Expliquer les effets de la crise de 1929",
+    "Distinguer une démocratie d'une dictature"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "crise économique",
+     "def": "période où les usines ferment et où beaucoup de gens perdent leur travail"
+    },
+    {
+     "mot": "dictature",
+     "def": "régime où un chef ou un parti a tous les pouvoirs, sans liberté"
+    },
+    {
+     "mot": "démocratie",
+     "def": "régime où les citoyens choisissent librement leurs dirigeants"
+    }
+   ],
+   "contexte": "Après la crise de 1929, des dictateurs prennent tout le pouvoir : Mussolini en Italie, Hitler en Allemagne, Staline en URSS. La France et le Royaume-Uni restent des démocraties, mais la paix est menacée."
+  },
+  {
+   "salle": 2,
+   "titre": "Fréquence 2, juin 1940 — La gare de Paul : la défaite et Vichy",
+   "objectifs": [
+    "Dater le début de la guerre et la défaite de 1940",
+    "Expliquer l'appel du 18 juin, l'armistice et le régime de Vichy"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "exode",
+     "def": "fuite de millions de personnes sur les routes en mai et juin 1940"
+    },
+    {
+     "mot": "armistice",
+     "def": "accord qui arrête les combats"
+    },
+    {
+     "mot": "collaboration",
+     "def": "politique qui consiste à aider l'Allemagne nazie"
+    }
+   ],
+   "contexte": "En 1940, l'armée française est battue. Le 18 juin, le général de Gaulle appelle à continuer le combat. L'armistice coupe la France en deux ; à Vichy, Pétain supprime la République et collabore avec l'Allemagne nazie."
+  },
+  {
+   "salle": 3,
+   "titre": "Fréquence 3, 1942-1943 — L'épicerie de Madeleine : vivre sous l'Occupation",
+   "objectifs": [
+    "Décrire la vie quotidienne : rationnement, tickets, queues, ersatz",
+    "Savoir ce qu'est le STO"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "rationnement",
+     "def": "limitation de ce que chacun a le droit d'acheter"
+    },
+    {
+     "mot": "ersatz",
+     "def": "produit qui en remplace un autre qui manque"
+    },
+    {
+     "mot": "STO",
+     "def": "Service du travail obligatoire : travail forcé en Allemagne, créé en 1943"
+    }
+   ],
+   "contexte": "La nourriture, le charbon et les vêtements manquent : il faut des tickets pour acheter. À partir de 1943, des jeunes doivent partir travailler en Allemagne. La leçon parle aussi des persécutions contre les Juifs, de la Shoah et des Justes : on en parle ensemble en classe, sans question notée."
+  },
+  {
+   "salle": 4,
+   "titre": "Fréquence 4, 1944 — Le maquis de Marc : la Résistance",
+   "objectifs": [
+    "Expliquer ce que veut dire résister",
+    "Citer des formes de la Résistance et le rôle de Jean Moulin"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "résistant",
+     "def": "personne qui lutte contre l'occupant et la collaboration"
+    },
+    {
+     "mot": "clandestin",
+     "def": "fait en cachette, interdit par l'occupant"
+    },
+    {
+     "mot": "maquis",
+     "def": "groupe de résistants cachés dans la forêt ou la montagne"
+    }
+   ],
+   "contexte": "Des Français refusent la défaite : journaux clandestins, réseaux, messages de Radio Londres, maquis comme dans le Morvan. En 1943, Jean Moulin réunit les mouvements dans le Conseil national de la Résistance."
+  },
+  {
+   "salle": 5,
+   "titre": "Fréquence 5, 8 mai 1945 — La place de la mairie de Lucie : la Libération",
+   "objectifs": [
+    "Dater les débarquements, la libération de Paris et la victoire",
+    "Expliquer le retour de la République et le vote des femmes"
+   ],
+   "vocabulaire": [
+    {
+     "mot": "débarquement",
+     "def": "arrivée d'une armée par la mer sur une côte"
+    },
+    {
+     "mot": "Libération",
+     "def": "fin de l'occupation allemande en France, en 1944"
+    },
+    {
+     "mot": "capitulation",
+     "def": "reddition sans condition d'une armée vaincue"
+    }
+   ],
+   "contexte": "Le 6 juin 1944, les Alliés débarquent en Normandie ; Paris est libéré le 25 août 1944. Le 8 mai 1945, l'Allemagne nazie capitule. La République est rétablie et les femmes votent."
+  }
+ ],
+ "qcm": {
+  "CM1": [
+   {
+    "q": "Où commence la crise économique de 1929 ?",
+    "options": [
+     "aux États-Unis",
+     "en France",
+     "en Italie"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Qui dirige l'Allemagne nazie ?",
+    "options": [
+     "Mussolini",
+     "Hitler",
+     "Staline"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Dans une dictature...",
+    "options": [
+     "on vote librement",
+     "les journaux sont libres",
+     "il n'y a pas de liberté"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "En septembre 1939, l'Allemagne envahit...",
+    "options": [
+     "la Pologne",
+     "l'Angleterre",
+     "l'Espagne"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "La fuite de millions de Français sur les routes en 1940 s'appelle...",
+    "options": [
+     "la Libération",
+     "l'exode",
+     "la mobilisation"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Après l'armistice de 1940, Pétain gouverne depuis...",
+    "options": [
+     "Londres",
+     "Paris",
+     "Vichy"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Un ersatz, c'est...",
+    "options": [
+     "un produit qui en remplace un autre qui manque",
+     "un ticket de rationnement",
+     "un soldat allemand"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Que font les jeunes qui refusent le STO et se cachent dans les forêts ?",
+    "options": [
+     "ils partent en vacances",
+     "ils forment des maquis",
+     "ils deviennent policiers"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Le soir, les résistants écoutent des messages codés sur...",
+    "options": [
+     "la télévision",
+     "le téléphone",
+     "Radio Londres"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Le 6 juin 1944, les Alliés débarquent en...",
+    "options": [
+     "Normandie",
+     "Bourgogne",
+     "Provence"
+    ],
+    "bonne": 0,
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "En octobre 1929...",
+    "options": [
+     "la Bourse de New York s'effondre",
+     "Hitler devient chancelier",
+     "la guerre commence"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Un régime totalitaire, c'est une dictature qui...",
+    "options": [
+     "organise des élections libres",
+     "veut contrôler toute la vie des habitants",
+     "laisse les journaux libres"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Mussolini, chef du parti fasciste, prend le pouvoir en Italie en...",
+    "options": [
+     "1933",
+     "1938",
+     "1922"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Le 3 septembre 1939, le Royaume-Uni et la France...",
+    "options": [
+     "déclarent la guerre à l'Allemagne",
+     "signent l'armistice",
+     "débarquent en Normandie"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Pendant les huit mois de la « drôle de guerre »...",
+    "options": [
+     "Paris est occupé",
+     "il y a peu de combats à l'ouest",
+     "les Alliés débarquent"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "L'armée allemande entre dans Paris le...",
+    "options": [
+     "18 juin 1940",
+     "22 juin 1940",
+     "14 juin 1940"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Le 10 juillet 1940, les députés et les sénateurs...",
+    "options": [
+     "donnent les pleins pouvoirs à Pétain",
+     "votent la guerre",
+     "rétablissent la République"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "La devise du régime de Vichy est...",
+    "options": [
+     "« Liberté, Égalité, Fraternité »",
+     "« Travail, Famille, Patrie »",
+     "« Les Français parlent aux Français »"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "Les résistants sont...",
+    "options": [
+     "la majorité des Français dès 1940",
+     "des soldats allemands",
+     "une minorité courageuse, qui grandit à partir de 1943"
+    ],
+    "bonne": 2,
+    "pts": 1
+   },
+   {
+    "q": "Jean Moulin est arrêté près de Lyon le...",
+    "options": [
+     "21 juin 1943",
+     "27 mai 1943",
+     "6 juin 1944"
+    ],
+    "bonne": 0,
+    "pts": 1
+   },
+   {
+    "q": "Le 15 août 1944, des troupes alliées, dont l'armée française, débarquent en...",
+    "options": [
+     "Normandie",
+     "Provence",
+     "Bretagne"
+    ],
+    "bonne": 1,
+    "pts": 1
+   },
+   {
+    "q": "La guerre se termine dans le monde le 2 septembre 1945, avec la capitulation...",
+    "options": [
+     "de l'Italie",
+     "de l'Allemagne",
+     "du Japon"
+    ],
+    "bonne": 2,
+    "pts": 1
+   }
+  ]
+ },
+ "questions_fermees": {
+  "CM1": [
+   {
+    "q": "La France et le Royaume-Uni restent des démocraties avant la guerre.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Le général de Gaulle lance son appel depuis Vichy.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Après l'armistice, la France est coupée en deux.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Sous l'Occupation, on trouve de tout dans les magasins.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Les résistants risquent leur vie.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Que veut dire « collaborer » avec l'Allemagne nazie ?",
+    "type": "court",
+    "rep": "aider l'Allemagne nazie",
+    "pts": 1
+   },
+   {
+    "q": "Cite deux actions des résistants.",
+    "type": "court",
+    "rep": "par exemple : imprimer des journaux clandestins, transmettre des informations aux Alliés, cacher des personnes recherchées, écouter Radio Londres",
+    "pts": 1
+   },
+   {
+    "q": "Quel droit les femmes obtiennent-elles à la Libération ?",
+    "type": "court",
+    "rep": "le droit de vote",
+    "pts": 1
+   }
+  ],
+  "CM2": [
+   {
+    "q": "Le régime de Vichy est une dictature : il n'y a plus d'élections.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "L'armistice est signé le 18 juin 1940.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "En France, écouter Radio Londres est interdit.",
+    "type": "vf",
+    "bonne": "vrai",
+    "pts": 1
+   },
+   {
+    "q": "Dijon est libérée le même jour que Paris.",
+    "type": "vf",
+    "bonne": "faux",
+    "pts": 1
+   },
+   {
+    "q": "Qu'est-ce que la ligne de démarcation ?",
+    "type": "court",
+    "rep": "la frontière intérieure entre la zone occupée et la zone non occupée",
+    "pts": 1
+   },
+   {
+    "q": "Qu'est-ce que le marché noir ?",
+    "type": "court",
+    "rep": "un commerce caché, à des prix très élevés",
+    "pts": 1
+   },
+   {
+    "q": "À quoi servent les messages personnels de Radio Londres ?",
+    "type": "court",
+    "rep": "ce sont des ordres codés pour les résistants",
+    "pts": 1
+   },
+   {
+    "q": "Pourquoi les pays vainqueurs créent-ils l'ONU en 1945 ?",
+    "type": "court",
+    "rep": "pour maintenir la paix, pour que la guerre ne recommence pas",
+    "pts": 1
+   }
+  ]
+ },
+ "etudes_documents": {
+  "CM1": [
+   {
+    "titre": "Radio Londres",
+    "document": {
+     "contenu": "Chaque soir, la radio de Londres, la BBC, diffuse l'émission « Les Français parlent aux Français ». Après les nouvelles viennent les messages personnels : des phrases étranges, qui sont des ordres codés pour les résistants. En France, écouter Radio Londres est interdit.",
+     "source": "D'après la leçon 4 du jeu."
+    },
+    "questions": [
+     {
+      "q": "Depuis quelle ville parle Radio Londres ?",
+      "type": "court",
+      "rep": "depuis Londres",
+      "pts": 1
+     },
+     {
+      "q": "Pourquoi les messages personnels ont-ils l'air étranges ?",
+      "type": "court",
+      "rep": "parce que ce sont des ordres codés pour les résistants",
+      "pts": 1
+     },
+     {
+      "q": "Écouter Radio Londres est-il permis en France occupée ?",
+      "type": "court",
+      "rep": "non, c'est interdit",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "Les repères de la guerre",
+    "document": {
+     "contenu": "1929 : début d'une grave crise économique. Septembre 1939 : début de la guerre. Juin 1940 : défaite de la France et appel du général de Gaulle. 1943 : STO ; Jean Moulin réunit la Résistance. 6 juin 1944 : débarquement de Normandie. 25 août 1944 : libération de Paris. 8 mai 1945 : capitulation de l'Allemagne nazie.",
+     "source": "D'après les leçons du jeu."
+    },
+    "questions": [
+     {
+      "q": "En quelle année commence la Seconde Guerre mondiale ?",
+      "type": "court",
+      "rep": "en 1939",
+      "pts": 1
+     },
+     {
+      "q": "Qu'arrive-t-il le 6 juin 1944 ?",
+      "type": "court",
+      "rep": "les Alliés débarquent en Normandie",
+      "pts": 1
+     },
+     {
+      "q": "Combien d'années la guerre a-t-elle duré environ en Europe ?",
+      "type": "court",
+      "rep": "près de six ans (de 1939 à 1945)",
+      "pts": 1
+     }
+    ]
+   }
+  ],
+  "CM2": [
+   {
+    "titre": "Juin 1940, jour après jour",
+    "document": {
+     "contenu": "10 mai 1940 : l'armée allemande attaque à l'ouest. 14 juin : l'armée allemande entre dans Paris. 17 juin : le maréchal Pétain annonce à la radio qu'il faut cesser le combat. 18 juin : depuis Londres, le général de Gaulle appelle à la radio de la BBC à continuer le combat. 22 juin : armistice signé à Rethondes. 10 juillet : les députés et les sénateurs donnent les pleins pouvoirs à Pétain.",
+     "source": "D'après la leçon 2 du jeu."
+    },
+    "questions": [
+     {
+      "q": "Combien de jours séparent l'annonce de Pétain et l'appel du général de Gaulle ?",
+      "type": "court",
+      "rep": "un jour (17 et 18 juin 1940)",
+      "pts": 1
+     },
+     {
+      "q": "Pétain et de Gaulle font-ils le même choix ? Explique.",
+      "type": "court",
+      "rep": "non : Pétain veut cesser le combat, de Gaulle veut le continuer",
+      "pts": 1
+     },
+     {
+      "q": "Que devient la République après le 10 juillet 1940 ?",
+      "type": "court",
+      "rep": "elle est remplacée par l'État français de Vichy, une dictature",
+      "pts": 1
+     }
+    ]
+   },
+   {
+    "titre": "La Libération",
+    "document": {
+     "contenu": "Les jours qui précèdent le 6 juin 1944, Radio Londres diffuse des vers de Verlaine pour prévenir les résistants. 6 juin 1944 : débarquement de Normandie, le Jour J. 15 août 1944 : débarquement de Provence. 25 août 1944 : Paris est libéré par la 2e division blindée du général Leclerc, les Alliés et les résistants. 11 septembre 1944 : Dijon est libérée. 8 mai 1945 : l'Allemagne nazie capitule.",
+     "source": "D'après la leçon 5 du jeu."
+    },
+    "questions": [
+     {
+      "q": "Pourquoi Radio Londres diffuse-t-elle des vers de Verlaine avant le 6 juin 1944 ?",
+      "type": "court",
+      "rep": "pour prévenir les résistants que le débarquement approche",
+      "pts": 1
+     },
+     {
+      "q": "Qui libère Paris ? Cite deux acteurs.",
+      "type": "court",
+      "rep": "la 2e division blindée du général Leclerc, les Alliés, les résistants",
+      "pts": 1
+     },
+     {
+      "q": "Combien de temps sépare le débarquement de Normandie de la capitulation de l'Allemagne ?",
+      "type": "court",
+      "rep": "environ onze mois (du 6 juin 1944 au 8 mai 1945)",
+      "pts": 1
+     }
+    ]
+   }
+  ]
+ }
+}

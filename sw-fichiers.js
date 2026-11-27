@@ -1,6 +1,6 @@
 /* Fichier GÉNÉRÉ par outils-pwa/maj-hors-ligne.py — ne pas modifier à la main.
    Liste des fichiers gardés hors connexion par sw.js (application installable). */
-self.VERSION_HORS_LIGNE = "d03b198fd8";
+self.VERSION_HORS_LIGNE = "1c3fb25f22";
 self.FICHIERS_CODE = [
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/index.html",
 "Michel strogoff/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/michel-strogoff-escape-game-michel-strogoff-escape-game-a4dee/package-lock.json",
@@ -1112,7 +1112,13 @@ self.FICHIERS_CODE = [
 "resultats.html",
 "seconde-guerre/assets/data/dialogues.json",
 "seconde-guerre/assets/data/enigmes.json",
+"seconde-guerre/assets/data/evaluations-embarquees.js",
+"seconde-guerre/assets/data/evaluations.json",
+"seconde-guerre/assets/data/lecons-a4.json",
 "seconde-guerre/assets/data/lecons.json",
+"seconde-guerre/css/print.css",
+"seconde-guerre/evaluations-imprimables.html",
+"seconde-guerre/lecons-imprimables.html",
 "sequences/donnees.js",
 "sequences/fiche.html",
 "sequences/index.html",
