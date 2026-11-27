@@ -2,15 +2,15 @@
    État de production des jeux, lu par le tableau de bord (enseignant.html) quand le serveur local
    n'est pas là (site en ligne). Avec le serveur : /api/production, recalculé en direct. */
 var PRODUCTION = {
-"genere": "2026-11-24T21:13",
+"genere": "2026-11-27T05:42",
 "totaux": {
-"jeux": 23,
-"finis": 2,
+"jeux": 24,
+"finis": 3,
 "sensibles": 4,
-"images": 70,
-"videos": 82,
-"sans_voix": 1,
-"a_verifier": 164,
+"images": 80,
+"videos": 87,
+"sans_voix": 0,
+"a_verifier": 192,
 "sans_credit": 27,
 "en_cours": 21
 },
@@ -28,8 +28,9 @@ var PRODUCTION = {
 "medias": {
 "attendus": 14,
 "images": 0,
-"videos": 1,
+"videos": 2,
 "exemples": [
+"assets/videos/transition-e2.mp4",
 "assets/videos/transition-e5.mp4"
 ]
 },
@@ -49,7 +50,7 @@ var PRODUCTION = {
 "sensible": "",
 "etat": "en-cours",
 "manque": [
-"1 vidéo"
+"2 vidéos"
 ]
 },
 {
@@ -297,10 +298,8 @@ var PRODUCTION = {
 "medias": {
 "attendus": 14,
 "images": 0,
-"videos": 1,
-"exemples": [
-"assets/videos/transition-e3.mp4"
-]
+"videos": 0,
+"exemples": []
 },
 "voix": 53,
 "lecons": "alimentation/lecons-imprimables.html",
@@ -316,10 +315,8 @@ var PRODUCTION = {
 ],
 "sans_credit": 7,
 "sensible": "",
-"etat": "en-cours",
-"manque": [
-"1 vidéo"
-]
+"etat": "fini",
+"manque": []
 },
 {
 "id": "lumiere",
@@ -551,8 +548,8 @@ var PRODUCTION = {
 "voix": 55,
 "lecons": "electricite/lecons-imprimables.html",
 "evaluations": "electricite/evaluations-imprimables.html",
-"affiche": "",
-"bande_annonce": "",
+"affiche": "electricite/assets/images/affiche.jpg",
+"bande_annonce": "electricite/assets/videos/bande-annonce.mp4",
 "a_verifier": 9,
 "points": [
 "Programme 2026 (BO n° 24 du 11 juin 2026) : l'électricité est en CM2, partie « Signaux » (",
@@ -564,10 +561,7 @@ var PRODUCTION = {
 "sensible": "",
 "etat": "en-cours",
 "manque": [
-"5 vidéos",
-"affiche",
-"bande-annonce",
-"carte de l'accueil « médias en attente »"
+"5 vidéos"
 ]
 },
 {
@@ -684,8 +678,8 @@ var PRODUCTION = {
 ]
 },
 "voix": 54,
-"lecons": "immersifs/grande-guerre/lecons-imprimables.html",
-"evaluations": "",
+"lecons": "grande-guerre/lecons-imprimables.html",
+"evaluations": "grande-guerre/evaluations-imprimables.html",
 "affiche": "",
 "bande_annonce": "",
 "a_verifier": 15,
@@ -701,7 +695,6 @@ var PRODUCTION = {
 "manque": [
 "10 images",
 "5 vidéos",
-"évaluations",
 "affiche",
 "bande-annonce",
 "carte de l'accueil « médias en attente »"
@@ -775,7 +768,7 @@ var PRODUCTION = {
 "assets/images/decors/cratere.webp"
 ]
 },
-"voix": 0,
+"voix": 56,
 "lecons": "immersifs/terre-active/lecons-imprimables.html",
 "evaluations": "",
 "affiche": "",
@@ -793,7 +786,52 @@ var PRODUCTION = {
 "manque": [
 "10 images",
 "5 vidéos",
-"voix",
+"évaluations",
+"affiche",
+"bande-annonce",
+"carte de l'accueil « médias en attente »"
+]
+},
+{
+"id": "reproduction",
+"num": "24",
+"titre": "Le Jardin de la vie",
+"icone": "🌸",
+"matiere": "Sciences",
+"annee": "A",
+"dossier": "reproduction",
+"immersif": "immersifs/reproduction",
+"grades": 5,
+"medias": {
+"attendus": 15,
+"images": 10,
+"videos": 5,
+"exemples": [
+"assets/images/decors/serre.webp",
+"assets/videos/transition-e1.mp4",
+"assets/images/decors/rucher.webp",
+"assets/videos/transition-e2.mp4",
+"assets/images/decors/potager.webp"
+]
+},
+"voix": 54,
+"lecons": "immersifs/reproduction/lecons-imprimables.html",
+"evaluations": "",
+"affiche": "",
+"bande_annonce": "",
+"a_verifier": 9,
+"points": [
+"Place dans le programme",
+"Reproduction non sexuée",
+"Durées",
+"Mot « gamète »"
+],
+"sans_credit": 0,
+"sensible": "",
+"etat": "en-cours",
+"manque": [
+"10 images",
+"5 vidéos",
 "évaluations",
 "affiche",
 "bande-annonce",
@@ -877,8 +915,13 @@ var PRODUCTION = {
 "evaluations": "",
 "affiche": "mission-geo/assets/images/affiche.jpg",
 "bande_annonce": "mission-geo/assets/videos/bande-annonce.mp4",
-"a_verifier": null,
-"points": [],
+"a_verifier": 19,
+"points": [
+"Niveau de chaque séance au BO n° 22",
+"Libellés « BO » du README",
+"Chiffres des documents du livret",
+"Cartes"
+],
 "sans_credit": 10,
 "sensible": "",
 "etat": "en-cours",
@@ -937,6 +980,18 @@ var PRODUCTION = {
 "titre": "Radio Londres",
 "point": "RELECTURE OBLIGATOIRE avant la classe (Seconde Guerre mondiale, persécutions)",
 "priorite": 1
+},
+{
+"jeu": "mission-geo",
+"titre": "Mission géographique",
+"point": "Niveau de chaque séance au BO n° 22",
+"priorite": 2
+},
+{
+"jeu": "mission-geo",
+"titre": "Mission géographique",
+"point": "Libellés « BO » du README",
+"priorite": 2
 },
 {
 "jeu": "alimentation",
@@ -1059,6 +1114,18 @@ var PRODUCTION = {
 "priorite": 2
 },
 {
+"jeu": "reproduction",
+"titre": "Le Jardin de la vie",
+"point": "Place dans le programme",
+"priorite": 2
+},
+{
+"jeu": "reproduction",
+"titre": "Le Jardin de la vie",
+"point": "Reproduction non sexuée",
+"priorite": 2
+},
+{
 "jeu": "mouvement",
 "titre": "Le Grand Prix de l'observatoire",
 "point": "Programme 2026, annexe 2",
@@ -1068,30 +1135,6 @@ var PRODUCTION = {
 "jeu": "mouvement",
 "titre": "Le Grand Prix de l'observatoire",
 "point": "Salle 3 (comparer)",
-"priorite": 2
-},
-{
-"jeu": "grandes-explorations",
-"titre": "La Caravelle du capitaine",
-"point": "12 octobre 1492 : arrivée de Colomb dans une île des Bahamas (Guanahani) ; Colomb fait qua",
-"priorite": 2
-},
-{
-"jeu": "grandes-explorations",
-"titre": "La Caravelle du capitaine",
-"point": "Prise de Tenochtitlan en 1521 (13 août) ; capture d'Atahualpa par Pizarro en 1532 ; Tenoch",
-"priorite": 2
-},
-{
-"jeu": "versailles",
-"titre": "De l'édit de Nantes à Versailles",
-"point": "« Paris vaut bien une messe » et « L'État, c'est moi » ne sont jamais attribuées dans le j",
-"priorite": 2
-},
-{
-"jeu": "versailles",
-"titre": "De l'édit de Nantes à Versailles",
-"point": "La phrase de Saint-Simon (« avec un almanach et une montre… ») est citée d'après le châtea",
 "priorite": 2
 }
 ]
