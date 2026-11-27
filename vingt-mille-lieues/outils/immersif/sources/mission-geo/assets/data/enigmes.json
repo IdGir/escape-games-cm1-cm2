@@ -4,7 +4,7 @@
   "auteur": "Escape game · cycle 3 · géographie",
   "version": 1,
   "differenciation": "Une escale par séance. CM1 : 3 énigmes par escale. CM2 : 4 énigmes par escale (la 4e : « niveaux »: [\"CM2\"]).",
-  "sources": "Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français » ; livret « Mission géographique » (Année A) ; Insee ; DGCL ; ministère de l'Agriculture (CEP) ; Office de tourisme des Rousses ; PNUD (RDH 2025) ; OIT et UNICEF (2025)."
+  "sources": "Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026), « L'organisation du territoire français » ; livret « Mission géographique » (Année A) ; Insee ; DGCL ; ministère de l'Agriculture (CEP) ; Office de tourisme des Rousses ; PNUD (RDH 2025) ; OIT et UNICEF (2025) ; FAO (SOFI 2025) ; Sandre ; géomètres-experts de la Haute-Savoie (2026)."
  },
  "salles": [
   {
@@ -2611,6 +2611,1676 @@
       ]
      },
      "lecon": "l08"
+    }
+   ]
+  },
+  {
+   "num": 9,
+   "titre": "Bamako — Les pratiques alimentaires",
+   "enigmes": [
+    {
+     "id": "9-1",
+     "titre": "Les deux frigos",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Aminata t'emmène chez deux familles : une en France, une au Mali. Elle a mélangé le contenu de leurs frigos. Range chaque aliment dans le frigo où on le trouve le plus souvent.",
+      "cm2": "Aminata a mélangé le contenu de deux frigos, un en France, un au Mali. Au Mali, on consomme surtout ce qui est produit sur place ; les produits importés sont rares et chers. Range chaque aliment dans son frigo."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 9 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; FAO, SOFI 2025",
+     "correction": "En France, on trouve du pain de mie, des pâtes, du fromage, des yaourts, des pommes et des carottes. Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots rouges, le gombo et la mangue.",
+     "indices": {
+      "cm1": [
+       "Au Mali, on mange ce qui pousse sur place.",
+       "Le fromage et le yaourt sont importés au Mali.",
+       "Le millet, le gombo et la mangue sont des produits maliens."
+      ],
+      "cm2": [
+       "Un produit importé coûte très cher au Mali : il est rare dans un frigo.",
+       "Le riz, le millet et les arachides poussent en Afrique de l'Ouest.",
+       "Six aliments dans chaque frigo."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "fr",
+        "titre": "Le frigo en France"
+       },
+       {
+        "id": "ml",
+        "titre": "Le frigo au Mali"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pain de mie",
+        "col": "fr"
+       },
+       {
+        "txt": "Fromage",
+        "col": "fr"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "fr"
+       },
+       {
+        "txt": "Pomme",
+        "col": "fr"
+       },
+       {
+        "txt": "Millet",
+        "col": "ml"
+       },
+       {
+        "txt": "Arachides",
+        "col": "ml"
+       },
+       {
+        "txt": "Gombo",
+        "col": "ml"
+       },
+       {
+        "txt": "Mangue",
+        "col": "ml"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "fr",
+        "titre": "Le frigo en France"
+       },
+       {
+        "id": "ml",
+        "titre": "Le frigo au Mali"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pain de mie",
+        "col": "fr"
+       },
+       {
+        "txt": "Pâtes",
+        "col": "fr"
+       },
+       {
+        "txt": "Fromage",
+        "col": "fr"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "fr"
+       },
+       {
+        "txt": "Pomme",
+        "col": "fr"
+       },
+       {
+        "txt": "Carotte",
+        "col": "fr"
+       },
+       {
+        "txt": "Millet",
+        "col": "ml"
+       },
+       {
+        "txt": "Riz",
+        "col": "ml"
+       },
+       {
+        "txt": "Arachides",
+        "col": "ml"
+       },
+       {
+        "txt": "Haricots rouges",
+        "col": "ml"
+       },
+       {
+        "txt": "Gombo",
+        "col": "ml"
+       },
+       {
+        "txt": "Mangue",
+        "col": "ml"
+       }
+      ]
+     },
+     "lecon": "l09"
+    },
+    {
+     "id": "9-2",
+     "titre": "Pourquoi si peu de poisson ?",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Aminata s'étonne : sur le marché, il y a peu de poisson, peu de bœuf et peu de variété de fruits et de légumes. Aide-la à comprendre pourquoi.",
+      "cm2": "Aminata te demande d'expliquer ce que tu vois sur le marché : peu de poisson, peu de bœuf, peu de variété de fruits et de légumes. Cherche les causes, une par question."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 9 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; FAO, SOFI 2025",
+     "correction": "Le Mali est un pays enclavé, sans accès à la mer : le poisson de mer y est rare et cher. Le climat est chaud et sec et la saison des pluies est courte : les cultures sont peu variées. Peu de familles possèdent un réfrigérateur, ce qui limite la conservation de la viande et du poisson. Les produits importés coûtent très cher.",
+     "indices": {
+      "cm1": [
+       "Regarde une carte : le Mali est loin de toute mer.",
+       "Sans frigo, la viande ne se garde pas.",
+       "Relis ce que dit Aminata sur le marché."
+      ],
+      "cm2": [
+       "Le Mali n'a pas de côte.",
+       "Un climat très sec limite les cultures.",
+       "Les importations coûtent cher ; peu de familles ont un frigo."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Il y a peu de poisson de mer sur le marché de Bamako. Pourquoi ?",
+        "options": [
+         "le Mali est un pays enclavé, sans accès à la mer",
+         "les Maliens n'aiment pas le poisson",
+         "il n'y a pas de marché pour le poisson"
+        ],
+        "bonne": 0,
+        "explication": "Le Mali n'a pas de côte : le poisson de mer y est rare et cher."
+       },
+       {
+        "q": "Pourquoi les pâtes importées sont-elles rares sur les étals ?",
+        "options": [
+         "elles coûtent très cher pour une famille malienne",
+         "elles sont interdites au Mali",
+         "elles poussent seulement en France"
+        ],
+        "bonne": 0,
+        "explication": "Un kilo de pâtes importées vaut environ cinq fois le prix d'un kilo de millet."
+       },
+       {
+        "q": "Pourquoi est-il difficile de garder la viande et le poisson ?",
+        "options": [
+         "peu de familles ont un réfrigérateur",
+         "il fait trop froid",
+         "on les mange toujours crus"
+        ],
+        "bonne": 0,
+        "explication": "Sans réfrigérateur, ils se conservent mal."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Il y a peu de poisson de mer sur le marché de Bamako. Pourquoi ?",
+        "options": [
+         "le Mali est un pays enclavé, sans accès à la mer",
+         "les Maliens n'aiment pas le poisson",
+         "il n'y a pas de marché pour le poisson",
+         "la pêche est interdite"
+        ],
+        "bonne": 0,
+        "explication": "Le Mali n'a pas de côte : le poisson de mer y est rare et cher."
+       },
+       {
+        "q": "Pourquoi y a-t-il peu de variété de fruits et de légumes ?",
+        "options": [
+         "le climat est chaud et sec, la saison des pluies est courte",
+         "le sol est gelé toute l'année",
+         "les fruits y sont interdits",
+         "on n'y cultive rien"
+        ],
+        "bonne": 0,
+        "explication": "Les cultures y sont peu variées."
+       },
+       {
+        "q": "Pourquoi la viande et le poisson se conservent-ils mal ?",
+        "options": [
+         "peu de familles possèdent un réfrigérateur",
+         "ils ne se mangent jamais cuits",
+         "il fait trop froid",
+         "ils sont trop salés"
+        ],
+        "bonne": 0,
+        "explication": "Sans froid, la viande et le poisson se gâtent vite."
+       },
+       {
+        "q": "Pourquoi les familles achètent-elles surtout des produits locaux ?",
+        "options": [
+         "les produits importés coûtent très cher",
+         "les produits locaux sont gratuits",
+         "les produits importés sont interdits",
+         "elles n'aiment pas le fromage"
+        ],
+        "bonne": 0,
+        "explication": "Les revenus sont faibles : un kilo de pâtes importées vaut environ cinq fois un kilo de millet."
+       }
+      ]
+     },
+     "lecon": "l09"
+    },
+    {
+     "id": "9-3",
+     "titre": "Le budget de la famille C",
+     "type": "code",
+     "consigne": {
+      "cm1": "La famille C, au Mali, dispose de 8 €. Elle achète 1 kg de pâtes importées, 100 g de fromage importé et 1 yaourt importé. Calcule en centimes (1 € = 100 centimes), puis ouvre le cadenas.<div class=\"doc-titre\"><i>Les prix au marché de Bamako (en euros)</i></div><table class=\"tableau-releves\"><tr><th>Produit local</th><th>Prix</th><th>Produit importé</th><th>Prix</th></tr><tr><td>Millet (1 kg)</td><td>0,76</td><td>Pain (1 pièce)</td><td>0,46</td></tr><tr><td>Riz (1 kg)</td><td>0,91</td><td>Pâtes importées (1 kg)</td><td>3,81</td></tr><tr><td>Arachides (1 kg)</td><td>1,52</td><td>Fromage importé (100 g)</td><td>2,29</td></tr><tr><td>Haricots (1 kg)</td><td>1,37</td><td>Yaourt importé (1 pot)</td><td>1,22</td></tr><tr><td>Gombo (1 kg)</td><td>1,22</td><td>Pomme importée (1 pièce)</td><td>1,52</td></tr><tr><td>Mangue (1 kg)</td><td>1,06</td><td>Carotte (1 kg)</td><td>1,06</td></tr></table>",
+      "cm2": "La famille C (Mali) dispose de 8 €, la famille A (France) de 25 €. La famille C achète 1 kg de pâtes importées, 100 g de fromage importé et 1 yaourt importé. Calcule en centimes (1 € = 100 centimes), puis ouvre le cadenas.<div class=\"doc-titre\"><i>Les prix au marché de Bamako (en euros)</i></div><table class=\"tableau-releves\"><tr><th>Produit local</th><th>Prix</th><th>Produit importé</th><th>Prix</th></tr><tr><td>Millet (1 kg)</td><td>0,76</td><td>Pain (1 pièce)</td><td>0,46</td></tr><tr><td>Riz (1 kg)</td><td>0,91</td><td>Pâtes importées (1 kg)</td><td>3,81</td></tr><tr><td>Arachides (1 kg)</td><td>1,52</td><td>Fromage importé (100 g)</td><td>2,29</td></tr><tr><td>Haricots (1 kg)</td><td>1,37</td><td>Yaourt importé (1 pot)</td><td>1,22</td></tr><tr><td>Gombo (1 kg)</td><td>1,22</td><td>Pomme importée (1 pièce)</td><td>1,52</td></tr><tr><td>Mangue (1 kg)</td><td>1,06</td><td>Carotte (1 kg)</td><td>1,06</td></tr></table>"
+     },
+     "source": "Livret « Mission géographique », Année A, séance 9 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; FAO, SOFI 2025",
+     "correction": "La famille C dépense 3,81 + 2,29 + 1,22 = 7,32 €, soit 732 centimes. Il lui reste 8 − 7,32 = 0,68 €, soit 68 centimes. Avec 8 € (800 centimes), elle aurait pu acheter 10 kg de millet (800 ÷ 76 ≈ 10,5, donc 10 kilos entiers). La famille A est environ 3 fois plus riche (25 ÷ 8 ≈ 3,1).",
+     "indices": {
+      "cm1": [
+       "3,81 € = 381 centimes ; 2,29 € = 229 centimes ; 1,22 € = 122 centimes.",
+       "800 − le total des dépenses.",
+       "Un kilo de millet coûte 76 centimes : 800 ÷ 76, en gardant les kilos entiers."
+      ],
+      "cm2": [
+       "Additionne 381 + 229 + 122.",
+       "Le reste : 800 centimes moins la dépense.",
+       "25 ÷ 8 donne un peu plus de 3 : arrondis à l'unité."
+      ]
+     },
+     "cm1": {
+      "champs": [
+       {
+        "libelle": "Dépense de la famille C (centimes)",
+        "valeur": "732",
+        "longueur": 3
+       },
+       {
+        "libelle": "Il lui reste (centimes)",
+        "valeur": "68",
+        "longueur": 2
+       },
+       {
+        "libelle": "Kilos de millet pour 8 € (nombre entier)",
+        "valeur": "10",
+        "longueur": 2
+       }
+      ]
+     },
+     "cm2": {
+      "champs": [
+       {
+        "libelle": "Dépense de la famille C (centimes)",
+        "valeur": "732",
+        "longueur": 3
+       },
+       {
+        "libelle": "Il lui reste (centimes)",
+        "valeur": "68",
+        "longueur": 2
+       },
+       {
+        "libelle": "Kilos de millet pour 8 € (nombre entier)",
+        "valeur": "10",
+        "longueur": 2
+       },
+       {
+        "libelle": "La famille A est environ … fois plus riche (arrondi à l'unité)",
+        "valeur": "3",
+        "longueur": 1
+       }
+      ]
+     },
+     "lecon": "l09"
+    },
+    {
+     "id": "9-4",
+     "titre": "Qui ne mange pas assez ?",
+     "type": "vraifaux",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Aminata te montre la carte de la sous-alimentation, qui indique la part de la population qui ne mange pas assez. Pour chaque phrase, choisis « Vrai » ou « Faux ».",
+     "source": "Livret « Mission géographique », Année A, séance 9 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; FAO, SOFI 2025",
+     "correction": "La sous-alimentation touche surtout l'Afrique subsaharienne (Tchad, Soudan, Madagascar) et certains pays comme Haïti, une île des Caraïbes qui appartient à l'Amérique du Nord. En France et aux États-Unis, elle concerne moins de 2,5 % de la population. Au Mali, on mange surtout ce qui est produit sur place.",
+     "indices": {
+      "cm2": [
+       "Haïti est une île des Caraïbes.",
+       "Le Tchad est en Afrique, pas en Europe.",
+       "Relis ce que dit Aminata sur la France."
+      ]
+     },
+     "commun": {
+      "affirmations": [
+       {
+        "txt": "En France, la sous-alimentation concerne moins de 2,5 % de la population.",
+        "vrai": true,
+        "explication": "C'est aussi le cas aux États-Unis."
+       },
+       {
+        "txt": "Haïti est un pays d'Amérique du Sud.",
+        "vrai": false,
+        "explication": "Haïti est une île des Caraïbes : elle appartient à l'Amérique du Nord."
+       },
+       {
+        "txt": "La sous-alimentation touche surtout l'Afrique subsaharienne.",
+        "vrai": true,
+        "explication": "Le Tchad, le Soudan et Madagascar en font partie."
+       },
+       {
+        "txt": "Le Tchad est un pays d'Europe.",
+        "vrai": false,
+        "explication": "Le Tchad est en Afrique."
+       },
+       {
+        "txt": "Au Mali, on mange surtout des produits importés.",
+        "vrai": false,
+        "explication": "On y mange surtout ce qui est produit sur place."
+       }
+      ]
+     },
+     "lecon": "l09"
+    }
+   ]
+  },
+  {
+   "num": 10,
+   "titre": "La cantine — Produits agricoles et transformés",
+   "enigmes": [
+    {
+     "id": "10-1",
+     "titre": "Le plateau de la cantine",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Camille, la cheffe de la cantine, te présente le plateau du jour. Range chaque aliment : vient-il directement de la nature, ou a-t-il été fabriqué ?",
+      "cm2": "Observe le plateau du jour et range chaque aliment dans le bon panier. Un produit transformé a été fabriqué à partir d'autre chose : le pain vient du blé."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 10 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "La pomme, les haricots verts, les carottes, le poulet et la salade sont des produits agricoles : ils viennent directement de la nature. Le yaourt, le pain et le cookie sont des produits transformés, fabriqués à partir de produits agricoles.",
+     "indices": {
+      "cm1": [
+       "Une pomme se cueille sur un arbre.",
+       "Le pain est fabriqué à partir du blé.",
+       "Il y a 5 produits agricoles et 3 produits transformés."
+      ],
+      "cm2": [
+       "Un produit transformé a été fabriqué par quelqu'un, dans un atelier ou une usine.",
+       "Le yaourt vient du lait.",
+       "Le cookie est fabriqué avec de la farine, du sucre, du beurre…"
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "agri",
+        "titre": "Produits agricoles (viennent directement de la nature)"
+       },
+       {
+        "id": "trans",
+        "titre": "Produits transformés (fabriqués)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pomme",
+        "col": "agri"
+       },
+       {
+        "txt": "Haricots verts",
+        "col": "agri"
+       },
+       {
+        "txt": "Carottes",
+        "col": "agri"
+       },
+       {
+        "txt": "Poulet",
+        "col": "agri"
+       },
+       {
+        "txt": "Salade",
+        "col": "agri"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "trans"
+       },
+       {
+        "txt": "Pain",
+        "col": "trans"
+       },
+       {
+        "txt": "Cookie",
+        "col": "trans"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "agri",
+        "titre": "Produits agricoles (viennent directement de la nature)"
+       },
+       {
+        "id": "trans",
+        "titre": "Produits transformés (fabriqués à partir de produits agricoles)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pomme",
+        "col": "agri"
+       },
+       {
+        "txt": "Haricots verts",
+        "col": "agri"
+       },
+       {
+        "txt": "Carottes",
+        "col": "agri"
+       },
+       {
+        "txt": "Poulet",
+        "col": "agri"
+       },
+       {
+        "txt": "Salade",
+        "col": "agri"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "trans"
+       },
+       {
+        "txt": "Pain",
+        "col": "trans"
+       },
+       {
+        "txt": "Cookie",
+        "col": "trans"
+       }
+      ]
+     },
+     "lecon": "l10"
+    },
+    {
+     "id": "10-2",
+     "titre": "De la nature à l'assiette",
+     "type": "association",
+     "consigne": {
+      "cm1": "Camille te demande de relier chaque produit agricole au produit transformé fabriqué à partir de lui : clique sur l'un, puis sur l'autre.",
+      "cm2": "Relie chaque produit agricole au produit transformé fabriqué à partir de lui. Réfléchis à la matière première de chaque produit."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 10 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "Le raisin donne le jus de raisin, le lait le fromage, la tomate la sauce tomate, le blé le pain, le cacao le chocolat, la canne à sucre le sucre.",
+     "indices": {
+      "cm1": [
+       "Le pain est fabriqué avec de la farine de blé.",
+       "Le fromage est fabriqué avec du lait.",
+       "Le chocolat vient des fèves d'un arbre tropical."
+      ],
+      "cm2": [
+       "Le sucre vient d'une plante : la canne à sucre (ou la betterave).",
+       "Le cacao est la matière première du chocolat.",
+       "Le jus de raisin est du raisin pressé."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "Raisin",
+        "d": "Jus de raisin"
+       },
+       {
+        "g": "Lait",
+        "d": "Fromage"
+       },
+       {
+        "g": "Tomate",
+        "d": "Sauce tomate"
+       },
+       {
+        "g": "Blé",
+        "d": "Pain"
+       },
+       {
+        "g": "Cacao",
+        "d": "Chocolat"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "Raisin",
+        "d": "Jus de raisin"
+       },
+       {
+        "g": "Lait",
+        "d": "Fromage"
+       },
+       {
+        "g": "Tomate",
+        "d": "Sauce tomate"
+       },
+       {
+        "g": "Canne à sucre",
+        "d": "Sucre"
+       },
+       {
+        "g": "Blé",
+        "d": "Pain"
+       },
+       {
+        "g": "Cacao",
+        "d": "Chocolat"
+       }
+      ]
+     },
+     "lecon": "l10"
+    },
+    {
+     "id": "10-3",
+     "titre": "Qui produit quoi ?",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Camille visite la ferme de Bray avec toi. Chaque aliment du plateau vient d'un espace de production et d'un métier. Réponds à ses questions.",
+      "cm2": "À la ferme de Bray, chaque aliment du plateau vient d'un espace de production et d'un métier. Réponds aux questions de Camille."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 10 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "L'éleveur produit le poulet dans un élevage ; le maraîcher cultive les carottes et les haricots verts ; les pommes poussent dans un verger, qui est le domaine de l'arboriculteur ; le céréalier cultive le blé, dont on fait le pain. Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles.",
+     "indices": {
+      "cm1": [
+       "Le poulet vient d'un élevage.",
+       "Un maraîcher cultive des légumes.",
+       "Les pommes poussent sur des arbres, dans un verger."
+      ],
+      "cm2": [
+       "Le céréalier cultive le blé et le maïs.",
+       "L'arboriculteur s'occupe d'un verger.",
+       "Un produit transformé a besoin d'un produit agricole pour être fabriqué."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Qui s'occupe de l'élevage des poulets ?",
+        "options": [
+         "l'éleveur",
+         "le maraîcher",
+         "le céréalier"
+        ],
+        "bonne": 0,
+        "explication": "L'éleveur travaille dans un élevage."
+       },
+       {
+        "q": "Qui cultive les carottes et les haricots verts ?",
+        "options": [
+         "le maraîcher",
+         "l'éleveur",
+         "le céréalier"
+        ],
+        "bonne": 0,
+        "explication": "Le maraîcher cultive les légumes."
+       },
+       {
+        "q": "Où poussent les pommes ?",
+        "options": [
+         "dans un verger",
+         "dans un élevage",
+         "dans un champ de blé"
+        ],
+        "bonne": 0,
+        "explication": "Un verger est un terrain planté d'arbres fruitiers."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Qui s'occupe de l'élevage des poulets ?",
+        "options": [
+         "l'éleveur",
+         "le maraîcher",
+         "le céréalier",
+         "l'arboriculteur"
+        ],
+        "bonne": 0,
+        "explication": "L'éleveur travaille dans un élevage."
+       },
+       {
+        "q": "Qui cultive les carottes et les haricots verts ?",
+        "options": [
+         "le maraîcher",
+         "l'éleveur",
+         "le céréalier",
+         "l'arboriculteur"
+        ],
+        "bonne": 0,
+        "explication": "Le maraîcher cultive les légumes."
+       },
+       {
+        "q": "Quel métier s'occupe d'un verger ?",
+        "options": [
+         "l'arboriculteur",
+         "le maraîcher",
+         "le céréalier",
+         "l'éleveur"
+        ],
+        "bonne": 0,
+        "explication": "Les pommes, les poires et les cerises poussent dans un verger."
+       },
+       {
+        "q": "Quelle affirmation est exacte ?",
+        "options": [
+         "un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles",
+         "un produit transformé vient directement de la nature",
+         "un produit agricole est toujours fabriqué dans une usine",
+         "le fromage est un produit agricole"
+        ],
+        "bonne": 0,
+        "explication": "Le fromage est fabriqué à partir du lait : c'est un produit transformé."
+       }
+      ]
+     },
+     "lecon": "l10"
+    },
+    {
+     "id": "10-4",
+     "titre": "Le décompte de Camille",
+     "type": "code",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Camille doit remplir son registre. Sur le plateau du jour : une pomme, des haricots verts, des carottes, du poulet, de la salade, un yaourt, du pain et un cookie. Compte, puis ouvre le cadenas.",
+     "source": "Livret « Mission géographique », Année A, séance 10 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "Cinq produits agricoles (pomme, haricots verts, carottes, poulet, salade) et trois produits transformés (yaourt, pain, cookie) : huit aliments en tout.",
+     "indices": {
+      "cm2": [
+       "Reprends le tri du plateau.",
+       "Un yaourt, du pain et un cookie sont transformés.",
+       "5 + 3 pour le total."
+      ]
+     },
+     "commun": {
+      "champs": [
+       {
+        "libelle": "Produits agricoles sur le plateau",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Produits transformés sur le plateau",
+        "valeur": "3",
+        "longueur": 1
+       },
+       {
+        "libelle": "Aliments en tout",
+        "valeur": "8",
+        "longueur": 1
+       }
+      ]
+     },
+     "lecon": "l10"
+    }
+   ]
+  },
+  {
+   "num": 11,
+   "titre": "Issenheim — Du lait au yaourt",
+   "enigmes": [
+    {
+     "id": "11-1",
+     "titre": "Le trajet du lait",
+     "type": "ordre",
+     "consigne": {
+      "cm1": "Manon, éleveuse à la ferme de Bray, te montre le trajet du lait jusqu'au yaourt. Remets les étapes dans l'ordre, de la ferme au magasin.",
+      "cm2": "Remets le trajet du lait dans l'ordre, des vaches au rayon frais du supermarché."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 11 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "Les vaches pâturent au pré ; le lait est recueilli à la traite puis refroidi ; un camion-citerne réfrigéré le collecte ; à l'usine, il est analysé ; il est chauffé, ensemencé de ferments et il repose ; le yaourt est versé dans des pots ; un camion frigorifique livre les magasins ; le yaourt est vendu au rayon frais.",
+     "indices": {
+      "cm1": [
+       "Tout commence à la ferme.",
+       "Le lait voyage dans un camion avant d'arriver à l'usine.",
+       "Le yaourt finit au magasin."
+      ],
+      "cm2": [
+       "Les vaches sont dans le pré avant la traite.",
+       "Le lait est analysé avant d'être transformé.",
+       "Le yaourt est mis en pots avant d'être livré."
+      ]
+     },
+     "cm1": {
+      "items": [
+       {
+        "txt": "La traite : le lait est recueilli, puis refroidi",
+        "rang": 1
+       },
+       {
+        "txt": "Le camion-citerne réfrigéré collecte le lait",
+        "rang": 2
+       },
+       {
+        "txt": "À l'usine, le lait est analysé",
+        "rang": 3
+       },
+       {
+        "txt": "Le yaourt est fabriqué, puis versé dans des pots",
+        "rang": 4
+       },
+       {
+        "txt": "Un camion frigorifique livre les magasins",
+        "rang": 5
+       },
+       {
+        "txt": "Le yaourt est vendu au rayon frais",
+        "rang": 6
+       }
+      ]
+     },
+     "cm2": {
+      "items": [
+       {
+        "txt": "Les vaches pâturent au pré",
+        "rang": 1
+       },
+       {
+        "txt": "La traite : le lait est recueilli, puis refroidi",
+        "rang": 2
+       },
+       {
+        "txt": "Le camion-citerne réfrigéré collecte le lait",
+        "rang": 3
+       },
+       {
+        "txt": "Le lait arrive à l'usine et il est analysé",
+        "rang": 4
+       },
+       {
+        "txt": "Le lait est chauffé, ensemencé de ferments, puis il repose",
+        "rang": 5
+       },
+       {
+        "txt": "Le yaourt est versé dans des pots, qui sont operculés",
+        "rang": 6
+       },
+       {
+        "txt": "Un camion frigorifique livre les magasins",
+        "rang": 7
+       },
+       {
+        "txt": "Le yaourt est vendu au rayon frais du supermarché",
+        "rang": 8
+       }
+      ]
+     },
+     "lecon": "l11"
+    },
+    {
+     "id": "11-2",
+     "titre": "Le texte du directeur",
+     "type": "trous",
+     "consigne": {
+      "cm1": "Avant de te laisser entrer à l'usine d'Issenheim, le directeur te donne un texte à compléter : clique sur une étiquette, puis sur le trou où elle va. Une étiquette est en trop.",
+      "cm2": "Avant de te laisser entrer, le directeur te donne ce texte à trous. Deux mots de la liste ne servent à rien."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 11 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "Le lait est trait puis refroidi, transporté dans un camion-citerne réfrigéré jusqu'à l'usine, où il est analysé, chauffé et ensemencé de ferments : le yaourt fermente. Il est versé dans des pots, puis livré aux supermarchés et vendu en magasin. Le lait n'est jamais congelé ni cuit.",
+     "indices": {
+      "cm1": [
+       "Le lait est refroidi, jamais congelé.",
+       "Un camion réfrigéré transporte le lait à l'usine.",
+       "Le yaourt fermente grâce aux ferments."
+      ],
+      "cm2": [
+       "Le lait n'est jamais congelé ni cuit : il est refroidi, transporté au frais, puis chauffé doucement.",
+       "À l'usine, le lait est analysé.",
+       "Le yaourt est versé dans des pots."
+      ]
+     },
+     "cm1": {
+      "texte": "<p>Tout commence à la [[ferme]]. Le lait est [[trait]], puis refroidi. Un camion-citerne [[réfrigéré]] le porte à l'[[usine]]. Là, il est [[analysé]], puis le yaourt [[fermente]]. Il est versé dans des [[pots]] et livré aux [[supermarchés]].</p>",
+      "etiquettes": [
+       "ferme",
+       "trait",
+       "réfrigéré",
+       "usine",
+       "analysé",
+       "fermente",
+       "pots",
+       "supermarchés",
+       "congelé"
+      ]
+     },
+     "cm2": {
+      "texte": "<p>Tout commence à la [[ferme]]. Le lait est [[trait]] puis immédiatement refroidi. Il est ensuite transporté dans un camion-citerne [[réfrigéré]] jusqu'à l'[[usine]]. À l'usine, le lait est [[analysé]] et stocké dans de grands réservoirs. Le lait est alors chauffé, des ferments sont ajoutés et le mélange repose : le yaourt [[fermente]]. Le yaourt est versé dans des [[pots]] et fermé avec un couvercle. Il est ensuite transporté jusqu'aux [[supermarchés]]. Enfin, il est vendu en [[magasin]] et arrive dans ton frigo !</p>",
+      "etiquettes": [
+       "ferme",
+       "trait",
+       "réfrigéré",
+       "usine",
+       "analysé",
+       "fermente",
+       "pots",
+       "supermarchés",
+       "magasin",
+       "congelé",
+       "cuit"
+      ]
+     },
+     "lecon": "l11"
+    },
+    {
+     "id": "11-3",
+     "titre": "Et si le lait tournait ?",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Manon te pose deux questions pour vérifier que tu as bien suivi le lait.",
+      "cm2": "Manon vérifie que tu as bien suivi le lait. Réponds à ses trois questions."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 11 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "Sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation : la chaîne du froid ne doit jamais être interrompue. L'usine de yaourts transforme une matière première : elle relève du secteur secondaire. La ferme relève du secteur primaire, le supermarché du secteur tertiaire.",
+     "indices": {
+      "cm1": [
+       "Sans froid, le lait se gâte.",
+       "Transformer, c'est du secteur secondaire.",
+       "Relis le trajet du lait."
+      ],
+      "cm2": [
+       "Les microbes se développent quand il fait trop chaud.",
+       "Souviens-toi de la séance de Besançon : transformer, c'est du secondaire.",
+       "La ferme exploite directement la nature."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Que se passerait-il si le lait n'était pas transporté au frais jusqu'à l'usine ?",
+        "options": [
+         "il tournerait et deviendrait impropre à la consommation",
+         "il deviendrait plus sucré",
+         "il se transformerait en fromage tout seul"
+        ],
+        "bonne": 0,
+        "explication": "Des microbes se développeraient dans le lait."
+       },
+       {
+        "q": "Dans quel secteur classe-t-on l'usine de yaourts ?",
+        "options": [
+         "le secteur secondaire : elle transforme une matière première",
+         "le secteur primaire : elle exploite la nature",
+         "le secteur tertiaire : elle rend un service"
+        ],
+        "bonne": 0,
+        "explication": "Elle transforme le lait en yaourt."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Que se passerait-il si le lait n'était pas transporté au frais jusqu'à l'usine ?",
+        "options": [
+         "des microbes s'y développeraient : il tournerait et deviendrait impropre à la consommation",
+         "il deviendrait plus sucré",
+         "il se transformerait en fromage tout seul",
+         "rien du tout"
+        ],
+        "bonne": 0,
+        "explication": "La chaîne du froid protège la santé des consommateurs."
+       },
+       {
+        "q": "Dans quel secteur classe-t-on l'usine de yaourts ?",
+        "options": [
+         "le secteur secondaire : elle transforme une matière première",
+         "le secteur primaire : elle exploite la nature",
+         "le secteur tertiaire : elle rend un service",
+         "aucun secteur"
+        ],
+        "bonne": 0,
+        "explication": "Elle transforme le lait en yaourt."
+       },
+       {
+        "q": "Dans quel secteur classe-t-on la ferme de Bray ?",
+        "options": [
+         "le secteur primaire : elle exploite directement la nature",
+         "le secteur secondaire",
+         "le secteur tertiaire",
+         "aucun secteur"
+        ],
+        "bonne": 0,
+        "explication": "L'éleveur produit le lait."
+       }
+      ]
+     },
+     "lecon": "l11"
+    },
+    {
+     "id": "11-4",
+     "titre": "Dans l'usine",
+     "type": "code",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Dans l'usine d'Issenheim, le directeur te fait compter. Les étapes du trajet : 1. les vaches pâturent ; 2. la traite ; 3. le camion-citerne collecte le lait ; 4. le lait arrive à l'usine et il est analysé ; 5. le lait est chauffé et ensemencé de ferments ; 6. le yaourt est versé dans des pots ; 7. un camion frigorifique livre les magasins ; 8. le yaourt est vendu au rayon frais. Compte, puis ouvre le cadenas.",
+     "source": "Livret « Mission géographique », Année A, séance 11 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "Trois étapes se déroulent à l'intérieur de l'usine (l'analyse, la transformation et la mise en pots), sur huit étapes en tout ; deux étapes sont des transports en camion (le camion-citerne et le camion frigorifique).",
+     "indices": {
+      "cm2": [
+       "L'analyse, la transformation et la mise en pots ont lieu à l'usine.",
+       "Compte toutes les étapes de la liste.",
+       "Cherche les mots « camion » dans la liste."
+      ]
+     },
+     "commun": {
+      "champs": [
+       {
+        "libelle": "Étapes à l'intérieur de l'usine",
+        "valeur": "3",
+        "longueur": 1
+       },
+       {
+        "libelle": "Étapes en tout",
+        "valeur": "8",
+        "longueur": 1
+       },
+       {
+        "libelle": "Transports en camion",
+        "valeur": "2",
+        "longueur": 1
+       }
+      ]
+     },
+     "lecon": "l11"
+    }
+   ]
+  },
+  {
+   "num": 12,
+   "titre": "Marseille — D'où vient ce que l'on mange ?",
+   "enigmes": [
+    {
+     "id": "12-1",
+     "titre": "D'où viennent les étiquettes ?",
+     "type": "tri",
+     "consigne": {
+      "cm1": "Sur le marché de Marseille, Yanis te montre les étiquettes d'origine des produits. Range chaque produit selon le continent d'où il vient.",
+      "cm2": "Classe chaque produit du marché selon le continent d'où il vient. Le Maroc est en Afrique du Nord ; la Turquie se trouve surtout en Asie."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 12 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "L'Espagne, la Grèce, le Portugal et l'Italie sont en Europe ; le Cameroun, l'Afrique du Sud et le Maroc en Afrique ; l'Argentine, le Chili et le Brésil en Amérique du Sud ; la Turquie est surtout en Asie ; la Nouvelle-Zélande est en Océanie.",
+     "indices": {
+      "cm1": [
+       "L'Espagne et la Grèce sont en Europe.",
+       "Le Cameroun et le Maroc sont en Afrique.",
+       "Le Chili et le Brésil sont en Amérique du Sud."
+      ],
+      "cm2": [
+       "Le Maroc est au nord de l'Afrique.",
+       "La Turquie se trouve surtout en Asie.",
+       "La Nouvelle-Zélande est en Océanie."
+      ]
+     },
+     "cm1": {
+      "colonnes": [
+       {
+        "id": "eu",
+        "titre": "Europe"
+       },
+       {
+        "id": "af",
+        "titre": "Afrique"
+       },
+       {
+        "id": "as",
+        "titre": "Amérique du Sud"
+       },
+       {
+        "id": "oc",
+        "titre": "Océanie"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Fraises (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Feta (Grèce)",
+        "col": "eu"
+       },
+       {
+        "txt": "Bananes (Cameroun)",
+        "col": "af"
+       },
+       {
+        "txt": "Tomates (Maroc)",
+        "col": "af"
+       },
+       {
+        "txt": "Oranges (Afrique du Sud)",
+        "col": "af"
+       },
+       {
+        "txt": "Poires (Chili)",
+        "col": "as"
+       },
+       {
+        "txt": "Mangues (Brésil)",
+        "col": "as"
+       },
+       {
+        "txt": "Kiwis (Nouvelle-Zélande)",
+        "col": "oc"
+       }
+      ]
+     },
+     "cm2": {
+      "colonnes": [
+       {
+        "id": "eu",
+        "titre": "Europe"
+       },
+       {
+        "id": "af",
+        "titre": "Afrique"
+       },
+       {
+        "id": "as",
+        "titre": "Amérique du Sud"
+       },
+       {
+        "id": "asie",
+        "titre": "Asie"
+       },
+       {
+        "id": "oc",
+        "titre": "Océanie"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Fraises (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Avocats (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Salade (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Feta (Grèce)",
+        "col": "eu"
+       },
+       {
+        "txt": "Myrtilles (Portugal)",
+        "col": "eu"
+       },
+       {
+        "txt": "Figues (Italie)",
+        "col": "eu"
+       },
+       {
+        "txt": "Bananes (Cameroun)",
+        "col": "af"
+       },
+       {
+        "txt": "Oranges (Afrique du Sud)",
+        "col": "af"
+       },
+       {
+        "txt": "Tomates (Maroc)",
+        "col": "af"
+       },
+       {
+        "txt": "Citrons (Argentine)",
+        "col": "as"
+       },
+       {
+        "txt": "Poires (Chili)",
+        "col": "as"
+       },
+       {
+        "txt": "Mangues (Brésil)",
+        "col": "as"
+       },
+       {
+        "txt": "Noisettes (Turquie)",
+        "col": "asie"
+       },
+       {
+        "txt": "Kiwis (Nouvelle-Zélande)",
+        "col": "oc"
+       }
+      ]
+     },
+     "lecon": "l12"
+    },
+    {
+     "id": "12-2",
+     "titre": "La salade fraîcheur",
+     "type": "code",
+     "consigne": {
+      "cm1": "Yanis prépare une salade avec des produits du monde entier. Calcule les kilomètres alimentaires de la recette, puis ouvre le cadenas. Recette de la salade fraîcheur : 1 poire (Chili), 100 g de feta (Grèce), 1 salade (Espagne), 100 g de noisettes (Turquie), 200 g de tomates (Maroc).<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+      "cm2": "Calcule les kilomètres alimentaires nécessaires pour réaliser cette salade, puis ouvre le cadenas. Recette de la salade fraîcheur : 1 poire (Chili), 100 g de feta (Grèce), 1 salade (Espagne), 100 g de noisettes (Turquie), 200 g de tomates (Maroc).<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>"
+     },
+     "source": "Livret « Mission géographique », Année A, séance 12 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; distances du livret",
+     "correction": "11 702 + 2 585 + 1 013 + 3 422 + 2 292 = 21 014 km. Le chiffre des unités est 4. Deux produits (la feta de Grèce et la salade d'Espagne) viennent d'Europe.",
+     "indices": {
+      "cm1": [
+       "Additionne les cinq distances, une par produit.",
+       "Pose l'addition en colonnes.",
+       "Le chiffre des unités est le dernier chiffre du résultat."
+      ],
+      "cm2": [
+       "11 702 + 2 585 + 1 013 + 3 422 + 2 292.",
+       "Pose l'addition en colonnes !",
+       "La Grèce et l'Espagne sont des pays d'Europe."
+      ]
+     },
+     "cm1": {
+      "champs": [
+       {
+        "libelle": "Total des kilomètres alimentaires de la recette",
+        "valeur": "21014",
+        "longueur": 5
+       },
+       {
+        "libelle": "Chiffre des unités de ce total",
+        "valeur": "4",
+        "longueur": 1
+       }
+      ]
+     },
+     "cm2": {
+      "champs": [
+       {
+        "libelle": "Total des kilomètres alimentaires de la recette",
+        "valeur": "21014",
+        "longueur": 5
+       },
+       {
+        "libelle": "Chiffre des unités de ce total",
+        "valeur": "4",
+        "longueur": 1
+       },
+       {
+        "libelle": "Produits de la recette venus d'Europe",
+        "valeur": "2",
+        "longueur": 1
+       }
+      ]
+     },
+     "lecon": "l12"
+    },
+    {
+     "id": "12-3",
+     "titre": "Moins de kilomètres",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Yanis cherche comment réduire les kilomètres alimentaires. Réponds à ses questions.",
+      "cm2": "Pour réduire les kilomètres alimentaires, Yanis te demande de distinguer ce qui sert de ce qui ne sert à rien. Réponds à ses questions."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 12 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026)",
+     "correction": "Plus la distance est grande, plus le transport rejette de CO₂. Pour réduire les kilomètres alimentaires, on peut acheter en circuit court, privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande. Manger moins salé ou ne pas laver ses fruits n'a aucun effet.",
+     "indices": {
+      "cm1": [
+       "Le circuit court est une vente directe du producteur au consommateur.",
+       "Le transport rejette du CO₂.",
+       "Le sel et le lavage n'ont rien à voir avec la distance."
+      ],
+      "cm2": [
+       "Produits locaux et de saison : moins de transport.",
+       "Manger moins salé n'a aucun rapport avec la distance parcourue.",
+       "Circuit court : un seul intermédiaire au plus."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Quel geste réduit les kilomètres alimentaires ?",
+        "options": [
+         "acheter en circuit court, directement au producteur",
+         "acheter des produits venus de l'autre bout du monde",
+         "laver ses fruits plus longtemps"
+        ],
+        "bonne": 0,
+        "explication": "Moins de distance, moins de transport."
+       },
+       {
+        "q": "Pourquoi les kilomètres alimentaires posent-ils un problème ?",
+        "options": [
+         "le transport rejette du CO₂",
+         "les aliments perdent leur couleur",
+         "les étiquettes deviennent illisibles"
+        ],
+        "bonne": 0,
+        "explication": "Le CO₂ contribue au réchauffement climatique."
+       },
+       {
+        "q": "Lequel de ces gestes n'a aucun effet sur les kilomètres alimentaires ?",
+        "options": [
+         "manger moins salé",
+         "acheter local",
+         "choisir des produits de saison"
+        ],
+        "bonne": 0,
+        "explication": "Le sel n'a aucun rapport avec la distance."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Quel geste réduit les kilomètres alimentaires ?",
+        "options": [
+         "acheter en circuit court, directement au producteur",
+         "acheter des produits venus de l'autre bout du monde",
+         "laver ses fruits plus longtemps",
+         "manger plus salé"
+        ],
+        "bonne": 0,
+        "explication": "Moins de distance, moins de transport."
+       },
+       {
+        "q": "Pourquoi les kilomètres alimentaires posent-ils un problème ?",
+        "options": [
+         "le transport rejette du CO₂ et contribue au réchauffement climatique",
+         "les aliments perdent leur couleur",
+         "les étiquettes deviennent illisibles",
+         "les camions sont trop lents"
+        ],
+        "bonne": 0,
+        "explication": "Plus la distance est grande, plus il y a de CO₂."
+       },
+       {
+        "q": "Lequel de ces gestes n'a aucun effet sur les kilomètres alimentaires ?",
+        "options": [
+         "manger moins salé",
+         "acheter local",
+         "choisir des produits de saison",
+         "acheter en circuit court"
+        ],
+        "bonne": 0,
+        "explication": "Le sel n'a aucun rapport avec la distance."
+       },
+       {
+        "q": "Que veut dire « circuit court » ?",
+        "options": [
+         "une vente directe, ou avec un seul intermédiaire, entre le producteur et le consommateur",
+         "un trajet de moins d'un kilomètre",
+         "un petit supermarché",
+         "un camion plus rapide"
+        ],
+        "bonne": 0,
+        "explication": "Moins d'intermédiaires, moins de transport."
+       }
+      ]
+     },
+     "lecon": "l12"
+    },
+    {
+     "id": "12-4",
+     "titre": "Du plus près au plus loin",
+     "type": "ordre",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Yanis veut savoir quel ingrédient de la salade vient de plus près. Range les ingrédients du plus proche au plus lointain, d'après les distances jusqu'en France.<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+     "source": "Livret « Mission géographique », Année A, séance 12 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; distances du livret",
+     "correction": "Dans l'ordre : la salade d'Espagne (1 013 km), les tomates du Maroc (2 292 km), la feta de Grèce (2 585 km), les noisettes de Turquie (3 422 km), puis la poire du Chili (11 702 km).",
+     "indices": {
+      "cm2": [
+       "Compare les nombres de kilomètres.",
+       "L'Espagne est le pays le plus proche.",
+       "Le Chili est de l'autre côté de l'Atlantique : c'est le plus lointain."
+      ]
+     },
+     "commun": {
+      "items": [
+       {
+        "txt": "La salade (Espagne)",
+        "rang": 1
+       },
+       {
+        "txt": "Les tomates (Maroc)",
+        "rang": 2
+       },
+       {
+        "txt": "La feta (Grèce)",
+        "rang": 3
+       },
+       {
+        "txt": "Les noisettes (Turquie)",
+        "rang": 4
+       },
+       {
+        "txt": "La poire (Chili)",
+        "rang": 5
+       }
+      ]
+     },
+     "lecon": "l12"
+    }
+   ]
+  },
+  {
+   "num": 13,
+   "titre": "Les Alpes — Fleuves et massifs",
+   "enigmes": [
+    {
+     "id": "13-1",
+     "titre": "La carte du relief",
+     "type": "plan",
+     "consigne": {
+      "cm1": "Rémi, guide de haute montagne, te tend une carte de France. Place le nom de chaque fleuve et de chaque massif sur son repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France : fleuves et massifs (repères numérotés)\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M478,140 q22,-6 26,20 q4,26 -16,32 q-22,4 -24,-22 q-2,-24 14,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M440,214 q26,-10 32,16 q6,26 -14,34 q-22,8 -30,-16 q-8,-24 12,-34 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M456,272 q34,-8 40,30 q6,40 -22,52 q-30,10 -40,-28 q-10,-40 22,-54 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M304,272 q46,-14 54,32 q8,46 -30,58 q-42,10 -52,-32 q-10,-44 28,-58 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M180,398 q70,-16 128,26 q28,20 -6,28 q-64,-6 -122,-26 q-24,-12 0,-28 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M570,442 q20,-4 22,26 q2,30 -14,32 q-18,0 -20,-28 q-2,-28 12,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><g fill=\"none\" stroke=\"#1f6fb8\" stroke-width=\"4\" stroke-linecap=\"round\"><path d=\"M406,178 L382,153 L312,126 L262,98 L222,93\"/><path d=\"M386,328 L344,218 L294,173 L246,198 L156,208 L130,203\"/><path d=\"M246,428 L276,388 L195,326 L178,288\"/><path d=\"M462,258 L412,280 L410,371 L406,401\"/><path d=\"M522,188 L530,138 L546,118\"/></g><text x=\"60\" y=\"300\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Océan Atlantique</text><text x=\"220\" y=\"45\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Manche</text><text x=\"400\" y=\"470\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Mer Méditerranée</text><g font-size=\"13\" fill=\"#3a4a5c\"><text x=\"330\" y=\"12\">N</text></g><circle cx='312' cy='126' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='312' y='132' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='246' cy='198' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='204' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='200' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='412' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='412' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='556' cy='120' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='556' y='126' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='474' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='474' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text></svg>",
+      "cm2": "Replace les noms des cinq fleuves, des cinq massifs montagneux de la France continentale et de la Corse sur leurs repères. Les fleuves sont en bleu sur la carte, les massifs en brun.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France : fleuves et massifs (repères numérotés)\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M478,140 q22,-6 26,20 q4,26 -16,32 q-22,4 -24,-22 q-2,-24 14,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M440,214 q26,-10 32,16 q6,26 -14,34 q-22,8 -30,-16 q-8,-24 12,-34 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M456,272 q34,-8 40,30 q6,40 -22,52 q-30,10 -40,-28 q-10,-40 22,-54 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M304,272 q46,-14 54,32 q8,46 -30,58 q-42,10 -52,-32 q-10,-44 28,-58 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M180,398 q70,-16 128,26 q28,20 -6,28 q-64,-6 -122,-26 q-24,-12 0,-28 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M570,442 q20,-4 22,26 q2,30 -14,32 q-18,0 -20,-28 q-2,-28 12,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><g fill=\"none\" stroke=\"#1f6fb8\" stroke-width=\"4\" stroke-linecap=\"round\"><path d=\"M406,178 L382,153 L312,126 L262,98 L222,93\"/><path d=\"M386,328 L344,218 L294,173 L246,198 L156,208 L130,203\"/><path d=\"M246,428 L276,388 L195,326 L178,288\"/><path d=\"M462,258 L412,280 L410,371 L406,401\"/><path d=\"M522,188 L530,138 L546,118\"/></g><text x=\"60\" y=\"300\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Océan Atlantique</text><text x=\"220\" y=\"45\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Manche</text><text x=\"400\" y=\"470\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Mer Méditerranée</text><g font-size=\"13\" fill=\"#3a4a5c\"><text x=\"330\" y=\"12\">N</text></g><circle cx='312' cy='126' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='312' y='132' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='246' cy='198' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='204' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='200' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='412' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='412' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='556' cy='120' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='556' y='126' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='474' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='474' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='246' cy='424' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='430' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text><circle cx='328' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='328' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>8</text><circle cx='452' cy='240' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='452' y='246' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>9</text><circle cx='486' cy='178' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='486' y='184' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>10</text><circle cx='580' cy='470' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='580' y='476' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>11</text></svg>"
+     },
+     "source": "Livret « Mission géographique », Année A, séance 13 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; fond de carte dessiné par script (mission-geo/js/cartes.js) ; Sandre ; géomètres-experts de la Haute-Savoie (2026)",
+     "correction": "La Seine traverse Paris, au nord ; la Loire coule vers l'ouest, la Garonne vers le sud-ouest, le Rhône vers le sud et le Rhin est à l'est, à la frontière avec l'Allemagne. Les Alpes sont à l'est, les Pyrénées au sud, le Massif central au centre, le Jura et les Vosges à l'est, et la Corse est une île.",
+     "indices": {
+      "cm1": [
+       "La Seine passe à Paris, au nord.",
+       "Le Rhône descend vers le sud.",
+       "Les Alpes sont à l'est, près de l'Italie."
+      ],
+      "cm2": [
+       "La Garonne descend des Pyrénées vers l'Atlantique.",
+       "Le Jura est au nord des Alpes, le long de la frontière avec la Suisse.",
+       "Le Massif central est au centre du pays."
+      ]
+     },
+     "cm1": {
+      "titre": "La carte du relief de Rémi",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Seine"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Loire"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "La Garonne"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Rhône"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Le Rhin"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Les Alpes"
+       }
+      ]
+     },
+     "cm2": {
+      "titre": "La carte du relief de Rémi",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Seine"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Loire"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "La Garonne"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Rhône"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Le Rhin"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Les Alpes"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Les Pyrénées"
+       },
+       {
+        "libelle": "Repère 8",
+        "reponse": "Le Massif central"
+       },
+       {
+        "libelle": "Repère 9",
+        "reponse": "Le Jura"
+       },
+       {
+        "libelle": "Repère 10",
+        "reponse": "Les Vosges"
+       },
+       {
+        "libelle": "Repère 11",
+        "reponse": "La Corse"
+       }
+      ]
+     },
+     "lecon": "l13"
+    },
+    {
+     "id": "13-2",
+     "titre": "Fleuve ou rivière ?",
+     "type": "qcm",
+     "consigne": {
+      "cm1": "Rémi te pose trois questions avant de t'emmener au bord du torrent.",
+      "cm2": "Avant de remonter le torrent, Rémi te teste sur les fleuves et les massifs."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 13 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; fond de carte dessiné par script (mission-geo/js/cartes.js) ; Sandre ; géomètres-experts de la Haute-Savoie (2026)",
+     "correction": "Un fleuve se jette dans la mer ou l'océan ; une rivière se jette dans un autre cours d'eau. La Loire est le plus long fleuve de France, avec environ 1 006 km. La Garonne descend des Pyrénées. La France compte six grands massifs montagneux.",
+     "indices": {
+      "cm1": [
+       "Ce n'est pas une question de taille, mais de destination.",
+       "La Loire est le plus long fleuve de France.",
+       "Les Pyrénées sont au sud, à la frontière avec l'Espagne."
+      ],
+      "cm2": [
+       "Un fleuve se jette dans la mer ou l'océan.",
+       "Alpes, Pyrénées, Massif central, Jura, Vosges, Corse.",
+       "La Loire mesure environ 1 000 km."
+      ]
+     },
+     "cm1": {
+      "questions": [
+       {
+        "q": "Quelle est la différence entre un fleuve et une rivière ?",
+        "options": [
+         "un fleuve se jette dans la mer ou l'océan ; une rivière se jette dans un autre cours d'eau",
+         "un fleuve est plus long qu'une rivière",
+         "un fleuve est plus large qu'une rivière"
+        ],
+        "bonne": 0,
+        "explication": "Ce n'est pas une question de taille, mais de destination."
+       },
+       {
+        "q": "Quel est le plus long fleuve de France ?",
+        "options": [
+         "la Loire",
+         "la Seine",
+         "le Rhône"
+        ],
+        "bonne": 0,
+        "explication": "Environ 1 006 km."
+       },
+       {
+        "q": "De quel massif descend la Garonne ?",
+        "options": [
+         "les Pyrénées",
+         "les Vosges",
+         "le Jura"
+        ],
+        "bonne": 0,
+        "explication": "Elle descend des Pyrénées vers l'océan Atlantique."
+       }
+      ]
+     },
+     "cm2": {
+      "questions": [
+       {
+        "q": "Quelle est la différence entre un fleuve et une rivière ?",
+        "options": [
+         "un fleuve se jette dans la mer ou l'océan ; une rivière se jette dans un autre cours d'eau",
+         "un fleuve est plus long qu'une rivière",
+         "un fleuve prend sa source en montagne, une rivière en plaine",
+         "un fleuve est plus large qu'une rivière"
+        ],
+        "bonne": 0,
+        "explication": "Ce n'est pas une question de taille, mais de destination."
+       },
+       {
+        "q": "Quel est le plus long fleuve de France ?",
+        "options": [
+         "la Loire",
+         "la Seine",
+         "le Rhône",
+         "la Garonne"
+        ],
+        "bonne": 0,
+        "explication": "Environ 1 006 km."
+       },
+       {
+        "q": "Combien de grands massifs montagneux compte la France ?",
+        "options": [
+         "six",
+         "trois",
+         "huit",
+         "douze"
+        ],
+        "bonne": 0,
+        "explication": "Alpes, Pyrénées, Massif central, Jura, Vosges, Corse."
+       },
+       {
+        "q": "Quel massif forme la frontière avec l'Espagne ?",
+        "options": [
+         "les Pyrénées",
+         "les Alpes",
+         "les Vosges",
+         "le Jura"
+        ],
+        "bonne": 0,
+        "explication": "La Garonne y prend sa source."
+       }
+      ]
+     },
+     "lecon": "l13"
+    },
+    {
+     "id": "13-3",
+     "titre": "Où se jettent les fleuves ?",
+     "type": "association",
+     "consigne": {
+      "cm1": "Rémi veut savoir où l'eau des fleuves finit sa course. Relie chaque fleuve à la mer ou à l'océan dans lequel il se jette.",
+      "cm2": "Relie chaque fleuve à la mer ou à l'océan dans lequel il se jette. Attention : deux fleuves se jettent dans l'océan Atlantique, par des estuaires différents."
+     },
+     "source": "Livret « Mission géographique », Année A, séance 13 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; fond de carte dessiné par script (mission-geo/js/cartes.js) ; Sandre ; géomètres-experts de la Haute-Savoie (2026)",
+     "correction": "La Seine se jette dans la Manche, la Loire dans l'océan Atlantique par son estuaire, la Garonne dans l'océan Atlantique par l'estuaire de la Gironde, le Rhône dans la mer Méditerranée et le Rhin dans la mer du Nord.",
+     "indices": {
+      "cm1": [
+       "Le Rhône descend vers le sud : il se jette dans la Méditerranée.",
+       "La Seine se jette près du Havre, en Normandie.",
+       "Le Rhin coule vers le nord."
+      ],
+      "cm2": [
+       "La Loire coule vers l'ouest.",
+       "La Garonne forme l'estuaire de la Gironde.",
+       "Le Rhin longe l'Allemagne avant de rejoindre la mer du Nord."
+      ]
+     },
+     "cm1": {
+      "paires": [
+       {
+        "g": "La Seine",
+        "d": "La Manche"
+       },
+       {
+        "g": "La Loire",
+        "d": "L'océan Atlantique (estuaire de la Loire)"
+       },
+       {
+        "g": "La Garonne",
+        "d": "L'océan Atlantique (estuaire de la Gironde)"
+       },
+       {
+        "g": "Le Rhône",
+        "d": "La mer Méditerranée"
+       },
+       {
+        "g": "Le Rhin",
+        "d": "La mer du Nord"
+       }
+      ]
+     },
+     "cm2": {
+      "paires": [
+       {
+        "g": "La Seine",
+        "d": "La Manche"
+       },
+       {
+        "g": "La Loire",
+        "d": "L'océan Atlantique (estuaire de la Loire)"
+       },
+       {
+        "g": "La Garonne",
+        "d": "L'océan Atlantique (estuaire de la Gironde)"
+       },
+       {
+        "g": "Le Rhône",
+        "d": "La mer Méditerranée"
+       },
+       {
+        "g": "Le Rhin",
+        "d": "La mer du Nord"
+       }
+      ]
+     },
+     "lecon": "l13"
+    },
+    {
+     "id": "13-4",
+     "titre": "Les repères à connaître",
+     "type": "code",
+     "niveaux": [
+      "CM2"
+     ],
+     "consigne": "Rémi te rappelle quelques repères à connaître par cœur. Réponds, puis ouvre le cadenas.",
+     "source": "Livret « Mission géographique », Année A, séance 13 ; Programme d'histoire-géographie du cycle 3 (BO n° 22 du 28 mai 2026) ; fond de carte dessiné par script (mission-geo/js/cartes.js) ; Sandre ; géomètres-experts de la Haute-Savoie (2026)",
+     "correction": "La France compte six grands massifs montagneux et cinq grands fleuves ; le mont Blanc, dans les Alpes, culmine à environ 4 807 mètres (4 807,47 m en septembre 2026).",
+     "indices": {
+      "cm2": [
+       "Alpes, Pyrénées, Massif central, Jura, Vosges, Corse : compte-les.",
+       "Seine, Loire, Garonne, Rhône, Rhin.",
+       "Le mont Blanc est le plus haut sommet d'Europe occidentale : environ 4 800 m."
+      ]
+     },
+     "commun": {
+      "champs": [
+       {
+        "libelle": "Nombre de grands massifs montagneux",
+        "valeur": "6",
+        "longueur": 1
+       },
+       {
+        "libelle": "Nombre de grands fleuves",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Altitude du mont Blanc, en mètres (arrondie)",
+        "valeur": "4807",
+        "longueur": 4
+       }
+      ]
+     },
+     "lecon": "l13"
     }
    ]
   }

@@ -29,9 +29,14 @@ INDICES = {
     6: {"type": "nombre", "symbole": "pentagone", "valeur": 4, "libelle": "Nombre de lettres du premier mot de la définition"},
     7: {"type": "nombre", "symbole": "trapeze", "valeur": 15, "libelle": "Coefficient multiplicateur de la densité en été"},
     8: {"type": "fait", "texte": "Le drapeau du pays recherché comporte du vert et du blanc.", "libelle": "Photographie froissée récupérée à Dhaka"},
+    9: {"type": "fait", "texte": "Le drapeau du pays recherché comporte aussi du rouge.", "libelle": "Précision d'une marchande de Bamako"},
+    10: {"type": "nombre", "symbole": "goutte", "valeur": 5, "libelle": "Nombre de produits agricoles sur le plateau"},
+    11: {"type": "fait", "texte": "Dans le pays recherché, on parle espagnol.", "libelle": "Radio entendue dans le vestiaire de l'usine"},
+    12: {"type": "nombre", "symbole": "hexagone", "valeur": 4, "libelle": "Chiffre des unités des kilomètres alimentaires"},
+    13: {"type": "nombre", "symbole": "losange", "valeur": 6, "libelle": "Nombre de grands massifs montagneux français"},
 }
-SYMBOLES = {"etoile": "l'étoile", "cercle": "le cercle", "nuage": "le nuage", "pentagone": "le pentagone", "trapeze": "le trapèze"}
-PERIODES = {1: "Période 1", 2: "Période 1", 3: "Période 1", 4: "Période 1", 5: "Période 1", 6: "Période 2", 7: "Période 2", 8: "Période 2"}
+SYMBOLES = {"etoile": "l'étoile", "cercle": "le cercle", "nuage": "le nuage", "pentagone": "le pentagone", "trapeze": "le trapèze", "goutte": "la goutte", "hexagone": "l'hexagone", "losange": "le losange"}
+PERIODES = {1: "Période 1", 2: "Période 1", 3: "Période 1", 4: "Période 1", 5: "Période 1", 6: "Période 2", 7: "Période 2", 8: "Période 2", 9: "Période 3", 10: "Période 3", 11: "Période 4", 12: "Période 4", 13: "Période 4"}
 
 
 def go(titre, cmd, cwd=RACINE, fin=4, obligatoire=True):
@@ -76,10 +81,12 @@ def finitions():
     DL["coffre"]["texte"] = ("Mon coffre ne s'ouvre qu'avec le mot de chaque séance, dans l'ordre. Ensemble, ils résument ce que vous avez appris : "
                              "votre COMMUNE fait partie de territoires EMBOÎTÉS ; la DENSITÉ distingue la campagne de la ville ; la ville vit surtout du secteur TERTIAIRE ; "
                              "la montagne vit du TOURISME ; la station BALNÉAIRE attire tant de visiteurs que le LITTORAL change de visage chaque été ; "
-                             "et dans le monde, de fortes INÉGALITÉS séparent les pays riches des pays pauvres.")
-    DL["cinematiques"]["fin"]["plans"][0]["texte"] = ("Le coffre est ouvert. Vous connaissez le territoire où vous vivez, ses villes, ses campagnes, ses montagnes et son littoral, "
-                                                      "et vous savez lire les inégalités du monde. La photo du drapeau rejoint votre carnet : vert et blanc, ce n'est pas le drapeau du Bangladesh. "
-                                                      "La valise est ailleurs. Gardez précieusement votre carnet : la mission continue à la séance suivante.")
+                             "dans le monde, de fortes INÉGALITÉS séparent les pays riches des pays pauvres ; les PRATIQUES alimentaires dépendent surtout des revenus ; "
+                             "les produits TRANSFORMÉS sont fabriqués à partir de produits agricoles ; une CHAÎNE de production mène du pré à l'assiette ; "
+                             "les KILOMÈTRES alimentaires mesurent la distance parcourue par un aliment ; et la France a six MASSIFS qui nourrissent ses fleuves.")
+    DL["cinematiques"]["fin"]["plans"][0]["texte"] = ("Le coffre est ouvert. Vous savez comment s'organise le territoire, d'où vient ce que l'on mange et où coule l'eau. "
+                                                      "Votre carnet s'est bien rempli : le pays recherché est en Amérique latine, dans l'hémisphère nord ; son drapeau est vert, blanc et rouge ; on y parle espagnol. "
+                                                      "La valise est ailleurs. Gardez précieusement votre carnet : la piste de l'eau continue à la séance suivante.")
     ecrire("enigmes.json", E)
     ecrire("dialogues.json", DL)
     P = lire("personnages.json")

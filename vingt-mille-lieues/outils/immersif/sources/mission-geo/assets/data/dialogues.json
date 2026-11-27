@@ -34,6 +34,26 @@
   "nour": {
    "nom": "Nour",
    "role": "Agente envoyée à Dhaka, elle enquête au milieu des marchés"
+  },
+  "aminata": {
+   "nom": "Aminata",
+   "role": "Agente de Bamako, elle t'emmène au marché pour comprendre comment on se nourrit au Mali"
+  },
+  "camille": {
+   "nom": "Camille",
+   "role": "Cheffe de la cantine de l'école, elle t'a engagé comme aide pour quelques jours"
+  },
+  "manon": {
+   "nom": "Manon",
+   "role": "Éleveuse à la ferme de Bray, elle te fait suivre le lait jusqu'à l'usine"
+  },
+  "yanis": {
+   "nom": "Yanis",
+   "role": "Agent de Marseille, il lit les étiquettes d'origine sur les marchés"
+  },
+  "remi": {
+   "nom": "Rémi",
+   "role": "Guide de haute montagne dans les Alpes, il lit les cartes du relief et des cours d'eau"
   }
  },
  "intro_accueil": "Bienvenue au bureau du Professeur Atlas. Une valise contenant des informations secrètes a été volée. Séance après séance, vous allez suivre sa trace à travers la France, puis le monde. Chaque séance réussie vous donne un mot pour le coffre et un indice pour votre carnet de mission.",
@@ -220,6 +240,121 @@
     "perso": "nour",
     "nom": "Nour",
     "texte": "Vous avez compris les <b>INÉGALITÉS</b> qui séparent les pays du monde. Notez ce mot. Et regardez ce qu'un marchand m'a tendu : une photo froissée d'un drapeau. On n'en voit que deux couleurs."
+   }
+  },
+  {
+   "num": 9,
+   "titre": "Au marché de Bamako",
+   "decor": "bamako-marche",
+   "motCle": "PRATIQUES",
+   "lieu": "Bamako, capitale du Mali, dans un marché en plein air",
+   "description": "Un marché animé : des étals de millet, d'arachides et de mangues sous des parasols, des vendeuses qui discutent, des motos qui passent et, accrochée à un poteau, une ardoise couverte de prix.",
+   "sens": [
+    "À voir : les tas de millet, d'arachides et de mangues sous les parasols",
+    "À entendre : les voix des vendeuses et le moteur des motos",
+    "À sentir : les épices, la mangue mûre et la poussière chaude"
+   ],
+   "dialogue_intro": {
+    "perso": "aminata",
+    "nom": "Aminata",
+    "texte": "Bienvenue à Bamako, au Mali. Je suis Aminata. Pour te remettre de ton long voyage, viens faire un tour au marché : tu y verras des aliments que tu ne connais pas, et beaucoup de ceux que tu connais coûtent ici une fortune. Regardons pourquoi."
+   },
+   "dialogue_reussite": {
+    "perso": "aminata",
+    "nom": "Aminata",
+    "texte": "Tu as compris que les <b>PRATIQUES</b> alimentaires dépendent du climat, des habitudes et surtout des revenus. Notez ce mot. Regarde : une marchande a reconnu le drapeau de ta photographie froissée, et elle a quelque chose à ajouter."
+   }
+  },
+  {
+   "num": 10,
+   "titre": "Les produits consommés",
+   "decor": "cantine-ecole",
+   "motCle": "TRANSFORMÉS",
+   "lieu": "La cantine de l'école, à l'heure du déjeuner",
+   "description": "Un réfectoire lumineux : de longues tables, des plateaux alignés, un comptoir en inox et, derrière, la cuisine où l'on voit des casseroles fumer.",
+   "sens": [
+    "À voir : les plateaux alignés sur le comptoir en inox",
+    "À entendre : le bruit des couverts et les voix des enfants",
+    "À sentir : la soupe chaude et le pain frais"
+   ],
+   "dialogue_intro": {
+    "perso": "camille",
+    "nom": "Camille",
+    "texte": "Salut, je suis Camille, la cheffe de la cantine. On t'a placé ici comme aide pour quelques jours : le temps de réfléchir aux indices déjà récupérés. En cuisine, on se pose toujours la même question : d'où vient chaque aliment du plateau ?"
+   },
+   "dialogue_reussite": {
+    "perso": "camille",
+    "nom": "Camille",
+    "texte": "Plateau trié ! Un produit agricole vient de la nature ; un produit <b>TRANSFORMÉ</b> est fabriqué à partir de lui. Notez ce mot. Et une question me trotte dans la tête : par où passe donc un yaourt avant d'arriver dans ton assiette ?"
+   }
+  },
+  {
+   "num": 11,
+   "titre": "Chaînes de production",
+   "decor": "issenheim-usine",
+   "motCle": "CHAÎNE",
+   "lieu": "La ferme de Bray, puis l'usine de yaourts d'Issenheim, en Alsace",
+   "description": "Un pré où paissent des vaches et, plus loin, une usine blanche : de grands réservoirs en inox, des tuyaux, une chaîne qui remplit des pots à la file, des camions frigorifiques à quai.",
+   "sens": [
+    "À voir : les réservoirs en inox et la chaîne qui remplit les pots",
+    "À entendre : le ronronnement des machines et le bip des chariots",
+    "À sentir : le lait tiède et l'air frais de la chambre froide"
+   ],
+   "dialogue_intro": {
+    "perso": "manon",
+    "nom": "Manon",
+    "texte": "Je suis Manon, éleveuse à la ferme de Bray. Les malfaiteurs sont partout en France : pour t'approcher d'eux, tu te fais passer pour un producteur et tu suis notre lait jusqu'à l'usine de yaourts d'Issenheim, en Alsace. Suis bien chaque étape."
+   },
+   "dialogue_reussite": {
+    "perso": "manon",
+    "nom": "Manon",
+    "texte": "Tu connais maintenant toute la <b>CHAÎNE</b> de production du yaourt, du pré au frigo. Notez ce mot. Écoute : dans le vestiaire, une radio grésille dans une langue que tu ne comprends pas… mais que tu reconnais."
+   }
+  },
+  {
+   "num": 12,
+   "titre": "L'heure du ravitaillement",
+   "decor": "marseille-marche",
+   "motCle": "KILOMÈTRES",
+   "lieu": "Marseille, sur un marché de quartier",
+   "description": "Un marché ensoleillé : des cageots de fruits et de légumes, des étiquettes d'origine piquées dans les étals, des paniers qui se remplissent et, au loin, la mer.",
+   "sens": [
+    "À voir : les cageots de fruits et leurs étiquettes d'origine",
+    "À entendre : les marchands qui crient leurs prix",
+    "À sentir : les agrumes, les herbes et l'air salé"
+   ],
+   "dialogue_intro": {
+    "perso": "yanis",
+    "nom": "Yanis",
+    "texte": "Salut, c'est Yanis, de Marseille. Chez nous, la nourriture est abondante, mais regarde les étiquettes : d'où viennent vraiment ces fruits et ces légumes ? Combien de kilomètres ont-ils parcourus avant d'arriver dans ton panier ?"
+   },
+   "dialogue_reussite": {
+    "perso": "yanis",
+    "nom": "Yanis",
+    "texte": "21 014 kilomètres pour une seule salade ! Tu sais maintenant compter les <b>KILOMÈTRES</b> alimentaires. Notez ce mot. Le chiffre des unités de ce total rejoint ton carnet : il te servira plus tard."
+   }
+  },
+  {
+   "num": 13,
+   "titre": "L'eau en France : fleuves et massifs",
+   "decor": "alpes-torrent",
+   "motCle": "MASSIFS",
+   "lieu": "Les Alpes, au bord d'un torrent de montagne",
+   "description": "Un torrent clair qui dévale entre des rochers, des sapins, des névés accrochés aux pentes et, tout en haut, des sommets enneigés baignés de lumière.",
+   "sens": [
+    "À voir : le torrent qui dévale et les sommets enneigés",
+    "À entendre : le grondement de l'eau sur les rochers",
+    "À sentir : la résine des sapins et l'air froid"
+   ],
+   "dialogue_intro": {
+    "perso": "remi",
+    "nom": "Rémi",
+    "texte": "Je suis Rémi, guide de haute montagne. La piste des produits agricoles n'a rien donné : il te reste la piste de l'eau. Pour comprendre d'où elle vient, il faut savoir lire une carte du relief et des cours d'eau."
+   },
+   "dialogue_reussite": {
+    "perso": "remi",
+    "nom": "Rémi",
+    "texte": "Cinq fleuves, six <b>MASSIFS</b> : la carte de France n'a plus de secret pour toi. Notez ce mot. Le nombre de massifs rejoint ton carnet. Le chemin de l'eau, lui, continue : la mission aussi."
    }
   }
  ]

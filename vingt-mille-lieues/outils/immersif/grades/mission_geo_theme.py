@@ -29,10 +29,15 @@ VOIX = {
     "ines":  {"edge": "fr-BE-CharlineNeural",            "nom": "Charline", "rate": 1.02, "pitch": 1.0},    # agente de la côte normande, enjouée
     "theo":  {"edge": "fr-BE-GerardNeural",              "nom": "Gérard",   "rate": 1.0,  "pitch": 1.0},    # sauveteur de Biarritz, décontracté
     "nour":  {"edge": "fr-CH-ArianeNeural",              "nom": "Ariane",   "rate": 0.98, "pitch": 1.0},    # agente à Dhaka, grave et attentive
+    "aminata": {"edge": "fr-FR-JacquelineNeural",        "nom": "Jacqueline", "rate": 1.0, "pitch": 1.0},   # agente de Bamako, chaleureuse
+    "camille": {"edge": "fr-FR-CelesteNeural",           "nom": "Céleste",  "rate": 1.02, "pitch": 1.0},    # cheffe de cantine, énergique
+    "manon":   {"edge": "fr-FR-YvetteNeural",            "nom": "Yvette",   "rate": 0.98, "pitch": 1.0},    # éleveuse, posée
+    "yanis":   {"edge": "fr-FR-AlainNeural",             "nom": "Alain",    "rate": 1.03, "pitch": 1.0},    # agent de Marseille, bavard
+    "remi":    {"edge": "fr-FR-MauriceNeural",           "nom": "Maurice",  "rate": 0.97, "pitch": 0.98},   # guide de haute montagne, calme
 }
 
-# Une séance = une escale ; le guide parle pour toutes les énigmes de sa séance (P1 : séances 1 à 5 ; P2 : 6 à 8).
-GUIDES = {1: "atlas", 2: "lena", 3: "malik", 4: "zoe", 5: "hugo", 6: "ines", 7: "theo", 8: "nour"}
+# Une séance = une escale ; le guide parle pour toutes les énigmes de sa séance (P1 : séances 1 à 5 ; P2 : 6 à 8 ; P3-P4 : 9 à 13).
+GUIDES = {1: "atlas", 2: "lena", 3: "malik", 4: "zoe", 5: "hugo", 6: "ines", 7: "theo", 8: "nour", 9: "aminata", 10: "camille", 11: "manon", 12: "yanis", 13: "remi"}
 
 PORTRAITS = {
     "atlas": {"genre": "homme", "coiffure": "courte", "cheveux": "#d9d4cc", "peau": "#e9c4a6", "habit": "#1d3b5c", "barbe": True, "lunettes": True},
@@ -43,9 +48,14 @@ PORTRAITS = {
     "ines":  {"genre": "femme", "coiffure": "longue", "cheveux": "#2b1a12", "peau": "#d9a57e", "habit": "#3a6f8f", "lunettes": False},
     "theo":  {"genre": "homme", "coiffure": "courte", "cheveux": "#e0c27a", "peau": "#e8b994", "habit": "#d9382c", "barbe": False, "lunettes": False},
     "nour":  {"genre": "femme", "coiffure": "longue", "cheveux": "#141010", "peau": "#9a6a4a", "habit": "#2f7a4a", "lunettes": True},
+    "aminata": {"genre": "femme", "coiffure": "longue", "cheveux": "#141010", "peau": "#7a4a30", "habit": "#c9a24a", "lunettes": False},
+    "camille": {"genre": "femme", "coiffure": "courte", "cheveux": "#8a5a2b", "peau": "#f0cdb3", "habit": "#e8e4da", "lunettes": False},
+    "manon":   {"genre": "femme", "coiffure": "longue", "cheveux": "#7a4a22", "peau": "#f3d6bf", "habit": "#3f6f4a", "lunettes": False},
+    "yanis":   {"genre": "homme", "coiffure": "courte", "cheveux": "#141010", "peau": "#c68a5e", "habit": "#8a6a2a", "barbe": False, "lunettes": False},
+    "remi":    {"genre": "homme", "coiffure": "courte", "cheveux": "#9a9a9a", "peau": "#e8b994", "habit": "#3a6f8f", "barbe": True, "lunettes": False},
 }
 
 STYLE_VISUEL = ("Photographie photoréaliste de cinéma, objectif 35 mm, France d'aujourd'hui, lumière naturelle douce, couleurs franches, "
                 "ambiance de film d'espionnage pour la jeunesse, aucune inscription lisible, grain fin.")
 EPOQUE = ("Univers contemporain : le bureau du Professeur Atlas (inventé), puis Dijon (place de la Libération), Clamecy (Nièvre), Besançon (boucle du Doubs), "
-          "la station des Rousses (Haut-Jura), Étretat (falaises, front de mer), Biarritz (Grande Plage), Dhaka (marché). Personnages inventés, aucune personne réelle, aucune violence.")
+          "la station des Rousses (Haut-Jura), Étretat (falaises, front de mer), Biarritz (Grande Plage), Dhaka (marché), Bamako (marché), la cantine d'une école, la ferme de Bray et l'usine d'Issenheim, un marché de Marseille, les Alpes (torrent). Personnages inventés, aucune personne réelle, aucune violence.")

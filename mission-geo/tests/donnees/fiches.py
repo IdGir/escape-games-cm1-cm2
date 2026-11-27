@@ -10,7 +10,9 @@ Période 2 (séances 6 à 8) : Insee (Étretat : 1 102 habitants, population mun
 Francetvinfo (août 2022) et presse 2023-2025 (plus d'un million de visiteurs par an à Étretat) ; office de tourisme Le Havre Étretat (Clos Lupin,
 château des Aygues, marché couvert, parc des Roches) ; PNUD, Rapport sur le développement humain 2025 (données 2023) ; OIT et UNICEF,
 « Travail des enfants : estimations mondiales 2024 » (juin 2025) ; World Inequality Lab, Rapport sur les inégalités mondiales 2022 ;
-Convention internationale des droits de l'enfant (ONU, 1989, article 32)."""
+Convention internationale des droits de l'enfant (ONU, 1989, article 32).
+Périodes 3 et 4 (séances 9 à 13) : livret « Mission géographique » (Année A) ; Sandre (Loire : 1 005,93 km) ; Chambre départementale des géomètres-experts de la
+Haute-Savoie (mont Blanc : 4 807,47 m, mesure de septembre 2026) ; FAO, SOFI 2025 (sous-alimentation) ; voir A-VERIFIER.md, points 20 à 27."""
 
 # ---------------------------------------------------------------- Séance 1 : la commune
 C_COMMUNE = "La commune est le plus petit territoire administratif de France : au 1er janvier 2026, on en compte 34 875."
@@ -122,6 +124,72 @@ I_DROITS = "La Convention internationale des droits de l'enfant, adoptée par l'
 LECON_INEGALITES = [("Des niveaux de vie très différents", [I_NIVEAU, I_INDICATEURS, I_ECART, I_SEULE]),
                     ("Où sont les pays riches et les pays pauvres ?", [I_RICHES, I_PAUVRES, I_PARTAGE]),
                     ("La pauvreté et les enfants", [I_ENFANTS, I_OIT, I_DROITS])]
+
+# ---------------------------------------------------------------- Séance 9 : les pratiques alimentaires
+P_PRATIQUES = "Les pratiques alimentaires, c'est-à-dire la manière de se nourrir, dépendent du climat, des cultures locales, des habitudes et surtout des revenus."
+P_MALI = "Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots, le gombo et la mangue."
+P_ENCLAVE = "Le Mali est un pays enclavé, sans accès à la mer : le poisson de mer y est rare et cher."
+P_CLIMAT = "Le climat est chaud et sec une grande partie de l'année et la saison des pluies est courte : les cultures y sont peu variées."
+P_IMPORT = "Les aliments importés, comme les pâtes, le fromage ou le yaourt, coûtent très cher au Mali : un kilo de pâtes importées vaut environ cinq fois le prix d'un kilo de millet."
+P_FRIGO = "Peu de familles maliennes possèdent un réfrigérateur, ce qui limite la conservation de la viande et du poisson."
+P_BUDGET = "En France, un budget de 25 € permet d'acheter une grande variété d'aliments ; au Mali, une famille dispose souvent de moins de 10 € pour la même semaine."
+P_SOUS = "La sous-alimentation, c'est le fait de ne pas manger assez pour couvrir ses besoins."
+P_ZONES = "Elle touche surtout l'Afrique subsaharienne, comme le Tchad, le Soudan et Madagascar, et certains pays comme Haïti."
+P_FRANCE = "En France et aux États-Unis, elle concerne moins de 2,5 % de la population."
+LECON_ALIM = [("Se nourrir ici et ailleurs", [P_PRATIQUES, P_MALI, P_ENCLAVE, P_CLIMAT, P_IMPORT, P_FRIGO, P_BUDGET]),
+              ("La sous-alimentation", [P_SOUS, P_ZONES, P_FRANCE])]
+
+# ---------------------------------------------------------------- Séance 10 : produits agricoles et produits transformés
+A_AGRI = "Un produit agricole vient directement de la nature : il est cultivé ou élevé, puis consommé presque tel quel, comme une pomme, une carotte, un œuf ou du lait."
+A_TRANS = "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine."
+A_EX = "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao."
+A_ESPACE = "Chaque aliment vient d'un espace de production et d'un métier."
+A_ELEV = "L'éleveur travaille dans un élevage : il produit les volailles, les œufs, le lait et la viande."
+A_CEREAL = "Le céréalier cultive des céréales, comme le blé et le maïs, dans des champs."
+A_MARAIC = "Le maraîcher cultive des légumes, comme les carottes, les salades et les haricots, dans une exploitation maraîchère."
+A_ARBO = "L'arboriculteur s'occupe d'un verger : il produit des fruits, comme les pommes, les poires et les cerises."
+LECON_PRODUITS = [("Agricole ou transformé ?", [A_AGRI, A_TRANS, A_EX]),
+                  ("Espaces de production et métiers", [A_ESPACE, A_ELEV, A_CEREAL, A_MARAIC, A_ARBO])]
+
+# ---------------------------------------------------------------- Séance 11 : la chaîne de production du yaourt
+Y_CHAINE = "La chaîne de production d'un aliment décrit toutes les étapes qui séparent la matière première de l'assiette du consommateur."
+Y_FERME = "À la ferme, les vaches sont traites chaque jour : le lait est immédiatement refroidi et stocké dans un tank réfrigéré."
+Y_TRANSPORT = "Un camion-citerne réfrigéré collecte le lait et l'apporte à l'usine."
+Y_USINE = "À l'usine, le lait est analysé, puis stocké dans de grands réservoirs ; il est chauffé, des ferments sont ajoutés et le mélange repose : le yaourt fermente et s'épaissit."
+Y_POTS = "Le yaourt est ensuite versé dans des pots, fermés par un couvercle, puis rangés sur des palettes."
+Y_DISTRI = "Des camions frigorifiques livrent les supermarchés, où le yaourt est vendu au rayon frais."
+Y_FROID = "La chaîne du froid ne doit jamais être interrompue : sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation."
+Y_SECTEUR = "Une usine qui transforme une matière première, comme le lait, fait partie du secteur secondaire, alors que la ferme relève du secteur primaire et le supermarché du secteur tertiaire."
+LECON_YAOURT = [("Du lait au yaourt", [Y_CHAINE, Y_FERME, Y_TRANSPORT, Y_USINE, Y_POTS, Y_DISTRI]),
+                ("Le froid et les secteurs d'activité", [Y_FROID, Y_SECTEUR])]
+
+# ---------------------------------------------------------------- Séance 12 : les kilomètres alimentaires
+K_KM = "Les kilomètres alimentaires sont la distance totale parcourue par un aliment avant d'arriver dans notre assiette."
+K_CO2 = "Plus cette distance est grande, plus le transport rejette de CO₂ dans l'atmosphère, ce qui dégrade l'air et contribue au réchauffement climatique."
+K_ORIGINES = ("Dans un supermarché français, les étiquettes révèlent des origines très variées : fraises d'Espagne, bananes du Cameroun, noisettes de Turquie, oranges d'Afrique du Sud, "
+              "citrons d'Argentine, feta de Grèce, poires du Chili, myrtilles du Portugal, kiwis de Nouvelle-Zélande et mangues du Brésil.")
+K_CIRCUIT = "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur."
+K_LOCAL = "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande."
+K_SANS = "Manger moins salé ou ne pas laver ses fruits n'a aucun effet sur les kilomètres alimentaires."
+LECON_KM = [("Les kilomètres alimentaires", [K_KM, K_CO2, K_ORIGINES]),
+            ("Consommer autrement", [K_CIRCUIT, K_LOCAL, K_SANS])]
+
+# ---------------------------------------------------------------- Séance 13 : fleuves et massifs montagneux
+F_FLEUVE = "Un fleuve est un cours d'eau qui se jette dans la mer ou dans l'océan ; une rivière se jette dans un autre cours d'eau."
+F_CINQ = "Les cinq principaux fleuves français sont la Seine, la Loire, la Garonne, le Rhône et le Rhin."
+F_SEINE = "La Seine traverse Paris et se jette dans la Manche, près du Havre."
+F_LOIRE = "La Loire est le plus long fleuve de France, avec environ 1 006 km ; elle se jette dans l'océan Atlantique."
+F_GARONNE = "La Garonne descend des Pyrénées et se jette dans l'océan Atlantique par l'estuaire de la Gironde."
+F_RHONE = "Le Rhône vient de Suisse et se jette dans la mer Méditerranée."
+F_RHIN = "Le Rhin longe la frontière avec l'Allemagne et se jette dans la mer du Nord."
+F_SIX = "Les six grands massifs montagneux sont les Alpes, les Pyrénées, le Massif central, le Jura, les Vosges et les montagnes de Corse."
+F_ALPES = "Les Alpes sont les plus hautes montagnes de France : le mont Blanc culmine à environ 4 807 mètres."
+F_PYRENEES = "Les Pyrénées forment la frontière avec l'Espagne."
+F_JURA = "Le Jura longe la frontière avec la Suisse, et les Vosges se trouvent à l'est, avec des sommets arrondis."
+F_VOLCANS = "Le Massif central, au centre du pays, est formé d'anciens volcans."
+F_NEIGE = "Les montagnes retiennent la neige : en fondant au printemps, elle alimente les fleuves."
+LECON_FLEUVES = [("Fleuves et rivières", [F_FLEUVE, F_CINQ, F_SEINE, F_LOIRE, F_GARONNE, F_RHONE, F_RHIN]),
+                 ("Les grands massifs montagneux", [F_SIX, F_ALPES, F_PYRENEES, F_JURA, F_VOLCANS, F_NEIGE])]
 
 
 def html(sections):

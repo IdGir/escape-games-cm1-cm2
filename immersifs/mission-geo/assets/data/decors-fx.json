@@ -583,6 +583,371 @@
      "filtre": "none"
     }
    }
+  },
+  "bamako-marche": {
+   "titre": "Bamako, capitale du Mali, dans un marché en plein air",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les deux frigos",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Deux frigos ouverts côte à côte, l'un rempli de boîtes et de pots, l'autre de sacs de grains et de fruits."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "L'étal de poisson presque vide",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une planche en bois sur un tréteau : quelques poissons séchés, un peu de viande sous un linge, de maigres légumes."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "L'ardoise des prix",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une ardoise couverte de chiffres à la craie, accrochée à un poteau du marché."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La carte de la sous-alimentation",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une grande carte du monde aux pays colorés du plus clair au plus foncé, épinglée à un mur du marché."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "cantine-ecole": {
+   "titre": "La cantine de l'école, à l'heure du déjeuner",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le plateau de la cantine",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un plateau en plastique avec huit aliments disposés dans ses cases."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le tableau des recettes",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un tableau blanc de cuisine où Camille a écrit des noms de produits."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le carnet de la ferme de Bray",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet graisseux de la ferme, plein de noms de métiers écrits à la main."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le registre de la cantine",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un registre à spirale où Camille note les quantités servies chaque jour."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "issenheim-usine": {
+   "titre": "La ferme de Bray, puis l'usine de yaourts d'Issenheim, en Alsace",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le trajet du lait",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un schéma punaisé dans la laiterie de la ferme, avec des flèches effacées par la vapeur."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le texte du directeur",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une feuille à en-tête de l'usine, trouée de blancs, posée sur le bureau du directeur."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le thermomètre du camion",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un thermomètre fixé dans la cabine d'un camion-citerne, dont l'aiguille tremble."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le tableau de bord de l'usine",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un tableau de bord avec trois compteurs lumineux à l'entrée de la salle de contrôle."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "marseille-marche": {
+   "titre": "Marseille, sur un marché de quartier",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les étiquettes du marché",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Des étiquettes d'origine piquées dans des cageots de fruits et de légumes."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La recette de la salade fraîcheur",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une recette griffonnée sur un sac en papier, avec cinq produits et cinq pays."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le cabas de Yanis",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un cabas en toile rempli de produits de saison achetés au marché, en face d'un cageot venu de loin."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La carte des distances",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une carte punaisée au mur du marché, avec des fils tendus de la France vers cinq pays."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "alpes-torrent": {
+   "titre": "Les Alpes, au bord d'un torrent de montagne",
+   "reference": null,
+   "ambiance": [
+    "piece",
+    "brise"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La carte du relief de Rémi",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une carte froissée, sur la table d'un refuge, avec des repères numérotés tracés au crayon."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le torrent",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un torrent glacé qui dévale entre des rochers, au pied d'un névé."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les panneaux du refuge",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Cinq panneaux de bois accrochés au mur du refuge, chacun portant le nom d'un fleuve."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le carnet du guide",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Un carnet de poche écorné, plein de repères notés à la main : altitudes, longueurs, nombres."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
   }
  }
 }

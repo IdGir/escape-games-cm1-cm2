@@ -53,3 +53,15 @@ Points relevés par l'audit de la refonte (26/11/2026). La page du BO n° 22 du 
     Les seuils « plus de 40 000 $ » et « moins de 3 000 $ » sont choisis pour l'exercice : ce n'est pas une classification officielle.
 19. **Médias de la période 2** : lieux réels (falaises d'Étretat, Grande Plage de Biarritz, marché de Dhaka) → photos Wikimedia Commons créditées ;
     pour Dhaka, éviter toute photo d'enfant identifiable.
+
+## Version immersive, étapes P3-P4 (séances 9 à 13) — 27/11/2026
+
+20. **Mont Blanc** : 4 807,47 m (mesure de septembre 2026). La version classique garde 4 806 m (périmé) ; la version immersive écrit « environ 4 807 m ».
+21. **Prix et distances du livret** (séances 9 à 12 : panier, kiwi, yaourt, circuit) : non recoupés avec une source ; gardés comme données d'exercice.
+22. **Affirmations « manger moins de viande » et « le kiwi fait 19 000 km »** : à vérifier avant diffusion (source et année).
+23. **Haïti** classé en « Amérique du Nord » (séance 9) : convention du livret ; Haïti est dans les Caraïbes (Amérique du Nord au sens des continents scolaires).
+24. **Classification FAO** (pays qui exportent / importent des céréales) : différente de la carte du livret ; la version immersive utilise des repères simplifiés.
+25. **Fleuves** : Marne, Allier, Saône et Oise présentés comme affluents (juste) ; Loire ≈ 1 006 km (Sandre 1 005,93) alors que d'autres sources donnent 1 012 à 1 020 km.
+26. **Voix Edge** des nouveaux personnages (Aminata, Camille, Manon, Yanis, Rémi) : à valider à l'écoute avec `generer-voix`.
+27. **Médias de la période 3-4** : lieux réels (Bamako, Marseille, Alpes) → photos Wikimedia Commons créditées ; aucune photo d'enfant identifiable ; cartes jamais générées par IA.
+

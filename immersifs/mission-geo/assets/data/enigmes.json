@@ -7256,6 +7256,4552 @@
      }
     }
    ]
+  },
+  {
+   "numero": 9,
+   "id": "bamako-les-pratiques-alimentaires",
+   "titre": "Au marché de Bamako",
+   "lieu": "Bamako, capitale du Mali, dans un marché en plein air",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 3",
+   "episode": "Un marché animé : des étals de millet, d'arachides et de mangues sous des parasols, des vendeuses qui discutent, des motos qui passent et, accrochée à un poteau, une ardoise couverte de prix.",
+   "scenarimage": "",
+   "mot": "PRATIQUES",
+   "mot_origine": "Le mot-clé de la séance 9, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e9",
+   "cinematique_fin": "fin-e9",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e9-1",
+     "escale": 9,
+     "ordre": 1,
+     "titre": "Les deux frigos",
+     "decor": "bamako-marche",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aminata",
+     "probleme_narratif": "Aminata a mélangé les aliments de deux familles, l'une en France, l'autre au Mali.",
+     "enjeu": "Pour comprendre comment on mange ici, il faut d'abord voir ce que contiennent les frigos.",
+     "episode_du_roman": "Séance 9 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Comparer l'alimentation dans un pays riche et dans un pays pauvre",
+     "pourquoi_ce_savoir_ici": "La séance « Bamako — Les pratiques alimentaires » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Chaque aliment trouve sa place ; le frigo malien est bien plus vide de produits importés."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l09",
+     "type": "tri",
+     "niveau_variantes": "Découverte (tri) ; Agent CM1 (tri) ; Agent CM2 (tri) ; Géographe (ordre) ; Chef de mission (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "En France, on trouve du pain de mie, des pâtes, du fromage, des yaourts, des pommes et des carottes. Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots rouges, le gombo et la mangue.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "fr",
+        "titre": "Le frigo en France"
+       },
+       {
+        "id": "ml",
+        "titre": "Le frigo au Mali"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pain de mie",
+        "col": "fr"
+       },
+       {
+        "txt": "Fromage",
+        "col": "fr"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "fr"
+       },
+       {
+        "txt": "Pomme",
+        "col": "fr"
+       },
+       {
+        "txt": "Millet",
+        "col": "ml"
+       },
+       {
+        "txt": "Arachides",
+        "col": "ml"
+       },
+       {
+        "txt": "Gombo",
+        "col": "ml"
+       },
+       {
+        "txt": "Mangue",
+        "col": "ml"
+       }
+      ],
+      "consigne": "Aminata t'emmène chez deux familles : une en France, une au Mali. Elle a mélangé le contenu de leurs frigos. Range chaque aliment dans le frigo où on le trouve le plus souvent.",
+      "indices": [
+       "Au Mali, on mange ce qui pousse sur place.",
+       "Le fromage et le yaourt sont importés au Mali.",
+       "Le millet, le gombo et la mangue sont des produits maliens."
+      ],
+      "dialogue": "Bienvenue à Bamako, au Mali. Je suis Aminata. Pour te remettre de ton long voyage, viens faire un tour au marché : tu y verras des aliments que tu ne connais pas, et beaucoup de ceux que tu connais coûtent ici une fortune. Regardons pourquoi."
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "fr",
+        "titre": "Le frigo en France"
+       },
+       {
+        "id": "ml",
+        "titre": "Le frigo au Mali"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pain de mie",
+        "col": "fr"
+       },
+       {
+        "txt": "Pâtes",
+        "col": "fr"
+       },
+       {
+        "txt": "Fromage",
+        "col": "fr"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "fr"
+       },
+       {
+        "txt": "Pomme",
+        "col": "fr"
+       },
+       {
+        "txt": "Carotte",
+        "col": "fr"
+       },
+       {
+        "txt": "Millet",
+        "col": "ml"
+       },
+       {
+        "txt": "Riz",
+        "col": "ml"
+       },
+       {
+        "txt": "Arachides",
+        "col": "ml"
+       },
+       {
+        "txt": "Haricots rouges",
+        "col": "ml"
+       },
+       {
+        "txt": "Gombo",
+        "col": "ml"
+       },
+       {
+        "txt": "Mangue",
+        "col": "ml"
+       }
+      ],
+      "consigne": "Aminata a mélangé le contenu de deux frigos, un en France, un au Mali. Au Mali, on consomme surtout ce qui est produit sur place ; les produits importés sont rares et chers. Range chaque aliment dans son frigo.",
+      "indices": [
+       "Un produit importé coûte très cher au Mali : il est rare dans un frigo.",
+       "Le riz, le millet et les arachides poussent en Afrique de l'Ouest.",
+       "Six aliments dans chaque frigo."
+      ],
+      "dialogue": "Bienvenue à Bamako, au Mali. Je suis Aminata. Pour te remettre de ton long voyage, viens faire un tour au marché : tu y verras des aliments que tu ne connais pas, et beaucoup de ceux que tu connais coûtent ici une fortune. Regardons pourquoi."
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "fr",
+        "titre": "Le frigo en France"
+       },
+       {
+        "id": "ml",
+        "titre": "Le frigo au Mali"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pain de mie",
+        "col": "fr"
+       },
+       {
+        "txt": "Fromage",
+        "col": "fr"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "fr"
+       },
+       {
+        "txt": "Millet",
+        "col": "ml"
+       },
+       {
+        "txt": "Arachides",
+        "col": "ml"
+       },
+       {
+        "txt": "Mangue",
+        "col": "ml"
+       }
+      ],
+      "consigne": "Aminata a mélangé le contenu de deux frigos. Range chaque aliment dans le bon frigo.",
+      "indices": [
+       "Ouvre la fiche « Se nourrir ici et ailleurs ».",
+       "Au Mali, on mange ce qui est produit sur place.",
+       "Le fromage et le yaourt sont importés au Mali : ils sont rares et chers."
+      ],
+      "dialogue": "Bienvenue à Bamako, au Mali. Je suis Aminata. Pour te remettre de ton long voyage, viens faire un tour au marché : tu y verras des aliments que tu ne connais pas, et beaucoup de ceux que tu connais coûtent ici une fortune. Regardons pourquoi."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "le millet",
+        "rang": 1
+       },
+       {
+        "txt": "le riz",
+        "rang": 2
+       },
+       {
+        "txt": "la mangue",
+        "rang": 3
+       },
+       {
+        "txt": "le gombo",
+        "rang": 4
+       },
+       {
+        "txt": "les haricots",
+        "rang": 5
+       },
+       {
+        "txt": "les arachides",
+        "rang": 6
+       }
+      ],
+      "consigne": "Aminata relève les prix au kilo des produits locaux du marché de Bamako. Range-les du moins cher au plus cher, puis choisis la phrase de la fiche qui dit ce que l'on mange surtout au Mali.<div class=\"doc-titre\"><i>Prix au kilo des produits locaux du marché de Bamako (en euros)</i></div><table class=\"tableau-releves\"><tr><th>Gombo</th><th>Millet</th><th>Arachides</th><th>Riz</th><th>Haricots</th><th>Mangue</th></tr><tr><td>1,22</td><td>0,76</td><td>1,52</td><td>0,91</td><td>1,37</td><td>1,06</td></tr></table>",
+      "indices": [
+       "Le millet coûte le moins : 0,76 €.",
+       "Les arachides coûtent le plus : 1,52 €.",
+       "Pour la justification : cherche « produit sur place »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce que l'on mange surtout au Mali ?",
+       "options": [
+        "Les aliments importés, comme les pâtes, le fromage ou le yaourt, coûtent très cher au Mali : un kilo de pâtes importées vaut environ cinq fois le prix d'un kilo de millet.",
+        "Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots, le gombo et la mangue.",
+        "Peu de familles maliennes possèdent un réfrigérateur, ce qui limite la conservation de la viande et du poisson.",
+        "En France, un budget de 25 € permet d'acheter une grande variété d'aliments ; au Mali, une famille dispose souvent de moins de 10 € pour la même semaine."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Bienvenue à Bamako, au Mali. Je suis Aminata. Pour te remettre de ton long voyage, viens faire un tour au marché : tu y verras des aliments que tu ne connais pas, et beaucoup de ceux que tu connais coûtent ici une fortune. Regardons pourquoi."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "geo",
+        "titre": "La géographie et le climat"
+       },
+       {
+        "id": "rev",
+        "titre": "Les revenus"
+       },
+       {
+        "id": "con",
+        "titre": "La conservation des aliments"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pas d'accès à la mer",
+        "col": "geo"
+       },
+       {
+        "txt": "Saison des pluies courte",
+        "col": "geo"
+       },
+       {
+        "txt": "Climat chaud et sec",
+        "col": "geo"
+       },
+       {
+        "txt": "Les produits importés coûtent très cher",
+        "col": "rev"
+       },
+       {
+        "txt": "Un budget de moins de 10 € pour la semaine",
+        "col": "rev"
+       },
+       {
+        "txt": "Peu de familles ont un réfrigérateur",
+        "col": "con"
+       },
+       {
+        "txt": "La viande et le poisson se gâtent vite",
+        "col": "con"
+       }
+      ],
+      "consigne": "Aminata classe les causes de ce que tu vois au marché. Range chaque cause selon son origine, puis choisis la phrase de la fiche sur le réfrigérateur.",
+      "indices": [
+       "Le Mali est enclavé : il n'a pas de côte.",
+       "Le prix des produits importés relève des revenus.",
+       "Pour la justification : cherche « réfrigérateur »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du réfrigérateur ?",
+       "options": [
+        "Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots, le gombo et la mangue.",
+        "En France, un budget de 25 € permet d'acheter une grande variété d'aliments ; au Mali, une famille dispose souvent de moins de 10 € pour la même semaine.",
+        "Peu de familles maliennes possèdent un réfrigérateur, ce qui limite la conservation de la viande et du poisson.",
+        "Le Mali est un pays enclavé, sans accès à la mer : le poisson de mer y est rare et cher."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Bienvenue à Bamako, au Mali. Je suis Aminata. Pour te remettre de ton long voyage, viens faire un tour au marché : tu y verras des aliments que tu ne connais pas, et beaucoup de ceux que tu connais coûtent ici une fortune. Regardons pourquoi."
+     }
+    },
+    {
+     "id": "e9-2",
+     "escale": 9,
+     "ordre": 2,
+     "titre": "Pourquoi si peu de poisson ?",
+     "decor": "bamako-marche",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aminata",
+     "probleme_narratif": "Aminata te montre un étal presque vide et te demande ce qui manque, et pourquoi.",
+     "enjeu": "Si tu ne comprends pas pourquoi l'étal est vide, tu prendras les habitants pour ce qu'ils ne sont pas.",
+     "episode_du_roman": "Séance 9 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Comparer l'alimentation dans un pays riche et dans un pays pauvre",
+     "pourquoi_ce_savoir_ici": "La séance « Bamako — Les pratiques alimentaires » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les causes s'affichent une à une sur l'ardoise de l'étal."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l09",
+     "type": "qcm",
+     "niveau_variantes": "Découverte (vraifaux) ; Agent CM1 (qcm) ; Agent CM2 (qcm) ; Géographe (trous) ; Chef de mission (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Le Mali est un pays enclavé, sans accès à la mer : le poisson de mer y est rare et cher. Le climat est chaud et sec et la saison des pluies est courte : les cultures sont peu variées. Peu de familles possèdent un réfrigérateur, ce qui limite la conservation de la viande et du poisson. Les produits importés coûtent très cher.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Il y a peu de poisson de mer sur le marché de Bamako. Pourquoi ?",
+        "options": [
+         "le Mali est un pays enclavé, sans accès à la mer",
+         "les Maliens n'aiment pas le poisson",
+         "il n'y a pas de marché pour le poisson"
+        ],
+        "bonne": 0,
+        "explication": "Le Mali n'a pas de côte : le poisson de mer y est rare et cher."
+       },
+       {
+        "q": "Pourquoi les pâtes importées sont-elles rares sur les étals ?",
+        "options": [
+         "elles coûtent très cher pour une famille malienne",
+         "elles sont interdites au Mali",
+         "elles poussent seulement en France"
+        ],
+        "bonne": 0,
+        "explication": "Un kilo de pâtes importées vaut environ cinq fois le prix d'un kilo de millet."
+       },
+       {
+        "q": "Pourquoi est-il difficile de garder la viande et le poisson ?",
+        "options": [
+         "peu de familles ont un réfrigérateur",
+         "il fait trop froid",
+         "on les mange toujours crus"
+        ],
+        "bonne": 0,
+        "explication": "Sans réfrigérateur, ils se conservent mal."
+       }
+      ],
+      "consigne": "Aminata s'étonne : sur le marché, il y a peu de poisson, peu de bœuf et peu de variété de fruits et de légumes. Aide-la à comprendre pourquoi.",
+      "indices": [
+       "Regarde une carte : le Mali est loin de toute mer.",
+       "Sans frigo, la viande ne se garde pas.",
+       "Relis ce que dit Aminata sur le marché."
+      ],
+      "dialogue": "Regarde cet étal : peu de poisson, peu de bœuf, peu de variété. Cherchons pourquoi."
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Il y a peu de poisson de mer sur le marché de Bamako. Pourquoi ?",
+        "options": [
+         "le Mali est un pays enclavé, sans accès à la mer",
+         "les Maliens n'aiment pas le poisson",
+         "il n'y a pas de marché pour le poisson",
+         "la pêche est interdite"
+        ],
+        "bonne": 0,
+        "explication": "Le Mali n'a pas de côte : le poisson de mer y est rare et cher."
+       },
+       {
+        "q": "Pourquoi y a-t-il peu de variété de fruits et de légumes ?",
+        "options": [
+         "le climat est chaud et sec, la saison des pluies est courte",
+         "le sol est gelé toute l'année",
+         "les fruits y sont interdits",
+         "on n'y cultive rien"
+        ],
+        "bonne": 0,
+        "explication": "Les cultures y sont peu variées."
+       },
+       {
+        "q": "Pourquoi la viande et le poisson se conservent-ils mal ?",
+        "options": [
+         "peu de familles possèdent un réfrigérateur",
+         "ils ne se mangent jamais cuits",
+         "il fait trop froid",
+         "ils sont trop salés"
+        ],
+        "bonne": 0,
+        "explication": "Sans froid, la viande et le poisson se gâtent vite."
+       },
+       {
+        "q": "Pourquoi les familles achètent-elles surtout des produits locaux ?",
+        "options": [
+         "les produits importés coûtent très cher",
+         "les produits locaux sont gratuits",
+         "les produits importés sont interdits",
+         "elles n'aiment pas le fromage"
+        ],
+        "bonne": 0,
+        "explication": "Les revenus sont faibles : un kilo de pâtes importées vaut environ cinq fois un kilo de millet."
+       }
+      ],
+      "consigne": "Aminata te demande d'expliquer ce que tu vois sur le marché : peu de poisson, peu de bœuf, peu de variété de fruits et de légumes. Cherche les causes, une par question.",
+      "indices": [
+       "Le Mali n'a pas de côte.",
+       "Un climat très sec limite les cultures.",
+       "Les importations coûtent cher ; peu de familles ont un frigo."
+      ],
+      "dialogue": "Regarde cet étal : peu de poisson, peu de bœuf, peu de variété. Cherchons pourquoi."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Au Mali, on mange surtout ce qui est produit sur place.",
+        "vrai": true,
+        "explication": "Le millet, le riz et la mangue poussent là-bas."
+       },
+       {
+        "txt": "Les pâtes importées coûtent moins cher que le millet.",
+        "vrai": false,
+        "explication": "Un kilo de pâtes importées vaut environ cinq fois le prix d'un kilo de millet."
+       },
+       {
+        "txt": "Au Mali, presque toutes les familles ont un réfrigérateur.",
+        "vrai": false,
+        "explication": "Peu de familles en possèdent un."
+       }
+      ],
+      "consigne": "Aminata te raconte ce qu'elle a vu au marché. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « Se nourrir ici et ailleurs ».",
+       "Ce qui vient de loin coûte plus cher.",
+       "Sans réfrigérateur, la viande ne se garde pas."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "trous",
+      "texte": "<p>Au Mali, on mange surtout ce qui est [[produit]] sur place : le [[millet]], le riz, les [[arachides]]. Les aliments [[importés]] coûtent très cher.</p>",
+      "etiquettes": [
+       "produit",
+       "millet",
+       "arachides",
+       "importés",
+       "congelés",
+       "gratuits"
+      ],
+      "consigne": "Complète le carnet d'Aminata (deux mots sont des intrus), puis choisis la phrase de la fiche qui dit de quoi dépendent les pratiques alimentaires.",
+      "indices": [
+       "Les produits importés viennent d'un autre pays.",
+       "Le millet et les arachides poussent sur place.",
+       "Pour la justification : cherche « surtout des revenus »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit de quoi dépendent les pratiques alimentaires ?",
+       "options": [
+        "La sous-alimentation, c'est le fait de ne pas manger assez pour couvrir ses besoins.",
+        "En France, un budget de 25 € permet d'acheter une grande variété d'aliments ; au Mali, une famille dispose souvent de moins de 10 € pour la même semaine.",
+        "Les pratiques alimentaires, c'est-à-dire la manière de se nourrir, dépendent du climat, des cultures locales, des habitudes et surtout des revenus.",
+        "Peu de familles maliennes possèdent un réfrigérateur, ce qui limite la conservation de la viande et du poisson."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Qu'est-ce que la sous-alimentation ?",
+        "options": [
+         "ne pas manger assez pour couvrir ses besoins",
+         "manger trop de sucre",
+         "ne manger que des produits importés",
+         "manger uniquement du poisson"
+        ],
+        "bonne": 0,
+        "explication": "C'est manger trop peu pour couvrir ses besoins."
+       },
+       {
+        "q": "Quelle région du monde est surtout touchée par la sous-alimentation ?",
+        "options": [
+         "l'Afrique subsaharienne",
+         "l'Europe de l'Ouest",
+         "l'Océanie",
+         "le Japon"
+        ],
+        "bonne": 0,
+        "explication": "Comme le Tchad, le Soudan et Madagascar."
+       },
+       {
+        "q": "Quelle part de la population française est sous-alimentée ?",
+        "options": [
+         "moins de 2,5 %",
+         "environ 25 %",
+         "la moitié",
+         "un tiers"
+        ],
+        "bonne": 0,
+        "explication": "Moins de 2,5 %, comme aux États-Unis."
+       },
+       {
+        "q": "Que montre la comparaison des budgets (25 € en France, moins de 10 € au Mali) ?",
+        "options": [
+         "les revenus influencent beaucoup ce que l'on mange",
+         "tout le monde mange la même chose",
+         "le Mali est plus riche que la France",
+         "le prix n'a aucun effet"
+        ],
+        "bonne": 0,
+        "explication": "Les pratiques alimentaires dépendent surtout des revenus."
+       }
+      ],
+      "consigne": "Aminata prépare son rapport. Réponds à ses questions, puis choisis la phrase de la fiche qui cite les pays touchés par la sous-alimentation.",
+      "indices": [
+       "La sous-alimentation, c'est manger trop peu.",
+       "Le Tchad et Madagascar sont en Afrique.",
+       "Pour la justification : cherche « Soudan »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les pays touchés par la sous-alimentation ?",
+       "options": [
+        "La sous-alimentation, c'est le fait de ne pas manger assez pour couvrir ses besoins.",
+        "En France et aux États-Unis, elle concerne moins de 2,5 % de la population.",
+        "Les pratiques alimentaires, c'est-à-dire la manière de se nourrir, dépendent du climat, des cultures locales, des habitudes et surtout des revenus.",
+        "Elle touche surtout l'Afrique subsaharienne, comme le Tchad, le Soudan et Madagascar, et certains pays comme Haïti."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     }
+    },
+    {
+     "id": "e9-3",
+     "escale": 9,
+     "ordre": 3,
+     "titre": "Le budget de la famille C",
+     "decor": "bamako-marche",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aminata",
+     "probleme_narratif": "Aminata te demande de calculer la dépense d'une famille malienne devant l'ardoise.",
+     "enjeu": "Sans lire les prix, on ne comprend pas ce qu'une famille peut acheter avec 8 €.",
+     "episode_du_roman": "Séance 9 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Comparer l'alimentation dans un pays riche et dans un pays pauvre",
+     "pourquoi_ce_savoir_ici": "La séance « Bamako — Les pratiques alimentaires » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "La craie s'efface et le total s'inscrit en bas de l'ardoise."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l09",
+     "type": "code",
+     "niveau_variantes": "Découverte (qcm) ; Agent CM1 (code) ; Agent CM2 (code) ; Géographe (code) ; Chef de mission (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La famille C dépense 3,81 + 2,29 + 1,22 = 7,32 €, soit 732 centimes. Il lui reste 8 − 7,32 = 0,68 €, soit 68 centimes. Avec 8 € (800 centimes), elle aurait pu acheter 10 kg de millet (800 ÷ 76 ≈ 10,5, donc 10 kilos entiers). La famille A est environ 3 fois plus riche (25 ÷ 8 ≈ 3,1).",
+     "matelot": {
+      "champs": [
+       {
+        "libelle": "Dépense de la famille C (centimes)",
+        "valeur": "732",
+        "longueur": 3
+       },
+       {
+        "libelle": "Il lui reste (centimes)",
+        "valeur": "68",
+        "longueur": 2
+       },
+       {
+        "libelle": "Kilos de millet pour 8 € (nombre entier)",
+        "valeur": "10",
+        "longueur": 2
+       }
+      ],
+      "consigne": "La famille C, au Mali, dispose de 8 €. Elle achète 1 kg de pâtes importées, 100 g de fromage importé et 1 yaourt importé. Calcule en centimes (1 € = 100 centimes), puis ouvre le cadenas.<div class=\"doc-titre\"><i>Les prix au marché de Bamako (en euros)</i></div><table class=\"tableau-releves\"><tr><th>Produit local</th><th>Prix</th><th>Produit importé</th><th>Prix</th></tr><tr><td>Millet (1 kg)</td><td>0,76</td><td>Pain (1 pièce)</td><td>0,46</td></tr><tr><td>Riz (1 kg)</td><td>0,91</td><td>Pâtes importées (1 kg)</td><td>3,81</td></tr><tr><td>Arachides (1 kg)</td><td>1,52</td><td>Fromage importé (100 g)</td><td>2,29</td></tr><tr><td>Haricots (1 kg)</td><td>1,37</td><td>Yaourt importé (1 pot)</td><td>1,22</td></tr><tr><td>Gombo (1 kg)</td><td>1,22</td><td>Pomme importée (1 pièce)</td><td>1,52</td></tr><tr><td>Mangue (1 kg)</td><td>1,06</td><td>Carotte (1 kg)</td><td>1,06</td></tr></table>",
+      "indices": [
+       "3,81 € = 381 centimes ; 2,29 € = 229 centimes ; 1,22 € = 122 centimes.",
+       "800 − le total des dépenses.",
+       "Un kilo de millet coûte 76 centimes : 800 ÷ 76, en gardant les kilos entiers."
+      ],
+      "dialogue": "Voici les prix du jour. Calcule ce que dépense la famille C."
+     },
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Dépense de la famille C (centimes)",
+        "valeur": "732",
+        "longueur": 3
+       },
+       {
+        "libelle": "Il lui reste (centimes)",
+        "valeur": "68",
+        "longueur": 2
+       },
+       {
+        "libelle": "Kilos de millet pour 8 € (nombre entier)",
+        "valeur": "10",
+        "longueur": 2
+       },
+       {
+        "libelle": "La famille A est environ … fois plus riche (arrondi à l'unité)",
+        "valeur": "3",
+        "longueur": 1
+       }
+      ],
+      "consigne": "La famille C (Mali) dispose de 8 €, la famille A (France) de 25 €. La famille C achète 1 kg de pâtes importées, 100 g de fromage importé et 1 yaourt importé. Calcule en centimes (1 € = 100 centimes), puis ouvre le cadenas.<div class=\"doc-titre\"><i>Les prix au marché de Bamako (en euros)</i></div><table class=\"tableau-releves\"><tr><th>Produit local</th><th>Prix</th><th>Produit importé</th><th>Prix</th></tr><tr><td>Millet (1 kg)</td><td>0,76</td><td>Pain (1 pièce)</td><td>0,46</td></tr><tr><td>Riz (1 kg)</td><td>0,91</td><td>Pâtes importées (1 kg)</td><td>3,81</td></tr><tr><td>Arachides (1 kg)</td><td>1,52</td><td>Fromage importé (100 g)</td><td>2,29</td></tr><tr><td>Haricots (1 kg)</td><td>1,37</td><td>Yaourt importé (1 pot)</td><td>1,22</td></tr><tr><td>Gombo (1 kg)</td><td>1,22</td><td>Pomme importée (1 pièce)</td><td>1,52</td></tr><tr><td>Mangue (1 kg)</td><td>1,06</td><td>Carotte (1 kg)</td><td>1,06</td></tr></table>",
+      "indices": [
+       "Additionne 381 + 229 + 122.",
+       "Le reste : 800 centimes moins la dépense.",
+       "25 ÷ 8 donne un peu plus de 3 : arrondis à l'unité."
+      ],
+      "dialogue": "Voici les prix du jour. Calcule ce que dépense la famille C."
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quel produit coûte le moins cher ?",
+        "options": [
+         "le millet",
+         "les pâtes importées",
+         "le même prix"
+        ],
+        "bonne": 0,
+        "explication": "0,76 € est plus petit que 3,81 €."
+       },
+       {
+        "q": "La famille A (France) a 25 € et la famille C (Mali) a 8 €. Quelle famille a le plus d'argent ?",
+        "options": [
+         "la famille A",
+         "la famille C",
+         "la même somme"
+        ],
+        "bonne": 0,
+        "explication": "25 € est plus grand que 8 €."
+       }
+      ],
+      "consigne": "Aminata compare des prix. Un kilo de pâtes importées coûte 3,81 € et un kilo de millet 0,76 €.",
+      "indices": [
+       "Ouvre la fiche « Se nourrir ici et ailleurs ».",
+       "Compare 3,81 et 0,76.",
+       "Compare 25 et 8."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Dépense de la famille C (centimes)",
+        "valeur": "732",
+        "longueur": 3
+       },
+       {
+        "libelle": "Il lui reste sur 8 € (centimes)",
+        "valeur": "68",
+        "longueur": 2
+       },
+       {
+        "libelle": "Kilos de millet pour 8 € (nombre entier)",
+        "valeur": "10",
+        "longueur": 2
+       }
+      ],
+      "consigne": "La famille C (8 €) achète 1 kg de pâtes importées, 100 g de fromage importé et 1 yaourt importé. Calcule en centimes (1 € = 100 centimes), puis choisis la phrase de la fiche qui compare les pâtes importées et le millet.<div class=\"doc-titre\"><i>Prix au marché de Bamako (en euros)</i></div><table class=\"tableau-releves\"><tr><th>Produit</th><th>Prix</th></tr><tr><td>Millet (1 kg)</td><td>0,76</td></tr><tr><td>Pâtes importées (1 kg)</td><td>3,81</td></tr><tr><td>Fromage importé (100 g)</td><td>2,29</td></tr><tr><td>Yaourt importé (1 pot)</td><td>1,22</td></tr></table>",
+      "indices": [
+       "381 + 229 + 122.",
+       "800 moins la dépense.",
+       "800 ÷ 76, en gardant les kilos entiers. Pour la justification : cherche « cinq fois »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche compare le prix des pâtes importées et celui du millet ?",
+       "options": [
+        "Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots, le gombo et la mangue.",
+        "En France, un budget de 25 € permet d'acheter une grande variété d'aliments ; au Mali, une famille dispose souvent de moins de 10 € pour la même semaine.",
+        "Les aliments importés, comme les pâtes, le fromage ou le yaourt, coûtent très cher au Mali : un kilo de pâtes importées vaut environ cinq fois le prix d'un kilo de millet.",
+        "La sous-alimentation, c'est le fait de ne pas manger assez pour couvrir ses besoins."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Dépense de la famille C (centimes)",
+        "valeur": "732",
+        "longueur": 3
+       },
+       {
+        "libelle": "Il lui reste sur 8 € (centimes)",
+        "valeur": "68",
+        "longueur": 2
+       },
+       {
+        "libelle": "Euros de plus pour la famille A que pour la famille C",
+        "valeur": "17",
+        "longueur": 2
+       },
+       {
+        "libelle": "La famille A est environ … fois plus riche (arrondi à l'unité)",
+        "valeur": "3",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Un kilo de pâtes importées (3,81 €), 100 g de fromage importé (2,29 €) et un yaourt importé (1,22 €) : calcule en centimes ce que dépense la famille C (8 €), puis compare avec la famille A (25 €). Choisis ensuite la phrase de la fiche qui parle de ces budgets.",
+      "indices": [
+       "381 + 229 + 122.",
+       "25 − 8.",
+       "25 ÷ 8 donne un peu plus de 3. Pour la justification : cherche « 25 € »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche compare les budgets de la France et du Mali ?",
+       "options": [
+        "En France, un budget de 25 € permet d'acheter une grande variété d'aliments ; au Mali, une famille dispose souvent de moins de 10 € pour la même semaine.",
+        "Les aliments importés, comme les pâtes, le fromage ou le yaourt, coûtent très cher au Mali : un kilo de pâtes importées vaut environ cinq fois le prix d'un kilo de millet.",
+        "Peu de familles maliennes possèdent un réfrigérateur, ce qui limite la conservation de la viande et du poisson.",
+        "Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots, le gombo et la mangue."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     }
+    },
+    {
+     "id": "e9-4",
+     "escale": 9,
+     "ordre": 4,
+     "titre": "Qui ne mange pas assez ?",
+     "decor": "bamako-marche",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "aminata",
+     "probleme_narratif": "Aminata te montre la carte de la sous-alimentation et attend tes conclusions.",
+     "enjeu": "Pour comprendre le monde, il faut savoir où l'on mange assez, et où l'on ne mange pas assez.",
+     "episode_du_roman": "Séance 9 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Comparer l'alimentation dans un pays riche et dans un pays pauvre",
+     "pourquoi_ce_savoir_ici": "La séance « Bamako — Les pratiques alimentaires » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les pays les plus foncés se détachent sur la carte."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l09",
+     "type": "vraifaux",
+     "niveau_variantes": "Agent CM2 (vraifaux) ; Géographe (tri) ; Chef de mission (plan). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La sous-alimentation touche surtout l'Afrique subsaharienne (Tchad, Soudan, Madagascar) et certains pays comme Haïti, une île des Caraïbes qui appartient à l'Amérique du Nord. En France et aux États-Unis, elle concerne moins de 2,5 % de la population. Au Mali, on mange surtout ce qui est produit sur place.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "affirmations": [
+       {
+        "txt": "En France, la sous-alimentation concerne moins de 2,5 % de la population.",
+        "vrai": true,
+        "explication": "C'est aussi le cas aux États-Unis."
+       },
+       {
+        "txt": "Haïti est un pays d'Amérique du Sud.",
+        "vrai": false,
+        "explication": "Haïti est une île des Caraïbes : elle appartient à l'Amérique du Nord."
+       },
+       {
+        "txt": "La sous-alimentation touche surtout l'Afrique subsaharienne.",
+        "vrai": true,
+        "explication": "Le Tchad, le Soudan et Madagascar en font partie."
+       },
+       {
+        "txt": "Le Tchad est un pays d'Europe.",
+        "vrai": false,
+        "explication": "Le Tchad est en Afrique."
+       },
+       {
+        "txt": "Au Mali, on mange surtout des produits importés.",
+        "vrai": false,
+        "explication": "On y mange surtout ce qui est produit sur place."
+       }
+      ],
+      "consigne": "Aminata te montre la carte de la sous-alimentation, qui indique la part de la population qui ne mange pas assez. Pour chaque phrase, choisis « Vrai » ou « Faux ».",
+      "indices": [
+       "Haïti est une île des Caraïbes.",
+       "Le Tchad est en Afrique, pas en Europe.",
+       "Relis ce que dit Aminata sur la France."
+      ],
+      "dialogue": "Lis cette carte avec soin : certaines phrases cachent des pièges."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "fa",
+        "titre": "Moins de 2,5 % de la population"
+       },
+       {
+        "id": "fo",
+        "titre": "Beaucoup plus de personnes touchées"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la France",
+        "col": "fa"
+       },
+       {
+        "txt": "les États-Unis",
+        "col": "fa"
+       },
+       {
+        "txt": "le Tchad",
+        "col": "fo"
+       },
+       {
+        "txt": "Madagascar",
+        "col": "fo"
+       },
+       {
+        "txt": "Haïti",
+        "col": "fo"
+       },
+       {
+        "txt": "le Soudan",
+        "col": "fo"
+       }
+      ],
+      "consigne": "Aminata te donne des pays. Range chacun selon la part de sa population qui ne mange pas assez, puis choisis la phrase de la fiche sur la France et les États-Unis.",
+      "indices": [
+       "Deux pays riches, quatre pays où la sous-alimentation est forte.",
+       "Haïti est une île des Caraïbes.",
+       "Pour la justification : cherche « moins de 2,5 % »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la France et des États-Unis ?",
+       "options": [
+        "Elle touche surtout l'Afrique subsaharienne, comme le Tchad, le Soudan et Madagascar, et certains pays comme Haïti.",
+        "En France et aux États-Unis, elle concerne moins de 2,5 % de la population.",
+        "La sous-alimentation, c'est le fait de ne pas manger assez pour couvrir ses besoins.",
+        "En France, un budget de 25 € permet d'acheter une grande variété d'aliments ; au Mali, une famille dispose souvent de moins de 10 € pour la même semaine."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "plan",
+      "titre": "Le planisphère d'Aminata",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La France"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "Les États-Unis"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Haïti"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Tchad"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Le Mali"
+       }
+      ],
+      "etiquettes": [
+       "La France",
+       "Les États-Unis",
+       "Haïti",
+       "Le Tchad",
+       "Le Mali",
+       "L'Inde"
+      ],
+      "consigne": "Place les cinq pays sur leur repère (une étiquette est en trop), puis choisis la phrase de la fiche qui cite des pays où la sous-alimentation est forte.<svg viewBox=\"0 0 1000 500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"Le planisphère d'Aminata\"><rect x=\"0\" y=\"0\" width=\"1000\" height=\"500\" fill=\"#bfe0f2\"/><line x1=\"0\" y1=\"250\" x2=\"1000\" y2=\"250\" stroke=\"#4a6b8c\" stroke-dasharray=\"8 6\" stroke-width=\"1.5\"/><text x=\"8\" y=\"245\" font-size=\"13\" fill=\"#3a5a7c\" font-style=\"italic\">équateur</text><path data-continent=\"amerique-nord\" d=\"M33,67 L111,83 L153,114 L175,161 L208,194 L231,206 L269,222 L278,181 L292,153 L317,125 L347,119 L333,89 L292,61 L236,50 L153,56 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"amerique-sud\" d=\"M278,228 L306,217 L333,236 L361,250 L403,267 L394,300 L367,319 L339,347 L319,375 L306,397 L292,375 L303,333 L306,300 L286,264 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"europe\" d=\"M472,150 L500,128 L528,144 L556,139 L578,136 L583,125 L611,117 L611,83 L583,67 L569,53 L528,75 L514,83 L486,111 L472,131 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"afrique\" d=\"M453,208 L500,208 L542,189 L589,164 L597,194 L619,217 L642,217 L617,256 L611,292 L597,311 L569,344 L550,344 L533,300 L522,239 L486,236 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"asie\" d=\"M611,117 L667,97 L722,83 L778,50 L889,50 L1000,67 L1000,97 L944,111 L889,125 L875,153 L839,167 L833,189 L792,222 L764,236 L722,228 L700,194 L667,181 L639,172 L619,217 L597,194 L589,164 L583,125 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"oceanie\" d=\"M814,311 L858,283 L894,281 L906,303 L917,319 L925,328 L917,356 L889,356 L858,339 L819,344 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><path data-continent=\"antarctique\" d=\"M80,468 L200,452 L340,462 L470,450 L600,462 L740,452 L900,470 L920,500 L60,500 Z\" fill=\"#e7dfc6\" stroke=\"#8a7f5f\" stroke-width=\"1.5\"/><circle cx='525' cy='110' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='525' y='116' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='200' cy='150' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='156' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='290' cy='185' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='290' y='191' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='560' cy='220' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='560' y='226' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='495' cy='222' r='14' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='495' y='228' text-anchor='middle' font-size='17' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text></svg>",
+      "indices": [
+       "L'Inde est en Asie : aucun repère n'y est placé.",
+       "Haïti est une île, à l'est de l'Amérique centrale.",
+       "Pour la justification : cherche « Madagascar »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite des pays où la sous-alimentation est forte ?",
+       "options": [
+        "En France et aux États-Unis, elle concerne moins de 2,5 % de la population.",
+        "La sous-alimentation, c'est le fait de ne pas manger assez pour couvrir ses besoins.",
+        "Elle touche surtout l'Afrique subsaharienne, comme le Tchad, le Soudan et Madagascar, et certains pays comme Haïti.",
+        "Au Mali, on mange surtout ce qui est produit sur place : le millet, le riz, les arachides, les haricots, le gombo et la mangue."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Voici mon schéma. Placez chaque étiquette au bon endroit."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 10,
+   "id": "la-cantine-produits-agricoles-et-transformes",
+   "titre": "Les produits consommés",
+   "lieu": "La cantine de l'école, à l'heure du déjeuner",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 3",
+   "episode": "Un réfectoire lumineux : de longues tables, des plateaux alignés, un comptoir en inox et, derrière, la cuisine où l'on voit des casseroles fumer.",
+   "scenarimage": "",
+   "mot": "TRANSFORMÉS",
+   "mot_origine": "Le mot-clé de la séance 10, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e10",
+   "cinematique_fin": "fin-e10",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e10-1",
+     "escale": 10,
+     "ordre": 1,
+     "titre": "Le plateau de la cantine",
+     "decor": "cantine-ecole",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "camille",
+     "probleme_narratif": "Camille te tend le plateau du jour et te demande d'en faire le tri.",
+     "enjeu": "Chaque aliment a une origine : savoir laquelle, c'est savoir d'où il vient.",
+     "episode_du_roman": "Séance 10 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Distinguer un produit agricole d'un produit transformé",
+     "pourquoi_ce_savoir_ici": "La séance « La cantine — Produits agricoles et transformés » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les aliments se rangent dans deux paniers, l'un vert, l'autre bleu."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l10",
+     "type": "tri",
+     "niveau_variantes": "Découverte (tri) ; Agent CM1 (tri) ; Agent CM2 (tri) ; Géographe (tri) ; Chef de mission (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La pomme, les haricots verts, les carottes, le poulet et la salade sont des produits agricoles : ils viennent directement de la nature. Le yaourt, le pain et le cookie sont des produits transformés, fabriqués à partir de produits agricoles.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "agri",
+        "titre": "Produits agricoles (viennent directement de la nature)"
+       },
+       {
+        "id": "trans",
+        "titre": "Produits transformés (fabriqués)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pomme",
+        "col": "agri"
+       },
+       {
+        "txt": "Haricots verts",
+        "col": "agri"
+       },
+       {
+        "txt": "Carottes",
+        "col": "agri"
+       },
+       {
+        "txt": "Poulet",
+        "col": "agri"
+       },
+       {
+        "txt": "Salade",
+        "col": "agri"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "trans"
+       },
+       {
+        "txt": "Pain",
+        "col": "trans"
+       },
+       {
+        "txt": "Cookie",
+        "col": "trans"
+       }
+      ],
+      "consigne": "Camille, la cheffe de la cantine, te présente le plateau du jour. Range chaque aliment : vient-il directement de la nature, ou a-t-il été fabriqué ?",
+      "indices": [
+       "Une pomme se cueille sur un arbre.",
+       "Le pain est fabriqué à partir du blé.",
+       "Il y a 5 produits agricoles et 3 produits transformés."
+      ],
+      "dialogue": "Salut, je suis Camille, la cheffe de la cantine. On t'a placé ici comme aide pour quelques jours : le temps de réfléchir aux indices déjà récupérés. En cuisine, on se pose toujours la même question : d'où vient chaque aliment du plateau ?"
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "agri",
+        "titre": "Produits agricoles (viennent directement de la nature)"
+       },
+       {
+        "id": "trans",
+        "titre": "Produits transformés (fabriqués à partir de produits agricoles)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pomme",
+        "col": "agri"
+       },
+       {
+        "txt": "Haricots verts",
+        "col": "agri"
+       },
+       {
+        "txt": "Carottes",
+        "col": "agri"
+       },
+       {
+        "txt": "Poulet",
+        "col": "agri"
+       },
+       {
+        "txt": "Salade",
+        "col": "agri"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "trans"
+       },
+       {
+        "txt": "Pain",
+        "col": "trans"
+       },
+       {
+        "txt": "Cookie",
+        "col": "trans"
+       }
+      ],
+      "consigne": "Observe le plateau du jour et range chaque aliment dans le bon panier. Un produit transformé a été fabriqué à partir d'autre chose : le pain vient du blé.",
+      "indices": [
+       "Un produit transformé a été fabriqué par quelqu'un, dans un atelier ou une usine.",
+       "Le yaourt vient du lait.",
+       "Le cookie est fabriqué avec de la farine, du sucre, du beurre…"
+      ],
+      "dialogue": "Salut, je suis Camille, la cheffe de la cantine. On t'a placé ici comme aide pour quelques jours : le temps de réfléchir aux indices déjà récupérés. En cuisine, on se pose toujours la même question : d'où vient chaque aliment du plateau ?"
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "agri",
+        "titre": "Produits agricoles"
+       },
+       {
+        "id": "trans",
+        "titre": "Produits transformés"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Pomme",
+        "col": "agri"
+       },
+       {
+        "txt": "Haricots verts",
+        "col": "agri"
+       },
+       {
+        "txt": "Carottes",
+        "col": "agri"
+       },
+       {
+        "txt": "Poulet",
+        "col": "agri"
+       },
+       {
+        "txt": "Salade",
+        "col": "agri"
+       },
+       {
+        "txt": "Yaourt",
+        "col": "trans"
+       },
+       {
+        "txt": "Pain",
+        "col": "trans"
+       },
+       {
+        "txt": "Cookie",
+        "col": "trans"
+       }
+      ],
+      "consigne": "Camille te montre le plateau du jour. Range chaque aliment : vient-il directement de la nature, ou a-t-il été fabriqué ?",
+      "indices": [
+       "Ouvre la fiche « Produits agricoles et produits transformés ».",
+       "Une pomme se cueille sur un arbre.",
+       "Il y a cinq produits agricoles et trois produits transformés."
+      ],
+      "dialogue": "Salut, je suis Camille, la cheffe de la cantine. On t'a placé ici comme aide pour quelques jours : le temps de réfléchir aux indices déjà récupérés. En cuisine, on se pose toujours la même question : d'où vient chaque aliment du plateau ?"
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "agri",
+        "titre": "Produits agricoles"
+       },
+       {
+        "id": "trans",
+        "titre": "Produits transformés"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "un œuf",
+        "col": "agri"
+       },
+       {
+        "txt": "une carotte",
+        "col": "agri"
+       },
+       {
+        "txt": "du lait",
+        "col": "agri"
+       },
+       {
+        "txt": "du blé",
+        "col": "agri"
+       },
+       {
+        "txt": "du pain",
+        "col": "trans"
+       },
+       {
+        "txt": "du fromage",
+        "col": "trans"
+       },
+       {
+        "txt": "du chocolat",
+        "col": "trans"
+       },
+       {
+        "txt": "du sucre",
+        "col": "trans"
+       }
+      ],
+      "consigne": "Camille prépare ses commandes. Range chaque produit, puis choisis la phrase de la fiche qui définit un produit transformé.",
+      "indices": [
+       "Le pain est fabriqué avec le blé.",
+       "Le fromage est fabriqué avec le lait.",
+       "Pour la justification : cherche « atelier ou une usine »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit un produit transformé ?",
+       "options": [
+        "Un produit agricole vient directement de la nature : il est cultivé ou élevé, puis consommé presque tel quel, comme une pomme, une carotte, un œuf ou du lait.",
+        "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine.",
+        "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao.",
+        "Chaque aliment vient d'un espace de production et d'un métier."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Salut, je suis Camille, la cheffe de la cantine. On t'a placé ici comme aide pour quelques jours : le temps de réfléchir aux indices déjà récupérés. En cuisine, on se pose toujours la même question : d'où vient chaque aliment du plateau ?"
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "le poulet",
+        "d": "un élevage"
+       },
+       {
+        "g": "le pain (blé)",
+        "d": "un champ de céréales"
+       },
+       {
+        "g": "les carottes",
+        "d": "une exploitation maraîchère"
+       },
+       {
+        "g": "la pomme",
+        "d": "un verger"
+       }
+      ],
+      "consigne": "Chaque aliment du plateau vient d'un espace de production. Relie-les, puis choisis la phrase de la fiche qui parle des espaces de production.",
+      "indices": [
+       "Le poulet est élevé.",
+       "Les carottes sont des légumes.",
+       "Pour la justification : cherche « espace de production »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des espaces de production ?",
+       "options": [
+        "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine.",
+        "Un produit agricole vient directement de la nature : il est cultivé ou élevé, puis consommé presque tel quel, comme une pomme, une carotte, un œuf ou du lait.",
+        "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao.",
+        "Chaque aliment vient d'un espace de production et d'un métier."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Salut, je suis Camille, la cheffe de la cantine. On t'a placé ici comme aide pour quelques jours : le temps de réfléchir aux indices déjà récupérés. En cuisine, on se pose toujours la même question : d'où vient chaque aliment du plateau ?"
+     }
+    },
+    {
+     "id": "e10-2",
+     "escale": 10,
+     "ordre": 2,
+     "titre": "De la nature à l'assiette",
+     "decor": "cantine-ecole",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "camille",
+     "probleme_narratif": "Camille veut que tu retrouves de quel produit agricole vient chaque produit transformé.",
+     "enjeu": "Pour fabriquer un aliment, il faut connaître le produit dont il vient.",
+     "episode_du_roman": "Séance 10 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Distinguer un produit agricole d'un produit transformé",
+     "pourquoi_ce_savoir_ici": "La séance « La cantine — Produits agricoles et transformés » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Des flèches se tracent entre chaque produit et celui qu'il devient."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l10",
+     "type": "association",
+     "niveau_variantes": "Découverte (association) ; Agent CM1 (association) ; Agent CM2 (association) ; Géographe (qcm) ; Chef de mission (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Le raisin donne le jus de raisin, le lait le fromage, la tomate la sauce tomate, le blé le pain, le cacao le chocolat, la canne à sucre le sucre.",
+     "matelot": {
+      "paires": [
+       {
+        "g": "Raisin",
+        "d": "Jus de raisin"
+       },
+       {
+        "g": "Lait",
+        "d": "Fromage"
+       },
+       {
+        "g": "Tomate",
+        "d": "Sauce tomate"
+       },
+       {
+        "g": "Blé",
+        "d": "Pain"
+       },
+       {
+        "g": "Cacao",
+        "d": "Chocolat"
+       }
+      ],
+      "consigne": "Camille te demande de relier chaque produit agricole au produit transformé fabriqué à partir de lui : clique sur l'un, puis sur l'autre.",
+      "indices": [
+       "Le pain est fabriqué avec de la farine de blé.",
+       "Le fromage est fabriqué avec du lait.",
+       "Le chocolat vient des fèves d'un arbre tropical."
+      ],
+      "dialogue": "Voici mes recettes. Retrouve à partir de quoi on les fabrique."
+     },
+     "timonier": {
+      "paires": [
+       {
+        "g": "Raisin",
+        "d": "Jus de raisin"
+       },
+       {
+        "g": "Lait",
+        "d": "Fromage"
+       },
+       {
+        "g": "Tomate",
+        "d": "Sauce tomate"
+       },
+       {
+        "g": "Canne à sucre",
+        "d": "Sucre"
+       },
+       {
+        "g": "Blé",
+        "d": "Pain"
+       },
+       {
+        "g": "Cacao",
+        "d": "Chocolat"
+       }
+      ],
+      "consigne": "Relie chaque produit agricole au produit transformé fabriqué à partir de lui. Réfléchis à la matière première de chaque produit.",
+      "indices": [
+       "Le sucre vient d'une plante : la canne à sucre (ou la betterave).",
+       "Le cacao est la matière première du chocolat.",
+       "Le jus de raisin est du raisin pressé."
+      ],
+      "dialogue": "Voici mes recettes. Retrouve à partir de quoi on les fabrique."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "Lait",
+        "d": "Fromage"
+       },
+       {
+        "g": "Blé",
+        "d": "Pain"
+       },
+       {
+        "g": "Cacao",
+        "d": "Chocolat"
+       }
+      ],
+      "consigne": "Relie chaque produit agricole au produit transformé fabriqué à partir de lui.",
+      "indices": [
+       "Ouvre la fiche « Produits agricoles et produits transformés ».",
+       "Le pain est fabriqué avec le blé.",
+       "Le chocolat vient du cacao."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Le pain est fabriqué à partir de…",
+        "options": [
+         "blé",
+         "lait",
+         "cacao",
+         "tomate"
+        ],
+        "bonne": 0,
+        "explication": "La farine de blé fait le pain."
+       },
+       {
+        "q": "Le yaourt est fabriqué à partir de…",
+        "options": [
+         "lait",
+         "blé",
+         "raisin",
+         "betterave"
+        ],
+        "bonne": 0,
+        "explication": "Comme le fromage."
+       },
+       {
+        "q": "Le sucre est fabriqué à partir de la canne à sucre ou de…",
+        "options": [
+         "la betterave",
+         "la pomme de terre",
+         "la carotte",
+         "le maïs"
+        ],
+        "bonne": 0,
+        "explication": "Deux plantes donnent le sucre."
+       },
+       {
+        "q": "Le chocolat est fabriqué à partir du…",
+        "options": [
+         "cacao",
+         "café",
+         "blé",
+         "raisin"
+        ],
+        "bonne": 0,
+        "explication": "Le cacao pousse sur un arbre tropical."
+       }
+      ],
+      "consigne": "Camille te teste sur l'origine des produits. Réponds, puis choisis la phrase de la fiche qui donne des exemples de produits transformés.",
+      "indices": [
+       "Le pain vient du blé.",
+       "Le sucre a deux origines possibles.",
+       "Pour la justification : cherche « betterave »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche donne des exemples de produits transformés ?",
+       "options": [
+        "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao.",
+        "Un produit agricole vient directement de la nature : il est cultivé ou élevé, puis consommé presque tel quel, comme une pomme, une carotte, un œuf ou du lait.",
+        "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine.",
+        "Chaque aliment vient d'un espace de production et d'un métier."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "agri",
+        "titre": "Produits agricoles"
+       },
+       {
+        "id": "trans",
+        "titre": "Produits transformés"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "un yaourt nature",
+        "col": "trans"
+       },
+       {
+        "txt": "de la compote de pommes",
+        "col": "trans"
+       },
+       {
+        "txt": "un œuf",
+        "col": "agri"
+       },
+       {
+        "txt": "du jus de raisin",
+        "col": "trans"
+       },
+       {
+        "txt": "une salade",
+        "col": "agri"
+       },
+       {
+        "txt": "de la sauce tomate",
+        "col": "trans"
+       },
+       {
+        "txt": "des haricots verts",
+        "col": "agri"
+       },
+       {
+        "txt": "du lait",
+        "col": "agri"
+       }
+      ],
+      "consigne": "Camille te teste avec des produits plus difficiles. Range chacun, puis choisis la phrase de la fiche qui définit un produit agricole.",
+      "indices": [
+       "Le lait est du lait : il n'a pas été transformé.",
+       "La compote est fabriquée avec des pommes.",
+       "Pour la justification : cherche « presque tel quel »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit un produit agricole ?",
+       "options": [
+        "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine.",
+        "Chaque aliment vient d'un espace de production et d'un métier.",
+        "Un produit agricole vient directement de la nature : il est cultivé ou élevé, puis consommé presque tel quel, comme une pomme, une carotte, un œuf ou du lait.",
+        "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     }
+    },
+    {
+     "id": "e10-3",
+     "escale": 10,
+     "ordre": 3,
+     "titre": "Qui produit quoi ?",
+     "decor": "cantine-ecole",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "camille",
+     "probleme_narratif": "Camille t'emmène en pensée à la ferme de Bray et te pose des questions sur les métiers.",
+     "enjeu": "Sans savoir qui produit quoi, on ne sait pas qui remercier pour son assiette.",
+     "episode_du_roman": "Séance 10 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Distinguer un produit agricole d'un produit transformé",
+     "pourquoi_ce_savoir_ici": "La séance « La cantine — Produits agricoles et transformés » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Un métier s'inscrit sous chaque espace de production."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l10",
+     "type": "qcm",
+     "niveau_variantes": "Découverte (qcm) ; Agent CM1 (qcm) ; Agent CM2 (qcm) ; Géographe (association) ; Chef de mission (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "L'éleveur produit le poulet dans un élevage ; le maraîcher cultive les carottes et les haricots verts ; les pommes poussent dans un verger, qui est le domaine de l'arboriculteur ; le céréalier cultive le blé, dont on fait le pain. Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Qui s'occupe de l'élevage des poulets ?",
+        "options": [
+         "l'éleveur",
+         "le maraîcher",
+         "le céréalier"
+        ],
+        "bonne": 0,
+        "explication": "L'éleveur travaille dans un élevage."
+       },
+       {
+        "q": "Qui cultive les carottes et les haricots verts ?",
+        "options": [
+         "le maraîcher",
+         "l'éleveur",
+         "le céréalier"
+        ],
+        "bonne": 0,
+        "explication": "Le maraîcher cultive les légumes."
+       },
+       {
+        "q": "Où poussent les pommes ?",
+        "options": [
+         "dans un verger",
+         "dans un élevage",
+         "dans un champ de blé"
+        ],
+        "bonne": 0,
+        "explication": "Un verger est un terrain planté d'arbres fruitiers."
+       }
+      ],
+      "consigne": "Camille visite la ferme de Bray avec toi. Chaque aliment du plateau vient d'un espace de production et d'un métier. Réponds à ses questions.",
+      "indices": [
+       "Le poulet vient d'un élevage.",
+       "Un maraîcher cultive des légumes.",
+       "Les pommes poussent sur des arbres, dans un verger."
+      ],
+      "dialogue": "Visitons la ferme de Bray. Qui travaille où ?"
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Qui s'occupe de l'élevage des poulets ?",
+        "options": [
+         "l'éleveur",
+         "le maraîcher",
+         "le céréalier",
+         "l'arboriculteur"
+        ],
+        "bonne": 0,
+        "explication": "L'éleveur travaille dans un élevage."
+       },
+       {
+        "q": "Qui cultive les carottes et les haricots verts ?",
+        "options": [
+         "le maraîcher",
+         "l'éleveur",
+         "le céréalier",
+         "l'arboriculteur"
+        ],
+        "bonne": 0,
+        "explication": "Le maraîcher cultive les légumes."
+       },
+       {
+        "q": "Quel métier s'occupe d'un verger ?",
+        "options": [
+         "l'arboriculteur",
+         "le maraîcher",
+         "le céréalier",
+         "l'éleveur"
+        ],
+        "bonne": 0,
+        "explication": "Les pommes, les poires et les cerises poussent dans un verger."
+       },
+       {
+        "q": "Quelle affirmation est exacte ?",
+        "options": [
+         "un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles",
+         "un produit transformé vient directement de la nature",
+         "un produit agricole est toujours fabriqué dans une usine",
+         "le fromage est un produit agricole"
+        ],
+        "bonne": 0,
+        "explication": "Le fromage est fabriqué à partir du lait : c'est un produit transformé."
+       }
+      ],
+      "consigne": "À la ferme de Bray, chaque aliment du plateau vient d'un espace de production et d'un métier. Réponds aux questions de Camille.",
+      "indices": [
+       "Le céréalier cultive le blé et le maïs.",
+       "L'arboriculteur s'occupe d'un verger.",
+       "Un produit transformé a besoin d'un produit agricole pour être fabriqué."
+      ],
+      "dialogue": "Visitons la ferme de Bray. Qui travaille où ?"
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Un produit transformé est…",
+        "options": [
+         "fabriqué à partir d'un produit agricole",
+         "cueilli directement dans un champ",
+         "toujours un fruit"
+        ],
+        "bonne": 0,
+        "explication": "Il est fabriqué par quelqu'un."
+       },
+       {
+        "q": "Qui cultive les légumes ?",
+        "options": [
+         "le maraîcher",
+         "l'éleveur",
+         "le céréalier"
+        ],
+        "bonne": 0,
+        "explication": "Le maraîcher cultive les légumes."
+       }
+      ],
+      "consigne": "Camille vérifie ce que tu as retenu.",
+      "indices": [
+       "Ouvre la fiche « Produits agricoles et produits transformés ».",
+       "Un produit transformé a été fabriqué.",
+       "Le maraîcher cultive des carottes."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "un élevage",
+        "d": "l'éleveur"
+       },
+       {
+        "g": "un champ de céréales",
+        "d": "le céréalier"
+       },
+       {
+        "g": "une exploitation maraîchère",
+        "d": "le maraîcher"
+       },
+       {
+        "g": "un verger",
+        "d": "l'arboriculteur"
+       }
+      ],
+      "consigne": "Relie chaque espace de production au métier de la personne qui y travaille, puis choisis la phrase de la fiche sur le verger.",
+      "indices": [
+       "L'éleveur élève des animaux.",
+       "Le céréalier cultive le blé.",
+       "Pour la justification : cherche « pommes, poires et cerises »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du verger ?",
+       "options": [
+        "L'éleveur travaille dans un élevage : il produit les volailles, les œufs, le lait et la viande.",
+        "Le céréalier cultive des céréales, comme le blé et le maïs, dans des champs.",
+        "Le maraîcher cultive des légumes, comme les carottes, les salades et les haricots, dans une exploitation maraîchère.",
+        "L'arboriculteur s'occupe d'un verger : il produit des fruits, comme les pommes, les poires et les cerises."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Quelle affirmation est exacte ?",
+        "options": [
+         "un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles",
+         "un produit transformé vient directement de la nature",
+         "un produit agricole est toujours fabriqué dans une usine",
+         "le fromage est un produit agricole"
+        ],
+        "bonne": 0,
+        "explication": "Le fromage est fabriqué à partir du lait."
+       },
+       {
+        "q": "Un yaourt est…",
+        "options": [
+         "un produit transformé",
+         "un produit agricole",
+         "un légume",
+         "un fruit"
+        ],
+        "bonne": 0,
+        "explication": "Il est fabriqué à partir du lait."
+       },
+       {
+        "q": "Qui cultive le blé et le maïs ?",
+        "options": [
+         "le céréalier",
+         "l'éleveur",
+         "le maraîcher",
+         "l'arboriculteur"
+        ],
+        "bonne": 0,
+        "explication": "Le céréalier cultive des céréales dans des champs."
+       }
+      ],
+      "consigne": "Camille vérifie tes connaissances, puis choisis la phrase de la fiche qui définit un produit transformé.",
+      "indices": [
+       "Le fromage est fabriqué à partir du lait.",
+       "Le yaourt aussi.",
+       "Pour la justification : cherche « un ou de plusieurs »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit un produit transformé ?",
+       "options": [
+        "Un produit agricole vient directement de la nature : il est cultivé ou élevé, puis consommé presque tel quel, comme une pomme, une carotte, un œuf ou du lait.",
+        "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine.",
+        "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao.",
+        "Le céréalier cultive des céréales, comme le blé et le maïs, dans des champs."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     }
+    },
+    {
+     "id": "e10-4",
+     "escale": 10,
+     "ordre": 4,
+     "titre": "Le décompte de Camille",
+     "decor": "cantine-ecole",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "camille",
+     "probleme_narratif": "Camille doit remplir son registre et te confie le plateau du jour à compter.",
+     "enjeu": "Si le décompte est faux, tout le registre de la semaine est faux.",
+     "episode_du_roman": "Séance 10 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Distinguer un produit agricole d'un produit transformé",
+     "pourquoi_ce_savoir_ici": "La séance « La cantine — Produits agricoles et transformés » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Le registre se referme sur des nombres justes."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l10",
+     "type": "code",
+     "niveau_variantes": "Agent CM2 (code) ; Géographe (ordre) ; Chef de mission (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Cinq produits agricoles (pomme, haricots verts, carottes, poulet, salade) et trois produits transformés (yaourt, pain, cookie) : huit aliments en tout.",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Produits agricoles sur le plateau",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Produits transformés sur le plateau",
+        "valeur": "3",
+        "longueur": 1
+       },
+       {
+        "libelle": "Aliments en tout",
+        "valeur": "8",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Camille doit remplir son registre. Sur le plateau du jour : une pomme, des haricots verts, des carottes, du poulet, de la salade, un yaourt, du pain et un cookie. Compte, puis ouvre le cadenas.",
+      "indices": [
+       "Reprends le tri du plateau.",
+       "Un yaourt, du pain et un cookie sont transformés.",
+       "5 + 3 pour le total."
+      ],
+      "dialogue": "Je dois remplir mon registre. Compte avec moi les aliments du plateau."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le blé est cultivé dans un champ",
+        "rang": 1
+       },
+       {
+        "txt": "Le blé est récolté",
+        "rang": 2
+       },
+       {
+        "txt": "Le blé est transformé en farine",
+        "rang": 3
+       },
+       {
+        "txt": "Le boulanger fabrique le pain avec la farine",
+        "rang": 4
+       }
+      ],
+      "consigne": "Camille te raconte le trajet du blé jusqu'au pain. Range les étapes dans l'ordre, puis choisis la phrase de la fiche qui dit d'où vient le pain.",
+      "indices": [
+       "Tout commence dans un champ.",
+       "La farine est faite avec le blé récolté.",
+       "Pour la justification : cherche « Le pain vient du blé »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit d'où vient le pain ?",
+       "options": [
+        "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine.",
+        "Le céréalier cultive des céréales, comme le blé et le maïs, dans des champs.",
+        "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao.",
+        "Chaque aliment vient d'un espace de production et d'un métier."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Produits agricoles sur le plateau",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Produits transformés sur le plateau",
+        "valeur": "3",
+        "longueur": 1
+       },
+       {
+        "libelle": "Aliments en tout",
+        "valeur": "8",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Camille compte les aliments du plateau : une pomme, des haricots verts, des carottes, du poulet, de la salade, un yaourt, du pain et un cookie. Compte, puis choisis la phrase de la fiche qui définit un produit agricole.",
+      "indices": [
+       "Reprends le tri du plateau.",
+       "Le yaourt, le pain et le cookie sont fabriqués.",
+       "5 + 3. Pour la justification : cherche « directement de la nature »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit un produit agricole ?",
+       "options": [
+        "Un produit agricole vient directement de la nature : il est cultivé ou élevé, puis consommé presque tel quel, comme une pomme, une carotte, un œuf ou du lait.",
+        "Un produit transformé est fabriqué à partir d'un ou de plusieurs produits agricoles, dans un atelier ou une usine.",
+        "Le pain vient du blé, le fromage et le yaourt du lait, le jus du raisin, la sauce de la tomate, le sucre de la canne à sucre ou de la betterave, et le chocolat du cacao.",
+        "Chaque aliment vient d'un espace de production et d'un métier."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 11,
+   "id": "issenheim-du-lait-au-yaourt",
+   "titre": "Chaînes de production",
+   "lieu": "La ferme de Bray, puis l'usine de yaourts d'Issenheim, en Alsace",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 4",
+   "episode": "Un pré où paissent des vaches et, plus loin, une usine blanche : de grands réservoirs en inox, des tuyaux, une chaîne qui remplit des pots à la file, des camions frigorifiques à quai.",
+   "scenarimage": "",
+   "mot": "CHAÎNE",
+   "mot_origine": "Le mot-clé de la séance 11, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e11",
+   "cinematique_fin": "fin-e11",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e11-1",
+     "escale": 11,
+     "ordre": 1,
+     "titre": "Le trajet du lait",
+     "decor": "issenheim-usine",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "manon",
+     "probleme_narratif": "Manon te montre les étapes du lait, mélangées sur le tableau de la ferme.",
+     "enjeu": "Pour passer pour un producteur, il faut connaître le trajet du lait par cœur.",
+     "episode_du_roman": "Séance 11 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Remettre dans l'ordre les étapes de la production d'un yaourt",
+     "pourquoi_ce_savoir_ici": "La séance « Issenheim — Du lait au yaourt » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Les étapes se remettent en file, du pré au rayon frais."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l11",
+     "type": "ordre",
+     "niveau_variantes": "Découverte (ordre) ; Agent CM1 (ordre) ; Agent CM2 (ordre) ; Géographe (tri) ; Chef de mission (ordre). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Les vaches pâturent au pré ; le lait est recueilli à la traite puis refroidi ; un camion-citerne réfrigéré le collecte ; à l'usine, il est analysé ; il est chauffé, ensemencé de ferments et il repose ; le yaourt est versé dans des pots ; un camion frigorifique livre les magasins ; le yaourt est vendu au rayon frais.",
+     "matelot": {
+      "items": [
+       {
+        "txt": "La traite : le lait est recueilli, puis refroidi",
+        "rang": 1
+       },
+       {
+        "txt": "Le camion-citerne réfrigéré collecte le lait",
+        "rang": 2
+       },
+       {
+        "txt": "À l'usine, le lait est analysé",
+        "rang": 3
+       },
+       {
+        "txt": "Le yaourt est fabriqué, puis versé dans des pots",
+        "rang": 4
+       },
+       {
+        "txt": "Un camion frigorifique livre les magasins",
+        "rang": 5
+       },
+       {
+        "txt": "Le yaourt est vendu au rayon frais",
+        "rang": 6
+       }
+      ],
+      "consigne": "Manon, éleveuse à la ferme de Bray, te montre le trajet du lait jusqu'au yaourt. Remets les étapes dans l'ordre, de la ferme au magasin.",
+      "indices": [
+       "Tout commence à la ferme.",
+       "Le lait voyage dans un camion avant d'arriver à l'usine.",
+       "Le yaourt finit au magasin."
+      ],
+      "dialogue": "Je suis Manon, éleveuse à la ferme de Bray. Les malfaiteurs sont partout en France : pour t'approcher d'eux, tu te fais passer pour un producteur et tu suis notre lait jusqu'à l'usine de yaourts d'Issenheim, en Alsace. Suis bien chaque étape."
+     },
+     "timonier": {
+      "items": [
+       {
+        "txt": "Les vaches pâturent au pré",
+        "rang": 1
+       },
+       {
+        "txt": "La traite : le lait est recueilli, puis refroidi",
+        "rang": 2
+       },
+       {
+        "txt": "Le camion-citerne réfrigéré collecte le lait",
+        "rang": 3
+       },
+       {
+        "txt": "Le lait arrive à l'usine et il est analysé",
+        "rang": 4
+       },
+       {
+        "txt": "Le lait est chauffé, ensemencé de ferments, puis il repose",
+        "rang": 5
+       },
+       {
+        "txt": "Le yaourt est versé dans des pots, qui sont operculés",
+        "rang": 6
+       },
+       {
+        "txt": "Un camion frigorifique livre les magasins",
+        "rang": 7
+       },
+       {
+        "txt": "Le yaourt est vendu au rayon frais du supermarché",
+        "rang": 8
+       }
+      ],
+      "consigne": "Remets le trajet du lait dans l'ordre, des vaches au rayon frais du supermarché.",
+      "indices": [
+       "Les vaches sont dans le pré avant la traite.",
+       "Le lait est analysé avant d'être transformé.",
+       "Le yaourt est mis en pots avant d'être livré."
+      ],
+      "dialogue": "Je suis Manon, éleveuse à la ferme de Bray. Les malfaiteurs sont partout en France : pour t'approcher d'eux, tu te fais passer pour un producteur et tu suis notre lait jusqu'à l'usine de yaourts d'Issenheim, en Alsace. Suis bien chaque étape."
+     },
+     "mousse": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "La traite : le lait est recueilli",
+        "rang": 1
+       },
+       {
+        "txt": "Le camion-citerne apporte le lait à l'usine",
+        "rang": 2
+       },
+       {
+        "txt": "L'usine fabrique le yaourt",
+        "rang": 3
+       },
+       {
+        "txt": "Le yaourt est vendu au magasin",
+        "rang": 4
+       }
+      ],
+      "consigne": "Manon te montre le trajet du lait. Remets les étapes dans l'ordre.",
+      "indices": [
+       "Ouvre la fiche « La chaîne de production d'un aliment ».",
+       "Tout commence à la ferme.",
+       "Le yaourt finit au magasin."
+      ],
+      "dialogue": "Je suis Manon, éleveuse à la ferme de Bray. Les malfaiteurs sont partout en France : pour t'approcher d'eux, tu te fais passer pour un producteur et tu suis notre lait jusqu'à l'usine de yaourts d'Issenheim, en Alsace. Suis bien chaque étape."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "fe",
+        "titre": "À la ferme"
+       },
+       {
+        "id": "ca",
+        "titre": "Dans un camion"
+       },
+       {
+        "id": "us",
+        "titre": "À l'usine"
+       },
+       {
+        "id": "ma",
+        "titre": "Au magasin"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "La traite des vaches",
+        "col": "fe"
+       },
+       {
+        "txt": "Le lait est refroidi dans un tank",
+        "col": "fe"
+       },
+       {
+        "txt": "Le camion-citerne collecte le lait",
+        "col": "ca"
+       },
+       {
+        "txt": "Un camion frigorifique livre les supermarchés",
+        "col": "ca"
+       },
+       {
+        "txt": "Le lait est analysé",
+        "col": "us"
+       },
+       {
+        "txt": "Des ferments sont ajoutés au lait",
+        "col": "us"
+       },
+       {
+        "txt": "Le yaourt est versé dans des pots",
+        "col": "us"
+       },
+       {
+        "txt": "Le yaourt est vendu au rayon frais",
+        "col": "ma"
+       }
+      ],
+      "consigne": "Manon range ses étapes selon l'endroit où elles se passent. Place chaque étape, puis choisis la phrase de la fiche qui dit ce qui se passe à la ferme.",
+      "indices": [
+       "Le tank est à la ferme.",
+       "Il y a deux transports en camion.",
+       "Pour la justification : cherche « tank réfrigéré »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce qui se passe à la ferme ?",
+       "options": [
+        "À la ferme, les vaches sont traites chaque jour : le lait est immédiatement refroidi et stocké dans un tank réfrigéré.",
+        "Un camion-citerne réfrigéré collecte le lait et l'apporte à l'usine.",
+        "À l'usine, le lait est analysé, puis stocké dans de grands réservoirs ; il est chauffé, des ferments sont ajoutés et le mélange repose : le yaourt fermente et s'épaissit.",
+        "Le yaourt est ensuite versé dans des pots, fermés par un couvercle, puis rangés sur des palettes."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Je suis Manon, éleveuse à la ferme de Bray. Les malfaiteurs sont partout en France : pour t'approcher d'eux, tu te fais passer pour un producteur et tu suis notre lait jusqu'à l'usine de yaourts d'Issenheim, en Alsace. Suis bien chaque étape."
+     },
+     "second": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Les vaches pâturent au pré",
+        "rang": 1
+       },
+       {
+        "txt": "La traite : le lait est recueilli, puis refroidi",
+        "rang": 2
+       },
+       {
+        "txt": "Le camion-citerne réfrigéré collecte le lait",
+        "rang": 3
+       },
+       {
+        "txt": "Le lait arrive à l'usine et il est analysé",
+        "rang": 4
+       },
+       {
+        "txt": "Le lait est chauffé, ensemencé de ferments, puis il repose",
+        "rang": 5
+       },
+       {
+        "txt": "Le yaourt est versé dans des pots",
+        "rang": 6
+       },
+       {
+        "txt": "Un camion frigorifique livre les magasins",
+        "rang": 7
+       },
+       {
+        "txt": "Le yaourt est vendu au rayon frais",
+        "rang": 8
+       }
+      ],
+      "consigne": "Reconstitue tout le trajet du lait, puis choisis la phrase de la fiche qui décrit la chaîne de production.",
+      "indices": [
+       "Les vaches sont au pré avant la traite.",
+       "Le lait est analysé avant d'être transformé.",
+       "Pour la justification : cherche « séparent la matière première »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit ce qu'est une chaîne de production ?",
+       "options": [
+        "La chaîne du froid ne doit jamais être interrompue : sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation.",
+        "À l'usine, le lait est analysé, puis stocké dans de grands réservoirs ; il est chauffé, des ferments sont ajoutés et le mélange repose : le yaourt fermente et s'épaissit.",
+        "La chaîne de production d'un aliment décrit toutes les étapes qui séparent la matière première de l'assiette du consommateur.",
+        "Des camions frigorifiques livrent les supermarchés, où le yaourt est vendu au rayon frais."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Je suis Manon, éleveuse à la ferme de Bray. Les malfaiteurs sont partout en France : pour t'approcher d'eux, tu te fais passer pour un producteur et tu suis notre lait jusqu'à l'usine de yaourts d'Issenheim, en Alsace. Suis bien chaque étape."
+     }
+    },
+    {
+     "id": "e11-2",
+     "escale": 11,
+     "ordre": 2,
+     "titre": "Le texte du directeur",
+     "decor": "issenheim-usine",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "manon",
+     "probleme_narratif": "Le directeur de l'usine d'Issenheim te tend un texte à compléter avant de te laisser entrer.",
+     "enjeu": "Le directeur ne laisse entrer que ceux qui connaissent le métier.",
+     "episode_du_roman": "Séance 11 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Remettre dans l'ordre les étapes de la production d'un yaourt",
+     "pourquoi_ce_savoir_ici": "La séance « Issenheim — Du lait au yaourt » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Les blancs se remplissent : la porte de l'usine s'ouvre."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l11",
+     "type": "trous",
+     "niveau_variantes": "Découverte (trous) ; Agent CM1 (trous) ; Agent CM2 (trous) ; Géographe (qcm) ; Chef de mission (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Le lait est trait puis refroidi, transporté dans un camion-citerne réfrigéré jusqu'à l'usine, où il est analysé, chauffé et ensemencé de ferments : le yaourt fermente. Il est versé dans des pots, puis livré aux supermarchés et vendu en magasin. Le lait n'est jamais congelé ni cuit.",
+     "matelot": {
+      "texte": "<p>Tout commence à la [[ferme]]. Le lait est [[trait]], puis refroidi. Un camion-citerne [[réfrigéré]] le porte à l'[[usine]]. Là, il est [[analysé]], puis le yaourt [[fermente]]. Il est versé dans des [[pots]] et livré aux [[supermarchés]].</p>",
+      "etiquettes": [
+       "ferme",
+       "trait",
+       "réfrigéré",
+       "usine",
+       "analysé",
+       "fermente",
+       "pots",
+       "supermarchés",
+       "congelé"
+      ],
+      "consigne": "Avant de te laisser entrer à l'usine d'Issenheim, le directeur te donne un texte à compléter : clique sur une étiquette, puis sur le trou où elle va. Une étiquette est en trop.",
+      "indices": [
+       "Le lait est refroidi, jamais congelé.",
+       "Un camion réfrigéré transporte le lait à l'usine.",
+       "Le yaourt fermente grâce aux ferments."
+      ],
+      "dialogue": "Complète ce texte, et je te laisse entrer dans l'usine."
+     },
+     "timonier": {
+      "texte": "<p>Tout commence à la [[ferme]]. Le lait est [[trait]] puis immédiatement refroidi. Il est ensuite transporté dans un camion-citerne [[réfrigéré]] jusqu'à l'[[usine]]. À l'usine, le lait est [[analysé]] et stocké dans de grands réservoirs. Le lait est alors chauffé, des ferments sont ajoutés et le mélange repose : le yaourt [[fermente]]. Le yaourt est versé dans des [[pots]] et fermé avec un couvercle. Il est ensuite transporté jusqu'aux [[supermarchés]]. Enfin, il est vendu en [[magasin]] et arrive dans ton frigo !</p>",
+      "etiquettes": [
+       "ferme",
+       "trait",
+       "réfrigéré",
+       "usine",
+       "analysé",
+       "fermente",
+       "pots",
+       "supermarchés",
+       "magasin",
+       "congelé",
+       "cuit"
+      ],
+      "consigne": "Avant de te laisser entrer, le directeur te donne ce texte à trous. Deux mots de la liste ne servent à rien.",
+      "indices": [
+       "Le lait n'est jamais congelé ni cuit : il est refroidi, transporté au frais, puis chauffé doucement.",
+       "À l'usine, le lait est analysé.",
+       "Le yaourt est versé dans des pots."
+      ],
+      "dialogue": "Complète ce texte, et je te laisse entrer dans l'usine."
+     },
+     "mousse": {
+      "type": "trous",
+      "texte": "<p>Le lait vient de la [[ferme]]. Un [[camion]] l'apporte à l'[[usine]]. Là, on fabrique le [[yaourt]]. Il est vendu au [[magasin]].</p>",
+      "etiquettes": [
+       "ferme",
+       "camion",
+       "usine",
+       "yaourt",
+       "magasin",
+       "cuit"
+      ],
+      "consigne": "Complète le texte de Manon. Un mot est un intrus.",
+      "indices": [
+       "Ouvre la fiche « La chaîne de production d'un aliment ».",
+       "Un camion transporte le lait.",
+       "Le yaourt est fabriqué à l'usine."
+      ],
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Pourquoi le camion-citerne est-il réfrigéré ?",
+        "options": [
+         "pour que le lait ne tourne pas",
+         "pour fabriquer des glaçons",
+         "pour que le lait épaississe",
+         "pour économiser de l'essence"
+        ],
+        "bonne": 0,
+        "explication": "Sans froid, des microbes se développent."
+       },
+       {
+        "q": "Dans quel secteur classe-t-on l'usine de yaourts ?",
+        "options": [
+         "le secteur secondaire",
+         "le secteur primaire",
+         "le secteur tertiaire",
+         "aucun secteur"
+        ],
+        "bonne": 0,
+        "explication": "Elle transforme une matière première."
+       },
+       {
+        "q": "Qu'est-ce qui fait fermenter le lait ?",
+        "options": [
+         "les ferments ajoutés",
+         "le sel",
+         "la lumière",
+         "le sucre"
+        ],
+        "bonne": 0,
+        "explication": "Des ferments sont ajoutés, puis le mélange repose."
+       }
+      ],
+      "consigne": "Manon vérifie ce que tu as retenu. Réponds, puis choisis la phrase de la fiche sur la chaîne du froid.",
+      "indices": [
+       "Sans froid, le lait se gâte.",
+       "Transformer, c'est du secondaire.",
+       "Pour la justification : cherche « microbes »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la chaîne du froid ?",
+       "options": [
+        "À la ferme, les vaches sont traites chaque jour : le lait est immédiatement refroidi et stocké dans un tank réfrigéré.",
+        "La chaîne de production d'un aliment décrit toutes les étapes qui séparent la matière première de l'assiette du consommateur.",
+        "La chaîne du froid ne doit jamais être interrompue : sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation.",
+        "Une usine qui transforme une matière première, comme le lait, fait partie du secteur secondaire, alors que la ferme relève du secteur primaire et le supermarché du secteur tertiaire."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le lait peut rester plusieurs heures sans froid avant d'arriver à l'usine.",
+        "vrai": false,
+        "explication": "Sans réfrigération, des microbes se développent et le lait tourne."
+       },
+       {
+        "txt": "Un camion-citerne réfrigéré collecte le lait.",
+        "vrai": true,
+        "explication": "Le froid est maintenu pendant le transport."
+       },
+       {
+        "txt": "À l'usine, des ferments transforment le lait en yaourt.",
+        "vrai": true,
+        "explication": "Le mélange repose : le yaourt fermente."
+       },
+       {
+        "txt": "La chaîne du froid s'arrête à la sortie de l'usine.",
+        "vrai": false,
+        "explication": "Des camions frigorifiques livrent les supermarchés."
+       },
+       {
+        "txt": "Le yaourt est vendu au rayon frais.",
+        "vrai": true,
+        "explication": "Il reste au froid jusqu'au consommateur."
+       }
+      ],
+      "consigne": "Manon vérifie ta connaissance de la chaîne du froid. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur la chaîne du froid.",
+      "indices": [
+       "Un lait qui tourne est impropre à la consommation.",
+       "Les camions qui livrent les supermarchés sont frigorifiques.",
+       "Pour la justification : cherche « jamais être interrompue »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la chaîne du froid ?",
+       "options": [
+        "La chaîne du froid ne doit jamais être interrompue : sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation.",
+        "À la ferme, les vaches sont traites chaque jour : le lait est immédiatement refroidi et stocké dans un tank réfrigéré.",
+        "Des camions frigorifiques livrent les supermarchés, où le yaourt est vendu au rayon frais.",
+        "Un camion-citerne réfrigéré collecte le lait et l'apporte à l'usine."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     }
+    },
+    {
+     "id": "e11-3",
+     "escale": 11,
+     "ordre": 3,
+     "titre": "Et si le lait tournait ?",
+     "decor": "issenheim-usine",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "manon",
+     "probleme_narratif": "Manon te demande ce qui arriverait si le thermomètre montait trop haut.",
+     "enjeu": "Si le froid se rompt, tout le lait du camion est perdu.",
+     "episode_du_roman": "Séance 11 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Remettre dans l'ordre les étapes de la production d'un yaourt",
+     "pourquoi_ce_savoir_ici": "La séance « Issenheim — Du lait au yaourt » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "L'aiguille redescend dans la zone bleue."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l11",
+     "type": "qcm",
+     "niveau_variantes": "Découverte (vraifaux) ; Agent CM1 (qcm) ; Agent CM2 (qcm) ; Géographe (ordre) ; Chef de mission (trous). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation : la chaîne du froid ne doit jamais être interrompue. L'usine de yaourts transforme une matière première : elle relève du secteur secondaire. La ferme relève du secteur primaire, le supermarché du secteur tertiaire.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Que se passerait-il si le lait n'était pas transporté au frais jusqu'à l'usine ?",
+        "options": [
+         "il tournerait et deviendrait impropre à la consommation",
+         "il deviendrait plus sucré",
+         "il se transformerait en fromage tout seul"
+        ],
+        "bonne": 0,
+        "explication": "Des microbes se développeraient dans le lait."
+       },
+       {
+        "q": "Dans quel secteur classe-t-on l'usine de yaourts ?",
+        "options": [
+         "le secteur secondaire : elle transforme une matière première",
+         "le secteur primaire : elle exploite la nature",
+         "le secteur tertiaire : elle rend un service"
+        ],
+        "bonne": 0,
+        "explication": "Elle transforme le lait en yaourt."
+       }
+      ],
+      "consigne": "Manon te pose deux questions pour vérifier que tu as bien suivi le lait.",
+      "indices": [
+       "Sans froid, le lait se gâte.",
+       "Transformer, c'est du secteur secondaire.",
+       "Relis le trajet du lait."
+      ],
+      "dialogue": "Regarde ce thermomètre. Que se passe-t-il quand le froid se rompt ?"
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Que se passerait-il si le lait n'était pas transporté au frais jusqu'à l'usine ?",
+        "options": [
+         "des microbes s'y développeraient : il tournerait et deviendrait impropre à la consommation",
+         "il deviendrait plus sucré",
+         "il se transformerait en fromage tout seul",
+         "rien du tout"
+        ],
+        "bonne": 0,
+        "explication": "La chaîne du froid protège la santé des consommateurs."
+       },
+       {
+        "q": "Dans quel secteur classe-t-on l'usine de yaourts ?",
+        "options": [
+         "le secteur secondaire : elle transforme une matière première",
+         "le secteur primaire : elle exploite la nature",
+         "le secteur tertiaire : elle rend un service",
+         "aucun secteur"
+        ],
+        "bonne": 0,
+        "explication": "Elle transforme le lait en yaourt."
+       },
+       {
+        "q": "Dans quel secteur classe-t-on la ferme de Bray ?",
+        "options": [
+         "le secteur primaire : elle exploite directement la nature",
+         "le secteur secondaire",
+         "le secteur tertiaire",
+         "aucun secteur"
+        ],
+        "bonne": 0,
+        "explication": "L'éleveur produit le lait."
+       }
+      ],
+      "consigne": "Manon vérifie que tu as bien suivi le lait. Réponds à ses trois questions.",
+      "indices": [
+       "Les microbes se développent quand il fait trop chaud.",
+       "Souviens-toi de la séance de Besançon : transformer, c'est du secondaire.",
+       "La ferme exploite directement la nature."
+      ],
+      "dialogue": "Regarde ce thermomètre. Que se passe-t-il quand le froid se rompt ?"
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Le lait est transporté dans un camion réfrigéré.",
+        "vrai": true,
+        "explication": "Le froid garde le lait en bon état."
+       },
+       {
+        "txt": "Le lait n'a pas besoin de froid.",
+        "vrai": false,
+        "explication": "Sans froid, le lait tourne."
+       },
+       {
+        "txt": "Le yaourt est fabriqué à l'usine.",
+        "vrai": true,
+        "explication": "Avec du lait et des ferments."
+       }
+      ],
+      "consigne": "Manon te pose trois questions. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « La chaîne de production d'un aliment ».",
+       "Le froid garde le lait.",
+       "L'usine transforme le lait."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "Le lait arrive à l'usine et il est analysé",
+        "rang": 1
+       },
+       {
+        "txt": "Le lait est stocké dans de grands réservoirs",
+        "rang": 2
+       },
+       {
+        "txt": "Le lait est chauffé et des ferments sont ajoutés",
+        "rang": 3
+       },
+       {
+        "txt": "Le mélange repose : le yaourt fermente",
+        "rang": 4
+       },
+       {
+        "txt": "Le yaourt est versé dans des pots",
+        "rang": 5
+       }
+      ],
+      "consigne": "Manon te détaille le travail de l'usine. Range les étapes qui s'y déroulent dans l'ordre, puis choisis la phrase de la fiche qui les décrit.",
+      "indices": [
+       "On analyse le lait dès son arrivée.",
+       "Les ferments sont ajoutés quand le lait est chaud.",
+       "Pour la justification : cherche « grands réservoirs »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit ce que fait l'usine ?",
+       "options": [
+        "Le yaourt est ensuite versé dans des pots, fermés par un couvercle, puis rangés sur des palettes.",
+        "À l'usine, le lait est analysé, puis stocké dans de grands réservoirs ; il est chauffé, des ferments sont ajoutés et le mélange repose : le yaourt fermente et s'épaissit.",
+        "À la ferme, les vaches sont traites chaque jour : le lait est immédiatement refroidi et stocké dans un tank réfrigéré.",
+        "Un camion-citerne réfrigéré collecte le lait et l'apporte à l'usine."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "trous",
+      "texte": "<p>À la ferme, le lait est immédiatement [[refroidi]] puis stocké dans un [[tank]] réfrigéré. Un [[camion-citerne]] le collecte et l'apporte à l'[[usine]]. Là, il est chauffé, des [[ferments]] sont ajoutés et le yaourt [[fermente]].</p>",
+      "etiquettes": [
+       "refroidi",
+       "tank",
+       "camion-citerne",
+       "usine",
+       "ferments",
+       "fermente",
+       "congelé",
+       "pots"
+      ],
+      "consigne": "Complète le carnet de Manon (deux mots sont des intrus), puis choisis la phrase de la fiche sur le tank réfrigéré.",
+      "indices": [
+       "Le lait est refroidi, jamais congelé.",
+       "Les ferments transforment le lait en yaourt.",
+       "Pour la justification : cherche « tank »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du tank réfrigéré ?",
+       "options": [
+        "Un camion-citerne réfrigéré collecte le lait et l'apporte à l'usine.",
+        "La chaîne de production d'un aliment décrit toutes les étapes qui séparent la matière première de l'assiette du consommateur.",
+        "À la ferme, les vaches sont traites chaque jour : le lait est immédiatement refroidi et stocké dans un tank réfrigéré.",
+        "À l'usine, le lait est analysé, puis stocké dans de grands réservoirs ; il est chauffé, des ferments sont ajoutés et le mélange repose : le yaourt fermente et s'épaissit."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Il manque des mots dans mon carnet. Remettez-les à leur place."
+     }
+    },
+    {
+     "id": "e11-4",
+     "escale": 11,
+     "ordre": 4,
+     "titre": "Dans l'usine",
+     "decor": "issenheim-usine",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "manon",
+     "probleme_narratif": "Le directeur te fait compter les étapes de l'usine devant ses compteurs.",
+     "enjeu": "Pour te faire passer pour un producteur, tu dois savoir compter les étapes.",
+     "episode_du_roman": "Séance 11 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Remettre dans l'ordre les étapes de la production d'un yaourt",
+     "pourquoi_ce_savoir_ici": "La séance « Issenheim — Du lait au yaourt » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les trois compteurs affichent des nombres justes et passent au vert."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l11",
+     "type": "code",
+     "niveau_variantes": "Agent CM2 (code) ; Géographe (code) ; Chef de mission (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Trois étapes se déroulent à l'intérieur de l'usine (l'analyse, la transformation et la mise en pots), sur huit étapes en tout ; deux étapes sont des transports en camion (le camion-citerne et le camion frigorifique).",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Étapes à l'intérieur de l'usine",
+        "valeur": "3",
+        "longueur": 1
+       },
+       {
+        "libelle": "Étapes en tout",
+        "valeur": "8",
+        "longueur": 1
+       },
+       {
+        "libelle": "Transports en camion",
+        "valeur": "2",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Dans l'usine d'Issenheim, le directeur te fait compter. Les étapes du trajet : 1. les vaches pâturent ; 2. la traite ; 3. le camion-citerne collecte le lait ; 4. le lait arrive à l'usine et il est analysé ; 5. le lait est chauffé et ensemencé de ferments ; 6. le yaourt est versé dans des pots ; 7. un camion frigorifique livre les magasins ; 8. le yaourt est vendu au rayon frais. Compte, puis ouvre le cadenas.",
+      "indices": [
+       "L'analyse, la transformation et la mise en pots ont lieu à l'usine.",
+       "Compte toutes les étapes de la liste.",
+       "Cherche les mots « camion » dans la liste."
+      ],
+      "dialogue": "Voici mes compteurs. Compte les étapes avec moi."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Étapes à l'intérieur de l'usine",
+        "valeur": "3",
+        "longueur": 1
+       },
+       {
+        "libelle": "Étapes en tout",
+        "valeur": "8",
+        "longueur": 1
+       },
+       {
+        "libelle": "Transports en camion",
+        "valeur": "2",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Le directeur te fait compter. Les étapes du trajet : 1. les vaches pâturent ; 2. la traite ; 3. le camion-citerne collecte le lait ; 4. le lait arrive à l'usine et il est analysé ; 5. le lait est chauffé et ensemencé de ferments ; 6. le yaourt est versé dans des pots ; 7. un camion frigorifique livre les magasins ; 8. le yaourt est vendu au rayon frais. Compte, puis choisis la phrase de la fiche qui décrit la chaîne de production.",
+      "indices": [
+       "L'analyse, la transformation et la mise en pots ont lieu à l'usine.",
+       "Compte toutes les étapes de la liste.",
+       "Cherche les mots « camion ». Pour la justification : cherche « de l'assiette »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche décrit ce qu'est une chaîne de production ?",
+       "options": [
+        "La chaîne de production d'un aliment décrit toutes les étapes qui séparent la matière première de l'assiette du consommateur.",
+        "La chaîne du froid ne doit jamais être interrompue : sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation.",
+        "À l'usine, le lait est analysé, puis stocké dans de grands réservoirs ; il est chauffé, des ferments sont ajoutés et le mélange repose : le yaourt fermente et s'épaissit.",
+        "Des camions frigorifiques livrent les supermarchés, où le yaourt est vendu au rayon frais."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "la ferme de Bray",
+        "d": "le secteur primaire"
+       },
+       {
+        "g": "l'usine de yaourts",
+        "d": "le secteur secondaire"
+       },
+       {
+        "g": "le supermarché",
+        "d": "le secteur tertiaire"
+       }
+      ],
+      "consigne": "Chaque lieu du trajet du lait relève d'un secteur d'activité. Relie-les, puis choisis la phrase de la fiche qui les cite.",
+      "indices": [
+       "La ferme exploite directement la nature.",
+       "L'usine transforme le lait.",
+       "Pour la justification : cherche « le supermarché du secteur tertiaire »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche classe la ferme, l'usine et le supermarché ?",
+       "options": [
+        "La chaîne du froid ne doit jamais être interrompue : sans réfrigération, des microbes se développent dans le lait, qui tourne et devient impropre à la consommation.",
+        "La chaîne de production d'un aliment décrit toutes les étapes qui séparent la matière première de l'assiette du consommateur.",
+        "Des camions frigorifiques livrent les supermarchés, où le yaourt est vendu au rayon frais.",
+        "Une usine qui transforme une matière première, comme le lait, fait partie du secteur secondaire, alors que la ferme relève du secteur primaire et le supermarché du secteur tertiaire."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 12,
+   "id": "marseille-d-ou-vient-ce-que-l-on-mange",
+   "titre": "L'heure du ravitaillement",
+   "lieu": "Marseille, sur un marché de quartier",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 4",
+   "episode": "Un marché ensoleillé : des cageots de fruits et de légumes, des étiquettes d'origine piquées dans les étals, des paniers qui se remplissent et, au loin, la mer.",
+   "scenarimage": "",
+   "mot": "KILOMÈTRES",
+   "mot_origine": "Le mot-clé de la séance 12, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e12",
+   "cinematique_fin": "fin-e12",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e12-1",
+     "escale": 12,
+     "ordre": 1,
+     "titre": "D'où viennent les étiquettes ?",
+     "decor": "marseille-marche",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yanis",
+     "probleme_narratif": "Yanis te montre les étiquettes et te demande de classer les produits par continent.",
+     "enjeu": "Pour compter les kilomètres d'un aliment, il faut d'abord savoir d'où il vient.",
+     "episode_du_roman": "Séance 12 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Calculer les kilomètres alimentaires d'un repas",
+     "pourquoi_ce_savoir_ici": "La séance « Marseille — D'où vient ce que l'on mange ? » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "carte",
+      "description": "Chaque cageot reçoit un drapeau de son continent."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l12",
+     "type": "tri",
+     "niveau_variantes": "Découverte (tri) ; Agent CM1 (tri) ; Agent CM2 (tri) ; Géographe (ordre) ; Chef de mission (association). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "L'Espagne, la Grèce, le Portugal et l'Italie sont en Europe ; le Cameroun, l'Afrique du Sud et le Maroc en Afrique ; l'Argentine, le Chili et le Brésil en Amérique du Sud ; la Turquie est surtout en Asie ; la Nouvelle-Zélande est en Océanie.",
+     "matelot": {
+      "colonnes": [
+       {
+        "id": "eu",
+        "titre": "Europe"
+       },
+       {
+        "id": "af",
+        "titre": "Afrique"
+       },
+       {
+        "id": "as",
+        "titre": "Amérique du Sud"
+       },
+       {
+        "id": "oc",
+        "titre": "Océanie"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Fraises (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Feta (Grèce)",
+        "col": "eu"
+       },
+       {
+        "txt": "Bananes (Cameroun)",
+        "col": "af"
+       },
+       {
+        "txt": "Tomates (Maroc)",
+        "col": "af"
+       },
+       {
+        "txt": "Oranges (Afrique du Sud)",
+        "col": "af"
+       },
+       {
+        "txt": "Poires (Chili)",
+        "col": "as"
+       },
+       {
+        "txt": "Mangues (Brésil)",
+        "col": "as"
+       },
+       {
+        "txt": "Kiwis (Nouvelle-Zélande)",
+        "col": "oc"
+       }
+      ],
+      "consigne": "Sur le marché de Marseille, Yanis te montre les étiquettes d'origine des produits. Range chaque produit selon le continent d'où il vient.",
+      "indices": [
+       "L'Espagne et la Grèce sont en Europe.",
+       "Le Cameroun et le Maroc sont en Afrique.",
+       "Le Chili et le Brésil sont en Amérique du Sud."
+      ],
+      "dialogue": "Salut, c'est Yanis, de Marseille. Chez nous, la nourriture est abondante, mais regarde les étiquettes : d'où viennent vraiment ces fruits et ces légumes ? Combien de kilomètres ont-ils parcourus avant d'arriver dans ton panier ?"
+     },
+     "timonier": {
+      "colonnes": [
+       {
+        "id": "eu",
+        "titre": "Europe"
+       },
+       {
+        "id": "af",
+        "titre": "Afrique"
+       },
+       {
+        "id": "as",
+        "titre": "Amérique du Sud"
+       },
+       {
+        "id": "asie",
+        "titre": "Asie"
+       },
+       {
+        "id": "oc",
+        "titre": "Océanie"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Fraises (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Avocats (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Salade (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Feta (Grèce)",
+        "col": "eu"
+       },
+       {
+        "txt": "Myrtilles (Portugal)",
+        "col": "eu"
+       },
+       {
+        "txt": "Figues (Italie)",
+        "col": "eu"
+       },
+       {
+        "txt": "Bananes (Cameroun)",
+        "col": "af"
+       },
+       {
+        "txt": "Oranges (Afrique du Sud)",
+        "col": "af"
+       },
+       {
+        "txt": "Tomates (Maroc)",
+        "col": "af"
+       },
+       {
+        "txt": "Citrons (Argentine)",
+        "col": "as"
+       },
+       {
+        "txt": "Poires (Chili)",
+        "col": "as"
+       },
+       {
+        "txt": "Mangues (Brésil)",
+        "col": "as"
+       },
+       {
+        "txt": "Noisettes (Turquie)",
+        "col": "asie"
+       },
+       {
+        "txt": "Kiwis (Nouvelle-Zélande)",
+        "col": "oc"
+       }
+      ],
+      "consigne": "Classe chaque produit du marché selon le continent d'où il vient. Le Maroc est en Afrique du Nord ; la Turquie se trouve surtout en Asie.",
+      "indices": [
+       "Le Maroc est au nord de l'Afrique.",
+       "La Turquie se trouve surtout en Asie.",
+       "La Nouvelle-Zélande est en Océanie."
+      ],
+      "dialogue": "Salut, c'est Yanis, de Marseille. Chez nous, la nourriture est abondante, mais regarde les étiquettes : d'où viennent vraiment ces fruits et ces légumes ? Combien de kilomètres ont-ils parcourus avant d'arriver dans ton panier ?"
+     },
+     "mousse": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "eu",
+        "titre": "Europe"
+       },
+       {
+        "id": "af",
+        "titre": "Afrique"
+       },
+       {
+        "id": "as",
+        "titre": "Amérique du Sud"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Fraises (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Feta (Grèce)",
+        "col": "eu"
+       },
+       {
+        "txt": "Bananes (Cameroun)",
+        "col": "af"
+       },
+       {
+        "txt": "Tomates (Maroc)",
+        "col": "af"
+       },
+       {
+        "txt": "Poires (Chili)",
+        "col": "as"
+       },
+       {
+        "txt": "Mangues (Brésil)",
+        "col": "as"
+       }
+      ],
+      "consigne": "Yanis te montre les étiquettes du marché. Range chaque produit selon le continent d'où il vient.",
+      "indices": [
+       "Ouvre la fiche « Les kilomètres alimentaires ».",
+       "L'Espagne et la Grèce sont en Europe.",
+       "Le Chili et le Brésil sont en Amérique du Sud."
+      ],
+      "dialogue": "Salut, c'est Yanis, de Marseille. Chez nous, la nourriture est abondante, mais regarde les étiquettes : d'où viennent vraiment ces fruits et ces légumes ? Combien de kilomètres ont-ils parcourus avant d'arriver dans ton panier ?"
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "la salade d'Espagne",
+        "rang": 1
+       },
+       {
+        "txt": "les tomates du Maroc",
+        "rang": 2
+       },
+       {
+        "txt": "la feta de Grèce",
+        "rang": 3
+       },
+       {
+        "txt": "les noisettes de Turquie",
+        "rang": 4
+       },
+       {
+        "txt": "la poire du Chili",
+        "rang": 5
+       }
+      ],
+      "consigne": "Yanis veut savoir quel ingrédient de sa salade vient de plus près. Range-les du plus proche au plus lointain, puis choisis la phrase de la fiche qui définit les kilomètres alimentaires.<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+      "indices": [
+       "Compare les nombres de kilomètres.",
+       "L'Espagne est le pays le plus proche.",
+       "Pour la justification : cherche « distance totale parcourue »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche définit les kilomètres alimentaires ?",
+       "options": [
+        "Plus cette distance est grande, plus le transport rejette de CO₂ dans l'atmosphère, ce qui dégrade l'air et contribue au réchauffement climatique.",
+        "Les kilomètres alimentaires sont la distance totale parcourue par un aliment avant d'arriver dans notre assiette.",
+        "Dans un supermarché français, les étiquettes révèlent des origines très variées : fraises d'Espagne, bananes du Cameroun, noisettes de Turquie, oranges d'Afrique du Sud, citrons d'Argentine, feta de Grèce, poires du Chili, myrtilles du Portugal, kiwis de Nouvelle-Zélande et mangues du Brésil.",
+        "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Salut, c'est Yanis, de Marseille. Chez nous, la nourriture est abondante, mais regarde les étiquettes : d'où viennent vraiment ces fruits et ces légumes ? Combien de kilomètres ont-ils parcourus avant d'arriver dans ton panier ?"
+     },
+     "second": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "les kiwis",
+        "d": "la Nouvelle-Zélande"
+       },
+       {
+        "g": "les bananes",
+        "d": "le Cameroun"
+       },
+       {
+        "g": "les poires",
+        "d": "le Chili"
+       },
+       {
+        "g": "les noisettes",
+        "d": "la Turquie"
+       },
+       {
+        "g": "la feta",
+        "d": "la Grèce"
+       },
+       {
+        "g": "les mangues",
+        "d": "le Brésil"
+       }
+      ],
+      "consigne": "Yanis lit les étiquettes d'origine. Relie chaque produit à son pays d'origine, puis choisis la phrase de la fiche qui les cite.",
+      "indices": [
+       "Les kiwis viennent de l'autre bout du monde.",
+       "Les mangues poussent en Amérique du Sud.",
+       "Pour la justification : cherche « origines très variées »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite des produits et leurs pays d'origine ?",
+       "options": [
+        "Dans un supermarché français, les étiquettes révèlent des origines très variées : fraises d'Espagne, bananes du Cameroun, noisettes de Turquie, oranges d'Afrique du Sud, citrons d'Argentine, feta de Grèce, poires du Chili, myrtilles du Portugal, kiwis de Nouvelle-Zélande et mangues du Brésil.",
+        "Les kilomètres alimentaires sont la distance totale parcourue par un aliment avant d'arriver dans notre assiette.",
+        "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur.",
+        "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Salut, c'est Yanis, de Marseille. Chez nous, la nourriture est abondante, mais regarde les étiquettes : d'où viennent vraiment ces fruits et ces légumes ? Combien de kilomètres ont-ils parcourus avant d'arriver dans ton panier ?"
+     }
+    },
+    {
+     "id": "e12-2",
+     "escale": 12,
+     "ordre": 2,
+     "titre": "La salade fraîcheur",
+     "decor": "marseille-marche",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yanis",
+     "probleme_narratif": "Yanis veut savoir combien de kilomètres a parcourus la salade avant d'arriver dans ton panier.",
+     "enjeu": "Une seule salade peut avoir fait le tour du monde sans que personne le sache.",
+     "episode_du_roman": "Séance 12 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Calculer les kilomètres alimentaires d'un repas",
+     "pourquoi_ce_savoir_ici": "La séance « Marseille — D'où vient ce que l'on mange ? » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "La somme s'inscrit en gros sur le sac en papier."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l12",
+     "type": "code",
+     "niveau_variantes": "Découverte (code) ; Agent CM1 (code) ; Agent CM2 (code) ; Géographe (qcm) ; Chef de mission (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "11 702 + 2 585 + 1 013 + 3 422 + 2 292 = 21 014 km. Le chiffre des unités est 4. Deux produits (la feta de Grèce et la salade d'Espagne) viennent d'Europe.",
+     "matelot": {
+      "champs": [
+       {
+        "libelle": "Total des kilomètres alimentaires de la recette",
+        "valeur": "21014",
+        "longueur": 5
+       },
+       {
+        "libelle": "Chiffre des unités de ce total",
+        "valeur": "4",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Yanis prépare une salade avec des produits du monde entier. Calcule les kilomètres alimentaires de la recette, puis ouvre le cadenas. Recette de la salade fraîcheur : 1 poire (Chili), 100 g de feta (Grèce), 1 salade (Espagne), 100 g de noisettes (Turquie), 200 g de tomates (Maroc).<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+      "indices": [
+       "Additionne les cinq distances, une par produit.",
+       "Pose l'addition en colonnes.",
+       "Le chiffre des unités est le dernier chiffre du résultat."
+      ],
+      "dialogue": "Une salade, cinq pays : additionne les kilomètres."
+     },
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Total des kilomètres alimentaires de la recette",
+        "valeur": "21014",
+        "longueur": 5
+       },
+       {
+        "libelle": "Chiffre des unités de ce total",
+        "valeur": "4",
+        "longueur": 1
+       },
+       {
+        "libelle": "Produits de la recette venus d'Europe",
+        "valeur": "2",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Calcule les kilomètres alimentaires nécessaires pour réaliser cette salade, puis ouvre le cadenas. Recette de la salade fraîcheur : 1 poire (Chili), 100 g de feta (Grèce), 1 salade (Espagne), 100 g de noisettes (Turquie), 200 g de tomates (Maroc).<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+      "indices": [
+       "11 702 + 2 585 + 1 013 + 3 422 + 2 292.",
+       "Pose l'addition en colonnes !",
+       "La Grèce et l'Espagne sont des pays d'Europe."
+      ],
+      "dialogue": "Une salade, cinq pays : additionne les kilomètres."
+     },
+     "mousse": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Chiffre des unités de 21 014",
+        "valeur": "4",
+        "longueur": 1
+       },
+       {
+        "libelle": "Chiffre des milliers de 21 014",
+        "valeur": "1",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Yanis a additionné les kilomètres alimentaires de sa salade fraîcheur : 21 014 km. Lis bien ce nombre.",
+      "indices": [
+       "Ouvre la fiche « Les kilomètres alimentaires ».",
+       "Le chiffre des unités est le dernier chiffre.",
+       "Le chiffre des milliers est le deuxième en partant de la gauche."
+      ],
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "lieutenant": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Que veut dire « circuit court » ?",
+        "options": [
+         "une vente directe, ou avec un seul intermédiaire, entre le producteur et le consommateur",
+         "un trajet de moins d'un kilomètre",
+         "un petit supermarché",
+         "un camion plus rapide"
+        ],
+        "bonne": 0,
+        "explication": "Moins d'intermédiaires, moins de transport."
+       },
+       {
+        "q": "Pourquoi les kilomètres alimentaires posent-ils un problème ?",
+        "options": [
+         "le transport rejette du CO₂",
+         "les aliments perdent leur couleur",
+         "les étiquettes deviennent illisibles",
+         "les camions sont trop lents"
+        ],
+        "bonne": 0,
+        "explication": "Le CO₂ contribue au réchauffement climatique."
+       },
+       {
+        "q": "Lequel de ces gestes n'a aucun effet sur les kilomètres alimentaires ?",
+        "options": [
+         "manger moins salé",
+         "acheter local",
+         "choisir des produits de saison",
+         "acheter en circuit court"
+        ],
+        "bonne": 0,
+        "explication": "Le sel n'a aucun rapport avec la distance."
+       }
+      ],
+      "consigne": "Yanis cherche comment réduire les kilomètres alimentaires. Réponds, puis choisis la phrase de la fiche sur le circuit court.",
+      "indices": [
+       "Un seul intermédiaire au plus.",
+       "Le transport rejette du gaz.",
+       "Pour la justification : cherche « directement au producteur »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du circuit court ?",
+       "options": [
+        "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur.",
+        "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande.",
+        "Manger moins salé ou ne pas laver ses fruits n'a aucun effet sur les kilomètres alimentaires.",
+        "Plus cette distance est grande, plus le transport rejette de CO₂ dans l'atmosphère, ce qui dégrade l'air et contribue au réchauffement climatique."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Acheter en circuit court réduit les kilomètres alimentaires.",
+        "vrai": true,
+        "explication": "Moins d'intermédiaires, moins de transport."
+       },
+       {
+        "txt": "Ne pas laver ses fruits réduit les kilomètres alimentaires.",
+        "vrai": false,
+        "explication": "Cela n'a aucun effet sur la distance parcourue."
+       },
+       {
+        "txt": "Manger moins salé n'a aucun effet sur les kilomètres alimentaires.",
+        "vrai": true,
+        "explication": "Le sel n'a aucun rapport avec la distance."
+       },
+       {
+        "txt": "Plus la distance est grande, moins le transport rejette de CO₂.",
+        "vrai": false,
+        "explication": "Plus la distance est grande, plus il y a de CO₂."
+       },
+       {
+        "txt": "Choisir des fruits de saison peut réduire les kilomètres alimentaires.",
+        "vrai": true,
+        "explication": "Un produit de saison vient plus souvent de près."
+       }
+      ],
+      "consigne": "Yanis te présente des idées reçues. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche qui dit ce qui n'a aucun effet.",
+      "indices": [
+       "Le sel et le lavage n'ont aucun rapport avec la distance.",
+       "Plus on va loin, plus on pollue.",
+       "Pour la justification : cherche « aucun effet »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche dit ce qui n'a aucun effet sur les kilomètres alimentaires ?",
+       "options": [
+        "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur.",
+        "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande.",
+        "Plus cette distance est grande, plus le transport rejette de CO₂ dans l'atmosphère, ce qui dégrade l'air et contribue au réchauffement climatique.",
+        "Manger moins salé ou ne pas laver ses fruits n'a aucun effet sur les kilomètres alimentaires."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     }
+    },
+    {
+     "id": "e12-3",
+     "escale": 12,
+     "ordre": 3,
+     "titre": "Moins de kilomètres",
+     "decor": "marseille-marche",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yanis",
+     "probleme_narratif": "Yanis cherche comment remplir son cabas avec moins de kilomètres alimentaires.",
+     "enjeu": "Chaque achat est un choix : tu peux parcourir moins de kilomètres.",
+     "episode_du_roman": "Séance 12 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Calculer les kilomètres alimentaires d'un repas",
+     "pourquoi_ce_savoir_ici": "La séance « Marseille — D'où vient ce que l'on mange ? » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Les bons gestes se cochent sur la toile du cabas."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l12",
+     "type": "qcm",
+     "niveau_variantes": "Découverte (vraifaux) ; Agent CM1 (qcm) ; Agent CM2 (qcm) ; Géographe (tri) ; Chef de mission (tri). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Plus la distance est grande, plus le transport rejette de CO₂. Pour réduire les kilomètres alimentaires, on peut acheter en circuit court, privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande. Manger moins salé ou ne pas laver ses fruits n'a aucun effet.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Quel geste réduit les kilomètres alimentaires ?",
+        "options": [
+         "acheter en circuit court, directement au producteur",
+         "acheter des produits venus de l'autre bout du monde",
+         "laver ses fruits plus longtemps"
+        ],
+        "bonne": 0,
+        "explication": "Moins de distance, moins de transport."
+       },
+       {
+        "q": "Pourquoi les kilomètres alimentaires posent-ils un problème ?",
+        "options": [
+         "le transport rejette du CO₂",
+         "les aliments perdent leur couleur",
+         "les étiquettes deviennent illisibles"
+        ],
+        "bonne": 0,
+        "explication": "Le CO₂ contribue au réchauffement climatique."
+       },
+       {
+        "q": "Lequel de ces gestes n'a aucun effet sur les kilomètres alimentaires ?",
+        "options": [
+         "manger moins salé",
+         "acheter local",
+         "choisir des produits de saison"
+        ],
+        "bonne": 0,
+        "explication": "Le sel n'a aucun rapport avec la distance."
+       }
+      ],
+      "consigne": "Yanis cherche comment réduire les kilomètres alimentaires. Réponds à ses questions.",
+      "indices": [
+       "Le circuit court est une vente directe du producteur au consommateur.",
+       "Le transport rejette du CO₂.",
+       "Le sel et le lavage n'ont rien à voir avec la distance."
+      ],
+      "dialogue": "Je veux remplir mon cabas avec moins de kilomètres. Aide-moi."
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Quel geste réduit les kilomètres alimentaires ?",
+        "options": [
+         "acheter en circuit court, directement au producteur",
+         "acheter des produits venus de l'autre bout du monde",
+         "laver ses fruits plus longtemps",
+         "manger plus salé"
+        ],
+        "bonne": 0,
+        "explication": "Moins de distance, moins de transport."
+       },
+       {
+        "q": "Pourquoi les kilomètres alimentaires posent-ils un problème ?",
+        "options": [
+         "le transport rejette du CO₂ et contribue au réchauffement climatique",
+         "les aliments perdent leur couleur",
+         "les étiquettes deviennent illisibles",
+         "les camions sont trop lents"
+        ],
+        "bonne": 0,
+        "explication": "Plus la distance est grande, plus il y a de CO₂."
+       },
+       {
+        "q": "Lequel de ces gestes n'a aucun effet sur les kilomètres alimentaires ?",
+        "options": [
+         "manger moins salé",
+         "acheter local",
+         "choisir des produits de saison",
+         "acheter en circuit court"
+        ],
+        "bonne": 0,
+        "explication": "Le sel n'a aucun rapport avec la distance."
+       },
+       {
+        "q": "Que veut dire « circuit court » ?",
+        "options": [
+         "une vente directe, ou avec un seul intermédiaire, entre le producteur et le consommateur",
+         "un trajet de moins d'un kilomètre",
+         "un petit supermarché",
+         "un camion plus rapide"
+        ],
+        "bonne": 0,
+        "explication": "Moins d'intermédiaires, moins de transport."
+       }
+      ],
+      "consigne": "Pour réduire les kilomètres alimentaires, Yanis te demande de distinguer ce qui sert de ce qui ne sert à rien. Réponds à ses questions.",
+      "indices": [
+       "Produits locaux et de saison : moins de transport.",
+       "Manger moins salé n'a aucun rapport avec la distance parcourue.",
+       "Circuit court : un seul intermédiaire au plus."
+      ],
+      "dialogue": "Je veux remplir mon cabas avec moins de kilomètres. Aide-moi."
+     },
+     "mousse": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Un aliment qui vient de loin a parcouru beaucoup de kilomètres.",
+        "vrai": true,
+        "explication": "On parle de kilomètres alimentaires."
+       },
+       {
+        "txt": "Le transport des aliments rejette du CO₂.",
+        "vrai": true,
+        "explication": "Ce gaz contribue au réchauffement climatique."
+       },
+       {
+        "txt": "Ne pas laver ses fruits réduit les kilomètres alimentaires.",
+        "vrai": false,
+        "explication": "Cela n'a aucun effet."
+       }
+      ],
+      "consigne": "Yanis te pose trois questions. Pour chaque phrase, choisis vrai ou faux.",
+      "indices": [
+       "Ouvre la fiche « Les kilomètres alimentaires ».",
+       "Loin, ça veut dire beaucoup de kilomètres.",
+       "Laver un fruit ne change pas la distance."
+      ],
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "eu",
+        "titre": "Europe"
+       },
+       {
+        "id": "af",
+        "titre": "Afrique"
+       },
+       {
+        "id": "as",
+        "titre": "Amérique du Sud"
+       },
+       {
+        "id": "asie",
+        "titre": "Asie"
+       },
+       {
+        "id": "oc",
+        "titre": "Océanie"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Fraises (Espagne)",
+        "col": "eu"
+       },
+       {
+        "txt": "Feta (Grèce)",
+        "col": "eu"
+       },
+       {
+        "txt": "Bananes (Cameroun)",
+        "col": "af"
+       },
+       {
+        "txt": "Oranges (Afrique du Sud)",
+        "col": "af"
+       },
+       {
+        "txt": "Citrons (Argentine)",
+        "col": "as"
+       },
+       {
+        "txt": "Poires (Chili)",
+        "col": "as"
+       },
+       {
+        "txt": "Noisettes (Turquie)",
+        "col": "asie"
+       },
+       {
+        "txt": "Kiwis (Nouvelle-Zélande)",
+        "col": "oc"
+       }
+      ],
+      "consigne": "Yanis classe les produits du marché par continent. Range-les, puis choisis la phrase de la fiche qui cite les origines des produits.",
+      "indices": [
+       "La Turquie se trouve surtout en Asie.",
+       "La Nouvelle-Zélande est en Océanie.",
+       "Pour la justification : cherche « myrtilles du Portugal »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les origines des produits d'un supermarché ?",
+       "options": [
+        "Les kilomètres alimentaires sont la distance totale parcourue par un aliment avant d'arriver dans notre assiette.",
+        "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur.",
+        "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande.",
+        "Dans un supermarché français, les étiquettes révèlent des origines très variées : fraises d'Espagne, bananes du Cameroun, noisettes de Turquie, oranges d'Afrique du Sud, citrons d'Argentine, feta de Grèce, poires du Chili, myrtilles du Portugal, kiwis de Nouvelle-Zélande et mangues du Brésil."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "oui",
+        "titre": "Réduit les kilomètres alimentaires"
+       },
+       {
+        "id": "non",
+        "titre": "N'a aucun effet"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "Acheter en circuit court",
+        "col": "oui"
+       },
+       {
+        "txt": "Choisir des produits locaux",
+        "col": "oui"
+       },
+       {
+        "txt": "Choisir des fruits et des légumes de saison",
+        "col": "oui"
+       },
+       {
+        "txt": "Manger moins de viande",
+        "col": "oui"
+       },
+       {
+        "txt": "Manger moins salé",
+        "col": "non"
+       },
+       {
+        "txt": "Ne pas laver ses fruits",
+        "col": "non"
+       }
+      ],
+      "consigne": "Yanis te propose des gestes. Range chacun selon son effet sur les kilomètres alimentaires, puis choisis la phrase de la fiche qui cite les gestes efficaces.",
+      "indices": [
+       "Le sel et le lavage n'ont aucun effet.",
+       "Local et de saison : moins de transport.",
+       "Pour la justification : cherche « manger moins de viande »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite des gestes qui réduisent les kilomètres ?",
+       "options": [
+        "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur.",
+        "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande.",
+        "Manger moins salé ou ne pas laver ses fruits n'a aucun effet sur les kilomètres alimentaires.",
+        "Plus cette distance est grande, plus le transport rejette de CO₂ dans l'atmosphère, ce qui dégrade l'air et contribue au réchauffement climatique."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     }
+    },
+    {
+     "id": "e12-4",
+     "escale": 12,
+     "ordre": 4,
+     "titre": "Du plus près au plus loin",
+     "decor": "marseille-marche",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "yanis",
+     "probleme_narratif": "Yanis veut classer les ingrédients de sa salade du plus proche au plus lointain.",
+     "enjeu": "Pour choisir ce que l'on achète, il faut savoir ce qui vient de près et ce qui vient de loin.",
+     "episode_du_roman": "Séance 12 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Calculer les kilomètres alimentaires d'un repas",
+     "pourquoi_ce_savoir_ici": "La séance « Marseille — D'où vient ce que l'on mange ? » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Les fils se raccourcissent ou s'allongent selon l'ordre juste."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l12",
+     "type": "ordre",
+     "niveau_variantes": "Agent CM2 (ordre) ; Géographe (code) ; Chef de mission (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Dans l'ordre : la salade d'Espagne (1 013 km), les tomates du Maroc (2 292 km), la feta de Grèce (2 585 km), les noisettes de Turquie (3 422 km), puis la poire du Chili (11 702 km).",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "items": [
+       {
+        "txt": "La salade (Espagne)",
+        "rang": 1
+       },
+       {
+        "txt": "Les tomates (Maroc)",
+        "rang": 2
+       },
+       {
+        "txt": "La feta (Grèce)",
+        "rang": 3
+       },
+       {
+        "txt": "Les noisettes (Turquie)",
+        "rang": 4
+       },
+       {
+        "txt": "La poire (Chili)",
+        "rang": 5
+       }
+      ],
+      "consigne": "Yanis veut savoir quel ingrédient de la salade vient de plus près. Range les ingrédients du plus proche au plus lointain, d'après les distances jusqu'en France.<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+      "indices": [
+       "Compare les nombres de kilomètres.",
+       "L'Espagne est le pays le plus proche.",
+       "Le Chili est de l'autre côté de l'Atlantique : c'est le plus lointain."
+      ],
+      "dialogue": "Quel ingrédient vient de plus près ? Classe-les."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Total des kilomètres alimentaires de cette salade",
+        "valeur": "16579",
+        "longueur": 5
+       },
+       {
+        "libelle": "Chiffre des dizaines de ce total",
+        "valeur": "7",
+        "longueur": 1
+       }
+      ],
+      "consigne": "Yanis prépare une autre salade : 1 poire (Chili), 100 g de feta (Grèce) et 200 g de tomates (Maroc). Calcule, puis choisis la phrase de la fiche qui explique pourquoi la distance compte.<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+      "indices": [
+       "11 702 + 2 585 + 2 292.",
+       "Le chiffre des dizaines est l'avant-dernier chiffre.",
+       "Pour la justification : cherche « rejette de CO₂ »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique pourquoi la distance compte ?",
+       "options": [
+        "Les kilomètres alimentaires sont la distance totale parcourue par un aliment avant d'arriver dans notre assiette.",
+        "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande.",
+        "Plus cette distance est grande, plus le transport rejette de CO₂ dans l'atmosphère, ce qui dégrade l'air et contribue au réchauffement climatique.",
+        "Manger moins salé ou ne pas laver ses fruits n'a aucun effet sur les kilomètres alimentaires."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Total initial des kilomètres alimentaires",
+        "valeur": "21014",
+        "longueur": 5
+       },
+       {
+        "libelle": "Kilomètres économisés",
+        "valeur": "11402",
+        "longueur": 5
+       },
+       {
+        "libelle": "Nouveau total",
+        "valeur": "9612",
+        "longueur": 4
+       }
+      ],
+      "consigne": "Imagine que Yanis remplace la poire du Chili de la salade fraîcheur (1 poire du Chili, 100 g de feta de Grèce, 1 salade d'Espagne, 100 g de noisettes de Turquie, 200 g de tomates du Maroc) par une pomme de saison produite à 300 km. Calcule, puis choisis la phrase de la fiche qui recommande les produits locaux.<div class=\"doc-titre\"><i>Distance jusqu'en France (en kilomètres)</i></div><table class=\"tableau-releves\"><tr><th>Chili</th><th>Grèce</th><th>Espagne</th><th>Turquie</th><th>Maroc</th></tr><tr><td>11 702</td><td>2 585</td><td>1 013</td><td>3 422</td><td>2 292</td></tr></table>",
+      "indices": [
+       "11 702 + 2 585 + 1 013 + 3 422 + 2 292.",
+       "11 702 − 300.",
+       "Le total initial moins les kilomètres économisés. Pour la justification : cherche « produits locaux »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche recommande les produits locaux ?",
+       "options": [
+        "On peut aussi privilégier les produits locaux, choisir des fruits et des légumes de saison et manger moins de viande.",
+        "Les kilomètres alimentaires sont la distance totale parcourue par un aliment avant d'arriver dans notre assiette.",
+        "Pour réduire ces kilomètres, on peut acheter en circuit court, directement au producteur.",
+        "Plus cette distance est grande, plus le transport rejette de CO₂ dans l'atmosphère, ce qui dégrade l'air et contribue au réchauffement climatique."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     }
+    }
+   ]
+  },
+  {
+   "numero": 13,
+   "id": "les-alpes-fleuves-et-massifs",
+   "titre": "L'eau en France : fleuves et massifs",
+   "lieu": "Les Alpes, au bord d'un torrent de montagne",
+   "matiere": "Géographie",
+   "periode_conseillee": "Période 4",
+   "episode": "Un torrent clair qui dévale entre des rochers, des sapins, des névés accrochés aux pentes et, tout en haut, des sommets enneigés baignés de lumière.",
+   "scenarimage": "",
+   "mot": "MASSIFS",
+   "mot_origine": "Le mot-clé de la séance 13, à recopier sur la fiche de mission.",
+   "air": null,
+   "cinematique_ouverture": "transition-e13",
+   "cinematique_fin": "fin-e13",
+   "etats_decor": [],
+   "enigmes": [
+    {
+     "id": "e13-1",
+     "escale": 13,
+     "ordre": 1,
+     "titre": "La carte du relief",
+     "decor": "alpes-torrent",
+     "objet_principal": "objet-1",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "remi",
+     "probleme_narratif": "Rémi déplie sa carte de France et te demande de nommer fleuves et massifs.",
+     "enjeu": "Pour suivre le chemin de l'eau, il faut savoir lire les fleuves et les montagnes.",
+     "episode_du_roman": "Séance 13 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Situer et nommer les cinq principaux fleuves français",
+     "pourquoi_ce_savoir_ici": "La séance « Les Alpes — Fleuves et massifs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "ouverture",
+      "description": "Les noms se posent sur la carte, en bleu pour les fleuves, en brun pour les massifs."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l13",
+     "type": "plan",
+     "niveau_variantes": "Découverte (plan) ; Agent CM1 (plan) ; Agent CM2 (plan) ; Géographe (association) ; Chef de mission (plan). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La Seine traverse Paris, au nord ; la Loire coule vers l'ouest, la Garonne vers le sud-ouest, le Rhône vers le sud et le Rhin est à l'est, à la frontière avec l'Allemagne. Les Alpes sont à l'est, les Pyrénées au sud, le Massif central au centre, le Jura et les Vosges à l'est, et la Corse est une île.",
+     "matelot": {
+      "titre": "La carte du relief de Rémi",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Seine"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Loire"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "La Garonne"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Rhône"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Le Rhin"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Les Alpes"
+       }
+      ],
+      "consigne": "Rémi, guide de haute montagne, te tend une carte de France. Place le nom de chaque fleuve et de chaque massif sur son repère : clique sur une étiquette, puis sur la case du repère.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France : fleuves et massifs (repères numérotés)\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M478,140 q22,-6 26,20 q4,26 -16,32 q-22,4 -24,-22 q-2,-24 14,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M440,214 q26,-10 32,16 q6,26 -14,34 q-22,8 -30,-16 q-8,-24 12,-34 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M456,272 q34,-8 40,30 q6,40 -22,52 q-30,10 -40,-28 q-10,-40 22,-54 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M304,272 q46,-14 54,32 q8,46 -30,58 q-42,10 -52,-32 q-10,-44 28,-58 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M180,398 q70,-16 128,26 q28,20 -6,28 q-64,-6 -122,-26 q-24,-12 0,-28 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M570,442 q20,-4 22,26 q2,30 -14,32 q-18,0 -20,-28 q-2,-28 12,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><g fill=\"none\" stroke=\"#1f6fb8\" stroke-width=\"4\" stroke-linecap=\"round\"><path d=\"M406,178 L382,153 L312,126 L262,98 L222,93\"/><path d=\"M386,328 L344,218 L294,173 L246,198 L156,208 L130,203\"/><path d=\"M246,428 L276,388 L195,326 L178,288\"/><path d=\"M462,258 L412,280 L410,371 L406,401\"/><path d=\"M522,188 L530,138 L546,118\"/></g><text x=\"60\" y=\"300\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Océan Atlantique</text><text x=\"220\" y=\"45\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Manche</text><text x=\"400\" y=\"470\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Mer Méditerranée</text><g font-size=\"13\" fill=\"#3a4a5c\"><text x=\"330\" y=\"12\">N</text></g><circle cx='312' cy='126' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='312' y='132' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='246' cy='198' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='204' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='200' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='412' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='412' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='556' cy='120' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='556' y='126' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='474' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='474' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text></svg>",
+      "indices": [
+       "La Seine passe à Paris, au nord.",
+       "Le Rhône descend vers le sud.",
+       "Les Alpes sont à l'est, près de l'Italie."
+      ],
+      "dialogue": "Je suis Rémi, guide de haute montagne. La piste des produits agricoles n'a rien donné : il te reste la piste de l'eau. Pour comprendre d'où elle vient, il faut savoir lire une carte du relief et des cours d'eau."
+     },
+     "timonier": {
+      "titre": "La carte du relief de Rémi",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Seine"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Loire"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "La Garonne"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Rhône"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Le Rhin"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Les Alpes"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Les Pyrénées"
+       },
+       {
+        "libelle": "Repère 8",
+        "reponse": "Le Massif central"
+       },
+       {
+        "libelle": "Repère 9",
+        "reponse": "Le Jura"
+       },
+       {
+        "libelle": "Repère 10",
+        "reponse": "Les Vosges"
+       },
+       {
+        "libelle": "Repère 11",
+        "reponse": "La Corse"
+       }
+      ],
+      "consigne": "Replace les noms des cinq fleuves, des cinq massifs montagneux de la France continentale et de la Corse sur leurs repères. Les fleuves sont en bleu sur la carte, les massifs en brun.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France : fleuves et massifs (repères numérotés)\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M478,140 q22,-6 26,20 q4,26 -16,32 q-22,4 -24,-22 q-2,-24 14,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M440,214 q26,-10 32,16 q6,26 -14,34 q-22,8 -30,-16 q-8,-24 12,-34 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M456,272 q34,-8 40,30 q6,40 -22,52 q-30,10 -40,-28 q-10,-40 22,-54 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M304,272 q46,-14 54,32 q8,46 -30,58 q-42,10 -52,-32 q-10,-44 28,-58 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M180,398 q70,-16 128,26 q28,20 -6,28 q-64,-6 -122,-26 q-24,-12 0,-28 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M570,442 q20,-4 22,26 q2,30 -14,32 q-18,0 -20,-28 q-2,-28 12,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><g fill=\"none\" stroke=\"#1f6fb8\" stroke-width=\"4\" stroke-linecap=\"round\"><path d=\"M406,178 L382,153 L312,126 L262,98 L222,93\"/><path d=\"M386,328 L344,218 L294,173 L246,198 L156,208 L130,203\"/><path d=\"M246,428 L276,388 L195,326 L178,288\"/><path d=\"M462,258 L412,280 L410,371 L406,401\"/><path d=\"M522,188 L530,138 L546,118\"/></g><text x=\"60\" y=\"300\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Océan Atlantique</text><text x=\"220\" y=\"45\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Manche</text><text x=\"400\" y=\"470\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Mer Méditerranée</text><g font-size=\"13\" fill=\"#3a4a5c\"><text x=\"330\" y=\"12\">N</text></g><circle cx='312' cy='126' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='312' y='132' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='246' cy='198' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='204' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='200' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='412' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='412' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='556' cy='120' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='556' y='126' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='474' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='474' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='246' cy='424' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='430' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text><circle cx='328' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='328' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>8</text><circle cx='452' cy='240' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='452' y='246' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>9</text><circle cx='486' cy='178' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='486' y='184' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>10</text><circle cx='580' cy='470' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='580' y='476' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>11</text></svg>",
+      "indices": [
+       "La Garonne descend des Pyrénées vers l'Atlantique.",
+       "Le Jura est au nord des Alpes, le long de la frontière avec la Suisse.",
+       "Le Massif central est au centre du pays."
+      ],
+      "dialogue": "Je suis Rémi, guide de haute montagne. La piste des produits agricoles n'a rien donné : il te reste la piste de l'eau. Pour comprendre d'où elle vient, il faut savoir lire une carte du relief et des cours d'eau."
+     },
+     "mousse": {
+      "type": "plan",
+      "titre": "La carte de Rémi",
+      "colonnes": 3,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Seine"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "Le Rhône"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "Les Alpes"
+       }
+      ],
+      "etiquettes": [
+       "La Seine",
+       "Le Rhône",
+       "Les Alpes"
+      ],
+      "consigne": "Place chaque nom sur son repère.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France : fleuves et massifs (repères numérotés)\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M478,140 q22,-6 26,20 q4,26 -16,32 q-22,4 -24,-22 q-2,-24 14,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M440,214 q26,-10 32,16 q6,26 -14,34 q-22,8 -30,-16 q-8,-24 12,-34 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M456,272 q34,-8 40,30 q6,40 -22,52 q-30,10 -40,-28 q-10,-40 22,-54 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M304,272 q46,-14 54,32 q8,46 -30,58 q-42,10 -52,-32 q-10,-44 28,-58 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M180,398 q70,-16 128,26 q28,20 -6,28 q-64,-6 -122,-26 q-24,-12 0,-28 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M570,442 q20,-4 22,26 q2,30 -14,32 q-18,0 -20,-28 q-2,-28 12,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><g fill=\"none\" stroke=\"#1f6fb8\" stroke-width=\"4\" stroke-linecap=\"round\"><path d=\"M406,178 L382,153 L312,126 L262,98 L222,93\"/><path d=\"M386,328 L344,218 L294,173 L246,198 L156,208 L130,203\"/><path d=\"M246,428 L276,388 L195,326 L178,288\"/><path d=\"M462,258 L412,280 L410,371 L406,401\"/><path d=\"M522,188 L530,138 L546,118\"/></g><text x=\"60\" y=\"300\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Océan Atlantique</text><text x=\"220\" y=\"45\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Manche</text><text x=\"400\" y=\"470\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Mer Méditerranée</text><g font-size=\"13\" fill=\"#3a4a5c\"><text x=\"330\" y=\"12\">N</text></g><circle cx='312' cy='126' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='312' y='132' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='412' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='412' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='474' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='474' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text></svg>",
+      "indices": [
+       "Ouvre la fiche « Les principaux fleuves et massifs de France ».",
+       "La Seine traverse Paris, au nord.",
+       "Les Alpes sont à l'est, près de l'Italie."
+      ],
+      "dialogue": "Je suis Rémi, guide de haute montagne. La piste des produits agricoles n'a rien donné : il te reste la piste de l'eau. Pour comprendre d'où elle vient, il faut savoir lire une carte du relief et des cours d'eau."
+     },
+     "lieutenant": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "les Alpes",
+        "d": "les plus hautes montagnes de France"
+       },
+       {
+        "g": "les Pyrénées",
+        "d": "la frontière avec l'Espagne"
+       },
+       {
+        "g": "le Massif central",
+        "d": "d'anciens volcans"
+       },
+       {
+        "g": "le Jura",
+        "d": "la frontière avec la Suisse"
+       },
+       {
+        "g": "les Vosges",
+        "d": "des sommets arrondis, à l'est"
+       }
+      ],
+      "consigne": "Rémi te décrit les massifs. Relie chaque massif à ce qui le caractérise, puis choisis la phrase de la fiche qui les nomme tous.",
+      "indices": [
+       "Le mont Blanc est dans les Alpes.",
+       "Le Massif central est formé d'anciens volcans.",
+       "Pour la justification : cherche « six grands massifs »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche nomme les six grands massifs ?",
+       "options": [
+        "Les Alpes sont les plus hautes montagnes de France : le mont Blanc culmine à environ 4 807 mètres.",
+        "Les Pyrénées forment la frontière avec l'Espagne.",
+        "Les six grands massifs montagneux sont les Alpes, les Pyrénées, le Massif central, le Jura, les Vosges et les montagnes de Corse.",
+        "Les montagnes retiennent la neige : en fondant au printemps, elle alimente les fleuves."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Je suis Rémi, guide de haute montagne. La piste des produits agricoles n'a rien donné : il te reste la piste de l'eau. Pour comprendre d'où elle vient, il faut savoir lire une carte du relief et des cours d'eau."
+     },
+     "second": {
+      "type": "plan",
+      "titre": "La carte de Rémi",
+      "colonnes": 2,
+      "cases": [
+       {
+        "libelle": "Repère 1",
+        "reponse": "La Seine"
+       },
+       {
+        "libelle": "Repère 2",
+        "reponse": "La Loire"
+       },
+       {
+        "libelle": "Repère 3",
+        "reponse": "La Garonne"
+       },
+       {
+        "libelle": "Repère 4",
+        "reponse": "Le Rhône"
+       },
+       {
+        "libelle": "Repère 5",
+        "reponse": "Le Rhin"
+       },
+       {
+        "libelle": "Repère 6",
+        "reponse": "Les Alpes"
+       },
+       {
+        "libelle": "Repère 7",
+        "reponse": "Les Pyrénées"
+       },
+       {
+        "libelle": "Repère 8",
+        "reponse": "Le Massif central"
+       }
+      ],
+      "etiquettes": [
+       "La Seine",
+       "La Loire",
+       "La Garonne",
+       "Le Rhône",
+       "Le Rhin",
+       "Les Alpes",
+       "Les Pyrénées",
+       "Le Massif central",
+       "La Dordogne"
+      ],
+      "consigne": "Place les cinq fleuves et trois massifs sur leur repère (une étiquette est en trop), puis choisis la phrase de la fiche qui cite les cinq fleuves.<svg viewBox=\"0 0 620 520\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" style='max-width:100%;height:auto;display:block;margin:10px auto;border-radius:10px' aria-label=\"La France : fleuves et massifs (repères numérotés)\"><rect x=\"0\" y=\"0\" width=\"620\" height=\"520\" fill=\"#bfe0f2\"/><path d=\"M314,18 L282,23 L222,93 L154,83 L138,138 L38,148 L30,168 L82,183 L130,203 L146,243 L170,258 L178,288 L170,338 L154,393 L338,443 L374,388 L434,403 L510,383 L482,323 L462,258 L522,188 L530,138 L546,118 L450,93 L342,38 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M566,433 L592,433 L600,448 L598,473 L590,498 L570,488 L562,458 Z\" fill=\"#dff0d5\" stroke=\"#4a6b3c\" stroke-width=\"2.5\"/><path d=\"M478,140 q22,-6 26,20 q4,26 -16,32 q-22,4 -24,-22 q-2,-24 14,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M440,214 q26,-10 32,16 q6,26 -14,34 q-22,8 -30,-16 q-8,-24 12,-34 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M456,272 q34,-8 40,30 q6,40 -22,52 q-30,10 -40,-28 q-10,-40 22,-54 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M304,272 q46,-14 54,32 q8,46 -30,58 q-42,10 -52,-32 q-10,-44 28,-58 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M180,398 q70,-16 128,26 q28,20 -6,28 q-64,-6 -122,-26 q-24,-12 0,-28 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><path d=\"M570,442 q20,-4 22,26 q2,30 -14,32 q-18,0 -20,-28 q-2,-28 12,-30 Z\" fill=\"#c9a06a\" stroke=\"#a97f4a\" stroke-width=\"1.5\" opacity=\".85\"/><g fill=\"none\" stroke=\"#1f6fb8\" stroke-width=\"4\" stroke-linecap=\"round\"><path d=\"M406,178 L382,153 L312,126 L262,98 L222,93\"/><path d=\"M386,328 L344,218 L294,173 L246,198 L156,208 L130,203\"/><path d=\"M246,428 L276,388 L195,326 L178,288\"/><path d=\"M462,258 L412,280 L410,371 L406,401\"/><path d=\"M522,188 L530,138 L546,118\"/></g><text x=\"60\" y=\"300\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Océan Atlantique</text><text x=\"220\" y=\"45\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Manche</text><text x=\"400\" y=\"470\" font-size=\"15\" fill=\"#2c6c99\" font-style=\"italic\">Mer Méditerranée</text><g font-size=\"13\" fill=\"#3a4a5c\"><text x=\"330\" y=\"12\">N</text></g><circle cx='312' cy='126' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='312' y='132' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>1</text><circle cx='246' cy='198' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='204' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>2</text><circle cx='200' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='200' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>3</text><circle cx='412' cy='330' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='412' y='336' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>4</text><circle cx='556' cy='120' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='556' y='126' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>5</text><circle cx='474' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='474' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>6</text><circle cx='246' cy='424' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='246' y='430' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>7</text><circle cx='328' cy='318' r='13' fill='#7a1f2b' stroke='#fff' stroke-width='3'/><text x='328' y='324' text-anchor='middle' font-size='16' font-weight='700' fill='#fff' font-family='Atkinson Hyperlegible,Arial,sans-serif'>8</text></svg>",
+      "indices": [
+       "La Dordogne n'est pas un des cinq grands fleuves.",
+       "Le Massif central est au centre du pays.",
+       "Pour la justification : cherche « cinq principaux fleuves »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les cinq principaux fleuves ?",
+       "options": [
+        "La Seine traverse Paris et se jette dans la Manche, près du Havre.",
+        "Le Rhin longe la frontière avec l'Allemagne et se jette dans la mer du Nord.",
+        "Les cinq principaux fleuves français sont la Seine, la Loire, la Garonne, le Rhône et le Rhin.",
+        "La Garonne descend des Pyrénées et se jette dans l'océan Atlantique par l'estuaire de la Gironde."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Je suis Rémi, guide de haute montagne. La piste des produits agricoles n'a rien donné : il te reste la piste de l'eau. Pour comprendre d'où elle vient, il faut savoir lire une carte du relief et des cours d'eau."
+     }
+    },
+    {
+     "id": "e13-2",
+     "escale": 13,
+     "ordre": 2,
+     "titre": "Fleuve ou rivière ?",
+     "decor": "alpes-torrent",
+     "objet_principal": "objet-2",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "remi",
+     "probleme_narratif": "Rémi te pose des questions au bord du torrent, entre deux gorgées d'eau glacée.",
+     "enjeu": "Un torrent est le début d'un cours d'eau : il faut savoir où il va.",
+     "episode_du_roman": "Séance 13 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Situer et nommer les cinq principaux fleuves français",
+     "pourquoi_ce_savoir_ici": "La séance « Les Alpes — Fleuves et massifs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "lumiere",
+      "description": "Le torrent rugit et les réponses justes s'affichent sur les rochers."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l13",
+     "type": "qcm",
+     "niveau_variantes": "Découverte (qcm) ; Agent CM1 (qcm) ; Agent CM2 (qcm) ; Géographe (tri) ; Chef de mission (vraifaux). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "Un fleuve se jette dans la mer ou l'océan ; une rivière se jette dans un autre cours d'eau. La Loire est le plus long fleuve de France, avec environ 1 006 km. La Garonne descend des Pyrénées. La France compte six grands massifs montagneux.",
+     "matelot": {
+      "questions": [
+       {
+        "q": "Quelle est la différence entre un fleuve et une rivière ?",
+        "options": [
+         "un fleuve se jette dans la mer ou l'océan ; une rivière se jette dans un autre cours d'eau",
+         "un fleuve est plus long qu'une rivière",
+         "un fleuve est plus large qu'une rivière"
+        ],
+        "bonne": 0,
+        "explication": "Ce n'est pas une question de taille, mais de destination."
+       },
+       {
+        "q": "Quel est le plus long fleuve de France ?",
+        "options": [
+         "la Loire",
+         "la Seine",
+         "le Rhône"
+        ],
+        "bonne": 0,
+        "explication": "Environ 1 006 km."
+       },
+       {
+        "q": "De quel massif descend la Garonne ?",
+        "options": [
+         "les Pyrénées",
+         "les Vosges",
+         "le Jura"
+        ],
+        "bonne": 0,
+        "explication": "Elle descend des Pyrénées vers l'océan Atlantique."
+       }
+      ],
+      "consigne": "Rémi te pose trois questions avant de t'emmener au bord du torrent.",
+      "indices": [
+       "Ce n'est pas une question de taille, mais de destination.",
+       "La Loire est le plus long fleuve de France.",
+       "Les Pyrénées sont au sud, à la frontière avec l'Espagne."
+      ],
+      "dialogue": "Écoute le torrent. Sais-tu où va cette eau ?"
+     },
+     "timonier": {
+      "questions": [
+       {
+        "q": "Quelle est la différence entre un fleuve et une rivière ?",
+        "options": [
+         "un fleuve se jette dans la mer ou l'océan ; une rivière se jette dans un autre cours d'eau",
+         "un fleuve est plus long qu'une rivière",
+         "un fleuve prend sa source en montagne, une rivière en plaine",
+         "un fleuve est plus large qu'une rivière"
+        ],
+        "bonne": 0,
+        "explication": "Ce n'est pas une question de taille, mais de destination."
+       },
+       {
+        "q": "Quel est le plus long fleuve de France ?",
+        "options": [
+         "la Loire",
+         "la Seine",
+         "le Rhône",
+         "la Garonne"
+        ],
+        "bonne": 0,
+        "explication": "Environ 1 006 km."
+       },
+       {
+        "q": "Combien de grands massifs montagneux compte la France ?",
+        "options": [
+         "six",
+         "trois",
+         "huit",
+         "douze"
+        ],
+        "bonne": 0,
+        "explication": "Alpes, Pyrénées, Massif central, Jura, Vosges, Corse."
+       },
+       {
+        "q": "Quel massif forme la frontière avec l'Espagne ?",
+        "options": [
+         "les Pyrénées",
+         "les Alpes",
+         "les Vosges",
+         "le Jura"
+        ],
+        "bonne": 0,
+        "explication": "La Garonne y prend sa source."
+       }
+      ],
+      "consigne": "Avant de remonter le torrent, Rémi te teste sur les fleuves et les massifs.",
+      "indices": [
+       "Un fleuve se jette dans la mer ou l'océan.",
+       "Alpes, Pyrénées, Massif central, Jura, Vosges, Corse.",
+       "La Loire mesure environ 1 000 km."
+      ],
+      "dialogue": "Écoute le torrent. Sais-tu où va cette eau ?"
+     },
+     "mousse": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Combien de grands massifs montagneux compte la France ?",
+        "options": [
+         "six",
+         "trois",
+         "douze"
+        ],
+        "bonne": 0,
+        "explication": "Alpes, Pyrénées, Massif central, Jura, Vosges et Corse."
+       },
+       {
+        "q": "Un fleuve se jette dans…",
+        "options": [
+         "la mer ou l'océan",
+         "un autre cours d'eau",
+         "une montagne"
+        ],
+        "bonne": 0,
+        "explication": "Une rivière, elle, se jette dans un autre cours d'eau."
+       }
+      ],
+      "consigne": "Rémi te pose deux questions.",
+      "indices": [
+       "Ouvre la fiche « Les principaux fleuves et massifs de France ».",
+       "Compte les massifs sur la carte.",
+       "Un fleuve finit sa course dans la mer."
+      ],
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     },
+     "lieutenant": {
+      "type": "tri",
+      "colonnes": [
+       {
+        "id": "fl",
+        "titre": "Un fleuve (se jette dans la mer ou l'océan)"
+       },
+       {
+        "id": "ri",
+        "titre": "Une rivière (se jette dans un autre cours d'eau)"
+       }
+      ],
+      "cartes": [
+       {
+        "txt": "la Seine",
+        "col": "fl"
+       },
+       {
+        "txt": "la Loire",
+        "col": "fl"
+       },
+       {
+        "txt": "la Garonne",
+        "col": "fl"
+       },
+       {
+        "txt": "le Rhône",
+        "col": "fl"
+       },
+       {
+        "txt": "la Marne (affluent de la Seine)",
+        "col": "ri"
+       },
+       {
+        "txt": "l'Allier (affluent de la Loire)",
+        "col": "ri"
+       },
+       {
+        "txt": "la Saône (affluent du Rhône)",
+        "col": "ri"
+       },
+       {
+        "txt": "l'Oise (affluent de la Seine)",
+        "col": "ri"
+       }
+      ],
+      "consigne": "Rémi te demande de distinguer fleuves et rivières. Range chaque cours d'eau, puis choisis la phrase de la fiche qui les distingue.",
+      "indices": [
+       "Un affluent se jette dans un autre cours d'eau.",
+       "Les cinq grands fleuves se jettent dans une mer ou dans l'océan.",
+       "Pour la justification : cherche « une rivière se jette »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche distingue un fleuve d'une rivière ?",
+       "options": [
+        "Les cinq principaux fleuves français sont la Seine, la Loire, la Garonne, le Rhône et le Rhin.",
+        "Un fleuve est un cours d'eau qui se jette dans la mer ou dans l'océan ; une rivière se jette dans un autre cours d'eau.",
+        "Les montagnes retiennent la neige : en fondant au printemps, elle alimente les fleuves.",
+        "Les six grands massifs montagneux sont les Alpes, les Pyrénées, le Massif central, le Jura, les Vosges et les montagnes de Corse."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Il faut tout ranger. Placez chaque carte dans la bonne colonne."
+     },
+     "second": {
+      "type": "vraifaux",
+      "affirmations": [
+       {
+        "txt": "Une rivière se jette dans la mer.",
+        "vrai": false,
+        "explication": "Une rivière se jette dans un autre cours d'eau."
+       },
+       {
+        "txt": "La Garonne descend des Pyrénées.",
+        "vrai": true,
+        "explication": "Elle se jette dans l'océan Atlantique par l'estuaire de la Gironde."
+       },
+       {
+        "txt": "Le Rhône vient de Suisse.",
+        "vrai": true,
+        "explication": "Il se jette dans la mer Méditerranée."
+       },
+       {
+        "txt": "Le Massif central est formé d'anciens volcans.",
+        "vrai": true,
+        "explication": "Il se trouve au centre du pays."
+       },
+       {
+        "txt": "La Seine est le plus long fleuve de France.",
+        "vrai": false,
+        "explication": "C'est la Loire, avec environ 1 006 km."
+       }
+      ],
+      "consigne": "Rémi t'envoie des affirmations à vérifier. Pour chaque phrase, choisis vrai ou faux, puis la phrase de la fiche sur le rôle de la neige.",
+      "indices": [
+       "Un fleuve se jette dans la mer ou l'océan.",
+       "La Loire est plus longue que la Seine.",
+       "Pour la justification : cherche « en fondant au printemps »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche explique le rôle de la neige ?",
+       "options": [
+        "Un fleuve est un cours d'eau qui se jette dans la mer ou dans l'océan ; une rivière se jette dans un autre cours d'eau.",
+        "Les montagnes retiennent la neige : en fondant au printemps, elle alimente les fleuves.",
+        "Le Massif central, au centre du pays, est formé d'anciens volcans.",
+        "La Seine traverse Paris et se jette dans la Manche, près du Havre."
+       ],
+       "bonne": 1
+      },
+      "dialogue": "Voici mes affirmations. À vous de dire lesquelles sont vraies."
+     }
+    },
+    {
+     "id": "e13-3",
+     "escale": 13,
+     "ordre": 3,
+     "titre": "Où se jettent les fleuves ?",
+     "decor": "alpes-torrent",
+     "objet_principal": "objet-3",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "remi",
+     "probleme_narratif": "Rémi veut que tu retrouves où se jette chaque fleuve.",
+     "enjeu": "Chaque fleuve a sa destination : l'oublier, c'est perdre la trace de l'eau.",
+     "episode_du_roman": "Séance 13 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Situer et nommer les cinq principaux fleuves français",
+     "pourquoi_ce_savoir_ici": "La séance « Les Alpes — Fleuves et massifs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "eclat",
+      "description": "Chaque panneau reçoit sa mer ou son océan."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l13",
+     "type": "association",
+     "niveau_variantes": "Découverte (association) ; Agent CM1 (association) ; Agent CM2 (association) ; Géographe (ordre) ; Chef de mission (qcm). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La Seine se jette dans la Manche, la Loire dans l'océan Atlantique par son estuaire, la Garonne dans l'océan Atlantique par l'estuaire de la Gironde, le Rhône dans la mer Méditerranée et le Rhin dans la mer du Nord.",
+     "matelot": {
+      "paires": [
+       {
+        "g": "La Seine",
+        "d": "La Manche"
+       },
+       {
+        "g": "La Loire",
+        "d": "L'océan Atlantique (estuaire de la Loire)"
+       },
+       {
+        "g": "La Garonne",
+        "d": "L'océan Atlantique (estuaire de la Gironde)"
+       },
+       {
+        "g": "Le Rhône",
+        "d": "La mer Méditerranée"
+       },
+       {
+        "g": "Le Rhin",
+        "d": "La mer du Nord"
+       }
+      ],
+      "consigne": "Rémi veut savoir où l'eau des fleuves finit sa course. Relie chaque fleuve à la mer ou à l'océan dans lequel il se jette.",
+      "indices": [
+       "Le Rhône descend vers le sud : il se jette dans la Méditerranée.",
+       "La Seine se jette près du Havre, en Normandie.",
+       "Le Rhin coule vers le nord."
+      ],
+      "dialogue": "Voici cinq fleuves. Retrouve où ils se jettent."
+     },
+     "timonier": {
+      "paires": [
+       {
+        "g": "La Seine",
+        "d": "La Manche"
+       },
+       {
+        "g": "La Loire",
+        "d": "L'océan Atlantique (estuaire de la Loire)"
+       },
+       {
+        "g": "La Garonne",
+        "d": "L'océan Atlantique (estuaire de la Gironde)"
+       },
+       {
+        "g": "Le Rhône",
+        "d": "La mer Méditerranée"
+       },
+       {
+        "g": "Le Rhin",
+        "d": "La mer du Nord"
+       }
+      ],
+      "consigne": "Relie chaque fleuve à la mer ou à l'océan dans lequel il se jette. Attention : deux fleuves se jettent dans l'océan Atlantique, par des estuaires différents.",
+      "indices": [
+       "La Loire coule vers l'ouest.",
+       "La Garonne forme l'estuaire de la Gironde.",
+       "Le Rhin longe l'Allemagne avant de rejoindre la mer du Nord."
+      ],
+      "dialogue": "Voici cinq fleuves. Retrouve où ils se jettent."
+     },
+     "mousse": {
+      "type": "association",
+      "paires": [
+       {
+        "g": "La Seine",
+        "d": "La Manche"
+       },
+       {
+        "g": "Le Rhône",
+        "d": "La mer Méditerranée"
+       },
+       {
+        "g": "Le Rhin",
+        "d": "La mer du Nord"
+       }
+      ],
+      "consigne": "Relie chaque fleuve à la mer dans laquelle il se jette.",
+      "indices": [
+       "Ouvre la fiche « Les principaux fleuves et massifs de France ».",
+       "Le Rhône descend vers le sud.",
+       "Le Rhin longe l'Allemagne."
+      ],
+      "dialogue": "Il faut relier chaque élément à ce qui lui correspond."
+     },
+     "lieutenant": {
+      "type": "ordre",
+      "items": [
+       {
+        "txt": "le Rhin (mer du Nord)",
+        "rang": 1
+       },
+       {
+        "txt": "la Seine (Manche)",
+        "rang": 2
+       },
+       {
+        "txt": "la Loire (océan Atlantique)",
+        "rang": 3
+       },
+       {
+        "txt": "la Garonne (estuaire de la Gironde)",
+        "rang": 4
+       },
+       {
+        "txt": "le Rhône (mer Méditerranée)",
+        "rang": 5
+       }
+      ],
+      "consigne": "Range les cinq fleuves du nord au sud, d'après l'endroit où ils se jettent, puis choisis la phrase de la fiche qui les cite.",
+      "indices": [
+       "La mer du Nord est au nord, la Méditerranée au sud.",
+       "La Loire se jette plus au nord que la Gironde.",
+       "Pour la justification : cherche « cinq principaux fleuves »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche cite les cinq principaux fleuves ?",
+       "options": [
+        "La Seine traverse Paris et se jette dans la Manche, près du Havre.",
+        "Le Rhin longe la frontière avec l'Allemagne et se jette dans la mer du Nord.",
+        "Les cinq principaux fleuves français sont la Seine, la Loire, la Garonne, le Rhône et le Rhin.",
+        "La Garonne descend des Pyrénées et se jette dans l'océan Atlantique par l'estuaire de la Gironde."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Mes étapes sont mélangées. Remettez-les dans le bon ordre."
+     },
+     "second": {
+      "type": "qcm",
+      "questions": [
+       {
+        "q": "Qu'est-ce qui alimente les fleuves au printemps ?",
+        "options": [
+         "la neige qui fond en montagne",
+         "les glaces de l'océan",
+         "les canaux",
+         "le vent"
+        ],
+        "bonne": 0,
+        "explication": "Les montagnes retiennent la neige."
+       },
+       {
+        "q": "Quel fleuve longe la frontière avec l'Allemagne ?",
+        "options": [
+         "le Rhin",
+         "la Loire",
+         "la Garonne",
+         "le Rhône"
+        ],
+        "bonne": 0,
+        "explication": "Il se jette dans la mer du Nord."
+       },
+       {
+        "q": "Quel massif longe la frontière avec la Suisse ?",
+        "options": [
+         "le Jura",
+         "les Pyrénées",
+         "le Massif central",
+         "les Vosges"
+        ],
+        "bonne": 0,
+        "explication": "Les Vosges se trouvent à l'est, avec des sommets arrondis."
+       }
+      ],
+      "consigne": "Rémi veut vérifier ta lecture de la carte. Réponds, puis choisis la phrase de la fiche sur le Jura.",
+      "indices": [
+       "La neige fond au printemps.",
+       "Le Rhin est à l'est de la France.",
+       "Pour la justification : cherche « la frontière avec la Suisse »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle du Jura ?",
+       "options": [
+        "Le Jura longe la frontière avec la Suisse, et les Vosges se trouvent à l'est, avec des sommets arrondis.",
+        "Les Pyrénées forment la frontière avec l'Espagne.",
+        "Le Massif central, au centre du pays, est formé d'anciens volcans.",
+        "Les Alpes sont les plus hautes montagnes de France : le mont Blanc culmine à environ 4 807 mètres."
+       ],
+       "bonne": 0
+      },
+      "dialogue": "J'ai quelques questions pour vous. Lisez bien le document avant de répondre."
+     }
+    },
+    {
+     "id": "e13-4",
+     "escale": 13,
+     "ordre": 4,
+     "titre": "Les repères à connaître",
+     "decor": "alpes-torrent",
+     "objet_principal": "objet-4",
+     "objets_cliquables": [
+      "objet-1",
+      "objet-2",
+      "objet-3",
+      "objet-4"
+     ],
+     "personnage_emetteur": "remi",
+     "probleme_narratif": "Rémi te teste sur quelques chiffres à connaître avant de te laisser repartir.",
+     "enjeu": "Un bon guide connaît ses repères par cœur.",
+     "episode_du_roman": "Séance 13 du livret « Mission géographique » (Année A)",
+     "competence_programme": "Situer et nommer les cinq principaux fleuves français",
+     "pourquoi_ce_savoir_ici": "La séance « Les Alpes — Fleuves et massifs » repose sur cette notion.",
+     "reaction_du_decor": {
+      "effet": "calme",
+      "description": "Le carnet se referme : tu as tous les repères en main."
+     },
+     "liberte_ou_anachronisme": "Aucune liberté particulière signalée (jeu migré).",
+     "lecon": "l13",
+     "type": "code",
+     "niveau_variantes": "Agent CM2 (code) ; Géographe (code) ; Chef de mission (code). Mousse : indices renvoyant à la fiche, énoncés courts ; lieutenant et second : justification par une phrase de la fiche.",
+     "correction_origine": "La France compte six grands massifs montagneux et cinq grands fleuves ; le mont Blanc, dans les Alpes, culmine à environ 4 807 mètres (4 807,47 m en septembre 2026).",
+     "niveaux": [
+      "timonier",
+      "lieutenant",
+      "second"
+     ],
+     "timonier": {
+      "champs": [
+       {
+        "libelle": "Nombre de grands massifs montagneux",
+        "valeur": "6",
+        "longueur": 1
+       },
+       {
+        "libelle": "Nombre de grands fleuves",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Altitude du mont Blanc, en mètres (arrondie)",
+        "valeur": "4807",
+        "longueur": 4
+       }
+      ],
+      "consigne": "Rémi te rappelle quelques repères à connaître par cœur. Réponds, puis ouvre le cadenas.",
+      "indices": [
+       "Alpes, Pyrénées, Massif central, Jura, Vosges, Corse : compte-les.",
+       "Seine, Loire, Garonne, Rhône, Rhin.",
+       "Le mont Blanc est le plus haut sommet d'Europe occidentale : environ 4 800 m."
+      ],
+      "dialogue": "Un bon guide connaît ses repères par cœur. Vérifions les tiens."
+     },
+     "lieutenant": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Nombre de grands massifs montagneux",
+        "valeur": "6",
+        "longueur": 1
+       },
+       {
+        "libelle": "Nombre de grands fleuves",
+        "valeur": "5",
+        "longueur": 1
+       },
+       {
+        "libelle": "Altitude du mont Blanc, en mètres (arrondie)",
+        "valeur": "4807",
+        "longueur": 4
+       }
+      ],
+      "consigne": "Rémi te rappelle quelques repères. Réponds, puis choisis la phrase de la fiche sur les Alpes.",
+      "indices": [
+       "Alpes, Pyrénées, Massif central, Jura, Vosges, Corse.",
+       "Seine, Loire, Garonne, Rhône, Rhin.",
+       "Le mont Blanc culmine à environ 4 800 mètres. Pour la justification : cherche « les plus hautes »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle des Alpes ?",
+       "options": [
+        "Les six grands massifs montagneux sont les Alpes, les Pyrénées, le Massif central, le Jura, les Vosges et les montagnes de Corse.",
+        "Les Pyrénées forment la frontière avec l'Espagne.",
+        "Le Massif central, au centre du pays, est formé d'anciens volcans.",
+        "Les Alpes sont les plus hautes montagnes de France : le mont Blanc culmine à environ 4 807 mètres."
+       ],
+       "bonne": 3
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     },
+     "second": {
+      "type": "code",
+      "champs": [
+       {
+        "libelle": "Longueur de la Loire (kilomètres, arrondie)",
+        "valeur": "1006",
+        "longueur": 4
+       },
+       {
+        "libelle": "Le mont Blanc dépasse 4 000 m de combien de mètres ? (arrondi)",
+        "valeur": "807",
+        "longueur": 3
+       },
+       {
+        "libelle": "Nombre de fleuves + nombre de massifs",
+        "valeur": "11",
+        "longueur": 2
+       }
+      ],
+      "consigne": "Rémi pousse la réflexion plus loin. Réponds, puis choisis la phrase de la fiche sur la Loire.",
+      "indices": [
+       "La Loire est le plus long fleuve de France.",
+       "4 807 − 4 000.",
+       "5 + 6. Pour la justification : cherche « plus long fleuve »."
+      ],
+      "justification": {
+       "question": "Quelle phrase de la fiche parle de la Loire ?",
+       "options": [
+        "La Seine traverse Paris et se jette dans la Manche, près du Havre.",
+        "La Garonne descend des Pyrénées et se jette dans l'océan Atlantique par l'estuaire de la Gironde.",
+        "La Loire est le plus long fleuve de France, avec environ 1 006 km ; elle se jette dans l'océan Atlantique.",
+        "Le Rhône vient de Suisse et se jette dans la mer Méditerranée."
+       ],
+       "bonne": 2
+      },
+      "dialogue": "Ce cadenas ne s'ouvre qu'avec le bon code. Lisez bien le document."
+     }
+    }
+   ]
   }
  ]
 }

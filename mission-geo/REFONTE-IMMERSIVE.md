@@ -101,6 +101,22 @@ Même chaîne qu'en P1 : `python mission-geo/tests/donnees/construire-immersif.p
 - Tests : `test-immersif.js` (8 séances, 5 grades) ; `test-reprise.js` 19 vérifications (reprise à la séance 7, fin de la séance 8) ; version classique 985 (inchangée).
 - Non fait (comme en P1) : voix mp3, médias, intégration au catalogue.
 
+## 3 ter. Étapes P3-P4 faites (27/11/2026) : séances 9 à 13
+
+Même chaîne : `python mission-geo/tests/donnees/construire-immersif.py` reconstruit les 13 séances (52 énigmes, 5 grades).
+
+| Ajout | Fichier |
+|---|---|
+| Escales 9 à 13 (pratiques agricoles, produits, yaourt, kilomètres, fleuves et massifs) | `gen_escales.py` (E9 à E13), `fiches.py` (phrases des fiches et leçons) |
+| Cartes par script (fleuves, massifs, pays) | `schemas.py` (`fleuves`, `pays9`) |
+| Grades Découverte, Géographe, Chef de mission | `grades/mission_geo_s9.py` … `_s13.py` ; voix, portraits, guides dans `mission_geo_theme.py` |
+| Narration, indices 9 à 13, coffre de 13 mots | `narration/mission-geo.json`, `construire-immersif.py` |
+
+- Mots du coffre : COMMUNE … INÉGALITÉS, **PRATIQUES, TRANSFORMÉS, CHAÎNE, KILOMÈTRES, MASSIFS** ; le coffre s'ouvre après la séance 13.
+- Tests : `test-immersif.js` 1 462 vérifications ; `test-reprise.js` 19 (fin de la séance 13) ; version classique 985.
+- Points à relire : `A-VERIFIER.md`, points 20 à 27.
+- Non fait : voix mp3, médias, intégration au catalogue ; P5 (séances 14 à 16, piste finale et coffre).
+
 ## 4. Plan des prochaines conversations (une période à la fois)
 
 1. ~~**P1 (séances 1 à 5)**~~ (fait, voir § 3) : script `mission-geo/tests/donnees/gen_escales.py` (lit `js/donnees/*.js` par Node, écrit
@@ -108,7 +124,7 @@ Même chaîne qu'en P1 : `python mission-geo/tests/donnees/construire-immersif.p
    Atlas, mot « séance »), grades `vingt-mille-lieues/outils/immersif/grades/mission_geo_s1..s5.py`, narration,
    `migrer-jeu.py mission-geo --theme …`, `appliquer-grades.py`, `appliquer-narration.py`, `finir-jeu.py`,
    lecture d'une partie importée (§ 1), tests `test-immersif.js`.
-2. ~~**P2 (6 à 8)**~~ (fait, voir § 3 bis), 3. **P3-P4 (9 à 13)**, 4. **P5 (14 à 16) + piste finale et coffre**. Pour chaque période : ajouter les salles à `gen_escales.py`
+2. ~~**P2 (6 à 8)**~~ (fait, voir § 3 bis), 3. ~~**P3-P4 (9 à 13)**~~ (fait, voir § 3 ter), 4. **P5 (14 à 16) + piste finale et coffre**. Pour chaque période : ajouter les salles à `gen_escales.py`
    (E6…), les leçons et phrases à `fiches.py`, `mission_geo_s6.py`…, la narration, `GUIDES` et `PERIODES`, `INDICES` dans `construire-immersif.py`,
    puis relancer `construire-immersif.py`. Le coffre s'ouvre provisoirement après la dernière séance construite (aujourd'hui la 8 ; phrase-bilan dans `construire-immersif.py`).
 5. Leçons A4 (les 16 leçons existent : textes courts dans `outils-lecons/textes/mission-geo.json`), évaluations

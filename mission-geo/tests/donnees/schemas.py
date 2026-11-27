@@ -155,3 +155,20 @@ def tableau_pnud(noms, titre="Trois indicateurs du développement (2023)"):
     tr = "".join(f"<tr><th>{t}</th>" + "".join(f"<td>{f(PNUD[n])}</td>" for n in noms) + "</tr>" for t, f in lignes)
     return (f'<div class="doc-titre"><i>{titre}</i></div><table class="tableau-releves"><tr><th></th>{th}</tr>{tr}</table>'
             f'<p style="font-size:.85em"><i>Source : {SOURCE_PNUD}.</i></p>')
+
+
+# ---------------------------------------------------------------- périodes 3 et 4 (séances 9 à 13)
+# Repères de la carte « france-fleuves » (mêmes positions, en %, que la version classique) : 5 fleuves, 5 massifs, la Corse.
+FLEUVES = [("La Seine", 50.3, 24.2), ("La Loire", 39.7, 38.1), ("La Garonne", 32.3, 63.5), ("Le Rhône", 66.5, 63.5), ("Le Rhin", 89.7, 23.1),
+           ("Les Alpes", 76.5, 61.2), ("Les Pyrénées", 39.7, 81.5), ("Le Massif central", 52.9, 61.2), ("Le Jura", 72.9, 46.2), ("Les Vosges", 78.4, 34.2),
+           ("La Corse", 93.5, 90.4)]
+# Pays de la séance 9 sur le planisphère muet (en %).
+PAYS9 = [("La France", 52.5, 22), ("Les États-Unis", 20, 30), ("Haïti", 29, 37), ("Le Tchad", 56, 44), ("Le Mali", 49.5, 44.5)]
+
+
+def fleuves(idx, titre="La France : fleuves et massifs (repères numérotés)"):
+    return avec_reperes("france-fleuves", [(x, y) for _, x, y in [FLEUVES[i] for i in idx]], titre, r=13)
+
+
+def pays9(idx, titre="Le planisphère d'Aminata"):
+    return avec_reperes("planisphere-muet", [(x, y) for _, x, y in [PAYS9[i] for i in idx]], titre, r=14)

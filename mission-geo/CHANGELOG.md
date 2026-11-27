@@ -4,6 +4,10 @@ Les évolutions du jeu, de la plus récente à la plus ancienne. Ce journal est 
 (contrairement aux fichiers RECAP-… de reprise de session). Les entrées viennent de l'historique
 git (`python outils-docs/maj-journaux.py`) ; on peut les compléter à la main.
 
+## 27 novembre 2026
+
+- Refonte immersive, étapes P3-P4 : séances 9 à 13 (agriculture, produits, yaourt, kilomètres, fleuves et massifs ; 52 énigmes, coffre de 13 mots), reprise des parties étendue à 13 séances.
+
 ## 26 novembre 2026
 
 - Refonte immersive, étape P2 : séances 6 à 8 (Étretat, Biarritz, Dhaka ; 32 énigmes en tout, coffre de 8 mots), chiffres du PNUD 2025 et de l'Insee mis à jour.

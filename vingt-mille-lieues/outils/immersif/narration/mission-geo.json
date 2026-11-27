@@ -7,7 +7,12 @@
   "hugo": "Moniteur de ski chaleureux du Haut-Jura, il aime sa montagne et ne cache pas ce qui l'abîme",
   "ines": "Agente enjouée de la côte normande, experte en déguisements, elle aime sa ville mais voit ce que la foule lui coûte",
   "theo": "Sauveteur décontracté de Biarritz, attentif à l'océan, il parle simplement et va droit au but",
-  "nour": "Agente grave et attentive, elle observe sans juger et veut comprendre pourquoi tant de gens vivent dans la pauvreté"
+  "nour": "Agente grave et attentive, elle observe sans juger et veut comprendre pourquoi tant de gens vivent dans la pauvreté",
+  "aminata": "Agente chaleureuse de Bamako, elle explique ce qu'elle voit sans jamais plaindre ni juger les familles",
+  "camille": "Cheffe de cantine énergique et directe, elle connaît ses produits et vérifie toujours d'où ils viennent",
+  "manon": "Éleveuse posée de la ferme de Bray, fière de son lait, elle explique chaque étape sans se presser",
+  "yanis": "Agent bavard de Marseille, curieux de tout ce qui se vend sur un marché, il lit chaque étiquette",
+  "remi": "Guide de haute montagne calme et précis, il lit un paysage comme une carte"
  },
  "enigmes": {
   "e1-1": {
@@ -257,6 +262,161 @@
    "situation": "Nour compare quatre pays avec trois indicateurs.",
    "reaction": "Deux cases du tableau s'entourent de rouge.",
    "dialogue": "Ce tableau cache une surprise. Lis-le attentivement."
+  },
+  "e9-1": {
+   "objet": "Les deux frigos",
+   "description": "Deux frigos ouverts côte à côte, l'un rempli de boîtes et de pots, l'autre de sacs de grains et de fruits.",
+   "enjeu": "Pour comprendre comment on mange ici, il faut d'abord voir ce que contiennent les frigos.",
+   "situation": "Aminata a mélangé les aliments de deux familles, l'une en France, l'autre au Mali.",
+   "reaction": "Chaque aliment trouve sa place ; le frigo malien est bien plus vide de produits importés."
+  },
+  "e9-2": {
+   "objet": "L'étal de poisson presque vide",
+   "description": "Une planche en bois sur un tréteau : quelques poissons séchés, un peu de viande sous un linge, de maigres légumes.",
+   "enjeu": "Si tu ne comprends pas pourquoi l'étal est vide, tu prendras les habitants pour ce qu'ils ne sont pas.",
+   "situation": "Aminata te montre un étal presque vide et te demande ce qui manque, et pourquoi.",
+   "reaction": "Les causes s'affichent une à une sur l'ardoise de l'étal.",
+   "dialogue": "Regarde cet étal : peu de poisson, peu de bœuf, peu de variété. Cherchons pourquoi."
+  },
+  "e9-3": {
+   "objet": "L'ardoise des prix",
+   "description": "Une ardoise couverte de chiffres à la craie, accrochée à un poteau du marché.",
+   "enjeu": "Sans lire les prix, on ne comprend pas ce qu'une famille peut acheter avec 8 €.",
+   "situation": "Aminata te demande de calculer la dépense d'une famille malienne devant l'ardoise.",
+   "reaction": "La craie s'efface et le total s'inscrit en bas de l'ardoise.",
+   "dialogue": "Voici les prix du jour. Calcule ce que dépense la famille C."
+  },
+  "e9-4": {
+   "objet": "La carte de la sous-alimentation",
+   "description": "Une grande carte du monde aux pays colorés du plus clair au plus foncé, épinglée à un mur du marché.",
+   "enjeu": "Pour comprendre le monde, il faut savoir où l'on mange assez, et où l'on ne mange pas assez.",
+   "situation": "Aminata te montre la carte de la sous-alimentation et attend tes conclusions.",
+   "reaction": "Les pays les plus foncés se détachent sur la carte.",
+   "dialogue": "Lis cette carte avec soin : certaines phrases cachent des pièges."
+  },
+  "e10-1": {
+   "objet": "Le plateau de la cantine",
+   "description": "Un plateau en plastique avec huit aliments disposés dans ses cases.",
+   "enjeu": "Chaque aliment a une origine : savoir laquelle, c'est savoir d'où il vient.",
+   "situation": "Camille te tend le plateau du jour et te demande d'en faire le tri.",
+   "reaction": "Les aliments se rangent dans deux paniers, l'un vert, l'autre bleu."
+  },
+  "e10-2": {
+   "objet": "Le tableau des recettes",
+   "description": "Un tableau blanc de cuisine où Camille a écrit des noms de produits.",
+   "enjeu": "Pour fabriquer un aliment, il faut connaître le produit dont il vient.",
+   "situation": "Camille veut que tu retrouves de quel produit agricole vient chaque produit transformé.",
+   "reaction": "Des flèches se tracent entre chaque produit et celui qu'il devient.",
+   "dialogue": "Voici mes recettes. Retrouve à partir de quoi on les fabrique."
+  },
+  "e10-3": {
+   "objet": "Le carnet de la ferme de Bray",
+   "description": "Un carnet graisseux de la ferme, plein de noms de métiers écrits à la main.",
+   "enjeu": "Sans savoir qui produit quoi, on ne sait pas qui remercier pour son assiette.",
+   "situation": "Camille t'emmène en pensée à la ferme de Bray et te pose des questions sur les métiers.",
+   "reaction": "Un métier s'inscrit sous chaque espace de production.",
+   "dialogue": "Visitons la ferme de Bray. Qui travaille où ?"
+  },
+  "e10-4": {
+   "objet": "Le registre de la cantine",
+   "description": "Un registre à spirale où Camille note les quantités servies chaque jour.",
+   "enjeu": "Si le décompte est faux, tout le registre de la semaine est faux.",
+   "situation": "Camille doit remplir son registre et te confie le plateau du jour à compter.",
+   "reaction": "Le registre se referme sur des nombres justes.",
+   "dialogue": "Je dois remplir mon registre. Compte avec moi les aliments du plateau."
+  },
+  "e11-1": {
+   "objet": "Le trajet du lait",
+   "description": "Un schéma punaisé dans la laiterie de la ferme, avec des flèches effacées par la vapeur.",
+   "enjeu": "Pour passer pour un producteur, il faut connaître le trajet du lait par cœur.",
+   "situation": "Manon te montre les étapes du lait, mélangées sur le tableau de la ferme.",
+   "reaction": "Les étapes se remettent en file, du pré au rayon frais."
+  },
+  "e11-2": {
+   "objet": "Le texte du directeur",
+   "description": "Une feuille à en-tête de l'usine, trouée de blancs, posée sur le bureau du directeur.",
+   "enjeu": "Le directeur ne laisse entrer que ceux qui connaissent le métier.",
+   "situation": "Le directeur de l'usine d'Issenheim te tend un texte à compléter avant de te laisser entrer.",
+   "reaction": "Les blancs se remplissent : la porte de l'usine s'ouvre.",
+   "dialogue": "Complète ce texte, et je te laisse entrer dans l'usine."
+  },
+  "e11-3": {
+   "objet": "Le thermomètre du camion",
+   "description": "Un thermomètre fixé dans la cabine d'un camion-citerne, dont l'aiguille tremble.",
+   "enjeu": "Si le froid se rompt, tout le lait du camion est perdu.",
+   "situation": "Manon te demande ce qui arriverait si le thermomètre montait trop haut.",
+   "reaction": "L'aiguille redescend dans la zone bleue.",
+   "dialogue": "Regarde ce thermomètre. Que se passe-t-il quand le froid se rompt ?"
+  },
+  "e11-4": {
+   "objet": "Le tableau de bord de l'usine",
+   "description": "Un tableau de bord avec trois compteurs lumineux à l'entrée de la salle de contrôle.",
+   "enjeu": "Pour te faire passer pour un producteur, tu dois savoir compter les étapes.",
+   "situation": "Le directeur te fait compter les étapes de l'usine devant ses compteurs.",
+   "reaction": "Les trois compteurs affichent des nombres justes et passent au vert.",
+   "dialogue": "Voici mes compteurs. Compte les étapes avec moi."
+  },
+  "e12-1": {
+   "objet": "Les étiquettes du marché",
+   "description": "Des étiquettes d'origine piquées dans des cageots de fruits et de légumes.",
+   "enjeu": "Pour compter les kilomètres d'un aliment, il faut d'abord savoir d'où il vient.",
+   "situation": "Yanis te montre les étiquettes et te demande de classer les produits par continent.",
+   "reaction": "Chaque cageot reçoit un drapeau de son continent."
+  },
+  "e12-2": {
+   "objet": "La recette de la salade fraîcheur",
+   "description": "Une recette griffonnée sur un sac en papier, avec cinq produits et cinq pays.",
+   "enjeu": "Une seule salade peut avoir fait le tour du monde sans que personne le sache.",
+   "situation": "Yanis veut savoir combien de kilomètres a parcourus la salade avant d'arriver dans ton panier.",
+   "reaction": "La somme s'inscrit en gros sur le sac en papier.",
+   "dialogue": "Une salade, cinq pays : additionne les kilomètres."
+  },
+  "e12-3": {
+   "objet": "Le cabas de Yanis",
+   "description": "Un cabas en toile rempli de produits de saison achetés au marché, en face d'un cageot venu de loin.",
+   "enjeu": "Chaque achat est un choix : tu peux parcourir moins de kilomètres.",
+   "situation": "Yanis cherche comment remplir son cabas avec moins de kilomètres alimentaires.",
+   "reaction": "Les bons gestes se cochent sur la toile du cabas.",
+   "dialogue": "Je veux remplir mon cabas avec moins de kilomètres. Aide-moi."
+  },
+  "e12-4": {
+   "objet": "La carte des distances",
+   "description": "Une carte punaisée au mur du marché, avec des fils tendus de la France vers cinq pays.",
+   "enjeu": "Pour choisir ce que l'on achète, il faut savoir ce qui vient de près et ce qui vient de loin.",
+   "situation": "Yanis veut classer les ingrédients de sa salade du plus proche au plus lointain.",
+   "reaction": "Les fils se raccourcissent ou s'allongent selon l'ordre juste.",
+   "dialogue": "Quel ingrédient vient de plus près ? Classe-les."
+  },
+  "e13-1": {
+   "objet": "La carte du relief de Rémi",
+   "description": "Une carte froissée, sur la table d'un refuge, avec des repères numérotés tracés au crayon.",
+   "enjeu": "Pour suivre le chemin de l'eau, il faut savoir lire les fleuves et les montagnes.",
+   "situation": "Rémi déplie sa carte de France et te demande de nommer fleuves et massifs.",
+   "reaction": "Les noms se posent sur la carte, en bleu pour les fleuves, en brun pour les massifs."
+  },
+  "e13-2": {
+   "objet": "Le torrent",
+   "description": "Un torrent glacé qui dévale entre des rochers, au pied d'un névé.",
+   "enjeu": "Un torrent est le début d'un cours d'eau : il faut savoir où il va.",
+   "situation": "Rémi te pose des questions au bord du torrent, entre deux gorgées d'eau glacée.",
+   "reaction": "Le torrent rugit et les réponses justes s'affichent sur les rochers.",
+   "dialogue": "Écoute le torrent. Sais-tu où va cette eau ?"
+  },
+  "e13-3": {
+   "objet": "Les panneaux du refuge",
+   "description": "Cinq panneaux de bois accrochés au mur du refuge, chacun portant le nom d'un fleuve.",
+   "enjeu": "Chaque fleuve a sa destination : l'oublier, c'est perdre la trace de l'eau.",
+   "situation": "Rémi veut que tu retrouves où se jette chaque fleuve.",
+   "reaction": "Chaque panneau reçoit sa mer ou son océan.",
+   "dialogue": "Voici cinq fleuves. Retrouve où ils se jettent."
+  },
+  "e13-4": {
+   "objet": "Le carnet du guide",
+   "description": "Un carnet de poche écorné, plein de repères notés à la main : altitudes, longueurs, nombres.",
+   "enjeu": "Un bon guide connaît ses repères par cœur.",
+   "situation": "Rémi te teste sur quelques chiffres à connaître avant de te laisser repartir.",
+   "reaction": "Le carnet se referme : tu as tous les repères en main.",
+   "dialogue": "Un bon guide connaît ses repères par cœur. Vérifions les tiens."
   }
  }
 }

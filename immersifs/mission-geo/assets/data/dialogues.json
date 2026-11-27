@@ -6,7 +6,7 @@
  },
  "coffre": {
   "personnage": "atlas",
-  "texte": "Mon coffre ne s'ouvre qu'avec le mot de chaque séance, dans l'ordre. Ensemble, ils résument ce que vous avez appris : votre COMMUNE fait partie de territoires EMBOÎTÉS ; la DENSITÉ distingue la campagne de la ville ; la ville vit surtout du secteur TERTIAIRE ; la montagne vit du TOURISME ; la station BALNÉAIRE attire tant de visiteurs que le LITTORAL change de visage chaque été ; et dans le monde, de fortes INÉGALITÉS séparent les pays riches des pays pauvres."
+  "texte": "Mon coffre ne s'ouvre qu'avec le mot de chaque séance, dans l'ordre. Ensemble, ils résument ce que vous avez appris : votre COMMUNE fait partie de territoires EMBOÎTÉS ; la DENSITÉ distingue la campagne de la ville ; la ville vit surtout du secteur TERTIAIRE ; la montagne vit du TOURISME ; la station BALNÉAIRE attire tant de visiteurs que le LITTORAL change de visage chaque été ; dans le monde, de fortes INÉGALITÉS séparent les pays riches des pays pauvres ; les PRATIQUES alimentaires dépendent surtout des revenus ; les produits TRANSFORMÉS sont fabriqués à partir de produits agricoles ; une CHAÎNE de production mène du pré à l'assiette ; les KILOMÈTRES alimentaires mesurent la distance parcourue par un aliment ; et la France a six MASSIFS qui nourrissent ses fleuves."
  },
  "cinematiques": {
   "transition-e1": {
@@ -217,15 +217,145 @@
     }
    ]
   },
+  "transition-e9": {
+   "titre": "Séance 9 — Au marché de Bamako",
+   "plans": [
+    {
+     "decor": "bamako-marche",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "aminata",
+     "texte": "Bienvenue à Bamako, au Mali. Je suis Aminata. Pour te remettre de ton long voyage, viens faire un tour au marché : tu y verras des aliments que tu ne connais pas, et beaucoup de ceux que tu connais coûtent ici une fortune. Regardons pourquoi.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e9": {
+   "titre": "Fin de la séance 9",
+   "plans": [
+    {
+     "decor": "bamako-marche",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "aminata",
+     "texte": "Tu as compris que les PRATIQUES alimentaires dépendent du climat, des habitudes et surtout des revenus. Notez ce mot. Regarde : une marchande a reconnu le drapeau de ta photographie froissée, et elle a quelque chose à ajouter.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e10": {
+   "titre": "Séance 10 — Les produits consommés",
+   "plans": [
+    {
+     "decor": "cantine-ecole",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "camille",
+     "texte": "Salut, je suis Camille, la cheffe de la cantine. On t'a placé ici comme aide pour quelques jours : le temps de réfléchir aux indices déjà récupérés. En cuisine, on se pose toujours la même question : d'où vient chaque aliment du plateau ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e10": {
+   "titre": "Fin de la séance 10",
+   "plans": [
+    {
+     "decor": "cantine-ecole",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "camille",
+     "texte": "Plateau trié ! Un produit agricole vient de la nature ; un produit TRANSFORMÉ est fabriqué à partir de lui. Notez ce mot. Et une question me trotte dans la tête : par où passe donc un yaourt avant d'arriver dans ton assiette ?",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e11": {
+   "titre": "Séance 11 — Chaînes de production",
+   "plans": [
+    {
+     "decor": "issenheim-usine",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "manon",
+     "texte": "Je suis Manon, éleveuse à la ferme de Bray. Les malfaiteurs sont partout en France : pour t'approcher d'eux, tu te fais passer pour un producteur et tu suis notre lait jusqu'à l'usine de yaourts d'Issenheim, en Alsace. Suis bien chaque étape.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e11": {
+   "titre": "Fin de la séance 11",
+   "plans": [
+    {
+     "decor": "issenheim-usine",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "manon",
+     "texte": "Tu connais maintenant toute la CHAÎNE de production du yaourt, du pré au frigo. Notez ce mot. Écoute : dans le vestiaire, une radio grésille dans une langue que tu ne comprends pas… mais que tu reconnais.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e12": {
+   "titre": "Séance 12 — L'heure du ravitaillement",
+   "plans": [
+    {
+     "decor": "marseille-marche",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "yanis",
+     "texte": "Salut, c'est Yanis, de Marseille. Chez nous, la nourriture est abondante, mais regarde les étiquettes : d'où viennent vraiment ces fruits et ces légumes ? Combien de kilomètres ont-ils parcourus avant d'arriver dans ton panier ?",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e12": {
+   "titre": "Fin de la séance 12",
+   "plans": [
+    {
+     "decor": "marseille-marche",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "yanis",
+     "texte": "21 014 kilomètres pour une seule salade ! Tu sais maintenant compter les KILOMÈTRES alimentaires. Notez ce mot. Le chiffre des unités de ce total rejoint ton carnet : il te servira plus tard.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e13": {
+   "titre": "Séance 13 — L'eau en France : fleuves et massifs",
+   "plans": [
+    {
+     "decor": "alpes-torrent",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "remi",
+     "texte": "Je suis Rémi, guide de haute montagne. La piste des produits agricoles n'a rien donné : il te reste la piste de l'eau. Pour comprendre d'où elle vient, il faut savoir lire une carte du relief et des cours d'eau.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e13": {
+   "titre": "Fin de la séance 13",
+   "plans": [
+    {
+     "decor": "alpes-torrent",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "remi",
+     "texte": "Cinq fleuves, six MASSIFS : la carte de France n'a plus de secret pour toi. Notez ce mot. Le nombre de massifs rejoint ton carnet. Le chemin de l'eau, lui, continue : la mission aussi.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
   "fin": {
    "titre": "Fin de « Mission géographique »",
    "plans": [
     {
-     "decor": "dhaka-marche",
+     "decor": "alpes-torrent",
      "etat": "normal",
      "duree": 7,
-     "personnage": "nour",
-     "texte": "Le coffre est ouvert. Vous connaissez le territoire où vous vivez, ses villes, ses campagnes, ses montagnes et son littoral, et vous savez lire les inégalités du monde. La photo du drapeau rejoint votre carnet : vert et blanc, ce n'est pas le drapeau du Bangladesh. La valise est ailleurs. Gardez précieusement votre carnet : la mission continue à la séance suivante.",
+     "personnage": "remi",
+     "texte": "Le coffre est ouvert. Vous savez comment s'organise le territoire, d'où vient ce que l'on mange et où coule l'eau. Votre carnet s'est bien rempli : le pays recherché est en Amérique latine, dans l'hémisphère nord ; son drapeau est vert, blanc et rouge ; on y parle espagnol. La valise est ailleurs. Gardez précieusement votre carnet : la piste de l'eau continue à la séance suivante.",
      "mouvement": "zoom"
     }
    ]
@@ -263,6 +393,26 @@
   "8": {
    "personnage": "nour",
    "texte": "Notez le mot de cette séance, INÉGALITÉS : il servira à ouvrir le coffre. Indice pour le carnet de mission : Le drapeau du pays recherché comporte du vert et du blanc."
+  },
+  "9": {
+   "personnage": "aminata",
+   "texte": "Notez le mot de cette séance, PRATIQUES : il servira à ouvrir le coffre. Indice pour le carnet de mission : Le drapeau du pays recherché comporte aussi du rouge."
+  },
+  "10": {
+   "personnage": "camille",
+   "texte": "Notez le mot de cette séance, TRANSFORMÉS : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous la goutte, écrivez 5 (nombre de produits agricoles sur le plateau)."
+  },
+  "11": {
+   "personnage": "manon",
+   "texte": "Notez le mot de cette séance, CHAÎNE : il servira à ouvrir le coffre. Indice pour le carnet de mission : Dans le pays recherché, on parle espagnol."
+  },
+  "12": {
+   "personnage": "yanis",
+   "texte": "Notez le mot de cette séance, KILOMÈTRES : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous l'hexagone, écrivez 4 (chiffre des unités des kilomètres alimentaires)."
+  },
+  "13": {
+   "personnage": "remi",
+   "texte": "Notez le mot de cette séance, MASSIFS : il servira à ouvrir le coffre. Indice pour le carnet de mission : sous le losange, écrivez 6 (nombre de grands massifs montagneux français)."
   }
  }
 }
