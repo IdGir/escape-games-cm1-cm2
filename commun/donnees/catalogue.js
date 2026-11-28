@@ -387,13 +387,16 @@ var CATALOGUE = {
     "P4"
    ],
    "competences": "Napoléon, du général à l'empereur ; lieux, symboles et rites de la République ; lois protectrices des libertés.",
-   "dossier": null,
+   "dossier": "napoleon-republique",
+   "immersif": "immersifs/napoleon-republique",
+   "classique": false,
    "icone": "🦅",
    "couleurs": [
-    "#6b4a2b",
-    "#c9a227"
+    "#2f4a7a",
+    "#c9a24a"
    ],
-   "resume": "",
+   "resume": "Aux Invalides, un coffre de voyage cache le testament de l'Empereur : cinq salles, du jeune général Bonaparte à la République d'aujourd'hui, pour retrouver cinq mots et briser le sceau.",
+   "medias_en_attente": true,
    "prompt": "16-napoleon-republique.md",
    "programme": [
     "hg2026"

@@ -1373,6 +1373,7 @@ def main():
     print("     Immersif n°20        →  http://{}:{}/immersifs/seconde-guerre/".format(ip, PORT))
     print("     Immersif n°23        →  http://{}:{}/immersifs/terre-active/".format(ip, PORT))
     print("     Immersif n°24        →  http://{}:{}/immersifs/reproduction/".format(ip, PORT))
+    print("     Immersif n°16        →  http://{}:{}/immersifs/napoleon-republique/".format(ip, PORT))
     print()
     print("  👨‍🏫 TABLEAUX DE BORD ENSEIGNANT :")
     print("     http://127.0.0.1:{}/declaration/prof.html".format(PORT))
