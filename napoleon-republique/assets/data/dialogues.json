@@ -1,0 +1,154 @@
+{
+ "metadata": {
+  "jeu": "Le Testament de l'Empereur",
+  "sujet": "Napoléon Bonaparte, du général à l'empereur (Consulat, sacre, conquêtes, héritage) ; lieux, symboles et rites de la République — histoire, cycle 3",
+  "niveaux": [
+   "CM1",
+   "CM2"
+  ],
+  "phrase_bilan": "Le GÉNÉRAL Bonaparte prend le pouvoir ; par le SACRE, il devient empereur ; ses CONQUÊTES finissent à Waterloo ; il laisse un HÉRITAGE de lois et de monuments ; aujourd'hui, la RÉPUBLIQUE a ses propres lieux, symboles et rites.",
+  "lien_autres_jeux": "Suite du « Secret de la Déclaration » (Révolution) ; la salle 5 renvoie au « Sceau de la République » (Constitution de 1958) pour les lois qui protègent les droits et les libertés ; voisin des « Archives du port » (n°12) pour le rétablissement de l'esclavage en 1802.",
+  "sources": "Programme d'histoire du cycle 3 (BO n° 22 du 28 mai 2026) ; Fondation Napoléon ; Musée de l'Armée ; Musée du Louvre ; Banque de France ; Présidence de la République ; Constitution de 1958. Détail : README.md, section Sources.",
+  "vigilance": "Bilan nuancé : réformes durables, mais guerres et morts, censure, rétablissement de l'esclavage en 1802 ; aucune scène de combat ; personnages inventés ; les personnes réelles ne parlent jamais."
+ },
+ "personnages": {
+  "antoine": {
+   "nom": "Antoine",
+   "role": "Grenadier de la garde, ancien soldat de l'armée d'Italie"
+  },
+  "rose": {
+   "nom": "Rose",
+   "role": "Brodeuse du manteau du sacre"
+  },
+  "jeanne": {
+   "nom": "Jeanne",
+   "role": "Cantinière de la Grande Armée"
+  },
+  "hugo": {
+   "nom": "Hugo",
+   "role": "Conservateur au musée de l'Armée, aux Invalides"
+  },
+  "ines": {
+   "nom": "Inès",
+   "role": "Maire d'une commune de Bourgogne"
+  }
+ },
+ "intro_accueil": "Bonjour, je suis Hugo, conservateur au musée de l'Armée, aux Invalides. Dans nos réserves, nous venons d'ouvrir un vieux coffre de voyage. À l'intérieur : une copie du testament de l'Empereur, scellée, et cinq objets. Le sceau ne s'ouvrira qu'avec cinq mots. Chaque objet raconte un moment de l'histoire, du jeune général Bonaparte jusqu'à notre République. Entrez dans chaque salle, écoutez chaque témoin, et retrouvez les cinq mots.",
+ "salles": [
+  {
+   "num": 1,
+   "titre": "Le palais des Tuileries",
+   "decor": "tuileries",
+   "motCle": "GÉNÉRAL",
+   "lieu": "Une antichambre du palais des Tuileries, à Paris, en 1800",
+   "description": "Une antichambre aux boiseries claires, des cartes d'Italie et d'Égypte épinglées au mur, un pupitre avec un carnet de campagne, une giberne de soldat posée sur une chaise et un bureau couvert de lettres.",
+   "sens": [
+    "À voir : les cartes de campagne épinglées au mur",
+    "À entendre : le pas cadencé de la garde dans la cour",
+    "À toucher : le cuir usé de la giberne"
+   ],
+   "dialogue_intro": {
+    "perso": "antoine",
+    "nom": "Antoine",
+    "texte": "Bonjour, je suis Antoine, grenadier de la garde. J'ai suivi le général Bonaparte en Italie, puis j'ai vu les grands changements de 1799. Aujourd'hui, il gouverne la France depuis ce palais. Aidez-moi à remettre en ordre mes souvenirs de campagne."
+   },
+   "dialogue_reussite": {
+    "perso": "antoine",
+    "nom": "Antoine",
+    "texte": "Merci. Le premier mot est <b>GÉNÉRAL</b> : tout a commencé avec un jeune général. Bientôt, il voudra une couronne. Rose vous attend à Notre-Dame."
+   }
+  },
+  {
+   "num": 2,
+   "titre": "Notre-Dame de Paris",
+   "decor": "notre-dame",
+   "motCle": "SACRE",
+   "lieu": "La cathédrale Notre-Dame de Paris, le 2 décembre 1804",
+   "description": "La nef de Notre-Dame décorée de tentures rouges et or, des tribunes pleines d'invités, un autel illuminé, et dans un coin, la table de travail de la brodeuse avec du fil d'or, un registre et des motifs d'abeilles.",
+   "sens": [
+    "À voir : les tentures rouges et or le long de la nef",
+    "À entendre : l'orgue et les cloches de la cathédrale",
+    "À toucher : le velours brodé de fil d'or"
+   ],
+   "dialogue_intro": {
+    "perso": "rose",
+    "nom": "Rose",
+    "texte": "Bonjour, je m'appelle Rose. J'ai brodé des abeilles d'or pendant des semaines pour le manteau du sacre. Aujourd'hui, toute la cathédrale attend. Aidez-moi à comprendre ce qui se passe et à finir mon registre."
+   },
+   "dialogue_reussite": {
+    "perso": "rose",
+    "nom": "Rose",
+    "texte": "Le deuxième mot est <b>SACRE</b>. La République est devenue un empire. L'empereur veut maintenant agrandir son pouvoir en Europe. Jeanne vous raconte la suite au bivouac."
+   }
+  },
+  {
+   "num": 3,
+   "titre": "Le bivouac",
+   "decor": "bivouac",
+   "motCle": "CONQUÊTES",
+   "lieu": "Le bivouac de la Grande Armée, au fil des campagnes de 1805 à 1815",
+   "description": "Une tente de toile éclairée par une lanterne, une carte de l'Europe sur une table pliante, une malle cadenassée, la gourde et le tonnelet de la cantinière, et dehors, le feu de camp.",
+   "sens": [
+    "À voir : la carte de l'Europe couverte de traits",
+    "À entendre : le crépitement du feu de camp",
+    "À toucher : le bois froid du tonnelet"
+   ],
+   "dialogue_intro": {
+    "perso": "jeanne",
+    "nom": "Jeanne",
+    "texte": "Bonjour, je suis Jeanne, cantinière. Je nourris et je soigne les soldats depuis Austerlitz. J'ai vu des victoires, mais aussi beaucoup de souffrances et de morts. Aidez-moi à retracer le chemin de l'armée, jusqu'au bout."
+   },
+   "dialogue_reussite": {
+    "perso": "jeanne",
+    "nom": "Jeanne",
+    "texte": "Le troisième mot est <b>CONQUÊTES</b>. Elles ont fini à Waterloo, et elles ont coûté très cher. Mais l'Empire a aussi laissé des choses qui durent. Hugo vous attend aux Invalides."
+   }
+  },
+  {
+   "num": 4,
+   "titre": "Le dôme des Invalides",
+   "decor": "invalides",
+   "motCle": "HÉRITAGE",
+   "lieu": "Le dôme des Invalides et les réserves du musée de l'Armée, aujourd'hui",
+   "description": "Sous la grande coupole dorée, la crypte du tombeau ; à côté, une salle d'exposition en préparation avec des vitrines, des cartels, des panneaux et une boîte de fiches.",
+   "sens": [
+    "À voir : la coupole dorée au-dessus de la crypte",
+    "À entendre : l'écho des pas dans la crypte",
+    "À toucher : le verre lisse d'une vitrine"
+   ],
+   "dialogue_intro": {
+    "perso": "hugo",
+    "nom": "Hugo",
+    "texte": "Nous voici dans notre siècle. Je prépare une exposition sur ce qui reste de l'Empire. Je veux une exposition honnête : montrer les lois et les monuments, mais aussi la part d'ombre. Aidez-moi à tout ranger."
+   },
+   "dialogue_reussite": {
+    "perso": "hugo",
+    "nom": "Hugo",
+    "texte": "Le quatrième mot est <b>HÉRITAGE</b>. Un héritage se trie : on garde l'égalité devant la loi, on refuse l'esclavage et la censure. Pour le dernier mot, allez voir Inès, à la mairie."
+   }
+  },
+  {
+   "num": 5,
+   "titre": "La mairie",
+   "decor": "mairie",
+   "motCle": "RÉPUBLIQUE",
+   "lieu": "La salle des mariages d'une mairie de Bourgogne, aujourd'hui",
+   "description": "Une salle des mariages lumineuse, un buste de Marianne, un drapeau tricolore, une écharpe tricolore posée sur la table, une urne de vote rangée dans un coin et le coffre du testament.",
+   "sens": [
+    "À voir : le buste de Marianne et le drapeau tricolore",
+    "À entendre : les cloches de la place",
+    "À toucher : la soie de l'écharpe tricolore"
+   ],
+   "dialogue_intro": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Bonjour, je suis Inès, la maire. Dans cette salle, je célèbre les mariages ; ici aussi, on vote. Il n'y a plus d'empereur depuis longtemps : nous vivons en République. Aidez-moi à montrer ses symboles, puis ouvrons ensemble le coffre."
+   },
+   "dialogue_fin": {
+    "perso": "ines",
+    "nom": "Inès",
+    "texte": "Le dernier mot est <b>RÉPUBLIQUE</b>. Le sceau du testament s'ouvre. L'histoire de l'Empire est derrière nous ; aujourd'hui, ce sont la liberté, l'égalité et la fraternité qui nous rassemblent."
+   }
+  }
+ ]
+}

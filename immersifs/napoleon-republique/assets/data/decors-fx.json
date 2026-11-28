@@ -1,0 +1,364 @@
+{
+ "decors": {
+  "tuileries": {
+   "titre": "Une antichambre du palais des Tuileries, à Paris, en 1800",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le carnet de campagne",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un petit carnet de cuir posé sur le pupitre, aux pages volantes."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La giberne d'Antoine",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une giberne de cuir posée sur une chaise, pleine de petits souvenirs."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les lettres du bureau",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un bureau couvert de lettres et de bulletins, près de la fenêtre."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Les cartes de campagne",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Des cartes d'Italie et d'Égypte épinglées au mur, avec des épingles de couleur."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "notre-dame": {
+   "titre": "La cathédrale Notre-Dame de Paris, le 2 décembre 1804",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le registre de l'atelier",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un registre ouvert sur la table de la brodeuse, taché d'encre."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le grand tableau",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un schéma du grand tableau de David, punaisé près de l'autel."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les motifs de broderie",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un carton de motifs brodés de fil d'or, posé sur la table de Rose."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le chemin de la couronne",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une bande de tapis rouge déroulée vers l'autel, marquée de cinq étapes."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "bivouac": {
+   "titre": "Le bivouac de la Grande Armée, au fil des campagnes de 1805 à 1815",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "La carte de l'Europe",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une carte de l'Europe couverte de traits, sur la table pliante de la tente."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le carnet de route",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un carnet de route rangé dans la poche du tablier de la cantinière."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le feu de camp",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un feu de camp devant la tente, entouré de jeunes soldats."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La malle cadenassée",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une malle de bois fermée par un cadenas à rouleaux, au fond de la tente."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "invalides": {
+   "titre": "Le dôme des Invalides et les réserves du musée de l'Armée, aujourd'hui",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Les cartels de l'exposition",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Une pile de cartels, de petites étiquettes de musée, sur un chariot."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "La vitrine des créations",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Une vitrine éclairée avec des objets et des documents de l'Empire."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Les panneaux de l'exposition",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Deux grands panneaux vides, côte à côte, près de la crypte."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "La boîte de fiches",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Une boîte de fiches cartonnées dans les réserves du musée."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  },
+  "mairie": {
+   "titre": "La salle des mariages d'une mairie de Bourgogne, aujourd'hui",
+   "reference": null,
+   "ambiance": [
+    "piece"
+   ],
+   "kenBurns": {
+    "echelle": 1.05,
+    "duree": 32
+   },
+   "effets": [
+    {
+     "type": "poussiere",
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 100,
+     "nombre": 24
+    },
+    {
+     "type": "vignette",
+     "force": 0.5
+    },
+    {
+     "type": "grain",
+     "force": 0.04
+    }
+   ],
+   "zones": [
+    {
+     "id": "objet-1",
+     "libelle": "Le placard de la mairie",
+     "x": 6,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un vieux placard ouvert, plein d'objets de toutes les époques."
+    },
+    {
+     "id": "objet-2",
+     "libelle": "Le livret d'accueil",
+     "x": 37,
+     "y": 10,
+     "w": 26,
+     "h": 34,
+     "description": "Un livret d'accueil de la mairie posé près du buste de Marianne."
+    },
+    {
+     "id": "objet-3",
+     "libelle": "Le plan de la place",
+     "x": 68,
+     "y": 14,
+     "w": 26,
+     "h": 34,
+     "description": "Un plan de la place de la commune, dessiné à la main, sur la table."
+    },
+    {
+     "id": "objet-4",
+     "libelle": "Le coffre du testament",
+     "x": 37,
+     "y": 48,
+     "w": 26,
+     "h": 26,
+     "description": "Le coffre de voyage des Invalides, posé sur la table des mariages."
+    }
+   ],
+   "etats": {
+    "normal": {
+     "filtre": "none"
+    }
+   }
+  }
+ }
+}

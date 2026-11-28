@@ -1,0 +1,178 @@
+{
+ "_commentaire": "Brouillon généré par le migrateur : reformuler dans le ton de chaque personnage.",
+ "accueil": {
+  "personnage": "antoine",
+  "texte": "Bonjour, je suis Hugo, conservateur au musée de l'Armée, aux Invalides. Dans nos réserves, nous venons d'ouvrir un vieux coffre de voyage. À l'intérieur : une copie du testament de l'Empereur, scellée, et cinq objets. Le sceau ne s'ouvrira qu'avec cinq mots. Chaque objet raconte un moment de l'histoire, du jeune général Bonaparte jusqu'à notre République. Entrez dans chaque salle, écoutez chaque témoin, et retrouvez les cinq mots."
+ },
+ "coffre": {
+  "personnage": "antoine",
+  "texte": "Le coffre ne s'ouvre qu'avec les mots de chaque salle, dans l'ordre. Vous les avez notés, j'espère."
+ },
+ "cinematiques": {
+  "transition-e1": {
+   "titre": "Salle 1 — Le palais des Tuileries",
+   "plans": [
+    {
+     "decor": "tuileries",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "antoine",
+     "texte": "Bonjour, je suis Antoine, grenadier de la garde. J'ai suivi le général Bonaparte en Italie, puis j'ai vu les grands changements de 1799. Aujourd'hui, il gouverne la France depuis ce palais. Aidez-moi à remettre en ordre mes souvenirs de campagne.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e1": {
+   "titre": "Fin de la salle 1",
+   "plans": [
+    {
+     "decor": "tuileries",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "antoine",
+     "texte": "Merci. Le premier mot est GÉNÉRAL : tout a commencé avec un jeune général. Bientôt, il voudra une couronne. Rose vous attend à Notre-Dame.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e2": {
+   "titre": "Salle 2 — Notre-Dame de Paris",
+   "plans": [
+    {
+     "decor": "notre-dame",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "rose",
+     "texte": "Bonjour, je m'appelle Rose. J'ai brodé des abeilles d'or pendant des semaines pour le manteau du sacre. Aujourd'hui, toute la cathédrale attend. Aidez-moi à comprendre ce qui se passe et à finir mon registre.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e2": {
+   "titre": "Fin de la salle 2",
+   "plans": [
+    {
+     "decor": "notre-dame",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "rose",
+     "texte": "Le deuxième mot est SACRE . La République est devenue un empire. L'empereur veut maintenant agrandir son pouvoir en Europe. Jeanne vous raconte la suite au bivouac.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e3": {
+   "titre": "Salle 3 — Le bivouac",
+   "plans": [
+    {
+     "decor": "bivouac",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "jeanne",
+     "texte": "Bonjour, je suis Jeanne, cantinière. Je nourris et je soigne les soldats depuis Austerlitz. J'ai vu des victoires, mais aussi beaucoup de souffrances et de morts. Aidez-moi à retracer le chemin de l'armée, jusqu'au bout.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e3": {
+   "titre": "Fin de la salle 3",
+   "plans": [
+    {
+     "decor": "bivouac",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "jeanne",
+     "texte": "Le troisième mot est CONQUÊTES . Elles ont fini à Waterloo, et elles ont coûté très cher. Mais l'Empire a aussi laissé des choses qui durent. Hugo vous attend aux Invalides.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e4": {
+   "titre": "Salle 4 — Le dôme des Invalides",
+   "plans": [
+    {
+     "decor": "invalides",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "hugo",
+     "texte": "Nous voici dans notre siècle. Je prépare une exposition sur ce qui reste de l'Empire. Je veux une exposition honnête : montrer les lois et les monuments, mais aussi la part d'ombre. Aidez-moi à tout ranger.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e4": {
+   "titre": "Fin de la salle 4",
+   "plans": [
+    {
+     "decor": "invalides",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "hugo",
+     "texte": "Le quatrième mot est HÉRITAGE . Un héritage se trie : on garde l'égalité devant la loi, on refuse l'esclavage et la censure. Pour le dernier mot, allez voir Inès, à la mairie.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "transition-e5": {
+   "titre": "Salle 5 — La mairie",
+   "plans": [
+    {
+     "decor": "mairie",
+     "etat": "normal",
+     "duree": 8,
+     "personnage": "ines",
+     "texte": "Bonjour, je suis Inès, la maire. Dans cette salle, je célèbre les mariages ; ici aussi, on vote. Il n'y a plus d'empereur depuis longtemps : nous vivons en République. Aidez-moi à montrer ses symboles, puis ouvrons ensemble le coffre.",
+     "mouvement": "zoom"
+    }
+   ]
+  },
+  "fin-e5": {
+   "titre": "Fin de la salle 5",
+   "plans": [
+    {
+     "decor": "mairie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Le dernier mot est RÉPUBLIQUE . Le sceau du testament s'ouvre. L'histoire de l'Empire est derrière nous ; aujourd'hui, ce sont la liberté, l'égalité et la fraternité qui nous rassemblent.",
+     "mouvement": "glisse"
+    }
+   ]
+  },
+  "fin": {
+   "titre": "Fin de « Le Testament de l'Empereur »",
+   "plans": [
+    {
+     "decor": "mairie",
+     "etat": "normal",
+     "duree": 7,
+     "personnage": "ines",
+     "texte": "Le coffre est ouvert : toutes les pages sont rassemblées. Bravo, équipe !",
+     "mouvement": "zoom"
+    }
+   ]
+  }
+ },
+ "fin_escale": {
+  "1": {
+   "personnage": "antoine",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "2": {
+   "personnage": "rose",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "3": {
+   "personnage": "jeanne",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "4": {
+   "personnage": "hugo",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  },
+  "5": {
+   "personnage": "ines",
+   "texte": "Notez le mot de cette salle : il servira à ouvrir le coffre final."
+  }
+ }
+}
